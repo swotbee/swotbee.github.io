@@ -29,7 +29,7 @@ description: >-                        # used by seo meta and the atom feed
   Blogs with respect to Product Marketing and their workflows.
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
-url: ''
+url: 'https://swotbee.github.io'
 
 github:
   username: SWOTBee             # change to your github username
