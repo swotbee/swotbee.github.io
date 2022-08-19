@@ -51,6 +51,7 @@ build() {
     rm -rf "$SITE_DIR"
   fi
 
+  echo production bundle exec jekyll b -d "$SITE_DIR$_baseurl" --config "$_config"
   # build
   JEKYLL_ENV=production bundle exec jekyll b -d "$SITE_DIR$_baseurl" --config "$_config"
 }
