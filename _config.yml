@@ -21,12 +21,12 @@ timezone: Asia/Kolkata
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: SWOTBee Blogs                          # the main title
+title: SWOTBee                          # the main title
 
-tagline: Blogs for Product Marketers and their workflow.
+tagline: Blog for Product Marketers and their workflow.
 
 description: >-                        # used by seo meta and the atom feed
-  Blogs with respect to Product Marketing and their workflows.
+  Blog with respect to Product Marketing and their workflows.
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
 url: 'https://swotbee.github.io'
@@ -80,7 +80,7 @@ theme_mode:   # [light|dark]
 # will be added to all image (site avatar & posts' images) paths starting with '/'
 #
 # e.g. 'https://cdn.com'
-img_cdn: 'https://raw.githubusercontent.com/cotes2020/chirpy-images/main'
+#img_cdn: 'https://raw.githubusercontent.com/cotes2020/chirpy-images/main'
 
 # the avatar on sidebar, support local or CORS resources
 avatar: '/commons/avatar.jpg'
