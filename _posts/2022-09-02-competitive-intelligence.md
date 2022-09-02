@@ -11,25 +11,34 @@ summary:
 - [Do we need Competitive Intelligence?](#do-we-need-competitive-intelligence)
 - [Goals of Competitive Analysis](#goals-of-competitive-analysis)
 - [Choosing your competitors: Divide and Conquer](#choosing-your-competitors-divide-and-conquer)
-  - [Direct Competitors:](#direct-competitors)
-  - [Indirect Competitors:](#indirect-competitors)
-  - [Distant Competitors:](#distant-competitors)
-  - [Segmenting your Competitors - A complete list:](#segmenting-your-competitors---a-complete-list)
-  - [Sources of Competitors:](#sources-of-competitors)
+  - [Direct Competitors](#direct-competitors)
+  - [Indirect Competitors](#indirect-competitors)
+  - [Distant Competitors](#distant-competitors)
+  - [Segmenting your Competitors - A complete list](#segmenting-your-competitors---a-complete-list)
+  - [Sources of Competitors](#sources-of-competitors)
 - [Choosing a competitive analysis Framework](#choosing-a-competitive-analysis-framework)
 - [Competitive Analysis Frameworks](#competitive-analysis-frameworks)
-- [Analyse your direct competitors](#analyse-your-direct-competitors)
-  - [Analyzing your product’s position against Competitors](#analyzingyour-products-position-against-competitors)
-  - [Analysing a Company with Multiple Products](#analysing-a-company-with-multiple-products)
+  - [1. Identify the variables that can influence the market](#1-identify-the-variables-that-can-influence-the-market)
+  - [2. Identify Direct Competitors with Strategic Group Analysis](#2-identify-direct-competitors-with-strategic-group-analysis)
+  - [3. Analyse your direct competitors](#3-analyse-your-direct-competitors)
+  - [4. Analyzing your product’s position against Competitors](#4-analyzingyour-products-position-against-competitors)
+  - [5. Analysing a Company with Multiple Products](#5-analysing-a-company-with-multiple-products)
 - [Gathering Data about your Competitors](#gathering-data-about-your-competitors)
-  - [1.  Company](#1--company)
-  - [2. Products and services](#2-products-and-services)
-  - [3. Target market and customer awareness](#3-target-market-and-customer-awareness)
-  - [4. Marketing strategy](#4-marketing-strategy)
+  - [1:  Company](#1--company)
+    - [Sources](#sources)
+  - [2: Products and services](#2-products-and-services)
+    - [Sources](#sources-1)
+      - [Tech Used](#tech-used)
+      - [Product features](#product-features)
+      - [Pricing Policy](#pricing-policy)
+  - [3: Target market and customer awareness](#3-target-market-and-customer-awareness)
+    - [Sources](#sources-2)
+  - [4: Marketing strategy](#4-marketing-strategy)
     - [Advertising](#advertising)
     - [Social media and influencer marketing](#social-media-and-influencer-marketing)
     - [Content marketing](#content-marketing)
     - [SEO performance](#seo-performance)
+    - [Lead handling](#lead-handling)
 - [Conclusion](#conclusion)
 
 The PMM role is a busy one. It helps set the tone for many other roles and it's not hard to see why this position would be so important in any company looking towards success! From product positioning, messaging, sales collateral creation; all of these aspects stem from what we do here at our organization- first with planning then onto execution through campaigns that target customers right down to implementing pricing strategies--the list goes on forever really but you get my drift…
@@ -66,7 +75,7 @@ So you sit down to list all your competitors, only to find what you expected to 
 
 The solution is to find an efficient way to split your time amongst them. All competitors are not equal.
 
-Direct Competitors:
+Direct Competitors
 -------------------
 
 There are some who compete for the same target audience as you and have a rather similar product. So they position, message and price very close to you. These are direct competitors and need to be checked on regularly.
@@ -75,7 +84,7 @@ You can find them from your existing customers, ask them which companies they we
 
 Your customer success people can also identify the most dangerous competitors as that is where your most of your churned customers will move to.
 
-Indirect Competitors:
+Indirect Competitors
 ---------------------
 
 These are competitors who are not direct threats but could potentially change tactics or target market to occupy your market.
@@ -87,14 +96,14 @@ While you need not follow them obsessively, you need to be aware of any directio
 
 They would be a higher number than direct competitors, at 10 or higher. This is the group you will monitor periodically, once a month or a quarter.
 
-Distant Competitors:
+Distant Competitors
 --------------------
 
 These are competitors who have a long way to go before being able to position themselves as a viable alternative to you. They are usually months or years behind and do not pose an immediate threat, but someone to keep an eye on for the future. Sometimes, startups optimized for growth with huge investment backing can narrow the gap much faster and hence their financial details should be on your radar.
 
 Their number will vary based on how you define distant competitors for your usecase. They will need to be assessed every 6 months or so and if necessary added to one of the above categories.
 
-Segmenting your Competitors - A complete list:
+Segmenting your Competitors - A complete list
 ----------------------------------------------
 
 While we have used the most important aspects of your competitors to classify, there are more ways to group your competitors
@@ -109,7 +118,7 @@ While we have used the most important aspects of your competitors to classify, t
 *   Capacity & Utilization
 *   Integrations and Partnerships
 
-Sources of Competitors:
+Sources of Competitors
 -----------------------
 
 *   Voice of customer and prospects. The best sources are your sales people and customer success team. If a prospect is evaluating your product versus another, the other product is definitely a direct competitor. Same goes for when a customer is considering renewal or switching to another product.
@@ -134,8 +143,8 @@ The process of competitive analysis can give you a wealth of data both quantitat
 Competitive Analysis Frameworks
 ===============================
 
-*   Identify the variables that can influence the market
-    ----------------------------------------------------
+1. Identify the variables that can influence the market
+-------------------------------------------------------
     
 
 Porter’s five forces analysis: is a way to help you understand the competitive structure of your industry by looking at five factors:
@@ -154,8 +163,8 @@ For example, Intel was the dominant chip manufacturer for a long time. Hence all
 
 ![](/assets/images/competitive-intelligence/image2.png)
 
-*   Identify Direct Competitors with Strategic Group Analysis:
-    ----------------------------------------------------------
+  2. Identify Direct Competitors with Strategic Group Analysis
+  -------------------------------------------------------------
     
 
 *   You might have already gotten a list of competitors and grouped them into direct, indirect, distant or not-a-competitor already.
@@ -187,16 +196,16 @@ Now one can sort the competitors based on the identified attributes into Strateg
 
 (refered from: https://open.lib.umn.edu/strategicmanagement/chapter/3-5-mapping-strategic-groups/)
 
-Analyse your direct competitors
-===============================
+3. Analyse your direct competitors
+----------------------------------
 
 *   SWOT analysis :  A SWOT analysis is a powerful tool that businesses can use to gain a competitive advantage. The acronym stands for Strengths, Weaknesses, Opportunities, and Threats. By identifying these four key areas, businesses can develop strategies to improve their position in the marketplace.
 *   One of the main strengths of a SWOT analysis is that it forces businesses to take a close look at their competitor's operations. By understanding their competitor's strengths and weaknesses, businesses can develop strategies to either exploit their weaknesses or protect against their strengths. In addition, a SWOT analysis can help businesses to identify opportunities in the marketplace that they may not have otherwise noticed. Finally, by understanding the threats facing their business, companies can develop plans to mitigate these risks.
 
 In short, a SWOT analysis is an essential tool for any business that wants to stay ahead of the competition. By taking the time to understand their own strengths and weaknesses, as well as those of their competitors, businesses can develop actionable plans to improve their position in the marketplace.
 
-Analyzing your product’s position against Competitors
------------------------------------------------------
+4. Analyzing your product’s position against Competitors
+--------------------------------------------------------
 
 Perceptual Mapping
 
@@ -206,7 +215,7 @@ As marketing strategies continue to evolve, so too does the need for accurate an
 
 https://courses.lumenlearning.com/waymakerintromarketingxmasterfall2016/chapter/reading-the-positioning-process/
 
-Analysing a Company with Multiple Products
+5. Analysing a Company with Multiple Products
 ------------------------------------------
 
 The Growth-Share Matrix, also known as the Boston Consulting Group (BCG) Matrix, is a tool used by businesses to help them assess their different products and make informed decisions about investments. The matrix looks at two main variables - relative market share and market growth rate - in order to classify products into one of four categories: Stars, Question Marks, Cash Cows or Dogs.
@@ -220,7 +229,7 @@ By understanding where each of their products fall on the matrix, businesses can
 Gathering Data about your Competitors
 =====================================
 
-1.  Company
+1:  Company
 ------------
     
 
@@ -230,14 +239,15 @@ The former may be as simple as filling out data on your competitors' number of e
 
 To learn more about a company's revenue and customers, begin by searching for their names alongside "revenue" or "customers." If that doesn't work, you might try a business directory like Dun & Bradstreet.
 
-Sources:
+### Sources
 
-*   About Us page on competitor's website
-*   Crunchbase
-*   LinkedIn
-*   Paid services like Dun & Bradstreet
+*   **About Us page on competitor's website** - Often you can the location, the key people in the company and funding information here.
+*   **Crunchbase** - You can find information about when a company was started, who are the key people, the number of funding rounds and fundng amount, what are the other companies in the space. While you can get a ballpark estimate of how big the company is, it is often inaccurate. The same goes for employee information
+*   **LinkedIn** - You can find all the locations the company exists in, the number of employees, recent hires, job postings etc. If you have the paid account, you can also find how many they have hired of late.
+*   **Paid services like Dun & Bradstreet**
+*   **GlassDoor** - Gives an idea of what the culture is at the competitor company and how aligned they are. When a company's culture is in trouble, the agility of their progress is greatly hindered.
 
-2. Products and services
+2: Products and services
 -------------------------
 
 Understanding the products or services that your competitors offer is the key to finding market differentiation for your brand. The first thing you’ll need to do is answer a few basic qualitative questions:
@@ -255,49 +265,50 @@ After that, you can move on to more quantitative details around price. Questions
 *   Is it a subscription or a one-off fee?
 *   Do your competitors offer more packages than you?
 
-Sources:
+### Sources
 
-*   Tech Used:
+#### Tech Used
 
-*   Builtwith.com
-*   Website Career page
-*   Linkedin Job Posts
-*   Patents filed
+  
 
-*   Product features
+*   **Builtwith.com** - Builtwith is biased more towards the customer facing tech you find in frontend. This can still be very useful, depending on what you are looking for. This is a good source to know what webserver they are using, the analytics solution used, frontend tech, CDNs etc.
+*   **Website Career page** - To deep dive into tech that the competitors use in the backend, the jobs listed on their careeer page would be an ideal source. Even more importantly, new job postings will be leading indicators of new features that the competitor would be building. For example: An Job Advert for SAP developer could indicate SAP integration is in their future plans. 
+*   **Linkedin Job Posts** - In addition to the same advantages confered by visitng the Website Career page indicated above, you can also see when the job was posted, giving a timeline information 
+*   **Patents filed** - This is an important source of upcoming innovation for companies in hardcore tech, manufacturing tech, FMCG, oil and gas, and Energy companies.
 
-*   Website Product Page
-*   Review sites like G2
+#### Product features
 
-*   Pricing Policy
+*   **Website Product Page** - For a B2B product targeted at small and medium businesses, The product pages usually have a complete list of features that a competitor team wants the customer to know. Sometimes, there will be multiple pages targeted at different user personas, which makes it much easier to know what personas are being targeted. 
+*   **Youtube Demo Videos** - The name says it all. Often one can find demo of the products put up by the company themselves on their own site or on Youtube. It is also possible to find users/influencers posting their own videos and take on the product. This can be a treasure trove of information on what is truly possible with a product (as opposed to Website Product Page, where the narrative is strongly controlled), what innovative features are present and what is absent.
+*   **Review sites like G2** - When all else fails, review sites like G2, Capterra and forums like Reddit are great sources of information on what features delight customers, what frustrates them and what is the role of the customer using the product. 
 
-*   Pricing Page
-*   Review sites like G2
-*   Googling “How much does x cost”
+#### Pricing Policy
 
-3. Target market and customer awareness
+*   **Pricing Page** - Some product pages have transperant pricing policy. In such cases, you get all the information  you need from the Pricing pages itself.
+*   **Ex-Customers** - When there is no clear pricing on the page, ex-customers who have chosen your product could be good source of information. Vice-versa, if one of your non-renewal customers is moving to the competitor, you could ask them for a favour and have a short exit interview covering their current frustrations and information about the product they are migrating to.
+*   **Review sites like G2** - G2 sometimes has the information as provided by some of the reviewing customers.
+*   **Googling “How much does x cost”** - When all else fails, Google can deliver. It is possible to find some discussion on forums (usually reddit) by the competitors users and prospects about the pricing.
+
+3: Target market and customer awareness
 ----------------------------------------
 
 It’s only really by tracking a range of competitors that you can apply meaning and context to the results your brand sees. Social listening can also help you learn what customers are saying about your competitors and whether they’re listening. It’s also useful to see what kind of things your competitors are saying on their social channels – and on which ones. For instance, if your competitor is posting more on say, TikTok than LinkedIn, then you can make an educated assumption that they’re probably looking to attract a younger audience.
 
-Whom are your competitors trying to sell to?
+* Whom are your competitors trying to sell to?
+* Is it the same kind of customer your own company wants to attract? And, importantly, is it working?
+* You can get a decent handle on that last question by monitoring both share of customer voice and sentiment. Most social listening and competitor analysis tools will be able to track this for you.
+* How does your competitor’s share of voice or sentiment rankings stack up to yours?
 
-Is it the same kind of customer your own company wants to attract? And, importantly, is it working?
+### Sources
 
-*   You can get a decent handle on that last question by monitoring both share of voice and sentiment. Most social listening and competitor analysis tools (more on those in a bit) will be able to track this for you.
+1.  **Customer Interviews (Incoming and Churning)**
+2.  **Prospect Interviews** - Your prospects are probably speaking to multiple companies before fixing on one. They will have the most upto date information
+3.  **Sales People Intel** - Your sales people are probably the first to hear of a new competitor. They are constantly interacting with prospects are often posed with questions about how your product stands against a competitor's. 
+4.  **Social Media Monitoring** 
+5.  **Discussions on forums like StackOverflow, Reddit, Quora** - Ideally you should also have an account on these forums where your customers/prospects hang out to be able to participate in the conversation, and if possible steer it favourably.
+6.  **Customer Complaint Forums** - If one exists for your category, it can be rich source of objections to your competitor products.
 
-How does your competitor’s share of voice or sentiment rankings stack up to yours?
-
-Sources:
-
-1.  Customer Interviews (Incoming and Churning)
-2.  Prospect Interviews
-3.  Sales People Intel
-4.  Social Media Monitoring
-5.  Discussions on forums like StackOverflow, Reddit, Quora
-6.  Customer Complaint Forums
-
-4. Marketing strategy
+4: Marketing strategy
 ----------------------
 
 The meta-information around the above line of inquiry can help you fill in a few more blanks, too. For example, you’ll learn the geographical markets your competitor is focussed on alongside which ones they aren’t, and you’ll soon develop a full picture of their online presence as it relates to their target market.
@@ -322,8 +333,7 @@ Tracking content marketing will likely lead to monitoring the SEO performance of
 
 Understanding this is crucial for adjusting your marketing strategy, to win a greater share of common search results in your industry.
 
-*   Lead handling
-    -------------
+### Lead handling
     
 
 *   Familiarise yourself with your competitors’ lead and sales process by venturing down it yourself. Watch a tutorial, book a demo, or make contact with their sales teams to see how much of the process is gated, how seamless things are, and how long responses take.
