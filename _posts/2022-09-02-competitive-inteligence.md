@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Competitive-Intelligence: A Comprehensive Guide
+title: Competitive-Intelligence - A Comprehensive Guide
 date: 2022-09-02 12:39
 category: 
 author: Sharmila Gopirajan
@@ -152,7 +152,7 @@ For example, Intel was the dominant chip manufacturer for a long time. Hence all
 
  Thus, A Five Forces analysis may help businesses gauge the competitiveness of their industry, evaluate how trends will influence industry competition and how to position oneself for success.
 
-![](assets/images/competitive-intelligence/image2.png)
+![](/assets/images/competitive-intelligence/image2.png)
 
 *   Identify Direct Competitors with Strategic Group Analysis:
     ----------------------------------------------------------
@@ -183,7 +183,7 @@ For example, Intel was the dominant chip manufacturer for a long time. Hence all
 
 Now one can sort the competitors based on the identified attributes into Strategic Groups.
 
-![Strategic Group Analysis](assets/images/competitive-intelligence/image1.png)
+![Strategic Group Analysis](/assets/images/competitive-intelligence/image1.png)
 
 (refered from: https://open.lib.umn.edu/strategicmanagement/chapter/3-5-mapping-strategic-groups/)
 
@@ -202,7 +202,7 @@ Perceptual Mapping
 
 As marketing strategies continue to evolve, so too does the need for accurate and reliable consumer research. Perceptual mapping is a powerful tool that can help marketers to understand the perceptions of their customers or potential customers. By visually displaying the perceived positions of products, product lines, brands, or companies, perceptual maps provide valuable insights into consumer attitudes and preferences. In addition to helping marketers to understand where the consumer ranks their company in terms of characteristics and in comparison to competing companies, perceptual maps can also help to identify areas of opportunity. When creating a new product, for example, a company should look for a space that is currently unoccupied by competitors and that has a high concentration of consumer desire (ideal points). By using perceptual mapping to guide their decision-making, companies can ensure that they are making informed choices that are based on sound market research.
 
-![Perceptual Mapping](assets/images/competitive-intelligence/image3.png)
+![Perceptual Mapping](/assets/images/competitive-intelligence/image3.png)
 
 https://courses.lumenlearning.com/waymakerintromarketingxmasterfall2016/chapter/reading-the-positioning-process/
 
@@ -215,7 +215,7 @@ Stars are products with high market share and high growth rate. They require sig
 
 By understanding where each of their products fall on the matrix, businesses can make strategic decisions about where to allocate their resources in order to maximize their return on investment. For example, a company might choose to invest more heavily in a 'Star' product which has high growth potential but low market share. This could involve increasing advertising or innovating the product. On the other hand, a 'Cash Cow' might be a product with high market share but low growth potential. In this case, a company might choose to milk the product for as long as possible before eventually phasing it out. The Growth-Share Matrix is therefore an essential tool for any business looking to make informed decisions about investments.
 
-![Growth-Share Matrix](assets/images/competitive-intelligence/image4.png)
+![Growth-Share Matrix](/assets/images/competitive-intelligence/image4.png)
 
 Gathering Data about your Competitors
 =====================================

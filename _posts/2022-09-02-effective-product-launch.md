@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Effective Product Launch plan: The Ultimate step by step Guide
+title: Effective Product Launch plan - The Ultimate step by step Guide
 date: 2022-09-02 12:39
 category: 
 author: Sharmila Gopirajan
@@ -9,9 +9,9 @@ summary:
 ---
 
 
-![](assets/images/product-launch/image1.png "horizontal line")
+![](/assets/images/product-launch/image1.png "horizontal line")
 
-![](assets/images/product-launch/image3.png "short line")
+![](/assets/images/product-launch/image3.png "short line")
 
 
 # Effective Product Launch plan: The Ultimate step by step Guide
@@ -24,7 +24,7 @@ summary:
 - [What do you need to get started for a successful product launch?](#what-do-you-need-to-get-started-for-a-successful-product-launch)
   - [Ensure Go-To-Market Strategy is in Place](#ensure-go-to-market-strategy-is-in-place)
 
-![](assets/images/product-launch/image3.png "short line")
+![](/assets/images/product-launch/image3.png "short line")
 
 The feeling of success is worth every ounce when you successfully launch your company’s newest venture into customers' hands. Seeing people delighted and receiving value from what was once just a simple idea makes all the work worthwhile. You're going into this knowing that there are deadlines and goals, but when they’re met? It feels so satisfying; nothing can compare in terms of excitement or pride about how far everyone has come together towards one goal: delivering happiness through our work
 
@@ -361,4 +361,4 @@ A product launch is not about driving traffic for sales. It is a well-coordinate
 
 As Archimedes once said, "Give me a lever long enough and a fulcrum on which to place it, and I shall move the world ."Product launch is a fulcrum; having all cross-functional teams coordinate their effort towards this will deliver tremendous success.
 
-![](assets/images/product-launch/image2.png "short dash")
+![](/assets/images/product-launch/image2.png "short dash")
