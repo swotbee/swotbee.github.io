@@ -18,11 +18,11 @@ summary:
   - [Sources of Competitors](#sources-of-competitors)
 - [Choosing a competitive analysis Framework](#choosing-a-competitive-analysis-framework)
 - [Competitive Analysis Frameworks](#competitive-analysis-frameworks)
-  - [1. Identify the variables that can influence the market](#1-identify-the-variables-that-can-influence-the-market)
-  - [2. Identify Direct Competitors with Strategic Group Analysis](#2-identify-direct-competitors-with-strategic-group-analysis)
-  - [3. Analyse your direct competitors](#3-analyse-your-direct-competitors)
-  - [4. Analyzing your product’s position against Competitors](#4-analyzingyour-products-position-against-competitors)
-  - [5. Analysing a Company with Multiple Products](#5-analysing-a-company-with-multiple-products)
+  - [1: Identify the variables that can influence the market](#1-identify-the-variables-that-can-influence-the-market)
+  - [2: Identify Direct Competitors with Strategic Group Analysis](#2-identify-direct-competitors-with-strategic-group-analysis)
+  - [3: Analyse your direct competitors](#3-analyse-your-direct-competitors)
+  - [4: Analyzing your product’s position against Competitors](#4-analyzingyour-products-position-against-competitors)
+  - [5: Analysing a Company with Multiple Products](#5-analysing-a-company-with-multiple-products)
 - [Gathering Data about your Competitors](#gathering-data-about-your-competitors)
   - [1:  Company](#1--company)
     - [Sources](#sources)
@@ -143,7 +143,7 @@ The process of competitive analysis can give you a wealth of data both quantitat
 Competitive Analysis Frameworks
 ===============================
 
-1. Identify the variables that can influence the market
+1: Identify the variables that can influence the market
 -------------------------------------------------------
     
 
@@ -161,9 +161,9 @@ For example, Intel was the dominant chip manufacturer for a long time. Hence all
 
  Thus, A Five Forces analysis may help businesses gauge the competitiveness of their industry, evaluate how trends will influence industry competition and how to position oneself for success.
 
-![](/assets/images/competitive-intelligence/image2.png)
+![Porter's Five Forces](/assets/images/competitive-intelligence/image2.png)
 
-  2. Identify Direct Competitors with Strategic Group Analysis
+  2: Identify Direct Competitors with Strategic Group Analysis
   -------------------------------------------------------------
     
 
@@ -196,7 +196,7 @@ Now one can sort the competitors based on the identified attributes into Strateg
 
 (refered from: https://open.lib.umn.edu/strategicmanagement/chapter/3-5-mapping-strategic-groups/)
 
-3. Analyse your direct competitors
+3: Analyse your direct competitors
 ----------------------------------
 
 *   SWOT analysis :  A SWOT analysis is a powerful tool that businesses can use to gain a competitive advantage. The acronym stands for Strengths, Weaknesses, Opportunities, and Threats. By identifying these four key areas, businesses can develop strategies to improve their position in the marketplace.
@@ -204,7 +204,7 @@ Now one can sort the competitors based on the identified attributes into Strateg
 
 In short, a SWOT analysis is an essential tool for any business that wants to stay ahead of the competition. By taking the time to understand their own strengths and weaknesses, as well as those of their competitors, businesses can develop actionable plans to improve their position in the marketplace.
 
-4. Analyzing your product’s position against Competitors
+4: Analyzing your product’s position against Competitors
 --------------------------------------------------------
 
 Perceptual Mapping
@@ -215,7 +215,7 @@ As marketing strategies continue to evolve, so too does the need for accurate an
 
 https://courses.lumenlearning.com/waymakerintromarketingxmasterfall2016/chapter/reading-the-positioning-process/
 
-5. Analysing a Company with Multiple Products
+5: Analysing a Company with Multiple Products
 ------------------------------------------
 
 The Growth-Share Matrix, also known as the Boston Consulting Group (BCG) Matrix, is a tool used by businesses to help them assess their different products and make informed decisions about investments. The matrix looks at two main variables - relative market share and market growth rate - in order to classify products into one of four categories: Stars, Question Marks, Cash Cows or Dogs.
