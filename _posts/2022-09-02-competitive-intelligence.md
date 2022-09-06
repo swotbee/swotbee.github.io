@@ -163,8 +163,10 @@ For example, Intel was the dominant chip manufacturer for a long time. Hence all
 
 ![Porter's Five Forces](/assets/images/competitive-intelligence/image2.png)
 
-  2: Identify Direct Competitors with Strategic Group Analysis
-  -------------------------------------------------------------
+
+
+2: Identify Direct Competitors with Strategic Group Analysis
+-------------------------------------------------------------
     
 
 *   You might have already gotten a list of competitors and grouped them into direct, indirect, distant or not-a-competitor already.
