@@ -14,9 +14,9 @@ summary:
 ![](/assets/images/product-launch/image3.png "short line")
 
 
-# Effective Product Launch plan: The Ultimate step by step Guide
+# How to measure the success of your product marketing strategy using key metrics
 
-- [Effective Product Launch plan: The Ultimate step by step Guide](#effective-product-launch-plan-the-ultimate-step-by-step-guide)
+- [How to measure the success of your product marketing strategy using key metrics](#how-to-measure-the-success-of-your-product-marketing-strategy-using-key-metrics)
 - [Product Marketing: What It Is & How to Measure It](#product-marketing-what-it-is--how-to-measure-it)
   - [Quote as image](#quote-as-image)
   - [Image inspiration](#image-inspiration)
