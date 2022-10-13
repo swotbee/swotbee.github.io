@@ -19,7 +19,7 @@ _Competitors of different feathers_
   - [Indirect Competitors](#indirect-competitors)
   - [Distant Competitors](#distant-competitors)
   - [Segmenting your Competitors - A complete list](#segmenting-your-competitors---a-complete-list)
-  - [Sources of Competitors](#sources-of-competitors)
+  - [Sources for Discovering Competitors](#sources-for-discovering-competitors)
 - [Choosing a competitive analysis Framework](#choosing-a-competitive-analysis-framework)
 - [Competitive Analysis Frameworks](#competitive-analysis-frameworks)
   - [1: Identify the variables that can influence the market](#1-identify-the-variables-that-can-influence-the-market)
@@ -52,30 +52,35 @@ Do we need Competitive Intelligence?
 
 Whether you’re just starting out or have been in the market for a long time, it’s important to always be aware of industry trends.
 
-There are often two camps in when it comes to competitive intelligence: The one that watches the competition closely and mirrors their changes, lest they gain an advantage. This can lead into a " spaghetti monster", a hodge podge of features from all your competitors and at the same time everything is too similar to other products.
 
-The second believes their strategy should not be defined by competition, only by customer voice. To work without thinking about how this may compare with existing products out there, is throwing caution to the winds and being blissfully unaware until competition hits you in the face.
+![Desktop View](/assets/blog-images/spagetti-monster-1.jpeg){: width="50%" height="auto" }{: .left } 
+There are often two camps of thought when it comes to competitive intelligence: The one that watches the competition closely and mirrors their changes, lest they gain an advantage. This can lead into a "spaghetti monster", a hodge podge of features from all your competitors and at the same time your product is just too similar to other products to differentiate.
+	
+
+
+
+The second believes their strategy should not be defined by competition, only by customer voice. Yet, to work without thinking about how this may compare with existing products out there, is throwing caution to the winds and being blissfully unaware until competition hits you in the face.
 
 Actually, there is a more nuanced third stance: One cannot drive a car forward looking into the rear view mirror, but it is still important to know where the other vehicles are on the road to stay safe and stay ahead.
 
-You could be the market leader, or positioned yourself for a niche. It is important to know when competition is expanding into your territory or inching into your niche. This is the reason market pioneers are often not market leaders. Competition copies the same innovation they do and do it better because of insights gained from seeing the pioneer doing it first.
+You could be the market leader, or could have positioned yourself as the big fish of a small pond. It is important to know when competition is expanding into your territory or inching into your niche. There is the reason for market pioneers often not being the market leaders. Competition copies the same innovation they do and do it better because of insights gained from seeing the pioneer doing it first.
 
 Goals of Competitive Analysis
 =============================
 
 Competitive analysis is an exercise backed by a goal in mind. It has a huge set of potential actions and launching into Competitive Intelligence without a goal is a surefire way to burn your time and money. If you are getting into a new market, the goal can be completely different from an existing product. Here are some possible goals
 
-*   Entering New Markets: One of the most important things to do before entering into new markets is analysis on competitors. This will allow you know what they are up against, their strengths and weaknesses etc., which can help with your own product/service launch strategy
-*   Market Suitability : How can you know if your business is still the best choice in its niche market? A strategic analysis of competitors bylooking at their products, services, prices and more helps understand where you stand apart from others within this niche and how relevant you still are to your market.
-*   Customer Segmentation: Which customer segments are your competitors targeting? What types of customers gravitate toward each different competitor in the market.
+*   Entering New Markets: One of the most important things to do before entering into new markets is analysis of competitors. This will allow you know what they are up against, their strengths and weaknesses etc., which can help with your own product/service launch strategy
+*   Market Suitability : How can you know if your business is still the best choice in its niche market? A strategic analysis of competitors by looking at their products, services, prices and more helps understand where you stand apart from others within this niche and how relevant you still are to your market.
+*   Customer Segmentation: Which customer segments are your competitors targeting? What types of customers gravitate toward each different competitor in the market?
 *   Competitor Discovery: find aspiring competitors which can become your direct counterparts in the future.
 
-Your goals may differ from one Competitive Analysis session to another, but it is important to go into the session understanding the goal to ensure your time is used effectively and not lost in the sea of exploration and possibilities that is Competitive Intelligence.
+Your goals may differ from one Competitive Analysis session to another, but it is important to go into the session after deciding on the goal to ensure your time is used effectively and not lost in the sea of exploration and possibilities that is Competitive Intelligence.
 
 Choosing your competitors: Divide and Conquer
 =============================================
 
-So you sit down to list all your competitors, only to find what you expected to be a list of 5 expanding on and on to 30 and beyond. Oh the horror! What now? Obviously tracking 30 competitors is a recipe for exercise in futility.
+So you sit down to list all your competitors, only to find what you expected to be a list of 5 competitors expanding on and on to 30 and beyond. Oh the horror! What now? Obviously trying to track 30 competitors is an exercise in futility.
 
 The solution is to find an efficient way to split your time amongst them. All competitors are not equal.
 
@@ -93,12 +98,12 @@ Indirect Competitors
 
 These are competitors who are not direct threats but could potentially change tactics or target market to occupy your market.
 
-1.  who provide alternative ways to solve your customer problem. Eg. Netflix and Youtube. One relies on monthly subscription and consistent format and high quality content. Youtube relies on ad revenue and independent content creators with hit or miss quality.
+1.  Who provide alternative ways to solve your customer problem. Eg. Netflix and Youtube. One relies on monthly subscription and consistent format and high quality content. Youtube relies on ad revenue and independent content creators with hit or miss quality.
 2.  Who provide a similar product but targeted at a different audience e.g Netflix and Curiosity Stream. Both are monthly subscription and consistent format and high quality content but the former is geared towards entertainment, Curiosity Stream is focused on the edutainment focused market through streaming documentaries.
 
 While you need not follow them obsessively, you need to be aware of any directional changes in strategy and positioning that might cause incursion into or overlap with your market.
 
-They would be a higher number than direct competitors, at 10 or higher. This is the group you will monitor periodically, once a month or a quarter.
+Indirect competitors would be a higher number than direct competitors, at 10 or higher. This is the group you will monitor periodically, once a month or once a quarter.
 
 Distant Competitors
 --------------------
@@ -110,7 +115,7 @@ Their number will vary based on how you define distant competitors for your usec
 Segmenting your Competitors - A complete list
 ----------------------------------------------
 
-While we have used the most important aspects of your competitors to classify, there are more ways to group your competitors
+While in the above description, we have used the most important aspects of your competitors to classify, there are others ways to group your competitors
 
 *   Target Persona(s)
 *   Target Companies/Market Segment
@@ -122,10 +127,10 @@ While we have used the most important aspects of your competitors to classify, t
 *   Capacity & Utilization
 *   Integrations and Partnerships
 
-Sources of Competitors
+Sources for Discovering Competitors
 -----------------------
 
-*   Voice of customer and prospects. The best sources are your sales people and customer success team. If a prospect is evaluating your product versus another, the other product is definitely a direct competitor. Same goes for when a customer is considering renewal or switching to another product.
+*   Voice of customer and prospects. The best sources are your sales people and customer success team. If a prospect is evaluating your product versus another, the other product is definitely a direct competitor. Same goes for when an existing customer is considering renewal of your product or switching to another product.
 
 The following lists of companies will be approximate estimations for competitors and you will need to use your judgement to decide if they truly are one.
 
@@ -138,9 +143,9 @@ Choosing a competitive analysis Framework
 
 The goal of any framework is to help you be more mindful about the decisions and actions that impact your business.
 
-If you are an entrepreneur or a startup founder, then it will help you assess the value proposition of your product. If you are a product manager then it will help you identify which market positioning will work best for your product. If you are a product marketer, then both the above statements might be true for you.
+If you are an entrepreneur or a startup founder, then it will help you assess the value proposition of your product. If you are a product marketing professional then it will help you identify which market positioning will work best for your product. If you are a product marketer, then both of the above statements might be true for you.
 
-There are multiple frameworks to give structure to your competitive analysis. You can choose the ones that fulfils your objective. In time, you will be able to adapt these frameworks to something unique and use for you.
+There are multiple frameworks to give structure to your competitive analysis. You can choose the ones that fulfils your objective. In time, you will be able to adapt these frameworks to something unique and customized for you.
 
 The process of competitive analysis can give you a wealth of data both quantitative ( Numbers) as well qualitative(Data). Organized well, it  will make things easier for future campaigns by giving clear direction(and a competitive edge) on which strategy works best based on this information gathered during each one!
 
@@ -173,8 +178,8 @@ For example, Intel was the dominant chip manufacturer for a long time. Hence all
 -------------------------------------------------------------
     
 
-*   You might have already gotten a list of competitors and grouped them into direct, indirect, distant or not-a-competitor already.
-*   This exercise helps you verify your decisions and illustrate visually the competitor landscape that is understandable for everyone.
+You might have already gotten a list of competitors and grouped them into direct, indirect, distant or not-a-competitor already. So why should you do Strategic Group Analysis?
+*   The following exercise helps you verify your decisions and illustrate visually the competitor landscape that is understandable for everyone.
 *   It also helps identify shifts in the market
 *   It is easy to understand how the company can move into a more lucrative part of the market
 
@@ -199,8 +204,7 @@ For example, Intel was the dominant chip manufacturer for a long time. Hence all
 Now one can sort the competitors based on the identified attributes into Strategic Groups.
 
 ![Strategic Group Analysis](/assets/images/competitive-intelligence/image1.png)
-
-(refered from: https://open.lib.umn.edu/strategicmanagement/chapter/3-5-mapping-strategic-groups/)
+ _refered from: https://open.lib.umn.edu/strategicmanagement/chapter/3-5-mapping-strategic-groups/)_
 
 3: Analyse your direct competitors
 ----------------------------------
@@ -308,7 +312,7 @@ It’s only really by tracking a range of competitors that you can apply meaning
 ### Sources
 
 1.  **Customer Interviews (Incoming and Churning)**
-2.  **Prospect Interviews** - Your prospects are probably speaking to multiple companies before fixing on one. They will have the most upto date information
+2.  **Prospect Interviews** - Your prospects are probably speaking to multiple companies before fixing on one. They will have the most up to date information
 3.  **Sales People Intel** - Your sales people are probably the first to hear of a new competitor. They are constantly interacting with prospects are often posed with questions about how your product stands against a competitor's. 
 4.  **Social Media Monitoring** 
 5.  **Discussions on forums like StackOverflow, Reddit, Quora** - Ideally you should also have an account on these forums where your customers/prospects hang out to be able to participate in the conversation, and if possible steer it favourably.
@@ -327,7 +331,7 @@ Alongside TV and other traditional ATL advertising, it’s helpful to use compet
 
 ### Social media and influencer marketing
 
-As mentioned in the section above, it’s important to know where your direct competitors are focussing their efforts when it comes to social posting. Moreover, if you monitor engagement levels per platform, you’ll learn which channels it’s best for you to prioritise.
+As mentioned in the section above, it’s important to know where your direct competitors are focussing their efforts when it comes to social posting. Moreover, if you monitor engagement levels per platform, you’ll learn which channels it’s best for you to prioritize.
 
 ### Content marketing
 
@@ -342,10 +346,10 @@ Understanding this is crucial for adjusting your marketing strategy, to win a gr
 ### Lead handling
     
 
-*   Familiarise yourself with your competitors’ lead and sales process by venturing down it yourself. Watch a tutorial, book a demo, or make contact with their sales teams to see how much of the process is gated, how seamless things are, and how long responses take.
+*   Familiarize yourself with your competitors’ lead and sales process by venturing down it yourself. Watch a tutorial, book a demo, or make contact with their sales teams to see how much of the process is gated, how seamless things are, and how long responses take.
 *   Sign up for their newsletter and see how they lead prospects to their funnel. What offers are given? How long is the nurture cycle?
 
 Conclusion
 ==========
 
-The process of creating a marketing strategy is not an easy one. This process requires that you have a clear vision for why certain decisions were made. This will be a guiding light for making some of the tactical decisions during the course where and when you need to allocate resources to certain campaigns. So make absolutely sure it's worth the commitment and worth all of the time spent before moving forward with them!
+The process of creating a marketing strategy is not an easy one. This process requires that you have a clear vision for why certain decisions were made. This will be a guiding light for making some tactical decisions during the course where and when you need to allocate resources to certain campaigns. So make absolutely sure it's worth the commitment and worth all the time spent before moving forward with them!
