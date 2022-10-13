@@ -41,7 +41,7 @@ summary:
     - [Lead handling](#lead-handling)
 - [Conclusion](#conclusion)
 
-The PMM role is a busy one. It helps set the tone for many other roles and it's not hard to see why this position would be so important in any company looking towards success! From product positioning, messaging, sales collateral creation; all of these aspects stem from what we do here at our organization- first with planning then onto execution through campaigns that target customers right down to implementing pricing strategies--the list goes on forever really but you get my drift…
+The PMM role is a busy one. It helps set the tone for many other roles and it's not hard to see why this position would be so important in any company looking towards success! From product positioning, messaging, product launches, sales collateral creation to aiding customer retention the influence is felt across the board. Work starts first with planning then onto execution through campaigns that target customers right down to implementing pricing strategies--the list goes on forever really but you get my drift…
 
 Do we need Competitive Intelligence?
 ====================================
