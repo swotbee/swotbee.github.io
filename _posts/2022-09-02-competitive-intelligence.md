@@ -145,9 +145,9 @@ The goal of any framework is to help you be more mindful about the decisions and
 
 If you are an entrepreneur or a startup founder, then it will help you assess the value proposition of your product. If you are a product marketing professional then it will help you identify which market positioning will work best for your product. If you are a product marketer, then both of the above statements might be true for you.
 
-There are multiple frameworks to give structure to your competitive analysis. You can choose the ones that fulfils your objective. In time, you will be able to adapt these frameworks to something unique and customized for you.
+There are multiple frameworks to give structure to your competitive analysis. You can choose the ones that fulfil your objective. In time, you will be able to adapt these frameworks to something unique and customized for you.
 
-The process of competitive analysis can give you a wealth of data both quantitative ( Numbers) as well qualitative(Data). Organized well, it  will make things easier for future campaigns by giving clear direction(and a competitive edge) on which strategy works best based on this information gathered during each one!
+The process of competitive analysis can give you a wealth of data both quantitative (Numbers) as well qualitative(Data). Organized well, it  will make things easier for future campaigns by giving clear direction(and a competitive edge) on which strategy works best based on this information gathered during each one!
 
 Competitive Analysis Frameworks
 ===============================
@@ -183,7 +183,7 @@ You might have already gotten a list of competitors and grouped them into direct
 *   It also helps identify shifts in the market
 *   It is easy to understand how the company can move into a more lucrative part of the market
 
-        Once you have a siziable list of competitors (atleast 5), you need to identify the attribute(s) that meaningfully differentiates the competitors into groups. This can be something unique to your market (e.g Menu Spread , as shown in the example below) or a more standard attribute like
+        Once you have a sizable list of competitors (at least 5), you need to identify the attribute(s) that meaningfully differentiates the competitors into groups. This can be something unique to your market (e.g Menu Spread, as shown in the example below) or a more standard attribute like
 
 *   Product quality and features
 
