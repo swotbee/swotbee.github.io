@@ -8,6 +8,10 @@ tags: []
 summary: 
 ---
 
+![Competitors of different feathers](/assets/blog-images/multiple_chess.webp){: width="100%" height="auto" }{: .shadow }
+_Competitors of different feathers_
+
+
 - [Do we need Competitive Intelligence?](#do-we-need-competitive-intelligence)
 - [Goals of Competitive Analysis](#goals-of-competitive-analysis)
 - [Choosing your competitors: Divide and Conquer](#choosing-your-competitors-divide-and-conquer)
