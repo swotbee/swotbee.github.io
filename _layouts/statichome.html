@@ -1,0 +1,258 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/images/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/assets/images/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/assets/images/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/assets/images/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/assets/images/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/assets/images/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/assets/images/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/assets/images/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/assets/images/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/assets/images/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
+<link rel="manifest" href="/assets/images/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+{% include header-common-includes.html %}
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:slnt,wght@-5,400;-5,700;0,400;0,700&display=swap" rel="stylesheet"> 
+
+  <style>
+    ul.questions li::before {
+      content: "🗯 ";
+
+    }
+
+    .Hightlight {
+      position: relative;
+      display: inline-block;
+      padding: .4em;
+      background-image: url("assets/home-images/highlight_circle.svg");
+      background-position: 50% 100%;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-origin:padding-box;
+
+    }
+    svg#freepik_stories-competitive-intelligence:not(.animated) .animable {
+      opacity: 0;
+    }
+
+    svg#freepik_stories-competitive-intelligence.animated #freepik--magnifying-glass--inject-16 {
+      animation: 1s 1 forwards cubic-bezier(.36, -0.01, .5, 1.38) zoomOut;
+      animation-delay: 0s;
+    }
+
+    @keyframes zoomOut {
+      0% {
+        opacity: 0;
+        transform: scale(1.5);
+      }
+
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    .highlightIt {
+      border: 4px dashed red;
+      padding: 0.03em 0.25em;
+    }
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            prima: { "50": "#eff6ff", "100": "#dbeafe", "200": "#bfdbfe", "300": "#93c5fd", "400": "#60a5fa", "500": "#3b82f6", "600": "#2563eb", "700": "#1d4ed8", "800": "#1e40af", "900": "#1e3a8a" },
+            secondary: {    DEFAULT: '#FFD802',
+  '50': '#FFFFFF',
+  '100': '#FFFFFF',
+  '200': '#FFFEF7',
+  '300': '#FFF7CE',
+  '400': '#FFF1A5',
+  '500': '#FFEB7C',
+  '600': '#FFE554',
+  '700': '#FFDE2B',
+  '800': '#FFD802',
+  '900': '#C9AA00'},
+  primary:  {   DEFAULT: '#024D8C',
+  '50': '#9AD0FE',
+  '100': '#86C7FD',
+  '200': '#5DB4FD',
+  '300': '#35A1FC',
+  '400': '#0D8FFC',
+  '500': '#0379DC',
+  '600': '#0363B4',
+  '700': '#024D8C',
+  '800': '#012F55',
+  '900': '#00101D'},
+  back: {  DEFAULT: '#FEF6F7',
+  '50': '#FEE9EA',
+  '100': '#FCD6D8',
+  '200': '#FAB0B4',
+  '300': '#F78A8F',
+  '400': '#F3555D',
+  '500': '#F0212A',
+  '600': '#CB0E17',
+  '700': '#960A11',
+  '800': '#62070B',
+  '900': '#2D0305'},
+
+          },
+        },
+        fontFamily: {
+          'body': [
+            'Inter',
+            'ui-sans-serif',
+            'system-ui',
+            '-apple-system',
+            'system-ui',
+            'Segoe UI',
+            'Roboto',
+            'Helvetica Neue',
+            'Arial',
+            'Noto Sans',
+            'sans-serif',
+            'Apple Color Emoji',
+            'Segoe UI Emoji',
+            'Segoe UI Symbol',
+            'Noto Color Emoji'
+          ],
+          'sans': [
+            'Inter',
+            'ui-sans-serif',
+            'system-ui',
+            '-apple-system',
+            'system-ui',
+            'Segoe UI',
+            'Roboto',
+            'Helvetica Neue',
+            'Arial',
+            'Noto Sans',
+            'sans-serif',
+            'Apple Color Emoji',
+            'Segoe UI Emoji',
+            'Segoe UI Symbol',
+            'Noto Color Emoji'
+          ]
+        }
+      }
+    }
+  </script>
+</head>
+
+<body >
+  {% include body-includes.html %}
+  <header>
+    <nav class="bg-back border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800">
+      <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
+        <a href="#" class="flex items-center">
+          <img src="assets/home-images/swotbee.png" class="mr-3 h-6 sm:h-9" alt="Swotbee Logo" />
+          <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">SWOTbee</span>
+        </a>
+        <div class="flex items-center lg:order-2">
+
+          <a href="#"
+            class="text-primary-800 bg-secondary-700 hover:bg-secondary-800 focus:ring-4 focus:ring-seconary-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:bg-secondary-600 dark:hover:bg-secondary-700 focus:outline-none dark:focus:ring-secondary-800">
+            Contact us
+          </a>
+          <button data-collapse-toggle="mobile-menu-2" type="button"
+            class="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+            aria-controls="mobile-menu-2" aria-expanded="false">
+            <span class="sr-only">Open main menu</span>
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                clip-rule="evenodd"></path>
+            </svg>
+            <svg class="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                clip-rule="evenodd"></path>
+            </svg>
+          </button>
+        </div>
+        <div class="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1" id="mobile-menu-2">
+         <ul class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
+             <li>
+              <a href="#"
+                class="block py-2 pr-4 pl-3 text-white rounded bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0 dark:text-white"
+                aria-current="page">Home</a>
+            </li>
+           <!-- <li>
+              <a href="#"
+                class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Company</a>
+            </li>
+            <li>
+              <a href="#"
+                class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Marketplace</a>
+            </li>
+            <li>
+              <a href="#"
+                class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Features</a>
+            </li>-->
+            <li>
+              <a href="/"
+                class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">About Us</a>
+            </li> 
+            <li>
+              <a href="/articles"
+                class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Articles</a>
+            </li>
+          </ul> 
+        </div>
+      </div>
+    </nav>
+  </header>
+  {{ content }}
+  <footer class="p-4 bg-back md:p-8 lg:p-10 dark:bg-gray-800">
+    <div class="mx-auto max-w-screen-xl text-center">
+      <a href="#" class="flex justify-center items-center text-2xl font-semibold text-gray-900 dark:text-white">
+        <img src="assets/home-images/swotbee.png" class="mr-3 h-6 sm:h-9" alt="Swotbee Logo" />
+
+        SWOTbee
+      </a>
+      <p class="my-6 text-gray-500 dark:text-gray-400">From a torrent of Information to a shower of insights.</p>
+      <!--<ul class="flex flex-wrap justify-center items-center mb-6 text-gray-900 dark:text-white">
+        <li>
+          <a href="#" class="mr-4 hover:underline md:mr-6 ">About</a>
+        </li>
+        <li>
+          <a href="#" class="mr-4 hover:underline md:mr-6">Premium</a>
+        </li>
+        <li>
+          <a href="#" class="mr-4 hover:underline md:mr-6 ">Campaigns</a>
+        </li>
+        <li>
+          <a href="#" class="mr-4 hover:underline md:mr-6">Blog</a>
+        </li>
+        <li>
+          <a href="#" class="mr-4 hover:underline md:mr-6">Affiliate Program</a>
+        </li>
+        <li>
+          <a href="#" class="mr-4 hover:underline md:mr-6">FAQs</a>
+        </li>
+        <li>
+          <a href="#" class="mr-4 hover:underline md:mr-6">Contact</a>
+        </li>
+      </ul> -->
+      <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2021-2022 <a href="#"
+          class="hover:underline">SWOTBee™</a>. All Rights Reserved.</span>
+    </div>
+  </footer>
+</body>
+
+</html>
