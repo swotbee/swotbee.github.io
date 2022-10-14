@@ -53,7 +53,9 @@ Do we need Competitive Intelligence?
 Whether you’re just starting out or have been in the market for a long time, it’s important to always be aware of industry trends.
 
 
-![Desktop View](/assets/blog-images/spagetti-monster-1.jpeg){: width="50%" height="auto" }{: .left } 
+![Desktop View](/assets/blog-images/spagetti-monster-4.jpeg){: width="40%" height="auto" }{: .left } 
+_The spaghetti monster of yore_
+
 There are often two camps of thought when it comes to competitive intelligence: The one that watches the competition closely and mirrors their changes, lest they gain an advantage. This can lead into a "spaghetti monster", a hodge podge of features from all your competitors and at the same time your product is just too similar to other products to differentiate.
 	
 
