@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="420"
+   height="20"
+   viewBox="0 0 111.12499 5.2916667"
+   version="1.1"
+   id="svg873"
+   inkscape:version="1.1.2 (1:1.1+202205011111+08b2f3d93c)"
+   sodipodi:docname="underline-orange.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview875"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     units="px"
+     width="100px"
+     inkscape:zoom="2"
+     inkscape:cx="166.25"
+     inkscape:cy="29.25"
+     inkscape:window-width="3772"
+     inkscape:window-height="2096"
+     inkscape:window-x="68"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     height="20px" />
+  <defs
+     id="defs870">
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect1936"
+       is_visible="true"
+       lpeversion="1" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect1513"
+       is_visible="true"
+       lpeversion="1" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect1186"
+       is_visible="true"
+       lpeversion="1" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       style="fill:#ff6600;stroke:none;stroke-width:0.264583;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 0.77303178,2.8525867 32.493884,3.6891146 110.67387,1.678376"
+       id="path1934"
+       inkscape:path-effect="#path-effect1936"
+       inkscape:original-d="M 0.77303178,2.8525867 C -0.96907083,13.516273 32.493884,3.6891146 32.493884,3.6891146 35.165942,3.7097476 106.21134,2.6718952 110.67387,1.678376"
+       sodipodi:nodetypes="csc" />
+  </g>
+</svg>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="64"
+   height="64"
+   viewBox="0 0 16.933333 16.933333"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.2 (1:1.1+202205011111+08b2f3d93c)"
+   sodipodi:docname="Swotbee_logo-red-cyan.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="true"
+     units="px"
+     inkscape:zoom="16"
+     inkscape:cx="11.5"
+     inkscape:cy="42.65625"
+     inkscape:window-width="2342"
+     inkscape:window-height="2044"
+     inkscape:window-x="118"
+     inkscape:window-y="77"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer3">
+    <inkscape:grid
+       type="xygrid"
+       id="grid1046" />
+  </sodipodi:namedview>
+  <defs
+     id="defs2" />
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="BAse Red Circle"
+     style="display:inline">
+    <circle
+       style="fill:#ff2768;fill-opacity:1;stroke-width:0.528548"
+       id="path847"
+       cx="8.5"
+       cy="8.5"
+       r="8.3999996" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer3"
+     inkscape:label="Inner white ring"
+     style="display:inline">
+    <circle
+       style="fill:#05e0e9;fill-opacity:1;stroke-width:0.556569"
+       id="path964"
+       cx="8.5"
+       cy="8.5"
+       r="6" />
+    <circle
+       style="fill:#ff2768;fill-opacity:1;stroke-width:0.269653"
+       id="path1198"
+       cx="8.5"
+       cy="8.5"
+       r="3.5" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer4"
+     inkscape:label="Inner Red Circle"
+     style="display:inline" />
+  <g
+     inkscape:label="Quadrent"
+     inkscape:groupmode="layer"
+     id="layer1"
+     style="display:inline">
+    <rect
+       style="fill:#cfeed1;fill-opacity:1;stroke:none;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
+       id="rect1982"
+       width="16.799999"
+       height="0.40000001"
+       x="0.1"
+       y="8.1999998"
+       ry="0"
+       rx="0" />
+    <rect
+       style="display:inline;fill:#cfeed1;fill-opacity:1;stroke:none;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
+       id="rect1982-4"
+       width="16.799932"
+       height="0.39068398"
+       x="0.22542298"
+       y="-8.5914326"
+       ry="0"
+       rx="0"
+       transform="matrix(5.5700528e-4,0.99999984,-0.99989343,0.01459859,0,0)" />
+  </g>
+</svg>
