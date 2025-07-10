@@ -97,14 +97,14 @@ const defaultSelectedStep = steps[0];
   </ol>
 
   <div class="flex-1 sticky top-4">
-    <div id="step-description" class="p-6 rounded-lg border border-gray-200 bg-white dark:bg-gray-800 dark:border-gray-700 min-h-full">
+    <div id="step-description" class="p-6 rounded-lg border border-gray-200 bg-white dark:bg-gray-800 dark:border-gray-700 min-h-full transition-all duration-300">
       <div class="flex items-center gap-3 mb-4">
-        <span id="step-icon" class="text-2xl">{defaultSelectedStep.icon}</span>
-        <h3 id="step-title" class="text-xl font-semibold text-gray-900 dark:text-white">
+        <span id="step-icon" class="text-2xl transition-all duration-300">{defaultSelectedStep.icon}</span>
+        <h3 id="step-title" class="text-xl font-semibold text-gray-900 dark:text-white transition-all duration-300 opacity-100">
           {defaultSelectedStep.title}
         </h3>
       </div>
-      <p id="step-content" class="text-gray-700 dark:text-gray-300">
+      <p id="step-content" class="text-gray-700 dark:text-gray-300 transition-all duration-300 opacity-100">
         {defaultSelectedStep.description}
       </p>
     </div>
@@ -112,9 +112,51 @@ const defaultSelectedStep = steps[0];
 </div>
 
 <script>
-  const steps = {
-    // ...existing code...
-  };
+  // Import the steps data from the frontmatter
+  const steps = [
+    {
+      id: 1,
+      icon: "🔍",
+      title: "Discovery",
+      description: "We kick off with a focused Discovery Workshop to align on goals, scope, and success metrics. We survey key stakeholders to uncover pain points, existing tech stacks, and desired outcomes.",
+      status: "completed",
+    },
+    {
+      id: 2,
+      icon: "📝",
+      title: "Strategy & Roadmap",
+      description: "Based on our findings, we deliver a Custom Roadmap with prioritized milestones, budgets, and timelines—so you know exactly what's happening, when, and at what cost.",
+      status: "in-progress",
+    },
+    {
+      id: 3,
+      icon: "⚙️",
+      title: "Technical Setup",
+      description: "Our experts configure your HubSpot & Shopify environments—migrating data, integrating apps, and building workflows—to establish a rock-solid foundation that avoids broken processes.",
+      status: "pending",
+    },
+    {
+      id: 4,
+      icon: "🎓",
+      title: "Training & Enablement",
+      description: "We provide hands-on workshops and up-to-date documentation (not stale slide decks) to empower your team. Interactive sessions ensure quick adoption and reduce support requests.",
+      status: "pending",
+    },
+    {
+      id: 5,
+      icon: "🚀",
+      title: "Launch & Optimization",
+      description: "We go live together—monitoring KPIs with custom dashboards. Through iterative A/B testing and analytics, we optimize campaigns, automations, and integrations for continuous improvement.",
+      status: "pending",
+    },
+    {
+      id: 6,
+      icon: "🔄",
+      title: "Review & Scale",
+      description: "Regular Quarterly Business Reviews keep you informed on ROI, upcoming enhancements, and expansion opportunities—so you scale predictably and mitigate risks before they arise.",
+      status: "pending",
+    }
+  ];
 
   function updateDescription(stepId: number) {
     const step = steps.find(s => s.id === stepId);
@@ -124,9 +166,22 @@ const defaultSelectedStep = steps[0];
     const titleEl = document.getElementById('step-title');
     const contentEl = document.getElementById('step-content');
 
-    if (iconEl) iconEl.textContent = step.icon;
-    if (titleEl) titleEl.textContent = step.title;
-    if (contentEl) contentEl.textContent = step.description;
+    // Fade out
+    if (titleEl) titleEl.style.opacity = '0';
+    if (contentEl) contentEl.style.opacity = '0';
+
+    // Update content after a short delay
+    setTimeout(() => {
+      if (iconEl) iconEl.textContent = step.icon;
+      if (titleEl) {
+        titleEl.textContent = step.title;
+        titleEl.style.opacity = '1';
+      }
+      if (contentEl) {
+        contentEl.textContent = step.description;
+        contentEl.style.opacity = '1';
+      }
+    }, 150); // Half of the transition duration
   }
 
   // Add click event listeners to all step items
