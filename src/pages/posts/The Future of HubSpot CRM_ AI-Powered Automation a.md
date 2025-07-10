@@ -6,7 +6,6 @@ description: "A quick intro to my new Astro blog."
 ---
 Your post content goes here...
 
-<img src="https://r2cdn.perplexity.ai/pplx-full-logo-primary-dark%402x.png" class="logo" width="120"/>
 
 # The Future of HubSpot CRM: AI-Powered Automation and Personalization
 
