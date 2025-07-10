@@ -7,9 +7,7 @@ import tailwind from '@astrojs/tailwind';
 export default defineConfig({
   integrations: [
     react(),
-    tailwind({
-      // Optional: Add any Tailwind config overrides here if needed
-    })
+    tailwind()
   ],
   output: 'static'
 });
