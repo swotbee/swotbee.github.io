@@ -1,0 +1,311 @@
+---
+import JosephImage from '/public/assets/people/Joseph.png';
+import SherlinImage from '/public/assets/people/Sherlin.png';
+import PriyaNairImage from '/public/assets/people/Priya Nair.png';
+import RavikumarImage from '/public/assets/people/Ravikumar.png';
+import SandeepImage from '/public/assets/people/Sandeep Sharma.png';
+import KarunanidhiImage from '/public/assets/people/Karunanidhi.png';
+import VivekImage from '/public/assets/people/Vivek.png';
+import ManishImage from '/public/assets/people/Manish Gupta.png';
+import SaranyaImage from '/public/assets/people/Saranya.png';
+import PradeepImage from '/public/assets/people/Pradeep.png';
+import EswarImage from '/public/assets/people/Eswar.png';
+import RohanImage from '/public/assets/people/Rohan.png';
+import TogetherTeamImage from '/public/assets/together_team.png';
+
+// import lots_ecommerce from '/assets/customer_logos/big-lots_ecommerce.png';
+// import Insteon from '/assets/customer_logos/Insteon-logo-transparent-bg.svg';
+// import lavie from '/assets/customer_logos/lavie-care-centers-squarelogo-1462971862284.webp';
+// import Mytheresa from '/assets/customer_logos/Logo_of_Mytheresa_ecommerce.png';
+// import VRTV from '/assets/customer_logos/NYSE_VRTV_logistics.png';
+// Image is now in public/assets/customer_logos/ and will be referenced directly
+
+import TeamSuccessThumbsUpImage from '/public/assets/about/Team Success Thumbs Up1.png';
+import BusinessPresentationDynamics from '/public/assets/about/Business Presentation Dynamics.png';
+// src/assets/Business Consulting.png
+import BusinessConsultingImage from '/public/assets/about/Business Consulting.png';
+// src/assets/Cafeteria Business Meeting.png
+import CafeteriaBusinessMeetingImage from '/public/assets/about/Cafeteria Business Meeting.png';
+// src/assets/Casual Business Meeting.png
+import CasualBusinessMeetingImage from '/public/assets/about/Casual Business Meeting.png';
+// src/assets/Consultants Analyzing Data.png
+import ConsultantsAnalyzingDataImage from '/public/assets/about/Consultants Analyzing Data.png';
+const stats = [
+  { label: "Clients Served", value: "150+" },
+  { label: "Projects Delivered", value: "300+" },
+  { label: "Years of Experience", value: "10+" },
+];
+
+const values = [
+  {
+    name: "Client-First Focus",
+    description: "Your goals are at the center of everything we do. We listen, adapt, and deliver solutions that matter most to you.",
+  },
+  {
+    name: "Integrity",
+    description: "We operate with transparency, honesty, and respect—earning your trust through every interaction.",
+  },
+  {
+    name: "Collaborative Spirit",
+    description: "We believe the best solutions are built together. Your insights and our expertise create lasting impact.",
+  },
+  {
+    name: "Continuous Learning",
+    description: "We stay ahead so you always benefit from new ideas, best practices, and innovative strategies.",
+  },
+  {
+    name: "Accountability",
+    description: "We own our results and measure our success by yours. We stand by our promises and deliver on them.",
+  },
+  {
+    name: "Empowerment",
+    description: "We equip you and your team for long-term success, providing tools and knowledge that last beyond our engagement.",
+  },
+];
+
+
+const team = [
+  {
+    name: "Joseph Johnson",
+    role: "Chief Executive Officer (CEO)",
+    imageUrl: JosephImage,
+  },
+  {
+    name: "Sherlin Thomas",
+    role: "Chief Marketing Officer",
+    imageUrl: SherlinImage,
+  },
+  {
+    name: "Priya Nair",
+    role: "Senior Consultant",
+    imageUrl: PriyaNairImage,
+  },
+  {
+    name: "Ravikumar",
+    role: "Managing Partner / Partner / Director",
+    imageUrl: RavikumarImage,
+  },
+  {
+    name: "Sandeep Sharma",
+    role: "Onboarding Specialist",
+    imageUrl: SandeepImage,
+  },
+  // {
+  //   name: "Karunanidhi",
+  //   role: "Graphic Designer / Creative Director",
+  //   imageUrl: KarunanidhiImage,
+  // },
+  {
+    name: "Vivek Singh",
+    role: "Sales Representative",
+    imageUrl: VivekImage,
+  },
+  {
+    name: "Manish Gupta",
+    role: "Web Developer / Technical Resource",
+    imageUrl: ManishImage,
+  },
+  // { 
+  //   name: "Eswar", 
+  //   role: "Managing Partner",
+  //   imageUrl: EswarImage
+  // },
+  { 
+    name: "Rohan Iyer", 
+    role: "Solutions Architect",
+    imageUrl: RohanImage
+  },
+  { 
+    name: "Pradeep Kumar", 
+    role: "Graphic Designer / Creative Director",
+    imageUrl: PradeepImage
+  },
+  { 
+    name: "Saranya", 
+    role: "Web Developer / Technical Resource",
+    imageUrl: SaranyaImage
+  }
+];
+---
+
+<section class="max-w-4xl bg-highlight-25 mx-auto px-4 py-12">
+  <h1 class="text-3xl font-bold mb-6 text-gray-900">
+    Empowering You to Build Meaningful Business Relationships
+  </h1>
+  <p class="mb-6 text-gray-700">
+    We bridge the gap between ambition and achievement by connecting you with the expertise and insights needed to thrive in today’s dynamic business landscape. Our approach isn’t just about introductions—it’s about forging partnerships that drive sustainable growth and measurable outcomes.
+  </p>
+
+  <h2 class="text-2xl font-semibold mt-10 mb-4 text-gray-900">Our mission</h2>
+  <p class="mb-6 text-gray-700">
+    At the heart of our consulting practice is a simple promise: We empower organizations to achieve sustainable growth and lasting impact through strategic partnership and actionable insight.
+  </p>
+  <p class="mb-6 text-gray-700">
+    We partner closely with our clients to understand their unique challenges, co-create tailored solutions, and deliver measurable results. Our mission is to be the catalyst for your transformation—helping you navigate complexity, embrace innovation, and realize your boldest ambitions.
+  </p>
+  <blockquote class="mb-8 p-4 bg-gray-50 border-l-4 border-blue-600 text-gray-800 italic">
+    “Your success is our mission. We’re here to guide, support, and accelerate your journey—every step of the way.”
+  </blockquote>
+
+  <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-10">
+    {stats.map(stat => (
+      <div class="bg-blue-50 rounded p-4 text-center">
+        <div class="text-xl font-bold text-blue-700">{stat.value}</div>
+        <div class="text-gray-600">{stat.label}</div>
+      </div>
+    ))}
+  </div>
+<div>
+
+    <div class="bg-white py-24 sm:py-32">
+      <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <div class="mx-auto max-w-2xl lg:max-w-none">
+          <h2 class="text-lg/8 font-semibold text-gray-900">Trusted by the world’s most innovative teams</h2>
+          <div class="mx-auto mt-10 grid grid-cols-4 items-start gap-x-8 gap-y-10 sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:grid-cols-5">
+            <img
+              alt="Transistor"
+              src="https://tailwindcss.com/plus-assets/img/logos/transistor-logo-gray-900.svg"
+              width={158}
+              height={48}
+              class="col-span-2 max-h-12 w-full object-contain object-left lg:col-span-1"
+            />
+            <img
+              alt="Reform"
+              src="https://tailwindcss.com/plus-assets/img/logos/reform-logo-gray-900.svg"
+              width={158}
+              height={48}
+              class="col-span-2 max-h-12 w-full object-contain object-left lg:col-span-1"
+            />
+            <img
+              alt="Tuple"
+              src="https://tailwindcss.com/plus-assets/img/logos/tuple-logo-gray-900.svg"
+              width={158}
+              height={48}
+              class="col-span-2 max-h-12 w-full object-contain object-left lg:col-span-1"
+            />
+            <img
+              alt="SavvyCal"
+              src="https://tailwindcss.com/plus-assets/img/logos/savvycal-logo-gray-900.svg"
+              width={158}
+              height={48}
+              class="col-span-2 max-h-12 w-full object-contain object-left lg:col-span-1"
+            />
+            <img
+              alt="Statamic"
+              src="https://tailwindcss.com/plus-assets/img/logos/statamic-logo-gray-900.svg"
+              width={158}
+              height={48}
+              class="col-span-2 max-h-12 w-full object-contain object-left lg:col-span-1"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+
+</div>
+  <h2 class="text-2xl font-semibold mt-10 mb-4 text-gray-900">Our values</h2>
+  <p class="mb-6 text-gray-700">
+    We believe that true partnership is built on a foundation of trust, collaboration, and a relentless commitment to your success. These core values guide every engagement and define how we work with clients.
+  </p>
+  <ul class="mb-10 space-y-4">
+    {values.map(value => (
+      <li class="bg-gray-100 rounded p-4">
+        <div class="font-semibold text-blue-700">{value.name}</div>
+        <div class="text-gray-700">{value.description}</div>
+      </li>
+    ))}
+  </ul>
+
+  <!-- <h2 class="text-2xl font-semibold mt-10 mb-4 text-gray-900">Trusted by the world’s most innovative teams</h2> -->
+  <!-- Add logos or testimonials here if desired -->
+        {/* Logo cloud */}
+        <div class="relative mt-32 isolate -z-10 sm:mt-48">
+          <div class="absolute inset-x-0 top-1/2 -z-10 flex -translate-y-1/2 justify-center overflow-hidden mask-[radial-gradient(50%_45%_at_50%_55%,white,transparent)]">
+            <svg aria-hidden="true" class="flex-none h-160 w-7xl stroke-gray-200">
+              <defs>
+                <pattern
+                  x="50%"
+                  y="50%"
+                  id="e9033f3e-f665-41a6-84ef-756f6778e6fe"
+                  width={200}
+                  height={200}
+                  patternUnits="userSpaceOnUse"
+                  patternTransform="translate(-100 0)"
+                >
+                  <path d="M.5 200V.5H200" fill="none" />
+                </pattern>
+              </defs>
+              <svg x="50%" y="50%" class="overflow-visible fill-gray-50">
+                <path d="M-300 0h201v201h-201Z M300 200h201v201h-201Z" stroke-width={0} />
+              </svg>
+              <rect fill="url(#e9033f3e-f665-41a6-84ef-756f6778e6fe)" width="100%" height="100%" stroke-width={0} />
+            </svg>
+          </div>
+          <div class="px-6 mx-auto max-w-7xl lg:px-8">
+            <h2 class="font-semibold text-center text-gray-900 text-lg/8">
+              Trusted by the world’s most innovative teams
+            </h2>
+            <div class="grid items-center max-w-lg grid-cols-4 mx-auto mt-10 gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-5">
+                <!-- 
+              <img
+                alt="lots_ecommerce"
+                src={lots_ecommerce}
+                width={158}
+                height={48}
+                class="object-contain w-full col-span-2 max-h-12 lg:col-span-1"
+              />
+              <img
+                alt="Insteon"
+                src={Insteon}
+                width={158}
+                height={48}
+                class="object-contain w-full col-span-2 max-h-12 lg:col-span-1"
+              />
+              <img
+                alt="lavie"
+                src={lavie}
+                width={158}
+                height={48}
+                class="object-contain w-full col-span-2 max-h-12 lg:col-span-1"
+              />
+              <img
+                alt="Mytheresa"
+                src={Mytheresa}
+                width={158}
+                height={48}
+                class="object-contain w-full col-span-2 max-h-12 sm:col-start-2 lg:col-span-1"
+              />-->
+              <img
+                alt="Statamic"
+                src="/assets/customer_logos/Wescologo-defence.png"
+                width={158}
+                height={48}
+                class="object-contain w-full col-span-2 col-start-2 max-h-12 sm:col-start-auto lg:col-span-1"
+              />
+            </div> 
+          </div>
+        </div>
+
+  <div class="px-6 mx-auto mt-32 max-w-7xl sm:mt-48 lg:px-8">
+          <div class="max-w-2xl mx-auto lg:mx-0">
+            <h2 class="text-4xl font-semibold tracking-tight text-gray-900 text-pretty sm:text-5xl">Our team</h2>
+            <p class="mt-6 text-gray-600 text-lg/8">
+              We’re a dynamic group of individuals who are passionate about what we do and dedicated to delivering the
+              best results for our clients.
+            </p>
+          </div>
+          <ul
+            role="list"
+            class="grid max-w-2xl grid-cols-2 mx-auto mt-20 text-center gap-x-8 gap-y-16 sm:grid-cols-3 md:grid-cols-4 lg:mx-0 lg:max-w-none lg:grid-cols-5 xl:grid-cols-6"
+          >
+            {team.map((person) => (
+              <li>
+                <img alt="" src={person.imageUrl.src} class="mx-auto rounded-full size-24" />
+                <h3 class="mt-6 font-semibold tracking-tight text-gray-900 text-base/7">{person.name}</h3>
+                <p class="text-gray-600 text-sm/6">{person.role}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+</section>
