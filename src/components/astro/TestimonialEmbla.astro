@@ -1,48 +1,243 @@
 ---
-import { onMount } from 'astro/jsx-runtime';
 const testimonials = [
   {
     id: 1,
-    content: "Always the best choice. I always try something else but keep coming back to use Astro.",
-    name: "Alice Johnson",
-    title: "Frontend Developer",
+    content: "SWOWBee guided us through a complete HubSpot onboarding and site redesign. Their clear communication, deadline focus, and rapid implementation of feedback made the entire process seamless. We now track leads and automate nurture sequences with confidence.",
+    name: "Terry Parmelee",
+    title: "VP of Operations",
     imageUrl: "/images/alice.jpg",
+    company: "Material Movement Solutions (MMS)",
   },
   {
     id: 2,
-    content: "Astro has changed the way I write static pages forever… The islands architecture is really nice.",
-    name: "Diego Martínez",
-    title: "UI/UX Designer",
+    content: "High-quality work and a flexible team—that’s New Breed on HubSpot. Despite compressed timelines and evolving scope, Alex and the team met every milestone and even delivered early. Their collaborative approach and transparent process gave us confidence throughout.",
+    name: " Sarah Orlandi",
+    title: "Marketing Director",
     imageUrl: "/images/diego.jpg",
+    company: "Lakeside Laundry ",
   },
   {
     id: 3,
-    content: "Absolute elegant and straight forward! Just a symlink to contents then build… rocket!",
+    content: "SWOTBee’s custom automations, like workflows and email sequences, save time and boost the quality of leads. Their tools help improve sales conversions with less manual effort. The email tracking, notifications, and customizable dashboards make it easy to monitor deals and forecast sales.",
     name: "Chen Wei",
     title: "Technical Writer",
     imageUrl: "/images/chen.jpg",
   },
+  {
+    id: 3,
+    content: "SWOTBee’s custom automations, like workflows and email sequences, save time and boost the quality of leads. Their tools help improve sales conversions with less manual effort. The email tracking, notifications, and customizable dashboards make it easy to monitor deals and forecast sales.",
+    name: "Chen Wei",
+    title: "Technical Writer",
+    imageUrl: "/images/chen.jpg",
+  },
+  {
+    id: 4,
+    content: "We've managed all our data and clients in one platform, automated all our campaigns, allocated more time to higher priority initiatives, and improved customer satisfaction. The marketing automation platform complemented all our efforts and made this relationship a huge win from day one.",
+    name: "Daniel Cross",
+    title: "Project Manager",
+    imageUrl: "/images/emily.jpg",
+    company: "Spiderbox Design",
+  },
+  {
+    id: 5,
+    content: "The personalized one-on-one assistance and training from our marketing automation consultant was exceptional. We communicate weekly with a list of nearly 1 million customers via email campaigns and needed a new solution to better customize the consumer experience. This was a VERY important aspect of our business and we couldn't have done it without their assistance.",
+    name: "Vincent M.",
+    title: "Marketing Specialist",
+    imageUrl: "/images/michael.jpg",
+    company: "E-commerce Business",
+  },
+  {
+    id: 6,
+    content: "The support from SWOWBee was outstanding. They helped us navigate the complexities of our project with ease.",
+    name: "Laura Green",
+    title: "Product Owner",
+    imageUrl: "/images/laura.jpg",
+    company: "Innovative Tech",
+  },
+  {
+    id: 7,
+    content: "SWOWBee’s team was instrumental in our HubSpot implementation. Their attention to detail and commitment to our success were impressive.",
+    name: "David Brown",
+    title: "Sales Director",
+    imageUrl: "/images/david.jpg",
+    company: "Global Enterprises",
+  },
+  {
+    id: 8,
+    content: "The support from SWOWBee was outstanding. They helped us navigate the complexities of our project with ease.",
+    name: "Laura Green",
+    title: "Product Owner",
+    imageUrl: "/images/laura.jpg",
+    company: "Innovative Tech",
+  },
 ];
-let container;
 ---
+
 <section class="max-w-3xl mx-auto p-6">
   <h2 class="text-2xl font-bold mb-4 text-center">What Our Clients Say</h2>
-  <div class="embla overflow-hidden" ref={el => container = el}>
-    <div class="embla__container flex">
-      {testimonials.map(t => (
-        <div class="embla__slide flex flex-col items-center text-center p-4 space-y-4">
-          <img src={t.avatar} alt={`Avatar of ${t.name}`} class="w-24 h-24 rounded-full" />
-          <blockquote class="italic">“{t.quote}”</blockquote>
-          <p class="font-semibold">{t.name}</p>
-          <p class="text-sm text-gray-500">{t.title}</p>
-        </div>
-      ))}
+  
+  <!-- Embla Carousel Container -->
+  <div class="embla relative">
+    <!-- Viewport -->
+    <div class="embla__viewport overflow-hidden" id="embla-viewport">
+      <!-- Container -->
+      <div class="embla__container flex">
+        <!-- Slides -->
+        {testimonials.map((testimonial) => (
+          <div class="embla__slide flex-shrink-0 w-full flex flex-col items-center text-center p-8 space-y-4">
+            <img 
+              src={testimonial.imageUrl} 
+              alt={`Avatar of ${testimonial.name}`} 
+              class="w-24 h-24 rounded-full object-cover shadow-lg" 
+            />
+            <blockquote class="text-lg italic text-gray-700 max-w-md">
+              "{testimonial.content}"
+            </blockquote>
+            <div class="space-y-1">
+              <p class="font-semibold text-gray-900">{testimonial.name}</p>
+              <p class="text-sm text-gray-500">{testimonial.title}</p>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
+    
+    <!-- Navigation Buttons -->
+    <button 
+      class="embla__prev absolute left-4 top-1/2 -translate-y-1/2 bg-white hover:bg-gray-50 border border-gray-300 rounded-full p-3 shadow-md transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+      id="embla-prev"
+      aria-label="Previous testimonial"
+    >
+      <svg class="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+      </svg>
+    </button>
+    
+    <button 
+      class="embla__next absolute right-4 top-1/2 -translate-y-1/2 bg-white hover:bg-gray-50 border border-gray-300 rounded-full p-3 shadow-md transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+      id="embla-next"
+      aria-label="Next testimonial"
+    >
+      <svg class="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+      </svg>
+    </button>
+  </div>
+  
+  <!-- Dots Indicator (Optional) -->
+  <div class="flex justify-center mt-6 space-x-2" id="embla-dots">
+    <!-- Dots will be generated by JavaScript -->
   </div>
 </section>
-<script type="module">
+
+<script>
   import EmblaCarousel from 'embla-carousel';
-  onMount(() => {
-    EmblaCarousel(container, { loop: true, align: 'center' });
+  
+  document.addEventListener('DOMContentLoaded', function() {
+    const viewport = document.getElementById('embla-viewport');
+    const prevBtn = document.getElementById('embla-prev');
+    const nextBtn = document.getElementById('embla-next');
+    const dotsContainer = document.getElementById('embla-dots');
+    
+    if (!viewport || !prevBtn || !nextBtn) return;
+    
+    // Initialize Embla Carousel
+    const embla = EmblaCarousel(viewport, {
+      loop: true,
+      align: 'center',
+      skipSnaps: false,
+      slidesToScroll: 1
+    });
+    
+    // Button functionality
+    const scrollPrev = () => embla.scrollPrev();
+    const scrollNext = () => embla.scrollNext();
+    
+    // Add event listeners
+    prevBtn.addEventListener('click', scrollPrev);
+    nextBtn.addEventListener('click', scrollNext);
+    
+    // Update button states
+    const updateButtons = () => {
+      prevBtn.disabled = !embla.canScrollPrev();
+      nextBtn.disabled = !embla.canScrollNext();
+    };
+    
+    // Create dots
+    const createDots = () => {
+      const scrollSnaps = embla.scrollSnapList();
+      dotsContainer.innerHTML = '';
+      
+      scrollSnaps.forEach((_, index) => {
+        const dot = document.createElement('button');
+        dot.className = 'w-3 h-3 rounded-full transition-colors duration-200 embla__dot';
+        dot.setAttribute('aria-label', `Go to slide ${index + 1}`);
+        dot.addEventListener('click', () => embla.scrollTo(index));
+        dotsContainer.appendChild(dot);
+      });
+    };
+    
+    // Update dot states
+    const updateDots = () => {
+      const dots = dotsContainer.querySelectorAll('.embla__dot');
+      const selectedIndex = embla.selectedScrollSnap();
+      
+      dots.forEach((dot, index) => {
+        if (index === selectedIndex) {
+          dot.classList.add('bg-blue-600');
+          dot.classList.remove('bg-gray-300');
+        } else {
+          dot.classList.add('bg-gray-300');
+          dot.classList.remove('bg-blue-600');
+        }
+      });
+    };
+    
+    // Event listeners for state updates
+    embla.on('select', () => {
+      updateButtons();
+      updateDots();
+    });
+    
+    embla.on('init', () => {
+      updateButtons();
+      createDots();
+      updateDots();
+    });
+    
+    // Initialize
+    updateButtons();
+    createDots();
+    updateDots();
   });
 </script>
+
+<style>
+  .embla {
+    position: relative;
+  }
+  
+  .embla__viewport {
+    overflow: hidden;
+  }
+  
+  .embla__container {
+    display: flex;
+  }
+  
+  .embla__slide {
+    flex: 0 0 100%;
+    min-width: 0;
+  }
+  
+  .embla__prev,
+  .embla__next {
+    z-index: 10;
+  }
+  
+  .embla__prev:disabled,
+  .embla__next:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+</style>

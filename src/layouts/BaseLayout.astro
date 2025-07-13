@@ -21,5 +21,10 @@ const { title, description = "Your default description" } = Astro.props;
 </head>
 <body>
   <slot />
+  <script>
+    import Alpine from 'alpinejs'
+    window.Alpine = Alpine
+    Alpine.start()
+  </script>
 </body>
 </html>
