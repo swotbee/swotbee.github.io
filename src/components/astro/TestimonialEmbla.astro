@@ -1,0 +1,48 @@
+---
+import { onMount } from 'astro/jsx-runtime';
+const testimonials = [
+  {
+    id: 1,
+    content: "Always the best choice. I always try something else but keep coming back to use Astro.",
+    name: "Alice Johnson",
+    title: "Frontend Developer",
+    imageUrl: "/images/alice.jpg",
+  },
+  {
+    id: 2,
+    content: "Astro has changed the way I write static pages forever… The islands architecture is really nice.",
+    name: "Diego Martínez",
+    title: "UI/UX Designer",
+    imageUrl: "/images/diego.jpg",
+  },
+  {
+    id: 3,
+    content: "Absolute elegant and straight forward! Just a symlink to contents then build… rocket!",
+    name: "Chen Wei",
+    title: "Technical Writer",
+    imageUrl: "/images/chen.jpg",
+  },
+];
+let container;
+---
+<section class="max-w-3xl mx-auto p-6">
+  <h2 class="text-2xl font-bold mb-4 text-center">What Our Clients Say</h2>
+  <div class="embla overflow-hidden" ref={el => container = el}>
+    <div class="embla__container flex">
+      {testimonials.map(t => (
+        <div class="embla__slide flex flex-col items-center text-center p-4 space-y-4">
+          <img src={t.avatar} alt={`Avatar of ${t.name}`} class="w-24 h-24 rounded-full" />
+          <blockquote class="italic">“{t.quote}”</blockquote>
+          <p class="font-semibold">{t.name}</p>
+          <p class="text-sm text-gray-500">{t.title}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+<script type="module">
+  import EmblaCarousel from 'embla-carousel';
+  onMount(() => {
+    EmblaCarousel(container, { loop: true, align: 'center' });
+  });
+</script>
