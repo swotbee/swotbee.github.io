@@ -1,0 +1,24 @@
+---
+const {
+  type = "button",
+  href = undefined,
+  class: customClass = "",
+  children = 'Talk to an Expert',
+  ...props
+} = Astro.props;
+
+const baseClasses =
+  "text-white bg-highlight-500 hover:bg-highlight-600 focus:ring-4 focus:outline-none focus:ring-highlight-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-highlight-600 dark:hover:bg-highlight-700 dark:focus:ring-highlight-800";
+
+const classes = `${baseClasses} ${customClass}`;
+---
+
+{href ? (
+  <a href={href} class={classes} {...props}>
+    {children}
+  </a>
+) : (
+  <button type={type} class={classes} {...props}>
+    {children}
+  </button>
+)}
