@@ -12,6 +12,7 @@ import CTAButton from "./CTAButton.astro";
 interface Props {
   title: string;
   description: string;
+  image?: ImageMetadata;
   validationText: string;
   validationText2?: string;
   features: Array<{
@@ -24,6 +25,7 @@ interface Props {
 const {
   title,
   description,
+  image = DealPipelineImg,
   validationText,
   validationText2 = "",
   features,
@@ -43,11 +45,11 @@ const {
   </div>
 
   <div
-    class="gap-8 items-center px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 xl:gap-16 "
+    class="gap-8 items-center px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 xl:gap-16"
   >
     <img
       class="mb-4 w-full lg:mb-0 rounded-lg"
-      src={DealPipelineImg.src}
+      src={image.src}
       alt="feature image"
     />
     <div class="text-gray-500 dark:text-gray-400 sm:text-lg">

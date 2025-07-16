@@ -22,3 +22,5 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+src/assets/service_features/prompts.md
+src/assets/service_features/prompts.pdf
