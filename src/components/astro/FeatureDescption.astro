@@ -1,0 +1,106 @@
+---
+import {
+  ArrowPathIcon,
+  UserGroupIcon,
+  ChartBarIcon,
+  CurrencyDollarIcon,
+} from "@heroicons/react/20/solid";
+
+import DealPipelineImg from "../../assets/service_features/deal_pipeline.png";
+import CTAButton from "./CTAButton.astro";
+
+interface Props {
+  title: string;
+  description: string;
+  image?: ImageMetadata;
+  validationText: string;
+  validationText2?: string;
+  features: Array<{
+    name: string;
+    description: string;
+    icon: any;
+  }>;
+}
+
+const {
+  title,
+  description,
+  image = DealPipelineImg,
+  validationText,
+  validationText2 = "",
+  features,
+} = Astro.props;
+---
+
+<section class="bg-highlight-25">
+  <div class="max-w-screen-xl px-4 pt-8 mx-auto text-center lg:pt-16 lg:px-6">
+    <h2
+      class="mb-4 text-4xl tracking-tight font-extrabold text-status-900 dark:text-white"
+    >
+      {title}
+    </h2>
+    <p class="mb-2 font-light lg:text-xl text-status-900">
+      {description}
+    </p>
+  </div>
+
+  <div
+    class="gap-8 items-center px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 xl:gap-16"
+  >
+    <img
+      class="mb-4 w-full lg:mb-0 rounded-lg"
+      src={image.src}
+      alt="feature image"
+    />
+    <div class="text-gray-500 dark:text-gray-400 sm:text-lg">
+      <div class="py-2 mb-6 dark:border-gray-700">
+        {
+          features.map((feature) => {
+            const Icon = feature.icon;
+            return (
+              <div class="flex pt-8">
+                <div class="flex justify-center items-center mr-4 w-8 h-8  rounded-full shadow-sm dark:bg-gray-800 shrink-0">
+                  <Icon
+                    aria-hidden="true"
+                    className="h-5 w-5 text-highlight-500 shrink-0"
+                  />
+                </div>
+                <div>
+                  <h3 class="mb-2 text-xl font-bold text-status-900 dark:text-white">
+                    {feature.name}
+                  </h3>
+                  <p class="mb-2 font-light text-gray-500 dark:text-status-400">
+                    {feature.description}
+                  </p>
+                </div>
+              </div>
+            );
+          })
+        }
+      </div>
+      <div>
+        <p
+          class="pl-8 mt-2 text-sm font-semibold tracking-tight text-pretty text-gray-900"
+        >
+          {validationText}
+        </p>
+
+        {
+          validationText2 && (
+            <p class="pl-8 mt-2 text-sm text-pretty text-gray-900">
+              {validationText2}
+            </p>
+          )
+        }
+        <div class="pl-8 mt-4 flex flex-row justify-center items-center">
+          <CTAButton
+            href="/contact"
+            class="text-white bg-highlight-500 hover:bg-highlight-600 focus:ring-4 focus:outline-none focus:ring-highlight-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-highlight-600 dark:hover:bg-highlight-700 dark:focus:ring-highlight-800"
+          >
+            Talk to an Expert
+          </CTAButton>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
