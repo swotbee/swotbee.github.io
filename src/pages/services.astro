@@ -4,7 +4,7 @@ import Layout from "../layouts/Layout.astro";
 import Footer from "../components/astro/Footer.astro";
 import FeatureImgRight from "../components/astro/FeatureImgRight.astro";
 import FeatureDesc from "../components/astro/FeatureDesc.astro";
-import FeatureDescption from "../components/astro/FeatureDescption.astro";
+import FeatureDescription from "../components/astro/FeatureDescription.astro";
 
 import Navbar from "../components/astro/Navbar.astro";
 
@@ -69,37 +69,29 @@ import {
 <Layout title="Home">
   <Navbar />
   <section class="max-w-4xl bg-highlight-25 mx-auto px-4 py-12">
-    <FeatureDescption
+    <FeatureDescription
       title="Optimize Deal-Company Associations for Accurate Reporting"
       description="When HubSpot-Shopify deals aren’t linked to companies, your B2B sales data is fractured—crippling segmentation, muddying reports, and leaving your team flying blind. If you’re tired of 'phantom deals' that can’t be tracked by account, you’re not alone. Every day you delay, you risk lost revenue, bad forecasts, and frustrated execs."
       validationText="Clients have seen up to 45% faster reporting and 2x more accurate sales forecasting within a month."
       image={OptimizeDealCompanyAssociations}
-      features={[
-        {
-          name: "Eliminate Manual Deal Tracking",
-          description:
-            "Manual workarounds waste hours every week and still miss deals.",
-          icon: ClipboardDocumentListIcon,
-        },
-        {
-          name: "Gain Full Customer Journey Visibility",
-          description:
-            "Sales reps can’t see the full customer journey, killing upsell and cross-sell opportunities.",
-          icon: EyeIcon,
-        },
-        {
-          name: "Fix Inaccurate Pipeline Reporting",
-          description:
-            "Reporting is unreliable, making it impossible to measure true account value or pipeline health.",
-          icon: ChartBarSquareIcon,
-        },
-        {
-          name: "Surface the True Cost of Inefficiency",
-          description:
-            "Hidden costs: missed renewals, duplicate outreach, and poor executive visibility.",
-          icon: CurrencyDollarIcon,
-        },
-      ]}
+  challenges={[
+    { name: "Phantom Deals", description: "Shopify orders sync to HubSpot as deals but aren't linked to companies…" },
+    { name: "Manual Deal-Company Linking", description: "Sales teams spend hours weekly manually associating deals to companies…" },
+    { name: "Fractured B2B Data", description: "Disconnected deals undermine segmentation, hide account-level activity…" },
+    { name: "Unreliable Pipeline Reporting", description: "Reports show duplicate or missing deals per account…" },
+    { name: "Hidden Revenue Leakage", description: "Missed renewals and duplicate outreach due to disassociated deals…" }
+  ]}
+  solutions={[
+    { name: "Sync Unique Company Identifier", description: "Create a synced property on deal records that captures the primary company's unique ID…" },
+    { name: "Auto-Associate on Deal Creation", description: "Build a deal-based workflow that triggers when a deal is created…" },
+    { name: "Validate and Monitor Associations", description: "Schedule regular reports to verify deal-company links…" }
+  ]}
+  impacts={[
+    { name: "Reporting Speed", description: "Manual reconciliation takes days → Reporting updates in minutes (45% faster)" },
+    { name: "Forecast Accuracy", description: "Wins and pipeline at risk of under- or over-forecast by 30% → Forecast accuracy improved by 2×" },
+    { name: "Time Spent on Data Cleanup", description: "5–10 hours/week per rep → <1 hour/week per rep" },
+    { name: "Upsell/Cross-sell Opportunities", description: "20% of opportunities not pursued due to missing account context → Nearly 100% visibility on account deals" }
+  ]}
     />
     <FeatureDesc
       title="Optimize Deal-Company Associations for Accurate Reporting"
