@@ -31,192 +31,204 @@ const {
   features,
 } = Astro.props;
 
-
-import {ExclamationCircleIcon, ArrowTrendingUpIcon,LightBulbIcon, EllipsisHorizontalIcon } from '@heroicons/react/20/solid'
-
-
+import {
+  ExclamationCircleIcon,
+  ArrowTrendingUpIcon,
+  LightBulbIcon,
+  EllipsisHorizontalIcon,
+} from "@heroicons/react/20/solid";
 
 const statuses = {
-  Paid: 'text-green-700 bg-green-50 ring-green-600/20',
-  Withdraw: 'text-gray-600 bg-gray-50 ring-gray-500/10',
-  Overdue: 'text-red-700 bg-red-50 ring-red-600/10',
-}
+  Paid: "text-green-700 bg-green-50 ring-green-600/20",
+  Withdraw: "text-gray-600 bg-gray-50 ring-gray-500/10",
+  Overdue: "text-red-700 bg-red-50 ring-red-600/10",
+};
 
 const clients = [
   {
     id: 1,
-    name: 'Challenge',
+    name: "Challenge",
     imageUrl: ExclamationCircleIcon,
-    lastInvoice: { date: 'December 13, 2022', dateTime: '2022-12-13', amount: '$2,000.00', status: 'Overdue' },
-        features: [
+    lastInvoice: {
+      date: "December 13, 2022",
+      dateTime: "2022-12-13",
+      amount: "$2,000.00",
+      status: "Overdue",
+    },
+    features: [
       {
-        name: 'Phantom Deals',
-        description: 'Shopify orders sync to HubSpot as deals but aren\'t linked to companies, causing "phantom" deals impossible to track by account',
+        name: "Phantom Deals",
+        description:
+          'Shopify orders sync to HubSpot as deals but aren\'t linked to companies, causing "phantom" deals impossible to track by account',
       },
       {
-        name: 'Manual Deal-Company Linking',
-        description: 'Sales teams spend hours weekly manually associating deals to companies—still missing many orders',
+        name: "Manual Deal-Company Linking",
+        description:
+          "Sales teams spend hours weekly manually associating deals to companies—still missing many orders",
       },
       {
-        name: 'Fractured B2B Data',
-        description: 'Disconnected deals undermine segmentation, hide account-level activity, and block true customer journey visibility',
+        name: "Fractured B2B Data",
+        description:
+          "Disconnected deals undermine segmentation, hide account-level activity, and block true customer journey visibility",
       },
       {
-        name: 'Unreliable Pipeline Reporting',
-        description: 'Reports show duplicate or missing deals per account, preventing accurate pipeline health assessment',
+        name: "Unreliable Pipeline Reporting",
+        description:
+          "Reports show duplicate or missing deals per account, preventing accurate pipeline health assessment",
       },
       {
-        name: 'Hidden Revenue Leakage',
-        description: 'Missed renewals and duplicate outreach due to disassociated deals create hidden costs in lost revenue and poor executive visibility',
+        name: "Hidden Revenue Leakage",
+        description:
+          "Missed renewals and duplicate outreach due to disassociated deals create hidden costs in lost revenue and poor executive visibility",
       },
     ],
   },
   {
     id: 2,
-    name: 'Impact',
+    name: "Impact",
     imageUrl: ArrowTrendingUpIcon,
-    lastInvoice: { date: 'January 22, 2023', dateTime: '2023-01-22', amount: '$14,000.00', status: 'Paid' },
-        features: [
+    lastInvoice: {
+      date: "January 22, 2023",
+      dateTime: "2023-01-22",
+      amount: "$14,000.00",
+      status: "Paid",
+    },
+    features: [
       {
-        name: 'Reporting Speed',
-        description: 'Manual reconciliation takes days → Reporting updates in minutes (45% faster)',
+        name: "Reporting Speed",
+        description:
+          "Manual reconciliation takes days → Reporting updates in minutes (45% faster)",
       },
       {
-        name: 'Forecast Accuracy',
-        description: 'Wins and pipeline at risk of under- or over-forecast by 30% → Forecast accuracy improved by 2×',
+        name: "Forecast Accuracy",
+        description:
+          "Wins and pipeline at risk of under- or over-forecast by 30% → Forecast accuracy improved by 2×",
       },
       {
-        name: 'Time Spent on Data Cleanup',
-        description: '5–10 hours/week per rep → <1 hour/week per rep',
+        name: "Time Spent on Data Cleanup",
+        description: "5–10 hours/week per rep → <1 hour/week per rep",
       },
       {
-        name: 'Upsell/Cross-sell Opportunities',
-        description: '20% of opportunities not pursued due to missing account context → Nearly 100% visibility on account deals',
+        name: "Upsell/Cross-sell Opportunities",
+        description:
+          "20% of opportunities not pursued due to missing account context → Nearly 100% visibility on account deals",
       },
     ],
   },
   {
     id: 3,
-    name: 'Solution',
+    name: "Solution",
     features: [
       {
-        name: 'Sync Unique Company Identifier',
-        description: 'Create a synced property on deal records that captures the primary company\'s unique ID and populate this field via workflow when new deals are created from Shopify orders or other sources',
+        name: "Sync Unique Company Identifier",
+        description:
+          "Create a synced property on deal records that captures the primary company's unique ID and populate this field via workflow when new deals are created from Shopify orders or other sources",
       },
       {
-        name: 'Auto-Associate on Deal Creation',
-        description: 'Build a deal-based workflow that triggers when a deal is created or Company ID property is known, using HubSpot\'s native "Create associations" action to link deals with matching companies',
+        name: "Auto-Associate on Deal Creation",
+        description:
+          'Build a deal-based workflow that triggers when a deal is created or Company ID property is known, using HubSpot\'s native "Create associations" action to link deals with matching companies',
       },
       {
-        name: 'Validate and Monitor Associations',
-        description: 'Schedule regular reports to verify deal-company links, identify unmatched deals, and use dashboards showing "Deals without Company" count to trigger exception workflows for cleanup',
+        name: "Validate and Monitor Associations",
+        description:
+          'Schedule regular reports to verify deal-company links, identify unmatched deals, and use dashboards showing "Deals without Company" count to trigger exception workflows for cleanup',
       },
     ],
     imageUrl: LightBulbIcon,
-    lastInvoice: { date: 'January 23, 2023', dateTime: '2023-01-23', amount: '$7,600.00', status: 'Paid' },
+    lastInvoice: {
+      date: "January 23, 2023",
+      dateTime: "2023-01-23",
+      amount: "$7,600.00",
+      status: "Paid",
+    },
   },
-]
+];
 
 function classNames(...classes: string[]): string {
-  return classes.filter(Boolean).join(' ')
+  return classes.filter(Boolean).join(" ");
 }
-
-
 ---
-<section class="hidden">
-  <div class="bg-white py-24 sm:py-32">
-  <div class="mx-auto max-w-7xl px-6 lg:px-8">
-    <div class="mx-auto max-w-2xl lg:text-center">
-      <h2 class="text-base/7 font-semibold text-indigo-600">Deploy faster</h2>
-      <p class="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl lg:text-balance">
-        Everything you need to deploy your app
-      </p>
-      <p class="mt-6 text-lg/8 text-gray-600">
-        Quis tellus eget adipiscing convallis sit sit eget aliquet quis. Suspendisse eget egestas a elementum
-        pulvinar et feugiat blandit at. In mi viverra elit nunc.
-      </p>
-    </div>
 
-    <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
-      <dl class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
-        {features.map((feature) => {
-          const Icon = feature.icon;
-          return (
-            <div class="flex flex-col" key={feature.name}>
-              <dt class="flex items-center gap-x-3 text-base/7 font-semibold text-gray-900">
-                <Icon aria-hidden="true" class="size-5 flex-none text-indigo-600" />
-                {feature.name}
-              </dt>
-              <dd class="mt-4 flex flex-auto flex-col text-base/7 text-gray-600">
-                <p class="flex-auto">{feature.description}</p>
-                <p class="mt-6">
-                  <a href={feature.href} class="text-sm/6 font-semibold text-indigo-600 hover:text-indigo-500">
-                    Learn more <span aria-hidden="true">→</span>
-                  </a>
-                </p>
-              </dd>
-            </div>
-          )
-        })}
-      </dl>
-    </div>
-  </div>
-</div>
-</section>
 <section class="bg-highlight-25">
   <div class="max-w-screen-xl px-4 pt-8 mx-auto text-center lg:pt-16 lg:px-6">
     <h2
       class="mb-4 text-4xl tracking-tight font-extrabold text-status-900 dark:text-white"
     >
-      <!-- {title} -->
+      {title}
     </h2>
     <p class="mb-2 font-light lg:text-xl text-status-900">
-      <!-- {description} -->
+      {description}
     </p>
   </div>
 
   <div
-    class="gap-8 items-center px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 xl:gap-16"
+    
   >
-    <img
+    <!-- 
+  class="gap-8 items-center px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 xl:gap-16"
+  <img
+      class="mb-4 w-full lg:mb-0 rounded-lg"
+      src={image.src}
+      alt="feature image"
+    /> -->
+    <div class="text-gray-500 dark:text-gray-400 sm:text-lg">
+      <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
+        <ul
+          role="list"
+          class="grid grid-cols-1 gap-x-2 gap-y-8 lg:grid-cols-1 xl:grid-cols-2 xl:gap-x-8"
+        >
+        <li>
+          <div class="flex items-center gap-x-4 border-b border-gray-900/5 bg-highlight-25 p-4 justify-center">
+            
+          <img
       class="mb-4 w-full lg:mb-0 rounded-lg"
       src={image.src}
       alt="feature image"
     />
-    <div class="text-gray-500 dark:text-gray-400 sm:text-lg">
-      <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
-        <ul role="list" class="grid grid-cols-1 gap-x-2 gap-y-8 lg:grid-cols-1 xl:grid-cols-2 xl:gap-x-8">
-  {clients.map((client) => (
-    <li key={client.id} class="overflow-hidden rounded-xl border border-gray-200">
-      <div class="flex items-center gap-x-4 border-b border-gray-900/5 bg-highlight-25 p-4 relative">
-        <div class="size-8 flex-none rounded-lg bg-highlight-50 ring-1 ring-gray-900/10 flex items-center justify-center">
-          {(() => {
-            const Icon = client.imageUrl;
-            return <Icon className="h-6 w-6 text-highlight-400" aria-hidden="true" />;
-          })()}
-        </div>
-        <div class="text-base font-medium text-primary-600">{client.name}</div>
-      </div>
+    </div>
+        </li>
+          {
+            clients.map((client) => (
+              <li
+                key={client.id}
+                class="overflow-hidden rounded-xl border border-gray-200"
+              >
+                <div class="flex items-center gap-x-4 border-b border-gray-900/5 bg-highlight-25 p-4 relative">
+                  <div class="size-8 flex-none rounded-lg bg-highlight-50 ring-1 ring-gray-900/10 flex items-center justify-center">
+                    {(() => {
+                      const Icon = client.imageUrl;
+                      return (
+                        <Icon
+                          className="h-6 w-6 text-highlight-400"
+                          aria-hidden="true"
+                        />
+                      );
+                    })()}
+                  </div>
+                  <div class="text-base font-medium text-primary-600">
+                    {client.name}
+                  </div>
+                </div>
 
-      <dl class="-my-3 divide-y divide-gray-100 px-6 py-4 text-sm/6">
-                {
-            client.features?.map((feature) => {
-              return (
-		   <div class="py-3">
-        <h2 class="mb-2 text-base font-semibold text-gray-900 dark:text-white">{feature.name}</h2>
-<ul class="max-w-md space-y-1 text-gray-500 list-none list-inside dark:text-gray-400">
-    <li>
-        {feature.description}
-    </li>
-    </ul>
-	          </div>
-              );
-            })}
-
-      </dl>
-    </li>
-  ))}
-</ul>
+                <dl class="-my-3 divide-y divide-gray-100 px-6 py-4 text-sm/6">
+                  {client.features?.map((feature) => {
+                    return (
+                      <div class="py-3">
+                        <h2 class="mb-2 text-base font-semibold text-gray-900 dark:text-white">
+                          {feature.name}
+                        </h2>
+                        <ul class="max-w-md space-y-1 text-gray-500 list-none list-inside dark:text-gray-400">
+                          <li>{feature.description}</li>
+                        </ul>
+                      </div>
+                    );
+                  })}
+                </dl>
+              </li>
+            ))
+          }
+        </ul>
       </div>
       <div class="py-2 mb-6 dark:border-gray-700 hidden">
         {
