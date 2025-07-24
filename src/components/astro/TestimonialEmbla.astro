@@ -81,13 +81,15 @@ const testimonials = [
         {testimonials.map((testimonial) => (
           <div class="embla__slide flex-shrink-0 w-full flex flex-col items-center text-center p-8 space-y-4">
             <div class="mt-6 flex items-center gap-x-4">
-              <Picture
-                src={testimonial.image}
-                alt={`${testimonial.name}'s profile picture`}
-                widths={[40, 80]}
-                formats={['webp', 'avif', 'jpeg']}
-                class="h-10 w-10 rounded-full bg-gray-50"
-              />
+              <div class="h-10 w-10 rounded-full overflow-hidden">
+                <Picture
+                  src={testimonial.image}
+                  alt={`${testimonial.name}'s profile picture`}
+                  widths={[40, 80]}
+                  formats={['webp', 'avif', 'jpeg']}
+                  class="w-full h-full object-cover"
+                />
+              </div>
             </div>
             <blockquote class="text-lg italic text-gray-700 max-w-md">
               "{testimonial.content}"
