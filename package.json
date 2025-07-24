@@ -6,9 +6,7 @@
     "dev": "astro dev --host",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro",
-    "st-preview": "serve dist"
-
+    "astro": "astro"
   },
   "dependencies": {
     "@astrojs/alpinejs": "^0.4.8",
