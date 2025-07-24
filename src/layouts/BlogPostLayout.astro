@@ -1,0 +1,108 @@
+---
+import Layout from "./Layout.astro";
+import type { MarkdownLayoutProps } from "astro";
+import Navbar from "../components/astro/Navbar.astro";
+import Footer from "../components/astro/Footer.astro";
+
+type Props = MarkdownLayoutProps<{
+  title: string;
+  description: string;
+  pubDate: string;
+  author: {
+    name: string;
+    url: string;
+    imageUrl: string;
+  };
+  image: string;
+  tags: string[];
+}>;
+
+const { frontmatter } = Astro.props;
+
+// Format the publish date
+const formattedDate = new Date(frontmatter.pubDate).toLocaleDateString(
+  "en-US",
+  {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  }
+);
+
+// Generate structured data for the blog post
+const articleStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: frontmatter.title,
+  image: frontmatter.image,
+  datePublished: frontmatter.pubDate,
+  author: {
+    "@type": "Person",
+    name: frontmatter.author.name,
+    url: frontmatter.author.url,
+  },
+  publisher: {
+    "@type": "Organization",
+    name: "SWOTBee",
+    logo: {
+      "@type": "ImageObject",
+      url: "https://swotbee.com/logo.png",
+    },
+  },
+};
+---
+
+<Layout
+  title={frontmatter.title}
+  description={frontmatter.description}
+  ogImage={frontmatter.image}
+  jsonLd={articleStructuredData}
+>
+  <Navbar />
+  <article class="prose prose-lg max-w-4xl mx-auto px-4 py-8">
+    <header class="mb-8">
+      <h1
+        class="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl"
+      >
+        {frontmatter.title}
+      </h1>
+      <div
+        class="inline-flex items-center my-6 mr-3 text-sm text-gray-900 dark:text-white"
+      >
+        <img
+          class="mr-4 w-16 h-16 rounded-full"
+          src={frontmatter.author.imageUrl}
+          alt={frontmatter.author.name}
+        />
+        <div>
+          <a
+            href={frontmatter.author.url}
+            rel="author"
+            class="text-xl font-bold text-gray-900 dark:text-white">{frontmatter.author.name}</a
+          >
+          <p class="text-base text-gray-500 dark:text-gray-400">
+            {frontmatter.author.title || "Author"}
+          </p>
+          <p class="text-base text-gray-500 dark:text-gray-400">
+            <time pubdate datetime={frontmatter.pubDate} title={formattedDate}
+              >{formattedDate}</time>
+          </p>
+        </div>
+      </div>
+
+      {
+        frontmatter.tags && (
+          <div class="flex gap-2 mt-4">
+            {frontmatter.tags.map((tag) => (
+              <span class="bg-primary-100 text-primary-800 px-2 py-1 rounded-full text-base">
+                {tag}
+              </span>
+            ))}
+          </div>
+        )
+      }
+    </header>
+    <slot />
+  </article>
+  <Footer />
+</Layout>

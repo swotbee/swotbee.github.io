@@ -1,7 +1,8 @@
 ---
-title: "My Second Blog Post"
+layout: ../../layouts/BlogPostLayout.astro
+title: "The Future of HubSpot CRM: AI-Powered Automation and Personalization"
 pubDate: "2025-07-10"
-description: "A quick intro to my new Astro blog."
+description: "Discover how HubSpot's AI-powered automation is transforming CRM capabilities, addressing key challenges like duplicate contacts and team adoption, and providing cutting-edge personalization features."
 author:
   name: "SWOTBee Team"
   url: "https://swotbee.com"

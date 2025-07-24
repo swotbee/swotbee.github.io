@@ -1,13 +1,20 @@
 ---
-// BaseLayout.astro
+import { AstroSEO } from 'astro-seo-plugin';
 import '../styles/global.css';
 
 interface Props {
   title: string;
   description?: string;
+  ogImage?: string;
+  canonicalURL?: string;
 }
 
-const { title, description = "Your default description" } = Astro.props;
+const {
+  title,
+  description = "SWOTBee - Your HubSpot & Shopify consulting partner for business growth and optimization",
+  ogImage = "/assets/home-images/swotbee.png",
+  canonicalURL = Astro.url.href
+} = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -15,8 +22,30 @@ const { title, description = "Your default description" } = Astro.props;
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{title}</title>
-  <meta name="description" content={description}>
+  <AstroSEO
+    title={`${title} | SWOTBee`}
+    description={description}
+    openGraph={{
+      title: title,
+      description: description,
+      image: ogImage,
+      type: "website",
+      url: canonicalURL
+    }}
+    twitter={{
+      card: "summary_large_image",
+      site: "@swotbee",
+      creator: "@swotbee"
+    }}
+    jsonLd={{
+      "@type": "WebSite",
+      name: "SWOTBee",
+      url: "https://swotbee.com",
+      description: description
+    }}
+    robots={{ index: true, follow: true }}
+    additionalLinkTags={[{ rel: "canonical", href: canonicalURL }]}
+  />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 </head>
 <body class="min-h-full bg-highlight-25">
