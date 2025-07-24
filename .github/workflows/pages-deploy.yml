@@ -1,5 +1,4 @@
 name: Automatic build
-
 on:
   push:
     branches: [ main ]
@@ -23,8 +22,8 @@ jobs:
         with:
           node-version: 18
 
-      - name: Install dependencies
-        run: npm ci
+      - name: Install dependencies (ignore peer deps)
+        run: npm ci --legacy-peer-deps
 
       - name: Build with Astro (including Tailwind v4)
         run: npm run build
