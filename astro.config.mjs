@@ -1,22 +1,16 @@
-// @ts-check
-import { defineConfig } from 'astro/config';
-import react from '@astrojs/react';
-import tailwind from '@astrojs/tailwind';
-import alpine from '@astrojs/alpinejs';
+import { defineConfig } from "astro/config";
+import react from "@astrojs/react";
+import alpine from "@astrojs/alpinejs";
+import tailwindcss from "@tailwindcss/cli";
 
-// https://astro.build/config
 export default defineConfig({
-  // 1. Set your Pages URL
-  site: 'https://swotbee.github.io',
-
-  // 2. Set base to your repo name (include leading & trailing slash)
-  base: '/swotbee.github.io/',
-
-  // 3. Output static files
-  output: 'static',
-  integrations: [
-    react(),
-    tailwind(),
-    alpine()
-  ]
+  site: "https://swotbee.github.io",
+  base: "/swotbee.github.io/",
+  output: "static",
+  integrations: [react(), alpine()],
+  vite: {
+    plugins: [
+      tailwindcss(),
+    ],
+  },
 });
