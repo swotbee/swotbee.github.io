@@ -1,0 +1,63 @@
+---
+const faqs = [
+  {
+    question: "What is consulting and how can it help my business?",
+    answer: "Consulting is a professional service that provides expert advice and tailored solutions to help businesses solve problems, improve performance, and achieve growth. Consultants bring specialized knowledge and experience to guide your organization through challenges and opportunities.",
+  },
+  {
+    question: "What types of consulting services do you offer?",
+    answer: "We offer a range of consulting services including strategy development, business transformation, process optimization, technology implementation, and change management tailored to your unique business needs.",
+  },
+  {
+    question: "How do you customize your consulting approach?",
+    answer: "Our consulting approach is highly customized based on a deep understanding of your organization's goals, challenges, and industry context. We collaborate closely with your team to co-create actionable strategies that deliver measurable results.",
+  },
+  {
+    question: "What industries do you serve?",
+    answer: "We serve a diverse range of industries including technology, healthcare, finance, manufacturing, and professional services, adapting our expertise to meet the specific demands of each sector.",
+  },
+  {
+    question: "How do you measure the success of your consulting engagements?",
+    answer: "Success is measured through key performance indicators agreed upon at the start of the engagement, such as revenue growth, cost savings, process efficiency, and customer satisfaction improvements. We provide regular progress reports and adjust strategies as needed.",
+  },
+  {
+    question: "What is the typical duration of a consulting project?",
+    answer: "Project duration varies depending on scope and complexity, ranging from a few weeks for focused initiatives to several months for comprehensive transformations. We work with you to define realistic timelines aligned with your objectives.",
+  },
+  {
+    question: "How do you ensure confidentiality and data security?",
+    answer: "We adhere to strict confidentiality agreements and implement robust data security measures to protect your sensitive information throughout the consulting engagement.",
+  },
+  {
+    question: "What are your consulting fees and payment terms?",
+    answer: "Our fees are competitive and based on the scope and complexity of the project. We offer flexible payment terms and provide detailed proposals outlining costs before engagement.",
+  },
+  {
+    question: "How can I get started with your consulting services?",
+    answer: "Getting started is easy. Contact us via our website or email to schedule an initial consultation where we discuss your needs and how we can help.",
+  },
+  {
+    question: "Do you offer ongoing support after the consulting project?",
+    answer: "Yes, we offer ongoing support and advisory services to ensure sustained success and help you adapt to evolving business challenges.",
+  },
+];
+---
+
+<section class="max-w-3xl mx-auto px-4 py-12">
+  <h2 class="text-3xl font-bold mb-8 text-gray-900">Frequently Asked Questions</h2>
+  <div class="space-y-6">
+    {faqs.map(faq => (
+      <div class="border-b pb-4">
+        <h3 class="text-lg font-semibold text-blue-700 mb-2">{faq.question}</h3>
+        <p class="text-gray-700">{faq.answer}</p>
+      </div>
+    ))}
+  </div>
+  <div class="mt-10 bg-blue-50 p-6 rounded">
+    <p class="mb-2 text-gray-800">
+      Have a different question and can’t find the answer you’re looking for? Reach out to our support team by{' '}
+      <a href="mailto:support@yourcompany.com" class="text-blue-700 underline">sending us an email</a>
+      {' '}and we’ll get back to you as soon as we can.
+    </p>
+  </div>
+</section>

@@ -1,0 +1,103 @@
+---
+import JosephImage from '/public/assets/people/Joseph.png';
+import SherlinImage from '/public/assets/people/Sherlin.png';
+import PriyaNairImage from '/public/assets/people/Priya Nair.png';
+import RavikumarImage from '/public/assets/people/Ravikumar.png';
+import SandeepImage from '/public/assets/people/Sandeep Sharma.png';
+import KarunanidhiImage from '/public/assets/people/Karunanidhi.png';
+import VivekImage from '/public/assets/people/Vivek.png';
+import ManishImage from '/public/assets/people/Manish Gupta.png';
+import SaranyaImage from '/public/assets/people/Saranya.png';
+import PradeepImage from '/public/assets/people/Pradeep.png';
+import EswarImage from '/public/assets/people/Eswar.png';
+import RohanImage from '/public/assets/people/Rohan.png';
+import TogetherTeamImage from '/public/assets/together_team.png';
+
+
+
+const team = [
+  {
+    name: "Joseph Johnson",
+    role: "Chief Executive Officer (CEO)",
+    imageUrl: JosephImage,
+  },
+  {
+    name: "Sherlin Thomas",
+    role: "Chief Marketing Officer",
+    imageUrl: SherlinImage,
+  },
+  {
+    name: "Priya Nair",
+    role: "Senior Consultant",
+    imageUrl: PriyaNairImage,
+  },
+  {
+    name: "Ravikumar",
+    role: "Managing Partner / Partner / Director",
+    imageUrl: RavikumarImage,
+  },
+  {
+    name: "Sandeep Sharma",
+    role: "Onboarding Specialist",
+    imageUrl: SandeepImage,
+  },
+  // {
+  //   name: "Karunanidhi",
+  //   role: "Graphic Designer / Creative Director",
+  //   imageUrl: KarunanidhiImage,
+  // },
+  {
+    name: "Vivek Singh",
+    role: "Sales Representative",
+    imageUrl: VivekImage,
+  },
+  {
+    name: "Manish Gupta",
+    role: "Web Developer / Technical Resource",
+    imageUrl: ManishImage,
+  },
+  // { 
+  //   name: "Eswar", 
+  //   role: "Managing Partner",
+  //   imageUrl: EswarImage
+  // },
+  { 
+    name: "Rohan Iyer", 
+    role: "Solutions Architect",
+    imageUrl: RohanImage
+  },
+  { 
+    name: "Pradeep Kumar", 
+    role: "Graphic Designer / Creative Director",
+    imageUrl: PradeepImage
+  },
+  { 
+    name: "Saranya", 
+    role: "Web Developer / Technical Resource",
+    imageUrl: SaranyaImage
+  }
+];
+---
+
+  <div class="px-6 mx-auto mt-32 max-w-7xl sm:mt-48 lg:px-8">
+          <div class="max-w-2xl mx-auto lg:mx-0">
+            <h2 class="text-4xl font-semibold tracking-tight text-gray-900 text-pretty sm:text-5xl">Our team</h2>
+            <p class="mt-6 text-gray-600 text-lg/8">
+              We’re a dynamic group of individuals who are passionate about what we do and dedicated to delivering the
+              best results for our clients.
+            </p>
+          </div>
+          <ul
+            role="list"
+            class="grid max-w-2xl grid-cols-2 mx-auto mt-20 text-center gap-x-8 gap-y-16 sm:grid-cols-3 md:grid-cols-4 lg:mx-0 lg:max-w-none lg:grid-cols-5 xl:grid-cols-6"
+          >
+            {team.map((person) => (
+              <li>
+                <img alt="" src={person.imageUrl.src} class="mx-auto rounded-full size-24" />
+                <h3 class="mt-6 font-semibold tracking-tight text-gray-900 text-base/7">{person.name}</h3>
+                <p class="text-gray-600 text-sm/6">{person.role}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+

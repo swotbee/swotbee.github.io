@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Use Motion's spring() helper to generate a spring easing */
+  --testimonial-transition: spring(0.5, 0.2);
+}
+
+.carousel-item {
+  transition:
+    transform var(--testimonial-transition),
+    opacity   var(--testimonial-transition);
+}

@@ -1,0 +1,168 @@
+---
+import { EnvelopeIcon, GlobeAltIcon } from "@iksaku/heroicons-astro/24/outline";
+import { UserGroupIcon } from "@iksaku/heroicons-astro/24/solid";
+import Button from "./Button.astro";
+import logo from "/public/assets/ico/logo.png";
+
+const logoSrc = "/assets/ico/logo.png";
+---
+
+<footer class="bg-gray-900 text-white py-8">
+  <div
+    class="container mx-auto px-4 flex flex-col md:flex-row items-center md:justify-between"
+  >
+    <div class="flex items-center mb-6 md:mb-0">
+      <img src={logoSrc} alt="Logo" class="h-10 mr-3" />
+      <span class="text-xl font-semibold">SWOTBee</span>
+    </div>
+    <nav class="flex space-x-4 mb-6 md:mb-0">
+      <div class="container">
+        <div class="border-b border-border-primary">
+          <div
+            class="mb-12 grid grid-cols-1 gap-x-[8vw] gap-y-12 md:mb-18 md:gap-y-16 lg:mb-20 lg:grid-cols-[1fr_0.5fr] lg:gap-y-20"
+          >
+            <div class="max-w-md rb-6">
+              <h1
+                class="mb-5 text-6xl font-bold md:mb-6 md:text-9xl lg:text-10xl"
+              >
+                Your Trusted HubSpot Consulting Partner
+              </h1>
+              <p>
+                Expert solutions to streamline your HubSpot experience and boost
+                conversions.
+              </p>
+              <div class="flex flex-wrap gap-4 mt-6 md:mt-8">
+                <button type="button"
+          class="text-white bg-highlight-500 hover:bg-highlight-600 focus:ring-4 focus:outline-none focus:ring-highlight-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-highlight-600 dark:hover:bg-highlight-700 dark:focus:ring-highlight-800" title="Learn More">Learn More</button>
+                <button type="button"
+          class="text-white bg-highlight-500 hover:bg-highlight-600 focus:ring-4 focus:outline-none focus:ring-highlight-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-highlight-600 dark:hover:bg-highlight-700 dark:focus:ring-highlight-800" 
+          title="Contact" variant="secondary" > Contact </button>
+              </div>
+            </div>
+            <div
+              class="grid items-start grid-cols-1 gap-x-6 gap-y-5 sm:grid-cols-2 sm:gap-x-6 md:gap-x-8 md:gap-y-4"
+            >
+              <ul>
+                <li class="py-2 text-sm font-semibold">
+                  <a href="#">Our Services</a>
+                </li>
+                <li class="py-2 text-sm font-semibold">
+                  <a href="#">Case Studies</a>
+                </li>
+                <li class="py-2 text-sm font-semibold">
+                  <a href="#">Testimonials</a>
+                </li>
+                <li class="py-2 text-sm font-semibold">
+                  <a href="/blog/">Blog Posts</a>
+                </li>
+                <li class="py-2 text-sm font-semibold">
+                  <a href="/faq">FAQs</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="py-2 text-sm font-semibold">
+                  <a href="/privacy">Privacy Policy</a>
+                </li>
+                <li class="py-2 text-sm font-semibold">
+                  <a href="/terms">Terms of Use</a>
+                </li>
+                <li class="py-2 text-sm font-semibold">
+                  <a href="/cookie">Cookie Policy</a>
+                </li>
+                <li class="py-2 text-sm font-semibold">
+                  <a href="#">Contact Us</a>
+                </li>
+                <li class="py-2 text-sm font-semibold">
+                  <a href="#">Join Us</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div
+            class="flex flex-col items-start justify-between hidden col-span-1 pb-6 rb-6 sm:flex-row sm:items-center md:pb-8 lg:col-span-2"
+          >
+            <a href="#">
+              <img
+                src={logo}
+                alt="Logo image"
+                class="inline-block w-auto h-8 mb-6 sm:mb-0 md:h-4 md:w-auto lg:h-6 lg:w-auto"
+              />
+            </a>
+            <div class="flex ml-3 border-2 border-red-600 rounded-full ">
+              <img
+                src="https://d22po4pjz3o32e.cloudfront.net/placeholder-image-small.svg"
+                alt="Relume placeholder image"
+                class="relative object-cover -ml-3 border-2 border-white rounded-full size-12 min-h-12 min-w-12"
+              />
+              <img
+                src="https://d22po4pjz3o32e.cloudfront.net/placeholder-image-small.svg"
+                alt="Relume placeholder image"
+                class="relative object-cover -ml-3 border-2 border-white rounded-full size-12 min-h-12 min-w-12"
+              />
+              <img
+                src="https://d22po4pjz3o32e.cloudfront.net/placeholder-image-small.svg"
+                alt="Relume placeholder image"
+                class="relative object-cover -ml-3 border-2 border-white rounded-full size-12 min-h-12 min-w-12"
+              />
+              <img
+                src="https://d22po4pjz3o32e.cloudfront.net/placeholder-image-small.svg"
+                alt="Relume placeholder image"
+                class="relative object-cover -ml-3 border-2 border-white rounded-full size-12 min-h-12 min-w-12"
+              />
+              <img
+                src="https://d22po4pjz3o32e.cloudfront.net/placeholder-image-small.svg"
+                alt="Relume placeholder image"
+                class="relative object-cover -ml-3 border-2 border-white rounded-full size-12 min-h-12 min-w-12"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          class="flex flex-col-reverse items-start justify-between pt-6 pb-4 text-sm md:flex-row md:items-center md:pt-8 md:pb-0"
+        >
+          <p>© 2025 swotbee. All rights reserved.</p>
+          <div
+            class="grid grid-flow-col grid-cols-[max-content] items-start justify-start gap-x-3"
+          >
+            <a
+              href="mailto:info@yourcompany.com"
+              aria-label="Email"
+              class="hover:text-gray-400 size-6 p-0.5"
+            >
+              <EnvelopeIcon class="h-6 w-6 size-6 p-0.5" />
+            </a>
+            <a
+              href="https://yourcompany.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Website"
+              class="hover:text-gray-400"
+            >
+              <GlobeAltIcon class="h-6 w-6 size-6" />
+            </a>
+            <a
+              href="/about"
+              aria-label="Team"
+              class="hover:text-gray-400 size-6 p-0.5"
+            >
+              <UserGroupIcon class="h-6 w-6" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <div
+    id="cookie-consent"
+    class="fixed bottom-0 left-0 w-full bg-gray-800 text-white p-4 flex justify-between items-center z-50"
+  >
+    <span
+      >We use cookies to improve your experience. By using our site, you agree
+      to our <a href="/privacy" class="underline">Privacy Policy</a>.</span
+    >
+    <button
+      onclick="document.getElementById('cookie-consent').style.display='none'"
+      class="bg-gray-700 px-4 py-2 rounded ml-4">Got it</button
+    >
+  </div>
+</footer>

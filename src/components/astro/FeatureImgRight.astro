@@ -1,0 +1,140 @@
+---
+import {
+  ArrowPathIcon,
+  UserGroupIcon,
+  ChartBarIcon,
+  CurrencyDollarIcon,
+} from "@heroicons/react/20/solid";
+// import src/assets/service_features/deal_pipeline.png
+import DealPipelineImg from "../../assets/service_features/deal_pipeline.png";
+const features = [
+  {
+    name: "Eliminate Manual Workarounds",
+    description:
+      "Manual workarounds waste hours every week and still miss deals.",
+    icon: ArrowPathIcon,
+  },
+  {
+    name: "Full Customer Journey Visibility",
+    description:
+      "Sales reps can’t see the full customer journey, killing upsell and cross-sell opportunities.",
+    icon: UserGroupIcon,
+  },
+  {
+    name: "Reliable Reporting",
+    description:
+      "Reporting is unreliable, making it impossible to measure true account value or pipeline health.",
+    icon: ChartBarIcon,
+  },
+  {
+    name: "Reduce Hidden Costs",
+    description:
+      "Hidden costs: missed renewals, duplicate outreach, and poor executive visibility",
+    icon: CurrencyDollarIcon,
+  },
+];
+---
+
+<div class="overflow-hidden bg-white py-24 sm:py-32">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <div>
+      <h2 class="text-base/7 font-semibold text-indigo-600">Clear Dashboard</h2>
+      <div class="mt-2">
+        <p
+          class="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl"
+        >
+          Optimize Deal-Company Associations for Accurate Reporting
+        </p>
+        <p class="mt-6 text-lg/8 text-gray-700">
+          When HubSpot-Shopify deals aren’t linked to companies, your B2B sales
+          data is fractured—crippling segmentation, muddying reports, and
+          leaving your team flying blind. If you’re tired of "phantom deals"
+          that can’t be tracked by account, you’re not alone. Every day you
+          delay, you risk lost revenue, bad forecasts, and frustrated execs
+        </p>
+      </div>
+    </div>
+    <div
+      class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2"
+    >
+      <div class="lg:pt-4 lg:pr-8">
+        <div class="lg:max-w-lg">
+          <h2 class="text-xl font-semibold text-indigo-600 mt-10">
+            Sound familiar?
+          </h2>
+
+          <dl
+            class="mt-2 max-w-xl space-y-8 text-base/7 text-gray-600 lg:max-w-none"
+          >
+            {
+              features.map((feature) => {
+                const Icon = feature.icon;
+                return (
+                  <div class="relative pl-9 py-4">
+                    <dt class="flex gap-4 font-semibold text-gray-900">
+                      <Icon
+                        aria-hidden="true"
+                        className="h-5 w-5 text-indigo-600 shrink-0"
+                      />
+                      <div class="flex flex-col space-y-1">
+                        <span class="text-gray-900">{feature.name}</span>
+                        <dd class="font-normal">
+                          <span class="text-gray-500">
+                            {feature.description}
+                          </span>
+                        </dd>
+                      </div>
+                    </dt>
+                  </div>
+                );
+              })
+            }
+          </dl>
+        </div>
+      </div>
+      <div class="flex items-center justify-center mt-12">
+        <img
+          alt="Product screenshot"
+          src={DealPipelineImg.src}
+          class="w-3xl max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-228 md:-ml-4 lg:-ml-0"
+        />
+      </div>
+    </div>
+    <div>
+              <p
+          class="mt-2 text-xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-2xl"
+        >
+          Clients have seen up to 45% faster reporting and 2x more accurate sales forecasting within a month.
+        </p>
+        <p class="mt-6 text-lg/8 text-gray-700">
+          
+          <br />
+          <span class="font-semibold">Ready to finally trust your B2B data?</span>
+          <br />
+          Schedule a Free Strategy Session or Download the Deal-Company Association Blueprint—spaces are limited this quarter
+                  <button
+          type="button"
+          class="text-white bg-highlight-500 hover:bg-highlight-600 focus:ring-4 focus:outline-none focus:ring-highlight-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-highlight-600 dark:hover:bg-highlight-700 dark:focus:ring-highlight-800"
+        >
+          Talk to an Expert
+          <svg
+            class="rtl:rotate-180 w-3.5 h-3.5 ms-2"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 14 10"
+          >
+            <path
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeLineJoin="round"
+              strokeLineWidth="2"
+              d="M1 5h12m0 0L9 1m4 4L9 9"></path>
+          </svg>
+        </button>
+        </p>
+
+        
+    </div>
+  </div>
+</div>

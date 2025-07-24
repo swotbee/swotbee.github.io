@@ -1,0 +1,160 @@
+---
+import {
+  ArrowPathIcon,
+  UserGroupIcon,
+  ChartBarIcon,
+  CurrencyDollarIcon,
+} from "@heroicons/react/20/solid";
+
+import DealPipelineImg from "../../assets/service_features/deal_pipeline.png";
+import CTAButton from "./CTAButton.astro";
+import FeatureItemCard from "./FeatureItemCard.astro";
+
+interface Props {
+  title: string;
+  description: string;
+  image?: ImageMetadata;
+  validationText: string;
+  validationText2?: string;
+
+  features: Array<{
+    name: string;
+    description: string;
+    icon: any;
+  }>;
+  challenges: Challenges[];
+  solutions: Solutions[];
+  impacts: Impacts[];
+}
+
+interface Challenges {
+  name: string;
+  description: string;
+}
+[];
+interface Solutions {
+  name: string;
+  description: string;
+}
+[];
+interface Impacts {
+  name: string;
+  description: string;
+}
+[];
+
+const {
+  title,
+  description,
+  image = DealPipelineImg,
+  validationText,
+  validationText2 = "",
+  features,
+  challenges,
+  solutions,
+  impacts,
+} = Astro.props;
+
+import {
+  ExclamationCircleIcon,
+  ArrowTrendingUpIcon,
+  LightBulbIcon,
+  EllipsisHorizontalIcon,
+} from "@heroicons/react/20/solid";
+
+function classNames(...classes: string[]): string {
+  return classes.filter(Boolean).join(" ");
+}
+
+console.log("Debug Props:", {
+  features,
+  challenges,
+  solutions,
+  impacts,
+});
+---
+
+<section class="bg-highlight-25">
+  <div class="max-w-screen-xl px-4 pt-8 mx-auto text-center lg:pt-16 lg:px-6">
+    <h2
+      class="mb-4 text-4xl tracking-tight font-extrabold text-status-900 dark:text-white"
+    >
+      {title}
+    </h2>
+    <p class="mb-2 font-light lg:text-xl text-status-900">
+      {description}
+    </p>
+  </div>
+
+  <div>
+    <div class="text-gray-500 dark:text-gray-400 sm:text-lg">
+      <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
+        <ul
+          role="list"
+          class="grid grid-cols-1 gap-x-2 gap-y-8 lg:grid-cols-1 xl:grid-cols-2 xl:gap-x-8"
+        >
+          <li>
+            <div
+              class="flex items-center gap-x-4 border-b border-gray-900/5 bg-highlight-25 p-4 justify-center"
+            >
+              <img
+                class="mb-4 w-full lg:mb-0 rounded-lg"
+                src={image.src}
+                alt="feature image"
+              />
+            </div>
+          </li>
+          {
+            (challenges?.length > 0 ||
+              solutions?.length > 0 ||
+              impacts?.length > 0) && (
+              <>
+                <FeatureItemCard
+                  title="Challenge"
+                  Icon={ExclamationCircleIcon}
+                  itemList={challenges}
+                  bgColor="bg-highlight-50"
+                />
+                <FeatureItemCard
+                  title="Solution"
+                  Icon={LightBulbIcon}
+                  itemList={solutions}
+                  bgColor="bg-neutral-50"
+                />
+                <FeatureItemCard
+                  title="Impact"
+                  Icon={ArrowTrendingUpIcon}
+                  itemList={impacts}
+                  bgColor="bg-status-50"
+                />
+              </>
+            )
+          }
+        </ul>
+      </div>
+      <div>
+        <p
+          class="pl-8 mt-2 text-sm font-semibold tracking-tight text-pretty text-gray-900"
+        >
+          {validationText}
+        </p>
+
+        {
+          validationText2 && (
+            <p class="pl-8 mt-2 text-sm text-pretty text-gray-900">
+              {validationText2}
+            </p>
+          )
+        }
+        <div class="pl-8 mt-4 flex flex-row justify-center items-center">
+          <CTAButton
+            href="/contact"
+            class="text-white bg-highlight-500 hover:bg-highlight-600 focus:ring-4 focus:outline-none focus:ring-highlight-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-highlight-600 dark:hover:bg-highlight-700 dark:focus:ring-highlight-800"
+          >
+            Talk to an Expert
+          </CTAButton>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

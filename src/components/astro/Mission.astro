@@ -1,0 +1,168 @@
+---
+import TeamSuccessThumbsUpImage from "/public/assets/about/TeamSuccessThumbsUp1.png";
+import BusinessPresentationDynamics from "/public/assets/about/BusinessPresentation.png";
+import BusinessConsultingImage from "/public/assets/about/BusinessConsulting.png";
+import CafeteriaBusinessMeetingImage from "/public/assets/about/CafeteriaBusinessMeeting.png";
+import CasualBusinessMeetingImage from "/public/assets/about/CasualBusinessMeeting.png";
+import ConsultantsAnalyzingDataImage from "/public/assets/about/ConsultantsAnalyzingData.png";
+
+const stats = [
+  { label: "Clients Served", value: "150+" },
+  { label: "Projects Delivered", value: "300+" },
+  { label: "Years of Experience", value: "10+" },
+];
+
+const values = [
+  {
+    name: "Client-First Focus",
+    description:
+      "Your goals are at the center of everything we do. We listen, adapt, and deliver solutions that matter most to you.",
+  },
+  {
+    name: "Integrity",
+    description:
+      "We operate with transparency, honesty, and respect—earning your trust through every interaction.",
+  },
+  {
+    name: "Collaborative Spirit",
+    description:
+      "We believe the best solutions are built together. Your insights and our expertise create lasting impact.",
+  },
+  {
+    name: "Continuous Learning",
+    description:
+      "We stay ahead so you always benefit from new ideas, best practices, and innovative strategies.",
+  },
+  {
+    name: "Accountability",
+    description:
+      "We own our results and measure our success by yours. We stand by our promises and deliver on them.",
+  },
+  {
+    name: "Empowerment",
+    description:
+      "We equip you and your team for long-term success, providing tools and knowledge that last beyond our engagement.",
+  },
+];
+---
+
+<div class="overflow-hidden bg-white py-24 sm:py-32">
+  <div class="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
+    <div class="max-w-4xl">
+      <p class="text-base/7 font-semibold text-indigo-600">About us</p>
+      <h1
+        class="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl"
+      >
+        Empowering You to Build Meaningful Business Relationships
+      </h1>
+      <p class="mt-6 text-xl/8 text-balance text-gray-700">
+        We bridge the gap between ambition and achievement by connecting you
+        with the expertise and insights needed to thrive in today’s dynamic
+        business landscape. Our approach isn’t just about introductions—it’s
+        about forging partnerships that drive sustainable growth and measurable
+        outcomes.
+      </p>
+    </div>
+    <section
+      class="mt-20 grid grid-cols-1 lg:grid-cols-2 lg:gap-x-8 lg:gap-y-16"
+    >
+      <div class="lg:pr-8">
+        <h2
+          class="text-2xl font-semibold tracking-tight text-pretty text-gray-900"
+        >
+          Our mission
+        </h2>
+        <p class="mt-6 text-base/7 text-gray-600">
+          At the heart of our consulting practice is a simple promise: We
+          empower organizations to achieve sustainable growth and lasting impact
+          through strategic partnership and actionable insight.
+        </p>
+        <p class="mt-8 text-base/7 text-gray-600">
+          We partner closely with our clients to understand their unique
+          challenges, co-create tailored solutions, and deliver measurable
+          results. Our mission is to be the catalyst for your
+          transformation—helping you navigate complexity, embrace innovation,
+          and realize your boldest ambitions.
+        </p>
+      </div>
+      <div class="pt-16 lg:row-span-2 lg:-mr-16 xl:mr-auto">
+        <div
+          class="-mx-8 grid grid-cols-2 gap-4 sm:-mx-16 sm:grid-cols-4 lg:mx-0 lg:grid-cols-2 lg:gap-4 xl:gap-8"
+        >
+          <div
+            class="aspect-square overflow-hidden rounded-xl shadow-xl outline-1 -outline-offset-1 outline-black/10"
+          >
+            <img
+              alt=""
+              src={BusinessConsultingImage.src}
+              class="block size-full object-cover"
+            />
+          </div>
+          <div
+            class="-mt-8 aspect-square overflow-hidden rounded-xl shadow-xl outline-1 -outline-offset-1 outline-black/10 lg:-mt-40"
+          >
+            <img
+              alt=""
+              src={CafeteriaBusinessMeetingImage.src}
+              class="block size-full object-cover"
+            />
+          </div>
+          <div
+            class="aspect-square overflow-hidden rounded-xl shadow-xl outline-1 -outline-offset-1 outline-black/10"
+          >
+            <img
+              alt=""
+              src={CasualBusinessMeetingImage.src}
+              class="block size-full object-cover"
+            />
+          </div>
+          <div
+            class="-mt-8 aspect-square overflow-hidden rounded-xl shadow-xl outline-1 -outline-offset-1 outline-black/10 lg:-mt-40"
+          >
+            <img
+              alt=""
+              src={ConsultantsAnalyzingDataImage.src}
+              class="block size-full object-cover"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="max-lg:mt-16 lg:col-span-1">
+        <blockquote
+          class="p-4 my-4 border-s-4 border-status-300 bg-highlight-50 dark:border-gray-500 dark:bg-gray-800"
+        >
+          <p
+            class="text-xl italic font-medium leading-relaxed text-status-500 dark:text-white"
+          >
+            “Your success is our mission. We’re here to guide, support, and
+            accelerate your journey—every step of the way.”
+          </p>
+        </blockquote>
+
+        <p class="text-base/7 font-semibold text-gray-500">The numbers</p>
+        <hr class="mt-6 border-t border-gray-200" />
+        <dl class="mt-6 grid grid-cols-1 gap-x-8 gap-y-4 sm:grid-cols-2">
+          {
+            stats.map((stat) => (
+              <div class="flex flex-col gap-y-2 border-b border-dotted border-gray-200 pb-4">
+                <dt class="text-sm/6 text-gray-600">{stat.label}</dt>
+                <dd class="order-first text-6xl font-semibold tracking-tight">
+                  {stat.value}
+                </dd>
+              </div>
+            ))
+          }
+        </dl>
+      </div>
+    </section>
+  </div>
+</div>
+
+{/* Image section */}
+<div class="mt-32 sm:mt-40 xl:mx-auto xl:max-w-7xl xl:px-8">
+  <img
+    alt=""
+    src={TeamSuccessThumbsUpImage.src}
+    class="object-cover w-full aspect-5/2 xl:rounded-3xl"
+  />
+</div>

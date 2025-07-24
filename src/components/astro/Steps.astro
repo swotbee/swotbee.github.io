@@ -1,0 +1,222 @@
+---
+export const steps = [
+  {
+    id: 1,
+    icon: "🔍",
+    title: "Discovery",
+    description:
+      "We kick off with a focused Discovery Workshop to align on goals, scope, and success metrics. We survey key stakeholders to uncover pain points, existing tech stacks, and desired outcomes.",
+    status: "completed",
+  },
+  {
+    id: 2,
+    icon: "📝",
+    title: "Strategy & Roadmap",
+    description:
+      "Based on our findings, we deliver a Custom Roadmap with prioritized milestones, budgets, and timelines—so you know exactly what’s happening, when, and at what cost.",
+    status: "in-progress",
+  },
+  {
+    id: 3,
+    icon: "⚙️",
+    title: "Technical Setup",
+    description:
+      "Our experts configure your HubSpot & Shopify environments—migrating data, integrating apps, and building workflows—to establish a rock-solid foundation that avoids broken processes.",
+    status: "pending",
+  },
+  {
+    id: 4,
+    icon: "🎓",
+    title: "Training & Enablement",
+    description:
+      "We provide hands-on workshops and up-to-date documentation (not stale slide decks) to empower your team. Interactive sessions ensure quick adoption and reduce support requests.",
+    status: "pending",
+  },
+  {
+    id: 5,
+    icon: "🚀",
+    title: "Launch & Optimization",
+    description:
+      "We go live together—monitoring KPIs with custom dashboards. Through iterative A/B testing and analytics, we optimize campaigns, automations, and integrations for continuous improvement.",
+    status: "pending",
+  },
+  {
+    id: 6,
+    icon: "🔄",
+    title: "Review & Scale",
+    description:
+      "Regular Quarterly Business Reviews keep you informed on ROI, upcoming enhancements, and expansion opportunities—so you scale predictably and mitigate risks before they arise.",
+    status: "pending",
+  },
+];
+
+const defaultSelectedStep = steps[0];
+---
+
+<section class="py-16 bg-white">
+  <div class="max-w-4xl mx-auto px-4">
+    <h2 class="text-3xl font-bold text-gray-900 mb-4">Our Collaboration Framework</h2>
+    <p class="mb-8 text-gray-600">
+      From day one, we guide you through a clear, hands-on roadmap—kickoff alignment, custom strategy, seamless setup, interactive training, data-driven launch, and ongoing reviews—so you achieve quick wins, avoid surprises, and scale with confidence.
+    </p>
+
+    <div class="flex gap-8">
+      <ol class="space-y-4 w-72">
+        {
+          steps.map((s) => (
+            <li>
+              <div
+                class={`w-full p-4 rounded-lg dark:bg-gray-800 cursor-pointer transition-all hover:scale-[1.02] ${
+                  s.status === "completed"
+                    ? "text-green-700 border-green-300 bg-green-50 dark:border-green-800 dark:text-green-400"
+                    : s.status === "in-progress"
+                      ? "text-blue-700 border-blue-300 bg-blue-50 dark:border-blue-800 dark:text-blue-400"
+                      : "text-orange-700 border-orange-300 bg-orange-50 dark:border-orange-800 dark:text-orange-400"
+                } border`}
+                role="button"
+                data-step-id={s.id}
+              >
+                <div class="flex items-center justify-between">
+                  <span class="sr-only">{s.title}</span>
+                  <h3 class="font-medium">
+                    {s.id}. {s.title}
+                  </h3>
+                  <svg
+                    class="w-4 h-4"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 16 12"
+                  >
+                    <path
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M1 5.917 5.724 10.5 15 1.5"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </li>
+          ))
+        }
+      </ol>
+
+      <div class="flex-1 sticky top-4">
+        <div
+          id="step-description"
+          class="p-6 rounded-lg border border-gray-200 bg-white dark:bg-gray-800 dark:border-gray-700 min-h-full transition-all duration-300"
+        >
+          <div class="flex items-center gap-3 mb-4">
+            <span id="step-icon" class="text-2xl transition-all duration-300"
+              >{defaultSelectedStep.icon}</span
+            >
+            <h3
+              id="step-title"
+              class="text-xl font-semibold text-gray-900 dark:text-white transition-all duration-300 opacity-100"
+            >
+              {defaultSelectedStep.title}
+            </h3>
+          </div>
+          <p
+            id="step-content"
+            class="text-gray-700 dark:text-gray-300 transition-all duration-300 opacity-100"
+          >
+            {defaultSelectedStep.description}
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Import the steps data from the frontmatter
+      const steps = [
+        {
+          id: 1,
+          icon: "🔍",
+          title: "Discovery",
+          description:
+            "We kick off with a focused Discovery Workshop to align on goals, scope, and success metrics. We survey key stakeholders to uncover pain points, existing tech stacks, and desired outcomes.",
+          status: "completed",
+        },
+        {
+          id: 2,
+          icon: "📝",
+          title: "Strategy & Roadmap",
+          description:
+            "Based on our findings, we deliver a Custom Roadmap with prioritized milestones, budgets, and timelines—so you know exactly what's happening, when, and at what cost.",
+          status: "in-progress",
+        },
+        {
+          id: 3,
+          icon: "⚙️",
+          title: "Technical Setup",
+          description:
+            "Our experts configure your HubSpot & Shopify environments—migrating data, integrating apps, and building workflows—to establish a rock-solid foundation that avoids broken processes.",
+          status: "pending",
+        },
+        {
+          id: 4,
+          icon: "🎓",
+          title: "Training & Enablement",
+          description:
+            "We provide hands-on workshops and up-to-date documentation (not stale slide decks) to empower your team. Interactive sessions ensure quick adoption and reduce support requests.",
+          status: "pending",
+        },
+        {
+          id: 5,
+          icon: "🚀",
+          title: "Launch & Optimization",
+          description:
+            "We go live together—monitoring KPIs with custom dashboards. Through iterative A/B testing and analytics, we optimize campaigns, automations, and integrations for continuous improvement.",
+          status: "pending",
+        },
+        {
+          id: 6,
+          icon: "🔄",
+          title: "Review & Scale",
+          description:
+            "Regular Quarterly Business Reviews keep you informed on ROI, upcoming enhancements, and expansion opportunities—so you scale predictably and mitigate risks before they arise.",
+          status: "pending",
+        },
+      ];
+
+      function updateDescription(stepId: number) {
+        const step = steps.find((s) => s.id === stepId);
+        if (!step) return;
+
+        const iconEl = document.getElementById("step-icon");
+        const titleEl = document.getElementById("step-title");
+        const contentEl = document.getElementById("step-content");
+
+        // Fade out
+        if (titleEl) titleEl.style.opacity = "0";
+        if (contentEl) contentEl.style.opacity = "0";
+
+        // Update content after a short delay
+        setTimeout(() => {
+          if (iconEl) iconEl.textContent = step.icon;
+          if (titleEl) {
+            titleEl.textContent = step.title;
+            titleEl.style.opacity = "1";
+          }
+          if (contentEl) {
+            contentEl.textContent = step.description;
+            contentEl.style.opacity = "1";
+          }
+        }, 150); // Half of the transition duration
+      }
+
+      // Add click event listeners to all step items
+      document.querySelectorAll("[data-step-id]").forEach((el) => {
+        el.addEventListener("click", (e) => {
+          const stepId = Number(
+            (e.currentTarget as HTMLElement).dataset.stepId
+          );
+          updateDescription(stepId);
+        });
+      });
+    </script>
+  </div>
+</section>

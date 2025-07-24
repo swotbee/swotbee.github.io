@@ -1,0 +1,63 @@
+---
+const values = [
+  {
+    name: "Client-First Focus",
+    description:
+      "Your goals are at the center of everything we do. We listen, adapt, and deliver solutions that matter most to you.",
+  },
+  {
+    name: "Integrity",
+    description:
+      "We operate with transparency, honesty, and respect—earning your trust through every interaction.",
+  },
+  {
+    name: "Collaborative Spirit",
+    description:
+      "We believe the best solutions are built together. Your insights and our expertise create lasting impact.",
+  },
+  {
+    name: "Continuous Learning",
+    description:
+      "We stay ahead so you always benefit from new ideas, best practices, and innovative strategies.",
+  },
+  {
+    name: "Accountability",
+    description:
+      "We own our results and measure our success by yours. We stand by our promises and deliver on them.",
+  },
+  {
+    name: "Empowerment",
+    description:
+      "We equip you and your team for long-term success, providing tools and knowledge that last beyond our engagement.",
+  },
+];
+---
+{/* Values section */}
+<div class="px-6 mx-auto mt-32 max-w-7xl sm:mt-40 lg:px-8">
+  <div class="max-w-2xl mx-auto lg:mx-0">
+    <h2
+      class="text-4xl font-semibold tracking-tight text-gray-900 text-pretty sm:text-5xl"
+    >
+      Our values
+    </h2>
+    <p class="mt-6 text-gray-600 text-lg/8">
+      We believe that true partnership is built on a foundation of trust,
+      collaboration, and a relentless commitment to your success. These core
+      values guide every engagement and define how we work with clients.
+    </p>
+  </div>
+  <dl
+    class="grid max-w-2xl grid-cols-1 mx-auto mt-16 gap-x-8 gap-y-16 text-base/7 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3"
+  >
+    {
+      values.map((value) => (
+        <>
+          <div>
+            <dt class="font-semibold text-gray-900">{value.name}</dt>
+            <dd class="mt-1 text-gray-600">{value.description}</dd>
+          </div>
+        </>
+      ))
+    }
+  </dl>
+</div>
