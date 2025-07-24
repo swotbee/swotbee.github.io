@@ -1,10 +1,18 @@
-
 ---
 title: "My Second Blog Post"
 pubDate: "2025-07-10"
 description: "A quick intro to my new Astro blog."
+author:
+  name: "SWOTBee Team"
+  url: "https://swotbee.com"
+  imageUrl: "/public/assets/ico/logo.png"
+image: "/public/assets/about/CafeteriaBusinessMeeting.png"
+tags:
+  - "AI"
+  - "HubSpot"
+  - "Automation"
+  - "CRM"
 ---
-Your post content goes here...
 
 
 # The Future of HubSpot CRM: AI-Powered Automation and Personalization
