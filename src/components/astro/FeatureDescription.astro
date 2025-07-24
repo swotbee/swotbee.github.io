@@ -1,4 +1,5 @@
 ---
+import { Picture } from 'astro:assets';
 import {
   ArrowPathIcon,
   UserGroupIcon,
@@ -94,13 +95,13 @@ console.log("Debug Props:", {
           class="grid grid-cols-1 gap-x-2 gap-y-8 lg:grid-cols-1 xl:grid-cols-2 xl:gap-x-8"
         >
           <li>
-            <div
-              class="flex items-center gap-x-4 border-b border-gray-900/5 bg-highlight-25 p-4 justify-center"
-            >
-              <img
-                class="mb-4 w-full lg:mb-0 rounded-lg"
-                src={image.src}
+            <div class="flex items-center gap-x-4 border-b border-gray-900/5 bg-highlight-25 p-4 justify-center">
+              <Picture
+                src={image}
                 alt="feature image"
+                widths={[400, 800, 1200]}
+                formats={['webp', 'avif', 'png']}
+                class="mb-4 w-full lg:mb-0 rounded-lg"
               />
             </div>
           </li>

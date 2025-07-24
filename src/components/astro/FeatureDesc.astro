@@ -1,4 +1,5 @@
 ---
+import { Picture } from 'astro:assets';
 import {
   ArrowPathIcon,
   UserGroupIcon,
@@ -47,58 +48,68 @@ const {
   <div
     class="gap-8 items-center px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 xl:gap-16"
   >
-    <img
-      class="mb-4 w-full lg:mb-0 rounded-lg"
-      src={image.src}
-      alt="feature image"
-    />
-    <div class="text-gray-500 dark:text-gray-400 sm:text-lg">
-      <div class="py-2 mb-6 dark:border-gray-700">
-        {
-          features.map((feature) => {
-            const Icon = feature.icon;
-            return (
-              <div class="flex pt-8">
-                <div class="flex justify-center items-center mr-4 w-8 h-8  rounded-full shadow-sm dark:bg-gray-800 shrink-0">
-                  <Icon
-                    aria-hidden="true"
-                    className="h-5 w-5 text-highlight-500 shrink-0"
-                  />
-                </div>
-                <div>
-                  <h3 class="mb-2 text-xl font-bold text-status-900 dark:text-white">
-                    {feature.name}
-                  </h3>
-                  <p class="mb-2 font-light text-gray-500 dark:text-status-400">
-                    {feature.description}
-                  </p>
-                </div>
-              </div>
-            );
-          })
-        }
-      </div>
-      <div>
-        <p
-          class="pl-8 mt-2 text-sm font-semibold tracking-tight text-pretty text-gray-900"
-        >
-          {validationText}
-        </p>
+    <div class="relative">
+      <div class="mx-auto max-w-7xl">
+        <div class="relative overflow-hidden rounded-xl px-8 shadow-2xl lg:grid lg:grid-cols-2 lg:gap-x-8">
+          <div class="absolute inset-0 opacity-50 mix-blend-multiply saturate-0 filter">
+            <Picture
+              src={image}
+              alt={title}
+              widths={[400, 800, 1200]}
+              formats={['webp', 'avif', 'png']}
+              class="h-full w-full object-cover"
+            />
+          </div>
+          <div class="text-gray-500 dark:text-gray-400 sm:text-lg">
+            <div class="py-2 mb-6 dark:border-gray-700">
+              {
+                features.map((feature) => {
+                  const Icon = feature.icon;
+                  return (
+                    <div class="flex pt-8">
+                      <div class="flex justify-center items-center mr-4 w-8 h-8  rounded-full shadow-sm dark:bg-gray-800 shrink-0">
+                        <Icon
+                          aria-hidden="true"
+                          className="h-5 w-5 text-highlight-500 shrink-0"
+                        />
+                      </div>
+                      <div>
+                        <h3 class="mb-2 text-xl font-bold text-status-900 dark:text-white">
+                          {feature.name}
+                        </h3>
+                        <p class="mb-2 font-light text-gray-500 dark:text-status-400">
+                          {feature.description}
+                        </p>
+                      </div>
+                    </div>
+                  );
+                })
+              }
+            </div>
+            <div>
+              <p
+                class="pl-8 mt-2 text-sm font-semibold tracking-tight text-pretty text-gray-900"
+              >
+                {validationText}
+              </p>
 
-        {
-          validationText2 && (
-            <p class="pl-8 mt-2 text-sm text-pretty text-gray-900">
-              {validationText2}
-            </p>
-          )
-        }
-        <div class="pl-8 mt-4 flex flex-row justify-center items-center">
-          <CTAButton
-            href="/contact"
-            class="text-white bg-highlight-500 hover:bg-highlight-600 focus:ring-4 focus:outline-none focus:ring-highlight-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-highlight-600 dark:hover:bg-highlight-700 dark:focus:ring-highlight-800"
-          >
-            Talk to an Expert
-          </CTAButton>
+              {
+                validationText2 && (
+                  <p class="pl-8 mt-2 text-sm text-pretty text-gray-900">
+                    {validationText2}
+                  </p>
+                )
+              }
+              <div class="pl-8 mt-4 flex flex-row justify-center items-center">
+                <CTAButton
+                  href="/contact"
+                  class="text-white bg-highlight-500 hover:bg-highlight-600 focus:ring-4 focus:outline-none focus:ring-highlight-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-highlight-600 dark:hover:bg-highlight-700 dark:focus:ring-highlight-800"
+                >
+                  Talk to an Expert
+                </CTAButton>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

@@ -1,4 +1,5 @@
 ---
+import { Picture } from 'astro:assets';
 import heroImage from "../../../public/assets/workflow/CRM_consulting_workflow.v1.png";
 // public/assets/workflow/CRM_consulting_workflow.v1.png
 // src/components/astro/Hero.astro
@@ -33,10 +34,13 @@ import heroImage from "../../../public/assets/workflow/CRM_consulting_workflow.v
       </div>
           <div class="relative pt-8 overflow-hidden">
         <div class="px-6 mx-auto max-w-7xl lg:px-8">
-            <img
-                src={heroImage.src}
-                // class="object-cover size-full"
-            />
+          <Picture
+            src={heroImage}
+            alt="CRM Consulting Workflow"
+            widths={[768, 1024, 1536, 2048]}
+            formats={['webp', 'avif', 'png']}
+            class="w-full"
+          />
           <div aria-hidden="true" class="relative">
             <div class="absolute -inset-x-20 bottom-0 bg-linear-to-t from-white pt-[7%]" />
           </div>

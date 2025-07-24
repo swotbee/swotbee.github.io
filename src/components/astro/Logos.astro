@@ -1,64 +1,47 @@
 ---
+import { Picture } from 'astro:assets';
 import RohanImage from "/public/assets/people/Rohan.png";
 import TogetherTeamImage from "/public/assets/together_team.png";
-// public/assets/customer_logos/Wescologo-defence.png
 import WescoLogo from "/public/assets/customerLogos/WescologoDefence.png";
-// public/assets/customerLogos/BigLotsEcommerce.png
 import BigLotsLogo from "/public/assets/customerLogos/BigLotsEcommerce.png";
-// public/assets/customerLogos/Insteon.svg
 import InsteonLogo from "/public/assets/customerLogos/Insteon.svg";
-// public/assets/customerLogos/lavie.webp
 import LaVieLogo from "/public/assets/customerLogos/lavie.webp";
-// public/assets/customerLogos/MytheresaEcommerce.png
 import MytheresaLogo from "/public/assets/customerLogos/MytheresaEcommerce.png";
-// public/assets/customerLogos/WescologoDefence.png
 
-const logos = [
-  {
-    name: "Wesco",
-    imageUrl: WescoLogo,
-  },
-  {
-    name: "Big Lots",
-    imageUrl: BigLotsLogo,
-  },
-  {
-    name: "Insteon",
-    imageUrl: InsteonLogo,
-  },
-  {
-    name: "La Vie",
-    imageUrl: LaVieLogo,
-  },
-  {
-    name: "Mytheresa",
-    imageUrl: MytheresaLogo,
-  },
+interface Logo {
+  name: string;
+  imageUrl: ImageMetadata;
+}
+
+const logos: Logo[] = [
+  { name: "Wesco", imageUrl: WescoLogo },
+  { name: "Big Lots", imageUrl: BigLotsLogo },
+  { name: "Insteon", imageUrl: InsteonLogo },
+  { name: "La Vie", imageUrl: LaVieLogo },
+  { name: "Mytheresa", imageUrl: MytheresaLogo },
 ];
 ---
 
 <div class="bg-highlight-25 py-24 sm:py-32">
   <div class="mx-auto max-w-7xl px-6 lg:px-8">
     <div class="mx-auto max-w-2xl lg:max-w-none">
-      <h2 class="text-lg/8 font-semibold text-gray-900">
-        Trusted by the world's most innovative teams
-      </h2>
-      <div
-        class="mx-auto mt-10 grid grid-cols-4 items-start gap-x-8 gap-y-10 sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:grid-cols-5"
-      >
-        {
-          logos.map((logo) => (
-            <div class="bg-blue-50 rounded p-4 text-center">
-              <img
-                alt={logo.name}
-                src={logo.imageUrl.src}
-                width={158}
-                height={48}
-                class="col-span-2 max-h-12 w-full object-contain object-left lg:col-span-1"
-              />
-            </div>
-          ))
-        }
+    <h2 class="text-lg/8 font-semibold text-gray-900">
+      Trusted by the world's most innovative teams
+    </h2>
+    <div
+     class="mx-auto mt-10 grid grid-cols-4 items-start gap-x-8 gap-y-10 sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:grid-cols-5"
+     >
+      {logos.map((logo) => (
+        <div class="bg-blue-50 rounded p-4 text-center">
+        <Picture
+          src={logo.imageUrl}
+          alt={`${logo.name} logo`}
+          widths={[200, 400]}
+          formats={['webp', 'avif', logo.imageUrl.src.endsWith('.svg') ? 'svg' : 'png']}
+          class="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
+        />
+        </div>
+      ))}
       </div>
     </div>
   </div>

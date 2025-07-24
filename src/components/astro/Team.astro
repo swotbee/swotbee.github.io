@@ -1,4 +1,5 @@
 ---
+import { Picture } from 'astro:assets';
 import JosephImage from '/public/assets/people/Joseph.png';
 import SherlinImage from '/public/assets/people/Sherlin.png';
 import PriyaNairImage from '/public/assets/people/Priya Nair.png';
@@ -15,7 +16,7 @@ import TogetherTeamImage from '/public/assets/together_team.png';
 
 
 
-const team = [
+const teamMembers = [
   {
     name: "Joseph Johnson",
     role: "Chief Executive Officer (CEO)",
@@ -91,9 +92,15 @@ const team = [
             role="list"
             class="grid max-w-2xl grid-cols-2 mx-auto mt-20 text-center gap-x-8 gap-y-16 sm:grid-cols-3 md:grid-cols-4 lg:mx-0 lg:max-w-none lg:grid-cols-5 xl:grid-cols-6"
           >
-            {team.map((person) => (
+            {teamMembers.map((person) => (
               <li>
-                <img alt="" src={person.imageUrl.src} class="mx-auto rounded-full size-24" />
+                <Picture
+                  src={person.imageUrl}
+                  alt={`${person.name}'s profile picture`}
+                  widths={[96, 192]}
+                  formats={['webp', 'avif', 'png']}
+                  class="mx-auto rounded-full size-24"
+                />
                 <h3 class="mt-6 font-semibold tracking-tight text-gray-900 text-base/7">{person.name}</h3>
                 <p class="text-gray-600 text-sm/6">{person.role}</p>
               </li>

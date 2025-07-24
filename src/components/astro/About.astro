@@ -1,4 +1,6 @@
 ---
+import { Picture } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
 import JosephImage from '/public/assets/people/Joseph.png';
 import SherlinImage from '/public/assets/people/Sherlin.png';
 import PriyaNairImage from '/public/assets/people/Priya Nair.png';
@@ -13,11 +15,12 @@ import EswarImage from '/public/assets/people/Eswar.png';
 import RohanImage from '/public/assets/people/Rohan.png';
 import TogetherTeamImage from '/public/assets/together_team.png';
 
-// import lots_ecommerce from '/assets/customer_logos/big-lots_ecommerce.png';
-// import Insteon from '/assets/customer_logos/Insteon-logo-transparent-bg.svg';
-// import lavie from '/assets/customer_logos/lavie-care-centers-squarelogo-1462971862284.webp';
-// import Mytheresa from '/assets/customer_logos/Logo_of_Mytheresa_ecommerce.png';
-// import VRTV from '/assets/customer_logos/NYSE_VRTV_logistics.png';
+import lots_ecommerce from '/public/assets/customer_logos/big-lots_ecommerce.png';
+import Insteon from '/public/assets/customer_logos/Insteon-logo-transparent-bg.svg';
+import lavie from '/public/assets/customer_logos/lavie-care-centers-squarelogo.webp';
+import Mytheresa from '/public/assets/customer_logos/Logo_of_Mytheresa_ecommerce.png';
+import WescoLogo from "/public/assets/customer_logos/Wescologo-defence.png";
+
 // Image is now in public/assets/customer_logos/ and will be referenced directly
 
 import TeamSuccessThumbsUpImage from '/public/assets/about/Team Success Thumbs Up1.png';
@@ -64,17 +67,28 @@ const values = [
 ];
 
 
-const team = [
-  {
-    name: "Joseph Johnson",
-    role: "Chief Executive Officer (CEO)",
-    imageUrl: JosephImage,
-  },
-  {
-    name: "Sherlin Thomas",
-    role: "Chief Marketing Officer",
-    imageUrl: SherlinImage,
-  },
+interface TeamMember {
+  name: string;
+  role: string;
+  imageUrl: ImageMetadata;
+}
+
+interface TeamImage {
+  src: ImageMetadata;
+  alt: string;
+}
+
+const teamImages: TeamImage[] = [
+  { src: TeamSuccessThumbsUpImage, alt: "Team Success" },
+  { src: BusinessPresentationDynamics, alt: "Business Presentation" },
+  { src: BusinessConsultingImage, alt: "Business Consulting" },
+  { src: CafeteriaBusinessMeetingImage, alt: "Cafeteria Business Meeting" },
+  { src: CasualBusinessMeetingImage, alt: "Casual Business Meeting" },
+];
+
+const teamMembers: TeamMember[] = [
+  { name: "Joseph", role: "CEO", imageUrl: JosephImage },
+  { name: "Sherlin", role: "COO", imageUrl: SherlinImage },
   {
     name: "Priya Nair",
     role: "Senior Consultant",
@@ -162,40 +176,40 @@ const team = [
         <div class="mx-auto max-w-2xl lg:max-w-none">
           <h2 class="text-lg/8 font-semibold text-gray-900">Trusted by the world's most innovative teams</h2>
           <div class="mx-auto mt-10 grid grid-cols-4 items-start gap-x-8 gap-y-10 sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:grid-cols-5">
-            <img
-              alt="Transistor"
-              src="https://tailwindcss.com/plus-assets/img/logos/transistor-logo-gray-900.svg"
-              width={158}
-              height={48}
+            <Picture
+              src={lots_ecommerce}
+              alt="Big Lots E-commerce"
+              widths={[158]}
+              formats={['webp', 'avif', 'png']}
               class="col-span-2 max-h-12 w-full object-contain object-left lg:col-span-1"
             />
-            <img
-              alt="Reform"
-              src="https://tailwindcss.com/plus-assets/img/logos/reform-logo-gray-900.svg"
-              width={158}
-              height={48}
+            <Picture
+              src={Insteon}
+              alt="Insteon"
+              widths={[158]}
+              formats={['svg']}
               class="col-span-2 max-h-12 w-full object-contain object-left lg:col-span-1"
             />
-            <img
-              alt="Tuple"
-              src="https://tailwindcss.com/plus-assets/img/logos/tuple-logo-gray-900.svg"
-              width={158}
-              height={48}
+            <Picture
+              src={lavie}
+              alt="La Vie Care Centers"
+              widths={[158]}
+              formats={['webp']}
               class="col-span-2 max-h-12 w-full object-contain object-left lg:col-span-1"
             />
-            <img
-              alt="SavvyCal"
-              src="https://tailwindcss.com/plus-assets/img/logos/savvycal-logo-gray-900.svg"
-              width={158}
-              height={48}
-              class="col-span-2 max-h-12 w-full object-contain object-left lg:col-span-1"
+            <Picture
+              src={Mytheresa}
+              alt="Mytheresa E-commerce"
+              widths={[158]}
+              formats={['webp', 'avif', 'png']}
+              class="col-span-2 max-h-12 w-full object-contain object-left sm:col-start-2 lg:col-span-1"
             />
-            <img
-              alt="Statamic"
-              src="https://tailwindcss.com/plus-assets/img/logos/statamic-logo-gray-900.svg"
-              width={158}
-              height={48}
-              class="col-span-2 max-h-12 w-full object-contain object-left lg:col-span-1"
+            <Picture
+              src={WescoLogo}
+              alt="Wesco Defence"
+              widths={[158]}
+              formats={['webp', 'avif', 'png']}
+              class="col-span-2 col-start-2 max-h-12 w-full object-contain sm:col-start-auto lg:col-span-1"
             />
           </div>
         </div>
@@ -247,40 +261,11 @@ const team = [
               Trusted by the world's most innovative teams
             </h2>
             <div class="grid items-center max-w-lg grid-cols-4 mx-auto mt-10 gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-5">
-                <!--
-              <img
-                alt="lots_ecommerce"
-                src={lots_ecommerce}
-                width={158}
-                height={48}
-                class="object-contain w-full col-span-2 max-h-12 lg:col-span-1"
-              />
-              <img
-                alt="Insteon"
-                src={Insteon}
-                width={158}
-                height={48}
-                class="object-contain w-full col-span-2 max-h-12 lg:col-span-1"
-              />
-              <img
-                alt="lavie"
-                src={lavie}
-                width={158}
-                height={48}
-                class="object-contain w-full col-span-2 max-h-12 lg:col-span-1"
-              />
-              <img
-                alt="Mytheresa"
-                src={Mytheresa}
-                width={158}
-                height={48}
-                class="object-contain w-full col-span-2 max-h-12 sm:col-start-2 lg:col-span-1"
-              />-->
-              <img
-                alt="Statamic"
-                src="/assets/customer_logos/Wescologo-defence.png"
-                width={158}
-                height={48}
+              <Picture
+                src={WescoLogo}
+                alt="Wesco Defence"
+                widths={[158, 316]}
+                formats={['webp', 'avif', 'png']}
                 class="object-contain w-full col-span-2 col-start-2 max-h-12 sm:col-start-auto lg:col-span-1"
               />
             </div>
@@ -299,12 +284,18 @@ const team = [
             role="list"
             class="grid max-w-2xl grid-cols-2 mx-auto mt-20 text-center gap-x-8 gap-y-16 sm:grid-cols-3 md:grid-cols-4 lg:mx-0 lg:max-w-none lg:grid-cols-5 xl:grid-cols-6"
           >
-            {team.map((person) => (
-              <li>
-                <img alt="" src={person.imageUrl.src} class="mx-auto rounded-full size-24" />
+            {teamMembers.map((person) => (
+              <div class="space-y-4">
+                <Picture
+                  src={person.imageUrl}
+                  alt={`${person.name}'s photo`}
+                  widths={[96, 192]}
+                  formats={['webp', 'avif', 'png']}
+                  class="mx-auto rounded-full size-24"
+                />
                 <h3 class="mt-6 font-semibold tracking-tight text-gray-900 text-base/7">{person.name}</h3>
                 <p class="text-gray-600 text-sm/6">{person.role}</p>
-              </li>
+              </div>
             ))}
           </ul>
         </div>

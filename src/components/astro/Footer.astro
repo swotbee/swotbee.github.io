@@ -1,6 +1,7 @@
 ---
 import { EnvelopeIcon, GlobeAltIcon } from "@iksaku/heroicons-astro/24/outline";
 import { UserGroupIcon } from "@iksaku/heroicons-astro/24/solid";
+import { Picture } from 'astro:assets';
 import Button from "./Button.astro";
 import logo from "/public/assets/ico/logo.png";
 
@@ -11,7 +12,15 @@ import logo from "/public/assets/ico/logo.png";
     class="container mx-auto px-4 flex flex-col md:flex-row items-center md:justify-between"
   >
     <div class="flex items-center mb-6 md:mb-0">
-      <img src={logo.src} alt="Logo" class="h-10 mr-3" />
+      <Picture
+        src={logo}
+        alt="Logo"
+        width={40}
+        height={40}
+        class="size-10 mr-3 object-contain"
+        widths={[40, 80]}
+        formats={['webp', 'avif', 'png']}
+      />
       <span class="text-xl font-semibold">SWOTBee</span>
     </div>
     <nav class="flex space-x-4 mb-6 md:mb-0">

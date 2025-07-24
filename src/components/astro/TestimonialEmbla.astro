@@ -1,11 +1,21 @@
 ---
+import { Picture } from 'astro:assets';
+import TerryImage from '/public/assets/testimonials/Terry_Parmelee.jpeg';
+import SarahImage from '/public/assets/testimonials/Sarah_Orlandi.jpeg';
+import ChenImage from '/public/assets/testimonials/Chen_Wei.jpeg';
+import DanielImage from '/public/assets/testimonials/Daniel_Cross.jpeg';
+import VincentImage from '/public/assets/testimonials/Vincent_M.jpeg';
+import LauraImage from '/public/assets/testimonials/Laura_Green.jpeg';
+import DavidImage from '/public/assets/testimonials/David_Brown.jpeg';
+
+
 const testimonials = [
   {
     id: 1,
     content: "SWOWBee guided us through a complete HubSpot onboarding and site redesign. Their clear communication, deadline focus, and rapid implementation of feedback made the entire process seamless. We now track leads and automate nurture sequences with confidence.",
     name: "Terry Parmelee",
     title: "VP of Operations",
-    imageUrl: "/assets/testimonials/Terry_Parmelee.jpeg",
+    image: TerryImage,
     company: "Material Movement Solutions (MMS)",
   },
   {
@@ -13,7 +23,7 @@ const testimonials = [
     content: "High-quality work and a flexible team—that's New Breed on HubSpot. Despite compressed timelines and evolving scope, Alex and the team met every milestone and even delivered early. Their collaborative approach and transparent process gave us confidence throughout.",
     name: "Sarah Orlandi",
     title: "Marketing Director",
-    imageUrl: "/assets/testimonials/Sarah_Orlandi.jpeg",
+    image: SarahImage,
     company: "Lakeside Laundry ",
   },
   {
@@ -21,21 +31,14 @@ const testimonials = [
     content: "SWOTBee's custom automations, like workflows and email sequences, save time and boost the quality of leads. Their tools help improve sales conversions with less manual effort. The email tracking, notifications, and customizable dashboards make it easy to monitor deals and forecast sales.",
     name: "Chen Wei",
     title: "Technical Writer",
-    imageUrl: "/assets/testimonials/Chen_Wei.jpeg",
-  },
-  {
-    id: 3,
-    content: "SWOTBee's custom automations, like workflows and email sequences, save time and boost the quality of leads. Their tools help improve sales conversions with less manual effort. The email tracking, notifications, and customizable dashboards make it easy to monitor deals and forecast sales.",
-    name: "Chen Wei",
-    title: "Technical Writer",
-    imageUrl: "/assets/testimonials/Chen_Wei.jpeg",
+    image: ChenImage,
   },
   {
     id: 4,
     content: "We've managed all our data and clients in one platform, automated all our campaigns, allocated more time to higher priority initiatives, and improved customer satisfaction. The marketing automation platform complemented all our efforts and made this relationship a huge win from day one.",
     name: "Daniel Cross",
     title: "Project Manager",
-    imageUrl: "/assets/testimonials/Daniel_Cross.jpeg",
+    image: DanielImage,
     company: "Spiderbox Design",
   },
   {
@@ -43,7 +46,7 @@ const testimonials = [
     content: "The personalized one-on-one assistance and training from our marketing automation consultant was exceptional. We communicate weekly with a list of nearly 1 million customers via email campaigns and needed a new solution to better customize the consumer experience. This was a VERY important aspect of our business and we couldn't have done it without their assistance.",
     name: "Vincent M.",
     title: "Marketing Specialist",
-    imageUrl: "/assets/testimonials/Vincent_M.jpeg",
+    image: VincentImage,
     company: "E-commerce Business",
   },
   {
@@ -51,7 +54,7 @@ const testimonials = [
     content: "The support from SWOWBee was outstanding. They helped us navigate the complexities of our project with ease.",
     name: "Laura Green",
     title: "Product Owner",
-    imageUrl: "/assets/testimonials/Laura_Green.jpeg",
+    image: LauraImage,
     company: "Innovative Tech",
   },
   {
@@ -59,16 +62,8 @@ const testimonials = [
     content: "SWOWBee's team was instrumental in our HubSpot implementation. Their attention to detail and commitment to our success were impressive.",
     name: "David Brown",
     title: "Sales Director",
-    imageUrl: "/assets/testimonials/David_Brown.jpeg",
+    image: DavidImage,
     company: "Global Enterprises",
-  },
-  {
-    id: 8,
-    content: "The support from SWOWBee was outstanding. They helped us navigate the complexities of our project with ease.",
-    name: "Laura Green",
-    title: "Product Owner",
-    imageUrl: "/assets/testimonials/Laura_Green.jpeg",
-    company: "Innovative Tech",
   },
 ];
 ---
@@ -85,11 +80,15 @@ const testimonials = [
         <!-- Slides -->
         {testimonials.map((testimonial) => (
           <div class="embla__slide flex-shrink-0 w-full flex flex-col items-center text-center p-8 space-y-4">
-            <img
-              src={testimonial.imageUrl}
-              alt={`Avatar of ${testimonial.name}`}
-              class="w-24 h-24 rounded-full object-cover shadow-lg"
-            />
+            <div class="mt-6 flex items-center gap-x-4">
+              <Picture
+                src={testimonial.image}
+                alt={`${testimonial.name}'s profile picture`}
+                widths={[40, 80]}
+                formats={['webp', 'avif', 'jpeg']}
+                class="h-10 w-10 rounded-full bg-gray-50"
+              />
+            </div>
             <blockquote class="text-lg italic text-gray-700 max-w-md">
               "{testimonial.content}"
             </blockquote>
