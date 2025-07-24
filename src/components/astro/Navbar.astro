@@ -3,11 +3,11 @@ import Button from "./Button.astro";
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
-  { href: "/testimonials", label: "Testimonials" },
+  // { href: "/testimonials", label: "Testimonials" },
   { href: "/blog", label: "Blog" },
   { href: "/contact", label: "Contact" },
   { href: "/services", label: "Services" },
-  { href: "/industries", label: "Industries" },
+  // { href: "/industries", label: "Industries" },
 ];
 import logo from "../../../public/assets/ico/logo.png";
 ---
@@ -28,7 +28,7 @@ import logo from "../../../public/assets/ico/logo.png";
         {
           navLinks.map((link) => (
             <a
-              href="/"
+              href={link.href}
               class="relative block w-auto py-3 text-md lg:inline-block lg:px-4 lg:py-6 lg:text-base"
             >
               {link.label}

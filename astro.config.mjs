@@ -5,7 +5,6 @@ import tailwind from "@astrojs/tailwind";
 
 export default defineConfig({
   site: "https://swotbee.github.io",
-  base: "/swotbee.github.io/",
   output: "static",
   integrations: [react(), alpine(), tailwind()],
 });
