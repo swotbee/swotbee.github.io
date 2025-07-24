@@ -1,6 +1,16 @@
 ---
 // Import Tailwind CSS
 import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "SWOTBee - HubSpot & Shopify Consulting Services",
+  description = "Expert HubSpot consulting services to optimize your sales funnel, boost conversions, and integrate seamlessly with Shopify, Kajabi, Xero, QuickBooks, and DocuSign."
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -10,7 +20,8 @@ import '../styles/global.css';
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Unlock HubSpot's full potential with expert consulting. We set up sales funnels, increase conversions, and integrate HubSpot seamlessly with Shopify, Kajabi, Xero, QuickBooks, and DocuSign.</title>
+		<meta name="description" content={description} />
+		<title>{title}</title>
 		<!-- Alpine.js will be automatically initialized by @astrojs/alpinejs integration -->
 		<script>
 			document.addEventListener('astro:page-load', () => {

@@ -1,7 +1,15 @@
 ---
-
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/astro/Footer.astro";
+import Navbar from "../components/astro/Navbar.astro";
 ---
-<section class="max-w-3xl mx-auto px-4 py-12">
+
+<Layout
+  title="Privacy Policy | SWOTBee"
+  description="Learn about SWOTBee's privacy practices and how we protect your personal information. Read our comprehensive privacy policy for HubSpot and Shopify consulting services."
+>
+  <!-- <Navbar /> -->
+  <section class="max-w-3xl mx-auto px-4 py-12">
   <h2 class="text-3xl font-bold mb-8 text-gray-900">Terms and Conditions</h2>
           <div class="py-24 bg-white sm:py-32">
       <div class="px-6 mx-auto max-w-7xl lg:px-8">
@@ -71,4 +79,6 @@
         </div>
       </div>
     </div>
-</section>
+  </section>
+  <!-- <Footer /> -->
+</Layout>
