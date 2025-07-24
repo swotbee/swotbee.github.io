@@ -1,10 +1,35 @@
 "use client";
 
-import { Button, useMediaQuery } from "@relume_io/relume-ui";
 import { AnimatePresence, motion } from "framer-motion";
 import React, { useState } from "react";
 import { RxChevronDown } from "react-icons/rx";
-import logo from "../../assets/ico/logo.png";
+import logo from "../../../public/assets/ico/logo.png";
+import { useMediaQuery } from "../../hooks/useMediaQuery";
+
+// Custom Button component
+const Button = ({ children, variant = "primary", size = "md", className = "", ...props }) => {
+  const baseClasses = "rounded-lg font-medium text-center inline-flex items-center";
+  const variants = {
+    primary: "text-white bg-highlight-500 hover:bg-highlight-600 focus:ring-4 focus:ring-highlight-300",
+    secondary: "text-gray-900 bg-white border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100",
+    link: "text-highlight-500 hover:text-highlight-600 underline"
+  };
+  const sizes = {
+    sm: "text-sm px-4 py-2",
+    md: "text-base px-5 py-2.5",
+    lg: "text-lg px-6 py-3",
+    link: "text-sm"
+  };
+
+  return (
+    <button
+      className={`${baseClasses} ${variants[variant]} ${sizes[size]} ${className}`}
+      {...props}
+    >
+      {children}
+    </button>
+  );
+};
 
 const useRelume = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);

@@ -2,9 +2,8 @@
 import { EnvelopeIcon, GlobeAltIcon } from "@iksaku/heroicons-astro/24/outline";
 import { UserGroupIcon } from "@iksaku/heroicons-astro/24/solid";
 import Button from "./Button.astro";
-import logo from "/public/assets/ico/logo.png";
+import logo from "../../../public/assets/ico/logo.png";
 
-const logoSrc = "/assets/ico/logo.png";
 ---
 
 <footer class="bg-gray-900 text-white py-8">
@@ -12,7 +11,7 @@ const logoSrc = "/assets/ico/logo.png";
     class="container mx-auto px-4 flex flex-col md:flex-row items-center md:justify-between"
   >
     <div class="flex items-center mb-6 md:mb-0">
-      <img src={logoSrc} alt="Logo" class="h-10 mr-3" />
+      <img src={logo} alt="Logo" class="h-10 mr-3" />
       <span class="text-xl font-semibold">SWOTBee</span>
     </div>
     <nav class="flex space-x-4 mb-6 md:mb-0">
@@ -35,7 +34,7 @@ const logoSrc = "/assets/ico/logo.png";
                 <button type="button"
           class="text-white bg-highlight-500 hover:bg-highlight-600 focus:ring-4 focus:outline-none focus:ring-highlight-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-highlight-600 dark:hover:bg-highlight-700 dark:focus:ring-highlight-800" title="Learn More">Learn More</button>
                 <button type="button"
-          class="text-white bg-highlight-500 hover:bg-highlight-600 focus:ring-4 focus:outline-none focus:ring-highlight-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-highlight-600 dark:hover:bg-highlight-700 dark:focus:ring-highlight-800" 
+          class="text-white bg-highlight-500 hover:bg-highlight-600 focus:ring-4 focus:outline-none focus:ring-highlight-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-highlight-600 dark:hover:bg-highlight-700 dark:focus:ring-highlight-800"
           title="Contact" variant="secondary" > Contact </button>
               </div>
             </div>

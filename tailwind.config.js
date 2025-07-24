@@ -3,11 +3,7 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 
 export default {
   content: [
-    "./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}",
-    "./node_modules/@relume_io/relume-ui/dist/**/*.{js,ts,jsx,tsx}"
-  ],
-  presets: [
-    require("@relume_io/relume-tailwind")
+    "./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"
   ],
   theme: {
     extend: {
