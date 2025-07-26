@@ -7,7 +7,7 @@ author:
   name: "SWOTBee Team"
   url: "https://swotbee.com"
   imageUrl: "/public/assets/ico/logo.png"
-image: "/assets/about/CafeteriaBusinessMeeting.png"
+image: "/public/assets/posts/The Future of HubSpot CRM: AI-Powered Automation and Personalization.png"
 tags:
   - "AI"
   - "HubSpot"
