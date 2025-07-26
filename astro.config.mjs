@@ -3,10 +3,13 @@ import react from "@astrojs/react";
 import alpine from "@astrojs/alpinejs";
 import tailwind from "@astrojs/tailwind";
 
+import sitemap from "@astrojs/sitemap";
+
 export default defineConfig({
   site: "https://swotbee.github.io",
+  base: "/",
   output: "static",
-  integrations: [react(), alpine(), tailwind()],
+  integrations: [react(), alpine(), tailwind(), sitemap()],
   server: {
     headers: {
       "Content-Security-Policy": [
