@@ -11,6 +11,7 @@
   "dependencies": {
     "@astrojs/alpinejs": "^0.4.8",
     "@astrojs/react": "^4.3.0",
+    "@astrojs/sitemap": "^3.4.1",
     "@heroicons/react": "^2.2.0",
     "@iksaku/heroicons-astro": "^0.0.6",
     "@types/react": "^19.1.8",

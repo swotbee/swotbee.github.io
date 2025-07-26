@@ -1,6 +1,6 @@
 ---
 title: "Top Affordable HubSpot Alternatives for Startups"
-pubDate: "2025-07-25"
+pubDate: "2025-05-07"
 description: "Discover affordable HubSpot alternatives for startups. Explore customizable, cost-effective CRMs like Zoho, Freshsales, and Pipedrive, tailored for small business needs."
 category:
   title: "Affordable HubSpot Alternatives for Startups"

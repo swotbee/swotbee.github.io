@@ -1,13 +1,13 @@
 ---
 layout: ../../layouts/BlogPostLayout.astro
 title: "The Future of HubSpot CRM: AI-Powered Automation and Personalization"
-pubDate: "2025-07-10"
+pubDate: "2025-04-30"
 description: "Discover how HubSpot's AI-powered automation is transforming CRM capabilities, addressing key challenges like duplicate contacts and team adoption, and providing cutting-edge personalization features."
 author:
   name: "SWOTBee Team"
   url: "https://swotbee.com"
   imageUrl: "/public/assets/ico/logo.png"
-image: "/public/assets/about/CafeteriaBusinessMeeting.png"
+image: "/assets/about/CafeteriaBusinessMeeting.png"
 tags:
   - "AI"
   - "HubSpot"
