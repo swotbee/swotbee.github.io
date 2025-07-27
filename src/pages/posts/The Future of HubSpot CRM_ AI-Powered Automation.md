@@ -8,6 +8,9 @@ author:
   url: "https://swotbee.com"
   imageUrl: "/assets/ico/logo.png"
 image: "/assets/posts/the-future-of-hubSpot-CRM/tumbnail.png"
+category:
+  title: "Business Strategy"
+  href: "/categories/business-strategy"
 tags:
   - "AI"
   - "HubSpot"

@@ -5,6 +5,22 @@ import Navbar from "../components/astro/Navbar.astro";
 import Newsletter from "../components/astro/Newsletter.astro";
 import { Picture } from 'astro:assets';
 
+interface BlogPost {
+  title: string;
+  description: string;
+  pubDate: string;
+  image?: string;
+  url: string;
+  category?: {
+    title: string;
+  };
+  author?: {
+    name: string;
+    imageUrl?: string;
+  };
+  tags?: string[]; // Added tags property
+}
+
 // Helper function to check if a URL is external
 const isExternalUrl = (url: string) => {
   try {
@@ -20,7 +36,7 @@ const BLOG_IMAGE_DIMENSIONS = { width: 800, height: 450 }; // 16:9 aspect ratio
 const AVATAR_DIMENSIONS = { width: 40, height: 40 };
 
 const posts = await Promise.all(
-  Object.entries(import.meta.glob("./posts/*.md")).map(
+  Object.entries(import.meta.glob<{ frontmatter: BlogPost }>("./posts/*.md")).map(
     async ([path, resolver]) => {
       const { frontmatter } = await resolver();
       return {
@@ -29,7 +45,21 @@ const posts = await Promise.all(
       };
     }
   )
+).then(posts =>
+  // Sort posts by date in descending order (newest first)
+  posts.sort((a, b) => new Date(b.pubDate).getTime() - new Date(a.pubDate).getTime())
 );
+
+// Format date helper
+const formatDate = (dateString: string) => {
+  return new Date(dateString).toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric'
+  });
+};
+
+const MAX_VISIBLE_TAGS = 4; // Maximum number of tags to show before "Show More"
 ---
 
 <Layout
@@ -37,117 +67,158 @@ const posts = await Promise.all(
   description="Expert insights, tips, and strategies for optimizing your HubSpot and Shopify integration. Learn about CRM best practices, automation, and revenue optimization."
 >
   <Navbar />
-  <section class="max-w-4xl bg-highlight-25 mx-auto px-4 py-12">
-    <div class="py-24 sm:py-32">
-      <div class="mx-auto max-w-7xl px-6 lg:px-8">
-        <div class="mx-auto max-w-2xl">
-          <h2
-            class="text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl"
-          >
-            From the blog
-          </h2>
-          <p class="mt-2 text-lg/8 text-gray-600">
-            Learn how to grow your business with our expert advice.
-          </p>
-          <div
-            class="mt-10 space-y-16 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16"
-          >
-            {
-              posts.map((post) => (
-                <article class="flex max-w-xl flex-col items-start justify-between">
-                  {post.image && (
-                    <div class="relative w-full mb-4">
-                      {isExternalUrl(post.image) ? (
-                        <img
-                          src={post.image}
-                          alt={post.title}
-                          width={BLOG_IMAGE_DIMENSIONS.width}
-                          height={BLOG_IMAGE_DIMENSIONS.height}
-                          class="aspect-video w-full rounded-lg object-cover"
-                          loading="lazy"
-                          decoding="async"
-                        />
-                      ) : (
-                        <Picture
-                          src={post.image}
-                          alt={post.title}
-                          width={BLOG_IMAGE_DIMENSIONS.width}
-                          height={BLOG_IMAGE_DIMENSIONS.height}
-                          widths={[400, 800]}
-                          formats={['webp', 'avif', 'jpg']}
-                          inferSize={true}
-                          class="aspect-video w-full rounded-lg object-cover"
-                        />
-                      )}
-                    </div>
+  <section class="bg-white dark:bg-gray-900">
+    <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+      <div class="mx-auto max-w-screen-sm text-center mb-8 lg:mb-16">
+        <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">From the Blog</h2>
+        <p class="font-light text-gray-500 sm:text-xl dark:text-gray-400">
+          Learn how to grow your business with our expert advice on HubSpot and Shopify integration.
+        </p>
+      </div>
+
+      <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        {posts.map((post) => (
+          <article class="p-4 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
+            {post.image && (
+              <a href={post.url}>
+                <div class="mb-5">
+                  {isExternalUrl(post.image) ? (
+                    <img
+                      src={post.image}
+                      alt={post.title}
+                      width={BLOG_IMAGE_DIMENSIONS.width}
+                      height={BLOG_IMAGE_DIMENSIONS.height}
+                      class="rounded-lg object-cover w-full aspect-video"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  ) : (
+                    <Picture
+                      src={post.image}
+                      alt={post.title}
+                      width={BLOG_IMAGE_DIMENSIONS.width}
+                      height={BLOG_IMAGE_DIMENSIONS.height}
+                      widths={[400, 800]}
+                      formats={['webp', 'avif', 'jpg']}
+                      inferSize
+                      class="rounded-lg object-cover w-full aspect-video"
+                    />
                   )}
-                  <div class="flex items-center gap-x-4 text-xs">
-                    <time datetime={post.pubDate} class="text-gray-500">
-                      {post.pubDate}
-                    </time>
-                  </div>
-                  <div class="group relative">
-                    <h3 class="mt-3 text-lg/6 font-semibold text-gray-900 group-hover:text-gray-600">
-                      <a href={post.url}>
-                        <span class="absolute inset-0" />
-                        {post.title}
+                </div>
+              </a>
+            )}
+
+            {post.category && (
+              <span class="bg-purple-100 text-purple-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-purple-200 dark:text-purple-900">
+                {post.category.title}
+              </span>
+            )}
+
+            <h2 class="my-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+              <a href={post.url}>{post.title}</a>
+            </h2>
+
+            <p class="mb-4 font-light text-gray-500 dark:text-gray-400 line-clamp-3">
+              {post.description}
+            </p>
+
+            {post.tags && post.tags.length > 0 && (
+              <div class="mb-4">
+                <div class="tags-container relative">
+                  <div class="flex flex-wrap gap-2 tags-list">
+                    {post.tags.slice(0, MAX_VISIBLE_TAGS).map((tag) => (
+                      <a
+                        href={`/tags/${tag}`}
+                        class="px-2 py-1 text-xs bg-gray-100 text-gray-800 rounded-full hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600"
+                      >
+                        #{tag}
                       </a>
-                    </h3>
-                    <p class="mt-5 line-clamp-3 text-sm/6 text-gray-600">
-                      {post.description}
-                    </p>
+                    ))}
                   </div>
-                  <div class="relative mt-8 flex items-center gap-x-4">
-                    {post.author?.imageUrl && (
-                      isExternalUrl(post.author.imageUrl) ? (
-                        <img
-                          src={post.author.imageUrl}
-                          alt={`${post.author.name}'s avatar`}
-                          width={AVATAR_DIMENSIONS.width}
-                          height={AVATAR_DIMENSIONS.height}
-                          class="size-10 rounded-full bg-gray-50"
-                          loading="lazy"
-                          decoding="async"
-                        />
-                      ) : (
-                        <Picture
-                          src={post.author.imageUrl}
-                          alt={`${post.author.name}'s avatar`}
-                          width={AVATAR_DIMENSIONS.width}
-                          height={AVATAR_DIMENSIONS.height}
-                          widths={[40, 80]}
-                          formats={['webp', 'avif', 'png']}
-                          inferSize={true}
-                          class="size-10 rounded-full bg-gray-50"
-                        />
-                      )
-                    )}
-                    <div class="text-sm/6">
-                      <p class="font-semibold text-gray-900">
-                        {post.author?.url ? (
-                          <a href={post.author.url}>
-                            <span class="absolute inset-0" />
-                            {post.author.name}
+                  {post.tags.length > MAX_VISIBLE_TAGS && (
+                    <>
+                      <div class="hidden tags-extra flex flex-wrap gap-2 mt-2">
+                        {post.tags.slice(MAX_VISIBLE_TAGS).map((tag) => (
+                          <a
+                            href={`/tags/${tag}`}
+                            class="px-2 py-1 text-xs bg-gray-100 text-gray-800 rounded-full hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600"
+                          >
+                            #{tag}
                           </a>
-                        ) : (
-                          post.author?.name
-                        )}
-                      </p>
-                      {post.author?.role && (
-                        <p class="text-gray-600">{post.author.role}</p>
-                      )}
-                    </div>
-                  </div>
-                </article>
-              ))
-            }
-          </div>
-        </div>
+                        ))}
+                      </div>
+                      <button
+                        class="show-more-tags text-xs text-primary-600 hover:text-primary-800 dark:text-primary-400 dark:hover:text-primary-300 mt-1"
+                        data-show-more="true"
+                      >
+                        Show More Tags
+                      </button>
+                    </>
+                  )}
+                </div>
+              </div>
+            )}
+
+            <div class="flex items-center space-x-4">
+              {post.author?.imageUrl && (
+                isExternalUrl(post.author.imageUrl) ? (
+                  <img
+                    src={post.author.imageUrl}
+                    alt={`${post.author?.name}'s avatar`}
+                    width={AVATAR_DIMENSIONS.width}
+                    height={AVATAR_DIMENSIONS.height}
+                    class="w-10 h-10 rounded-full"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                ) : (
+                  <Picture
+                    src={post.author.imageUrl}
+                    alt={`${post.author?.name}'s avatar`}
+                    width={AVATAR_DIMENSIONS.width}
+                    height={AVATAR_DIMENSIONS.height}
+                    widths={[40, 80]}
+                    formats={['webp', 'avif', 'png']}
+                    inferSize
+                    class="w-10 h-10 rounded-full"
+                  />
+                )
+              )}
+              <div class="font-medium dark:text-white">
+                <div>{post.author?.name}</div>
+                <div class="text-sm font-normal text-gray-500 dark:text-gray-400">
+                  {formatDate(post.pubDate)}
+                </div>
+              </div>
+            </div>
+          </article>
+        ))}
       </div>
     </div>
   </section>
+
   <div class="text-center py-12">
     <Newsletter buttonText="Subscribe to our Blog" />
   </div>
   <Footer />
 </Layout>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const showMoreButtons = document.querySelectorAll('.show-more-tags');
+
+    showMoreButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const container = button.closest('.tags-container');
+        const extraTags = container?.querySelector('.tags-extra');
+        const isShowing = button.getAttribute('data-show-more') === 'true';
+
+        if (extraTags) {
+          extraTags.classList.toggle('hidden');
+          button.textContent = isShowing ? 'Show Less Tags' : 'Show More Tags';
+          button.setAttribute('data-show-more', (!isShowing).toString());
+        }
+      });
+    });
+  });
+</script>

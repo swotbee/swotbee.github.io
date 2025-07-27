@@ -10,7 +10,8 @@ author:
   name: "SWOTBee Team"
   url: "https://swotbee.com"
   imageUrl: "/public/assets/ico/logo.png"
-image: "/assets/posts/best-practices-for-implementing-CRM-solutions/tumbnail.png"
+image: "/assets/posts/hubSpot-free-CRM-vs-competitors/tumbnail.png"
+
 tags:
   - "hubspot-crm"
   - "free-crm"
@@ -63,7 +64,7 @@ Free CRMs should also offer good support. Resources like tutorials and forums ca
 
 Finally, assess how well the CRM integrates into your existing systems. A seamless workflow ensures better productivity and less frustration.
 
-![A variety of CRM software tools on a digital dashboard](/assets/posts/best-practices-for-implementing-CRM-solutions/0.png)
+![A variety of CRM software tools on a digital dashboard](/assets/posts/hubSpot-free-CRM-vs-competitors/0.png)
 
 ## **HubSpot Free CRM: Features, Benefits, and User Experience**
 
@@ -93,7 +94,7 @@ The CRM is also mobile-friendly, ensuring users can manage tasks on the go. This
 
 User feedback highlights the scalability and reliability of HubSpot's CRM. Businesses of different sizes find it adaptable to their needs. This scalability is key for growing companies.
 
-![User-friendly HubSpot CRM dashboard with key features highlighted](/assets/posts/best-practices-for-implementing-CRM-solutions/1.png)
+![User-friendly HubSpot CRM dashboard with key features highlighted](/assets/posts/hubSpot-free-CRM-vs-competitors/1.png)
 
 ## **HubSpot Free CRM: Pros and Cons**
 
@@ -140,7 +141,7 @@ Here’s how HubSpot compares to other top free CRM options:
 * Freshsales provides strong phone integration
 * Agile CRM adds telephony and project management at a cost
 
-![Comparison of CRM Features](/assets/posts/best-practices-for-implementing-CRM-solutions/2.png)by Guns (https://unsplash.com/@lilguns)
+![Comparison of CRM Features](/assets/posts/hubSpot-free-CRM-vs-competitors/2.png)by Guns (https://unsplash.com/@lilguns)
 
 The strength of HubSpot lies in its integration capabilities. Users can connect with social media, marketing tools, and more without a hitch.
 
