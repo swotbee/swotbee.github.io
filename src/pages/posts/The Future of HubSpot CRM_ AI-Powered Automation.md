@@ -6,15 +6,14 @@ description: "Discover how HubSpot's AI-powered automation is transforming CRM c
 author:
   name: "SWOTBee Team"
   url: "https://swotbee.com"
-  imageUrl: "/public/assets/ico/logo.png"
-image: "/public/assets/posts/The Future of HubSpot CRM: AI-Powered Automation and Personalization.png"
+  imageUrl: "/assets/ico/logo.png"
+image: "/assets/posts/the-future-of-hubSpot-CRM/tumbnail.png"
 tags:
   - "AI"
   - "HubSpot"
   - "Automation"
   - "CRM"
 ---
-
 
 # The Future of HubSpot CRM: AI-Powered Automation and Personalization
 
@@ -26,7 +25,7 @@ Based on comprehensive research across social media platforms, forums, and HubSp
 
 The research reveals that **89% of users struggle with duplicate contacts ruining their AI results** - making data quality the \#1 concern. Additionally, **85% report team resistance to adopting AI tools**, indicating that change management is equally critical to technical implementation.
 
-![HubSpot AI Evolution Timeline: From Basic Tools to Comprehensive Intelligence Platform (2023-2025)](https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/e33d06de324bedfa3143022da1751983/9f4e4a72-6629-4413-8fc9-b2bb352fd8af/53e8e6c5.png)
+![HubSpot AI Evolution Timeline: From Basic Tools to Comprehensive Intelligence Platform (2023-2025)](/assets/posts/the-future-of-hubSpot-CRM/0.png)
 
 HubSpot AI Evolution Timeline: From Basic Tools to Comprehensive Intelligence Platform (2023-2025)
 
@@ -90,7 +89,7 @@ The evolution of HubSpot's AI capabilities shows a clear progression from basic 
 
 ## Recommended Implementation Roadmap for Your Blog Series
 
-![HubSpot AI Implementation Roadmap: A 4-Phase Approach to Successful AI Adoption](https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/e33d06de324bedfa3143022da1751983/3b2a3b88-fb81-480d-a4f2-6f8b46212e33/343059af.png)
+![HubSpot AI Implementation Roadmap: A 4-Phase Approach to Successful AI Adoption](/assets/posts/the-future-of-hubSpot-CRM/1.png)
 
 HubSpot AI Implementation Roadmap: A 4-Phase Approach to Successful AI Adoption
 

@@ -9,7 +9,7 @@ author:
   name: "SWOTBee Team"
   url: "https://swotbee.com"
   imageUrl: "/public/assets/ico/logo.png"
-image: "/public/assets/posts/Step-by-Step Guide: How to Onboard Your Team with HubSpot CRM Free Plan Setup.png"
+image: "/assets/posts/step-by-step-guide-to-onboarding/tumbnail.png"
 tags:
   - hubspot
   - crm
