@@ -1,108 +1,149 @@
 ---
-import Layout from "./Layout.astro";
-import type { MarkdownLayoutProps } from "astro";
-import Navbar from "../components/astro/Navbar.astro";
-import Footer from "../components/astro/Footer.astro";
-
-type Props = MarkdownLayoutProps<{
-  title: string;
-  description: string;
-  pubDate: string;
-  author: {
-    name: string;
-    url: string;
-    imageUrl: string;
-  };
-  image: string;
-  tags: string[];
-}>;
+import BlogPage from '../components/astro/BlogPage.astro';
+import Navbar from '../components/astro/Navbar.astro';
+import { getRecentPosts } from '../utils/posts';
 
 const { frontmatter } = Astro.props;
-
-// Format the publish date
-const formattedDate = new Date(frontmatter.pubDate).toLocaleDateString(
-  "en-US",
-  {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  }
-);
-
-// Generate structured data for the blog post
-const articleStructuredData = {
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  headline: frontmatter.title,
-  image: frontmatter.image,
-  datePublished: frontmatter.pubDate,
-  author: {
-    "@type": "Person",
-    name: frontmatter.author.name,
-    url: frontmatter.author.url,
-  },
-  publisher: {
-    "@type": "Organization",
-    name: "SWOTBee",
-    logo: {
-      "@type": "ImageObject",
-      url: "https://swotbee.com/logo.png",
-    },
-  },
-};
+const { recentPosts, popularTags } = await getRecentPosts();
 ---
+<Navbar />
+<main class="pt-8 pb-16 lg:pt-16 lg:pb-24 bg-white dark:bg-gray-900 antialiased">
+    <div class="flex justify-between px-4 xl:px-0 mx-auto max-w-screen-xl">
+        <!-- Main article content -->
+        <article class="prose prose-lg dark:prose-invert mx-auto w-full max-w-2xl format format-sm sm:format-base lg:format-lg format-blue dark:format-invert">
+            <header class="mb-8 lg:mb-6 not-format">
+                <h1 class="mb-4 text-3xl font-extrabold leading-tight text-gray-900 lg:mb-6 lg:text-4xl dark:text-white">
+                    {frontmatter.title}
+                </h1>
+                <div class="text-base">
+                    <address class="inline">By <a rel="author" class="text-gray-900 no-underline dark:text-white hover:underline" href={frontmatter.author.url}>
+                        {frontmatter.author.name}
+                    </a></address> in
+                    <a href={frontmatter.category.href} class="text-gray-900 no-underline dark:text-white hover:underline">
+                        {frontmatter.category.title}
+                    </a>
+                    <time datetime={frontmatter.pubDate} class="uppercase">
+                        {new Date(frontmatter.pubDate).toLocaleDateString('en-US', {
+                            year: 'numeric',
+                            month: 'short',
+                            day: 'numeric'
+                        })}
+                    </time>
+                </div>
+            </header>
 
-<Layout
-  title={frontmatter.title}
-  description={frontmatter.description}
-  ogImage={frontmatter.image}
-  jsonLd={articleStructuredData}
->
-  <Navbar />
-  <article class="prose prose-lg max-w-4xl mx-auto px-4 py-8">
-    <header class="mb-8">
-      <p
-        class="mt-2 text-[2.25rem] leading-[2.5rem] font-semibold tracking-tight text-pretty text-gray-900 sm:text-[3rem] sm:leading-[3.5rem]"
-      >
-        {frontmatter.title}
-      </p>
-      <div
-        class="inline-flex items-center my-6 mr-3 text-sm text-gray-900 dark:text-white"
-      >
-        <img
-          class="mr-4 w-16 h-16 rounded-full"
-          src={frontmatter.author.imageUrl}
-          alt={frontmatter.author.name}
-        />
-        <div>
-          <a
-            href={frontmatter.author.url}
-            rel="author"
-            class="text-xl font-bold text-gray-900 dark:text-white">{frontmatter.author.name}</a
-          >
-          <p class="text-base text-gray-500 dark:text-gray-400">
-            {frontmatter.author.title || "Author"}
-          </p>
-          <p class="text-base text-gray-500 dark:text-gray-400">
-            <time pubdate datetime={frontmatter.pubDate} title={formattedDate}
-              >{formattedDate}</time>
-          </p>
-        </div>
-      </div>
+            <!-- Share buttons -->
+            <div class="flex justify-between items-center mb-6">
+                <aside aria-label="Share social media">
+                    <a href="#" class="inline-flex items-center py-2 px-3 mr-2 text-xs font-medium text-gray-900 no-underline bg-white rounded-lg border border-gray-200 focus:outline-none hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
+                        <svg class="mr-2 w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 8 19">
+                            <path fill-rule="evenodd" d="M6.135 3H8V0H6.135a4.147 4.147 0 0 0-4.142 4.142V6H0v3h2v9.938h3V9h2.021l.592-3H5V3.591A.6.6 0 0 1 5.592 3h.543Z" clip-rule="evenodd"/>
+                        </svg>
+                        Share
+                    </a>
+                    <a href="#" class="inline-flex items-center py-2 px-3 mr-2 text-xs font-medium text-gray-900 no-underline bg-white rounded-lg border border-gray-200 focus:outline-none hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
+                        <svg class="mr-2 w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                            <path fill="currentColor" d="M12.186 8.672 18.743.947h-2.927l-5.005 5.9-4.44-5.9H0l7.434 9.876-6.986 8.23h2.927l5.434-6.4 4.82 6.4H20L12.186 8.672Zm-2.267 2.671L8.544 9.515 3.2 2.42h2.2l4.312 5.719 1.375 1.828 5.731 7.613h-2.2l-4.699-6.237Z"/>
+                        </svg>
+                        Tweet
+                    </a>
+                </aside>
+                <button data-tooltip-target="tooltip-save" class="inline-flex items-center p-2 text-sm font-medium text-center text-gray-500 bg-white rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none dark:text-gray-400 focus:ring-gray-50 dark:bg-gray-900 dark:hover:bg-gray-700 dark:focus:ring-gray-600" type="button">
+                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 20">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m13 19-6-5-6 5V2a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v17Z"/>
+                    </svg>
+                </button>
+            </div>
 
-      {
-        frontmatter.tags && (
-          <div class="flex gap-2 mt-4">
-            {frontmatter.tags.map((tag) => (
-              <span class="bg-primary-100 text-primary-800 px-2 py-1 rounded-full text-base">
-                {tag}
-              </span>
-            ))}
-          </div>
-        )
-      }
-    </header>
-    <slot />
-  </article>
-  <Footer />
-</Layout>
+            <!-- Article content -->
+            <div class="article-content">
+                <slot />
+            </div>
+
+            <!-- Tags -->
+            {frontmatter.tags && (
+                <div class="flex flex-wrap gap-2 mt-8">
+                    {frontmatter.tags.map((tag: string) => (
+                        <a href={`/tags/${tag}`} class="bg-primary-100 text-primary-800 text-sm font-medium px-2.5 py-0.5 rounded dark:bg-primary-200 dark:text-primary-800">
+                            {tag}
+                        </a>
+                    ))}
+                </div>
+            )}
+        </article>
+
+        <!-- Right Sidebar -->
+        <aside class="hidden lg:block lg:w-72" aria-labelledby="sidebar-label">
+            <div class="sticky top-6">
+                <!-- Newsletter Signup -->
+                <div class="p-6 mb-6 font-medium text-gray-500 rounded-lg border border-gray-200 dark:border-gray-700 dark:text-gray-400">
+                    <h4 class="mb-4 text-lg font-bold text-gray-900 dark:text-white">Newsletter</h4>
+                    <p class="mb-4 text-sm">Stay updated with our latest insights and articles.</p>
+                    <form class="mb-2">
+                        <label for="email-address" class="sr-only">Email address</label>
+                        <input type="email" id="email-address" name="email" class="block w-full px-4 py-2 text-gray-900 bg-white border border-gray-300 rounded-md shadow-sm focus:ring-primary-500 focus:border-primary-500 sm:text-sm" placeholder="Enter your email" required>
+                        <button type="submit" class="w-full mt-3 px-4 py-2 text-sm font-medium text-white bg-primary-600 rounded-md hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500">
+                            Subscribe
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Recent Posts -->
+                <div class="p-6 font-medium text-gray-500 rounded-lg border border-gray-200 dark:border-gray-700 dark:text-gray-400">
+                    <h4 class="mb-4 text-lg font-bold text-gray-900 dark:text-white">Recent Posts</h4>
+                    <div class="space-y-4">
+                        {recentPosts.map((post) => (
+                            <article class="flex items-center">
+                                <div class="flex-shrink-0">
+                                    <img
+                                        class="h-16 w-16 rounded-lg object-cover"
+                                        src={post.image}
+                                        alt={post.title}
+                                    />
+                                </div>
+                                <div class="ml-4">
+                                    <h5 class="text-sm font-medium text-gray-900 dark:text-white">
+                                        <a href={`/posts/${post.slug}`} class="hover:underline">
+                                            {post.title}
+                                        </a>
+                                    </h5>
+                                    <p class="mt-1 text-xs text-gray-500">
+                                        {new Date(post.pubDate).toLocaleDateString('en-US', {
+                                            year: 'numeric',
+                                            month: 'short',
+                                            day: 'numeric'
+                                        })}
+                                    </p>
+                                    {post.tags && post.tags.length > 0 && (
+                                        <div class="flex flex-wrap gap-1 mt-2">
+                                            {post.tags.slice(0, 2).map((tag) => (
+                                                <a href={`/tags/${tag}`} class="text-xs px-2 py-0.5 bg-gray-100 text-gray-600 rounded-full hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600">
+                                                    #{tag}
+                                                </a>
+                                            ))}
+                                        </div>
+                                    )}
+                                </div>
+                            </article>
+                        ))}
+                    </div>
+                </div>
+
+                <!-- Popular Tags -->
+                <div class="p-6 mt-6 font-medium text-gray-500 rounded-lg border border-gray-200 dark:border-gray-700 dark:text-gray-400">
+                    <h4 class="mb-4 text-lg font-bold text-gray-900 dark:text-white">Popular Tags</h4>
+                    <div class="flex flex-wrap gap-2">
+                        {popularTags.map((tag) => (
+                            <a
+                                href={`/tags/${tag}`}
+                                class="px-3 py-1 text-sm bg-gray-100 text-gray-800 rounded-full hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600"
+                            >
+                                #{tag}
+                            </a>
+                        ))}
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </div>
+</main>

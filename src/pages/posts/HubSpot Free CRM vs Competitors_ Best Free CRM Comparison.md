@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/BlogPostLayout.astro
 title: "HubSpot Free CRM vs Competitors: Best Free CRM Comparison"
 pubDate: "2025-05-28"
 description: "Explore how HubSpot Free CRM stacks up against competitors in this detailed comparison. Discover the best free CRM options, features, and user experiences."

@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/BlogPostLayout.astro
 title: "Maximize Customer Support with HubSpot: Key Tools & Tips"
 pubDate: "2025-07-02"
 description: "Maximize customer support with HubSpot Service Hub by enhancing service operations, optimizing experiences, and managing your support team effectively. Discover key features like ticketing systems, knowledge bases, live chat, and customer feedback tools to streamline your support processes."

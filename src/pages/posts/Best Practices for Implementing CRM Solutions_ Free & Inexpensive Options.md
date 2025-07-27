@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/BlogPostLayout.astro
 title: "Best Practices for Implementing CRM Solutions: Free & Inexpensive Options"
 pubDate: "2025-06-11"
 description: "Discover the best practices for implementing CRM solutions to streamline customer management and boost profitability. Explore free and inexpensive CRM options perfect for small businesses looking to enhance customer relations without breaking the bank."

@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/BlogPostLayout.astro
 title: "Maximize Your Marketing: HubSpot Free Guide"
 pubDate: "2025-06-04"
 description: "Maximize your marketing with HubSpot Free! Discover powerful tools for CRM, lead generation, and automation that boost efficiency and growth. Ideal for beginners!"

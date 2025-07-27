@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/BlogPostLayout.astro
 title: "ActiveCampaign vs HubSpot: Comprehensive Comparison 2023"
 pubDate: "2025-05-21"
 description: "Explore ActiveCampaign vs HubSpot: Which is better for your business? Compare pricing, email automation tools, and marketing capabilities to decide wisely."
