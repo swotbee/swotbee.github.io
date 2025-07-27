@@ -5,12 +5,34 @@ import { getRecentPosts } from '../utils/posts';
 
 const { frontmatter } = Astro.props;
 const { recentPosts, popularTags } = await getRecentPosts();
+
+// Define blog sections for left navigation
+const blogSections = [
+    { title: 'All Posts', href: '/blog' },
+    { title: 'Marketing', href: '/categories/marketing' },
+    { title: 'Business Strategy', href: '/categories/business-strategy' },
+    { title: 'Product Management', href: '/categories/product-management' },
+    { title: 'Customer Success', href: '/categories/customer-success' },
+    { title: 'Sales', href: '/categories/sales' },
+];
 ---
 <Navbar />
 <main class="pt-8 pb-16 lg:pt-16 lg:pb-24 bg-white dark:bg-gray-900 antialiased">
-    <div class="flex justify-between px-4 xl:px-0 mx-auto max-w-screen-xl">
+    <div class="flex justify-between px-4 xl:px-0 mx-auto max-w-screen-xl gap-8">
+        <!-- Left Sidebar Navigation -->
+        <aside class="hidden lg:block lg:w-64" aria-labelledby="table-of-contents">
+            <div class="sticky top-6 max-h-[calc(100vh-4rem)] overflow-y-auto scrollbar-thin scrollbar-thumb-rounded-md scrollbar-track-transparent hover:scrollbar-thumb-gray-300 dark:hover:scrollbar-thumb-gray-600">
+                <div class="p-6 font-medium text-gray-500 rounded-lg border border-gray-200 dark:border-gray-700 dark:text-gray-400">
+                    <h4 class="mb-4 text-lg font-bold text-gray-900 dark:text-white">Table of Contents</h4>
+                    <nav class="toc space-y-2" id="toc">
+                        <!-- Table of contents will be populated here -->
+                    </nav>
+                </div>
+            </div>
+        </aside>
+
         <!-- Main article content -->
-        <article class="prose prose-lg dark:prose-invert mx-auto w-full max-w-2xl format format-sm sm:format-base lg:format-lg format-blue dark:format-invert">
+        <article class="prose prose-lg dark:prose-invert w-full max-w-3xl format format-sm sm:format-base lg:format-lg format-blue dark:format-invert">
             <header class="mb-8 lg:mb-6 not-format">
                 <h1 class="mb-4 text-3xl font-extrabold leading-tight text-gray-900 lg:mb-6 lg:text-4xl dark:text-white">
                     {frontmatter.title}
@@ -74,7 +96,7 @@ const { recentPosts, popularTags } = await getRecentPosts();
 
         <!-- Right Sidebar -->
         <aside class="hidden lg:block lg:w-72" aria-labelledby="sidebar-label">
-            <div class="sticky top-6">
+            <div class="sticky top-6 max-h-[calc(100vh-4rem)] overflow-y-auto scrollbar-thin scrollbar-thumb-rounded-md scrollbar-track-transparent hover:scrollbar-thumb-gray-300 dark:hover:scrollbar-thumb-gray-600">
                 <!-- Newsletter Signup -->
                 <div class="p-6 mb-6 font-medium text-gray-500 rounded-lg border border-gray-200 dark:border-gray-700 dark:text-gray-400">
                     <h4 class="mb-4 text-lg font-bold text-gray-900 dark:text-white">Newsletter</h4>
@@ -147,3 +169,69 @@ const { recentPosts, popularTags } = await getRecentPosts();
         </aside>
     </div>
 </main>
+
+<script>
+    // Function to generate slug from heading text
+    function slugify(text) {
+        return text.toLowerCase()
+            .replace(/[^a-z0-9]+/g, '-')
+            .replace(/(^-|-$)/g, '');
+    }
+
+    // Function to get all headings and build TOC
+    function buildTableOfContents() {
+        const article = document.querySelector('article');
+        const headings = article.querySelectorAll('h2, h3');
+        const toc = document.getElementById('toc');
+
+        headings.forEach((heading) => {
+            // Create slug for the heading
+            const slug = slugify(heading.textContent);
+            heading.id = slug;
+
+            // Create TOC item
+            const link = document.createElement('a');
+            link.href = `#${slug}`;
+            link.textContent = heading.textContent;
+
+            // Add appropriate styling based on heading level
+            const isSubheading = heading.tagName === 'H3';
+            link.className = `block py-1 px-4 ${isSubheading ? 'ml-4' : ''} text-sm text-gray-700 rounded-lg dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 ${isSubheading ? 'opacity-75' : 'font-medium'}`;
+
+            // Add click handler for smooth scrolling
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                document.getElementById(slug).scrollIntoView({ behavior: 'smooth' });
+            });
+
+            toc.appendChild(link);
+        });
+
+        // Highlight current section on scroll
+        let tocLinks = toc.getElementsByTagName('a');
+        let headingElements = Array.from(headings);
+
+        window.addEventListener('scroll', () => {
+            let fromTop = window.scrollY + 100;
+
+            let current = headingElements.find((heading) => {
+                return heading.offsetTop <= fromTop &&
+                       heading.offsetTop + heading.offsetHeight > fromTop;
+            });
+
+            Array.from(tocLinks).forEach(link => {
+                link.classList.remove('bg-gray-100', 'dark:bg-gray-700');
+            });
+
+            if (current && current.id) {
+                const activeLink = toc.querySelector(`a[href="#${current.id}"]`);
+                if (activeLink) {
+                    activeLink.classList.add('bg-gray-100', 'dark:bg-gray-700');
+                }
+            }
+        });
+    }
+
+    // Build TOC when content is loaded
+    document.addEventListener('DOMContentLoaded', buildTableOfContents);
+</script>

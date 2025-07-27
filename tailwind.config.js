@@ -162,6 +162,10 @@ export default {
   },
   plugins: [
     require('flowbite/plugin'),
-    require('flowbite-typography')
+    require('flowbite-typography'),
+    require('tailwind-scrollbar')({ nocompatible: true }),
   ],
+  variants: {
+    scrollbar: ['dark', 'rounded', 'hover']
+  }
 }
