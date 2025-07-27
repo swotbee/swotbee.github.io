@@ -9,7 +9,8 @@ author:
   name: "SWOTBee Team"
   url: "https://swotbee.com"
   imageUrl: "/public/assets/ico/logo.png"
-image: "/assets/about/BusinessConsulting.png"
+image: "/assets/posts/Top CRM Solutions Tailored for Accountants/tumbnail.png"
+
 tags:
   - "HubSpot"
   - "Zoho CRM"

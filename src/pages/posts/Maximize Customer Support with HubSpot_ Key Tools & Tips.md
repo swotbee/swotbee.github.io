@@ -9,7 +9,7 @@ author:
   name: "SWOTBee Team"
   url: "https://swotbee.com"
   imageUrl: "/public/assets/ico/logo.png"
-image: "/assets/about/BusinessConsulting.png"
+image: "/assets/posts/Maximize Your Marketing with HubSpot Free/tumbnail.png"
 tags:
   - customer-support
   - hubspot
