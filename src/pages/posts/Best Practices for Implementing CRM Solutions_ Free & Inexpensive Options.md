@@ -9,7 +9,7 @@ category:
 author:
   name: "SWOTBee Team"
   url: "https://swotbee.com"
-  imageUrl: "/public/assets/ico/logo.png"
+  imageUrl: "/assets/ico/logo.png"
 image: "/assets/posts/best-practices-for-implementing-CRM-solutions/thumbnail.png"
 tags:
   - crm

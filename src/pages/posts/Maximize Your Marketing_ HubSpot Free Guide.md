@@ -9,7 +9,7 @@ category:
 author:
   name: "SWOTBee Team"
   url: "https://swotbee.com"
-  imageUrl: "/public/assets/ico/logo.png"
+  imageUrl: "/assets/ico/logo.png"
 image: "/assets/posts/maximize-your-marketing-with-hubSpot-free/tumbnail.png"
 tags:
   - "CRM"

@@ -9,8 +9,8 @@ category:
 author:
   name: "SWOTBee Team"
   url: "https://swotbee.com"
-  imageUrl: "/public/assets/ico/logo.png"
-image: "/public/assets/posts/how to associate campaign with webinar in hubspot.png"
+  imageUrl: "/assets/ico/logo.png"
+image: "/assets/posts/how to associate campaign with webinar in hubspot.png"
 tags:
   - crm
   - small-business
