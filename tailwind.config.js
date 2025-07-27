@@ -3,7 +3,8 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 
 export default {
   content: [
-    "./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"
+    "./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}",
+    "./node_modules/flowbite/**/*.js"
   ],
   theme: {
     extend: {
@@ -150,7 +151,17 @@ export default {
           900: "#f0fbfb"
         },
       },
+      typography: {
+        DEFAULT: {
+          css: {
+            maxWidth: '100ch', // add required styles
+          },
+        },
+      },
     },
   },
-  plugins: [],
+  plugins: [
+    require('flowbite/plugin'),
+    require('flowbite-typography')
+  ],
 }

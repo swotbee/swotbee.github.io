@@ -1,10 +1,90 @@
 ---
 // public/assets/newsletter/signup.png
-import signupImage from '../../public/assets/newsletter/signup.png';
-import Picture from '../../components/Picture.astro';
-title: "Newsletter Component"
+import signupImage from '/public/assets/newsletter/signup1.jpg';
+import { Picture } from 'astro:assets';
+
+interface Props {
+  autoShow?: boolean;
+  buttonClass?: string;
+  buttonText?: string;
+  showAfterDelay?: number; // Time in seconds
+}
+
+const {
+  autoShow = false,
+  buttonClass = "py-3 px-5 text-sm font-medium text-center text-white rounded-lg cursor-pointer bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800",
+  buttonText = "Subscribe to Newsletter",
+  showAfterDelay = 0
+} = Astro.props;
 ---
-<div id="newsletter-modal" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full">
+<script>
+  // Need to import Flowbite this way in client-side scripts
+  import 'flowbite';
+
+  class NewsletterModal {
+    private modal: any;
+    private timer: number | null = null;
+
+    constructor() {
+      const modalEl = document.getElementById('newsletter-modal');
+      if (!modalEl) return;
+
+      // @ts-ignore - Flowbite types
+      this.modal = new window.Modal(modalEl, {
+        placement: 'center'
+      });
+
+      const closeModalEl = document.getElementById('close-modal');
+      if (closeModalEl) {
+        closeModalEl.addEventListener('click', () => {
+          this.modal?.hide();
+          if (this.timer) {
+            window.clearTimeout(this.timer);
+            this.timer = null;
+          }
+        });
+      }
+
+      const openModalEl = document.getElementById('open-newsletter-modal');
+      if (openModalEl) {
+        openModalEl.addEventListener('click', () => this.modal?.show());
+      }
+    }
+
+    initialize(autoShow: boolean, delayInSeconds: number) {
+      if (!this.modal) return;
+
+      if (autoShow) {
+        this.modal.show();
+      } else if (delayInSeconds > 0) {
+        this.timer = window.setTimeout(() => {
+          this.modal?.show();
+        }, delayInSeconds * 1000);
+      }
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const newsletter = new NewsletterModal();
+    const modalEl = document.getElementById('newsletter-modal');
+    const autoShow = modalEl?.dataset.autoShow === 'true';
+    const showAfterDelay = Number(modalEl?.dataset.showAfterDelay || '0');
+    newsletter.initialize(autoShow, showAfterDelay);
+  });
+</script>
+
+<button id="open-newsletter-modal" type="button" class={buttonClass}>
+  {buttonText}
+</button>
+
+<div
+  id="newsletter-modal"
+  data-auto-show={autoShow}
+  data-show-after-delay={showAfterDelay}
+  data-modal
+  tabindex="-1"
+  class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full"
+>
   <div class="relative p-4 w-full max-w-2xl h-full rounded-lg md:h-auto">
       <!-- Modal content -->
       <div class="flex relative items-center bg-white rounded-lg shadow dark:bg-gray-800">
