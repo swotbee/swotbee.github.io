@@ -10,7 +10,7 @@ author:
   name: "SWOTBee Team"
   url: "https://swotbee.com"
   imageUrl: "/assets/ico/logo.png"
-image: "/assets/posts/hubSpot-success-for-food-beverage-clients/tumbnail.png"
+image: "/assets/posts/hubSpot-success-for-food-beverage-clients/thumbnail.jpg"
 
 tags:
   - "HubSpot"
@@ -24,7 +24,6 @@ tags:
   - "Marketing Strategies"
 
 ---
-
 
 # **How HubSpot Transforms Beverage Marketing Strategies**
 

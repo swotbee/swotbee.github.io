@@ -9,8 +9,8 @@ author:
   imageUrl: "/assets/ico/logo.png"
 image: "/assets/posts/the-future-of-hubSpot-CRM/tumbnail.png"
 category:
-  title: "Business Strategy"
-  href: "/categories/business-strategy"
+  title: "Feature Deep Dives & Advanced Automation"
+  href: "/categories/feature-deep-dives"
 tags:
   - "AI"
   - "HubSpot"

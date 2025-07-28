@@ -11,7 +11,7 @@ author:
   name: "SWOTBee Team"
   url: "https://swotbee.com"
   imageUrl: "/assets/ico/logo.png"
-image: "/assets/posts/hubSpot-success-for-food-beverage-clients/tumbnail.png"
+image: "/assets/posts/optimize-marketing-with-amplitude-hubspot-integration/thumbnail.jpg"
 
 tags:
   - crm
