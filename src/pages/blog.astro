@@ -11,6 +11,7 @@ interface BlogPost {
   pubDate: string;
   image?: string;
   url: string;
+  draft?: boolean;  // Added draft property
   category?: {
     title: string;
   };
@@ -35,10 +36,19 @@ const isExternalUrl = (url: string) => {
 const BLOG_IMAGE_DIMENSIONS = { width: 800, height: 450 }; // 16:9 aspect ratio
 const AVATAR_DIMENSIONS = { width: 40, height: 40 };
 
+// Date validation helper
+const isValidDate = (dateString: string) => {
+  const date = new Date(dateString);
+  return date instanceof Date && !isNaN(date.getTime());
+};
+
 const posts = await Promise.all(
   Object.entries(import.meta.glob<{ frontmatter: BlogPost }>("./posts/*.md")).map(
     async ([path, resolver]) => {
       const { frontmatter } = await resolver();
+      if (!isValidDate(frontmatter.pubDate)) {
+        console.error(`Invalid date in file ${path}. Date string: "${frontmatter.pubDate}"`);
+      }
       return {
         ...frontmatter,
         url: path.replace("./posts", "/posts").replace(".md", ""),
@@ -46,12 +56,23 @@ const posts = await Promise.all(
     }
   )
 ).then(posts =>
-  // Sort posts by date in descending order (newest first)
-  posts.sort((a, b) => new Date(b.pubDate).getTime() - new Date(a.pubDate).getTime())
+  // Filter out draft posts and sort by date
+  posts
+    .filter(post => !post.draft)
+    .sort((a, b) => {
+      // Handle invalid dates by putting them at the end
+      if (!isValidDate(a.pubDate)) return 1;
+      if (!isValidDate(b.pubDate)) return -1;
+      return new Date(b.pubDate).getTime() - new Date(a.pubDate).getTime();
+    })
 );
 
-// Format date helper
+// Format date helper with error handling
 const formatDate = (dateString: string) => {
+  if (!isValidDate(dateString)) {
+    console.error(`Attempting to format invalid date: "${dateString}"`);
+    return "Invalid Date";
+  }
   return new Date(dateString).toLocaleDateString('en-US', {
     year: 'numeric',
     month: 'short',

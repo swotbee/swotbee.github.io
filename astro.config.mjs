@@ -9,9 +9,13 @@ export default defineConfig({
   site: "https://swotbee.github.io",
   base: "/",
   output: "static",
+  markdown: {
+    smartypants: true,
+  },
   integrations: [react(), alpine(), tailwind(), sitemap()],
   server: {
     headers: {
+      "Content-Type": "text/html; charset=utf-8",
       "Content-Security-Policy": [
   //       "default-src * 'unsafe-inline' 'unsafe-eval' data: blob:;",
   //       "script-src * 'unsafe-inline' 'unsafe-eval' data: blob:;",
