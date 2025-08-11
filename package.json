@@ -12,6 +12,8 @@
     "@astrojs/alpinejs": "^0.4.8",
     "@astrojs/react": "^4.3.0",
     "@astrojs/sitemap": "^3.4.1",
+    "@fontsource/lexend-deca": "^5.2.9",
+    "@fontsource/vollkorn": "^5.2.8",
     "@heroicons/react": "^2.2.0",
     "@iksaku/heroicons-astro": "^0.0.6",
     "@types/react": "^19.1.8",

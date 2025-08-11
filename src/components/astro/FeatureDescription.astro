@@ -1,5 +1,5 @@
 ---
-import { Picture } from 'astro:assets';
+import { Picture } from "astro:assets";
 import {
   ArrowPathIcon,
   UserGroupIcon,
@@ -90,21 +90,22 @@ console.log("Debug Props:", {
   <div>
     <div class="text-gray-500 dark:text-gray-400 sm:text-lg">
       <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
+        <div
+          class="mx-auto flex items-center gap-x-4 border-b border-gray-900/5 bg-highlight-25 p-4 justify-center max-w-4xl mb-4"
+        >
+          <Picture
+            src={image}
+            alt="feature image"
+            widths={[400, 800, 1200]}
+            formats={["webp", "avif", "png"]}
+            class="mb-4 w-full lg:mb-0 rounded-lg"
+          />
+        </div>
         <ul
           role="list"
-          class="grid grid-cols-1 gap-x-2 gap-y-8 lg:grid-cols-1 xl:grid-cols-2 xl:gap-x-8"
+          class="grid grid-cols-1 gap-x-2 gap-y-8 lg:grid-cols-1 xl:grid-cols-2 xl:gap-x-8 mb-6"
         >
-          <li>
-            <div class="flex items-center gap-x-4 border-b border-gray-900/5 bg-highlight-25 p-4 justify-center">
-              <Picture
-                src={image}
-                alt="feature image"
-                widths={[400, 800, 1200]}
-                formats={['webp', 'avif', 'png']}
-                class="mb-4 w-full lg:mb-0 rounded-lg"
-              />
-            </div>
-          </li>
+          <!-- <li></li> -->
           {
             (challenges?.length > 0 ||
               solutions?.length > 0 ||
@@ -114,24 +115,25 @@ console.log("Debug Props:", {
                   title="Challenge"
                   Icon={ExclamationCircleIcon}
                   itemList={challenges}
-                  bgColor="bg-highlight-50"
+                  bgColor="bg-red-50"
                 />
                 <FeatureItemCard
                   title="Solution"
                   Icon={LightBulbIcon}
                   itemList={solutions}
-                  bgColor="bg-neutral-50"
-                />
-                <FeatureItemCard
-                  title="Impact"
-                  Icon={ArrowTrendingUpIcon}
-                  itemList={impacts}
-                  bgColor="bg-status-50"
+                  bgColor="bg-green-100"
                 />
               </>
             )
           }
         </ul>
+        <FeatureItemCard
+          title="Impact"
+          Icon={ArrowTrendingUpIcon}
+          itemList={impacts}
+          bgColor="bg-status-50"
+          horizontal={true}
+        />
       </div>
       <div>
         <p

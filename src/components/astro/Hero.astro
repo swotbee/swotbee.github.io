@@ -1,5 +1,5 @@
 ---
-import { Picture } from 'astro:assets';
+import { Picture } from "astro:assets";
 import heroImage from "../../../public/assets/workflow/CRM_consulting_workflow.v1.png";
 // public/assets/workflow/CRM_consulting_workflow.v1.png
 // src/components/astro/Hero.astro
@@ -7,44 +7,55 @@ import heroImage from "../../../public/assets/workflow/CRM_consulting_workflow.v
 
 <section class="hero">
   <div class="bg-highlight-25">
-      <div class="px-6 pt-24 pb-4 sm:px-6 sm:pt-32 sm:pb-8 lg:px-8">
-        <div class="max-w-2xl mx-auto text-center">
-          <h2 class="text-4xl font-semibold tracking-tight text-gray-900 text-balance sm:text-5xl">
-            Transform Your HubSpot Experience Today
-          </h2>
-          <p class="max-w-xl mx-auto mt-6 text-gray-600 text-lg/8 text-pretty">
-            Unlock the full potential of HubSpot with our expert consulting
-              services. Streamline your sales funnel, boost conversions, and
-              integrate seamlessly with your favorite tools.
-          </p>
-          <div class="flex items-center justify-center mt-10 gap-x-6">
-            <a
-              href="#"
-              class="rounded-md bg-highlight-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-highlight-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-highlight-600"
-              title="Claim Your Free 30-Minute AI Marketing & Sales Automation Session"
-              aria-label="Claim Your Free 30-Minute AI Marketing & Sales Automation Session"
-            >
-              Claim Your Free Consultation
-            </a>
-            <a href="#" class="font-semibold text-gray-900 text-sm/6">
-              Learn more <span aria-hidden="true">→</span>
-            </a>
+    <div class="px-6 pt-24 pb-4 sm:px-6 sm:pt-32 sm:pb-8 lg:px-8">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1
+          class="text-4xl font-bold tracking-tight text-gray-900 text-balance sm:text-5xl"
+        >
+          Is HubSpot failing to deliver the results you were promised?
+        </h1>
+
+        <p class="max-w-xl mx-auto mt-6 text-gray-600 text-2xl/8 text-pretty">
+          Our expert consultants help you unlock its true value, so you can
+          finally stop feeling stuck and start seeing real returns.
+        </p>
+
+        <p class="max-w-xl mx-auto mt-6 text-gray-600 text-lg/8 text-pretty">
+          We tailor HubSpot to your team’s unique style, streamline your sales
+          funnel to boost conversions, and integrate seamlessly with the tools
+          you already use.
+        </p>
+        <div class="flex items-center justify-center mt-10 gap-x-6">
+          <a
+            href="#"
+            class="rounded-md bg-highlight-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-highlight-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-highlight-600"
+            title="Claim Your Free 30-Minute AI Marketing & Sales Automation Session"
+            aria-label="Claim Your Free 30-Minute AI Marketing & Sales Automation Session"
+          >
+            Claim Your Free Consultation
+          </a>
+          <a href="#" class="font-semibold text-gray-900 text-sm/6">
+            Learn more <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="relative pt-8 overflow-hidden">
+      <div class="px-6 mx-auto max-w-7xl lg:px-8">
+        <Picture
+          src={heroImage}
+          alt="CRM Consulting Workflow"
+          widths={[768, 1024, 1536, 2048]}
+          formats={["webp", "avif", "png"]}
+          class="w-full"
+        />
+        <div aria-hidden="true" class="relative">
+          <div
+            class="absolute -inset-x-20 bottom-0 bg-linear-to-t from-white pt-[7%]"
+          >
           </div>
         </div>
       </div>
-          <div class="relative pt-8 overflow-hidden">
-        <div class="px-6 mx-auto max-w-7xl lg:px-8">
-          <Picture
-            src={heroImage}
-            alt="CRM Consulting Workflow"
-            widths={[768, 1024, 1536, 2048]}
-            formats={['webp', 'avif', 'png']}
-            class="w-full"
-          />
-          <div aria-hidden="true" class="relative">
-            <div class="absolute -inset-x-20 bottom-0 bg-linear-to-t from-white pt-[7%]" />
-          </div>
-        </div>
-      </div>
-</div>
+    </div>
+  </div>
 </section>

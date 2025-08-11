@@ -1,6 +1,14 @@
 ---
-import { AstroSEO } from 'astro-seo-plugin';
-import '../styles/global.css';
+import { AstroSEO } from "astro-seo-plugin";
+import "@fontsource/lexend-deca";
+import "@fontsource/lexend-deca/200.css";
+import "@fontsource/lexend-deca/300.css";
+import "@fontsource/vollkorn/400.css";
+import "@fontsource/vollkorn/600.css";
+import "@fontsource/vollkorn/700.css";
+
+import "@fontsource/vollkorn/900.css";
+import "../styles/global.css";
 
 interface Props {
   title: string;
@@ -13,48 +21,48 @@ const {
   title,
   description = "SWOTBee - Your HubSpot & Shopify consulting partner for business growth and optimization",
   ogImage = "/assets/home-images/swotbee.png",
-  canonicalURL = Astro.url.href
+  canonicalURL = Astro.url.href,
 } = Astro.props;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <AstroSEO
-    title={`${title} | SWOTBee`}
-    description={description}
-    openGraph={{
-      title: title,
-      description: description,
-      image: ogImage,
-      type: "website",
-      url: canonicalURL
-    }}
-    twitter={{
-      card: "summary_large_image",
-      site: "@swotbee",
-      creator: "@swotbee"
-    }}
-    jsonLd={{
-      "@type": "WebSite",
-      name: "SWOTBee",
-      url: "https://swotbee.com",
-      description: description
-    }}
-    robots={{ index: true, follow: true }}
-    additionalLinkTags={[{ rel: "canonical", href: canonicalURL }]}
-  />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="sitemap" href="/sitemap-index.xml">
-</head>
-<body class="min-h-full bg-highlight-25">
-  <slot />
-  <script>
-    import Alpine from 'alpinejs'
-    window.Alpine = Alpine
-    Alpine.start()
-  </script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <AstroSEO
+      title={`${title} | SWOTBee`}
+      description={description}
+      openGraph={{
+        title: title,
+        description: description,
+        image: ogImage,
+        type: "website",
+        url: canonicalURL,
+      }}
+      twitter={{
+        card: "summary_large_image",
+        site: "@swotbee",
+        creator: "@swotbee",
+      }}
+      jsonLd={{
+        "@type": "WebSite",
+        name: "SWOTBee",
+        url: "https://swotbee.com",
+        description: description,
+      }}
+      robots={{ index: true, follow: true }}
+      additionalLinkTags={[{ rel: "canonical", href: canonicalURL }]}
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+  </head>
+  <body class="min-h-full bg-highlight-25">
+    <slot />
+    <script>
+      import Alpine from "alpinejs";
+      window.Alpine = Alpine;
+      Alpine.start();
+    </script>
+  </body>
 </html>

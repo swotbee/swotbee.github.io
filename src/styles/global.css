@@ -13,3 +13,22 @@
     transform var(--testimonial-transition),
     opacity   var(--testimonial-transition);
 }
+
+body {
+  font-family: 'Lexend Deca', sans-serif;
+  letter-spacing: 0.02em;
+  font-weight: 300;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Vollkorn', serif;
+}
+
+h1 {
+  font-weight: 700;
+  line-height: 1.5em;
+  /* 36px */
+}

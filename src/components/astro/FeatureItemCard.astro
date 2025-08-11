@@ -1,61 +1,63 @@
 ---
 interface Props {
   title: string;
-  Icon: any; 
+  Icon: any;
   itemList: Array<{
     name: string;
     description: string;
   }>;
   bgColor?: string;
+  horizontal?: boolean;
 }
 
 const {
   title,
   itemList,
   Icon: cardIcon,
-  bgColor = "bg-neutral-50" // default value if not provided
+  bgColor = "bg-neutral-50", // default value if not provided
+  horizontal = false,
 } = Astro.props;
-
 ---
 
-<li class={`overflow-hidden rounded-xl border border-gray-200 ${bgColor} shadow-xl hover:shadow-sm transition-shadow duration-300`}>
-            <div
-              class="flex items-center gap-x-4 border-b border-gray-900/5 p-4 relative"
-            >
-              <div
-                class="size-8 flex-none rounded-lg bg-highlight-50 ring-1 ring-gray-900/10 flex items-center justify-center"
-              >
-                {
-                  (() => {
-                    const Icon = cardIcon;
-                    return (
-                      <Icon
-                        className="h-6 w-6 text-highlight-400"
-                        aria-hidden="true"
-                      />
-                    );
-                  })()
-                }
-              </div>
-              <div class="text-base font-medium text-primary-600">
-                {title}
-              </div>
-            </div>
+<li
+  class={`overflow-hidden rounded-xl border border-gray-200 ${bgColor} shadow-xl hover:shadow-sm transition-shadow duration-300`}
+>
+  <div
+    class="flex items-center gap-x-4 border-b border-gray-900/5 p-4 relative"
+  >
+    <div
+      class="size-8 flex-none rounded-lg bg-highlight-50 ring-1 ring-gray-900/10 flex items-center justify-center"
+    >
+      {
+        (() => {
+          const Icon = cardIcon;
+          return (
+            <Icon className="h-6 w-6 text-highlight-400" aria-hidden="true" />
+          );
+        })()
+      }
+    </div>
+    <div class="text-base font-medium text-primary-600">
+      {title}
+    </div>
+  </div>
 
-            <dl class="-my-3 divide-y divide-gray-100 px-6 py-4 text-sm/6">
-              {
-                itemList.map((item) => {
-                  return (
-                    <div class="py-3">
-                      <h2 class="mb-2 text-base font-semibold text-gray-900 dark:text-white">
-                        {item.name}
-                      </h2>
-                      <ul class="max-w-md space-y-1 text-gray-500 list-none list-inside dark:text-gray-400">
-                        <li>{item.description}</li>
-                      </ul>
-                    </div>
-                  );
-                })
-              }
-            </dl>
-          </li>
+  <dl
+    class={`-my-3 divide-y divide-gray-100 px-6 py-4 text-sm/6 ${horizontal ? "grid grid-cols-1 md:grid-cols-3 space-between gap-4 " : "grid grid-cols-1"}`}
+  >
+    {
+      itemList.map((item) => {
+        return (
+          <div class="py-3">
+            <h2 class="mb-2 text-lg font-semibold text-gray-900 dark:text-white">
+              {item.name}
+            </h2>
+            <ul class="max-w-md space-y-1 text-gray-500 list-none list-inside dark:text-gray-400 text-base">
+              <li>{item.description}</li>
+            </ul>
+          </div>
+        );
+      })
+    }
+  </dl>
+</li>

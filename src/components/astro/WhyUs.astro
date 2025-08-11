@@ -1,35 +1,53 @@
 ---
-import { ChartBarIcon, CogIcon, UserGroupIcon, LightBulbIcon, ChatBubbleLeftRightIcon } from '@iksaku/heroicons-astro/20/solid';
+import {
+  ChartBarIcon,
+  CogIcon,
+  UserGroupIcon,
+  LightBulbIcon,
+  ChatBubbleLeftRightIcon,
+} from "@iksaku/heroicons-astro/20/solid";
 
 const features = [
   {
-    name: 'Proven, Results-Driven',
-    description: 'Delivering measurable ROI through data-backed strategies and optimized workflows tailored to your business goals.',
-    href: '#',
+    name: "Proven ROI, Backed by Data",
+    description:
+      "Our strategies drive measurable ROI with data-backed decisions and optimized workflows tailored to your goals.",
+    href: "#",
     icon: ChartBarIcon,
   },
   {
-    name: 'Innovative, Tech-Savvy Solutions',
-    description: 'Leveraging cutting-edge tools and automation to streamline processes and accelerate growth without friction.',
-    href: '#',
+    name: "Seamless, Integrated Systems",
+    description:
+      "We connect your CRM, marketing, and analytics into one intuitive system—backed by 24/7 expert support. Your team can focus on growth, not juggling dashboards.",
+    href: "#",
     icon: CogIcon,
   },
   {
-    name: 'Meticulous, Customer-Centric Approach',
-    description: 'Putting your users first with personalized journeys, proactive support, and continuous feedback loops.',
-    href: '#',
+    name: "Innovation Without the Hassle",
+    description:
+      "We use cutting-edge tools and automation to streamline processes and accelerate growth—without the friction.",
+    href: "#",
+    icon: CogIcon,
+  },
+  {
+    name: "Meticulous, Customer-Centric Approach",
+    description:
+      "We put you first, offering personalized journeys, proactive support, and continuous feedback loops that improve over time.",
+    href: "#",
     icon: UserGroupIcon,
   },
   {
-    name: 'Collaborative, Transparent Partnership',
-    description: 'Working hand-in-hand with clear communication, shared roadmaps, and aligned objectives every step of the way.',
-    href: '#',
+    name: "Collaborative, Transparent Partnership",
+    description:
+      "From clear communication and aligned objectives to shared roadmaps, we work hand-in-hand with you to achieve your goals, with full transparency every step of the way.",
+    href: "#",
     icon: ChatBubbleLeftRightIcon,
   },
   {
-    name: 'Deep Curiosity & Continuous Improvement',
-    description: 'Constantly experimenting, measuring, and refining to uncover new opportunities and drive sustainable success.',
-    href: '#',
+    name: "Deep Curiosity & Continuous Improvement",
+    description:
+      "We’re always experimenting, measuring, and refining to uncover new opportunities and help your business succeed in the long run.",
+    href: "#",
     icon: LightBulbIcon,
   },
 ];
@@ -37,22 +55,31 @@ const features = [
 
 <section class="py-16 bg-white">
   <div class="max-w-4xl mx-auto px-4">
-    <h2 class="text-3xl font-bold text-gray-900 mb-4">Why Our Clients Rely on Us Every Time</h2>
+    <h2 class="text-3xl font-bold text-gray-900 mb-4">
+      Why Our Clients Rely on Us Every Time
+    </h2>
     <p class="mb-8 text-gray-600">
-      Off-the-shelf approaches rarely fit your unique challenges. We custom-build workflows, automations, and messaging that align with your goals—so you avoid one-size-fits-all implementations, steep learning curves, and surprise upgrade fees. Disjointed tools and poor onboarding waste time. We connect your CRM, marketing, and analytics platforms into a unified, intuitive system—and back you with 24/7 expert guidance—so your team can focus on growth, not juggling dashboards.
+      Off-the-shelf tools can’t solve your unique challenges. That’s why we
+      build personalized workflows, automations, and messaging that align with
+      your business goals. No more one-size-fits-all solutions, steep learning
+      curves, or surprise fees.
     </p>
     <div class="grid gap-8 md:grid-cols-2">
-      {features.map(feature => (
-        <div class="flex items-start space-x-4" key={feature.name}>
-          <span class="flex-shrink-0">
-            <feature.icon class="h-8 w-8 text-blue-600" aria-hidden="true" />
-          </span>
-          <div>
-            <h3 class="text-lg font-semibold text-gray-900">{feature.name}</h3>
-            <p class="text-gray-600">{feature.description}</p>
+      {
+        features.map((feature) => (
+          <div class="flex items-start space-x-4" key={feature.name}>
+            <span class="flex-shrink-0">
+              <feature.icon class="h-8 w-8 text-blue-600" aria-hidden="true" />
+            </span>
+            <div>
+              <h3 class="text-xl font-semibold text-gray-700">
+                {feature.name}
+              </h3>
+              <p class="text-gray-600">{feature.description}</p>
+            </div>
           </div>
-        </div>
-      ))}
+        ))
+      }
     </div>
   </div>
 </section>
