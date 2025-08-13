@@ -68,8 +68,11 @@ const features = [
       {
         features.map((feature) => (
           <div class="flex items-start space-x-4" key={feature.name}>
-            <span class="flex-shrink-0">
-              <feature.icon class="h-8 w-8 text-blue-600" aria-hidden="true" />
+            <span class="flex-shrink-0 shadow-md shadow-highlight-200 rounded-lg">
+              <feature.icon
+                class="h-8 w-8 text-highlight-400  m-2 "
+                aria-hidden="true"
+              />
             </span>
             <div>
               <h3 class="text-xl font-semibold text-gray-700">
