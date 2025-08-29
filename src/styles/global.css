@@ -1,7 +1,154 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@plugin "flowbite/plugin";
+@plugin "flowbite-typography";
+@plugin "tailwind-scrollbar";
 
+@utility prose {
+  max-width: 100ch;
+}
+
+@custom-variant scrollbar-dark (&:where(.dark, .dark *));
+@custom-variant scrollbar-rounded (&:where(.rounded, .rounded *));
+@custom-variant scrollbar-hover (&:hover);
+
+@theme {
+  /* Primary colors */
+  --color-primary: #213343;
+  --color-primary-900: #070a0e;
+  --color-primary-800: #0d151b;
+  --color-primary-700: #141f29;
+  --color-primary-600: #1b2a37;
+  --color-primary-500: #213343;
+  --color-primary-400: #3d5e7b;
+  --color-primary-300: #5b87ae;
+  --color-primary-200: #92afc9;
+  --color-primary-100: #c8d7e4;
+
+  /* Secondary colors */
+  --color-secondary: #ffe066;
+  --color-secondary-100: #473900;
+  --color-secondary-200: #8f7200;
+  --color-secondary-300: #d6ab00;
+  --color-secondary-400: #ffd21f;
+  --color-secondary-500: #ffe066;
+  --color-secondary-600: #ffe785;
+  --color-secondary-700: #ffeda3;
+  --color-secondary-800: #fff3c2;
+  --color-secondary-900: #fff9e0;
+  --color-secondary-950: #fffaf1;
+
+  /* Highlight colors */
+  --color-highlight: #ff5c35;
+  --color-highlight-900: #3d0c00;
+  --color-highlight-800: #7a1800;
+  --color-highlight-700: #b82500;
+  --color-highlight-600: #f53100;
+  --color-highlight-500: #ff5c35;
+  --color-highlight-400: #ff7c5c;
+  --color-highlight-300: #ff9d85;
+  --color-highlight-200: #ffbead;
+  --color-highlight-100: #ffded6;
+  --color-highlight-50: #fff5f2;
+  --color-highlight-25: #fef4ea;
+
+  /* Status colors */
+  --color-status: #5C62D6;
+  --color-status-900: #0c0e31;
+  --color-status-800: #181c62;
+  --color-status-700: #252a93;
+  --color-status-600: #3138c4;
+  --color-status-500: #5c62d6;
+  --color-status-400: #7c81de;
+  --color-status-300: #9da1e7;
+  --color-status-200: #bec0ef;
+  --color-status-100: #dee0f7;
+  --color-status-50: #f2f3fb;
+
+  /* Neutral colors */
+  --color-neutral: #70c1b3;
+  --color-neutral-900: #122b27;
+  --color-neutral-800: #25564e;
+  --color-neutral-700: #378174;
+  --color-neutral-600: #49ab9b;
+  --color-neutral-500: #70c1b3;
+  --color-neutral-400: #8dcec3;
+  --color-neutral-300: #a9dad2;
+  --color-neutral-200: #c6e7e1;
+  --color-neutral-100: #e2f3f0;
+  --color-neutral-50: #f1f9f7;
+
+  /* Purple colors */
+  --color-purple: #ab93d5;
+  --color-purple-100: #170f25;
+  --color-purple-200: #2e1d4b;
+  --color-purple-300: #452c70;
+  --color-purple-400: #5c3a96;
+  --color-purple-500: #724ab8;
+  --color-purple-600: #8f6fc7;
+  --color-purple-700: #ab93d5;
+  --color-purple-800: #c7b7e3;
+  --color-purple-900: #e3dbf1;
+
+  /* Black colors */
+  --color-black: #02010a;
+  --color-black-100: #000002;
+  --color-black-200: #010004;
+  --color-black-300: #010106;
+  --color-black-400: #020107;
+  --color-black-500: #02010a;
+  --color-black-600: #140a64;
+  --color-black-700: #2713bf;
+  --color-black-800: #5c49ed;
+  --color-black-900: #aea4f6;
+
+  /* Xanthous Yellow colors */
+  --color-xanthous-yellow: #ffbd4d;
+  --color-xanthous-yellow-100: #422a00;
+  --color-xanthous-yellow-200: #855400;
+  --color-xanthous-yellow-300: #c77e00;
+  --color-xanthous-yellow-400: #ffa50a;
+  --color-xanthous-yellow-500: #ffbd4d;
+  --color-xanthous-yellow-600: #ffcb70;
+  --color-xanthous-yellow-700: #ffd894;
+  --color-xanthous-yellow-800: #ffe5b8;
+  --color-xanthous-yellow-900: #fff2db;
+  --color-xanthous-yellow-950: #fffaf1;
+
+  /* Persian Rose colors */
+  --color-persian-rose: #fb31a8;
+  --color-persian-rose-100: #3b0123;
+  --color-persian-rose-200: #760246;
+  --color-persian-rose-300: #b10469;
+  --color-persian-rose-400: #ec058c;
+  --color-persian-rose-500: #fb31a8;
+  --color-persian-rose-600: #fc5bb9;
+  --color-persian-rose-700: #fc84ca;
+  --color-persian-rose-800: #fdaddc;
+  --color-persian-rose-900: #fed6ed;
+
+  /* Other Orange colors */
+    --color-other-orange: #fc814a;
+    --color-other-orange-100: #401501;
+    --color-other-orange-200: #812a02;
+    --color-other-orange-300: #c13f03;
+    --color-other-orange-400: #fb560a;
+    --color-other-orange-500: #fc814a;
+    --color-other-orange-600: #fd9b6e;
+    --color-other-orange-700: #fdb492;
+    --color-other-orange-800: #fecdb7;
+    --color-other-orange-900: #fee6db;
+    /* Accent1 colors */
+    --color-accent1: #b7ecec;
+    --color-accent1-100: #124242;
+    --color-accent1-200: #238484;
+    --color-accent1-300: #35c6c6;
+    --color-accent1-400: #74dada;
+    --color-accent1-500: #b7ecec;
+    --color-accent1-600: #c5f0f0;
+    --color-accent1-700: #d3f3f3;
+    --color-accent1-800: #e2f7f7;
+    --color-accent1-900: #f0fbfb;
+  }
 
 :root {
   /* Use Motion's spring() helper to generate a spring easing */

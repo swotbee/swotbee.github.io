@@ -1,5 +1,8 @@
 /** @type {import('tailwindcss').Config} */
-const defaultTheme = require('tailwindcss/defaultTheme')
+import defaultTheme from 'tailwindcss/defaultTheme'
+import flowbite from 'flowbite/plugin'
+import flowbiteTypography from 'flowbite-typography'
+import tailwindScrollbar from 'tailwind-scrollbar'
 
 export default {
   content: [
@@ -161,9 +164,9 @@ export default {
     },
   },
   plugins: [
-    require('flowbite/plugin'),
-    require('flowbite-typography'),
-    require('tailwind-scrollbar')({ nocompatible: true }),
+  flowbite,
+  flowbiteTypography,
+  tailwindScrollbar({ nocompatible: true }),
   ],
   variants: {
     scrollbar: ['dark', 'rounded', 'hover']

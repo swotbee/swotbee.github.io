@@ -1,18 +1,23 @@
 import { defineConfig } from "astro/config";
 import react from "@astrojs/react";
 import alpine from "@astrojs/alpinejs";
-import tailwind from "@astrojs/tailwind";
+// import tailwind from "@astrojs/tailwind";
 
 import sitemap from "@astrojs/sitemap";
+
+import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
   site: "https://swotbee.github.io",
   base: "/",
   output: "static",
+
   markdown: {
     smartypants: true,
   },
-  integrations: [react(), alpine(), tailwind(), sitemap()],
+
+  integrations: [react(), alpine(), sitemap()],
+
   server: {
     headers: {
       "Content-Type": "text/html; charset=utf-8",
@@ -35,5 +40,9 @@ export default defineConfig({
       "X-XSS-Protection": "1; mode=block",
       // "Referrer-Policy": "strict-origin-when-cross-origin"
     }
+  },
+
+  vite: {
+    plugins: [tailwindcss()]
   }
 });

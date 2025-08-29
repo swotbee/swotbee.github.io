@@ -1,0 +1,1043 @@
+---
+// src/pages/index.astro
+import Layout from "../../layouts/Layout.astro";
+import Footer from "../../components/astro/Footer.astro";
+
+const title =
+  "HubSpot Consulting Services | CRM, Automation & Integration Solutions";
+const description =
+  "Comprehensive HubSpot consulting services including CRM migration, automation setup, email marketing, lead qualification, and third-party integrations for improved business efficiency.";
+import FeatureImgRight from "../../components/astro/FeatureImgRight.astro";
+import FeatureDesc from "../../components/astro/FeatureDesc.astro";
+import FeatureDescription from "../../components/astro/FeatureDescriptionBento.astro";
+
+import Navbar from "../../components/astro/Navbar.astro";
+
+import AccelerateHubSpotAdoption from "../../assets/service_features/Accelerate HubSpot Adoption2.png";
+import AccelerateOnboardingSuccess from "../../assets/service_features/Accelerate Onboarding Success1.png";
+import AutomateDealAndRenewalTracking from "../../assets/service_features/Automate Deal & Renewal Tracking.png";
+import AutomateEmailMarketingThatConverts from "../../assets/service_features/Automate Email Marketing That Converts2.png";
+import AutomateLeadQualification from "../../assets/service_features/Automate Lead Qualification1.png";
+import AutomateMarketingAttribution from "../../assets/service_features/Automate Marketing Attribution.png";
+import AutomateSalesActivityCapture from "../../assets/service_features/Automate Sales Activity Capture3.png";
+import AutomateThirdPartyIntegrations from "../../assets/service_features/Automate Third-Party Integrations2.png";
+import CRMMigrationDoneRight from "../../assets/service_features/CRM Migration Done Right3.png";
+import IgniteAccurateRevenuePlanning from "../../assets/service_features/Ignite Accurate Revenue Planning1.png";
+import OptimizeCustomObjects from "../../assets/service_features/Optimize Custom Objects2.png";
+import OptimizeDealCompanyAssociations from "../../assets/service_features/Optimize Deal Company Associations3.png";
+import OptimizeFormsAndLandingPages from "../../assets/service_features/Optimize Forms & Landing Pages.png";
+import OptimizeLeadScoring from "../../assets/service_features/Optimize Lead Scoring2.png";
+import OptimizeYourSalesPipeline from "../../assets/service_features/Optimize Your Sales Pipeline3.png";
+import StreamlineYourHubSpotAutomation from "../../assets/service_features/Streamline Your HubSpot Automation2.png";
+import SuperchargeYourHubSpotData from "../../assets/service_features/Supercharge Your HubSpot Data2.png";
+import SynchronizeTeamsWithRevOps from "../../assets/service_features/Synchronize Teams with RevOps2.png";
+import VisualizeYourBusinessImpact from "../../assets/service_features/Visualize Your Business Impact1.png";
+
+import {
+  ArrowPathIcon,
+  UserGroupIcon,
+  ChartBarIcon,
+  CurrencyDollarIcon,
+  WrenchScrewdriverIcon,
+  AdjustmentsHorizontalIcon,
+  ExclamationTriangleIcon,
+  ChartBarSquareIcon,
+  EnvelopeIcon,
+  TrashIcon,
+  CalendarDaysIcon,
+  ClipboardDocumentListIcon,
+  CursorArrowRaysIcon,
+  ArrowRightEndOnRectangleIcon,
+  GlobeAltIcon,
+  BellAlertIcon,
+  XMarkIcon,
+  MagnifyingGlassCircleIcon,
+  PresentationChartBarIcon,
+  ClockIcon,
+  EnvelopeOpenIcon,
+  PaintBrushIcon,
+  ScaleIcon,
+  Cog6ToothIcon,
+  EyeIcon,
+  LinkIcon,
+  TableCellsIcon,
+  MagnifyingGlassIcon,
+  BookOpenIcon,
+  ArrowsRightLeftIcon,
+  ShieldCheckIcon,
+  FunnelIcon,
+  MapIcon,
+  HandRaisedIcon,
+} from "@heroicons/react/20/solid";
+---
+
+<Layout title="Home">
+  <Navbar />
+  <section class="max-w-7xl bg-highlight-25 mx-auto px-4 py-12">
+    <FeatureDescription
+      tagline="CRM Migration Done Right: Seamless Transition, No Data Loss"
+      title="Migrate Your CRM with Confidence: Avoid Data Loss and Business Disruptions"
+      oldtitle="Our CRM Migration Done Right service solves these problems strategically, not tactically:"
+      description="Migrating your CRM often turns into a nightmare of lost records, broken relationships, and business disruptions. CRM Migrations risk skewed reports, frustrated teams, and stalled growth."
+      validationText="Our CRM Migration Done Right service ensures your migration is seamless, preserving data integrity and minimizing downtime throughout the process."
+      validationText2={`Comprehensive Audit & Cleanup—identify and cleanse duplicates, standardize formats, and enforce validation rules before migration.
+
+Precise Data Mapping—design ER diagrams, align legacy fields to HubSpot properties, and test in phased batches to catch issues early.
+
+Robust Migration Infrastructure—automate error handling, retry logic, and real-time monitoring to minimize downtime and ensure data integrity.
+
+Change Management & Training—role-based workshops, user guides, and ongoing coaching to embed HubSpot into daily workflows.`}
+      image={CRMMigrationDoneRight}
+      challenges={[
+        {
+          name: "Data Loss Risk",
+          description: "Records and history drop during migration",
+        },
+        {
+          name: "Relationship Breaks",
+          description: "Associations between objects not preserved",
+        },
+        {
+          name: "User Disruption",
+          description: "Teams struggle with cutover confusion",
+        },
+      ]}
+      solutions={[
+        {
+          name: "Pre-Migration Cleanup",
+          description: "Audit and standardize data in source system",
+        },
+        {
+          name: "Preserve Links",
+          description: "Map and migrate object relationships carefully",
+        },
+        {
+          name: "Change Management",
+          description: "Train users and provide rollback plans",
+        },
+      ]}
+      impacts={[
+        {
+          name: "Clean Cutover",
+          description: "Minimal downtime and data loss",
+        },
+        {
+          name: "Historical Context",
+          description: "All past activities and associations intact",
+        },
+        {
+          name: "User Confidence",
+          description: "Smooth transition accelerates adoption",
+        },
+      ]}
+    />
+
+    <FeatureDescription
+      title="Get Your Team to Actually Use HubSpot - Adoption Strategy That Works"
+      oldtitle="Accelerate HubSpot Adoption—Achieve 90% User Engagement in 90 Days"
+      description="When your team resists HubSpot, data rots, processes stall, and ROI never materializes. Without active usage, your CRM becomes a costly liability—wasting hours, eroding confidence, and blocking growth."
+      validationText="Our Management-Led Adoption Strategy embeds HubSpot into daily workflows with:"
+      tagline="Achieve Seamless HubSpot Adoption for Real Results"
+      validationText2={`A clear executive-driven rollout plan—aligning KPIs, incentives, and psychological safety to drive behavior change.
+Role-based training programs with interactive modules, templates, and hands-on workshops—so every user knows exactly what to do.
+Incentive structures—gamification, scorecards, and recognition tied to CRM usage metrics.
+Ongoing coaching and adoption tracking dashboards—real-time visibility for leaders, plus quarterly health checks to sustain momentum.
+
+Worried about complexity or cost? We deliver phased pilots, ROI calculators, and a dedicated adoption manager to guide you every step.
+
+Clients see average adoption jump from 23% to 90% in four months and enterprises report saving $8.7 million through tailored training`}
+      image={AccelerateHubSpotAdoption}
+      challenges={[
+        {
+          name: "User Resistance",
+          description: "Teams avoid new processes and tools",
+        },
+        {
+          name: "Training Gaps",
+          description: "Lack of role-based, contextual education",
+        },
+        {
+          name: "Process Misfit",
+          description: "HubSpot workflows don't match daily routines",
+        },
+      ]}
+      solutions={[
+        {
+          name: "Barrier Analysis",
+          description: "Identify psych­ological and practical roadblocks",
+        },
+        {
+          name: "Role-Based Training",
+          description: "Tailor sessions and templates per function",
+        },
+        {
+          name: "Incentive Programs",
+          description: "Reward usage and track adoption metrics",
+        },
+      ]}
+      impacts={[
+        {
+          name: "Higher Engagement",
+          description: "Platform becomes integral to workflows",
+        },
+        {
+          name: "Faster ROI",
+          description: "Teams leverage features effectively",
+        },
+        {
+          name: "Sustained Adoption",
+          description: "Ongoing coaching prevents backsliding",
+        },
+      ]}
+    />
+
+    <FeatureDescription
+      tagline="Empower Your Sales Team with Qualified Leads"
+      title="Lead Qualification That Stops Wasting Sales Time"
+      oldtitle="Automate Lead Qualification—Double Sales-Ready Prospects in 30 Days"
+      description="When unqualified leads flood your pipeline, your reps waste hours chasing dead ends—and genuine opportunities slip through the cracks. Inconsistent data, vague qualification criteria, and misaligned handoffs mean stalled deals, frustrated teams, and missed revenue."
+      validationText="Our Lead Qualification That Stops Wasting Sales Time service is the strategic fix. We partner with you to:"
+      validationText2={`Define precise qualification criteria aligned to your ICP and buying process
+
+Build automated scoring and routing workflows in HubSpot—no more guesswork
+
+Establish feedback loops between marketing and sales to refine accuracy
+
+Train reps on best practices and deploy easy-to-use prioritization tools`}
+      image={AutomateLeadQualification}
+      challenges={[
+        {
+          name: "Undefined Criteria",
+          description: "No clear rules for MQL vs SQL",
+        },
+        {
+          name: "Routing Delays",
+          description: "Leads sit unassigned before handoff",
+        },
+        {
+          name: "Feedback Gaps",
+          description: "No loops to refine criteria after sale",
+        },
+      ]}
+      solutions={[
+        {
+          name: "Define Triggers",
+          description: "Set explicit enrollment criteria per stage",
+        },
+        {
+          name: "Auto-Routing",
+          description: "Instantly assign hot leads to reps",
+        },
+        {
+          name: "Feedback Loops",
+          description: "Capture outcome data to adjust scoring",
+        },
+      ]}
+      impacts={[
+        {
+          name: "Faster Handoffs",
+          description: "Sales responds immediately to qualified leads",
+        },
+        {
+          name: "Improved Quality",
+          description: "Only true prospects reach reps",
+        },
+        {
+          name: "Adaptive Model",
+          description: "Qualification improves with real-world results",
+        },
+      ]}
+    />
+
+    <FeatureDescription
+      tagline="Automated Onboarding that Protects Your Customer Lifetime Value"
+      title="Customer Onboarding Automation That Reduces Churn and Boosts Retention"
+      oldtitle="Accelerate Onboarding Success—Reduce Churn by 30% in 30 Days"
+      description="When manual kick-off calls and follow-ups stall, new customers slip through the cracks—driving up support tickets, burning cash, and shrinking lifetime value. Every day you delay, you risk losing more clients before they even see your product's promise."
+      validationText="Our Customer Onboarding Automation service transforms chaotic hand-offs into seamless journeys. We map your ideal onboarding playbook, then build:"
+      validationText2={`Automated touchpoint sequences that deliver the right content at the right time
+
+Real-time progress tracking dashboards for proactive outreach
+
+Escalation workflows that flag and remedy at-risk accounts before churn hits`}
+      image={AccelerateOnboardingSuccess}
+      challenges={[
+        {
+          name: "Manual Tasks",
+          description: "Repetitive onboarding steps require human effort",
+        },
+        {
+          name: "Inconsistent Experience",
+          description: "Customers get varied guidance levels",
+        },
+        {
+          name: "At-Risk Signals",
+          description: "No early warnings for stalled onboarding",
+        },
+      ]}
+      solutions={[
+        {
+          name: "Sequence Automation",
+          description: "Deliver milestone-based email and task sequences",
+        },
+        {
+          name: "Progress Tracking",
+          description: "Dashboards monitor customer completion rates",
+        },
+        {
+          name: "Escalation Workflows",
+          description: "Alert team when milestones missed",
+        },
+      ]}
+      impacts={[
+        {
+          name: "Consistent Onboarding",
+          description: "All customers follow best-practice journey",
+        },
+        {
+          name: "Reduced Churn",
+          description: "Early intervention prevents drop-offs",
+        },
+        {
+          name: "Scalable Process",
+          description: "Automated sequences free team capacity",
+        },
+      ]}
+    />
+
+    <FeatureDescription
+      tagline="Streamline Revenue Planning with AI-Powered Forecasting"
+      title="Sales Forecasting That Leadership Can Trust"
+      oldtitle="Ignite Accurate Revenue Planning—Achieve 95% Forecast Confidence in 30 Days"
+      description="When your sales forecasts miss the mark, you're making strategic bets in the dark — overhiring, underinvesting, and watching investor confidence evaporate. Each inaccurate prediction erodes budgets, frustrates leadership, and stalls growth."
+      validationText="Our Sales Forecasting That Leadership Can Trust service transforms your process end-to-end. We analyze your historical conversions to calibrate stage probabilities, implement seasonality and market-condition models, and automate real-time forecast generation inside HubSpot. You'll get:"
+      validationText2={`AI-driven weighting that learns from every deal, boosting accuracy to 95%.
+
+Automated variance analysis reports and executive dashboards for instant confidence.
+
+Forecast review workflows and team feedback loops that refine predictions continuously.`}
+      image={IgniteAccurateRevenuePlanning}
+      challenges={[
+        {
+          name: "Over-Optimism",
+          description: "Reps inflate deal probabilities",
+        },
+        {
+          name: "Seasonality Blindspots",
+          description: "Models ignore cyclical trends",
+        },
+        {
+          name: "Manual Spreadsheets",
+          description: "Forecasts built outside HubSpot lack integration",
+        },
+      ]}
+      solutions={[
+        {
+          name: "Data-Driven Weightings",
+          description: "Base probabilities on historical conversion rates",
+        },
+        {
+          name: "Seasonal Adjustments",
+          description: "Incorporate cycle factors into forecasts",
+        },
+        {
+          name: "In-Hub Reports",
+          description: "Automate forecast generation inside HubSpot",
+        },
+      ]}
+      impacts={[
+        {
+          name: "Accurate Projections",
+          description: "Reliable revenue predictions support planning",
+        },
+        {
+          name: "Team Trust",
+          description: "Leadership relies on HubSpot forecasts",
+        },
+        {
+          name: "Reduced Spreadsheets",
+          description: "Centralized forecasting increases transparency",
+        },
+      ]}
+    />
+
+    <FeatureDescription
+      tagline="Maximize Retention and Revenue with Automated Deal Tracking"
+      title="Automated Deal & Renewal Tracking to Plug Revenue Leaks"
+      oldtitle="Automate Deal & Renewal Tracking—Plug Revenue Leaks and Boost Retention by 30% in 30 Days"
+      description="When Missed renewals, stalled deals, and untracked upsells bleed revenue—and you might not even know it. Each lost renewal and forgotten opportunity costs you valuable MRR and stunts your growth."
+      validationText="Our Deal & Renewal Tracking stops Revenue Leaks service for good. We implement:"
+      validationText2={`Automated renewal reminders and task assignments—so no contract end date goes unseen
+
+Real-time pipeline health alerts for stalled deals and missed opportunities
+
+Expansion-opportunity workflows that flag and nurture upsell candidates
+
+Loss-reason capture tools and win/loss dashboards to uncover and eliminate revenue blockers
+
+`}
+      image={AutomateDealAndRenewalTracking}
+      challenges={[
+        {
+          name: "Missed Renewals",
+          description: "Renewal deals aren't automatically created",
+        },
+        {
+          name: "Upsell Blindspots",
+          description: "No triggers for expansion opportunities",
+        },
+        {
+          name: "Loss Reasons",
+          description: "No systematic capture of why deals are lost",
+        },
+      ]}
+      solutions={[
+        {
+          name: "Renewal Workflows",
+          description: "Auto-create deals ahead of contract end",
+        },
+        {
+          name: "Opp Identification",
+          description: "Trigger alerts for cross-sell signals",
+        },
+        {
+          name: "Reason Capture",
+          description: "Prompt reps to log loss reasons",
+        },
+      ]}
+      impacts={[
+        {
+          name: "Maximized Revenue",
+          description: "Every renewal and upsell tracked",
+        },
+        {
+          name: "Root-Cause Insights",
+          description: "Loss data drives process improvements",
+        },
+        {
+          name: "Predictable Growth",
+          description: "Reduced unexpected churn and gaps",
+        },
+      ]}
+    />
+
+    <FeatureDescription
+      tagline="Transform Your Email Marketing. Unlock Real Results."
+      title="Email Marketing That Converts - Setup Beyond Basic Templates"
+      oldtitle="Automate Email Marketing That Converts—Boost Conversions by 2× in 30 Days"
+      description="When your emails land in spam folders or fall flat with generic templates, you're leaving revenue—and customer trust—on the table. Low open rates, high bounces, and stagnant click-throughs mean wasted effort and missed growth opportunities."
+      validationText="Our Email Marketing Beyond Basics service with multi-touch nurture sequences driven by behavioral triggers and dynamic-content personalization, delivers the right message at the right time. Expect improved engagement, increased conversions, and better ROI."
+      validationText2={`Optimized deliverability: list hygiene, DKIM/DMARC setup, and ongoing inbox-placement monitoring.
+
+A/B testing protocols and template designs that render flawlessly across devices.
+
+Performance dashboards that tie email metrics—opens, clicks, conversions—to real business outcomes.
+
+List-management best practices and GDPR-compliant workflows for clean, engaged audiences.`}
+      image={AutomateEmailMarketingThatConverts}
+      challenges={[
+        {
+          name: "Generic Templates",
+          description: "Emails lack personalization",
+        },
+        {
+          name: "Deliverability Issues",
+          description: "Emails get blocked by spam filters.",
+        },
+        {
+          name: "Testing Gaps",
+          description: "No systematic A/B testing protocols",
+        },
+      ]}
+      solutions={[
+        {
+          name: "Dynamic Content",
+          description: "Personalize emails per segment and behavior",
+        },
+        {
+          name: "Deliverability Tuning",
+          description: "Optimize sending IP and domain settings",
+        },
+        {
+          name: "A/B Framework",
+          description: "Automate tests and analyze results",
+        },
+      ]}
+      impacts={[
+        {
+          name: "Revenue Acceleration",
+          description: "15% increase in email-driven revenue",
+        },
+        {
+          name: "Brand Strength",
+          description: "Professional campaigns improve market perception",
+        },
+        {
+          name: "Marketing ROI",
+          description: "505% return on email marketing investment",
+        },
+      ]}
+    />
+    <!-- title="Visualize Your Business with Dashboards—Gain 2× Faster Insights in 30 Days" -->
+    <FeatureDescription
+      title="Dashboards That Actually Help You Run Your Business"
+      description="When your HubSpot dashboards leave you drilling into spreadsheets and guessing at trends, you're making decisions in the dark—wasting time, missing risks, and eroding leadership confidence. Every week you delay, you risk costly missteps and stalled growth."
+      validationText="Our Custom Dashboards Turn Data into Actionable Insights for Every Role."
+      image={VisualizeYourBusinessImpact}
+      tagline="Smarter Dashboards for Smarter Decisions"
+      validationText2={`Automated data refreshes every 15 minutes for real-time accuracy
+
+Mobile-optimized dashboards and alert systems for critical metrics
+
+Cross-object reporting and advanced filters that answer your toughest business questions
+
+Training and documentation so your team can interpret and act on insights immediately.`}
+      challenges={[
+        {
+          name: "One-Size-Fits-All",
+          description: "Standard dashboards miss role needs",
+        },
+        {
+          name: "Manual Refresh",
+          description: "Data not updated in real time",
+        },
+        {
+          name: "Mobile Unfriendly",
+          description: "Poor mobile viewing experience",
+        },
+      ]}
+      solutions={[
+        {
+          name: "Role-Specific Views",
+          description: "Design dashboards per executive, manager, rep",
+        },
+        {
+          name: "Auto-Refresh",
+          description: "Enable real-time data pulls and alerts",
+        },
+        {
+          name: "Mobile Optimization",
+          description: "Create responsive, concise mobile layouts",
+        },
+      ]}
+      impacts={[
+        {
+          name: "Faster Decisions",
+          description: "Leaders access up-to-date KPIs instantly",
+        },
+        {
+          name: "Team Alignment",
+          description: "Shared dashboards drive unified focus",
+        },
+        {
+          name: "On-the-Go Access",
+          description: "Mobile views support remote leadership",
+        },
+      ]}
+    />
+
+    <FeatureDescription
+      tagline="Make Every Customer Visit Count"
+      title="Boost Conversions with Optimized Forms & Landing Pages"
+      oldtitle="Optimize Forms & Landing Pages—Boost Conversions by 2× in 30 Days"
+      description="When your forms are too long and your landing pages frustrate visitors, you're leaking leads—and revenue—every day. High abandonment rates and poor mobile experiences mean wasted ad spend and stunted growth."
+      validationText="Our service optimizes your forms and landing pages for higher conversions. We implement:"
+      validationText2={`Data-driven form redesign with progressive profiling to shorten initial fields and collect deeper insights over time.
+
+A/B testing framework for headlines, CTAs, layouts, and mobile-first designs that drive responsiveness and engagement.
+
+Smart content personalization: dynamic headlines and images that adapt by referral source, lifecycle stage, or past behavior.
+
+Real-time analytics dashboards and heatmaps to pinpoint friction points and iterate fast.
+
+
+
+`}
+      image={OptimizeFormsAndLandingPages}
+      challenges={[
+        { name: "High Friction", description: "Long forms deter submissions" },
+        {
+          name: "Mobile UX Issues",
+          description: "Pages not optimized for phones",
+        },
+        { name: "No Testing", description: "Lack of systematic A/B protocols" },
+      ]}
+      solutions={[
+        {
+          name: "Progressive Profiling",
+          description: "Collect data across multiple form fills",
+        },
+        {
+          name: "Responsive Design",
+          description: "Ensure mobile-friendly layouts",
+        },
+        {
+          name: "A/B Programs",
+          description: "Automate tests and track performance",
+        },
+      ]}
+      impacts={[
+        {
+          name: "Higher Conversions",
+          description: "Reduced form abandonment rates",
+        },
+        {
+          name: "Better Mobile Leads",
+          description: "Increased mobile submissions",
+        },
+        {
+          name: "Data-Driven Refinement",
+          description: "Continuous improvement via testing",
+        },
+      ]}
+    />
+
+    <FeatureDescription
+      tagline="Accurate Attribution for Smarter Marketing Decisions"
+      title="Accurate Marketing Attribution to Reveal True ROI"
+      oldtitle="Automate Marketing Attribution—Double ROI Clarity in 30 Days"
+      description="When you're flying blind on which campaigns drive revenue, you waste budget and stall growth. Generic “original source” reports lump paid search, social, and org­anic together, leaving you guessing which channel truly works. Fragmented customer journeys across devices and browsers further muddy the picture, undervaluing key touchpoints like social ads and email nurturing. And with HubSpot's attribution locked behind Enterprise plans, most teams never get the detail they need."
+      validationText="Clients have seen up to 45% faster reporting and 2x more accurate sales forecasting within a month."
+      validationText2=""
+      image={AutomateMarketingAttribution}
+      challenges={[
+        {
+          name: "Single-Touch Bias",
+          description: "Default models credit only first or last touch",
+        },
+        {
+          name: "Offline Events",
+          description: "Inability to include trade shows/webinars",
+        },
+        {
+          name: "Privacy Limits",
+          description: "Cookies deprecation hinders tracking",
+        },
+      ]}
+      solutions={[
+        {
+          name: "Multi-Touch Models",
+          description: "Attribute credit across all journey touchpoints",
+        },
+        {
+          name: "Server-Side Tracking",
+          description: "Bypass privacy constraints with back-end capture",
+        },
+        {
+          name: "Data Integration",
+          description: "Combine CRM and channel data for full view",
+        },
+      ]}
+      impacts={[
+        {
+          name: "Balanced Credit",
+          description: "All channels get proper ROI attribution",
+        },
+        {
+          name: "Complete Journeys",
+          description: "Include offline and digital events",
+        },
+        {
+          name: "Privacy Safe",
+          description: "Comply with regulations without data loss",
+        },
+      ]}
+    />
+
+    <FeatureDescription
+      title="Automate Deal and Renewal Tracking—Eliminate 100% of Missed Touchpoints in 30 Days"
+      description="When “Did you call that lead?” becomes a weekly headache, your pipeline leaks revenue and frays team morale. Every unlogged email, call, or website visit is a lost opportunity—and guesswork kills close rates."
+      validationText="Our Predictive Lead Scoring system eliminates guesswork by analyzing your historical conversion data and predicting purchase intent with precision."
+      validationText2="We analyze historical conversion data to identify true buying signals and predict purchase intent. With multi-segment scoring, score decay, and automated workflows, we trigger outreach at the right time. Continuous feedback loops refine the model based on real outcomes—eliminating guesswork."
+      tagline="Eliminate Guesswork. Close More Deals."
+      image={AutomateDealAndRenewalTracking}
+      challenges={[
+        {
+          name: "Revenue Leakage",
+          description: "27% of leads lost due to poor follow-up tracking",
+        },
+        {
+          name: "Management Blindness",
+          description: "Leaders can't coach teams without activity visibility",
+        },
+        {
+          name: "Accountability Gap",
+          description:
+            "Manual tracking creates disputes and missed opportunities",
+        },
+      ]}
+      solutions={[
+        {
+          name: "Predictive Lead Scoring",
+          description:
+            "Identify true buying signals and automate sales outreach",
+        },
+        {
+          name: "Automated Workflows",
+          description: "Trigger sales outreach at the right moment, every time",
+        },
+        {
+          name: "Ongoing Feedback Loops",
+          description: "Refine predictive models with real-time outcomes",
+        },
+        {
+          name: "Ongoing Hygiene",
+          description: "Set up automated cleanup and monitoring routines",
+        },
+      ]}
+      impacts={[
+        {
+          name: "Better Lead Follow-Up",
+          description: "No more missed touchpoints—automate outreach",
+        },
+        {
+          name: "Improved Sales Conversions",
+          description:
+            "Close more deals with accurate purchase intent predictions",
+        },
+        {
+          name: "Stronger Sales Morale",
+          description: "No more guesswork—your team knows exactly when to act",
+        },
+      ]}
+    />
+
+    <FeatureDescription
+      title="Get Actionable HubSpot Reports That Drive Decisions in Just 30 Days"
+      oldtitle="Visualize Your Business Impact—Unlock 2x Faster Insights with Custom HubSpot Reporting in 30 Days"
+      description="Tired of HubSpot’s basic reports leaving you in the dark? Incomplete data and filter frustrations lead to poor decisions, missed opportunities, and lost trust. Every day you wait, the impact grows."
+      validationText="Our custom reporting service transforms your HubSpot analytics into a strategic asset."
+      validationText2="We build advanced, executive-ready dashboards — cross-object, attribution, and lifecycle reports tailored to your goals. Our process includes data audits, integration with external sources, and automated report delivery for every role. No more filter headaches or data silos—just clear, role-specific reports delivered automatically."
+      tagline="Transform HubSpot Data Into Decisions"
+      image={VisualizeYourBusinessImpact}
+      challenges={[
+        {
+          name: "Basic Metrics Only",
+          description: "Native reports lack cross-object insights",
+        },
+        {
+          name: "Attribution Limits",
+          description: "Cannot model multi-touch customer journeys",
+        },
+        {
+          name: "Filter Constraints",
+          description: "Limited ability to combine disparate data sources",
+        },
+      ]}
+      solutions={[
+        {
+          name: "Cross-Object Reports",
+          description:
+            "Design custom reports linking deals, contacts, and revenue",
+        },
+        {
+          name: "Attribution Models",
+          description: "Implement multi-touch crediting across channels",
+        },
+        {
+          name: "Dashboard Personalization",
+          description: "Tailor views to roles with advanced filters",
+        },
+      ]}
+      impacts={[
+        {
+          name: "Actionable Insights",
+          description: "Metrics aligned with business objectives",
+        },
+        {
+          name: "Revenue Transparency",
+          description: "Clear ROI across campaigns",
+        },
+        {
+          name: "Role Alignment",
+          description: "Stakeholders see relevant KPIs instantly",
+        },
+      ]}
+    />
+
+    <FeatureDescription
+      title="Double Sales-Ready Leads in 30 Days with Smarter Lead Scoring"
+      description="When your lead scoring flags too many “false positives” or misses high-intent buyers, your sales team chases the wrong prospects—wasting hours and losing pipeline momentum."
+      validationText="Our AI-driven Lead Scoring eliminates guesswork and ensures your sales team gets the right leads, every time."
+      validationText2="We analyze your historical conversion data, we identify the true buying signals and weight them to predict purchase intent accurately. We implement multi-segment scoring, score decay, and automated workflows that trigger sales outreach the moment prospects hit your threshold."
+      image={OptimizeLeadScoring}
+      tagline="Smarter Scoring. Faster Conversions."
+      challenges={[
+        {
+          name: "Sales Frustration",
+          description:
+            "leads passed to sales are unqualified, damaging relationships",
+        },
+        {
+          name: "Wasted Resources",
+          description: "Sales teams spend time on prospects that won't buy",
+        },
+        {
+          name: "Revenue Leakage",
+          description:
+            "Poor qualification costs companies $1M+ annually in lost opportunities",
+        },
+      ]}
+      solutions={[
+        {
+          name: "AI-Powered Scoring",
+          description: "Analyze historic data to weight predictive actions",
+        },
+        {
+          name: "Sales-Marketing Alignment",
+          description:
+            "Create shared qualification criteria reducing handoff friction",
+        },
+        {
+          name: "Continuous Optimization",
+          description: "Regular model updates based on closed-won data",
+        },
+      ]}
+      impacts={[
+        {
+          name: "Higher MQL Quality",
+          description: "Sales gets truly sales-ready prospects",
+        },
+        {
+          name: "Focused Outreach",
+          description: "Reduce wasted effort on stale leads",
+        },
+        {
+          name: "Continuous Improvement",
+          description: "Feedback loops refine accuracy over time",
+        },
+      ]}
+    />
+
+    <FeatureDescription
+      title="Optimize Your Sales Pipeline for Predictable Revenue Growth"
+      oldtitle="Optimize Your Sales Pipeline—Unlock 2× Predictable Revenue in 30 Days"
+      description="When your sales pipeline is a guessing game, forecasts collapse and opportunities slip through the cracks. Without clear stages, hidden bottlenecks slow down deals and leave reps scrambling to meet targets—hurting revenue and morale."
+      validationText="Our service aligns your pipeline with your actual sales process, creating a customized structure for predictable growth."
+      validationText2={`We audit your pipeline to uncover leaks and bottlenecks, then optimize stages with clear definitions, data-driven probability weightings, and automated progression rules. You'll gain:
+<br />
+Automated stage-progression workflows and deal-scoring rules
+<br />
+Pipeline-specific dashboards and reports for real-time visibility
+<br />
+Ongoing pipeline hygiene with deal-score decay and data-validation workflows
+<br />
+Sales coaching tools tied to pipeline metrics`}
+      tagline="Predictable Revenue Starts with a Clear Pipeline."
+      image={OptimizeYourSalesPipeline}
+      challenges={[
+        {
+          name: "Unclear Stages",
+          description: "Pipeline stages misaligned with buyer journey",
+        },
+        {
+          name: "Forecast Inaccuracy",
+          description: "Lack of probability weighting leads to poor forecasts",
+        },
+        {
+          name: "Data Hygiene",
+          description:
+            "50-70% of CRM implementations fail due to poor pipeline management",
+        },
+      ]}
+      solutions={[
+        {
+          name: "Stage Redesign",
+          description: "Align stages to actual sales steps and criteria",
+        },
+        {
+          name: "Probability Rules",
+          description: "Set data-driven weightings per stage",
+        },
+        {
+          name: "Hygiene Workflows",
+          description: "Automate deal-score decay and validation",
+        },
+      ]}
+      impacts={[
+        {
+          name: "Reliable Forecasts",
+          description: "Accurate revenue projections boost confidence",
+        },
+        {
+          name: "Faster Closures",
+          description: "Clear criteria accelerate deal progression",
+        },
+        {
+          name: "Scalable Growth",
+          description: "Pipeline process supports business expansion",
+        },
+      ]}
+    />
+
+    <FeatureDescription
+      title="Automate Sales Activity Capture - No More 'Did You Call That Lead?'"
+      oldtitle="Automate Sales Activity Capture—Eliminate 100% of Missed Touchpoints in 30 Days"
+      description="Missed calls, emails, and website visits leak revenue and hurt close rates. Without automated tracking, you’re losing opportunities and draining team morale."
+      validationText="Our solution automatically captures every sales activity, eliminating missed touchpoints and ensuring no opportunity slips through the cracks. "
+      tagline="Track Every Touchpoint. Never Miss a Lead."
+      validationText2="Our system tracks every touchpoint—calls, emails, and meetings—automatically. It prioritizes high-intent prospects, triggers follow-up tasks, and continuously improves through real-time feedback, ensuring your team never misses an opportunity."
+      image={AutomateSalesActivityCapture}
+      challenges={[
+        {
+          name: "Missed Touchpoints",
+          description: "Emails or calls not automatically logged",
+        },
+        {
+          name: "Data Silos",
+          description: "Activities tracked across disparate tools",
+        },
+        {
+          name: "Manual Updates",
+          description: "Reps skip logging due to friction",
+        },
+      ]}
+      solutions={[
+        {
+          name: "Intelligent Logging",
+          description: "Auto-capture emails, calls, and meetings",
+        },
+        {
+          name: "Unified Inbox",
+          description: "Sync all channels into HubSpot activity feed",
+        },
+        {
+          name: "Follow-Up Workflows",
+          description: "Trigger tasks based on engagement patterns",
+        },
+      ]}
+      impacts={[
+        {
+          name: "Full Visibility",
+          description: "Managers see real-time team activity",
+        },
+        {
+          name: "No Missed Leads",
+          description: "Every touchpoint recorded and followed up",
+        },
+        {
+          name: "Better Coaching",
+          description: "Activity patterns inform rep training",
+        },
+      ]}
+    />
+
+    <FeatureDescription
+      title="Align Sales, Marketing \& Customer Success with RevOps Strategy"
+      tagline="Stop the Revenue Leak"
+      oldtitle="Synchronize Teams with RevOps—Drive 32% More Revenue in 90 Days"
+      description="When your teams aren’t aligned, leads fall through the cracks, buyer journeys stall, and trust erodes. Misalignment costs B2B companies $1 trillion annually and shrinks win rates by up to 38%—let's fix that."
+      validationText="We eliminate silos, streamline workflows, and align your teams around shared goals to drive faster, more predictable revenue growth. "
+      validationText2={`We map your end-to-end journey, eliminate friction points, and build integrated workflows with shared KPIs—from lead generation to renewal. You'll get:
+
+Cross-functional dashboards and automated handoff rules
+
+Unified data governance and real-time reporting
+
+Quarterly “Smarketing” workshops and accountability frameworks`}
+      image={SynchronizeTeamsWithRevOps}
+      challenges={[
+        {
+          name: "Department Silos",
+          description: "Teams operate on separate data and goals",
+        },
+        {
+          name: "Handoff Breaks",
+          description: "Leads get lost between functions",
+        },
+        {
+          name: "Metric Disconnect",
+          description: "No shared KPIs for joint accountability",
+        },
+      ]}
+      solutions={[
+        {
+          name: "Journey Mapping",
+          description: "Document end-to-end customer lifecycle",
+        },
+        {
+          name: "Shared Dashboards",
+          description: "Create cross-functional KPI views",
+        },
+        {
+          name: "Integrated Workflows",
+          description: "Automate handoffs and notifications",
+        },
+      ]}
+      impacts={[
+        {
+          name: "Revenue Synergy",
+          description: "Teams collaborate toward common targets",
+        },
+        {
+          name: "No Leaks",
+          description: "Smooth transitions keep prospects engaged",
+        },
+        {
+          name: "Unified Insights",
+          description: "Single source of truth for decisions",
+        },
+      ]}
+    />
+
+    <FeatureDescription
+      title="Eliminate CRM Errors: Implement Scalable, Future-Proof Custom Objects in 30 Days"
+      oldtitle="Optimize Custom Objects—Ensure Scalable, Error-Free CRM in 30 Days"
+      description="When custom objects are poorly designed, you face schema errors, data silos, and unreliable reports, wasting hours of your team's time. These technical debts slow down growth and damage trust in your CRM system. We’ll help you fix that in just 30 days"
+      validationText="ur Professional Custom Objects Implementation service eliminates errors, streamlines your processes, and ensures your schema can grow with your business—no more technical debt."
+      validationText2={`We start with a deep analysis to define clear object use cases, design intuitive associations, and implement governance protocols for long-term success. You’ll get:
+
+A robust, error-free data model that grows with you
+
+Clear, actionable documentation and ongoing support
+
+Seamless integrations and workflows that ensure a frictionless CRM experience
+
+Worried about complexity or cost? We provide ROI calculators, phased pilots, and a dedicated project manager. Resistance risk? Stakeholder workshops and hands-on coaching ensure adoption.`}
+      image={OptimizeCustomObjects}
+      challenges={[
+        {
+          name: "Schema Errors",
+          description: "Objects built without clear design lead to issues",
+        },
+        {
+          name: "Association Gaps",
+          description: "Objects not linked properly across records",
+        },
+        {
+          name: "Governance Lapses",
+          description: "No protocols for future modifications",
+        },
+      ]}
+      solutions={[
+        {
+          name: "Requirements Analysis",
+          description: "Define object use cases and fields up front",
+        },
+        {
+          name: "Association Design",
+          description: "Implement proper links to standard objects",
+        },
+        {
+          name: "Governance Protocols",
+          description: "Set naming, versioning, and modification rules",
+        },
+      ]}
+      impacts={[
+        {
+          name: "Reliable Data Model",
+          description: "Objects serve real processes without breaks",
+        },
+        {
+          name: "User Confidence",
+          description: "Teams trust and adopt custom records",
+        },
+        {
+          name: "Scalable Architecture",
+          description: "Future changes follow clear protocols",
+        },
+      ]}
+    />
+  </section>
+  <Footer />
+</Layout>

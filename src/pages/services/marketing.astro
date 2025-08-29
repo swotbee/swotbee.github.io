@@ -1,0 +1,466 @@
+---
+// src/pages/index.astro
+import Layout from "../../layouts/Layout.astro";
+import Footer from "../../components/astro/Footer.astro";
+
+const title =
+  "HubSpot Consulting Services | CRM, Automation & Integration Solutions";
+const description =
+  "Comprehensive HubSpot consulting services including CRM migration, automation setup, email marketing, lead qualification, and third-party integrations for improved business efficiency.";
+import FeatureImgRight from "../../components/astro/FeatureImgRight.astro";
+import FeatureDesc from "../../components/astro/FeatureDesc.astro";
+import FeatureDescription from "../../components/astro/FeatureDescriptionBento.astro";
+
+import Navbar from "../../components/astro/Navbar.astro";
+
+import AccelerateHubSpotAdoption from "../../assets/service_features/Accelerate HubSpot Adoption2.png";
+import AccelerateOnboardingSuccess from "../../assets/service_features/Accelerate Onboarding Success1.png";
+import AutomateDealAndRenewalTracking from "../../assets/service_features/Automate Deal & Renewal Tracking.png";
+import AutomateEmailMarketingThatConverts from "../../assets/service_features/Automate Email Marketing That Converts2.png";
+import AutomateLeadQualification from "../../assets/service_features/Automate Lead Qualification1.png";
+import AutomateMarketingAttribution from "../../assets/service_features/Automate Marketing Attribution.png";
+import AutomateSalesActivityCapture from "../../assets/service_features/Automate Sales Activity Capture3.png";
+import AutomateThirdPartyIntegrations from "../../assets/service_features/Automate Third-Party Integrations2.png";
+import CRMMigrationDoneRight from "../../assets/service_features/CRM Migration Done Right3.png";
+import IgniteAccurateRevenuePlanning from "../../assets/service_features/Ignite Accurate Revenue Planning1.png";
+import OptimizeCustomObjects from "../../assets/service_features/Optimize Custom Objects2.png";
+import OptimizeDealCompanyAssociations from "../../assets/service_features/Optimize Deal Company Associations3.png";
+import OptimizeFormsAndLandingPages from "../../assets/service_features/Optimize Forms & Landing Pages.png";
+import OptimizeLeadScoring from "../../assets/service_features/Optimize Lead Scoring2.png";
+import OptimizeYourSalesPipeline from "../../assets/service_features/Optimize Your Sales Pipeline3.png";
+import StreamlineYourHubSpotAutomation from "../../assets/service_features/Streamline Your HubSpot Automation2.png";
+import SuperchargeYourHubSpotData from "../../assets/service_features/Supercharge Your HubSpot Data2.png";
+import SynchronizeTeamsWithRevOps from "../../assets/service_features/Synchronize Teams with RevOps2.png";
+import VisualizeYourBusinessImpact from "../../assets/service_features/Visualize Your Business Impact1.png";
+
+import {
+  ArrowPathIcon,
+  UserGroupIcon,
+  ChartBarIcon,
+  CurrencyDollarIcon,
+  WrenchScrewdriverIcon,
+  AdjustmentsHorizontalIcon,
+  ExclamationTriangleIcon,
+  ChartBarSquareIcon,
+  EnvelopeIcon,
+  TrashIcon,
+  CalendarDaysIcon,
+  ClipboardDocumentListIcon,
+  CursorArrowRaysIcon,
+  ArrowRightEndOnRectangleIcon,
+  GlobeAltIcon,
+  BellAlertIcon,
+  XMarkIcon,
+  MagnifyingGlassCircleIcon,
+  PresentationChartBarIcon,
+  ClockIcon,
+  EnvelopeOpenIcon,
+  PaintBrushIcon,
+  ScaleIcon,
+  Cog6ToothIcon,
+  EyeIcon,
+  LinkIcon,
+  TableCellsIcon,
+  MagnifyingGlassIcon,
+  BookOpenIcon,
+  ArrowsRightLeftIcon,
+  ShieldCheckIcon,
+  FunnelIcon,
+  MapIcon,
+  HandRaisedIcon,
+} from "@heroicons/react/20/solid";
+---
+
+<Layout title="Home">
+  <Navbar />
+  <section class="max-w-7xl bg-highlight-25 mx-auto px-4 py-12">
+    <FeatureDescription
+      tagline="Make Every Customer Visit Count"
+      title="Boost Conversions with Optimized Forms & Landing Pages"
+      oldtitle="Optimize Forms & Landing Pages—Boost Conversions by 2× in 30 Days"
+      description="When your forms are too long and your landing pages frustrate visitors, you're leaking leads—and revenue—every day. High abandonment rates and poor mobile experiences mean wasted ad spend and stunted growth."
+      validationText="Our service optimizes your forms and landing pages for higher conversions. We implement:"
+      validationText2={`Data-driven form redesign with progressive profiling to shorten initial fields and collect deeper insights over time.
+
+A/B testing framework for headlines, CTAs, layouts, and mobile-first designs that drive responsiveness and engagement.
+
+Smart content personalization: dynamic headlines and images that adapt by referral source, lifecycle stage, or past behavior.
+
+Real-time analytics dashboards and heatmaps to pinpoint friction points and iterate fast.
+
+
+
+`}
+      image={OptimizeFormsAndLandingPages}
+      challenges={[
+        { name: "High Friction", description: "Long forms deter submissions" },
+        {
+          name: "Mobile UX Issues",
+          description: "Pages not optimized for phones",
+        },
+        { name: "No Testing", description: "Lack of systematic A/B protocols" },
+      ]}
+      solutions={[
+        {
+          name: "Progressive Profiling",
+          description: "Collect data across multiple form fills",
+        },
+        {
+          name: "Responsive Design",
+          description: "Ensure mobile-friendly layouts",
+        },
+        {
+          name: "A/B Programs",
+          description: "Automate tests and track performance",
+        },
+      ]}
+      impacts={[
+        {
+          name: "Higher Conversions",
+          description: "Reduced form abandonment rates",
+        },
+        {
+          name: "Better Mobile Leads",
+          description: "Increased mobile submissions",
+        },
+        {
+          name: "Data-Driven Refinement",
+          description: "Continuous improvement via testing",
+        },
+      ]}
+    />
+
+    <FeatureDescription
+      tagline="Accurate Attribution for Smarter Marketing Decisions"
+      title="Accurate Marketing Attribution to Reveal True ROI"
+      oldtitle="Automate Marketing Attribution—Double ROI Clarity in 30 Days"
+      description="When you're flying blind on which campaigns drive revenue, you waste budget and stall growth. Generic “original source” reports lump paid search, social, and org­anic together, leaving you guessing which channel truly works. Fragmented customer journeys across devices and browsers further muddy the picture, undervaluing key touchpoints like social ads and email nurturing. And with HubSpot's attribution locked behind Enterprise plans, most teams never get the detail they need."
+      validationText="Clients have seen up to 45% faster reporting and 2x more accurate sales forecasting within a month."
+      validationText2=""
+      image={AutomateMarketingAttribution}
+      challenges={[
+        {
+          name: "Single-Touch Bias",
+          description: "Default models credit only first or last touch",
+        },
+        {
+          name: "Offline Events",
+          description: "Inability to include trade shows/webinars",
+        },
+        {
+          name: "Privacy Limits",
+          description: "Cookies deprecation hinders tracking",
+        },
+      ]}
+      solutions={[
+        {
+          name: "Multi-Touch Models",
+          description: "Attribute credit across all journey touchpoints",
+        },
+        {
+          name: "Server-Side Tracking",
+          description: "Bypass privacy constraints with back-end capture",
+        },
+        {
+          name: "Data Integration",
+          description: "Combine CRM and channel data for full view",
+        },
+      ]}
+      impacts={[
+        {
+          name: "Balanced Credit",
+          description: "All channels get proper ROI attribution",
+        },
+        {
+          name: "Complete Journeys",
+          description: "Include offline and digital events",
+        },
+        {
+          name: "Privacy Safe",
+          description: "Comply with regulations without data loss",
+        },
+      ]}
+    />
+  </section>
+
+  <FeatureDescription
+    tagline="Transform Your Email Marketing. Unlock Real Results."
+    title="Email Marketing That Converts - Setup Beyond Basic Templates"
+    oldtitle="Automate Email Marketing That Converts—Boost Conversions by 2× in 30 Days"
+    description="When your emails land in spam folders or fall flat with generic templates, you're leaving revenue—and customer trust—on the table. Low open rates, high bounces, and stagnant click-throughs mean wasted effort and missed growth opportunities."
+    validationText="Our Email Marketing Beyond Basics service with multi-touch nurture sequences driven by behavioral triggers and dynamic-content personalization, delivers the right message at the right time. Expect improved engagement, increased conversions, and better ROI."
+    validationText2={`Optimized deliverability: list hygiene, DKIM/DMARC setup, and ongoing inbox-placement monitoring.
+
+A/B testing protocols and template designs that render flawlessly across devices.
+
+Performance dashboards that tie email metrics—opens, clicks, conversions—to real business outcomes.
+
+List-management best practices and GDPR-compliant workflows for clean, engaged audiences.`}
+    image={AutomateEmailMarketingThatConverts}
+    challenges={[
+      {
+        name: "Generic Templates",
+        description: "Emails lack personalization",
+      },
+      {
+        name: "Deliverability Issues",
+        description: "Emails get blocked by spam filters.",
+      },
+      {
+        name: "Testing Gaps",
+        description: "No systematic A/B testing protocols",
+      },
+    ]}
+    solutions={[
+      {
+        name: "Dynamic Content",
+        description: "Personalize emails per segment and behavior",
+      },
+      {
+        name: "Deliverability Tuning",
+        description: "Optimize sending IP and domain settings",
+      },
+      {
+        name: "A/B Framework",
+        description: "Automate tests and analyze results",
+      },
+    ]}
+    impacts={[
+      {
+        name: "Revenue Acceleration",
+        description: "15% increase in email-driven revenue",
+      },
+      {
+        name: "Brand Strength",
+        description: "Professional campaigns improve market perception",
+      },
+      {
+        name: "Marketing ROI",
+        description: "505% return on email marketing investment",
+      },
+    ]}
+  />
+
+  <FeatureDescription
+    title="Get Actionable HubSpot Reports That Drive Decisions in Just 30 Days"
+    oldtitle="Visualize Your Business Impact—Unlock 2x Faster Insights with Custom HubSpot Reporting in 30 Days"
+    description="Tired of HubSpot’s basic reports leaving you in the dark? Incomplete data and filter frustrations lead to poor decisions, missed opportunities, and lost trust. Every day you wait, the impact grows."
+    validationText="Our custom reporting service transforms your HubSpot analytics into a strategic asset."
+    validationText2="We build advanced, executive-ready dashboards — cross-object, attribution, and lifecycle reports tailored to your goals. Our process includes data audits, integration with external sources, and automated report delivery for every role. No more filter headaches or data silos—just clear, role-specific reports delivered automatically."
+    tagline="Transform HubSpot Data Into Decisions"
+    image={VisualizeYourBusinessImpact}
+    challenges={[
+      {
+        name: "Basic Metrics Only",
+        description: "Native reports lack cross-object insights",
+      },
+      {
+        name: "Attribution Limits",
+        description: "Cannot model multi-touch customer journeys",
+      },
+      {
+        name: "Filter Constraints",
+        description: "Limited ability to combine disparate data sources",
+      },
+    ]}
+    solutions={[
+      {
+        name: "Cross-Object Reports",
+        description:
+          "Design custom reports linking deals, contacts, and revenue",
+      },
+      {
+        name: "Attribution Models",
+        description: "Implement multi-touch crediting across channels",
+      },
+      {
+        name: "Dashboard Personalization",
+        description: "Tailor views to roles with advanced filters",
+      },
+    ]}
+    impacts={[
+      {
+        name: "Actionable Insights",
+        description: "Metrics aligned with business objectives",
+      },
+      {
+        name: "Revenue Transparency",
+        description: "Clear ROI across campaigns",
+      },
+      {
+        name: "Role Alignment",
+        description: "Stakeholders see relevant KPIs instantly",
+      },
+    ]}
+  />
+  <!-- title="Visualize Your Business with Dashboards—Gain 2× Faster Insights in 30 Days" -->
+  <FeatureDescription
+    title="Dashboards That Actually Help You Run Your Business"
+    description="When your HubSpot dashboards leave you drilling into spreadsheets and guessing at trends, you're making decisions in the dark—wasting time, missing risks, and eroding leadership confidence. Every week you delay, you risk costly missteps and stalled growth."
+    validationText="Our Custom Dashboards Turn Data into Actionable Insights for Every Role."
+    image={VisualizeYourBusinessImpact}
+    tagline="Smarter Dashboards for Smarter Decisions"
+    validationText2={`Automated data refreshes every 15 minutes for real-time accuracy
+
+Mobile-optimized dashboards and alert systems for critical metrics
+
+Cross-object reporting and advanced filters that answer your toughest business questions
+
+Training and documentation so your team can interpret and act on insights immediately.`}
+    challenges={[
+      {
+        name: "One-Size-Fits-All",
+        description: "Standard dashboards miss role needs",
+      },
+      {
+        name: "Manual Refresh",
+        description: "Data not updated in real time",
+      },
+      {
+        name: "Mobile Unfriendly",
+        description: "Poor mobile viewing experience",
+      },
+    ]}
+    solutions={[
+      {
+        name: "Role-Specific Views",
+        description: "Design dashboards per executive, manager, rep",
+      },
+      {
+        name: "Auto-Refresh",
+        description: "Enable real-time data pulls and alerts",
+      },
+      {
+        name: "Mobile Optimization",
+        description: "Create responsive, concise mobile layouts",
+      },
+    ]}
+    impacts={[
+      {
+        name: "Faster Decisions",
+        description: "Leaders access up-to-date KPIs instantly",
+      },
+      {
+        name: "Team Alignment",
+        description: "Shared dashboards drive unified focus",
+      },
+      {
+        name: "On-the-Go Access",
+        description: "Mobile views support remote leadership",
+      },
+    ]}
+  />
+
+  <FeatureDescription
+    title="Say Goodbye to Messy Data in HubSpot, Hello ROI"
+    description="Cluttered HubSpot databases—filled with duplicates, outdated contacts, and inconsistent records—drain your budget, sabotage segmentation, and cripple campaign performance. "
+    description2="Every day you delay, you risk inaccurate reporting, wasted ad spend, and missed sales."
+    validationText="Our data cleansing service gives you a strategic edge by ensuring your HubSpot database is always clean, accurate, and primed for success."
+    validationText2="We go beyond surface-level fixes, using advanced tools and custom workflows to audit your HubSpot database, eliminate duplicates, standardize formats, and remove dead weight. Ongoing monitoring ensures your data stays clean, saving you from manual headaches."
+    tagline="Clean Data, Better Results"
+    image={SuperchargeYourHubSpotData}
+    challenges={[
+      {
+        name: "Duplicate Records",
+        description: "Multiple contact duplicates hinder segmentation",
+      },
+      {
+        name: "Credibility Issues",
+        description: "Inaccurate data undermines trust in marketing campaigns",
+      },
+      {
+        name: "Compliance Risk",
+        description: "Data quality issues create regulatory and legal exposure",
+      },
+    ]}
+    solutions={[
+      {
+        name: "Deduplication",
+        description: "Audit and merge duplicates with custom rules",
+      },
+      {
+        name: "Data Standardization",
+        description: "Enforce formatting via workflows and validation",
+      },
+      {
+        name: "Ongoing Hygiene",
+        description: "Set up automated cleanup and monitoring routines",
+      },
+    ]}
+    impacts={[
+      {
+        name: "Better Segmentation",
+        description: "Reliable lists for targeted campaigns",
+      },
+      {
+        name: "Improved Deliverability",
+        description: "Reduce bounces and spam complaints",
+      },
+      {
+        name: "Higher ROI",
+        description:
+          "Clean data yields more accurate reporting and conversions",
+      },
+    ]}
+  />
+
+  <FeatureDescription
+    title="Align Sales, Marketing \& Customer Success with RevOps Strategy"
+    tagline="Stop the Revenue Leak"
+    oldtitle="Synchronize Teams with RevOps—Drive 32% More Revenue in 90 Days"
+    description="When your teams aren’t aligned, leads fall through the cracks, buyer journeys stall, and trust erodes. Misalignment costs B2B companies $1 trillion annually and shrinks win rates by up to 38%—let's fix that."
+    validationText="We eliminate silos, streamline workflows, and align your teams around shared goals to drive faster, more predictable revenue growth. "
+    validationText2={`We map your end-to-end journey, eliminate friction points, and build integrated workflows with shared KPIs—from lead generation to renewal. You'll get:
+
+Cross-functional dashboards and automated handoff rules
+
+Unified data governance and real-time reporting
+
+Quarterly “Smarketing” workshops and accountability frameworks`}
+    image={SynchronizeTeamsWithRevOps}
+    challenges={[
+      {
+        name: "Department Silos",
+        description: "Teams operate on separate data and goals",
+      },
+      {
+        name: "Handoff Breaks",
+        description: "Leads get lost between functions",
+      },
+      {
+        name: "Metric Disconnect",
+        description: "No shared KPIs for joint accountability",
+      },
+    ]}
+    solutions={[
+      {
+        name: "Journey Mapping",
+        description: "Document end-to-end customer lifecycle",
+      },
+      {
+        name: "Shared Dashboards",
+        description: "Create cross-functional KPI views",
+      },
+      {
+        name: "Integrated Workflows",
+        description: "Automate handoffs and notifications",
+      },
+    ]}
+    impacts={[
+      {
+        name: "Revenue Synergy",
+        description: "Teams collaborate toward common targets",
+      },
+      {
+        name: "No Leaks",
+        description: "Smooth transitions keep prospects engaged",
+      },
+      {
+        name: "Unified Insights",
+        description: "Single source of truth for decisions",
+      },
+    ]}
+  />
+
+  <Footer />
+</Layout>

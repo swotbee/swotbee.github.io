@@ -525,7 +525,7 @@ The **service hub** ticket system is like a hospital emergency room triage syste
 
 ### **Advanced Features and Capabilities**
 
-**Hubspots Capabilities Expansion**: As your business grows, explore advanced features:
+**HubSpot Capabilities Expansion**: As your business grows, explore advanced features:
 
 **AI and Machine Learning**: Modern **hubspot tool** innovations include:
 - Predictive lead scoring powered by machine learning algorithms
