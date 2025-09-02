@@ -1,5 +1,6 @@
 ---
 import { AstroSEO } from "astro-seo-plugin";
+import { generateOgImage, generateCanonicalUrl, generateRobotsDirective } from "../utils/seo";
 import "@fontsource/lexend-deca";
 import "@fontsource/lexend-deca/200.css";
 import "@fontsource/lexend-deca/300.css";
@@ -15,14 +16,24 @@ interface Props {
   description?: string;
   ogImage?: string;
   canonicalURL?: string;
+  keywords?: string;
+  author?: string;
+  robots?: string;
 }
 
 const {
   title,
   description = "SWOTBee - Your HubSpot & Shopify consulting partner for business growth and optimization",
-  ogImage = "/assets/home-images/swotbee.png",
-  canonicalURL = Astro.url.href,
+  ogImage,
+  canonicalURL,
+  keywords = "HubSpot consulting, Shopify integration, CRM optimization, marketing automation, sales funnel, business growth, HubSpot experts",
+  author = "SWOTBee",
+  robots = "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
 } = Astro.props;
+
+// Use utility functions for consistent URL generation
+const finalOgImage = ogImage || generateOgImage();
+const finalCanonicalURL = canonicalURL || generateCanonicalUrl(Astro.url.pathname);
 ---
 
 <!doctype html>
@@ -30,32 +41,106 @@ const {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content={keywords} />
+    <meta name="author" content={author} />
+    <meta name="robots" content={robots} />
+    <meta name="language" content="English" />
+    <meta name="revisit-after" content="7 days" />
+    <meta name="theme-color" content="#1f2937" />
+
+    <!-- Additional SEO meta tags -->
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="SWOTBee" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:site" content="@swotbee" />
+    <meta name="twitter:creator" content="@swotbee" />
+
     <AstroSEO
       title={`${title} | SWOTBee`}
       description={description}
       openGraph={{
         title: title,
         description: description,
-        image: ogImage,
+        image: finalOgImage,
         type: "website",
-        url: canonicalURL,
+        url: finalCanonicalURL,
+        siteName: "SWOTBee",
+        locale: "en_US",
       }}
       twitter={{
         card: "summary_large_image",
         site: "@swotbee",
         creator: "@swotbee",
+        title: title,
+        description: description,
+        image: finalOgImage,
       }}
       jsonLd={{
-        "@type": "WebSite",
-        name: "SWOTBee",
-        url: "https://swotbee.com",
-        description: description,
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://swotbee.github.io/#website",
+            "url": "https://swotbee.github.io",
+            "name": "SWOTBee - HubSpot & Shopify Consulting",
+            "description": description,
+            "inLanguage": "en-US",
+            "publisher": {
+              "@id": "https://swotbee.github.io/#organization"
+            },
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": "https://swotbee.github.io/search?q={search_term_string}",
+              "query-input": "required name=search_term_string"
+            }
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://swotbee.github.io/#organization",
+            "name": "SWOTBee",
+            "url": "https://swotbee.github.io",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://swotbee.github.io/assets/home-images/swotbee.png",
+              "width": 400,
+              "height": 400
+            },
+            "description": "Expert HubSpot and Shopify consulting services for business growth and optimization",
+            "foundingDate": "2023",
+            "knowsAbout": [
+              "HubSpot CRM",
+              "Shopify Integration",
+              "Marketing Automation",
+              "Sales Funnel Optimization",
+              "CRM Migration",
+              "Lead Qualification",
+              "Email Marketing",
+              "Business Consulting"
+            ],
+            "serviceType": [
+              "HubSpot Consulting",
+              "Shopify Integration",
+              "CRM Optimization",
+              "Marketing Automation",
+              "Sales Process Consulting"
+            ],
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "contactType": "Customer Service",
+              "url": "https://swotbee.github.io/contactus"
+            },
+            "sameAs": [
+              "https://twitter.com/swotbee",
+              "https://linkedin.com/company/swotbee"
+            ]
+          }
+        ]
       }}
       robots={{ index: true, follow: true }}
-      additionalLinkTags={[{ rel: "canonical", href: canonicalURL }]}
+      additionalLinkTags={[{ rel: "canonical", href: finalCanonicalURL }]}
     />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
   </head>
   <body class="min-h-full bg-highlight-25">
     <slot />

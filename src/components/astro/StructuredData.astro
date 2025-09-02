@@ -1,0 +1,82 @@
+---
+interface Props {
+  type: 'article' | 'organization' | 'website' | 'breadcrumb' | 'service';
+  data: any;
+}
+
+const { type, data } = Astro.props;
+
+const getStructuredData = () => {
+  switch (type) {
+    case 'article':
+      return {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": data.title,
+        "description": data.description,
+        "image": data.image,
+        "datePublished": data.publishDate,
+        "dateModified": data.modifiedDate || data.publishDate,
+        "author": {
+          "@type": "Organization",
+          "name": data.author || "SWOTBee",
+          "url": "https://swotbee.github.io"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "SWOTBee",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://swotbee.github.io/assets/home-images/swotbee.png"
+          }
+        },
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": data.url
+        },
+        "articleSection": data.category || "HubSpot Consulting",
+        "keywords": data.tags?.join(", ") || ""
+      };
+
+    case 'breadcrumb':
+      return {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": data.breadcrumbs.map((crumb: any, index: number) => ({
+          "@type": "ListItem",
+          "position": index + 1,
+          "name": crumb.name,
+          "item": crumb.url
+        }))
+      };
+
+    case 'service':
+      return {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": data.name,
+        "description": data.description,
+        "provider": {
+          "@type": "Organization",
+          "name": "SWOTBee",
+          "url": "https://swotbee.github.io"
+        },
+        "serviceType": data.serviceType || "Consulting",
+        "areaServed": "Worldwide",
+        "url": data.url,
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "USD",
+          "description": "Contact for pricing information"
+        }
+      };
+
+    default:
+      return {};
+  }
+};
+
+const structuredData = getStructuredData();
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(structuredData, null, 2)}></script>

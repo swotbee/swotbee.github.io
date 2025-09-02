@@ -6,13 +6,19 @@ interface Props {
   description?: string;
   ogImage?: string;
   canonicalURL?: string;
+  keywords?: string;
+  author?: string;
+  robots?: string;
 }
 
 const {
   title = "SWOTBee - HubSpot & Shopify Consulting Services",
   description = "Expert HubSpot consulting services to optimize your sales funnel, boost conversions, and integrate seamlessly with Shopify, Kajabi, Xero, QuickBooks, and DocuSign.",
   ogImage,
-  canonicalURL
+  canonicalURL,
+  keywords = "HubSpot consulting, Shopify integration, CRM optimization, marketing automation, sales funnel, business growth, HubSpot experts, CRM migration, lead qualification, email marketing",
+  author = "SWOTBee",
+  robots = "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
 } = Astro.props;
 ---
 
@@ -21,6 +27,9 @@ const {
   description={description}
   ogImage={ogImage}
   canonicalURL={canonicalURL}
+  keywords={keywords}
+  author={author}
+  robots={robots}
 >
   <slot />
 </BaseLayout>

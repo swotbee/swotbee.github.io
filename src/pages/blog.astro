@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import Footer from "../components/astro/Footer.astro";
 import Navbar from "../components/astro/Navbar.astro";
 import Newsletter from "../components/astro/Newsletter.astro";
+import StructuredData from "../components/astro/StructuredData.astro";
 import { Picture } from 'astro:assets';
 
 interface BlogPost {
@@ -87,6 +88,15 @@ const MAX_VISIBLE_TAGS = 4; // Maximum number of tags to show before "Show More"
   title="HubSpot & Shopify Integration Blog | SWOTBee"
   description="Expert insights, tips, and strategies for optimizing your HubSpot and Shopify integration. Learn about CRM best practices, automation, and revenue optimization."
 >
+  <StructuredData
+    type="breadcrumb"
+    data={{
+      breadcrumbs: [
+        { name: "Home", url: "https://swotbee.github.io" },
+        { name: "Blog", url: "https://swotbee.github.io/blog" }
+      ]
+    }}
+  />
   <Navbar />
   <section class="bg-white dark:bg-gray-900">
     <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">

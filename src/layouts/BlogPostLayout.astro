@@ -1,6 +1,8 @@
 ---
 import BlogPage from '../components/astro/BlogPage.astro';
 import Navbar from '../components/astro/Navbar.astro';
+import StructuredData from '../components/astro/StructuredData.astro';
+import { generateArticleStructuredData, generateCanonicalUrl } from '../utils/seo';
 import { getRecentPosts } from '../utils/posts';
 
 const { frontmatter } = Astro.props;
@@ -21,7 +23,44 @@ const blogSections = [
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{frontmatter.title}</title>
+    <title>{frontmatter.title} | SWOTBee</title>
+    <meta name="description" content={frontmatter.description} />
+    <meta name="keywords" content={frontmatter.tags?.join(', ') || 'HubSpot consulting, CRM, marketing automation'} />
+    <meta name="author" content={frontmatter.author?.name || 'SWOTBee'} />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={`${frontmatter.title} | SWOTBee`} />
+    <meta property="og:description" content={frontmatter.description} />
+    <meta property="og:image" content={frontmatter.image ? `https://swotbee.github.io${frontmatter.image}` : 'https://swotbee.github.io/assets/home-images/swotbee.png'} />
+    <meta property="og:url" content={generateCanonicalUrl(Astro.url.pathname)} />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="SWOTBee" />
+    <meta property="article:published_time" content={frontmatter.pubDate} />
+    <meta property="article:author" content={frontmatter.author?.name || 'SWOTBee'} />
+    {frontmatter.tags && frontmatter.tags.map(tag => <meta property="article:tag" content={tag} />)}
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@swotbee" />
+    <meta name="twitter:creator" content="@swotbee" />
+    <meta name="twitter:title" content={`${frontmatter.title} | SWOTBee`} />
+    <meta name="twitter:description" content={frontmatter.description} />
+    <meta name="twitter:image" content={frontmatter.image ? `https://swotbee.github.io${frontmatter.image}` : 'https://swotbee.github.io/assets/home-images/swotbee.png'} />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href={generateCanonicalUrl(Astro.url.pathname)} />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify(generateArticleStructuredData({
+      title: frontmatter.title,
+      description: frontmatter.description,
+      image: frontmatter.image,
+      url: generateCanonicalUrl(Astro.url.pathname),
+      publishedTime: frontmatter.pubDate,
+      author: frontmatter.author?.name || 'SWOTBee',
+      tags: frontmatter.tags
+    }), null, 2)}></script>
 </head>
 <Navbar />
 <main class="pt-8 pb-16 lg:pt-16 lg:pb-24 bg-white dark:bg-gray-900 antialiased">

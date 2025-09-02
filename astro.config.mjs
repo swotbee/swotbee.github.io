@@ -16,7 +16,17 @@ export default defineConfig({
     smartypants: true,
   },
 
-  integrations: [react(), alpine(), sitemap()],
+  integrations: [
+    react(),
+    alpine(),
+    sitemap({
+      changefreq: 'weekly',
+      priority: 0.7,
+      lastmod: new Date(),
+      // Include all pages and exclude certain patterns
+      filter: (page) => !page.includes('/admin/') && !page.includes('/api/'),
+    })
+  ],
 
   server: {
     headers: {

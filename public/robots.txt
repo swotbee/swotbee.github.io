@@ -1,5 +1,45 @@
 User-agent: *
 Allow: /
 
+# Disallow access to certain directories
+Disallow: /admin/
+Disallow: /api/
+Disallow: /_astro/
+Disallow: /assets/js/
+Disallow: /assets/lib/
+Disallow: /docs/
+Disallow: /tools/
+Disallow: /node_modules/
+Disallow: /.git/
+
+# Allow access to CSS and JS files for rendering
+Allow: /assets/css/
+Allow: /assets/images/
+Allow: /assets/home-images/
+Allow: /assets/blog-images/
+Allow: /public/assets/
+
+# Crawl delay for respectful crawling
+Crawl-delay: 1
+
+# Specific rules for major search engines
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Block unwanted bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
 # Sitemaps
-Sitemap: https://swotbee.github.io/sitemap-index.xml
+Sitemap: https://swotbee.github.io/sitemap.xml
+
+# Host directive for canonical domain
+Host: https://swotbee.github.io
