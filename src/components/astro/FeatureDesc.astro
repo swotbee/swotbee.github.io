@@ -36,7 +36,7 @@ const {
 <section class="bg-highlight-25">
   <div class="max-w-screen-xl px-4 pt-8 mx-auto text-center lg:pt-16 lg:px-6">
     <h2
-      class="mb-4 text-4xl tracking-normal font-bold text-status-900 dark:text-white"
+      class="mb-4 text-4xl tracking-normal font-bold text-status-900"
     >
       {title}
     </h2>
@@ -64,24 +64,23 @@ const {
               class="h-full w-full object-cover"
             />
           </div>
-          <div class="text-gray-500 dark:text-gray-400 sm:text-lg">
-            <div class="py-2 mb-6 dark:border-gray-700">
+          <div class="text-gray-500 sm:text-lg">
               {
                 features.map((feature) => {
                   const Icon = feature.icon;
                   return (
                     <div class="flex pt-8">
-                      <div class="flex justify-center items-center mr-4 w-8 h-8  rounded-full shadow-sm dark:bg-gray-800 shrink-0">
+                      <div class="flex justify-center items-center mr-4 w-8 h-8 rounded-full shadow-sm shrink-0">
                         <Icon
                           aria-hidden="true"
                           className="h-5 w-5 text-highlight-500 shrink-0"
                         />
                       </div>
                       <div>
-                        <h3 class="mb-2 text-xl font-bold text-status-900 dark:text-white">
+                        <h3 class="mb-2 text-xl font-bold text-status-900">
                           {feature.name}
                         </h3>
-                        <p class="mb-2 font-light text-gray-500 dark:text-status-400">
+                        <p class="mb-2 font-light text-gray-500">
                           {feature.description}
                         </p>
                       </div>
@@ -108,7 +107,7 @@ const {
                 <CTAButton
                   href="/meetus"
                   title="Talk to an Expert"
-                  class="text-white bg-highlight-500 hover:bg-highlight-600 focus:ring-4 focus:outline-none focus:ring-highlight-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-highlight-600 dark:hover:bg-highlight-700 dark:focus:ring-highlight-800"
+                  class="text-white bg-highlight-500 hover:bg-highlight-600 focus:ring-4 focus:outline-none focus:ring-highlight-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center"
                 >
                   Talk to an Expert
                 </CTAButton>
