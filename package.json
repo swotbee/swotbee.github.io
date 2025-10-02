@@ -16,7 +16,7 @@
     "@fontsource/vollkorn": "^5.2.8",
     "@heroicons/react": "^2.2.0",
     "@iksaku/heroicons-astro": "^0.0.6",
-    "@tailwindcss/vite": "^4.1.11",
+    "@tailwindcss/vite": "^4.1.14",
     "@tailwindplus/elements": "^1.0.7",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
@@ -36,7 +36,7 @@
     "sharp": "^0.34.3",
     "shiki": "^3.8.1",
     "tailwind-scrollbar": "^4.0.2",
-    "tailwindcss": "^4.1.11"
+    "tailwindcss": "^4.1.14"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.21",
