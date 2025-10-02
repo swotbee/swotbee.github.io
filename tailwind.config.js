@@ -5,6 +5,7 @@ import flowbiteTypography from 'flowbite-typography'
 import tailwindScrollbar from 'tailwind-scrollbar'
 
 export default {
+  darkMode: false, // Disable dark mode completely
   content: [
     "./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}",
     "./node_modules/flowbite/**/*.js"
