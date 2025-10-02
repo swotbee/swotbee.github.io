@@ -11,7 +11,7 @@ author:
   name: "SWOTBee Team"
   url: "https://swotbee.com"
   imageUrl: "/assets/ico/logo.png"
-image: "/assets/posts/master-hubSpot-workflows/tumbnail.png"
+image: "/assets/posts/master-hubSpot-workflows/thumbnail.png"
 tags:
   - "HubSpot Workflows"
   - "Automation"
