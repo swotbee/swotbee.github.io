@@ -1,6 +1,10 @@
 ---
 import { AstroSEO } from "astro-seo-plugin";
-import { generateOgImage, generateCanonicalUrl, generateRobotsDirective } from "../utils/seo";
+import {
+  generateOgImage,
+  generateCanonicalUrl,
+  generateRobotsDirective,
+} from "../utils/seo";
 import "@fontsource/lexend-deca";
 import "@fontsource/lexend-deca/200.css";
 import "@fontsource/lexend-deca/300.css";
@@ -9,6 +13,13 @@ import "@fontsource/vollkorn/600.css";
 import "@fontsource/vollkorn/700.css";
 
 import "@fontsource/vollkorn/900.css";
+// Supports weights 100-900
+import "@fontsource-variable/dm-sans";
+import "@fontsource-variable/dm-sans/wght-italic.css";
+// Supports weights 100-900
+import "@fontsource-variable/hanken-grotesk";
+// Supports weights 100-900
+import "@fontsource-variable/hanken-grotesk/wght-italic.css";
 import "../styles/global.css";
 
 interface Props {
@@ -33,7 +44,8 @@ const {
 
 // Use utility functions for consistent URL generation
 const finalOgImage = ogImage || generateOgImage();
-const finalCanonicalURL = canonicalURL || generateCanonicalUrl(Astro.url.pathname);
+const finalCanonicalURL =
+  canonicalURL || generateCanonicalUrl(Astro.url.pathname);
 ---
 
 <!doctype html>
@@ -81,33 +93,34 @@ const finalCanonicalURL = canonicalURL || generateCanonicalUrl(Astro.url.pathnam
           {
             "@type": "WebSite",
             "@id": "https://swotbee.github.io/#website",
-            "url": "https://swotbee.github.io",
-            "name": "SWOTBee - HubSpot & Shopify Consulting",
-            "description": description,
-            "inLanguage": "en-US",
-            "publisher": {
-              "@id": "https://swotbee.github.io/#organization"
+            url: "https://swotbee.github.io",
+            name: "SWOTBee - HubSpot & Shopify Consulting",
+            description: description,
+            inLanguage: "en-US",
+            publisher: {
+              "@id": "https://swotbee.github.io/#organization",
             },
-            "potentialAction": {
+            potentialAction: {
               "@type": "SearchAction",
-              "target": "https://swotbee.github.io/search?q={search_term_string}",
-              "query-input": "required name=search_term_string"
-            }
+              target: "https://swotbee.github.io/search?q={search_term_string}",
+              "query-input": "required name=search_term_string",
+            },
           },
           {
             "@type": "Organization",
             "@id": "https://swotbee.github.io/#organization",
-            "name": "SWOTBee",
-            "url": "https://swotbee.github.io",
-            "logo": {
+            name: "SWOTBee",
+            url: "https://swotbee.github.io",
+            logo: {
               "@type": "ImageObject",
-              "url": "https://swotbee.github.io/assets/home-images/swotbee.png",
-              "width": 400,
-              "height": 400
+              url: "https://swotbee.github.io/assets/home-images/swotbee.png",
+              width: 400,
+              height: 400,
             },
-            "description": "Expert HubSpot and Shopify consulting services for business growth and optimization",
-            "foundingDate": "2023",
-            "knowsAbout": [
+            description:
+              "Expert HubSpot and Shopify consulting services for business growth and optimization",
+            foundingDate: "2023",
+            knowsAbout: [
               "HubSpot CRM",
               "Shopify Integration",
               "Marketing Automation",
@@ -115,26 +128,26 @@ const finalCanonicalURL = canonicalURL || generateCanonicalUrl(Astro.url.pathnam
               "CRM Migration",
               "Lead Qualification",
               "Email Marketing",
-              "Business Consulting"
+              "Business Consulting",
             ],
-            "serviceType": [
+            serviceType: [
               "HubSpot Consulting",
               "Shopify Integration",
               "CRM Optimization",
               "Marketing Automation",
-              "Sales Process Consulting"
+              "Sales Process Consulting",
             ],
-            "contactPoint": {
+            contactPoint: {
               "@type": "ContactPoint",
-              "contactType": "Customer Service",
-              "url": "https://swotbee.github.io/contactus"
+              contactType: "Customer Service",
+              url: "https://swotbee.github.io/contactus",
             },
-            "sameAs": [
+            sameAs: [
               "https://twitter.com/swotbee",
-              "https://linkedin.com/company/swotbee"
-            ]
-          }
-        ]
+              "https://linkedin.com/company/swotbee",
+            ],
+          },
+        ],
       }}
       robots={{ index: true, follow: true }}
       additionalLinkTags={[{ rel: "canonical", href: finalCanonicalURL }]}

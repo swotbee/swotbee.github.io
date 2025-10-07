@@ -1,0 +1,125 @@
+---
+// src/pages/index.astro
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/astro/Footer.astro";
+import Hero from "../components/astro/account-planning/Hero.astro";
+import AccountFeature from "../components/astro/account-planning/AccountFeature.astro";
+import WhyUs from "../components/astro/WhyUs.astro";
+import Navbar from "../components/astro/Navbar.astro";
+import Steps from "../components/astro/Steps.astro";
+import TestimonialEmbla from "../components/astro/TestimonialEmbla.astro";
+---
+
+<Layout
+  title="Turn Every Account Into a Growth Engine"
+  description="See every relationship, uncover hidden opportunities, and enable your team to close deals faster—without missing a beat."
+>
+  <Navbar />
+  <Hero />
+  <AccountFeature
+    subtitle="Account & Relationship Visibility"
+    title="Turn Complexity Into Clarity"
+    description="Map every relationship, understand the political landscape, and make strategic moves that drive growth."
+    feature1="Visual account mapping & org charts."
+    desc1="See all contacts, hierarchies, and influence lines at a glance—no more hopping between spreadsheets or CRM tabs."
+    feature2="360° view of customers."
+    desc2="Understand relationships, decision-makers, and political landscapes to make strategic moves with confidence."
+    feature3="Lines of influence mapping."
+    desc3="Identify who really matters, spot key relationships, and focus your team’s effort where it drives results."
+  />
+
+  <AccountFeature
+    subtitle="Revenue Growth & Performance"
+    title="Unlock Hidden Revenue in Every Account"
+    description="Gain full visibility of relationships, spot untapped opportunities, and accelerate deal wins across your team."
+    feature1="Strategic account expansion tools."
+    desc1="Identify upsell and cross-sell opportunities to increase Share of Wallet."
+    feature2="Whitespace analysis."
+    desc2="Identify gaps in product line coverage across buying centres and prioritize high-value accounts."
+    feature3="Executive dashboards & reporting."
+    desc3="Track team performance, account coverage, and ROI to make smarter decisions."
+  />
+
+  <AccountFeature
+    subtitle="Deal & Opportunity Management"
+    title="Drive Strategic Deal Execution"
+    description="Focus your team on the deals that matter most. Spot risks early, align the right stakeholders, and apply proven methodologies for consistent wins. Every deal becomes a deliberate, strategic move toward your revenue goals."
+    feature1="Track Opportunities and Prioritize."
+    desc1="Quickly identify stalled deals and focus on the best opportunities to maximize revenue."
+    feature2="Influence & engagement insights."
+    desc2="Navigate complex accounts faster and penetrate the right levels for higher win ratios."
+    feature3="Integration with sales methodologies (MEDDPICC, etc.)."
+    desc3="Ensure consistent, repeatable, and effective sales processes across your team."
+  />
+
+  <AccountFeature
+    subtitle="Gap Analysis & Strategic Planning"
+    title="Never Lose Sight of a Deal Again"
+    description="Capture critical account knowledge, maintain relationship continuity, and protect revenue even during transitions."
+    feature1="Identify contact and relationship gaps."
+    desc1="Ensure your coverage is complete, uncover whitespace opportunities, and prioritize high-value accounts."
+    feature2="Strategic account planning dashboards."
+    desc2="Execute plans clearly, track progress, and make data-driven decisions that accelerate revenue."
+    feature3="Risk mitigation tools."
+    desc3="Diagnose weaknesses early to prevent lost deals or stalled opportunities."
+  />
+
+  <AccountFeature
+    subtitle="Efficiency & Time Savings"
+    title="Close Deals Faster, Without the Chaos"
+    description="Visualize your accounts, streamline team handoffs, and spend more time on strategy—not chasing contacts."
+    feature1="Rapid org map creation (hours → minutes)."
+    desc1="Save massive amounts of time creating org charts, so your team can focus on selling."
+    feature2="One place for all account information."
+    desc2="Reduce clicks on each contact - simplify workflow and see all account details in one view."
+    feature3="Automated tracking and updates."
+    desc3="Keep everyone from <b>pre-sales to customer success</b> on the same page without constant manual follow-ups."
+  />
+
+  <AccountFeature
+    subtitle="Team Enablement & Onboarding"
+    title="Get Your Team Selling at Full Speed"
+    description="Onboard new reps in minutes, align your team around relationships, and ensure no opportunity slips through the cracks."
+    feature1="Quick team onboarding & briefings."
+    desc1="Get new reps up to speed in 10 minutes, so they can start contributing immediately."
+    feature2="Auto-connect teams to opportunities."
+    desc2="Everyone knows who is working on what—no duplicate effort or missed handovers."
+    feature3="Centralized account knowledge."
+    desc3="Share experience-driven know-how across the team to avoid losing critical insights over long sales and renewal cycles."
+  />
+  <AccountFeature
+    subtitle="Enterprise Sales Excellence"
+    title="Play in the Big Leagues, Without the Guesswork"
+    description="Navigate complex enterprise accounts, penetrate the right levels, and win deals with confidence and control.."
+    feature1="Enterprise Account Orchestration."
+    desc1="Coordinate pursuits across global teams, partners, and business units — ensuring every move supports a unified account strategy."
+    feature2="Executive Sponsorship & Multi-Threading Insights."
+    desc2="Identify and strengthen executive sponsors while expanding influence across departments to de-risk large deals."
+    feature3="Strategic Guidance & Playbooks."
+    desc3="Equip your team with enterprise-tested playbooks that guide every stage of the deal — from stakeholder alignment to renewal strategy."
+    feature4="Renewal & Expansion Foresight."
+    desc4="Predict renewals, whitespace, and cross-sell opportunities early with intelligent relationship and coverage insights."
+  />
+
+  <AccountFeature
+    subtitle="Sales Management & Coaching"
+    title="Turn Every Sales 1-on-1 into a Strategic Growth Session"
+    description="Most sales managers spend 70% of their 1-on-1s gathering deal updates instead of driving performance. With SWOTbee, walk into every coaching session fully briefed on deals, relationships, and risks — so you spend time shaping strategy, not collecting updates."
+    feature1="Strategic, Not Status Calls."
+    desc1="Replace data gathering with meaningful discussion. Reps and managers come prepared with a full account snapshot — making each session focused on next moves and winning strategy."
+    feature2="Coaching Frameworks & Talking Points."
+    desc2="Structure your 1-on-1s with guided prompts that highlight opportunities, coverage gaps, and next best actions. No more vague “how’s it going?” meetings."
+    feature3="Instant Deal & Relationship Overview."
+    desc3="In seconds, see all key contacts, deal health, and activity history — so you can jump straight to coaching and problem-solving."
+    feature4="Shared Coaching Notes & Follow-Ups."
+    desc4="Capture key takeaways and agreed actions, building a continuous feedback loop that accelerates performance over time."
+    flip={true}
+  />
+  <WhyUs />
+  <TestimonialEmbla />
+  <Steps />
+  <Footer />
+</Layout>
+
+--- ---
+
