@@ -10,8 +10,7 @@ author:
   name: "SWOTBee Team"
   url: "https://swotbee.com"
   imageUrl: "/assets/ico/logo.png"
-image: "/assets/posts/hubSpot-cMS-building-managing-your-website/thumbnail.jpg"
-
+image: "/assets/posts/hubSpot-cMS-building-managing-your-website/thumbnail.png"
 tags:
   - crm
   - small-business

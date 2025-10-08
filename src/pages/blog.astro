@@ -98,18 +98,18 @@ const MAX_VISIBLE_TAGS = 4; // Maximum number of tags to show before "Show More"
     }}
   />
   <Navbar />
-  <section class="bg-white dark:bg-gray-900">
+  <section class="bg-white">
     <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
       <div class="mx-auto max-w-screen-sm text-center mb-8 lg:mb-16">
-        <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">From the Blog</h2>
-        <p class="font-light text-gray-500 sm:text-xl dark:text-gray-400">
+        <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900">From the Blog</h2>
+        <p class="font-light text-gray-500 sm:text-xl">
           Learn how to grow your business with our expert advice on HubSpot and Shopify integration.
         </p>
       </div>
 
       <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
         {posts.map((post) => (
-          <article class="p-4 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
+          <article class="p-4 bg-white rounded-lg border border-gray-200 shadow-md">
             {post.image && (
               <a href={post.url}>
                 <div class="mb-5">
@@ -140,16 +140,16 @@ const MAX_VISIBLE_TAGS = 4; // Maximum number of tags to show before "Show More"
             )}
 
             {post.category && (
-              <span class="bg-purple-100 text-purple-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-purple-200 dark:text-purple-900">
+              <span class="bg-purple-100 text-purple-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">
                 {post.category.title}
               </span>
             )}
 
-            <h2 class="my-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+            <h2 class="my-2 text-2xl font-bold tracking-tight text-gray-900">
               <a href={post.url}>{post.title}</a>
             </h2>
 
-            <p class="mb-4 font-light text-gray-500 dark:text-gray-400 line-clamp-3">
+            <p class="mb-4 font-light text-gray-500 line-clamp-3">
               {post.description}
             </p>
 
@@ -160,7 +160,7 @@ const MAX_VISIBLE_TAGS = 4; // Maximum number of tags to show before "Show More"
                     {post.tags.slice(0, MAX_VISIBLE_TAGS).map((tag) => (
                       <a
                         href={`/tags/${tag}`}
-                        class="px-2 py-1 text-xs bg-gray-100 text-gray-800 rounded-full hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600"
+                        class="px-2 py-1 text-xs bg-gray-100 text-gray-800 rounded-full hover:bg-gray-200"
                       >
                         #{tag}
                       </a>
@@ -168,18 +168,18 @@ const MAX_VISIBLE_TAGS = 4; // Maximum number of tags to show before "Show More"
                   </div>
                   {post.tags.length > MAX_VISIBLE_TAGS && (
                     <>
-                      <div class="hidden tags-extra flex flex-wrap gap-2 mt-2">
+                      <div class="hidden flex-wrap gap-2 mt-2 tags-extra">
                         {post.tags.slice(MAX_VISIBLE_TAGS).map((tag) => (
                           <a
                             href={`/tags/${tag}`}
-                            class="px-2 py-1 text-xs bg-gray-100 text-gray-800 rounded-full hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600"
+                            class="px-2 py-1 text-xs bg-gray-100 text-gray-800 rounded-full hover:bg-gray-200"
                           >
                             #{tag}
                           </a>
                         ))}
                       </div>
                       <button
-                        class="show-more-tags text-xs text-primary-600 hover:text-primary-800 dark:text-primary-400 dark:hover:text-primary-300 mt-1"
+                        class="show-more-tags text-xs text-primary-600 hover:text-primary-800 mt-1"
                         data-show-more="true"
                       >
                         Show More Tags
@@ -215,9 +215,9 @@ const MAX_VISIBLE_TAGS = 4; // Maximum number of tags to show before "Show More"
                   />
                 )
               )}
-              <div class="font-medium dark:text-white">
+              <div class="font-medium">
                 <div>{post.author?.name}</div>
-                <div class="text-sm font-normal text-gray-500 dark:text-gray-400">
+                <div class="text-sm font-normal text-gray-500">
                   {formatDate(post.pubDate)}
                 </div>
               </div>
