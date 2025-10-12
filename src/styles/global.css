@@ -164,6 +164,9 @@
 html {
   font-size: 22px;
 }
+bg-custom {
+  background-color: #fef4ea33;
+}
 body {
   font-family: 'Hanken Grotesk Variable', 'DM Sans Variable', 'Lexend Deca', sans-serif;
     /* letter-spacing: 0.02em; */

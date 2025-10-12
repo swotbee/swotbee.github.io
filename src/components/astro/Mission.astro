@@ -1,5 +1,5 @@
 ---
-import { Picture } from 'astro:assets';
+import { Picture } from "astro:assets";
 import TeamSuccessThumbsUpImage from "/public/assets/about/TeamSuccessThumbsUp1.png";
 import BusinessPresentationDynamics from "/public/assets/about/BusinessPresentationDynamics.png";
 import BusinessConsultingImage from "/public/assets/about/BusinessConsulting.png";
@@ -22,7 +22,7 @@ const values = [
   {
     name: "Integrity",
     description:
-      "We operate with transparency, honesty, and respect—earning your trust through every interaction.",
+      "We operate with transparency, honesty, and respect, earning your trust through every interaction.",
   },
   {
     name: "Collaborative Spirit",
@@ -47,21 +47,19 @@ const values = [
 ];
 ---
 
-<div class="overflow-hidden  py-24 sm:py-32">
+<div class="overflow-hidden py-24 sm:py-32">
   <div class="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
     <div class="max-w-4xl">
       <p class="text-base/7 font-semibold text-indigo-600">About us</p>
       <p
         class="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl"
       >
-        Empowering You to Build Meaningful Business Relationships
+        We Build the Engines Behind Revenue Growth
       </p>
       <p class="mt-6 text-xl/8 text-balance text-gray-700">
-        We bridge the gap between ambition and achievement by connecting you
-        with the expertise and insights needed to thrive in today's dynamic
-        business landscape. Our approach isn't just about introductions—it's
-        about forging partnerships that drive sustainable growth and measurable
-        outcomes.
+        Many businesses struggle with disconnected systems, broken automation,
+        or misaligned teams. We partner with you to fix that, building systems
+        that amplify your marketing, sales, and operations.
       </p>
     </div>
     <section
@@ -74,55 +72,61 @@ const values = [
           Our mission
         </h2>
         <p class="mt-6 text-base/7 text-gray-600">
-          At the heart of our consulting practice is a simple promise: We
-          empower organizations to achieve sustainable growth and lasting impact
-          through strategic partnership and actionable insight.
+          We empower organizations to scale revenue predictably by bridging
+          engineering, operations, and go-to-market strategy. Your data, CRM,
+          and tech stack should serve your growth, not hold it back.
         </p>
         <p class="mt-8 text-base/7 text-gray-600">
-          We partner closely with our clients to understand their unique
-          challenges, co-create tailored solutions, and deliver measurable
-          results. Our mission is to be the catalyst for your
-          transformation—helping you navigate complexity, embrace innovation,
-          and realize your boldest ambitions.
+          We work side by side with your teams: listening, designing,
+          implementing, and iterating, so your systems evolve as your business
+          does.
         </p>
       </div>
       <div class="pt-16 lg:row-span-2 lg:-mr-16 xl:mr-auto">
         <div
           class="-mx-8 grid grid-cols-2 gap-4 sm:-mx-16 sm:grid-cols-4 lg:mx-0 lg:grid-cols-2 lg:gap-4 xl:gap-8"
         >
-          <div class="aspect-square overflow-hidden rounded-xl shadow-xl outline-1 -outline-offset-1 outline-black/10">
+          <div
+            class="aspect-square overflow-hidden rounded-xl shadow-xl outline-1 -outline-offset-1 outline-black/10"
+          >
             <Picture
               src={BusinessConsultingImage}
               alt="Business Consulting"
               widths={[400, 800]}
-              formats={['webp', 'avif', 'png']}
+              formats={["webp", "avif", "png"]}
               class="block size-full object-cover"
             />
           </div>
-          <div class="-mt-8 aspect-square overflow-hidden rounded-xl shadow-xl outline-1 -outline-offset-1 outline-black/10 lg:-mt-40">
+          <div
+            class="-mt-8 aspect-square overflow-hidden rounded-xl shadow-xl outline-1 -outline-offset-1 outline-black/10 lg:-mt-40"
+          >
             <Picture
               src={CafeteriaBusinessMeetingImage}
               alt="Business Meeting in Cafeteria"
               widths={[400, 800]}
-              formats={['webp', 'avif', 'png']}
+              formats={["webp", "avif", "png"]}
               class="block size-full object-cover"
             />
           </div>
-          <div class="aspect-square overflow-hidden rounded-xl shadow-xl outline-1 -outline-offset-1 outline-black/10">
+          <div
+            class="aspect-square overflow-hidden rounded-xl shadow-xl outline-1 -outline-offset-1 outline-black/10"
+          >
             <Picture
               src={CasualBusinessMeetingImage}
               alt="Casual Business Meeting"
               widths={[400, 800]}
-              formats={['webp', 'avif', 'png']}
+              formats={["webp", "avif", "png"]}
               class="block size-full object-cover"
             />
           </div>
-          <div class="-mt-8 aspect-square overflow-hidden rounded-xl shadow-xl outline-1 -outline-offset-1 outline-black/10 lg:-mt-40">
+          <div
+            class="-mt-8 aspect-square overflow-hidden rounded-xl shadow-xl outline-1 -outline-offset-1 outline-black/10 lg:-mt-40"
+          >
             <Picture
               src={ConsultantsAnalyzingDataImage}
               alt="Consultants Analyzing Data"
               widths={[400, 800]}
-              formats={['webp', 'avif', 'png']}
+              formats={["webp", "avif", "png"]}
               class="block size-full object-cover"
             />
           </div>
@@ -132,11 +136,9 @@ const values = [
         <blockquote
           class="p-4 my-4 border-s-4 border-status-300 bg-highlight-50"
         >
-          <p
-            class="text-xl italic font-medium leading-relaxed text-status-500"
-          >
+          <p class="text-xl italic font-medium leading-relaxed text-status-500">
             “Your success is our mission. We're here to guide, support, and
-            accelerate your journey—every step of the way.”
+            accelerate your journey.. every step of the way.”
           </p>
         </blockquote>
 
@@ -168,7 +170,7 @@ const values = [
           src={TeamSuccessThumbsUpImage}
           alt="Team Success"
           widths={[400, 800]}
-          formats={['webp', 'avif', 'png']}
+          formats={["webp", "avif", "png"]}
           class="h-64 w-64 rounded-lg object-cover md:h-72 md:w-72"
         />
       </div>
@@ -177,7 +179,7 @@ const values = [
           src={BusinessPresentationDynamics}
           alt="Business Presentation"
           widths={[400, 800]}
-          formats={['webp', 'avif', 'png']}
+          formats={["webp", "avif", "png"]}
           class="h-64 w-64 rounded-lg object-cover md:h-72 md:w-72"
         />
       </div>
@@ -186,7 +188,7 @@ const values = [
           src={BusinessConsultingImage}
           alt="Business Consulting"
           widths={[400, 800]}
-          formats={['webp', 'avif', 'png']}
+          formats={["webp", "avif", "png"]}
           class="h-64 w-64 rounded-lg object-cover md:h-72 md:w-72"
         />
       </div>
@@ -195,7 +197,7 @@ const values = [
           src={ConsultantsAnalyzingDataImage}
           alt="Consultants Analyzing Data"
           widths={[400, 800]}
-          formats={['webp', 'avif', 'png']}
+          formats={["webp", "avif", "png"]}
           class="h-64 w-64 rounded-lg object-cover md:h-72 md:w-72"
         />
       </div>
