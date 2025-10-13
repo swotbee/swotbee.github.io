@@ -12,9 +12,10 @@
     "@astrojs/alpinejs": "^0.4.8",
     "@astrojs/react": "^4.3.0",
     "@astrojs/sitemap": "^3.4.1",
+    "@element-plus/icons-vue": "^2.3.2",
     "@fontsource-variable/dm-sans": "^5.2.8",
     "@fontsource-variable/hanken-grotesk": "^5.2.8",
-    "@element-plus/icons-vue": "^2.3.2",
+    "@fontsource/dm-sans": "^5.2.8",
     "@fontsource/lexend-deca": "^5.2.9",
     "@fontsource/vollkorn": "^5.2.8",
     "@heroicons/react": "^2.2.0",
@@ -43,8 +44,10 @@
     "tailwindcss": "^4.1.14"
   },
   "devDependencies": {
+    "@vitejs/plugin-react": "^5.0.4",
     "autoprefixer": "^10.4.21",
     "flowbite-typography": "^1.0.5",
-    "serve": "^14.2.4"
+    "serve": "^14.2.4",
+    "vite": "^7.1.9"
   }
 }
