@@ -13,57 +13,63 @@ import YoganandImage from '/public/assets/team/yoga.jpeg';
 import RavikumarImage from '/public/assets/team/ravikumar.png';
 import ParthibanImage from '/public/assets/team/parthiban.jpeg';
 
-
-
 const teamMembers = [
   {
     name: "Sharmila",
     role: "Hubspot Solutions",
     imageUrl: sharmilaImage,
-    country: "India",
-    countryCode: "IN",
+    countries: [
+      { name: "India", code: "IN" }
+    ]
   },
   {
     name: "Sivakumar",
     role: "Hubspot Solutions",
     imageUrl: sivakumarImage,
-    country: "India",
-    countryCode: "IN",
+    countries: [
+      { name: "India", code: "IN" }
+    ]
   },
   {
     name: "Rajkumar",
-    role: "UX & Visual Design ",
+    role: "UX & Visual Design",
     imageUrl: RajkumarImage,
-    country: "India",
-    countryCode: "IN",
+    countries: [
+      { name: "India", code: "IN" }
+    ]
   },
   {
     name: "Raj",
     role: "Global Partner Relations",
     imageUrl: RajImage,
-    country: "Canada",
-    countryCode: "CA",
+    countries: [
+      { name: "Canada", code: "CA" },
+      { name: "United States", code: "US" }
+    ]
   },
   {
     name: "Yoganand",
     role: "Solutions Engineering",
     imageUrl: YoganandImage,
-    country: "India",
-    countryCode: "IN",
+    countries: [
+      { name: "India", code: "IN" }
+    ]
   },
   {
     name: "Ravikumar",
     role: "Marketing Solutions",
     imageUrl: RavikumarImage,
-    country: "India",
-    countryCode: "IN",
+    countries: [
+      { name: "India", code: "IN" }
+    ]
   },
   {
     name: "Parthiban",
     role: "Compliance & Security",
     imageUrl: ParthibanImage,
-    country: "Canada",
-    countryCode: "CA",
+    countries: [
+      { name: "Canada", code: "CA" }
+    ]
   }
 ];
 ---
@@ -88,14 +94,18 @@ const teamMembers = [
                   formats={['webp', 'avif', 'png']}
                   class="mx-auto rounded-full size-24"
                 />
-                <div class="flex items-center justify-center mt-2 gap-1">
-                  <img
-                    src={`https://flagcdn.com/16x12/${person.countryCode.toLowerCase()}.png`}
-                    alt={`${person.country} flag`}
-                    width="16"
-                    height="12"
-                  />
-                  <span class="text-gray-500 text-xs">{person.country}</span>
+                <div class="flex flex-col items-center justify-center mt-2 gap-1">
+                  {person.countries.map((country) => (
+                    <div class="flex items-center gap-1">
+                      <img
+                        src={`https://flagcdn.com/16x12/${country.code.toLowerCase()}.png`}
+                        alt={`${country.name} flag`}
+                        width="16"
+                        height="12"
+                      />
+                      <span class="text-gray-500 text-xs">{country.name}</span>
+                    </div>
+                  ))}
                 </div>
                 <h3 class="mt-6 font-semibold tracking-tight text-gray-900 text-base/7">{person.name}</h3>
                 <p class="text-gray-600 text-sm/6">{person.role}</p>
