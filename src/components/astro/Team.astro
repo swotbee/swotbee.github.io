@@ -20,43 +20,57 @@ const teamMembers = [
     name: "Sharmila",
     role: "Hubspot Solutions",
     imageUrl: sharmilaImage,
+    country: "India",
+    countryCode: "IN",
   },
   {
     name: "Sivakumar",
     role: "Hubspot Solutions",
     imageUrl: sivakumarImage,
+    country: "India",
+    countryCode: "IN",
   },
   {
     name: "Rajkumar",
     role: "UX & Visual Design ",
     imageUrl: RajkumarImage,
+    country: "India",
+    countryCode: "IN",
   },
   {
     name: "Raj",
     role: "Global Partner Relations",
     imageUrl: RajImage,
+    country: "Canada",
+    countryCode: "CA",
   },
   {
     name: "Yoganand",
     role: "Solutions Engineering",
     imageUrl: YoganandImage,
+    country: "India",
+    countryCode: "IN",
   },
   {
     name: "Ravikumar",
     role: "Marketing Solutions",
     imageUrl: RavikumarImage,
+    country: "India",
+    countryCode: "IN",
   },
   {
     name: "Parthiban",
     role: "Compliance & Security",
     imageUrl: ParthibanImage,
+    country: "Canada",
+    countryCode: "CA",
   }
 ];
 ---
 
   <div class="px-6 mx-auto mt-32 max-w-7xl sm:mt-48 lg:px-8">
           <div class="max-w-2xl mx-auto lg:mx-0">
-            <h2 class="text-4xl font-semibold tracking-tight text-gray-900 text-pretty sm:text-5xl">Our team</h2>
+            <h2 class="text-4xl font-semibold tracking-tight text-gray-900 text-pretty sm:text-5xl">Our Global team</h2>
             <p class="mt-6 text-gray-600 text-lg/8">
               We're a dynamic group of individuals who are passionate about what we do and dedicated to delivering the
               best results for our clients.
@@ -75,6 +89,15 @@ const teamMembers = [
                   formats={['webp', 'avif', 'png']}
                   class="mx-auto rounded-full size-24"
                 />
+                <div class="flex items-center justify-center mt-2 gap-1">
+                  <img
+                    src={`https://flagcdn.com/16x12/${person.countryCode.toLowerCase()}.png`}
+                    alt={`${person.country} flag`}
+                    width="16"
+                    height="12"
+                  />
+                  <span class="text-gray-500 text-xs">{person.country}</span>
+                </div>
                 <h3 class="mt-6 font-semibold tracking-tight text-gray-900 text-base/7">{person.name}</h3>
                 <p class="text-gray-600 text-sm/6">{person.role}</p>
               </li>
