@@ -8,7 +8,8 @@ export default {
   darkMode: false, // Disable dark mode completely
   content: [
     "./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}",
-    "./node_modules/flowbite/**/*.js"
+    "./node_modules/flowbite/**/*.js",
+    "./src/components/**/*.{js,ts,jsx,tsx,astro}" // Add this line
   ],
   theme: {
     extend: {
@@ -65,7 +66,7 @@ export default {
     '700': '#0a7194',
     '800': '#125b78',
     '900': '#144c65',
-    '950': '#063246',
+    '950': '#0A3048',
 },
 
 

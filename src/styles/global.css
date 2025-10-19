@@ -148,6 +148,62 @@
     --color-accent1-700: #d3f3f3;
     --color-accent1-800: #e2f7f7;
     --color-accent1-900: #f0fbfb;
+
+  /* Icon Blue colors */
+  --color-icon-blue: #1ec7ff;
+  --color-icon-blue-50: #edfcff;
+  --color-icon-blue-100: #d6f7ff;
+  --color-icon-blue-200: #b5f3ff;
+  --color-icon-blue-300: #83eeff;
+  --color-icon-blue-400: #48e1ff;
+  --color-icon-blue-500: #1ec7ff;
+  --color-icon-blue-600: #06acff;
+  --color-icon-blue-700: #0099ff;
+  --color-icon-blue-800: #0874c5;
+  --color-icon-blue-900: #0d629b;
+  --color-icon-blue-950: #0e3b5d;
+
+  /* Icon Orange colors */
+  --color-icon-orange: #fe3511;
+  --color-icon-orange-50: #fff2ed;
+  --color-icon-orange-100: #ffe2d4;
+  --color-icon-orange-200: #ffc1a8;
+  --color-icon-orange-300: #ff9571;
+  --color-icon-orange-400: #ff5c35;
+  --color-icon-orange-500: #fe3511;
+  --color-icon-orange-600: #ef1b07;
+  --color-icon-orange-700: #c60e08;
+  --color-icon-orange-800: #9d0f10;
+  --color-icon-orange-900: #7e1010;
+  --color-icon-orange-950: #440609;
+
+  /* Icon Gold colors */
+  --color-icon-gold: #efbb03;
+  --color-icon-gold-50: #fefde8;
+  --color-icon-gold-100: #fffbc2;
+  --color-icon-gold-200: #fff587;
+  --color-icon-gold-300: #ffe743;
+  --color-icon-gold-400: #ffd71e;
+  --color-icon-gold-500: #efbb03;
+  --color-icon-gold-600: #ce9100;
+  --color-icon-gold-700: #a46704;
+  --color-icon-gold-800: #88500b;
+  --color-icon-gold-900: #734110;
+  --color-icon-gold-950: #432105;
+
+  /* Icon Sea Blue colors */
+  --color-icon-seablue: #00b5de;
+  --color-icon-seablue-50: #ebfdff;
+  --color-icon-seablue-100: #cef9ff;
+  --color-icon-seablue-200: #a2f1ff;
+  --color-icon-seablue-300: #63e5fd;
+  --color-icon-seablue-400: #1ccff4;
+  --color-icon-seablue-500: #00b5de;
+  --color-icon-seablue-600: #038db7;
+  --color-icon-seablue-700: #0a7194;
+  --color-icon-seablue-800: #125b78;
+  --color-icon-seablue-900: #144c65;
+  --color-icon-seablue-950: #0A3048;
   }
 
 :root {
