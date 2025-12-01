@@ -1,0 +1,91 @@
+---
+import { Picture } from "astro:assets";
+import logo from "../../../public/assets/ico/swotbee_logo.png";
+import "@fortawesome/fontawesome-free/css/all.min.css";
+
+import {
+
+} from "@iksaku/heroicons-astro/20/solid";
+
+const navLinks = [
+  { href: "/", label: "Home" },
+  { href: "/services", label: "Our Services" },
+  { href: "/about", label: "About" },
+  { href: "/blog", label: "Blog" },
+  { href: "/contactus", label: "Contact" },
+];
+
+const servicesLinks = [
+  { href: "/services/hubspot-onboarding", label: "HubSpot Onboarding" },
+  { href: "/services/marketing", label: "Marketing" },
+  { href: "/services/sales-revops", label: "Sales & RevOps" },
+  { href: "/services/integrations", label: "Integrations" },
+]
+
+---
+
+<!-- TOP BAR -->
+<div class="w-full bg-[#FCEEDF] border-b border-gray-300">
+  <div class="max-w-7xl mx-auto flex justify-between items-center py-2 px-4 text-sm">
+    
+    <!-- Left Icons -->
+    <div class="hidden md:flex items-center gap-3">
+      <a href="#" class="text-black text-xs">
+      <i class="fa-brands fa-instagram"></i>
+      </a>
+      <a href="#" class="text-black text-xs">
+       <i class="fa-brands fa-facebook"></i>
+      </a>
+    </div>
+
+    <!-- Right Contact Info -->
+    <div class="flex items-center gap-6 text-black">
+      <p class="text-xs">Ph: +91 8843992484</p>
+      <p class="text-xs">Swotbeeinfo@email.com</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- MAIN NAVBAR -->
+<nav class="bg-[#0A3048]">
+  <div class="max-w-7xl mx-auto px-4 flex justify-between items-center h-16">
+    
+    <!-- Logo -->
+    <a href="/" class="flex items-center">
+      <Picture src={logo} alt="SwotBee Logo" class="h-9 w-auto" />
+    </a>
+
+    <!-- Desktop Menu -->
+    <div class="hidden lg:flex items-center space-x-10">
+      {navLinks.map((item) => (
+        <a
+          href={item.href}
+          class="text-[#FFFFFF] text-sm font-medium hover:text-[#FF764D] hover:border-b-2 hover:border-[#FF764D] pb-1 transition-all"
+        >
+          {item.label}
+        </a>
+      ))}
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <button
+      class="lg:hidden text-white text-3xl"
+      onclick="document.getElementById('mobileMenu').classList.toggle('hidden')"
+    >
+      ☰
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="lg:hidden hidden bg-[#0A3048] px-4 pb-4 space-y-2">
+    {navLinks.map((item) => (
+      <a
+        href={item.href}
+        class="block text-white text-base py-2 border-b border-white/20"
+      >
+        {item.label}
+      </a>
+    ))}
+  </div>
+</nav>

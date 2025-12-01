@@ -1,0 +1,60 @@
+---
+import { EnvelopeIcon, GlobeAltIcon } from "@iksaku/heroicons-astro/24/outline";
+import { UserGroupIcon } from "@iksaku/heroicons-astro/24/solid";
+import { Picture } from "astro:assets";
+import Button from "./Button.astro";
+import logo from "../../../public/assets/ico/swotbee_logo.png";
+---
+
+
+<footer class="bg-[url('../src/img/footer.png')] bg-cover bg-center bg-no-repeat text-white relative overflow-hidden pb-23">
+
+
+  
+
+ <div class="max-w-7xl mx-auto px-6">
+  <!-- TOP SECTION -->
+  <div class="flex flex-col md:flex-row justify-between gap-10 pb-10 pt-10">
+
+    <!-- LEFT Section -->
+    <div class="md:w-1/2">
+    <div class="pb-10">
+    <Picture src={logo} alt="SwotBee Logo" class="h-9 w-auto" />
+    </div>
+      <h2 class="text-2xl text-[#FFF2B2] font-bold leading-snug mb-4">
+        Your Trusted HubSpot<br />
+        Consulting Partner
+      </h2>
+      <p class="text-white/80 text-[15px] leading-relaxed">
+        Expert solutions to streamline your HubSpot experience
+        and boost conversions.
+      </p>
+    </div>
+
+    <!-- RIGHT Section – MENU -->
+<div class="md:w-1/2 grid grid-cols-2 md:grid-cols-2 gap-8 text-[15px] font-medium">
+
+  <ul class="space-y-3">
+    <li><a href="#">About</a></li>
+    <li><a href="#">Our Services</a></li>
+    <li><a href="#">Case Studies</a></li>
+    <li><a href="#">Testimonials</a></li>
+    <li><a href="#">Blog Posts</a></li>
+    <li><a href="#">Subscribe to Newsletter</a></li>
+  </ul>
+
+  <ul class="space-y-3">
+    <li><a href="#">FAQs</a></li>
+    <li><a href="#">Contact Us</a></li>
+    <li><a href="#">Privacy Policy</a></li>
+    <li><a href="#">Terms of Use</a></li>
+    <li><a href="#">Cookie Policy</a></li>
+  </ul>
+
+</div>
+
+  </div>
+
+</div>
+
+</footer>

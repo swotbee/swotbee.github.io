@@ -1,0 +1,86 @@
+---
+import {
+  ChartBarIcon,
+  MagnifyingGlassIcon,
+  Cog8ToothIcon,
+  CodeBracketSquareIcon,
+  AdjustmentsHorizontalIcon,
+  RocketLaunchIcon
+} from "@iksaku/heroicons-astro/20/solid";
+
+
+ const collaboration = [
+    {
+      icon: MagnifyingGlassIcon,
+      title: "Discovery",
+      description: "We kick off with a focused Discovery Workshop to align on goals, scope, and success metrics. We survey key stakeholders to uncover pain points, existing tech stacks, and desired outcomes."
+    },
+   {
+      icon: AdjustmentsHorizontalIcon,
+      title: "Strategy & Roadmap",
+      description: "Based on our findings, we deliver a Custom Roadmap with prioritized milestones, budgets, and timelines—so you know exactly what's happening, when, and at what cost."
+    },
+   {
+      icon: Cog8ToothIcon,
+      title: "Technical Setup",
+      description: "Our experts configure your HubSpot & Shopify environments—migrating data, integrating apps, and building workflows—to establish a rock-solid foundation that avoids broken processes."
+    },
+    {
+      icon: ChartBarIcon,
+      title: "Training & Enablement",
+      description: "We provide hands-on workshops and up-to-date documentation (not stale slide decks) to empower your team. Interactive sessions ensure quick adoption and reduce support requests."
+    },
+   {
+      icon: RocketLaunchIcon,
+      title: "Launch & Optimization",
+      description: "We go live together—monitoring KPIs with custom dashboards. Through iterative A/B testing and analytics, we optimize campaigns, automations, and integrations for continuous improvement."
+    },
+   {
+      icon: CodeBracketSquareIcon,
+      title: "Review & Scale",
+      description: "Regular Quarterly Business Reviews keep you informed on ROI, upcoming enhancements, and expansion opportunities—so you scale predictably and mitigate risks before they arise."
+    }
+  ];
+---
+
+
+<section class="py-16 bg-[#FFF0E2]">
+  <div class="max-w-7xl mx-auto px-4">
+    <!-- Section Title -->
+    <div class="text-center mb-12">
+      <h2 class="text-2xl md:text-4xl font-bold text-[#005983]">
+        Our Collaboration Framework
+      </h2>
+      <p class="mt-4 text-gray-700 text-sm md:text-base max-w-2xl mx-auto">
+        From day one, we partner with you through a structured, hands-on approach. From kick-off to launch and beyond, we ensure you stay aligned, achieve quick wins, and scale confidently.
+      </p>
+    </div>
+
+
+    <!-- Grid -->
+    <div class="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+      <!-- Card 1 -->
+       {
+        collaboration.map((collaboration) => (
+      <div class="bg-white rounded-xl p-6 shadow hover:shadow-lg transition">
+        <div class="flex items-center justify-center h-10 w-10 rounded-xl border border-gray-300 mb-4">
+              <collaboration.icon
+                class="h-8 w-8 m-2 "
+                aria-hidden="true"
+              />
+        </div>
+        <h3 class="text-lg font-semibold text-gray-800 mb-2">{collaboration.title}</h3>
+        <p class="text-gray-600 text-sm">
+          {collaboration.description}
+        </p>
+      </div>
+                              ))
+      }
+    </div>
+  </div>
+</section>
+
+
+
+
+
