@@ -1,21 +1,27 @@
 ---
+import "@fortawesome/fontawesome-free/css/all.min.css";
+
  const testimonials = [
     {
+      icon: "fa fa-user",
       name: "Terry Parmelee",
       role: "VP of Operations",
       text: "SWOTBee guided us through a complete HubSpot onboarding and site redesign. Their clear communication, deadline focus, and rapid implementation of feedback made the entire process seamless. We now track leads and automate nurture sequences with confidence."
     },
     {
+      icon: "fa fa-user",
       name: "John Wilson",
       role: "Marketing Director",
       text: "SWOTBee guided us through a complete HubSpot onboarding and site redesign. Their clear communication, deadline focus, and rapid implementation of feedback made the entire process seamless. We now track leads and automate nurture sequences with confidence."
     },
     {
+      icon: "fa fa-user",
       name: "Sarah Mitchell",
       role: "Product Manager",
       text: "SWOTBee guided us through a complete HubSpot onboarding and site redesign. Their clear communication, deadline focus, and rapid implementation of feedback made the entire process seamless. We now track leads and automate nurture sequences with confidence."
     },
     {
+      icon: "fa fa-user",
       name: "Alice Brown",
       role: "CTO",
       text: "SWOTBee guided us through a complete HubSpot onboarding and site redesign. Their clear communication, deadline focus, and rapid implementation of feedback made the entire process seamless. We now track leads and automate nurture sequences with confidence."
@@ -26,12 +32,12 @@
 <!-- --------------------------
   Slider HTML
 --------------------------- -->
-<section class="py-0 md:py-16 bg-[#FFF0E2]">
+<section class="py-0 md:py-16 bg-[#FFF0E2]" data-aos="fade-up">
   <h2 class="text-2xl md:text-4xl font-bold text-center mb-10 text-[#0d476d]">
     What Our Clients Say
   </h2>
 
-  <div class="relative max-w-7xl mx-auto px-4">
+  <div class="relative max-w-7xl mx-auto px-8 lg:px-10 data-aos="zoom-in">
 
     <!-- Scroll Wrapper -->
     <div id="testimonial-wrapper"
@@ -40,12 +46,14 @@
        {
         testimonials.map((testimonials) => (
       <!-- CARD -->
-      <div class="inline-block shrink-0 px-4 w-[85%] md:w-[50%] lg:w-[33%]">
+      <div class="inline-block shrink-0 px-2 w-[85%] md:w-[50%] lg:w-[33%]">
         <article class="bg-white rounded-2xl p-6 shadow-sm h-full whitespace-normal">
           <div class="flex items-start gap-3 mb-3">
-            <div class="h-12 w-12 rounded-full border border-black"></div>
+            <div class="flex items-center justify-center h-12 w-12 rounded-full border border-black">
+            <i class={`${testimonials.icon}`}></i>
+            </div>
             <div class="whitespace-normal">
-              <p class="font-semibold text-[16px]"> {testimonials.name}</p>
+              <h4 class="font-semibold text-[16px]"> {testimonials.name}</h4>
               <p class="text-gray-500 text-[14px]">{testimonials.role}</p>
             </div>
           </div>

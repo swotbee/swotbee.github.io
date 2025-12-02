@@ -157,9 +157,23 @@ const finalCanonicalURL =
     />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+
+     <!-- AOS CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
   </head>
   <body class="min-h-full bg-custom">
     <slot />
+      <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js" client:load></script>
+
+    <!-- Initialize AOS -->
+    <script client:load>
+      AOS.init({
+        duration: 800,
+        easing: "ease-out-cubic",
+        once: true
+      });
+    </script>
     <script>
       import Alpine from "alpinejs";
       window.Alpine = Alpine;

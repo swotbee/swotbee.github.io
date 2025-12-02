@@ -1,42 +1,34 @@
 ---
-import {
-  ChartBarIcon,
-  MagnifyingGlassIcon,
-  Cog8ToothIcon,
-  CodeBracketSquareIcon,
-  AdjustmentsHorizontalIcon,
-  RocketLaunchIcon
-} from "@iksaku/heroicons-astro/20/solid";
-
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
  const collaboration = [
     {
-      icon: MagnifyingGlassIcon,
+      icon: "fa-solid fa-magnifying-glass",
       title: "Discovery",
       description: "We kick off with a focused Discovery Workshop to align on goals, scope, and success metrics. We survey key stakeholders to uncover pain points, existing tech stacks, and desired outcomes."
     },
    {
-      icon: AdjustmentsHorizontalIcon,
+      icon: "fa-solid fa-diagram-project",
       title: "Strategy & Roadmap",
       description: "Based on our findings, we deliver a Custom Roadmap with prioritized milestones, budgets, and timelines—so you know exactly what's happening, when, and at what cost."
     },
    {
-      icon: Cog8ToothIcon,
+      icon: "fa-solid fa-gear",
       title: "Technical Setup",
       description: "Our experts configure your HubSpot & Shopify environments—migrating data, integrating apps, and building workflows—to establish a rock-solid foundation that avoids broken processes."
     },
     {
-      icon: ChartBarIcon,
+      icon: "fa-solid fa-users",
       title: "Training & Enablement",
       description: "We provide hands-on workshops and up-to-date documentation (not stale slide decks) to empower your team. Interactive sessions ensure quick adoption and reduce support requests."
     },
    {
-      icon: RocketLaunchIcon,
+      icon: "fa-solid fa-rocket",
       title: "Launch & Optimization",
       description: "We go live together—monitoring KPIs with custom dashboards. Through iterative A/B testing and analytics, we optimize campaigns, automations, and integrations for continuous improvement."
     },
    {
-      icon: CodeBracketSquareIcon,
+      icon: "fa-solid fa-chart-line",
       title: "Review & Scale",
       description: "Regular Quarterly Business Reviews keep you informed on ROI, upcoming enhancements, and expansion opportunities—so you scale predictably and mitigate risks before they arise."
     }
@@ -44,8 +36,8 @@ import {
 ---
 
 
-<section class="py-16 bg-[#FFF0E2]">
-  <div class="max-w-7xl mx-auto px-4">
+<section class="py-16 bg-[#FFF0E2]" data-aos="fade-up">
+  <div class="max-w-7xl mx-auto px-8 lg:px-10">
     <!-- Section Title -->
     <div class="text-center mb-12">
       <h2 class="text-2xl md:text-4xl font-bold text-[#005983]">
@@ -62,12 +54,9 @@ import {
       <!-- Card 1 -->
        {
         collaboration.map((collaboration) => (
-      <div class="bg-white rounded-xl p-6 shadow hover:shadow-lg transition">
+      <div class="bg-white rounded-xl p-6 shadow hover:shadow-lg transition" data-aos="fade-up">
         <div class="flex items-center justify-center h-10 w-10 rounded-xl border border-gray-300 mb-4">
-              <collaboration.icon
-                class="h-8 w-8 m-2 "
-                aria-hidden="true"
-              />
+        <i class={`${collaboration.icon}`}></i>
         </div>
         <h3 class="text-lg font-semibold text-gray-800 mb-2">{collaboration.title}</h3>
         <p class="text-gray-600 text-sm">
