@@ -65,32 +65,11 @@ const servicesLinks = [
           </a>
 
    <!-- Services dropdown -->
-        <el-dropdown class="h-full flex">
-
              <a
             href="/services/services-page"
             class="text-[#FFFFFF] text-sm font-medium hover:text-[#FF764D] hover:border-b-2 hover:border-[#FF764D] pb-1 transition-all"
           >
             Our Services
-          </a>
-          <el-menu
-            anchor="bottom end"
-            popover
-            class="w-48 origin-top-right rounded-md bg-white py-1 shadow-lg outline-1 outline-black/5 transition transition-discrete [--anchor-gap:--spacing(2)] data-closed:scale-95 data-closed:transform data-closed:opacity-0 data-enter:duration-100 data-enter:ease-out data-leave:duration-75 data-leave:ease-in"
-          > {
-            servicesLinks.map((link) => (
-              <a
-                href={link.href}
-                class="block px-4 py-2 text-sm text-[#0A3048] focus:bg-gray-100 hover:text-[#FF764D] focus:outline-hidden"
-              >
-                {link.label}
-              </a>
-            ))
-          }
-
-
-          </el-menu>
-        </el-dropdown>
 {
 
           navLinks.map((link) => (
