@@ -127,28 +127,94 @@
   --color-persian-rose-900: #fed6ed;
 
   /* Other Orange colors */
-    --color-other-orange: #fc814a;
-    --color-other-orange-100: #401501;
-    --color-other-orange-200: #812a02;
-    --color-other-orange-300: #c13f03;
-    --color-other-orange-400: #fb560a;
-    --color-other-orange-500: #fc814a;
-    --color-other-orange-600: #fd9b6e;
-    --color-other-orange-700: #fdb492;
-    --color-other-orange-800: #fecdb7;
-    --color-other-orange-900: #fee6db;
-    /* Accent1 colors */
-    --color-accent1: #b7ecec;
-    --color-accent1-100: #124242;
-    --color-accent1-200: #238484;
-    --color-accent1-300: #35c6c6;
-    --color-accent1-400: #74dada;
-    --color-accent1-500: #b7ecec;
-    --color-accent1-600: #c5f0f0;
-    --color-accent1-700: #d3f3f3;
-    --color-accent1-800: #e2f7f7;
-    --color-accent1-900: #f0fbfb;
-  }
+  --color-other-orange: #fc814a;
+  --color-other-orange-100: #401501;
+  --color-other-orange-200: #812a02;
+  --color-other-orange-300: #c13f03;
+  --color-other-orange-400: #fb560a;
+  --color-other-orange-500: #fc814a;
+  --color-other-orange-600: #fd9b6e;
+  --color-other-orange-700: #fdb492;
+  --color-other-orange-800: #fecdb7;
+  --color-other-orange-900: #fee6db;
+
+  /* Accent1 colors */
+  --color-accent1: #b7ecec;
+  --color-accent1-100: #124242;
+  --color-accent1-200: #238484;
+  --color-accent1-300: #35c6c6;
+  --color-accent1-400: #74dada;
+  --color-accent1-500: #b7ecec;
+  --color-accent1-600: #c5f0f0;
+  --color-accent1-700: #d3f3f3;
+  --color-accent1-800: #e2f7f7;
+  --color-accent1-900: #f0fbfb;
+
+  /* Dodger blue colors */
+  --color-dodger-blue-50: #e5f5ff;
+  --color-dodger-blue-100: #ccebff;
+  --color-dodger-blue-200: #99d6ff;
+  --color-dodger-blue-300: #66c2ff;
+  --color-dodger-blue-400: #33adff;
+  --color-dodger-blue-500: #0099ff;
+  --color-dodger-blue-600: #007acc;
+  --color-dodger-blue-700: #005c99;
+  --color-dodger-blue-800: #003d66;
+  --color-dodger-blue-900: #001f33;
+  --color-dodger-blue-950: #001524;
+
+  /* Coral Glow colors */
+  --color-coral-glow-50: #ffebe5;
+  --color-coral-glow-100: #ffd6cc;
+  --color-coral-glow-200: #ffad99;
+  --color-coral-glow-300: #ff8566;
+  --color-coral-glow-400: #ff5c33;
+  --color-coral-glow-500: #ff3300;
+  --color-coral-glow-600: #cc2900;
+  --color-coral-glow-700: #991f00;
+  --color-coral-glow-800: #661400;
+  --color-coral-glow-900: #330a00;
+  --color-coral-glow-950: #240700;
+
+  /* Gold colors */
+  --color-gold-50: #fffae5;
+  --color-gold-100: #fff6cc;
+  --color-gold-200: #ffec99;
+  --color-gold-300: #ffe366;
+  --color-gold-400: #ffda33;
+  --color-gold-500: #ffd000;
+  --color-gold-600: #cca700;
+  --color-gold-700: #997d00;
+  --color-gold-800: #665300;
+  --color-gold-900: #332a00;
+  --color-gold-950: #241d00;
+
+  /* Sky Surge colors */
+  --color-sky-surge-50: #e5faff;
+  --color-sky-surge-100: #ccf6ff;
+  --color-sky-surge-200: #99ecff;
+  --color-sky-surge-300: #66e3ff;
+  --color-sky-surge-400: #33daff;
+  --color-sky-surge-500: #00d0ff;
+  --color-sky-surge-600: #00a7cc;
+  --color-sky-surge-700: #007d99;
+  --color-sky-surge-800: #005366;
+  --color-sky-surge-900: #002a33;
+  --color-sky-surge-950: #001d24;
+
+  /* Deep Space Blue */
+  --color-deep-space-blue-50: #e9f5fc;
+  --color-deep-space-blue-100: #d2eaf9;
+  --color-deep-space-blue-200: #a5d5f3;
+  --color-deep-space-blue-300: #78c0ed;
+  --color-deep-space-blue-400: #4babe7;
+  --color-deep-space-blue-500: #1f96e0;
+  --color-deep-space-blue-600: #1878b4;
+  --color-deep-space-blue-700: #125a87;
+  --color-deep-space-blue-800: #0c3c5a;
+  --color-deep-space-blue-900: #061e2d;
+  --color-deep-space-blue-950: #04151f;
+}
 
 :root {
   /* Use Motion's spring() helper to generate a spring easing */
@@ -158,19 +224,21 @@
 .carousel-item {
   transition:
     transform var(--testimonial-transition),
-    opacity   var(--testimonial-transition);
+    opacity var(--testimonial-transition);
 }
 
 html {
   font-size: 22px;
 }
+
 bg-custom {
   background-color: #fef4ea33;
 }
+
 body {
   font-family: 'Hanken Grotesk Variable', 'DM Sans Variable', 'Lexend Deca', sans-serif;
-    /* letter-spacing: 0.02em; */
-    font-weight: 400;
+  /* letter-spacing: 0.02em; */
+  font-weight: 400;
 
 }
 
@@ -305,6 +373,7 @@ h1 {
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
+
 .no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
