@@ -1,56 +1,301 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import Navbarnew from '../../components/astro/Navbarnew.astro';
-import Footernew from '../../components/astro/Footernew.astro';
+import Navbarnew from "../../components/astro/Navbarnew.astro";
+import Footernew from "../../components/astro/Footernew.astro";
 ---
 
 <Layout title="Home">
   <Navbarnew />
-<section class="px-6 py-6 md:py-12 bg-[#FFF0E2]" data-aos="fade-up">
-  <div class="max-w-6xl mx-auto mb-6 px-8 lg:px-10 text-center">
-    <h1 class="text-3xl font-bold text-[#0d476d]">HubSpot Onboarding</h1>
-    <p class="text-2xl font-bold text-[#0d476d]  md:text-center pt-4">
-      Migrate Your CRM with Confidence: Avoid Data Loss and Business Disruptions
-      </p>
-        <p class="mt-4 text-ls text-gray-600 max-w-3xl mx-auto md:text-center">
-      Migrating your CRM often turns into a nightmare of lost records, broken relationships, and business disruptions. CRM Migrations risk skewed reports, frustrated teams, and stalled growth.
-    </p>
-  </div>
-  </section>
 
-<section class="px-6 py-6 md:py-12 bg-[#FFF0E2]" data-aos="fade-up">
-  <div class="max-w-6xl mx-auto mb-6 px-8 lg:px-10 text-center">
-    <h1 class="text-3xl font-bold text-[#0d476d]">Marketing</h1>
-    <p class="text-2xl font-bold text-[#0d476d]  md:text-center pt-4">
-      Boost Conversions with Optimized Forms & Landing Pages
-      </p>
-        <p class="mt-4 text-ls text-gray-600 max-w-3xl mx-auto md:text-center">
-     When your forms are too long and your landing pages frustrate visitors, you're leaking leads—and revenue—every day. High abandonment rates and poor mobile experiences mean wasted ad spend and stunted growth.
-    </p>
+  <div class="bg-coral-glow-50 dark:bg-gray-900" data-aos="fade-up">
+    <div class="px-6 py-16 sm:py-18 lg:px-8">
+      <div class="mx-auto max-w-2xl text-center">
+        <h1
+          class="text-3xl lg:text-4xl md:text-4xl font-bold text-center text-sky-surge-800 sm:text-5xl dark:text-white"
+        >
+          HubSpot Onboarding
+        </h1>
+        <p
+          class="mx-auto mt-6 max-w-xl text-lg/8 text-pretty text-sky-surge-900 dark:text-gray-300"
+        >
+          Migrating your CRM often turns into a nightmare of lost records,
+          broken relationships, and business disruptions. CRM Migrations risk
+          skewed reports, frustrated teams, and stalled growth.
+        </p>
+        <div class="mt-6 flex items-center justify-center gap-x-6">
+          <!-- <a href="#" class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 dark:bg-indigo-500 dark:shadow-none dark:hover:bg-indigo-400 dark:focus-visible:outline-indigo-500">Get started</a> -->
+          <a
+            href="/services/hubspot-onboarding"
+            class="text-sm/6 font-semibold text-sky-surge-800 dark:text-white hover:text-coral-glow-500 hover:border-coral-glow-500"
+            >Learn more <span aria-hidden="true">→</span></a
+          >
+        </div>
+      </div>
+    </div>
   </div>
-  </section>
 
-<section class="px-6 py-6 md:py-12 bg-[#FFF0E2]" data-aos="fade-up">
-  <div class="max-w-6xl mx-auto mb-6 px-8 lg:px-10 text-center">
-    <h1 class="text-3xl font-bold text-[#0d476d]">Sales & RevOps</h1>
-    <p class="text-2xl font-bold text-[#0d476d]  md:text-center pt-4">
-      Eliminate Phantom Deals & Boost Reporting Accuracy
-      </p>
-        <p class="mt-4 text-ls text-gray-600 max-w-3xl mx-auto md:text-center">
-     When deals aren’t linked to companies, your B2B sales data becomes fractured—leading to poor segmentation, unreliable reports, and missed revenue opportunities.
-    </p>
+  <div class="bg-coral-glow-50 dark:bg-gray-900" data-aos="fade-up">
+    <div
+      class="mx-auto flex max-w-2xl flex-col gap-16 px-6 py-12 sm:p-8 lg:mx-0 lg:max-w-none lg:flex-row lg:items-center lg:py-18 xl:gap-x-20 xl:px-20"
+    >
+      <img
+        src="../src/img/marketing.webp"
+        alt=""
+        class="h-96 w-full flex-none rounded-2xl lg:aspect-square lg:h-auto lg:max-w-sm"
+      />
+      <div class="w-full flex-auto">
+        <h1
+          class="text-3xl lg:text-4xl md:text-4xl font-bold text-sky-surge-800 sm:text-5xl dark:text-white"
+        >
+          Marketing
+        </h1>
+        <p class="mt-6 text-lg/8 text-pretty text-gray-600">
+          Boost Conversions with Optimized Forms & Landing Pages
+        </p>
+        <ul
+          role="list"
+          class="mt-10 grid grid-cols-1 gap-x-8 gap-y-3 text-base/7 text-gray-950 sm:grid-cols-2"
+        >
+          <li class="flex gap-x-3">
+            <svg
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              data-slot="icon"
+              aria-hidden="true"
+              class="h-7 w-5 flex-none text-sky-surge-800"
+            >
+              <path
+                d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z"
+                clip-rule="evenodd"
+                fill-rule="evenodd"></path>
+            </svg>
+            Competitive salaries
+          </li>
+          <li class="flex gap-x-3">
+            <svg
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              data-slot="icon"
+              aria-hidden="true"
+              class="h-7 w-5 flex-none text-sky-surge-800"
+            >
+              <path
+                d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z"
+                clip-rule="evenodd"
+                fill-rule="evenodd"></path>
+            </svg>
+            Flexible work hours
+          </li>
+          <li class="flex gap-x-3">
+            <svg
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              data-slot="icon"
+              aria-hidden="true"
+              class="h-7 w-5 flex-none text-sky-surge-800"
+            >
+              <path
+                d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z"
+                clip-rule="evenodd"
+                fill-rule="evenodd"></path>
+            </svg>
+            30 days of paid vacation
+          </li>
+          <li class="flex gap-x-3">
+            <svg
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              data-slot="icon"
+              aria-hidden="true"
+              class="h-7 w-5 flex-none text-sky-surge-800"
+            >
+              <path
+                d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z"
+                clip-rule="evenodd"
+                fill-rule="evenodd"></path>
+            </svg>
+            Annual team retreats
+          </li>
+          <li class="flex gap-x-3">
+            <svg
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              data-slot="icon"
+              aria-hidden="true"
+              class="h-7 w-5 flex-none text-sky-surge-800"
+            >
+              <path
+                d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z"
+                clip-rule="evenodd"
+                fill-rule="evenodd"></path>
+            </svg>
+            Benefits for you and your family
+          </li>
+          <li class="flex gap-x-3">
+            <svg
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              data-slot="icon"
+              aria-hidden="true"
+              class="h-7 w-5 flex-none text-sky-surge-800"
+            >
+              <path
+                d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z"
+                clip-rule="evenodd"
+                fill-rule="evenodd"></path>
+            </svg>
+            A great work environment
+          </li>
+        </ul>
+        <div class="mt-10 flex">
+          <a
+            href="/services/marketing"
+            class="text-sm/6 font-semibold text-sky-surge-800 hover:text-coral-glow-500 hover:border-coral-glow-500"
+          >
+            Learn more
+            <span aria-hidden="true">&rarr;</span>
+          </a>
+        </div>
+      </div>
+    </div>
   </div>
-  </section>
 
-<section class="px-6 py-6 md:py-12 bg-[#FFF0E2]" data-aos="fade-up">
-  <div class="max-w-6xl mx-auto mb-6 px-8 lg:px-10 text-center">
-    <h1 class="text-3xl font-bold text-[#0d476d]">Integrations</h1>
-    <p class="text-2xl font-bold text-[#0d476d]  md:text-center pt-4">
-      Fix Broken Integrations: Achieve Seamless Data Syncs Across All Platforms in 30 Days
-      </p>
-        <p class="mt-4 text-ls text-gray-600 max-w-3xl mx-auto md:text-center">
-     Broken integrations disrupt workflows, corrupt data, and frustrate teams. Sync errors, mapping mismatches, and lack of error monitoring lead to lost leads, billing mistakes, and costly delays. We fix that.
+  <div class="bg-coral-glow-50 dark:bg-gray-900" data-aos="fade-up">
+    <div
+      class="mx-auto flex max-w-2xl flex-col gap-16 px-6 py-12 sm:p-8 lg:mx-0 lg:max-w-none lg:flex-row lg:items-center lg:py-18 xl:gap-x-20 xl:px-20"
+    >
+      <div class="w-full flex-auto">
+        <h1
+          class="text-3xl lg:text-4xl md:text-4xl font-bold text-sky-surge-800 sm:text-5xl dark:text-white"
+        >
+          Sales & RevOps
+        </h1>
+        <p class="mt-6 text-lg/8 text-pretty text-gray-600">
+          Eliminate Phantom Deals & Boost Reporting Accuracy
+        </p>
+        <ul
+          role="list"
+          class="mt-10 grid grid-cols-1 gap-x-8 gap-y-3 text-base/7 text-gray-950 sm:grid-cols-2"
+        >
+          <li class="flex gap-x-3">
+            <svg
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              data-slot="icon"
+              aria-hidden="true"
+              class="h-7 w-5 flex-none text-sky-surge-800"
+            >
+              <path
+                d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z"
+                clip-rule="evenodd"
+                fill-rule="evenodd"></path>
+            </svg>
+            Phantom Deals
+          </li>
+          <li class="flex gap-x-3">
+            <svg
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              data-slot="icon"
+              aria-hidden="true"
+              class="h-7 w-5 flex-none text-sky-surge-800"
+            >
+              <path
+                d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z"
+                clip-rule="evenodd"
+                fill-rule="evenodd"></path>
+            </svg>
+            Manual Deal-Company Linking
+          </li>
+          <li class="flex gap-x-3">
+            <svg
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              data-slot="icon"
+              aria-hidden="true"
+              class="h-7 w-5 flex-none text-sky-surge-800"
+            >
+              <path
+                d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z"
+                clip-rule="evenodd"
+                fill-rule="evenodd"></path>
+            </svg>
+            Unreliable Pipeline Reporting
+          </li>
+          <li class="flex gap-x-3">
+            <svg
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              data-slot="icon"
+              aria-hidden="true"
+              class="h-7 w-5 flex-none text-sky-surge-800"
+            >
+              <path
+                d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z"
+                clip-rule="evenodd"
+                fill-rule="evenodd"></path>
+            </svg>
+            Hidden Revenue Leakage
+          </li>
+          <li class="flex gap-x-3">
+            <svg
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              data-slot="icon"
+              aria-hidden="true"
+              class="h-7 w-5 flex-none text-sky-surge-800"
+            >
+              <path
+                d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z"
+                clip-rule="evenodd"
+                fill-rule="evenodd"></path>
+            </svg>
+            Benefits for you and your family
+          </li>
+        </ul>
+        <div class="mt-10 flex">
+          <a
+            href="/services/sales-revops"
+            class="text-sm/6 font-semibold text-sky-surge-800 hover:text-coral-glow-500 hover:border-coral-glow-500"
+          >
+            Learn more
+            <span aria-hidden="true">&rarr;</span>
+          </a>
+        </div>
+      </div>
+      <img
+        src="../src/img/sales.webp"
+        alt=""
+        class="h-96 w-full flex-none rounded-2xl lg:aspect-square lg:h-auto lg:max-w-sm"
+      />
+    </div>
   </div>
-  </section>
-    <Footernew />
+
+  <div class="bg-coral-glow-50 dark:bg-gray-900" data-aos="fade-up">
+    <div class="px-6 py-16 sm:py-18 lg:px-8">
+      <div class="mx-auto max-w-2xl text-center">
+        <h1
+          class="text-3xl lg:text-4xl md:text-4xl font-bold text-center text-sky-surge-800 sm:text-5xl dark:text-white"
+        >
+          Integrations
+        </h1>
+        <p
+          class="mx-auto mt-6 max-w-xl text-lg/8 text-pretty text-sky-surge-900 dark:text-gray-300"
+        >
+          Fix Broken Integrations: Achieve Seamless Data Syncs Across All
+          Platforms in 30 Days
+        </p>
+        <div class="mt-6 flex items-center justify-center gap-x-6">
+          <!-- <a href="#" class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 dark:bg-indigo-500 dark:shadow-none dark:hover:bg-indigo-400 dark:focus-visible:outline-indigo-500">Get started</a> -->
+          <a
+            href="/services/integrations"
+            class="text-sm/6 font-semibold text-sky-surge-800 dark:text-white hover:text-coral-glow-500 hover:border-coral-glow-500"
+            >Learn more <span aria-hidden="true">→</span></a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <Footernew />
 </Layout>
