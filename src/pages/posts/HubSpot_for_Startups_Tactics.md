@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/BlogPostLayout.astro
+layout: ../../layouts/BlogPostLayoutNew.astro
 title: "HubSpot for Startups: Costs, Setup, and Growth Tactics"
 pubDate: "2025-04-26"
 description: "Discover the best practices for implementing CRM solutions to streamline customer management and boost profitability. Explore free and inexpensive CRM options perfect for small businesses looking to enhance customer relations without breaking the bank."

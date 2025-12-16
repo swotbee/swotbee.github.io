@@ -378,3 +378,10 @@ h1 {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+/* Blog content css */
+.article-content h1,
+h2,
+h3 {
+  color: #005366;
+}

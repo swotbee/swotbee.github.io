@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/BlogPostLayout.astro
+layout: ../../layouts/BlogPostLayoutNew.astro
 title: "Pendo HubSpot Integration: Boost Customer Insights"
 pubDate: "2025-04-09"
 description: "Unlock deeper customer insights and boost engagement with Pendo HubSpot integration. Streamline marketing, enhance user experience, and increase retention."

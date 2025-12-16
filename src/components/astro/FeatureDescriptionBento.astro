@@ -78,13 +78,13 @@ console.log("Debug Props:", {
 });
 ---
 
-<div class="bg-coral-glow-50 py-24 sm:py-32">
+<div class="bg-coral-glow-50 py-12 sm:py-12">
   <div class="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
-    <h3 class="text-base/7 font-semibold text-indigo-600">
+    <h3 class="text-base/7 font-semibold text-sky-surge-800">
       {tagline}
     </h3>
     <h2
-      class="mt-2 max-w-2xl text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl"
+      class="mt-2 text-3xl lg:text-4xl font-semibold tracking-tight text-pretty text-sky-surge-800"
     >
       {title}
     </h2>
@@ -115,7 +115,7 @@ console.log("Debug Props:", {
             title="Challenge"
             Icon={ExclamationCircleIcon}
             itemList={challenges}
-            bgColor="bg-red-50"
+            bgColor="bg-dodger-blue-50"
           />
         </div>
       </div>
@@ -131,7 +131,7 @@ console.log("Debug Props:", {
             title="Solution"
             Icon={LightBulbIcon}
             itemList={solutions}
-            bgColor="bg-green-100"
+            bgColor="bg-gold-50"
           />
         </div>
       </div>
@@ -143,7 +143,7 @@ console.log("Debug Props:", {
             title="Impact"
             Icon={ArrowTrendingUpIcon}
             itemList={impacts}
-            bgColor="bg-status-50"
+            bgColor="bg-sky-surge-50"
             horizontal={false}
           />
         </div>
@@ -152,19 +152,30 @@ console.log("Debug Props:", {
   </div>
 
   <div>
-    <p
-      class="pl-8 mt-2 text-sm font-semibold tracking-tight text-pretty text-gray-900"
+    <div class="mx-auto mt-12 px-0 md:px-8 lg:px-10 text-left md:text-center">
+      <h1 class="text-2xl lg:text-2xl font-bold text-sky-surge-800">
+        {validationText}
+      </h1>
+      <p
+        class="mt-4 text-ls text-sky-surge-900 max-w-3xl mx-auto md:text-center"
+      >
+        {validationText2}
+      </p>
+    </div>
+
+    <!-- <p
+      class="pl-8 mt-12 text-sm font-semibold tracking-tight text-pretty text-sky-surge-800"
     >
       {validationText}
-    </p>
+    </p> -->
 
-    {
+    <!-- {
       validationText2 && (
-        <p class="pl-8 mt-2 text-sm text-pretty text-gray-900">
+        <p class="pl-8 mt-2 text-sm text-pretty text-sky-surge-900">
           {validationText2}
         </p>
       )
-    }
+    } -->
     <div class="pl-8 mt-4 flex flex-row justify-center items-center">
       <CTAButton
         href="/meetus"

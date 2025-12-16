@@ -1,0 +1,363 @@
+---
+import Layout from './Layout.astro';
+import Navbar from '../components/astro/Navbarnew.astro';
+import Footer from "../components/astro/Footernew.astro";
+import { generateArticleStructuredData, generateCanonicalUrl } from '../utils/seo';
+import { getRecentPosts } from '../utils/posts';
+
+const { frontmatter } = Astro.props;
+const { recentPosts, popularTags } = await getRecentPosts();
+
+// Set the layout title and description
+const pageTitle = `${frontmatter.title} | SWOTBee`;
+const pageDescription = frontmatter.description || 'Read our latest blog post on SWOTBee';
+
+// Generate canonical URL
+const canonicalURL = generateCanonicalUrl(Astro.url.pathname);
+
+// Define blog sections for left navigation
+const blogSections = [
+    { title: 'All Posts', href: '/blog' },
+    { title: 'Marketing', href: '/categories/marketing' },
+    { title: 'Business Strategy', href: '/categories/business-strategy' },
+    { title: 'Product Management', href: '/categories/product-management' },
+    { title: 'Customer Success', href: '/categories/customer-success' },
+    { title: 'Sales', href: '/categories/sales' },
+];
+---
+<!-- Main content that will be passed to the Layout component -->
+<Layout 
+  title={pageTitle}
+  description={pageDescription}
+  ogImage={frontmatter.image}
+  canonicalURL={canonicalURL}
+  keywords={frontmatter.tags?.join(', ')}
+  author={frontmatter.author?.name}
+>
+  <!-- Open Graph -->
+  <meta property="og:title" content={`${frontmatter.title} | SWOTBee`} />
+  <meta property="og:description" content={frontmatter.description} />
+  <meta property="og:image" content={frontmatter.image ? `https://swotbee.github.io${frontmatter.image}` : 'https://swotbee.github.io/assets/home-images/swotbee.png'} />
+  <meta property="og:url" content={canonicalURL} />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="SWOTBee" />
+  <meta property="article:published_time" content={frontmatter.pubDate} />
+  <meta property="article:author" content={frontmatter.author?.name || 'SWOTBee'} />
+  {frontmatter.tags && frontmatter.tags.map((tag: string) => (
+    <meta property="article:tag" content={tag} />
+  ))}
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@swotbee" />
+  <meta name="twitter:creator" content="@swotbee" />
+  <meta name="twitter:title" content={`${frontmatter.title} | SWOTBee`} />
+  <meta name="twitter:description" content={frontmatter.description} />
+  <meta name="twitter:image" content={frontmatter.image ? `https://swotbee.github.io${frontmatter.image}` : 'https://swotbee.github.io/assets/home-images/swotbee.png'} />
+  <!-- Add structured data for SEO -->
+  <script type="application/ld+json" set:html={JSON.stringify(generateArticleStructuredData({
+    title: frontmatter.title,
+    description: frontmatter.description,
+    image: frontmatter.image,
+    url: canonicalURL,
+    publishedTime: frontmatter.pubDate,
+    author: frontmatter.author?.name || 'SWOTBee',
+    tags: frontmatter.tags
+  }), null, 2)}></script>
+  
+  <Navbar />
+<main class="pt-8 pb-16 lg:pt-16 lg:pb-24 bg-coral-glow-50 antialiased">
+    <div class="container px-4 mx-auto max-w-screen-xl bg-coral-glow-50">
+        <div class="flex flex-col lg:flex-row gap-8">
+        <!-- Left Sidebar Navigation -->
+        <aside class="hidden lg:block lg:w-64 " aria-labelledby="table-of-contents">
+            <div class="sticky top-6 max-h-[calc(100vh-4rem)] overflow-y-auto scrollbar-thin scrollbar-thumb-rounded-md scrollbar-track-transparent hover:scrollbar-thumb-gray-300">
+                <div class="p-6 font-medium bg-white text-gray-500 rounded-lg border border-gray-200">
+                    <h4 class="mb-4 text-lg font-bold text-sky-surge-800">Table of Contents</h4>
+                    <nav class="toc space-y-2" id="toc">
+                        <!-- Table of contents will be populated here -->
+                    </nav>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main article content -->
+        <!-- Main Content -->
+        <div class="w-full lg:w-2/3">
+            <article class="prose prose-lg w-full format format-sm sm:format-base lg:format-lg format-blue">
+            <header class="mb-8 lg:mb-6 not-format">
+                <h1 class="mb-4 text-3xl font-extrabold leading-tight text-sky-surge-800 lg:mb-6 lg:text-4xl">
+                    {frontmatter.title}
+                </h1>
+                <div class="text-base">
+                    <address class="inline">By <a rel="author" class="text-sky-surge-900 no-underline hover:underline" href={frontmatter.author?.url || '#'}>
+                        {frontmatter.author?.name || 'Anonymous'}
+                    </a></address>
+                    {frontmatter.category && (
+                        <>
+                            {' '}in{' '}
+                            <a href={frontmatter.category?.href || '#'} class="text-sky-surge-900 no-underline hover:underline">
+                                {frontmatter.category?.title || 'Uncategorized'}
+                            </a>
+                        </>
+                    )}
+                    <time datetime={frontmatter.pubDate} class="uppercase">
+                        {new Date(frontmatter.pubDate).toLocaleDateString('en-US', {
+                            year: 'numeric',
+                            month: 'short',
+                            day: 'numeric'
+                        })}
+                    </time>
+                </div>
+            </header>
+
+            <!-- Share buttons -->
+            <div class="flex justify-between items-center mb-6">
+                <aside aria-label="Share social media">
+                    <a href="#" class="inline-flex items-center py-2 px-3 mr-2 text-xs font-medium text-gray-900 no-underline bg-white rounded-lg border border-gray-200 focus:outline-none hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:ring-4 focus:ring-gray-200">
+                        <svg class="mr-2 w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 8 19">
+                            <path fill-rule="evenodd" d="M6.135 3H8V0H6.135a4.147 4.147 0 0 0-4.142 4.142V6H0v3h2v9.938h3V9h2.021l.592-3H5V3.591A.6.6 0 0 1 5.592 3h.543Z" clip-rule="evenodd"/>
+                        </svg>
+                        Share
+                    </a>
+                    <a href="#" class="inline-flex items-center py-2 px-3 mr-2 text-xs font-medium text-gray-900 no-underline bg-white rounded-lg border border-gray-200 focus:outline-none hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:ring-4 focus:ring-gray-200">
+                        <svg class="mr-2 w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                            <path fill="currentColor" d="M12.186 8.672 18.743.947h-2.927l-5.005 5.9-4.44-5.9H0l7.434 9.876-6.986 8.23h2.927l5.434-6.4 4.82 6.4H20L12.186 8.672Zm-2.267 2.671L8.544 9.515 3.2 2.42h2.2l4.312 5.719 1.375 1.828 5.731 7.613h-2.2l-4.699-6.237Z"/>
+                        </svg>
+                        Tweet
+                    </a>
+                </aside>
+                <button data-tooltip-target="tooltip-save" class="inline-flex items-center p-2 text-sm font-medium text-center text-gray-500 bg-white rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-50" type="button">
+                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 20">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m13 19-6-5-6 5V2a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v17Z"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Article content -->
+            <div class="article-content">
+                <slot />
+            </div>
+
+            <!-- Tags -->
+            {frontmatter.tags && (
+                <div class="flex flex-wrap gap-2 mt-8">
+                    {frontmatter.tags.map((tag: string) => (
+                        <a href={`/tags/${tag}`} class="bg-sky-surge-50 text-primary-800 text-sm font-medium px-2.5 py-0.5 rounded">
+                            {tag}
+                        </a>
+                    ))}
+                </div>
+            )}
+            </article>
+        </div>
+
+        <!-- Right Sidebar -->
+        <aside class="w-full lg:w-1/4" aria-labelledby="sidebar-label">
+            <div class="sticky top-6 max-h-[calc(100vh-4rem)] overflow-y-auto scrollbar-thin scrollbar-thumb-rounded-md scrollbar-track-transparent hover:scrollbar-thumb-gray-300">
+                <!-- Newsletter Signup -->
+                <div class="p-6 mb-6 font-medium text-gray-500 bg-white rounded-lg border border-gray-200">
+                    <h4 class="mb-4 text-lg font-bold text-sky-surge-800">Newsletter</h4>
+                    <p class="mb-4 text-sm">Stay updated with our latest insights and articles.</p>
+                    <form class="mb-2">
+                        <label for="email-address" class="sr-only">Email address</label>
+                        <input type="email" id="email-address" name="email" class="block w-full px-4 py-2 text-gray-900 bg-white border border-gray-300 rounded-md shadow-sm focus:ring-primary-500 focus:border-primary-500 sm:text-sm" placeholder="Enter your email" required>
+                        <button type="submit" class="w-full mt-3 px-4 py-2 text-sm font-medium bg-coral-glow-400 text-white rounded-md hover:bg-coral-glow-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500">
+                            Subscribe
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Recent Posts -->
+                <div class="p-6 bg-white font-medium text-gray-500 rounded-lg border border-gray-200">
+                    <h4 class="mb-4 text-lg font-bold text-sky-surge-800">Recent Posts</h4>
+                    <div class="space-y-4">
+                        {recentPosts.map((post) => (
+                            <article class="flex items-center">
+                                <div class="flex-shrink-0">
+                                    <img
+                                        class="h-16 w-16 rounded-lg object-cover"
+                                        src={post.image}
+                                        alt={post.title}
+                                    />
+                                </div>
+                                <div class="ml-4">
+                                    <h5 class="text-sm font-medium text-sky-surge-900">
+                                        <a href={`/posts/${post.slug}`} class="hover:underline">
+                                            {post.title}
+                                        </a>
+                                    </h5>
+                                    <p class="mt-1 text-xs text-gray-500">
+                                        {new Date(post.pubDate).toLocaleDateString('en-US', {
+                                            year: 'numeric',
+                                            month: 'short',
+                                            day: 'numeric'
+                                        })}
+                                    </p>
+                                    {post.tags && post.tags.length > 0 && (
+                                        <div class="flex flex-wrap gap-1 mt-2">
+                                            {post.tags.slice(0, 2).map((tag) => (
+                                                <a href={`/tags/${tag}`} class="text-xs px-2 py-0.5 bg-coral-glow-50 text-gray-600 rounded-full hover:bg-coral-glow-100">
+                                                    #{tag}
+                                                </a>
+                                            ))}
+                                        </div>
+                                    )}
+                                </div>
+                            </article>
+                        ))}
+                    </div>
+                </div>
+
+                <!-- Popular Tags -->
+                <div class="p-6 mt-6 bg-white font-medium text-gray-500 rounded-lg border border-gray-200">
+                    <h4 class="mb-4 text-lg font-bold text-sky-surge-800">Popular Tags</h4>
+                    <div class="flex flex-wrap gap-2">
+                        {popularTags.map((tag) => (
+                            <a
+                                href={`/tags/${tag}`}
+                                class="px-3 py-1 text-sm bg-sky-surge-800 text-gray-800 rounded-full hover:bg-gray-200"
+                            >
+                                #{tag}
+                            </a>
+                        ))}
+                    </div>
+                </div>
+            </div>
+        </aside>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    
+    <script is:inline>
+    // Function to generate slug from heading text
+    function slugify(text) {
+        return text.toLowerCase()
+            .replace(/[^a-z0-9]+/g, '-')
+            .replace(/(^-|-$)/g, '');
+    }
+
+    // Function to get all headings and build TOC
+    function buildTableOfContents() {
+        console.log('Building table of contents...');
+        const article = document.querySelector('article');
+        if (!article) {
+            console.error('Article element not found');
+            return;
+        }
+        
+        const headings = Array.from(article.querySelectorAll('h2, h3'));
+        const toc = document.getElementById('toc');
+        if (!toc) {
+            console.error('TOC container not found');
+            return;
+        }
+
+        // Clear any existing TOC items
+        toc.innerHTML = '';
+
+        headings.forEach((heading) => {
+            if (!heading) return;
+            
+            // Create slug for the heading
+            const slug = slugify(heading.textContent || '');
+            heading.id = slug;
+
+            // Create TOC item
+            const link = document.createElement('a');
+            link.href = `#${slug}`;
+            link.textContent = heading.textContent;
+
+            // Add appropriate styling based on heading level
+            const isSubheading = heading.tagName === 'H3';
+            link.className = `block py-1 px-4 ${isSubheading ? 'ml-4' : ''} text-sm text-sky-surge-900 rounded-lg hover:bg-coral-glow-100 ${isSubheading ? 'opacity-75' : 'font-medium'}`;
+
+            // Add click handler for smooth scrolling
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const target = document.getElementById(slug);
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+
+            if (toc) toc.appendChild(link);
+        });
+
+        // Highlight current section on scroll
+        const tocLinks = toc ? Array.from(toc.getElementsByTagName('a')) : [];
+        
+        if (tocLinks.length > 0 && toc) {
+            const handleScroll = () => {
+                let currentSection = null;
+                const scrollPosition = window.scrollY + 100;
+
+                // Find the current section in view
+                for (const heading of headings) {
+                    if (!heading) continue;
+                    const section = document.getElementById(heading.id);
+                    if (!section) continue;
+                    
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.offsetHeight;
+                    
+                    if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                        currentSection = heading;
+                        break;
+                    }
+                }
+
+                // Update active states
+                if (currentSection?.id) {
+                    tocLinks.forEach(link => {
+                        if (link.getAttribute('href') === `#${currentSection?.id}`) {
+                            link.classList.add('bg-gray-100');
+                        } else {
+                            link.classList.remove('bg-gray-100');
+                        }
+                    });
+                } else {
+                    // If no section is in view, remove all active states
+                    tocLinks.forEach(link => {
+                        link.classList.remove('bg-gray-100');
+                    });
+                }
+            };
+
+            let isScrolling = null;
+            window.addEventListener('scroll', () => {
+                if (isScrolling !== null) {
+                    window.cancelAnimationFrame(isScrolling);
+                }
+                isScrolling = window.requestAnimationFrame(handleScroll);
+            });
+
+            // Initial check
+            handleScroll();
+        }
+    }
+
+      // Build TOC when content is loaded
+    const buildTOC = () => {
+        try {
+            buildTableOfContents();
+        } catch (error) {
+            console.error('Error building TOC:', error);
+        }
+    };
+
+    if (document.readyState === 'loading') {
+        // Document is still loading, wait for DOMContentLoaded
+        document.addEventListener('DOMContentLoaded', buildTOC);
+    } else {
+        // Document is already loaded, run immediately
+        buildTOC();
+    }
+    
+    // Also run after a short delay to catch any dynamic content
+    setTimeout(buildTOC, 1000);
+    </script>
+    <Footer />
+  </Layout>

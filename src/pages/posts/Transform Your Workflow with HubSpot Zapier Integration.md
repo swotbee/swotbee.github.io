@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/BlogPostLayout.astro
+layout: ../../layouts/BlogPostLayoutNew.astro
 title: "Transform Your Workflow with HubSpot Zapier Integration"
 pubDate: "2025-03-09"
 description: "Discover how HubSpot Zapier integration revolutionizes business processes through automation, optimizing workflows, and enhancing CRM efficiency."

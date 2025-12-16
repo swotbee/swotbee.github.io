@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/BlogPostLayout.astro
+layout: ../../layouts/BlogPostLayoutNew.astro
 title: "HubSpot Success for Food & Beverage Clients"
 pubDate: "2025-04-16"
 description: "Discover how HubSpot revolutionizes beverage marketing strategies for food and beverage clients, boosting sales and enhancing customer engagement."

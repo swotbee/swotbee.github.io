@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/BlogPostLayout.astro
+layout: ../../layouts/BlogPostLayoutNew.astro
 title: "RecurPost vs HubSpot: Feature & Pricing Comparison"
 pubDate: "2025-04-03"
 description: "Discover the differences between RecurPost and HubSpot in this comprehensive comparison. Evaluate features, pricing, and benefits of these social media and marketing tools to choose the best fit for your business. Explore RecurPost vs HubSpot now!"

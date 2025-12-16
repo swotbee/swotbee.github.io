@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/BlogPostLayout.astro
+layout: ../../layouts/BlogPostLayoutNew.astro
 title: "HubSpot CMS: Build & Manage Your Website"
 pubDate: "2025-03-12"
 description: "Discover the robust features and seamless integration of HubSpot CMS for building, managing, and optimizing your website effortlessly. Enhance your online presence today!"

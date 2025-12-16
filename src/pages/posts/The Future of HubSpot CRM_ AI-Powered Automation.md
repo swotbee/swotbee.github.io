@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/BlogPostLayout.astro
+layout: ../../layouts/BlogPostLayoutNew.astro
 title: "The Future of HubSpot CRM: AI-Powered Automation and Personalization"
 pubDate: "2025-04-30"
 description: "Discover how HubSpot's AI-powered automation is transforming CRM capabilities, addressing key challenges like duplicate contacts and team adoption, and providing cutting-edge personalization features."

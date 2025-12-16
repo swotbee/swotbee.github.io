@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/BlogPostLayout.astro
+layout: ../../layouts/BlogPostLayoutNew.astro
 title: "HubSpot for Startups: Costs, Benefits, and Growth Tips"
 pubDate: "2025-03-12"
 description: "Discover how HubSpot for Startups offers significant discounts and tools like CRM, marketing automation, and integrations to fuel startup growth efficiently."

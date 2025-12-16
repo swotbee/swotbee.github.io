@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/BlogPostLayout.astro
+layout: ../../layouts/BlogPostLayoutNew.astro
 title: "Strategic Account Management: The game plan for effective stakeholder collaboration"
 pubDate: "2025-10-02"
 description: "Explore how strategic account management builds strong, long-term partnerships with key clients through clear planning, stakeholder collaboration, and tailored strategies. Learn best practices, tools, and steps to align client needs with business goals for sustainable growth."

@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/BlogPostLayout.astro
+layout: ../../layouts/BlogPostLayoutNew.astro
 title: "Optimize Marketing with Amplitude HubSpot Integration"
 pubDate: "2025-04-16"
 description: "Harness the power of Amplitude HubSpot Integration to boost marketing efficiency. Unify customer data, enhance insights, and streamline analytics for impactful strategies."

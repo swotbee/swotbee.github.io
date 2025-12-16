@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/BlogPostLayout.astro
+layout: ../../layouts/BlogPostLayoutNew.astro
 title: "Hootsuite vs HubSpot: Ultimate Tool Comparison"
 pubDate: "2025-04-09"
 description: "Discover the ultimate comparison of Hootsuite vs HubSpot to determine which marketing platform best suits your business needs for social media management and CRM."

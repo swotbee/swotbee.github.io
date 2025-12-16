@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/BlogPostLayout.astro
+layout: ../../layouts/BlogPostLayoutNew.astro
 title: "Top Tools for Effective Content Management: Enhance Workflow & Collaboration"
 pubDate: "2025-06-18"
 description: "Discover the top tools for effective content management that enhance collaboration, improve content quality, and streamline workflows for optimal business growth. Explore how tools like Trello, Asana, Slack, Google Drive, WordPress, and Hootsuite can transform your content strategy and drive engagement."

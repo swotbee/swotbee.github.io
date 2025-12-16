@@ -11,9 +11,9 @@ const navLinks = [
 
 const servicesLinks = [
   { href: "/services/hubspot-onboarding-new", label: "HubSpot Onboarding" },
-  { href: "/services/marketing", label: "Marketing" },
-  { href: "/services/sales-revops", label: "Sales & RevOps" },
-  { href: "/services/integrations", label: "Integrations" },
+  { href: "/services/marketing-new", label: "Marketing" },
+  { href: "/services/sales-revops-new", label: "Sales & RevOps" },
+  { href: "/services/integrations-new", label: "Integrations" },
 ];
 ---
 
@@ -75,13 +75,54 @@ const servicesLinks = [
         Home
       </a>
 
-      <!-- Services dropdown -->
-      <a
-        href="/services/services-page"
-        class="text-coral-glow-50 text-sm font-medium hover:text-coral-glow-400 hover:border-b-2 hover:border-coral-glow-400 pb-1 transition-all"
-      >
-        Our Services
-      </a>
+      <!-- Services dropdown (Desktop) -->
+      <div class="relative group">
+        <!-- Main link (click works) -->
+        <a
+          href="/services/services-page"
+          class="flex items-center gap-1 text-coral-glow-50 text-sm font-medium
+           hover:text-coral-glow-400 hover:border-b-2 hover:border-coral-glow-400
+           pb-1 transition-all"
+        >
+          Our Services
+          <svg
+            class="w-4 h-4 mt-0.5"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </a>
+
+        <!-- Dropdown -->
+        <div
+          class="absolute left-0 top-full z-50 mt-3 w-64 rounded-xl bg-sky-surge-800 shadow-xl
+           opacity-0 invisible group-hover:opacity-100 group-hover:visible
+           transition-all duration-200"
+        >
+          <ul class="py-3">
+            {
+              servicesLinks.map((link) => (
+                <li>
+                  <a
+                    href={link.href}
+                    class="block px-5 py-2 text-sm text-coral-glow-50
+                     hover:bg-coral-glow-50 hover:text-coral-glow-500 transition"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      </div>
+
       {
         navLinks.map((link) => (
           <a

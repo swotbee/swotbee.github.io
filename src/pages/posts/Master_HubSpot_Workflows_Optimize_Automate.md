@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/BlogPostLayout.astro
+layout: ../../layouts/BlogPostLayoutNew.astro
 title: "Master HubSpot Workflows: Optimize and Automate​"
 
 pubDate: "2025-03-05"

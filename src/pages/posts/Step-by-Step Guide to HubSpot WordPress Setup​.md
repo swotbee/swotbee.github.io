@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/BlogPostLayout.astro
+layout: ../../layouts/BlogPostLayoutNew.astro
 title: "Step-by-Step Guide to HubSpot WordPress Setup​"
 pubDate: "2025-06-25"
 description: "Effortlessly integrate HubSpot with your WordPress site using our step-by-step guide. Enhance marketing strategies with seamless site integration, live chat, forms, and analytics."
