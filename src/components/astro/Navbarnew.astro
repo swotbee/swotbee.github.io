@@ -4,13 +4,13 @@ import logo from "../../../public/assets/ico/swotbee_logo.png";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
 const navLinks = [
-  { href: "/about", label: "About", current: false },
-  { href: "/blog", label: "Blog", current: false },
+  { href: "/about-new", label: "About", current: false },
+  { href: "/blog-new", label: "Blog", current: false },
   { href: "/contactus", label: "Contact", current: false },
 ];
 
 const servicesLinks = [
-  { href: "/services/hubspot-onboarding", label: "HubSpot Onboarding" },
+  { href: "/services/hubspot-onboarding-new", label: "HubSpot Onboarding" },
   { href: "/services/marketing", label: "Marketing" },
   { href: "/services/sales-revops", label: "Sales & RevOps" },
   { href: "/services/integrations", label: "Integrations" },
@@ -47,11 +47,14 @@ const servicesLinks = [
 
     <!-- Right Contact Info -->
     <div class="flex items-center gap-6 text-sky-surge-800">
-      <p class="text-xs">talktohumans@swtbee.com</p>
+      <a
+        href="mailto:talktohumans@swotbee.com?subject=I’d%20like%20to%20know%20more%20about%20SwotBee"
+        class="text-sky-surge-800 hover:text-coral-glow-400 text-xs"
+        >talktohumans@swotbee.com</a
+      >
     </div>
   </div>
 </div>
-
 
 <!-- MAIN NAVBAR -->
 <nav class="bg-sky-surge-800">

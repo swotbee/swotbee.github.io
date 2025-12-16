@@ -1,0 +1,261 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/astro/Footernew.astro";
+import Navbar from "../components/astro/Navbarnew.astro";
+import Newsletter from "../components/astro/Newsletter.astro";
+import StructuredData from "../components/astro/StructuredData.astro";
+import { Picture } from "astro:assets";
+
+interface BlogPost {
+  title: string;
+  description: string;
+  pubDate: string;
+  image?: string;
+  url: string;
+  draft?: boolean; // Added draft property
+  category?: {
+    title: string;
+  };
+  author?: {
+    name: string;
+    imageUrl?: string;
+  };
+  tags?: string[]; // Added tags property
+}
+
+// Helper function to check if a URL is external
+const isExternalUrl = (url: string) => {
+  try {
+    new URL(url);
+    return url.startsWith("http://") || url.startsWith("https://");
+  } catch {
+    return false;
+  }
+};
+
+// Default dimensions for different image types
+const BLOG_IMAGE_DIMENSIONS = { width: 800, height: 450 }; // 16:9 aspect ratio
+const AVATAR_DIMENSIONS = { width: 40, height: 40 };
+
+// Date validation helper
+const isValidDate = (dateString: string) => {
+  const date = new Date(dateString);
+  return date instanceof Date && !isNaN(date.getTime());
+};
+
+const posts = await Promise.all(
+  Object.entries(
+    import.meta.glob<{ frontmatter: BlogPost }>("./posts/*.md"),
+  ).map(async ([path, resolver]) => {
+    const { frontmatter } = await resolver();
+    if (!isValidDate(frontmatter.pubDate)) {
+      console.error(
+        `Invalid date in file ${path}. Date string: "${frontmatter.pubDate}"`,
+      );
+    }
+    return {
+      ...frontmatter,
+      url: path.replace("./posts", "/posts").replace(".md", ""),
+    };
+  }),
+).then((posts) =>
+  // Filter out draft posts and sort by date
+  posts
+    .filter((post) => !post.draft)
+    .sort((a, b) => {
+      // Handle invalid dates by putting them at the end
+      if (!isValidDate(a.pubDate)) return 1;
+      if (!isValidDate(b.pubDate)) return -1;
+      return new Date(b.pubDate).getTime() - new Date(a.pubDate).getTime();
+    }),
+);
+
+// Format date helper with error handling
+const formatDate = (dateString: string) => {
+  if (!isValidDate(dateString)) {
+    console.error(`Attempting to format invalid date: "${dateString}"`);
+    return "Invalid Date";
+  }
+  return new Date(dateString).toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+  });
+};
+
+const MAX_VISIBLE_TAGS = 4; // Maximum number of tags to show before "Show More"
+---
+
+<Layout
+  title="HubSpot & Shopify Integration Blog | SWOTBee"
+  description="Expert insights, tips, and strategies for optimizing your HubSpot and Shopify integration. Learn about CRM best practices, automation, and revenue optimization."
+>
+  <StructuredData
+    type="breadcrumb"
+    data={{
+      breadcrumbs: [
+        { name: "Home", url: "https://swotbee.github.io" },
+        { name: "Blog", url: "https://swotbee.github.io/blog" },
+      ],
+    }}
+  />
+  <Navbar />
+  <section class="bg-coral-glow-50 dark:bg-gray-900" data-aos="fade-up">
+    <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+      <div class="mx-auto max-w-screen-sm text-center mb-8 lg:mb-16">
+        <h2 class="text-3xl lg:text-4xl md:text-4xl font-bold text-center mb-10 text-sky-surge-800 tracking-tight">
+          From the Blog
+        </h2>
+        <p class="font-light text-gray-500">
+          Learn how to grow your business with our expert advice on HubSpot and
+          Shopify integration.
+        </p>
+      </div>
+
+      <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        {
+          posts.map((post) => (
+            <article class="p-4 bg-white rounded-lg border border-gray-200 shadow-md">
+              {post.image && (
+                <a href={post.url}>
+                  <div class="mb-5">
+                    {isExternalUrl(post.image) ? (
+                      <img
+                        src={post.image}
+                        alt={post.title}
+                        width={BLOG_IMAGE_DIMENSIONS.width}
+                        height={BLOG_IMAGE_DIMENSIONS.height}
+                        class="rounded-lg object-cover w-full aspect-video"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    ) : (
+                      <Picture
+                        src={post.image}
+                        alt={post.title}
+                        width={BLOG_IMAGE_DIMENSIONS.width}
+                        height={BLOG_IMAGE_DIMENSIONS.height}
+                        widths={[400, 800]}
+                        formats={["webp", "avif", "jpg"]}
+                        inferSize
+                        class="rounded-lg object-cover w-full aspect-video"
+                      />
+                    )}
+                  </div>
+                </a>
+              )}
+
+              {post.category && (
+                <span class="bg-coral-glow-400 text-white text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">
+                  {post.category.title}
+                </span>
+              )}
+
+              <h2 class="my-2 text-2xl font-bold tracking-tight text-sky-surge-800">
+                <a href={post.url}>{post.title}</a>
+              </h2>
+
+              <p class="mb-4 font-light text-gray-500 line-clamp-3">
+                {post.description}
+              </p>
+
+              {post.tags && post.tags.length > 0 && (
+                <div class="mb-4">
+                  <div class="tags-container relative">
+                    <div class="flex flex-wrap gap-2 tags-list">
+                      {post.tags.slice(0, MAX_VISIBLE_TAGS).map((tag) => (
+                        <a
+                          href={`/tags/${tag}`}
+                          class="px-2 py-1 text-xs bg-gray-100 text-gray-800 rounded-full hover:bg-gray-200"
+                        >
+                          #{tag}
+                        </a>
+                      ))}
+                    </div>
+                    {post.tags.length > MAX_VISIBLE_TAGS && (
+                      <>
+                        <div class="hidden flex-wrap gap-2 mt-2 tags-extra">
+                          {post.tags.slice(MAX_VISIBLE_TAGS).map((tag) => (
+                            <a
+                              href={`/tags/${tag}`}
+                              class="px-2 py-1 text-xs bg-gray-100 text-gray-800 rounded-full hover:bg-gray-200"
+                            >
+                              #{tag}
+                            </a>
+                          ))}
+                        </div>
+                        <button
+                          class="show-more-tags text-xs text-primary-600 hover:text-primary-800 mt-1"
+                          data-show-more="true"
+                        >
+                          Show More Tags
+                        </button>
+                      </>
+                    )}
+                  </div>
+                </div>
+              )}
+
+              <div class="flex items-center space-x-4">
+                {post.author?.imageUrl &&
+                  (isExternalUrl(post.author.imageUrl) ? (
+                    <img
+                      src={post.author.imageUrl}
+                      alt={`${post.author?.name}'s avatar`}
+                      width={AVATAR_DIMENSIONS.width}
+                      height={AVATAR_DIMENSIONS.height}
+                      class="w-10 h-10"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  ) : (
+                    <Picture
+                      src={post.author.imageUrl}
+                      alt={`${post.author?.name}'s avatar`}
+                      width={AVATAR_DIMENSIONS.width}
+                      height={AVATAR_DIMENSIONS.height}
+                      widths={[40, 80]}
+                      formats={["webp", "avif", "png"]}
+                      inferSize
+                      class="w-10 h-10"
+                    />
+                  ))}
+                <div class="font-medium">
+                  <div class="text-sky-surge-800">{post.author?.name}</div>
+                  <div class="text-sm font-normal text-gray-500">
+                    {formatDate(post.pubDate)}
+                  </div>
+                </div>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <div class="bg-coral-glow-50 text-center py-12">
+    <Newsletter buttonText="Subscribe to our Blog" />
+  </div>
+  <Footer />
+</Layout>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const showMoreButtons = document.querySelectorAll(".show-more-tags");
+
+    showMoreButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const container = button.closest(".tags-container");
+        const extraTags = container?.querySelector(".tags-extra");
+        const isShowing = button.getAttribute("data-show-more") === "true";
+
+        if (extraTags) {
+          extraTags.classList.toggle("hidden");
+          button.textContent = isShowing ? "Show Less Tags" : "Show More Tags";
+          button.setAttribute("data-show-more", (!isShowing).toString());
+        }
+      });
+    });
+  });
+</script>
