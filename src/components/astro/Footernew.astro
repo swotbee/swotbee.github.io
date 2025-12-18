@@ -6,55 +6,115 @@ import Button from "./Button.astro";
 import logo from "../../../public/assets/ico/swotbee_logo.png";
 ---
 
+<footer
+  class="bg-[url('../src/img/footer1.png')] bg-cover bg-center bg-no-repeat text-white relative overflow-hidden pb-23"
+  data-aos="fade-up"
+>
+  <div class="max-w-7xl mx-auto px-8 lg:px-10">
+    <!-- TOP SECTION -->
+    <div class="flex flex-col md:flex-row justify-between gap-10 pb-10 pt-10">
+      <!-- LEFT Section -->
+      <div class="md:w-1/2">
+        <div class="pb-10">
+          <Picture src={logo} alt="SwotBee Logo" class="h-9 w-auto" />
+        </div>
+        <h2 class="text-2xl text-gold-300 font-bold leading-snug mb-4">
+          Your Trusted HubSpot<br />
+          Consulting Partner
+        </h2>
+        <p class="text-gold-50 text-[16px] leading-relaxed">
+          Expert solutions to streamline your HubSpot experience and boost
+          conversions.
+        </p>
+      </div>
 
-<footer class="bg-[url('../src/img/footer1.png')] bg-cover bg-center bg-no-repeat text-white relative overflow-hidden pb-23" data-aos="fade-up">
+      <!-- RIGHT Section – MENU -->
+      <div
+        class="md:w-1/2 grid grid-cols-2 md:grid-cols-2 gap-8 text-[15px] font-medium"
+      >
+        <ul class="space-y-3">
+          <li>
+            <a
+              href="/about"
+              class="hover:font-extrabold hover:text-coral-glow-400 hover:border-b-2 hover:border-coral-glow-400"
+              >About</a
+            >
+          </li>
+          <li>
+            <a
+              href="/services/services-page"
+              class="hover:font-extrabold hover:text-coral-glow-400 hover:border-b-2 hover:border-coral-glow-400"
+              >Our Services</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="hover:font-extrabold hover:text-coral-glow-400 hover:border-b-2 hover:border-coral-glow-400"
+              >Case Studies</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="hover:font-extrabold hover:text-coral-glow-400 hover:border-b-2 hover:border-coral-glow-400"
+              >Testimonials</a
+            >
+          </li>
+          <li>
+            <a
+              href="/blog"
+              class="hover:font-extrabold hover:text-coral-glow-400 hover:border-b-2 hover:border-coral-glow-400"
+              >Blog Posts</a
+            >
+          </li>
+          <li>
+            <a
+              href="/subscribe"
+              class="hover:font-extrabold hover:text-coral-glow-400 hover:border-b-2 hover:border-coral-glow-400"
+              >Subscribe to Newsletter</a
+            >
+          </li>
+        </ul>
 
-
-  
-
- <div class="max-w-7xl mx-auto px-8 lg:px-10">
-  <!-- TOP SECTION -->
-  <div class="flex flex-col md:flex-row justify-between gap-10 pb-10 pt-10">
-
-    <!-- LEFT Section -->
-    <div class="md:w-1/2">
-    <div class="pb-10">
-    <Picture src={logo} alt="SwotBee Logo" class="h-9 w-auto" />
+        <ul class="space-y-3">
+          <li>
+            <a
+              href="/faq"
+              class="hover:font-extrabold hover:text-coral-glow-400 hover:border-b-2 hover:border-coral-glow-400"
+              >FAQs</a
+            >
+          </li>
+          <li>
+            <a
+              href="/contactus"
+              class="hover:font-extrabold hover:text-coral-glow-400 hover:border-b-2 hover:border-coral-glow-400"
+              >Contact Us</a
+            >
+          </li>
+          <li>
+            <a
+              href="/privacy"
+              class="hover:font-extrabold hover:text-coral-glow-400 hover:border-b-2 hover:border-coral-glow-400"
+              >Privacy Policy</a
+            >
+          </li>
+          <li>
+            <a
+              href="/terms"
+              class="hover:font-extrabold hover:text-coral-glow-400 hover:border-b-2 hover:border-coral-glow-400"
+              >Terms of Use</a
+            >
+          </li>
+          <li>
+            <a
+              href="/cookie"
+              class="hover:font-extrabold hover:text-coral-glow-400 hover:border-b-2 hover:border-coral-glow-400"
+              >Cookie Policy</a
+            >
+          </li>
+        </ul>
+      </div>
     </div>
-      <h2 class="text-2xl text-gold-300 font-bold leading-snug mb-4">
-        Your Trusted HubSpot<br />
-        Consulting Partner
-      </h2>
-      <p class="text-gold-50 text-[16px] leading-relaxed">
-        Expert solutions to streamline your HubSpot experience
-        and boost conversions.
-      </p>
-    </div>
-
-    <!-- RIGHT Section – MENU -->
-<div class="md:w-1/2 grid grid-cols-2 md:grid-cols-2 gap-8 text-[15px] font-medium">
-
-  <ul class="space-y-3">
-    <li><a href="/about" class="hover:text-coral-glow-400 hover:border-b-2 hover:border-coral-glow-400">About</a></li>
-    <li><a href="/services/services-page" class="hover:text-coral-glow-400 hover:border-b-2 hover:border-coral-glow-400">Our Services</a></li>
-    <li><a href="#" class="hover:text-coral-glow-400 hover:border-b-2 hover:border-coral-glow-400">Case Studies</a></li>
-    <li><a href="#" class="hover:text-coral-glow-400 hover:border-b-2 hover:border-coral-glow-400">Testimonials</a></li>
-    <li><a href="/blog" class="hover:text-coral-glow-400 hover:border-b-2 hover:border-coral-glow-400">Blog Posts</a></li>
-    <li><a href="/subscribe" class="hover:text-coral-glow-400 hover:border-b-2 hover:border-coral-glow-400">Subscribe to Newsletter</a></li>
-  </ul>
-
-  <ul class="space-y-3">
-    <li><a href="/faq" class="hover:text-coral-glow-400 hover:border-b-2 hover:border-coral-glow-400">FAQs</a></li>
-    <li><a href="/contactus" class="hover:text-coral-glow-400 hover:border-b-2 hover:border-coral-glow-400">Contact Us</a></li>
-    <li><a href="/privacy" class="hover:text-coral-glow-400 hover:border-b-2 hover:border-coral-glow-400">Privacy Policy</a></li>
-    <li><a href="/terms" class="hover:text-coral-glow-400 hover:border-b-2 hover:border-coral-glow-400">Terms of Use</a></li>
-    <li><a href="/cookie" class="hover:text-coral-glow-400 hover:border-b-2 hover:border-coral-glow-400">Cookie Policy</a></li>
-  </ul>
-
-</div>
-
   </div>
-
-</div>
-
 </footer>

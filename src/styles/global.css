@@ -239,6 +239,7 @@ body {
   font-family: 'Hanken Grotesk Variable', 'DM Sans Variable', 'Lexend Deca', sans-serif;
   /* letter-spacing: 0.02em; */
   font-weight: 400;
+  background-color: #ffebe5;
 
 }
 
@@ -339,7 +340,7 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: 'Lusitana', serif;
+  font-family: 'Rokkitt Variable', serif;
   font-weight: 700;
 }
 
@@ -380,8 +381,10 @@ h1 {
 }
 
 /* Blog content css */
-.article-content h1,
-h2,
-h3 {
-  color: #005366;
+.article-content {
+  h1,
+  h2,
+  h3 {
+    color: #005366 !important;
+  }
 }

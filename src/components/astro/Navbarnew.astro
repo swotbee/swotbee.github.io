@@ -23,7 +23,7 @@ const servicesLinks = [
   type="module"></script>
 
 <!-- TOP BAR -->
-<div class="w-full bg-coral-glow-50 border-b border-gray-300">
+<div class="w-full border-b border-gray-300">
   <div
     class="max-w-7xl mx-auto flex justify-between items-center py-2 px-4 text-sm"
   >
@@ -49,7 +49,7 @@ const servicesLinks = [
     <div class="flex items-center gap-6 text-sky-surge-800">
       <a
         href="mailto:talktohumans@swotbee.com?subject=I’d%20like%20to%20know%20more%20about%20SwotBee"
-        class="text-sky-surge-800 hover:text-coral-glow-400 text-xs"
+        class="text-sky-surge-800 hover:text-coral-glow-400 hover:font-extrabold text-xs"
         >talktohumans@swotbee.com</a
       >
     </div>
@@ -70,7 +70,7 @@ const servicesLinks = [
     <div class="hidden lg:flex items-center space-x-10">
       <a
         href="/"
-        class="text-coral-glow-50 text-sm font-medium hover:text-coral-glow-400 hover:border-b-2 hover:border-coral-glow-400 pb-1 transition-all"
+        class="text-coral-glow-50 text-sm font-medium hover:text-coral-glow-400 hover:border-b-2 hover:border-coral-glow-400 hover:font-extrabold pb-1 transition-all"
       >
         Home
       </a>
@@ -81,7 +81,7 @@ const servicesLinks = [
         <a
           href="/services/services-page"
           class="flex items-center gap-1 text-coral-glow-50 text-sm font-medium
-           hover:text-coral-glow-400 hover:border-b-2 hover:border-coral-glow-400
+           hover:text-coral-glow-400 hover:border-b-2 hover:border-coral-glow-400 hover:font-extrabold
            pb-1 transition-all"
         >
           Our Services
@@ -112,7 +112,7 @@ const servicesLinks = [
                   <a
                     href={link.href}
                     class="block px-5 py-2 text-sm text-coral-glow-50
-                     hover:bg-coral-glow-50 hover:text-coral-glow-500 transition"
+                     hover:font-extrabold hover:text-coral-glow-400 transition"
                   >
                     {link.label}
                   </a>
@@ -129,8 +129,8 @@ const servicesLinks = [
             href={link.href}
             class={
               link.current
-                ? "text-coral-glow-50 text-sm font-medium hover:text-coral-glow-400 hover:border-b-2 hover:border-[#FF764D] pb-1 transition-all"
-                : "text-coral-glow-50 text-sm font-medium hover:text-coral-glow-400 hover:border-b-2 hover:border-[#FF764D] pb-1 transition-all"
+                ? "text-coral-glow-50 text-sm font-medium hover:text-coral-glow-400 hover:border-b-2 hover:font-extrabold hover:border-coral-glow-400 pb-1 transition-all"
+                : "text-coral-glow-50 text-sm font-medium hover:text-coral-glow-400 hover:border-b-2 hover:font-extrabold hover:border-coral-glow-400 pb-1 transition-all"
             }
           >
             {link.label}
