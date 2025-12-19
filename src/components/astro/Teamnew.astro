@@ -1,37 +1,31 @@
 ---
-import { Picture } from 'astro:assets';
-import sharmilaImage from '/public/assets/team/sharmilago.png';
-import sivakumarImage from '/public/assets/team/siva.jpeg';
-import RajkumarImage from '/public/assets/team/rajkumar.jpeg';
-import RajImage from '/public/assets/team/raj.png';
-import YoganandImage from '/public/assets/team/yoga.jpeg';
-import RavikumarImage from '/public/assets/team/ravikumar.png';
-import ParthibanImage from '/public/assets/team/parthiban.jpeg';
+import { Picture } from "astro:assets";
+import sharmilaImage from "/public/assets/team/sharmilago.png";
+import sivakumarImage from "/public/assets/team/siva.jpeg";
+import RajkumarImage from "/public/assets/team/rajkumar.jpeg";
+import RajImage from "/public/assets/team/raj.png";
+import YoganandImage from "/public/assets/team/yoga.jpeg";
+import RavikumarImage from "/public/assets/team/ravikumar.png";
+import ParthibanImage from "/public/assets/team/parthiban.jpeg";
 
 const teamMembers = [
   {
     name: "Sharmila",
     role: "Hubspot Solutions",
     imageUrl: sharmilaImage,
-    countries: [
-      { name: "India", code: "IN" }
-    ]
+    countries: [{ name: "India", code: "IN" }],
   },
   {
     name: "Sivakumar",
     role: "Hubspot Solutions",
     imageUrl: sivakumarImage,
-    countries: [
-      { name: "India", code: "IN" }
-    ]
+    countries: [{ name: "India", code: "IN" }],
   },
   {
     name: "Rajkumar",
     role: "UX & Visual Design",
     imageUrl: RajkumarImage,
-    countries: [
-      { name: "India", code: "IN" }
-    ]
+    countries: [{ name: "India", code: "IN" }],
   },
   {
     name: "Raj",
@@ -39,73 +33,74 @@ const teamMembers = [
     imageUrl: RajImage,
     countries: [
       { name: "Canada", code: "CA" },
-      { name: "United States", code: "US" }
-    ]
+      { name: "United States", code: "US" },
+    ],
   },
   {
     name: "Yoganand",
     role: "Solutions Engineering",
     imageUrl: YoganandImage,
-    countries: [
-      { name: "India", code: "IN" }
-    ]
+    countries: [{ name: "India", code: "IN" }],
   },
   {
     name: "Ravikumar",
     role: "Marketing Solutions",
     imageUrl: RavikumarImage,
-    countries: [
-      { name: "India", code: "IN" }
-    ]
+    countries: [{ name: "India", code: "IN" }],
   },
   {
     name: "Parthiban",
     role: "Compliance & Security",
     imageUrl: ParthibanImage,
-    countries: [
-      { name: "Canada", code: "CA" }
-    ]
-  }
+    countries: [{ name: "Canada", code: "CA" }],
+  },
 ];
 ---
-  <div class="px-6 py-16 sm:py-16 mx-auto max-w-7xl lg:px-8" data-aos="fade-up">
-          <div class="max-w-2xl mx-auto lg:mx-0">
-            <h2 class="text-3xl lg:text-4xl font-bold text-sky-surge-800">Our Global team</h2>
-            <p class="mt-4 text-ls text-sky-surge-900 max-w-3xl mx-auto">
-              We're a dynamic group of individuals who are passionate about what we do and dedicated to delivering the
-              best results for our clients.
-            </p>
-          </div>
-          <ul
-            role="list"
-            class="grid max-w-2xl grid-cols-2 mx-auto mt-12 text-center gap-x-8 gap-y-16 sm:grid-cols-3 md:grid-cols-4 lg:mx-0 lg:max-w-none lg:grid-cols-5 xl:grid-cols-6"
-          data-aos="zoom-in">
-            {teamMembers.map((person) => (
-              <li>
-                <Picture
-                  src={person.imageUrl}
-                  alt={`${person.name}'s profile picture`}
-                  widths={[96, 192]}
-                  formats={['webp', 'avif', 'png']}
-                  class="mx-auto rounded-full size-24"
-                />
-                <div class="flex flex-col items-center justify-center mt-2 gap-1">
-                  {person.countries.map((country) => (
-                    <div class="flex items-center gap-1">
-                      <img
-                        src={`https://flagcdn.com/16x12/${country.code.toLowerCase()}.png`}
-                        alt={`${country.name} flag`}
-                        width="16"
-                        height="12"
-                      />
-                      <span class="text-gray-500 text-xs">{country.name}</span>
-                    </div>
-                  ))}
-                </div>
-                <h3 class="mt-6 font-semibold tracking-tight text-sky-surge-800 text-base/7">{person.name}</h3>
-                <p class="text-gray-600 text-sm/6">{person.role}</p>
-              </li>
-            ))}
-          </ul>
-        </div>
 
+<div class="px-6 py-16 sm:py-16 mx-auto max-w-7xl lg:px-8" data-aos="fade-up">
+  <div class="max-w-2xl mx-auto lg:mx-0">
+    <h2 class="text-3xl lg:text-4xl font-bold text-sky-surge-800">
+      Our Global team
+    </h2>
+    <p class="mt-4 text-ls text-sky-surge-900 max-w-3xl mx-auto">
+      We're a dynamic group of individuals who are passionate about what we do
+      and dedicated to delivering the best results for our clients.
+    </p>
+  </div>
+  <ul
+    role="list"
+    class="grid max-w-2xl grid-cols-2 mx-auto mt-12 text-center gap-x-8 gap-y-16 sm:grid-cols-3 md:grid-cols-4 lg:mx-0 lg:max-w-none lg:grid-cols-5 xl:grid-cols-6"
+    data-aos="zoom-in"
+  >
+    {
+      teamMembers.map((person) => (
+        <li>
+          <Picture
+            src={person.imageUrl}
+            alt={`${person.name}'s profile picture`}
+            widths={[96, 192]}
+            formats={["webp", "avif", "png"]}
+            class="mx-auto rounded-full size-24"
+          />
+          <div class="flex flex-col items-center justify-center mt-2 gap-1">
+            {person.countries.map((country) => (
+              <div class="flex items-center gap-1">
+                <img
+                  src={`https://flagcdn.com/16x12/${country.code.toLowerCase()}.png`}
+                  alt={`${country.name} flag`}
+                  width="16"
+                  height="12"
+                />
+                <span class="text-gray-500 text-xs">{country.name}</span>
+              </div>
+            ))}
+          </div>
+          <h3 class="mt-6 font-semibold tracking-tight text-sky-surge-800 text-base/7">
+            {person.name}
+          </h3>
+          <p class="text-gray-600 text-sm/6">{person.role}</p>
+        </li>
+      ))
+    }
+  </ul>
+</div>

@@ -1,77 +1,82 @@
 ---
 import "@fortawesome/fontawesome-free/css/all.min.css";
+import { Picture } from "astro:assets";
+import Shreyas from "/public/assets/testimonials/Shreyas.png";
+import linda from "/public/assets/testimonials/linda.jpg";
+import Samantha from "/public/assets/testimonials/Samantha.png";
 
- const testimonials = [
-    {
-      icon: "fa fa-user",
-      name: "Samantha",
-      role: "Postgrad",
-      text: "Automated spam checks and validations cleared our blocklist alert, reduced bounces, boosted open rates, and prevented AWS flagging our domain."
-    },
-    {
-      icon: "fa fa-user",
-      name: "Linda",
-      role: "Zenergy",
-      text: "Our email campaigns feel more relevant thanks to advanced data enrichment."
-    },
-    {
-      icon: "fa fa-user",
-      name: "Shreyas",
-      role: "Jirav",
-      text: "ICP framework gave us a strategic advantage by targeting ideal customers precisely."
-    }
-  ];
+const testimonials = [
+  {
+    icon: Samantha,
+    name: "Samantha",
+    role: "Postgrad",
+    text: "Automated spam checks and validations cleared our blocklist alert, reduced bounces, boosted open rates, and prevented AWS flagging our domain.",
+  },
+  {
+    icon: linda,
+    name: "Linda",
+    role: "Zenergy",
+    text: "Our email campaigns feel more relevant thanks to advanced data enrichment.",
+  },
+  {
+    icon: Shreyas,
+    name: "Shreyas",
+    role: "Jirav",
+    text: "ICP framework gave us a strategic advantage by targeting ideal customers precisely.",
+  },
+];
 ---
 
 <!-- --------------------------
   Slider HTML
 --------------------------- -->
 <section class="py-6 md:py-16 max-w-7xl" data-aos="fade-up">
-  <h2 class="text-3xl lg:text-4xl md:text-4xl font-bold text-center mb-10 text-sky-surge-800">
+  <h2
+    class="text-3xl lg:text-4xl md:text-4xl font-bold text-center mb-10 text-sky-surge-800"
+  >
     What Our Clients Say
   </h2>
 
   <div class="relative max-w-7xl mx-auto px-8 lg:px-10" data-aos="zoom-in">
-
     <!-- Scroll Wrapper -->
-   <div id="testimonial-wrapper"
-     class="flex overflow-x-auto overflow-y-hidden no-scrollbar cursor-grab scroll-smooth gap-2">
-
-  {
-    testimonials.map((testimonials) => (
-      <div class="flex-none px-2 w-[100%] md:w-[50%] lg:w-[33%]">
-        
-        <article class="bg-white rounded-2xl p-6 shadow-sm h-full flex flex-col justify-between">
-          <div>
-            <div class="flex items-start gap-3 mb-3">
-              <div class="flex items-center justify-center h-12 w-12 rounded-full border border-black">
-                <i class={`${testimonials.icon}`}></i>
-              </div>
+    <div
+      id="testimonial-wrapper"
+      class="flex overflow-x-auto overflow-y-hidden no-scrollbar cursor-grab scroll-smooth gap-2"
+    >
+      {
+        testimonials.map((testimonials) => (
+          <div class="flex-none px-2 w-[100%] md:w-[50%] lg:w-[33%]">
+            <article class="bg-white rounded-2xl p-6 shadow-sm h-full flex flex-col justify-between">
               <div>
-                <h4 class="font-semibold text-[16px]">{testimonials.name}</h4>
-                <p class="text-gray-500 text-[14px]">{testimonials.role}</p>
+                <div class="flex items-start gap-3 mb-3">
+                  <div class="flex items-center justify-center h-12 w-12 rounded-full">
+                    <Picture
+                      src={testimonials.icon}
+                      alt={`${testimonials.name}'s profile picture`}
+                      widths={[96, 192]}
+                      formats={["webp", "avif", "png"]}
+                      class="mx-auto rounded-full"
+                    />
+                  </div>
+                  <div>
+                    <h4 class="font-semibold text-[16px]">
+                      {testimonials.name}
+                    </h4>
+                    <p class="text-gray-500 text-[14px]">{testimonials.role}</p>
+                  </div>
+                </div>
               </div>
-            </div>
+
+              <p class="text-sky-surge-900 text-[15px] leading-relaxed mt-auto">
+                {testimonials.text}
+              </p>
+            </article>
           </div>
-
-          <p class="text-sky-surge-900 text-[15px] leading-relaxed mt-auto">
-           {testimonials.text}
-          </p>
-        </article>
-      </div>
-              ))
+        ))
       }
-
     </div>
   </div>
 </section>
-
-
-
-
-
-
-
 
 <script is:inline>
   const slider = document.getElementById("testimonial-wrapper");
@@ -121,7 +126,8 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
   // Auto scroll
   let autoScrollSpeed = 1; // pixels per frame
   function autoScroll() {
-    if (!isDown) { // don't auto-scroll when dragging
+    if (!isDown) {
+      // don't auto-scroll when dragging
       slider.scrollLeft += autoScrollSpeed;
       // Reset scroll to start for infinite loop effect
       if (slider.scrollLeft >= slider.scrollWidth - slider.clientWidth) {
