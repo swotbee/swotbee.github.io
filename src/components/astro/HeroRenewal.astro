@@ -1,0 +1,347 @@
+---
+// HeroRenewal.astro — Before/After Renewal Automation Hero
+// Shows: Manual renewal chaos → Automated renewal that creates itself
+---
+
+<section class="hero-renewal-section">
+  <div class="hero-renewal-wrapper">
+    <svg
+      viewBox="0 0 960 500"
+      xmlns="http://www.w3.org/2000/svg"
+      class="hero-renewal-svg"
+      role="img"
+      aria-label="Renewal automation: from manual chaos to deals that create themselves"
+    >
+      <defs>
+        <linearGradient id="rbg" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#1b2a37" />
+          <stop offset="100%" stop-color="#141f29" />
+        </linearGradient>
+        <filter id="rs" x="-5%" y="-5%" width="110%" height="120%">
+          <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.25" />
+        </filter>
+        <!-- Glow for the lightning bolt -->
+        <filter id="bolt-glow" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="6" result="blur" />
+          <feFlood flood-color="#F5C400" flood-opacity="0.4" />
+          <feComposite in2="blur" operator="in" />
+          <feMerge>
+            <feMergeNode />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+      </defs>
+
+      <!-- Background -->
+      <rect width="960" height="500" fill="url(#rbg)" rx="12" />
+
+      <!-- Subtle grid -->
+      <g opacity="0.03">
+        {Array.from({length: 24}, (_, i) => i).map(i => (
+          <line x1={i * 40} y1="0" x2={i * 40} y2="500" stroke="white" stroke-width="0.5" />
+        ))}
+        {Array.from({length: 13}, (_, i) => i).map(i => (
+          <line x1="0" y1={i * 40} x2="960" y2={i * 40} stroke="white" stroke-width="0.5" />
+        ))}
+      </g>
+
+      <!-- ============ LEFT SIDE: BEFORE (Manual Renewals) ============ -->
+
+      <!-- Label -->
+      <text x="220" y="38" text-anchor="middle" fill="#ff5c35" font-size="10" font-weight="600" letter-spacing="2" font-family="sans-serif" opacity="0.7" class="r-fade" style="--d:0.2s">MANUAL RENEWALS</text>
+
+      <!-- Source deal: Closed Won -->
+      <g class="r-fade" style="--d:0.3s" transform="translate(60, 58)">
+        <rect width="160" height="72" rx="8" fill="#1e3244" stroke="#70c1b3" stroke-width="1.5" filter="url(#rs)" />
+        <text x="12" y="22" fill="#ffffff" font-size="11" font-weight="600" font-family="sans-serif">Acme Corp — 2026</text>
+        <text x="12" y="38" fill="#ffffff" opacity="0.5" font-size="9" font-family="sans-serif">$120,000 · 4 line items</text>
+        <text x="12" y="52" fill="#ffffff" opacity="0.4" font-size="8" font-family="sans-serif">Owner: Sarah K.</text>
+        <!-- Closed Won badge -->
+        <rect x="100" y="56" width="52" height="14" rx="7" fill="#70c1b3" />
+        <text x="126" y="66" text-anchor="middle" fill="#1b2a37" font-size="7" font-weight="700" font-family="sans-serif">WON ✓</text>
+      </g>
+
+      <!-- Calendar flip: Year turns over -->
+      <g class="r-fade" style="--d:0.6s" transform="translate(260, 62)">
+        <rect width="56" height="60" rx="6" fill="#1e3244" stroke="#ffffff" stroke-width="0.5" opacity="0.4" />
+        <rect width="56" height="16" rx="6" fill="#ff5c35" opacity="0.7" />
+        <text x="28" y="12" text-anchor="middle" fill="white" font-size="7" font-weight="700" font-family="sans-serif">JAN 2027</text>
+        <text x="28" y="47" text-anchor="middle" fill="white" opacity="0.7" font-size="20" font-weight="700" font-family="sans-serif">1</text>
+        <!-- Clock icon -->
+        <text x="28" y="75" text-anchor="middle" fill="#ff5c35" font-size="9" opacity="0.6" font-family="sans-serif">⏰ 90 days pass...</text>
+      </g>
+
+      <!-- Arrow down: manual process -->
+      <g class="r-fade" style="--d:0.8s">
+        <line x1="140" y1="135" x2="140" y2="170" stroke="#ff5c35" stroke-width="1.5" stroke-dasharray="4 3" opacity="0.5" class="r-dash" />
+        <text x="160" y="158" fill="#ff5c35" font-size="8" opacity="0.6" font-family="sans-serif">manual copy...</text>
+      </g>
+
+      <!-- Manual renewal attempt (messy) -->
+      <g class="r-fade" style="--d:1.0s" transform="translate(60, 178)">
+        <rect width="160" height="110" rx="8" fill="#1e3244" stroke="#ff5c35" stroke-width="1" stroke-dasharray="6 3" filter="url(#rs)" />
+        <text x="12" y="20" fill="#ffffff" opacity="0.6" font-size="10" font-family="sans-serif">Acme Renewal 2027</text>
+        <text x="12" y="35" fill="#ff5c35" opacity="0.8" font-size="8" font-family="sans-serif">Created manually</text>
+
+        <!-- Problems list -->
+        <g transform="translate(12, 48)">
+          <text x="0" y="0" fill="#ff5c35" font-size="8" font-family="sans-serif" class="r-pulse">✗ Wrong amount ($95K vs $120K)</text>
+          <text x="0" y="15" fill="#ff5c35" font-size="8" font-family="sans-serif" class="r-pulse">✗ Setup fee included (one-time)</text>
+          <text x="0" y="30" fill="#F5C400" font-size="8" font-family="sans-serif">⚠ No price uplift applied</text>
+          <text x="0" y="45" fill="#F5C400" font-size="8" font-family="sans-serif">⚠ Owner changed (wrong rep)</text>
+        </g>
+      </g>
+
+      <!-- Missed renewal -->
+      <g class="r-fade" style="--d:1.2s" transform="translate(260, 178)">
+        <rect width="120" height="72" rx="8" fill="#1e3244" stroke="#ff5c35" stroke-width="1.5" opacity="0.6" />
+        <text x="60" y="24" text-anchor="middle" fill="#ff5c35" font-size="10" font-weight="600" font-family="sans-serif">Beta Inc</text>
+        <text x="60" y="40" text-anchor="middle" fill="#ffffff" opacity="0.4" font-size="9" font-family="sans-serif">$85K ARR</text>
+        <text x="60" y="58" text-anchor="middle" fill="#ff5c35" font-size="9" font-weight="600" font-family="sans-serif" class="r-pulse">MISSED ✗</text>
+        <text x="60" y="82" text-anchor="middle" fill="#ff5c35" font-size="7" opacity="0.6" font-family="sans-serif">Expired — no one noticed</text>
+      </g>
+
+      <!-- Revenue impact (Before) -->
+      <g class="r-fade" style="--d:1.3s" transform="translate(60, 330)">
+        <rect width="320" height="68" rx="8" fill="#1e3244" stroke="#ffffff" stroke-width="0.5" opacity="0.3" />
+        <text x="16" y="20" fill="#ffffff" opacity="0.3" font-size="9" font-family="sans-serif">Revenue Visibility</text>
+        <text x="16" y="42" fill="#ff5c35" font-size="16" font-weight="700" font-family="sans-serif" class="r-pulse">ARR: $ ???</text>
+        <text x="16" y="58" fill="#ff5c35" font-size="8" opacity="0.7" font-family="sans-serif">Tracked in spreadsheet · 3 renewals missed this quarter</text>
+        <text x="175" y="42" fill="#ffffff" opacity="0.2" font-size="14" font-weight="700" font-family="sans-serif">NRR: —</text>
+      </g>
+
+      <!-- Bottom left stat -->
+      <g class="r-fade" style="--d:1.4s" transform="translate(60, 420)">
+        <text x="0" y="14" fill="#ff5c35" font-size="22" font-weight="700" font-family="sans-serif">~$85K</text>
+        <text x="0" y="30" fill="#ffffff" opacity="0.4" font-size="9" font-family="sans-serif">lost to missed renewal this quarter</text>
+        <text x="0" y="48" fill="#F5C400" font-size="10" font-family="sans-serif">10-15 min per deal to recreate manually</text>
+      </g>
+
+
+      <!-- ============ CENTER DIVIDER ============ -->
+      <g class="r-scale" style="--d:1.6s">
+        <line x1="480" y1="25" x2="480" y2="475" stroke="#ffffff" stroke-width="0.5" opacity="0.08" />
+        <!-- Bee/bolt icon -->
+        <g transform="translate(480, 250)">
+          <circle cx="0" cy="0" r="22" fill="#F5C400" opacity="0.15" class="r-ring-pulse" />
+          <circle cx="0" cy="0" r="16" fill="#1b2a37" stroke="#F5C400" stroke-width="1.5" />
+          <!-- Lightning bolt -->
+          <text x="0" y="6" text-anchor="middle" fill="#F5C400" font-size="16">⚡</text>
+        </g>
+      </g>
+
+
+      <!-- ============ RIGHT SIDE: AFTER (Automated Renewals) ============ -->
+
+      <!-- Label -->
+      <text x="720" y="38" text-anchor="middle" fill="#70c1b3" font-size="10" font-weight="600" letter-spacing="2" font-family="sans-serif" opacity="0.7" class="r-fade" style="--d:1.8s">AUTOMATED RENEWALS</text>
+
+      <!-- Same source deal -->
+      <g class="r-slide" style="--d:2.0s" transform="translate(520, 58)">
+        <rect width="160" height="72" rx="8" fill="#1e3244" stroke="#70c1b3" stroke-width="1.5" filter="url(#rs)" />
+        <text x="12" y="22" fill="#ffffff" font-size="11" font-weight="600" font-family="sans-serif">Acme Corp — 2026</text>
+        <text x="12" y="38" fill="#ffffff" opacity="0.5" font-size="9" font-family="sans-serif">$120,000 · 4 line items</text>
+        <text x="12" y="52" fill="#ffffff" opacity="0.4" font-size="8" font-family="sans-serif">Owner: Sarah K.</text>
+        <rect x="100" y="56" width="52" height="14" rx="7" fill="#70c1b3" />
+        <text x="126" y="66" text-anchor="middle" fill="#1b2a37" font-size="7" font-weight="700" font-family="sans-serif">WON ✓</text>
+      </g>
+
+      <!-- Lightning arrow: automatic trigger -->
+      <g class="r-fade" style="--d:2.2s">
+        <line x1="600" y1="135" x2="600" y2="170" stroke="#F5C400" stroke-width="2" class="r-line-draw" />
+        <!-- Bolt icon on arrow -->
+        <g filter="url(#bolt-glow)">
+          <text x="600" y="157" text-anchor="middle" fill="#F5C400" font-size="12">⚡</text>
+        </g>
+        <text x="622" y="155" fill="#F5C400" font-size="8" font-weight="600" font-family="sans-serif">auto-created</text>
+      </g>
+
+      <!-- Auto-created renewal deal (clean, detailed) -->
+      <g class="r-slide" style="--d:2.4s" transform="translate(520, 178)">
+        <rect width="190" height="145" rx="8" fill="#1e3244" stroke="#70c1b3" stroke-width="1.5" filter="url(#rs)" />
+        <!-- Header -->
+        <rect width="190" height="28" rx="8" fill="#70c1b3" opacity="0.15" />
+        <text x="12" y="19" fill="#70c1b3" font-size="11" font-weight="700" font-family="sans-serif">Acme Corp — Renewal 2027</text>
+
+        <!-- Deal details -->
+        <g transform="translate(12, 40)">
+          <!-- Amount with uplift -->
+          <text x="0" y="10" fill="#ffffff" font-size="9" font-family="sans-serif" opacity="0.5">Amount</text>
+          <text x="55" y="10" fill="#F5C400" font-size="10" font-weight="700" font-family="sans-serif">$123,600</text>
+          <text x="116" y="10" fill="#70c1b3" font-size="7" font-family="sans-serif">+3% uplift ↑</text>
+
+          <!-- Line items -->
+          <text x="0" y="28" fill="#ffffff" font-size="9" font-family="sans-serif" opacity="0.5">Line items</text>
+          <text x="55" y="28" fill="#ffffff" font-size="9" font-family="sans-serif">3 recurring only</text>
+
+          <!-- Filtered out -->
+          <text x="55" y="40" fill="#ffffff" opacity="0.3" font-size="7" font-family="sans-serif">
+            <tspan text-decoration="line-through">1 one-time excluded</tspan>
+          </text>
+
+          <!-- Owner -->
+          <text x="0" y="56" fill="#ffffff" font-size="9" font-family="sans-serif" opacity="0.5">Owner</text>
+          <text x="55" y="56" fill="#ffffff" font-size="9" font-family="sans-serif">Sarah K.</text>
+          <text x="102" y="56" fill="#70c1b3" font-size="7" font-family="sans-serif">✓ same</text>
+
+          <!-- Close date -->
+          <text x="0" y="72" fill="#ffffff" font-size="9" font-family="sans-serif" opacity="0.5">Close date</text>
+          <text x="55" y="72" fill="#ffffff" font-size="9" font-family="sans-serif">Oct 15, 2027</text>
+
+          <!-- Pipeline -->
+          <text x="0" y="88" fill="#ffffff" font-size="9" font-family="sans-serif" opacity="0.5">Pipeline</text>
+          <text x="55" y="88" fill="#70c1b3" font-size="9" font-weight="600" font-family="sans-serif">Renewal Pipeline</text>
+        </g>
+
+        <!-- Auto badge -->
+        <rect x="130" y="127" width="52" height="14" rx="7" fill="#F5C400" />
+        <text x="156" y="137" text-anchor="middle" fill="#1b2a37" font-size="7" font-weight="700" font-family="sans-serif">AUTO ⚡</text>
+      </g>
+
+      <!-- Time indicator: created 90 days early -->
+      <g class="r-fade" style="--d:2.6s" transform="translate(720, 178)">
+        <rect width="120" height="52" rx="8" fill="#1e3244" stroke="#70c1b3" stroke-width="1" opacity="0.8" />
+        <text x="60" y="20" text-anchor="middle" fill="#70c1b3" font-size="9" font-weight="600" font-family="sans-serif">⏱ Created</text>
+        <text x="60" y="36" text-anchor="middle" fill="#F5C400" font-size="14" font-weight="700" font-family="sans-serif">90 days</text>
+        <text x="60" y="48" text-anchor="middle" fill="#ffffff" opacity="0.5" font-size="8" font-family="sans-serif">before expiry</text>
+      </g>
+
+      <!-- Second renewal: also auto-created -->
+      <g class="r-slide" style="--d:2.8s" transform="translate(720, 248)">
+        <rect width="120" height="62" rx="8" fill="#1e3244" stroke="#70c1b3" stroke-width="1" filter="url(#rs)" />
+        <text x="12" y="18" fill="#ffffff" font-size="9" font-weight="600" font-family="sans-serif">Beta Inc</text>
+        <text x="12" y="32" fill="#ffffff" opacity="0.5" font-size="8" font-family="sans-serif">$87,550 · +3%</text>
+        <text x="12" y="46" fill="#70c1b3" font-size="8" font-family="sans-serif">✓ Auto-renewed</text>
+        <rect x="62" y="48" width="50" height="12" rx="6" fill="#F5C400" opacity="0.8" />
+        <text x="87" y="57" text-anchor="middle" fill="#1b2a37" font-size="6" font-weight="700" font-family="sans-serif">AUTO ⚡</text>
+      </g>
+
+      <!-- Revenue metrics (After) -->
+      <g class="r-slide" style="--d:3.0s" transform="translate(520, 340)">
+        <rect width="320" height="68" rx="8" fill="#1e3244" stroke="#70c1b3" stroke-width="1" />
+
+        <!-- ARR -->
+        <text x="16" y="20" fill="#ffffff" opacity="0.5" font-size="9" font-family="sans-serif">ARR</text>
+        <text x="16" y="42" fill="#70c1b3" font-size="18" font-weight="700" font-family="sans-serif">$5.2M</text>
+
+        <!-- NRR -->
+        <text x="110" y="20" fill="#ffffff" opacity="0.5" font-size="9" font-family="sans-serif">NRR</text>
+        <text x="110" y="42" fill="#F5C400" font-size="18" font-weight="700" font-family="sans-serif">104%</text>
+
+        <!-- GRR -->
+        <text x="190" y="20" fill="#ffffff" opacity="0.5" font-size="9" font-family="sans-serif">GRR</text>
+        <text x="190" y="42" fill="#ffffff" opacity="0.8" font-size="18" font-weight="700" font-family="sans-serif">96%</text>
+
+        <!-- Status line -->
+        <text x="16" y="58" fill="#70c1b3" font-size="8" font-family="sans-serif">✓ 0 renewals missed · All tracked automatically · Daily snapshots</text>
+      </g>
+
+      <!-- Bottom right stat -->
+      <g class="r-slide" style="--d:3.2s" transform="translate(520, 428)">
+        <text x="0" y="14" fill="#70c1b3" font-size="22" font-weight="700" font-family="sans-serif">$0</text>
+        <text x="30" y="14" fill="#ffffff" opacity="0.4" font-size="9" font-family="sans-serif"> lost to missed renewals</text>
+        <text x="0" y="32" fill="#F5C400" font-size="10" font-family="sans-serif">&lt; 5 seconds per renewal · Zero manual work</text>
+        <text x="0" y="50" fill="#ffffff" opacity="0.3" font-size="8" font-family="sans-serif">Recurring items only · Price uplift · Owner preserved · Full audit trail</text>
+      </g>
+
+
+      <!-- ============ BOTTOM APP NAME ============ -->
+      <g class="r-fade" style="--d:3.4s">
+        <text x="480" y="486" text-anchor="middle" fill="#ffffff" opacity="0.3" font-size="9" font-family="sans-serif" letter-spacing="1">RENEWAL DEAL BUILDER — by SWOTBee</text>
+      </g>
+
+    </svg>
+  </div>
+</section>
+
+<style>
+  .hero-renewal-section {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  .hero-renewal-wrapper {
+    width: 100%;
+  }
+  .hero-renewal-svg {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  /* ===== Animations ===== */
+  @keyframes rFade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes rSlide {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes rScale {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes rPulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+  @keyframes rRingPulse {
+    0%, 100% { r: 22; opacity: 0.15; }
+    50% { r: 28; opacity: 0.05; }
+  }
+  @keyframes rDash {
+    to { stroke-dashoffset: -14; }
+  }
+  @keyframes rLineDraw {
+    from { stroke-dashoffset: 40; }
+    to { stroke-dashoffset: 0; }
+  }
+
+  .r-fade {
+    opacity: 0;
+    animation: rFade 0.6s ease-out forwards;
+    animation-delay: var(--d, 0s);
+  }
+  .r-slide {
+    opacity: 0;
+    animation: rSlide 0.5s ease-out forwards;
+    animation-delay: var(--d, 0s);
+  }
+  .r-scale {
+    opacity: 0;
+    animation: rScale 0.5s ease-out forwards;
+    animation-delay: var(--d, 0s);
+  }
+  .r-pulse {
+    animation: rPulse 2s ease-in-out infinite;
+  }
+  .r-ring-pulse {
+    animation: rRingPulse 2.5s ease-in-out infinite;
+  }
+  .r-dash {
+    animation: rDash 1.5s linear infinite;
+  }
+  .r-line-draw {
+    stroke-dasharray: 40;
+    stroke-dashoffset: 40;
+    animation: rLineDraw 0.6s ease-out forwards;
+    animation-delay: 2.2s;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .r-fade, .r-slide, .r-scale {
+      opacity: 1 !important;
+      animation: none !important;
+      transform: none !important;
+    }
+    .r-pulse, .r-ring-pulse, .r-dash, .r-line-draw {
+      animation: none !important;
+      opacity: 1 !important;
+      stroke-dashoffset: 0 !important;
+    }
+  }
+</style>

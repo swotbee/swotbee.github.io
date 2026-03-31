@@ -1,0 +1,221 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/astro/Navbar.astro';
+---
+
+<BaseLayout title="Logo — Tesla Valve Square">
+  <Navbar />
+  <div style="background: #f8fafb; min-height: 100vh; padding: 3rem 1rem;">
+    <div style="max-width: 1100px; margin: 0 auto;">
+
+      <h1 style="font-size: 1.8rem; font-weight: 700; color: #1b2a37; margin-bottom: 0.5rem; text-align: center;">Tesla Valve — Alternating C / Ↄ Bumps</h1>
+      <p style="text-align: center; color: #5b87ae; margin-bottom: 2.5rem; font-size: 0.9rem;">Each side: two semicircle bumps alternating outside and inside the square</p>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 3rem;">
+
+        <!-- Dark bg large -->
+        <div style="background: #1b2a37; border-radius: 14px; padding: 3rem; display: flex; align-items: center; justify-content: center;">
+          <svg viewBox="0 0 240 240" width="320" height="320" xmlns="http://www.w3.org/2000/svg">
+            <!-- LEFT -->
+            <line x1="60" y1="60" x2="60" y2="80" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" />
+            <path d="M60,80 C30,80 30,110 60,110" fill="none" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" />
+            <line x1="60" y1="110" x2="60" y2="130" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" />
+            <path d="M60,130 C90,130 90,160 60,160" fill="none" stroke="#3d5e7b" stroke-width="3" stroke-linecap="round" />
+            <line x1="60" y1="160" x2="60" y2="180" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" />
+            <!-- RIGHT -->
+            <line x1="180" y1="60" x2="180" y2="80" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" />
+            <path d="M180,80 C210,80 210,110 180,110" fill="none" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" />
+            <line x1="180" y1="110" x2="180" y2="130" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" />
+            <path d="M180,130 C150,130 150,160 180,160" fill="none" stroke="#3d5e7b" stroke-width="3" stroke-linecap="round" />
+            <line x1="180" y1="160" x2="180" y2="180" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" />
+            <!-- TOP -->
+            <line x1="60" y1="60" x2="80" y2="60" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" />
+            <path d="M80,60 C80,30 110,30 110,60" fill="none" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" />
+            <line x1="110" y1="60" x2="130" y2="60" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" />
+            <path d="M130,60 C130,90 160,90 160,60" fill="none" stroke="#3d5e7b" stroke-width="3" stroke-linecap="round" />
+            <line x1="160" y1="60" x2="180" y2="60" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" />
+            <!-- BOTTOM -->
+            <line x1="60" y1="180" x2="80" y2="180" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" />
+            <path d="M80,180 C80,210 110,210 110,180" fill="none" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" />
+            <line x1="110" y1="180" x2="130" y2="180" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" />
+            <path d="M130,180 C130,150 160,150 160,180" fill="none" stroke="#3d5e7b" stroke-width="3" stroke-linecap="round" />
+            <line x1="160" y1="180" x2="180" y2="180" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" />
+
+            <circle cx="60" cy="60" r="4" fill="#70c1b3" />
+            <circle cx="180" cy="60" r="4" fill="#70c1b3" />
+            <circle cx="180" cy="180" r="4" fill="#70c1b3" />
+            <circle cx="60" cy="180" r="4" fill="#70c1b3" />
+            <polygon points="170,59 178,55 178,63" fill="#F5C400" />
+            <text x="120" y="127" text-anchor="middle" fill="#70c1b3" font-size="24" font-weight="700" font-family="sans-serif" opacity="0.15">$</text>
+            <circle cx="60" cy="60" r="12" fill="#F5C400" />
+            <path d="M59,52 L55,62 L59,60 L57,69 L63,59 L59,61 Z" fill="#1b2a37" />
+
+            <text x="25" y="98" text-anchor="middle" fill="#70c1b3" font-size="8" font-family="sans-serif" opacity="0.5">C out</text>
+            <text x="82" y="148" text-anchor="middle" fill="#3d5e7b" font-size="8" font-family="sans-serif" opacity="0.5">Ↄ in</text>
+            <text x="215" y="98" text-anchor="middle" fill="#70c1b3" font-size="8" font-family="sans-serif" opacity="0.5">Ↄ out</text>
+            <text x="158" y="148" text-anchor="middle" fill="#3d5e7b" font-size="8" font-family="sans-serif" opacity="0.5">C in</text>
+            <text x="98" y="42" text-anchor="middle" fill="#70c1b3" font-size="8" font-family="sans-serif" opacity="0.5">C out</text>
+            <text x="148" y="82" text-anchor="middle" fill="#3d5e7b" font-size="8" font-family="sans-serif" opacity="0.5">Ↄ in</text>
+            <text x="98" y="222" text-anchor="middle" fill="#70c1b3" font-size="8" font-family="sans-serif" opacity="0.5">Ↄ out</text>
+            <text x="148" y="172" text-anchor="middle" fill="#3d5e7b" font-size="8" font-family="sans-serif" opacity="0.5">C in</text>
+          </svg>
+        </div>
+
+        <!-- Light bg large -->
+        <div style="background: #ffffff; border: 1px solid #e5e7eb; border-radius: 14px; padding: 3rem; display: flex; align-items: center; justify-content: center;">
+          <svg viewBox="0 0 240 240" width="320" height="320" xmlns="http://www.w3.org/2000/svg">
+            <line x1="60" y1="60" x2="60" y2="80" stroke="#49ab9b" stroke-width="3" stroke-linecap="round" />
+            <path d="M60,80 C30,80 30,110 60,110" fill="none" stroke="#49ab9b" stroke-width="3" stroke-linecap="round" />
+            <line x1="60" y1="110" x2="60" y2="130" stroke="#49ab9b" stroke-width="3" stroke-linecap="round" />
+            <path d="M60,130 C90,130 90,160 60,160" fill="none" stroke="#c8d7e4" stroke-width="3" stroke-linecap="round" />
+            <line x1="60" y1="160" x2="60" y2="180" stroke="#49ab9b" stroke-width="3" stroke-linecap="round" />
+            <line x1="180" y1="60" x2="180" y2="80" stroke="#49ab9b" stroke-width="3" stroke-linecap="round" />
+            <path d="M180,80 C210,80 210,110 180,110" fill="none" stroke="#49ab9b" stroke-width="3" stroke-linecap="round" />
+            <line x1="180" y1="110" x2="180" y2="130" stroke="#49ab9b" stroke-width="3" stroke-linecap="round" />
+            <path d="M180,130 C150,130 150,160 180,160" fill="none" stroke="#c8d7e4" stroke-width="3" stroke-linecap="round" />
+            <line x1="180" y1="160" x2="180" y2="180" stroke="#49ab9b" stroke-width="3" stroke-linecap="round" />
+            <line x1="60" y1="60" x2="80" y2="60" stroke="#49ab9b" stroke-width="3" stroke-linecap="round" />
+            <path d="M80,60 C80,30 110,30 110,60" fill="none" stroke="#49ab9b" stroke-width="3" stroke-linecap="round" />
+            <line x1="110" y1="60" x2="130" y2="60" stroke="#49ab9b" stroke-width="3" stroke-linecap="round" />
+            <path d="M130,60 C130,90 160,90 160,60" fill="none" stroke="#c8d7e4" stroke-width="3" stroke-linecap="round" />
+            <line x1="160" y1="60" x2="180" y2="60" stroke="#49ab9b" stroke-width="3" stroke-linecap="round" />
+            <line x1="60" y1="180" x2="80" y2="180" stroke="#49ab9b" stroke-width="3" stroke-linecap="round" />
+            <path d="M80,180 C80,210 110,210 110,180" fill="none" stroke="#49ab9b" stroke-width="3" stroke-linecap="round" />
+            <line x1="110" y1="180" x2="130" y2="180" stroke="#49ab9b" stroke-width="3" stroke-linecap="round" />
+            <path d="M130,180 C130,150 160,150 160,180" fill="none" stroke="#c8d7e4" stroke-width="3" stroke-linecap="round" />
+            <line x1="160" y1="180" x2="180" y2="180" stroke="#49ab9b" stroke-width="3" stroke-linecap="round" />
+
+            <circle cx="60" cy="60" r="4" fill="#49ab9b" />
+            <circle cx="180" cy="60" r="4" fill="#49ab9b" />
+            <circle cx="180" cy="180" r="4" fill="#49ab9b" />
+            <circle cx="60" cy="180" r="4" fill="#49ab9b" />
+            <polygon points="170,59 178,55 178,63" fill="#b8930a" />
+            <text x="120" y="127" text-anchor="middle" fill="#49ab9b" font-size="24" font-weight="700" font-family="sans-serif" opacity="0.1">$</text>
+            <circle cx="60" cy="60" r="12" fill="#b8930a" />
+            <path d="M59,52 L55,62 L59,60 L57,69 L63,59 L59,61 Z" fill="#ffffff" />
+          </svg>
+        </div>
+      </div>
+
+
+      <!-- Clean variations -->
+      <h2 style="font-size: 1.1rem; font-weight: 600; color: #1b2a37; margin-bottom: 1.5rem; text-align: center;">Clean Variations (no labels)</h2>
+
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-bottom: 3rem;">
+
+        <!-- Mono Teal -->
+        <div style="text-align: center;">
+          <p style="font-size: 0.8rem; color: #5b87ae; margin-bottom: 0.5rem; font-weight: 600;">Mono Teal</p>
+          <div style="background: #1b2a37; border-radius: 12px; padding: 1.5rem; display: flex; align-items: center; justify-content: center;">
+            <svg viewBox="0 0 240 240" width="110" height="110" xmlns="http://www.w3.org/2000/svg">
+              <line x1="60" y1="60" x2="60" y2="80" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" /><path d="M60,80 C30,80 30,110 60,110" fill="none" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" /><line x1="60" y1="110" x2="60" y2="130" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" /><path d="M60,130 C90,130 90,160 60,160" fill="none" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" /><line x1="60" y1="160" x2="60" y2="180" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" />
+              <line x1="180" y1="60" x2="180" y2="80" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" /><path d="M180,80 C210,80 210,110 180,110" fill="none" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" /><line x1="180" y1="110" x2="180" y2="130" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" /><path d="M180,130 C150,130 150,160 180,160" fill="none" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" /><line x1="180" y1="160" x2="180" y2="180" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" />
+              <line x1="60" y1="60" x2="80" y2="60" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" /><path d="M80,60 C80,30 110,30 110,60" fill="none" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" /><line x1="110" y1="60" x2="130" y2="60" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" /><path d="M130,60 C130,90 160,90 160,60" fill="none" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" /><line x1="160" y1="60" x2="180" y2="60" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" />
+              <line x1="60" y1="180" x2="80" y2="180" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" /><path d="M80,180 C80,210 110,210 110,180" fill="none" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" /><line x1="110" y1="180" x2="130" y2="180" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" /><path d="M130,180 C130,150 160,150 160,180" fill="none" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" /><line x1="160" y1="180" x2="180" y2="180" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" />
+              <circle cx="60" cy="60" r="4" fill="#70c1b3" /><circle cx="180" cy="60" r="4" fill="#70c1b3" /><circle cx="180" cy="180" r="4" fill="#70c1b3" /><circle cx="60" cy="180" r="4" fill="#70c1b3" />
+              <polygon points="170,59 178,55 178,63" fill="#F5C400" />
+              <circle cx="60" cy="60" r="10" fill="#F5C400" /><path d="M59,53 L56,61 L59,60 L58,66 L62,59 L59,60.5 Z" fill="#1b2a37" />
+            </svg>
+          </div>
+        </div>
+
+        <!-- Teal Out + Navy In -->
+        <div style="text-align: center;">
+          <p style="font-size: 0.8rem; color: #5b87ae; margin-bottom: 0.5rem; font-weight: 600;">Teal Out + Navy In</p>
+          <div style="background: #1b2a37; border-radius: 12px; padding: 1.5rem; display: flex; align-items: center; justify-content: center;">
+            <svg viewBox="0 0 240 240" width="110" height="110" xmlns="http://www.w3.org/2000/svg">
+              <line x1="60" y1="60" x2="60" y2="80" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" /><path d="M60,80 C30,80 30,110 60,110" fill="none" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" /><line x1="60" y1="110" x2="60" y2="130" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" /><path d="M60,130 C90,130 90,160 60,160" fill="none" stroke="#3d5e7b" stroke-width="3" stroke-linecap="round" /><line x1="60" y1="160" x2="60" y2="180" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" />
+              <line x1="180" y1="60" x2="180" y2="80" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" /><path d="M180,80 C210,80 210,110 180,110" fill="none" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" /><line x1="180" y1="110" x2="180" y2="130" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" /><path d="M180,130 C150,130 150,160 180,160" fill="none" stroke="#3d5e7b" stroke-width="3" stroke-linecap="round" /><line x1="180" y1="160" x2="180" y2="180" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" />
+              <line x1="60" y1="60" x2="80" y2="60" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" /><path d="M80,60 C80,30 110,30 110,60" fill="none" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" /><line x1="110" y1="60" x2="130" y2="60" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" /><path d="M130,60 C130,90 160,90 160,60" fill="none" stroke="#3d5e7b" stroke-width="3" stroke-linecap="round" /><line x1="160" y1="60" x2="180" y2="60" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" />
+              <line x1="60" y1="180" x2="80" y2="180" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" /><path d="M80,180 C80,210 110,210 110,180" fill="none" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" /><line x1="110" y1="180" x2="130" y2="180" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" /><path d="M130,180 C130,150 160,150 160,180" fill="none" stroke="#3d5e7b" stroke-width="3" stroke-linecap="round" /><line x1="160" y1="180" x2="180" y2="180" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" />
+              <circle cx="60" cy="60" r="4" fill="#70c1b3" /><circle cx="180" cy="60" r="4" fill="#70c1b3" /><circle cx="180" cy="180" r="4" fill="#70c1b3" /><circle cx="60" cy="180" r="4" fill="#70c1b3" />
+              <polygon points="170,59 178,55 178,63" fill="#F5C400" />
+              <circle cx="60" cy="60" r="10" fill="#F5C400" /><path d="M59,53 L56,61 L59,60 L58,66 L62,59 L59,60.5 Z" fill="#1b2a37" />
+            </svg>
+          </div>
+        </div>
+
+        <!-- Orange Out -->
+        <div style="text-align: center;">
+          <p style="font-size: 0.8rem; color: #5b87ae; margin-bottom: 0.5rem; font-weight: 600;">Orange Out</p>
+          <div style="background: #1b2a37; border-radius: 12px; padding: 1.5rem; display: flex; align-items: center; justify-content: center;">
+            <svg viewBox="0 0 240 240" width="110" height="110" xmlns="http://www.w3.org/2000/svg">
+              <line x1="60" y1="60" x2="60" y2="80" stroke="#ff5c35" stroke-width="3" stroke-linecap="round" /><path d="M60,80 C30,80 30,110 60,110" fill="none" stroke="#ff5c35" stroke-width="3" stroke-linecap="round" /><line x1="60" y1="110" x2="60" y2="130" stroke="#ff5c35" stroke-width="3" stroke-linecap="round" /><path d="M60,130 C90,130 90,160 60,160" fill="none" stroke="#3d5e7b" stroke-width="3" stroke-linecap="round" /><line x1="60" y1="160" x2="60" y2="180" stroke="#ff5c35" stroke-width="3" stroke-linecap="round" />
+              <line x1="180" y1="60" x2="180" y2="80" stroke="#ff5c35" stroke-width="3" stroke-linecap="round" /><path d="M180,80 C210,80 210,110 180,110" fill="none" stroke="#ff5c35" stroke-width="3" stroke-linecap="round" /><line x1="180" y1="110" x2="180" y2="130" stroke="#ff5c35" stroke-width="3" stroke-linecap="round" /><path d="M180,130 C150,130 150,160 180,160" fill="none" stroke="#3d5e7b" stroke-width="3" stroke-linecap="round" /><line x1="180" y1="160" x2="180" y2="180" stroke="#ff5c35" stroke-width="3" stroke-linecap="round" />
+              <line x1="60" y1="60" x2="80" y2="60" stroke="#ff5c35" stroke-width="3" stroke-linecap="round" /><path d="M80,60 C80,30 110,30 110,60" fill="none" stroke="#ff5c35" stroke-width="3" stroke-linecap="round" /><line x1="110" y1="60" x2="130" y2="60" stroke="#ff5c35" stroke-width="3" stroke-linecap="round" /><path d="M130,60 C130,90 160,90 160,60" fill="none" stroke="#3d5e7b" stroke-width="3" stroke-linecap="round" /><line x1="160" y1="60" x2="180" y2="60" stroke="#ff5c35" stroke-width="3" stroke-linecap="round" />
+              <line x1="60" y1="180" x2="80" y2="180" stroke="#ff5c35" stroke-width="3" stroke-linecap="round" /><path d="M80,180 C80,210 110,210 110,180" fill="none" stroke="#ff5c35" stroke-width="3" stroke-linecap="round" /><line x1="110" y1="180" x2="130" y2="180" stroke="#ff5c35" stroke-width="3" stroke-linecap="round" /><path d="M130,180 C130,150 160,150 160,180" fill="none" stroke="#3d5e7b" stroke-width="3" stroke-linecap="round" /><line x1="160" y1="180" x2="180" y2="180" stroke="#ff5c35" stroke-width="3" stroke-linecap="round" />
+              <circle cx="60" cy="60" r="4" fill="#ff5c35" /><circle cx="180" cy="60" r="4" fill="#ff5c35" /><circle cx="180" cy="180" r="4" fill="#ff5c35" /><circle cx="60" cy="180" r="4" fill="#ff5c35" />
+              <polygon points="170,59 178,55 178,63" fill="#F5C400" />
+              <circle cx="60" cy="60" r="10" fill="#F5C400" /><path d="M59,53 L56,61 L59,60 L58,66 L62,59 L59,60.5 Z" fill="#1b2a37" />
+            </svg>
+          </div>
+        </div>
+
+        <!-- Pure Shape -->
+        <div style="text-align: center;">
+          <p style="font-size: 0.8rem; color: #5b87ae; margin-bottom: 0.5rem; font-weight: 600;">Pure Shape</p>
+          <div style="background: #1b2a37; border-radius: 12px; padding: 1.5rem; display: flex; align-items: center; justify-content: center;">
+            <svg viewBox="0 0 240 240" width="110" height="110" xmlns="http://www.w3.org/2000/svg">
+              <line x1="60" y1="60" x2="60" y2="80" stroke="#70c1b3" stroke-width="3.5" stroke-linecap="round" /><path d="M60,80 C30,80 30,110 60,110" fill="none" stroke="#70c1b3" stroke-width="3.5" stroke-linecap="round" /><line x1="60" y1="110" x2="60" y2="130" stroke="#70c1b3" stroke-width="3.5" stroke-linecap="round" /><path d="M60,130 C90,130 90,160 60,160" fill="none" stroke="#70c1b3" stroke-width="3.5" stroke-linecap="round" opacity="0.4" /><line x1="60" y1="160" x2="60" y2="180" stroke="#70c1b3" stroke-width="3.5" stroke-linecap="round" />
+              <line x1="180" y1="60" x2="180" y2="80" stroke="#70c1b3" stroke-width="3.5" stroke-linecap="round" /><path d="M180,80 C210,80 210,110 180,110" fill="none" stroke="#70c1b3" stroke-width="3.5" stroke-linecap="round" /><line x1="180" y1="110" x2="180" y2="130" stroke="#70c1b3" stroke-width="3.5" stroke-linecap="round" /><path d="M180,130 C150,130 150,160 180,160" fill="none" stroke="#70c1b3" stroke-width="3.5" stroke-linecap="round" opacity="0.4" /><line x1="180" y1="160" x2="180" y2="180" stroke="#70c1b3" stroke-width="3.5" stroke-linecap="round" />
+              <line x1="60" y1="60" x2="80" y2="60" stroke="#70c1b3" stroke-width="3.5" stroke-linecap="round" /><path d="M80,60 C80,30 110,30 110,60" fill="none" stroke="#70c1b3" stroke-width="3.5" stroke-linecap="round" /><line x1="110" y1="60" x2="130" y2="60" stroke="#70c1b3" stroke-width="3.5" stroke-linecap="round" /><path d="M130,60 C130,90 160,90 160,60" fill="none" stroke="#70c1b3" stroke-width="3.5" stroke-linecap="round" opacity="0.4" /><line x1="160" y1="60" x2="180" y2="60" stroke="#70c1b3" stroke-width="3.5" stroke-linecap="round" />
+              <line x1="60" y1="180" x2="80" y2="180" stroke="#70c1b3" stroke-width="3.5" stroke-linecap="round" /><path d="M80,180 C80,210 110,210 110,180" fill="none" stroke="#70c1b3" stroke-width="3.5" stroke-linecap="round" /><line x1="110" y1="180" x2="130" y2="180" stroke="#70c1b3" stroke-width="3.5" stroke-linecap="round" /><path d="M130,180 C130,150 160,150 160,180" fill="none" stroke="#70c1b3" stroke-width="3.5" stroke-linecap="round" opacity="0.4" /><line x1="160" y1="180" x2="180" y2="180" stroke="#70c1b3" stroke-width="3.5" stroke-linecap="round" />
+              <circle cx="60" cy="60" r="5" fill="#70c1b3" /><circle cx="180" cy="60" r="5" fill="#70c1b3" /><circle cx="180" cy="180" r="5" fill="#70c1b3" /><circle cx="60" cy="180" r="5" fill="#70c1b3" />
+            </svg>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Size test -->
+      <h2 style="font-size: 1.1rem; font-weight: 600; color: #1b2a37; margin-bottom: 1rem; text-align: center;">Size Test</h2>
+      <div style="background: #1b2a37; border-radius: 12px; padding: 2rem; display: flex; align-items: end; justify-content: center; gap: 3rem; flex-wrap: wrap; margin-bottom: 2rem;">
+        {[16, 32, 48, 80, 120].map(size => (
+          <div style="text-align: center;">
+            <svg viewBox="0 0 240 240" width={size} height={size} xmlns="http://www.w3.org/2000/svg">
+              <line x1="60" y1="60" x2="60" y2="80" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" /><path d="M60,80 C30,80 30,110 60,110" fill="none" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" /><line x1="60" y1="110" x2="60" y2="130" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" /><path d="M60,130 C90,130 90,160 60,160" fill="none" stroke="#3d5e7b" stroke-width="3" stroke-linecap="round" /><line x1="60" y1="160" x2="60" y2="180" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" />
+              <line x1="180" y1="60" x2="180" y2="80" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" /><path d="M180,80 C210,80 210,110 180,110" fill="none" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" /><line x1="180" y1="110" x2="180" y2="130" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" /><path d="M180,130 C150,130 150,160 180,160" fill="none" stroke="#3d5e7b" stroke-width="3" stroke-linecap="round" /><line x1="180" y1="160" x2="180" y2="180" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" />
+              <line x1="60" y1="60" x2="80" y2="60" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" /><path d="M80,60 C80,30 110,30 110,60" fill="none" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" /><line x1="110" y1="60" x2="130" y2="60" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" /><path d="M130,60 C130,90 160,90 160,60" fill="none" stroke="#3d5e7b" stroke-width="3" stroke-linecap="round" /><line x1="160" y1="60" x2="180" y2="60" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" />
+              <line x1="60" y1="180" x2="80" y2="180" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" /><path d="M80,180 C80,210 110,210 110,180" fill="none" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" /><line x1="110" y1="180" x2="130" y2="180" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" /><path d="M130,180 C130,150 160,150 160,180" fill="none" stroke="#3d5e7b" stroke-width="3" stroke-linecap="round" /><line x1="160" y1="180" x2="180" y2="180" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" />
+              <circle cx="60" cy="60" r="4" fill="#70c1b3" /><circle cx="180" cy="60" r="4" fill="#70c1b3" /><circle cx="180" cy="180" r="4" fill="#70c1b3" /><circle cx="60" cy="180" r="4" fill="#70c1b3" />
+              <polygon points="170,59 178,55 178,63" fill="#F5C400" />
+              <circle cx="60" cy="60" r="10" fill="#F5C400" /><path d="M59,53 L56,61 L59,60 L58,66 L62,59 L59,60.5 Z" fill="#1b2a37" />
+            </svg>
+            <p style="color: #92afc9; font-size: 0.6rem; margin-top: 0.5rem;">{size}px</p>
+          </div>
+        ))}
+      </div>
+
+
+      <!-- Lockup -->
+      <h2 style="font-size: 1.1rem; font-weight: 600; color: #1b2a37; margin-bottom: 1rem; text-align: center;">Logo + Text</h2>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+        <div style="background: #1b2a37; border-radius: 12px; padding: 1.5rem; display: flex; align-items: center; gap: 1rem;">
+          <svg viewBox="0 0 240 240" width="52" height="52" xmlns="http://www.w3.org/2000/svg">
+            <line x1="60" y1="60" x2="60" y2="80" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" /><path d="M60,80 C30,80 30,110 60,110" fill="none" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" /><line x1="60" y1="110" x2="60" y2="130" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" /><path d="M60,130 C90,130 90,160 60,160" fill="none" stroke="#3d5e7b" stroke-width="3" stroke-linecap="round" /><line x1="60" y1="160" x2="60" y2="180" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" /><line x1="180" y1="60" x2="180" y2="80" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" /><path d="M180,80 C210,80 210,110 180,110" fill="none" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" /><line x1="180" y1="110" x2="180" y2="130" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" /><path d="M180,130 C150,130 150,160 180,160" fill="none" stroke="#3d5e7b" stroke-width="3" stroke-linecap="round" /><line x1="180" y1="160" x2="180" y2="180" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" /><line x1="60" y1="60" x2="80" y2="60" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" /><path d="M80,60 C80,30 110,30 110,60" fill="none" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" /><line x1="110" y1="60" x2="130" y2="60" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" /><path d="M130,60 C130,90 160,90 160,60" fill="none" stroke="#3d5e7b" stroke-width="3" stroke-linecap="round" /><line x1="160" y1="60" x2="180" y2="60" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" /><line x1="60" y1="180" x2="80" y2="180" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" /><path d="M80,180 C80,210 110,210 110,180" fill="none" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" /><line x1="110" y1="180" x2="130" y2="180" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" /><path d="M130,180 C130,150 160,150 160,180" fill="none" stroke="#3d5e7b" stroke-width="3" stroke-linecap="round" /><line x1="160" y1="180" x2="180" y2="180" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" />
+            <circle cx="60" cy="60" r="4" fill="#70c1b3" /><circle cx="180" cy="60" r="4" fill="#70c1b3" /><circle cx="180" cy="180" r="4" fill="#70c1b3" /><circle cx="60" cy="180" r="4" fill="#70c1b3" />
+            <polygon points="170,59 178,55 178,63" fill="#F5C400" />
+            <circle cx="60" cy="60" r="12" fill="#F5C400" /><path d="M59,52 L55,62 L59,60 L57,69 L63,59 L59,61 Z" fill="#1b2a37" />
+          </svg>
+          <div>
+            <div style="color: #ffffff; font-size: 1rem; font-weight: 700; font-family: sans-serif;">Renewal Deal Builder</div>
+            <div style="color: #70c1b3; font-size: 0.7rem; font-weight: 500; font-family: sans-serif;">by SWOTBee</div>
+          </div>
+        </div>
+        <div style="background: #ffffff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 1.5rem; display: flex; align-items: center; gap: 1rem;">
+          <svg viewBox="0 0 240 240" width="52" height="52" xmlns="http://www.w3.org/2000/svg">
+            <line x1="60" y1="60" x2="60" y2="80" stroke="#49ab9b" stroke-width="3" stroke-linecap="round" /><path d="M60,80 C30,80 30,110 60,110" fill="none" stroke="#49ab9b" stroke-width="3" stroke-linecap="round" /><line x1="60" y1="110" x2="60" y2="130" stroke="#49ab9b" stroke-width="3" stroke-linecap="round" /><path d="M60,130 C90,130 90,160 60,160" fill="none" stroke="#c8d7e4" stroke-width="3" stroke-linecap="round" /><line x1="60" y1="160" x2="60" y2="180" stroke="#49ab9b" stroke-width="3" stroke-linecap="round" /><line x1="180" y1="60" x2="180" y2="80" stroke="#49ab9b" stroke-width="3" stroke-linecap="round" /><path d="M180,80 C210,80 210,110 180,110" fill="none" stroke="#49ab9b" stroke-width="3" stroke-linecap="round" /><line x1="180" y1="110" x2="180" y2="130" stroke="#49ab9b" stroke-width="3" stroke-linecap="round" /><path d="M180,130 C150,130 150,160 180,160" fill="none" stroke="#c8d7e4" stroke-width="3" stroke-linecap="round" /><line x1="180" y1="160" x2="180" y2="180" stroke="#49ab9b" stroke-width="3" stroke-linecap="round" /><line x1="60" y1="60" x2="80" y2="60" stroke="#49ab9b" stroke-width="3" stroke-linecap="round" /><path d="M80,60 C80,30 110,30 110,60" fill="none" stroke="#49ab9b" stroke-width="3" stroke-linecap="round" /><line x1="110" y1="60" x2="130" y2="60" stroke="#49ab9b" stroke-width="3" stroke-linecap="round" /><path d="M130,60 C130,90 160,90 160,60" fill="none" stroke="#c8d7e4" stroke-width="3" stroke-linecap="round" /><line x1="160" y1="60" x2="180" y2="60" stroke="#49ab9b" stroke-width="3" stroke-linecap="round" /><line x1="60" y1="180" x2="80" y2="180" stroke="#49ab9b" stroke-width="3" stroke-linecap="round" /><path d="M80,180 C80,210 110,210 110,180" fill="none" stroke="#49ab9b" stroke-width="3" stroke-linecap="round" /><line x1="110" y1="180" x2="130" y2="180" stroke="#49ab9b" stroke-width="3" stroke-linecap="round" /><path d="M130,180 C130,150 160,150 160,180" fill="none" stroke="#c8d7e4" stroke-width="3" stroke-linecap="round" /><line x1="160" y1="180" x2="180" y2="180" stroke="#49ab9b" stroke-width="3" stroke-linecap="round" />
+            <circle cx="60" cy="60" r="4" fill="#49ab9b" /><circle cx="180" cy="60" r="4" fill="#49ab9b" /><circle cx="180" cy="180" r="4" fill="#49ab9b" /><circle cx="60" cy="180" r="4" fill="#49ab9b" />
+            <polygon points="170,59 178,55 178,63" fill="#b8930a" />
+            <circle cx="60" cy="60" r="12" fill="#b8930a" /><path d="M59,52 L55,62 L59,60 L57,69 L63,59 L59,61 Z" fill="#ffffff" />
+          </svg>
+          <div>
+            <div style="color: #1b2a37; font-size: 1rem; font-weight: 700; font-family: sans-serif;">Renewal Deal Builder</div>
+            <div style="color: #70c1b3; font-size: 0.7rem; font-weight: 500; font-family: sans-serif;">by SWOTBee</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</BaseLayout>

@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroPipeline from '../components/astro/HeroPipeline.astro';
+import Navbar from '../components/astro/Navbar.astro';
+---
+
+<BaseLayout title="Hero Pipeline Preview">
+  <Navbar />
+  <div style="background: linear-gradient(180deg, #fef4ea 0%, #ffffff 100%); min-height: 100vh; padding: 2rem 0;">
+
+    <!-- Hero text -->
+    <div style="max-width: 960px; margin: 0 auto; padding: 2rem 1rem 1.5rem; text-align: center;">
+      <h1 style="font-size: 2.5rem; font-weight: 700; color: #1b2a37; line-height: 1.2; margin-bottom: 1rem;">
+        Stop losing revenue to <span style="color: #ff5c35;">missed renewals</span>
+      </h1>
+      <p style="font-size: 1.15rem; color: #3d5e7b; max-width: 620px; margin: 0 auto 1.5rem;">
+        Deals that renew themselves. Line items that filter automatically. Revenue you can finally see.
+      </p>
+      <div style="display: flex; gap: 1rem; justify-content: center; margin-bottom: 0.5rem;">
+        <a href="#" style="background: #ff5c35; color: white; padding: 0.75rem 1.5rem; border-radius: 8px; font-weight: 600; font-size: 0.9rem; text-decoration: none;">See It In Action</a>
+        <a href="#" style="color: #1b2a37; padding: 0.75rem 1.5rem; font-weight: 600; font-size: 0.9rem; text-decoration: none;">Learn more →</a>
+      </div>
+      <p style="font-size: 0.8rem; color: #92afc9;">Works with your existing HubSpot. No migration needed.</p>
+    </div>
+
+    <!-- Pipeline Hero SVG -->
+    <HeroPipeline />
+
+  </div>
+</BaseLayout>

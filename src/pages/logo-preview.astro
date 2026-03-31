@@ -1,0 +1,555 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/astro/Navbar.astro';
+---
+
+<BaseLayout title="Logo Preview — Stacked Deals">
+  <Navbar />
+  <div style="background: #f8fafb; min-height: 100vh; padding: 3rem 1rem;">
+    <div style="max-width: 1000px; margin: 0 auto;">
+
+      <!-- ============ RENEWAL LOOP + REVENUE LEAK ============ -->
+      <h1 style="font-size: 1.8rem; font-weight: 700; color: #1b2a37; margin-bottom: 2rem; text-align: center;">Renewal Loop + Revenue Leak — Variations</h1>
+
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 4rem;">
+
+        <!-- ===== L1: Loop with plug/leak ===== -->
+        <div style="text-align: center;">
+          <p style="font-size: 0.8rem; color: #5b87ae; margin-bottom: 0.75rem; font-weight: 600;">L1: Loop + Leak Drops</p>
+
+          <div style="background: #1b2a37; border-radius: 12px; padding: 2rem; margin-bottom: 0.75rem; display: flex; align-items: center; justify-content: center;">
+            <svg viewBox="0 0 80 80" width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+              <!-- Circular renewal loop arrow -->
+              <path d="M40,14 A26,26 0 1,1 18,54" fill="none" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" />
+              <!-- Arrowhead on the loop -->
+              <polygon points="14,50 18,58 23,51" fill="#70c1b3" />
+
+              <!-- Bolt at the top (automation trigger point) -->
+              <circle cx="40" cy="12" r="8" fill="#F5C400" />
+              <path d="M39.5,7 L37,13 L39.5,12 L38.5,17 L42,11.5 L39.5,12.5 Z" fill="#1b2a37" />
+
+              <!-- Dollar sign in center -->
+              <text x="40" y="46" text-anchor="middle" fill="#70c1b3" font-size="20" font-weight="700" font-family="sans-serif" opacity="0.3">$</text>
+
+              <!-- Revenue leak: drops falling from broken gap at bottom-left -->
+              <circle cx="16" cy="60" r="2.5" fill="#ff5c35" opacity="0.7" />
+              <circle cx="12" cy="67" r="2" fill="#ff5c35" opacity="0.5" />
+              <circle cx="19" cy="72" r="1.5" fill="#ff5c35" opacity="0.3" />
+            </svg>
+          </div>
+
+          <div style="background: #ffffff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 2rem; display: flex; align-items: center; justify-content: center;">
+            <svg viewBox="0 0 80 80" width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+              <path d="M40,14 A26,26 0 1,1 18,54" fill="none" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" />
+              <polygon points="14,50 18,58 23,51" fill="#70c1b3" />
+              <circle cx="40" cy="12" r="8" fill="#b8930a" />
+              <path d="M39.5,7 L37,13 L39.5,12 L38.5,17 L42,11.5 L39.5,12.5 Z" fill="#ffffff" />
+              <text x="40" y="46" text-anchor="middle" fill="#49ab9b" font-size="20" font-weight="700" font-family="sans-serif" opacity="0.2">$</text>
+              <circle cx="16" cy="60" r="2.5" fill="#ff5c35" opacity="0.7" />
+              <circle cx="12" cy="67" r="2" fill="#ff5c35" opacity="0.5" />
+              <circle cx="19" cy="72" r="1.5" fill="#ff5c35" opacity="0.3" />
+            </svg>
+          </div>
+        </div>
+
+
+        <!-- ===== L2: Loop with broken gap (leak) sealed by bolt ===== -->
+        <div style="text-align: center;">
+          <p style="font-size: 0.8rem; color: #5b87ae; margin-bottom: 0.75rem; font-weight: 600;">L2: Sealed Leak</p>
+
+          <div style="background: #1b2a37; border-radius: 12px; padding: 2rem; margin-bottom: 0.75rem; display: flex; align-items: center; justify-content: center;">
+            <svg viewBox="0 0 80 80" width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+              <!-- Full circle but with a visible gap at bottom-left (the "leak") -->
+              <!-- Right arc: from top going clockwise to bottom-right -->
+              <path d="M40,12 A28,28 0 1,1 16,56" fill="none" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" />
+              <!-- Arrowhead completing the loop -->
+              <polygon points="12,52 16,60 21,53" fill="#70c1b3" />
+
+              <!-- The gap/break at bottom-left: dashed red = the leak -->
+              <path d="M16,56 A28,28 0 0,1 28,12" fill="none" stroke="#ff5c35" stroke-width="2" stroke-dasharray="4 3" opacity="0.5" />
+
+              <!-- Bolt sealing the gap -->
+              <circle cx="20" cy="34" r="9" fill="#F5C400" />
+              <path d="M19.5,28.5 L17,34.5 L19.5,33.5 L18.5,39 L22,33 L19.5,34 Z" fill="#1b2a37" />
+
+              <!-- Dollar in center -->
+              <text x="42" y="46" text-anchor="middle" fill="#70c1b3" font-size="18" font-weight="700" font-family="sans-serif" opacity="0.25">$</text>
+
+              <!-- Small leak drops below the dashed section -->
+              <circle cx="10" cy="46" r="1.5" fill="#ff5c35" opacity="0.4" />
+              <circle cx="7" cy="52" r="1" fill="#ff5c35" opacity="0.25" />
+            </svg>
+          </div>
+
+          <div style="background: #ffffff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 2rem; display: flex; align-items: center; justify-content: center;">
+            <svg viewBox="0 0 80 80" width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+              <path d="M40,12 A28,28 0 1,1 16,56" fill="none" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" />
+              <polygon points="12,52 16,60 21,53" fill="#70c1b3" />
+              <path d="M16,56 A28,28 0 0,1 28,12" fill="none" stroke="#ff5c35" stroke-width="2" stroke-dasharray="4 3" opacity="0.4" />
+              <circle cx="20" cy="34" r="9" fill="#b8930a" />
+              <path d="M19.5,28.5 L17,34.5 L19.5,33.5 L18.5,39 L22,33 L19.5,34 Z" fill="#ffffff" />
+              <text x="42" y="46" text-anchor="middle" fill="#49ab9b" font-size="18" font-weight="700" font-family="sans-serif" opacity="0.15">$</text>
+              <circle cx="10" cy="46" r="1.5" fill="#ff5c35" opacity="0.4" />
+              <circle cx="7" cy="52" r="1" fill="#ff5c35" opacity="0.25" />
+            </svg>
+          </div>
+        </div>
+
+
+        <!-- ===== L3: Loop with funnel/bucket (revenue captured vs leaked) ===== -->
+        <div style="text-align: center;">
+          <p style="font-size: 0.8rem; color: #5b87ae; margin-bottom: 0.75rem; font-weight: 600;">L3: Loop + Bucket</p>
+
+          <div style="background: #1b2a37; border-radius: 12px; padding: 2rem; margin-bottom: 0.75rem; display: flex; align-items: center; justify-content: center;">
+            <svg viewBox="0 0 80 80" width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+              <!-- Renewal loop (upper portion) -->
+              <path d="M40,10 A24,24 0 1,1 20,48" fill="none" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" />
+              <polygon points="16,44 20,52 25,45" fill="#70c1b3" />
+
+              <!-- Bolt at top -->
+              <circle cx="40" cy="8" r="7" fill="#F5C400" />
+              <path d="M39.5,3.5 L37.5,9 L39.5,8 L38.5,13 L41.5,7.5 L39.5,8.5 Z" fill="#1b2a37" />
+
+              <!-- Dollar in center of loop -->
+              <text x="40" y="40" text-anchor="middle" fill="#70c1b3" font-size="16" font-weight="700" font-family="sans-serif" opacity="0.3">$</text>
+
+              <!-- Small bucket/container at bottom catching revenue -->
+              <path d="M28,60 L28,72 Q28,76 32,76 L48,76 Q52,76 52,72 L52,60 Z" fill="#253d52" stroke="#3d5e7b" stroke-width="1" />
+              <!-- Fill level in bucket (teal = captured revenue) -->
+              <path d="M29,66 L29,72 Q29,75 32,75 L48,75 Q51,75 51,72 L51,66 Z" fill="#70c1b3" opacity="0.3" />
+              <!-- Leak drops outside bucket -->
+              <circle cx="22" cy="64" r="2" fill="#ff5c35" opacity="0.6" />
+              <circle cx="18" cy="70" r="1.5" fill="#ff5c35" opacity="0.4" />
+              <circle cx="58" cy="66" r="1.5" fill="#ff5c35" opacity="0.5" />
+              <circle cx="62" cy="72" r="1" fill="#ff5c35" opacity="0.3" />
+            </svg>
+          </div>
+
+          <div style="background: #ffffff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 2rem; display: flex; align-items: center; justify-content: center;">
+            <svg viewBox="0 0 80 80" width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+              <path d="M40,10 A24,24 0 1,1 20,48" fill="none" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" />
+              <polygon points="16,44 20,52 25,45" fill="#70c1b3" />
+              <circle cx="40" cy="8" r="7" fill="#b8930a" />
+              <path d="M39.5,3.5 L37.5,9 L39.5,8 L38.5,13 L41.5,7.5 L39.5,8.5 Z" fill="#ffffff" />
+              <text x="40" y="40" text-anchor="middle" fill="#49ab9b" font-size="16" font-weight="700" font-family="sans-serif" opacity="0.2">$</text>
+              <path d="M28,60 L28,72 Q28,76 32,76 L48,76 Q52,76 52,72 L52,60 Z" fill="#e8eef3" stroke="#c8d7e4" stroke-width="1" />
+              <path d="M29,66 L29,72 Q29,75 32,75 L48,75 Q51,75 51,72 L51,66 Z" fill="#70c1b3" opacity="0.2" />
+              <circle cx="22" cy="64" r="2" fill="#ff5c35" opacity="0.6" />
+              <circle cx="18" cy="70" r="1.5" fill="#ff5c35" opacity="0.4" />
+              <circle cx="58" cy="66" r="1.5" fill="#ff5c35" opacity="0.5" />
+              <circle cx="62" cy="72" r="1" fill="#ff5c35" opacity="0.3" />
+            </svg>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Size + lockup for renewal loop variants -->
+      <h2 style="font-size: 1.2rem; font-weight: 600; color: #1b2a37; margin: 0 0 1.5rem; text-align: center;">Renewal Loop — Size Test + Lockup</h2>
+
+      <div style="background: #1b2a37; border-radius: 12px; padding: 2rem; display: flex; align-items: end; justify-content: center; gap: 3rem; flex-wrap: wrap; margin-bottom: 1.5rem;">
+        {[16, 32, 48, 80].map(size => (
+          <div style="text-align: center;">
+            <div style="display: flex; gap: 1.5rem; align-items: end;">
+              <!-- L1 -->
+              <svg viewBox="0 0 80 80" width={size} height={size} xmlns="http://www.w3.org/2000/svg">
+                <path d="M40,14 A26,26 0 1,1 18,54" fill="none" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" />
+                <polygon points="14,50 18,58 23,51" fill="#70c1b3" />
+                <circle cx="40" cy="12" r="8" fill="#F5C400" />
+                <path d="M39.5,7 L37,13 L39.5,12 L38.5,17 L42,11.5 L39.5,12.5 Z" fill="#1b2a37" />
+                <circle cx="16" cy="60" r="2.5" fill="#ff5c35" opacity="0.7" />
+                <circle cx="12" cy="67" r="2" fill="#ff5c35" opacity="0.5" />
+              </svg>
+              <!-- L2 -->
+              <svg viewBox="0 0 80 80" width={size} height={size} xmlns="http://www.w3.org/2000/svg">
+                <path d="M40,12 A28,28 0 1,1 16,56" fill="none" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" />
+                <polygon points="12,52 16,60 21,53" fill="#70c1b3" />
+                <path d="M16,56 A28,28 0 0,1 28,12" fill="none" stroke="#ff5c35" stroke-width="2" stroke-dasharray="4 3" opacity="0.5" />
+                <circle cx="20" cy="34" r="9" fill="#F5C400" />
+                <path d="M19.5,28.5 L17,34.5 L19.5,33.5 L18.5,39 L22,33 L19.5,34 Z" fill="#1b2a37" />
+              </svg>
+              <!-- L3 -->
+              <svg viewBox="0 0 80 80" width={size} height={size} xmlns="http://www.w3.org/2000/svg">
+                <path d="M40,10 A24,24 0 1,1 20,48" fill="none" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" />
+                <polygon points="16,44 20,52 25,45" fill="#70c1b3" />
+                <circle cx="40" cy="8" r="7" fill="#F5C400" />
+                <path d="M39.5,3.5 L37.5,9 L39.5,8 L38.5,13 L41.5,7.5 L39.5,8.5 Z" fill="#1b2a37" />
+                <path d="M28,60 L28,72 Q28,76 32,76 L48,76 Q52,76 52,72 L52,60 Z" fill="#253d52" stroke="#3d5e7b" stroke-width="1" />
+                <circle cx="22" cy="64" r="2" fill="#ff5c35" opacity="0.6" />
+                <circle cx="58" cy="66" r="1.5" fill="#ff5c35" opacity="0.5" />
+              </svg>
+            </div>
+            <p style="color: #92afc9; font-size: 0.65rem; margin-top: 0.5rem;">{size}px — L1 / L2 / L3</p>
+          </div>
+        ))}
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 4rem;">
+        <!-- L1 lockup dark -->
+        <div style="background: #1b2a37; border-radius: 12px; padding: 1.5rem; display: flex; align-items: center; gap: 1rem;">
+          <svg viewBox="0 0 80 80" width="48" height="48" xmlns="http://www.w3.org/2000/svg">
+            <path d="M40,14 A26,26 0 1,1 18,54" fill="none" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" />
+            <polygon points="14,50 18,58 23,51" fill="#70c1b3" />
+            <circle cx="40" cy="12" r="8" fill="#F5C400" />
+            <path d="M39.5,7 L37,13 L39.5,12 L38.5,17 L42,11.5 L39.5,12.5 Z" fill="#1b2a37" />
+            <text x="40" y="46" text-anchor="middle" fill="#70c1b3" font-size="20" font-weight="700" font-family="sans-serif" opacity="0.3">$</text>
+            <circle cx="16" cy="60" r="2.5" fill="#ff5c35" opacity="0.7" />
+            <circle cx="12" cy="67" r="2" fill="#ff5c35" opacity="0.5" />
+          </svg>
+          <div>
+            <div style="color: #ffffff; font-size: 1rem; font-weight: 700; font-family: sans-serif;">Renewal Deal Builder</div>
+            <div style="color: #70c1b3; font-size: 0.7rem; font-weight: 500; font-family: sans-serif;">by SWOTBee · L1: Loop + Leak</div>
+          </div>
+        </div>
+        <!-- L2 lockup dark -->
+        <div style="background: #1b2a37; border-radius: 12px; padding: 1.5rem; display: flex; align-items: center; gap: 1rem;">
+          <svg viewBox="0 0 80 80" width="48" height="48" xmlns="http://www.w3.org/2000/svg">
+            <path d="M40,12 A28,28 0 1,1 16,56" fill="none" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" />
+            <polygon points="12,52 16,60 21,53" fill="#70c1b3" />
+            <path d="M16,56 A28,28 0 0,1 28,12" fill="none" stroke="#ff5c35" stroke-width="2" stroke-dasharray="4 3" opacity="0.5" />
+            <circle cx="20" cy="34" r="9" fill="#F5C400" />
+            <path d="M19.5,28.5 L17,34.5 L19.5,33.5 L18.5,39 L22,33 L19.5,34 Z" fill="#1b2a37" />
+            <text x="42" y="46" text-anchor="middle" fill="#70c1b3" font-size="18" font-weight="700" font-family="sans-serif" opacity="0.25">$</text>
+          </svg>
+          <div>
+            <div style="color: #ffffff; font-size: 1rem; font-weight: 700; font-family: sans-serif;">Renewal Deal Builder</div>
+            <div style="color: #70c1b3; font-size: 0.7rem; font-weight: 500; font-family: sans-serif;">by SWOTBee · L2: Sealed Leak</div>
+          </div>
+        </div>
+        <!-- L3 lockup dark -->
+        <div style="background: #1b2a37; border-radius: 12px; padding: 1.5rem; display: flex; align-items: center; gap: 1rem;">
+          <svg viewBox="0 0 80 80" width="48" height="48" xmlns="http://www.w3.org/2000/svg">
+            <path d="M40,10 A24,24 0 1,1 20,48" fill="none" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" />
+            <polygon points="16,44 20,52 25,45" fill="#70c1b3" />
+            <circle cx="40" cy="8" r="7" fill="#F5C400" />
+            <path d="M39.5,3.5 L37.5,9 L39.5,8 L38.5,13 L41.5,7.5 L39.5,8.5 Z" fill="#1b2a37" />
+            <text x="40" y="40" text-anchor="middle" fill="#70c1b3" font-size="16" font-weight="700" font-family="sans-serif" opacity="0.3">$</text>
+            <path d="M28,60 L28,72 Q28,76 32,76 L48,76 Q52,76 52,72 L52,60 Z" fill="#253d52" stroke="#3d5e7b" stroke-width="1" />
+            <path d="M29,66 L29,72 Q29,75 32,75 L48,75 Q51,75 51,72 L51,66 Z" fill="#70c1b3" opacity="0.3" />
+            <circle cx="22" cy="64" r="2" fill="#ff5c35" opacity="0.6" />
+            <circle cx="58" cy="66" r="1.5" fill="#ff5c35" opacity="0.5" />
+          </svg>
+          <div>
+            <div style="color: #ffffff; font-size: 1rem; font-weight: 700; font-family: sans-serif;">Renewal Deal Builder</div>
+            <div style="color: #70c1b3; font-size: 0.7rem; font-weight: 500; font-family: sans-serif;">by SWOTBee · L3: Loop + Bucket</div>
+          </div>
+        </div>
+        <!-- L2 lockup LIGHT -->
+        <div style="background: #ffffff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 1.5rem; display: flex; align-items: center; gap: 1rem;">
+          <svg viewBox="0 0 80 80" width="48" height="48" xmlns="http://www.w3.org/2000/svg">
+            <path d="M40,12 A28,28 0 1,1 16,56" fill="none" stroke="#70c1b3" stroke-width="3" stroke-linecap="round" />
+            <polygon points="12,52 16,60 21,53" fill="#70c1b3" />
+            <path d="M16,56 A28,28 0 0,1 28,12" fill="none" stroke="#ff5c35" stroke-width="2" stroke-dasharray="4 3" opacity="0.4" />
+            <circle cx="20" cy="34" r="9" fill="#b8930a" />
+            <path d="M19.5,28.5 L17,34.5 L19.5,33.5 L18.5,39 L22,33 L19.5,34 Z" fill="#ffffff" />
+            <text x="42" y="46" text-anchor="middle" fill="#49ab9b" font-size="18" font-weight="700" font-family="sans-serif" opacity="0.15">$</text>
+          </svg>
+          <div>
+            <div style="color: #1b2a37; font-size: 1rem; font-weight: 700; font-family: sans-serif;">Renewal Deal Builder</div>
+            <div style="color: #70c1b3; font-size: 0.7rem; font-weight: 500; font-family: sans-serif;">by SWOTBee · L2 Light</div>
+          </div>
+        </div>
+      </div>
+
+      <hr style="border: none; border-top: 2px solid #e5e7eb; margin: 2rem 0 3rem;" />
+
+      <!-- ============ STACKED DEALS (previous) ============ -->
+      <h1 style="font-size: 1.8rem; font-weight: 700; color: #1b2a37; margin-bottom: 2rem; text-align: center;">Stacked Deal Card Logo — Variations</h1>
+
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem;">
+
+        <!-- ===== V1: Dollar amount card ===== -->
+        <div style="text-align: center;">
+          <p style="font-size: 0.8rem; color: #5b87ae; margin-bottom: 0.75rem; font-weight: 600;">1: Dollar Amount</p>
+
+          <div style="background: #1b2a37; border-radius: 12px; padding: 2rem; margin-bottom: 0.75rem; display: flex; align-items: center; justify-content: center;">
+            <svg viewBox="0 0 80 80" width="90" height="90" xmlns="http://www.w3.org/2000/svg">
+              <!-- Bottom card (original deal) -->
+              <rect x="6" y="26" width="46" height="34" rx="5" fill="#253d52" stroke="#3d5e7b" stroke-width="1.5" />
+              <text x="14" y="40" fill="#3d5e7b" font-size="8" font-weight="700" font-family="sans-serif">$120K</text>
+              <line x1="14" y1="46" x2="38" y2="46" stroke="#3d5e7b" stroke-width="1.5" stroke-linecap="round" opacity="0.6" />
+              <line x1="14" y1="52" x2="28" y2="52" stroke="#3d5e7b" stroke-width="1" stroke-linecap="round" opacity="0.4" />
+
+              <!-- Top card (renewal) -->
+              <rect x="26" y="12" width="46" height="34" rx="5" fill="#1e3244" stroke="#70c1b3" stroke-width="1.5" />
+              <text x="34" y="26" fill="#70c1b3" font-size="8" font-weight="700" font-family="sans-serif">$123K</text>
+              <line x1="34" y1="32" x2="58" y2="32" stroke="#70c1b3" stroke-width="1.5" stroke-linecap="round" opacity="0.7" />
+              <line x1="34" y1="38" x2="48" y2="38" stroke="#70c1b3" stroke-width="1" stroke-linecap="round" opacity="0.4" />
+
+              <!-- Bolt badge -->
+              <circle cx="64" cy="16" r="10" fill="#F5C400" />
+              <path d="M63,10 L60,17 L63,16 L62,22 L66,15 L63,16 Z" fill="#1b2a37" />
+            </svg>
+          </div>
+
+          <div style="background: #ffffff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 2rem; display: flex; align-items: center; justify-content: center;">
+            <svg viewBox="0 0 80 80" width="90" height="90" xmlns="http://www.w3.org/2000/svg">
+              <rect x="6" y="26" width="46" height="34" rx="5" fill="#e8eef3" stroke="#c8d7e4" stroke-width="1.5" />
+              <text x="14" y="40" fill="#92afc9" font-size="8" font-weight="700" font-family="sans-serif">$120K</text>
+              <line x1="14" y1="46" x2="38" y2="46" stroke="#c8d7e4" stroke-width="1.5" stroke-linecap="round" />
+              <line x1="14" y1="52" x2="28" y2="52" stroke="#c8d7e4" stroke-width="1" stroke-linecap="round" opacity="0.5" />
+
+              <rect x="26" y="12" width="46" height="34" rx="5" fill="#ffffff" stroke="#70c1b3" stroke-width="1.5" />
+              <text x="34" y="26" fill="#49ab9b" font-size="8" font-weight="700" font-family="sans-serif">$123K</text>
+              <line x1="34" y1="32" x2="58" y2="32" stroke="#70c1b3" stroke-width="1.5" stroke-linecap="round" opacity="0.6" />
+              <line x1="34" y1="38" x2="48" y2="38" stroke="#70c1b3" stroke-width="1" stroke-linecap="round" opacity="0.4" />
+
+              <circle cx="64" cy="16" r="10" fill="#b8930a" />
+              <path d="M63,10 L60,17 L63,16 L62,22 L66,15 L63,16 Z" fill="#ffffff" />
+            </svg>
+          </div>
+        </div>
+
+
+        <!-- ===== V2: Header bar card (HubSpot style) ===== -->
+        <div style="text-align: center;">
+          <p style="font-size: 0.8rem; color: #5b87ae; margin-bottom: 0.75rem; font-weight: 600;">2: Header Bar</p>
+
+          <div style="background: #1b2a37; border-radius: 12px; padding: 2rem; margin-bottom: 0.75rem; display: flex; align-items: center; justify-content: center;">
+            <svg viewBox="0 0 80 80" width="90" height="90" xmlns="http://www.w3.org/2000/svg">
+              <!-- Bottom card with muted header strip -->
+              <rect x="6" y="26" width="46" height="34" rx="5" fill="#253d52" stroke="#3d5e7b" stroke-width="1.5" />
+              <rect x="6" y="26" width="46" height="10" rx="5" fill="#3d5e7b" />
+              <rect x="6" y="31" width="46" height="5" fill="#3d5e7b" />
+              <line x1="14" y1="44" x2="38" y2="44" stroke="#3d5e7b" stroke-width="1.5" stroke-linecap="round" opacity="0.6" />
+              <line x1="14" y1="50" x2="28" y2="50" stroke="#3d5e7b" stroke-width="1" stroke-linecap="round" opacity="0.4" />
+
+              <!-- Top card with teal header strip -->
+              <rect x="26" y="12" width="46" height="34" rx="5" fill="#1e3244" stroke="#70c1b3" stroke-width="1.5" />
+              <rect x="26" y="12" width="46" height="10" rx="5" fill="#70c1b3" opacity="0.3" />
+              <rect x="26" y="17" width="46" height="5" fill="#70c1b3" opacity="0.3" />
+              <line x1="34" y1="30" x2="58" y2="30" stroke="#70c1b3" stroke-width="1.5" stroke-linecap="round" opacity="0.7" />
+              <line x1="34" y1="36" x2="48" y2="36" stroke="#70c1b3" stroke-width="1" stroke-linecap="round" opacity="0.4" />
+
+              <!-- Bolt badge -->
+              <circle cx="64" cy="16" r="10" fill="#F5C400" />
+              <path d="M63,10 L60,17 L63,16 L62,22 L66,15 L63,16 Z" fill="#1b2a37" />
+            </svg>
+          </div>
+
+          <div style="background: #ffffff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 2rem; display: flex; align-items: center; justify-content: center;">
+            <svg viewBox="0 0 80 80" width="90" height="90" xmlns="http://www.w3.org/2000/svg">
+              <rect x="6" y="26" width="46" height="34" rx="5" fill="#e8eef3" stroke="#c8d7e4" stroke-width="1.5" />
+              <rect x="6" y="26" width="46" height="10" rx="5" fill="#c8d7e4" />
+              <rect x="6" y="31" width="46" height="5" fill="#c8d7e4" />
+              <line x1="14" y1="44" x2="38" y2="44" stroke="#c8d7e4" stroke-width="1.5" stroke-linecap="round" />
+              <line x1="14" y1="50" x2="28" y2="50" stroke="#c8d7e4" stroke-width="1" stroke-linecap="round" opacity="0.5" />
+
+              <rect x="26" y="12" width="46" height="34" rx="5" fill="#ffffff" stroke="#70c1b3" stroke-width="1.5" />
+              <rect x="26" y="12" width="46" height="10" rx="5" fill="#70c1b3" opacity="0.15" />
+              <rect x="26" y="17" width="46" height="5" fill="#70c1b3" opacity="0.15" />
+              <line x1="34" y1="30" x2="58" y2="30" stroke="#70c1b3" stroke-width="1.5" stroke-linecap="round" opacity="0.5" />
+              <line x1="34" y1="36" x2="48" y2="36" stroke="#70c1b3" stroke-width="1" stroke-linecap="round" opacity="0.3" />
+
+              <circle cx="64" cy="16" r="10" fill="#b8930a" />
+              <path d="M63,10 L60,17 L63,16 L62,22 L66,15 L63,16 Z" fill="#ffffff" />
+            </svg>
+          </div>
+        </div>
+
+
+        <!-- ===== V3: Status dot + stage pill ===== -->
+        <div style="text-align: center;">
+          <p style="font-size: 0.8rem; color: #5b87ae; margin-bottom: 0.75rem; font-weight: 600;">3: Stage Pill</p>
+
+          <div style="background: #1b2a37; border-radius: 12px; padding: 2rem; margin-bottom: 0.75rem; display: flex; align-items: center; justify-content: center;">
+            <svg viewBox="0 0 80 80" width="90" height="90" xmlns="http://www.w3.org/2000/svg">
+              <!-- Bottom card with stage pill -->
+              <rect x="6" y="26" width="46" height="36" rx="5" fill="#253d52" stroke="#3d5e7b" stroke-width="1.5" />
+              <!-- Status dot -->
+              <circle cx="14" cy="36" r="3" fill="#3d5e7b" />
+              <line x1="20" y1="36" x2="40" y2="36" stroke="#3d5e7b" stroke-width="1.5" stroke-linecap="round" />
+              <!-- Stage pill -->
+              <rect x="12" y="44" width="28" height="10" rx="5" fill="#3d5e7b" opacity="0.5" />
+              <text x="26" y="51.5" text-anchor="middle" fill="#5b87ae" font-size="5.5" font-weight="600" font-family="sans-serif">Won</text>
+
+              <!-- Top card with stage pill -->
+              <rect x="26" y="10" width="46" height="36" rx="5" fill="#1e3244" stroke="#70c1b3" stroke-width="1.5" />
+              <!-- Status dot (green = active) -->
+              <circle cx="34" cy="20" r="3" fill="#70c1b3" />
+              <line x1="40" y1="20" x2="60" y2="20" stroke="#70c1b3" stroke-width="1.5" stroke-linecap="round" />
+              <!-- Stage pill -->
+              <rect x="32" y="28" width="32" height="10" rx="5" fill="#70c1b3" opacity="0.2" />
+              <text x="48" y="35.5" text-anchor="middle" fill="#70c1b3" font-size="5.5" font-weight="600" font-family="sans-serif">Renewal</text>
+
+              <!-- Bolt badge -->
+              <circle cx="64" cy="14" r="10" fill="#F5C400" />
+              <path d="M63,8 L60,15 L63,14 L62,20 L66,13 L63,14 Z" fill="#1b2a37" />
+            </svg>
+          </div>
+
+          <div style="background: #ffffff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 2rem; display: flex; align-items: center; justify-content: center;">
+            <svg viewBox="0 0 80 80" width="90" height="90" xmlns="http://www.w3.org/2000/svg">
+              <rect x="6" y="26" width="46" height="36" rx="5" fill="#e8eef3" stroke="#c8d7e4" stroke-width="1.5" />
+              <circle cx="14" cy="36" r="3" fill="#c8d7e4" />
+              <line x1="20" y1="36" x2="40" y2="36" stroke="#c8d7e4" stroke-width="1.5" stroke-linecap="round" />
+              <rect x="12" y="44" width="28" height="10" rx="5" fill="#c8d7e4" opacity="0.5" />
+              <text x="26" y="51.5" text-anchor="middle" fill="#92afc9" font-size="5.5" font-weight="600" font-family="sans-serif">Won</text>
+
+              <rect x="26" y="10" width="46" height="36" rx="5" fill="#ffffff" stroke="#70c1b3" stroke-width="1.5" />
+              <circle cx="34" cy="20" r="3" fill="#70c1b3" />
+              <line x1="40" y1="20" x2="60" y2="20" stroke="#70c1b3" stroke-width="1.5" stroke-linecap="round" />
+              <rect x="32" y="28" width="32" height="10" rx="5" fill="#70c1b3" opacity="0.12" />
+              <text x="48" y="35.5" text-anchor="middle" fill="#49ab9b" font-size="5.5" font-weight="600" font-family="sans-serif">Renewal</text>
+
+              <circle cx="64" cy="14" r="10" fill="#b8930a" />
+              <path d="M63,8 L60,15 L63,14 L62,20 L66,13 L63,14 Z" fill="#ffffff" />
+            </svg>
+          </div>
+        </div>
+
+
+        <!-- ===== V4: Dollar icon + upward arrow ===== -->
+        <div style="text-align: center;">
+          <p style="font-size: 0.8rem; color: #5b87ae; margin-bottom: 0.75rem; font-weight: 600;">4: Dollar + Arrow Up</p>
+
+          <div style="background: #1b2a37; border-radius: 12px; padding: 2rem; margin-bottom: 0.75rem; display: flex; align-items: center; justify-content: center;">
+            <svg viewBox="0 0 80 80" width="90" height="90" xmlns="http://www.w3.org/2000/svg">
+              <!-- Bottom card -->
+              <rect x="6" y="26" width="46" height="34" rx="5" fill="#253d52" stroke="#3d5e7b" stroke-width="1.5" />
+              <!-- Dollar circle icon -->
+              <circle cx="18" cy="38" r="7" fill="#3d5e7b" opacity="0.6" />
+              <text x="18" y="42" text-anchor="middle" fill="#5b87ae" font-size="10" font-weight="700" font-family="sans-serif">$</text>
+              <line x1="30" y1="36" x2="44" y2="36" stroke="#3d5e7b" stroke-width="1.5" stroke-linecap="round" opacity="0.6" />
+              <line x1="30" y1="44" x2="38" y2="44" stroke="#3d5e7b" stroke-width="1" stroke-linecap="round" opacity="0.4" />
+
+              <!-- Top card -->
+              <rect x="26" y="12" width="46" height="34" rx="5" fill="#1e3244" stroke="#70c1b3" stroke-width="1.5" />
+              <!-- Dollar circle icon (vibrant) -->
+              <circle cx="38" cy="24" r="7" fill="#70c1b3" opacity="0.2" />
+              <text x="38" y="28" text-anchor="middle" fill="#70c1b3" font-size="10" font-weight="700" font-family="sans-serif">$</text>
+              <line x1="50" y1="22" x2="64" y2="22" stroke="#70c1b3" stroke-width="1.5" stroke-linecap="round" opacity="0.7" />
+              <line x1="50" y1="30" x2="58" y2="30" stroke="#70c1b3" stroke-width="1" stroke-linecap="round" opacity="0.4" />
+
+              <!-- Small upward arrow between cards -->
+              <path d="M54,48 L54,54" stroke="#F5C400" stroke-width="1.5" />
+              <path d="M54,48 L54,42" stroke="#F5C400" stroke-width="1.5" />
+              <polygon points="51,43 54,38 57,43" fill="#F5C400" />
+
+              <!-- Bolt badge -->
+              <circle cx="64" cy="16" r="10" fill="#F5C400" />
+              <path d="M63,10 L60,17 L63,16 L62,22 L66,15 L63,16 Z" fill="#1b2a37" />
+            </svg>
+          </div>
+
+          <div style="background: #ffffff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 2rem; display: flex; align-items: center; justify-content: center;">
+            <svg viewBox="0 0 80 80" width="90" height="90" xmlns="http://www.w3.org/2000/svg">
+              <rect x="6" y="26" width="46" height="34" rx="5" fill="#e8eef3" stroke="#c8d7e4" stroke-width="1.5" />
+              <circle cx="18" cy="38" r="7" fill="#c8d7e4" opacity="0.6" />
+              <text x="18" y="42" text-anchor="middle" fill="#92afc9" font-size="10" font-weight="700" font-family="sans-serif">$</text>
+              <line x1="30" y1="36" x2="44" y2="36" stroke="#c8d7e4" stroke-width="1.5" stroke-linecap="round" />
+              <line x1="30" y1="44" x2="38" y2="44" stroke="#c8d7e4" stroke-width="1" stroke-linecap="round" opacity="0.5" />
+
+              <rect x="26" y="12" width="46" height="34" rx="5" fill="#ffffff" stroke="#70c1b3" stroke-width="1.5" />
+              <circle cx="38" cy="24" r="7" fill="#70c1b3" opacity="0.1" />
+              <text x="38" y="28" text-anchor="middle" fill="#49ab9b" font-size="10" font-weight="700" font-family="sans-serif">$</text>
+              <line x1="50" y1="22" x2="64" y2="22" stroke="#70c1b3" stroke-width="1.5" stroke-linecap="round" opacity="0.5" />
+              <line x1="50" y1="30" x2="58" y2="30" stroke="#70c1b3" stroke-width="1" stroke-linecap="round" opacity="0.3" />
+
+              <path d="M54,48 L54,54" stroke="#b8930a" stroke-width="1.5" />
+              <path d="M54,48 L54,42" stroke="#b8930a" stroke-width="1.5" />
+              <polygon points="51,43 54,38 57,43" fill="#b8930a" />
+
+              <circle cx="64" cy="16" r="10" fill="#b8930a" />
+              <path d="M63,10 L60,17 L63,16 L62,22 L66,15 L63,16 Z" fill="#ffffff" />
+            </svg>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Size test row -->
+      <h2 style="font-size: 1.2rem; font-weight: 600; color: #1b2a37; margin: 3rem 0 1.5rem; text-align: center;">Size Test — All 4 at 16px / 32px / 48px / 80px</h2>
+
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem;">
+        {[
+          { label: '1: Dollar', bottomFill: '#253d52', bottomStroke: '#3d5e7b', topFill: '#1e3244', topStroke: '#70c1b3' },
+        ].map(() => null)}
+      </div>
+
+      <div style="background: #1b2a37; border-radius: 12px; padding: 2rem; display: flex; align-items: end; justify-content: center; gap: 3rem; flex-wrap: wrap;">
+        {[16, 32, 48, 80].map(size => (
+          <div style="text-align: center;">
+            <div style="display: flex; gap: 1.5rem; align-items: end;">
+              <!-- V1 -->
+              <div>
+                <svg viewBox="0 0 80 80" width={size} height={size} xmlns="http://www.w3.org/2000/svg">
+                  <rect x="6" y="26" width="46" height="34" rx="5" fill="#253d52" stroke="#3d5e7b" stroke-width="1.5" />
+                  <text x="14" y="40" fill="#3d5e7b" font-size="8" font-weight="700" font-family="sans-serif">$120K</text>
+                  <rect x="26" y="12" width="46" height="34" rx="5" fill="#1e3244" stroke="#70c1b3" stroke-width="1.5" />
+                  <text x="34" y="26" fill="#70c1b3" font-size="8" font-weight="700" font-family="sans-serif">$123K</text>
+                  <circle cx="64" cy="16" r="10" fill="#F5C400" />
+                  <path d="M63,10 L60,17 L63,16 L62,22 L66,15 L63,16 Z" fill="#1b2a37" />
+                </svg>
+              </div>
+              <!-- V2 -->
+              <div>
+                <svg viewBox="0 0 80 80" width={size} height={size} xmlns="http://www.w3.org/2000/svg">
+                  <rect x="6" y="26" width="46" height="34" rx="5" fill="#253d52" stroke="#3d5e7b" stroke-width="1.5" />
+                  <rect x="6" y="26" width="46" height="10" rx="5" fill="#3d5e7b" />
+                  <rect x="6" y="31" width="46" height="5" fill="#3d5e7b" />
+                  <rect x="26" y="12" width="46" height="34" rx="5" fill="#1e3244" stroke="#70c1b3" stroke-width="1.5" />
+                  <rect x="26" y="12" width="46" height="10" rx="5" fill="#70c1b3" opacity="0.3" />
+                  <rect x="26" y="17" width="46" height="5" fill="#70c1b3" opacity="0.3" />
+                  <circle cx="64" cy="16" r="10" fill="#F5C400" />
+                  <path d="M63,10 L60,17 L63,16 L62,22 L66,15 L63,16 Z" fill="#1b2a37" />
+                </svg>
+              </div>
+              <!-- V3 -->
+              <div>
+                <svg viewBox="0 0 80 80" width={size} height={size} xmlns="http://www.w3.org/2000/svg">
+                  <rect x="6" y="26" width="46" height="36" rx="5" fill="#253d52" stroke="#3d5e7b" stroke-width="1.5" />
+                  <circle cx="14" cy="36" r="3" fill="#3d5e7b" />
+                  <line x1="20" y1="36" x2="40" y2="36" stroke="#3d5e7b" stroke-width="1.5" stroke-linecap="round" />
+                  <rect x="12" y="44" width="28" height="10" rx="5" fill="#3d5e7b" opacity="0.5" />
+                  <rect x="26" y="10" width="46" height="36" rx="5" fill="#1e3244" stroke="#70c1b3" stroke-width="1.5" />
+                  <circle cx="34" cy="20" r="3" fill="#70c1b3" />
+                  <line x1="40" y1="20" x2="60" y2="20" stroke="#70c1b3" stroke-width="1.5" stroke-linecap="round" />
+                  <rect x="32" y="28" width="32" height="10" rx="5" fill="#70c1b3" opacity="0.2" />
+                  <circle cx="64" cy="14" r="10" fill="#F5C400" />
+                  <path d="M63,8 L60,15 L63,14 L62,20 L66,13 L63,14 Z" fill="#1b2a37" />
+                </svg>
+              </div>
+              <!-- V4 -->
+              <div>
+                <svg viewBox="0 0 80 80" width={size} height={size} xmlns="http://www.w3.org/2000/svg">
+                  <rect x="6" y="26" width="46" height="34" rx="5" fill="#253d52" stroke="#3d5e7b" stroke-width="1.5" />
+                  <circle cx="18" cy="38" r="7" fill="#3d5e7b" opacity="0.6" />
+                  <text x="18" y="42" text-anchor="middle" fill="#5b87ae" font-size="10" font-weight="700" font-family="sans-serif">$</text>
+                  <rect x="26" y="12" width="46" height="34" rx="5" fill="#1e3244" stroke="#70c1b3" stroke-width="1.5" />
+                  <circle cx="38" cy="24" r="7" fill="#70c1b3" opacity="0.2" />
+                  <text x="38" y="28" text-anchor="middle" fill="#70c1b3" font-size="10" font-weight="700" font-family="sans-serif">$</text>
+                  <polygon points="51,43 54,38 57,43" fill="#F5C400" />
+                  <circle cx="64" cy="16" r="10" fill="#F5C400" />
+                  <path d="M63,10 L60,17 L63,16 L62,22 L66,15 L63,16 Z" fill="#1b2a37" />
+                </svg>
+              </div>
+            </div>
+            <p style="color: #92afc9; font-size: 0.65rem; margin-top: 0.5rem;">{size}px — V1 / V2 / V3 / V4</p>
+          </div>
+        ))}
+      </div>
+
+      <!-- Lockups -->
+      <h2 style="font-size: 1.2rem; font-weight: 600; color: #1b2a37; margin: 3rem 0 1.5rem; text-align: center;">Logo + Text Lockup (all 4)</h2>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+        {[
+          { name: 'V1: Dollar', svg: `<rect x="6" y="26" width="46" height="34" rx="5" fill="#253d52" stroke="#3d5e7b" stroke-width="1.5"/><text x="14" y="40" fill="#3d5e7b" font-size="8" font-weight="700" font-family="sans-serif">$120K</text><line x1="14" y1="46" x2="38" y2="46" stroke="#3d5e7b" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/><rect x="26" y="12" width="46" height="34" rx="5" fill="#1e3244" stroke="#70c1b3" stroke-width="1.5"/><text x="34" y="26" fill="#70c1b3" font-size="8" font-weight="700" font-family="sans-serif">$123K</text><line x1="34" y1="32" x2="58" y2="32" stroke="#70c1b3" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/><circle cx="64" cy="16" r="10" fill="#F5C400"/><path d="M63,10 L60,17 L63,16 L62,22 L66,15 L63,16 Z" fill="#1b2a37"/>` },
+          { name: 'V2: Header', svg: `<rect x="6" y="26" width="46" height="34" rx="5" fill="#253d52" stroke="#3d5e7b" stroke-width="1.5"/><rect x="6" y="26" width="46" height="10" rx="5" fill="#3d5e7b"/><rect x="6" y="31" width="46" height="5" fill="#3d5e7b"/><line x1="14" y1="44" x2="38" y2="44" stroke="#3d5e7b" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/><rect x="26" y="12" width="46" height="34" rx="5" fill="#1e3244" stroke="#70c1b3" stroke-width="1.5"/><rect x="26" y="12" width="46" height="10" rx="5" fill="#70c1b3" opacity="0.3"/><rect x="26" y="17" width="46" height="5" fill="#70c1b3" opacity="0.3"/><line x1="34" y1="30" x2="58" y2="30" stroke="#70c1b3" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/><circle cx="64" cy="16" r="10" fill="#F5C400"/><path d="M63,10 L60,17 L63,16 L62,22 L66,15 L63,16 Z" fill="#1b2a37"/>` },
+          { name: 'V3: Stage', svg: `<rect x="6" y="26" width="46" height="36" rx="5" fill="#253d52" stroke="#3d5e7b" stroke-width="1.5"/><circle cx="14" cy="36" r="3" fill="#3d5e7b"/><line x1="20" y1="36" x2="40" y2="36" stroke="#3d5e7b" stroke-width="1.5" stroke-linecap="round"/><rect x="12" y="44" width="28" height="10" rx="5" fill="#3d5e7b" opacity="0.5"/><rect x="26" y="10" width="46" height="36" rx="5" fill="#1e3244" stroke="#70c1b3" stroke-width="1.5"/><circle cx="34" cy="20" r="3" fill="#70c1b3"/><line x1="40" y1="20" x2="60" y2="20" stroke="#70c1b3" stroke-width="1.5" stroke-linecap="round"/><rect x="32" y="28" width="32" height="10" rx="5" fill="#70c1b3" opacity="0.2"/><circle cx="64" cy="14" r="10" fill="#F5C400"/><path d="M63,8 L60,15 L63,14 L62,20 L66,13 L63,14 Z" fill="#1b2a37"/>` },
+          { name: 'V4: Dollar $', svg: `<rect x="6" y="26" width="46" height="34" rx="5" fill="#253d52" stroke="#3d5e7b" stroke-width="1.5"/><circle cx="18" cy="38" r="7" fill="#3d5e7b" opacity="0.6"/><text x="18" y="42" text-anchor="middle" fill="#5b87ae" font-size="10" font-weight="700" font-family="sans-serif">$</text><line x1="30" y1="36" x2="44" y2="36" stroke="#3d5e7b" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/><rect x="26" y="12" width="46" height="34" rx="5" fill="#1e3244" stroke="#70c1b3" stroke-width="1.5"/><circle cx="38" cy="24" r="7" fill="#70c1b3" opacity="0.2"/><text x="38" y="28" text-anchor="middle" fill="#70c1b3" font-size="10" font-weight="700" font-family="sans-serif">$</text><polygon points="51,43 54,38 57,43" fill="#F5C400"/><circle cx="64" cy="16" r="10" fill="#F5C400"/><path d="M63,10 L60,17 L63,16 L62,22 L66,15 L63,16 Z" fill="#1b2a37"/>` },
+        ].map(v => (
+          <div style="background: #1b2a37; border-radius: 12px; padding: 1.5rem; display: flex; align-items: center; gap: 1rem;">
+            <svg viewBox="0 0 80 80" width="48" height="48" xmlns="http://www.w3.org/2000/svg" set:html={v.svg} />
+            <div>
+              <div style="color: #ffffff; font-size: 1rem; font-weight: 700; font-family: sans-serif;">Renewal Deal Builder</div>
+              <div style="color: #70c1b3; font-size: 0.7rem; font-weight: 500; font-family: sans-serif;">by SWOTBee · {v.name}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </div>
+</BaseLayout>

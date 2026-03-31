@@ -1,0 +1,623 @@
+---
+// HeroPipeline.astro — Horizontal pipeline flow, wider layout
+// Left (muted): no automation | Right (vibrant): with automation
+// Features: stage highlights, confetti on Closed Won, animated flow path to renewal
+---
+
+<section class="hp-section">
+  <div class="hp-wrap">
+    <svg
+      viewBox="0 0 1100 700"
+      xmlns="http://www.w3.org/2000/svg"
+      class="hp-svg"
+      role="img"
+      aria-label="Pipeline comparison: without automation vs with automated renewals"
+    >
+      <defs>
+        <linearGradient id="hpbg-dark" x1="0" y1="0" x2="0.5" y2="1">
+          <stop offset="0%" stop-color="#1b2a37" />
+          <stop offset="100%" stop-color="#141f29" />
+        </linearGradient>
+        <linearGradient id="hpbg-light" x1="0" y1="0" x2="0.5" y2="1">
+          <stop offset="0%" stop-color="#f8fafb" />
+          <stop offset="100%" stop-color="#f0f4f7" />
+        </linearGradient>
+        <filter id="hps-dark" x="-5%" y="-5%" width="110%" height="115%">
+          <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#000" flood-opacity="0.3" />
+        </filter>
+        <filter id="hps-light" x="-5%" y="-5%" width="110%" height="115%">
+          <feDropShadow dx="0" dy="1" stdDeviation="3" flood-color="#92afc9" flood-opacity="0.2" />
+        </filter>
+      </defs>
+
+      <style>
+        /* SVG theme using CSS custom properties */
+        /* Dark = default */
+        .hp-svg {
+          --hp-bg: url(#hpbg-dark);
+          --hp-card: #1e3244;
+          --hp-card-deal: #253d52;
+          --hp-card-ren: #1a3a3a;
+          --hp-card-filter: url(#hps-dark);
+          --hp-border-muted: #3d5e7b;
+          --hp-border-accent: #5b87ae;
+          --hp-text-primary: #ffffff;
+          --hp-text-muted: #92afc9;
+          --hp-text-muted-strong: #5b87ae;
+          --hp-divider: #ffffff;
+          --hp-sub-text: #ffffff;
+          --hp-yellow: #F5C400;
+          --hp-yellow-border: #F5C400;
+        }
+
+        /* Light mode override */
+        @media (prefers-color-scheme: light) {
+          .hp-svg {
+            --hp-bg: url(#hpbg-light);
+            --hp-card: #ffffff;
+            --hp-card-deal: #f0f4f7;
+            --hp-card-ren: #f0faf8;
+            --hp-card-filter: url(#hps-light);
+            --hp-border-muted: #c8d7e4;
+            --hp-border-accent: #92afc9;
+            --hp-text-primary: #1b2a37;
+            --hp-text-muted: #5b87ae;
+            --hp-text-muted-strong: #3d5e7b;
+            --hp-divider: #c8d7e4;
+            --hp-sub-text: #3d5e7b;
+            --hp-yellow: #b8930a;
+            --hp-yellow-border: #c9a00b;
+          }
+        }
+
+        .hp-bg { fill: var(--hp-bg); }
+        .hp-card { fill: var(--hp-card); stroke: var(--hp-border-muted); }
+        .hp-card-accent { fill: var(--hp-card); stroke: var(--hp-border-accent); }
+        .hp-card-deal { fill: var(--hp-card-deal); stroke: var(--hp-border-accent); filter: var(--hp-card-filter); }
+        .hp-card-ren { fill: var(--hp-card-ren); stroke: #70c1b3; filter: var(--hp-card-filter); }
+        .hp-text-primary { fill: var(--hp-text-primary); }
+        .hp-text-muted { fill: var(--hp-text-muted); }
+        .hp-text-muted-strong { fill: var(--hp-text-muted-strong); }
+        .hp-border-muted { fill: var(--hp-border-muted); }
+        .hp-border-accent { fill: var(--hp-border-accent); }
+        .hp-divider { stroke: var(--hp-divider); }
+        .hp-sub-text { fill: var(--hp-sub-text); }
+        .hp-stat-card { fill: var(--hp-card); stroke: var(--hp-border-muted); }
+        .hp-stat-card-right { fill: var(--hp-card); stroke: #70c1b3; }
+        .hp-yellow { fill: var(--hp-yellow); }
+        .hp-yellow-stroke { stroke: var(--hp-yellow-border); }
+      </style>
+
+      <!-- Background -->
+      <rect width="1100" height="700" class="hp-bg" rx="14" />
+
+
+      <!-- =============== LEFT HALF: WITHOUT AUTOMATION (muted) =============== -->
+
+      <text x="260" y="36" text-anchor="middle" fill="#5b87ae" font-size="15" font-weight="700" letter-spacing="1.5" font-family="sans-serif" opacity="0.7">WITHOUT AUTOMATION</text>
+
+      <text x="35" y="65" class="hp-text-muted" opacity="0.5" font-size="13" font-weight="600" font-family="sans-serif">Sales Pipeline</text>
+
+      <!-- Muted stage boxes -->
+      <rect x="35" y="78" width="110" height="44" rx="7" class="hp-card hp-border-muted" stroke-width="1" opacity="0.7" />
+      <text x="90" y="105" text-anchor="middle" class="hp-text-muted" font-size="13" font-family="sans-serif">Discovery</text>
+      <polygon points="149,100 156,95 156,105" class="hp-border-muted" fill="currentColor" opacity="0.5" />
+
+      <rect x="162" y="78" width="110" height="44" rx="7" class="hp-card hp-border-muted" stroke-width="1" opacity="0.7" />
+      <text x="217" y="105" text-anchor="middle" class="hp-text-muted" font-size="13" font-family="sans-serif">Qualified</text>
+      <polygon points="276,100 283,95 283,105" class="hp-border-muted" fill="currentColor" opacity="0.5" />
+
+      <rect x="289" y="78" width="110" height="44" rx="7" class="hp-card hp-border-muted" stroke-width="1" opacity="0.7" />
+      <text x="344" y="105" text-anchor="middle" class="hp-text-muted" font-size="13" font-family="sans-serif">Proposal</text>
+      <polygon points="403,100 410,95 410,105" class="hp-border-muted" fill="currentColor" opacity="0.5" />
+
+      <rect x="416" y="78" width="110" height="44" rx="7" class="hp-card hp-border-accent" stroke-width="1.5" opacity="0.7" />
+      <text x="471" y="105" text-anchor="middle" class="hp-text-muted-strong" font-size="13" font-weight="600" font-family="sans-serif">Closed Won</text>
+
+      <!-- Empty renewal pipeline -->
+      <text x="35" y="175" class="hp-text-muted" opacity="0.3" font-size="13" font-weight="600" font-family="sans-serif">Renewal Pipeline</text>
+      <rect x="35" y="188" width="491" height="44" rx="7" fill="none" class="hp-card" stroke-width="1" stroke-dasharray="5 4" opacity="0.2" />
+      <text x="280" y="215" text-anchor="middle" class="hp-text-muted" opacity="0.2" font-size="14" font-family="sans-serif">— empty — no renewals tracked —</text>
+
+      <!-- Warning stats -->
+      <g>
+        <rect x="35" y="460" width="491" height="90" rx="10" class="hp-stat-card" stroke-width="1" opacity="0.6" />
+        <text x="55" y="490" fill="#ff5c35" font-size="16" font-weight="700" font-family="sans-serif" opacity="0.9">⚠ 3 renewals missed this year</text>
+        <text x="55" y="514" class="hp-yellow" font-size="16" font-weight="700" font-family="sans-serif">💸 ~$285K revenue leaked</text>
+        <text x="55" y="536" class="hp-text-muted" font-size="11" opacity="0.4" font-family="sans-serif">Renewals tracked in spreadsheets · No visibility</text>
+      </g>
+
+      <!-- Left ARR -->
+      <g>
+        <rect x="35" y="570" width="491" height="80" rx="10" class="hp-stat-card" stroke-width="1" opacity="0.6" />
+        <text x="55" y="598" class="hp-text-muted" opacity="0.4" font-size="13" font-family="sans-serif">Annual Recurring Revenue</text>
+        <text x="55" y="634" fill="#5b87ae" font-size="36" font-weight="700" font-family="sans-serif" opacity="0.6">$1.2M</text>
+        <text x="215" y="634" fill="#5b87ae" opacity="0.3" font-size="14" font-family="sans-serif">— flat</text>
+      </g>
+
+      <!-- Left deal cards -->
+      <g class="l-deal1" opacity="0">
+        <rect width="100" height="34" rx="6" class="hp-card-deal" stroke-width="1" opacity="0.8" />
+        <text x="8" y="15" class="hp-text-muted" font-size="11" font-weight="600" font-family="sans-serif">Acme Corp</text>
+        <text x="8" y="28" class="hp-text-muted" opacity="0.5" font-size="9" font-family="sans-serif">$120K</text>
+      </g>
+      <g class="l-deal2" opacity="0">
+        <rect width="100" height="34" rx="6" class="hp-card-deal" stroke-width="1" opacity="0.8" />
+        <text x="8" y="15" class="hp-text-muted" font-size="11" font-weight="600" font-family="sans-serif">Beta Inc</text>
+        <text x="8" y="28" class="hp-text-muted" opacity="0.5" font-size="9" font-family="sans-serif">$85K</text>
+      </g>
+      <g class="l-deal3" opacity="0">
+        <rect width="100" height="34" rx="6" class="hp-card-deal" stroke-width="1" opacity="0.8" />
+        <text x="8" y="15" class="hp-text-muted" font-size="11" font-weight="600" font-family="sans-serif">Gamma Ltd</text>
+        <text x="8" y="28" class="hp-text-muted" opacity="0.5" font-size="9" font-family="sans-serif">$200K</text>
+      </g>
+
+
+      <!-- =============== CENTER DIVIDER =============== -->
+      <line x1="550" y1="16" x2="550" y2="680" class="hp-divider" stroke-width="0.5" opacity="0.06" />
+
+
+      <!-- =============== RIGHT HALF: WITH AUTOMATION (vibrant) =============== -->
+
+      <text x="810" y="36" text-anchor="middle" fill="#70c1b3" font-size="15" font-weight="700" letter-spacing="1.5" font-family="sans-serif">WITH AUTOMATION ⚡</text>
+
+      <text x="575" y="65" class="hp-text-primary" opacity="0.7" font-size="13" font-weight="600" font-family="sans-serif">Sales Pipeline</text>
+
+      <!-- Vibrant stage boxes -->
+      <rect x="575" y="78" width="110" height="44" rx="7" class="hp-card" stroke-width="1" />
+      <text x="630" y="105" text-anchor="middle" class="hp-text-primary" font-size="13" font-family="sans-serif">Discovery</text>
+      <polygon points="689,100 696,95 696,105" class="hp-border-muted" />
+
+      <rect x="702" y="78" width="110" height="44" rx="7" class="hp-card" stroke-width="1" />
+      <text x="757" y="105" text-anchor="middle" class="hp-text-primary" font-size="13" font-family="sans-serif">Qualified</text>
+      <polygon points="816,100 823,95 823,105" class="hp-border-muted" />
+
+      <rect x="829" y="78" width="110" height="44" rx="7" class="hp-card" stroke-width="1" />
+      <text x="884" y="105" text-anchor="middle" class="hp-text-primary" font-size="13" font-family="sans-serif">Proposal</text>
+      <polygon points="943,100 950,95 950,105" class="hp-border-muted" />
+
+      <rect x="956" y="78" width="110" height="44" rx="7" class="hp-card" stroke="#70c1b3" stroke-width="1.5" />
+      <text x="1011" y="105" text-anchor="middle" fill="#70c1b3" font-size="13" font-weight="600" font-family="sans-serif">Closed Won</text>
+
+      <!-- Stage highlight overlays (on top of stage boxes so they're visible) -->
+      <rect class="stage-hl stage-hl-0" x="575" y="78" width="110" height="44" rx="7" fill="#70c1b3" opacity="0" />
+      <rect class="stage-hl stage-hl-1" x="702" y="78" width="110" height="44" rx="7" fill="#70c1b3" opacity="0" />
+      <rect class="stage-hl stage-hl-2" x="829" y="78" width="110" height="44" rx="7" fill="#70c1b3" opacity="0" />
+      <rect class="stage-hl stage-hl-3" x="956" y="78" width="110" height="44" rx="7" fill="#F5C400" opacity="0" />
+
+      <!-- Confetti particles (hidden, animated on Closed Won) -->
+      <g class="confetti" opacity="0">
+        <circle class="conf-p" cx="1011" cy="85" r="3" fill="#F5C400" />
+        <circle class="conf-p" cx="1000" cy="80" r="2.5" fill="#ff5c35" />
+        <circle class="conf-p" cx="1022" cy="82" r="2" fill="#70c1b3" />
+        <circle class="conf-p" cx="995" cy="88" r="3" fill="#F5C400" />
+        <circle class="conf-p" cx="1025" cy="90" r="2.5" fill="#ff5c35" />
+        <circle class="conf-p" cx="1008" cy="76" r="2" fill="#70c1b3" />
+        <rect class="conf-p" x="1015" y="84" width="4" height="4" rx="1" fill="#F5C400" transform="rotate(25,1017,86)" />
+        <rect class="conf-p" x="998" y="78" width="3" height="5" rx="1" fill="#ff5c35" transform="rotate(-15,999,80)" />
+        <circle class="conf-p" cx="1030" cy="95" r="2" fill="#F5C400" />
+        <circle class="conf-p" cx="990" cy="95" r="2.5" fill="#70c1b3" />
+        <rect class="conf-p" x="1020" y="75" width="3" height="4" rx="1" fill="#ff5c35" transform="rotate(40,1021,77)" />
+        <circle class="conf-p" cx="1005" cy="72" r="2" fill="#F5C400" />
+      </g>
+
+      <!-- Flow path: dotted connector from Closed Won → Renewal Pipeline -->
+      <!-- Static connector line (always visible after first trigger) -->
+      <g class="bolt-connector" opacity="0">
+        <path class="flow-path" d="M1011,124 L1011,155 L651,155 L651,188" fill="none" stroke="#F5C400" stroke-width="2" stroke-dasharray="5 3" />
+        <polygon points="646,185 651,195 656,185" fill="#F5C400" />
+        <text x="830" y="147" class="hp-yellow" font-size="10" font-weight="700" font-family="sans-serif" text-anchor="middle">⚡ auto-creates renewal</text>
+      </g>
+
+      <!-- Animated flow dot that travels the path -->
+      <circle class="flow-dot" cx="0" cy="0" r="4" fill="#F5C400" opacity="0" />
+
+      <!-- bolt-flash removed -->
+
+      <!-- Renewal Pipeline -->
+      <text x="575" y="175" fill="#70c1b3" opacity="0.8" font-size="13" font-weight="600" font-family="sans-serif">Renewal Pipeline</text>
+
+      <rect x="575" y="188" width="153" height="44" rx="7" class="hp-card" stroke="#70c1b3" stroke-width="1" />
+      <text x="651" y="215" text-anchor="middle" fill="#70c1b3" font-size="13" font-family="sans-serif">Upcoming</text>
+      <polygon points="732,210 739,205 739,215" fill="#70c1b3" />
+
+      <rect x="745" y="188" width="153" height="44" rx="7" class="hp-card" stroke="#70c1b3" stroke-width="1" />
+      <text x="821" y="215" text-anchor="middle" fill="#70c1b3" font-size="13" font-family="sans-serif">In Review</text>
+      <polygon points="902,210 909,205 909,215" fill="#70c1b3" />
+
+      <rect x="915" y="188" width="151" height="44" rx="7" class="hp-card hp-yellow-stroke" stroke-width="1.5" />
+      <text x="990" y="215" text-anchor="middle" class="hp-yellow" font-size="13" font-weight="600" font-family="sans-serif">Renewed ★</text>
+
+      <!-- Success stats -->
+      <g>
+        <rect x="575" y="460" width="491" height="90" rx="10" class="hp-stat-card-right" stroke-width="1" />
+        <text x="595" y="490" fill="#70c1b3" font-size="15" font-weight="600" font-family="sans-serif">✓ 0 renewals missed</text>
+        <text x="595" y="514" class="hp-yellow" font-size="15" font-weight="700" font-family="sans-serif">✓ $0 revenue leaked</text>
+        <text x="595" y="536" class="hp-sub-text" opacity="0.4" font-size="11" font-family="sans-serif">Recurring items only · 3% price uplift · Owner preserved · Full audit trail</text>
+      </g>
+
+      <!-- Right ARR -->
+      <g>
+        <rect x="575" y="570" width="491" height="80" rx="10" class="hp-stat-card-right" stroke-width="1.5" />
+        <text x="600" y="598" class="hp-sub-text" opacity="0.6" font-size="13" font-family="sans-serif">Annual Recurring Revenue</text>
+        <text x="600" y="634" fill="#ff5c35" font-size="36" font-weight="700" font-family="sans-serif" class="r-arr-text">$1.2M</text>
+        <g class="arr-growth" opacity="0">
+          <text x="790" y="634" class="hp-yellow" font-size="18" font-weight="700" font-family="sans-serif">↑ growing</text>
+        </g>
+      </g>
+
+      <!-- Right deal cards -->
+      <g class="r-deal1" opacity="0">
+        <rect width="100" height="34" rx="6" class="hp-card-deal" stroke-width="1" />
+        <text x="8" y="15" class="hp-text-primary" font-size="11" font-weight="600" font-family="sans-serif">Acme Corp</text>
+        <text x="8" y="28" class="hp-text-primary" opacity="0.5" font-size="9" font-family="sans-serif">$120K</text>
+      </g>
+      <g class="r-deal2" opacity="0">
+        <rect width="100" height="34" rx="6" class="hp-card-deal" stroke-width="1" />
+        <text x="8" y="15" class="hp-text-primary" font-size="11" font-weight="600" font-family="sans-serif">Beta Inc</text>
+        <text x="8" y="28" class="hp-text-primary" opacity="0.5" font-size="9" font-family="sans-serif">$85K</text>
+      </g>
+      <g class="r-deal3" opacity="0">
+        <rect width="100" height="34" rx="6" class="hp-card-deal" stroke-width="1" />
+        <text x="8" y="15" class="hp-text-primary" font-size="11" font-weight="600" font-family="sans-serif">Gamma Ltd</text>
+        <text x="8" y="28" class="hp-text-primary" opacity="0.5" font-size="9" font-family="sans-serif">$200K</text>
+      </g>
+
+      <!-- Renewal deal cards -->
+      <g class="ren1" opacity="0">
+        <rect width="140" height="34" rx="6" class="hp-card-ren" stroke-width="1" />
+        <text x="8" y="15" fill="#70c1b3" font-size="10" font-weight="600" font-family="sans-serif">Acme Renewal '27</text>
+        <text x="8" y="28" class="hp-yellow" font-size="9" font-family="sans-serif">$123.6K · +3% ↑</text>
+      </g>
+      <g class="ren2" opacity="0">
+        <rect width="140" height="34" rx="6" class="hp-card-ren" stroke-width="1" />
+        <text x="8" y="15" fill="#70c1b3" font-size="10" font-weight="600" font-family="sans-serif">Beta Renewal '27</text>
+        <text x="8" y="28" class="hp-yellow" font-size="9" font-family="sans-serif">$87.6K · +3% ↑</text>
+      </g>
+      <g class="ren3" opacity="0">
+        <rect width="140" height="34" rx="6" class="hp-card-ren" stroke-width="1" />
+        <text x="8" y="15" fill="#70c1b3" font-size="10" font-weight="600" font-family="sans-serif">Gamma Renewal '27</text>
+        <text x="8" y="28" class="hp-yellow" font-size="9" font-family="sans-serif">$206K · +3% ↑</text>
+      </g>
+
+      <!-- Bottom -->
+      <text x="550" y="688" text-anchor="middle" class="hp-text-muted" opacity="0.2" font-size="10" font-family="sans-serif" letter-spacing="1">RENEWAL DEAL BUILDER — by SWOTBee</text>
+
+    </svg>
+  </div>
+</section>
+
+<script is:inline>
+document.addEventListener('DOMContentLoaded', function () {
+  var svg = document.querySelector('.hp-svg');
+  if (!svg) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  var lStagesX = [40, 167, 294, 421];
+  var lY = 83;
+  var rStagesX = [580, 707, 834, 961];
+  var rY = 83;
+  var renStagesX = [580, 750, 920];
+  var renY = 193;
+
+  var lDeal1 = svg.querySelector('.l-deal1');
+  var lDeal2 = svg.querySelector('.l-deal2');
+  var lDeal3 = svg.querySelector('.l-deal3');
+  var rDeal1 = svg.querySelector('.r-deal1');
+  var rDeal2 = svg.querySelector('.r-deal2');
+  var rDeal3 = svg.querySelector('.r-deal3');
+  var ren1 = svg.querySelector('.ren1');
+  var ren2 = svg.querySelector('.ren2');
+  var ren3 = svg.querySelector('.ren3');
+  var boltConn = svg.querySelector('.bolt-connector');
+  var boltFlash = null; // removed
+  var arrText = svg.querySelector('.r-arr-text');
+  var arrGrowth = svg.querySelector('.arr-growth');
+  var confetti = svg.querySelector('.confetti');
+  var confParticles = svg.querySelectorAll('.conf-p');
+  var flowDot = svg.querySelector('.flow-dot');
+  var stageHls = [
+    svg.querySelector('.stage-hl-0'),
+    svg.querySelector('.stage-hl-1'),
+    svg.querySelector('.stage-hl-2'),
+    svg.querySelector('.stage-hl-3')
+  ];
+
+  function pos(el, x, y) {
+    if (el) el.setAttribute('transform', 'translate(' + x + ',' + y + ')');
+  }
+  function show(el, o) {
+    if (el) el.setAttribute('opacity', String(o));
+  }
+
+  function animateDeal(el, fx, fy, tx, ty, dur, cb) {
+    if (!el) return;
+    var start = null;
+    function step(ts) {
+      if (!start) start = ts;
+      var p = Math.min((ts - start) / dur, 1);
+      var ease = 1 - Math.pow(1 - p, 3);
+      pos(el, fx + (tx - fx) * ease, fy + (ty - fy) * ease);
+      if (p < 1) requestAnimationFrame(step);
+      else if (cb) cb();
+    }
+    show(el, 1);
+    requestAnimationFrame(step);
+  }
+
+  // Highlight a right-side stage box briefly
+  function highlightStage(idx) {
+    var hl = stageHls[idx];
+    if (!hl) return;
+    show(hl, 0.15);
+    setTimeout(function() { show(hl, 0.08); }, 300);
+    setTimeout(function() { show(hl, 0); }, 800);
+  }
+
+  // Confetti burst at Closed Won
+  function fireConfetti(cb) {
+    show(confetti, 1);
+    // Scatter particles outward
+    var origins = [];
+    confParticles.forEach(function(p) {
+      var cx = parseFloat(p.getAttribute('cx') || p.getAttribute('x') || 1011);
+      var cy = parseFloat(p.getAttribute('cy') || p.getAttribute('y') || 85);
+      origins.push({cx: cx, cy: cy});
+    });
+    var start = null;
+    function step(ts) {
+      if (!start) start = ts;
+      var p = Math.min((ts - start) / 800, 1);
+      confParticles.forEach(function(el, i) {
+        var ox = origins[i].cx;
+        var oy = origins[i].cy;
+        // Scatter outward from center (1011,100) + gravity
+        var dx = (ox - 1011) * 4 * p;
+        var dy = (oy - 90) * 4 * p + 40 * p * p; // gravity
+        el.setAttribute('transform', 'translate(' + dx + ',' + dy + ')');
+        el.setAttribute('opacity', String(1 - p));
+      });
+      if (p < 1) requestAnimationFrame(step);
+      else {
+        show(confetti, 0);
+        confParticles.forEach(function(el) {
+          el.setAttribute('transform', 'translate(0,0)');
+          el.setAttribute('opacity', '1');
+        });
+        if (cb) cb();
+      }
+    }
+    requestAnimationFrame(step);
+  }
+
+  // Animate flow dot along the path: Closed Won → down → left → down → Renewal
+  function animateFlowDot(cb) {
+    show(flowDot, 1);
+    // Path waypoints: (1011,124) → (1011,155) → (651,155) → (651,193)
+    var waypoints = [
+      {x:1011, y:124},
+      {x:1011, y:155},
+      {x:651,  y:155},
+      {x:651,  y:193}
+    ];
+    var segDur = 250; // ms per segment
+    var seg = 0;
+
+    function runSeg() {
+      if (seg >= waypoints.length - 1) {
+        show(flowDot, 0);
+        if (cb) cb();
+        return;
+      }
+      var from = waypoints[seg];
+      var to = waypoints[seg + 1];
+      var start = null;
+      function step(ts) {
+        if (!start) start = ts;
+        var p = Math.min((ts - start) / segDur, 1);
+        var ease = p; // linear for smooth travel
+        flowDot.setAttribute('cx', from.x + (to.x - from.x) * ease);
+        flowDot.setAttribute('cy', from.y + (to.y - from.y) * ease);
+        if (p < 1) requestAnimationFrame(step);
+        else {
+          seg++;
+          runSeg();
+        }
+      }
+      requestAnimationFrame(step);
+    }
+    runSeg();
+  }
+
+  function flashBolt(cb) {
+    show(boltConn, 1);
+    if (boltFlash) {
+      boltFlash.setAttribute('r', '16');
+      boltFlash.setAttribute('opacity', '0.5');
+      setTimeout(function() {
+        boltFlash.setAttribute('r', '0');
+        boltFlash.setAttribute('opacity', '0');
+      }, 400);
+    }
+    // Animate the flow dot along the path, then create renewal
+    animateFlowDot(function() {
+      if (cb) cb();
+    });
+  }
+
+  function updateARR(val) {
+    if (!arrText) return;
+    arrText.textContent = val;
+    var yellowColor = getComputedStyle(svg).getPropertyValue('--hp-yellow').trim() || '#F5C400';
+    arrText.setAttribute('fill', yellowColor);
+    setTimeout(function() { arrText.setAttribute('fill', '#ff5c35'); }, 700);
+  }
+
+  function resetAll() {
+    [lDeal1, lDeal2, lDeal3, rDeal1, rDeal2, rDeal3, ren1, ren2, ren3].forEach(function(el) {
+      show(el, 0);
+      pos(el, -300, -300);
+    });
+    show(boltConn, 0);
+    show(arrGrowth, 0);
+    show(confetti, 0);
+    show(flowDot, 0);
+    stageHls.forEach(function(hl) { show(hl, 0); });
+    if (arrText) { arrText.textContent = '$1.2M'; arrText.setAttribute('fill', '#ff5c35'); }
+  }
+
+  function runSequence() {
+    resetAll();
+
+    // Deal 1 appears in Discovery
+    setTimeout(function() {
+      animateDeal(lDeal1, lStagesX[0], lY - 40, lStagesX[0], lY, 600, null);
+      animateDeal(rDeal1, rStagesX[0], rY - 40, rStagesX[0], rY, 600, function() {
+        highlightStage(0);
+      });
+    }, 800);
+
+    // Deal 1: Discovery → Qualified
+    setTimeout(function() {
+      animateDeal(lDeal1, lStagesX[0], lY, lStagesX[1], lY, 900, null);
+      animateDeal(rDeal1, rStagesX[0], rY, rStagesX[1], rY, 900, function() {
+        highlightStage(1);
+      });
+    }, 2200);
+
+    // Deal 1: Qualified → Proposal
+    setTimeout(function() {
+      animateDeal(lDeal1, lStagesX[1], lY, lStagesX[2], lY, 900, null);
+      animateDeal(rDeal1, rStagesX[1], rY, rStagesX[2], rY, 900, function() {
+        highlightStage(2);
+      });
+    }, 3800);
+
+    // Deal 1: Proposal → Closed Won + confetti + bolt + flow dot + renewal
+    setTimeout(function() {
+      animateDeal(lDeal1, lStagesX[2], lY, lStagesX[3], lY, 900, null);
+      animateDeal(rDeal1, rStagesX[2], rY, rStagesX[3], rY, 900, function() {
+        highlightStage(3);
+        fireConfetti(null);
+        flashBolt(function() {
+          animateDeal(ren1, renStagesX[0], renY - 30, renStagesX[0], renY, 500, null);
+        });
+      });
+    }, 5400);
+
+    // Renewal 1: Upcoming → In Review
+    setTimeout(function() {
+      animateDeal(ren1, renStagesX[0], renY, renStagesX[1], renY, 800, null);
+    }, 7800);
+
+    // Renewal 1: In Review → Renewed → ARR tick
+    setTimeout(function() {
+      animateDeal(ren1, renStagesX[1], renY, renStagesX[2], renY, 800, function() {
+        updateARR('$1.5M');
+        show(arrGrowth, 1);
+      });
+    }, 9200);
+
+    // Deal 2 appears
+    setTimeout(function() {
+      animateDeal(lDeal2, lStagesX[0], lY - 40, lStagesX[0], lY, 600, null);
+      animateDeal(rDeal2, rStagesX[0], rY - 40, rStagesX[0], rY, 600, function() {
+        highlightStage(0);
+      });
+    }, 11000);
+
+    // Deal 2: through pipeline
+    setTimeout(function() {
+      animateDeal(lDeal2, lStagesX[0], lY, lStagesX[1], lY, 800, null);
+      animateDeal(rDeal2, rStagesX[0], rY, rStagesX[1], rY, 800, function() { highlightStage(1); });
+    }, 12100);
+    setTimeout(function() {
+      animateDeal(lDeal2, lStagesX[1], lY, lStagesX[2], lY, 800, null);
+      animateDeal(rDeal2, rStagesX[1], rY, rStagesX[2], rY, 800, function() { highlightStage(2); });
+    }, 13300);
+    setTimeout(function() {
+      animateDeal(lDeal2, lStagesX[2], lY, lStagesX[3], lY, 800, null);
+      animateDeal(rDeal2, rStagesX[2], rY, rStagesX[3], rY, 800, function() {
+        highlightStage(3);
+        fireConfetti(null);
+        flashBolt(function() {
+          animateDeal(ren2, renStagesX[0], renY - 30, renStagesX[0], renY, 500, null);
+        });
+      });
+    }, 14500);
+
+    // Renewal 2 flows through → ARR $1.9M
+    setTimeout(function() {
+      animateDeal(ren2, renStagesX[0], renY, renStagesX[1], renY, 700, null);
+    }, 16800);
+    setTimeout(function() {
+      animateDeal(ren2, renStagesX[1], renY, renStagesX[2], renY, 700, function() {
+        updateARR('$1.9M');
+      });
+    }, 17800);
+
+    // Deal 3 appears
+    setTimeout(function() {
+      animateDeal(lDeal3, lStagesX[0], lY - 40, lStagesX[0], lY, 600, null);
+      animateDeal(rDeal3, rStagesX[0], rY - 40, rStagesX[0], rY, 600, function() { highlightStage(0); });
+    }, 19500);
+
+    // Deal 3: through pipeline
+    setTimeout(function() {
+      animateDeal(lDeal3, lStagesX[0], lY, lStagesX[1], lY, 700, null);
+      animateDeal(rDeal3, rStagesX[0], rY, rStagesX[1], rY, 700, function() { highlightStage(1); });
+    }, 20500);
+    setTimeout(function() {
+      animateDeal(lDeal3, lStagesX[1], lY, lStagesX[2], lY, 700, null);
+      animateDeal(rDeal3, rStagesX[1], rY, rStagesX[2], rY, 700, function() { highlightStage(2); });
+    }, 21600);
+    setTimeout(function() {
+      animateDeal(lDeal3, lStagesX[2], lY, lStagesX[3], lY, 700, null);
+      animateDeal(rDeal3, rStagesX[2], rY, rStagesX[3], rY, 700, function() {
+        highlightStage(3);
+        fireConfetti(null);
+        flashBolt(function() {
+          animateDeal(ren3, renStagesX[0], renY - 30, renStagesX[0], renY, 500, null);
+        });
+      });
+    }, 22700);
+
+    // Renewal 3 → ARR $2.4M
+    setTimeout(function() {
+      animateDeal(ren3, renStagesX[0], renY, renStagesX[1], renY, 700, null);
+    }, 25000);
+    setTimeout(function() {
+      animateDeal(ren3, renStagesX[1], renY, renStagesX[2], renY, 700, function() {
+        updateARR('$2.4M');
+      });
+    }, 26000);
+
+    // Loop
+    setTimeout(runSequence, 30000);
+  }
+
+  setTimeout(runSequence, 500);
+});
+</script>
+
+<style>
+  .hp-section {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 0.75rem;
+  }
+  .hp-wrap { width: 100%; }
+  .hp-svg {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 14px;
+    overflow: hidden;
+  }
+  .l-deal1, .l-deal2, .l-deal3,
+  .r-deal1, .r-deal2, .r-deal3,
+  .ren1, .ren2, .ren3 {
+    opacity: 0;
+  }
+</style>
