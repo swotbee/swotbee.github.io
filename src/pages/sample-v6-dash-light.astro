@@ -1,0 +1,157 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="V6 Dashboard — Light Mode (Copper CTA)">
+  <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style is:global>
+    body { font-family: 'Lexend Deca', sans-serif !important; background: #f3f4f6 !important; margin: 0; }
+    * { font-family: 'Lexend Deca', sans-serif; }
+  </style>
+
+  <!-- TOPNAV — light -->
+  <nav style="background: #ffffff; border-bottom: 1px solid #e5e7eb; position: sticky; top: 0; z-index: 50;">
+    <div style="max-width: 1280px; margin: 0 auto; padding: 0 1rem; display: flex; align-items: center; justify-content: space-between; height: 48px;">
+      <div style="display: flex; align-items: center; gap: 1.5rem;">
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+          <div style="width: 28px; height: 28px; border-radius: 6px; background: #C47A2A; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.7rem; font-weight: 700;">SCP</div>
+          <span style="color: #1a2530; font-size: 0.85rem; font-weight: 600;">Smart Company Picker</span>
+        </div>
+        <div style="display: flex; gap: 0.25rem;">
+          <a href="#" style="font-size: 0.8rem; font-weight: 500; padding: 0.4rem 0.75rem; border-radius: 6px; text-decoration: none; background: #FDF0DE; color: #C47A2A;">Overview</a>
+          <a href="#" style="color: #5a6a78; font-size: 0.8rem; font-weight: 500; padding: 0.4rem 0.75rem; border-radius: 6px; text-decoration: none;">CRM</a>
+          <a href="#" style="color: #5a6a78; font-size: 0.8rem; font-weight: 500; padding: 0.4rem 0.75rem; border-radius: 6px; text-decoration: none;">Quality</a>
+          <a href="#" style="color: #5a6a78; font-size: 0.8rem; font-weight: 500; padding: 0.4rem 0.75rem; border-radius: 6px; text-decoration: none;">Renewals</a>
+          <a href="#" style="color: #5a6a78; font-size: 0.8rem; font-weight: 500; padding: 0.4rem 0.75rem; border-radius: 6px; text-decoration: none;">Insights</a>
+        </div>
+      </div>
+      <div style="display: flex; align-items: center; gap: 1rem;">
+        <a href="#" style="color: #5a6a78; font-size: 0.8rem; text-decoration: none;">⚙ Settings</a>
+        <div style="width: 30px; height: 30px; border-radius: 50%; background: #C47A2A; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.7rem; font-weight: 600;">SK</div>
+      </div>
+    </div>
+  </nav>
+
+  <div style="max-width: 1280px; margin: 0 auto; padding: 1.5rem 1rem;">
+    <div style="margin-bottom: 1.5rem;">
+      <h1 style="font-size: 1.4rem; font-weight: 600; color: #1a2530; margin-bottom: 0.25rem;">Data Quality Dashboard</h1>
+      <p style="font-size: 0.85rem; color: #5a6a78;">Portal: Acme Corp · Last synced 5 minutes ago</p>
+    </div>
+
+    <!-- Alert -->
+    <div style="background: #FDF0DE; border: 1px solid #E8A850; border-left: 4px solid #C47A2A; border-radius: 8px; padding: 0.75rem 1rem; margin-bottom: 1.5rem;">
+      <span style="color: #A86520; font-size: 0.85rem;">⚠ 3 renewals expiring within 30 days — <a href="#" style="color: #C47A2A; font-weight: 600; text-decoration: underline;">Review now</a></span>
+    </div>
+
+    <!-- Health card -->
+    <div style="background: white; border: 1px solid #e5e7eb; border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem;">
+      <div style="display: flex; align-items: center; justify-content: space-between;">
+        <div>
+          <h2 style="font-size: 1.1rem; font-weight: 600; color: #1a2530; margin-bottom: 0.5rem;">Overall Health Score</h2>
+          <div style="display: flex; align-items: baseline; gap: 0.5rem;">
+            <span style="font-size: 2.5rem; font-weight: 700; color: #5AAB9D;">78</span>
+            <span style="font-size: 1rem; color: #9ca3af;">/100</span>
+            <span style="background: #e8f5f2; color: #3d8a7a; font-size: 0.75rem; font-weight: 600; padding: 0.2rem 0.5rem; border-radius: 99px;">↑ 5 pts</span>
+          </div>
+        </div>
+        <svg width="80" height="80" viewBox="0 0 80 80"><circle cx="40" cy="40" r="32" fill="none" stroke="#e5e7eb" stroke-width="6" /><circle cx="40" cy="40" r="32" fill="none" stroke="#5AAB9D" stroke-width="6" stroke-linecap="round" stroke-dasharray="201" stroke-dashoffset="44" transform="rotate(-90 40 40)" /><text x="40" y="44" text-anchor="middle" fill="#5AAB9D" font-size="16" font-weight="700">78</text></svg>
+      </div>
+    </div>
+
+    <!-- Stat cards -->
+    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-bottom: 1.5rem;">
+      {[
+        { label: 'Total Companies', value: '2,847', trend: '+12%', tc: '#5AAB9D', tb: '#e8f5f2' },
+        { label: 'Deals Tracked', value: '423', trend: '+8%', tc: '#5AAB9D', tb: '#e8f5f2' },
+        { label: 'Pending Reviews', value: '18', trend: '3 urgent', tc: '#C47A2A', tb: '#FDF0DE' },
+        { label: 'ARR Tracked', value: '$5.2M', trend: 'NRR 104%', tc: '#1A7AB5', tb: '#e8f4fb' },
+      ].map(s => (
+        <div style="background: white; border: 1px solid #e5e7eb; border-radius: 10px; padding: 1.25rem;">
+          <p style="font-size: 0.75rem; color: #9ca3af; margin-bottom: 0.5rem; font-weight: 500;">{s.label}</p>
+          <p style="font-size: 1.5rem; font-weight: 700; color: #1a2530; margin-bottom: 0.25rem;">{s.value}</p>
+          <span style={`font-size: 0.7rem; font-weight: 600; color: ${s.tc}; background: ${s.tb}; padding: 0.15rem 0.5rem; border-radius: 99px;`}>{s.trend}</span>
+        </div>
+      ))}
+    </div>
+
+    <!-- Two column -->
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
+      <!-- Action queue -->
+      <div style="background: white; border: 1px solid #e5e7eb; border-radius: 12px; padding: 1.25rem;">
+        <div style="display: flex; justify-content: space-between; margin-bottom: 1rem;">
+          <h3 style="font-size: 0.95rem; font-weight: 600; color: #1a2530;">Action Queue</h3>
+          <span style="background: #C47A2A; color: white; font-size: 0.65rem; font-weight: 700; padding: 0.15rem 0.5rem; border-radius: 99px;">5</span>
+        </div>
+        {[
+          { name: 'CBRE — Review branch match', s: 'Urgent', sc: '#ef4444', sb: '#fef2f2' },
+          { name: 'Beta Inc — Missing decision maker', s: 'Warning', sc: '#C47A2A', sb: '#FDF0DE' },
+          { name: 'Delta Corp — Renewal due 28d', s: 'Review', sc: '#1A7AB5', sb: '#e8f4fb' },
+        ].map(i => (
+          <div style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f3f4f6;">
+            <span style="font-size: 0.8rem; color: #1a2530;">{i.name}</span>
+            <span style={`font-size: 0.65rem; font-weight: 600; color: ${i.sc}; background: ${i.sb}; padding: 0.15rem 0.5rem; border-radius: 99px;`}>{i.s}</span>
+          </div>
+        ))}
+      </div>
+
+      <!-- Renewal pipeline -->
+      <div style="background: white; border: 1px solid #e5e7eb; border-radius: 12px; padding: 1.25rem;">
+        <div style="display: flex; justify-content: space-between; margin-bottom: 1rem;">
+          <h3 style="font-size: 0.95rem; font-weight: 600; color: #1a2530;">Renewal Pipeline</h3>
+          <a href="#" style="color: #1A7AB5; font-size: 0.8rem; text-decoration: none;">View all →</a>
+        </div>
+        <div style="display: flex; gap: 0.75rem; margin-bottom: 1rem;">
+          {[
+            { stage: 'Upcoming', count: 12, color: '#1A7AB5', bg: '#e8f4fb' },
+            { stage: 'In Review', count: 5, color: '#C47A2A', bg: '#FDF0DE' },
+            { stage: 'Renewed', count: 34, color: '#5AAB9D', bg: '#e8f5f2' },
+          ].map(p => (
+            <div style={`flex: 1; background: ${p.bg}; border-radius: 8px; padding: 0.75rem; text-align: center;`}>
+              <div style={`font-size: 1.25rem; font-weight: 700; color: ${p.color};`}>{p.count}</div>
+              <div style="font-size: 0.7rem; color: #5a6a78;">{p.stage}</div>
+            </div>
+          ))}
+        </div>
+        <div style="background: #f3f4f6; border-radius: 8px; padding: 0.75rem;">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+            <span style="font-size: 0.75rem; color: #5a6a78;">ARR Retained</span>
+            <span style="font-size: 0.75rem; font-weight: 600; color: #5AAB9D;">96%</span>
+          </div>
+          <div style="height: 8px; background: #e5e7eb; border-radius: 4px; overflow: hidden;">
+            <div style="height: 100%; width: 96%; background: linear-gradient(90deg, #5AAB9D, #1A7AB5); border-radius: 4px;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Table -->
+    <div style="background: white; border: 1px solid #e5e7eb; border-radius: 12px; overflow: hidden;">
+      <div style="padding: 1rem 1.25rem; border-bottom: 1px solid #e5e7eb; display: flex; justify-content: space-between;">
+        <h3 style="font-size: 0.95rem; font-weight: 600; color: #1a2530;">Recent Deals</h3>
+        <button style="background: #1A7AB5; color: white; border: none; padding: 0.4rem 0.85rem; border-radius: 6px; font-size: 0.75rem; font-weight: 600; cursor: pointer;">Sync Now</button>
+      </div>
+      <table style="width: 100%; border-collapse: collapse;">
+        <thead><tr style="background: #f9fafb;">
+          <th style="text-align: left; padding: 0.6rem 1.25rem; font-size: 0.7rem; font-weight: 600; color: #9ca3af; text-transform: uppercase;">Deal</th>
+          <th style="text-align: left; padding: 0.6rem 1rem; font-size: 0.7rem; font-weight: 600; color: #9ca3af; text-transform: uppercase;">Amount</th>
+          <th style="text-align: left; padding: 0.6rem 1rem; font-size: 0.7rem; font-weight: 600; color: #9ca3af; text-transform: uppercase;">Quality</th>
+          <th style="text-align: left; padding: 0.6rem 1rem; font-size: 0.7rem; font-weight: 600; color: #9ca3af; text-transform: uppercase;">Status</th>
+        </tr></thead>
+        <tbody>
+          {[
+            { d: 'Acme Corp Renewal', a: '$123.6K', q: '92%', qc: '#5AAB9D', qb: '#e8f5f2', s: 'Renewed', sc: '#5AAB9D', sb: '#e8f5f2' },
+            { d: 'Beta Inc Enterprise', a: '$85K', q: '78%', qc: '#C47A2A', qb: '#FDF0DE', s: 'In review', sc: '#C47A2A', sb: '#FDF0DE' },
+            { d: 'Gamma Ltd Expansion', a: '$200K', q: '95%', qc: '#5AAB9D', qb: '#e8f5f2', s: 'Verified', sc: '#1A7AB5', sb: '#e8f4fb' },
+          ].map(r => (
+            <tr style="border-bottom: 1px solid #f3f4f6;">
+              <td style="padding: 0.75rem 1.25rem; font-size: 0.8rem; font-weight: 500; color: #1a2530;">{r.d}</td>
+              <td style="padding: 0.75rem 1rem; font-size: 0.8rem; font-weight: 600; color: #1a2530;">{r.a}</td>
+              <td style="padding: 0.75rem 1rem;"><span style={`font-size: 0.7rem; font-weight: 600; color: ${r.qc}; background: ${r.qb}; padding: 0.15rem 0.5rem; border-radius: 99px;`}>{r.q}</span></td>
+              <td style="padding: 0.75rem 1rem;"><span style={`font-size: 0.7rem; font-weight: 600; color: ${r.sc}; background: ${r.sb}; padding: 0.15rem 0.5rem; border-radius: 99px;`}>{r.s}</span></td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</BaseLayout>

@@ -1,0 +1,60 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/astro/Navbar.astro';
+---
+
+<BaseLayout title="Logo — Palette 5: Deep Ocean">
+  <Navbar />
+  <div style="background: #f8fafb; min-height: 100vh; padding: 3rem 1rem;">
+    <div style="max-width: 900px; margin: 0 auto;">
+      <h1 style="font-size: 1.5rem; font-weight: 700; color: #0f172a; margin-bottom: 0.5rem; text-align: center;">Palette 5: Deep Ocean</h1>
+      <p style="text-align: center; color: #64748b; margin-bottom: 0.5rem; font-size: 0.85rem;">Midnight Blue · Coral Orange · Teal · Pale Sky · Steel</p>
+      <div style="display: flex; justify-content: center; gap: 0.5rem; margin-bottom: 2.5rem;">
+        <div style="width: 40px; height: 40px; border-radius: 8px; background: #0f172a;" title="#0f172a"></div>
+        <div style="width: 40px; height: 40px; border-radius: 8px; background: #ff5c35;" title="#ff5c35"></div>
+        <div style="width: 40px; height: 40px; border-radius: 8px; background: #70c1b3;" title="#70c1b3"></div>
+        <div style="width: 40px; height: 40px; border-radius: 8px; background: #e8f4f8; border: 1px solid #d1e3ea;" title="#e8f4f8"></div>
+        <div style="width: 40px; height: 40px; border-radius: 8px; background: #475569;" title="#475569"></div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 3rem;">
+        <div style="background: #0f172a; border-radius: 14px; padding: 2.5rem; display: flex; align-items: center; justify-content: center; gap: 1rem;">
+          <svg viewBox="0 0 120 120" width="80" height="80" xmlns="http://www.w3.org/2000/svg">
+            <path d="M58,2 L58,58 L2,58 L2,20 Z" fill="#ff5c35" />
+            <path d="M62,2 L118,20 L118,58 L62,58 Z" fill="#70c1b3" />
+            <path d="M2,62 L58,62 L58,118 L2,100 Z" fill="#e8f4f8" />
+            <path d="M62,62 L118,62 L118,100 L62,118 Z" fill="#475569" />
+          </svg>
+          <div>
+            <div style="color: #ffffff; font-size: 1.3rem; font-weight: 700; font-family: sans-serif;">SWOT<span style="color: #70c1b3;">bee</span></div>
+          </div>
+        </div>
+        <div style="background: #ffffff; border: 1px solid #e5e7eb; border-radius: 14px; padding: 2.5rem; display: flex; align-items: center; justify-content: center; gap: 1rem;">
+          <svg viewBox="0 0 120 120" width="80" height="80" xmlns="http://www.w3.org/2000/svg">
+            <path d="M58,2 L58,58 L2,58 L2,20 Z" fill="#ff5c35" />
+            <path d="M62,2 L118,20 L118,58 L62,58 Z" fill="#70c1b3" />
+            <path d="M2,62 L58,62 L58,118 L2,100 Z" fill="#0f172a" />
+            <path d="M62,62 L118,62 L118,100 L62,118 Z" fill="#475569" />
+          </svg>
+          <div>
+            <div style="color: #0f172a; font-size: 1.3rem; font-weight: 700; font-family: sans-serif;">SWOT<span style="color: #70c1b3;">bee</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div style="background: #0f172a; border-radius: 12px; padding: 2rem; display: flex; align-items: end; justify-content: center; gap: 2.5rem;">
+        {[16, 32, 48, 80, 120].map(size => (
+          <div style="text-align: center;">
+            <svg viewBox="0 0 120 120" width={size} height={size} xmlns="http://www.w3.org/2000/svg">
+              <path d="M58,2 L58,58 L2,58 L2,20 Z" fill="#ff5c35" />
+              <path d="M62,2 L118,20 L118,58 L62,58 Z" fill="#70c1b3" />
+              <path d="M2,62 L58,62 L58,118 L2,100 Z" fill="#e8f4f8" />
+              <path d="M62,62 L118,62 L118,100 L62,118 Z" fill="#475569" />
+            </svg>
+            <p style="color: #475569; font-size: 0.6rem; margin-top: 0.5rem;">{size}px</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</BaseLayout>

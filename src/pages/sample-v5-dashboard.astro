@@ -1,0 +1,262 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="V5 Dashboard Preview — Django Backend">
+  <style is:global>
+    body { font-family: 'Lexend Deca', 'Helvetica Neue', sans-serif !important; background: #f3f4f6 !important; }
+    * { font-family: 'Lexend Deca', 'Helvetica Neue', sans-serif; }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!--
+    V5 Mid-tones palette applied to Django dashboard layout:
+    Primary (nav/buttons): Mid Blue #1A7AB5
+    Secondary (accents): Mid Teal #5AAB9D
+    CTA/Highlights: Mid Amber #D4960A
+    Warn: Warm Yellow #E0B820
+    Dark bg: #0f2a3d (derived from blue)
+    Text: #1a2530 / #5a6a78
+  -->
+
+  <!-- ============ TOP NAV BAR (hs-topbar style) ============ -->
+  <nav style="background: #0f2a3d; box-shadow: 0 1px 3px rgba(0,0,0,0.2); position: sticky; top: 0; z-index: 50;">
+    <div style="max-width: 1280px; margin: 0 auto; padding: 0 1rem; display: flex; align-items: center; justify-content: space-between; height: 48px;">
+      <!-- Left: logo + nav links -->
+      <div style="display: flex; align-items: center; gap: 1.5rem;">
+        <!-- App icon badge -->
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+          <div style="width: 28px; height: 28px; border-radius: 6px; background: #D4960A; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.7rem; font-weight: 700;">SCP</div>
+          <span style="color: white; font-size: 0.85rem; font-weight: 600;">Smart Company Picker</span>
+        </div>
+        <!-- Nav links -->
+        <div style="display: flex; gap: 0.25rem;">
+          <a href="#" style="color: #a3c4d8; font-size: 0.8rem; font-weight: 500; padding: 0.4rem 0.75rem; border-radius: 6px; text-decoration: none; background: rgba(26,122,181,0.15); color: #D4960A;">Overview</a>
+          <a href="#" style="color: #7a9bb0; font-size: 0.8rem; font-weight: 500; padding: 0.4rem 0.75rem; border-radius: 6px; text-decoration: none;">CRM</a>
+          <a href="#" style="color: #7a9bb0; font-size: 0.8rem; font-weight: 500; padding: 0.4rem 0.75rem; border-radius: 6px; text-decoration: none;">Quality</a>
+          <a href="#" style="color: #7a9bb0; font-size: 0.8rem; font-weight: 500; padding: 0.4rem 0.75rem; border-radius: 6px; text-decoration: none;">Renewals</a>
+          <a href="#" style="color: #7a9bb0; font-size: 0.8rem; font-weight: 500; padding: 0.4rem 0.75rem; border-radius: 6px; text-decoration: none;">Insights</a>
+        </div>
+      </div>
+      <!-- Right: settings + user -->
+      <div style="display: flex; align-items: center; gap: 1rem;">
+        <a href="#" style="color: #7a9bb0; font-size: 0.8rem; text-decoration: none;">⚙ Settings</a>
+        <a href="#" style="color: #7a9bb0; font-size: 0.8rem; text-decoration: none;">? Help</a>
+        <div style="width: 30px; height: 30px; border-radius: 50%; background: #D4960A; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.7rem; font-weight: 600;">SK</div>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- ============ MAIN CONTENT ============ -->
+  <div style="max-width: 1280px; margin: 0 auto; padding: 1.5rem 1rem;">
+
+    <!-- Page title -->
+    <div style="margin-bottom: 1.5rem;">
+      <h1 style="font-size: 1.4rem; font-weight: 600; color: #1a2530; margin-bottom: 0.25rem;">Data Quality Dashboard</h1>
+      <p style="font-size: 0.85rem; color: #5a6a78;">Portal: Acme Corp · Last synced 5 minutes ago</p>
+    </div>
+
+    <!-- Alert -->
+    <div style="background: #fef3dc; border: 1px solid #f5d080; border-left: 4px solid #D4960A; border-radius: 8px; padding: 0.75rem 1rem; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem;">
+      <span style="color: #D4960A; font-size: 1rem;">⚠</span>
+      <span style="color: #7a5606; font-size: 0.85rem;">3 renewals expiring within 30 days — <a href="#" style="color: #D4960A; font-weight: 600; text-decoration: underline;">Review now</a></span>
+    </div>
+
+
+    <!-- ============ HERO HEALTH CARD ============ -->
+    <div style="background: white; border: 1px solid #e5e7eb; border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 1px 3px rgba(0,0,0,0.06);">
+      <div style="display: flex; align-items: center; justify-content: space-between;">
+        <div>
+          <h2 style="font-size: 1.1rem; font-weight: 600; color: #1a2530; margin-bottom: 0.5rem;">Overall Health Score</h2>
+          <div style="display: flex; align-items: baseline; gap: 0.5rem;">
+            <span style="font-size: 2.5rem; font-weight: 700; color: #5AAB9D;">78</span>
+            <span style="font-size: 1rem; color: #5a6a78;">/100</span>
+            <span style="background: #e8f5f2; color: #3d8a7a; font-size: 0.75rem; font-weight: 600; padding: 0.2rem 0.5rem; border-radius: 99px;">↑ 5 pts this week</span>
+          </div>
+        </div>
+        <!-- Mini SVG arc -->
+        <svg width="80" height="80" viewBox="0 0 80 80">
+          <circle cx="40" cy="40" r="32" fill="none" stroke="#e5e7eb" stroke-width="6" />
+          <circle cx="40" cy="40" r="32" fill="none" stroke="#5AAB9D" stroke-width="6" stroke-linecap="round" stroke-dasharray="201" stroke-dashoffset="44" transform="rotate(-90 40 40)" />
+          <text x="40" y="44" text-anchor="middle" fill="#5AAB9D" font-size="16" font-weight="700">78</text>
+        </svg>
+      </div>
+    </div>
+
+
+    <!-- ============ 4-COLUMN STAT CARDS ============ -->
+    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-bottom: 1.5rem;">
+      {[
+        { label: 'Total Companies', value: '2,847', trend: '+12%', trendColor: '#5AAB9D', bg: '#e8f5f2' },
+        { label: 'Deals Tracked', value: '423', trend: '+8%', trendColor: '#5AAB9D', bg: '#e8f5f2' },
+        { label: 'Pending Reviews', value: '18', trend: '3 urgent', trendColor: '#D4960A', bg: '#fef3dc' },
+        { label: 'ARR Tracked', value: '$5.2M', trend: 'NRR 104%', trendColor: '#1A7AB5', bg: '#e8f4fb' },
+      ].map(s => (
+        <div style="background: white; border: 1px solid #e5e7eb; border-radius: 10px; padding: 1.25rem; box-shadow: 0 1px 2px rgba(0,0,0,0.04);">
+          <p style="font-size: 0.75rem; color: #5a6a78; margin-bottom: 0.5rem; font-weight: 500;">{s.label}</p>
+          <p style="font-size: 1.5rem; font-weight: 700; color: #1a2530; margin-bottom: 0.25rem;">{s.value}</p>
+          <span style={`font-size: 0.7rem; font-weight: 600; color: ${s.trendColor}; background: ${s.bg}; padding: 0.15rem 0.5rem; border-radius: 99px;`}>{s.trend}</span>
+        </div>
+      ))}
+    </div>
+
+
+    <!-- ============ TWO-COLUMN LAYOUT ============ -->
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
+
+      <!-- Action Queue -->
+      <div style="background: white; border: 1px solid #e5e7eb; border-radius: 12px; padding: 1.25rem; box-shadow: 0 1px 3px rgba(0,0,0,0.06);">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+          <h3 style="font-size: 0.95rem; font-weight: 600; color: #1a2530;">Action Queue</h3>
+          <span style="background: #D4960A; color: white; font-size: 0.65rem; font-weight: 700; padding: 0.15rem 0.5rem; border-radius: 99px;">5 pending</span>
+        </div>
+
+        {[
+          { name: 'CBRE — Review branch match', status: 'Urgent', statusColor: '#ef4444', statusBg: '#fef2f2' },
+          { name: 'Beta Inc — Missing decision maker', status: 'Warning', statusColor: '#D4960A', statusBg: '#fef3dc' },
+          { name: 'Gamma Ltd — Stale 45 days', status: 'Warning', statusColor: '#D4960A', statusBg: '#fef3dc' },
+          { name: 'Delta Corp — Renewal due in 28d', status: 'Review', statusColor: '#1A7AB5', statusBg: '#e8f4fb' },
+          { name: 'Epsilon SA — Duplicate detected', status: 'Info', statusColor: '#5a6a78', statusBg: '#f3f4f6' },
+        ].map(item => (
+          <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.6rem 0; border-bottom: 1px solid #f3f4f6;">
+            <span style="font-size: 0.8rem; color: #1a2530;">{item.name}</span>
+            <span style={`font-size: 0.65rem; font-weight: 600; color: ${item.statusColor}; background: ${item.statusBg}; padding: 0.15rem 0.5rem; border-radius: 99px;`}>{item.status}</span>
+          </div>
+        ))}
+      </div>
+
+      <!-- Renewal Pipeline Status -->
+      <div style="background: white; border: 1px solid #e5e7eb; border-radius: 12px; padding: 1.25rem; box-shadow: 0 1px 3px rgba(0,0,0,0.06);">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+          <h3 style="font-size: 0.95rem; font-weight: 600; color: #1a2530;">Renewal Pipeline</h3>
+          <a href="#" style="color: #1A7AB5; font-size: 0.8rem; font-weight: 500; text-decoration: none;">View all →</a>
+        </div>
+
+        <!-- Pipeline stages -->
+        <div style="display: flex; gap: 0.75rem; margin-bottom: 1rem;">
+          {[
+            { stage: 'Upcoming', count: 12, color: '#1A7AB5', bg: '#e8f4fb' },
+            { stage: 'In Review', count: 5, color: '#D4960A', bg: '#fef3dc' },
+            { stage: 'Renewed', count: 34, color: '#5AAB9D', bg: '#e8f5f2' },
+          ].map(p => (
+            <div style={`flex: 1; background: ${p.bg}; border-radius: 8px; padding: 0.75rem; text-align: center;`}>
+              <div style={`font-size: 1.25rem; font-weight: 700; color: ${p.color};`}>{p.count}</div>
+              <div style="font-size: 0.7rem; color: #5a6a78;">{p.stage}</div>
+            </div>
+          ))}
+        </div>
+
+        <!-- Revenue bar -->
+        <div style="background: #f3f4f6; border-radius: 8px; padding: 0.75rem;">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+            <span style="font-size: 0.75rem; color: #5a6a78;">ARR Retained</span>
+            <span style="font-size: 0.75rem; font-weight: 600; color: #5AAB9D;">96%</span>
+          </div>
+          <div style="height: 8px; background: #e5e7eb; border-radius: 4px; overflow: hidden;">
+            <div style="height: 100%; width: 96%; background: linear-gradient(90deg, #5AAB9D, #1A7AB5); border-radius: 4px;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ============ DATA TABLE ============ -->
+    <div style="background: white; border: 1px solid #e5e7eb; border-radius: 12px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.06); margin-bottom: 1.5rem;">
+      <div style="padding: 1rem 1.25rem; border-bottom: 1px solid #e5e7eb; display: flex; justify-content: space-between; align-items: center;">
+        <h3 style="font-size: 0.95rem; font-weight: 600; color: #1a2530;">Recent Deal Activity</h3>
+        <div style="display: flex; gap: 0.5rem;">
+          <button style="background: #1A7AB5; color: white; border: none; padding: 0.4rem 0.85rem; border-radius: 6px; font-size: 0.75rem; font-weight: 600; cursor: pointer;">Sync Now</button>
+          <button style="background: #f3f4f6; color: #1a2530; border: 1px solid #e5e7eb; padding: 0.4rem 0.85rem; border-radius: 6px; font-size: 0.75rem; font-weight: 500; cursor: pointer;">Export</button>
+        </div>
+      </div>
+
+      <table style="width: 100%; border-collapse: collapse;">
+        <thead>
+          <tr style="background: #f9fafb;">
+            <th style="text-align: left; padding: 0.6rem 1.25rem; font-size: 0.7rem; font-weight: 600; color: #5a6a78; text-transform: uppercase; letter-spacing: 0.5px;">Deal</th>
+            <th style="text-align: left; padding: 0.6rem 1rem; font-size: 0.7rem; font-weight: 600; color: #5a6a78; text-transform: uppercase; letter-spacing: 0.5px;">Company</th>
+            <th style="text-align: left; padding: 0.6rem 1rem; font-size: 0.7rem; font-weight: 600; color: #5a6a78; text-transform: uppercase; letter-spacing: 0.5px;">Amount</th>
+            <th style="text-align: left; padding: 0.6rem 1rem; font-size: 0.7rem; font-weight: 600; color: #5a6a78; text-transform: uppercase; letter-spacing: 0.5px;">Quality</th>
+            <th style="text-align: left; padding: 0.6rem 1rem; font-size: 0.7rem; font-weight: 600; color: #5a6a78; text-transform: uppercase; letter-spacing: 0.5px;">Status</th>
+            <th style="text-align: right; padding: 0.6rem 1.25rem; font-size: 0.7rem; font-weight: 600; color: #5a6a78; text-transform: uppercase; letter-spacing: 0.5px;">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          {[
+            { deal: 'Acme Corp — 2027 Renewal', company: 'Acme Corp (SF)', amount: '$123.6K', quality: '92%', qualityColor: '#5AAB9D', qualityBg: '#e8f5f2', status: 'Auto-renewed', statusColor: '#5AAB9D', statusBg: '#e8f5f2' },
+            { deal: 'Beta Inc — Enterprise', company: 'Beta Inc (NYC)', amount: '$85K', quality: '78%', qualityColor: '#D4960A', qualityBg: '#fef3dc', status: 'In review', statusColor: '#D4960A', statusBg: '#fef3dc' },
+            { deal: 'Gamma Ltd — Q2 Expansion', company: 'Gamma Ltd (LON)', amount: '$200K', quality: '95%', qualityColor: '#5AAB9D', qualityBg: '#e8f5f2', status: 'Verified', statusColor: '#1A7AB5', statusBg: '#e8f4fb' },
+            { deal: 'Delta Corp — Support', company: 'Delta Corp (CHI)', amount: '$50K', quality: '45%', qualityColor: '#ef4444', qualityBg: '#fef2f2', status: 'Needs attention', statusColor: '#ef4444', statusBg: '#fef2f2' },
+            { deal: 'Epsilon SA — 2027 Renewal', company: 'Epsilon SA (PAR)', amount: '$300K', quality: '87%', qualityColor: '#5AAB9D', qualityBg: '#e8f5f2', status: 'Upcoming', statusColor: '#1A7AB5', statusBg: '#e8f4fb' },
+          ].map(row => (
+            <tr style="border-bottom: 1px solid #f3f4f6;">
+              <td style="padding: 0.75rem 1.25rem; font-size: 0.8rem; font-weight: 500; color: #1a2530;">{row.deal}</td>
+              <td style="padding: 0.75rem 1rem; font-size: 0.8rem; color: #5a6a78;">{row.company}</td>
+              <td style="padding: 0.75rem 1rem; font-size: 0.8rem; font-weight: 600; color: #1a2530;">{row.amount}</td>
+              <td style="padding: 0.75rem 1rem;">
+                <span style={`font-size: 0.7rem; font-weight: 600; color: ${row.qualityColor}; background: ${row.qualityBg}; padding: 0.15rem 0.5rem; border-radius: 99px;`}>{row.quality}</span>
+              </td>
+              <td style="padding: 0.75rem 1rem;">
+                <span style={`font-size: 0.7rem; font-weight: 600; color: ${row.statusColor}; background: ${row.statusBg}; padding: 0.15rem 0.5rem; border-radius: 99px;`}>{row.status}</span>
+              </td>
+              <td style="padding: 0.75rem 1.25rem; text-align: right;">
+                <a href="#" style="color: #1A7AB5; font-size: 0.75rem; font-weight: 500; text-decoration: none;">View →</a>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+
+
+    <!-- ============ SETTINGS PREVIEW ============ -->
+    <div style="background: white; border: 1px solid #e5e7eb; border-radius: 12px; padding: 1.5rem; box-shadow: 0 1px 3px rgba(0,0,0,0.06);">
+      <h3 style="font-size: 0.95rem; font-weight: 600; color: #1a2530; margin-bottom: 1rem;">Renewal Rule Configuration</h3>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+        <div>
+          <label style="font-size: 0.75rem; font-weight: 500; color: #5a6a78; display: block; margin-bottom: 0.25rem;">Trigger Type</label>
+          <select style="width: 100%; padding: 0.5rem 0.75rem; border: 1px solid #d1d5db; border-radius: 8px; font-size: 0.85rem; color: #1a2530; background: white;">
+            <option>On Closed Won (automatic)</option>
+            <option>Time-based (90 days before)</option>
+            <option>Manual only</option>
+          </select>
+        </div>
+        <div>
+          <label style="font-size: 0.75rem; font-weight: 500; color: #5a6a78; display: block; margin-bottom: 0.25rem;">Line Item Mode</label>
+          <select style="width: 100%; padding: 0.5rem 0.75rem; border: 1px solid #d1d5db; border-radius: 8px; font-size: 0.85rem; color: #1a2530; background: white;">
+            <option>Recurring items only</option>
+            <option>All items</option>
+            <option>By category</option>
+          </select>
+        </div>
+        <div>
+          <label style="font-size: 0.75rem; font-weight: 500; color: #5a6a78; display: block; margin-bottom: 0.25rem;">Price Adjustment</label>
+          <div style="display: flex; gap: 0.5rem;">
+            <select style="flex: 1; padding: 0.5rem 0.75rem; border: 1px solid #d1d5db; border-radius: 8px; font-size: 0.85rem; color: #1a2530; background: white;">
+              <option>Percentage uplift</option>
+              <option>Fixed amount</option>
+              <option>Current catalog</option>
+            </select>
+            <input type="text" value="3%" style="width: 60px; padding: 0.5rem 0.75rem; border: 1px solid #d1d5db; border-radius: 8px; font-size: 0.85rem; color: #1a2530; text-align: center;" />
+          </div>
+        </div>
+        <div>
+          <label style="font-size: 0.75rem; font-weight: 500; color: #5a6a78; display: block; margin-bottom: 0.25rem;">Owner Assignment</label>
+          <select style="width: 100%; padding: 0.5rem 0.75rem; border: 1px solid #d1d5db; border-radius: 8px; font-size: 0.85rem; color: #1a2530; background: white;">
+            <option>Same owner</option>
+            <option>Company owner</option>
+            <option>Round robin</option>
+          </select>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 0.75rem; margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid #f3f4f6;">
+        <button style="background: #1A7AB5; color: white; border: none; padding: 0.5rem 1.25rem; border-radius: 8px; font-size: 0.85rem; font-weight: 600; cursor: pointer;">Save Configuration</button>
+        <button style="background: #f3f4f6; color: #1a2530; border: 1px solid #e5e7eb; padding: 0.5rem 1.25rem; border-radius: 8px; font-size: 0.85rem; font-weight: 500; cursor: pointer;">Cancel</button>
+      </div>
+    </div>
+
+  </div>
+</BaseLayout>

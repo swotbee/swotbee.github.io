@@ -1,0 +1,245 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/astro/Navbar.astro';
+---
+
+<BaseLayout title="Logo — Honeycomb Hexagon">
+  <Navbar />
+  <div style="background: #f8fafb; min-height: 100vh; padding: 3rem 1rem;">
+    <div style="max-width: 1000px; margin: 0 auto;">
+      <h1 style="font-size: 1.5rem; font-weight: 700; color: #1b2a37; margin-bottom: 0.5rem; text-align: center;">Honeycomb / Hexagon Logo</h1>
+      <p style="text-align: center; color: #5b87ae; margin-bottom: 2.5rem; font-size: 0.85rem;">Coral Orange + Teal as constants, with palette variations</p>
+
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-bottom: 3rem;">
+
+        <!-- ===== H1: Single hexagon split into 4 quadrants ===== -->
+        <div style="text-align: center;">
+          <p style="font-size: 0.85rem; color: #5b87ae; margin-bottom: 0.75rem; font-weight: 600;">H1: Split Hexagon</p>
+
+          <div style="background: #1b2a37; border-radius: 14px; padding: 2rem; margin-bottom: 0.75rem; display: flex; align-items: center; justify-content: center;">
+            <svg viewBox="0 0 120 120" width="120" height="120" xmlns="http://www.w3.org/2000/svg">
+              <!--
+                Hexagon center at (60,60), radius ~50
+                Points: top(60,10), top-right(103,35), bottom-right(103,85), bottom(60,110), bottom-left(17,85), top-left(17,35)
+                Split into 4 sections through center
+              -->
+              <!-- Top-left quadrant: Coral Orange -->
+              <path d="M60,10 L103,35 L60,60 L17,35 Z" fill="#ff5c35" />
+              <!-- Right quadrant: Teal -->
+              <path d="M103,35 L103,85 L60,60 Z" fill="#70c1b3" />
+              <!-- Bottom quadrant: Navy -->
+              <path d="M103,85 L60,110 L17,85 L60,60 Z" fill="#1b2a37" stroke="#3d5e7b" stroke-width="0.5" />
+              <!-- Left quadrant: Light/cream -->
+              <path d="M17,85 L17,35 L60,60 Z" fill="#fef4ea" />
+
+              <!-- Thin hexagon outline -->
+              <polygon points="60,10 103,35 103,85 60,110 17,85 17,35" fill="none" stroke="#3d5e7b" stroke-width="1.5" />
+            </svg>
+          </div>
+
+          <div style="background: #ffffff; border: 1px solid #e5e7eb; border-radius: 14px; padding: 2rem; display: flex; align-items: center; justify-content: center;">
+            <svg viewBox="0 0 120 120" width="120" height="120" xmlns="http://www.w3.org/2000/svg">
+              <path d="M60,10 L103,35 L60,60 L17,35 Z" fill="#ff5c35" />
+              <path d="M103,35 L103,85 L60,60 Z" fill="#70c1b3" />
+              <path d="M103,85 L60,110 L17,85 L60,60 Z" fill="#1b2a37" />
+              <path d="M17,85 L17,35 L60,60 Z" fill="#fef4ea" stroke="#e5e7eb" stroke-width="0.5" />
+              <polygon points="60,10 103,35 103,85 60,110 17,85 17,35" fill="none" stroke="#c8d7e4" stroke-width="1.5" />
+            </svg>
+          </div>
+        </div>
+
+        <!-- ===== H2: 4 hexagons in honeycomb cluster ===== -->
+        <div style="text-align: center;">
+          <p style="font-size: 0.85rem; color: #5b87ae; margin-bottom: 0.75rem; font-weight: 600;">H2: 4 Hex Cluster</p>
+
+          <div style="background: #1b2a37; border-radius: 14px; padding: 2rem; margin-bottom: 0.75rem; display: flex; align-items: center; justify-content: center;">
+            <svg viewBox="0 0 130 120" width="130" height="120" xmlns="http://www.w3.org/2000/svg">
+              <!--
+                4 small hexagons in a honeycomb arrangement
+                Each hex is ~28px radius
+                Row 1: 2 hexagons side by side
+                Row 2: 2 hexagons offset below
+              -->
+              <!-- Hex function: center (cx,cy), radius r=24 -->
+              <!-- Top-left hex: Coral Orange -->
+              <polygon points="40,8 58,18 58,38 40,48 22,38 22,18" fill="#ff5c35" />
+              <!-- Top-right hex: Teal -->
+              <polygon points="78,8 96,18 96,38 78,48 60,38 60,18" fill="#70c1b3" />
+              <!-- Bottom-left hex: Navy dark -->
+              <polygon points="21,42 39,52 39,72 21,82 3,72 3,52" fill="#1b2a37" stroke="#3d5e7b" stroke-width="1" />
+              <!-- Bottom-center hex: Cream -->
+              <polygon points="59,42 77,52 77,72 59,82 41,72 41,52" fill="#fef4ea" stroke="#d4c9b5" stroke-width="0.5" />
+              <!-- Bonus: bottom-right hex for balance (gray) -->
+              <polygon points="97,42 115,52 115,72 97,82 79,72 79,52" fill="#3d5e7b" />
+
+              <!-- Top bonus hex -->
+              <polygon points="59,76 77,86 77,106 59,116 41,106 41,86" fill="#5b87ae" />
+            </svg>
+          </div>
+
+          <div style="background: #ffffff; border: 1px solid #e5e7eb; border-radius: 14px; padding: 2rem; display: flex; align-items: center; justify-content: center;">
+            <svg viewBox="0 0 130 120" width="130" height="120" xmlns="http://www.w3.org/2000/svg">
+              <polygon points="40,8 58,18 58,38 40,48 22,38 22,18" fill="#ff5c35" />
+              <polygon points="78,8 96,18 96,38 78,48 60,38 60,18" fill="#70c1b3" />
+              <polygon points="21,42 39,52 39,72 21,82 3,72 3,52" fill="#1b2a37" />
+              <polygon points="59,42 77,52 77,72 59,82 41,72 41,52" fill="#fef4ea" stroke="#e5e7eb" stroke-width="0.5" />
+              <polygon points="97,42 115,52 115,72 97,82 79,72 79,52" fill="#3d5e7b" />
+              <polygon points="59,76 77,86 77,106 59,116 41,106 41,86" fill="#92afc9" />
+            </svg>
+          </div>
+        </div>
+
+        <!-- ===== H3: Single hex with 6 triangular sections ===== -->
+        <div style="text-align: center;">
+          <p style="font-size: 0.85rem; color: #5b87ae; margin-bottom: 0.75rem; font-weight: 600;">H3: 6 Slices</p>
+
+          <div style="background: #1b2a37; border-radius: 14px; padding: 2rem; margin-bottom: 0.75rem; display: flex; align-items: center; justify-content: center;">
+            <svg viewBox="0 0 120 120" width="120" height="120" xmlns="http://www.w3.org/2000/svg">
+              <!--
+                Hexagon split into 6 triangles from center
+                Using the 4 palette colors + 2 shades
+              -->
+              <!-- Top triangle -->
+              <path d="M60,60 L60,10 L103,35 Z" fill="#ff5c35" />
+              <!-- Top-right triangle -->
+              <path d="M60,60 L103,35 L103,85 Z" fill="#70c1b3" />
+              <!-- Bottom-right triangle -->
+              <path d="M60,60 L103,85 L60,110 Z" fill="#ff7c5c" />
+              <!-- Bottom triangle -->
+              <path d="M60,60 L60,110 L17,85 Z" fill="#1b2a37" stroke="#3d5e7b" stroke-width="0.5" />
+              <!-- Bottom-left triangle -->
+              <path d="M60,60 L17,85 L17,35 Z" fill="#49ab9b" />
+              <!-- Top-left triangle -->
+              <path d="M60,60 L17,35 L60,10 Z" fill="#fef4ea" />
+
+              <polygon points="60,10 103,35 103,85 60,110 17,85 17,35" fill="none" stroke="#3d5e7b" stroke-width="1.5" />
+            </svg>
+          </div>
+
+          <div style="background: #ffffff; border: 1px solid #e5e7eb; border-radius: 14px; padding: 2rem; display: flex; align-items: center; justify-content: center;">
+            <svg viewBox="0 0 120 120" width="120" height="120" xmlns="http://www.w3.org/2000/svg">
+              <path d="M60,60 L60,10 L103,35 Z" fill="#ff5c35" />
+              <path d="M60,60 L103,35 L103,85 Z" fill="#70c1b3" />
+              <path d="M60,60 L103,85 L60,110 Z" fill="#ffbead" />
+              <path d="M60,60 L60,110 L17,85 Z" fill="#1b2a37" />
+              <path d="M60,60 L17,85 L17,35 Z" fill="#a9dad2" />
+              <path d="M60,60 L17,35 L60,10 Z" fill="#fef4ea" />
+              <polygon points="60,10 103,35 103,85 60,110 17,85 17,35" fill="none" stroke="#c8d7e4" stroke-width="1.5" />
+            </svg>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Size tests for all 3 -->
+      <h2 style="font-size: 1.1rem; font-weight: 600; color: #1b2a37; margin-bottom: 1rem; text-align: center;">Size Test</h2>
+
+      <div style="background: #1b2a37; border-radius: 12px; padding: 2rem; display: flex; align-items: end; justify-content: center; gap: 2.5rem; flex-wrap: wrap; margin-bottom: 2rem;">
+        {[16, 32, 48, 80, 120].map(size => (
+          <div style="text-align: center;">
+            <div style="display: flex; gap: 1.2rem; align-items: end;">
+              {/* H1 */}
+              <svg viewBox="0 0 120 120" width={size} height={size} xmlns="http://www.w3.org/2000/svg">
+                <path d="M60,10 L103,35 L60,60 L17,35 Z" fill="#ff5c35" />
+                <path d="M103,35 L103,85 L60,60 Z" fill="#70c1b3" />
+                <path d="M103,85 L60,110 L17,85 L60,60 Z" fill="#1b2a37" stroke="#3d5e7b" stroke-width="0.5" />
+                <path d="M17,85 L17,35 L60,60 Z" fill="#fef4ea" />
+                <polygon points="60,10 103,35 103,85 60,110 17,85 17,35" fill="none" stroke="#3d5e7b" stroke-width="1.5" />
+              </svg>
+              {/* H2 */}
+              <svg viewBox="0 0 130 120" width={size * 1.08} height={size} xmlns="http://www.w3.org/2000/svg">
+                <polygon points="40,8 58,18 58,38 40,48 22,38 22,18" fill="#ff5c35" />
+                <polygon points="78,8 96,18 96,38 78,48 60,38 60,18" fill="#70c1b3" />
+                <polygon points="21,42 39,52 39,72 21,82 3,72 3,52" fill="#1b2a37" stroke="#3d5e7b" stroke-width="1" />
+                <polygon points="59,42 77,52 77,72 59,82 41,72 41,52" fill="#fef4ea" />
+                <polygon points="97,42 115,52 115,72 97,82 79,72 79,52" fill="#3d5e7b" />
+                <polygon points="59,76 77,86 77,106 59,116 41,106 41,86" fill="#5b87ae" />
+              </svg>
+              {/* H3 */}
+              <svg viewBox="0 0 120 120" width={size} height={size} xmlns="http://www.w3.org/2000/svg">
+                <path d="M60,60 L60,10 L103,35 Z" fill="#ff5c35" />
+                <path d="M60,60 L103,35 L103,85 Z" fill="#70c1b3" />
+                <path d="M60,60 L103,85 L60,110 Z" fill="#ff7c5c" />
+                <path d="M60,60 L60,110 L17,85 Z" fill="#1b2a37" stroke="#3d5e7b" stroke-width="0.5" />
+                <path d="M60,60 L17,85 L17,35 Z" fill="#49ab9b" />
+                <path d="M60,60 L17,35 L60,10 Z" fill="#fef4ea" />
+                <polygon points="60,10 103,35 103,85 60,110 17,85 17,35" fill="none" stroke="#3d5e7b" stroke-width="1.5" />
+              </svg>
+            </div>
+            <p style="color: #92afc9; font-size: 0.6rem; margin-top: 0.5rem;">{size}px — H1 / H2 / H3</p>
+          </div>
+        ))}
+      </div>
+
+
+      <!-- Lockups -->
+      <h2 style="font-size: 1.1rem; font-weight: 600; color: #1b2a37; margin-bottom: 1rem; text-align: center;">Logo + Text Lockup</h2>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+        <!-- H1 dark -->
+        <div style="background: #1b2a37; border-radius: 12px; padding: 1.5rem; display: flex; align-items: center; gap: 1rem;">
+          <svg viewBox="0 0 120 120" width="48" height="48" xmlns="http://www.w3.org/2000/svg">
+            <path d="M60,10 L103,35 L60,60 L17,35 Z" fill="#ff5c35" />
+            <path d="M103,35 L103,85 L60,60 Z" fill="#70c1b3" />
+            <path d="M103,85 L60,110 L17,85 L60,60 Z" fill="#1b2a37" stroke="#3d5e7b" stroke-width="0.5" />
+            <path d="M17,85 L17,35 L60,60 Z" fill="#fef4ea" />
+            <polygon points="60,10 103,35 103,85 60,110 17,85 17,35" fill="none" stroke="#3d5e7b" stroke-width="1.5" />
+          </svg>
+          <div>
+            <div style="color: #ffffff; font-size: 1.1rem; font-weight: 700; font-family: sans-serif;">SWOT<span style="color: #70c1b3;">bee</span></div>
+            <div style="color: #3d5e7b; font-size: 0.65rem; font-family: sans-serif;">H1 · Split Hexagon</div>
+          </div>
+        </div>
+
+        <!-- H1 light -->
+        <div style="background: #ffffff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 1.5rem; display: flex; align-items: center; gap: 1rem;">
+          <svg viewBox="0 0 120 120" width="48" height="48" xmlns="http://www.w3.org/2000/svg">
+            <path d="M60,10 L103,35 L60,60 L17,35 Z" fill="#ff5c35" />
+            <path d="M103,35 L103,85 L60,60 Z" fill="#70c1b3" />
+            <path d="M103,85 L60,110 L17,85 L60,60 Z" fill="#1b2a37" />
+            <path d="M17,85 L17,35 L60,60 Z" fill="#fef4ea" stroke="#e5e7eb" stroke-width="0.5" />
+            <polygon points="60,10 103,35 103,85 60,110 17,85 17,35" fill="none" stroke="#c8d7e4" stroke-width="1.5" />
+          </svg>
+          <div>
+            <div style="color: #1b2a37; font-size: 1.1rem; font-weight: 700; font-family: sans-serif;">SWOT<span style="color: #70c1b3;">bee</span></div>
+            <div style="color: #92afc9; font-size: 0.65rem; font-family: sans-serif;">H1 · Split Hexagon</div>
+          </div>
+        </div>
+
+        <!-- H2 dark -->
+        <div style="background: #1b2a37; border-radius: 12px; padding: 1.5rem; display: flex; align-items: center; gap: 1rem;">
+          <svg viewBox="0 0 130 120" width="52" height="48" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="40,8 58,18 58,38 40,48 22,38 22,18" fill="#ff5c35" />
+            <polygon points="78,8 96,18 96,38 78,48 60,38 60,18" fill="#70c1b3" />
+            <polygon points="21,42 39,52 39,72 21,82 3,72 3,52" fill="#1b2a37" stroke="#3d5e7b" stroke-width="1" />
+            <polygon points="59,42 77,52 77,72 59,82 41,72 41,52" fill="#fef4ea" />
+            <polygon points="97,42 115,52 115,72 97,82 79,72 79,52" fill="#3d5e7b" />
+            <polygon points="59,76 77,86 77,106 59,116 41,106 41,86" fill="#5b87ae" />
+          </svg>
+          <div>
+            <div style="color: #ffffff; font-size: 1.1rem; font-weight: 700; font-family: sans-serif;">SWOT<span style="color: #70c1b3;">bee</span></div>
+            <div style="color: #3d5e7b; font-size: 0.65rem; font-family: sans-serif;">H2 · Honeycomb Cluster</div>
+          </div>
+        </div>
+
+        <!-- H3 dark -->
+        <div style="background: #1b2a37; border-radius: 12px; padding: 1.5rem; display: flex; align-items: center; gap: 1rem;">
+          <svg viewBox="0 0 120 120" width="48" height="48" xmlns="http://www.w3.org/2000/svg">
+            <path d="M60,60 L60,10 L103,35 Z" fill="#ff5c35" />
+            <path d="M60,60 L103,35 L103,85 Z" fill="#70c1b3" />
+            <path d="M60,60 L103,85 L60,110 Z" fill="#ff7c5c" />
+            <path d="M60,60 L60,110 L17,85 Z" fill="#1b2a37" stroke="#3d5e7b" stroke-width="0.5" />
+            <path d="M60,60 L17,85 L17,35 Z" fill="#49ab9b" />
+            <path d="M60,60 L17,35 L60,10 Z" fill="#fef4ea" />
+            <polygon points="60,10 103,35 103,85 60,110 17,85 17,35" fill="none" stroke="#3d5e7b" stroke-width="1.5" />
+          </svg>
+          <div>
+            <div style="color: #ffffff; font-size: 1.1rem; font-weight: 700; font-family: sans-serif;">SWOT<span style="color: #70c1b3;">bee</span></div>
+            <div style="color: #3d5e7b; font-size: 0.65rem; font-family: sans-serif;">H3 · 6 Slices</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</BaseLayout>

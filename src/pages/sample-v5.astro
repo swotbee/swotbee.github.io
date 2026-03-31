@@ -1,0 +1,283 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Sample Page — V5 Mid-tones Palette">
+
+  <!-- Inline styles using V5 palette as CSS custom properties -->
+  <style is:global>
+    :root {
+      --v5-blue: #1A7AB5;
+      --v5-blue-dark: #0f5a8a;
+      --v5-blue-darker: #0a3d60;
+      --v5-blue-darkest: #071f33;
+      --v5-blue-light: #3d9ad0;
+      --v5-blue-lighter: #a3d1ee;
+      --v5-blue-lightest: #e8f4fb;
+
+      --v5-teal: #5AAB9D;
+      --v5-teal-dark: #3d8a7a;
+      --v5-teal-darker: #276558;
+      --v5-teal-light: #7ec4b8;
+      --v5-teal-lighter: #b5ddd4;
+      --v5-teal-lightest: #e8f5f2;
+
+      --v5-amber: #D4960A;
+      --v5-amber-dark: #a87608;
+      --v5-amber-darker: #7a5606;
+      --v5-amber-light: #e8b040;
+      --v5-amber-lighter: #f5d080;
+      --v5-amber-lightest: #fef3dc;
+
+      --v5-yellow: #E0B820;
+      --v5-yellow-dark: #b8960e;
+      --v5-yellow-light: #f0d050;
+      --v5-yellow-lighter: #fde990;
+      --v5-yellow-lightest: #fef9e0;
+
+      --v5-text: #1a2530;
+      --v5-text-muted: #5a6a78;
+      --v5-bg: #f7f5f1;
+      --v5-bg-card: #ffffff;
+      --v5-border: #e5e2da;
+    }
+  </style>
+
+  <!-- ============ NAVBAR ============ -->
+  <nav style="background: var(--v5-blue-darkest); padding: 0; position: sticky; top: 0; z-index: 50;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; display: flex; align-items: center; justify-content: space-between; height: 64px;">
+      <div style="display: flex; align-items: center; gap: 0.75rem;">
+        <!-- Logo hex -->
+        <svg viewBox="0 0 120 120" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+          <path d="M60,10 L103,35 L60,60 L17,35 Z" fill="var(--v5-amber)" />
+          <path d="M103,35 L103,85 L60,60 Z" fill="var(--v5-teal)" />
+          <path d="M103,85 L60,110 L17,85 L60,60 Z" fill="var(--v5-blue)" />
+          <path d="M17,85 L17,35 L60,60 Z" fill="var(--v5-yellow)" />
+        </svg>
+        <span style="color: white; font-size: 1.15rem; font-weight: 700; font-family: sans-serif;">SWOT<span style="color: var(--v5-teal-light);">bee</span></span>
+      </div>
+      <div style="display: flex; gap: 2rem; align-items: center;">
+        <a href="#" style="color: #c8d8e8; font-size: 0.9rem; text-decoration: none; font-family: sans-serif;">Home</a>
+        <a href="#" style="color: #c8d8e8; font-size: 0.9rem; text-decoration: none; font-family: sans-serif;">Services</a>
+        <a href="#" style="color: #c8d8e8; font-size: 0.9rem; text-decoration: none; font-family: sans-serif;">About</a>
+        <a href="#" style="color: #c8d8e8; font-size: 0.9rem; text-decoration: none; font-family: sans-serif;">Blog</a>
+        <a href="#" style="background: var(--v5-amber); color: white; padding: 0.5rem 1.25rem; border-radius: 8px; font-size: 0.85rem; font-weight: 600; text-decoration: none; font-family: sans-serif;">Get Started</a>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- ============ HERO ============ -->
+  <section style="background: linear-gradient(180deg, var(--v5-blue-darkest) 0%, var(--v5-blue-darker) 100%); padding: 5rem 1.5rem 4rem;">
+    <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+      <h1 style="font-size: 2.8rem; font-weight: 700; color: white; line-height: 1.15; margin-bottom: 1.25rem; font-family: sans-serif;">
+        Stop losing revenue to <span style="color: var(--v5-amber);">missed renewals</span>
+      </h1>
+      <p style="font-size: 1.15rem; color: var(--v5-blue-lighter); max-width: 600px; margin: 0 auto 2rem; line-height: 1.6; font-family: sans-serif;">
+        Deals that renew themselves. Line items that filter automatically. Revenue you can finally see.
+      </p>
+      <div style="display: flex; gap: 1rem; justify-content: center; margin-bottom: 1rem;">
+        <a href="#" style="background: var(--v5-amber); color: white; padding: 0.85rem 2rem; border-radius: 10px; font-size: 1rem; font-weight: 600; text-decoration: none; font-family: sans-serif;">See It In Action</a>
+        <a href="#" style="border: 1.5px solid var(--v5-blue-light); color: var(--v5-blue-lighter); padding: 0.85rem 2rem; border-radius: 10px; font-size: 1rem; font-weight: 500; text-decoration: none; font-family: sans-serif;">Learn more →</a>
+      </div>
+      <p style="color: var(--v5-blue-light); font-size: 0.8rem; opacity: 0.7; font-family: sans-serif;">Works with your existing HubSpot. No migration needed.</p>
+    </div>
+  </section>
+
+
+  <!-- ============ TRUST BADGES ============ -->
+  <section style="background: var(--v5-bg); padding: 1.5rem 1.5rem; border-bottom: 1px solid var(--v5-border);">
+    <div style="max-width: 900px; margin: 0 auto; display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap;">
+      <div style="display: flex; align-items: center; gap: 0.5rem;">
+        <div style="width: 36px; height: 36px; border-radius: 50%; background: var(--v5-teal-lightest); display: flex; align-items: center; justify-content: center;">
+          <span style="color: var(--v5-teal); font-size: 1.1rem;">✓</span>
+        </div>
+        <div>
+          <div style="font-size: 0.8rem; font-weight: 600; color: var(--v5-text); font-family: sans-serif;">HubSpot Partner</div>
+          <div style="font-size: 0.65rem; color: var(--v5-text-muted); font-family: sans-serif;">Solutions Provider</div>
+        </div>
+      </div>
+      <div style="display: flex; align-items: center; gap: 0.5rem;">
+        <div style="width: 36px; height: 36px; border-radius: 50%; background: var(--v5-amber-lightest); display: flex; align-items: center; justify-content: center;">
+          <span style="color: var(--v5-amber); font-size: 1.1rem;">★</span>
+        </div>
+        <div>
+          <div style="font-size: 0.8rem; font-weight: 600; color: var(--v5-text); font-family: sans-serif;">150+ Clients</div>
+          <div style="font-size: 0.65rem; color: var(--v5-text-muted); font-family: sans-serif;">Across Industries</div>
+        </div>
+      </div>
+      <div style="display: flex; align-items: center; gap: 0.5rem;">
+        <div style="width: 36px; height: 36px; border-radius: 50%; background: var(--v5-blue-lightest); display: flex; align-items: center; justify-content: center;">
+          <span style="color: var(--v5-blue); font-size: 1.1rem;">⊕</span>
+        </div>
+        <div>
+          <div style="font-size: 0.8rem; font-weight: 600; color: var(--v5-text); font-family: sans-serif;">10+ Years</div>
+          <div style="font-size: 0.65rem; color: var(--v5-text-muted); font-family: sans-serif;">Global Experience</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============ FEATURES (WhyUs style) ============ -->
+  <section style="background: var(--v5-bg); padding: 4rem 1.5rem;">
+    <div style="max-width: 900px; margin: 0 auto;">
+      <h2 style="font-size: 1.8rem; font-weight: 700; color: var(--v5-text); margin-bottom: 0.5rem; font-family: sans-serif;">Why Our Clients Rely on Us</h2>
+      <p style="color: var(--v5-text-muted); margin-bottom: 2.5rem; font-size: 1rem; max-width: 600px; font-family: sans-serif;">Personalized workflows, automations, and messaging aligned with your business goals.</p>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+        {[
+          { icon: '📊', title: 'Proven ROI, Backed by Data', desc: 'Data-backed decisions and optimized workflows tailored to your goals.' },
+          { icon: '⚙️', title: 'Seamless, Integrated Systems', desc: 'CRM, marketing, and analytics connected into one intuitive system.' },
+          { icon: '💡', title: 'Innovation Without the Hassle', desc: 'Cutting-edge tools and automation to streamline growth.' },
+          { icon: '🤝', title: 'Transparent Partnership', desc: 'Clear communication, aligned objectives, and shared roadmaps.' },
+        ].map(f => (
+          <div style="display: flex; gap: 1rem; align-items: start;">
+            <div style="width: 40px; height: 40px; border-radius: 10px; background: var(--v5-blue-lightest); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 1.2rem;">
+              {f.icon}
+            </div>
+            <div>
+              <h3 style="font-size: 1rem; font-weight: 600; color: var(--v5-text); margin-bottom: 0.25rem; font-family: sans-serif;">{f.title}</h3>
+              <p style="font-size: 0.85rem; color: var(--v5-text-muted); line-height: 1.5; font-family: sans-serif;">{f.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============ STATS BAR ============ -->
+  <section style="background: linear-gradient(135deg, var(--v5-blue-darker), var(--v5-blue-darkest)); padding: 2.5rem 1.5rem;">
+    <div style="max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; text-align: center;">
+      {[
+        { val: '150+', label: 'Clients Served' },
+        { val: '300+', label: 'Projects Delivered' },
+        { val: '10+', label: 'Years Experience' },
+        { val: '98%', label: 'Client Satisfaction' },
+      ].map(s => (
+        <div>
+          <div style="font-size: 2rem; font-weight: 700; color: var(--v5-amber); font-family: sans-serif;">{s.val}</div>
+          <div style="font-size: 0.8rem; color: var(--v5-blue-lighter); font-family: sans-serif;">{s.label}</div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+
+  <!-- ============ SERVICES CARDS ============ -->
+  <section style="background: white; padding: 4rem 1.5rem;">
+    <div style="max-width: 1000px; margin: 0 auto;">
+      <h2 style="font-size: 1.8rem; font-weight: 700; color: var(--v5-text); margin-bottom: 0.5rem; text-align: center; font-family: sans-serif;">Our Services</h2>
+      <p style="color: var(--v5-text-muted); margin-bottom: 2.5rem; text-align: center; font-size: 1rem; font-family: sans-serif;">Expert solutions for every stage of your HubSpot journey</p>
+
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;">
+        {[
+          { title: 'HubSpot Onboarding', desc: 'Get set up right from day one with custom CRM configuration and data migration.', color: 'var(--v5-blue)' },
+          { title: 'Marketing Automation', desc: 'Automated campaigns, lead scoring, and personalized email sequences.', color: 'var(--v5-teal)' },
+          { title: 'Renewal Automation', desc: 'Deals that renew themselves — with line item filtering and ARR tracking.', color: 'var(--v5-amber)' },
+        ].map(s => (
+          <div style={`background: var(--v5-bg); border: 1px solid var(--v5-border); border-radius: 12px; overflow: hidden; transition: box-shadow 0.3s;`}>
+            <div style={`height: 4px; background: ${s.color};`}></div>
+            <div style="padding: 1.5rem;">
+              <h3 style="font-size: 1.05rem; font-weight: 600; color: var(--v5-text); margin-bottom: 0.5rem; font-family: sans-serif;">{s.title}</h3>
+              <p style="font-size: 0.85rem; color: var(--v5-text-muted); line-height: 1.5; margin-bottom: 1rem; font-family: sans-serif;">{s.desc}</p>
+              <a href="#" style={`color: ${s.color}; font-size: 0.85rem; font-weight: 600; text-decoration: none; font-family: sans-serif;`}>Learn more →</a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============ TESTIMONIAL ============ -->
+  <section style="background: var(--v5-bg); padding: 4rem 1.5rem;">
+    <div style="max-width: 700px; margin: 0 auto; text-align: center;">
+      <h2 style="font-size: 1.8rem; font-weight: 700; color: var(--v5-text); margin-bottom: 2rem; font-family: sans-serif;">What Our Clients Say</h2>
+      <div style="background: white; border: 1px solid var(--v5-border); border-radius: 16px; padding: 2.5rem;">
+        <blockquote style="font-size: 1.05rem; color: var(--v5-text); line-height: 1.7; font-style: italic; margin-bottom: 1.5rem; font-family: sans-serif;">
+          "SWOTBee guided us through a complete HubSpot onboarding and site redesign. Their clear communication, deadline focus, and rapid implementation of feedback made the entire process seamless."
+        </blockquote>
+        <div style="display: flex; align-items: center; justify-content: center; gap: 0.75rem;">
+          <div style="width: 44px; height: 44px; border-radius: 50%; background: var(--v5-teal-lighter); display: flex; align-items: center; justify-content: center; color: var(--v5-teal-dark); font-weight: 700; font-family: sans-serif;">TP</div>
+          <div style="text-align: left;">
+            <div style="font-size: 0.9rem; font-weight: 600; color: var(--v5-text); font-family: sans-serif;">Terry Parmelee</div>
+            <div style="font-size: 0.75rem; color: var(--v5-text-muted); font-family: sans-serif;">VP of Operations, MMS</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============ CTA SECTION ============ -->
+  <section style="background: linear-gradient(135deg, var(--v5-blue), var(--v5-teal-dark)); padding: 4rem 1.5rem;">
+    <div style="max-width: 700px; margin: 0 auto; text-align: center;">
+      <h2 style="font-size: 2rem; font-weight: 700; color: white; margin-bottom: 1rem; font-family: sans-serif;">Ready to grow your revenue?</h2>
+      <p style="color: var(--v5-teal-lighter); font-size: 1.05rem; margin-bottom: 2rem; font-family: sans-serif;">Book a free consultation and see how renewal automation can work for you.</p>
+      <div style="display: flex; gap: 1rem; justify-content: center;">
+        <a href="#" style="background: var(--v5-amber); color: white; padding: 0.85rem 2rem; border-radius: 10px; font-size: 1rem; font-weight: 600; text-decoration: none; font-family: sans-serif;">Claim Your Free Consultation</a>
+        <a href="#" style="border: 1.5px solid white; color: white; padding: 0.85rem 2rem; border-radius: 10px; font-size: 1rem; font-weight: 500; text-decoration: none; font-family: sans-serif; opacity: 0.9;">Learn more</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============ FOOTER ============ -->
+  <footer style="background: var(--v5-blue-darkest); color: white; padding: 3rem 1.5rem 2rem;">
+    <div style="max-width: 1000px; margin: 0 auto;">
+      <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 2rem; margin-bottom: 2rem;">
+        <!-- Brand -->
+        <div>
+          <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
+            <svg viewBox="0 0 120 120" width="28" height="28" xmlns="http://www.w3.org/2000/svg">
+              <path d="M60,10 L103,35 L60,60 L17,35 Z" fill="var(--v5-amber)" />
+              <path d="M103,35 L103,85 L60,60 Z" fill="var(--v5-teal)" />
+              <path d="M103,85 L60,110 L17,85 L60,60 Z" fill="var(--v5-blue)" />
+              <path d="M17,85 L17,35 L60,60 Z" fill="var(--v5-yellow)" />
+            </svg>
+            <span style="font-size: 1rem; font-weight: 700; font-family: sans-serif;">SWOTbee</span>
+          </div>
+          <p style="font-size: 0.8rem; color: var(--v5-blue-light); line-height: 1.6; max-width: 280px; font-family: sans-serif;">Expert HubSpot consulting to streamline your experience and boost conversions.</p>
+          <!-- Newsletter -->
+          <div style="margin-top: 1.25rem;">
+            <p style="font-size: 0.8rem; font-weight: 600; margin-bottom: 0.5rem; font-family: sans-serif;">Stay Updated</p>
+            <div style="display: flex; gap: 0.5rem;">
+              <input type="email" placeholder="Your email" style="flex: 1; padding: 0.5rem 0.75rem; border-radius: 6px; border: 1px solid var(--v5-blue-dark); background: var(--v5-blue-darker); color: white; font-size: 0.8rem; font-family: sans-serif;" />
+              <button style="background: var(--v5-amber); color: white; padding: 0.5rem 1rem; border-radius: 6px; border: none; font-size: 0.8rem; font-weight: 600; cursor: pointer; font-family: sans-serif;">Subscribe</button>
+            </div>
+          </div>
+        </div>
+        <!-- Links -->
+        <div>
+          <p style="font-size: 0.8rem; font-weight: 600; margin-bottom: 0.75rem; font-family: sans-serif;">Company</p>
+          {['About', 'Services', 'Blog', 'Contact'].map(l => (
+            <a href="#" style="display: block; color: var(--v5-blue-light); font-size: 0.8rem; text-decoration: none; padding: 0.25rem 0; font-family: sans-serif;">{l}</a>
+          ))}
+        </div>
+        <div>
+          <p style="font-size: 0.8rem; font-weight: 600; margin-bottom: 0.75rem; font-family: sans-serif;">Services</p>
+          {['HubSpot Onboarding', 'Marketing', 'Sales & RevOps', 'Integrations'].map(l => (
+            <a href="#" style="display: block; color: var(--v5-blue-light); font-size: 0.8rem; text-decoration: none; padding: 0.25rem 0; font-family: sans-serif;">{l}</a>
+          ))}
+        </div>
+        <div>
+          <p style="font-size: 0.8rem; font-weight: 600; margin-bottom: 0.75rem; font-family: sans-serif;">Legal</p>
+          {['Privacy Policy', 'Terms of Use', 'Cookie Policy', 'FAQs'].map(l => (
+            <a href="#" style="display: block; color: var(--v5-blue-light); font-size: 0.8rem; text-decoration: none; padding: 0.25rem 0; font-family: sans-serif;">{l}</a>
+          ))}
+        </div>
+      </div>
+      <div style="border-top: 1px solid var(--v5-blue-darker); padding-top: 1.5rem; display: flex; justify-content: space-between; align-items: center;">
+        <p style="font-size: 0.75rem; color: var(--v5-blue-light); font-family: sans-serif;">© 2026 SWOTbee. All rights reserved.</p>
+        <div style="display: flex; gap: 1rem;">
+          <a href="#" style="color: var(--v5-blue-light); font-size: 0.75rem; text-decoration: none; font-family: sans-serif;">Email</a>
+          <a href="#" style="color: var(--v5-blue-light); font-size: 0.75rem; text-decoration: none; font-family: sans-serif;">LinkedIn</a>
+          <a href="#" style="color: var(--v5-blue-light); font-size: 0.75rem; text-decoration: none; font-family: sans-serif;">Twitter</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</BaseLayout>
