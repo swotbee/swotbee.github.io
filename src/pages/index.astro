@@ -1,29 +1,279 @@
 ---
-// src/pages/index.astro
-import Layout from '../layouts/Layout.astro';
-import Footer from '../components/astro/Footer.astro';
-import Hero from '../components/astro/Hero.astro';
-import WhyUs from '../components/astro/WhyUs.astro';
-import Navbar from '../components/astro/Navbar.astro';
-import Steps from '../components/astro/Steps.astro';
-import TestimonialEmbla from '../components/astro/TestimonialEmbla.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import LogoHoneycomb from '../components/astro/LogoHoneycomb.astro';
+import HeroPipelineV6 from '../components/astro/HeroPipelineV6.astro';
 
+const navLinks = [
+  { href: '/', label: 'Home' },
+  { href: '/about', label: 'About' },
+  { href: '/blog', label: 'Blog' },
+  { href: '/contactus', label: 'Contact' },
+];
+
+const trustBadges = [
+  { icon: '✓', label: 'HubSpot Partner', sub: 'Solutions Provider', bg: 'bg-v6-teal-50', color: 'text-v6-teal' },
+  { icon: '★', label: '150+ Clients', sub: 'Across Industries', bg: 'bg-v6-copper-50', color: 'text-v6-copper' },
+  { icon: '⊕', label: '10+ Years', sub: 'Global Experience', bg: 'bg-v6-blue-50', color: 'text-v6-blue' },
+];
+
+const features = [
+  { icon: '📊', title: 'Proven ROI, Backed by Data', desc: 'Our strategies drive measurable ROI with data-backed decisions and optimized workflows tailored to your goals.' },
+  { icon: '⚙️', title: 'Seamless, Integrated Systems', desc: 'We connect your CRM, marketing, and analytics into one intuitive system — backed by expert support.' },
+  { icon: '💡', title: 'Innovation Without the Hassle', desc: 'We use cutting-edge tools and automation to streamline processes and accelerate growth.' },
+  { icon: '🤝', title: 'Transparent Partnership', desc: 'Clear communication, aligned objectives, and shared roadmaps — full transparency every step of the way.' },
+];
+
+const stats = [
+  { value: '150+', label: 'Clients Served' },
+  { value: '300+', label: 'Projects Delivered' },
+  { value: '10+', label: 'Years Experience' },
+  { value: '98%', label: 'Client Satisfaction' },
+];
+
+const services = [
+  { title: 'HubSpot Onboarding', desc: 'Get set up right from day one with custom CRM configuration and data migration.', color: 'border-t-v6-blue', link: 'text-v6-blue' },
+  { title: 'Marketing Automation', desc: 'Automated campaigns, lead scoring, and personalized email sequences.', color: 'border-t-v6-teal', link: 'text-v6-teal' },
+  { title: 'Renewal Automation', desc: 'Deals that renew themselves — with line item filtering and ARR tracking.', color: 'border-t-v6-copper', link: 'text-v6-copper' },
+];
 ---
 
-<Layout
+<BaseLayout
   title="SWOTBee - Expert HubSpot & Shopify Consulting Services"
-  description="Transform your business with expert HubSpot consulting. We help optimize sales funnels, increase conversions, and seamlessly integrate HubSpot with your favorite tools."
+  description="Stop losing revenue to missed renewals. Deals that renew themselves. Line items that filter automatically. Revenue you can finally see."
 >
-  <Navbar />
-  <Hero />
-  <WhyUs />
-  <TestimonialEmbla />
-  <Steps />
-  <Footer />
-</Layout>
 
----
+  <!-- ============ NAVBAR ============ -->
+  <nav class="bg-white border-b border-gray-200 sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+      <!-- Logo + brand -->
+      <a href="/" class="flex items-center gap-2">
+        <LogoHoneycomb width={32} height={30} />
+        <span class="text-v6-dark text-lg font-bold">SWOT<span class="text-v6-teal">bee</span></span>
+      </a>
 
----
+      <!-- Desktop nav links -->
+      <div class="hidden md:flex items-center gap-6">
+        {navLinks.map(link => (
+          <a href={link.href} class="text-v6-text-muted text-sm font-medium hover:text-v6-dark transition-colors">
+            {link.label}
+          </a>
+        ))}
+        <a href="/contactus" class="bg-v6-copper text-white px-5 py-2 rounded-lg text-sm font-semibold hover:bg-v6-copper-600 transition-colors">
+          Get Started
+        </a>
+      </div>
+
+      <!-- Mobile hamburger -->
+      <button type="button" class="md:hidden p-2 rounded-md text-v6-text-muted hover:bg-gray-100" id="mobile-menu-btn">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile menu -->
+    <div class="hidden md:hidden border-t border-gray-200" id="mobile-menu">
+      <div class="px-4 py-3 space-y-2">
+        {navLinks.map(link => (
+          <a href={link.href} class="block text-v6-text-muted text-sm font-medium py-2 hover:text-v6-dark">
+            {link.label}
+          </a>
+        ))}
+        <a href="/contactus" class="block bg-v6-copper text-white text-center px-5 py-2.5 rounded-lg text-sm font-semibold mt-2">
+          Get Started
+        </a>
+      </div>
+    </div>
+  </nav>
 
 
+  <!-- ============ HERO ============ -->
+  <section class="bg-gradient-to-b from-v6-bg to-white px-4 sm:px-6 lg:px-8 pt-12 sm:pt-16 pb-4 sm:pb-6">
+    <div class="max-w-3xl mx-auto text-center">
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-v6-dark leading-tight mb-4 sm:mb-5 text-balance">
+        Stop losing revenue to <span class="text-v6-copper">missed renewals</span>
+      </h1>
+      <p class="text-base sm:text-lg text-v6-text-muted max-w-xl mx-auto mb-6 sm:mb-8 leading-relaxed">
+        Deals that renew themselves. Line items that filter automatically. Revenue you can finally see.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center mb-3">
+        <a href="/contactus" class="bg-v6-copper text-white px-6 sm:px-8 py-3 rounded-xl text-base font-semibold hover:bg-v6-copper-600 transition-colors text-center">
+          See It In Action
+        </a>
+        <a href="/about" class="border border-gray-300 text-v6-dark px-6 sm:px-8 py-3 rounded-xl text-base font-medium hover:bg-gray-50 transition-colors text-center">
+          Learn more →
+        </a>
+      </div>
+      <p class="text-xs sm:text-sm text-gray-400">Works with your existing HubSpot. No migration needed.</p>
+    </div>
+  </section>
+
+
+  <!-- ============ HERO PIPELINE ANIMATION ============ -->
+  <section class="bg-v6-bg px-4 sm:px-6 lg:px-8 pb-6">
+    <div class="max-w-6xl mx-auto">
+      <HeroPipelineV6 />
+    </div>
+  </section>
+
+
+  <!-- ============ TRUST BADGES ============ -->
+  <section class="bg-white border-b border-v6-border py-4 px-4 sm:px-6">
+    <div class="max-w-4xl mx-auto flex flex-wrap justify-center gap-6 sm:gap-10">
+      {trustBadges.map(b => (
+        <div class="flex items-center gap-2.5">
+          <div class={`w-9 h-9 rounded-full ${b.bg} flex items-center justify-center ${b.color} text-base`}>
+            {b.icon}
+          </div>
+          <div>
+            <div class="text-sm font-semibold text-v6-dark">{b.label}</div>
+            <div class="text-xs text-gray-400">{b.sub}</div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+
+  <!-- ============ FEATURES ============ -->
+  <section class="bg-v6-bg py-16 sm:py-20 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl sm:text-3xl font-bold text-v6-dark mb-2">Why Our Clients Rely on Us</h2>
+      <p class="text-v6-text-muted mb-10 max-w-xl text-base sm:text-lg">Personalized workflows, automations, and messaging aligned with your business goals.</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {features.map(f => (
+          <div class="flex gap-4 items-start">
+            <div class="w-10 h-10 rounded-lg bg-v6-blue-50 flex items-center justify-center flex-shrink-0 text-xl">
+              {f.icon}
+            </div>
+            <div>
+              <h3 class="text-base font-semibold text-v6-dark mb-1">{f.title}</h3>
+              <p class="text-sm text-v6-text-muted leading-relaxed">{f.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============ STATS BAR ============ -->
+  <section class="bg-gradient-to-br from-v6-blue to-v6-blue-600 py-10 sm:py-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
+      {stats.map(s => (
+        <div>
+          <div class="text-2xl sm:text-3xl font-bold text-v6-copper-200">{s.value}</div>
+          <div class="text-xs sm:text-sm text-v6-blue-100 mt-1">{s.label}</div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+
+  <!-- ============ SERVICES ============ -->
+  <section class="bg-white py-16 sm:py-20 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-2xl sm:text-3xl font-bold text-v6-dark mb-10 text-center">Our Services</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {services.map(s => (
+          <div class={`bg-v6-bg border border-v6-border rounded-xl overflow-hidden border-t-4 ${s.color} hover:shadow-lg transition-shadow`}>
+            <div class="p-6">
+              <h3 class="text-base font-semibold text-v6-dark mb-2">{s.title}</h3>
+              <p class="text-sm text-v6-text-muted leading-relaxed mb-4">{s.desc}</p>
+              <a href="#" class={`${s.link} text-sm font-semibold hover:underline`}>Learn more →</a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============ CTA ============ -->
+  <section class="bg-gradient-to-br from-v6-copper to-v6-copper-600 py-16 sm:py-20 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-2xl mx-auto text-center">
+      <h2 class="text-2xl sm:text-3xl font-bold text-white mb-4">Ready to grow your revenue?</h2>
+      <p class="text-v6-copper-50 text-base sm:text-lg mb-8">Book a free consultation and see how renewal automation can work for you.</p>
+      <a href="/contactus" class="bg-white text-v6-copper px-8 py-3.5 rounded-xl text-base font-semibold hover:bg-gray-50 transition-colors inline-block">
+        Claim Your Free Consultation
+      </a>
+    </div>
+  </section>
+
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="bg-v6-dark text-white py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-5xl mx-auto">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
+        <!-- Brand -->
+        <div class="sm:col-span-2 lg:col-span-1">
+          <div class="flex items-center gap-2 mb-4">
+            <LogoHoneycomb width={24} height={22} />
+            <span class="font-bold text-base">SWOTbee</span>
+          </div>
+          <p class="text-sm text-v6-blue-300 leading-relaxed max-w-xs">
+            Expert HubSpot consulting to streamline your experience and boost conversions.
+          </p>
+          <!-- Newsletter -->
+          <div class="mt-5">
+            <p class="text-sm font-semibold mb-2">Stay Updated</p>
+            <div class="flex gap-2">
+              <input
+                type="email"
+                placeholder="Your email"
+                class="flex-1 px-3 py-2 rounded-lg bg-v6-blue-900 border border-v6-blue-700 text-white text-sm placeholder:text-v6-blue-300 focus:ring-2 focus:ring-v6-copper focus:outline-none"
+              />
+              <button class="bg-v6-copper text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-v6-copper-600 transition-colors">
+                Subscribe
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Links columns -->
+        <div>
+          <p class="text-sm font-semibold mb-3">Company</p>
+          {['About', 'Services', 'Blog', 'Contact'].map(l => (
+            <a href="#" class="block text-sm text-v6-blue-300 hover:text-white py-1 transition-colors">{l}</a>
+          ))}
+        </div>
+        <div>
+          <p class="text-sm font-semibold mb-3">Services</p>
+          {['HubSpot Onboarding', 'Marketing', 'Sales & RevOps', 'Integrations'].map(l => (
+            <a href="#" class="block text-sm text-v6-blue-300 hover:text-white py-1 transition-colors">{l}</a>
+          ))}
+        </div>
+        <div>
+          <p class="text-sm font-semibold mb-3">Legal</p>
+          {['Privacy Policy', 'Terms of Use', 'Cookie Policy', 'FAQs'].map(l => (
+            <a href="#" class="block text-sm text-v6-blue-300 hover:text-white py-1 transition-colors">{l}</a>
+          ))}
+        </div>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="border-t border-v6-blue-800 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+        <p class="text-xs text-v6-blue-300">© 2026 SWOTbee. All rights reserved.</p>
+        <div class="flex gap-4">
+          <a href="mailto:info@swotbee.com" class="text-xs text-v6-blue-300 hover:text-white transition-colors">Email</a>
+          <a href="https://www.linkedin.com/company/swotbee" class="text-xs text-v6-blue-300 hover:text-white transition-colors">LinkedIn</a>
+          <a href="https://x.com/SWOTBee" class="text-xs text-v6-blue-300 hover:text-white transition-colors">Twitter</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile menu toggle script -->
+  <script is:inline>
+    document.addEventListener('DOMContentLoaded', function() {
+      var btn = document.getElementById('mobile-menu-btn');
+      var menu = document.getElementById('mobile-menu');
+      if (btn && menu) {
+        btn.addEventListener('click', function() {
+          menu.classList.toggle('hidden');
+        });
+      }
+    });
+  </script>
+
+</BaseLayout>
