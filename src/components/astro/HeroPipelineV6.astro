@@ -708,99 +708,90 @@ document.addEventListener('DOMContentLoaded', function () {
   function runSequence() {
     resetAll();
 
-    // Stage 0: Deal drops into Discovery (both sides)
+    // === DEAL 1: Acme moves Discovery → Qualified → Proposal → Closed Won ===
+    // Both sides move simultaneously
+
+    // Drop into Discovery
     setTimeout(function() {
-      animateDeal(lDeals[0], lStagesX[0], lY - 40, lStagesX[0], lY, 600, null);
-      animateDeal(rDeals[0], rStagesX[0], rY - 40, rStagesX[0], rY, 600, function() {
-        highlightStage(0);
-      });
+      animateDeal(lDeals[0], lStagesX[0], lY - 40, lStagesX[0], lY, 500, null);
+      animateDeal(rDeals[0], rStagesX[0], rY - 40, rStagesX[0], rY, 500, function() { highlightStage(0); });
     }, 800);
 
-    // Stage 1: Deal drops into Qualified (both sides)
+    // Discovery → Qualified
     setTimeout(function() {
-      animateDeal(lDeals[1], lStagesX[1], lY - 40, lStagesX[1], lY, 600, null);
-      animateDeal(rDeals[1], rStagesX[1], rY - 40, rStagesX[1], rY, 600, function() {
-        highlightStage(1);
-      });
-    }, 2200);
+      animateDeal(lDeals[0], lStagesX[0], lY, lStagesX[1], lY, 700, null);
+      animateDeal(rDeals[0], rStagesX[0], rY, rStagesX[1], rY, 700, function() { highlightStage(1); });
+    }, 2000);
 
-    // Stage 2: Deal drops into Proposal (both sides)
+    // Qualified → Proposal
     setTimeout(function() {
-      animateDeal(lDeals[2], lStagesX[2], lY - 40, lStagesX[2], lY, 600, null);
-      animateDeal(rDeals[2], rStagesX[2], rY - 40, rStagesX[2], rY, 600, function() {
-        highlightStage(2);
-      });
-    }, 3600);
+      animateDeal(lDeals[0], lStagesX[1], lY, lStagesX[2], lY, 700, null);
+      animateDeal(rDeals[0], rStagesX[1], rY, rStagesX[2], rY, 700, function() { highlightStage(2); });
+    }, 3200);
 
-    // Stage 3: Deal drops into Closed Won (both sides)
-    // Right side: confetti + bolt + renewal
+    // Proposal → Closed Won
     setTimeout(function() {
-      animateDeal(lDeals[3], lStagesX[3], lY - 40, lStagesX[3], lY, 600, null);
-      animateDeal(rDeals[3], rStagesX[3], rY - 40, rStagesX[3], rY, 600, function() {
+      animateDeal(lDeals[0], lStagesX[2], lY, lStagesX[3], lY, 700, null);
+      animateDeal(rDeals[0], rStagesX[2], rY, rStagesX[3], rY, 700, function() {
         highlightStage(3);
         fireConfetti(null);
+        // Right side: bolt fires, renewal auto-creates
         flashBolt(function() {
           animateDeal(rens[0], renStagesX[0], renY - 30, renStagesX[0], renY, 500, null);
         });
       });
-    }, 5000);
+    }, 4400);
 
-    // Renewal 1: drops into In Review
+    // Renewal 1: Upcoming → In Review → Renewed
     setTimeout(function() {
       animateDeal(rens[0], renStagesX[0], renY, renStagesX[1], renY, 700, null);
-    }, 7200);
-
-    // Renewal 1: moves to Renewed → ARR tick
+    }, 6600);
     setTimeout(function() {
       animateDeal(rens[0], renStagesX[1], renY, renStagesX[2], renY, 700, function() {
         updateARR('$1.5M');
         show(arrGrowth, 1);
       });
-    }, 8400);
+    }, 7800);
 
-    // Second wave: new deals drop into each stage again
-    // (previous cards fade out, new ones drop in)
+    // === DEAL 2: Beta moves through pipeline ===
     setTimeout(function() {
-      // Fade out first wave on left
-      lDeals.forEach(function(el) { show(el, 0); });
-      // Drop new deals (reuse same elements)
-      animateDeal(lDeals[0], lStagesX[0], lY - 40, lStagesX[0], lY, 500, null);
-      animateDeal(rDeals[0], rStagesX[0], rY - 40, rStagesX[0], rY, 500, function() { highlightStage(0); });
-    }, 10000);
+      animateDeal(lDeals[1], lStagesX[0], lY - 40, lStagesX[0], lY, 500, null);
+      animateDeal(rDeals[1], rStagesX[0], rY - 40, rStagesX[0], rY, 500, function() { highlightStage(0); });
+    }, 9500);
 
     setTimeout(function() {
-      animateDeal(lDeals[1], lStagesX[1], lY - 40, lStagesX[1], lY, 500, null);
-      animateDeal(rDeals[1], rStagesX[1], rY - 40, rStagesX[1], rY, 500, function() { highlightStage(1); });
-    }, 11000);
+      animateDeal(lDeals[1], lStagesX[0], lY, lStagesX[1], lY, 600, null);
+      animateDeal(rDeals[1], rStagesX[0], rY, rStagesX[1], rY, 600, function() { highlightStage(1); });
+    }, 10500);
 
     setTimeout(function() {
-      animateDeal(lDeals[2], lStagesX[2], lY - 40, lStagesX[2], lY, 500, null);
-      animateDeal(rDeals[2], rStagesX[2], rY - 40, rStagesX[2], rY, 500, function() { highlightStage(2); });
-    }, 12000);
+      animateDeal(lDeals[1], lStagesX[1], lY, lStagesX[2], lY, 600, null);
+      animateDeal(rDeals[1], rStagesX[1], rY, rStagesX[2], rY, 600, function() { highlightStage(2); });
+    }, 11500);
 
     setTimeout(function() {
-      animateDeal(lDeals[3], lStagesX[3], lY - 40, lStagesX[3], lY, 500, null);
-      animateDeal(rDeals[3], rStagesX[3], rY - 40, rStagesX[3], rY, 500, function() {
+      animateDeal(lDeals[1], lStagesX[2], lY, lStagesX[3], lY, 600, null);
+      animateDeal(rDeals[1], rStagesX[2], rY, rStagesX[3], rY, 600, function() {
         highlightStage(3);
         fireConfetti(null);
         flashBolt(function() {
           animateDeal(rens[1], renStagesX[0], renY - 30, renStagesX[0], renY, 500, null);
         });
       });
-    }, 13000);
+    }, 12500);
 
-    // Renewal 2 flows through
+    // Renewal 2: flows through → ARR $2.4M
     setTimeout(function() {
       animateDeal(rens[1], renStagesX[0], renY, renStagesX[1], renY, 600, null);
-    }, 15000);
+    }, 14500);
     setTimeout(function() {
       animateDeal(rens[1], renStagesX[1], renY, renStagesX[2], renY, 600, function() {
         updateARR('$2.4M');
       });
-    }, 16000);
+    }, 15500);
 
     // Loop
-    setTimeout(runSequence, 20000);
+    setTimeout(runSequence, 19000);
   }
 
   setTimeout(runSequence, 500);
