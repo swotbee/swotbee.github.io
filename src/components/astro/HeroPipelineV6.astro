@@ -8,8 +8,8 @@
 <section class="block md:hidden px-3 pb-4">
   <div class="grid grid-cols-1 gap-3 max-w-lg mx-auto">
 
-    <!-- WITHOUT AUTOMATION — mobile SVG (left half cropped) -->
-    <svg viewBox="0 0 530 530" class="w-full h-auto rounded-xl overflow-hidden" xmlns="http://www.w3.org/2000/svg">
+    <!-- WITHOUT AUTOMATION — mobile SVG -->
+    <svg viewBox="0 0 530 530" class="w-full h-auto rounded-xl overflow-hidden hp-svg-mobile-left" xmlns="http://www.w3.org/2000/svg">
       <defs>
         <linearGradient id="m-bg1" x1="0" y1="0" x2="0.5" y2="1">
           <stop offset="0%" stop-color="#f7f5f1" />
@@ -58,6 +58,18 @@
       <text x="60" y="435" fill="#5a8a9f" opacity="0.5" font-size="14" font-family="sans-serif">Annual Recurring Revenue</text>
       <text x="60" y="474" fill="#3d7a9a" font-size="40" font-weight="700" font-family="sans-serif" opacity="0.5">$1.2M</text>
       <text x="230" y="474" fill="#3d7a9a" opacity="0.3" font-size="16" font-family="sans-serif">— flat</text>
+
+      <!-- Animated deal cards for Without side -->
+      <g class="ml-deal1" opacity="0">
+        <rect width="100" height="36" rx="6" fill="#f5f3ef" stroke="#c8d0d8" stroke-width="1" />
+        <text x="8" y="16" fill="#5a8a9f" font-size="12" font-weight="600" font-family="sans-serif">Acme Corp</text>
+        <text x="8" y="30" fill="#5a8a9f" font-size="10" opacity="0.5" font-family="sans-serif">$120K</text>
+      </g>
+      <g class="ml-deal2" opacity="0">
+        <rect width="100" height="36" rx="6" fill="#f5f3ef" stroke="#c8d0d8" stroke-width="1" />
+        <text x="8" y="16" fill="#5a8a9f" font-size="12" font-weight="600" font-family="sans-serif">Beta Inc</text>
+        <text x="8" y="30" fill="#5a8a9f" font-size="10" opacity="0.5" font-family="sans-serif">$85K</text>
+      </g>
     </svg>
 
     <!-- WITH AUTOMATION — mobile SVG (right half) -->
@@ -155,8 +167,9 @@
 
 <script is:inline>
 document.addEventListener('DOMContentLoaded', function() {
-  var svg = document.querySelector('.hp-svg-mobile');
-  if (!svg) return;
+  var svgR = document.querySelector('.hp-svg-mobile');
+  var svgL = document.querySelector('.hp-svg-mobile-left');
+  if (!svgR) return;
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
   var stagesX = [40, 165, 290, 415];
@@ -164,13 +177,18 @@ document.addEventListener('DOMContentLoaded', function() {
   var renX = [40, 205, 370];
   var renY = 203;
 
-  var d1 = svg.querySelector('.m-deal1');
-  var d2 = svg.querySelector('.m-deal2');
-  var r1 = svg.querySelector('.m-ren1');
-  var r2 = svg.querySelector('.m-ren2');
-  var bolts = svg.querySelectorAll('.m-bolt');
-  var arr = svg.querySelector('.m-arr');
-  var arrG = svg.querySelector('.m-arr-growth');
+  // Right side (With Automation)
+  var d1 = svgR.querySelector('.m-deal1');
+  var d2 = svgR.querySelector('.m-deal2');
+  var r1 = svgR.querySelector('.m-ren1');
+  var r2 = svgR.querySelector('.m-ren2');
+  var bolts = svgR.querySelectorAll('.m-bolt');
+  var arr = svgR.querySelector('.m-arr');
+  var arrG = svgR.querySelector('.m-arr-growth');
+
+  // Left side (Without Automation)
+  var ld1 = svgL ? svgL.querySelector('.ml-deal1') : null;
+  var ld2 = svgL ? svgL.querySelector('.ml-deal2') : null;
 
   function pos(el, x, y) { if (el) el.setAttribute('transform', 'translate(' + x + ',' + y + ')'); }
   function show(el, o) { if (el) el.setAttribute('opacity', String(o)); }
@@ -199,7 +217,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   function resetAll() {
-    [d1, d2, r1, r2].forEach(function(el) { show(el, 0); pos(el, -300, -300); });
+    [d1, d2, r1, r2, ld1, ld2].forEach(function(el) { show(el, 0); pos(el, -300, -300); });
     bolts.forEach(function(b) { show(b, 0); });
     show(arrG, 0);
     if (arr) { arr.textContent = '$1.2M'; arr.setAttribute('fill', '#C47A2A'); }
@@ -207,11 +225,24 @@ document.addEventListener('DOMContentLoaded', function() {
 
   function run() {
     resetAll();
-    // Deal 1
-    setTimeout(function() { animDeal(d1, stagesX[0], sY - 40, stagesX[0], sY, 500, null); }, 800);
-    setTimeout(function() { animDeal(d1, stagesX[0], sY, stagesX[1], sY, 700, null); }, 2000);
-    setTimeout(function() { animDeal(d1, stagesX[1], sY, stagesX[2], sY, 700, null); }, 3200);
+
+    // Deal 1 — both sides simultaneously
     setTimeout(function() {
+      animDeal(ld1, stagesX[0], sY - 40, stagesX[0], sY, 500, null);
+      animDeal(d1, stagesX[0], sY - 40, stagesX[0], sY, 500, null);
+    }, 800);
+    setTimeout(function() {
+      animDeal(ld1, stagesX[0], sY, stagesX[1], sY, 700, null);
+      animDeal(d1, stagesX[0], sY, stagesX[1], sY, 700, null);
+    }, 2000);
+    setTimeout(function() {
+      animDeal(ld1, stagesX[1], sY, stagesX[2], sY, 700, null);
+      animDeal(d1, stagesX[1], sY, stagesX[2], sY, 700, null);
+    }, 3200);
+    setTimeout(function() {
+      // Left: arrives at Closed Won, stops
+      animDeal(ld1, stagesX[2], sY, stagesX[3], sY, 700, null);
+      // Right: Closed Won → bolt → renewal
       animDeal(d1, stagesX[2], sY, stagesX[3], sY, 700, function() {
         flashBolts(function() { animDeal(r1, renX[0], renY - 30, renX[0], renY, 400, null); });
       });
@@ -219,11 +250,21 @@ document.addEventListener('DOMContentLoaded', function() {
     setTimeout(function() { animDeal(r1, renX[0], renY, renX[1], renY, 600, null); }, 6200);
     setTimeout(function() { animDeal(r1, renX[1], renY, renX[2], renY, 600, function() { updateARR('$1.8M'); show(arrG, 1); }); }, 7200);
 
-    // Deal 2
-    setTimeout(function() { animDeal(d2, stagesX[0], sY - 40, stagesX[0], sY, 500, null); }, 9000);
-    setTimeout(function() { animDeal(d2, stagesX[0], sY, stagesX[1], sY, 600, null); }, 10000);
-    setTimeout(function() { animDeal(d2, stagesX[1], sY, stagesX[2], sY, 600, null); }, 11000);
+    // Deal 2 — both sides simultaneously
     setTimeout(function() {
+      animDeal(ld2, stagesX[0], sY - 40, stagesX[0], sY, 500, null);
+      animDeal(d2, stagesX[0], sY - 40, stagesX[0], sY, 500, null);
+    }, 9000);
+    setTimeout(function() {
+      animDeal(ld2, stagesX[0], sY, stagesX[1], sY, 600, null);
+      animDeal(d2, stagesX[0], sY, stagesX[1], sY, 600, null);
+    }, 10000);
+    setTimeout(function() {
+      animDeal(ld2, stagesX[1], sY, stagesX[2], sY, 600, null);
+      animDeal(d2, stagesX[1], sY, stagesX[2], sY, 600, null);
+    }, 11000);
+    setTimeout(function() {
+      animDeal(ld2, stagesX[2], sY, stagesX[3], sY, 600, null);
       animDeal(d2, stagesX[2], sY, stagesX[3], sY, 600, function() {
         flashBolts(function() { animDeal(r2, renX[0], renY - 30, renX[0], renY, 400, null); });
       });
