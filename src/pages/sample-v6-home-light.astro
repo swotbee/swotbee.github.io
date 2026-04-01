@@ -2,88 +2,153 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import LogoHoneycomb from '../components/astro/LogoHoneycomb.astro';
 import HeroPipelineV6 from '../components/astro/HeroPipelineV6.astro';
+
+const navLinks = [
+  { href: '/', label: 'Home' },
+  { href: '/about', label: 'About' },
+  { href: '/blog', label: 'Blog' },
+  { href: '/contactus', label: 'Contact' },
+];
+
+const trustBadges = [
+  { icon: '✓', label: 'HubSpot Partner', sub: 'Solutions Provider', bg: 'bg-v6-teal-50', color: 'text-v6-teal' },
+  { icon: '★', label: '150+ Clients', sub: 'Across Industries', bg: 'bg-v6-copper-50', color: 'text-v6-copper' },
+  { icon: '⊕', label: '10+ Years', sub: 'Global Experience', bg: 'bg-v6-blue-50', color: 'text-v6-blue' },
+];
+
+const features = [
+  { icon: '📊', title: 'Proven ROI, Backed by Data', desc: 'Our strategies drive measurable ROI with data-backed decisions and optimized workflows tailored to your goals.' },
+  { icon: '⚙️', title: 'Seamless, Integrated Systems', desc: 'We connect your CRM, marketing, and analytics into one intuitive system — backed by expert support.' },
+  { icon: '💡', title: 'Innovation Without the Hassle', desc: 'We use cutting-edge tools and automation to streamline processes and accelerate growth.' },
+  { icon: '🤝', title: 'Transparent Partnership', desc: 'Clear communication, aligned objectives, and shared roadmaps — full transparency every step of the way.' },
+];
+
+const stats = [
+  { value: '150+', label: 'Clients Served' },
+  { value: '300+', label: 'Projects Delivered' },
+  { value: '10+', label: 'Years Experience' },
+  { value: '98%', label: 'Client Satisfaction' },
+];
+
+const services = [
+  { title: 'HubSpot Onboarding', desc: 'Get set up right from day one with custom CRM configuration and data migration.', color: 'border-t-v6-blue', link: 'text-v6-blue' },
+  { title: 'Marketing Automation', desc: 'Automated campaigns, lead scoring, and personalized email sequences.', color: 'border-t-v6-teal', link: 'text-v6-teal' },
+  { title: 'Renewal Automation', desc: 'Deals that renew themselves — with line item filtering and ARR tracking.', color: 'border-t-v6-copper', link: 'text-v6-copper' },
+];
 ---
 
-<BaseLayout title="V6 Homepage — Light Mode (Copper CTA)">
-  <style is:global>
-    body { font-family: 'Hanken Grotesk Variable', 'Helvetica Neue', sans-serif !important; margin: 0; }
-  </style>
+<BaseLayout
+  title="SWOTBee - Expert HubSpot & Shopify Consulting Services"
+  description="Stop losing revenue to missed renewals. Deals that renew themselves. Line items that filter automatically. Revenue you can finally see."
+>
 
-  <!-- NAVBAR — light -->
-  <nav style="background: #ffffff; border-bottom: 1px solid #e5e7eb; position: sticky; top: 0; z-index: 50;">
-    <div style="max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; display: flex; align-items: center; justify-content: space-between; height: 64px;">
-      <div style="display: flex; align-items: center; gap: 0.75rem;">
+  <!-- ============ NAVBAR ============ -->
+  <nav class="bg-white border-b border-gray-200 sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+      <!-- Logo + brand -->
+      <a href="/" class="flex items-center gap-2">
         <LogoHoneycomb width={32} height={30} />
-        <span style="color: #1a2530; font-size: 1.15rem; font-weight: 700;">SWOT<span style="color: #5AAB9D;">bee</span></span>
+        <span class="text-v6-dark text-lg font-bold">SWOT<span class="text-v6-teal">bee</span></span>
+      </a>
+
+      <!-- Desktop nav links -->
+      <div class="hidden md:flex items-center gap-6">
+        {navLinks.map(link => (
+          <a href={link.href} class="text-v6-text-muted text-sm font-medium hover:text-v6-dark transition-colors">
+            {link.label}
+          </a>
+        ))}
+        <a href="/contactus" class="bg-v6-copper text-white px-5 py-2 rounded-lg text-sm font-semibold hover:bg-v6-copper-600 transition-colors">
+          Get Started
+        </a>
       </div>
-      <div style="display: flex; gap: 2rem; align-items: center;">
-        <a href="#" style="color: #5a6a78; font-size: 0.9rem; text-decoration: none;">Home</a>
-        <a href="#" style="color: #5a6a78; font-size: 0.9rem; text-decoration: none;">Services</a>
-        <a href="#" style="color: #5a6a78; font-size: 0.9rem; text-decoration: none;">About</a>
-        <a href="#" style="color: #5a6a78; font-size: 0.9rem; text-decoration: none;">Blog</a>
-        <a href="#" style="background: #C47A2A; color: white; padding: 0.5rem 1.25rem; border-radius: 8px; font-size: 0.85rem; font-weight: 600; text-decoration: none;">Get Started</a>
+
+      <!-- Mobile hamburger -->
+      <button type="button" class="md:hidden p-2 rounded-md text-v6-text-muted hover:bg-gray-100" id="mobile-menu-btn">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile menu -->
+    <div class="hidden md:hidden border-t border-gray-200" id="mobile-menu">
+      <div class="px-4 py-3 space-y-2">
+        {navLinks.map(link => (
+          <a href={link.href} class="block text-v6-text-muted text-sm font-medium py-2 hover:text-v6-dark">
+            {link.label}
+          </a>
+        ))}
+        <a href="/contactus" class="block bg-v6-copper text-white text-center px-5 py-2.5 rounded-lg text-sm font-semibold mt-2">
+          Get Started
+        </a>
       </div>
     </div>
   </nav>
 
-  <!-- HERO — light -->
-  <section style="background: linear-gradient(180deg, #f7f5f1 0%, #ffffff 100%); padding: 5rem 1.5rem 4rem;">
-    <div style="max-width: 800px; margin: 0 auto; text-align: center;">
-      <h1 style="font-size: 2.8rem; font-weight: 700; color: #1a2530; line-height: 1.15; margin-bottom: 1.25rem;">
-        Stop losing revenue to <span style="color: #C47A2A;">missed renewals</span>
+
+  <!-- ============ HERO ============ -->
+  <section class="bg-gradient-to-b from-v6-bg to-white px-4 sm:px-6 lg:px-8 pt-12 sm:pt-16 pb-4 sm:pb-6">
+    <div class="max-w-3xl mx-auto text-center">
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-v6-dark leading-tight mb-4 sm:mb-5 text-balance">
+        Stop losing revenue to <span class="text-v6-copper">missed renewals</span>
       </h1>
-      <p style="font-size: 1.15rem; color: #5a6a78; max-width: 600px; margin: 0 auto 2rem; line-height: 1.6;">
+      <p class="text-base sm:text-lg text-v6-text-muted max-w-xl mx-auto mb-6 sm:mb-8 leading-relaxed">
         Deals that renew themselves. Line items that filter automatically. Revenue you can finally see.
       </p>
-      <div style="display: flex; gap: 1rem; justify-content: center; margin-bottom: 1rem;">
-        <a href="#" style="background: #C47A2A; color: white; padding: 0.85rem 2rem; border-radius: 10px; font-size: 1rem; font-weight: 600; text-decoration: none;">See It In Action</a>
-        <a href="#" style="border: 1.5px solid #d1d5db; color: #1a2530; padding: 0.85rem 2rem; border-radius: 10px; font-size: 1rem; font-weight: 500; text-decoration: none;">Learn more →</a>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center mb-3">
+        <a href="/contactus" class="bg-v6-copper text-white px-6 sm:px-8 py-3 rounded-xl text-base font-semibold hover:bg-v6-copper-600 transition-colors text-center">
+          See It In Action
+        </a>
+        <a href="/about" class="border border-gray-300 text-v6-dark px-6 sm:px-8 py-3 rounded-xl text-base font-medium hover:bg-gray-50 transition-colors text-center">
+          Learn more →
+        </a>
       </div>
-      <p style="color: #9ca3af; font-size: 0.8rem;">Works with your existing HubSpot. No migration needed.</p>
+      <p class="text-xs sm:text-sm text-gray-400">Works with your existing HubSpot. No migration needed.</p>
     </div>
   </section>
 
-  <!-- HERO PIPELINE ANIMATION (V6 colors) -->
-  <section style="background: #f7f5f1; padding: 0 1rem 3rem;">
-    <HeroPipelineV6 />
+
+  <!-- ============ HERO PIPELINE ANIMATION ============ -->
+  <section class="bg-v6-bg px-4 sm:px-6 lg:px-8 pb-6">
+    <div class="max-w-6xl mx-auto">
+      <HeroPipelineV6 />
+    </div>
   </section>
 
-  <!-- TRUST BADGES -->
-  <section style="background: #ffffff; padding: 1.5rem; border-bottom: 1px solid #e5e7eb;">
-    <div style="max-width: 900px; margin: 0 auto; display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap;">
-      {[
-        { icon: '✓', label: 'HubSpot Partner', sub: 'Solutions Provider', bg: '#e8f5f2', color: '#5AAB9D' },
-        { icon: '★', label: '150+ Clients', sub: 'Across Industries', bg: '#FDF0DE', color: '#C47A2A' },
-        { icon: '⊕', label: '10+ Years', sub: 'Global Experience', bg: '#e8f4fb', color: '#1A7AB5' },
-      ].map(b => (
-        <div style="display: flex; align-items: center; gap: 0.5rem;">
-          <div style={`width: 36px; height: 36px; border-radius: 50%; background: ${b.bg}; display: flex; align-items: center; justify-content: center; color: ${b.color}; font-size: 1rem;`}>{b.icon}</div>
+
+  <!-- ============ TRUST BADGES ============ -->
+  <section class="bg-white border-b border-v6-border py-4 px-4 sm:px-6">
+    <div class="max-w-4xl mx-auto flex flex-wrap justify-center gap-6 sm:gap-10">
+      {trustBadges.map(b => (
+        <div class="flex items-center gap-2.5">
+          <div class={`w-9 h-9 rounded-full ${b.bg} flex items-center justify-center ${b.color} text-base`}>
+            {b.icon}
+          </div>
           <div>
-            <div style="font-size: 0.8rem; font-weight: 600; color: #1a2530;">{b.label}</div>
-            <div style="font-size: 0.65rem; color: #9ca3af;">{b.sub}</div>
+            <div class="text-sm font-semibold text-v6-dark">{b.label}</div>
+            <div class="text-xs text-gray-400">{b.sub}</div>
           </div>
         </div>
       ))}
     </div>
   </section>
 
-  <!-- FEATURES -->
-  <section style="background: #f7f5f1; padding: 4rem 1.5rem;">
-    <div style="max-width: 900px; margin: 0 auto;">
-      <h2 style="font-size: 1.8rem; font-weight: 700; color: #1a2530; margin-bottom: 0.5rem;">Why Our Clients Rely on Us</h2>
-      <p style="color: #5a6a78; margin-bottom: 2.5rem; max-width: 600px;">Personalized workflows, automations, and messaging aligned with your goals.</p>
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
-        {[
-          { icon: '📊', title: 'Proven ROI', desc: 'Data-backed decisions and optimized workflows tailored to your goals.' },
-          { icon: '⚙️', title: 'Seamless Systems', desc: 'CRM, marketing, and analytics connected into one system.' },
-          { icon: '💡', title: 'Innovation', desc: 'Cutting-edge tools and automation to streamline growth.' },
-          { icon: '🤝', title: 'Transparent Partnership', desc: 'Clear communication, aligned objectives, shared roadmaps.' },
-        ].map(f => (
-          <div style="display: flex; gap: 1rem; align-items: start;">
-            <div style="width: 40px; height: 40px; border-radius: 10px; background: #e8f4fb; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 1.2rem;">{f.icon}</div>
+
+  <!-- ============ FEATURES ============ -->
+  <section class="bg-v6-bg py-16 sm:py-20 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl sm:text-3xl font-bold text-v6-dark mb-2">Why Our Clients Rely on Us</h2>
+      <p class="text-v6-text-muted mb-10 max-w-xl text-base sm:text-lg">Personalized workflows, automations, and messaging aligned with your business goals.</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {features.map(f => (
+          <div class="flex gap-4 items-start">
+            <div class="w-10 h-10 rounded-lg bg-v6-blue-50 flex items-center justify-center flex-shrink-0 text-xl">
+              {f.icon}
+            </div>
             <div>
-              <h3 style="font-size: 1rem; font-weight: 600; color: #1a2530; margin-bottom: 0.25rem;">{f.title}</h3>
-              <p style="font-size: 0.85rem; color: #5a6a78; line-height: 1.5;">{f.desc}</p>
+              <h3 class="text-base font-semibold text-v6-dark mb-1">{f.title}</h3>
+              <p class="text-sm text-v6-text-muted leading-relaxed">{f.desc}</p>
             </div>
           </div>
         ))}
@@ -91,34 +156,31 @@ import HeroPipelineV6 from '../components/astro/HeroPipelineV6.astro';
     </div>
   </section>
 
-  <!-- STATS -->
-  <section style="background: linear-gradient(135deg, #1A7AB5, #0f5a8a); padding: 2.5rem 1.5rem;">
-    <div style="max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; text-align: center;">
-      {[{ v: '150+', l: 'Clients' }, { v: '300+', l: 'Projects' }, { v: '10+', l: 'Years' }, { v: '98%', l: 'Satisfaction' }].map(s => (
+
+  <!-- ============ STATS BAR ============ -->
+  <section class="bg-gradient-to-br from-v6-blue to-v6-blue-600 py-10 sm:py-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
+      {stats.map(s => (
         <div>
-          <div style="font-size: 2rem; font-weight: 700; color: #E8A850;">{s.v}</div>
-          <div style="font-size: 0.8rem; color: #a3d1ee;">{s.l}</div>
+          <div class="text-2xl sm:text-3xl font-bold text-v6-copper-200">{s.value}</div>
+          <div class="text-xs sm:text-sm text-v6-blue-100 mt-1">{s.label}</div>
         </div>
       ))}
     </div>
   </section>
 
-  <!-- SERVICES -->
-  <section style="background: #ffffff; padding: 4rem 1.5rem;">
-    <div style="max-width: 1000px; margin: 0 auto;">
-      <h2 style="font-size: 1.8rem; font-weight: 700; color: #1a2530; margin-bottom: 2.5rem; text-align: center;">Our Services</h2>
-      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;">
-        {[
-          { title: 'HubSpot Onboarding', desc: 'Custom CRM configuration and data migration from day one.', color: '#1A7AB5' },
-          { title: 'Marketing Automation', desc: 'Automated campaigns, lead scoring, and email sequences.', color: '#5AAB9D' },
-          { title: 'Renewal Automation', desc: 'Deals that renew themselves with line item filtering.', color: '#C47A2A' },
-        ].map(s => (
-          <div style="background: #f7f5f1; border: 1px solid #e5e2da; border-radius: 12px; overflow: hidden;">
-            <div style={`height: 4px; background: ${s.color};`}></div>
-            <div style="padding: 1.5rem;">
-              <h3 style="font-size: 1.05rem; font-weight: 600; color: #1a2530; margin-bottom: 0.5rem;">{s.title}</h3>
-              <p style="font-size: 0.85rem; color: #5a6a78; line-height: 1.5; margin-bottom: 1rem;">{s.desc}</p>
-              <a href="#" style={`color: ${s.color}; font-size: 0.85rem; font-weight: 600; text-decoration: none;`}>Learn more →</a>
+
+  <!-- ============ SERVICES ============ -->
+  <section class="bg-white py-16 sm:py-20 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-2xl sm:text-3xl font-bold text-v6-dark mb-10 text-center">Our Services</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {services.map(s => (
+          <div class={`bg-v6-bg border border-v6-border rounded-xl overflow-hidden border-t-4 ${s.color} hover:shadow-lg transition-shadow`}>
+            <div class="p-6">
+              <h3 class="text-base font-semibold text-v6-dark mb-2">{s.title}</h3>
+              <p class="text-sm text-v6-text-muted leading-relaxed mb-4">{s.desc}</p>
+              <a href="#" class={`${s.link} text-sm font-semibold hover:underline`}>Learn more →</a>
             </div>
           </div>
         ))}
@@ -126,40 +188,92 @@ import HeroPipelineV6 from '../components/astro/HeroPipelineV6.astro';
     </div>
   </section>
 
-  <!-- CTA -->
-  <section style="background: linear-gradient(135deg, #C47A2A, #A86520); padding: 4rem 1.5rem;">
-    <div style="max-width: 700px; margin: 0 auto; text-align: center;">
-      <h2 style="font-size: 2rem; font-weight: 700; color: white; margin-bottom: 1rem;">Ready to grow your revenue?</h2>
-      <p style="color: #fde8cc; font-size: 1.05rem; margin-bottom: 2rem;">Book a free consultation and see how renewal automation works.</p>
-      <a href="#" style="background: white; color: #C47A2A; padding: 0.85rem 2rem; border-radius: 10px; font-size: 1rem; font-weight: 600; text-decoration: none;">Claim Your Free Consultation</a>
+
+  <!-- ============ CTA ============ -->
+  <section class="bg-gradient-to-br from-v6-copper to-v6-copper-600 py-16 sm:py-20 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-2xl mx-auto text-center">
+      <h2 class="text-2xl sm:text-3xl font-bold text-white mb-4">Ready to grow your revenue?</h2>
+      <p class="text-v6-copper-50 text-base sm:text-lg mb-8">Book a free consultation and see how renewal automation can work for you.</p>
+      <a href="/contactus" class="bg-white text-v6-copper px-8 py-3.5 rounded-xl text-base font-semibold hover:bg-gray-50 transition-colors inline-block">
+        Claim Your Free Consultation
+      </a>
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer style="background: #1a2530; color: white; padding: 3rem 1.5rem 2rem;">
-    <div style="max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 2rem; margin-bottom: 2rem;">
-      <div>
-        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
-          <LogoHoneycomb width={24} height={22} />
-          <span style="font-weight: 700;">SWOTbee</span>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="bg-v6-dark text-white py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-5xl mx-auto">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
+        <!-- Brand -->
+        <div class="sm:col-span-2 lg:col-span-1">
+          <div class="flex items-center gap-2 mb-4">
+            <LogoHoneycomb width={24} height={22} />
+            <span class="font-bold text-base">SWOTbee</span>
+          </div>
+          <p class="text-sm text-v6-blue-300 leading-relaxed max-w-xs">
+            Expert HubSpot consulting to streamline your experience and boost conversions.
+          </p>
+          <!-- Newsletter -->
+          <div class="mt-5">
+            <p class="text-sm font-semibold mb-2">Stay Updated</p>
+            <div class="flex gap-2">
+              <input
+                type="email"
+                placeholder="Your email"
+                class="flex-1 px-3 py-2 rounded-lg bg-v6-blue-900 border border-v6-blue-700 text-white text-sm placeholder:text-v6-blue-300 focus:ring-2 focus:ring-v6-copper focus:outline-none"
+              />
+              <button class="bg-v6-copper text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-v6-copper-600 transition-colors">
+                Subscribe
+              </button>
+            </div>
+          </div>
         </div>
-        <p style="font-size: 0.8rem; color: #7a9bb0; max-width: 280px; line-height: 1.6;">Expert HubSpot consulting to streamline your experience and boost conversions.</p>
+
+        <!-- Links columns -->
+        <div>
+          <p class="text-sm font-semibold mb-3">Company</p>
+          {['About', 'Services', 'Blog', 'Contact'].map(l => (
+            <a href="#" class="block text-sm text-v6-blue-300 hover:text-white py-1 transition-colors">{l}</a>
+          ))}
+        </div>
+        <div>
+          <p class="text-sm font-semibold mb-3">Services</p>
+          {['HubSpot Onboarding', 'Marketing', 'Sales & RevOps', 'Integrations'].map(l => (
+            <a href="#" class="block text-sm text-v6-blue-300 hover:text-white py-1 transition-colors">{l}</a>
+          ))}
+        </div>
+        <div>
+          <p class="text-sm font-semibold mb-3">Legal</p>
+          {['Privacy Policy', 'Terms of Use', 'Cookie Policy', 'FAQs'].map(l => (
+            <a href="#" class="block text-sm text-v6-blue-300 hover:text-white py-1 transition-colors">{l}</a>
+          ))}
+        </div>
       </div>
-      <div>
-        <p style="font-size: 0.8rem; font-weight: 600; margin-bottom: 0.75rem;">Company</p>
-        {['About', 'Services', 'Blog', 'Contact'].map(l => (<a href="#" style="display: block; color: #7a9bb0; font-size: 0.8rem; text-decoration: none; padding: 0.2rem 0;">{l}</a>))}
+
+      <!-- Bottom bar -->
+      <div class="border-t border-v6-blue-800 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+        <p class="text-xs text-v6-blue-300">© 2026 SWOTbee. All rights reserved.</p>
+        <div class="flex gap-4">
+          <a href="mailto:info@swotbee.com" class="text-xs text-v6-blue-300 hover:text-white transition-colors">Email</a>
+          <a href="https://www.linkedin.com/company/swotbee" class="text-xs text-v6-blue-300 hover:text-white transition-colors">LinkedIn</a>
+          <a href="https://x.com/SWOTBee" class="text-xs text-v6-blue-300 hover:text-white transition-colors">Twitter</a>
+        </div>
       </div>
-      <div>
-        <p style="font-size: 0.8rem; font-weight: 600; margin-bottom: 0.75rem;">Services</p>
-        {['Onboarding', 'Marketing', 'Sales & RevOps', 'Integrations'].map(l => (<a href="#" style="display: block; color: #7a9bb0; font-size: 0.8rem; text-decoration: none; padding: 0.2rem 0;">{l}</a>))}
-      </div>
-      <div>
-        <p style="font-size: 0.8rem; font-weight: 600; margin-bottom: 0.75rem;">Legal</p>
-        {['Privacy', 'Terms', 'Cookies', 'FAQs'].map(l => (<a href="#" style="display: block; color: #7a9bb0; font-size: 0.8rem; text-decoration: none; padding: 0.2rem 0;">{l}</a>))}
-      </div>
-    </div>
-    <div style="border-top: 1px solid #0f2a3d; padding-top: 1rem; text-align: center;">
-      <p style="font-size: 0.75rem; color: #5a6a78;">© 2026 SWOTbee. All rights reserved.</p>
     </div>
   </footer>
+
+  <!-- Mobile menu toggle script -->
+  <script is:inline>
+    document.addEventListener('DOMContentLoaded', function() {
+      var btn = document.getElementById('mobile-menu-btn');
+      var menu = document.getElementById('mobile-menu');
+      if (btn && menu) {
+        btn.addEventListener('click', function() {
+          menu.classList.toggle('hidden');
+        });
+      }
+    });
+  </script>
+
 </BaseLayout>
