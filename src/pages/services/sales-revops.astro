@@ -1,936 +1,324 @@
 ---
-// src/pages/index.astro
 import Layout from "../../layouts/Layout.astro";
-import Footer from "../../components/astro/Footer.astro";
-
-const title =
-  "HubSpot Consulting Services | CRM, Automation & Integration Solutions";
-const description =
-  "Comprehensive HubSpot consulting services including CRM migration, automation setup, email marketing, lead qualification, and third-party integrations for improved business efficiency.";
-import FeatureImgRight from "../../components/astro/FeatureImgRight.astro";
-import FeatureDesc from "../../components/astro/FeatureDesc.astro";
-import FeatureDescription from "../../components/astro/FeatureDescriptionBento.astro";
-
 import Navbar from "../../components/astro/Navbar.astro";
+import Footer from "../../components/astro/Footer.astro";
+import StructuredData from "../../components/astro/StructuredData.astro";
 
-import AccelerateHubSpotAdoption from "../../assets/service_features/Accelerate HubSpot Adoption2.png";
-import AccelerateOnboardingSuccess from "../../assets/service_features/Accelerate Onboarding Success1.png";
-import AutomateDealAndRenewalTracking from "../../assets/service_features/Automate Deal & Renewal Tracking.png";
-import AutomateEmailMarketingThatConverts from "../../assets/service_features/Automate Email Marketing That Converts2.png";
-import AutomateLeadQualification from "../../assets/service_features/Automate Lead Qualification1.png";
-import AutomateMarketingAttribution from "../../assets/service_features/Automate Marketing Attribution.png";
-import AutomateSalesActivityCapture from "../../assets/service_features/Automate Sales Activity Capture3.png";
-import AutomateThirdPartyIntegrations from "../../assets/service_features/Automate Third-Party Integrations2.png";
-import CRMMigrationDoneRight from "../../assets/service_features/CRM Migration Done Right3.png";
-import IgniteAccurateRevenuePlanning from "../../assets/service_features/Ignite Accurate Revenue Planning1.png";
-import OptimizeCustomObjects from "../../assets/service_features/Optimize Custom Objects2.png";
-import OptimizeDealCompanyAssociations from "../../assets/service_features/Optimize Deal Company Associations3.png";
-import OptimizeFormsAndLandingPages from "../../assets/service_features/Optimize Forms & Landing Pages.png";
-import OptimizeLeadScoring from "../../assets/service_features/Optimize Lead Scoring2.png";
-import OptimizeYourSalesPipeline from "../../assets/service_features/Optimize Your Sales Pipeline3.png";
-import StreamlineYourHubSpotAutomation from "../../assets/service_features/Streamline Your HubSpot Automation2.png";
-import SuperchargeYourHubSpotData from "../../assets/service_features/Supercharge Your HubSpot Data2.png";
-import SynchronizeTeamsWithRevOps from "../../assets/service_features/Synchronize Teams with RevOps2.png";
-import VisualizeYourBusinessImpact from "../../assets/service_features/Visualize Your Business Impact1.png";
+const title = "Sales & RevOps Consulting | Automate Renewals, Fix Your Pipeline";
+const description = "Every missed renewal is revenue walking out the door. Automate renewals, fix your pipeline, and make forecasting reliable again.";
 
-import {
-  ArrowPathIcon,
-  UserGroupIcon,
-  ChartBarIcon,
-  CurrencyDollarIcon,
-  WrenchScrewdriverIcon,
-  AdjustmentsHorizontalIcon,
-  ExclamationTriangleIcon,
-  ChartBarSquareIcon,
-  EnvelopeIcon,
-  TrashIcon,
-  CalendarDaysIcon,
-  ClipboardDocumentListIcon,
-  CursorArrowRaysIcon,
-  ArrowRightEndOnRectangleIcon,
-  GlobeAltIcon,
-  BellAlertIcon,
-  XMarkIcon,
-  MagnifyingGlassCircleIcon,
-  PresentationChartBarIcon,
-  ClockIcon,
-  EnvelopeOpenIcon,
-  PaintBrushIcon,
-  ScaleIcon,
-  Cog6ToothIcon,
-  EyeIcon,
-  LinkIcon,
-  TableCellsIcon,
-  MagnifyingGlassIcon,
-  BookOpenIcon,
-  ArrowsRightLeftIcon,
-  ShieldCheckIcon,
-  FunnelIcon,
-  MapIcon,
-  HandRaisedIcon,
-} from "@heroicons/react/20/solid";
+const painPoints = [
+  "Your forecast is wrong every quarter because deal data is incomplete",
+  "Deals go dark for weeks and nobody notices until the QBR",
+  "Renewals are tracked in a spreadsheet — and 3 expired last quarter without anyone following up",
+  "Marketing and sales blame each other for lead quality while revenue leaks through the cracks",
+  "Sales reps spend more time on data entry than selling",
+  "Your pipeline looks full but win rates keep dropping",
+];
+
+const processSteps = [
+  { num: "1", title: "Pipeline Audit", desc: "We map your current deal stages, data quality, and forecasting gaps — and surface the biggest leaks within the first 2 weeks." },
+  { num: "2", title: "Configure Deal Tracking & Automation", desc: "We rebuild your pipeline structure, automate renewal creation, set up activity capture, and connect your reporting stack." },
+  { num: "3", title: "Align Teams & Launch Dashboards", desc: "Cross-functional dashboards, shared KPIs, and automated handoff rules that keep marketing, sales, and customer success aligned." },
+];
+
+const services = [
+  {
+    title: "Pipeline Optimization",
+    desc: "Custom deal stages built around your actual sales process. Required properties, stage velocity tracking, and stale deal alerts so nothing goes dark.",
+    metric: "Win rates visible by stage, rep, and source",
+    icon: "📊",
+  },
+  {
+    title: "Renewal & Deal Automation",
+    desc: "Automated renewal creation with line items, price uplift, and owner assignment. 90-day early warning system catches every expiring contract. Our in-house renewal tools are built specifically for this.",
+    metric: "Zero missed renewals, 50% accuracy improvement",
+    icon: "🔄",
+  },
+  {
+    title: "Sales Forecasting & Reporting",
+    desc: "Forecast dashboards by pipeline, rep, and period. Cross-object reports linking deals, contacts, and revenue. Weighted pipeline views that actually reflect reality.",
+    metric: "45% faster reporting, 2× more accurate forecasting",
+    icon: "📈",
+  },
+  {
+    title: "Activity Capture & Automation",
+    desc: "Automatic email, call, and meeting logging. Task creation on deal stage changes. Follow-up sequences that trigger without manual input.",
+    metric: "27% fewer leads lost to poor follow-up",
+    icon: "⚡",
+  },
+  {
+    title: "RevOps Alignment",
+    desc: "Cross-functional dashboards, shared KPIs, and automated handoff rules between marketing, sales, and customer success. One version of truth for every team.",
+    metric: "Teams aligned around shared revenue goals",
+    icon: "🤝",
+  },
+];
+
+const faqs = [
+  {
+    q: "How long does pipeline optimization take?",
+    a: "Full RevOps alignment typically takes 3–6 months. But pipeline visibility — the thing that usually hurts most — shows up in the first 2 weeks. We prioritize the highest-impact changes first.",
+  },
+  {
+    q: "Will this work with our custom HubSpot setup?",
+    a: "Yes. We audit your existing configuration and build on what you already have. We don't start from scratch unless something is fundamentally broken.",
+  },
+  {
+    q: "How do you handle resistance from sales reps?",
+    a: "We design workflows that reduce their admin burden — not add to it. Training is hands-on and specific to their daily tasks. When HubSpot makes their job easier, adoption follows naturally.",
+  },
+  {
+    q: "What if we use Salesforce alongside HubSpot?",
+    a: "We've integrated both. We work with your actual stack and can build bidirectional syncs between HubSpot and Salesforce so neither system becomes the source of truth by accident.",
+  },
+  {
+    q: "How do you define 'RevOps alignment'?",
+    a: "For us it means: shared KPIs that marketing, sales, and customer success all report against; automated handoff rules so leads don't get lost between teams; and cross-functional dashboards so everyone sees the same data.",
+  },
+  {
+    q: "What dashboards will we get?",
+    a: "Role-specific views: an executive overview for leadership, a pipeline health dashboard for sales managers, and an activity dashboard for reps. All auto-refreshed, all accessible on mobile.",
+  },
+  {
+    q: "Can you help with renewal and subscription revenue tracking?",
+    a: "Yes — this is a core strength. Our in-house tools automate renewal deal creation with line items, price adjustments, and ARR tracking. We connect renewal workflows to your pipeline so nothing slips through.",
+  },
+];
+
+const clientLogos = ["Wesco", "Big Lots", "Insteon", "La Vie", "Mytheresa"];
 ---
 
-<Layout title="Home">
+<Layout title={title} description={description}>
+  <StructuredData
+    type="service"
+    data={{
+      name: "Sales & RevOps Consulting Services",
+      description: description,
+      serviceType: "Revenue Operations Consulting",
+      url: "https://swotbee.github.io/services/sales-revops",
+    }}
+  />
+
   <Navbar />
-  <section class="max-w-7xl bg-custom mx-auto px-4 py-12">
-    <FeatureDescription
-      title="Eliminate Phantom Deals & Boost Reporting Accuracy"
-      description="When deals aren’t linked to companies, your B2B sales data becomes fractured—leading to poor segmentation, unreliable reports, and missed revenue opportunities."
-      description2=" If you’re tired of phantom deals that can’t be tracked, you’re not alone. Every day you wait, you risk bad forecasts, lost revenue, and frustrated teams."
-      tagline="From Phantom Deals to Predictable Revenue"
-      validationText="Clients have seen up to 45% faster reporting and 2x more accurate sales forecasting within a month."
-      image={OptimizeDealCompanyAssociations}
-      challenges={[
-        {
-          name: "Phantom Deals ",
-          description: "Orders create deals without company contex",
-        },
-        {
-          name: "Manual Deal-Company Linking",
-          description:
-            "Sales teams spend hours weekly manually associating deals to companies…",
-        },
-        {
-          name: "Unreliable Pipeline Reporting",
-          description:
-            "Lack of associations prevents accurate account-based reporting",
-        },
-        {
-          name: "Hidden Revenue Leakage",
-          description:
-            "Missed renewals and duplicate outreach due to disassociated deals…",
-        },
-      ]}
-      solutions={[
-        {
-          name: "Sync Unique Company Identifier",
-          description:
-            "Create a synced property on deal records that captures the primary company's unique ID",
-        },
-        {
-          name: "Auto-Associate Company on Deal Creation",
-          description:
-            "Build a deal-based workflow that triggers when a deal is created.",
-        },
-        {
-          name: "Validate and Monitor Associations",
-          description: "Schedule regular reports to verify deal-company links.",
-        },
-      ]}
-      impacts={[
-        {
-          name: "Reporting Speed",
-          description:
-            "Manual reconciliation takes days → Reporting updates in minutes (45% faster)",
-        },
-        {
-          name: "Forecast Accuracy",
-          description:
-            "Wins and pipeline at risk of under- or over-forecast by 30% → Forecast accuracy improved by 2×",
-        },
-        {
-          name: "Time Spent on Data Cleanup",
-          description: "5–10 hours/week per rep → <1 hour/week per rep",
-        },
-        {
-          name: "Upsell/Cross-sell Opportunities",
-          description:
-            "20% of opportunities not pursued due to missing account context → Nearly 100% visibility on account deals",
-        },
-      ]}
-    />
 
-    <FeatureDescription
-      title="Say Goodbye to Messy Data in HubSpot, Hello ROI"
-      description="Cluttered HubSpot databases—filled with duplicates, outdated contacts, and inconsistent records—drain your budget, sabotage segmentation, and cripple campaign performance. "
-      description2="Every day you delay, you risk inaccurate reporting, wasted ad spend, and missed sales."
-      validationText="Our data cleansing service gives you a strategic edge by ensuring your HubSpot database is always clean, accurate, and primed for success."
-      validationText2="We go beyond surface-level fixes, using advanced tools and custom workflows to audit your HubSpot database, eliminate duplicates, standardize formats, and remove dead weight. Ongoing monitoring ensures your data stays clean, saving you from manual headaches."
-      tagline="Clean Data, Better Results"
-      image={SuperchargeYourHubSpotData}
-      challenges={[
-        {
-          name: "Duplicate Records",
-          description: "Multiple contact duplicates hinder segmentation",
-        },
-        {
-          name: "Credibility Issues",
-          description:
-            "Inaccurate data undermines trust in marketing campaigns",
-        },
-        {
-          name: "Compliance Risk",
-          description:
-            "Data quality issues create regulatory and legal exposure",
-        },
-      ]}
-      solutions={[
-        {
-          name: "Deduplication",
-          description: "Audit and merge duplicates with custom rules",
-        },
-        {
-          name: "Data Standardization",
-          description: "Enforce formatting via workflows and validation",
-        },
-        {
-          name: "Ongoing Hygiene",
-          description: "Set up automated cleanup and monitoring routines",
-        },
-      ]}
-      impacts={[
-        {
-          name: "Better Segmentation",
-          description: "Reliable lists for targeted campaigns",
-        },
-        {
-          name: "Improved Deliverability",
-          description: "Reduce bounces and spam complaints",
-        },
-        {
-          name: "Higher ROI",
-          description:
-            "Clean data yields more accurate reporting and conversions",
-        },
-      ]}
-    />
-
-    <FeatureDescription
-      title="Automate Deal and Renewal Tracking—Eliminate 100% of Missed Touchpoints in 30 Days"
-      description="When “Did you call that lead?” becomes a weekly headache, your pipeline leaks revenue and frays team morale. Every unlogged email, call, or website visit is a lost opportunity—and guesswork kills close rates."
-      validationText="Our Predictive Lead Scoring system eliminates guesswork by analyzing your historical conversion data and predicting purchase intent with precision."
-      validationText2="We analyze historical conversion data to identify true buying signals and predict purchase intent. With multi-segment scoring, score decay, and automated workflows, we trigger outreach at the right time. Continuous feedback loops refine the model based on real outcomes—eliminating guesswork."
-      tagline="Eliminate Guesswork. Close More Deals."
-      image={AutomateDealAndRenewalTracking}
-      challenges={[
-        {
-          name: "Revenue Leakage",
-          description: "27% of leads lost due to poor follow-up tracking",
-        },
-        {
-          name: "Management Blindness",
-          description: "Leaders can't coach teams without activity visibility",
-        },
-        {
-          name: "Accountability Gap",
-          description:
-            "Manual tracking creates disputes and missed opportunities",
-        },
-      ]}
-      solutions={[
-        {
-          name: "Predictive Lead Scoring",
-          description:
-            "Identify true buying signals and automate sales outreach",
-        },
-        {
-          name: "Automated Workflows",
-          description: "Trigger sales outreach at the right moment, every time",
-        },
-        {
-          name: "Ongoing Feedback Loops",
-          description: "Refine predictive models with real-time outcomes",
-        },
-        {
-          name: "Ongoing Hygiene",
-          description: "Set up automated cleanup and monitoring routines",
-        },
-      ]}
-      impacts={[
-        {
-          name: "Better Lead Follow-Up",
-          description: "No more missed touchpoints—automate outreach",
-        },
-        {
-          name: "Improved Sales Conversions",
-          description:
-            "Close more deals with accurate purchase intent predictions",
-        },
-        {
-          name: "Stronger Sales Morale",
-          description: "No more guesswork—your team knows exactly when to act",
-        },
-      ]}
-    />
-    <FeatureDescription
-      title="Tired of HubSpot Workflows Falling Apart? Let’s Fix It—And Boost Your Efficiency 2x in 30 Days!"
-      description="Are your HubSpot workflows out of control? Overlapping automations, confusing naming conventions, and misaligned customer stages can lead to missed opportunities, frustrated teams, and poor customer experiences. "
-      description2="Contacts get the wrong messages, and manual fixes eat up valuable hours. Every day you delay, you risk lost deals, frustrated staff, and a muddled customer experience."
-      validationText="Our data cleansing service is your strategic edge."
-      validationText2="We go beyond surface-level fixes—leveraging advanced tools, custom workflows, and best-in-class data hygiene protocols. We audit your entire HubSpot database, eliminate duplicates, standardize formats, and remove dead weight. Automated validation rules and ongoing monitoring ensure your data stays clean—no more manual headaches or recurring messes"
-      image={StreamlineYourHubSpotAutomation}
-      challenges={[
-        {
-          name: "Overlapping Flows",
-          description: "Conflicting workflows trigger unintended actions",
-        },
-        {
-          name: "Naming Confusion",
-          description: "Poor naming makes maintenance difficult",
-        },
-        {
-          name: "Lifecycle Misalignment",
-          description: "Workflows not aligned to customer stages",
-        },
-      ]}
-      solutions={[
-        {
-          name: "Audit & Rebuild",
-          description: "Identify conflicts and redesign with clear logic",
-        },
-        {
-          name: "Naming Standards",
-          description: "Implement consistent naming and documentation",
-        },
-        {
-          name: "Stage-Based Design",
-          description: "Align workflows to lifecycle stages, not campaigns",
-        },
-      ]}
-      impacts={[
-        {
-          name: "Predictable Automation",
-          description: "Workflows run reliably without conflicts",
-        },
-        {
-          name: "Scalable Processes",
-          description: "Easier onboarding of new workflows",
-        },
-        {
-          name: "Enhanced CX",
-          description: "Contacts receive coherent, contextual communications",
-        },
-      ]}
-    />
-
-    <FeatureDescription
-      title="Get Actionable HubSpot Reports That Drive Decisions in Just 30 Days"
-      oldtitle="Visualize Your Business Impact—Unlock 2x Faster Insights with Custom HubSpot Reporting in 30 Days"
-      description="Tired of HubSpot’s basic reports leaving you in the dark? Incomplete data and filter frustrations lead to poor decisions, missed opportunities, and lost trust. Every day you wait, the impact grows."
-      validationText="Our custom reporting service transforms your HubSpot analytics into a strategic asset."
-      validationText2="We build advanced, executive-ready dashboards — cross-object, attribution, and lifecycle reports tailored to your goals. Our process includes data audits, integration with external sources, and automated report delivery for every role. No more filter headaches or data silos—just clear, role-specific reports delivered automatically."
-      tagline="Transform HubSpot Data Into Decisions"
-      image={VisualizeYourBusinessImpact}
-      challenges={[
-        {
-          name: "Basic Metrics Only",
-          description: "Native reports lack cross-object insights",
-        },
-        {
-          name: "Attribution Limits",
-          description: "Cannot model multi-touch customer journeys",
-        },
-        {
-          name: "Filter Constraints",
-          description: "Limited ability to combine disparate data sources",
-        },
-      ]}
-      solutions={[
-        {
-          name: "Cross-Object Reports",
-          description:
-            "Design custom reports linking deals, contacts, and revenue",
-        },
-        {
-          name: "Attribution Models",
-          description: "Implement multi-touch crediting across channels",
-        },
-        {
-          name: "Dashboard Personalization",
-          description: "Tailor views to roles with advanced filters",
-        },
-      ]}
-      impacts={[
-        {
-          name: "Actionable Insights",
-          description: "Metrics aligned with business objectives",
-        },
-        {
-          name: "Revenue Transparency",
-          description: "Clear ROI across campaigns",
-        },
-        {
-          name: "Role Alignment",
-          description: "Stakeholders see relevant KPIs instantly",
-        },
-      ]}
-    />
-
-    <FeatureDescription
-      title="Double Sales-Ready Leads in 30 Days with Smarter Lead Scoring"
-      description="When your lead scoring flags too many “false positives” or misses high-intent buyers, your sales team chases the wrong prospects—wasting hours and losing pipeline momentum."
-      validationText="Our AI-driven Lead Scoring eliminates guesswork and ensures your sales team gets the right leads, every time."
-      validationText2="We analyze your historical conversion data, we identify the true buying signals and weight them to predict purchase intent accurately. We implement multi-segment scoring, score decay, and automated workflows that trigger sales outreach the moment prospects hit your threshold."
-      image={OptimizeLeadScoring}
-      tagline="Smarter Scoring. Faster Conversions."
-      challenges={[
-        {
-          name: "Sales Frustration",
-          description:
-            "leads passed to sales are unqualified, damaging relationships",
-        },
-        {
-          name: "Wasted Resources",
-          description: "Sales teams spend time on prospects that won't buy",
-        },
-        {
-          name: "Revenue Leakage",
-          description:
-            "Poor qualification costs companies $1M+ annually in lost opportunities",
-        },
-      ]}
-      solutions={[
-        {
-          name: "AI-Powered Scoring",
-          description: "Analyze historic data to weight predictive actions",
-        },
-        {
-          name: "Sales-Marketing Alignment",
-          description:
-            "Create shared qualification criteria reducing handoff friction",
-        },
-        {
-          name: "Continuous Optimization",
-          description: "Regular model updates based on closed-won data",
-        },
-      ]}
-      impacts={[
-        {
-          name: "Higher MQL Quality",
-          description: "Sales gets truly sales-ready prospects",
-        },
-        {
-          name: "Focused Outreach",
-          description: "Reduce wasted effort on stale leads",
-        },
-        {
-          name: "Continuous Improvement",
-          description: "Feedback loops refine accuracy over time",
-        },
-      ]}
-    />
-
-    <FeatureDescription
-      title="Optimize Your Sales Pipeline for Predictable Revenue Growth"
-      oldtitle="Optimize Your Sales Pipeline—Unlock 2× Predictable Revenue in 30 Days"
-      description="When your sales pipeline is a guessing game, forecasts collapse and opportunities slip through the cracks. Without clear stages, hidden bottlenecks slow down deals and leave reps scrambling to meet targets—hurting revenue and morale."
-      validationText="Our service aligns your pipeline with your actual sales process, creating a customized structure for predictable growth."
-      validationText2={`We audit your pipeline to uncover leaks and bottlenecks, then optimize stages with clear definitions, data-driven probability weightings, and automated progression rules. You'll gain:
-<br />
-Automated stage-progression workflows and deal-scoring rules
-<br />
-Pipeline-specific dashboards and reports for real-time visibility
-<br />
-Ongoing pipeline hygiene with deal-score decay and data-validation workflows
-<br />
-Sales coaching tools tied to pipeline metrics`}
-      tagline="Predictable Revenue Starts with a Clear Pipeline."
-      image={OptimizeYourSalesPipeline}
-      challenges={[
-        {
-          name: "Unclear Stages",
-          description: "Pipeline stages misaligned with buyer journey",
-        },
-        {
-          name: "Forecast Inaccuracy",
-          description: "Lack of probability weighting leads to poor forecasts",
-        },
-        {
-          name: "Data Hygiene",
-          description:
-            "50-70% of CRM implementations fail due to poor pipeline management",
-        },
-      ]}
-      solutions={[
-        {
-          name: "Stage Redesign",
-          description: "Align stages to actual sales steps and criteria",
-        },
-        {
-          name: "Probability Rules",
-          description: "Set data-driven weightings per stage",
-        },
-        {
-          name: "Hygiene Workflows",
-          description: "Automate deal-score decay and validation",
-        },
-      ]}
-      impacts={[
-        {
-          name: "Reliable Forecasts",
-          description: "Accurate revenue projections boost confidence",
-        },
-        {
-          name: "Faster Closures",
-          description: "Clear criteria accelerate deal progression",
-        },
-        {
-          name: "Scalable Growth",
-          description: "Pipeline process supports business expansion",
-        },
-      ]}
-    />
-
-    <FeatureDescription
-      title="Automate Sales Activity Capture - No More 'Did You Call That Lead?'"
-      oldtitle="Automate Sales Activity Capture—Eliminate 100% of Missed Touchpoints in 30 Days"
-      description="Missed calls, emails, and website visits leak revenue and hurt close rates. Without automated tracking, you’re losing opportunities and draining team morale."
-      validationText="Our solution automatically captures every sales activity, eliminating missed touchpoints and ensuring no opportunity slips through the cracks. "
-      tagline="Track Every Touchpoint. Never Miss a Lead."
-      validationText2="Our system tracks every touchpoint—calls, emails, and meetings—automatically. It prioritizes high-intent prospects, triggers follow-up tasks, and continuously improves through real-time feedback, ensuring your team never misses an opportunity."
-      image={AutomateSalesActivityCapture}
-      challenges={[
-        {
-          name: "Missed Touchpoints",
-          description: "Emails or calls not automatically logged",
-        },
-        {
-          name: "Data Silos",
-          description: "Activities tracked across disparate tools",
-        },
-        {
-          name: "Manual Updates",
-          description: "Reps skip logging due to friction",
-        },
-      ]}
-      solutions={[
-        {
-          name: "Intelligent Logging",
-          description: "Auto-capture emails, calls, and meetings",
-        },
-        {
-          name: "Unified Inbox",
-          description: "Sync all channels into HubSpot activity feed",
-        },
-        {
-          name: "Follow-Up Workflows",
-          description: "Trigger tasks based on engagement patterns",
-        },
-      ]}
-      impacts={[
-        {
-          name: "Full Visibility",
-          description: "Managers see real-time team activity",
-        },
-        {
-          name: "No Missed Leads",
-          description: "Every touchpoint recorded and followed up",
-        },
-        {
-          name: "Better Coaching",
-          description: "Activity patterns inform rep training",
-        },
-      ]}
-    />
-
-    <FeatureDescription
-      title="Align Sales, Marketing \& Customer Success with RevOps Strategy"
-      tagline="Stop the Revenue Leak"
-      oldtitle="Synchronize Teams with RevOps—Drive 32% More Revenue in 90 Days"
-      description="When your teams aren’t aligned, leads fall through the cracks, buyer journeys stall, and trust erodes. Misalignment costs B2B companies $1 trillion annually and shrinks win rates by up to 38%—let's fix that."
-      validationText="We eliminate silos, streamline workflows, and align your teams around shared goals to drive faster, more predictable revenue growth. "
-      validationText2={`We map your end-to-end journey, eliminate friction points, and build integrated workflows with shared KPIs—from lead generation to renewal. You'll get:
-
-Cross-functional dashboards and automated handoff rules
-
-Unified data governance and real-time reporting
-
-Quarterly “Smarketing” workshops and accountability frameworks`}
-      image={SynchronizeTeamsWithRevOps}
-      challenges={[
-        {
-          name: "Department Silos",
-          description: "Teams operate on separate data and goals",
-        },
-        {
-          name: "Handoff Breaks",
-          description: "Leads get lost between functions",
-        },
-        {
-          name: "Metric Disconnect",
-          description: "No shared KPIs for joint accountability",
-        },
-      ]}
-      solutions={[
-        {
-          name: "Journey Mapping",
-          description: "Document end-to-end customer lifecycle",
-        },
-        {
-          name: "Shared Dashboards",
-          description: "Create cross-functional KPI views",
-        },
-        {
-          name: "Integrated Workflows",
-          description: "Automate handoffs and notifications",
-        },
-      ]}
-      impacts={[
-        {
-          name: "Revenue Synergy",
-          description: "Teams collaborate toward common targets",
-        },
-        {
-          name: "No Leaks",
-          description: "Smooth transitions keep prospects engaged",
-        },
-        {
-          name: "Unified Insights",
-          description: "Single source of truth for decisions",
-        },
-      ]}
-    />
-
-    <FeatureDescription
-      title="Fix Broken Integrations: Achieve Seamless Data Syncs Across All Platforms in 30 Days"
-      tagline="Flawless Data Syncs, Zero Downtime"
-      oldtitle="Automate Third-Party Integrations—Eliminate 100% of Data Silos in 30 Days"
-      description="Broken integrations disrupt workflows, corrupt data, and frustrate teams. Sync errors, mapping mismatches, and lack of error monitoring lead to lost leads, billing mistakes, and costly delays. We fix that."
-      validationText="Our Make Your Integrations Actually Work service audits, fixes, and future-proofs your integrations for seamless data flow and maximum uptime."
-      validationText2={`We audit your entire stack—Shopify, Salesforce, Zapier, and more—pinpointing failure points and implementing robust solutions:
-
-Error handling and retry logic to prevent disruptions
-
-Accurate field mapping and data validation for flawless syncs
-
-Real-time monitoring alerts to quickly detect and resolve issues
-
-Comprehensive documentation and troubleshooting guides to empower your team
-
-Worried about complexity or cost? You get ROI calculators, phased pilots, and a dedicated project manager. Change resistance? We deliver stakeholder workshops and hands-on training.`}
-      image={AutomateThirdPartyIntegrations}
-      challenges={[
-        {
-          name: "Sync Errors",
-          description: "Frequent failures break data flows",
-        },
-        {
-          name: "Mapping Mismatches",
-          description: "Fields misaligned across systems",
-        },
-        {
-          name: "Error Monitoring",
-          description: "No alerts for integration issues",
-        },
-      ]}
-      solutions={[
-        {
-          name: "Integration Audit",
-          description: "Identify and fix sync and mapping errors",
-        },
-        {
-          name: "Error Handling",
-          description: "Implement retry logic and notifications",
-        },
-        {
-          name: "Monitoring Dashboards",
-          description: "Visualize integration health in HubSpot",
-        },
-      ]}
-      impacts={[
-        {
-          name: "Continuous Sync",
-          description: "Data flows reliably across platforms",
-        },
-        {
-          name: "Reduced Downtime",
-          description: "Immediate alerts minimize disruptions",
-        },
-        {
-          name: "Data Integrity",
-          description: "Consistent records across tools",
-        },
-      ]}
-    />
-
-    <!-- title="Visualize Your Business with Dashboards—Gain 2× Faster Insights in 30 Days" -->
-    <FeatureDescription
-      title="Dashboards That Actually Help You Run Your Business"
-      description="When your HubSpot dashboards leave you drilling into spreadsheets and guessing at trends, you're making decisions in the dark—wasting time, missing risks, and eroding leadership confidence. Every week you delay, you risk costly missteps and stalled growth."
-      validationText="Our Custom Dashboards Turn Data into Actionable Insights for Every Role."
-      image={VisualizeYourBusinessImpact}
-      tagline="Smarter Dashboards for Smarter Decisions"
-      validationText2={`Automated data refreshes every 15 minutes for real-time accuracy
-
-Mobile-optimized dashboards and alert systems for critical metrics
-
-Cross-object reporting and advanced filters that answer your toughest business questions
-
-Training and documentation so your team can interpret and act on insights immediately.`}
-      challenges={[
-        {
-          name: "One-Size-Fits-All",
-          description: "Standard dashboards miss role needs",
-        },
-        {
-          name: "Manual Refresh",
-          description: "Data not updated in real time",
-        },
-        {
-          name: "Mobile Unfriendly",
-          description: "Poor mobile viewing experience",
-        },
-      ]}
-      solutions={[
-        {
-          name: "Role-Specific Views",
-          description: "Design dashboards per executive, manager, rep",
-        },
-        {
-          name: "Auto-Refresh",
-          description: "Enable real-time data pulls and alerts",
-        },
-        {
-          name: "Mobile Optimization",
-          description: "Create responsive, concise mobile layouts",
-        },
-      ]}
-      impacts={[
-        {
-          name: "Faster Decisions",
-          description: "Leaders access up-to-date KPIs instantly",
-        },
-        {
-          name: "Team Alignment",
-          description: "Shared dashboards drive unified focus",
-        },
-        {
-          name: "On-the-Go Access",
-          description: "Mobile views support remote leadership",
-        },
-      ]}
-    />
-
-    <FeatureDescription
-      tagline="Empower Your Sales Team with Qualified Leads"
-      title="Lead Qualification That Stops Wasting Sales Time"
-      oldtitle="Automate Lead Qualification—Double Sales-Ready Prospects in 30 Days"
-      description="When unqualified leads flood your pipeline, your reps waste hours chasing dead ends—and genuine opportunities slip through the cracks. Inconsistent data, vague qualification criteria, and misaligned handoffs mean stalled deals, frustrated teams, and missed revenue."
-      validationText="Our Lead Qualification That Stops Wasting Sales Time service is the strategic fix. We partner with you to:"
-      validationText2={`Define precise qualification criteria aligned to your ICP and buying process
-
-Build automated scoring and routing workflows in HubSpot—no more guesswork
-
-Establish feedback loops between marketing and sales to refine accuracy
-
-Train reps on best practices and deploy easy-to-use prioritization tools`}
-      image={AutomateLeadQualification}
-      challenges={[
-        {
-          name: "Undefined Criteria",
-          description: "No clear rules for MQL vs SQL",
-        },
-        {
-          name: "Routing Delays",
-          description: "Leads sit unassigned before handoff",
-        },
-        {
-          name: "Feedback Gaps",
-          description: "No loops to refine criteria after sale",
-        },
-      ]}
-      solutions={[
-        {
-          name: "Define Triggers",
-          description: "Set explicit enrollment criteria per stage",
-        },
-        {
-          name: "Auto-Routing",
-          description: "Instantly assign hot leads to reps",
-        },
-        {
-          name: "Feedback Loops",
-          description: "Capture outcome data to adjust scoring",
-        },
-      ]}
-      impacts={[
-        {
-          name: "Faster Handoffs",
-          description: "Sales responds immediately to qualified leads",
-        },
-        {
-          name: "Improved Quality",
-          description: "Only true prospects reach reps",
-        },
-        {
-          name: "Adaptive Model",
-          description: "Qualification improves with real-world results",
-        },
-      ]}
-    />
-
-    <FeatureDescription
-      tagline="Automated Onboarding that Protects Your Customer Lifetime Value"
-      title="Customer Onboarding Automation That Reduces Churn and Boosts Retention"
-      oldtitle="Accelerate Onboarding Success—Reduce Churn by 30% in 30 Days"
-      description="When manual kick-off calls and follow-ups stall, new customers slip through the cracks—driving up support tickets, burning cash, and shrinking lifetime value. Every day you delay, you risk losing more clients before they even see your product's promise."
-      validationText="Our Customer Onboarding Automation service transforms chaotic hand-offs into seamless journeys. We map your ideal onboarding playbook, then build:"
-      validationText2={`Automated touchpoint sequences that deliver the right content at the right time
-
-Real-time progress tracking dashboards for proactive outreach
-
-Escalation workflows that flag and remedy at-risk accounts before churn hits`}
-      image={AccelerateOnboardingSuccess}
-      challenges={[
-        {
-          name: "Manual Tasks",
-          description: "Repetitive onboarding steps require human effort",
-        },
-        {
-          name: "Inconsistent Experience",
-          description: "Customers get varied guidance levels",
-        },
-        {
-          name: "At-Risk Signals",
-          description: "No early warnings for stalled onboarding",
-        },
-      ]}
-      solutions={[
-        {
-          name: "Sequence Automation",
-          description: "Deliver milestone-based email and task sequences",
-        },
-        {
-          name: "Progress Tracking",
-          description: "Dashboards monitor customer completion rates",
-        },
-        {
-          name: "Escalation Workflows",
-          description: "Alert team when milestones missed",
-        },
-      ]}
-      impacts={[
-        {
-          name: "Consistent Onboarding",
-          description: "All customers follow best-practice journey",
-        },
-        {
-          name: "Reduced Churn",
-          description: "Early intervention prevents drop-offs",
-        },
-        {
-          name: "Scalable Process",
-          description: "Automated sequences free team capacity",
-        },
-      ]}
-    />
-
-    <FeatureDescription
-      tagline="Streamline Revenue Planning with AI-Powered Forecasting"
-      title="Sales Forecasting That Leadership Can Trust"
-      oldtitle="Ignite Accurate Revenue Planning—Achieve 95% Forecast Confidence in 30 Days"
-      description="When your sales forecasts miss the mark, you're making strategic bets in the dark — overhiring, underinvesting, and watching investor confidence evaporate. Each inaccurate prediction erodes budgets, frustrates leadership, and stalls growth."
-      validationText="Our Sales Forecasting That Leadership Can Trust service transforms your process end-to-end. We analyze your historical conversions to calibrate stage probabilities, implement seasonality and market-condition models, and automate real-time forecast generation inside HubSpot. You'll get:"
-      validationText2={`AI-driven weighting that learns from every deal, boosting accuracy to 95%.
-
-Automated variance analysis reports and executive dashboards for instant confidence.
-
-Forecast review workflows and team feedback loops that refine predictions continuously.`}
-      image={IgniteAccurateRevenuePlanning}
-      challenges={[
-        {
-          name: "Over-Optimism",
-          description: "Reps inflate deal probabilities",
-        },
-        {
-          name: "Seasonality Blindspots",
-          description: "Models ignore cyclical trends",
-        },
-        {
-          name: "Manual Spreadsheets",
-          description: "Forecasts built outside HubSpot lack integration",
-        },
-      ]}
-      solutions={[
-        {
-          name: "Data-Driven Weightings",
-          description: "Base probabilities on historical conversion rates",
-        },
-        {
-          name: "Seasonal Adjustments",
-          description: "Incorporate cycle factors into forecasts",
-        },
-        {
-          name: "In-Hub Reports",
-          description: "Automate forecast generation inside HubSpot",
-        },
-      ]}
-      impacts={[
-        {
-          name: "Accurate Projections",
-          description: "Reliable revenue predictions support planning",
-        },
-        {
-          name: "Team Trust",
-          description: "Leadership relies on HubSpot forecasts",
-        },
-        {
-          name: "Reduced Spreadsheets",
-          description: "Centralized forecasting increases transparency",
-        },
-      ]}
-    />
-
-    <FeatureDescription
-      tagline="Maximize Retention and Revenue with Automated Deal Tracking"
-      title="Automated Deal & Renewal Tracking to Plug Revenue Leaks"
-      oldtitle="Automate Deal & Renewal Tracking—Plug Revenue Leaks and Boost Retention by 30% in 30 Days"
-      description="When Missed renewals, stalled deals, and untracked upsells bleed revenue—and you might not even know it. Each lost renewal and forgotten opportunity costs you valuable MRR and stunts your growth."
-      validationText="Our Deal & Renewal Tracking stops Revenue Leaks service for good. We implement:"
-      validationText2={`Automated renewal reminders and task assignments—so no contract end date goes unseen
-
-Real-time pipeline health alerts for stalled deals and missed opportunities
-
-Expansion-opportunity workflows that flag and nurture upsell candidates
-
-Loss-reason capture tools and win/loss dashboards to uncover and eliminate revenue blockers
-
-`}
-      image={AutomateDealAndRenewalTracking}
-      challenges={[
-        {
-          name: "Missed Renewals",
-          description: "Renewal deals aren't automatically created",
-        },
-        {
-          name: "Upsell Blindspots",
-          description: "No triggers for expansion opportunities",
-        },
-        {
-          name: "Loss Reasons",
-          description: "No systematic capture of why deals are lost",
-        },
-      ]}
-      solutions={[
-        {
-          name: "Renewal Workflows",
-          description: "Auto-create deals ahead of contract end",
-        },
-        {
-          name: "Opp Identification",
-          description: "Trigger alerts for cross-sell signals",
-        },
-        {
-          name: "Reason Capture",
-          description: "Prompt reps to log loss reasons",
-        },
-      ]}
-      impacts={[
-        {
-          name: "Maximized Revenue",
-          description: "Every renewal and upsell tracked",
-        },
-        {
-          name: "Root-Cause Insights",
-          description: "Loss data drives process improvements",
-        },
-        {
-          name: "Predictable Growth",
-          description: "Reduced unexpected churn and gaps",
-        },
-      ]}
-    />
+  <!-- ============ HERO ============ -->
+  <section class="bg-gradient-to-b from-v6-bg to-white px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20 pb-10 sm:pb-14">
+    <div class="max-w-3xl mx-auto text-center">
+      <div class="flex justify-center gap-3 mb-6">
+        <span class="bg-v6-teal-50 text-v6-teal text-xs font-semibold px-3 py-1 rounded-full">HubSpot Solutions Partner</span>
+        <span class="bg-v6-copper-50 text-v6-copper text-xs font-semibold px-3 py-1 rounded-full">RevOps Specialists</span>
+      </div>
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-v6-dark leading-tight mb-5 text-balance">
+        Every Missed Renewal Is <span class="text-v6-copper">Revenue Walking Out the Door</span>
+      </h1>
+      <p class="text-base sm:text-lg text-v6-text-muted max-w-xl mx-auto mb-8 leading-relaxed">
+        Automate renewals, fix your pipeline, and make forecasting reliable again.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center mb-4">
+        <a href="/contactus" class="bg-v6-copper text-white px-8 py-3.5 rounded-xl text-base font-semibold hover:bg-v6-copper-600 transition-colors text-center">
+          Get a Free Pipeline Assessment
+        </a>
+        <a href="#how-we-work" class="border border-gray-300 text-v6-dark px-8 py-3.5 rounded-xl text-base font-medium hover:bg-gray-50 transition-colors text-center">
+          See How We Work ↓
+        </a>
+      </div>
+      <p class="text-xs text-gray-400">Free 30-minute consultation. No commitment. No sales pitch.</p>
+    </div>
   </section>
+
+
+  <!-- ============ TRUST BAR ============ -->
+  <section class="bg-white border-y border-v6-border py-4 px-4">
+    <div class="max-w-4xl mx-auto flex flex-wrap justify-center gap-8 items-center">
+      <span class="text-xs text-gray-400 font-medium uppercase tracking-wider">Trusted by</span>
+      {clientLogos.map(name => (
+        <span class="text-sm text-v6-text-muted font-semibold opacity-50">{name}</span>
+      ))}
+    </div>
+  </section>
+
+
+  <!-- ============ "IS THIS YOU?" ============ -->
+  <section class="bg-v6-bg py-14 sm:py-18 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-2xl sm:text-3xl font-bold text-v6-dark mb-3 text-center">Sound Familiar?</h2>
+      <p class="text-v6-text-muted text-center mb-8 max-w-lg mx-auto">If any of these describe your revenue team right now, we can help.</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        {painPoints.map(point => (
+          <div class="flex gap-3 items-start bg-white rounded-lg p-4 border border-v6-border">
+            <span class="text-v6-copper text-lg flex-shrink-0 mt-0.5">→</span>
+            <p class="text-sm text-v6-text-muted leading-relaxed">{point}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============ BEFORE / AFTER ============ -->
+  <section class="bg-white py-14 sm:py-18 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl sm:text-3xl font-bold text-v6-dark mb-10 text-center">The Gap We Close</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Before -->
+        <div class="bg-gray-50 rounded-xl p-6 border border-gray-200">
+          <p class="text-sm font-semibold text-v6-text-muted uppercase tracking-wider mb-4 opacity-60">Before SWOTBee</p>
+          <ul class="space-y-3">
+            <li class="flex gap-2 text-sm text-v6-text-muted"><span class="text-red-400">✗</span> Forecast wrong every quarter — no one trusts the number</li>
+            <li class="flex gap-2 text-sm text-v6-text-muted"><span class="text-red-400">✗</span> Deals go dark for weeks with no alerts</li>
+            <li class="flex gap-2 text-sm text-v6-text-muted"><span class="text-red-400">✗</span> Renewals tracked in spreadsheets, 3 missed last quarter</li>
+            <li class="flex gap-2 text-sm text-v6-text-muted"><span class="text-red-400">✗</span> Sales and marketing misaligned on lead quality</li>
+            <li class="flex gap-2 text-sm text-v6-text-muted"><span class="text-red-400">✗</span> Manual data entry consuming rep time and energy</li>
+          </ul>
+        </div>
+        <!-- After -->
+        <div class="bg-v6-teal-50 rounded-xl p-6 border border-v6-teal-100">
+          <p class="text-sm font-semibold text-v6-teal uppercase tracking-wider mb-4">After SWOTBee</p>
+          <ul class="space-y-3">
+            <li class="flex gap-2 text-sm text-v6-dark"><span class="text-v6-teal">✓</span> 85%+ forecast accuracy — leadership trusts the pipeline</li>
+            <li class="flex gap-2 text-sm text-v6-dark"><span class="text-v6-teal">✓</span> Deal alerts and stage automation catch stalled deals instantly</li>
+            <li class="flex gap-2 text-sm text-v6-dark"><span class="text-v6-teal">✓</span> Automated renewals — zero missed, 50% accuracy improvement</li>
+            <li class="flex gap-2 text-sm text-v6-dark"><span class="text-v6-teal">✓</span> Unified RevOps dashboards, shared KPIs across teams</li>
+            <li class="flex gap-2 text-sm text-v6-dark"><span class="text-v6-teal">✓</span> Activity capture runs automatically — reps focus on selling</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============ HOW WE WORK (3 Steps) ============ -->
+  <section id="how-we-work" class="bg-v6-bg py-14 sm:py-18 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl sm:text-3xl font-bold text-v6-dark mb-10 text-center">How We Work</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {processSteps.map(step => (
+          <div class="bg-white rounded-xl p-6 border border-v6-border text-center">
+            <div class="w-12 h-12 rounded-full bg-v6-copper text-white text-xl font-bold flex items-center justify-center mx-auto mb-4">{step.num}</div>
+            <h3 class="text-lg font-semibold text-v6-dark mb-2">{step.title}</h3>
+            <p class="text-sm text-v6-text-muted leading-relaxed">{step.desc}</p>
+          </div>
+        ))}
+      </div>
+      <p class="text-center text-sm text-v6-text-muted mt-6">Typical engagement: 3–6 months. Pipeline visibility in the first 2 weeks.</p>
+    </div>
+  </section>
+
+
+  <!-- ============ SERVICES ============ -->
+  <section class="bg-white py-14 sm:py-18 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-2xl sm:text-3xl font-bold text-v6-dark mb-3 text-center">What We Fix for You</h2>
+      <p class="text-v6-text-muted text-center mb-10 max-w-lg mx-auto">The revenue operations your team needs to stop guessing and start growing.</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {services.map(s => (
+          <div class="bg-v6-bg rounded-xl p-6 border border-v6-border hover:shadow-lg transition-shadow">
+            <div class="text-2xl mb-3">{s.icon}</div>
+            <h3 class="text-base font-semibold text-v6-dark mb-2">{s.title}</h3>
+            <p class="text-sm text-v6-text-muted leading-relaxed mb-3">{s.desc}</p>
+            <p class="text-xs font-semibold text-v6-teal">{s.metric}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============ TESTIMONIAL ============ -->
+  <section class="bg-v6-bg py-14 sm:py-18 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-2xl sm:text-3xl font-bold text-v6-dark mb-8 text-center">What Our Clients Say</h2>
+      <div class="bg-white rounded-xl p-8 border border-v6-border">
+        <blockquote class="text-base sm:text-lg text-v6-dark leading-relaxed italic mb-6">
+          "Before SWOTBee, our sales team couldn't tell which building they were selling to — we have multiple contracts per company across different sites. Renewals were completely manual and things slipped through. SWOTBee automated our renewal pipeline and integrated HubSpot with NetSuite and Monday.com. Renewal accuracy jumped by nearly 50%, and our sales team now focuses on growth instead of admin work."
+        </blockquote>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-v6-teal-100 flex items-center justify-center text-v6-teal font-bold text-sm">VP</div>
+          <div>
+            <p class="text-sm font-semibold text-v6-dark">VP Sales</p>
+            <p class="text-xs text-v6-text-muted">Energy Sector Company</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============ WHY SWOTBEE ============ -->
+  <section class="bg-white py-14 sm:py-18 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl sm:text-3xl font-bold text-v6-dark mb-8 text-center">Why Clients Choose SWOTBee</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div class="flex gap-4 items-start">
+          <div class="w-10 h-10 rounded-lg bg-v6-blue-50 flex items-center justify-center flex-shrink-0 text-v6-blue text-lg font-bold">1</div>
+          <div>
+            <h3 class="text-base font-semibold text-v6-dark mb-1">Workflow-First Approach</h3>
+            <p class="text-sm text-v6-text-muted leading-relaxed">We adapt HubSpot to how your team works, so adoption is natural and changes are minimal.</p>
+          </div>
+        </div>
+        <div class="flex gap-4 items-start">
+          <div class="w-10 h-10 rounded-lg bg-v6-copper-50 flex items-center justify-center flex-shrink-0 text-v6-copper text-lg font-bold">2</div>
+          <div>
+            <h3 class="text-base font-semibold text-v6-dark mb-1">Day-One Results</h3>
+            <p class="text-sm text-v6-text-muted leading-relaxed">High-impact changes that show immediate ROI — not a 6-month wait for a strategy deck.</p>
+          </div>
+        </div>
+        <div class="flex gap-4 items-start">
+          <div class="w-10 h-10 rounded-lg bg-v6-teal-50 flex items-center justify-center flex-shrink-0 text-v6-teal text-lg font-bold">3</div>
+          <div>
+            <h3 class="text-base font-semibold text-v6-dark mb-1">Data Quality Obsession</h3>
+            <p class="text-sm text-v6-text-muted leading-relaxed">Clean data, accurate forecasts, zero missed renewals. We don't build on a bad foundation.</p>
+          </div>
+        </div>
+        <div class="flex gap-4 items-start">
+          <div class="w-10 h-10 rounded-lg bg-v6-amber-50 flex items-center justify-center flex-shrink-0 text-v6-amber text-lg font-bold">4</div>
+          <div>
+            <h3 class="text-base font-semibold text-v6-dark mb-1">Built for Your Industry</h3>
+            <p class="text-sm text-v6-text-muted leading-relaxed">Tools and integrations built for Energy, Manufacturing, Construction, and SaaS — not generic templates.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============ FAQ ============ -->
+  <section class="bg-v6-bg py-14 sm:py-18 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-2xl sm:text-3xl font-bold text-v6-dark mb-8 text-center">Frequently Asked Questions</h2>
+      <div class="space-y-4">
+        {faqs.map(faq => (
+          <details class="bg-white rounded-xl border border-v6-border group">
+            <summary class="flex items-center justify-between cursor-pointer px-6 py-4 text-base font-semibold text-v6-dark">
+              {faq.q}
+              <svg class="w-5 h-5 text-v6-text-muted flex-shrink-0 ml-4 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+            </summary>
+            <div class="px-6 pb-5 text-sm text-v6-text-muted leading-relaxed">
+              {faq.a}
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============ RISK REVERSAL + CTA ============ -->
+  <section class="bg-gradient-to-br from-v6-copper to-v6-copper-600 py-16 sm:py-20 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-2xl mx-auto text-center">
+      <h2 class="text-2xl sm:text-3xl font-bold text-white mb-4">Zero Risk to Get Started</h2>
+      <p class="text-v6-copper-50 text-base sm:text-lg mb-3">
+        Book a free 30-minute discovery call. No commitment, no sales pitch — just an honest conversation about whether we can help.
+      </p>
+      <p class="text-v6-copper-100 text-sm mb-8 opacity-80">
+        No long-term contracts. Month-to-month engagement. 30-day satisfaction checkpoint.
+      </p>
+      <a href="/contactus" class="bg-white text-v6-copper px-8 py-3.5 rounded-xl text-base font-semibold hover:bg-gray-50 transition-colors inline-block">
+        Book Your Free Pipeline Assessment
+      </a>
+    </div>
+  </section>
+
   <Footer />
 </Layout>
