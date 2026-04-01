@@ -1,0 +1,69 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/astro/Navbar.astro';
+---
+
+<BaseLayout title="Logo — Palette 1: Trust & Authority">
+  <Navbar />
+  <div style="background: #f8fafb; min-height: 100vh; padding: 3rem 1rem;">
+    <div style="max-width: 900px; margin: 0 auto;">
+      <h1 style="font-size: 1.5rem; font-weight: 700; color: #1b2a37; margin-bottom: 0.5rem; text-align: center;">Palette 1: Trust & Authority</h1>
+      <p style="text-align: center; color: #5b87ae; margin-bottom: 0.5rem; font-size: 0.85rem;">Deep Navy · Coral Orange · Teal · Cream · Slate Gray</p>
+      <div style="display: flex; justify-content: center; gap: 0.5rem; margin-bottom: 2.5rem;">
+        <div style="width: 40px; height: 40px; border-radius: 8px; background: #1b2a37;" title="#1b2a37"></div>
+        <div style="width: 40px; height: 40px; border-radius: 8px; background: #ff5c35;" title="#ff5c35"></div>
+        <div style="width: 40px; height: 40px; border-radius: 8px; background: #70c1b3;" title="#70c1b3"></div>
+        <div style="width: 40px; height: 40px; border-radius: 8px; background: #fef4ea;" title="#fef4ea; border: 1px solid #e5e7eb"></div>
+        <div style="width: 40px; height: 40px; border-radius: 8px; background: #3d5e7b;" title="#3d5e7b"></div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 3rem;">
+        <!-- Dark bg -->
+        <div style="background: #1b2a37; border-radius: 14px; padding: 2.5rem; display: flex; align-items: center; justify-content: center; gap: 1rem;">
+          <svg viewBox="0 0 120 120" width="80" height="80" xmlns="http://www.w3.org/2000/svg">
+            <!-- 2x2 grid: Primary(navy), Accent(orange), Teal, Cream -->
+            <!-- Top-left: Coral Orange -->
+            <path d="M58,2 L58,58 L2,58 L2,20 Z" fill="#ff5c35" />
+            <!-- Top-right: Deep Navy -->
+            <path d="M62,2 L118,20 L118,58 L62,58 Z" fill="#3d5e7b" />
+            <!-- Bottom-left: Teal -->
+            <path d="M2,62 L58,62 L58,118 L2,100 Z" fill="#70c1b3" />
+            <!-- Bottom-right: Cream/warm -->
+            <path d="M62,62 L118,62 L118,100 L62,118 Z" fill="#fef4ea" />
+          </svg>
+          <div>
+            <div style="color: #ffffff; font-size: 1.3rem; font-weight: 700; font-family: sans-serif;">SWOT<span style="color: #70c1b3;">bee</span></div>
+          </div>
+        </div>
+
+        <!-- Light bg -->
+        <div style="background: #ffffff; border: 1px solid #e5e7eb; border-radius: 14px; padding: 2.5rem; display: flex; align-items: center; justify-content: center; gap: 1rem;">
+          <svg viewBox="0 0 120 120" width="80" height="80" xmlns="http://www.w3.org/2000/svg">
+            <path d="M58,2 L58,58 L2,58 L2,20 Z" fill="#ff5c35" />
+            <path d="M62,2 L118,20 L118,58 L62,58 Z" fill="#1b2a37" />
+            <path d="M2,62 L58,62 L58,118 L2,100 Z" fill="#70c1b3" />
+            <path d="M62,62 L118,62 L118,100 L62,118 Z" fill="#fef4ea" stroke="#e5e7eb" stroke-width="1" />
+          </svg>
+          <div>
+            <div style="color: #1b2a37; font-size: 1.3rem; font-weight: 700; font-family: sans-serif;">SWOT<span style="color: #70c1b3;">bee</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sizes -->
+      <div style="background: #1b2a37; border-radius: 12px; padding: 2rem; display: flex; align-items: end; justify-content: center; gap: 2.5rem; margin-bottom: 2rem;">
+        {[16, 32, 48, 80, 120].map(size => (
+          <div style="text-align: center;">
+            <svg viewBox="0 0 120 120" width={size} height={size} xmlns="http://www.w3.org/2000/svg">
+              <path d="M58,2 L58,58 L2,58 L2,20 Z" fill="#ff5c35" />
+              <path d="M62,2 L118,20 L118,58 L62,58 Z" fill="#3d5e7b" />
+              <path d="M2,62 L58,62 L58,118 L2,100 Z" fill="#70c1b3" />
+              <path d="M62,62 L118,62 L118,100 L62,118 Z" fill="#fef4ea" />
+            </svg>
+            <p style="color: #92afc9; font-size: 0.6rem; margin-top: 0.5rem;">{size}px</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</BaseLayout>

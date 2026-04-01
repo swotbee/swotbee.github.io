@@ -1,0 +1,68 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/astro/Navbar.astro';
+---
+
+<BaseLayout title="Logo — Palette 3: Revenue Growth">
+  <Navbar />
+  <div style="background: #faf5eb; min-height: 100vh; padding: 3rem 1rem;">
+    <div style="max-width: 900px; margin: 0 auto;">
+      <h1 style="font-size: 1.5rem; font-weight: 700; color: #141f29; margin-bottom: 0.5rem; text-align: center;">Palette 3: Revenue Growth</h1>
+      <p style="text-align: center; color: #374151; margin-bottom: 0.5rem; font-size: 0.85rem;">Charcoal Navy · Vibrant Orange · Growth Green · Sand · Graphite</p>
+      <div style="display: flex; justify-content: center; gap: 0.5rem; margin-bottom: 2.5rem;">
+        <div style="width: 40px; height: 40px; border-radius: 8px; background: #141f29;" title="#141f29"></div>
+        <div style="width: 40px; height: 40px; border-radius: 8px; background: #ff5c35;" title="#ff5c35"></div>
+        <div style="width: 40px; height: 40px; border-radius: 8px; background: #22c55e;" title="#22c55e"></div>
+        <div style="width: 40px; height: 40px; border-radius: 8px; background: #faf5eb; border: 1px solid #e5e7eb;" title="#faf5eb"></div>
+        <div style="width: 40px; height: 40px; border-radius: 8px; background: #374151;" title="#374151"></div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 3rem;">
+        <!-- Dark bg -->
+        <div style="background: #141f29; border-radius: 14px; padding: 2.5rem; display: flex; align-items: center; justify-content: center; gap: 1rem;">
+          <svg viewBox="0 0 120 120" width="80" height="80" xmlns="http://www.w3.org/2000/svg">
+            <!-- Top-left: Vibrant Orange -->
+            <path d="M58,2 L58,58 L2,58 L2,20 Z" fill="#ff5c35" />
+            <!-- Top-right: Growth Green -->
+            <path d="M62,2 L118,20 L118,58 L62,58 Z" fill="#22c55e" />
+            <!-- Bottom-left: Sand/warm -->
+            <path d="M2,62 L58,62 L58,118 L2,100 Z" fill="#faf5eb" />
+            <!-- Bottom-right: Graphite -->
+            <path d="M62,62 L118,62 L118,100 L62,118 Z" fill="#374151" />
+          </svg>
+          <div>
+            <div style="color: #ffffff; font-size: 1.3rem; font-weight: 700; font-family: sans-serif;">SWOT<span style="color: #22c55e;">bee</span></div>
+          </div>
+        </div>
+
+        <!-- Light bg -->
+        <div style="background: #ffffff; border: 1px solid #e5e7eb; border-radius: 14px; padding: 2.5rem; display: flex; align-items: center; justify-content: center; gap: 1rem;">
+          <svg viewBox="0 0 120 120" width="80" height="80" xmlns="http://www.w3.org/2000/svg">
+            <path d="M58,2 L58,58 L2,58 L2,20 Z" fill="#ff5c35" />
+            <path d="M62,2 L118,20 L118,58 L62,58 Z" fill="#22c55e" />
+            <path d="M2,62 L58,62 L58,118 L2,100 Z" fill="#141f29" />
+            <path d="M62,62 L118,62 L118,100 L62,118 Z" fill="#374151" />
+          </svg>
+          <div>
+            <div style="color: #141f29; font-size: 1.3rem; font-weight: 700; font-family: sans-serif;">SWOT<span style="color: #22c55e;">bee</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sizes -->
+      <div style="background: #141f29; border-radius: 12px; padding: 2rem; display: flex; align-items: end; justify-content: center; gap: 2.5rem; margin-bottom: 2rem;">
+        {[16, 32, 48, 80, 120].map(size => (
+          <div style="text-align: center;">
+            <svg viewBox="0 0 120 120" width={size} height={size} xmlns="http://www.w3.org/2000/svg">
+              <path d="M58,2 L58,58 L2,58 L2,20 Z" fill="#ff5c35" />
+              <path d="M62,2 L118,20 L118,58 L62,58 Z" fill="#22c55e" />
+              <path d="M2,62 L58,62 L58,118 L2,100 Z" fill="#faf5eb" />
+              <path d="M62,62 L118,62 L118,100 L62,118 Z" fill="#374151" />
+            </svg>
+            <p style="color: #374151; font-size: 0.6rem; margin-top: 0.5rem;">{size}px</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</BaseLayout>

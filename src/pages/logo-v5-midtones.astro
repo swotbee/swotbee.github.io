@@ -1,0 +1,511 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/astro/Navbar.astro';
+
+// V5 Mid-tones palette
+const blue = '#1A7AB5';
+const teal = '#5AAB9D';
+const amber = '#D4960A';
+const yellow = '#E0B820';
+
+// Derived shades
+const blueDark = '#0A3D6B';
+const blueLight = '#A7D8E8';
+const tealDark = '#3D8A7A';
+const tealLight = '#B5DDD4';
+const amberDark = '#C48800';
+const yellowLight = '#FDD96B';
+const dark = '#1A2530';
+---
+
+<BaseLayout title="Logo — V5 Mid-tones Full Palette">
+  <Navbar />
+  <div style="background: #f5f3ef; min-height: 100vh; padding: 3rem 1rem;">
+    <div style="max-width: 1100px; margin: 0 auto;">
+
+      <h1 style="font-size: 1.8rem; font-weight: 700; color: #1a2530; margin-bottom: 0.5rem; text-align: center;">V5 Mid-tones — All Logos</h1>
+      <p style="text-align: center; color: #5a6a78; margin-bottom: 0.5rem; font-size: 0.9rem;">Mid Blue · Mid Teal · Mid Amber · Warm Yellow</p>
+
+      <!-- Swatches -->
+      <div style="display: flex; justify-content: center; gap: 0.75rem; margin-bottom: 2.5rem;">
+        <div style="text-align:center;"><div style={`width: 48px; height: 48px; border-radius: 8px; background: ${blue};`}></div><span style="font-size: 0.6rem; color: #5a6a78;">Blue<br/>{blue}</span></div>
+        <div style="text-align:center;"><div style={`width: 48px; height: 48px; border-radius: 8px; background: ${teal};`}></div><span style="font-size: 0.6rem; color: #5a6a78;">Teal<br/>{teal}</span></div>
+        <div style="text-align:center;"><div style={`width: 48px; height: 48px; border-radius: 8px; background: ${amber};`}></div><span style="font-size: 0.6rem; color: #5a6a78;">Amber<br/>{amber}</span></div>
+        <div style="text-align:center;"><div style={`width: 48px; height: 48px; border-radius: 8px; background: ${yellow};`}></div><span style="font-size: 0.6rem; color: #5a6a78;">Yellow<br/>{yellow}</span></div>
+      </div>
+
+
+      <!-- ============ ALL LOGO SHAPES ============ -->
+      <h2 style="font-size: 1.2rem; font-weight: 600; color: #1a2530; margin-bottom: 1.5rem; text-align: center;">Logo Shapes (4 colors)</h2>
+
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-bottom: 3rem;">
+
+        <!-- Split Hex -->
+        <div style="text-align: center;">
+          <p style="font-size: 0.8rem; color: #5a6a78; margin-bottom: 0.5rem; font-weight: 600;">Split Hexagon</p>
+          <div style="background: #1a2530; border-radius: 12px; padding: 1.5rem; margin-bottom: 0.5rem; display: flex; align-items: center; justify-content: center;">
+            <svg viewBox="0 0 120 120" width="90" height="90" xmlns="http://www.w3.org/2000/svg">
+              <path d="M60,10 L103,35 L60,60 L17,35 Z" fill={amber} />
+              <path d="M103,35 L103,85 L60,60 Z" fill={teal} />
+              <path d="M103,85 L60,110 L17,85 L60,60 Z" fill={blue} />
+              <path d="M17,85 L17,35 L60,60 Z" fill={yellow} />
+              <polygon points="60,10 103,35 103,85 60,110 17,85 17,35" fill="none" stroke={amber} stroke-width="1" opacity="0.3" />
+            </svg>
+          </div>
+          <div style="background: #ffffff; border: 1px solid #e5e2da; border-radius: 12px; padding: 1.5rem; display: flex; align-items: center; justify-content: center;">
+            <svg viewBox="0 0 120 120" width="90" height="90" xmlns="http://www.w3.org/2000/svg">
+              <path d="M60,10 L103,35 L60,60 L17,35 Z" fill={amber} />
+              <path d="M103,35 L103,85 L60,60 Z" fill={teal} />
+              <path d="M103,85 L60,110 L17,85 L60,60 Z" fill={blue} />
+              <path d="M17,85 L17,35 L60,60 Z" fill={yellow} />
+              <polygon points="60,10 103,35 103,85 60,110 17,85 17,35" fill="none" stroke="#ddd" stroke-width="0.75" />
+            </svg>
+          </div>
+        </div>
+
+        <!-- 6 Slices -->
+        <div style="text-align: center;">
+          <p style="font-size: 0.8rem; color: #5a6a78; margin-bottom: 0.5rem; font-weight: 600;">6 Slices</p>
+          <div style="background: #1a2530; border-radius: 12px; padding: 1.5rem; margin-bottom: 0.5rem; display: flex; align-items: center; justify-content: center;">
+            <svg viewBox="0 0 120 120" width="90" height="90" xmlns="http://www.w3.org/2000/svg">
+              <path d="M60,60 L60,10 L103,35 Z" fill={amber} />
+              <path d="M60,60 L103,35 L103,85 Z" fill={teal} />
+              <path d="M60,60 L103,85 L60,110 Z" fill={blue} />
+              <path d="M60,60 L60,110 L17,85 Z" fill={blueDark} />
+              <path d="M60,60 L17,85 L17,35 Z" fill={yellow} />
+              <path d="M60,60 L17,35 L60,10 Z" fill={amberDark} />
+              <polygon points="60,10 103,35 103,85 60,110 17,85 17,35" fill="none" stroke={amber} stroke-width="1" opacity="0.3" />
+            </svg>
+          </div>
+          <div style="background: #ffffff; border: 1px solid #e5e2da; border-radius: 12px; padding: 1.5rem; display: flex; align-items: center; justify-content: center;">
+            <svg viewBox="0 0 120 120" width="90" height="90" xmlns="http://www.w3.org/2000/svg">
+              <path d="M60,60 L60,10 L103,35 Z" fill={amber} />
+              <path d="M60,60 L103,35 L103,85 Z" fill={teal} />
+              <path d="M60,60 L103,85 L60,110 Z" fill={blue} />
+              <path d="M60,60 L60,110 L17,85 Z" fill={blueDark} />
+              <path d="M60,60 L17,85 L17,35 Z" fill={yellow} />
+              <path d="M60,60 L17,35 L60,10 Z" fill={amberDark} />
+              <polygon points="60,10 103,35 103,85 60,110 17,85 17,35" fill="none" stroke="#ddd" stroke-width="0.75" />
+            </svg>
+          </div>
+        </div>
+
+        <!-- Quadrant -->
+        <div style="text-align: center;">
+          <p style="font-size: 0.8rem; color: #5a6a78; margin-bottom: 0.5rem; font-weight: 600;">Quadrant</p>
+          <div style="background: #1a2530; border-radius: 12px; padding: 1.5rem; margin-bottom: 0.5rem; display: flex; align-items: center; justify-content: center;">
+            <svg viewBox="0 0 120 120" width="90" height="90" xmlns="http://www.w3.org/2000/svg">
+              <path d="M58,2 L58,58 L2,58 L2,20 Z" fill={amber} />
+              <path d="M62,2 L118,20 L118,58 L62,58 Z" fill={teal} />
+              <path d="M2,62 L58,62 L58,118 L2,100 Z" fill={yellow} />
+              <path d="M62,62 L118,62 L118,100 L62,118 Z" fill={blue} />
+            </svg>
+          </div>
+          <div style="background: #ffffff; border: 1px solid #e5e2da; border-radius: 12px; padding: 1.5rem; display: flex; align-items: center; justify-content: center;">
+            <svg viewBox="0 0 120 120" width="90" height="90" xmlns="http://www.w3.org/2000/svg">
+              <path d="M58,2 L58,58 L2,58 L2,20 Z" fill={amber} />
+              <path d="M62,2 L118,20 L118,58 L62,58 Z" fill={teal} />
+              <path d="M2,62 L58,62 L58,118 L2,100 Z" fill={yellow} />
+              <path d="M62,62 L118,62 L118,100 L62,118 Z" fill={blue} />
+            </svg>
+          </div>
+        </div>
+
+        <!-- Cluster (4 color) -->
+        <div style="text-align: center;">
+          <p style="font-size: 0.8rem; color: #5a6a78; margin-bottom: 0.5rem; font-weight: 600;">Cluster (4 color)</p>
+          <div style="background: #1a2530; border-radius: 12px; padding: 1.5rem; margin-bottom: 0.5rem; display: flex; align-items: center; justify-content: center;">
+            <svg viewBox="0 0 120 110" width="90" height="82" xmlns="http://www.w3.org/2000/svg">
+              <polygon points="38,8 54,18 54,36 38,46 22,36 22,18" fill={amber} />
+              <polygon points="72,8 88,18 88,36 72,46 56,36 56,18" fill={blue} />
+              <polygon points="21,40 37,50 37,68 21,78 5,68 5,50" fill={yellow} />
+              <polygon points="55,40 71,50 71,68 55,78 39,68 39,50" fill={teal} />
+              <polygon points="89,40 105,50 105,68 89,78 73,68 73,50" fill={tealDark} />
+              <polygon points="38,72 54,82 54,100 38,110 22,100 22,82" fill={amberDark} />
+              <polygon points="72,72 88,82 88,100 72,110 56,100 56,82" fill={blueDark} />
+            </svg>
+          </div>
+          <div style="background: #ffffff; border: 1px solid #e5e2da; border-radius: 12px; padding: 1.5rem; display: flex; align-items: center; justify-content: center;">
+            <svg viewBox="0 0 120 110" width="90" height="82" xmlns="http://www.w3.org/2000/svg">
+              <polygon points="38,8 54,18 54,36 38,46 22,36 22,18" fill={amber} />
+              <polygon points="72,8 88,18 88,36 72,46 56,36 56,18" fill={blue} />
+              <polygon points="21,40 37,50 37,68 21,78 5,68 5,50" fill={yellow} />
+              <polygon points="55,40 71,50 71,68 55,78 39,68 39,50" fill={teal} />
+              <polygon points="89,40 105,50 105,68 89,78 73,68 73,50" fill={dark} />
+              <polygon points="38,72 54,82 54,100 38,110 22,100 22,82" fill={amberDark} />
+              <polygon points="72,72 88,82 88,100 72,110 56,100 56,82" fill={blueDark} />
+            </svg>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- ============ CLUSTER VARIATIONS: 2 and 3 COLORS ============ -->
+      <h2 style="font-size: 1.2rem; font-weight: 600; color: #1a2530; margin-bottom: 1.5rem; text-align: center;">Cluster — 2 & 3 Color Variations</h2>
+
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-bottom: 3rem;">
+
+        <!-- 2-color: Blue + Teal -->
+        <div style="text-align: center;">
+          <p style="font-size: 0.75rem; color: #5a6a78; margin-bottom: 0.4rem; font-weight: 600;">2 color: Blue + Teal</p>
+          <div style="background: #1a2530; border-radius: 12px; padding: 1.5rem; margin-bottom: 0.5rem; display: flex; align-items: center; justify-content: center;">
+            <svg viewBox="0 0 120 110" width="90" height="82" xmlns="http://www.w3.org/2000/svg">
+              <polygon points="38,8 54,18 54,36 38,46 22,36 22,18" fill={blue} />
+              <polygon points="72,8 88,18 88,36 72,46 56,36 56,18" fill={teal} />
+              <polygon points="21,40 37,50 37,68 21,78 5,68 5,50" fill={teal} />
+              <polygon points="55,40 71,50 71,68 55,78 39,68 39,50" fill={blue} />
+              <polygon points="89,40 105,50 105,68 89,78 73,68 73,50" fill={tealDark} />
+              <polygon points="38,72 54,82 54,100 38,110 22,100 22,82" fill={blueDark} />
+              <polygon points="72,72 88,82 88,100 72,110 56,100 56,82" fill={teal} />
+            </svg>
+          </div>
+          <div style="background: #ffffff; border: 1px solid #e5e2da; border-radius: 12px; padding: 1.5rem; display: flex; align-items: center; justify-content: center;">
+            <svg viewBox="0 0 120 110" width="90" height="82" xmlns="http://www.w3.org/2000/svg">
+              <polygon points="38,8 54,18 54,36 38,46 22,36 22,18" fill={blue} />
+              <polygon points="72,8 88,18 88,36 72,46 56,36 56,18" fill={teal} />
+              <polygon points="21,40 37,50 37,68 21,78 5,68 5,50" fill={tealLight} />
+              <polygon points="55,40 71,50 71,68 55,78 39,68 39,50" fill={blueLight} />
+              <polygon points="89,40 105,50 105,68 89,78 73,68 73,50" fill={teal} />
+              <polygon points="38,72 54,82 54,100 38,110 22,100 22,82" fill={blue} />
+              <polygon points="72,72 88,82 88,100 72,110 56,100 56,82" fill={tealDark} />
+            </svg>
+          </div>
+        </div>
+
+        <!-- 2-color: Amber + Blue -->
+        <div style="text-align: center;">
+          <p style="font-size: 0.75rem; color: #5a6a78; margin-bottom: 0.4rem; font-weight: 600;">2 color: Amber + Blue</p>
+          <div style="background: #1a2530; border-radius: 12px; padding: 1.5rem; margin-bottom: 0.5rem; display: flex; align-items: center; justify-content: center;">
+            <svg viewBox="0 0 120 110" width="90" height="82" xmlns="http://www.w3.org/2000/svg">
+              <polygon points="38,8 54,18 54,36 38,46 22,36 22,18" fill={amber} />
+              <polygon points="72,8 88,18 88,36 72,46 56,36 56,18" fill={blue} />
+              <polygon points="21,40 37,50 37,68 21,78 5,68 5,50" fill={blue} />
+              <polygon points="55,40 71,50 71,68 55,78 39,68 39,50" fill={amber} />
+              <polygon points="89,40 105,50 105,68 89,78 73,68 73,50" fill={blueDark} />
+              <polygon points="38,72 54,82 54,100 38,110 22,100 22,82" fill={amberDark} />
+              <polygon points="72,72 88,82 88,100 72,110 56,100 56,82" fill={blue} />
+            </svg>
+          </div>
+          <div style="background: #ffffff; border: 1px solid #e5e2da; border-radius: 12px; padding: 1.5rem; display: flex; align-items: center; justify-content: center;">
+            <svg viewBox="0 0 120 110" width="90" height="82" xmlns="http://www.w3.org/2000/svg">
+              <polygon points="38,8 54,18 54,36 38,46 22,36 22,18" fill={amber} />
+              <polygon points="72,8 88,18 88,36 72,46 56,36 56,18" fill={blue} />
+              <polygon points="21,40 37,50 37,68 21,78 5,68 5,50" fill={blueLight} />
+              <polygon points="55,40 71,50 71,68 55,78 39,68 39,50" fill={yellowLight} />
+              <polygon points="89,40 105,50 105,68 89,78 73,68 73,50" fill={blue} />
+              <polygon points="38,72 54,82 54,100 38,110 22,100 22,82" fill={amber} />
+              <polygon points="72,72 88,82 88,100 72,110 56,100 56,82" fill={blueDark} />
+            </svg>
+          </div>
+        </div>
+
+        <!-- 2-color: Amber + Teal -->
+        <div style="text-align: center;">
+          <p style="font-size: 0.75rem; color: #5a6a78; margin-bottom: 0.4rem; font-weight: 600;">2 color: Amber + Teal</p>
+          <div style="background: #1a2530; border-radius: 12px; padding: 1.5rem; margin-bottom: 0.5rem; display: flex; align-items: center; justify-content: center;">
+            <svg viewBox="0 0 120 110" width="90" height="82" xmlns="http://www.w3.org/2000/svg">
+              <polygon points="38,8 54,18 54,36 38,46 22,36 22,18" fill={amber} />
+              <polygon points="72,8 88,18 88,36 72,46 56,36 56,18" fill={teal} />
+              <polygon points="21,40 37,50 37,68 21,78 5,68 5,50" fill={teal} />
+              <polygon points="55,40 71,50 71,68 55,78 39,68 39,50" fill={amber} />
+              <polygon points="89,40 105,50 105,68 89,78 73,68 73,50" fill={tealDark} />
+              <polygon points="38,72 54,82 54,100 38,110 22,100 22,82" fill={amberDark} />
+              <polygon points="72,72 88,82 88,100 72,110 56,100 56,82" fill={teal} />
+            </svg>
+          </div>
+          <div style="background: #ffffff; border: 1px solid #e5e2da; border-radius: 12px; padding: 1.5rem; display: flex; align-items: center; justify-content: center;">
+            <svg viewBox="0 0 120 110" width="90" height="82" xmlns="http://www.w3.org/2000/svg">
+              <polygon points="38,8 54,18 54,36 38,46 22,36 22,18" fill={amber} />
+              <polygon points="72,8 88,18 88,36 72,46 56,36 56,18" fill={teal} />
+              <polygon points="21,40 37,50 37,68 21,78 5,68 5,50" fill={tealLight} />
+              <polygon points="55,40 71,50 71,68 55,78 39,68 39,50" fill={yellowLight} />
+              <polygon points="89,40 105,50 105,68 89,78 73,68 73,50" fill={tealDark} />
+              <polygon points="38,72 54,82 54,100 38,110 22,100 22,82" fill={amberDark} />
+              <polygon points="72,72 88,82 88,100 72,110 56,100 56,82" fill={teal} />
+            </svg>
+          </div>
+        </div>
+
+        <!-- 3-color: Amber + Blue + Teal -->
+        <div style="text-align: center;">
+          <p style="font-size: 0.75rem; color: #5a6a78; margin-bottom: 0.4rem; font-weight: 600;">3 color: Amber+Blue+Teal</p>
+          <div style="background: #1a2530; border-radius: 12px; padding: 1.5rem; margin-bottom: 0.5rem; display: flex; align-items: center; justify-content: center;">
+            <svg viewBox="0 0 120 110" width="90" height="82" xmlns="http://www.w3.org/2000/svg">
+              <polygon points="38,8 54,18 54,36 38,46 22,36 22,18" fill={amber} />
+              <polygon points="72,8 88,18 88,36 72,46 56,36 56,18" fill={blue} />
+              <polygon points="21,40 37,50 37,68 21,78 5,68 5,50" fill={teal} />
+              <polygon points="55,40 71,50 71,68 55,78 39,68 39,50" fill={amber} />
+              <polygon points="89,40 105,50 105,68 89,78 73,68 73,50" fill={blueDark} />
+              <polygon points="38,72 54,82 54,100 38,110 22,100 22,82" fill={tealDark} />
+              <polygon points="72,72 88,82 88,100 72,110 56,100 56,82" fill={amberDark} />
+            </svg>
+          </div>
+          <div style="background: #ffffff; border: 1px solid #e5e2da; border-radius: 12px; padding: 1.5rem; display: flex; align-items: center; justify-content: center;">
+            <svg viewBox="0 0 120 110" width="90" height="82" xmlns="http://www.w3.org/2000/svg">
+              <polygon points="38,8 54,18 54,36 38,46 22,36 22,18" fill={amber} />
+              <polygon points="72,8 88,18 88,36 72,46 56,36 56,18" fill={blue} />
+              <polygon points="21,40 37,50 37,68 21,78 5,68 5,50" fill={teal} />
+              <polygon points="55,40 71,50 71,68 55,78 39,68 39,50" fill={yellowLight} />
+              <polygon points="89,40 105,50 105,68 89,78 73,68 73,50" fill={blueDark} />
+              <polygon points="38,72 54,82 54,100 38,110 22,100 22,82" fill={tealDark} />
+              <polygon points="72,72 88,82 88,100 72,110 56,100 56,82" fill={blueLight} />
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- More 3-color cluster variations -->
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-bottom: 3rem;">
+
+        <!-- 3-color: Blue shades + Amber accent -->
+        <div style="text-align: center;">
+          <p style="font-size: 0.75rem; color: #5a6a78; margin-bottom: 0.4rem; font-weight: 600;">3c: Blue shades + Amber</p>
+          <div style="background: #1a2530; border-radius: 12px; padding: 1.5rem; margin-bottom: 0.5rem; display: flex; align-items: center; justify-content: center;">
+            <svg viewBox="0 0 120 110" width="90" height="82" xmlns="http://www.w3.org/2000/svg">
+              <polygon points="38,8 54,18 54,36 38,46 22,36 22,18" fill={amber} />
+              <polygon points="72,8 88,18 88,36 72,46 56,36 56,18" fill={blue} />
+              <polygon points="21,40 37,50 37,68 21,78 5,68 5,50" fill={blueDark} />
+              <polygon points="55,40 71,50 71,68 55,78 39,68 39,50" fill={amber} />
+              <polygon points="89,40 105,50 105,68 89,78 73,68 73,50" fill={blue} />
+              <polygon points="38,72 54,82 54,100 38,110 22,100 22,82" fill={blueDark} />
+              <polygon points="72,72 88,82 88,100 72,110 56,100 56,82" fill={amberDark} />
+            </svg>
+          </div>
+          <div style="background: #ffffff; border: 1px solid #e5e2da; border-radius: 12px; padding: 1.5rem; display: flex; align-items: center; justify-content: center;">
+            <svg viewBox="0 0 120 110" width="90" height="82" xmlns="http://www.w3.org/2000/svg">
+              <polygon points="38,8 54,18 54,36 38,46 22,36 22,18" fill={amber} />
+              <polygon points="72,8 88,18 88,36 72,46 56,36 56,18" fill={blue} />
+              <polygon points="21,40 37,50 37,68 21,78 5,68 5,50" fill={blueLight} />
+              <polygon points="55,40 71,50 71,68 55,78 39,68 39,50" fill={yellowLight} />
+              <polygon points="89,40 105,50 105,68 89,78 73,68 73,50" fill={blue} />
+              <polygon points="38,72 54,82 54,100 38,110 22,100 22,82" fill={blueDark} />
+              <polygon points="72,72 88,82 88,100 72,110 56,100 56,82" fill={amber} />
+            </svg>
+          </div>
+        </div>
+
+        <!-- 3-color: Teal shades + Amber -->
+        <div style="text-align: center;">
+          <p style="font-size: 0.75rem; color: #5a6a78; margin-bottom: 0.4rem; font-weight: 600;">3c: Teal shades + Amber</p>
+          <div style="background: #1a2530; border-radius: 12px; padding: 1.5rem; margin-bottom: 0.5rem; display: flex; align-items: center; justify-content: center;">
+            <svg viewBox="0 0 120 110" width="90" height="82" xmlns="http://www.w3.org/2000/svg">
+              <polygon points="38,8 54,18 54,36 38,46 22,36 22,18" fill={teal} />
+              <polygon points="72,8 88,18 88,36 72,46 56,36 56,18" fill={amber} />
+              <polygon points="21,40 37,50 37,68 21,78 5,68 5,50" fill={tealDark} />
+              <polygon points="55,40 71,50 71,68 55,78 39,68 39,50" fill={teal} />
+              <polygon points="89,40 105,50 105,68 89,78 73,68 73,50" fill={amberDark} />
+              <polygon points="38,72 54,82 54,100 38,110 22,100 22,82" fill={teal} />
+              <polygon points="72,72 88,82 88,100 72,110 56,100 56,82" fill={tealDark} />
+            </svg>
+          </div>
+          <div style="background: #ffffff; border: 1px solid #e5e2da; border-radius: 12px; padding: 1.5rem; display: flex; align-items: center; justify-content: center;">
+            <svg viewBox="0 0 120 110" width="90" height="82" xmlns="http://www.w3.org/2000/svg">
+              <polygon points="38,8 54,18 54,36 38,46 22,36 22,18" fill={teal} />
+              <polygon points="72,8 88,18 88,36 72,46 56,36 56,18" fill={amber} />
+              <polygon points="21,40 37,50 37,68 21,78 5,68 5,50" fill={tealLight} />
+              <polygon points="55,40 71,50 71,68 55,78 39,68 39,50" fill={teal} />
+              <polygon points="89,40 105,50 105,68 89,78 73,68 73,50" fill={yellowLight} />
+              <polygon points="38,72 54,82 54,100 38,110 22,100 22,82" fill={tealDark} />
+              <polygon points="72,72 88,82 88,100 72,110 56,100 56,82" fill={teal} />
+            </svg>
+          </div>
+        </div>
+
+        <!-- 2-color: Blue monochrome + Amber pop -->
+        <div style="text-align: center;">
+          <p style="font-size: 0.75rem; color: #5a6a78; margin-bottom: 0.4rem; font-weight: 600;">2c: Blue mono + Amber</p>
+          <div style="background: #1a2530; border-radius: 12px; padding: 1.5rem; margin-bottom: 0.5rem; display: flex; align-items: center; justify-content: center;">
+            <svg viewBox="0 0 120 110" width="90" height="82" xmlns="http://www.w3.org/2000/svg">
+              <polygon points="38,8 54,18 54,36 38,46 22,36 22,18" fill={blue} />
+              <polygon points="72,8 88,18 88,36 72,46 56,36 56,18" fill={blueDark} />
+              <polygon points="21,40 37,50 37,68 21,78 5,68 5,50" fill={blueDark} />
+              <polygon points="55,40 71,50 71,68 55,78 39,68 39,50" fill={amber} />
+              <polygon points="89,40 105,50 105,68 89,78 73,68 73,50" fill={blue} />
+              <polygon points="38,72 54,82 54,100 38,110 22,100 22,82" fill={blue} />
+              <polygon points="72,72 88,82 88,100 72,110 56,100 56,82" fill={blueDark} />
+            </svg>
+          </div>
+          <div style="background: #ffffff; border: 1px solid #e5e2da; border-radius: 12px; padding: 1.5rem; display: flex; align-items: center; justify-content: center;">
+            <svg viewBox="0 0 120 110" width="90" height="82" xmlns="http://www.w3.org/2000/svg">
+              <polygon points="38,8 54,18 54,36 38,46 22,36 22,18" fill={blue} />
+              <polygon points="72,8 88,18 88,36 72,46 56,36 56,18" fill={blueLight} />
+              <polygon points="21,40 37,50 37,68 21,78 5,68 5,50" fill={blueLight} />
+              <polygon points="55,40 71,50 71,68 55,78 39,68 39,50" fill={amber} />
+              <polygon points="89,40 105,50 105,68 89,78 73,68 73,50" fill={blue} />
+              <polygon points="38,72 54,82 54,100 38,110 22,100 22,82" fill={blueDark} />
+              <polygon points="72,72 88,82 88,100 72,110 56,100 56,82" fill={blue} />
+            </svg>
+          </div>
+        </div>
+
+        <!-- 2-color: Teal monochrome + Amber pop -->
+        <div style="text-align: center;">
+          <p style="font-size: 0.75rem; color: #5a6a78; margin-bottom: 0.4rem; font-weight: 600;">2c: Teal mono + Amber</p>
+          <div style="background: #1a2530; border-radius: 12px; padding: 1.5rem; margin-bottom: 0.5rem; display: flex; align-items: center; justify-content: center;">
+            <svg viewBox="0 0 120 110" width="90" height="82" xmlns="http://www.w3.org/2000/svg">
+              <polygon points="38,8 54,18 54,36 38,46 22,36 22,18" fill={teal} />
+              <polygon points="72,8 88,18 88,36 72,46 56,36 56,18" fill={tealDark} />
+              <polygon points="21,40 37,50 37,68 21,78 5,68 5,50" fill={tealDark} />
+              <polygon points="55,40 71,50 71,68 55,78 39,68 39,50" fill={amber} />
+              <polygon points="89,40 105,50 105,68 89,78 73,68 73,50" fill={teal} />
+              <polygon points="38,72 54,82 54,100 38,110 22,100 22,82" fill={teal} />
+              <polygon points="72,72 88,82 88,100 72,110 56,100 56,82" fill={tealDark} />
+            </svg>
+          </div>
+          <div style="background: #ffffff; border: 1px solid #e5e2da; border-radius: 12px; padding: 1.5rem; display: flex; align-items: center; justify-content: center;">
+            <svg viewBox="0 0 120 110" width="90" height="82" xmlns="http://www.w3.org/2000/svg">
+              <polygon points="38,8 54,18 54,36 38,46 22,36 22,18" fill={teal} />
+              <polygon points="72,8 88,18 88,36 72,46 56,36 56,18" fill={tealLight} />
+              <polygon points="21,40 37,50 37,68 21,78 5,68 5,50" fill={tealLight} />
+              <polygon points="55,40 71,50 71,68 55,78 39,68 39,50" fill={amber} />
+              <polygon points="89,40 105,50 105,68 89,78 73,68 73,50" fill={teal} />
+              <polygon points="38,72 54,82 54,100 38,110 22,100 22,82" fill={tealDark} />
+              <polygon points="72,72 88,82 88,100 72,110 56,100 56,82" fill={teal} />
+            </svg>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- ============ SIZE TEST ============ -->
+      <h2 style="font-size: 1.1rem; font-weight: 600; color: #1a2530; margin-bottom: 1rem; text-align: center;">Size Test — Best Cluster Variations</h2>
+
+      <div style="background: #1a2530; border-radius: 12px; padding: 2rem; display: flex; align-items: end; justify-content: center; gap: 2.5rem; flex-wrap: wrap; margin-bottom: 2rem;">
+        {[16, 32, 48, 80, 120].map(size => (
+          <div style="text-align: center;">
+            <div style="display: flex; gap: 1rem; align-items: end;">
+              {/* Blue+Teal */}
+              <svg viewBox="0 0 120 110" width={size * 1.09} height={size} xmlns="http://www.w3.org/2000/svg">
+                <polygon points="38,8 54,18 54,36 38,46 22,36 22,18" fill={blue} /><polygon points="72,8 88,18 88,36 72,46 56,36 56,18" fill={teal} /><polygon points="21,40 37,50 37,68 21,78 5,68 5,50" fill={teal} /><polygon points="55,40 71,50 71,68 55,78 39,68 39,50" fill={blue} /><polygon points="89,40 105,50 105,68 89,78 73,68 73,50" fill={tealDark} /><polygon points="38,72 54,82 54,100 38,110 22,100 22,82" fill={blueDark} /><polygon points="72,72 88,82 88,100 72,110 56,100 56,82" fill={teal} />
+              </svg>
+              {/* Blue mono + Amber */}
+              <svg viewBox="0 0 120 110" width={size * 1.09} height={size} xmlns="http://www.w3.org/2000/svg">
+                <polygon points="38,8 54,18 54,36 38,46 22,36 22,18" fill={blue} /><polygon points="72,8 88,18 88,36 72,46 56,36 56,18" fill={blueDark} /><polygon points="21,40 37,50 37,68 21,78 5,68 5,50" fill={blueDark} /><polygon points="55,40 71,50 71,68 55,78 39,68 39,50" fill={amber} /><polygon points="89,40 105,50 105,68 89,78 73,68 73,50" fill={blue} /><polygon points="38,72 54,82 54,100 38,110 22,100 22,82" fill={blue} /><polygon points="72,72 88,82 88,100 72,110 56,100 56,82" fill={blueDark} />
+              </svg>
+              {/* 3c Amber+Blue+Teal */}
+              <svg viewBox="0 0 120 110" width={size * 1.09} height={size} xmlns="http://www.w3.org/2000/svg">
+                <polygon points="38,8 54,18 54,36 38,46 22,36 22,18" fill={amber} /><polygon points="72,8 88,18 88,36 72,46 56,36 56,18" fill={blue} /><polygon points="21,40 37,50 37,68 21,78 5,68 5,50" fill={teal} /><polygon points="55,40 71,50 71,68 55,78 39,68 39,50" fill={amber} /><polygon points="89,40 105,50 105,68 89,78 73,68 73,50" fill={blueDark} /><polygon points="38,72 54,82 54,100 38,110 22,100 22,82" fill={tealDark} /><polygon points="72,72 88,82 88,100 72,110 56,100 56,82" fill={amberDark} />
+              </svg>
+            </div>
+            <p style="color: #5a6a78; font-size: 0.55rem; margin-top: 0.5rem;">{size}px</p>
+          </div>
+        ))}
+      </div>
+
+
+      <!-- ============ LOCKUPS ============ -->
+      <h2 style="font-size: 1.1rem; font-weight: 600; color: #1a2530; margin-bottom: 1rem; text-align: center;">Lockups</h2>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+        {[
+          { label: 'Blue+Teal cluster', svg: `<polygon points="38,8 54,18 54,36 38,46 22,36 22,18" fill="${blue}" /><polygon points="72,8 88,18 88,36 72,46 56,36 56,18" fill="${teal}" /><polygon points="21,40 37,50 37,68 21,78 5,68 5,50" fill="${teal}" /><polygon points="55,40 71,50 71,68 55,78 39,68 39,50" fill="${blue}" /><polygon points="89,40 105,50 105,68 89,78 73,68 73,50" fill="${tealDark}" /><polygon points="38,72 54,82 54,100 38,110 22,100 22,82" fill="${blueDark}" /><polygon points="72,72 88,82 88,100 72,110 56,100 56,82" fill="${teal}" />`, bee: teal },
+          { label: 'Blue mono + Amber', svg: `<polygon points="38,8 54,18 54,36 38,46 22,36 22,18" fill="${blue}" /><polygon points="72,8 88,18 88,36 72,46 56,36 56,18" fill="${blueDark}" /><polygon points="21,40 37,50 37,68 21,78 5,68 5,50" fill="${blueDark}" /><polygon points="55,40 71,50 71,68 55,78 39,68 39,50" fill="${amber}" /><polygon points="89,40 105,50 105,68 89,78 73,68 73,50" fill="${blue}" /><polygon points="38,72 54,82 54,100 38,110 22,100 22,82" fill="${blue}" /><polygon points="72,72 88,82 88,100 72,110 56,100 56,82" fill="${blueDark}" />`, bee: amber },
+          { label: '3c Amber+Blue+Teal', svg: `<polygon points="38,8 54,18 54,36 38,46 22,36 22,18" fill="${amber}" /><polygon points="72,8 88,18 88,36 72,46 56,36 56,18" fill="${blue}" /><polygon points="21,40 37,50 37,68 21,78 5,68 5,50" fill="${teal}" /><polygon points="55,40 71,50 71,68 55,78 39,68 39,50" fill="${amber}" /><polygon points="89,40 105,50 105,68 89,78 73,68 73,50" fill="${blueDark}" /><polygon points="38,72 54,82 54,100 38,110 22,100 22,82" fill="${tealDark}" /><polygon points="72,72 88,82 88,100 72,110 56,100 56,82" fill="${amberDark}" />`, bee: teal },
+          { label: 'Teal mono + Amber', svg: `<polygon points="38,8 54,18 54,36 38,46 22,36 22,18" fill="${teal}" /><polygon points="72,8 88,18 88,36 72,46 56,36 56,18" fill="${tealDark}" /><polygon points="21,40 37,50 37,68 21,78 5,68 5,50" fill="${tealDark}" /><polygon points="55,40 71,50 71,68 55,78 39,68 39,50" fill="${amber}" /><polygon points="89,40 105,50 105,68 89,78 73,68 73,50" fill="${teal}" /><polygon points="38,72 54,82 54,100 38,110 22,100 22,82" fill="${teal}" /><polygon points="72,72 88,82 88,100 72,110 56,100 56,82" fill="${tealDark}" />`, bee: amber },
+        ].map(v => (
+          <div style="background: #1a2530; border-radius: 12px; padding: 1.25rem; display: flex; align-items: center; gap: 0.75rem;">
+            <svg viewBox="0 0 120 110" width="44" height="40" xmlns="http://www.w3.org/2000/svg" set:html={v.svg} />
+            <div>
+              <div style="color: #e8ecf0; font-size: 1rem; font-weight: 700;">SWOT<span style={`color: ${v.bee};`}>bee</span></div>
+              <div style="color: #5a6a78; font-size: 0.6rem;">{v.label}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- ============ 3c Amber+Blue+Teal — Light Version ============ -->
+      <h2 style="font-size: 1.1rem; font-weight: 600; color: #1a2530; margin: 2.5rem 0 1rem; text-align: center;">3c Amber+Blue+Teal — Light Versions</h2>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem;">
+        <!-- Dark (original for comparison) -->
+        <div style="background: #1a2530; border-radius: 12px; padding: 1.5rem; display: flex; align-items: center; gap: 1rem;">
+          <svg viewBox="0 0 120 110" width="52" height="48" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="38,8 54,18 54,36 38,46 22,36 22,18" fill={amber} />
+            <polygon points="72,8 88,18 88,36 72,46 56,36 56,18" fill={blue} />
+            <polygon points="21,40 37,50 37,68 21,78 5,68 5,50" fill={teal} />
+            <polygon points="55,40 71,50 71,68 55,78 39,68 39,50" fill={amber} />
+            <polygon points="89,40 105,50 105,68 89,78 73,68 73,50" fill={blueDark} />
+            <polygon points="38,72 54,82 54,100 38,110 22,100 22,82" fill={tealDark} />
+            <polygon points="72,72 88,82 88,100 72,110 56,100 56,82" fill={amberDark} />
+          </svg>
+          <div>
+            <div style="color: #e8ecf0; font-size: 1.1rem; font-weight: 700;">SWOT<span style={`color: ${teal};`}>bee</span></div>
+            <div style="color: #5a6a78; font-size: 0.6rem;">3c Amber+Blue+Teal · Dark</div>
+          </div>
+        </div>
+
+        <!-- Light version -->
+        <div style="background: #ffffff; border: 1px solid #e5e2da; border-radius: 12px; padding: 1.5rem; display: flex; align-items: center; gap: 1rem;">
+          <svg viewBox="0 0 120 110" width="52" height="48" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="38,8 54,18 54,36 38,46 22,36 22,18" fill={amber} />
+            <polygon points="72,8 88,18 88,36 72,46 56,36 56,18" fill={blue} />
+            <polygon points="21,40 37,50 37,68 21,78 5,68 5,50" fill={teal} />
+            <polygon points="55,40 71,50 71,68 55,78 39,68 39,50" fill={yellowLight} />
+            <polygon points="89,40 105,50 105,68 89,78 73,68 73,50" fill={blueDark} />
+            <polygon points="38,72 54,82 54,100 38,110 22,100 22,82" fill={tealDark} />
+            <polygon points="72,72 88,82 88,100 72,110 56,100 56,82" fill={blueLight} />
+          </svg>
+          <div>
+            <div style="color: #1a2530; font-size: 1.1rem; font-weight: 700;">SWOT<span style={`color: ${teal};`}>bee</span></div>
+            <div style="color: #5a6a78; font-size: 0.6rem;">3c Amber+Blue+Teal · Light (lighter shades)</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- More light variations -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem;">
+        <!-- Light: all cells use lighter shades -->
+        <div style="background: #ffffff; border: 1px solid #e5e2da; border-radius: 12px; padding: 1.5rem; display: flex; align-items: center; gap: 0.75rem;">
+          <svg viewBox="0 0 120 110" width="48" height="44" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="38,8 54,18 54,36 38,46 22,36 22,18" fill={amber} />
+            <polygon points="72,8 88,18 88,36 72,46 56,36 56,18" fill={blue} />
+            <polygon points="21,40 37,50 37,68 21,78 5,68 5,50" fill={teal} />
+            <polygon points="55,40 71,50 71,68 55,78 39,68 39,50" fill={amber} />
+            <polygon points="89,40 105,50 105,68 89,78 73,68 73,50" fill={blue} />
+            <polygon points="38,72 54,82 54,100 38,110 22,100 22,82" fill={teal} />
+            <polygon points="72,72 88,82 88,100 72,110 56,100 56,82" fill={amber} />
+          </svg>
+          <div>
+            <div style="color: #1a2530; font-size: 0.95rem; font-weight: 700;">SWOT<span style={`color: ${blue};`}>bee</span></div>
+            <div style="color: #9ca3af; font-size: 0.55rem;">All mid-tones (no darks)</div>
+          </div>
+        </div>
+
+        <!-- Light: same dark colors but on white bg -->
+        <div style="background: #ffffff; border: 1px solid #e5e2da; border-radius: 12px; padding: 1.5rem; display: flex; align-items: center; gap: 0.75rem;">
+          <svg viewBox="0 0 120 110" width="48" height="44" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="38,8 54,18 54,36 38,46 22,36 22,18" fill={amber} />
+            <polygon points="72,8 88,18 88,36 72,46 56,36 56,18" fill={blue} />
+            <polygon points="21,40 37,50 37,68 21,78 5,68 5,50" fill={teal} />
+            <polygon points="55,40 71,50 71,68 55,78 39,68 39,50" fill={amber} />
+            <polygon points="89,40 105,50 105,68 89,78 73,68 73,50" fill={blueDark} />
+            <polygon points="38,72 54,82 54,100 38,110 22,100 22,82" fill={tealDark} />
+            <polygon points="72,72 88,82 88,100 72,110 56,100 56,82" fill={amberDark} />
+          </svg>
+          <div>
+            <div style="color: #1a2530; font-size: 0.95rem; font-weight: 700;">SWOT<span style={`color: ${teal};`}>bee</span></div>
+            <div style="color: #9ca3af; font-size: 0.55rem;">Same as dark (on white)</div>
+          </div>
+        </div>
+
+        <!-- Light: warm bg -->
+        <div style="background: #f7f5f1; border: 1px solid #e5e2da; border-radius: 12px; padding: 1.5rem; display: flex; align-items: center; gap: 0.75rem;">
+          <svg viewBox="0 0 120 110" width="48" height="44" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="38,8 54,18 54,36 38,46 22,36 22,18" fill={amber} />
+            <polygon points="72,8 88,18 88,36 72,46 56,36 56,18" fill={blue} />
+            <polygon points="21,40 37,50 37,68 21,78 5,68 5,50" fill={teal} />
+            <polygon points="55,40 71,50 71,68 55,78 39,68 39,50" fill={amber} />
+            <polygon points="89,40 105,50 105,68 89,78 73,68 73,50" fill={blueDark} />
+            <polygon points="38,72 54,82 54,100 38,110 22,100 22,82" fill={tealDark} />
+            <polygon points="72,72 88,82 88,100 72,110 56,100 56,82" fill={amberDark} />
+          </svg>
+          <div>
+            <div style="color: #1a2530; font-size: 0.95rem; font-weight: 700;">SWOT<span style={`color: ${amber};`}>bee</span></div>
+            <div style="color: #9ca3af; font-size: 0.55rem;">Warm background</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</BaseLayout>
