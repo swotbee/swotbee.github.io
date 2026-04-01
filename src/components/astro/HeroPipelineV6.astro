@@ -156,7 +156,7 @@
 <script is:inline>
 document.addEventListener('DOMContentLoaded', function() {
   var svg = document.querySelector('.hp-svg-mobile');
-  if (!svg || window.innerWidth >= 768) return;
+  if (!svg) return;
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
   var stagesX = [40, 165, 290, 415];
