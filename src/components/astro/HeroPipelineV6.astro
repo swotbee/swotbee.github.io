@@ -4,7 +4,104 @@
 // Features: stage highlights, confetti on Closed Won, animated flow path to renewal
 ---
 
-<section class="hp-section">
+<!-- ============ MOBILE: Static comparison cards ============ -->
+<section class="block md:hidden px-4 pb-4">
+  <div class="grid grid-cols-1 gap-4 max-w-md mx-auto">
+
+    <!-- WITHOUT card -->
+    <div class="bg-[#152535] rounded-xl p-5 border border-[#1a3248]">
+      <p class="text-[#5a8a9f] text-xs font-semibold tracking-wider mb-3 uppercase">Without Automation</p>
+
+      <!-- Mini pipeline -->
+      <div class="flex gap-1.5 mb-4">
+        <div class="flex-1 bg-[#1a3248] rounded-md py-2 px-1.5 text-center">
+          <span class="text-[#5a8a9f] text-[10px]">Discovery</span>
+        </div>
+        <div class="flex-1 bg-[#1a3248] rounded-md py-2 px-1.5 text-center">
+          <span class="text-[#5a8a9f] text-[10px]">Qualified</span>
+        </div>
+        <div class="flex-1 bg-[#1a3248] rounded-md py-2 px-1.5 text-center">
+          <span class="text-[#5a8a9f] text-[10px]">Proposal</span>
+        </div>
+        <div class="flex-1 bg-[#1a3248] rounded-md py-2 px-1.5 text-center border border-[#3d7a9a]">
+          <span class="text-[#3d7a9a] text-[10px] font-semibold">Won</span>
+        </div>
+      </div>
+
+      <!-- Empty renewal -->
+      <div class="border border-dashed border-[#2a5070] rounded-md py-2 px-3 mb-4 opacity-40">
+        <span class="text-[#5a8a9f] text-xs">Renewal Pipeline — empty</span>
+      </div>
+
+      <!-- Warning stats -->
+      <div class="space-y-2">
+        <p class="text-[#C47A2A] text-sm font-bold">⚠ 3 renewals missed this year</p>
+        <p class="text-[#D4960A] text-sm font-bold">💸 ~$285K revenue leaked</p>
+      </div>
+
+      <!-- ARR -->
+      <div class="mt-4 pt-3 border-t border-[#1a3248]">
+        <p class="text-[#5a8a9f] text-xs mb-1">Annual Recurring Revenue</p>
+        <p class="text-[#3d7a9a] text-2xl font-bold opacity-60">$1.2M <span class="text-sm font-normal">— flat</span></p>
+      </div>
+    </div>
+
+    <!-- WITH card -->
+    <div class="bg-[#152535] rounded-xl p-5 border border-[#5AAB9D]">
+      <p class="text-[#5AAB9D] text-xs font-semibold tracking-wider mb-3 uppercase">With Automation ⚡</p>
+
+      <!-- Mini pipeline -->
+      <div class="flex gap-1.5 mb-2">
+        <div class="flex-1 bg-[#1a3248] rounded-md py-2 px-1.5 text-center">
+          <span class="text-white text-[10px]">Discovery</span>
+        </div>
+        <div class="flex-1 bg-[#1a3248] rounded-md py-2 px-1.5 text-center">
+          <span class="text-white text-[10px]">Qualified</span>
+        </div>
+        <div class="flex-1 bg-[#1a3248] rounded-md py-2 px-1.5 text-center">
+          <span class="text-white text-[10px]">Proposal</span>
+        </div>
+        <div class="flex-1 bg-[#1a3248] rounded-md py-2 px-1.5 text-center border border-[#5AAB9D]">
+          <span class="text-[#5AAB9D] text-[10px] font-semibold">Won ✓</span>
+        </div>
+      </div>
+
+      <!-- Bolt connector -->
+      <div class="text-center py-1">
+        <span class="text-[#D4960A] text-xs font-bold">⚡ auto-creates renewal</span>
+      </div>
+
+      <!-- Renewal pipeline -->
+      <div class="flex gap-1.5 mb-4">
+        <div class="flex-1 bg-[#1a3248] rounded-md py-2 px-1.5 text-center border border-[#5AAB9D]">
+          <span class="text-[#5AAB9D] text-[10px]">Upcoming</span>
+        </div>
+        <div class="flex-1 bg-[#1a3248] rounded-md py-2 px-1.5 text-center border border-[#5AAB9D]">
+          <span class="text-[#5AAB9D] text-[10px]">In Review</span>
+        </div>
+        <div class="flex-1 bg-[#1a3248] rounded-md py-2 px-1.5 text-center border border-[#D4960A]">
+          <span class="text-[#D4960A] text-[10px] font-semibold">Renewed ★</span>
+        </div>
+      </div>
+
+      <!-- Success stats -->
+      <div class="space-y-2">
+        <p class="text-[#5AAB9D] text-sm font-semibold">✓ 0 renewals missed</p>
+        <p class="text-[#D4960A] text-sm font-bold">✓ $0 revenue leaked</p>
+      </div>
+
+      <!-- ARR -->
+      <div class="mt-4 pt-3 border-t border-[#1a3248]">
+        <p class="text-white text-xs mb-1 opacity-60">Annual Recurring Revenue</p>
+        <p class="text-[#C47A2A] text-2xl font-bold">$2.4M <span class="text-[#D4960A] text-sm font-bold">↑ growing</span></p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ DESKTOP: Animated SVG ============ -->
+<section class="hp-section hidden md:block">
   <div class="hp-wrap">
     <svg
       viewBox="0 0 1100 530"
