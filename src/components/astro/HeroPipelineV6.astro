@@ -693,7 +693,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function resetAll() {
-    rDeals.concat(rens).forEach(function(el) {
+    lDeals.concat(rDeals, rens).forEach(function(el) {
       show(el, 0);
       pos(el, -300, -300);
     });
@@ -708,24 +708,31 @@ document.addEventListener('DOMContentLoaded', function () {
   function runSequence() {
     resetAll();
 
-    // === DEAL 1 (right side only — left side is static) ===
+    // === DEAL 1: Both sides move simultaneously through sales pipeline ===
+
     // Drop into Discovery
     setTimeout(function() {
+      animateDeal(lDeals[0], lStagesX[0], lY - 40, lStagesX[0], lY, 500, null);
       animateDeal(rDeals[0], rStagesX[0], rY - 40, rStagesX[0], rY, 500, function() { highlightStage(0); });
     }, 800);
 
     // Discovery → Qualified
     setTimeout(function() {
+      animateDeal(lDeals[0], lStagesX[0], lY, lStagesX[1], lY, 700, null);
       animateDeal(rDeals[0], rStagesX[0], rY, rStagesX[1], rY, 700, function() { highlightStage(1); });
     }, 2000);
 
     // Qualified → Proposal
     setTimeout(function() {
+      animateDeal(lDeals[0], lStagesX[1], lY, lStagesX[2], lY, 700, null);
       animateDeal(rDeals[0], rStagesX[1], rY, rStagesX[2], rY, 700, function() { highlightStage(2); });
     }, 3200);
 
-    // Proposal → Closed Won → confetti → bolt → renewal
+    // Proposal → Closed Won
+    // LEFT: card just arrives and stops (nothing else happens)
+    // RIGHT: confetti → bolt → renewal auto-creates and flows through
     setTimeout(function() {
+      animateDeal(lDeals[0], lStagesX[2], lY, lStagesX[3], lY, 700, null);
       animateDeal(rDeals[0], rStagesX[2], rY, rStagesX[3], rY, 700, function() {
         highlightStage(3);
         fireConfetti(null);
@@ -748,20 +755,27 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     }, 7200);
 
-    // === DEAL 2 (right side only) ===
+    // === DEAL 2: Both sides again ===
+
     setTimeout(function() {
+      animateDeal(lDeals[1], lStagesX[0], lY - 40, lStagesX[0], lY, 500, null);
       animateDeal(rDeals[1], rStagesX[0], rY - 40, rStagesX[0], rY, 500, function() { highlightStage(0); });
     }, 9000);
 
     setTimeout(function() {
+      animateDeal(lDeals[1], lStagesX[0], lY, lStagesX[1], lY, 600, null);
       animateDeal(rDeals[1], rStagesX[0], rY, rStagesX[1], rY, 600, function() { highlightStage(1); });
     }, 10000);
 
     setTimeout(function() {
+      animateDeal(lDeals[1], lStagesX[1], lY, lStagesX[2], lY, 600, null);
       animateDeal(rDeals[1], rStagesX[1], rY, rStagesX[2], rY, 600, function() { highlightStage(2); });
     }, 11000);
 
+    // LEFT: arrives at Closed Won, stops
+    // RIGHT: confetti → bolt → renewal
     setTimeout(function() {
+      animateDeal(lDeals[1], lStagesX[2], lY, lStagesX[3], lY, 600, null);
       animateDeal(rDeals[1], rStagesX[2], rY, rStagesX[3], rY, 600, function() {
         highlightStage(3);
         fireConfetti(null);
