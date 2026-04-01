@@ -276,6 +276,182 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   setTimeout(run, 500);
+
+  // === DESKTOP ANIMATION (runs in same DOMContentLoaded) ===
+
+  var dSvg = document.querySelector('.hp-svg');
+  if (dSvg && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+
+  var lStagesX = [40, 167, 294, 421];
+  var lY = 83;
+  var rStagesX = [580, 707, 834, 961];
+  var rY = 83;
+  var renStagesX = [580, 750, 920];
+  var dRenY = 193;
+
+  var dlDeals = [dSvg.querySelector('.l-deal1'), dSvg.querySelector('.l-deal2'), dSvg.querySelector('.l-deal3'), dSvg.querySelector('.l-deal4')];
+  var drDeals = [dSvg.querySelector('.r-deal1'), dSvg.querySelector('.r-deal2'), dSvg.querySelector('.r-deal3'), dSvg.querySelector('.r-deal4')];
+  var dRens = [dSvg.querySelector('.ren1'), dSvg.querySelector('.ren2'), dSvg.querySelector('.ren3')];
+  var dBoltConn = dSvg.querySelector('.bolt-connector');
+  var dArrText = dSvg.querySelector('.r-arr-text');
+  var dArrGrowth = dSvg.querySelector('.arr-growth');
+  var dConfetti = dSvg.querySelector('.confetti');
+  var dConfParticles = dSvg.querySelectorAll('.conf-p');
+  var dFlowDot = dSvg.querySelector('.flow-dot');
+  var dStageHls = [
+    dSvg.querySelector('.stage-hl-0'),
+    dSvg.querySelector('.stage-hl-1'),
+    dSvg.querySelector('.stage-hl-2'),
+    dSvg.querySelector('.stage-hl-3')
+  ];
+
+  function dPos(el, x, y) { if (el) el.setAttribute('transform', 'translate(' + x + ',' + y + ')'); }
+  function dShow(el, o) { if (el) el.setAttribute('opacity', String(o)); }
+
+  function dAnimDeal(el, fx, fy, tx, ty, dur, cb) {
+    if (!el) return;
+    var st = null;
+    function step(ts) {
+      if (!st) st = ts;
+      var p = Math.min((ts - st) / dur, 1);
+      var e = 1 - Math.pow(1 - p, 3);
+      dPos(el, fx + (tx - fx) * e, fy + (ty - fy) * e);
+      if (p < 1) requestAnimationFrame(step); else if (cb) cb();
+    }
+    dShow(el, 1);
+    requestAnimationFrame(step);
+  }
+
+  function dHighlight(idx) {
+    var hl = dStageHls[idx];
+    if (!hl) return;
+    dShow(hl, 0.15);
+    setTimeout(function() { dShow(hl, 0.08); }, 300);
+    setTimeout(function() { dShow(hl, 0); }, 800);
+  }
+
+  function dFireConfetti(cb) {
+    dShow(dConfetti, 1);
+    var origins = [];
+    dConfParticles.forEach(function(p) {
+      origins.push({ cx: parseFloat(p.getAttribute('cx') || p.getAttribute('x') || 1011), cy: parseFloat(p.getAttribute('cy') || p.getAttribute('y') || 85) });
+    });
+    var st = null;
+    function step(ts) {
+      if (!st) st = ts;
+      var p = Math.min((ts - st) / 800, 1);
+      dConfParticles.forEach(function(el, i) {
+        var dx = (origins[i].cx - 1011) * 4 * p;
+        var dy = (origins[i].cy - 90) * 4 * p + 40 * p * p;
+        el.setAttribute('transform', 'translate(' + dx + ',' + dy + ')');
+        el.setAttribute('opacity', String(1 - p));
+      });
+      if (p < 1) requestAnimationFrame(step);
+      else { dShow(dConfetti, 0); dConfParticles.forEach(function(el) { el.setAttribute('transform', 'translate(0,0)'); el.setAttribute('opacity', '1'); }); if (cb) cb(); }
+    }
+    requestAnimationFrame(step);
+  }
+
+  function dFlowAnimate(cb) {
+    dShow(dFlowDot, 1);
+    var wp = [{x:1011,y:124},{x:1011,y:155},{x:651,y:155},{x:651,y:193}];
+    var seg = 0;
+    function runSeg() {
+      if (seg >= wp.length - 1) { dShow(dFlowDot, 0); if (cb) cb(); return; }
+      var from = wp[seg], to = wp[seg + 1], st = null;
+      function step(ts) {
+        if (!st) st = ts;
+        var p = Math.min((ts - st) / 250, 1);
+        dFlowDot.setAttribute('cx', from.x + (to.x - from.x) * p);
+        dFlowDot.setAttribute('cy', from.y + (to.y - from.y) * p);
+        if (p < 1) requestAnimationFrame(step); else { seg++; runSeg(); }
+      }
+      requestAnimationFrame(step);
+    }
+    runSeg();
+  }
+
+  function dFlashBolt(cb) {
+    dShow(dBoltConn, 1);
+    dFlowAnimate(function() { if (cb) cb(); });
+  }
+
+  function dUpdateARR(val) {
+    if (!dArrText) return;
+    dArrText.textContent = val;
+    dArrText.setAttribute('fill', '#D4960A');
+    setTimeout(function() { dArrText.setAttribute('fill', '#C47A2A'); }, 700);
+  }
+
+  function dResetAll() {
+    dlDeals.concat(drDeals, dRens).forEach(function(el) { dShow(el, 0); dPos(el, -300, -300); });
+    dShow(dBoltConn, 0); dShow(dArrGrowth, 0); dShow(dConfetti, 0); dShow(dFlowDot, 0);
+    dStageHls.forEach(function(hl) { dShow(hl, 0); });
+    if (dArrText) { dArrText.textContent = '$1.2M'; dArrText.setAttribute('fill', '#C47A2A'); }
+  }
+
+  function dRun() {
+    dResetAll();
+
+    // Deal 1 — both sides
+    setTimeout(function() {
+      dAnimDeal(dlDeals[0], lStagesX[0], lY - 40, lStagesX[0], lY, 500, null);
+      dAnimDeal(drDeals[0], rStagesX[0], rY - 40, rStagesX[0], rY, 500, function() { dHighlight(0); });
+    }, 800);
+    setTimeout(function() {
+      dAnimDeal(dlDeals[0], lStagesX[0], lY, lStagesX[1], lY, 700, null);
+      dAnimDeal(drDeals[0], rStagesX[0], rY, rStagesX[1], rY, 700, function() { dHighlight(1); });
+    }, 2000);
+    setTimeout(function() {
+      dAnimDeal(dlDeals[0], lStagesX[1], lY, lStagesX[2], lY, 700, null);
+      dAnimDeal(drDeals[0], rStagesX[1], rY, rStagesX[2], rY, 700, function() { dHighlight(2); });
+    }, 3200);
+    setTimeout(function() {
+      dAnimDeal(dlDeals[0], lStagesX[2], lY, lStagesX[3], lY, 700, null);
+      dAnimDeal(drDeals[0], rStagesX[2], rY, rStagesX[3], rY, 700, function() {
+        dHighlight(3);
+        dFireConfetti(null);
+        dFlashBolt(function() {
+          dAnimDeal(dRens[0], renStagesX[0], dRenY - 30, renStagesX[0], dRenY, 400, null);
+        });
+      });
+    }, 4400);
+    setTimeout(function() { dAnimDeal(dRens[0], renStagesX[0], dRenY, renStagesX[1], dRenY, 600, null); }, 6200);
+    setTimeout(function() { dAnimDeal(dRens[0], renStagesX[1], dRenY, renStagesX[2], dRenY, 600, function() { dUpdateARR('$1.8M'); dShow(dArrGrowth, 1); }); }, 7200);
+
+    // Deal 2 — both sides
+    setTimeout(function() {
+      dAnimDeal(dlDeals[1], lStagesX[0], lY - 40, lStagesX[0], lY, 500, null);
+      dAnimDeal(drDeals[1], rStagesX[0], rY - 40, rStagesX[0], rY, 500, function() { dHighlight(0); });
+    }, 9000);
+    setTimeout(function() {
+      dAnimDeal(dlDeals[1], lStagesX[0], lY, lStagesX[1], lY, 600, null);
+      dAnimDeal(drDeals[1], rStagesX[0], rY, rStagesX[1], rY, 600, function() { dHighlight(1); });
+    }, 10000);
+    setTimeout(function() {
+      dAnimDeal(dlDeals[1], lStagesX[1], lY, lStagesX[2], lY, 600, null);
+      dAnimDeal(drDeals[1], rStagesX[1], rY, rStagesX[2], rY, 600, function() { dHighlight(2); });
+    }, 11000);
+    setTimeout(function() {
+      dAnimDeal(dlDeals[1], lStagesX[2], lY, lStagesX[3], lY, 600, null);
+      dAnimDeal(drDeals[1], rStagesX[2], rY, rStagesX[3], rY, 600, function() {
+        dHighlight(3);
+        dFireConfetti(null);
+        dFlashBolt(function() {
+          dAnimDeal(dRens[1], renStagesX[0], dRenY - 30, renStagesX[0], dRenY, 400, null);
+        });
+      });
+    }, 12000);
+    setTimeout(function() { dAnimDeal(dRens[1], renStagesX[0], dRenY, renStagesX[1], dRenY, 600, null); }, 13800);
+    setTimeout(function() { dAnimDeal(dRens[1], renStagesX[1], dRenY, renStagesX[2], dRenY, 600, function() { dUpdateARR('$2.4M'); }); }, 14800);
+
+    setTimeout(dRun, 18000);
+  }
+
+  setTimeout(dRun, 500);
+
+  } // end desktop if
+
 });
 </script>
 
@@ -573,276 +749,8 @@ document.addEventListener('DOMContentLoaded', function() {
   </div>
 </section>
 
-<script is:inline>
-document.addEventListener('DOMContentLoaded', function () {
-  var svg = document.querySelector('.hp-svg');
-  if (!svg) return;
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-
-  var lStagesX = [40, 167, 294, 421];
-  var lY = 83;
-  var rStagesX = [580, 707, 834, 961];
-  var rY = 83;
-  var renStagesX = [580, 750, 920];
-  var renY = 193;
-
-  var lDeals = [svg.querySelector('.l-deal1'), svg.querySelector('.l-deal2'), svg.querySelector('.l-deal3'), svg.querySelector('.l-deal4')];
-  var rDeals = [svg.querySelector('.r-deal1'), svg.querySelector('.r-deal2'), svg.querySelector('.r-deal3'), svg.querySelector('.r-deal4')];
-  var rens = [svg.querySelector('.ren1'), svg.querySelector('.ren2'), svg.querySelector('.ren3')];
-  var boltConn = svg.querySelector('.bolt-connector');
-  var boltFlash = null;
-  var arrText = svg.querySelector('.r-arr-text');
-  var arrGrowth = svg.querySelector('.arr-growth');
-  var confetti = svg.querySelector('.confetti');
-  var confParticles = svg.querySelectorAll('.conf-p');
-  var flowDot = svg.querySelector('.flow-dot');
-  var stageHls = [
-    svg.querySelector('.stage-hl-0'),
-    svg.querySelector('.stage-hl-1'),
-    svg.querySelector('.stage-hl-2'),
-    svg.querySelector('.stage-hl-3')
-  ];
-
-  function pos(el, x, y) {
-    if (el) el.setAttribute('transform', 'translate(' + x + ',' + y + ')');
-  }
-  function show(el, o) {
-    if (el) el.setAttribute('opacity', String(o));
-  }
-
-  function animateDeal(el, fx, fy, tx, ty, dur, cb) {
-    if (!el) return;
-    var start = null;
-    function step(ts) {
-      if (!start) start = ts;
-      var p = Math.min((ts - start) / dur, 1);
-      var ease = 1 - Math.pow(1 - p, 3);
-      pos(el, fx + (tx - fx) * ease, fy + (ty - fy) * ease);
-      if (p < 1) requestAnimationFrame(step);
-      else if (cb) cb();
-    }
-    show(el, 1);
-    requestAnimationFrame(step);
-  }
-
-  // Highlight a right-side stage box briefly
-  function highlightStage(idx) {
-    var hl = stageHls[idx];
-    if (!hl) return;
-    show(hl, 0.15);
-    setTimeout(function() { show(hl, 0.08); }, 300);
-    setTimeout(function() { show(hl, 0); }, 800);
-  }
-
-  // Confetti burst at Closed Won
-  function fireConfetti(cb) {
-    show(confetti, 1);
-    // Scatter particles outward
-    var origins = [];
-    confParticles.forEach(function(p) {
-      var cx = parseFloat(p.getAttribute('cx') || p.getAttribute('x') || 1011);
-      var cy = parseFloat(p.getAttribute('cy') || p.getAttribute('y') || 85);
-      origins.push({cx: cx, cy: cy});
-    });
-    var start = null;
-    function step(ts) {
-      if (!start) start = ts;
-      var p = Math.min((ts - start) / 800, 1);
-      confParticles.forEach(function(el, i) {
-        var ox = origins[i].cx;
-        var oy = origins[i].cy;
-        // Scatter outward from center (1011,100) + gravity
-        var dx = (ox - 1011) * 4 * p;
-        var dy = (oy - 90) * 4 * p + 40 * p * p; // gravity
-        el.setAttribute('transform', 'translate(' + dx + ',' + dy + ')');
-        el.setAttribute('opacity', String(1 - p));
-      });
-      if (p < 1) requestAnimationFrame(step);
-      else {
-        show(confetti, 0);
-        confParticles.forEach(function(el) {
-          el.setAttribute('transform', 'translate(0,0)');
-          el.setAttribute('opacity', '1');
-        });
-        if (cb) cb();
-      }
-    }
-    requestAnimationFrame(step);
-  }
-
-  // Animate flow dot along the path: Closed Won → down → left → down → Renewal
-  function animateFlowDot(cb) {
-    show(flowDot, 1);
-    // Path waypoints: (1011,124) → (1011,155) → (651,155) → (651,193)
-    var waypoints = [
-      {x:1011, y:124},
-      {x:1011, y:155},
-      {x:651,  y:155},
-      {x:651,  y:193}
-    ];
-    var segDur = 250; // ms per segment
-    var seg = 0;
-
-    function runSeg() {
-      if (seg >= waypoints.length - 1) {
-        show(flowDot, 0);
-        if (cb) cb();
-        return;
-      }
-      var from = waypoints[seg];
-      var to = waypoints[seg + 1];
-      var start = null;
-      function step(ts) {
-        if (!start) start = ts;
-        var p = Math.min((ts - start) / segDur, 1);
-        var ease = p; // linear for smooth travel
-        flowDot.setAttribute('cx', from.x + (to.x - from.x) * ease);
-        flowDot.setAttribute('cy', from.y + (to.y - from.y) * ease);
-        if (p < 1) requestAnimationFrame(step);
-        else {
-          seg++;
-          runSeg();
-        }
-      }
-      requestAnimationFrame(step);
-    }
-    runSeg();
-  }
-
-  function flashBolt(cb) {
-    show(boltConn, 1);
-    if (boltFlash) {
-      boltFlash.setAttribute('r', '16');
-      boltFlash.setAttribute('opacity', '0.5');
-      setTimeout(function() {
-        boltFlash.setAttribute('r', '0');
-        boltFlash.setAttribute('opacity', '0');
-      }, 400);
-    }
-    // Animate the flow dot along the path, then create renewal
-    animateFlowDot(function() {
-      if (cb) cb();
-    });
-  }
-
-  function updateARR(val) {
-    if (!arrText) return;
-    arrText.textContent = val;
-    var yellowColor = getComputedStyle(svg).getPropertyValue('--hp-yellow').trim() || '#D4960A';
-    arrText.setAttribute('fill', yellowColor);
-    setTimeout(function() { arrText.setAttribute('fill', '#C47A2A'); }, 700);
-  }
-
-  function resetAll() {
-    lDeals.concat(rDeals, rens).forEach(function(el) {
-      show(el, 0);
-      pos(el, -300, -300);
-    });
-    show(boltConn, 0);
-    show(arrGrowth, 0);
-    show(confetti, 0);
-    show(flowDot, 0);
-    stageHls.forEach(function(hl) { show(hl, 0); });
-    if (arrText) { arrText.textContent = '$1.2M'; arrText.setAttribute('fill', '#C47A2A'); }
-  }
-
-  function runSequence() {
-    resetAll();
-
-    // === DEAL 1: Both sides move simultaneously through sales pipeline ===
-
-    // Drop into Discovery
-    setTimeout(function() {
-      animateDeal(lDeals[0], lStagesX[0], lY - 40, lStagesX[0], lY, 500, null);
-      animateDeal(rDeals[0], rStagesX[0], rY - 40, rStagesX[0], rY, 500, function() { highlightStage(0); });
-    }, 800);
-
-    // Discovery → Qualified
-    setTimeout(function() {
-      animateDeal(lDeals[0], lStagesX[0], lY, lStagesX[1], lY, 700, null);
-      animateDeal(rDeals[0], rStagesX[0], rY, rStagesX[1], rY, 700, function() { highlightStage(1); });
-    }, 2000);
-
-    // Qualified → Proposal
-    setTimeout(function() {
-      animateDeal(lDeals[0], lStagesX[1], lY, lStagesX[2], lY, 700, null);
-      animateDeal(rDeals[0], rStagesX[1], rY, rStagesX[2], rY, 700, function() { highlightStage(2); });
-    }, 3200);
-
-    // Proposal → Closed Won
-    // LEFT: card just arrives and stops (nothing else happens)
-    // RIGHT: confetti → bolt → renewal auto-creates and flows through
-    setTimeout(function() {
-      animateDeal(lDeals[0], lStagesX[2], lY, lStagesX[3], lY, 700, null);
-      animateDeal(rDeals[0], rStagesX[2], rY, rStagesX[3], rY, 700, function() {
-        highlightStage(3);
-        fireConfetti(null);
-        flashBolt(function() {
-          animateDeal(rens[0], renStagesX[0], renY - 30, renStagesX[0], renY, 400, null);
-        });
-      });
-    }, 4400);
-
-    // Renewal 1: Upcoming → In Review
-    setTimeout(function() {
-      animateDeal(rens[0], renStagesX[0], renY, renStagesX[1], renY, 600, null);
-    }, 6200);
-
-    // Renewal 1: In Review → Renewed → ARR tick
-    setTimeout(function() {
-      animateDeal(rens[0], renStagesX[1], renY, renStagesX[2], renY, 600, function() {
-        updateARR('$1.8M');
-        show(arrGrowth, 1);
-      });
-    }, 7200);
-
-    // === DEAL 2: Both sides again ===
-
-    setTimeout(function() {
-      animateDeal(lDeals[1], lStagesX[0], lY - 40, lStagesX[0], lY, 500, null);
-      animateDeal(rDeals[1], rStagesX[0], rY - 40, rStagesX[0], rY, 500, function() { highlightStage(0); });
-    }, 9000);
-
-    setTimeout(function() {
-      animateDeal(lDeals[1], lStagesX[0], lY, lStagesX[1], lY, 600, null);
-      animateDeal(rDeals[1], rStagesX[0], rY, rStagesX[1], rY, 600, function() { highlightStage(1); });
-    }, 10000);
-
-    setTimeout(function() {
-      animateDeal(lDeals[1], lStagesX[1], lY, lStagesX[2], lY, 600, null);
-      animateDeal(rDeals[1], rStagesX[1], rY, rStagesX[2], rY, 600, function() { highlightStage(2); });
-    }, 11000);
-
-    // LEFT: arrives at Closed Won, stops
-    // RIGHT: confetti → bolt → renewal
-    setTimeout(function() {
-      animateDeal(lDeals[1], lStagesX[2], lY, lStagesX[3], lY, 600, null);
-      animateDeal(rDeals[1], rStagesX[2], rY, rStagesX[3], rY, 600, function() {
-        highlightStage(3);
-        fireConfetti(null);
-        flashBolt(function() {
-          animateDeal(rens[1], renStagesX[0], renY - 30, renStagesX[0], renY, 400, null);
-        });
-      });
-    }, 12000);
-
-    // Renewal 2: flows through → ARR $2.4M
-    setTimeout(function() {
-      animateDeal(rens[1], renStagesX[0], renY, renStagesX[1], renY, 600, null);
-    }, 13800);
-    setTimeout(function() {
-      animateDeal(rens[1], renStagesX[1], renY, renStagesX[2], renY, 600, function() {
-        updateARR('$2.4M');
-      });
-    }, 14800);
-
-    // Loop
-    setTimeout(runSequence, 18000);
-  }
-
-  setTimeout(runSequence, 500);
-});
-</script>
+<!-- Desktop animation is now in the unified script above -->
+<!-- Old desktop script removed — now in unified script above -->
 
 <style>
   .hp-section {
@@ -859,9 +767,7 @@ document.addEventListener('DOMContentLoaded', function () {
     border-radius: 14px;
     overflow: hidden;
   }
-  .l-deal1, .l-deal2, .l-deal3,
-  .r-deal1, .r-deal2, .r-deal3,
-  .ren1, .ren2, .ren3 {
-    opacity: 0;
-  }
+  /* Deal card initial opacity is set via SVG attribute opacity="0",
+     controlled by JS setAttribute('opacity'). No CSS opacity here
+     to avoid specificity conflicts with Astro scoped styles. */
 </style>
