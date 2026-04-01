@@ -334,15 +334,15 @@ document.addEventListener('DOMContentLoaded', function() {
     dShow(dConfetti, 1);
     var origins = [];
     dConfParticles.forEach(function(p) {
-      origins.push({ cx: parseFloat(p.getAttribute('cx') || p.getAttribute('x') || 990), cy: parseFloat(p.getAttribute('cy') || p.getAttribute('y') || 210) });
+      origins.push({ cx: parseFloat(p.getAttribute('cx') || p.getAttribute('x') || 990), cy: parseFloat(p.getAttribute('cy') || p.getAttribute('y') || 178) });
     });
     var st = null;
     function step(ts) {
       if (!st) st = ts;
-      var p = Math.min((ts - st) / 800, 1);
+      var p = Math.min((ts - st) / 1000, 1);
       dConfParticles.forEach(function(el, i) {
-        var dx = (origins[i].cx - 990) * 4 * p;
-        var dy = (origins[i].cy - 205) * 4 * p + 40 * p * p;
+        var dx = (origins[i].cx - 990) * 5 * p;
+        var dy = (origins[i].cy - 180) * 5 * p + 50 * p * p;
         el.setAttribute('transform', 'translate(' + dx + ',' + dy + ')');
         el.setAttribute('opacity', String(1 - p));
       });
@@ -640,21 +640,7 @@ document.addEventListener('DOMContentLoaded', function() {
       <rect class="stage-hl stage-hl-2" x="829" y="78" width="110" height="44" rx="7" fill="#5AAB9D" opacity="0" />
       <rect class="stage-hl stage-hl-3" x="956" y="78" width="110" height="44" rx="7" fill="#D4960A" opacity="0" />
 
-      <!-- Confetti particles (on Renewed ★ stage, centered at ~990,210) -->
-      <g class="confetti" opacity="0">
-        <circle class="conf-p" cx="990" cy="200" r="3" fill="#D4960A" />
-        <circle class="conf-p" cx="978" cy="195" r="2.5" fill="#C47A2A" />
-        <circle class="conf-p" cx="1002" cy="197" r="2" fill="#5AAB9D" />
-        <circle class="conf-p" cx="975" cy="203" r="3" fill="#D4960A" />
-        <circle class="conf-p" cx="1005" cy="205" r="2.5" fill="#C47A2A" />
-        <circle class="conf-p" cx="988" cy="191" r="2" fill="#5AAB9D" />
-        <rect class="conf-p" x="995" y="199" width="4" height="4" rx="1" fill="#D4960A" transform="rotate(25,997,201)" />
-        <rect class="conf-p" x="978" y="193" width="3" height="5" rx="1" fill="#C47A2A" transform="rotate(-15,979,195)" />
-        <circle class="conf-p" cx="1010" cy="210" r="2" fill="#D4960A" />
-        <circle class="conf-p" cx="970" cy="210" r="2.5" fill="#5AAB9D" />
-        <rect class="conf-p" x="1000" y="190" width="3" height="4" rx="1" fill="#C47A2A" transform="rotate(40,1001,192)" />
-        <circle class="conf-p" cx="985" cy="187" r="2" fill="#D4960A" />
-      </g>
+      <!-- Confetti moved to end of SVG for top render order -->
 
       <!-- Flow path: dotted connector from Closed Won → Renewal Pipeline -->
       <!-- Static connector line (always visible after first trigger) -->
@@ -742,6 +728,50 @@ document.addEventListener('DOMContentLoaded', function() {
 
       <!-- Bottom -->
       <text x="550" y="520" text-anchor="middle" class="hp-text-muted" opacity="0.2" font-size="10" font-family="sans-serif" letter-spacing="1">RENEWAL DEAL BUILDER — by SWOTBee</text>
+
+      <!-- Confetti: LAST element = renders on top of everything -->
+      <g class="confetti" opacity="0">
+
+        <!-- Streamers / ribbons (long wavy strips) -->
+        <path class="conf-p" d="M985,170 Q990,165 995,170 Q1000,175 1005,170" fill="none" stroke="#D4960A" stroke-width="2.5" stroke-linecap="round" />
+        <path class="conf-p" d="M960,175 Q965,168 970,175 Q975,182 980,175" fill="none" stroke="#C47A2A" stroke-width="2" stroke-linecap="round" />
+        <path class="conf-p" d="M1015,168 Q1020,162 1025,168 Q1030,174 1035,168" fill="none" stroke="#5AAB9D" stroke-width="2.5" stroke-linecap="round" />
+
+        <!-- Paper strips (elongated at angles) -->
+        <rect class="conf-p" x="988" y="160" width="12" height="3.5" rx="1" fill="#D4960A" transform="rotate(30,994,161)" />
+        <rect class="conf-p" x="968" y="165" width="10" height="3" rx="1" fill="#5AAB9D" transform="rotate(-50,973,166)" />
+        <rect class="conf-p" x="1012" y="158" width="11" height="3" rx="1" fill="#C47A2A" transform="rotate(65,1017,159)" />
+        <rect class="conf-p" x="945" y="172" width="10" height="3.5" rx="1" fill="#D4960A" transform="rotate(-25,950,173)" />
+        <rect class="conf-p" x="1030" y="170" width="10" height="3" rx="1" fill="#5AAB9D" transform="rotate(80,1035,171)" />
+
+        <!-- Stars (party style) -->
+        <polygon class="conf-p" points="990,152 992,157 997,157 993,160 995,165 990,162 985,165 987,160 983,157 988,157" fill="#D4960A" />
+        <polygon class="conf-p" points="1020,160 1022,165 1027,165 1023,168 1025,173 1020,170 1015,173 1017,168 1013,165 1018,165" fill="#C47A2A" />
+        <polygon class="conf-p" points="955,162 957,167 962,167 958,170 960,175 955,172 950,175 952,170 948,167 953,167" fill="#5AAB9D" />
+
+        <!-- Triangles (party flags) -->
+        <polygon class="conf-p" points="1000,155 1006,164 994,164" fill="#C47A2A" />
+        <polygon class="conf-p" points="975,158 981,167 969,167" fill="#D4960A" />
+        <polygon class="conf-p" points="1035,162 1041,171 1029,171" fill="#5AAB9D" />
+        <polygon class="conf-p" points="942,168 948,177 936,177" fill="#C47A2A" />
+
+        <!-- Candy circles (with inner highlight = shiny candy look) -->
+        <circle class="conf-p" cx="998" cy="148" r="4" fill="#D4960A" />
+        <circle cx="999" cy="147" r="1.5" fill="#fff" opacity="0.4" />
+        <circle class="conf-p" cx="965" cy="155" r="3.5" fill="#C47A2A" />
+        <circle cx="966" cy="154" r="1.2" fill="#fff" opacity="0.4" />
+        <circle class="conf-p" cx="1028" cy="155" r="4" fill="#5AAB9D" />
+        <circle cx="1029" cy="154" r="1.5" fill="#fff" opacity="0.4" />
+
+        <!-- Diamonds (rotated squares) -->
+        <rect class="conf-p" x="1040" y="175" width="6" height="6" fill="#D4960A" transform="rotate(45,1043,178)" />
+        <rect class="conf-p" x="935" y="178" width="5" height="5" fill="#5AAB9D" transform="rotate(45,937,180)" />
+        <rect class="conf-p" x="1005" y="145" width="5" height="5" fill="#C47A2A" transform="rotate(45,1007,147)" />
+
+        <!-- Extra streamers -->
+        <path class="conf-p" d="M940,165 Q945,158 950,165 Q955,172 960,165" fill="none" stroke="#D4960A" stroke-width="2" stroke-linecap="round" />
+        <path class="conf-p" d="M1038,158 Q1043,152 1048,158" fill="none" stroke="#C47A2A" stroke-width="2" stroke-linecap="round" />
+      </g>
 
     </svg>
   </div>
