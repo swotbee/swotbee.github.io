@@ -334,15 +334,15 @@ document.addEventListener('DOMContentLoaded', function() {
     dShow(dConfetti, 1);
     var origins = [];
     dConfParticles.forEach(function(p) {
-      origins.push({ cx: parseFloat(p.getAttribute('cx') || p.getAttribute('x') || 1011), cy: parseFloat(p.getAttribute('cy') || p.getAttribute('y') || 85) });
+      origins.push({ cx: parseFloat(p.getAttribute('cx') || p.getAttribute('x') || 990), cy: parseFloat(p.getAttribute('cy') || p.getAttribute('y') || 210) });
     });
     var st = null;
     function step(ts) {
       if (!st) st = ts;
       var p = Math.min((ts - st) / 800, 1);
       dConfParticles.forEach(function(el, i) {
-        var dx = (origins[i].cx - 1011) * 4 * p;
-        var dy = (origins[i].cy - 90) * 4 * p + 40 * p * p;
+        var dx = (origins[i].cx - 990) * 4 * p;
+        var dy = (origins[i].cy - 205) * 4 * p + 40 * p * p;
         el.setAttribute('transform', 'translate(' + dx + ',' + dy + ')');
         el.setAttribute('opacity', String(1 - p));
       });
@@ -410,14 +410,13 @@ document.addEventListener('DOMContentLoaded', function() {
       dAnimDeal(dlDeals[0], lStagesX[2], lY, lStagesX[3], lY, 700, null);
       dAnimDeal(drDeals[0], rStagesX[2], rY, rStagesX[3], rY, 700, function() {
         dHighlight(3);
-        dFireConfetti(null);
         dFlashBolt(function() {
           dAnimDeal(dRens[0], renStagesX[0], dRenY - 30, renStagesX[0], dRenY, 400, null);
         });
       });
     }, 4400);
     setTimeout(function() { dAnimDeal(dRens[0], renStagesX[0], dRenY, renStagesX[1], dRenY, 600, null); }, 6200);
-    setTimeout(function() { dAnimDeal(dRens[0], renStagesX[1], dRenY, renStagesX[2], dRenY, 600, function() { dUpdateARR('$1.8M'); dShow(dArrGrowth, 1); }); }, 7200);
+    setTimeout(function() { dAnimDeal(dRens[0], renStagesX[1], dRenY, renStagesX[2], dRenY, 600, function() { dFireConfetti(null); dUpdateARR('$1.8M'); dShow(dArrGrowth, 1); }); }, 7200);
 
     // Deal 2 — both sides
     setTimeout(function() {
@@ -436,14 +435,13 @@ document.addEventListener('DOMContentLoaded', function() {
       dAnimDeal(dlDeals[1], lStagesX[2], lY, lStagesX[3], lY, 600, null);
       dAnimDeal(drDeals[1], rStagesX[2], rY, rStagesX[3], rY, 600, function() {
         dHighlight(3);
-        dFireConfetti(null);
         dFlashBolt(function() {
           dAnimDeal(dRens[1], renStagesX[0], dRenY - 30, renStagesX[0], dRenY, 400, null);
         });
       });
     }, 12000);
     setTimeout(function() { dAnimDeal(dRens[1], renStagesX[0], dRenY, renStagesX[1], dRenY, 600, null); }, 13800);
-    setTimeout(function() { dAnimDeal(dRens[1], renStagesX[1], dRenY, renStagesX[2], dRenY, 600, function() { dUpdateARR('$2.4M'); }); }, 14800);
+    setTimeout(function() { dAnimDeal(dRens[1], renStagesX[1], dRenY, renStagesX[2], dRenY, 600, function() { dFireConfetti(null); dUpdateARR('$2.4M'); }); }, 14800);
 
     setTimeout(dRun, 18000);
   }
@@ -642,20 +640,20 @@ document.addEventListener('DOMContentLoaded', function() {
       <rect class="stage-hl stage-hl-2" x="829" y="78" width="110" height="44" rx="7" fill="#5AAB9D" opacity="0" />
       <rect class="stage-hl stage-hl-3" x="956" y="78" width="110" height="44" rx="7" fill="#D4960A" opacity="0" />
 
-      <!-- Confetti particles (hidden, animated on Closed Won) -->
+      <!-- Confetti particles (on Renewed ★ stage, centered at ~990,210) -->
       <g class="confetti" opacity="0">
-        <circle class="conf-p" cx="1011" cy="85" r="3" fill="#D4960A" />
-        <circle class="conf-p" cx="1000" cy="80" r="2.5" fill="#C47A2A" />
-        <circle class="conf-p" cx="1022" cy="82" r="2" fill="#5AAB9D" />
-        <circle class="conf-p" cx="995" cy="88" r="3" fill="#D4960A" />
-        <circle class="conf-p" cx="1025" cy="90" r="2.5" fill="#C47A2A" />
-        <circle class="conf-p" cx="1008" cy="76" r="2" fill="#5AAB9D" />
-        <rect class="conf-p" x="1015" y="84" width="4" height="4" rx="1" fill="#D4960A" transform="rotate(25,1017,86)" />
-        <rect class="conf-p" x="998" y="78" width="3" height="5" rx="1" fill="#C47A2A" transform="rotate(-15,999,80)" />
-        <circle class="conf-p" cx="1030" cy="95" r="2" fill="#D4960A" />
-        <circle class="conf-p" cx="990" cy="95" r="2.5" fill="#5AAB9D" />
-        <rect class="conf-p" x="1020" y="75" width="3" height="4" rx="1" fill="#C47A2A" transform="rotate(40,1021,77)" />
-        <circle class="conf-p" cx="1005" cy="72" r="2" fill="#D4960A" />
+        <circle class="conf-p" cx="990" cy="200" r="3" fill="#D4960A" />
+        <circle class="conf-p" cx="978" cy="195" r="2.5" fill="#C47A2A" />
+        <circle class="conf-p" cx="1002" cy="197" r="2" fill="#5AAB9D" />
+        <circle class="conf-p" cx="975" cy="203" r="3" fill="#D4960A" />
+        <circle class="conf-p" cx="1005" cy="205" r="2.5" fill="#C47A2A" />
+        <circle class="conf-p" cx="988" cy="191" r="2" fill="#5AAB9D" />
+        <rect class="conf-p" x="995" y="199" width="4" height="4" rx="1" fill="#D4960A" transform="rotate(25,997,201)" />
+        <rect class="conf-p" x="978" y="193" width="3" height="5" rx="1" fill="#C47A2A" transform="rotate(-15,979,195)" />
+        <circle class="conf-p" cx="1010" cy="210" r="2" fill="#D4960A" />
+        <circle class="conf-p" cx="970" cy="210" r="2.5" fill="#5AAB9D" />
+        <rect class="conf-p" x="1000" y="190" width="3" height="4" rx="1" fill="#C47A2A" transform="rotate(40,1001,192)" />
+        <circle class="conf-p" cx="985" cy="187" r="2" fill="#D4960A" />
       </g>
 
       <!-- Flow path: dotted connector from Closed Won → Renewal Pipeline -->
