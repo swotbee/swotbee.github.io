@@ -4,101 +4,239 @@
 // Features: stage highlights, confetti on Closed Won, animated flow path to renewal
 ---
 
-<!-- ============ MOBILE: Static comparison cards ============ -->
-<section class="block md:hidden px-4 pb-4">
-  <div class="grid grid-cols-1 gap-4 max-w-md mx-auto">
+<!-- ============ MOBILE: Split animated SVGs (stacked) ============ -->
+<section class="block md:hidden px-3 pb-4">
+  <div class="grid grid-cols-1 gap-3 max-w-lg mx-auto">
 
-    <!-- WITHOUT card -->
-    <div class="bg-[#152535] rounded-xl p-5 border border-[#1a3248]">
-      <p class="text-[#5a8a9f] text-xs font-semibold tracking-wider mb-3 uppercase">Without Automation</p>
+    <!-- WITHOUT AUTOMATION — mobile SVG (left half cropped) -->
+    <svg viewBox="0 0 530 530" class="w-full h-auto rounded-xl overflow-hidden" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="m-bg1" x1="0" y1="0" x2="0.5" y2="1">
+          <stop offset="0%" stop-color="#f7f5f1" />
+          <stop offset="100%" stop-color="#f5f3ef" />
+        </linearGradient>
+      </defs>
+      <rect width="530" height="530" fill="url(#m-bg1)" rx="12" />
 
-      <!-- Mini pipeline -->
-      <div class="flex gap-1.5 mb-4">
-        <div class="flex-1 bg-[#1a3248] rounded-md py-2 px-1.5 text-center">
-          <span class="text-[#5a8a9f] text-[10px]">Discovery</span>
-        </div>
-        <div class="flex-1 bg-[#1a3248] rounded-md py-2 px-1.5 text-center">
-          <span class="text-[#5a8a9f] text-[10px]">Qualified</span>
-        </div>
-        <div class="flex-1 bg-[#1a3248] rounded-md py-2 px-1.5 text-center">
-          <span class="text-[#5a8a9f] text-[10px]">Proposal</span>
-        </div>
-        <div class="flex-1 bg-[#1a3248] rounded-md py-2 px-1.5 text-center border border-[#3d7a9a]">
-          <span class="text-[#3d7a9a] text-[10px] font-semibold">Won</span>
-        </div>
-      </div>
+      <!-- Header -->
+      <text x="265" y="36" text-anchor="middle" fill="#5a8a9f" font-size="16" font-weight="700" letter-spacing="1.5" font-family="sans-serif" opacity="0.7">WITHOUT AUTOMATION</text>
+
+      <!-- Sales Pipeline label -->
+      <text x="40" y="68" fill="#5a8a9f" opacity="0.5" font-size="14" font-weight="600" font-family="sans-serif">Sales Pipeline</text>
+
+      <!-- Stage boxes (scaled up for mobile readability) -->
+      <rect x="35" y="82" width="110" height="48" rx="8" fill="white" stroke="#c8d0d8" stroke-width="1" opacity="0.7" />
+      <text x="90" y="112" text-anchor="middle" fill="#5a8a9f" font-size="15" font-family="sans-serif">Discovery</text>
+
+      <rect x="160" y="82" width="110" height="48" rx="8" fill="white" stroke="#c8d0d8" stroke-width="1" opacity="0.7" />
+      <text x="215" y="112" text-anchor="middle" fill="#5a8a9f" font-size="15" font-family="sans-serif">Qualified</text>
+
+      <rect x="285" y="82" width="110" height="48" rx="8" fill="white" stroke="#c8d0d8" stroke-width="1" opacity="0.7" />
+      <text x="340" y="112" text-anchor="middle" fill="#5a8a9f" font-size="15" font-family="sans-serif">Proposal</text>
+
+      <rect x="410" y="82" width="110" height="48" rx="8" fill="white" stroke="#3d7a9a" stroke-width="1.5" opacity="0.7" />
+      <text x="465" y="112" text-anchor="middle" fill="#3d7a9a" font-size="15" font-weight="600" font-family="sans-serif">Closed Won</text>
+
+      <!-- Arrows -->
+      <polygon points="149,106 157,101 157,111" fill="#c8d0d8" opacity="0.5" />
+      <polygon points="274,106 282,101 282,111" fill="#c8d0d8" opacity="0.5" />
+      <polygon points="399,106 407,101 407,111" fill="#c8d0d8" opacity="0.5" />
 
       <!-- Empty renewal -->
-      <div class="border border-dashed border-[#2a5070] rounded-md py-2 px-3 mb-4 opacity-40">
-        <span class="text-[#5a8a9f] text-xs">Renewal Pipeline — empty</span>
-      </div>
+      <text x="40" y="185" fill="#5a8a9f" opacity="0.3" font-size="14" font-weight="600" font-family="sans-serif">Renewal Pipeline</text>
+      <rect x="40" y="198" width="480" height="48" rx="8" fill="none" stroke="#c8d0d8" stroke-width="1" stroke-dasharray="5 4" opacity="0.3" />
+      <text x="280" y="228" text-anchor="middle" fill="#5a8a9f" opacity="0.25" font-size="15" font-family="sans-serif">— empty — no renewals tracked —</text>
 
       <!-- Warning stats -->
-      <div class="space-y-2">
-        <p class="text-[#C47A2A] text-sm font-bold">⚠ 3 renewals missed this year</p>
-        <p class="text-[#D4960A] text-sm font-bold">💸 ~$285K revenue leaked</p>
-      </div>
+      <rect x="40" y="290" width="450" height="95" rx="10" fill="white" stroke="#c8d0d8" stroke-width="1" />
+      <text x="60" y="322" fill="#C47A2A" font-size="18" font-weight="700" font-family="sans-serif">⚠ 3 renewals missed this year</text>
+      <text x="60" y="350" fill="#D4960A" font-size="18" font-weight="700" font-family="sans-serif">💸 ~$285K revenue leaked</text>
+      <text x="60" y="374" fill="#5a8a9f" font-size="12" opacity="0.5" font-family="sans-serif">Renewals tracked in spreadsheets · No visibility</text>
 
       <!-- ARR -->
-      <div class="mt-4 pt-3 border-t border-[#1a3248]">
-        <p class="text-[#5a8a9f] text-xs mb-1">Annual Recurring Revenue</p>
-        <p class="text-[#3d7a9a] text-2xl font-bold opacity-60">$1.2M <span class="text-sm font-normal">— flat</span></p>
-      </div>
-    </div>
+      <rect x="40" y="405" width="450" height="85" rx="10" fill="white" stroke="#c8d0d8" stroke-width="1" />
+      <text x="60" y="435" fill="#5a8a9f" opacity="0.5" font-size="14" font-family="sans-serif">Annual Recurring Revenue</text>
+      <text x="60" y="474" fill="#3d7a9a" font-size="40" font-weight="700" font-family="sans-serif" opacity="0.5">$1.2M</text>
+      <text x="230" y="474" fill="#3d7a9a" opacity="0.3" font-size="16" font-family="sans-serif">— flat</text>
+    </svg>
 
-    <!-- WITH card -->
-    <div class="bg-[#152535] rounded-xl p-5 border border-[#5AAB9D]">
-      <p class="text-[#5AAB9D] text-xs font-semibold tracking-wider mb-3 uppercase">With Automation ⚡</p>
+    <!-- WITH AUTOMATION — mobile SVG (right half) -->
+    <svg viewBox="0 0 530 530" class="w-full h-auto rounded-xl overflow-hidden hp-svg-mobile" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="m-bg2" x1="0" y1="0" x2="0.5" y2="1">
+          <stop offset="0%" stop-color="#f7f5f1" />
+          <stop offset="100%" stop-color="#f5f3ef" />
+        </linearGradient>
+      </defs>
+      <rect width="530" height="530" fill="url(#m-bg2)" rx="12" />
 
-      <!-- Mini pipeline -->
-      <div class="flex gap-1.5 mb-2">
-        <div class="flex-1 bg-[#1a3248] rounded-md py-2 px-1.5 text-center">
-          <span class="text-white text-[10px]">Discovery</span>
-        </div>
-        <div class="flex-1 bg-[#1a3248] rounded-md py-2 px-1.5 text-center">
-          <span class="text-white text-[10px]">Qualified</span>
-        </div>
-        <div class="flex-1 bg-[#1a3248] rounded-md py-2 px-1.5 text-center">
-          <span class="text-white text-[10px]">Proposal</span>
-        </div>
-        <div class="flex-1 bg-[#1a3248] rounded-md py-2 px-1.5 text-center border border-[#5AAB9D]">
-          <span class="text-[#5AAB9D] text-[10px] font-semibold">Won ✓</span>
-        </div>
-      </div>
+      <text x="265" y="36" text-anchor="middle" fill="#5AAB9D" font-size="16" font-weight="700" letter-spacing="1.5" font-family="sans-serif">WITH AUTOMATION ⚡</text>
+
+      <text x="40" y="68" fill="#1a2530" opacity="0.7" font-size="14" font-weight="600" font-family="sans-serif">Sales Pipeline</text>
+
+      <rect x="35" y="82" width="110" height="48" rx="8" fill="white" stroke="#c8d0d8" stroke-width="1" />
+      <text x="90" y="112" text-anchor="middle" fill="#1a2530" font-size="15" font-family="sans-serif">Discovery</text>
+
+      <rect x="160" y="82" width="110" height="48" rx="8" fill="white" stroke="#c8d0d8" stroke-width="1" />
+      <text x="215" y="112" text-anchor="middle" fill="#1a2530" font-size="15" font-family="sans-serif">Qualified</text>
+
+      <rect x="285" y="82" width="110" height="48" rx="8" fill="white" stroke="#c8d0d8" stroke-width="1" />
+      <text x="340" y="112" text-anchor="middle" fill="#1a2530" font-size="15" font-family="sans-serif">Proposal</text>
+
+      <rect x="410" y="82" width="110" height="48" rx="8" fill="white" stroke="#5AAB9D" stroke-width="1.5" />
+      <text x="465" y="112" text-anchor="middle" fill="#5AAB9D" font-size="15" font-weight="600" font-family="sans-serif">Closed Won</text>
+
+      <polygon points="149,106 157,101 157,111" fill="#c8d0d8" />
+      <polygon points="274,106 282,101 282,111" fill="#c8d0d8" />
+      <polygon points="399,106 407,101 407,111" fill="#c8d0d8" />
 
       <!-- Bolt connector -->
-      <div class="text-center py-1">
-        <span class="text-[#D4960A] text-xs font-bold">⚡ auto-creates renewal</span>
-      </div>
+      <line x1="465" y1="132" x2="465" y2="155" stroke="#D4960A" stroke-width="2" class="m-bolt" opacity="0" />
+      <line x1="465" y1="155" x2="110" y2="155" stroke="#D4960A" stroke-width="2" stroke-dasharray="5 3" class="m-bolt" opacity="0" />
+      <line x1="110" y1="155" x2="110" y2="198" stroke="#D4960A" stroke-width="2" class="m-bolt" opacity="0" />
+      <polygon points="105,195 110,205 115,195" fill="#D4960A" class="m-bolt" opacity="0" />
+      <text x="288" y="150" text-anchor="middle" fill="#D4960A" font-size="12" font-weight="700" font-family="sans-serif" class="m-bolt" opacity="0">⚡ auto-creates renewal</text>
 
-      <!-- Renewal pipeline -->
-      <div class="flex gap-1.5 mb-4">
-        <div class="flex-1 bg-[#1a3248] rounded-md py-2 px-1.5 text-center border border-[#5AAB9D]">
-          <span class="text-[#5AAB9D] text-[10px]">Upcoming</span>
-        </div>
-        <div class="flex-1 bg-[#1a3248] rounded-md py-2 px-1.5 text-center border border-[#5AAB9D]">
-          <span class="text-[#5AAB9D] text-[10px]">In Review</span>
-        </div>
-        <div class="flex-1 bg-[#1a3248] rounded-md py-2 px-1.5 text-center border border-[#D4960A]">
-          <span class="text-[#D4960A] text-[10px] font-semibold">Renewed ★</span>
-        </div>
-      </div>
+      <!-- Renewal Pipeline -->
+      <text x="40" y="185" fill="#5AAB9D" opacity="0.8" font-size="14" font-weight="600" font-family="sans-serif">Renewal Pipeline</text>
+
+      <rect x="35" y="198" width="155" height="48" rx="8" fill="white" stroke="#5AAB9D" stroke-width="1" />
+      <text x="112" y="228" text-anchor="middle" fill="#5AAB9D" font-size="15" font-family="sans-serif">Upcoming</text>
+
+      <rect x="200" y="198" width="155" height="48" rx="8" fill="white" stroke="#5AAB9D" stroke-width="1" />
+      <text x="277" y="228" text-anchor="middle" fill="#5AAB9D" font-size="15" font-family="sans-serif">In Review</text>
+
+      <rect x="365" y="198" width="155" height="48" rx="8" fill="white" stroke="#D4960A" stroke-width="1.5" />
+      <text x="442" y="228" text-anchor="middle" fill="#D4960A" font-size="15" font-weight="600" font-family="sans-serif">Renewed ★</text>
+
+      <polygon points="194,222 202,217 202,227" fill="#5AAB9D" />
+      <polygon points="359,222 367,217 367,227" fill="#5AAB9D" />
 
       <!-- Success stats -->
-      <div class="space-y-2">
-        <p class="text-[#5AAB9D] text-sm font-semibold">✓ 0 renewals missed</p>
-        <p class="text-[#D4960A] text-sm font-bold">✓ $0 revenue leaked</p>
-      </div>
+      <rect x="40" y="290" width="450" height="95" rx="10" fill="white" stroke="#5AAB9D" stroke-width="1" />
+      <text x="60" y="322" fill="#5AAB9D" font-size="17" font-weight="600" font-family="sans-serif">✓ 0 renewals missed</text>
+      <text x="60" y="350" fill="#D4960A" font-size="17" font-weight="700" font-family="sans-serif">✓ $0 revenue leaked</text>
+      <text x="60" y="374" fill="#5a6a78" font-size="12" opacity="0.5" font-family="sans-serif">Recurring items only · 3% uplift · Owner preserved</text>
 
       <!-- ARR -->
-      <div class="mt-4 pt-3 border-t border-[#1a3248]">
-        <p class="text-white text-xs mb-1 opacity-60">Annual Recurring Revenue</p>
-        <p class="text-[#C47A2A] text-2xl font-bold">$2.4M <span class="text-[#D4960A] text-sm font-bold">↑ growing</span></p>
-      </div>
-    </div>
+      <rect x="40" y="405" width="450" height="85" rx="10" fill="white" stroke="#5AAB9D" stroke-width="1.5" />
+      <text x="60" y="435" fill="#1a2530" opacity="0.6" font-size="14" font-family="sans-serif">Annual Recurring Revenue</text>
+      <text x="60" y="474" fill="#C47A2A" font-size="40" font-weight="700" font-family="sans-serif" class="m-arr">$1.2M</text>
+      <g class="m-arr-growth" opacity="0">
+        <text x="250" y="474" fill="#D4960A" font-size="20" font-weight="700" font-family="sans-serif">↑ growing</text>
+      </g>
 
+      <!-- Animated deal cards -->
+      <g class="m-deal1" opacity="0">
+        <rect width="100" height="36" rx="6" fill="#f5f3ef" stroke="#5a8a9f" stroke-width="1" />
+        <text x="8" y="16" fill="#1a2530" font-size="12" font-weight="600" font-family="sans-serif">Acme Corp</text>
+        <text x="8" y="30" fill="#5a6a78" font-size="10" font-family="sans-serif">$120K</text>
+      </g>
+      <g class="m-deal2" opacity="0">
+        <rect width="100" height="36" rx="6" fill="#f5f3ef" stroke="#5a8a9f" stroke-width="1" />
+        <text x="8" y="16" fill="#1a2530" font-size="12" font-weight="600" font-family="sans-serif">Beta Inc</text>
+        <text x="8" y="30" fill="#5a6a78" font-size="10" font-family="sans-serif">$85K</text>
+      </g>
+
+      <!-- Animated renewal cards -->
+      <g class="m-ren1" opacity="0">
+        <rect width="145" height="36" rx="6" fill="#f0faf8" stroke="#5AAB9D" stroke-width="1" />
+        <text x="8" y="16" fill="#5AAB9D" font-size="11" font-weight="600" font-family="sans-serif">Acme Renewal '27</text>
+        <text x="8" y="30" fill="#D4960A" font-size="10" font-family="sans-serif">$123.6K · +3% ↑</text>
+      </g>
+      <g class="m-ren2" opacity="0">
+        <rect width="145" height="36" rx="6" fill="#f0faf8" stroke="#5AAB9D" stroke-width="1" />
+        <text x="8" y="16" fill="#5AAB9D" font-size="11" font-weight="600" font-family="sans-serif">Beta Renewal '27</text>
+        <text x="8" y="30" fill="#D4960A" font-size="10" font-family="sans-serif">$87.6K · +3% ↑</text>
+      </g>
+    </svg>
   </div>
 </section>
+
+<script is:inline>
+document.addEventListener('DOMContentLoaded', function() {
+  var svg = document.querySelector('.hp-svg-mobile');
+  if (!svg || window.innerWidth >= 768) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  var stagesX = [40, 165, 290, 415];
+  var sY = 87;
+  var renX = [40, 205, 370];
+  var renY = 203;
+
+  var d1 = svg.querySelector('.m-deal1');
+  var d2 = svg.querySelector('.m-deal2');
+  var r1 = svg.querySelector('.m-ren1');
+  var r2 = svg.querySelector('.m-ren2');
+  var bolts = svg.querySelectorAll('.m-bolt');
+  var arr = svg.querySelector('.m-arr');
+  var arrG = svg.querySelector('.m-arr-growth');
+
+  function pos(el, x, y) { if (el) el.setAttribute('transform', 'translate(' + x + ',' + y + ')'); }
+  function show(el, o) { if (el) el.setAttribute('opacity', String(o)); }
+
+  function animDeal(el, fx, fy, tx, ty, dur, cb) {
+    if (!el) return;
+    var st = null;
+    function step(ts) {
+      if (!st) st = ts;
+      var p = Math.min((ts - st) / dur, 1);
+      var e = 1 - Math.pow(1 - p, 3);
+      pos(el, fx + (tx - fx) * e, fy + (ty - fy) * e);
+      if (p < 1) requestAnimationFrame(step); else if (cb) cb();
+    }
+    show(el, 1);
+    requestAnimationFrame(step);
+  }
+
+  function flashBolts(cb) {
+    bolts.forEach(function(b) { show(b, 1); });
+    setTimeout(cb, 300);
+  }
+
+  function updateARR(val) {
+    if (arr) { arr.textContent = val; arr.setAttribute('fill', '#D4960A'); setTimeout(function() { arr.setAttribute('fill', '#C47A2A'); }, 700); }
+  }
+
+  function resetAll() {
+    [d1, d2, r1, r2].forEach(function(el) { show(el, 0); pos(el, -300, -300); });
+    bolts.forEach(function(b) { show(b, 0); });
+    show(arrG, 0);
+    if (arr) { arr.textContent = '$1.2M'; arr.setAttribute('fill', '#C47A2A'); }
+  }
+
+  function run() {
+    resetAll();
+    // Deal 1
+    setTimeout(function() { animDeal(d1, stagesX[0], sY - 40, stagesX[0], sY, 500, null); }, 800);
+    setTimeout(function() { animDeal(d1, stagesX[0], sY, stagesX[1], sY, 700, null); }, 2000);
+    setTimeout(function() { animDeal(d1, stagesX[1], sY, stagesX[2], sY, 700, null); }, 3200);
+    setTimeout(function() {
+      animDeal(d1, stagesX[2], sY, stagesX[3], sY, 700, function() {
+        flashBolts(function() { animDeal(r1, renX[0], renY - 30, renX[0], renY, 400, null); });
+      });
+    }, 4400);
+    setTimeout(function() { animDeal(r1, renX[0], renY, renX[1], renY, 600, null); }, 6200);
+    setTimeout(function() { animDeal(r1, renX[1], renY, renX[2], renY, 600, function() { updateARR('$1.8M'); show(arrG, 1); }); }, 7200);
+
+    // Deal 2
+    setTimeout(function() { animDeal(d2, stagesX[0], sY - 40, stagesX[0], sY, 500, null); }, 9000);
+    setTimeout(function() { animDeal(d2, stagesX[0], sY, stagesX[1], sY, 600, null); }, 10000);
+    setTimeout(function() { animDeal(d2, stagesX[1], sY, stagesX[2], sY, 600, null); }, 11000);
+    setTimeout(function() {
+      animDeal(d2, stagesX[2], sY, stagesX[3], sY, 600, function() {
+        flashBolts(function() { animDeal(r2, renX[0], renY - 30, renX[0], renY, 400, null); });
+      });
+    }, 12000);
+    setTimeout(function() { animDeal(r2, renX[0], renY, renX[1], renY, 600, null); }, 13800);
+    setTimeout(function() { animDeal(r2, renX[1], renY, renX[2], renY, 600, function() { updateARR('$2.4M'); }); }, 14800);
+
+    setTimeout(run, 18000);
+  }
+
+  setTimeout(run, 500);
+});
+</script>
 
 <!-- ============ DESKTOP: Animated SVG ============ -->
 <section class="hp-section hidden md:block">
