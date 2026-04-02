@@ -5,12 +5,14 @@
   "scripts": {
     "dev": "astro dev --host --verbose",
     "build": "astro build",
+    "postbuild": "pagefind --site dist --output-path dist/pagefind",
     "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
     "@astrojs/alpinejs": "^0.4.8",
     "@astrojs/react": "^4.3.0",
+    "@astrojs/rss": "^4.0.18",
     "@astrojs/sitemap": "^3.4.1",
     "@element-plus/icons-vue": "^2.3.2",
     "@fontsource-variable/dm-sans": "^5.2.8",
@@ -48,6 +50,7 @@
     "@vitejs/plugin-react": "^5.0.4",
     "autoprefixer": "^10.4.21",
     "flowbite-typography": "^1.0.5",
+    "pagefind": "^1.4.0",
     "serve": "^14.2.4",
     "vite": "^7.1.9"
   }

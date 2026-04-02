@@ -1,0 +1,71 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/astro/Navbar.astro";
+import Footer from "../components/astro/Footer.astro";
+import StructuredData from "../components/astro/StructuredData.astro";
+---
+
+<Layout title="Search — SWOTBee Blog" description="Search our blog for HubSpot tips, RevOps strategies, and CRM automation guides.">
+  <StructuredData
+    type="breadcrumb"
+    data={{ breadcrumbs: [
+      { name: "Home", url: "https://swotbee.com" },
+      { name: "Blog", url: "https://swotbee.com/blog" },
+      { name: "Search", url: "https://swotbee.com/search" },
+    ]}}
+  />
+
+  <Navbar />
+
+  <section class="bg-gradient-to-b from-v6-bg to-white px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20 pb-10">
+    <div class="max-w-3xl mx-auto text-center">
+      <h1 class="text-3xl sm:text-4xl font-bold text-v6-dark mb-4">Search the Blog</h1>
+      <p class="text-base text-v6-text-muted max-w-xl mx-auto leading-relaxed">
+        Find HubSpot guides, RevOps strategies, and renewal pipeline tips.
+      </p>
+    </div>
+  </section>
+
+  <section class="bg-white px-4 sm:px-6 lg:px-8 pb-20">
+    <div class="max-w-3xl mx-auto">
+      <div id="search"></div>
+    </div>
+  </section>
+
+  <Footer />
+
+  <link href="/pagefind/pagefind-ui.css" rel="stylesheet" />
+  <script src="/pagefind/pagefind-ui.js" is:inline></script>
+  <script is:inline>
+    window.addEventListener('DOMContentLoaded', function() {
+      new PagefindUI({
+        element: "#search",
+        showSubResults: true,
+        showImages: false,
+      });
+    });
+  </script>
+  <style is:global>
+    :root {
+      --pagefind-ui-primary: #C47A2A;
+      --pagefind-ui-text: #1F2937;
+      --pagefind-ui-background: #f7f5f1;
+      --pagefind-ui-border: #e5e2da;
+      --pagefind-ui-tag: #f7f5f1;
+      --pagefind-ui-border-width: 1px;
+      --pagefind-ui-border-radius: 12px;
+      --pagefind-ui-font: 'Hanken Grotesk Variable', 'DM Sans Variable', sans-serif;
+    }
+    .pagefind-ui__search-input {
+      font-size: 1rem !important;
+      padding: 0.75rem 1rem !important;
+    }
+    .pagefind-ui__result-link {
+      color: #1A7AB5 !important;
+      font-weight: 600 !important;
+    }
+    .pagefind-ui__result-link:hover {
+      color: #C47A2A !important;
+    }
+  </style>
+</Layout>

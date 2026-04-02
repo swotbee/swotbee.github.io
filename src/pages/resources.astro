@@ -1,0 +1,140 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/astro/Navbar.astro";
+import Footer from "../components/astro/Footer.astro";
+import StructuredData from "../components/astro/StructuredData.astro";
+
+const guides = [
+  {
+    title: "Complete Guide to HubSpot Renewal Pipelines",
+    description: "The definitive resource for building, automating, and measuring renewal pipelines in HubSpot.",
+    url: "/posts/hubspot-renewal-pipeline-complete-guide",
+    tag: "Pillar Guide",
+  },
+  {
+    title: "HubSpot Onboarding Services",
+    description: "How SWOTBee gets your team up and running with HubSpot — from portal setup to workflow automation.",
+    url: "/services/hubspot-onboarding",
+    tag: "Service",
+  },
+  {
+    title: "Marketing Automation Services",
+    description: "Lead scoring, email sequences, campaign attribution, and marketing analytics in HubSpot.",
+    url: "/services/marketing",
+    tag: "Service",
+  },
+  {
+    title: "Sales & RevOps Services",
+    description: "Pipeline optimization, forecasting, territory management, and revenue reporting.",
+    url: "/services/sales-revops",
+    tag: "Service",
+  },
+];
+
+const topics = [
+  { name: "Renewal Pipelines", count: 11, slug: "revenue-operations", icon: "🔄" },
+  { name: "Workflow Automation", count: 5, slug: "revenue-operations", icon: "⚡" },
+  { name: "CRM Strategy", count: 8, slug: "revenue-operations", icon: "📊" },
+  { name: "Integrations", count: 4, slug: "revenue-operations", icon: "🔗" },
+];
+
+const quickLinks = [
+  { label: "Blog", url: "/blog", desc: "All articles" },
+  { label: "Contact Us", url: "/contactus", desc: "Free 30-min consultation" },
+  { label: "Search", url: "/search", desc: "Find specific topics" },
+];
+---
+
+<Layout
+  title="Resource Center | SWOTBee"
+  description="Guides, strategies, and tools for mastering HubSpot, revenue operations, and renewal pipeline management."
+>
+  <StructuredData
+    type="breadcrumb"
+    data={{ breadcrumbs: [
+      { name: "Home", url: "https://swotbee.com" },
+      { name: "Resources", url: "https://swotbee.com/resources" },
+    ]}}
+  />
+
+  <Navbar />
+
+  <!-- Hero -->
+  <section class="bg-v6-bg border-b border-v6-border px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20 pb-12 text-center">
+    <span class="inline-block bg-v6-copper-50 text-v6-copper text-xs font-semibold px-3 py-1 rounded-full mb-4">Resource Center</span>
+    <h1 class="text-3xl sm:text-4xl font-bold text-v6-dark mb-4">Everything You Need to Master HubSpot</h1>
+    <p class="text-base sm:text-lg text-v6-text-muted max-w-2xl mx-auto leading-relaxed mb-8">
+      Guides, frameworks, and strategies for mid-market teams in Energy, Manufacturing, and SaaS.
+    </p>
+    <a href="/search" class="inline-flex items-center gap-2 bg-white border border-v6-border rounded-xl px-5 py-3 text-sm text-v6-text-muted hover:border-v6-copper hover:text-v6-dark transition-colors">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+      Search all content...
+    </a>
+  </section>
+
+  <!-- Complete Guides -->
+  <section class="bg-white px-4 sm:px-6 lg:px-8 py-14">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-2xl font-bold text-v6-dark mb-8">Complete Guides</h2>
+      <div class="grid gap-6 sm:grid-cols-2">
+        {guides.map(guide => (
+          <a href={guide.url} class="group block bg-v6-bg rounded-xl border border-v6-border p-6 hover:shadow-md transition-shadow">
+            <span class="inline-block bg-v6-teal-50 text-v6-teal-700 text-xs font-semibold px-2.5 py-0.5 rounded-full mb-3">
+              {guide.tag}
+            </span>
+            <h3 class="text-lg font-bold text-v6-dark group-hover:text-v6-copper transition-colors mb-2">
+              {guide.title}
+            </h3>
+            <p class="text-sm text-v6-text-muted leading-relaxed">{guide.description}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- By Topic -->
+  <section class="bg-v6-bg px-4 sm:px-6 lg:px-8 py-14">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-2xl font-bold text-v6-dark mb-8">Browse by Topic</h2>
+      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        {topics.map(topic => (
+          <a href="/blog" class="group block bg-white rounded-xl border border-v6-border p-5 hover:shadow-md transition-shadow text-center">
+            <span class="text-3xl mb-3 block">{topic.icon}</span>
+            <h3 class="text-sm font-bold text-v6-dark group-hover:text-v6-copper transition-colors">{topic.name}</h3>
+            <p class="text-xs text-v6-text-muted mt-1">{topic.count} articles</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Links -->
+  <section class="bg-white px-4 sm:px-6 lg:px-8 py-14">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-2xl font-bold text-v6-dark mb-8">Quick Links</h2>
+      <div class="grid gap-4 sm:grid-cols-3">
+        {quickLinks.map(link => (
+          <a href={link.url} class="group flex items-center gap-4 bg-v6-bg rounded-xl border border-v6-border p-5 hover:shadow-md transition-shadow">
+            <div>
+              <h3 class="text-sm font-bold text-v6-dark group-hover:text-v6-copper transition-colors">{link.label}</h3>
+              <p class="text-xs text-v6-text-muted mt-0.5">{link.desc}</p>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-gradient-to-br from-v6-copper to-v6-copper-600 py-14 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-2xl mx-auto text-center">
+      <h2 class="text-2xl sm:text-3xl font-bold text-white mb-3">Need Hands-On Help?</h2>
+      <p class="text-v6-copper-100 text-base mb-6">SWOTBee builds HubSpot pipelines, automation, and dashboards for mid-market teams. Free 30-minute consultation.</p>
+      <a href="/contactus" class="inline-block bg-white text-v6-copper px-8 py-3 rounded-xl text-sm font-semibold hover:bg-gray-50 transition-colors">
+        Book a Free Consultation
+      </a>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

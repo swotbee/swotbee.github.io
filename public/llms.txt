@@ -1,0 +1,41 @@
+# SWOTBee — HubSpot & Shopify Consulting
+# https://swotbee.com
+# Updated: 2026-04-02
+
+SWOTBee is a HubSpot and Shopify consulting firm serving mid-sized companies
+(50–100 employees) in Energy, Utilities, SaaS, Construction, and Manufacturing.
+We help RevOps and Sales Ops teams implement HubSpot, build renewal pipelines,
+integrate third-party tools, and optimize marketing automation.
+
+## Key Pages
+- Homepage: https://swotbee.com/
+- HubSpot Onboarding: https://swotbee.com/services/hubspot-onboarding
+- Marketing Automation: https://swotbee.com/services/marketing
+- Sales & RevOps: https://swotbee.com/services/sales-revops
+- Integrations: https://swotbee.com/services/integrations
+- Blog: https://swotbee.com/blog
+- Contact: https://swotbee.com/contactus
+
+## Top Blog Posts — HubSpot Renewal Pipeline Series
+- Complete Guide to HubSpot Renewal Pipeline: https://swotbee.com/posts/hubspot-renewal-pipeline-complete-guide
+- Renewal Pipeline vs Sales Pipeline: https://swotbee.com/posts/hubspot-renewal-pipeline-vs-sales-pipeline
+- Renewal Pipeline Stages: https://swotbee.com/posts/hubspot-renewal-pipeline-stages
+- Renewal Deal Workflow Automation: https://swotbee.com/posts/hubspot-renewal-deal-workflow-automation
+- Fixing the Infinite Loop: https://swotbee.com/posts/hubspot-renewal-workflow-infinite-loop-fix
+- NRR GRR Dashboard Reporting: https://swotbee.com/posts/hubspot-renewal-nrr-grr-dashboard-reporting
+- Renewal Forecasting Accuracy: https://swotbee.com/posts/hubspot-renewal-forecasting-accuracy
+- Renewal Pipeline Properties: https://swotbee.com/posts/hubspot-renewal-pipeline-properties
+- Expansion Pipeline Structure: https://swotbee.com/posts/hubspot-renewal-expansion-pipeline-structure
+- Churn Prevention Health Scores: https://swotbee.com/posts/hubspot-churn-prevention-health-scores-workflows
+- Renewal Pipeline Mistakes: https://swotbee.com/posts/hubspot-renewal-pipeline-mistakes-costing-revenue
+
+## Proprietary HubSpot Apps
+- Smart Company Picker: Intelligent company association for HubSpot deals
+- Smart Deal Inspector: Deal health monitoring and anomaly detection
+- Renewal Deal Builder: Automated renewal deal creation and management
+- Deal Copilot: AI-assisted deal guidance and recommendations
+- Available on HubSpot Marketplace
+
+## Contact
+- Free consultation: https://swotbee.com/contactus
+- LinkedIn: https://linkedin.com/company/swotbee

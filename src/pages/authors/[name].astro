@@ -1,0 +1,128 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/astro/Navbar.astro';
+import Footer from '../../components/astro/Footer.astro';
+import StructuredData from '../../components/astro/StructuredData.astro';
+import { authors, getAuthorBySlug } from '../../data/authors';
+import { getAllPosts } from '../../utils/posts';
+
+export async function getStaticPaths() {
+  return authors.map(author => ({
+    params: { name: author.slug },
+    props: { author },
+  }));
+}
+
+const { author } = Astro.props;
+const allPosts = await getAllPosts();
+const authorPosts = allPosts.filter(
+  p => (p.authorName || 'SWOTBee Team').toLowerCase() === author.name.toLowerCase()
+);
+---
+
+<Layout
+  title={`${author.name} | SWOTBee Blog`}
+  description={author.bio}
+>
+  <StructuredData
+    type="person"
+    data={{
+      name: author.name,
+      url: `https://swotbee.com/authors/${author.slug}`,
+      linkedin: author.linkedin,
+      jobTitle: author.jobTitle,
+      worksFor: "SWOTBee",
+      knowsAbout: author.expertise,
+      image: author.imageUrl,
+    }}
+  />
+  <StructuredData
+    type="breadcrumb"
+    data={{ breadcrumbs: [
+      { name: "Home", url: "https://swotbee.com" },
+      { name: "Blog", url: "https://swotbee.com/blog" },
+      { name: author.name, url: `https://swotbee.com/authors/${author.slug}` },
+    ]}}
+  />
+
+  <Navbar />
+
+  <section class="bg-gradient-to-b from-v6-bg to-white px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20 pb-10">
+    <div class="max-w-3xl mx-auto">
+      <!-- Author Header -->
+      <div class="flex items-start gap-5 mb-8">
+        <div class="w-20 h-20 rounded-full bg-v6-teal-100 flex items-center justify-center text-v6-teal-700 font-bold text-2xl flex-shrink-0">
+          {author.name.charAt(0)}
+        </div>
+        <div>
+          <h1 class="text-3xl font-bold text-v6-dark">{author.name}</h1>
+          <p class="text-v6-text-muted text-sm mt-1">{author.jobTitle}</p>
+          {author.linkedin && (
+            <a
+              href={author.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-1.5 text-sm text-v6-teal-700 hover:text-v6-teal-800 transition-colors mt-2"
+            >
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+              </svg>
+              LinkedIn
+            </a>
+          )}
+        </div>
+      </div>
+
+      <!-- Expertise -->
+      {author.expertise.length > 0 && (
+        <div class="flex flex-wrap gap-2 mb-6">
+          {author.expertise.map(area => (
+            <span class="text-xs bg-v6-bg border border-v6-border text-v6-text-muted px-3 py-1 rounded-full">{area}</span>
+          ))}
+        </div>
+      )}
+
+      <!-- Bio -->
+      <p class="text-base text-v6-text-muted leading-relaxed mb-10">{author.bio}</p>
+
+      <!-- Posts -->
+      <h2 class="text-xl font-bold text-v6-dark mb-6">
+        Articles ({authorPosts.length})
+      </h2>
+    </div>
+  </section>
+
+  <section class="bg-white px-4 sm:px-6 lg:px-8 pb-16">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {authorPosts.map(post => (
+          <a href={`/posts/${post.slug}`} class="group block bg-v6-bg rounded-xl border border-v6-border overflow-hidden hover:shadow-md transition-shadow">
+            {post.image && (
+              <div class="aspect-video overflow-hidden">
+                <img
+                  src={post.image}
+                  alt={post.title}
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                  width="400"
+                  height="225"
+                />
+              </div>
+            )}
+            <div class="p-5">
+              <h3 class="text-sm font-semibold text-v6-dark leading-snug line-clamp-2 group-hover:text-v6-copper transition-colors">
+                {post.title}
+              </h3>
+              <p class="text-xs text-v6-text-muted mt-2 line-clamp-2">{post.description}</p>
+              <p class="text-xs text-v6-text-muted mt-2">
+                {new Date(post.pubDate).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
+              </p>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

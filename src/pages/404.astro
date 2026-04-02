@@ -1,0 +1,29 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/astro/Navbar.astro";
+import Footer from "../components/astro/Footer.astro";
+---
+
+<Layout title="Page Not Found | SWOTBee" description="The page you're looking for doesn't exist." robots="noindex, follow">
+  <Navbar />
+
+  <section class="bg-gradient-to-b from-v6-bg to-white px-4 sm:px-6 lg:px-8 py-24 sm:py-32">
+    <div class="max-w-2xl mx-auto text-center">
+      <p class="text-8xl sm:text-9xl font-bold text-v6-copper/20 select-none">404</p>
+      <h1 class="mt-4 text-3xl sm:text-4xl font-bold text-v6-dark">This page doesn't exist</h1>
+      <p class="mt-3 text-base text-v6-text-muted max-w-md mx-auto leading-relaxed">
+        The URL may have moved or been mistyped. Let's get you back on track.
+      </p>
+      <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="/" class="bg-v6-copper text-white px-6 py-3 rounded-xl text-sm font-semibold hover:bg-v6-copper-600 transition-colors">
+          Back to Home
+        </a>
+        <a href="/blog" class="text-v6-teal-700 text-sm font-medium hover:text-v6-teal-800 underline underline-offset-2 transition-colors">
+          Read our blog
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
