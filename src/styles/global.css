@@ -264,7 +264,220 @@ h4 {
 
 h1 {
   font-weight: 500;
-  
+
     line-height: 1.2em;
   /* 36px */
+}
+
+/* ── Blog Post Typography ─────────────────────────────────────── */
+/* Based on WCAG 1.4.12, Medium's design system, Baymard Institute */
+/* Body: 18px / 1.6 line-height / 680px max-width (70ch ≈ 66 chars/line) */
+
+.blog-content {
+  font-size: 1.125rem;                /* 18px */
+  line-height: 1.7;                   /* WCAG min 1.5; Medium 1.58; research sweet spot 1.6-1.7 */
+  color: #1a2530;
+  letter-spacing: -0.003em;
+}
+
+.blog-content p {
+  margin-top: 0;
+  margin-bottom: 1.5em;              /* ~27px — WCAG requires >= 2x font-size */
+}
+
+/* Headings — clear hierarchy with generous spacing above */
+.blog-content h1 {
+  font-size: 2.25rem;                /* 36px */
+  line-height: 1.25;
+  margin-top: 3rem;                  /* 48px */
+  margin-bottom: 1.5rem;            /* 24px */
+  font-weight: 700;
+  color: #1a2530;
+  letter-spacing: -0.02em;
+}
+
+.blog-content h2 {
+  font-size: 1.75rem;                /* 28px */
+  line-height: 1.3;
+  margin-top: 3rem;                  /* 48px — large gap creates clear section breaks */
+  margin-bottom: 1.25rem;           /* 20px — groups heading with its content */
+  font-weight: 700;
+  color: #1a2530;
+  letter-spacing: -0.015em;
+  padding-top: 0.5rem;              /* extra visual breathing room */
+  border-top: 1px solid #e5e2da;    /* subtle divider above H2 for scanability */
+}
+
+.blog-content h3 {
+  font-size: 1.375rem;              /* 22px */
+  line-height: 1.35;
+  margin-top: 2.5rem;               /* 40px */
+  margin-bottom: 0.75rem;           /* 12px */
+  font-weight: 600;
+  color: #1a2530;
+  letter-spacing: -0.01em;
+}
+
+.blog-content h4 {
+  font-size: 1.125rem;              /* 18px — same as body, differentiated by weight */
+  line-height: 1.4;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #1a2530;
+}
+
+/* Links */
+.blog-content a {
+  color: #1A7AB5;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.15s ease;
+}
+.blog-content a:hover {
+  border-bottom-color: #1A7AB5;
+}
+
+/* Bold */
+.blog-content strong {
+  color: #1a2530;
+  font-weight: 600;
+}
+
+/* Lists */
+.blog-content ul,
+.blog-content ol {
+  margin-top: 0;
+  margin-bottom: 1.5em;
+  padding-left: 1.5em;
+}
+
+.blog-content li {
+  margin-bottom: 0.5em;             /* 9px breathing room between items */
+  color: #5a6a78;
+}
+
+.blog-content li > ul,
+.blog-content li > ol {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+/* Blockquotes */
+.blog-content blockquote {
+  margin: 2em 0;
+  padding: 1.25em 1.5em;
+  border-left: 4px solid #C47A2A;
+  background: #f7f5f1;
+  border-radius: 0 8px 8px 0;
+  color: #5a6a78;
+}
+
+.blog-content blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+/* Inline code */
+.blog-content code {
+  font-size: 0.875em;
+  padding: 0.15em 0.4em;
+  background: #f7f5f1;
+  border-radius: 4px;
+  color: #C47A2A;
+  white-space: nowrap;
+}
+
+/* Code blocks */
+.blog-content pre {
+  margin: 2em 0;
+  padding: 1.25em 1.5em;
+  background: #1a2530;
+  color: #e0e8f0;
+  border-radius: 8px;
+  overflow-x: auto;
+  font-size: 0.9375rem;             /* 15px */
+  line-height: 1.55;
+  tab-size: 2;
+}
+
+.blog-content pre code {
+  padding: 0;
+  background: none;
+  border-radius: 0;
+  white-space: pre;
+  font-size: inherit;
+  color: inherit;
+}
+
+/* Images */
+.blog-content img {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+}
+
+.blog-content figure {
+  margin: 2rem 0;
+}
+
+.blog-content figcaption {
+  margin-top: 0.75rem;
+  font-size: 0.875rem;
+  color: #5a6a78;
+  text-align: center;
+}
+
+/* Horizontal rules */
+.blog-content hr {
+  margin: 3rem 0;
+  border: none;
+  border-top: 1px solid #e5e2da;
+}
+
+/* Tables */
+.blog-content table {
+  width: 100%;
+  margin: 2em 0;
+  border-collapse: collapse;
+  font-size: 0.9375rem;
+}
+
+.blog-content th {
+  text-align: left;
+  padding: 0.75rem 1rem;
+  background: #f7f5f1;
+  font-weight: 600;
+  color: #1a2530;
+  border-bottom: 2px solid #e5e2da;
+  font-size: 0.875rem;
+}
+
+.blog-content td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #e5e2da;
+  color: #5a6a78;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .blog-content {
+    font-size: 1rem;                 /* 16px on mobile */
+    line-height: 1.6;
+  }
+
+  .blog-content h1 { font-size: 1.75rem; margin-top: 2rem; }
+  .blog-content h2 { font-size: 1.5rem; margin-top: 2rem; }
+  .blog-content h3 { font-size: 1.25rem; margin-top: 1.5rem; }
+
+  .blog-content pre {
+    padding: 1em;
+    font-size: 0.8125rem;
+    border-radius: 0;
+    margin-left: -1rem;
+    margin-right: -1rem;
+    width: calc(100% + 2rem);
+  }
 }

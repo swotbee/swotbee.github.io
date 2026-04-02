@@ -83,7 +83,7 @@ const displayPosts = relatedPosts.length >= 2
 
   <main class="bg-white">
     <!-- Breadcrumb -->
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 pt-8 pb-2">
+    <div class="max-w-[680px] mx-auto px-4 sm:px-6 pt-8 pb-2">
       <nav class="text-xs text-v6-text-muted">
         <a href="/" class="hover:text-v6-dark transition-colors">Home</a>
         <span class="mx-1.5">›</span>
@@ -94,7 +94,7 @@ const displayPosts = relatedPosts.length >= 2
     </div>
 
     <!-- Article Header -->
-    <header class="max-w-3xl mx-auto px-4 sm:px-6 pt-4 pb-6">
+    <header class="max-w-[680px] mx-auto px-4 sm:px-6 pt-4 pb-6">
       <!-- Tags -->
       {frontmatter.tags && frontmatter.tags.length > 0 && (
         <div class="flex flex-wrap gap-2 mb-4">
@@ -142,40 +142,28 @@ const displayPosts = relatedPosts.length >= 2
       </div>
     )}
 
-    <!-- Table of Contents (collapsible) -->
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 mb-8">
-      <details class="bg-v6-bg rounded-xl border border-v6-border group" id="toc-container">
-        <summary class="flex items-center justify-between cursor-pointer px-5 py-3 text-sm font-semibold text-v6-dark">
-          In This Article
-          <svg class="w-4 h-4 text-v6-text-muted group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+    <!-- Table of Contents -->
+    <div class="max-w-[680px] mx-auto px-4 sm:px-6 mb-10">
+      <details class="bg-v6-bg rounded-xl border border-v6-border group" id="toc-container" open>
+        <summary class="flex items-center justify-between cursor-pointer px-6 py-4 text-base font-bold text-v6-dark tracking-wide uppercase">
+          Table of Contents
+          <svg class="w-5 h-5 text-v6-text-muted group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
         </summary>
-        <nav class="px-5 pb-4" id="toc-nav">
+        <nav class="px-6 pb-5 space-y-1" id="toc-nav">
           <!-- Populated by JS -->
         </nav>
       </details>
     </div>
 
     <!-- Article Body -->
-    <article class="max-w-3xl mx-auto px-4 sm:px-6 pb-12">
-      <div class="prose prose-lg max-w-none
-        prose-headings:text-v6-dark prose-headings:font-bold
-        prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4
-        prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3
-        prose-p:text-v6-text-muted prose-p:leading-relaxed prose-p:text-base
-        prose-a:text-v6-blue prose-a:no-underline hover:prose-a:underline
-        prose-strong:text-v6-dark
-        prose-li:text-v6-text-muted
-        prose-blockquote:border-v6-copper prose-blockquote:text-v6-text-muted prose-blockquote:not-italic
-        prose-code:text-v6-copper prose-code:bg-v6-bg prose-code:px-1 prose-code:py-0.5 prose-code:rounded
-        prose-img:rounded-xl
-        prose-hr:border-v6-border
-      ">
+    <article class="max-w-[680px] mx-auto px-4 sm:px-6 pb-16">
+      <div class="blog-content">
         <slot />
       </div>
     </article>
 
     <!-- Post Footer Section -->
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 pb-16">
+    <div class="max-w-[680px] mx-auto px-4 sm:px-6 pb-16">
 
       <!-- Tags (bottom) -->
       {frontmatter.tags && frontmatter.tags.length > 0 && (
@@ -335,7 +323,7 @@ const displayPosts = relatedPosts.length >= 2
 
         tocHtml += '<a href="#' + id + '" class="block text-sm ' +
           (isH3 ? 'pl-4 ' : '') +
-          'text-v6-text-muted hover:text-v6-copper py-1 transition-colors truncate">' +
+          'text-v6-text-muted hover:text-v6-copper py-1.5 leading-snug transition-colors">' +
           text + '</a>';
       });
 
