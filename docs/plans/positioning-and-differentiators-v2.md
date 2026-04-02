@@ -7,7 +7,7 @@
 
 ## ICP Positioning
 
-We empower mid-sized companies (50–100 employees) in Energy, Utilities, SaaS, and Manufacturing to turn HubSpot into a revenue engine — driving high adoption and predictable growth.
+We empower mid-sized companies (50–100 employees) in Energy, Utilities, SaaS, construction and Manufacturing to turn HubSpot into a revenue engine — driving high adoption and predictable growth.
 
 - Custom automations that integrate your existing tools effortlessly, without burdening sales or marketing teams.
 - RevOps alignment for seamless, streamlined operations.
@@ -42,12 +42,12 @@ We deploy industry-specific tools and integrations that fill HubSpot gaps, tailo
 
 ## Service Page Headlines (Revised — Revenue Leak & Renewals Emphasis)
 
-| Page | Headline | Subline |
-|------|----------|---------|
-| **Onboarding** | "Stop the Revenue Leak Before It Starts — Get HubSpot Right from Day One" | Your team adopts faster when the tool fits their workflow, not the other way around. |
-| **Marketing** | "Your Marketing Hub Is Leaking Pipeline — Let's Fix That" | Campaigns that convert. Attribution you can trust. Zero wasted budget. |
-| **Sales & RevOps** | "Every Missed Renewal Is Revenue Walking Out the Door" | Automate renewals, fix your pipeline, and make forecasting reliable again. |
-| **Integrations** | "Disconnected Tools = Leaked Revenue — Connect Your Stack in 30 Days" | HubSpot + DocuSign + NetSuite + Xero + Zoom — seamlessly synced. |
+| Page               | Headline                                                                  | Subline                                                                              |
+| ------------------ | ------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
+| **Onboarding**     | "Stop the Revenue Leak Before It Starts — Get HubSpot Right from Day One" | Your team adopts faster when the tool fits their workflow, not the other way around. |
+| **Marketing**      | "Your Marketing Hub Is Leaking Pipeline — Let's Fix That"                 | Campaigns that convert. Attribution you can trust. Zero wasted budget.               |
+| **Sales & RevOps** | "Every Missed Renewal Is Revenue Walking Out the Door"                    | Automate renewals, fix your pipeline, and make forecasting reliable again.           |
+| **Integrations**   | "Disconnected Tools = Leaked Revenue — Connect Your Stack in 30 Days"     | HubSpot + DocuSign + NetSuite + Xero + Zoom — seamlessly synced.                     |
 
 ---
 
@@ -203,12 +203,12 @@ A: Yes. We've integrated HubSpot with NetSuite, Xero, DocuSign, Zoom, Monday.com
 
 ## Open Items
 
-- [ ] Wellstat: Get approval on testimonial text + confirm contact name/title
-- [ ] Postgrad: Get approval on testimonial text + confirm contact name/title
-- [ ] Knape & Vogt: Get approval on testimonial text + confirm contact name/title
-- [ ] Case study 1 (Energy): Confirm specific company name or keep anonymous
-- [ ] Case study 2 (Manufacturing): Confirm specific company name
-- [ ] Case study 3 (Compliance): Which specific client(s)?
+- [x] Wellstat: Get approval on testimonial text + confirm contact name/title
+- [x] Postgrad: Get approval on testimonial text + confirm contact name/title
+- [x] Knape & Vogt: Get approval on testimonial text + confirm contact name/title
+- [x] Case study 1 (Energy): Confirm specific company name or keep anonymous
+- [x] Case study 2 (Manufacturing): Confirm specific company name
+- [x] Case study 3 (Compliance): Which specific client(s)?
 - [ ] Differentiators: Final sign-off on all 4
 - [ ] "Is this you?" sections: Any pain points to add/remove?
 - [ ] Headlines: Final sign-off on all 4
