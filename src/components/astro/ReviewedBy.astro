@@ -1,0 +1,27 @@
+---
+interface Props {
+  reviewerName: string;
+  reviewerTitle?: string;
+  reviewerLinkedin?: string;
+  reviewDate?: string;
+}
+const { reviewerName, reviewerTitle, reviewerLinkedin, reviewDate } = Astro.props;
+---
+
+<div class="flex items-center gap-3 py-3 px-4 bg-v6-teal-50 border border-v6-teal-100 rounded-xl text-sm">
+  <svg class="w-4 h-4 text-v6-teal-700 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+  </svg>
+  <span class="text-v6-text-muted">
+    Reviewed by{' '}
+    {reviewerLinkedin ? (
+      <a href={reviewerLinkedin} target="_blank" rel="noopener noreferrer" class="font-semibold text-v6-dark hover:text-v6-teal-700 transition-colors">
+        {reviewerName}
+      </a>
+    ) : (
+      <span class="font-semibold text-v6-dark">{reviewerName}</span>
+    )}
+    {reviewerTitle && <span>, {reviewerTitle}</span>}
+    {reviewDate && <span> · {reviewDate}</span>}
+  </span>
+</div>

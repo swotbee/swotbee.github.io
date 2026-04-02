@@ -36,7 +36,7 @@ const blogSections = [
   <!-- Open Graph -->
   <meta property="og:title" content={`${frontmatter.title} | SWOTBee`} />
   <meta property="og:description" content={frontmatter.description} />
-  <meta property="og:image" content={frontmatter.image ? `https://swotbee.github.io${frontmatter.image}` : 'https://swotbee.github.io/assets/home-images/swotbee.png'} />
+  <meta property="og:image" content={frontmatter.image ? `https://swotbee.com${frontmatter.image}` : 'https://swotbee.com/assets/home-images/swotbee.png'} />
   <meta property="og:url" content={canonicalURL} />
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="SWOTBee" />
@@ -52,7 +52,7 @@ const blogSections = [
   <meta name="twitter:creator" content="@swotbee" />
   <meta name="twitter:title" content={`${frontmatter.title} | SWOTBee`} />
   <meta name="twitter:description" content={frontmatter.description} />
-  <meta name="twitter:image" content={frontmatter.image ? `https://swotbee.github.io${frontmatter.image}` : 'https://swotbee.github.io/assets/home-images/swotbee.png'} />
+  <meta name="twitter:image" content={frontmatter.image ? `https://swotbee.com${frontmatter.image}` : 'https://swotbee.com/assets/home-images/swotbee.png'} />
   <!-- Add structured data for SEO -->
   <script type="application/ld+json" set:html={JSON.stringify(generateArticleStructuredData({
     title: frontmatter.title,

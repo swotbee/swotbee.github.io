@@ -330,12 +330,13 @@ h1 {
 /* Links */
 .blog-content a {
   color: #1A7AB5;
-  text-decoration: none;
-  border-bottom: 1px solid transparent;
-  transition: border-color 0.15s ease;
+  text-decoration: underline;
+  text-decoration-color: #93c5d880;
+  text-underline-offset: 2px;
+  transition: text-decoration-color 0.15s ease;
 }
 .blog-content a:hover {
-  border-bottom-color: #1A7AB5;
+  text-decoration-color: #C47A2A;
 }
 
 /* Bold */

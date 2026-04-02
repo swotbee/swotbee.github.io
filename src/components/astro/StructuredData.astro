@@ -1,6 +1,6 @@
 ---
 interface Props {
-  type: 'article' | 'organization' | 'website' | 'breadcrumb' | 'service';
+  type: 'article' | 'organization' | 'website' | 'breadcrumb' | 'service' | 'faq' | 'howto' | 'person';
   data: any;
 }
 
@@ -20,14 +20,14 @@ const getStructuredData = () => {
         "author": {
           "@type": "Organization",
           "name": data.author || "SWOTBee",
-          "url": "https://swotbee.github.io"
+          "url": "https://swotbee.com"
         },
         "publisher": {
           "@type": "Organization",
           "name": "SWOTBee",
           "logo": {
             "@type": "ImageObject",
-            "url": "https://swotbee.github.io/assets/home-images/swotbee.png"
+            "url": "https://swotbee.com/assets/home-images/swotbee.png"
           }
         },
         "mainEntityOfPage": {
@@ -59,7 +59,7 @@ const getStructuredData = () => {
         "provider": {
           "@type": "Organization",
           "name": "SWOTBee",
-          "url": "https://swotbee.github.io"
+          "url": "https://swotbee.com"
         },
         "serviceType": data.serviceType || "Consulting",
         "areaServed": "Worldwide",
@@ -69,6 +69,55 @@ const getStructuredData = () => {
           "priceCurrency": "USD",
           "description": "Contact for pricing information"
         }
+      };
+
+    case 'faq':
+      return {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": data.faqs.map((faq: any) => ({
+          "@type": "Question",
+          "name": faq.q,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": faq.a
+          }
+        }))
+      };
+
+    case 'howto':
+      return {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": data.name,
+        "description": data.description,
+        "step": data.steps.map((step: any, index: number) => ({
+          "@type": "HowToStep",
+          "position": index + 1,
+          "name": step.name,
+          "text": step.text
+        }))
+      };
+
+    case 'person':
+      return {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": data.name,
+        ...(data.jobTitle && { "jobTitle": data.jobTitle }),
+        ...(data.worksFor && {
+          "worksFor": {
+            "@type": "Organization",
+            "name": data.worksFor,
+            "url": "https://swotbee.com"
+          }
+        }),
+        ...(data.url && { "url": data.url }),
+        ...(data.linkedin && {
+          "sameAs": [data.linkedin]
+        }),
+        ...(data.knowsAbout && { "knowsAbout": data.knowsAbout }),
+        ...(data.image && { "image": data.image })
       };
 
     default:

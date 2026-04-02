@@ -96,8 +96,17 @@ const clientLogos = ["Wesco", "Big Lots", "Insteon", "La Vie", "Mytheresa"];
       name: "HubSpot Onboarding & Implementation Services",
       description: description,
       serviceType: "CRM Implementation Consulting",
-      url: "https://swotbee.github.io/services/hubspot-onboarding",
+      url: "https://swotbee.com/services/hubspot-onboarding",
     }}
+  />
+  <StructuredData type="faq" data={{ faqs }} />
+  <StructuredData
+    type="breadcrumb"
+    data={{ breadcrumbs: [
+      { name: "Home", url: "https://swotbee.com" },
+      { name: "Services", url: "https://swotbee.com/services" },
+      { name: "HubSpot Onboarding", url: "https://swotbee.com/services/hubspot-onboarding" },
+    ]}}
   />
 
   <Navbar />
@@ -123,7 +132,7 @@ const clientLogos = ["Wesco", "Big Lots", "Insteon", "La Vie", "Mytheresa"];
           See How We Work ↓
         </a>
       </div>
-      <p class="text-xs text-gray-400">Free 30-minute consultation. No commitment. No sales pitch.</p>
+      <p class="text-xs text-gray-500">Free 30-minute consultation. No commitment. No sales pitch.</p>
     </div>
   </section>
 
@@ -131,7 +140,7 @@ const clientLogos = ["Wesco", "Big Lots", "Insteon", "La Vie", "Mytheresa"];
   <!-- ============ TRUST BAR ============ -->
   <section class="bg-white border-y border-v6-border py-4 px-4">
     <div class="max-w-4xl mx-auto flex flex-wrap justify-center gap-8 items-center">
-      <span class="text-xs text-gray-400 font-medium uppercase tracking-wider">Trusted by</span>
+      <span class="text-xs text-gray-500 font-medium uppercase tracking-wider">Trusted by</span>
       {clientLogos.map(name => (
         <span class="text-sm text-v6-text-muted font-semibold opacity-50">{name}</span>
       ))}

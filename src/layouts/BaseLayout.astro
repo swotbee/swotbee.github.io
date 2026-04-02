@@ -5,25 +5,16 @@ import {
   generateCanonicalUrl,
   generateRobotsDirective,
 } from "../utils/seo";
-import "@fontsource/lexend-deca";
-import "@fontsource/lexend-deca/200.css";
-import "@fontsource/lexend-deca/300.css";
-import "@fontsource/vollkorn/400.css";
-import "@fontsource/vollkorn/600.css";
-import "@fontsource/vollkorn/700.css";
-
-import "@fontsource/vollkorn/900.css";
-// Supports weights 100-900
-import "@fontsource-variable/dm-sans";
-import "@fontsource-variable/dm-sans/wght-italic.css";
-// Supports weights 100-900
-import "@fontsource-variable/hanken-grotesk";
-// Supports weights 100-900
-import "@fontsource-variable/hanken-grotesk/wght-italic.css";
+// Fonts: only import what's actually used
+// Body: Hanken Grotesk (primary), DM Sans (fallback), Lexend Deca (fallback)
+// Headings: Rokkitt Variable (custom @font-face in global.css), Vollkorn (fallback)
+import "@fontsource-variable/hanken-grotesk";     // Body — variable font covers all weights
+import "@fontsource-variable/dm-sans";             // Body fallback
+import "@fontsource/lexend-deca";                  // Body fallback (weight 400 only)
+import "@fontsource/vollkorn/400.css";             // Heading fallback (regular)
+import "@fontsource/vollkorn/700.css";             // Heading fallback (bold)
+// Rokkitt loaded via @font-face in global.css (variable woff2, no separate import needed)
 import "../styles/global.css";
-import "@fontsource-variable/rokkitt"; // Defaults to wght axis
-import "@fontsource-variable/rokkitt/wght.css"; // Specify axis
-import "@fontsource-variable/rokkitt/wght-italic.css"; // Specify axis and style
 
 interface Props {
   title: string;
@@ -95,28 +86,28 @@ const finalCanonicalURL =
         "@graph": [
           {
             "@type": "WebSite",
-            "@id": "https://swotbee.github.io/#website",
-            url: "https://swotbee.github.io",
+            "@id": "https://swotbee.com/#website",
+            url: "https://swotbee.com",
             name: "SWOTBee - HubSpot & Shopify Consulting",
             description: description,
             inLanguage: "en-US",
             publisher: {
-              "@id": "https://swotbee.github.io/#organization",
+              "@id": "https://swotbee.com/#organization",
             },
             potentialAction: {
               "@type": "SearchAction",
-              target: "https://swotbee.github.io/search?q={search_term_string}",
+              target: "https://swotbee.com/search?q={search_term_string}",
               "query-input": "required name=search_term_string",
             },
           },
           {
             "@type": "Organization",
-            "@id": "https://swotbee.github.io/#organization",
+            "@id": "https://swotbee.com/#organization",
             name: "SWOTBee",
-            url: "https://swotbee.github.io",
+            url: "https://swotbee.com",
             logo: {
               "@type": "ImageObject",
-              url: "https://swotbee.github.io/assets/home-images/swotbee.png",
+              url: "https://swotbee.com/assets/home-images/swotbee.png",
               width: 400,
               height: 400,
             },
@@ -143,7 +134,7 @@ const finalCanonicalURL =
             contactPoint: {
               "@type": "ContactPoint",
               contactType: "Customer Service",
-              url: "https://swotbee.github.io/contactus",
+              url: "https://swotbee.com/contactus",
             },
             sameAs: [
               "https://twitter.com/swotbee",
@@ -155,11 +146,34 @@ const finalCanonicalURL =
       robots={{ index: true, follow: true }}
       additionalLinkTags={[{ rel: "canonical", href: finalCanonicalURL }]}
     />
+    <!-- Preconnect to external origins -->
+    <link rel="preconnect" href="https://images.unsplash.com" />
+    <link rel="dns-prefetch" href="https://images.unsplash.com" />
+    <!-- Prefetch key pages -->
+    <link rel="prefetch" href="/services/hubspot-onboarding" />
+    <link rel="prefetch" href="/contactus" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+    <link rel="alternate" type="application/rss+xml" title="SWOTBee Blog" href="/rss.xml" />
+    {import.meta.env.PUBLIC_GSC_VERIFICATION && (
+      <meta name="google-site-verification" content={import.meta.env.PUBLIC_GSC_VERIFICATION} />
+    )}
+    {import.meta.env.PUBLIC_GA4_ID && (
+      <script async src={`https://www.googletagmanager.com/gtag/js?id=${import.meta.env.PUBLIC_GA4_ID}`}></script>
+    )}
+    {import.meta.env.PUBLIC_GA4_ID && (
+      <script is:inline define:vars={{ ga4Id: import.meta.env.PUBLIC_GA4_ID }}>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', ga4Id);
+      </script>
+    )}
   </head>
   <body class="min-h-full bg-custom">
-    <slot />
+    <main>
+      <slot />
+    </main>
     <script>
       import Alpine from "alpinejs";
       window.Alpine = Alpine;

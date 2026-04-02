@@ -2,6 +2,8 @@
 import Layout from './Layout.astro';
 import Navbar from '../components/astro/Navbar.astro';
 import Footer from '../components/astro/Footer.astro';
+import StructuredData from '../components/astro/StructuredData.astro';
+import ReviewedBy from '../components/astro/ReviewedBy.astro';
 import { generateArticleStructuredData, generateCanonicalUrl } from '../utils/seo';
 import { getRecentPosts } from '../utils/posts';
 
@@ -17,10 +19,13 @@ const content = await Astro.slots.render('default');
 const wordCount = content.replace(/<[^>]*>/g, '').split(/\s+/).length;
 const readingTime = Math.max(1, Math.ceil(wordCount / 230));
 
-// Format date
+// Format dates
 const pubDate = new Date(frontmatter.pubDate).toLocaleDateString('en-US', {
   year: 'numeric', month: 'long', day: 'numeric'
 });
+const modDate = frontmatter.modifiedDate
+  ? new Date(frontmatter.modifiedDate).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
+  : null;
 
 // Find related posts (share at least 1 tag)
 const currentTags = frontmatter.tags || [];
@@ -46,7 +51,7 @@ const displayPosts = relatedPosts.length >= 2
   <!-- Open Graph -->
   <meta property="og:title" content={pageTitle} />
   <meta property="og:description" content={pageDescription} />
-  <meta property="og:image" content={frontmatter.image ? `https://swotbee.github.io${frontmatter.image}` : 'https://swotbee.github.io/assets/ico/logo.png'} />
+  <meta property="og:image" content={frontmatter.image ? `https://swotbee.com${frontmatter.image}` : 'https://swotbee.com/assets/ico/logo.png'} />
   <meta property="og:url" content={canonicalURL} />
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="SWOTBee" />
@@ -61,7 +66,7 @@ const displayPosts = relatedPosts.length >= 2
   <meta name="twitter:site" content="@swotbee" />
   <meta name="twitter:title" content={pageTitle} />
   <meta name="twitter:description" content={pageDescription} />
-  <meta name="twitter:image" content={frontmatter.image ? `https://swotbee.github.io${frontmatter.image}` : 'https://swotbee.github.io/assets/ico/logo.png'} />
+  <meta name="twitter:image" content={frontmatter.image ? `https://swotbee.com${frontmatter.image}` : 'https://swotbee.com/assets/ico/logo.png'} />
 
   <!-- Structured Data -->
   <script type="application/ld+json" set:html={JSON.stringify(generateArticleStructuredData({
@@ -70,9 +75,52 @@ const displayPosts = relatedPosts.length >= 2
     image: frontmatter.image,
     url: canonicalURL,
     publishedTime: frontmatter.pubDate,
+    modifiedTime: frontmatter.modifiedDate || frontmatter.pubDate,
     author: frontmatter.author?.name || 'SWOTBee',
     tags: frontmatter.tags
   }), null, 2)}></script>
+
+  {/* Person schema for author */}
+  {frontmatter.author?.linkedin && (
+    <StructuredData
+      type="person"
+      data={{
+        name: frontmatter.author.name,
+        url: frontmatter.author.url,
+        linkedin: frontmatter.author.linkedin,
+        jobTitle: frontmatter.author.jobTitle || "HubSpot Consultant",
+        worksFor: "SWOTBee",
+        knowsAbout: frontmatter.author.expertise,
+        image: frontmatter.author.imageUrl,
+      }}
+    />
+  )}
+
+  {/* HowTo schema for step-by-step posts */}
+  {frontmatter.howto && frontmatter.howtoSteps && (
+    <StructuredData
+      type="howto"
+      data={{
+        name: frontmatter.title,
+        description: frontmatter.description,
+        steps: frontmatter.howtoSteps,
+      }}
+    />
+  )}
+
+  {/* isPartOf schema for cluster posts in a series */}
+  {frontmatter.seriesName && frontmatter.pillarUrl && (
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "@id": canonicalURL,
+      "isPartOf": {
+        "@type": "Blog",
+        "name": frontmatter.seriesName,
+        "url": `https://swotbee.com${frontmatter.pillarUrl}`
+      }
+    }, null, 2)}></script>
+  )}
 
   <Navbar />
 
@@ -125,10 +173,30 @@ const displayPosts = relatedPosts.length >= 2
         )}
         <span>·</span>
         <time datetime={frontmatter.pubDate}>{pubDate}</time>
+        {modDate && modDate !== pubDate && (
+          <>
+            <span>·</span>
+            <span class="text-xs bg-v6-teal-50 text-v6-teal-700 px-2 py-0.5 rounded-full border border-v6-teal-100">
+              Updated {modDate}
+            </span>
+          </>
+        )}
         <span>·</span>
         <span>{readingTime} min read</span>
       </div>
     </header>
+
+    <!-- Reviewed By -->
+    {frontmatter.reviewedBy && (
+      <div class="max-w-[680px] mx-auto px-4 sm:px-6 mb-4">
+        <ReviewedBy
+          reviewerName={frontmatter.reviewedBy.name}
+          reviewerTitle={frontmatter.reviewedBy.title}
+          reviewerLinkedin={frontmatter.reviewedBy.linkedin}
+          reviewDate={frontmatter.reviewedBy.date}
+        />
+      </div>
+    )}
 
     <!-- Featured Image -->
     {frontmatter.image && (
@@ -138,6 +206,9 @@ const displayPosts = relatedPosts.length >= 2
           alt={frontmatter.title}
           class="w-full rounded-xl object-cover aspect-video"
           loading="eager"
+          width="800"
+          height="450"
+          decoding="async"
         />
       </div>
     )}
@@ -194,7 +265,7 @@ const displayPosts = relatedPosts.length >= 2
           Copy Link
         </button>
         <a
-          href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(`https://swotbee.github.io${Astro.url.pathname}`)}`}
+          href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(`https://swotbee.com${Astro.url.pathname}`)}`}
           target="_blank"
           rel="noopener"
           class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-v6-dark bg-v6-bg border border-v6-border rounded-lg hover:bg-gray-100 transition-colors"
@@ -203,7 +274,7 @@ const displayPosts = relatedPosts.length >= 2
           LinkedIn
         </a>
         <a
-          href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(frontmatter.title)}&url=${encodeURIComponent(`https://swotbee.github.io${Astro.url.pathname}`)}`}
+          href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(frontmatter.title)}&url=${encodeURIComponent(`https://swotbee.com${Astro.url.pathname}`)}`}
           target="_blank"
           rel="noopener"
           class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-v6-dark bg-v6-bg border border-v6-border rounded-lg hover:bg-gray-100 transition-colors"
@@ -214,15 +285,35 @@ const displayPosts = relatedPosts.length >= 2
       </div>
 
       <!-- Author Bio -->
-      <div class="flex items-center gap-4 py-6 border-b border-v6-border">
-        <div class="w-14 h-14 rounded-full bg-v6-teal-100 flex items-center justify-center text-v6-teal font-bold text-lg flex-shrink-0">
+      <div class="flex items-start gap-4 py-6 border-b border-v6-border">
+        <div class="w-14 h-14 rounded-full bg-v6-teal-100 flex items-center justify-center text-v6-teal-700 font-bold text-lg flex-shrink-0">
           {(frontmatter.author?.name || 'S').charAt(0)}
         </div>
         <div>
           <p class="text-sm font-semibold text-v6-dark">{frontmatter.author?.name || 'SWOTBee Team'}</p>
           <p class="text-xs text-v6-text-muted leading-relaxed mt-0.5">
-            HubSpot consultants helping mid-sized companies in Energy, Manufacturing, and SaaS turn their CRM into a revenue engine.
+            {frontmatter.author?.bio || 'HubSpot consultants helping mid-sized companies in Energy, Manufacturing, and SaaS turn their CRM into a revenue engine.'}
           </p>
+          {frontmatter.author?.linkedin && (
+            <a
+              href={frontmatter.author.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-1 text-xs text-v6-teal-700 hover:text-v6-teal-800 transition-colors mt-1.5"
+            >
+              <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+              </svg>
+              Connect on LinkedIn
+            </a>
+          )}
+          {frontmatter.author?.expertise && frontmatter.author.expertise.length > 0 && (
+            <div class="flex flex-wrap gap-1 mt-2">
+              {frontmatter.author.expertise.map((area: string) => (
+                <span class="text-xs bg-v6-bg border border-v6-border text-v6-text-muted px-2 py-0.5 rounded-full">{area}</span>
+              ))}
+            </div>
+          )}
         </div>
       </div>
 
@@ -289,6 +380,17 @@ const displayPosts = relatedPosts.length >= 2
       <!-- Populated by JS -->
     </nav>
   </div>
+
+  <!-- Scroll to Top -->
+  <button
+    id="scroll-top-btn"
+    aria-label="Scroll to top"
+    class="fixed bottom-6 left-6 z-50 bg-white border border-v6-border text-v6-text-muted w-10 h-10 rounded-full shadow-md flex items-center justify-center hover:bg-v6-bg hover:text-v6-dark transition-colors opacity-0 pointer-events-none"
+  >
+    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+    </svg>
+  </button>
 
   <Footer />
 
@@ -370,6 +472,23 @@ const displayPosts = relatedPosts.length >= 2
         if (e.target.tagName === 'A') {
           floatPanel.classList.add('hidden');
         }
+      });
+    }
+
+    // === Scroll to Top Button ===
+    var scrollTopBtn = document.getElementById('scroll-top-btn');
+    if (scrollTopBtn) {
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 600) {
+          scrollTopBtn.classList.remove('opacity-0', 'pointer-events-none');
+          scrollTopBtn.classList.add('opacity-100');
+        } else {
+          scrollTopBtn.classList.add('opacity-0', 'pointer-events-none');
+          scrollTopBtn.classList.remove('opacity-100');
+        }
+      });
+      scrollTopBtn.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       });
     }
 

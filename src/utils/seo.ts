@@ -50,7 +50,7 @@ export function generateKeywords(keywords: string[] | string): string {
  * Generate canonical URL
  */
 export function generateCanonicalUrl(path: string = ''): string {
-  const baseUrl = 'https://swotbee.github.io';
+  const baseUrl = 'https://swotbee.com';
   const cleanPath = path.startsWith('/') ? path : `/${path}`;
   return `${baseUrl}${cleanPath}`;
 }
@@ -63,9 +63,9 @@ export function generateOgImage(imagePath?: string): string {
     if (imagePath.startsWith('http')) {
       return imagePath;
     }
-    return `https://swotbee.github.io${imagePath.startsWith('/') ? '' : '/'}${imagePath}`;
+    return `https://swotbee.com${imagePath.startsWith('/') ? '' : '/'}${imagePath}`;
   }
-  return 'https://swotbee.github.io/assets/home-images/swotbee.png';
+  return 'https://swotbee.com/assets/home-images/swotbee.png';
 }
 
 /**
@@ -83,14 +83,14 @@ export function generateArticleStructuredData(seoData: SEOData) {
     "author": {
       "@type": "Organization",
       "name": seoData.author || "SWOTBee",
-      "url": "https://swotbee.github.io"
+      "url": "https://swotbee.com"
     },
     "publisher": {
       "@type": "Organization",
       "name": "SWOTBee",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://swotbee.github.io/assets/home-images/swotbee.png"
+        "url": "https://swotbee.com/assets/home-images/swotbee.png"
       }
     },
     "mainEntityOfPage": {
@@ -163,7 +163,7 @@ export function generateRobotsDirective(
  */
 export const defaultSEOConfig = {
   siteName: 'SWOTBee',
-  siteUrl: 'https://swotbee.github.io',
+  siteUrl: 'https://swotbee.com',
   defaultImage: '/assets/home-images/swotbee.png',
   twitterHandle: '@swotbee',
   defaultKeywords: 'HubSpot consulting, Shopify integration, CRM optimization, marketing automation, sales funnel, business growth, HubSpot experts',

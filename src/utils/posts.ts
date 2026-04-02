@@ -16,6 +16,7 @@ interface BlogPost {
   description: string;
   image: string;
   tags?: string[];
+  authorName?: string;
 }
 
 interface PostsResult {
@@ -55,4 +56,28 @@ export const getRecentPosts = async (): Promise<PostsResult> => {
     recentPosts: sortedPosts.slice(0, 3),
     popularTags: allTags.slice(0, 8) // Get top 8 tags
   };
+}
+
+export const getAllPosts = async (): Promise<BlogPost[]> => {
+  const posts = import.meta.glob<ImportedPost>('../pages/posts/*.{md,mdx}');
+
+  const allPosts = await Promise.all(
+    Object.entries(posts).map(async ([filePath, importPost]) => {
+      const post = await importPost();
+      const slug = filePath.split('/').pop()?.replace(/\.(md|mdx)$/, '') || '';
+      return {
+        slug,
+        title: post.frontmatter.title,
+        pubDate: post.frontmatter.pubDate,
+        description: post.frontmatter.description,
+        image: post.frontmatter.image,
+        tags: post.frontmatter.tags || [],
+        authorName: post.frontmatter.author?.name || 'SWOTBee Team',
+      };
+    })
+  );
+
+  return allPosts.sort((a, b) =>
+    new Date(b.pubDate).getTime() - new Date(a.pubDate).getTime()
+  );
 }
