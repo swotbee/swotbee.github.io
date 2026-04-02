@@ -6,10 +6,17 @@ description: "The definitive guide to building a HubSpot renewal pipeline — fr
 category:
   title: "Revenue Operations"
   href: "/categories/revenue-operations"
+modifiedDate: "2026-04-02"
 author:
   name: "SWOTBee Team"
   url: "https://swotbee.com"
   imageUrl: "/assets/ico/logo.png"
+  bio: "HubSpot-certified consultants specializing in renewal pipeline architecture, RevOps automation, and CRM migration for mid-market B2B companies."
+  linkedin: "https://linkedin.com/company/swotbee"
+  expertise:
+    - "HubSpot CRM"
+    - "Renewal Pipelines"
+    - "Revenue Operations"
 image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=450&fit=crop"
 tags:
   - "HubSpot"

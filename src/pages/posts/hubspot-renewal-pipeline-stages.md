@@ -17,6 +17,8 @@ tags:
   - "Deal Stages"
   - "Revenue Operations"
   - "Pipeline Management"
+seriesName: "HubSpot Renewal Pipeline"
+pillarUrl: "/posts/hubspot-renewal-pipeline-complete-guide"
 ---
 
 The stages in your renewal pipeline aren't just labels. They drive your automation triggers, your team's daily workflow, your forecasting accuracy, and your ability to spot at-risk accounts before it's too late. Unlike [traditional sales pipeline stages](https://www.salesforce.com/sales/pipeline/management/) built around buyer intent, renewal stages are built around time and customer health.

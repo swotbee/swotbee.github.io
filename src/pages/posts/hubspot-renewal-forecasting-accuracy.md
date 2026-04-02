@@ -17,6 +17,8 @@ tags:
   - "Revenue Forecasting"
   - "Pipeline Analytics"
   - "Revenue Operations"
+seriesName: "HubSpot Renewal Pipeline"
+pillarUrl: "/posts/hubspot-renewal-pipeline-complete-guide"
 ---
 
 If your forecast includes both new business and renewal deals using the same probability weights, your number is wrong. It's not "a little off." It's structurally broken.

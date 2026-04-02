@@ -17,6 +17,8 @@ tags:
   - "Revenue Operations"
   - "Pipeline Management"
   - "Best Practices"
+seriesName: "HubSpot Renewal Pipeline"
+pillarUrl: "/posts/hubspot-renewal-pipeline-complete-guide"
 ---
 
 After building renewal pipelines for dozens of mid-market companies, we see the same mistakes over and over. Some cost thousands in missed renewals. Others slowly poison your data until nobody trusts the CRM. Given that [retaining customers costs 5–25x less than acquiring new ones](https://hbr.org/2014/10/the-value-of-keeping-the-right-customers), these mistakes directly erode your bottom line.

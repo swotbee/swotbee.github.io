@@ -17,6 +17,8 @@ tags:
   - "Sales Pipeline"
   - "Revenue Operations"
   - "CRM Strategy"
+seriesName: "HubSpot Renewal Pipeline"
+pillarUrl: "/posts/hubspot-renewal-pipeline-complete-guide"
 ---
 
 "Should we have a separate pipeline for renewals, or just use a Deal Type property?"

@@ -17,6 +17,8 @@ tags:
   - "Workflow Troubleshooting"
   - "Multi-Year Contracts"
   - "Revenue Operations"
+seriesName: "HubSpot Renewal Pipeline"
+pillarUrl: "/posts/hubspot-renewal-pipeline-complete-guide"
 ---
 
 Your renewal workflow works perfectly for Year 1. A deal closes as Won, the workflow creates Year 2's renewal deal, and everything looks great.

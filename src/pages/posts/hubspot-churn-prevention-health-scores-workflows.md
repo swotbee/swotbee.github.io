@@ -18,6 +18,8 @@ tags:
   - "Customer Success"
   - "Renewal Pipeline"
   - "Revenue Operations"
+seriesName: "HubSpot Renewal Pipeline"
+pillarUrl: "/posts/hubspot-renewal-pipeline-complete-guide"
 ---
 
 By the time a CSM opens a renewal deal and sees that the customer is unhappy, it's usually too late. The decision to leave was made months ago — after a bad support experience, after the champion left, after product usage dropped to zero.

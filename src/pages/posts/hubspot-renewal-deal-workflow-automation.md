@@ -17,6 +17,8 @@ tags:
   - "Workflow Automation"
   - "Deal Automation"
   - "Revenue Operations"
+seriesName: "HubSpot Renewal Pipeline"
+pillarUrl: "/posts/hubspot-renewal-pipeline-complete-guide"
 ---
 
 The moment a new business deal closes as Won, the renewal clock starts ticking. If your team manually creates renewal deals — or worse, tracks renewals in a spreadsheet — you're guaranteeing that some will slip through the cracks.

@@ -17,6 +17,8 @@ tags:
   - "Expansion Revenue"
   - "Pipeline Architecture"
   - "Revenue Operations"
+seriesName: "HubSpot Renewal Pipeline"
+pillarUrl: "/posts/hubspot-renewal-pipeline-complete-guide"
 ---
 
 You've built a renewal pipeline. Renewals flow through it. Then a customer wants to add a product during their renewal. Or downgrade one service but upgrade another. Or expand mid-contract, outside the renewal window.
