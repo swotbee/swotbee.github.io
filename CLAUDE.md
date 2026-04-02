@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-SWOTBee is a HubSpot & Shopify consulting firm targeting mid-sized companies (50–100 employees) in Energy, Utilities, SaaS, Construction, and Manufacturing. The website is deployed as a static site to GitHub Pages at swotbee.github.io.
+SWOTBee is a HubSpot & Shopify consulting firm targeting mid-sized companies (50–100 employees) in Energy, Utilities, SaaS, Construction, and Manufacturing. The website is deployed as a static site to GitHub Pages at swotbee.com.
 
 **What SWOTBee does:**
 - HubSpot onboarding, marketing automation, sales/RevOps optimization, and third-party integrations (NetSuite, Xero, DocuSign, Zoom, Shopify, etc.)

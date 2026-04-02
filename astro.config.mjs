@@ -8,7 +8,7 @@ import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
-  site: "https://swotbee.github.io",
+  site: "https://swotbee.com",
   base: "/",
   output: "static",
 
