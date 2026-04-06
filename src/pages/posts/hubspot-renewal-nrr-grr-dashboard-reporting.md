@@ -2,7 +2,7 @@
 layout: ../../layouts/BlogPostLayout.astro
 title: "How to Track NRR, GRR & Renewal Rate in HubSpot Dashboards"
 pubDate: "2026-04-02"
-description: "HubSpot has no native NRR report. Here's how to build renewal dashboards using custom properties, calculated fields, and custom reports — including board-ready metrics."
+description: "HubSpot has no native NRR report. Here's how to build renewal dashboards using custom properties, calculated fields, and custom reports: including board-ready metrics."
 category:
   title: "Revenue Operations"
   href: "/categories/revenue-operations"
@@ -24,7 +24,7 @@ pillarUrl: "/posts/hubspot-renewal-pipeline-complete-guide"
 
 Your board wants to see NRR. Your CFO wants GRR. Your CS leader wants renewal rate by segment. And HubSpot doesn't have a native report for any of them.
 
-This isn't a gap in your HubSpot setup — it's a gap in HubSpot itself. The platform tracks deal revenue beautifully, but it doesn't natively calculate the retention metrics that recurring-revenue businesses need.
+This isn't a gap in your HubSpot setup, it's a gap in HubSpot itself. The platform tracks deal revenue beautifully, but it doesn't natively calculate the retention metrics that recurring-revenue businesses need.
 
 The good news: you can build these dashboards with custom properties, calculated fields, and HubSpot's custom report builder. This article shows you how.
 
@@ -40,9 +40,9 @@ Before building anything, let's align on definitions:
 
 **Formula:** (Number of renewed deals ÷ Total deals up for renewal) × 100
 
-**What it tells you:** What percentage of customers who could have renewed actually did. This is a count-based metric — it treats a $500/month customer the same as a $50,000/month customer.
+**What it tells you:** What percentage of customers who could have renewed actually did. This is a count-based metric, it treats a $500/month customer the same as a $50,000/month customer.
 
-**Benchmark:** 85–95% for B2B SaaS according to [ChartMogul's SaaS Retention Report](https://chartmogul.com/reports/saas-retention-report/). Lower for transactional businesses, higher for enterprise contracts.
+**Benchmark:** 85, 95% for B2B SaaS according to [ChartMogul's SaaS Retention Report](https://chartmogul.com/reports/saas-retention-report/). Lower for transactional businesses, higher for enterprise contracts.
 
 ### Gross Revenue Retention (GRR)
 
@@ -56,9 +56,9 @@ Before building anything, let's align on definitions:
 
 **Formula:** (Starting MRR + Expansion − Contraction − Churn) ÷ Starting MRR × 100
 
-**What it tells you:** Your total revenue trajectory from existing customers, including upsells. NRR above 100% means you're growing from existing customers alone — even without new business. [Baremetrics' guide to net revenue retention](https://baremetrics.com/blog/what-is-net-revenue-retention) walks through the formula in detail.
+**What it tells you:** Your total revenue trajectory from existing customers, including upsells. NRR above 100% means you're growing from existing customers alone, even without new business. [Baremetrics' guide to net revenue retention](https://baremetrics.com/blog/what-is-net-revenue-retention) walks through the formula in detail.
 
-**Benchmark:** 110%+ is excellent. 100–110% is solid. Below 100% means you're shrinking. [SaaS Capital's benchmark data](https://www.saas-capital.com/blog-posts/what-is-a-good-retention-rate-for-a-private-saas-company/) shows a median NRR of 104% for private SaaS companies. But [as Jason Lemkin warns](https://www.saastr.com/high-nrr-can-mask-a-lot-of-problems/), high NRR can mask serious retention problems if a few large accounts expand while many small ones churn.
+**Benchmark:** 110%+ is excellent. 100, 110% is solid. Below 100% means you're shrinking. [SaaS Capital's benchmark data](https://www.saas-capital.com/blog-posts/what-is-a-good-retention-rate-for-a-private-saas-company/) shows a median NRR of 104% for private SaaS companies. But [as Jason Lemkin warns](https://www.saastr.com/high-nrr-can-mask-a-lot-of-problems/), high NRR can mask serious retention problems if a few large accounts expand while many small ones churn.
 
 ### Churn Rate
 
@@ -171,7 +171,7 @@ HubSpot can't calculate NRR natively. Here's the workaround:
 3. **Track monthly** in a spreadsheet or BI tool
 4. **Display in HubSpot** using a custom report that shows the component parts (even if the final calculation is manual)
 
-For teams with [Operations Hub Enterprise](https://www.hubspot.com/pricing/operations), you can use datasets and calculated fields to get closer to an automated NRR report — but it still requires some manual setup.
+For teams with [Operations Hub Enterprise](https://www.hubspot.com/pricing/operations), you can use datasets and calculated fields to get closer to an automated NRR report, but it still requires some manual setup.
 
 ### Report 8: Churn Analysis by Reason
 
@@ -182,7 +182,7 @@ For teams with [Operations Hub Enterprise](https://www.hubspot.com/pricing/opera
 **Breakdown:** Churn Reason property
 **Time range:** Last 12 months
 
-This tells you *why* you're losing customers — which is more actionable than just knowing *that* you're losing them.
+This tells you *why* you're losing customers, which is more actionable than just knowing *that* you're losing them.
 
 ---
 
@@ -198,7 +198,7 @@ This dashboard answers: "What revenue can we expect next quarter?"
 **Rows:** Renewal Date (monthly)
 **Columns:** Weighted deal amount (amount × stage probability)
 
-**Critical:** Make sure your stage probabilities reflect renewal reality (85–95%), not sales reality (20–40%). See [why your renewal forecast is wrong](/posts/hubspot-renewal-forecasting-accuracy).
+**Critical:** Make sure your stage probabilities reflect renewal reality (85, 95%), not sales reality (20, 40%). See [why your renewal forecast is wrong](/posts/hubspot-renewal-forecasting-accuracy).
 
 ### Report 10: Pipeline Velocity
 
@@ -234,6 +234,6 @@ It's worth evaluating, but most mid-market teams find custom dashboards more fle
 
 ---
 
-**Building renewal dashboards that your board can actually use is harder than it looks.** SWOTBee builds NRR/GRR reporting for mid-market teams in Energy, Manufacturing, and SaaS — from property setup to executive-ready dashboards.
+**Building renewal dashboards that your board can actually use is harder than it looks.** SWOTBee builds NRR/GRR reporting for mid-market teams in Energy, Manufacturing, and SaaS, from property setup to executive-ready dashboards.
 
 [Book a free 30-minute discovery call →](/contactus)

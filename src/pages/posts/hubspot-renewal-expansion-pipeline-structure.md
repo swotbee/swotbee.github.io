@@ -25,7 +25,7 @@ You've built a renewal pipeline. Renewals flow through it. Then a customer wants
 
 Where do those deals go?
 
-This is the second most common HubSpot pipeline architecture question after "should I separate renewals?" — and getting it wrong leads to double-counted revenue, confused ownership, and reports that nobody trusts. As [Tomasz Tunguz demonstrates](https://tomtunguz.com/negative-churn/), companies with strong expansion revenue (negative net churn) generate 73% more revenue over time — but only if that expansion is tracked cleanly.
+This is the second most common HubSpot pipeline architecture question after "should I separate renewals?" (and getting it wrong leads to double-counted revenue, confused ownership, and reports that nobody trusts. As [Tomasz Tunguz demonstrates](https://tomtunguz.com/negative-churn/), companies with strong expansion revenue (negative net churn) generate 73% more revenue over time) but only if that expansion is tracked cleanly.
 
 > This article is part of our [Complete Guide to Building a Renewal Pipeline in HubSpot](/posts/hubspot-renewal-pipeline-complete-guide).
 
@@ -38,7 +38,7 @@ This is the second most common HubSpot pipeline architecture question after "sho
 Update the renewal deal's amount to reflect the new total contract value. If the customer was paying $100K/year and adds $20K in new services, the renewal deal becomes $120K.
 
 **Pros:**
-- Simplest approach — one deal per customer per renewal cycle
+- Simplest approach, one deal per customer per renewal cycle
 - Easy to understand for CSMs
 - No duplicate association issues
 
@@ -51,7 +51,7 @@ Update the renewal deal's amount to reflect the new total contract value. If the
 
 ### Option 2: Separate Expansion Pipeline
 
-Create a third pipeline specifically for expansion deals. When a customer wants to add services — whether at renewal time or mid-contract — create a new deal in the Expansion Pipeline.
+Create a third pipeline specifically for expansion deals. When a customer wants to add services (whether at renewal time or mid-contract) create a new deal in the Expansion Pipeline.
 
 **Stages might look like:**
 | Stage | Definition |
@@ -68,15 +68,15 @@ Create a third pipeline specifically for expansion deals. When a customer wants 
 - Different teams can own different pipelines
 
 **Cons:**
-- More pipeline overhead — three pipelines to manage, automate, and report on
+- More pipeline overhead, three pipelines to manage, automate, and report on
 - One customer might have deals in all three pipelines simultaneously
 - Risk of double-counting if the expansion is also reflected in the renewal amount
 
-**Best for:** Companies where expansion is a significant revenue motion, where AEs (not CSMs) drive expansion, or where investors/board require clean revenue segmentation. Tunguz outlines [three proven strategies for achieving negative churn](https://tomtunguz.com/engendering-negative-churn/) — all of which benefit from a dedicated expansion pipeline.
+**Best for:** Companies where expansion is a significant revenue motion, where AEs (not CSMs) drive expansion, or where investors/board require clean revenue segmentation. Tunguz outlines [three proven strategies for achieving negative churn](https://tomtunguz.com/engendering-negative-churn/), all of which benefit from a dedicated expansion pipeline.
 
 ### Option 3: Expansion in the Sales Pipeline
 
-Treat expansion deals exactly like new business — they go through the sales pipeline with Deal Type = "Expansion."
+Treat expansion deals exactly like new business, they go through the sales pipeline with Deal Type = "Expansion."
 
 **Pros:**
 - AEs manage expansion the same way they manage new business
@@ -124,7 +124,7 @@ Who owns what is as important as where deals live.
 This is the most common reporting problem in multi-pipeline setups. It happens when:
 
 1. **The renewal deal amount includes the expansion** AND there's a separate expansion deal. Revenue gets counted twice in total revenue reports.
-2. **A deal appears in two pipelines** — someone creates it in both Sales and Renewal pipeline.
+2. **A deal appears in two pipelines**, someone creates it in both Sales and Renewal pipeline.
 3. **Cross-pipeline reports sum everything** without filtering for Deal Type.
 
 ### Prevention Rules
@@ -145,7 +145,7 @@ Downgrades are the awkward middle ground between renewal and churn. The customer
 
 ### Simple Downgrade (at Renewal)
 
-Update the renewal deal amount to reflect the lower value. Set Deal Type = "Renewal" and Revenue Change Reason = "Downgrade — [Reason]." The difference between Previous Contract Value and the new Amount is your contraction revenue.
+Update the renewal deal amount to reflect the lower value. Set Deal Type = "Renewal" and Revenue Change Reason = "Downgrade, [Reason]." The difference between Previous Contract Value and the new Amount is your contraction revenue.
 
 ### Complex Downgrade (Dropping a Product Line)
 
@@ -157,7 +157,7 @@ Some teams create a "Contraction" Deal Type for this. Others just track it as a 
 
 ### Mid-Cycle Downgrade
 
-If a customer downgrades mid-contract (not at renewal), create a Contraction deal with the effective date. Don't modify the renewal deal — it should still reflect the full-year value until it closes.
+If a customer downgrades mid-contract (not at renewal), create a Contraction deal with the effective date. Don't modify the renewal deal, it should still reflect the full-year value until it closes.
 
 ---
 
@@ -190,13 +190,13 @@ For most mid-market teams:
 
 1. **Start with two pipelines:** Sales (new business) and Renewal. Track expansion as a Deal Type within the Sales Pipeline. If you use subscription billing platforms like [Chargebee](https://www.chargebee.com/integrations/hubspot/), their HubSpot integration can automatically create expansion deals when subscription amendments occur.
 2. **When expansion volume hits 20+ deals/quarter**, split it into its own pipeline for cleaner reporting and dedicated ownership.
-3. **Track contraction on the renewal deal** using Previous Contract Value and Revenue Change Reason properties — don't create a separate pipeline for it unless you have very complex product-level churn.
+3. **Track contraction on the renewal deal** using Previous Contract Value and Revenue Change Reason properties, don't create a separate pipeline for it unless you have very complex product-level churn.
 4. **Always use Deal Type.** On every deal. No exceptions.
 
-Expansion confusion is one of the [12 common mistakes](/posts/hubspot-renewal-pipeline-mistakes-costing-revenue) we see — see the full list.
+Expansion confusion is one of the [12 common mistakes](/posts/hubspot-renewal-pipeline-mistakes-costing-revenue) we see, see the full list.
 
 ---
 
-**Multi-pipeline architecture is one of those things that's easy to set up and hard to get right.** SWOTBee designs pipeline architectures for mid-market companies across Energy, Manufacturing, and SaaS — including the reporting and automation that make multiple pipelines actually work.
+**Multi-pipeline architecture is one of those things that's easy to set up and hard to get right.** SWOTBee designs pipeline architectures for mid-market companies across Energy, Manufacturing, and SaaS, including the reporting and automation that make multiple pipelines actually work.
 
 [Book a free 30-minute discovery call →](/contactus)

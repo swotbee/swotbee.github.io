@@ -105,7 +105,7 @@ Now that your WordPress site is connected to HubSpot, you can configure various 
 ### **Setting Up Forms**
 
 1. Accessing Forms: In your WordPress dashboard, go to HubSpot \> Forms. This section allows you to create and manage forms effortlessly.
-2. Creating a New Form: Click Create Form to start building your form. Choose the type of form you want to create (e.g., pop-up form, embedded form) and use the drag-and-drop editor to customize it.
+2. Creating a New Form: Click Create Form to start building your form. Choose the type of form you want to create (e.g. pop-up form, embedded form) and use the drag-and-drop editor to customize it.
 3. Customizing and Publishing: Once finished, click Publish to make it live on your site. Ensure your form aligns with your site's design for a cohesive user experience.
 4. Form Optimization Tips: Regularly analyze form performance using HubSpot's analytics. Adjust form fields and design based on user interaction data to increase conversion rates.
 

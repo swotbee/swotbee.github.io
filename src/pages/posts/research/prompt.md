@@ -44,7 +44,7 @@ source 26:	https://www.vtiger.com/crm-workflow/
 These are questions the reader might have. Make sure the blog answers it or asks with some clear guides them clearly:
 
 - **Planning: Objectives & Use Cases**  
-  - What are your top three goals for implementing the CRM (e.g., lead management, sales tracking, customer support)?  
+  - What are your top three goals for implementing the CRM (e.g. lead management, sales tracking, customer support)?  
   - Which teams will use the CRM (sales, marketing, customer service), and what are their specific workflows? what are the aspects they will look for in CRM when moving to this new system?
   - Which subscription tier or modules (Marketing, Sales, Service) do you need based on initial feature requirements?  
 
@@ -83,10 +83,10 @@ These are questions the reader might have. Make sure the blog answers it or asks
 (Continue for all anticipated questions.)
 
 ### 5. **Tone, Style, and Structure Guidance**
-- Audience: [e.g., business owners, marketing and sales people]
-- Tone: [e.g., friendly, expert, engaging, informative]
+- Audience: [e.g. business owners, marketing and sales people]
+- Tone: [e.g. friendly, expert, engaging, informative]
 - Structure: Include an engaging introduction, clear sections with headings, use bullet points or tables where helpful, and end with a conclusion or call to action.
-- Additional Instructions: [Any specific requirements—SEO best practices, word count target, internal/external links, etc.]
+- Additional Instructions: [Any specific requirements, SEO best practices, word count target, internal/external links, etc.]
 
 
 

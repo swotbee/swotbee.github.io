@@ -22,7 +22,7 @@ seriesName: "HubSpot Renewal Pipeline"
 pillarUrl: "/posts/hubspot-renewal-pipeline-complete-guide"
 ---
 
-By the time a CSM opens a renewal deal and sees that the customer is unhappy, it's usually too late. The decision to leave was made months ago — after a bad support experience, after the champion left, after product usage dropped to zero.
+By the time a CSM opens a renewal deal and sees that the customer is unhappy, it's usually too late. The decision to leave was made months ago: after a bad support experience, after the champion left, after product usage dropped to zero.
 
 Churn prevention isn't a renewal-stage activity. It's a continuous process that starts the day after onboarding and feeds into your renewal pipeline through health signals, automated alerts, and structured playbooks.
 
@@ -34,16 +34,16 @@ This article shows you how to build that system in HubSpot.
 
 ## Why Renewals Fail Before the Renewal Conversation
 
-The "silence = satisfaction" myth is the most dangerous assumption in customer success. [Research by Bain & Company](https://hbr.org/2014/10/the-value-of-keeping-the-right-customers) shows acquiring new customers costs 5–25x more than retaining existing ones — yet most teams invest far more in acquisition than retention. A customer who isn't complaining is not necessarily a customer who plans to renew.
+The "silence = satisfaction" myth is the most dangerous assumption in customer success. [Research by Bain & Company](https://hbr.org/2014/10/the-value-of-keeping-the-right-customers) shows acquiring new customers costs 5 to 25x more than retaining existing ones, yet most teams invest far more in acquisition than retention. A customer who isn't complaining is not necessarily a customer who plans to renew.
 
-[Churn](https://en.wikipedia.org/wiki/Churn_rate) signals typically appear 3–6 months before the contract ends:
+[Churn](https://en.wikipedia.org/wiki/Churn_rate) signals typically appear 3 to 6 months before the contract ends:
 - Product usage declines
 - Key contacts stop engaging with emails and meeting invitations
-- Support tickets increase — or stop entirely (disengagement)
+- Support tickets increase, or stop entirely (disengagement)
 - The champion who bought your product leaves the company
 - QBR attendance drops or QBRs get canceled
 
-The research suggests 10–20% churn reduction is achievable with proactive automation that catches these signals early.
+The research suggests 10-20% churn reduction is achievable with proactive automation that catches these signals early.
 
 ---
 
@@ -72,7 +72,7 @@ If you have **[Service Hub Professional or Enterprise](https://www.hubspot.com/p
 Each signal gets a point value. The weighted total produces a color-coded health indicator: Green (Healthy), Yellow (Passive), Red (At Risk).
 
 ### Pros
-- Native integration — no custom properties needed
+- Native integration with no custom properties needed
 - Visual health indicators on company records
 - Can trigger workflows based on health changes
 
@@ -118,9 +118,9 @@ Build workflows that update Account Health based on available data:
 
 ### When This Is Enough
 
-For teams with under 200 accounts and limited product usage data, a 3-tier health dropdown driven by CRM signals (email, meetings, tickets) is surprisingly effective. [Gainsight's Customer Success Maturity Model](https://www.gainsight.com/maturity-model/) outlines four stages of CS maturity — most teams start at "Reactive" and evolve from there. You don't need a fancy scoring algorithm — you need visibility into which accounts need attention.
+For teams with under 200 accounts and limited product usage data, a 3-tier health dropdown driven by CRM signals (email, meetings, tickets) is surprisingly effective. [Gainsight's Customer Success Maturity Model](https://www.gainsight.com/maturity-model/) outlines four stages of CS maturity; most teams start at "Reactive" and evolve from there. You don't need a fancy scoring algorithm. You need visibility into which accounts need attention.
 
-Health signals determine [which pipeline stage](/posts/hubspot-renewal-pipeline-stages) a deal belongs in — especially for activity-based and journey-based models.
+Health signals determine [which pipeline stage](/posts/hubspot-renewal-pipeline-stages) a deal belongs in, especially for activity-based and journey-based models.
 
 ---
 
@@ -145,17 +145,17 @@ This workflow fires when an account's health deteriorates.
 
 **Step 3: Create a task**
 - Assigned to company owner
-- "Review at-risk account: [Company Name] — within 24 hours"
+- "Review at-risk account: [Company Name], within 24 hours"
 - Due: tomorrow
 
 **Step 4: Check renewal proximity**
-- **If renewal within 90 days:** Create an escalation task for CS manager: "At-risk account approaching renewal — [Company Name]"
+- **If renewal within 90 days:** Create an escalation task for CS manager: "At-risk account approaching renewal, [Company Name]"
 - **If renewal 90+ days out:** Standard CSM task (no escalation yet)
 
 **Step 5: Enroll primary contact in a "Save" sequence** (optional)
 - Personalized email from the CSM
 - Focus: "We noticed [signal]. We'd love to schedule a call to make sure you're getting full value."
-- Not a marketing email — a genuine 1:1 outreach
+- Not a marketing email, a genuine 1:1 outreach
 
 **Step 6: Weekly digest** (separate workflow)
 - Every Monday, send CS leadership a summary of all companies currently at "At Risk"
@@ -176,7 +176,7 @@ When a customer churns despite your best efforts, you need to capture *why* in a
 | Value | When to Use |
 |-------|-------------|
 | Budget / Cost | Customer cited price as the primary factor |
-| Competitor — [add name in text field] | Switching to a named competitor |
+| Competitor (add name in text field) | Switching to a named competitor |
 | Product Fit | Our solution doesn't solve their problem well enough |
 | No Longer Needed | Business model or need changed |
 | Acquisition / Merger | Company was acquired; new parent has different tools |
@@ -184,7 +184,7 @@ When a customer churns despite your best efforts, you need to capture *why* in a
 | Support Issues | Unresolved support problems drove the decision |
 | Implementation Failed | Never successfully deployed or adopted |
 | Never Fully Adopted | Deployed but usage was always low |
-| Involuntary (Payment Failure) | Failed payment, dunning exhausted — [Recurly's research](https://recurly.com/blog/what-is-involuntary-churn-what-you-can-do-about-it/) shows this can account for up to 6% of churn |
+| Involuntary (Payment Failure) | Failed payment, dunning exhausted. [Recurly's research](https://recurly.com/blog/what-is-involuntary-churn-what-you-can-do-about-it/) shows this can account for up to 6% of churn |
 | No Response (Auto-Churn) | Contract lapsed with no engagement from the customer |
 | Other | Doesn't fit above categories (explain in details field) |
 
@@ -206,7 +206,7 @@ Health scores catch problems, but proactive monitoring prevents them.
 
 If a customer has open support tickets AND their renewal is within 90 days, pause the standard renewal outreach. Sending a renewal proposal while they're frustrated with a support issue is tone-deaf and accelerates churn.
 
-**Workflow:** If Renewal Date is within 90 days AND Open Ticket Count > 0 → create task for CSM: "Resolve open tickets before renewal outreach — [Company Name]"
+**Workflow:** If Renewal Date is within 90 days AND Open Ticket Count > 0 → create task for CSM: "Resolve open tickets before renewal outreach, [Company Name]"
 
 ### Signal 2: Champion / Contact Changes
 
@@ -223,7 +223,7 @@ If you can integrate product usage data into HubSpot (via API, [Segment](https:/
 
 ### Signal 4: QBR Coverage
 
-Track whether each account has had a QBR in the last quarter. Low QBR coverage correlates directly with higher churn — it's one of the strongest leading indicators. [Vitally's SaaS churn benchmarks](https://www.vitally.io/post/saas-churn-benchmarks) show that SMBs churn at 3–5% monthly vs. enterprise at 1–2% — QBR coverage is one of the biggest differentiators.
+Track whether each account has had a QBR in the last quarter. Low QBR coverage correlates directly with higher churn; it's one of the strongest leading indicators. [Vitally's SaaS churn benchmarks](https://www.vitally.io/post/saas-churn-benchmarks) show that SMBs churn at 3-5% monthly vs. enterprise at 1-2%, and QBR coverage is one of the biggest differentiators.
 
 **Workflow:** If "Last QBR Date" is more than 120 days ago AND Account Health is not "At Risk" → Create task: "Schedule QBR with [Company Name]"
 
@@ -247,11 +247,11 @@ Set this when a deal closes as Lost:
 
 **Trigger:** Deal Stage changes to Closed Lost AND Win-Back Potential is "High" or "Medium"
 
-1. **Day 30 post-churn:** Personalized email from CSM — "We hope [competitor] is working out. If not, we'd love to chat."
-2. **Day 60 post-churn:** Value reminder — share a case study or product update relevant to their use case
-3. **Day 90 post-churn:** Direct offer — "We've made [improvements] since you left. Would a 15-minute call make sense?"
+1. **Day 30 post-churn:** Personalized email from CSM: "We hope [competitor] is working out. If not, we'd love to chat."
+2. **Day 60 post-churn:** Value reminder. Share a case study or product update relevant to their use case
+3. **Day 90 post-churn:** Direct offer: "We've made [improvements] since you left. Would a 15-minute call make sense?"
 
-**Track:** Win-back conversion rate. Even a 5–10% win-back rate represents meaningful revenue recovery.
+**Track:** Win-back conversion rate. Even a 5-10% win-back rate represents meaningful revenue recovery.
 
 ---
 
@@ -259,16 +259,16 @@ Set this when a deal closes as Lost:
 
 Health scores aren't useful if they exist in isolation. They need to influence what happens in your renewal pipeline.
 
-**At-Risk + 90 days to renewal:** Move the deal to a special "At Risk — Renewal" stage. This triggers a different playbook than the standard renewal cadence.
+**At-Risk + 90 days to renewal:** Move the deal to a special "At Risk: Renewal" stage. This triggers a different playbook than the standard renewal cadence.
 
 **Passive + 180 days to renewal:** Flag for proactive QBR. You have time to fix the relationship before the renewal window opens.
 
-**Healthy + 60 days to renewal:** Standard process — send renewal proposal with confidence.
+**Healthy + 60 days to renewal:** Standard process. Send renewal proposal with confidence.
 
 Set up the [health score properties](/posts/hubspot-renewal-pipeline-properties) before building these workflows.
 
 ---
 
-**SWOTBee builds churn prevention systems for mid-market teams in Energy, Utilities, Manufacturing, and SaaS — including health scoring, alert workflows, churn analysis dashboards, and renewal automation.**
+**SWOTBee builds churn prevention systems for mid-market teams in Energy, Utilities, Manufacturing, and SaaS, including health scoring, alert workflows, churn analysis dashboards, and renewal automation.**
 
 [Book a free 30-minute discovery call →](/contactus)

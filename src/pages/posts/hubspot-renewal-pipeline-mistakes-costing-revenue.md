@@ -2,7 +2,7 @@
 layout: ../../layouts/BlogPostLayout.astro
 title: "12 HubSpot Renewal Pipeline Mistakes That Are Costing You Revenue"
 pubDate: "2026-04-02"
-description: "The most common renewal pipeline mistakes we see in HubSpot — from mixing deal types to ignoring silence, timing collisions, and unstandardized churn logging. Each mistake includes the fix."
+description: "The most common renewal pipeline mistakes we see in HubSpot: from mixing deal types to ignoring silence, timing collisions, and unstandardized churn logging. Each mistake includes the fix."
 category:
   title: "Revenue Operations"
   href: "/categories/revenue-operations"
@@ -21,9 +21,9 @@ seriesName: "HubSpot Renewal Pipeline"
 pillarUrl: "/posts/hubspot-renewal-pipeline-complete-guide"
 ---
 
-After building renewal pipelines for dozens of mid-market companies, we see the same mistakes over and over. Some cost thousands in missed renewals. Others slowly poison your data until nobody trusts the CRM. Given that [retaining customers costs 5–25x less than acquiring new ones](https://hbr.org/2014/10/the-value-of-keeping-the-right-customers), these mistakes directly erode your bottom line.
+After building renewal pipelines for dozens of mid-market companies, we see the same mistakes over and over. Some cost thousands in missed renewals. Others slowly poison your data until nobody trusts the CRM. Given that [retaining customers costs 5, 25x less than acquiring new ones](https://hbr.org/2014/10/the-value-of-keeping-the-right-customers), these mistakes directly erode your bottom line.
 
-Here are the 12 we see most often — and how to fix each one.
+Here are the 12 we see most often, and how to fix each one.
 
 > This article is part of our [Complete Guide to Building a Renewal Pipeline in HubSpot](/posts/hubspot-renewal-pipeline-complete-guide).
 
@@ -37,7 +37,7 @@ Here are the 12 we see most often — and how to fix each one.
 
 **The cost:** Every multi-year customer stops getting automatic renewal deals after Year 1. Manual intervention is needed forever, and some renewals will be missed.
 
-**The fix:** Use the boolean toggle pattern or the dual-workflow pattern. This is the #1 most common renewal automation issue — we wrote an [entire article on fixing it](/posts/hubspot-renewal-workflow-infinite-loop-fix).
+**The fix:** Use the boolean toggle pattern or the dual-workflow pattern. This is the #1 most common renewal automation issue: we wrote an [entire article on fixing it](/posts/hubspot-renewal-workflow-infinite-loop-fix).
 
 ---
 
@@ -63,7 +63,7 @@ Here are the 12 we see most often — and how to fix each one.
 
 **Why it happens:** 90 days feels like plenty of time. It's a nice round number. Most automation guides use it.
 
-**The cost:** For enterprise and mid-market contracts, 90 days is often too late. Budget cycles take 60–90 days alone. If the customer is unhappy, 90 days isn't enough time to fix the relationship AND close the renewal.
+**The cost:** For enterprise and mid-market contracts, 90 days is often too late. Budget cycles take 60, 90 days alone. If the customer is unhappy, 90 days isn't enough time to fix the relationship AND close the renewal.
 
 **The fix:** Start the renewal motion at 180 days for contracts over $50K annually. Use the first 90 days (180→90) for health checks, QBRs, and relationship building. Use the last 90 days (90→0) for the actual renewal proposal and negotiation.
 
@@ -77,7 +77,7 @@ Here are the 12 we see most often — and how to fix each one.
 
 **The cost:** You can't analyze churn patterns. Was it pricing? Product fit? The champion leaving? Without structured churn data, every quarter's churn is a surprise.
 
-**The fix:** Create a specific churn reason dropdown with 10–12 values — including involuntary churn from payment failures, which [Recurly's research](https://recurly.com/blog/what-is-involuntary-churn-what-you-can-do-about-it/) shows can account for up to 6% of total churn. Make it required when a deal moves to Closed Lost. Add a companion freeform text field for details. Review churn reasons quarterly. See the full taxonomy in our [churn prevention guide](/posts/hubspot-churn-prevention-health-scores-workflows).
+**The fix:** Create a specific churn reason dropdown with 10, 12 values, including involuntary churn from payment failures, which [Recurly's research](https://recurly.com/blog/what-is-involuntary-churn-what-you-can-do-about-it/) shows can account for up to 6% of total churn. Make it required when a deal moves to Closed Lost. Add a companion freeform text field for details. Review churn reasons quarterly. See the full taxonomy in our [churn prevention guide](/posts/hubspot-churn-prevention-health-scores-workflows).
 
 ---
 
@@ -99,7 +99,7 @@ Here are the 12 we see most often — and how to fix each one.
 
 **Why it happens:** No news feels like good news. Busy teams focus on the squeaky wheels.
 
-**The cost:** The customer has been quietly evaluating alternatives. By the time the renewal conversation starts, they've already chosen a competitor. [As Jason Lemkin notes](https://www.saastr.com/high-nrr-can-mask-a-lot-of-problems/), high NRR can mask this problem — a few large account expansions hide the fact that many smaller accounts are silently churning.
+**The cost:** The customer has been quietly evaluating alternatives. By the time the renewal conversation starts, they've already chosen a competitor. [As Jason Lemkin notes](https://www.saastr.com/high-nrr-can-mask-a-lot-of-problems/), high NRR can mask this problem: a few large account expansions hide the fact that many smaller accounts are silently churning.
 
 **The fix:** Build proactive health monitoring. Track email engagement, meeting frequency, QBR attendance, and product usage (if available). A customer who goes quiet is a customer who needs attention. Build [health-based alert workflows](/posts/hubspot-churn-prevention-health-scores-workflows) that flag disengagement early.
 
@@ -113,7 +113,7 @@ Here are the 12 we see most often — and how to fix each one.
 
 **The cost:** Your renewal forecast chronically understates reality. A $2M renewal pipeline at "average 35% weighted probability" shows as $700K. The actual number is closer to $1.7M. Your CFO is planning based on the wrong number.
 
-**The fix:** Set renewal stage probabilities to 80–95%. Calibrate quarterly against actuals. See [how to fix your renewal forecasting](/posts/hubspot-renewal-forecasting-accuracy).
+**The fix:** Set renewal stage probabilities to 80, 95%. Calibrate quarterly against actuals. See [how to fix your renewal forecasting](/posts/hubspot-renewal-forecasting-accuracy).
 
 ---
 
@@ -129,7 +129,7 @@ Here are the 12 we see most often — and how to fix each one.
 
 ---
 
-## Mistake 9: Ownership Confusion — Nobody Owns the Renewal
+## Mistake 9: Ownership Confusion: Nobody Owns the Renewal
 
 **What happens:** The AE thinks the CSM owns the renewal. The CSM thinks the AE owns it. The renewal deal sits untouched.
 
@@ -143,7 +143,7 @@ Here are the 12 we see most often — and how to fix each one.
 
 ## Mistake 10: Not Copying Line Items to Renewal Deals
 
-**What happens:** Your workflow creates a renewal deal with the correct total amount, but no line items. The deal looks incomplete — there's no record of which products or services are being renewed.
+**What happens:** Your workflow creates a renewal deal with the correct total amount, but no line items. The deal looks incomplete, there's no record of which products or services are being renewed.
 
 **Why it happens:** HubSpot workflows can copy deal properties but cannot copy line items. This is a platform limitation.
 
@@ -153,7 +153,7 @@ Here are the 12 we see most often — and how to fix each one.
 
 ---
 
-## Mistake 11: Timing Collisions — Renewal Outreach During Open Support Issues
+## Mistake 11: Timing Collisions: Renewal Outreach During Open Support Issues
 
 **What happens:** A customer has an unresolved critical support ticket. The automated renewal workflow sends them a "Time to renew!" email.
 
@@ -165,9 +165,9 @@ Here are the 12 we see most often — and how to fix each one.
 
 ---
 
-## Mistake 12: No Audit Trail — "Who Changed What and When?"
+## Mistake 12: No Audit Trail: "Who Changed What and When?"
 
-**What happens:** Deal properties change but there's no record of why. The renewal amount decreased — was that a downgrade or a data entry error? A deal moved to Closed Lost — who made that call?
+**What happens:** Deal properties change but there's no record of why. The renewal amount decreased (was that a downgrade or a data entry error? A deal moved to Closed Lost) who made that call?
 
 **Why it happens:** HubSpot logs property changes in the deal activity timeline, but nobody reviews it. There are no structured notes explaining why changes were made.
 
@@ -176,10 +176,10 @@ Here are the 12 we see most often — and how to fix each one.
 **The fix:**
 - Require a "Renewal Outcome Notes" text field for any deal that closes (Won or Lost)
 - Use "Revenue Change Reason" dropdown when amounts change
-- Build a monthly report that flags deals where the amount changed by more than 10% — review these in team meetings
+- Build a monthly report that flags deals where the amount changed by more than 10%, review these in team meetings
 - For Enterprise users, configure audit logs for pipeline changes
 
-Most automation mistakes start in the [initial workflow setup](/posts/hubspot-renewal-deal-workflow-automation) — get that right and half these problems disappear.
+Most automation mistakes start in the [initial workflow setup](/posts/hubspot-renewal-deal-workflow-automation), get that right and half these problems disappear.
 
 ---
 
@@ -198,6 +198,6 @@ Then they build. In that order.
 
 ---
 
-**SWOTBee has seen all 12 of these mistakes — and fixed them — across mid-market companies in Energy, Manufacturing, SaaS, and more. If your renewal pipeline isn't performing, we can audit it and build you one that works.**
+**SWOTBee has seen all 12 of these mistakes (and fixed them) across mid-market companies in Energy, Manufacturing, SaaS, and more. If your renewal pipeline isn't performing, we can audit it and build you one that works.**
 
 [Book a free 30-minute discovery call →](/contactus)

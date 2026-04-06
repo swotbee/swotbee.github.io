@@ -23,7 +23,7 @@ pillarUrl: "/posts/hubspot-renewal-pipeline-complete-guide"
 
 If your forecast includes both new business and renewal deals using the same probability weights, your number is wrong. It's not "a little off." It's structurally broken.
 
-Here's why: new business deals close at 20–30%. Renewal deals close at 85–95% ([KeyBanc's annual SaaS Survey](https://investor.key.com/press-releases/news-details/2025/PRIVATE-SAAS-COMPANY-SURVEY-REVEALS-AI-DRIVEN-TRANSFORMATION-AND-SUSTAINED-OPERATIONAL-EXCELLENCE/default.aspx) puts gross retention approaching 90% industry-wide). When HubSpot multiplies deal value by stage probability, a $100K renewal at "Proposal Sent" (let's say 40% probability) shows as $40K weighted value. In reality, that renewal has a 90%+ chance of closing — the real weighted value is $90K.
+Here's why: new business deals close at 20, 30%. Renewal deals close at 85, 95% ([KeyBanc's annual SaaS Survey](https://investor.key.com/press-releases/news-details/2025/PRIVATE-SAAS-COMPANY-SURVEY-REVEALS-AI-DRIVEN-TRANSFORMATION-AND-SUSTAINED-OPERATIONAL-EXCELLENCE/default.aspx) puts gross retention approaching 90% industry-wide). When HubSpot multiplies deal value by stage probability, a $100K renewal at "Proposal Sent" (let's say 40% probability) shows as $40K weighted value. In reality, that renewal has a 90%+ chance of closing, the real weighted value is $90K.
 
 Your forecast just understated that deal by $50K. Multiply that across your pipeline and your CFO is making decisions on fantasy numbers.
 
@@ -33,7 +33,7 @@ Your forecast just understated that deal by $50K. Multiply that across your pipe
 
 ## Why Standard HubSpot Forecasting Fails for Renewals
 
-HubSpot's forecast tool works well for new business. It takes each deal's amount, multiplies by the stage probability, and sums the result. Simple and effective — when every deal behaves similarly.
+HubSpot's forecast tool works well for new business. It takes each deal's amount, multiplies by the stage probability, and sums the result. Simple and effective, when every deal behaves similarly.
 
 Renewals break this model in three ways:
 
@@ -41,23 +41,23 @@ Renewals break this model in three ways:
 
 | Deal Type | Typical Close Rate | Standard HubSpot Probability |
 |-----------|-------------------|---------------------------|
-| New Business | 20–30% | 10%–60% across stages |
-| Renewal | 85–95% | Same 10%–60% (wrong!) |
-| Expansion | 40–60% | Varies |
+| New Business | 20, 30% | 10%-60% across stages |
+| Renewal | 85, 95% | Same 10%-60% (wrong!) |
+| Expansion | 40, 60% | Varies |
 
 Using new business probabilities on renewal deals systematically understates your forecast.
 
 ### 2. Renewal Timing Is Predictable
 
-New business deals close when the buyer is ready — unpredictable. Renewals close near the contract renewal date — highly predictable. A renewal 90 days out is far more certain than a new business deal at "Demo Completed."
+New business deals close when the buyer is ready (unpredictable. Renewals close near the contract renewal date) highly predictable. A renewal 90 days out is far more certain than a new business deal at "Demo Completed."
 
 Your forecast model should reflect this certainty.
 
 ### 3. Loss Signals Are Different
 
-New business "stalls" in mid-pipeline stages. Renewals rarely stall — they either renew or they churn, and churn is usually visible through health signals well before the renewal conversation.
+New business "stalls" in mid-pipeline stages. Renewals rarely stall, they either renew or they churn, and churn is usually visible through health signals well before the renewal conversation.
 
-A renewal sitting at "60-Day Proposal" isn't stalling — the customer just hasn't signed yet. Don't discount it the way you'd discount a stalled sales deal.
+A renewal sitting at "60-Day Proposal" isn't stalling, the customer just hasn't signed yet. Don't discount it the way you'd discount a stalled sales deal.
 
 ---
 
@@ -69,16 +69,16 @@ Go to **Settings → Objects → Deals → Pipelines → Renewal Pipeline** and 
 
 | Stage | Probability | Rationale |
 |-------|------------|-----------|
-| Active Contract | 80% | Baseline — most customers renew |
-| Upcoming Renewal (180 days) | 82% | Slightly higher — no churn signals yet |
+| Active Contract | 80% | Baseline, most customers renew |
+| Upcoming Renewal (180 days) | 82% | Slightly higher, no churn signals yet |
 | 90-Day Check-In | 85% | Engagement started, positive signal |
-| 60-Day Proposal Sent | 90% | Proposal delivered — high confidence |
-| 30-Day Negotiating | 85% | Terms under discussion — slight uncertainty |
-| Overdue | 50% | Significant risk — contract has lapsed |
+| 60-Day Proposal Sent | 90% | Proposal delivered, high confidence |
+| 30-Day Negotiating | 85% | Terms under discussion, slight uncertainty |
+| Overdue | 50% | Significant risk, contract has lapsed |
 | Closed Won | 100% | Done |
 | Closed Lost | 0% | Done |
 
-**Note:** The "Negotiating" stage drops slightly from "Proposal Sent" — if a customer pushes back on terms, there's real churn risk. This is counterintuitive but reflects the data.
+**Note:** The "Negotiating" stage drops slightly from "Proposal Sent", if a customer pushes back on terms, there's real churn risk. This is counterintuitive but reflects the data.
 
 ### Step 2: Calibrate Against Historical Data
 
@@ -88,15 +88,15 @@ After one quarter, pull your actual renewal data:
 2. That's your actual probability.
 3. Update your stage probabilities to match.
 
-Repeat this calibration quarterly. Your probabilities should converge on reality within 2–3 quarters.
+Repeat this calibration quarterly. Your probabilities should converge on reality within 2, 3 quarters.
 
-Forecast accuracy starts with [correct stage probabilities](/posts/hubspot-renewal-pipeline-stages) — set these when you configure your pipeline.
+Forecast accuracy starts with [correct stage probabilities](/posts/hubspot-renewal-pipeline-stages), set these when you configure your pipeline.
 
 ---
 
 ## Segmenting Your Forecast
 
-Never combine new business and renewal forecasts into one number. HubSpot's forecast tool lets you view forecasts per pipeline — use this.
+Never combine new business and renewal forecasts into one number. HubSpot's forecast tool lets you view forecasts per pipeline, use this.
 
 ### Forecast View 1: New Business Revenue
 
@@ -144,7 +144,7 @@ This is far more accurate than summing weighted pipeline values, because the pro
 
 ### Mistake 1: Using the Same Probabilities for All Pipelines
 
-This is the #1 mistake. If your renewal pipeline uses the same 10%/20%/40%/60% probability scale as your sales pipeline, your forecast understates renewal revenue by 30–50%.
+This is the #1 mistake. If your renewal pipeline uses the same 10%/20%/40%/60% probability scale as your sales pipeline, your forecast understates renewal revenue by 30, 50%.
 
 ### Mistake 2: Not Segmenting by Deal Type in Reports
 
@@ -152,11 +152,11 @@ Even with separate pipelines, your board report might combine all closed-won rev
 
 ### Mistake 3: Ignoring Overdue Deals
 
-A deal past its renewal date with no outcome is a forecasting black hole. It's not "Closed Won" and it's not "Closed Lost" — it's just sitting there, distorting your pipeline value. Set a deadline: if a renewal is 30+ days overdue with no engagement, move it to Closed Lost.
+A deal past its renewal date with no outcome is a forecasting black hole. It's not "Closed Won" and it's not "Closed Lost", it's just sitting there, distorting your pipeline value. Set a deadline: if a renewal is 30+ days overdue with no engagement, move it to Closed Lost.
 
 ### Mistake 4: Forecasting Too Far Out
 
-Renewal forecasts are highly accurate for next quarter and reasonably accurate for the quarter after. Beyond that, customer situations change too much. Forecast 1–2 quarters out for renewals, not 12 months.
+Renewal forecasts are highly accurate for next quarter and reasonably accurate for the quarter after. Beyond that, customer situations change too much. Forecast 1, 2 quarters out for renewals, not 12 months.
 
 ### Mistake 5: Not Accounting for Multi-Year Contracts
 
@@ -197,6 +197,6 @@ This cadence catches drift early. Without it, your forecast degrades over time a
 
 ---
 
-**Accurate renewal forecasting is the difference between hitting your number and being surprised.** SWOTBee builds renewal forecasting models for mid-market teams in Energy, Manufacturing, and SaaS — from pipeline setup to board-ready reports.
+**Accurate renewal forecasting is the difference between hitting your number and being surprised.** SWOTBee builds renewal forecasting models for mid-market teams in Energy, Manufacturing, and SaaS, from pipeline setup to board-ready reports.
 
 [Book a free 30-minute discovery call →](/contactus)

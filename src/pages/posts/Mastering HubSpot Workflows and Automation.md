@@ -16,7 +16,7 @@ tags:
 ---
 Mastering HubSpot Workflows and Automation
 
-e.g., “HubSpot workflows”, “HubSpot marketing automation”, “Combining workflows and sequences in HubSpot”
+e.g. “HubSpot workflows”, “HubSpot marketing automation”, “Combining workflows and sequences in HubSpot”
 Why: Strong product-focused traffic, shows technical depth.
 
 
@@ -80,7 +80,7 @@ To create a well-structured and logical article from these HubSpot workflow ques
 - Summarize key takeaways, reinforce the value of mastering HubSpot workflows, and suggest resources for further learning.
 
 **Tips for Writing:**
-- Within each section, answer the questions in a logical order (e.g., set up before troubleshooting).
+- Within each section, answer the questions in a logical order (e.g. set up before troubleshooting).
 - Use headings and subheadings to improve readability.
 - Avoid repeating questions; if two are similar (e.g. Zoom), address them together.
 - Where relevant, use bullet points, step-by-step guides, or tables for clarity.

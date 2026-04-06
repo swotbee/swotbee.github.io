@@ -2,7 +2,7 @@
 layout: ../../layouts/BlogPostLayout.astro
 title: "The 15 Custom Properties Every HubSpot Renewal Pipeline Needs"
 pubDate: "2026-04-02"
-description: "Complete property setup guide for HubSpot renewal pipelines — deal type, renewal date, contract term, churn reason, health score, and 10 more. Exact field types, dropdown values, and where each lives."
+description: "Complete property setup guide for HubSpot renewal pipelines: deal type, renewal date, contract term, churn reason, health score, and 10 more. Exact field types, dropdown values, and where each lives."
 category:
   title: "Revenue Operations"
   href: "/categories/revenue-operations"
@@ -23,7 +23,7 @@ pillarUrl: "/posts/hubspot-renewal-pipeline-complete-guide"
 
 Your renewal pipeline is only as good as the data feeding it. Workflows need properties to trigger on. Reports need properties to calculate from. CSMs need properties to understand what's happening with an account.
 
-HubSpot includes [a set of default deal properties](https://knowledge.hubspot.com/properties/hubspots-default-deal-properties) out of the box, but they're built for new business — not renewals. This article lists the 15 custom properties you need to add, with exact field types, recommended dropdown values, and explanations of where each one is used.
+HubSpot includes [a set of default deal properties](https://knowledge.hubspot.com/properties/hubspots-default-deal-properties) out of the box, but they're built for new business, not renewals. This article lists the 15 custom properties you need to add, with exact field types, recommended dropdown values, and explanations of where each one is used.
 
 > This article is part of our [Complete Guide to Building a Renewal Pipeline in HubSpot](/posts/hubspot-renewal-pipeline-complete-guide).
 
@@ -36,7 +36,7 @@ HubSpot includes [a set of default deal properties](https://knowledge.hubspot.co
 **Object:** Deal
 **Field type:** Dropdown select
 **Values:** `New Business` | `Renewal` | `Expansion` | `Contraction` | `Re-activation`
-**Required:** Yes — on deal creation
+**Required:** Yes, on deal creation
 
 **Why:** This is the single most important property for renewal reporting. Every cross-pipeline report, every revenue segmentation, every forecast filter depends on Deal Type being accurate.
 
@@ -51,7 +51,7 @@ HubSpot includes [a set of default deal properties](https://knowledge.hubspot.co
 
 **Object:** Deal
 **Field type:** Date picker
-**Required:** Yes — on all renewal deals
+**Required:** Yes, on all renewal deals
 
 **Why:** This is the anchor for everything time-based: stage progression workflows, the 90-60-30 cadence, forecast timing, and the "Days to Renewal" calculation.
 
@@ -93,11 +93,11 @@ HubSpot includes [a set of default deal properties](https://knowledge.hubspot.co
 
 **Object:** Deal
 **Field type:** Calculated property (requires [Operations Hub Professional](https://www.hubspot.com/pricing/operations))
-**Formula:** `Renewal Date - Today`
+**Formula:** `Renewal Date. Today`
 
 **Why:** This is the metric that drives urgency. It powers time-based stage progression, report filters ("show me all deals within 30 days"), and CSM dashboards.
 
-**Alternative without Ops Hub:** Create a "Days to Renewal Range" dropdown (180+, 90–180, 60–90, 30–60, 0–30, Overdue) and use workflows to update it based on date comparisons. Less precise but works on any tier.
+**Alternative without Ops Hub:** Create a "Days to Renewal Range" dropdown (180+, 90, 180, 60, 90, 30, 60, 0, 30, Overdue) and use workflows to update it based on date comparisons. Less precise but works on any tier.
 
 ---
 
@@ -107,7 +107,7 @@ HubSpot includes [a set of default deal properties](https://knowledge.hubspot.co
 **Field type:** Dropdown select
 **Values:** `Auto-Renew` | `Manual Renewal` | `Opt-Out Window`
 
-**Why:** Auto-renewing contracts need different handling. You still want a renewal deal in the pipeline (for forecasting and health monitoring), but the urgency and outreach cadence is different. A CSM doesn't need to "close" an auto-renewal — they need to ensure the customer doesn't cancel before the auto-renew date.
+**Why:** Auto-renewing contracts need different handling. You still want a renewal deal in the pipeline (for forecasting and health monitoring), but the urgency and outreach cadence is different. A CSM doesn't need to "close" an auto-renewal, they need to ensure the customer doesn't cancel before the auto-renew date.
 
 **How it's used:**
 - Different workflow branches for auto-renew vs. manual
@@ -130,7 +130,7 @@ HubSpot includes [a set of default deal properties](https://knowledge.hubspot.co
 
 **Object:** Deal
 **Field type:** Dropdown select
-**Values:** `Same Terms` | `Price Increase` | `Volume Increase` | `Product Upsell` | `Downgrade — Budget` | `Downgrade — Usage` | `Downgrade — Feature Removed` | `Partial Churn`
+**Values:** `Same Terms` | `Price Increase` | `Volume Increase` | `Product Upsell` | `Downgrade (Budget` | `Downgrade) Usage` | `Downgrade. Feature Removed` | `Partial Churn`
 
 **Why:** When the renewal amount differs from the previous contract, this property explains why. Critical for understanding whether expansion is organic (usage growth) or strategic (upsell motion), and whether contraction is preventable.
 
@@ -140,8 +140,8 @@ HubSpot includes [a set of default deal properties](https://knowledge.hubspot.co
 
 **Object:** Deal
 **Field type:** Dropdown select
-**Values:** `Budget/Cost` | `Competitor — [Name field]` | `Product Fit` | `No Longer Needed` | `Acquisition/Merger` | `Champion Left` | `Support Issues` | `Implementation Failed` | `Never Fully Adopted` | `No Response (Auto-Churn)` | `Other`
-**Required:** Yes — when deal moves to Closed Lost
+**Values:** `Budget/Cost` | `Competitor, [Name field]` | `Product Fit` | `No Longer Needed` | `Acquisition/Merger` | `Champion Left` | `Support Issues` | `Implementation Failed` | `Never Fully Adopted` | `No Response (Auto-Churn)` | `Other`
+**Required:** Yes, when deal moves to Closed Lost
 
 **Why:** "Lost to competitor" isn't specific enough. A proper churn reason taxonomy enables quarterly analysis that drives product, pricing, and retention strategy decisions.
 
@@ -171,7 +171,7 @@ Health score properties feed [churn prevention workflows](/posts/hubspot-churn-p
 **Field type:** Yes/No (boolean)
 **Default:** No
 
-**Why:** Used by the boolean toggle pattern to [solve the infinite loop problem](/posts/hubspot-renewal-workflow-infinite-loop-fix). When a renewal deal creates the next year's deal, this property flips to "Yes" — preventing the workflow from firing again on the same deal.
+**Why:** Used by the boolean toggle pattern to [solve the infinite loop problem](/posts/hubspot-renewal-workflow-infinite-loop-fix). When a renewal deal creates the next year's deal, this property flips to "Yes", preventing the workflow from firing again on the same deal.
 
 ---
 
@@ -211,9 +211,9 @@ Health score properties feed [churn prevention workflows](/posts/hubspot-churn-p
 **Object:** Deal
 **Field type:** Multi-line text
 
-**Why:** A catch-all for context that doesn't fit into structured properties. "Customer mentioned budget concerns in Q3 QBR." "New CTO wants to evaluate alternatives." "Expanding to 3 new locations — upsell opportunity."
+**Why:** A catch-all for context that doesn't fit into structured properties. "Customer mentioned budget concerns in Q3 QBR." "New CTO wants to evaluate alternatives." "Expanding to 3 new locations, upsell opportunity."
 
-This isn't for reporting — it's for the CSM who opens this deal in 6 months and needs to know the story.
+This isn't for reporting, it's for the CSM who opens this deal in 6 months and needs to know the story.
 
 ---
 
@@ -252,6 +252,6 @@ These properties power [your automation workflows](/posts/hubspot-renewal-deal-w
 
 ---
 
-**Need help setting up your renewal properties?** SWOTBee configures renewal pipelines end-to-end for mid-market teams — including all 15 properties, workflow automation, and reporting dashboards.
+**Need help setting up your renewal properties?** SWOTBee configures renewal pipelines end-to-end for mid-market teams, including all 15 properties, workflow automation, and reporting dashboards.
 
 [Book a free 30-minute discovery call →](/contactus)

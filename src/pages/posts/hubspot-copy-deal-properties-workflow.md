@@ -2,7 +2,7 @@
 layout: ../../layouts/BlogPostLayout.astro
 title: "How to Copy Deal Properties Between Deals in HubSpot Workflows"
 pubDate: "2026-04-02"
-description: "HubSpot's 'Copy Property' action updates the wrong deal. Here are 4 workarounds — company pass-through, sync properties, custom code, and Operations Hub — with step-by-step instructions."
+description: "HubSpot's 'Copy Property' action updates the wrong deal. Here are 4 workarounds: company pass-through, sync properties, custom code, and Operations Hub. With step-by-step instructions."
 category:
   title: "Revenue Operations"
   href: "/categories/revenue-operations"
@@ -37,9 +37,9 @@ howtoSteps:
     text: "Create a test deal, trigger the workflow, and verify all properties transferred to the new deal correctly."
 ---
 
-You build a workflow that creates a renewal deal when the original closes as Won. You add a "Copy Property" action to carry the contract value forward. You test it — and the property updates on the *original* deal, not the new one.
+You build a workflow that creates a renewal deal when the original closes as Won. You add a "Copy Property" action to carry the contract value forward. You test it, and the property updates on the *original* deal, not the new one.
 
-This [trips up nearly every HubSpot user](https://community.hubspot.com/t5/CRM/Copy-property-of-and-original-deal-to-a-renewal-deal/m-p/1233479) who builds renewal automation. The "Copy Property" action operates on the enrolled record — the deal that triggered the workflow. Not the deal the workflow just created.
+This [trips up nearly every HubSpot user](https://community.hubspot.com/t5/CRM/Copy-property-of-and-original-deal-to-a-renewal-deal/m-p/1233479) who builds renewal automation. The "Copy Property" action operates on the enrolled record, the deal that triggered the workflow. Not the deal the workflow just created.
 
 Here are four workarounds, from simplest to most powerful.
 
@@ -49,13 +49,13 @@ Here are four workarounds, from simplest to most powerful.
 
 ## Why HubSpot's "Copy Property" Updates the Wrong Deal
 
-When a deal-based workflow triggers, the "enrolled record" is the deal that matched the trigger criteria — the *original* deal. Every action in that workflow operates on the enrolled record by default.
+When a deal-based workflow triggers, the "enrolled record" is the deal that matched the trigger criteria, the *original* deal. Every action in that workflow operates on the enrolled record by default.
 
-The "Create Record" action creates a new deal — but it doesn't change which deal the workflow is operating on. The next action still targets the original deal. So "Copy Property Value" copies a value from one property to another *on the original deal*, not the new one.
+The "Create Record" action creates a new deal, but it doesn't change which deal the workflow is operating on. The next action still targets the original deal. So "Copy Property Value" copies a value from one property to another *on the original deal*, not the new one.
 
-This is by design. HubSpot workflows are object-scoped — they operate on one record throughout the workflow. There's no "switch context to the newly created record" action.
+This is by design. HubSpot workflows are object-scoped; they operate on one record throughout the workflow. There's no "switch context to the newly created record" action.
 
-According to [Validity's 2025 State of CRM Data report](https://www.validity.com/resource-center/the-state-of-crm-data-management-in-2025/), 47% of reps say inaccurate data is worse than a year ago. Workarounds that introduce intermediate steps create more opportunities for data inconsistency — so pick the simplest method that works for your situation.
+According to [Validity's 2025 State of CRM Data report](https://www.validity.com/resource-center/the-state-of-crm-data-management-in-2025/), 47% of reps say inaccurate data is worse than a year ago. Workarounds that introduce intermediate steps create more opportunities for data inconsistency, so pick the simplest method that works for your situation.
 
 ---
 
@@ -66,14 +66,14 @@ Use the associated Company record as an intermediary to shuttle property values 
 **How it works:**
 
 1. **Workflow A** (triggers on original deal Closed Won):
-   - Copy "Amount" from the deal to a custom Company property (e.g., "Temp — Last Deal Amount")
-   - Copy "Contract Term" from the deal to another Company property (e.g., "Temp — Last Contract Term")
+   - Copy "Amount" from the deal to a custom Company property (e.g. "Temp: Last Deal Amount")
+   - Copy "Contract Term" from the deal to another Company property (e.g. "Temp: Last Contract Term")
    - Create the new deal in the Renewal Pipeline
-   - Set the new deal's "Previous Contract Value" = the Company's "Temp — Last Deal Amount"
+   - Set the new deal's "Previous Contract Value" = the Company's "Temp: Last Deal Amount"
 
 2. **Workflow B** (triggers on new deal creation in Renewal Pipeline):
-   - Copy "Temp — Last Deal Amount" from the associated Company to the new deal's "Amount"
-   - Copy "Temp — Last Contract Term" from the Company to the new deal's "Contract Term"
+   - Copy "Temp: Last Deal Amount" from the associated Company to the new deal's "Amount"
+   - Copy "Temp: Last Contract Term" from the Company to the new deal's "Contract Term"
 
 **Pros:**
 - No third-party tools or custom code
@@ -92,7 +92,7 @@ Use the associated Company record as an intermediary to shuttle property values 
 
 ## Workaround 2: Sync Properties (Newer HubSpot Feature)
 
-HubSpot introduced property syncing that can keep properties in sync between associated records. If configured correctly, a deal property can automatically reflect its associated Company's property value — and vice versa.
+HubSpot introduced property syncing that can keep properties in sync between associated records. If configured correctly, a deal property can automatically reflect its associated Company's property value, and vice versa.
 
 **How it works:**
 
@@ -178,7 +178,7 @@ exports.main = async (event) => {
 
 **Cons:**
 - Requires developer skills (JavaScript + HubSpot API knowledge)
-- 20-second execution timeout — may fail for complex operations
+- 20-second execution timeout and may fail for complex operations
 - Harder to debug than visual workflow actions
 - Requires a [Private App](https://developers.hubspot.com/docs/api/private-apps) for API authentication
 
@@ -188,7 +188,7 @@ exports.main = async (event) => {
 
 ## Workaround 4: Operations Hub Data Quality Automation
 
-If you have [Operations Hub Professional](https://www.hubspot.com/pricing/operations), you can use Data Quality Automation to format, calculate, and transform property values — then feed them into your workflow.
+If you have [Operations Hub Professional](https://www.hubspot.com/pricing/operations), you can use Data Quality Automation to format, calculate, and transform property values and then feed them into your workflow.
 
 **How it works:**
 
@@ -196,9 +196,9 @@ If you have [Operations Hub Professional](https://www.hubspot.com/pricing/operat
 2. Use **Copy Property Value** to set that formatted value on the new deal (via the Company pass-through, or combined with custom code)
 
 **What Ops Hub adds:**
-- **Calculated properties** — compute Renewal Date = Close Date + Contract Term without custom code
-- **Format Data actions** — extract, transform, and combine property values within workflows
-- **Data quality rules** — validate property values before they're copied
+- **Calculated properties:** compute Renewal Date = Close Date + Contract Term without custom code
+- **Format Data actions:** extract, transform, and combine property values within workflows
+- **Data quality rules:** validate property values before they're copied
 
 **Best for:** Teams already on Operations Hub who want to minimize custom code.
 
@@ -225,7 +225,7 @@ Not every property should be carried forward. Here's the checklist:
 **Always reset:**
 - [ ] Deal Stage (first stage of target pipeline)
 - [ ] Deal Owner (route to correct person)
-- [ ] Renewal Created Boolean (set to "No" — for [loop prevention](/posts/hubspot-renewal-workflow-infinite-loop-fix))
+- [ ] Renewal Created Boolean (set to "No", for [loop prevention](/posts/hubspot-renewal-workflow-infinite-loop-fix))
 - [ ] Health Score (start fresh)
 
 For the full property setup, see [The 15 Custom Properties Every Renewal Pipeline Needs](/posts/hubspot-renewal-pipeline-properties).
@@ -243,10 +243,10 @@ Before enabling your workflow on live data:
 5. **Check timing:** If using the Company pass-through, are both workflows completing in the right order?
 6. **Test edge cases:** What happens with a $0 deal? A deal with no associated company? A deal already in the renewal pipeline?
 
-These workflows also power [the 90-60-30 engagement cadence](/posts/hubspot-renewal-deal-workflow-automation) — if properties aren't copying correctly, the entire downstream automation breaks.
+These workflows also power [the 90-60-30 engagement cadence](/posts/hubspot-renewal-deal-workflow-automation). If properties aren't copying correctly, the entire downstream automation breaks.
 
 ---
 
-**Property copying between deals is deceptively simple in theory and surprisingly hard in practice.** SWOTBee has built deal property workflows for dozens of mid-market companies — handling the edge cases, timing issues, and data integrity challenges that trip up most teams.
+**Property copying between deals is deceptively simple in theory and surprisingly hard in practice.** SWOTBee has built deal property workflows for dozens of mid-market companies, handling the edge cases, timing issues, and data integrity challenges that trip up most teams.
 
 [Book a free 30-minute discovery call →](/contactus)

@@ -21,5 +21,5 @@ tags:
 
 HubSpot for Accounting and Finance Firms
 
-e.g., “HubSpot QuickBooks integration”, “Automated invoicing in HubSpot”, “Revenue recognition with HubSpot & Xero”
+e.g. “HubSpot QuickBooks integration”, “Automated invoicing in HubSpot”, “Revenue recognition with HubSpot & Xero”
 Why: Niche audience, recurring consulting opportunities.

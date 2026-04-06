@@ -2,7 +2,7 @@
 layout: ../../layouts/BlogPostLayout.astro
 title: "How to Clone HubSpot Deals with Line Items: The Complete Fix"
 pubDate: "2026-04-02"
-description: "HubSpot can't copy line items when cloning deals — here are 4 proven solutions. Marketplace apps, Zapier, custom code, and API integration with step-by-step instructions."
+description: "HubSpot can't copy line items when cloning deals: here are 4 proven solutions. Marketplace apps, Zapier, custom code, and API integration with step-by-step instructions."
 category:
   title: "Revenue Operations"
   href: "/categories/revenue-operations"
@@ -34,10 +34,10 @@ howtoSteps:
   - name: "Map which line items to copy"
     text: "Decide whether to copy all line items or selectively filter by product, recurring status, or amount."
   - name: "Test with a sample deal"
-    text: "Clone a test deal and verify all line items transferred correctly — products, quantities, prices, discounts."
+    text: "Clone a test deal and verify all line items transferred correctly: products, quantities, prices, discounts."
 ---
 
-HubSpot workflows cannot copy line items from one deal to another. This means every automatically-created renewal deal, upsell deal, or cloned deal is missing its products, pricing, and quantities. Someone has to manually re-add them — or you need one of the four solutions below.
+HubSpot workflows cannot copy line items from one deal to another. This means every automatically-created renewal deal, upsell deal, or cloned deal is missing its products, pricing, and quantities. Someone has to manually re-add them, or you need one of the four solutions below.
 
 This is the [#2 most-requested feature in HubSpot's Ideas forum](https://community.hubspot.com/t5/HubSpot-Ideas/Copy-line-items-from-one-deal-to-another-in-order-to-manage/idi-p/722785), and as of 2026, there's still no native fix.
 
@@ -47,7 +47,7 @@ This is the [#2 most-requested feature in HubSpot's Ideas forum](https://communi
 
 ## Why HubSpot Workflows Can't Copy Line Items
 
-Line items in HubSpot are separate objects — they're associated with deals but not properties of deals. When a workflow creates a new deal via the "Create Record" action, it copies deal *properties* (amount, stage, name). Line items are a different object entirely, and the workflow engine has no action to duplicate them.
+Line items in HubSpot are separate objects; they're associated with deals but not properties of deals. When a workflow creates a new deal via the "Create Record" action, it copies deal *properties* (amount, stage, name). Line items are a different object entirely, and the workflow engine has no action to duplicate them.
 
 This is a fundamental platform architecture choice, not a bug. But the impact is real:
 
@@ -63,15 +63,15 @@ For context on how this fits into renewal automation, see our [renewal deal work
 
 The simplest fix. Install an app that handles line item cloning natively.
 
-### [CloneNer](https://ecosystem.hubspot.com/marketplace/apps/clonener-2156213) ($19–$149/mo)
+### [CloneNer](https://ecosystem.hubspot.com/marketplace/apps/clonener-2156213) (-/mo)
 
-CloneNer copies all line items — products, quantities, unit prices, discounts, and custom line item properties. It works both manually (CRM card button) and via workflow actions (Professional plan, $49/mo).
+CloneNer copies all line items: products, quantities, unit prices, discounts, and custom line item properties. It works both manually (CRM card button) and via workflow actions (Professional plan, $49/mo).
 
 **Setup:** Install → configure which properties and line items to include → add the CloneNer action to your renewal workflow.
 
 **Limitation:** No selective line item filtering (it copies all or nothing). If a deal has 10 line items and you only want 3 on the renewal, you'll need to manually remove the extras.
 
-### [Deal Duplicator](https://ecosystem.hubspot.com/marketplace/apps/deal-duplicator-201603) ($19–$59/mo)
+### [Deal Duplicator](https://ecosystem.hubspot.com/marketplace/apps/deal-duplicator-201603) (-/mo)
 
 Similar to CloneNer for line items. Deal Duplicator copies products and associations in a single operation. The Pro tier ($35/mo) adds automation rules with if/then logic.
 
@@ -79,9 +79,9 @@ Similar to CloneNer for line items. Deal Duplicator copies products and associat
 
 ### [Clone a Deal](https://ecosystem.hubspot.com/marketplace/listing/clone-a-deal-workflow-action) ($9.99/mo)
 
-A workflow-native action with a checkbox to include line items. Best value — flat $9.99/month with no per-deal limits.
+A workflow-native action with a checkbox to include line items. Best value at a flat $9.99/month with no per-deal limits.
 
-**Limitation:** Workflow-only — no manual CRM card cloning. If your team also needs ad-hoc cloning outside workflows, you'll need a second tool.
+**Limitation:** Workflow-only, with no manual CRM card cloning. If your team also needs ad-hoc cloning outside workflows, you'll need a second tool.
 
 For the full comparison, see [Best HubSpot Deal Cloning Apps Compared](/posts/hubspot-deal-cloning-apps-compared).
 
@@ -89,7 +89,7 @@ For the full comparison, see [Best HubSpot Deal Cloning Apps Compared](/posts/hu
 
 ## Solution 2: Zapier + HubSpot Line Items API
 
-[Zapier](https://zapier.com/apps/hubspot/integrations) can read line items from a source deal and create them on a new deal — but it requires a multi-step Zap with API calls.
+[Zapier](https://zapier.com/apps/hubspot/integrations) can read line items from a source deal and create them on a new deal, but it requires a multi-step Zap with API calls.
 
 **How it works:**
 
@@ -101,7 +101,7 @@ For the full comparison, see [Best HubSpot Deal Cloning Apps Compared](/posts/hu
 
 **Pros:** No HubSpot marketplace app required. Works with any Zapier plan that supports multi-step Zaps.
 
-**Cons:** Fragile — if the Zap breaks, line items silently fail. [Zapier cannot access quote associations](https://community.zapier.com/how-do-i-3/how-do-i-clone-line-items-from-a-published-quote-in-a-sales-pipeline-to-a-renewal-pipeline-using-zapier-44248), so you can't pull line items from quotes. Each line item requires a separate API call, which burns Zapier tasks.
+**Cons:** Fragile: if the Zap breaks, line items silently fail. [Zapier cannot access quote associations](https://community.zapier.com/how-do-i-3/how-do-i-clone-line-items-from-a-published-quote-in-a-sales-pipeline-to-a-renewal-pipeline-using-zapier-44248), so you can't pull line items from quotes. Each line item requires a separate API call, which burns Zapier tasks.
 
 **Best for:** Teams already using Zapier who don't want another app subscription.
 
@@ -109,7 +109,7 @@ For the full comparison, see [Best HubSpot Deal Cloning Apps Compared](/posts/hu
 
 ## Solution 3: Custom Code Action in HubSpot Workflows
 
-HubSpot Professional and Enterprise plans support custom code actions in workflows — JavaScript or Python snippets that run within the workflow.
+HubSpot Professional and Enterprise plans support custom code actions in workflows, specifically JavaScript or Python snippets that run within the workflow.
 
 **How it works:**
 
@@ -150,7 +150,7 @@ for (const assoc of associations.results) {
 
 **Pros:** No third-party app. Full control over which line items to copy and how to transform them (adjust pricing, change quantities, filter by product type).
 
-**Cons:** Requires developer skills. Custom code actions have a 20-second timeout — might fail for deals with many line items. Debugging is harder than app-based solutions.
+**Cons:** Requires developer skills. Custom code actions have a 20-second timeout and might fail for deals with many line items. Debugging is harder than app-based solutions.
 
 **Best for:** Teams with developer resources who need custom logic (price adjustments, selective filtering, conditional line items).
 
@@ -162,7 +162,7 @@ For the most control, build a standalone integration using HubSpot's [Deals API]
 
 **When this makes sense:**
 - You have variable-term contracts where line item pricing changes at renewal
-- You need to apply price escalation rules (e.g., +5% annually)
+- You need to apply price escalation rules (e.g. +5% annually)
 - You're integrating with external billing systems like [Chargebee](https://www.chargebee.com/integrations/hubspot/) or [Stripe](https://docs.stripe.com/billing/subscriptions/overview)
 - You need to handle complex product bundles or tiered pricing
 - Volume exceeds what workflow custom code actions can handle (20-second timeout)
@@ -185,7 +185,7 @@ For the most control, build a standalone integration using HubSpot's [Deals API]
 | **Reliability** | High | Medium | Medium | High |
 | **Maintenance** | Vendor maintains | You maintain Zaps | You maintain code | You maintain code |
 
-**Our recommendation:** Start with a marketplace app. If your needs outgrow it — custom pricing logic, selective filtering, external system integration — graduate to custom code or API.
+**Our recommendation:** Start with a marketplace app. If your needs outgrow it (custom pricing logic, selective filtering, external system integration), graduate to custom code or API.
 
 ---
 
@@ -199,7 +199,7 @@ Before going live with any solution:
 4. **Check edge cases:** What happens with a $0 line item? A line item with a deleted product? A line item with custom properties?
 5. **Verify associations:** Are the line items properly associated with the new deal (not the old one)?
 
-If line items aren't copying correctly, check our [infinite loop troubleshooting guide](/posts/hubspot-renewal-workflow-infinite-loop-fix) — the same re-enrollment rules that break renewal automation can also affect line item copying workflows.
+If line items aren't copying correctly, check our [infinite loop troubleshooting guide](/posts/hubspot-renewal-workflow-infinite-loop-fix), since the same re-enrollment rules that break renewal automation can also affect line item copying workflows.
 
 ---
 

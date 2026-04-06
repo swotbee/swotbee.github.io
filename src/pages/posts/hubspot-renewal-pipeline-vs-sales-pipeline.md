@@ -25,7 +25,7 @@ pillarUrl: "/posts/hubspot-renewal-pipeline-complete-guide"
 
 This question appears in every HubSpot community thread, Reddit discussion, and RevOps Slack channel about renewals. And the answer is almost always the same frustrating response: "It depends."
 
-This article replaces "it depends" with a concrete decision framework. By the end, you'll know exactly which approach fits your team — and why.
+This article replaces "it depends" with a concrete decision framework. By the end, you'll know exactly which approach fits your team, and why.
 
 > This article is part of our [Complete Guide to Building a Renewal Pipeline in HubSpot](/posts/hubspot-renewal-pipeline-complete-guide).
 
@@ -75,13 +75,13 @@ If renewals follow roughly the same process → **unified pipeline** is fine.
 
 ### 3. Do you need to forecast renewal revenue separately?
 
-If your CFO, board, or investors want to see new business revenue vs. renewal revenue vs. expansion revenue in separate forecasts → **separate pipeline**. HubSpot's forecast tool works per-pipeline. Mixing deal types in one pipeline makes accurate forecasting nearly impossible because renewal close rates (85–95%) are completely different from new business close rates (20–30%).
+If your CFO, board, or investors want to see new business revenue vs. renewal revenue vs. expansion revenue in separate forecasts → **separate pipeline**. HubSpot's forecast tool works per-pipeline. Mixing deal types in one pipeline makes accurate forecasting nearly impossible because renewal close rates (85, 95%) are completely different from new business close rates (20, 30%).
 
 If you only need total pipeline value → **unified pipeline** works.
 
 ### 4. Do you have more than 50 renewals per quarter?
 
-Volume matters. At low volume, you can manually manage renewals in a shared pipeline. At scale, you need automation — and automation works much better in a dedicated pipeline where triggers and conditions don't have to constantly filter by deal type.
+Volume matters. At low volume, you can manually manage renewals in a shared pipeline. At scale, you need automation, and automation works much better in a dedicated pipeline where triggers and conditions don't have to constantly filter by deal type.
 
 50+ per quarter → **separate pipeline**.
 
@@ -144,6 +144,6 @@ Once you decide to separate, [choose your stage model](/posts/hubspot-renewal-pi
 
 ---
 
-**Need help deciding?** SWOTBee builds renewal pipeline architectures for mid-market teams. We've seen dozens of configurations across Energy, Manufacturing, and SaaS — and we'll help you pick the right one for your team.
+**Need help deciding?** SWOTBee builds renewal pipeline architectures for mid-market teams. We've seen dozens of configurations across Energy, Manufacturing, and SaaS, and we'll help you pick the right one for your team.
 
 [Book a free 30-minute discovery call →](/contactus)

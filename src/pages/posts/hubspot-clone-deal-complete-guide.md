@@ -2,7 +2,7 @@
 layout: ../../layouts/BlogPostLayout.astro
 title: "How to Clone a Deal in HubSpot: The Complete Guide (2026)"
 pubDate: "2026-04-02"
-description: "The only vendor-neutral guide to cloning deals in HubSpot — native cloning, workflows, marketplace apps, and API. Covers the line item gap, 10 use cases, and best practices."
+description: "The only vendor-neutral guide to cloning deals in HubSpot: native cloning, workflows, marketplace apps, and API. Covers the line item gap, 10 use cases, and best practices."
 category:
   title: "Revenue Operations"
   href: "/categories/revenue-operations"
@@ -28,9 +28,9 @@ seriesName: "HubSpot Deal Cloning"
 pillarUrl: "/posts/hubspot-clone-deal-complete-guide"
 ---
 
-Cloning a deal in HubSpot means creating an exact copy of an existing deal — with its properties, associations, and (ideally) line items — so you don't have to rebuild it from scratch. It's one of the [most-requested features in HubSpot history](https://community.hubspot.com/t5/HubSpot-Ideas/Cloning-a-Deal/idi-p/28845), with 500+ upvotes on the Ideas forum.
+Cloning a deal in HubSpot means creating an exact copy of an existing deal (with its properties, associations, and ideally line items) so you don't have to rebuild it from scratch. It's one of the [most-requested features in HubSpot history](https://community.hubspot.com/t5/HubSpot-Ideas/Cloning-a-Deal/idi-p/28845), with 500+ upvotes on the Ideas forum.
 
-The problem: HubSpot's native cloning is limited, workflows can't copy line items, and every existing guide is written by a vendor promoting their own app. This guide is different. We cover all four methods — native, workflows, marketplace apps, and API — with honest pros and cons for each.
+The problem: HubSpot's native cloning is limited, workflows can't copy line items, and every existing guide is written by a vendor promoting their own app. This guide is different. We cover all four methods: native, workflows, marketplace apps, and API, with honest pros and cons for each.
 
 > **This is the pillar article in our HubSpot Deal Cloning series.** Each section links to deeper guides where we go step-by-step.
 
@@ -38,21 +38,21 @@ The problem: HubSpot's native cloning is limited, workflows can't copy line item
 
 ## Can You Clone a Deal in HubSpot? (The Current State in 2026)
 
-Yes — but with significant limitations. HubSpot added native deal cloning in a [private beta in late 2023](https://community.hubspot.com/t5/Tips-Tricks-Best-Practices/Cloning-a-deal/td-p/949228), and it's now available to most portals. You can click the "Clone" button on any deal record to create a copy.
+Yes, but with significant limitations. HubSpot added native deal cloning in a [private beta in late 2023](https://community.hubspot.com/t5/Tips-Tricks-Best-Practices/Cloning-a-deal/td-p/949228), and it's now available to most portals. You can click the "Clone" button on any deal record to create a copy.
 
 What native cloning copies:
 - Deal properties (name, amount, stage, pipeline, custom properties)
 - Company and contact associations
 
 What native cloning does NOT copy:
-- **Line items** (products, pricing, quantities) — this is the #1 gap
+- **Line items** (products, pricing, quantities). This is the #1 gap
 - **Engagements** (emails, notes, calls, meetings)
 - **Quotes** attached to the deal
-- **Automation triggers** — you can't clone deals inside workflows natively
+- **Automation triggers**. You can't clone deals inside workflows natively
 
 And there's no way to automate native cloning. It's a manual, one-at-a-time click. For teams managing renewals, upsells, or multi-location deals at scale, that's a dealbreaker.
 
-According to [Salesforce's State of Sales](https://www.salesforce.com/news/stories/sales-research-2023/), sales reps spend only 29% of their workweek actually selling — the rest goes to admin, data entry, and prep. Every manually recreated deal adds to that 71%.
+According to [Salesforce's State of Sales](https://www.salesforce.com/news/stories/sales-research-2023/), sales reps spend only 29% of their workweek actually selling; the rest goes to admin, data entry, and prep. Every manually recreated deal adds to that 71%.
 
 ---
 
@@ -65,7 +65,7 @@ HubSpot's built-in cloning works for one-off situations where you need a quick c
 1. Navigate to the deal record you want to clone
 2. Click the **Actions** dropdown (top-left)
 3. Select **Clone**
-4. Review the cloned deal — adjust the name, close date, and stage as needed
+4. Review the cloned deal and adjust the name, close date, and stage as needed
 5. Save
 
 **When this works:**
@@ -84,12 +84,12 @@ HubSpot's built-in cloning works for one-off situations where you need a quick c
 
 ## Method 2: Cloning Deals via Workflows (Native HubSpot)
 
-HubSpot workflows can create new deals — but they can't truly "clone" them. The **Create Record** action creates a deal in a specified pipeline and sets properties you define. It does NOT copy properties from the triggering deal automatically.
+HubSpot workflows can create new deals, but they can't truly "clone" them. The **Create Record** action creates a deal in a specified pipeline and sets properties you define. It does NOT copy properties from the triggering deal automatically.
 
 **How to build a deal-cloning workflow:**
 
 1. Create a deal-based workflow
-2. Set your trigger (e.g., Deal Stage = Closed Won AND Deal Type = New Business)
+2. Set your trigger (e.g. Deal Stage = Closed Won AND Deal Type = New Business)
 3. Add a **Create Record → Deal** action
 4. Manually map each property: set "Amount" to the enrolled deal's Amount, "Company" to the enrolled deal's Company, etc.
 5. Set the new deal's pipeline, stage, and deal name
@@ -103,46 +103,46 @@ HubSpot workflows can create new deals — but they can't truly "clone" them. Th
 We cover these workarounds in depth in [How to Copy Deal Properties Between Deals in HubSpot Workflows](/posts/hubspot-copy-deal-properties-workflow).
 
 **What workflows CANNOT do:**
-- Copy line items (products, pricing) — this is a [platform limitation with 500+ upvotes](https://community.hubspot.com/t5/HubSpot-Ideas/Copy-line-items-from-one-deal-to-another-in-order-to-manage/idi-p/722785) requesting a fix
+- Copy line items (products, pricing). This is a [platform limitation with 500+ upvotes](https://community.hubspot.com/t5/HubSpot-Ideas/Copy-line-items-from-one-deal-to-another-in-order-to-manage/idi-p/722785) requesting a fix
 - Copy engagements (emails, notes, calls)
 - Copy quotes
 
 For the full workflow setup for renewal deals, see our [step-by-step automation guide](/posts/hubspot-renewal-deal-workflow-automation). If your Year 2 renewal workflow stops creating deals, see [fixing the infinite loop](/posts/hubspot-renewal-workflow-infinite-loop-fix).
 
-**Verdict:** Good for creating new deals with basic properties. Not a true "clone" — you lose line items and engagements.
+**Verdict:** Good for creating new deals with basic properties. Not a true "clone"; you lose line items and engagements.
 
 ---
 
 ## Method 3: HubSpot Marketplace Apps Compared
 
-Four main apps solve the deal cloning gap. Here's an honest comparison — we're not affiliated with any of them.
+Four main apps solve the deal cloning gap. Here's an honest comparison, and we're not affiliated with any of them.
 
 | Feature | [CloneNer](https://ecosystem.hubspot.com/marketplace/apps/clonener-2156213) | [Deal Duplicator](https://ecosystem.hubspot.com/marketplace/apps/deal-duplicator-201603) | [Clone a Deal](https://ecosystem.hubspot.com/marketplace/listing/clone-a-deal-workflow-action) | [Clone Attack](https://ecosystem.hubspot.com/marketplace/apps/appchemist-clone-attack-229629) |
 |---------|----------|-----------------|---------------|--------------|
 | **Vendor** | 4CRMs | Instrumental | Baskey | hapily |
-| **Pricing** | Free–$149/mo | $19–$59/mo | $9.99/mo flat | Tiered, free tier |
+| **Pricing** | Free-/mo | -/mo | $9.99/mo flat | Tiered, free tier |
 | **Clone deals** | Yes | Yes | Workflow-only | Yes |
 | **Clone line items** | Yes | Yes | Yes (checkbox) | Yes |
 | **Clone associations** | Yes | Yes; tickets on Pro+ | Configurable | Yes |
 | **Clone engagements** | No | Coming soon | Not mentioned | Unconfirmed |
 | **Workflow action** | $49+/mo | $35+/mo | Core feature | Higher tiers |
 | **Auto-rules** | All paid plans | Pro+ | N/A | Workflow-based |
-| **Templates** | 1 free–unlimited | No | No | Presets |
+| **Templates** | 1 free-unlimited | No | No | Presets |
 | **Installs** | 1,500+ | 1,300+ | Not disclosed | Not disclosed |
 | **HubSpot Certified** | Yes | Yes | Unconfirmed | Unconfirmed |
 
 For a detailed breakdown with use-case recommendations, see our [full app comparison guide](/posts/hubspot-deal-cloning-apps-compared).
 
 **Quick recommendation:**
-- **Best overall:** CloneNer — most features, best reviews, HubSpot certified
-- **Best value:** Clone a Deal — $9.99/mo flat, unlimited, workflow-native
-- **Best for engagement cloning:** Deal Duplicator — only one with engagement cloning on the roadmap
+- **Best overall:** CloneNer: most features, best reviews, HubSpot certified
+- **Best value:** Clone a Deal: .99/mo flat, unlimited, workflow-native
+- **Best for engagement cloning:** Deal Duplicator: only one with engagement cloning on the roadmap
 
 ---
 
 ## Method 4: Cloning Deals via the HubSpot API
 
-For teams with developer resources, the [HubSpot Deals API](https://developers.hubspot.com/docs/api/crm/deals) gives you complete control over deal cloning — including line items.
+For teams with developer resources, the [HubSpot Deals API](https://developers.hubspot.com/docs/api/crm/deals) gives you complete control over deal cloning, including line items.
 
 **Basic approach:**
 
@@ -184,7 +184,7 @@ Deal cloning isn't just for renewals. Here's every use case we see across our cl
 ### 1. Renewal Deals
 **Who:** CSMs, Account Managers at subscription/contract businesses
 **What:** Auto-create next year's renewal deal when the current one closes as Won
-**Why clone:** Same customer, same products, same associations — just different dates
+**Why clone:** Same customer, same products, same associations, just different dates
 **Related:** [Complete Guide to Renewal Pipelines](/posts/hubspot-renewal-pipeline-complete-guide)
 
 ### 2. Upsell / Expansion Deals
@@ -194,7 +194,7 @@ Deal cloning isn't just for renewals. Here's every use case we see across our cl
 
 ### 3. Multi-Location Deals
 **Who:** Enterprise sales teams in energy, construction, manufacturing
-**What:** Same deal structure replicated across 5–50+ customer locations
+**What:** Same deal structure replicated across 5 to 50+ customer locations
 **Why clone:** Identical product mix and pricing, different delivery site
 
 ### 4. Template Deals
@@ -237,9 +237,9 @@ Deal cloning isn't just for renewals. Here's every use case we see across our cl
 
 ## Deal Cloning Best Practices
 
-Cloning saves time — but cloning carelessly creates a mess. Follow these rules:
+Cloning saves time, but cloning carelessly creates a mess. Follow these rules:
 
-**1. Naming conventions:** Use a consistent format. `[Company] — [Type] — [Year/Period]`. Example: "Acme Corp — Renewal — 2027". Never leave the default cloned name.
+**1. Naming conventions:** Use a consistent format. `[Company]: [Type]: [Year/Period]`. Example: "Acme Corp: Renewal: 2027". Never leave the default cloned name.
 
 **2. Reset date fields.** Cloned deals inherit the original's close date and renewal date. Always update these. A deal with last year's close date corrupts your forecast.
 
@@ -249,7 +249,7 @@ Cloning saves time — but cloning carelessly creates a mess. Follow these rules
 
 **5. Don't clone into the same pipeline.** If you're cloning a deal for a different purpose (renewal, upsell), put it in the correct pipeline. Same-pipeline clones confuse forecasting.
 
-**6. Verify line items.** After cloning, always check that line items are correct — right products, right quantities, right prices. Pricing changes between the original and cloned deal are common.
+**6. Verify line items.** After cloning, always check that line items are correct: right products, right quantities, right prices. Pricing changes between the original and cloned deal are common.
 
 For the full best practices framework, see [HubSpot Deal Duplication Best Practices: A RevOps Guide](/posts/hubspot-deal-duplication-best-practices).
 
@@ -258,7 +258,7 @@ For the full best practices framework, see [HubSpot Deal Duplication Best Practi
 ## FAQ: Common Questions About Cloning Deals in HubSpot
 
 **Can I clone a deal in HubSpot without an app?**
-Yes — HubSpot added native deal cloning. Click Actions → Clone on any deal. But it doesn't copy line items, can't be automated, and doesn't work in workflows.
+Yes. HubSpot added native deal cloning. Click Actions → Clone on any deal. But it doesn't copy line items, can't be automated, and doesn't work in workflows.
 
 **Does cloning a deal copy line items?**
 Not natively. You need a [marketplace app](/posts/hubspot-deal-cloning-apps-compared) (CloneNer, Deal Duplicator, Clone a Deal) or a custom API integration to copy line items.
@@ -279,7 +279,7 @@ Native cloning works on all tiers. Workflow automation requires [Sales Hub Profe
 Native cloning keeps the deal in the same pipeline. To clone to a different pipeline, use a workflow with a "Create Record" action specifying the target pipeline, or use a marketplace app that supports cross-pipeline cloning.
 
 **What's the best deal cloning app for HubSpot?**
-It depends on your use case. See our [full comparison](/posts/hubspot-deal-cloning-apps-compared) — CloneNer for features, Clone a Deal for value, Deal Duplicator for engagement cloning.
+It depends on your use case. See our [full comparison](/posts/hubspot-deal-cloning-apps-compared): CloneNer for features, Clone a Deal for value, Deal Duplicator for engagement cloning.
 
 ---
 

@@ -20,5 +20,5 @@ tags:
 ---
 
 
-e.g., “HubSpot starter plan onboarding”, “HubSpot for startups”, “HubSpot startup program review”
+e.g. “HubSpot starter plan onboarding”, “HubSpot for startups”, “HubSpot startup program review”
 Why: Attracts new businesses looking for turnkey CRM solutions.

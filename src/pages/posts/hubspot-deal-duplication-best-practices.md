@@ -2,7 +2,7 @@
 layout: ../../layouts/BlogPostLayout.astro
 title: "HubSpot Deal Duplication Best Practices: A RevOps Guide"
 pubDate: "2026-04-02"
-description: "When to clone vs. create fresh, naming conventions, which properties to copy, how cloning affects forecasting — the governance framework nobody else covers."
+description: "When to clone vs. create fresh, naming conventions, which properties to copy, how cloning affects forecasting: the governance framework nobody else covers."
 category:
   title: "Revenue Operations"
   href: "/categories/revenue-operations"
@@ -27,7 +27,7 @@ seriesName: "HubSpot Deal Cloning"
 pillarUrl: "/posts/hubspot-clone-deal-complete-guide"
 ---
 
-Cloning deals saves time. Cloning deals without governance creates a data quality nightmare. Duplicate names, inherited close dates from last year, wrong pipeline stages, and ghost deals that break your forecast — we see these in nearly every HubSpot portal we audit.
+Cloning deals saves time. Cloning deals without governance creates a data quality nightmare. Duplicate names, inherited close dates from last year, wrong pipeline stages, and ghost deals that break your forecast. We see these in nearly every HubSpot portal we audit.
 
 This article is the governance framework. It covers when to clone, what to clone, what to reset, and how to keep your pipeline clean as cloning scales.
 
@@ -48,7 +48,7 @@ Not every new deal should be a clone. Here's the decision framework:
 **Create fresh when:**
 - The new deal is genuinely different (new customer, new product line, different pipeline)
 - The original deal has stale or incorrect data you'd need to clean up anyway
-- The deal type has changed (e.g., expansion deal from a renewal — different process, different owner)
+- The deal type has changed (e.g. expansion deal from a renewal, with a different process, different owner)
 - You're starting a new relationship stage (win-back after 12+ months of no contact)
 
 **The rule of thumb:** If you'd spend more time cleaning the clone than building from scratch, don't clone.
@@ -57,19 +57,19 @@ Not every new deal should be a clone. Here's the decision framework:
 
 ## Naming Conventions for Cloned Deals
 
-The default cloned deal name is often "[Original Deal Name] (clone)" — useless for reporting and confusing for reps.
+The default cloned deal name is often "[Original Deal Name] (clone)", which is useless for reporting and confusing for reps.
 
 **Recommended naming format:**
 
 ```
-[Company Name] — [Deal Type] — [Year or Period]
+[Company Name]: [Deal Type]: [Year or Period]
 ```
 
 **Examples:**
-- `Acme Corp — Renewal — 2027`
-- `Acme Corp — Upsell — Q2 2026`
-- `Acme Corp — Renewal — Year 3`
-- `Global Energy Inc — Multi-Site — Houston`
+- `Acme Corp: Renewal: 2027`
+- `Acme Corp: Upsell: Q2 2026`
+- `Acme Corp: Renewal: Year 3`
+- `Global Energy Inc: Multi-Site: Houston`
 
 **Rules:**
 1. **Always include the company name.** Deal lists without company context are useless.
@@ -77,7 +77,7 @@ The default cloned deal name is often "[Original Deal Name] (clone)" — useless
 3. **Include the time reference.** Year, quarter, or period. This prevents confusion between this year's renewal and last year's.
 4. **Never leave "(clone)" in the name.** It signals nobody reviewed the deal after cloning.
 
-If you're using [automated deal creation via workflows](/posts/hubspot-renewal-deal-workflow-automation), set the naming convention in the workflow's "Create Record" action using personalization tokens: `{Company Name} — Renewal — {Year}`.
+If you're using [automated deal creation via workflows](/posts/hubspot-renewal-deal-workflow-automation), set the naming convention in the workflow's "Create Record" action using personalization tokens: `{Company Name}: Renewal: {Year}`.
 
 ---
 
@@ -115,8 +115,8 @@ This is where most teams get it wrong. They clone everything, including properti
 |----------|------------|-------------|
 | Line Items | Same products at same pricing | Pricing changed, products changed |
 | Previous Contract Value | Tracking expansion/contraction | First renewal (no previous) |
-| Revenue Change Reason | N/A — always blank on new deals | Always reset to blank |
-| Churn Reason | N/A — irrelevant for active deals | Always reset to blank |
+| Revenue Change Reason | N/A, always blank on new deals | Always reset to blank |
+| Churn Reason | N/A, irrelevant for active deals | Always reset to blank |
 
 For the full property list, see [The 15 Custom Properties Every Renewal Pipeline Needs](/posts/hubspot-renewal-pipeline-properties).
 
@@ -124,9 +124,9 @@ For the full property list, see [The 15 Custom Properties Every Renewal Pipeline
 
 ## How Cloned Deals Affect Forecasting and Reporting
 
-Cloning creates accurate deals — if done right. But it can also create phantom revenue if done wrong.
+Cloning creates accurate deals, if done right. But it can also create phantom revenue if done wrong.
 
-**Problem 1: Inherited close dates.** A cloned deal inherits the original's close date. If you don't reset it, your forecast shows $100K closing in January 2025 (last year) — distorting pipeline reports.
+**Problem 1: Inherited close dates.** A cloned deal inherits the original's close date. If you don't reset it, your forecast shows $100K closing in January 2025 (last year), distorting pipeline reports.
 
 **Fix:** Always recalculate the close date. For renewals: Close Date = Previous Renewal Date + Contract Term. For upsells: Close Date = target close date for the expansion.
 
@@ -134,11 +134,11 @@ Cloning creates accurate deals — if done right. But it can also create phantom
 
 **Fix:** Only clone from Closed Won deals. Use workflow triggers with a "Deal Stage = Closed Won" condition to ensure cloning happens at the right time.
 
-**Problem 3: Stage probability mismatch.** The cloned deal might land in a stage with the wrong probability weight — especially if the target pipeline has different probabilities than the source pipeline.
+**Problem 3: Stage probability mismatch.** The cloned deal might land in a stage with the wrong probability weight, especially if the target pipeline has different probabilities than the source pipeline.
 
 **Fix:** Always set the cloned deal's stage explicitly in the workflow. Don't let it inherit the source deal's stage. See [how to set renewal-specific probabilities](/posts/hubspot-renewal-forecasting-accuracy).
 
-According to [Salesforce's State of Sales](https://www.salesforce.com/news/stories/sales-research-2023/), 67% of sales reps didn't expect to meet quota in 2024. Bad forecasting from cloning mistakes makes this worse — reps plan against numbers that don't reflect reality.
+According to [Salesforce's State of Sales](https://www.salesforce.com/news/stories/sales-research-2023/), 67% of sales reps didn't expect to meet quota in 2024. Bad forecasting from cloning mistakes makes this worse; reps plan against numbers that don't reflect reality.
 
 ---
 
@@ -181,7 +181,7 @@ If you have HubSpot Enterprise, use team-level permissions to restrict which pip
 ## Common Cloning Mistakes That Break Your Pipeline
 
 ### Mistake 1: Not resetting the deal stage
-The cloned deal enters the pipeline at whatever stage the original was at — often "Closed Won." Your pipeline now shows a deal as closed that hasn't even been discussed.
+The cloned deal enters the pipeline at whatever stage the original was at, often "Closed Won." Your pipeline now shows a deal as closed that hasn't even been discussed.
 
 ### Mistake 2: Leaving old dates
 Close Date, Renewal Date, and any date-based properties must be recalculated. Old dates = wrong forecast.
@@ -199,6 +199,6 @@ For the full list of renewal pipeline mistakes, see [12 Mistakes That Are Costin
 
 ---
 
-**SWOTBee audits and optimizes HubSpot pipeline governance for mid-market teams.** We set up cloning workflows with proper naming, property mapping, permissions, and audit trails — so your data stays clean as you scale.
+**SWOTBee audits and optimizes HubSpot pipeline governance for mid-market teams.** We set up cloning workflows with proper naming, property mapping, permissions, and audit trails, so your data stays clean as you scale.
 
 [Book a free 30-minute discovery call →](/contactus)

@@ -291,7 +291,7 @@ Key distinctions include:
 
 ![Comparison of HubSpot vs Insightly and Capsule CRM][image7]by Steve Johnson (https://unsplash.com/@steve\_j)
 
-Selecting between these depends on your priorities—whether you need advanced marketing, project management, or a simplified sales tool.
+Selecting between these depends on your priorities, whether you need advanced marketing, project management, or a simplified sales tool.
 
 ## **HubSpot vs Salesforce Essentials**
 
