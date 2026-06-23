@@ -46,6 +46,8 @@ Why it matters for a subscription business: a blended retention number mixes a l
 
 ## Why Blended Churn Hides the Truth
 
+![A healthy blended retention curve hiding a fast-churning new cohort](/assets/posts/diagrams/cohort-retention-curve.svg)
+
 Imagine a SaaS company with 1,000 customers and 2% monthly churn. Healthy, right? Now split by acquisition cohort: customers acquired through referrals churn at 1%, while a new paid-acquisition channel brings customers who churn at 8%. The blended 2% hides a cohort that is bleeding.
 
 If you only watch the blended churn rate, you scale the bad channel because the average looks safe. Cohort analysis helps you catch this early, before the toxic cohort grows large enough to drag down the whole business. This is why cohort-based retention is one of the most important SaaS metrics.

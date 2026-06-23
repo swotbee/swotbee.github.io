@@ -1,0 +1,18 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 250' role='img' aria-label='TCV ARR ACV comparison' font-family='Hanken Grotesk, DM Sans, Arial, sans-serif'>
+<rect width='640' height='250' fill='white'/>
+<text x='320' y='28' font-size='16' fill='#213343' text-anchor='middle' font-weight='700'>TCV vs ARR vs ACV: a 3-year, $300k deal</text>
+<rect x='110' y='65' width='80' height='110' rx='8' fill='#213343' stroke='none'/>
+<text x='150' y='57' font-size='13' fill='#213343' text-anchor='middle' font-weight='700'>$300k</text>
+<text x='150' y='195' font-size='13' fill='#213343' text-anchor='middle' font-weight='700'>TCV</text>
+<text x='150' y='211' font-size='11' fill='#7a8087' text-anchor='middle' font-weight='400'>total</text>
+<rect x='290' y='138' width='80' height='37' rx='8' fill='#C47A2A' stroke='none'/>
+<text x='330' y='130' font-size='13' fill='#C47A2A' text-anchor='middle' font-weight='700'>$100k</text>
+<text x='330' y='195' font-size='13' fill='#213343' text-anchor='middle' font-weight='700'>ARR</text>
+<text x='330' y='211' font-size='11' fill='#7a8087' text-anchor='middle' font-weight='400'>per year (run-rate)</text>
+<rect x='470' y='138' width='80' height='37' rx='8' fill='#5AAB9D' stroke='none'/>
+<text x='510' y='130' font-size='13' fill='#5AAB9D' text-anchor='middle' font-weight='700'>$100k</text>
+<text x='510' y='195' font-size='13' fill='#213343' text-anchor='middle' font-weight='700'>ACV</text>
+<text x='510' y='211' font-size='11' fill='#7a8087' text-anchor='middle' font-weight='400'>avg / year</text>
+<line x1='80' y1='175' x2='560' y2='175' stroke='#e3ddd2' stroke-width='1.5'/>
+<text x='320' y='237' font-size='12' fill='#7a8087' text-anchor='middle' font-weight='400'>Forecast renewals on ARR, not TCV: blending them overstates run-rate 3x</text>
+</svg>

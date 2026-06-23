@@ -1,0 +1,12 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 235' role='img' aria-label='Usage based versus subscription revenue' font-family='Hanken Grotesk, DM Sans, Arial, sans-serif'>
+<rect width='640' height='235' fill='white'/>
+<text x='320' y='26' font-size='16' fill='#213343' text-anchor='middle' font-weight='700'>Usage-Based vs Subscription Revenue</text>
+<line x1='70' y1='180' x2='570' y2='180' stroke='#e3ddd2' stroke-width='1.5'/>
+<line x1='70' y1='60' x2='70' y2='180' stroke='#e3ddd2' stroke-width='1.5'/>
+<text x='320.0' y='202' font-size='11' fill='#7a8087' text-anchor='middle' font-weight='400'>time</text>
+<line x1='70' y1='130' x2='570' y2='130' stroke='#1A7AB5' stroke-width='3'/>
+<text x='575' y='130' font-size='10' fill='#1A7AB5' text-anchor='start' font-weight='700'>subscription</text>
+<polyline points='70,140 160,110 250,150 340,90 430,125 520,80 570,105' fill='none' stroke='#C47A2A' stroke-width='3'/>
+<text x='575' y='85' font-size='10' fill='#C47A2A' text-anchor='start' font-weight='700'>usage</text>
+<text x='320' y='222' font-size='12' fill='#7a8087' text-anchor='middle' font-weight='400'>Usage revenue varies with consumption: forecast from usage, not seats</text>
+</svg>

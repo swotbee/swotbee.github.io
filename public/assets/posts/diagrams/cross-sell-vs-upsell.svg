@@ -1,0 +1,16 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 225' role='img' aria-label='Cross-sell versus upsell' font-family='Hanken Grotesk, DM Sans, Arial, sans-serif'>
+<rect width='640' height='225' fill='white'/>
+<defs><marker id='a' markerWidth='8' markerHeight='8' refX='6' refY='3' orient='auto'><path d='M0,0 L6,3 L0,6 Z' fill='#7a8087'/></marker></defs>
+<text x='320' y='28' font-size='17' fill='#213343' text-anchor='middle' font-weight='700'>Cross-Sell vs Upsell</text>
+<rect x='60' y='60' width='230' height='120' rx='10' fill='#f7f5f1' stroke='#e3ddd2'/>
+<text x='175' y='86' font-size='14' fill='#C47A2A' text-anchor='middle' font-weight='700'>UPSELL</text>
+<text x='175' y='110' font-size='12' fill='#3a3f44' text-anchor='middle' font-weight='400'>same product,</text>
+<text x='175' y='128' font-size='12' fill='#3a3f44' text-anchor='middle' font-weight='400'>higher tier / more</text>
+<text x='175' y='156' font-size='12' fill='#7a8087' text-anchor='middle' font-weight='400'>Pro -> Enterprise</text>
+<rect x='350' y='60' width='230' height='120' rx='10' fill='#f7f5f1' stroke='#e3ddd2'/>
+<text x='465' y='86' font-size='14' fill='#5AAB9D' text-anchor='middle' font-weight='700'>CROSS-SELL</text>
+<text x='465' y='110' font-size='12' fill='#3a3f44' text-anchor='middle' font-weight='400'>complementary</text>
+<text x='465' y='128' font-size='12' fill='#3a3f44' text-anchor='middle' font-weight='400'>product alongside</text>
+<text x='465' y='156' font-size='12' fill='#7a8087' text-anchor='middle' font-weight='400'>CRM + analytics</text>
+<text x='320' y='205' font-size='12' fill='#7a8087' text-anchor='middle' font-weight='400'>Track separately: upsell adds depth, cross-sell adds breadth</text>
+</svg>

@@ -38,6 +38,8 @@ Renewal outreach lives or dies on timing and tone. Send too late and you are fir
 
 ## Sequences vs Workflows vs Marketing Emails for Renewals
 
+![Email and analytics dashboard on a laptop](https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop)
+
 This is the question almost every team gets stuck on, so let's settle it. HubSpot has three ways to send email, and they are not interchangeable:
 
 | Tool | Sending style | Best for renewals when |

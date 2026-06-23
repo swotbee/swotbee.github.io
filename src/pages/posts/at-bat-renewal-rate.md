@@ -38,6 +38,8 @@ Renewal rate is crucial because it is the cleanest read on whether customers ren
 
 ## The Renewal Rate Formula
 
+![At-bat renewal rate: renewed divided by customers up for renewal](/assets/posts/diagrams/renewal-rate-formula.svg)
+
 At its simplest, the renewal rate measures the percentage of customers who renew:
 
 ```

@@ -1,0 +1,15 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 245' role='img' aria-label='At-bat renewal rate formula' font-family='Hanken Grotesk, DM Sans, Arial, sans-serif'>
+<rect width='640' height='245' fill='white'/>
+<defs><marker id='a' markerWidth='8' markerHeight='8' refX='6' refY='3' orient='auto'><path d='M0,0 L6,3 L0,6 Z' fill='#7a8087'/></marker></defs>
+<text x='320' y='30' font-size='17' fill='#213343' text-anchor='middle' font-weight='700'>The At-Bat Renewal Rate</text>
+<rect x='60' y='60' width='200' height='70' rx='10' fill='#f7f5f1' stroke='#e3ddd2'/>
+<text x='160' y='90' font-size='12.5' fill='#7a8087' text-anchor='middle' font-weight='400'>Customers UP for</text>
+<text x='160' y='110' font-size='12.5' fill='#7a8087' text-anchor='middle' font-weight='400'>renewal this period</text>
+<rect x='380' y='60' width='200' height='70' rx='10' fill='#f7f5f1' stroke='#e3ddd2'/>
+<text x='480' y='90' font-size='12.5' fill='#7a8087' text-anchor='middle' font-weight='400'>Customers who</text>
+<text x='480' y='110' font-size='13' fill='#5AAB9D' text-anchor='middle' font-weight='700'>RENEWED</text>
+<line x1='262' y1='95' x2='378' y2='95' stroke='#7a8087' stroke-width='2' marker-end='url(#a)'/>
+<rect x='160' y='160' width='320' height='60' rx='10' fill='#213343' stroke='none'/>
+<text x='320' y='185' font-size='14' fill='white' text-anchor='middle' font-weight='700'>Renewal Rate = Renewed / Up-for-renewal</text>
+<text x='320' y='205' font-size='11.5' fill='#cbd3da' text-anchor='middle' font-weight='400'>count only the cohort actually expiring</text>
+</svg>

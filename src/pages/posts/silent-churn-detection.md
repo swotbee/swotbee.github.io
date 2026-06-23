@@ -38,6 +38,8 @@ Silent churn happens without saying a word, which is exactly what makes it dange
 
 ## What Is Silent Churn?
 
+![Silent churn signal timeline from usage decline to non-renewal](/assets/posts/diagrams/silent-churn-signals.svg)
+
 Silent churn is customer churn that happens without any explicit signal: the customer simply disengages and then does not renew. Of the different types of churn (voluntary, involuntary, and silent), silent churn is the hardest to catch because there is no event to react to. The customer does not complain, downgrade, or raise a flag. They quietly stop using your product and leave without a word.
 
 This matters because acquiring new customers costs far more than retaining existing ones. A high customer acquisition cost means every silently churned customer is expensive to replace, so reducing silent churn directly protects ROI.

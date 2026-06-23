@@ -40,6 +40,8 @@ Done well, this is one of the highest-leverage things you can build in HubSpot C
 
 ## What Is Renewal Risk Scoring?
 
+![Analytics dashboard used to score renewal risk](https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&h=400&fit=crop)
+
 A customer health score is a single score that summarizes how healthy a customer relationship is. Renewal risk scoring is that health score viewed through one lens: how likely is this account to renew?
 
 The difference matters. A general customer health score tracks the overall customer experience. A renewal risk score focuses on renewal likelihood and is attached to the upcoming renewal, so renewal managers and CSMs can prioritize the accounts most likely to churn. For the underlying workflow build, see our guide to [health scores and churn-prevention workflows](/posts/hubspot-churn-prevention-health-scores-workflows); this article focuses on applying that score to renewals.

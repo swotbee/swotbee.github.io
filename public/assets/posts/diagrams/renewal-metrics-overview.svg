@@ -1,0 +1,25 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 190' role='img' aria-label='Core renewal metrics overview' font-family='Hanken Grotesk, DM Sans, Arial, sans-serif'>
+<rect width='640' height='190' fill='white'/>
+<text x='320' y='30' font-size='18' fill='#213343' text-anchor='middle' font-weight='700'>The Core Renewal Metrics</text>
+<rect x='18' y='55' width='116' height='86' rx='10' fill='#f7f5f1' stroke='#e3ddd2'/>
+<rect x='18' y='55' width='6' height='86' rx='3' fill='#5AAB9D'/>
+<text x='79.0' y='93' font-size='16' fill='#213343' text-anchor='middle' font-weight='700'>Renewal Rate</text>
+<text x='79.0' y='117' font-size='12.5' fill='#7a8087' text-anchor='middle' font-weight='400'>% who renew</text>
+<rect x='142' y='55' width='116' height='86' rx='10' fill='#f7f5f1' stroke='#e3ddd2'/>
+<rect x='142' y='55' width='6' height='86' rx='3' fill='#1A7AB5'/>
+<text x='203.0' y='93' font-size='16' fill='#213343' text-anchor='middle' font-weight='700'>GRR</text>
+<text x='203.0' y='117' font-size='12.5' fill='#7a8087' text-anchor='middle' font-weight='400'>revenue kept</text>
+<rect x='266' y='55' width='116' height='86' rx='10' fill='#f7f5f1' stroke='#e3ddd2'/>
+<rect x='266' y='55' width='6' height='86' rx='3' fill='#C47A2A'/>
+<text x='327.0' y='93' font-size='16' fill='#213343' text-anchor='middle' font-weight='700'>NRR</text>
+<text x='327.0' y='117' font-size='12.5' fill='#7a8087' text-anchor='middle' font-weight='400'>kept + expansion</text>
+<rect x='390' y='55' width='116' height='86' rx='10' fill='#f7f5f1' stroke='#e3ddd2'/>
+<rect x='390' y='55' width='6' height='86' rx='3' fill='#c0563b'/>
+<text x='451.0' y='93' font-size='16' fill='#213343' text-anchor='middle' font-weight='700'>Churn Rate</text>
+<text x='451.0' y='117' font-size='12.5' fill='#7a8087' text-anchor='middle' font-weight='400'>revenue lost</text>
+<rect x='514' y='55' width='116' height='86' rx='10' fill='#f7f5f1' stroke='#e3ddd2'/>
+<rect x='514' y='55' width='6' height='86' rx='3' fill='#213343'/>
+<text x='575.0' y='93' font-size='16' fill='#213343' text-anchor='middle' font-weight='700'>LTV : CAC</text>
+<text x='575.0' y='117' font-size='12.5' fill='#7a8087' text-anchor='middle' font-weight='400'>unit economics</text>
+<text x='320' y='170' font-size='12.5' fill='#7a8087' text-anchor='middle' font-weight='400'>One source of truth for forecasting, retention and valuation</text>
+</svg>

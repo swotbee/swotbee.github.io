@@ -56,6 +56,8 @@ With fixed subscriptions, forecasting is straightforward: ARR is seats times pri
 
 ## Usage-Based vs Traditional SaaS Revenue
 
+![Flat subscription revenue versus variable usage-based revenue over time](/assets/posts/diagrams/usage-revenue-variability.svg)
+
 In a traditional SaaS model, monthly recurring revenue is fixed: each customer's monthly revenue is the same until they upgrade or churn, which makes projected revenue easy. Usage-based SaaS breaks that pattern. Customer revenue rises and falls with consumption, so the same account can produce different monthly revenue every period.
 
 This changes how you think about revenue growth. In a subscription model, growth comes from new customers and deliberate upgrades. In consumption-based models, growth also comes automatically as existing customers use more, which shows up as expansion revenue without a sales motion. That is great for net revenue retention but harder for revenue visibility, because the usage metric driving consumption revenue is outside your direct control. Many SaaS businesses therefore run a hybrid pricing plan: a subscription base for a predictable revenue floor plus usage pricing on top for upside.

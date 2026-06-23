@@ -1,0 +1,25 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 185' role='img' aria-label='Silent churn warning signs timeline' font-family='Hanken Grotesk, DM Sans, Arial, sans-serif'>
+<rect width='640' height='185' fill='white'/>
+<defs><marker id='a' markerWidth='8' markerHeight='8' refX='6' refY='3' orient='auto'><path d='M0,0 L6,3 L0,6 Z' fill='#7a8087'/></marker></defs>
+<text x='320' y='28' font-size='17' fill='#213343' text-anchor='middle' font-weight='700'>Silent Churn: The Warning Signs</text>
+<rect x='30' y='70' width='100' height='64' rx='8' fill='#5AAB9D' stroke='none'/>
+<text x='80.0' y='98' font-size='12' fill='white' text-anchor='middle' font-weight='600'>Usage</text>
+<text x='80.0' y='114' font-size='12' fill='white' text-anchor='middle' font-weight='600'>declines</text>
+<line x1='131' y1='102' x2='148' y2='102' stroke='#7a8087' stroke-width='2' marker-end='url(#a)'/>
+<rect x='149' y='70' width='100' height='64' rx='8' fill='#1A7AB5' stroke='none'/>
+<text x='199.0' y='98' font-size='12' fill='white' text-anchor='middle' font-weight='600'>Logins</text>
+<text x='199.0' y='114' font-size='12' fill='white' text-anchor='middle' font-weight='600'>drop</text>
+<line x1='250' y1='102' x2='267' y2='102' stroke='#7a8087' stroke-width='2' marker-end='url(#a)'/>
+<rect x='268' y='70' width='100' height='64' rx='8' fill='#D4960A' stroke='none'/>
+<text x='318.0' y='98' font-size='12' fill='white' text-anchor='middle' font-weight='600'>Emails</text>
+<text x='318.0' y='114' font-size='12' fill='white' text-anchor='middle' font-weight='600'>unanswered</text>
+<line x1='369' y1='102' x2='386' y2='102' stroke='#7a8087' stroke-width='2' marker-end='url(#a)'/>
+<rect x='387' y='70' width='100' height='64' rx='8' fill='#C47A2A' stroke='none'/>
+<text x='437.0' y='98' font-size='12' fill='white' text-anchor='middle' font-weight='600'>Skips</text>
+<text x='437.0' y='114' font-size='12' fill='white' text-anchor='middle' font-weight='600'>check-ins</text>
+<line x1='488' y1='102' x2='505' y2='102' stroke='#7a8087' stroke-width='2' marker-end='url(#a)'/>
+<rect x='506' y='70' width='100' height='64' rx='8' fill='#c0563b' stroke='none'/>
+<text x='556.0' y='98' font-size='12' fill='white' text-anchor='middle' font-weight='600'>Does not</text>
+<text x='556.0' y='114' font-size='12' fill='white' text-anchor='middle' font-weight='600'>renew</text>
+<text x='320' y='168' font-size='12' fill='#7a8087' text-anchor='middle' font-weight='400'>No complaint, no ticket: just quiet disengagement months before renewal</text>
+</svg>

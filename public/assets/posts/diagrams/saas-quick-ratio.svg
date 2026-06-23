@@ -1,0 +1,14 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 235' role='img' aria-label='SaaS quick ratio formula' font-family='Hanken Grotesk, DM Sans, Arial, sans-serif'>
+<rect width='640' height='235' fill='white'/>
+<text x='320' y='28' font-size='16' fill='#213343' text-anchor='middle' font-weight='700'>SaaS Quick Ratio = Growth Efficiency</text>
+<rect x='70' y='70' width='230' height='60' rx='10' fill='#5AAB9D' stroke='none'/>
+<text x='185' y='95' font-size='13' fill='white' text-anchor='middle' font-weight='700'>New + Expansion MRR</text>
+<text x='185' y='116' font-size='11' fill='#eafaf6' text-anchor='middle' font-weight='400'>inflows</text>
+<text x='320' y='108' font-size='26' fill='#213343' text-anchor='middle' font-weight='700'>÷</text>
+<rect x='345' y='70' width='230' height='60' rx='10' fill='#c0563b' stroke='none'/>
+<text x='460' y='95' font-size='12.5' fill='white' text-anchor='middle' font-weight='700'>Churned + Contraction MRR</text>
+<text x='460' y='116' font-size='11' fill='#fbe9e4' text-anchor='middle' font-weight='400'>outflows</text>
+<rect x='210' y='155' width='220' height='55' rx='10' fill='#213343' stroke='none'/>
+<text x='320' y='180' font-size='14' fill='white' text-anchor='middle' font-weight='700'>Healthy benchmark: 4+</text>
+<text x='320' y='199' font-size='11.5' fill='#cbd3da' text-anchor='middle' font-weight='400'>4 dollars gained per 1 lost</text>
+</svg>

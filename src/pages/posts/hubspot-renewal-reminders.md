@@ -38,6 +38,8 @@ Most teams do not lose renewals because the customer was unhappy. They lose them
 
 ## Why Renewal Dates Get Missed
 
+![Calendar and laptop representing renewal date tracking](https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=400&fit=crop)
+
 When renewal dates live in a spreadsheet, an inbox, or someone's memory, they slip. The expiration date arrives, the account manager is heads-down on new business, and the renewal becomes a fire drill (and one of the most avoidable churn risks you will ever face).
 
 The fix is to make HubSpot watch the renewal date for you and trigger an alert automatically. The renewal is coming whether you track it or not; the only question is whether your team gets enough time to act. This is exactly the kind of repetitive, date-driven work HubSpot can automate.

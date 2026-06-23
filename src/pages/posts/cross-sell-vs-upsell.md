@@ -70,6 +70,8 @@ If you only learn the difference between cross-selling and upselling, learn this
 
 ## Cross-Sell vs Upsell: The Key Differences
 
+![Upsell sells a higher tier of the same product, cross-sell sells a complementary product](/assets/posts/diagrams/cross-sell-vs-upsell.svg)
+
 The difference between cross-selling and upselling comes down to what you are selling relative to the original purchase:
 
 | | Upsell | Cross-sell |

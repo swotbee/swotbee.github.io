@@ -1,0 +1,13 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 250' role='img' aria-label='Cohort retention curve vs blended' font-family='Hanken Grotesk, DM Sans, Arial, sans-serif'>
+<rect width='640' height='250' fill='white'/>
+<text x='320' y='26' font-size='16' fill='#213343' text-anchor='middle' font-weight='700'>Blended Churn Hides Cohort Truth</text>
+<line x1='70' y1='190' x2='570' y2='190' stroke='#e3ddd2' stroke-width='1.5'/>
+<line x1='70' y1='60' x2='70' y2='190' stroke='#e3ddd2' stroke-width='1.5'/>
+<text x='62' y='66' font-size='10' fill='#7a8087' text-anchor='end' font-weight='400'>100%</text>
+<text x='320.0' y='212' font-size='11' fill='#7a8087' text-anchor='middle' font-weight='400'>months since signup</text>
+<polyline points='70,70 190,82 330,90 470,94 570,96' fill='none' stroke='#5AAB9D' stroke-width='3'/>
+<text x='575' y='96' font-size='10' fill='#5AAB9D' text-anchor='start' font-weight='700'>blended</text>
+<polyline points='70,70 190,140 330,162 470,174 570,178' fill='none' stroke='#c0563b' stroke-width='3' stroke-dasharray='6 4'/>
+<text x='575' y='178' font-size='10' fill='#c0563b' text-anchor='start' font-weight='700'>new cohort</text>
+<text x='320' y='230' font-size='12' fill='#7a8087' text-anchor='middle' font-weight='400'>A healthy blended average can hide a toxic, fast-churning cohort</text>
+</svg>

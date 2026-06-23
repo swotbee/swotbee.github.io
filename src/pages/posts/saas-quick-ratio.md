@@ -38,6 +38,8 @@ Unlike the accounting "acid test" quick ratio that measures a company's ability 
 
 ## What Is the SaaS Quick Ratio?
 
+![SaaS quick ratio: new plus expansion MRR over churned plus contraction MRR](/assets/posts/diagrams/saas-quick-ratio.svg)
+
 The SaaS quick ratio measures a company's growth efficiency by comparing revenue inflows to outflows. It answers one question: for all the recurring revenue you are adding, how much are you losing at the same time? A high quick ratio means growth comfortably outpaces churn; a low quick ratio means you are filling a leaky bucket.
 
 It is one of the most useful SaaS metrics because it captures both growth and retention in a single number. Two companies can post identical MRR growth while one has a quick ratio of 5 and the other 1.5: the first grows cleanly, the second only by outrunning heavy churn.

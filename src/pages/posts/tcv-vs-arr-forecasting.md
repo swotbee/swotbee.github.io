@@ -38,6 +38,8 @@ Contract value is a critical SaaS metric, but only if you keep TCV, ARR, and ACV
 
 ## TCV vs ARR vs ACV: The Difference
 
+![TCV vs ARR vs ACV for a three-year 300k dollar contract](/assets/posts/diagrams/tcv-arr-acv.svg)
+
 Three metrics, three jobs:
 
 - **TCV (Total Contract Value):** the total amount of revenue a customer contract is worth over its full length, including recurring subscription revenue plus one-time fees (onboarding, services). It answers "how much is this whole deal worth?"

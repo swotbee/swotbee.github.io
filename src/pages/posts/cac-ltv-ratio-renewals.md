@@ -38,6 +38,8 @@ If you acquire customers expensively and they churn early, you lose money on eve
 
 ## What Is the LTV to CAC Ratio?
 
+![LTV to CAC ratio with the 3 to 1 benchmark](/assets/posts/diagrams/ltv-cac-ratio.svg)
+
 Two metrics, one relationship:
 
 - **CAC (customer acquisition cost):** the total sales and marketing cost to acquire a new customer, divided by the number of new customers acquired in the period.

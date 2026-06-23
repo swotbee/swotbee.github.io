@@ -46,6 +46,8 @@ PQLs are valuable because they convert far better than other lead types: the cus
 
 ## PQL vs MQL vs SQL
 
+![PQL vs MQL vs SQL: product usage is the strongest intent signal](/assets/posts/diagrams/pql-funnel.svg)
+
 The lead types differ by the signal that qualifies them:
 
 - **MQL (marketing qualified lead):** qualified by marketing engagement (downloads, email opens). Intent is inferred from content interaction.

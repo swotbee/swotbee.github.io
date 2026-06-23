@@ -1,0 +1,14 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 265' role='img' aria-label='PQL vs MQL vs SQL' font-family='Hanken Grotesk, DM Sans, Arial, sans-serif'>
+<rect width='640' height='265' fill='white'/>
+<defs><marker id='a' markerWidth='8' markerHeight='8' refX='6' refY='3' orient='auto'><path d='M0,0 L6,3 L0,6 Z' fill='#7a8087'/></marker></defs>
+<text x='320' y='28' font-size='17' fill='#213343' text-anchor='middle' font-weight='700'>PQL vs MQL vs SQL</text>
+<rect x='170.0' y='60' width='300' height='52' rx='8' fill='#1A7AB5' stroke='none'/>
+<text x='320' y='84' font-size='14' fill='white' text-anchor='middle' font-weight='700'>MQL</text>
+<text x='320' y='102' font-size='11.5' fill='white' text-anchor='middle' font-weight='400'>qualified by marketing engagement</text>
+<rect x='205.0' y='124' width='230' height='52' rx='8' fill='#D4960A' stroke='none'/>
+<text x='320' y='148' font-size='14' fill='white' text-anchor='middle' font-weight='700'>SQL</text>
+<text x='320' y='166' font-size='11.5' fill='white' text-anchor='middle' font-weight='400'>vetted by a sales rep</text>
+<rect x='140.0' y='188' width='360' height='52' rx='8' fill='#5AAB9D' stroke='none'/>
+<text x='320' y='212' font-size='14' fill='white' text-anchor='middle' font-weight='700'>PQL</text>
+<text x='320' y='230' font-size='11.5' fill='white' text-anchor='middle' font-weight='400'>qualified by product usage (strongest intent)</text>
+</svg>

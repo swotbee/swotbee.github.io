@@ -38,6 +38,8 @@ When ownership is fuzzy, renewals slip. The CSM assumes sales has it; the rep as
 
 ## CS vs Sales: Who Owns the Renewal?
 
+![Customer success and sales team collaborating](https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=400&fit=crop)
+
 The difference between customer success and sales in the context of renewals comes down to the relationship versus the transaction.
 
 - **Customer success** owns the ongoing customer relationship: onboarding, adoption, customer health, and driving customer outcomes across the lifecycle. CS sees risk early and is closest to whether the customer will renew.
