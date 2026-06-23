@@ -1,0 +1,459 @@
+
+Chapter 1: Introduction: AI Content That Actually Ranks
+0:00In this video, I'll show you how to create AI content that actually ranks on Google. This isn't about churning out 50
+0:088 secondsplus AI post a week, hoping something sticks. That approach is dead. What works now is leveraging AI power for
+0:1515 secondscontent generation and then combining human expertise that resonates with real people. This blog post is ranking on the
+0:2323 secondsfirst page of Google and it was created using the exact workflow that I'm about to show you. AI handled the heavy
+0:3030 secondslifting while human expertise shaped strategies, redefined the messaging and ensured it genuinely serves our target
+0:3939 secondsaudience. The future of AI content generation isn't human versus AI. It's human-led AI collaboration. Before we
+0:4848 secondsdive into the system, let me show you exactly what we were competing against.
+0:5252 secondsI will launch a new browser in incognito so my search history doesn't impact the results. So let's launch a new browser
+1:011 minute, 1 secondand then I'm going to just search for the term and let's have a look at the results.
+1:071 minute, 7 secondsI'm just going to reject all and this is AI overview and look at these sponsored results. 11 Labs, Just Call, Connect,
+1:161 minute, 16 secondsBoommy. These are million-doll companies paying significant money to advertise on this exact keyword. When big players
+1:241 minute, 24 secondslike Leven Labs are bidding on a term, you know it is a commercially viable and has high buyer intent. Now, here's the
+1:321 minute, 32 secondsorganic results. So, Dalzer is on the first and we have some questions from
+1:381 minute, 38 secondsKora. These are some videos. Bot Penguin Wimpy and here's AI Agency Plus. This
+1:441 minute, 44 secondsblog was posted 5 days and it was generated using the same system that I'm about to show you. Let me show you
+1:511 minute, 51 secondsexactly how this post is optimized for SEO and is designed to turn every visitor into a paying customers. First,
+1:591 minute, 59 secondslook at the title. It hits the primary keyword perfectly. And notice how it immediately addresses UK businesses.
+2:072 minutes, 7 secondsGeographic targeting is crucial for local SEO. Now, here's where it gets clever. The content structure follows what I call as value ladder approach.
+2:172 minutes, 17 secondsProblem, solution, implementation and then conversion. It starts by addressing the pain point missed leads high
+2:262 minutes, 26 secondsreception is cost. These hooks the readers because it speaks directly to their problem. Then it delivers massive
+2:342 minutes, 34 secondsvalue by actually giving them a readyto use AI receptionist prompts. These aren't random generic examples. These are specially crafted for UK businesses.
+2:462 minutes, 46 secondsSemantic SEO terms are scattered naturally throughout the blog post.
+2:502 minutes, 50 secondsGoogle algorithm doesn't just look for your target keyword anymore. It wants to see comprehensive topic coverage using
+2:582 minutes, 58 secondsall the related terms and concepts that searches associated with your main topic. compared to the thin content that
+3:053 minutes, 5 secondsjust repeats the same keyword over and over again. The comprehensive semantic coverage is exactly why this post
+3:143 minutes, 14 secondsoverranks competitors with higher domain authority. And here's the conversion genius. Every section reinforces why you need a professional implementation.
+3:263 minutes, 26 secondsThere's a call to action everywhere. These are not pushy buy now buttons.
+3:303 minutes, 30 secondsThey are soft conversions. Get your custom prompt, free consultation, see our implementation service. So these are also of conversions, not pushy sales.
+3:413 minutes, 41 secondsThe conclusion doesn't just summarizes, it creates urgency around missing calls, losing revenue, then offers a logical
+3:503 minutes, 50 secondsnext step, professional setup. This isn't just ranking because of SEO tricks. It's ranking because it
+3:573 minutes, 57 secondsgenuinely solves the search intent better than anyone else. then it naturally guides visitors towards
+4:054 minutes, 5 secondsbecoming a customer. That's exactly what we're going to build with this automation. Content that ranks and converts. Let's build the automation
+4:144 minutes, 14 secondsthat can compete with milliondoll marketing budgets. Let's cover what you will need to follow along. The core of
+Chapter 2: What You Need to Follow Along (n8n & Tools Setup)
+4:224 minutes, 22 secondsthis automation runs on NAN. That is our workflow automation platform. If you don't already have an N8 instance set
+4:304 minutes, 30 secondsup, you have two options. Option one is where you go with the cloud version.
+4:344 minutes, 34 secondsThat is the quickest and easiest way to get started. I will leave a link in the description below for NHN Cloud. Let's
+4:424 minutes, 42 secondshave a very quick look at their website and the pricing. The cheapest plan starts with £20 a month and there is an
+4:494 minutes, 49 secondspro plan which is £50 a month. Choose the plan based on your requirements.
+4:534 minutes, 53 secondsOption two is self-hosted setup. If you want full control and don't mind getting your hands dirty, self-hosted version is
+5:005 minutesideal for you. If you want to go with self-hosted version, I have a detailed video on how to self-host N on Google
+5:085 minutes, 8 secondsCloud. Just search for self-host N on Google Cloud and hopefully you will find my video on the first organic result.
+5:155 minutes, 15 secondsHere's the complete step-by-step guide to self-host N on Google Cloud. And look at that. 28,000 views and,000 likes.
+5:235 minutes, 23 secondsThank you for all the support on that video. Your response has been absolutely amazing. This video walks you through
+5:305 minutes, 30 secondsthe entire process from setting up your Google Cloud instance to how to set up Docker, handling SSL, and everything
+5:375 minutes, 37 secondsthat you need to get your self-hosted nit instance up and running within about an hour. And while we are, if this video
+5:455 minutes, 45 secondsis helping you out, smash that like button and subscribe if you haven't already. It genuinely helps channel grow and let me create more detailed
+5:535 minutes, 53 secondstutorials like this. Right, here's where things get interesting. We need a content optimization software and this
+6:006 minutesis absolutely crucial to getting that NLP terms and semantic analysis that we talked about. There are several powerful
+6:096 minutes, 9 secondsoptions out there. Surfer SEO, Fraser, Data for SEO, Neon Writer, all excellent
+6:166 minutes, 16 secondstools. If you're already paying for any of those with API access, absolutely use the one that you've got. There's no point switching if you're happy. But
+6:256 minutes, 25 secondshere's what I personally use. I use Neon Writer. And it's not just about the price, though. The value is incredible.
+6:326 minutes, 32 secondsThe tools like data for SEO gives you raw data and stats, which is valuable.
+6:376 minutes, 37 secondsBut here's the game changer. Neon writer doesn't just give you the numbers. It gives you a full content editor where
+6:456 minutes, 45 secondsyou can actually optimize and redefine your content in real time. We are not just pulling API data and hoping for the
+6:526 minutes, 52 secondsbest SEO performance. We are using the editor to polish our content before it goes live. Here's the Neon Writer
+6:596 minutes, 59 secondswebsite. And if you look at their pricing, their pricing starts from $19 a month. And the gold plan is 57. You do
+7:087 minutes, 8 secondsneed a gold plan for API access. A goal plan starts at $57 a month on a yearly and $69 monthly. But here's where it
+7:167 minutes, 16 secondsgets insane. I've got a link in description where you can get a lifetime deal for Neon Writer. So instead of
+7:237 minutes, 23 secondspaying $69 a month on a monthly or $57 a month on a yearly plan, you can go for
+7:307 minutes, 30 secondstheir lifetime deal where you pay $267 for a lifetime plan and you get them credits every month. 75 content analysis
+7:387 minutes, 38 secondsevery month and then you can have 10 different projects which is absolutely incredible. In this tutorial I'm showing you Neon Writer integration because of
+7:477 minutes, 47 secondsthe editor component but the automation principles work same whichever tool you use. The magic happens when you combine
+7:557 minutes, 55 secondsAI data with hands-on optimization. The final piece of this preree is we have to choose the LLM model which actually creates the content for our blog post.
+8:058 minutes, 5 secondsFor this tutorial, I'll be using Straco for our AI generation. This is entirely optional. You can absolutely use OpenAI,
+8:138 minutes, 13 secondsCL or any other LLM model of your choice for this automation. I personally prefer Straco because it gives me incredible
+8:218 minutes, 21 secondsflexibility instead of managing separate subscriptions. So, here's their website.
+8:268 minutes, 26 secondsI get access to over 40 cutting edge AI models in one platform. I can test different models for different use cases and choose the best one for each task.
+8:368 minutes, 36 secondsFor example, if I have a use case where I want to perform deep research on a topic and include those results in the
+8:448 minutes, 44 secondsblog, I can just use Perplexity LLM directly within Straco. Instead of signing up for Perplexity and managing
+8:518 minutes, 51 secondsanother API key, if you do decide to go with Straco, I do have a 10% off affiliate link in the description. Full transparency, some of the links I share
+9:009 minutesare affiliate links. I only promote software that I personally use and I see value in. Some of my affiliate links
+9:079 minutes, 7 secondswill actually get you discount and you will never pay more than standard pricing. Now that we've got our prerex
+9:149 minutes, 14 secondsout of the way, it's time to start building our NHN automation. Once you've signed up for your NHN cloud or built
+Chapter 3: Building the n8n Automation Workflow
+9:219 minutes, 21 secondsyour self-hosted NN instance, you will land on this dashboard. This is your automation command center. You can see
+9:289 minutes, 28 secondsall your automations in here. You can see the status of the automation if it's active or inactive. Credentials is where
+9:369 minutes, 36 secondswhen you save an API key, it shows up in the credentials. Executions is where every time an automation runs. All the log shows up there. It shows you how
+9:459 minutes, 45 secondslong it took to run an automation and all the details are in there. To create a new automation, all we have to do is
+9:519 minutes, 51 secondsjust click on create workflow button on the top right. This will give us a blank canvas where we'll build our entire
+9:599 minutes, 59 secondscontent creation system. Each automation is built by connecting nodes together.
+10:0410 minutes, 4 secondsThink of it like building with digital Lego blocks. Before we start building our N8 automation, let's have a very
+10:1110 minutes, 11 secondsquick look at the flow that our automation is going to follow. So the first thing that's going to happen is a user will fill in a form with the
+10:2010 minutes, 20 secondsdetails of the block topic. So, it's going to be block title, primary keyword, secondary keyword. And once
+10:2710 minutes, 27 secondsthat data is collected, we're going to send that data over to Neon Writer to analyze the block topic and the keywords. Once the analysis is complete,
+10:3610 minutes, 36 secondswe're going to get the data back from Neon Writer with NLP terms, FAQ, content ideas. So, this is all the good stuff
+10:4410 minutes, 44 secondsthat's needed to rank higher. Once that's there, we're going to create a blog outline using Neon Writers content recommendations.
+10:5410 minutes, 54 secondsOnce the blog outline has been created, we're going to write content for each section. To get better results, we're
+11:0211 minutes, 2 secondsnot going to give the whole outline to AI and tell it to write article based on the whole outline. Instead, we're going
+11:1011 minutes, 10 secondsto split the sections into smaller sections and we're going to feed that over to AI and ask AI to write content
+11:1811 minutes, 18 secondsspecifically just for that section. Once the whole content has been created for the blog, we're going to send the
+11:2511 minutes, 25 secondscontent back to Neon Writers content editor. This is where the magic happen where human will optimize the content
+11:3211 minutes, 32 secondsand add their own expertise. Once it's all complete, that's when the content is going to be posted on your website.
+11:3911 minutes, 39 secondsWe're not going with a strategy of put as much blog post as we can and everything is automated where we don't
+11:4611 minutes, 46 secondseven see the outline. That kind of blog post and not even getting indexed by Google, let alone ranking. Next, let's
+11:5311 minutes, 53 secondsgo back to our NAN platform and start building our automation. The first step in any automation is a trigger. Think of
+12:0112 minutes, 1 seconda trigger as an event that needs to occur for your automation to run. In this scenario, we're going to use on
+12:0812 minutes, 8 secondsform submission, but there are multiple triggers that you can use. It can be on schedule, on an app event, on a form
+12:1612 minutes, 16 secondssubmission, on a chat message. So, there's multiple things that you can use as a trigger, but for this automation, we're going to use on form submission.
+12:2412 minutes, 24 secondsHere we're going to create a simple form which is going to prompt the user to enter the block title, primary keyword, secondary keyword and that data is going
+12:3312 minutes, 33 secondsto be passed along to the next node. I filled the form details in here. Form title can be anything. I've set that up
+12:4012 minutes, 40 secondsas SEO optimized blog and then we have multiple form entries. The first one is blog title. The element type is text.
+12:4912 minutes, 49 secondsThe second one is primary keyword and then the secondary keyword. So once you've entered all these form fields
+12:5612 minutes, 56 secondsjust click on execute step that will launch a form and we will just put in some details in here so it can be mapped
+13:0313 minutes, 3 secondsand be referenced further down here. The block title is going to be how AI receptionist prompting FX customer
+13:1013 minutes, 10 secondsengagement. The primary keyword is AI receptionist prompting and secondary keyword is AI voice receptionist. So
+13:1813 minutes, 18 secondslet's just submit that and once you've submitted we'll see that details in the output and we have that little pin icon
+13:2613 minutes, 26 secondson the top. We can click on that and that will pin the data so it can be a reference further down. The next node that we're going to add is a set node.
+13:3613 minutes, 36 secondsAll we're going to do is we're going to take the values that was entered by user and we're going to add that in as a
+13:4413 minutes, 44 secondsvariable so it can be referenced. So just searched for set. We are going to map all the fields that was entered by
+13:5113 minutes, 51 secondsthe user. Here the first field is block title. And to map all you do is just drag that value from the input section over down here. Next field is going to
+14:0014 minutesbe primary keyword. Here I'm just going to drag that out again. And the next one is the secondary keyword. Right here
+14:0814 minutes, 8 secondsI've mapped all three fields. All we do now is just click on execute step. And we have the details now set. so it can
+14:1514 minutes, 15 secondsbe referenced. Let's pin that data. We have a blog title, primary keyword, secondary keyword. The next step in the process is to send that details over to
+Chapter 4: NeuronWriter Integration & API Setup
+14:2514 minutes, 25 secondsNeon Writer. So, it does the analysis and give us the all the good stuff that's needed to rank and it's going to give us the NLP terms that should be
+14:3314 minutes, 33 secondsused for the headings for the content, the questions that user ask. So, all that details can be pulled from Neon
+14:4114 minutes, 41 secondsWriter. Before we make an API call, I'll give you a very quick rundown of the Neon Writer dashboard. Here we are on the Neon Writer. Once you've signed up
+14:4814 minutes, 48 secondsfor Neon Writer, you will be on a dashboard similar to this where it will prompt you to enter a new content
+14:5514 minutes, 55 secondsanalysis or optimize the content. So, what we're going to do first is create a project. So, just cross that out and
+15:0315 minutes, 3 secondsthen click on create new project. We have two different type of project. One is a project that's domain related and
+15:1015 minutes, 10 secondsone is a non-domain related project. I would recommend you go with domain related project. For the domain, I'm going to add AI agency plus. And then
+15:1815 minutes, 18 secondsnext, we just add the homepage URL. And then we select the default search engine. This is important. If you want
+15:2515 minutes, 25 secondsto rank for Google UK or Google US or any other country, you can choose that option. So the content that's analyzed
+15:3415 minutes, 34 secondsis specific to your country. Default language I'm just going to leave that as English and then click on create. This will create the project for us. So if I
+15:4315 minutes, 43 secondsclick on the drop-down next to the project, I will see that AI agency plus project has been created. Have a very quick look at what we've got in the left
+15:5215 minutes, 52 secondsmenu. We have my projects that we've seen. Content writer is any content analysis that you do. It shows up here.
+15:5915 minutes, 59 secondsmanagement is where you can create a content plan. You can have a content management input. The next menu item is performance where you can connect your
+16:0716 minutes, 7 secondsGoogle search console over to your project. This is an advantage of having a domain related project where you can
+16:1416 minutes, 14 secondsconnect your Google search console and all the top keywords, top URL. And this is even used for internal linking. And
+16:2316 minutes, 23 secondsyou can have a team, you can add multiple team members to the project.
+16:2716 minutes, 27 secondsAnd in the settings you can change the initial options that was entered here.
+16:3116 minutes, 31 secondsWe have set our project mode as a domain related and all the details that was entered in here shows up in here.
+16:3816 minutes, 38 secondsKeyword is where you can enter all the keywords that specific to your business or your website. AI profile is where
+16:4616 minutes, 46 secondsNeon writer will go in and extract all the details about your business. So just click on crawl and AI extract. It has
+16:5316 minutes, 53 secondsthe domain already populated. Just click on crawl and extract. And it will take about a minute or two to go in and
+17:0217 minutes, 2 secondsscrape all the details about your website, your social media profiles, and all that detail will be scraped and
+17:0917 minutes, 9 secondsit'll show up here. So, here it is. It It didn't take a minute. It was pretty quick. Here it gives the details about
+17:1617 minutes, 16 secondsmy business. It's always good to just go through all the details that were pulled and if you want to make any changes, you can. It checked all the services that we
+17:2417 minutes, 24 secondsoffer and if there was if there was any pricing mentioned it would have entered that as well. So you can see all the
+17:3217 minutes, 32 secondsdata it has scraped about your business which can be used to optimize the articles that you create. So here in the
+17:3917 minutes, 39 secondsdomains you can enter competitors domain and integrations is where you can integrate your WordPress. in here. Once
+17:4717 minutes, 47 secondsthe content have been optimized, you can click on publish on WordPress and it gets published on WordPress. The final
+17:5517 minutes, 55 secondspiece here what we've got is logo in the report and we have contact details. This
+18:0218 minutes, 2 secondsis for white labeling. If you're a content agency creating content for your clients, you can use that where you can
+18:0918 minutes, 9 secondshave your own custom logo and your contact details and this report can be sent over to your client. Next up in the
+18:1618 minutes, 16 secondsaccount, if you click on external API keys, you can add your own open AAI or anthropic key and use that for
+18:2518 minutes, 25 secondsgenerating the content. But the quality of the content is not as good. It's more specifically designed for content optimization, not content creation.
+18:3518 minutes, 35 secondsHere's the Neon Writer API key that we're going to be using in NA10 to make a new query and get the details back.
+18:4318 minutes, 43 secondsOnce I'm done with this tutorial, I will regenerate new API key. To regenerate, all you do is just click on that and it will regenerate a key. We're going to be
+18:5118 minutes, 51 secondsusing this key. Let me make a note of that. This was a very quick rundown of Neon Writer. Hopefully, I haven't gone too fast. Let's have a very quick look
+18:5918 minutes, 59 secondsat Neon Writer API documentation. Here we are in the API documentation. It gives you a very good detailed rundown
+19:0719 minutes, 7 secondson how you can get your API key and how to use the API key. New query is what we're going to use to send the details
+19:1619 minutes, 16 secondsover to Neon Writer to do the analysis for us. So what we need for that is we need the project ID, we need the
+19:2319 minutes, 23 secondskeyword, we need the engine, and we need the language. The way that you get your project ID is once you're in the
+19:3019 minutes, 30 secondsproject, you will see the project ID in here. So anything after view is the project ID. So just copy
+19:3919 minutes, 39 secondsthis field after view before optimization. So just copy that over and save that onto a notepad so you can use
+19:4619 minutes, 46 secondsthat further down. Here we are back on the API documentation. So we need the project ID. We've got it. We've got the
+19:5319 minutes, 53 secondskeywords. We've got the we know the engine that we're going to use and we have the language. Next step is to make
+20:0020 minutesa HTTP request over to Neon Writer using the API key, project and keyword. and let it perform the analysis. Now we will
+20:0920 minutes, 9 secondsgo back to NHN workflow and make a HTTP request to make a API call. Here we are
+20:1620 minutes, 16 secondsback on NAN. The next module that we're going to add is going to be a HTTP request and the method is going to be
+20:2320 minutes, 23 secondspost. Here's the URL that we're going to use for the post method. We just have to append it with the API method. API
+20:3120 minutes, 31 secondsmethod that we're going to use for the HTTP call is going to be new query. So we just copy that. That's the base URL
+20:3820 minutes, 38 secondsand then it's going to be forward/ new-ash query. The authentication is going to be a header authentication. So
+20:4720 minutes, 47 secondsjust click on generic credential type and we just click on header authentication and we're just going to
+20:5620 minutes, 56 secondsclick on create new credentials. We need the header name and the value. To get the header name, let's just go back to
+21:0221 minutes, 2 secondsNeon Writer API documentation. And if I go further down, we'll see that we'll see an example that we can use. So here
+21:1221 minutes, 12 secondsan example. And the header name is going to be X-api- key.
+21:2021 minutes, 20 secondsI'll copy that and paste that over. And the value is what we're going to get from our neon writer. So this is where we are in the profile section and that
+21:2821 minutes, 28 secondsis the neon writer API key. So let's just copy that over and then paste that in. So there's two ways of doing it.
+21:3421 minutes, 34 secondsFirst is where you set up an authentication and that key gets saved or you can add the API key direct in the
+21:4321 minutes, 43 secondsheaders itself. Here I'm going to give this a name so I can reference that later. And we'll just save that.
+21:4921 minutes, 49 secondsCredentials was successfully saved and we should be able to use this in our request. The next header type that we have to pass for this API call is going
+21:5821 minutes, 58 secondsto be accept and content type. Let's just copy that over.
+22:0522 minutes, 5 secondsSo I'm just going to tick this box to say send headers and the name is going to be accept and the value for that is going to be application JSON.
+22:2222 minutes, 22 secondsNext one, let's just copy content type.
+22:2422 minutes, 24 secondsName of the key is content type and the value for that is going to be application JSON.
+22:3322 minutes, 33 secondsNext, we're going to send the body. So, just tick this box where it gives you an option to send the body fields. We're
+22:4022 minutes, 40 secondsgoing to leave the body content type as JSON. And here we're going to pass the project ID. So this is the project ID for the body. We'll just copy that.
+22:5122 minutes, 51 secondsPaste that over. We've copied project ID before from the URL. So I'm just going to paste the same project ID that we've copied before. The next item that we're going to add is going to be keyword.
+23:0423 minutes, 4 secondsJust copy keyword from here. And instead of manually typing the keyword, we're going to map the keyword field that was sent by the user.
+23:1923 minutes, 19 secondsThe next option is engine and that will be google.co.uk.
+23:3023 minutes, 30 secondsOkay. Next one is going to be the language and that is English. Just copying and pasting the details from the
+23:3923 minutes, 39 secondsexample that we have. Let's have a very quick look at this before we click on execute step. We have the method setup
+23:4623 minutes, 46 secondsas post. We have the URL and we've added the credentials. And here's the headers.
+23:5323 minutes, 53 secondsWe have accept content type body type and we are passing project ID keyword
+24:0024 minutesthat was mapped from the entry that user has entered in the form. And we have the language. We are all good. So let's just
+24:0824 minutes, 8 secondsclick on execute step. And this will create a new content analysis in Neon
+24:1624 minutes, 16 secondsWriter. If I go back into Neon Writer and click on the projects, we will see that this just created using API. So AI
+24:2624 minutes, 26 secondsreception is prompting that is the keyword and you see that the action it is still processing. It takes about 60 seconds for the analysis to complete.
+24:3724 minutes, 37 secondsLet's just spin this value so it can be referenced further down. Next step that we're going to add is going to be wait.
+24:4524 minutes, 45 secondsSo we're going to wait for about 60 seconds before we check here. Wait amount is going to be 60 seconds. And
+24:5424 minutes, 54 secondsthen I'm just click on execute step. And after adding the wait step, we are going to add a new HTTP request. This is where
+25:0125 minutes, 1 secondwe're going to get the values back from the neon writers. We're going to add a HTTP request and the method is going to
+25:1025 minutes, 10 secondsbe post. For the URL, we're going to enter the base URL plus the API method.
+25:1725 minutes, 17 secondsSo here it's going to be post. URL is going to be this forward slash
+25:2825 minutes, 28 secondsget query authentication because we've added the
+25:3525 minutes, 35 secondsauthentication all we can do is we can reference the same. So here's the authentication that we've added here.
+25:4125 minutes, 41 secondsWe're going to add the new headers. So to get the details for the analysis, all we have to do is just pass the query ID
+25:5025 minutes, 50 secondsand we will get the analysis back. Let's do that. Here we have reference here.
+25:5525 minutes, 55 secondsThe value is going to be query and for the query ID itself, we're going to map
+26:0226 minutes, 2 secondsthat from our previous module of the HTTP request.
+26:0826 minutes, 8 secondsSo this is the query ID for the HTTP request that we've made before. So we're just going to map that in here. And if
+26:1726 minutes, 17 secondsyou click on execute step, that should
+26:3226 minutes, 32 secondsOkay, here's a mistake where I've added that as as a header. We have to send the query ID as a body not as a header. For
+26:4126 minutes, 41 secondsthe headers, we'll just add the accept and application JSON.
+26:5026 minutes, 50 secondsAnd the new header is going to be the second header is going to be content type
+26:5926 minutes, 59 secondsand application JSON.
+27:0727 minutes, 7 secondsFor the body, we're going to send the query ID.
+27:2127 minutes, 21 secondsID is where we going to map that from our previous HTTP request. Now, if I click on execute step, we should get all the values back. And here it is.
+27:3427 minutes, 34 secondsLet's pin that data so it can be referenced further down. Next, let's use the set node to map all the values that
+27:4227 minutes, 42 secondswe've received from Neon Writer. To do that, just click on the plus and it's going to be the set edit field. And here
+27:5127 minutes, 51 secondsthese are all the data that we've received from Neon Writer. So, let's have a quick look at see all the categories that we've got.
+28:0128 minutes, 1 secondOkay. Okay. So starting with ideas, we have suggested questions, we have people also ask, we have content questions, and
+28:0828 minutes, 8 secondsthen we have all the different websites that are ranking for that specific keywords. I believe there's about 30 of
+28:1628 minutes, 16 secondsthem. And then here's the recommended word count for the blog. And here's all the terms terms that should be used for
+28:2328 minutes, 23 secondstitle, for description, H1, H2, and the content. I'll start with ideas, suggested questions. I've mapped
+28:3128 minutes, 31 secondseverything that was received by Neon Writer. And let's just click on execute step. And here we are. And we see everything that's been mapped. And we'll
+28:3928 minutes, 39 secondspin that data as well. At this point, we have all the data that we need from Neon Writer. What we will be doing next is
+Chapter 5: SEO Optimized Blog Outline with AI
+28:4628 minutes, 46 secondswe're going to pass all the data over to AI and create a SEO optimized blog outline. To do that, just click on plus.
+28:5528 minutes, 55 secondsAnd we have multiple AI models in here that you can use. The best one that I found for content generation is Claude
+29:0329 minutes, 3 secondsZonet 4. So if you want to use Anthropic, just go into Anthropic and sign up for an account and you can get
+29:1129 minutes, 11 secondsthe API key and use that. If you plan on using anything else like Google Gemini or OpenAI, you can use that as well. It
+29:1929 minutes, 19 secondsall depends on your preference. For this blog, I'm going to use a Straco, which offers multiple LLMs. Here's the website
+29:2729 minutes, 27 secondsfor Straco. And they do offer over 50 leading models and the credits that you get. It can be used for text, images,
+29:3529 minutes, 35 secondsvideo, text to speech. So, it's like a one platform where you sign up and get the credits and then credits can be used for any LLM. I already have an account
+29:4429 minutes, 44 secondsset up. To get an API key, all you do is just go into uh user settings and API key and you will see this page in here
+29:5329 minutes, 53 secondswhere you will see your main API key and you can create a new API key as well for a specific project. Here's the API
+30:0230 minutes, 2 secondsdocumentation link that we will be using to make an API call. I am going to create a new API key.
+30:1230 minutes, 12 secondsI just name that as a YouTube demo. and save. And this is the API key that we're going to use for this demo. Let's
+30:1930 minutes, 19 secondsnavigate back to NAN and add a new Stra code node. So here we are in NHN. I'll
+30:2530 minutes, 25 secondsjust click on close and it's going to be Straco and this is Straco's official node for
+30:3330 minutes, 33 secondsNHN. So click on that and we and here we're going to choose create a completion. I already have an account
+30:4230 minutes, 42 secondsset up. So I'm just going to create a new credential so I can walk you through it here. All we do is we just add the key that we've created before. So if I
+30:5130 minutes, 51 secondsgo back into Straco and this is the key that was generated. We're just going to paste that in here and then click on
+30:5830 minutes, 58 secondssave and you can see that the connection test is successful. One thing that I found for Stracoon node is the models
+31:0731 minutes, 7 secondsdoesn't show up in the dropdown. I expect a drop down in here where I click on it and I can choose a model of my
+31:1431 minutes, 14 secondspreference. But for some reason that doesn't work. We are unable to choose the model from drop-down. We will be
+31:2131 minutes, 21 secondsusing an expression to add the model. To get the list of all the models that Straco offers and the ID, I'm going to
+31:2931 minutes, 29 secondsmake a quick HTTP call and get the list of all the models that they've got. So for that I'm just going to click on add
+31:3831 minutes, 38 secondsanother trigger and it's going to be a manual trigger and we're going to add the HTTP node after that. So HTTP
+31:4731 minutes, 47 secondsrequest and here's the Straus documentation and the model and here's
+31:5431 minutes, 54 secondsthe get model. The good thing here is it gives you the curl. So all you can do is just copy the curl and paste it in here
+32:0432 minutes, 4 secondsand that will populate all the fields that's needed.
+32:1032 minutes, 10 secondsSo we've got the get request with a URL and all we have to do here is replace this with a straos key which is this one. Let's copy that over.
+32:2232 minutes, 22 secondsI'll just paste that in and execute step. And here's all the models that they support. And here's the model name
+32:3132 minutes, 31 secondsthat we after anthropic claude set 4. So let's copy that. And if I go back into
+32:3832 minutes, 38 secondsour automation and here I'm going to just add the model name which is going
+32:4532 minutes, 45 secondsto be anthropic plot sonet for. And to test the connection, let's just send a
+32:5232 minutes, 52 secondshello and see if you get a response back. and we didn't. It needs to go in double quotes and it is enthropic load
+33:0133 minutes, 1 secondson 4. Just as a test, I'm going to send a hello message to make sure that we get a response back.
+33:0933 minutes, 9 secondsAnd here's the response back from the cla for. Okay, that's amazing. Now that we know that the connection is working
+33:1733 minutes, 17 secondsfor Straco, the next step in the process is to add a prompt. What we're going to do now is we're going to replace the
+33:2433 minutes, 24 secondsmessage that we've sent as a test message. Change that to expression.
+33:2933 minutes, 29 secondsMake that a full screen. And I'll copy the prompt over. Here's the prompt that we're going to use to create the blog outline. I will briefly go through the
+33:3733 minutes, 37 secondsprompt so you know how to structure your own prompt. Here we're giving it a role to say you are an expert in creating SEO
+33:4533 minutes, 45 secondsoptimized content. We're giving a primary objective. giving it a content specification on the tone and the voice.
+33:5233 minutes, 52 secondsWe are specifically mentioning that the output needs to be in the markdown format. So we can create content individually for each section. Here
+34:0234 minutes, 2 secondswe're going to map all the fields. So for the title, we're going to get the title from the variables that we set
+34:0934 minutes, 9 secondsfrom the user form submission. So the block title is going to be this. And we
+34:1534 minutes, 15 secondshave primary keyword, secondary keyword,
+34:2534 minutes, 25 secondsand here are the SEO optimization variables that we got from Neon Writer. The first
+34:3234 minutes, 32 secondsthing that we're going to map is title keywords. And this is the title keywords variable.
+34:3934 minutes, 39 secondsLet's map that. The next one is going to be the description keywords
+34:4834 minutes, 48 secondsand then H1 keywords and H2 keywords. even going to add some
+35:0035 minutescontent ideas so AI can create a blog outline based on the suggested questions
+35:0735 minutes, 7 secondsand other stuff that was recommended by Neon Writers. This is all the fields that we've mapped. Again, this is not a setting stone. It depends on a specific
+35:1635 minutes, 16 secondsuse case, specific business. Your prompt will be very different to the prompt that I've written in here. Let's come out of here and click on execute step.
+35:2835 minutes, 28 secondsThis should create a blog outline in here's the content that was generated by AI based on neon writer's
+35:3535 minutes, 35 secondsrecommendation. So what we're going to do is we'll copy that outline uh paste in a notepad and have a quick look at
+35:4235 minutes, 42 secondsthe outline to see the quality and how detailed it is. Here's a notepad. I'll just paste that through and straight
+35:5035 minutes, 50 secondsaway you can see that the outline that was generated by AI is not a random AI fluff. You can absolutely see that it
+35:5935 minutes, 59 secondsdoes target a specific target audience and it does follow all our recommendations. So you see that this is
+36:0536 minutes, 5 secondsa H2 and these are all H3s. They are bullet points. So when we pass this outline over to AI, it's going to create
+36:1336 minutes, 13 secondsthe content based on this outline and is going to be optimized based on the NLP terms that was recommended by neon
+36:2136 minutes, 21 secondswriter. Reason why I am not passing the whole blog outline over to AI and asking it to write a detailed blog is you're
+36:3036 minutes, 30 secondsnot going to get a content which is very detailed. If you just pass this whole outline over, we're going to split each
+36:3736 minutes, 37 secondsH2 into individual sections and we're going to pass that over to AI and ask you to write the content just for a
+36:4636 minutes, 46 secondsspecific section. Next step in the process is we're going to use a custom code node where we're going to split
+Chapter 6: Splitting Content into Sections (Custom Code)
+36:5536 minutes, 55 secondseach section that was created so it can be given to AI to write the content.
+37:0137 minutes, 1 secondLet's go back. Just click on plus and search for code. The node, the code node
+37:0937 minutes, 9 secondsthat we're going to use is going to be a JavaScript. You definitely don't have to be a dev or a expert coder to write this
+37:1637 minutes, 16 secondsJavaScript code. We just have to know what we want to achieve and give that detail over to AI and AI will write the
+37:2437 minutes, 24 secondsJavaScript code for us. Let's just understand what we want the code to do.
+37:2937 minutes, 29 secondsWe just want the code to split everything that starts with hash hash.
+37:3537 minutes, 35 secondsLet's put that in words and send it over to claude and get our custom code. I'm just going to bring up perplexity and
+37:4237 minutes, 42 secondswrite a prompt in here to say create a JavaScript code for NA10 that takes the markdown content cleans special characters so it doesn't break the JSON.
+37:5437 minutes, 54 secondsThat's one of the thing that I've noticed from experience. If the JSON has any special characters that breaks the JSON and the main thing that we want the
+38:0138 minutes, 1 secondcode to do is we want it to split the content at level two headers using hash.
+38:0838 minutes, 8 secondsI'm going to change the model to claude sonet 4.0. I have perplexity pro account and I have an option to change LLM in
+38:1738 minutes, 17 secondshere. If you don't already have a perplexity, they are doing a special offer for PayPal users. I've created a post in my school community other day to
+38:2638 minutes, 26 secondssay there's a one-year free perplexity deal for PayPal users. And if you haven't joined my school community yet,
+38:3338 minutes, 33 secondsplease do. We have about 162 members so far and we are growing and we are sharing information. So you will know
+38:4138 minutes, 41 secondsabout the latest deals, AI trends, anything to do with AI no code solutions. Yeah, do go in and claim this
+38:4938 minutes, 49 secondsdeal using this link and you will have Perplexity Pro and you have an option to choose a LLM of your choice. Let's give
+38:5738 minutes, 57 secondsthat over. This is going to take a bit of time. I'll come back once we have an answer from Publixity. Here's the
+39:0439 minutes, 4 secondsJavaScript code that Claude has given us. Let's give that a try. So, all I'm going to do now is I'm going to just
+39:1139 minutes, 11 secondsdelete the code that was there. Just paste that in.
+39:1739 minutes, 17 secondsWe're going to map the content from the last module.
+39:2439 minutes, 24 secondsSo here's the content. Let's just click on execute step and see if it works. No, it didn't. Okay. So it is very common to
+39:3139 minutes, 31 secondsget errors when you're giving prompts to perplexity or any LLM model. The main thing that you have to learn is you have
+39:3939 minutes, 39 secondsto keep giving more information and ask AI to troubleshoot. So here is what I've
+39:4639 minutes, 46 secondsdone. The best thing to do is you can just take a screenshot of the error message and pass that on to say like this is the error I'm getting. So back
+39:5339 minutes, 53 secondsand forth and finally we have a JavaScript code that works. Let me type that in here. Let me quickly show you
+40:0040 minutesthe code here. is declaring a constant and this is the input that is coming from the last module. And here's a
+40:0840 minutes, 8 secondssimple function just replacing special characters. And here is where the magic happens where we are using a reax expression to split based on hash hash.
+40:2240 minutes, 22 secondsAnd we're saying if there's an extra hash next to it, we're going to ignore that. This is the code. And let's click
+40:2940 minutes, 29 secondson execute step. And here is the sections that's been split in an array.
+40:3440 minutes, 34 secondsWe're going to pass these multiple sections onto split module and feed that over to AI to generate content. Let's
+40:4140 minutes, 41 secondspin the data. And the next module that we're going to add is going to be split.
+Chapter 7: Loop Through Sections & Generate Content
+40:4840 minutes, 48 secondsWhat this split module does is it takes the array and it splits it into multiple objects. Let's drag that in there. And
+40:5740 minutes, 57 secondsthen let's click on execute step. And this has been split. This is section zero. Next step is loop over all the
+41:0541 minutes, 5 secondsitems that is sent by the split out module. Search for loop over items. The bat size is going to be one. So just
+41:1441 minutes, 14 secondsclick on go back. And it just says replace me. This is just a placeholder module. All we do is just click on plus.
+41:2141 minutes, 21 secondsAnd again we going to use track to create content for the sections as well.
+41:2641 minutes, 26 secondsSo I'm just going to search for strao and it is going to be uh create a
+41:3741 minutes, 37 secondscompletion straa account is already there and here we have to change to the expression and
+41:4641 minutes, 46 secondslet's just copy that from our previous node. So this is what we need for the model selection.
+41:5741 minutes, 57 secondsWe're going to use cloet 4 for creating the content as well. So for the prompt, I'm just going to click on expression,
+42:0442 minutes, 4 secondsexpand that, and I'll paste the prompt here. Here's the prompt that we're going to give to AI to write the individual sections of a blog. Starting with the
+42:1342 minutes, 13 secondsrole, and then primary objective, guidelines, and structure. We do want the blog content to be in ATX Markdown
+42:2242 minutes, 22 secondsformat. So we're just saying that the scope SEO and NLP terms. So you can see the detail prompt that goes into
+42:3042 minutes, 30 secondscreating a blog that is optimized and which ranks. Here we have the details of
+42:3842 minutes, 38 secondsthe placeholders. This is where we're going to reference the detail that was provided by the user and also the NLP recommendations that we've got from Neon
+42:4742 minutes, 47 secondsWriter. Let's map them fields here for the section input. We're going to get the details from the split out module.
+42:5642 minutes, 56 secondsSo, we're just going to drag that over here. And then next, we're going to give it the primary keyword, which is from the users input.
+43:1043 minutes, 10 secondsNext up is the secondary keywords that the user entered. And here we're going to give the NLP phrases and entities
+43:1943 minutes, 19 secondsthat we've got from Neon Writer which is the second set module in here. Here's the term content basic. So we're going
+43:2743 minutes, 27 secondsto drag that on. And these are the optional extra ones that Neon Writer suggested that it's good to have these
+43:3643 minutes, 36 secondsterms in the block as well. We have completed all the mapping and now it's
+43:4343 minutes, 43 secondstime to execute step and see the content that gets generated for that specific section. So we can map and reference
+43:5043 minutes, 50 secondsthat further down. Here's the content that was generated for that specific section. So we can just go on to JSON
+43:5743 minutes, 57 secondsand we can copy the section again and we'll have a look at the content that was written. So here's the notepad and
+44:0744 minutes, 7 secondsI'm going to paste that on. Here's the content that was written for that specific section. We can see that it started with a H2 and it's written the
+44:1644 minutes, 16 secondscontent for subheadings as well. So that all looks good. Let's pin that output so it can be referenced further down. The
+44:2344 minutes, 23 secondsnext node that we're going to add here is a weight node because sometimes there is a limit on the API and we don't want
+44:3244 minutes, 32 secondsour automation to break by hitting the API limit. So we're just going to say wait after each section wait for about 30 seconds.
+44:4144 minutes, 41 secondsSo let me briefly explain what's happening here. So the sections that got broken by our JavaScript, it gets passed
+44:4844 minutes, 48 secondsonto the split out node and that gets split into multiple objects and we're going to loop over each section. We're
+44:5644 minutes, 56 secondsgoing to write the content for that specific section and we are waiting for about 30 seconds so we don't hit the
+45:0345 minutes, 3 secondsrate limits for the API. And once the loop is complete, we want to aggregate all the sections together. So here we're
+45:1145 minutes, 11 secondsgoing to search for aggregate and we're going to map the straos content section in here. This is the individual section
+45:2045 minutes, 20 secondsthat was written. If you click on execute step, you would see that it is executing the previous step and is going to aggregate everything together.
+45:3245 minutes, 32 secondsThis might take a while cuz I've added 15 seconds wait after each section. So we'll just wait for that to complete and I'll show you the output in here. And
+45:4145 minutes, 41 secondshere it is is complete. And here we see the whole content in here for each of the sections. So this is section zero,
+45:4845 minutes, 48 secondssection one, section 2, 3, 4, 5, 6. So the whole blog has been written. And I can see that it is quite detailed blog.
+45:5845 minutes, 58 secondsSo let's pin that data as well. And now let's use a set node as we've done previously and add the whole blog into a
+46:0846 minutes, 8 secondsset module. Next one is going to be set. And let's name this as full blog.
+46:1746 minutes, 17 secondsAnd I'm going to drag the whole of the content in here.
+46:2446 minutes, 24 secondsAnd let's execute step. And we will see the whole blog content showing up here.
+46:3046 minutes, 30 secondsNext, we're going to add a markdown module.
+Chapter 8: Aggregating & Converting to HTML Format
+46:3746 minutes, 37 secondsAnd here it is. What this does is it converts HTML to markdown and vice versa. So, we are here converting
+46:4546 minutes, 45 secondsmarkdown to HTML. And let's map that in here as well. If I click on execute
+46:5246 minutes, 52 secondsstep, here's the full blog in a full HTML format. The last step in the process is we're going to send the whole
+47:0147 minutes, 1 secondcontent back to Neon Writer where it all began. And there we're going to analyze the content. We're going to optimize it.
+Chapter 9: Sending Content Back to NeuronWriter Editor
+47:0947 minutes, 9 secondsWe're going to add our own expertise before posting the content over on our website. We're going to add a HTTP node again and HTTP request.
+47:2147 minutes, 21 secondsThe method is going to be post. And let's go back to Neon Writer documentation. Here's the Neon Writer
+47:2847 minutes, 28 secondsAPI documentation page. Let's have a look at the method that we're going to use to send the data back to Neon Writer content editor. Let's go further down.
+47:3947 minutes, 39 secondsThere's list and get. And here's the import content. So this is the API
+47:4647 minutes, 46 secondsmethod that's used to send data back to Neon Writer content editor. So for that
+47:5247 minutes, 52 secondswe first we need the base URL which is this. Let's copy this over.
+48:0348 minutes, 3 secondsLet's go back to our NAN and the URL is going to this forward slash
+48:1148 minutes, 11 secondsand it's going forward slashimp import content. So
+48:2048 minutes, 20 secondslet's just copy that. Paste that back here.
+48:2448 minutes, 24 secondsFor authentication, let's just choose what we've already set. It is going to
+48:3048 minutes, 30 secondsbe neon writer API key. And let's have a look at the headers that we have to
+48:3748 minutes, 37 secondssend. So here's an example for updating the content editor. And from here we can
+48:4448 minutes, 44 secondssee the headers that we have to send is API key which we are doing as part of the authentication. And we need to send accept and content type.
+48:5748 minutes, 57 secondsHere just click on send headers. The name is going to be accept and the value for that is going to be application JSON.
+49:0849 minutes, 8 secondsThe next header is going to be content type and the value is application JSON.
+49:1849 minutes, 18 secondsAgain, next we'll be sending the body.
+49:2149 minutes, 21 secondsThe first field that we need to send is going to be the query ID which is the
+49:3049 minutes, 30 secondsone we're going to get for the initial HTTP request that we've made to do the content analysis. So this is what we're going to map.
+49:4149 minutes, 41 secondsAnd the next field is going to be the HTML content.
+49:4949 minutes, 49 secondsAnd this is the one that we getting from the markdown node. The mapping is all
+49:5749 minutes, 57 secondscomplete. Now let's have a quick look at our neon writer project. So this was the analysis that was done and we don't have
+50:0550 minutes, 5 secondsanything in the content editor yet. So let's click on execute step and this we
+50:1250 minutes, 12 secondssee that the output status is okay. And if I go back to the neon writer content editor
+50:2650 minutes, 26 secondswe have couple of issues here. First is the content editor doesn't display the content that was pushed through API real
+50:3650 minutes, 36 secondstime. So we have to refresh the content editor to see the content. And the second issue that I see is we don't have
+50:4450 minutes, 44 secondsa proper HTML formatting in here. And the reason why is I've missed a critical
+50:5050 minutes, 50 secondsstep in the workflow where I look at the markdown. I see that everything is
+50:5750 minutes, 57 secondswrapped around P and everything is squished in. To fix, we'll go back into the edit node and add a join. This way,
+51:0651 minutes, 6 secondsthe content is going to be formatted in a proper way. I'm just going to click on execute step and this will execute the
+51:1451 minutes, 14 secondsworkflow and the formatting now is going to be right. This should have fixed the formatting. Now, I'm just going to pin the data so it can be referenced for the
+51:2251 minutes, 22 secondsnext step. Next, I'll unpin the data for the markdown and I will run the execute step again. So now this should get fixed
+51:3151 minutes, 31 secondsas part of the neuron. And here's the output. I can see the difference straight away. Instead of putting everything in P tag, I can see H2 in
+51:4051 minutes, 40 secondshere. And this should fix the issue that we had. Let's pin this data as well. I'm going to rerun the HTTP request note.
+51:4851 minutes, 48 secondsAnd this should fix the issue. And we should have a proper formatted blog in our neon writer content editor. So let
+51:5751 minutes, 57 secondsme just click on execute step. And here is updating the content onto the neon writer. Once this is complete, we'll get back to neon writer and check to make
+52:0552 minutes, 5 secondssure that the content is properly formatted in a HTML format. And the execution of HTTP step completed. I can
+52:1252 minutes, 12 secondssee the stat is okay. Let's go back to neon writer. This was the content that was there before. Let's refresh the page
+52:2052 minutes, 20 secondsand see if we get a proper formatted content this time. Yes, it is. So, we can see that H2 H3 the content is
+Chapter 10: Optimizing Content in NeuronWriter (Human Touch)
+52:2852 minutes, 28 secondsproperly formatted. I'm going to just copy a heading and paste that over in here now. And as you can see, Neon
+52:3552 minutes, 35 secondsWriter does have an option to create a AI generated title based on all the keywords. We'll do that for the description and it will generate a
+52:4452 minutes, 44 secondsdescription for us. This is the description that was generated. Let's save that. And here, let's add a hedge fun with a title. And straight away, you
+52:5452 minutes, 54 secondscan see that the score for the content has gone up to 55 just by adding the H1.
+52:5952 minutes, 59 secondsThe next step in the process is you go through the content, check what's covered, what's recommended, what's
+53:0753 minutes, 7 secondsoverly used. So, anything in the red, you can see that here receptionist was used 91 times and the recommended is 35.
+53:1553 minutes, 15 secondsI'll try to get that down to about 50, no more than that. So, it's just about going through the content and seeing
+53:2153 minutes, 21 secondswhat's been overly used and how we can optimize it and use the terms that's not been used. Let me quickly go through the
+53:3053 minutes, 30 secondscontent editor so you know the functionality and the powers of Neon Writers content editor. Here we have an
+53:3853 minutes, 38 secondsoption to autoinsert. If the content doesn't have the words that was recommended by Neon Writer, you can
+53:4553 minutes, 45 secondsclick on autoinsert terms and it will go in. It'll scan your content and it will give you the recommendations of where a
+53:5353 minutes, 53 secondsspecific term can be inserted. Here's the content suggestions. You can have a look at the suggestions that the new writer gave and you can accept and it'll
+54:0154 minutes, 1 secondauto update the content for you. The next option is it does recommend auto internal links. This is a really
+54:1054 minutes, 10 secondspowerful feature. You do have to integrate your Google search console for this. It see what terms your website is
+54:1754 minutes, 17 secondsranking for and which page needs an internal link. So this is a very very powerful feature that many people overlook. I'll give you a very quick
+54:2654 minutes, 26 secondsrundown of the editor itself. So obviously we've done the save. You can import, you can export the content.
+54:3254 minutes, 32 secondsHere's the menu where you can generate the schema markup language. You can check for plagiarism. You can check the
+54:3954 minutes, 39 secondsSER and competition. So, if I click on that and if I click on the competitors, it shows everyone who's ranking for this
+54:4754 minutes, 47 secondsspecific keyword. So, I can see that Dalzer is ranking first and it shows their blog outline that they're using.
+54:5554 minutes, 55 secondsSo this is very important for search engine optimization where you can see what your competitors are doing, how
+55:0155 minutes, 1 secondtheir blog is structured and you can kind of get inspiration from them and improve your blog and add additional
+55:1055 minutes, 10 secondstopics. If you think that someone else is covering that topic and your blog doesn't have that topic covered, you can include that in there. I don't want this
+55:1955 minutes, 19 secondsvideo to be in-depth neon writer tutorial, so I'll stop here. If if you're using Neon Writer, obviously you can go in and explore. There's lot of
+55:2755 minutes, 27 secondstutorials and a lot of videos on Neon Rider. You can explore and and get on grips with it. It's very easy to use
+55:3455 minutes, 34 secondsinterface. Next up, let's go back into our N8 automation itself. And here I'll briefly go through what we've done and
+55:4355 minutes, 43 secondshow you can improve this workflow. One of the things that I do for my customers is when you're creating a blog for a
+55:5255 minutes, 52 secondsspecific business, all the blogs are not the same types. It could be that one blog is for research, one is a how-to
+56:0256 minutes, 2 secondstutorial, another one references their internal documents or is more specific to their business itself. So what you
+56:0956 minutes, 9 secondscan do is to implement something like that. You can just add additional options in the form itself. Here we can
+Chapter 11: Advanced Workflow Improvements & Customization
+56:1756 minutes, 17 secondshave an additional drop-down option to say what is the blog type. For example, if it's a how-to blog, it can follow a
+56:2656 minutes, 26 secondsspecific path. And if it's a research blog, you can add a switch node in here and have similar things or a very
+56:3556 minutes, 35 secondsdifferent kind of flow where you have a perplexity node which goes in and does the research and gets that stats in the
+56:4356 minutes, 43 secondsblog. Or another use case is if you would like to create a blog that's more specific to their business based on
+56:5056 minutes, 50 secondstheir documentation and their expertise, you can add a ragged note in there. So the content that's generated is not
+56:5856 minutes, 58 secondsgeneric content. It's more specific to the business. It shows the expertise.
+57:0357 minutes, 3 secondsYou can even reference their case studies and the projects that they've done, anything any achievement that
+57:1057 minutes, 10 secondsthey've received. So all that gets included in the blog and that's where the value of such an automation comes in
+57:1757 minutes, 17 secondswhere it's not a random AI fluff. It is more customized towards a business. And
+Chapter 12: Conclusion: System Flexibility & Next Steps
+57:2457 minutes, 24 secondshere you have it, a complete system that combines NLP content optimization, NAT's powerful automation, and human expertise
+57:3357 minutes, 33 secondsto create SEO content that actually ranks. This isn't about cranking out more content. It's about creating a
+57:4157 minutes, 41 secondssustainable, scalable process that drives real results for your business.
+57:4657 minutes, 46 secondsNow, here's the beautiful part. Once you understand how everything is configured, how it all works, you can swap Neuron
+57:5457 minutes, 54 secondswriter for any optimization tool of your choice. Whether that's surfer SEO, data for SEO or anything else, the system
+58:0258 minutes, 2 secondsarchitecture remains the same. You can also swap our current Straco node with your choice of LLM like Claude, OpenAI,
+58:1258 minutes, 12 secondsGemini or other providers like Open Routter that gives you similar capabilities. My goal with this video
+58:1958 minutes, 19 secondswasn't just to give you another template to stack up with all the other ones that you might have collected. If this deep
+58:2658 minutes, 26 secondsdive approach helped you understand not just the what, but why and how, please hit that like button. It really helps
+58:3558 minutes, 35 secondsYouTube algorithm know that this content is valuable. And if you're serious about mastering automation and AI for your
+58:4358 minutes, 43 secondsbusiness, subscribe for more detailed breakdowns like this one. I would also love to hear from you in the comments
+58:5058 minutes, 50 secondsbelow. Let me know your feedback, your questions or any challenges implementing. Seriously, you can check my other videos. I do read every single
+58:5858 minutes, 58 secondscomment and I reply back. Your engagement is what shaped this channel's direction. I am ASF from AI Agency Plus.
+59:0659 minutes, 6 secondsWe help small businesses with AI and automation. If you're a business owner looking to implement AI and automation in your business, feel free to book a
+59:1559 minutes, 15 secondsdiscovery call with me. link is in the description below.
+
+Sync to video time
