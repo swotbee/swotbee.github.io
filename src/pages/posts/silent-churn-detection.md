@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/BlogPostLayout.astro
 title: "Detecting Silent Churn: The Quiet Customers Who Leave"
-pubDate: "2026-06-23"
+pubDate: "2026-05-25"
 description: "Silent churn is the customers who leave without a word. Learn what causes it, the warning signs, and how to detect silent churn early using engagement, usage, and support signals."
 category:
   title: "Revenue Operations"

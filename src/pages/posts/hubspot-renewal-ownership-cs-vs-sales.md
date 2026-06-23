@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/BlogPostLayout.astro
 title: "Who Owns Renewals in HubSpot? CS vs Sales (and the Handoff)"
-pubDate: "2026-06-23"
+pubDate: "2026-05-13"
 description: "Should customer success or sales own renewal deals in HubSpot? A decision framework, how to set ownership in a dedicated renewal pipeline, and how to automate the CS-to-sales handoff."
 category:
   title: "Revenue Operations"
@@ -38,7 +38,7 @@ When ownership is fuzzy, renewals slip. The CSM assumes sales has it; the rep as
 
 ## CS vs Sales: Who Owns the Renewal?
 
-![Customer success and sales team collaborating](https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=400&fit=crop)
+![Customer success to sales renewal handoff](/assets/posts/diagrams/cs-sales-handoff.svg)
 
 The difference between customer success and sales in the context of renewals comes down to the relationship versus the transaction.
 

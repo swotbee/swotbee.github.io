@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/BlogPostLayout.astro
 title: "Calculating the SaaS Quick Ratio (Growth Efficiency Metric)"
-pubDate: "2026-06-23"
+pubDate: "2026-05-29"
 description: "What the SaaS quick ratio is, how to calculate it from new, expansion, churned and contraction MRR, what a good benchmark is (4+), and how it compares to the Rule of 40 and SaaS magic number."
 category:
   title: "Revenue Operations"

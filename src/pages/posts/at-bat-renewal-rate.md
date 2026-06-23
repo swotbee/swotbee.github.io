@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/BlogPostLayout.astro
 title: "How to Calculate Renewal Rate: The At-Bat Method"
-pubDate: "2026-06-23"
+pubDate: "2026-05-22"
 description: "How to calculate renewal rate correctly: the count-based, revenue, gross and net renewal rate formulas, and why the at-bat method (only the cohort up for renewal) gives you the true number."
 category:
   title: "Revenue Operations"

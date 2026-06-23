@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/BlogPostLayout.astro
 title: "Gross vs Net Revenue Retention: The Valuation Multipliers"
-pubDate: "2026-06-23"
+pubDate: "2026-05-19"
 description: "GRR vs NRR explained: how to calculate gross and net revenue retention, what good benchmarks look like, why investors demand NRR over 115%, and how net dollar retention drives SaaS valuation."
 category:
   title: "Revenue Operations"

@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/BlogPostLayout.astro
 title: "TCV vs ARR: Forecasting Multi-Year Contracts the Right Way"
-pubDate: "2026-06-23"
+pubDate: "2026-05-20"
 description: "TCV vs ARR vs ACV explained: how to calculate each, how to derive ARR from TCV, and why blending Total Contract Value with Annual Recurring Revenue ruins your renewal forecasting accuracy."
 category:
   title: "Revenue Operations"

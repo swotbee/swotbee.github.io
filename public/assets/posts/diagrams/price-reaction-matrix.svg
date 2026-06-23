@@ -1,0 +1,16 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 220' role='img' aria-label='Price reaction matrix' font-family='Hanken Grotesk, DM Sans, Arial, sans-serif'>
+<rect width='640' height='220' fill='white'/>
+<text x='320' y='24' font-size='15' fill='#213343' text-anchor='middle' font-weight='700'>Competitive Price Reaction</text>
+<rect x='170' y='50' width='150' height='60' rx='6' fill='#5AAB9D' stroke='none'/>
+<text x='245' y='76' font-size='11.5' fill='white' text-anchor='middle' font-weight='700'>Low threat</text>
+<text x='245' y='94' font-size='11' fill='#eafaf6' text-anchor='middle' font-weight='400'>hold firm</text>
+<rect x='330' y='50' width='150' height='60' rx='6' fill='#D4960A' stroke='none'/>
+<text x='405' y='76' font-size='11.5' fill='white' text-anchor='middle' font-weight='700'>High threat,</text>
+<text x='405' y='94' font-size='11' fill='white' text-anchor='middle' font-weight='400'>trade on terms</text>
+<rect x='170' y='116' width='150' height='60' rx='6' fill='#ffffff' stroke='#e3ddd2'/>
+<text x='245' y='150' font-size='11' fill='#7a8087' text-anchor='middle' font-weight='400'>reinforce value</text>
+<rect x='330' y='116' width='150' height='60' rx='6' fill='#c0563b' stroke='none'/>
+<text x='405' y='142' font-size='11' fill='white' text-anchor='middle' font-weight='700'>strategic account:</text>
+<text x='405' y='160' font-size='11' fill='white' text-anchor='middle' font-weight='400'>measured response</text>
+<text x='320' y='200' font-size='11.5' fill='#7a8087' text-anchor='middle' font-weight='400'>Weigh threat vs cost before reacting; value beats price-matching</text>
+</svg>

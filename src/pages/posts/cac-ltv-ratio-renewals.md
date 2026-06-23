@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/BlogPostLayout.astro
 title: "The Cost of High CAC on LTV and Renewals"
-pubDate: "2026-06-23"
+pubDate: "2026-06-01"
 description: "How CAC and LTV interact: what a good LTV to CAC ratio is (3:1), why a high customer acquisition cost forces you to guarantee longer renewals for payback, and how to improve the ratio."
 category:
   title: "Revenue Operations"

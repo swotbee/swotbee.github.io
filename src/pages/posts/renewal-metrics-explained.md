@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/BlogPostLayout.astro
 title: "SaaS Renewal Metrics: Forecasting, NRR and Churn Risk (RevOps Guide)"
-pubDate: "2026-06-23"
+pubDate: "2026-05-17"
 description: "The complete RevOps guide to SaaS renewal metrics: how to calculate renewal rate, NRR vs GRR, forecast ARR, and catch churn risk early. Cut through vanity metrics to a single source of truth."
 category:
   title: "Revenue Operations"
@@ -156,7 +156,7 @@ They are inverses on the revenue you keep: a higher churn rate pulls your renewa
 
 ---
 
-These metrics tell you whether renewals are healthy; the [complete guide to building a renewal pipeline in HubSpot](/posts/hubspot-renewal-pipeline-complete-guide) shows you how to operationalize them.
+These metrics tell you whether renewals are healthy; the [complete guide to building a renewal pipeline in HubSpot](/posts/hubspot-renewal-pipeline-complete-guide) shows you how to operationalize them, and the [365-day renewal strategy](/posts/renewal-strategy-365) shows you how to win and expand them.
 
 **Measuring renewals is where most teams fool themselves:** blended averages, mixed revenue bases, and lagging signals. SWOTBee builds renewal forecasting, dashboards, and churn-risk scoring for mid-market companies across Energy, Manufacturing, and SaaS.
 

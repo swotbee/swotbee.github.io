@@ -1,0 +1,15 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 225' role='img' aria-label='Negotiation hold vs flex' font-family='Hanken Grotesk, DM Sans, Arial, sans-serif'>
+<rect width='640' height='225' fill='white'/>
+<text x='320' y='26' font-size='15' fill='#213343' text-anchor='middle' font-weight='700'>Renewal Negotiation: Hold vs Flex</text>
+<rect x='60' y='60' width='230' height='120' rx='10' fill='#f7f5f1' stroke='#e3ddd2'/>
+<text x='175' y='86' font-size='13' fill='#C47A2A' text-anchor='middle' font-weight='700'>HOLD</text>
+<text x='175' y='110' font-size='12' fill='#3a3f44' text-anchor='middle' font-weight='400'>list price</text>
+<text x='175' y='130' font-size='12' fill='#3a3f44' text-anchor='middle' font-weight='400'>margin</text>
+<text x='175' y='150' font-size='12' fill='#3a3f44' text-anchor='middle' font-weight='400'>discount governance</text>
+<rect x='350' y='60' width='230' height='120' rx='10' fill='#f7f5f1' stroke='#e3ddd2'/>
+<text x='465' y='86' font-size='13' fill='#5AAB9D' text-anchor='middle' font-weight='700'>FLEX</text>
+<text x='465' y='110' font-size='12' fill='#3a3f44' text-anchor='middle' font-weight='400'>contract term</text>
+<text x='465' y='130' font-size='12' fill='#3a3f44' text-anchor='middle' font-weight='400'>payment terms</text>
+<text x='465' y='150' font-size='12' fill='#3a3f44' text-anchor='middle' font-weight='400'>multi-year trade</text>
+<text x='320' y='205' font-size='11.5' fill='#7a8087' text-anchor='middle' font-weight='400'>Trade on terms; never panic-discount on price</text>
+</svg>

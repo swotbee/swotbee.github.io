@@ -37,7 +37,6 @@ These are the revenue metrics every RevOps team reports on: monthly recurring re
 
 ## The Four Metrics You Need
 
-![Gross vs net revenue retention shown as bars](/assets/posts/diagrams/grr-vs-nrr.svg)
 
 Before building anything, let's align on definitions:
 

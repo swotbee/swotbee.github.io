@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/BlogPostLayout.astro
 title: "Cross-Sell vs Upsell: The Difference That Drives Expansion"
-pubDate: "2026-06-23"
+pubDate: "2026-05-30"
 description: "Cross-selling vs upselling explained: the key differences, examples of each, why tracking them separately matters for expansion, proven techniques, and the risks to avoid."
 category:
   title: "Revenue Operations"

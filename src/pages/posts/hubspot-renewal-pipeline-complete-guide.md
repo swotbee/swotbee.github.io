@@ -57,7 +57,6 @@ Not sure if you need a separate pipeline? Read our [decision framework for separ
 
 ## What a HubSpot Renewal Pipeline Looks Like
 
-![The HubSpot renewal pipeline stages from Active Contract to Closed Won](/assets/posts/diagrams/renewal-pipeline-stages.svg)
 
 A well-built renewal pipeline has four components working together:
 

@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/BlogPostLayout.astro
 title: "The HubSpot Renewal Pipeline Template (Copy-Paste Setup)"
-pubDate: "2026-06-23"
+pubDate: "2026-05-08"
 description: "A ready-to-use HubSpot renewal pipeline template: copy-paste deal stages, custom properties, a deal naming convention, and the workflow checklist to set up a separate renewal pipeline fast."
 category:
   title: "Revenue Operations"

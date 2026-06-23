@@ -1,0 +1,25 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 185' role='img' aria-label='365-day renewal timeline' font-family='Hanken Grotesk, DM Sans, Arial, sans-serif'>
+<rect width='640' height='185' fill='white'/>
+<defs><marker id='a' markerWidth='8' markerHeight='8' refX='6' refY='3' orient='auto'><path d='M0,0 L6,3 L0,6 Z' fill='#7a8087'/></marker></defs>
+<text x='320' y='28' font-size='17' fill='#213343' text-anchor='middle' font-weight='700'>The 365-Day Renewal Timeline</text>
+<rect x='30' y='64' width='130' height='72' rx='8' fill='#5AAB9D' stroke='none'/>
+<text x='95.0' y='88' font-size='12' fill='white' text-anchor='middle' font-weight='700'>Day 0-90</text>
+<text x='95.0' y='108' font-size='11.5' fill='white' text-anchor='middle' font-weight='400'>Onboard:</text>
+<text x='95.0' y='123' font-size='11.5' fill='white' text-anchor='middle' font-weight='400'>define value</text>
+<line x1='161' y1='100' x2='178' y2='100' stroke='#7a8087' stroke-width='2' marker-end='url(#a)'/>
+<rect x='179' y='64' width='130' height='72' rx='8' fill='#1A7AB5' stroke='none'/>
+<text x='244.0' y='88' font-size='12' fill='white' text-anchor='middle' font-weight='700'>Day 90-270</text>
+<text x='244.0' y='108' font-size='11.5' fill='white' text-anchor='middle' font-weight='400'>Prove value,</text>
+<text x='244.0' y='123' font-size='11.5' fill='white' text-anchor='middle' font-weight='400'>multi-thread</text>
+<line x1='310' y1='100' x2='327' y2='100' stroke='#7a8087' stroke-width='2' marker-end='url(#a)'/>
+<rect x='328' y='64' width='130' height='72' rx='8' fill='#D4960A' stroke='none'/>
+<text x='393.0' y='88' font-size='12' fill='white' text-anchor='middle' font-weight='700'>Day 270-330</text>
+<text x='393.0' y='108' font-size='11.5' fill='white' text-anchor='middle' font-weight='400'>Renewal</text>
+<text x='393.0' y='123' font-size='11.5' fill='white' text-anchor='middle' font-weight='400'>window</text>
+<line x1='459' y1='100' x2='476' y2='100' stroke='#7a8087' stroke-width='2' marker-end='url(#a)'/>
+<rect x='477' y='64' width='130' height='72' rx='8' fill='#C47A2A' stroke='none'/>
+<text x='542.0' y='88' font-size='12' fill='white' text-anchor='middle' font-weight='700'>Day 330-365</text>
+<text x='542.0' y='108' font-size='11.5' fill='white' text-anchor='middle' font-weight='400'>Negotiate</text>
+<text x='542.0' y='123' font-size='11.5' fill='white' text-anchor='middle' font-weight='400'>& close</text>
+<text x='320' y='170' font-size='12' fill='#7a8087' text-anchor='middle' font-weight='400'>The renewal is won across the year, not in the final 30 days</text>
+</svg>

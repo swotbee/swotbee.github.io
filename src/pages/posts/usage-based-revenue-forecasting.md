@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/BlogPostLayout.astro
 title: "Forecasting Usage-Based and Consumption Revenue"
-pubDate: "2026-06-23"
+pubDate: "2026-06-03"
 description: "How to forecast revenue when pricing is usage-based instead of fixed seats. What a usage-based model is, how consumption-based forecasting works, the challenges, and how to improve predictability."
 category:
   title: "Revenue Operations"

@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/BlogPostLayout.astro
 title: "Product-Qualified Signals: Forecasting Expansion Before Renewal"
-pubDate: "2026-06-23"
+pubDate: "2026-05-27"
 description: "How product-qualified leads (PQLs) and expansion signals forecast upsell. What a PQL is, how PQLs differ from MQLs and SQLs, the triggers to track, and how to score and act on usage data."
 category:
   title: "Revenue Operations"

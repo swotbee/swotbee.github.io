@@ -1,0 +1,13 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 261' role='img' aria-label='EBR agenda' font-family='Hanken Grotesk, DM Sans, Arial, sans-serif'>
+<rect width='640' height='261' fill='white'/>
+<text x='320' y='26' font-size='15' fill='#213343' text-anchor='middle' font-weight='700'>Executive Business Review Agenda</text>
+<rect x='160' y='55' width='320' height='34' rx='6' fill='#5AAB9D' stroke='none'/>
+<text x='320' y='77' font-size='12.5' fill='white' text-anchor='middle' font-weight='700'>Goals recap</text>
+<rect x='160' y='99' width='320' height='34' rx='6' fill='#1A7AB5' stroke='none'/>
+<text x='320' y='121' font-size='12.5' fill='white' text-anchor='middle' font-weight='700'>Outcomes & ROI</text>
+<rect x='160' y='143' width='320' height='34' rx='6' fill='#D4960A' stroke='none'/>
+<text x='320' y='165' font-size='12.5' fill='white' text-anchor='middle' font-weight='700'>Roadmap & alignment</text>
+<rect x='160' y='187' width='320' height='34' rx='6' fill='#C47A2A' stroke='none'/>
+<text x='320' y='209' font-size='12.5' fill='white' text-anchor='middle' font-weight='700'>Next steps</text>
+<text x='320' y='245' font-size='11.5' fill='#7a8087' text-anchor='middle' font-weight='400'>Prove business outcomes, then frame the next 12 months</text>
+</svg>

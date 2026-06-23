@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/BlogPostLayout.astro
 title: "Why Blended Churn Hides Your True Retention (Cohort Analysis)"
-pubDate: "2026-06-23"
+pubDate: "2026-05-24"
 description: "How SaaS cohort analysis reveals the retention your blended churn rate hides: types of cohort analysis, how to perform one, the retention curve, common pitfalls, and how cohorts predict LTV."
 category:
   title: "Revenue Operations"

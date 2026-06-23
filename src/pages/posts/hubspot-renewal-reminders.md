@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/BlogPostLayout.astro
 title: "How to Set Up Renewal Reminders and Alerts in HubSpot (Step-by-Step)"
-pubDate: "2026-06-23"
+pubDate: "2026-05-05"
 description: "A step-by-step guide to building renewal reminders in HubSpot: track renewal dates, automate alerts and tasks 90/60/30 days before expiration, and stop renewals from slipping through the cracks."
 category:
   title: "Revenue Operations"
@@ -38,7 +38,7 @@ Most teams do not lose renewals because the customer was unhappy. They lose them
 
 ## Why Renewal Dates Get Missed
 
-![Calendar and laptop representing renewal date tracking](https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=400&fit=crop)
+![Renewal reminder cadence at 90, 60 and 30 days](/assets/posts/diagrams/reminder-cadence.svg)
 
 When renewal dates live in a spreadsheet, an inbox, or someone's memory, they slip. The expiration date arrives, the account manager is heads-down on new business, and the renewal becomes a fire drill (and one of the most avoidable churn risks you will ever face).
 

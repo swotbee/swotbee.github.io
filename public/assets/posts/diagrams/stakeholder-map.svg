@@ -1,0 +1,20 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 230' role='img' aria-label='Multi-threading stakeholder map' font-family='Hanken Grotesk, DM Sans, Arial, sans-serif'>
+<rect width='640' height='230' fill='white'/>
+<defs><marker id='a' markerWidth='8' markerHeight='8' refX='6' refY='3' orient='auto'><path d='M0,0 L6,3 L0,6 Z' fill='#7a8087'/></marker></defs>
+<text x='320' y='26' font-size='17' fill='#213343' text-anchor='middle' font-weight='700'>Multi-Threading the Account</text>
+<rect x='255' y='55' width='130' height='44' rx='8' fill='#C47A2A' stroke='none'/>
+<text x='320' y='82' font-size='13' fill='white' text-anchor='middle' font-weight='700'>Economic Buyer</text>
+<rect x='70' y='150' width='110' height='42' rx='8' fill='#5AAB9D' stroke='none'/>
+<text x='125' y='176' font-size='12.5' fill='white' text-anchor='middle' font-weight='700'>Champion</text>
+<line x1='320' y1='99' x2='125' y2='150' stroke='#e3ddd2' stroke-width='2'/>
+<rect x='210' y='150' width='110' height='42' rx='8' fill='#1A7AB5' stroke='none'/>
+<text x='265' y='176' font-size='12.5' fill='white' text-anchor='middle' font-weight='700'>Influencer</text>
+<line x1='320' y1='99' x2='265' y2='150' stroke='#e3ddd2' stroke-width='2'/>
+<rect x='350' y='150' width='110' height='42' rx='8' fill='#1A7AB5' stroke='none'/>
+<text x='405' y='176' font-size='12.5' fill='white' text-anchor='middle' font-weight='700'>Influencer</text>
+<line x1='320' y1='99' x2='405' y2='150' stroke='#e3ddd2' stroke-width='2'/>
+<rect x='490' y='150' width='110' height='42' rx='8' fill='#c0563b' stroke='none'/>
+<text x='545' y='176' font-size='12.5' fill='white' text-anchor='middle' font-weight='700'>Blocker</text>
+<line x1='320' y1='99' x2='545' y2='150' stroke='#e3ddd2' stroke-width='2'/>
+<text x='320' y='215' font-size='12' fill='#7a8087' text-anchor='middle' font-weight='400'>Engage many stakeholders so no single departure kills the renewal</text>
+</svg>

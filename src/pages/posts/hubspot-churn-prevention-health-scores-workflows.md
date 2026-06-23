@@ -35,7 +35,6 @@ This article shows you how to build that system in HubSpot.
 
 ## Building a Customer Health Score in HubSpot
 
-![Warning signs that precede silent churn](/assets/posts/diagrams/silent-churn-signals.svg)
 
 The foundation of churn prevention is a customer health score in HubSpot: a single number that summarizes the health of each account. To build a customer health score, decide your score criteria and the customer data that feeds it, then store the result on the company record so the whole team shares one view of customer health.
 

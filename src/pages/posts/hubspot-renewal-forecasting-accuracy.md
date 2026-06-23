@@ -34,7 +34,6 @@ Your forecast just understated that deal by $50K. Multiply that across your pipe
 
 ## Why Standard HubSpot Forecasting Fails for Renewals
 
-![Revenue forecast charts on a screen](https://images.unsplash.com/photo-1543286386-713bdd548da4?w=800&h=400&fit=crop)
 
 HubSpot's forecast tool works well for new business. It takes each deal's amount, multiplies by the stage probability, and sums the result. Simple and effective, when every deal behaves similarly.
 

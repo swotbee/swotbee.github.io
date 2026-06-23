@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/BlogPostLayout.astro
 title: "HubSpot Renewal Email Sequences: Setup, Examples and Best Practices"
-pubDate: "2026-06-23"
+pubDate: "2026-05-07"
 description: "How to build renewal email sequences in HubSpot: when to use Sequences vs Workflows, a step-by-step setup, a 4-email renewal sequence example, send limits, and best practices."
 category:
   title: "Revenue Operations"
@@ -38,7 +38,7 @@ Renewal outreach lives or dies on timing and tone. Send too late and you are fir
 
 ## Sequences vs Workflows vs Marketing Emails for Renewals
 
-![Email and analytics dashboard on a laptop](https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop)
+![A 90/60/30/7-day renewal email sequence](/assets/posts/diagrams/email-cadence.svg)
 
 This is the question almost every team gets stuck on, so let's settle it. HubSpot has three ways to send email, and they are not interchangeable:
 

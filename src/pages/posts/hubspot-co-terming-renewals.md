@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/BlogPostLayout.astro
 title: "Co-Terming Renewals in HubSpot: Align Multiple Contract Dates"
-pubDate: "2026-06-23"
+pubDate: "2026-05-15"
 description: "What co-terming is, why it makes renewals easier, and how to consolidate multiple contract end dates onto a single renewal date in HubSpot using change quotes, contracts, and proration."
 category:
   title: "Revenue Operations"
@@ -40,7 +40,7 @@ Whether a subscription renews automatically or you handle each renewal as a deal
 
 ## What Is Co-Terming (and Its Benefits)?
 
-![Aligning multiple contract dates onto one calendar](https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=400&fit=crop)
+![Aligning multiple contracts onto one renewal date](/assets/posts/diagrams/coterm-alignment.svg)
 
 Co-terming (short for co-termination) sets multiple line items or subscriptions to expire on the same date. Instead of a mid-term add-on creating a new, separate renewal, the add-on is aligned to the existing contract end date.
 
