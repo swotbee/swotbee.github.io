@@ -26,7 +26,7 @@ No test runner or linter is configured. Validate changes with `npm run build` �
 
 ## Tech Stack
 
-- **Framework**: Astro 5 (static output) with React and Alpine.js integrations
+- **Framework**: Astro 5.14 (static output) with React and Alpine.js integrations. Pending upgrade to Astro 6 (requires Node 22+).
 - **Styling**: Tailwind CSS v4 via `@tailwindcss/vite` plugin (NOT the older `@astrojs/tailwind` integration)
 - **Tailwind plugins**: Loaded via `@plugin` in `src/styles/global.css` — flowbite, flowbite-typography, tailwind-scrollbar
 - **UI Libraries**: Flowbite, Embla Carousel, Framer Motion
@@ -88,6 +88,43 @@ All service pages use V6 color tokens (`v6-copper`, `v6-teal`, `v6-dark`, `v6-te
 - `docs/plans/service-page-answers.md` — client decisions on pricing (no prices on site), engagement models, timelines, and deferred items
 - `docs/hubspot-apps-copy-brief.md` — copy brief for 4 HubSpot marketplace apps (Smart Company Picker, Deal Inspector, Renewal Builder, Deal Copilot)
 
+## SEO Blog Content Pipeline
+
+Blog posts are produced with a repeatable, research-driven pipeline that merges three frameworks. Use this process for every new article or cluster. The full spec lives in `docs/plans/seo-content-pipeline-neuronwriter-merged.md`; read it before starting.
+
+**The three frameworks (sources in `src/pages/posts/_prompts/`):**
+- Research Strategist (`advanced SEO Research Strategist find sources.md`): discover, validate, score sources and mine community insight.
+- Autonomous Content System (`Autonomous SEO Content System Agent Framework.md`): turn a topic into a pillar + cluster architecture, internal linking graph, semantic model, and executable article seeds.
+- NeuronWriter (`NeuronWriter: Agent task sequence.md`): real SERP terms, competitor scores, content scoring, editor sync.
+
+### Per-article process (run for the pillar first, then each cluster)
+1. **Gap analysis.** Inventory existing posts in `src/pages/posts/` for the topic so new clusters are net-new, not duplicates. Note cannibalization guards (which existing post each new one should cross-link rather than repeat).
+2. **Architecture.** Draft the pillar + cluster map, intents, priorities, and the internal linking graph. Write it to `docs/plans/<topic>-content-plan.md`.
+3. **NeuronWriter analysis (per seed).** Run a query for each article keyword (see API below). Capture `terms`, `ideas.topic_matrix` (importance-ranked questions), `ideas.content_questions`, `competitors` (the score to beat), and `metrics.word_count` (the length target).
+4. **Research.** Mine web + Reddit + community automatically; reuse existing dumps in `src/pages/posts/_prompts/research-resources/` when present. Write a scored insight bank to `docs/research/blog/<topic>/`.
+5. **Write.** Cover the NeuronWriter terms, use the `topic_matrix` questions as H2/FAQ, write answer-first passages, and match house style (below).
+6. **Optimize.** Score the draft with `/evaluate-content` and revise (add missing terms, hit the word-count target) until it beats the top competitor score. NeuronWriter scoring rewards both term coverage and reaching the word-count target.
+7. **Publish.** Push the final draft to the NeuronWriter editor with `/import-content`, write the `.md` to `src/pages/posts/`, apply the internal linking graph (and add back-links from the pillar), then run `npm run build` to validate.
+
+### NeuronWriter API
+- Base URL: `https://app.neuronwriter.com/neuron-api/0.5/writer`; auth header `X-API-KEY` (pass as an env var at call time, never commit the key); `Content-Type: application/json`.
+- Endpoints: `POST /list-projects`, `POST /new-query` (params `project`, `keyword`, `engine`, `language`), `POST /get-query` (poll `status` until `ready`, ~90s+), `POST /evaluate-content` (score a draft, params `query`, `html`, `title`, `description`), `POST /import-content` (push to editor).
+- Requires the Gold plan; each query and each evaluation consumes the monthly limit, so be deliberate.
+- Convert the markdown body to HTML for `/evaluate-content` and `/import-content` (Python `markdown` with the `tables` extension is available).
+- Watch for contaminated keywords: some "hubspot ..." keywords return SERP intent about HubSpot's own pricing/subscription rather than the customer use case (e.g. "hubspot renewal quote price increase", "turn off auto-renewal"). Keep the article on-brand for the ICP and accept a lower score, or retarget to a cleaner keyword.
+
+### Blog post house style
+- Frontmatter: `layout: ../../layouts/BlogPostLayout.astro`, `title`, `pubDate`, `description`, `category` (title + href), `modifiedDate`, `author` (SWOTBee Team block), `image` (Unsplash), `tags`. For cluster posts add `seriesName` and `pillarUrl` (the pillar's `/posts/...` path).
+- Open with a blockquote linking to the pillar, then an answer-first bold paragraph.
+- Use `---` between sections, descriptive H2/H3, tables for property/step references, a `## Frequently Asked Questions` block (bold question + short answer) for passage ranking.
+- Internal links: contextual, descriptive keyword anchors to other `/posts/...` pages; verify every link resolves to an existing file before building.
+- Close with a bold differentiator line plus the CTA `[Book a free 30-minute discovery call →](/contactus)`.
+- Follow the global no em/en dash rule in all generated content.
+
+### Where things live
+- Prompts and research material: `src/pages/posts/_prompts/` (prefixed with `_` so Astro excludes it from routing; do NOT rename back to `prompts/` or the raw research dumps break the build). Large research dumps are kept local and not committed.
+- Plans: `docs/plans/`. Research output: `docs/research/`.
+
 ## File Versioning Convention
 
 When iterating on page designs, old versions are kept as `*-old.astro` files (e.g., `hubspot-onboarding-old.astro`). Create new versioned files rather than overwriting previous designs.
@@ -101,4 +138,4 @@ When iterating on page designs, old versions are kept as `*-old.astro` files (e.
 
 ## Deployment
 
-Pushes to `main` auto-deploy via `.github/workflows/pages-deploy.yml`. The workflow uses `npm ci --legacy-peer-deps` and Node 18. Output goes to `./dist/` and is deployed to GitHub Pages.
+Pushes to `main` auto-deploy via `.github/workflows/pages-deploy.yml`. The workflow uses `npm ci --legacy-peer-deps` and Node 18. Output goes to `./dist/` and is deployed to GitHub Pages. Node version must be bumped to 22 before upgrading to Astro 6.
