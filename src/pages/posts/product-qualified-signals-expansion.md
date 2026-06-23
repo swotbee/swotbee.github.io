@@ -88,6 +88,17 @@ This guide to product qualified leads covers two related motions. In acquisition
 
 For B2B SaaS companies, the strongest setup blends three inputs: product usage (what they do inside your product), engagement intent data (how they interact with sales and marketing), and buyer intent data or third-party research signals (whether accounts are in research mode elsewhere). Layering these key signals gives sales teams and the customer success team a shared, ranked view of the buying intent of a B2B account, so prioritizing PQLs becomes a daily routine rather than a quarterly guess. The payoff is revenue growth from customers who are already proving, based on product usage, that they are ready.
 
+## How to Convert PQLs Into Expansion Revenue
+
+Identifying a PQL is half the job; converting qualified PQLs is the other half. Once an account shows the signs they are ready to buy, the play is fast and relevant:
+
+1. **Confirm readiness from customer data.** Check that the signals are real (sustained usage, not a one-off spike) before reaching out. The best signal is a customer consistently using the product and hitting limits.
+2. **Lead with the value they are already getting.** Because the customer is using the product daily, frame the expansion around the outcome they are achieving, not a feature list. Customers are ready to expand when more of your product solves more of their problem.
+3. **Time it to the renewal.** Fold the expansion opportunities into the renewal so it is one conversation, not two.
+4. **Separate research-mode from ready-to-buy.** Some accounts that are in research mode are exploring, not buying; treat them with education, and reserve direct offers for accounts showing strong buying signals.
+
+Done well, this turns product usage into a predictable stream of expansion opportunities, and it works for converting a free-trial new customer just as well as expanding an enterprise account.
+
 ## Why PQLs Beat Guesswork for Expansion
 
 Expansion revenue is what pushes [net revenue retention](/posts/gross-vs-net-revenue-retention) above 100%. Most teams chase expansion by gut feel or blanket outreach, which annoys customers and wastes rep time. PQLs replace that with evidence: you prioritize outreach to accounts whose usage proves they are ready, lifting conversion rates and protecting the customer relationship. The same usage signals that flag expansion also flag risk when they fall, so the model serves both growth and retention. Track which expansions come from upsell versus [cross-sell](/posts/cross-sell-vs-upsell) to refine the motion.

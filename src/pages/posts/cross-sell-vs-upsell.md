@@ -64,6 +64,10 @@ Cross-selling expands the relationship into new areas, which is why successful c
 
 ---
 
+## Learn the Difference: Cross-Selling vs Upselling at a Glance
+
+If you only learn the difference between cross-selling and upselling, learn this: upselling sells a better version of the product the customer already wants; cross-selling sells related or complementary products and services alongside it. Both are sales techniques aimed at existing customers, and both can boost revenue, but they are different motions. Cross-selling is a sales strategy of breadth (more products per customer); upselling is a sales strategy of depth (more value per product). Discover how cross-selling and upselling can boost average order value and customer lifetime value, and you will see why mature teams run both deliberately rather than ad hoc.
+
 ## Cross-Sell vs Upsell: The Key Differences
 
 The difference between cross-selling and upselling comes down to what you are selling relative to the original purchase:
@@ -104,6 +108,16 @@ Effective cross-selling and upselling is timed and relevant, not pushy:
 Done well, these techniques boost revenue per customer while improving customer satisfaction, because the customer gets more value.
 
 ---
+
+## Cross-Selling and Upselling in the Sales Process
+
+Where these tactics fit in the sales process matters as much as the offer itself. A cross-sell or upsell landed at the wrong moment feels like a pushy sales pitch; landed at the right moment it feels like help. Map each motion to the customer journey:
+
+- **After a successful initial purchase and onboarding** is the natural window to upsell, because the customer has seen the version of the product working and is open to more.
+- **When a complementary need surfaces** is the moment to cross-sell, encouraging customers to purchase additional products and services that solve an adjacent problem.
+- **Before renewal** is when both upsell and cross-sell opportunities should be reviewed, so expansion folds into the renewal conversation.
+
+Effective upselling strategies and cross-selling strategies share a backbone: they use customer data to find upsell opportunities, they frame the offer around the customer's goal, and they are timed to value. Cross-selling and upselling are essential growth levers precisely because selling to existing, satisfied customers converts far better than acquiring new ones, and it improves customer loyalty when done with restraint. The difference between upselling and cross-selling is what you sell; the discipline of timing and relevance is what makes either work.
 
 ## The Risks of Cross-Selling and Upselling
 

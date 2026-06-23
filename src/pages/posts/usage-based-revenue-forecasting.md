@@ -54,6 +54,12 @@ With fixed subscriptions, forecasting is straightforward: ARR is seats times pri
 
 ---
 
+## Usage-Based vs Traditional SaaS Revenue
+
+In a traditional SaaS model, monthly recurring revenue is fixed: each customer's monthly revenue is the same until they upgrade or churn, which makes projected revenue easy. Usage-based SaaS breaks that pattern. Customer revenue rises and falls with consumption, so the same account can produce different monthly revenue every period.
+
+This changes how you think about revenue growth. In a subscription model, growth comes from new customers and deliberate upgrades. In consumption-based models, growth also comes automatically as existing customers use more, which shows up as expansion revenue without a sales motion. That is great for net revenue retention but harder for revenue visibility, because the usage metric driving consumption revenue is outside your direct control. Many SaaS businesses therefore run a hybrid pricing plan: a subscription base for a predictable revenue floor plus usage pricing on top for upside.
+
 ## How Consumption-Based Forecasting Works
 
 Consumption-based forecasting projects future revenue from usage data rather than contracts. The core steps:
@@ -68,6 +74,14 @@ This is one of several types of revenue forecasting; for usage models, the consu
 
 ---
 
+## Usage-Based Revenue Recognition
+
+Forecasting and revenue recognition are linked. With a subscription, you recognize revenue evenly across the term. With usage-based revenue recognition, you recognize revenue as the customer consumes, so recognized revenue tracks actual usage rather than a flat schedule. This means your projected revenue and your recognized revenue can diverge within a month if usage runs ahead of or behind plan. Accurate revenue reporting depends on capturing product usage data in near real time so finance can recognize revenue correctly and report consumption-based revenue without month-end surprises.
+
+## Tools for Usage-Based Forecasting
+
+You do not need exotic software, but you do need the right inputs. Good forecasting tools for usage models share three traits: they ingest granular product usage data, they let you segment customers by usage pattern, and they output a range rather than a single number. Whether you build this in a spreadsheet, your data warehouse, or a billing platform, the goal is the same: predict future revenue from how customers actually use the product. Pair the forecast with usage alerts so a drop in a key usage metric flags churn risk early, the same discipline as [renewal risk scoring](/posts/hubspot-renewal-risk-scoring).
+
 ## The Challenges of Forecasting Usage-Based Revenue
 
 Usage-based revenue is harder to forecast for several reasons:
@@ -78,6 +92,17 @@ Usage-based revenue is harder to forecast for several reasons:
 - **Lumpy expansion.** A single large customer ramping usage can swing the forecast, so concentration matters.
 
 ---
+
+## Types of Revenue Forecasting for Usage Models
+
+There are several types of revenue forecasting, and usage models often blend them:
+
+- **Bottom-up (usage-based):** project each customer's consumption from their own usage trend, then sum. Most accurate for variable revenue, but data-hungry.
+- **Top-down:** apply an overall growth rate to total revenue. Fast but blunt for consumption revenue.
+- **Cohort-based:** forecast usage by customer cohort, since newer cohorts often ramp differently than mature ones.
+- **Driver-based:** tie revenue to a leading business driver (transactions processed, seats active) and forecast the driver.
+
+For a usage-based SaaS business, a bottom-up forecast cross-checked against a top-down growth rate gives the most reliable projected revenue. When you first implement usage-based pricing, lean on driver-based forecasting until you have enough history for accurate per-customer usage forecasting.
 
 ## How to Improve Usage-Based Revenue Predictability
 
