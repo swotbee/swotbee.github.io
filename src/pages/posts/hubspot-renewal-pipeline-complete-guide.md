@@ -183,7 +183,7 @@ For the commercial side, see how to [build renewal quotes and price increases](/
 
 ## Measuring Success: Dashboards and KPIs
 
-HubSpot doesn't have a native NRR report. You have to build it yourself using custom properties and reports.
+HubSpot doesn't have a native NRR report. You have to build it yourself using custom properties and reports. For the metrics themselves (how to calculate renewal rate, NRR, GRR, and forecast churn), see our [guide to SaaS renewal metrics](/posts/renewal-metrics-explained).
 
 ### The Four Metrics That Matter
 
