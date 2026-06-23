@@ -79,7 +79,7 @@ See the [complete list of 15 properties](/posts/hubspot-renewal-pipeline-propert
 
 The most common model: **Customer Success owns the renewal pipeline**, Sales owns the new business pipeline. If there's an expansion opportunity during renewal, it either stays in the renewal deal (simple upsell) or spawns a separate deal in an expansion pipeline (complex multi-product upsell).
 
-RevOps should own the pipeline architecture, automation, and reporting, regardless of who owns individual deals.
+RevOps should own the pipeline architecture, automation, and reporting, regardless of who owns individual deals. For the full decision framework and how to automate the CS-to-sales handoff, see [who should own renewals: CS vs sales](/posts/hubspot-renewal-ownership-cs-vs-sales).
 
 ### Automation Layer
 
@@ -90,6 +90,10 @@ This is where HubSpot shines, and where most implementations break. The core aut
 - **90-60-30 day engagement cadence** with tasks and emails
 - **Multi-year renewal chains** that create next year's deal when this year closes
 - **Churn/at-risk alerts** when health signals deteriorate
+
+For the deeper builds, see [renewal reminders and alerts](/posts/hubspot-renewal-reminders), [renewal email sequences](/posts/hubspot-renewal-email-sequence), and [renewal risk scoring](/posts/hubspot-renewal-risk-scoring).
+
+Want a head start? Use our [copy-paste renewal pipeline template](/posts/hubspot-renewal-pipeline-template) for the stages, properties, and automation checklist.
 
 ---
 
@@ -145,6 +149,8 @@ At each milestone, the workflow creates tasks for the CSM:
 - **60 days:** Send the renewal proposal
 - **30 days:** Follow up if unsigned, escalate if at-risk
 
+Pair this internal cadence with a customer-facing [renewal email sequence](/posts/hubspot-renewal-email-sequence) so outreach and reminders work together.
+
 ### Workflow 4: Multi-Year Renewal Chain
 
 When a renewal deal closes as Won, a new workflow creates next year's renewal deal. This is where HubSpot's re-enrollment blocking causes the infamous infinite loop problem.
@@ -170,6 +176,8 @@ Renewals rarely happen in isolation. Customers expand, downgrade, add products, 
 **Churn:** Move to Closed Lost with a required churn reason. Feed this into your churn analysis.
 
 How to [handle expansions and downgrades](/posts/hubspot-renewal-expansion-pipeline-structure) alongside renewals.
+
+For the commercial side, see how to [build renewal quotes and price increases](/posts/hubspot-renewal-quote-price-increase), and how to [co-term renewals onto a single date](/posts/hubspot-co-terming-renewals) when a customer has multiple contracts.
 
 ---
 
