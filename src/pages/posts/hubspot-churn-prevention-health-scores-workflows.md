@@ -2,6 +2,7 @@
 layout: ../../layouts/BlogPostLayout.astro
 title: "Building a Churn Prevention Workflow in HubSpot: Health Scores, Alerts & Playbooks"
 pubDate: "2026-04-02"
+modifiedDate: "2026-06-23"
 description: "From health score setup to at-risk alert workflows, churn reason taxonomies, and win-back sequences. A practical guide to preventing churn before the renewal conversation starts."
 category:
   title: "Revenue Operations"
@@ -29,6 +30,21 @@ Churn prevention isn't a renewal-stage activity. It's a continuous process that 
 This article shows you how to build that system in HubSpot.
 
 > This article is part of our [Complete Guide to Building a Renewal Pipeline in HubSpot](/posts/hubspot-renewal-pipeline-complete-guide).
+
+---
+
+## Building a Customer Health Score in HubSpot
+
+The foundation of churn prevention is a customer health score in HubSpot: a single number that summarizes the health of each account. To build a customer health score, decide your score criteria and the customer data that feeds it, then store the result on the company record so the whole team shares one view of customer health.
+
+Typical inputs and where they live:
+
+- **Product usage and customer engagement** (logins, feature adoption), often synced from your product or HubSpot's Service Hub.
+- **Support signals** (ticket volume and severity) from Service Hub.
+- **Relationship signals** (executive engagement, champion changes) tracked on company properties.
+- **Customer outcomes** (are they hitting their goals).
+
+Combine these into a weighted health score using a workflow, then map the number to a health status (for example, Healthy, Neutral, At Risk). As the underlying data changes, the workflow updates the score, so score changes surface automatically. Report the health status across customer segments so you can see which segments are at risk, and copy the score onto the renewal deal. For the renewal-pipeline application of this score, see [renewal risk scoring](/posts/hubspot-renewal-risk-scoring); for the behavioral angle, see [detecting silent churn](/posts/silent-churn-detection); and for how it fits the wider metrics picture, our [SaaS renewal metrics guide](/posts/renewal-metrics-explained).
 
 ---
 
