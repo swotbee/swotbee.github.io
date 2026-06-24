@@ -90,7 +90,7 @@ All service pages use V6 color tokens (`v6-copper`, `v6-teal`, `v6-dark`, `v6-te
 
 ## SEO Blog Content Pipeline
 
-Blog posts are produced with a repeatable, research-driven pipeline that merges three frameworks. Use this process for every new article or cluster. The full spec lives in `docs/plans/seo-content-pipeline-neuronwriter-merged.md`; read it before starting.
+Blog posts are produced with a repeatable, research-driven pipeline that merges three frameworks. Use this process for every new article or cluster. The full spec lives in `docs/plans/seo-content-pipeline-neuronwriter-merged.md`, and the practical step-by-step playbook (with real learnings and improvements from building 3 pillar clusters) is in `docs/plans/blog-creation-playbook.md`; read both before starting.
 
 **The three frameworks (sources in `src/pages/posts/_prompts/`):**
 - Research Strategist (`advanced SEO Research Strategist find sources.md`): discover, validate, score sources and mine community insight.
