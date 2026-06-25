@@ -34,17 +34,23 @@ const logos: Logo[] = [
         {
           logos.map((logo) => (
             <div class=" rounded p-4 text-center">
-              <Picture
-                src={logo.imageUrl}
-                alt={`${logo.name} logo`}
-                widths={[200, 400]}
-                formats={[
-                  "webp",
-                  "avif",
-                  logo.imageUrl.src.endsWith(".svg") ? "svg" : "png",
-                ]}
-                class="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
-              />
+              {logo.imageUrl.src.endsWith(".svg") ? (
+                <img
+                  src={logo.imageUrl.src}
+                  alt={`${logo.name} logo`}
+                  width={logo.imageUrl.width}
+                  height={logo.imageUrl.height}
+                  class="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
+                />
+              ) : (
+                <Picture
+                  src={logo.imageUrl}
+                  alt={`${logo.name} logo`}
+                  widths={[200, 400]}
+                  formats={["webp", "avif", "png"]}
+                  class="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
+                />
+              )}
             </div>
           ))
         }

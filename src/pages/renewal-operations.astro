@@ -1,0 +1,426 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/astro/Navbar.astro";
+import Footer from "../components/astro/Footer.astro";
+import StructuredData from "../components/astro/StructuredData.astro";
+
+const title = "Renewal Operations for HubSpot | Automate Renewals & Expansion Revenue";
+const description = "How much revenue is hiding in your renewal spreadsheet? We automate renewal opportunities, surface expansion revenue, and give leadership the forecast visibility to grow confidently.";
+
+const clientLogos = ["Wesco", "Big Lots", "Insteon", "La Vie", "Mytheresa"];
+
+// AGITATION — what breaks at scale
+const breaks = [
+  {
+    title: "Visibility Breaks",
+    desc: "Nobody has a complete picture of upcoming renewals, expansion opportunities, and contract changes.",
+    icon: "👁",
+    color: "text-v6-blue",
+    bg: "bg-v6-blue-50",
+  },
+  {
+    title: "Consistency Breaks",
+    desc: "Different reps handle renewals differently. Business rules live in people's heads instead of the system.",
+    icon: "⚖",
+    color: "text-v6-teal",
+    bg: "bg-v6-teal-50",
+  },
+  {
+    title: "Forecasting Breaks",
+    desc: "Revenue meetings become exercises in validating data instead of making decisions.",
+    icon: "📉",
+    color: "text-v6-amber",
+    bg: "bg-v6-amber-50",
+  },
+  {
+    title: "Morale Breaks",
+    desc: "Top performers spend more time maintaining processes than helping customers and growing accounts.",
+    icon: "🔥",
+    color: "text-v6-copper",
+    bg: "bg-v6-copper-50",
+  },
+];
+
+// ROOT CAUSE — comparison table
+const decisions = [
+  { simple: "Renew the customer", decision: "Which products should renew and which shouldn't?" },
+  { simple: "Create the next deal", decision: "Is this a renewal, an expansion, or both?" },
+  { simple: "Carry forward the pricing", decision: "Which escalations, discounts, and contract terms apply?" },
+  { simple: "Follow the renewal process", decision: "Which customers require different rules, approvals, or notice periods?" },
+  { simple: "Forecast future revenue", decision: "Which renewals are at risk and which accounts are ready to grow?" },
+];
+
+// CAPABILITIES — 5 value blocks
+const capabilities = [
+  {
+    icon: "🚨",
+    title: "Spot Revenue At Risk Before It Disappears",
+    color: "border-t-v6-copper",
+    points: [
+      "Alert teams before renewal deadlines",
+      "Surface contracts that need attention",
+      "Flag at-risk renewals",
+      "Identify ownerless accounts before revenue is missed",
+    ],
+  },
+  {
+    icon: "⚡",
+    title: "Turn Customer History Into Better Decisions. Fast.",
+    color: "border-t-v6-blue",
+    points: [
+      "Quick summary of customer history so your sales team can hit the ground running",
+      "Surface issues, risks, and opportunities before they become renewal objections",
+      "Highlight key contract changes, renewal history, and customer milestones",
+      "Give teams the context they need in seconds — not after digging through multiple records",
+    ],
+  },
+  {
+    icon: "⚙️",
+    title: "Let Business Rules Make Routine, Boring Decisions",
+    color: "border-t-v6-teal",
+    points: [
+      "Determine which products should renew",
+      "Apply pricing escalations automatically",
+      "Handle renewal notice periods",
+      "Follow customer-specific renewal rules consistently",
+    ],
+  },
+  {
+    icon: "📈",
+    title: "Surface Growth Opportunities Hidden In Your Customer Base",
+    color: "border-t-v6-amber",
+    points: [
+      "Identify customers that deserve an expansion conversation before renewal",
+      "Surface growth signals — new locations, business units, contract changes, expansion requests",
+      "Prioritize high-touch renewals and expansion candidates",
+      "Give sales teams time to act before the renewal window closes",
+    ],
+  },
+  {
+    icon: "🧮",
+    title: "Keep Reporting Clean As You Scale",
+    color: "border-t-v6-blue",
+    points: [
+      "Attribute renewal revenue correctly",
+      "Separate renewal and expansion revenue",
+      "Handle commission allocation accurately",
+      "Improve reporting and forecast accuracy",
+    ],
+  },
+];
+
+// Revenue intelligence signals surfaced automatically
+const signals = ["At Risk", "High Touch", "Expansion Candidate", "Ownerless", "Notice Period", "Pricing Escalation"];
+
+// TESTIMONIALS
+const testimonials = [
+  {
+    quote: "Working with Siva has been transformative for our team. He quickly grasped our complex workflows and immediately began identifying optimization opportunities. What sets him apart is how he functions as a true extension of our team, handling both technical implementation and strategic guidance. This partnership has freed our internal team to focus on high-level initiatives while maintaining confidence that execution will be exceptional.",
+    initials: "RO",
+    role: "Revenue Operations Lead",
+    context: "Mid-Market B2B",
+  },
+  {
+    quote: "Sharmi helped our team do the foundational work that launched our ABM strategy. She took unstructured goals and, by applying her customer-focused insight and technical know-how, turned them into specific solutions that optimized our entire enrichment project in HubSpot. She's fast, dependable, and brings a curiosity mindset that makes her work exceed expectations.",
+    initials: "MO",
+    role: "Marketing Operations Lead",
+    context: "B2B SaaS",
+  },
+];
+
+// FINAL CTA — what the audit reveals
+const auditOutcomes = [
+  "How renewals are managed today",
+  "Where manual work exists",
+  "Which business rules are driving complexity",
+  "What visibility leadership is missing",
+  "Where expansion opportunities may be hiding",
+  "Which data issues are preventing reliable automation",
+];
+---
+
+<Layout title={title} description={description}>
+  <StructuredData
+    type="service"
+    data={{
+      name: "Renewal Operations for HubSpot",
+      description: description,
+      serviceType: "Renewal Operations & Revenue Automation Consulting",
+      url: "https://swotbee.com/renewal-operations",
+    }}
+  />
+  <StructuredData
+    type="breadcrumb"
+    data={{ breadcrumbs: [
+      { name: "Home", url: "https://swotbee.com" },
+      { name: "Renewal Operations", url: "https://swotbee.com/renewal-operations" },
+    ]}}
+  />
+
+  <Navbar />
+
+  <!-- ============ HERO ============ -->
+  <section class="bg-gradient-to-b from-v6-bg to-white px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20 pb-10 sm:pb-14">
+    <div class="max-w-3xl mx-auto text-center">
+      <div class="flex flex-wrap justify-center gap-3 mb-6">
+        <span class="bg-v6-teal-50 text-v6-teal text-xs font-semibold px-3 py-1 rounded-full">HubSpot Solutions Partner</span>
+        <span class="bg-v6-copper-50 text-v6-copper text-xs font-semibold px-3 py-1 rounded-full">Renewal Operations</span>
+      </div>
+      <p class="text-xs font-semibold uppercase tracking-[0.2em] text-v6-copper mb-3">Eyebrow text</p>
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-v6-dark leading-tight mb-5 text-balance">
+        How Much Revenue Is Hiding In Your <span class="text-v6-copper">Renewal Spreadsheet</span>?
+      </h1>
+      <p class="text-base sm:text-lg text-v6-text-muted max-w-xl mx-auto mb-4 leading-relaxed">
+        Your next growth bottleneck may not be pipeline generation. It may be everything that happens after Closed Won.
+      </p>
+      <p class="text-sm sm:text-base text-v6-text-muted max-w-xl mx-auto mb-8 leading-relaxed">
+        Automatically create renewal opportunities, uncover expansion revenue, and give leadership the visibility needed to forecast confidently.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center mb-4">
+        <a href="/contactus" class="bg-v6-copper text-white px-8 py-3.5 rounded-xl text-base font-semibold hover:bg-v6-copper-600 transition-colors text-center">
+          Book Your Free Renewal Audit →
+        </a>
+        <a href="#how-it-works" class="border border-gray-300 text-v6-dark px-8 py-3.5 rounded-xl text-base font-medium hover:bg-gray-50 transition-colors text-center">
+          See How It Works ↓
+        </a>
+      </div>
+      <p class="text-xs text-gray-500">Works with the HubSpot your team already uses. Minimal process changes.</p>
+    </div>
+  </section>
+
+
+  <!-- ============ TRUST BAR ============ -->
+  <section class="bg-white border-y border-v6-border py-4 px-4">
+    <div class="max-w-4xl mx-auto flex flex-wrap justify-center gap-8 items-center">
+      <span class="text-xs text-gray-500 font-medium uppercase tracking-wider">Trusted by</span>
+      {clientLogos.map(name => (
+        <span class="text-sm text-v6-text-muted font-semibold opacity-50">{name}</span>
+      ))}
+    </div>
+  </section>
+
+
+  <!-- ============ AGITATION ============ -->
+  <section class="bg-v6-bg py-14 sm:py-18 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-xs font-semibold uppercase tracking-[0.2em] text-v6-copper mb-3 text-center">Eyebrow text</p>
+      <h2 class="text-2xl sm:text-3xl font-bold text-v6-dark mb-3 text-center text-balance">
+        The Process That Works At 200 Renewals Rarely Works At 2,000.
+      </h2>
+      <p class="text-v6-text-muted text-center mb-10 max-w-lg mx-auto">As renewal volume grows, four things quietly start to break.</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+        {breaks.map(b => (
+          <div class="bg-white rounded-xl p-6 border border-v6-border">
+            <div class={`w-11 h-11 rounded-lg ${b.bg} flex items-center justify-center ${b.color} text-xl mb-4`}>{b.icon}</div>
+            <h3 class="text-base font-semibold text-v6-dark mb-1.5">{b.title}</h3>
+            <p class="text-sm text-v6-text-muted leading-relaxed">{b.desc}</p>
+          </div>
+        ))}
+      </div>
+      <blockquote class="mt-10 max-w-2xl mx-auto text-center">
+        <p class="text-lg sm:text-xl text-v6-dark italic leading-relaxed">
+          “What started as a few manual workarounds quietly becomes the operating system for your renewal business.”
+        </p>
+      </blockquote>
+    </div>
+  </section>
+
+
+  <!-- ============ ROOT CAUSE ============ -->
+  <section class="bg-white py-14 sm:py-18 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-xs font-semibold uppercase tracking-[0.2em] text-v6-copper mb-3 text-center">Eyebrow text</p>
+      <h2 class="text-2xl sm:text-3xl font-bold text-v6-dark mb-3 text-center text-balance">
+        Every Renewal Looks Simple. Until You Have To Do It At Scale.
+      </h2>
+      <p class="text-v6-text-muted text-center mb-3 max-w-2xl mx-auto">
+        One renewal is easy. Thousands of renewals expose every exception in your business.
+      </p>
+      <p class="text-v6-text-muted text-center mb-10 max-w-2xl mx-auto text-sm">
+        Multi-year contracts. Product bundles. Pricing escalations. Notice periods. Every company has its own renewal rules.
+      </p>
+
+      <!-- Comparison: It Looks Like vs What Needs Deciding -->
+      <div class="rounded-2xl border border-v6-border overflow-hidden">
+        <div class="hidden sm:grid grid-cols-2 bg-v6-bg border-b border-v6-border">
+          <div class="px-6 py-3 text-xs font-semibold uppercase tracking-wider text-v6-text-muted">It Looks Like</div>
+          <div class="px-6 py-3 text-xs font-semibold uppercase tracking-wider text-v6-copper border-l border-v6-border">What Actually Needs To Be Decided</div>
+        </div>
+        {decisions.map((d, i) => (
+          <div class={`grid grid-cols-1 sm:grid-cols-2 ${i !== decisions.length - 1 ? 'border-b border-v6-border' : ''}`}>
+            <div class="px-6 py-4 flex items-center gap-3 bg-white">
+              <span class="text-v6-text-muted text-sm flex-shrink-0">✓</span>
+              <span class="text-sm text-v6-text-muted">{d.simple}</span>
+            </div>
+            <div class="px-6 py-4 flex items-start gap-3 bg-v6-copper-50/40 sm:border-l border-v6-border">
+              <span class="text-v6-copper text-sm flex-shrink-0 mt-0.5">→</span>
+              <span class="text-sm font-medium text-v6-dark">{d.decision}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- Key Insight -->
+      <div class="mt-10 max-w-2xl mx-auto bg-v6-dark rounded-2xl p-8 text-center">
+        <p class="text-xs font-semibold uppercase tracking-wider text-v6-copper-300 mb-3">Key Insight</p>
+        <p class="text-lg sm:text-xl text-white leading-relaxed mb-2">
+          The challenge isn't creating a renewal. It's making thousands of revenue decisions consistently.
+        </p>
+        <p class="text-sm text-gray-300">Every product. Every contract. Every customer. Every time.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============ SOLUTION ============ -->
+  <section id="how-it-works" class="bg-v6-bg py-14 sm:py-18 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-xs font-semibold uppercase tracking-[0.2em] text-v6-copper mb-3 text-center">Eyebrow text</p>
+      <h2 class="text-2xl sm:text-3xl font-bold text-v6-dark mb-3 text-center text-balance">
+        What If Every Renewal Followed The Right Rules — Automatically?
+      </h2>
+      <p class="text-v6-text-muted text-center mb-10 max-w-2xl mx-auto">
+        We design and automate the business rules that drive renewals, expansion revenue, and forecast visibility. Every renewal. Every expansion. Every revenue decision — handled consistently.
+      </p>
+
+      <!-- Flow visual: the black hole after Closed Won vs. the full revenue engine -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Without -->
+        <div class="bg-white rounded-xl p-6 border border-v6-border">
+          <p class="text-xs font-semibold uppercase tracking-wider text-v6-text-muted opacity-70 mb-5">Most companies today</p>
+          <div class="flex flex-col gap-3">
+            <div class="rounded-lg bg-v6-teal-50 text-v6-teal text-sm font-semibold px-4 py-3 text-center">Closed Won</div>
+            <div class="text-center text-v6-text-muted opacity-40 text-lg leading-none">↓</div>
+            <div class="rounded-lg border border-dashed border-gray-300 bg-gray-50 text-gray-400 text-sm font-semibold px-4 py-3 text-center tracking-widest">? ? ?</div>
+            <div class="text-center text-v6-text-muted opacity-40 text-lg leading-none">↓</div>
+            <div class="rounded-lg bg-gray-100 text-v6-text-muted text-sm font-semibold px-4 py-3 text-center">Forecast Meeting</div>
+          </div>
+          <p class="text-xs text-v6-text-muted opacity-70 mt-5 text-center">A black hole after Closed Won. No visibility, no tracked renewals.</p>
+        </div>
+        <!-- With -->
+        <div class="bg-white rounded-xl p-6 border-2 border-v6-teal-200 shadow-sm">
+          <p class="text-xs font-semibold uppercase tracking-wider text-v6-teal mb-5">With Renewal Operations ⚡</p>
+          <div class="flex flex-col gap-2.5">
+            <div class="rounded-lg bg-v6-teal-50 text-v6-teal text-sm font-semibold px-4 py-3 text-center">Closed Won</div>
+            <div class="text-center text-v6-teal opacity-50 text-lg leading-none">↓</div>
+            <div class="rounded-lg bg-v6-blue-50 text-v6-blue text-sm font-semibold px-4 py-3 text-center">Renewal Pipeline</div>
+            <div class="text-center text-v6-teal opacity-50 text-lg leading-none">↓</div>
+            <div class="rounded-lg bg-v6-copper-50 text-v6-copper text-sm font-semibold px-4 py-3 text-center">Expansion Pipeline</div>
+            <div class="text-center text-v6-teal opacity-50 text-lg leading-none">↓</div>
+            <div class="rounded-lg bg-v6-dark text-white text-sm font-semibold px-4 py-3 text-center">Confident Forecast</div>
+          </div>
+          <p class="text-xs text-v6-text-muted mt-5 text-center">Every deal flows into renewal, expansion, and forecast — automatically.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============ CAPABILITIES ============ -->
+  <section class="bg-white py-14 sm:py-18 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-5xl mx-auto">
+      <p class="text-xs font-semibold uppercase tracking-[0.2em] text-v6-copper mb-3 text-center">Eyebrow text</p>
+      <h2 class="text-2xl sm:text-3xl font-bold text-v6-dark mb-3 text-center text-balance">
+        What If Every Renewal Made Your Revenue Engine Smarter?
+      </h2>
+      <p class="text-v6-text-muted text-center mb-8 max-w-lg mx-auto">
+        A revenue intelligence layer that surfaces the right signal at the right moment.
+      </p>
+
+      <!-- Signal pills -->
+      <div class="flex flex-wrap justify-center gap-2.5 mb-12">
+        {signals.map(s => (
+          <span class="bg-v6-bg border border-v6-border text-v6-dark text-xs sm:text-sm font-medium px-3.5 py-1.5 rounded-full">
+            <span class="text-v6-copper mr-1.5">●</span>{s}
+          </span>
+        ))}
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {capabilities.map(c => (
+          <div class={`bg-v6-bg rounded-xl p-6 border border-v6-border border-t-4 ${c.color} hover:shadow-lg transition-shadow`}>
+            <div class="text-2xl mb-3">{c.icon}</div>
+            <h3 class="text-base font-semibold text-v6-dark mb-4 leading-snug">{c.title}</h3>
+            <ul class="space-y-2.5">
+              {c.points.map(p => (
+                <li class="flex gap-2.5 text-sm text-v6-text-muted leading-relaxed">
+                  <span class="text-v6-teal flex-shrink-0 mt-0.5">✓</span>
+                  <span>{p}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============ TESTIMONIALS ============ -->
+  <section class="bg-v6-bg py-14 sm:py-18 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-xs font-semibold uppercase tracking-[0.2em] text-v6-copper mb-3 text-center">Eyebrow text</p>
+      <h2 class="text-2xl sm:text-3xl font-bold text-v6-dark mb-3 text-center text-balance">
+        Every Renewal Process Is Different. That's Why We Don't Start With Software.
+      </h2>
+      <p class="text-v6-text-muted text-center mb-10 max-w-lg mx-auto">We start with your process, data, and business rules — then automate what's ready.</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {testimonials.map(t => (
+          <div class="bg-white rounded-xl p-7 border border-v6-border flex flex-col">
+            <div class="text-v6-copper text-3xl leading-none mb-3">“</div>
+            <blockquote class="text-sm sm:text-base text-v6-dark leading-relaxed mb-6 flex-grow">{t.quote}</blockquote>
+            <div class="flex items-center gap-3 pt-4 border-t border-v6-border">
+              <div class="w-10 h-10 rounded-full bg-v6-teal-100 flex items-center justify-center text-v6-teal font-bold text-sm flex-shrink-0">{t.initials}</div>
+              <div>
+                <p class="text-sm font-semibold text-v6-dark">{t.role}</p>
+                <p class="text-xs text-v6-text-muted">{t.context}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============ AUDIT CHECKLIST ============ -->
+  <section class="bg-white py-14 sm:py-18 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl mx-auto">
+      <p class="text-xs font-semibold uppercase tracking-[0.2em] text-v6-copper mb-3 text-center">Eyebrow text</p>
+      <h2 class="text-2xl sm:text-3xl font-bold text-v6-dark mb-3 text-center text-balance">
+        Wondering How Much Revenue Is Hiding In Your Renewal Process?
+      </h2>
+      <p class="text-v6-text-muted text-center mb-10 max-w-lg mx-auto">
+        Get a free renewal audit and leave with a clearer picture of:
+      </p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
+        {auditOutcomes.map(item => (
+          <div class="flex gap-3 items-start bg-v6-bg rounded-lg p-4 border border-v6-border">
+            <span class="text-v6-teal text-lg flex-shrink-0 mt-0.5">✓</span>
+            <p class="text-sm text-v6-dark leading-relaxed">{item}</p>
+          </div>
+        ))}
+      </div>
+      <p class="text-sm text-v6-text-muted text-center max-w-2xl mx-auto leading-relaxed">
+        We start by understanding your process, data, and business rules. Most companies don't have perfect CRM data — that's part of the reason we begin with an audit.
+      </p>
+    </div>
+  </section>
+
+
+  <!-- ============ FINAL CTA ============ -->
+  <section class="bg-gradient-to-br from-v6-copper to-v6-copper-600 py-16 sm:py-20 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-2xl mx-auto text-center">
+      <p class="text-xs font-semibold uppercase tracking-[0.2em] text-white/70 mb-3">Eyebrow text</p>
+      <h2 class="text-2xl sm:text-3xl font-bold text-white mb-4">Let's Find Out.</h2>
+      <p class="text-v6-copper-50 text-base sm:text-lg mb-8">
+        Book your free renewal audit. No commitment, no sales pitch — just an honest look at the revenue hiding in your renewal process.
+      </p>
+      <a href="/contactus" class="bg-white text-v6-copper px-8 py-3.5 rounded-xl text-base font-semibold hover:bg-gray-50 transition-colors inline-block">
+        Book Your Free Renewal Audit →
+      </a>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
