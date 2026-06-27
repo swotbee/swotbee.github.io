@@ -41,7 +41,7 @@ Most Shopify stores over-invest in acquisition and under-invest in retention, wh
 
 ## How to Measure Customer Retention on Shopify
 
-![The Shopify repeat-purchase retention loop](/assets/posts/diagrams/shopify-retention-loop.svg)
+<img src="/assets/posts/diagrams/shopify-retention-loop.svg" alt="The Shopify repeat-purchase retention loop" width="800" height="275" loading="lazy" decoding="async" />
 
 The key Shopify retention metrics:
 

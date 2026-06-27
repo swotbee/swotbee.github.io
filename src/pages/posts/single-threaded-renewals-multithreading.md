@@ -38,7 +38,7 @@ The data is blunt: relying on one point of contact is the most common reason hea
 
 ## What Is Multi-Threading in Sales?
 
-![Multi-threading map of economic buyer, champion, influencers and blocker](/assets/posts/diagrams/stakeholder-map.svg)
+<img src="/assets/posts/diagrams/stakeholder-map.svg" alt="Multi-threading map of economic buyer, champion, influencers and blocker" width="640" height="230" loading="lazy" decoding="async" />
 
 Multi-threading in sales means engaging multiple decision-makers and influencers within an account rather than working through a single point of contact. A multi-threaded sales approach maps the full buying group, the economic buyer, influencers, end users, and potential blockers, and builds a relationship with each.
 

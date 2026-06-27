@@ -35,7 +35,7 @@ Most SaaS companies track renewal numbers that quietly lie to them. A healthy-lo
 
 ## What Are SaaS Renewal Metrics?
 
-![The core renewal metrics: renewal rate, GRR, NRR, churn rate and LTV:CAC](/assets/posts/diagrams/renewal-metrics-overview.svg)
+<img src="/assets/posts/diagrams/renewal-metrics-overview.svg" alt="The core renewal metrics: renewal rate, GRR, NRR, churn rate and LTV:CAC" width="640" height="190" loading="lazy" decoding="async" />
 
 Renewal metrics measure how well a subscription business keeps and grows its existing customers. They answer three questions: how many customers (and how much revenue) renew, how much you expand or lose, and how predictable that is. Together with churn and retention metrics, they are the core SaaS KPIs every customer success team and RevOps leader reports on.
 

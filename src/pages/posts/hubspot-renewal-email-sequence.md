@@ -38,7 +38,7 @@ Renewal outreach lives or dies on timing and tone. Send too late and you are fir
 
 ## Sequences vs Workflows vs Marketing Emails for Renewals
 
-![A 90/60/30/7-day renewal email sequence](/assets/posts/diagrams/email-cadence.svg)
+<img src="/assets/posts/diagrams/email-cadence.svg" alt="A 90/60/30/7-day renewal email sequence" width="640" height="165" loading="lazy" decoding="async" />
 
 This is the question almost every team gets stuck on, so let's settle it. HubSpot has three ways to send email, and they are not interchangeable:
 

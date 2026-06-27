@@ -38,7 +38,7 @@ Most "check-ins" are wasted on demos no executive attends. A strategic business 
 
 ## EBR vs QBR: What's the Difference?
 
-![Executive business review agenda](/assets/posts/diagrams/qbr-agenda.svg)
+<img src="/assets/posts/diagrams/qbr-agenda.svg" alt="Executive business review agenda" width="640" height="261" loading="lazy" decoding="async" />
 
 They overlap, but the audience and altitude differ:
 

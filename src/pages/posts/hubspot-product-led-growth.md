@@ -43,7 +43,7 @@ PLG differs from sales-led and marketing-led growth in where the work happens. S
 
 ## How Does HubSpot Support a Product-Led Growth Strategy?
 
-![Product-led growth funnel: signup to product-qualified lead to paying customer](/assets/posts/diagrams/hubspot-plg-funnel.svg)
+<img src="/assets/posts/diagrams/hubspot-plg-funnel.svg" alt="Product-led growth funnel: signup to product-qualified lead to paying customer" width="800" height="290" loading="lazy" decoding="async" />
 
 HubSpot supports PLG by turning product behavior into CRM signals you can act on. The key capabilities:
 

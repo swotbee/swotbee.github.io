@@ -40,7 +40,7 @@ Whether a subscription renews automatically or you handle each renewal as a deal
 
 ## What Is Co-Terming (and Its Benefits)?
 
-![Aligning multiple contracts onto one renewal date](/assets/posts/diagrams/coterm-alignment.svg)
+<img src="/assets/posts/diagrams/coterm-alignment.svg" alt="Aligning multiple contracts onto one renewal date" width="640" height="165" loading="lazy" decoding="async" />
 
 Co-terming (short for co-termination) sets multiple line items or subscriptions to expire on the same date. Instead of a mid-term add-on creating a new, separate renewal, the add-on is aligned to the existing contract end date.
 

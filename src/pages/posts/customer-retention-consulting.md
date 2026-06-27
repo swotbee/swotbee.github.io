@@ -37,7 +37,7 @@ For the underlying playbook, start with our [B2B customer retention guide](/post
 
 ## What Does a Customer Retention Consultant Do?
 
-![A customer retention consulting engagement: audit, roadmap, build, measure, handover](/assets/posts/diagrams/retention-consulting-process.svg)
+<img src="/assets/posts/diagrams/retention-consulting-process.svg" alt="A customer retention consulting engagement: audit, roadmap, build, measure, handover" width="800" height="270" loading="lazy" decoding="async" />
 
 A customer retention consultant turns a vague "we have a churn problem" into a concrete plan and a working system. The work usually spans four areas:
 

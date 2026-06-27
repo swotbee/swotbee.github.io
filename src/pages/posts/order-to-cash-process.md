@@ -45,7 +45,7 @@ A simple way to explain the order-to-cash cycle: the moment a customer decides t
 
 ## The Steps in the Order-to-Cash Process
 
-![The order-to-cash process steps from order to payment](/assets/posts/diagrams/order-to-cash-steps.svg)
+<img src="/assets/posts/diagrams/order-to-cash-steps.svg" alt="The order-to-cash process steps from order to payment" width="800" height="230" loading="lazy" decoding="async" />
 
 The order-to-cash process steps are:
 

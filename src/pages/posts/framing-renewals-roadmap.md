@@ -38,7 +38,7 @@ A backward-looking renewal invites scrutiny; a forward-looking one invites commi
 
 ## What Is a Renewal Conversation?
 
-![Framing renewals around the next 12 months](/assets/posts/diagrams/forward-framing.svg)
+<img src="/assets/posts/diagrams/forward-framing.svg" alt="Framing renewals around the next 12 months" width="640" height="180" loading="lazy" decoding="async" />
 
 A renewal conversation is the discussion (or series of discussions) where a customer decides whether to renew. It is not a single call at the renewal date; the strongest renewal conversations start 60 to 90 days ahead and build on the value proven all year.
 

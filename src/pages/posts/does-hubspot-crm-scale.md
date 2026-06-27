@@ -49,7 +49,7 @@ The CRM capabilities that carry you as the company grows are the everyday ones: 
 
 ## The Honest Scaling Ceiling
 
-![HubSpot higher floor, Salesforce higher ceiling: the scaling curve](/assets/posts/diagrams/hubspot-scaling-ceiling.svg)
+<img src="/assets/posts/diagrams/hubspot-scaling-ceiling.svg" alt="HubSpot higher floor, Salesforce higher ceiling: the scaling curve" width="800" height="350" loading="lazy" decoding="async" />
 
 Every vendor-neutral practitioner cites the same soft ceiling: HubSpot scales well up to about 300 to 400 active sales users, and beyond that you begin hitting architectural limitations. That does not mean HubSpot fails at enterprise scale, only that very large or very complex sales organizations eventually find the customizations they need are easier on a higher-ceiling platform.
 

@@ -38,7 +38,7 @@ To see how the two platforms work together once you have chosen, return to our [
 
 ## Assessing Core Capabilities: NetSuite CRM vs HubSpot
 
-![Capability matrix comparing HubSpot and NetSuite CRM](/assets/posts/diagrams/netsuite-crm-vs-hubspot-matrix.svg)
+<img src="/assets/posts/diagrams/netsuite-crm-vs-hubspot-matrix.svg" alt="Capability matrix comparing HubSpot and NetSuite CRM" width="800" height="360" loading="lazy" decoding="async" />
 
 The first thing to understand is that NetSuite CRM and HubSpot are not the same kind of CRM system. HubSpot is a dedicated customer relationship management and marketing platform; HubSpot CRM is the product. NetSuite CRM is one module of Oracle NetSuite, sitting beside finance, inventory, and order management in a single ERP. Both are popular CRM choices in the mid-market, but they package CRM functionalities very differently: HubSpot is a CRM platform first, while NetSuite CRM offers CRM capabilities as an extension of the ERP. The differences between NetSuite CRM and HubSpot come down to what your CRM needs are.
 

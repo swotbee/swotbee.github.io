@@ -46,7 +46,7 @@ CSQLs sit at the intersection of customer success and sales: the CSM identifies 
 
 ## CSQL vs MQL vs PQL
 
-![CSQL handoff from customer success to sales](/assets/posts/diagrams/csql-handoff.svg)
+<img src="/assets/posts/diagrams/csql-handoff.svg" alt="CSQL handoff from customer success to sales" width="640" height="175" loading="lazy" decoding="async" />
 
 Different qualified leads come from different signals:
 

@@ -38,7 +38,7 @@ When ownership is fuzzy, renewals slip. The CSM assumes sales has it; the rep as
 
 ## CS vs Sales: Who Owns the Renewal?
 
-![Customer success to sales renewal handoff](/assets/posts/diagrams/cs-sales-handoff.svg)
+<img src="/assets/posts/diagrams/cs-sales-handoff.svg" alt="Customer success to sales renewal handoff" width="640" height="180" loading="lazy" decoding="async" />
 
 The difference between customer success and sales in the context of renewals comes down to the relationship versus the transaction.
 

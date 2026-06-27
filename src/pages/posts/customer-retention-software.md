@@ -45,7 +45,7 @@ The best customer retention software does three things well: it captures custome
 
 ## Types of Customer Retention Software
 
-![The customer retention software stack: CRM, success, feedback, analytics](/assets/posts/diagrams/retention-software-stack.svg)
+<img src="/assets/posts/diagrams/retention-software-stack.svg" alt="The customer retention software stack: CRM, success, feedback, analytics" width="800" height="330" loading="lazy" decoding="async" />
 
 There is no single category. Customer retention tools fall into several types, and most teams combine a few:
 

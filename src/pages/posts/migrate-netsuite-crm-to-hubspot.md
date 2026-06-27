@@ -37,7 +37,7 @@ Many teams reach this point after weighing the platforms in our [NetSuite CRM vs
 
 ## Preparing to Migrate NetSuite to HubSpot: The Pre Migration Audit
 
-![NetSuite to HubSpot migration sequence: audit, map, extract, dedupe, rebuild, validate](/assets/posts/diagrams/netsuite-migration-sequence.svg)
+<img src="/assets/posts/diagrams/netsuite-migration-sequence.svg" alt="NetSuite to HubSpot migration sequence: audit, map, extract, dedupe, rebuild, validate" width="800" height="320" loading="lazy" decoding="async" />
 
 Migration is mostly preparation. Before moving anything, audit what you have in NetSuite: a full field list per object, total record volume, data-quality issues (bad formats, special characters), and every active workflow and funnel stage. This audit is what makes the rest of the project predictable.
 

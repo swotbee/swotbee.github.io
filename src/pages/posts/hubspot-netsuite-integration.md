@@ -49,7 +49,7 @@ When the front office and back office do not share data, a sales rep quotes from
 
 ## The RevOps Decision Tree: Integrate, Migrate, or Maintain the Status Quo
 
-![Decision tree: integrate, migrate, or maintain HubSpot and NetSuite](/assets/posts/diagrams/netsuite-decision-tree.svg)
+<img src="/assets/posts/diagrams/netsuite-decision-tree.svg" alt="Decision tree: integrate, migrate, or maintain HubSpot and NetSuite" width="800" height="360" loading="lazy" decoding="async" />
 
 Before any data sync, decide the strategy. There are three paths: **integrate** (keep both, connect them), **migrate** (move CRM work off NetSuite into HubSpot), or **maintain** the status quo.
 
@@ -65,7 +65,7 @@ Signs you have outgrown the current setup: reps live in spreadsheets because Net
 
 ## Architecting the Data Sync: Object Mapping and Source of Truth
 
-![Object mapping between HubSpot and NetSuite records](/assets/posts/diagrams/netsuite-object-mapping.svg)
+<img src="/assets/posts/diagrams/netsuite-object-mapping.svg" alt="Object mapping between HubSpot and NetSuite records" width="800" height="360" loading="lazy" decoding="async" />
 
 The heart of any integration is object mapping: deciding which HubSpot record maps to which NetSuite record, and in which direction each field flows. Get this layer wrong and you get silent errors, duplicates, and broken workflows, which is why we devote a whole guide to the [HubSpot NetSuite data mapping pitfalls](/posts/hubspot-netsuite-data-mapping).
 

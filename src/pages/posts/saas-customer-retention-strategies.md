@@ -43,7 +43,7 @@ In SaaS, you earn the customer's revenue every month, not once. That makes reten
 
 ## How to Measure SaaS Customer Retention
 
-![SaaS retention strategy across the customer lifecycle](/assets/posts/diagrams/saas-retention-timeline.svg)
+<img src="/assets/posts/diagrams/saas-retention-timeline.svg" alt="SaaS retention strategy across the customer lifecycle" width="800" height="270" loading="lazy" decoding="async" />
 
 You measure SaaS retention with a few complementary metrics:
 

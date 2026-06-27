@@ -70,7 +70,7 @@ Dropdown and picklist values must match on both sides or the sync rejects the re
 
 With mappings in place, build the workflows that do the real work. The headline RevOps automation is turning a won deal into revenue without re-entry.
 
-![Closed-won deal to NetSuite sales order workflow](/assets/posts/diagrams/netsuite-deal-to-sales-order.svg)
+<img src="/assets/posts/diagrams/netsuite-deal-to-sales-order.svg" alt="Closed-won deal to NetSuite sales order workflow" width="800" height="300" loading="lazy" decoding="async" />
 
 ### Triggering Sales Orders from Closed Won Deals
 

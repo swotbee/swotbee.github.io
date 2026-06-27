@@ -37,7 +37,7 @@ For the bigger picture, start with our [B2B customer retention guide](/posts/b2b
 
 ## How Does CRM Help With Customer Retention?
 
-![The CRM customer retention loop: capture, score, act, retain](/assets/posts/diagrams/crm-retention-loop.svg)
+<img src="/assets/posts/diagrams/crm-retention-loop.svg" alt="The CRM customer retention loop: capture, score, act, retain" width="800" height="300" loading="lazy" decoding="async" />
 
 A CRM helps with customer retention in four ways:
 

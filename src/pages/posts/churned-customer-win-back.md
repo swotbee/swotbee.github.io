@@ -38,7 +38,7 @@ Most teams write off canceled customers. The smart ones run a win-back motion. T
 
 ## What Is a Customer Win-Back Strategy?
 
-![Win-back pipeline from churned to reactivated](/assets/posts/diagrams/winback-funnel.svg)
+<img src="/assets/posts/diagrams/winback-funnel.svg" alt="Win-back pipeline from churned to reactivated" width="640" height="160" loading="lazy" decoding="async" />
 
 A customer win-back strategy is a plan to re-engage customers who have churned and convince them to return. It treats lapsed customers as their own pipeline with its own messaging, offers, and cadence, separate from new-customer acquisition and ongoing retention.
 

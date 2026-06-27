@@ -72,7 +72,7 @@ The jump from Starter (~$20 per seat in real-world bundles) to Professional (~$1
 
 ## HubSpot Total Cost of Ownership at Scale
 
-![HubSpot total cost of ownership: headline price versus real cost at scale](/assets/posts/diagrams/hubspot-tco-stack.svg)
+<img src="/assets/posts/diagrams/hubspot-tco-stack.svg" alt="HubSpot total cost of ownership: headline price versus real cost at scale" width="800" height="360" loading="lazy" decoding="async" />
 
 The gap between expectation and reality is the whole story:
 

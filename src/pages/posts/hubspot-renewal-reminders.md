@@ -38,7 +38,7 @@ Most teams do not lose renewals because the customer was unhappy. They lose them
 
 ## Why Renewal Dates Get Missed
 
-![Renewal reminder cadence at 90, 60 and 30 days](/assets/posts/diagrams/reminder-cadence.svg)
+<img src="/assets/posts/diagrams/reminder-cadence.svg" alt="Renewal reminder cadence at 90, 60 and 30 days" width="640" height="165" loading="lazy" decoding="async" />
 
 When renewal dates live in a spreadsheet, an inbox, or someone's memory, they slip. The expiration date arrives, the account manager is heads-down on new business, and the renewal becomes a fire drill (and one of the most avoidable churn risks you will ever face).
 

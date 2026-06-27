@@ -46,7 +46,7 @@ Why it matters for a subscription business: a blended retention number mixes a l
 
 ## Why Blended Churn Hides the Truth
 
-![A healthy blended retention curve hiding a fast-churning new cohort](/assets/posts/diagrams/cohort-retention-curve.svg)
+<img src="/assets/posts/diagrams/cohort-retention-curve.svg" alt="A healthy blended retention curve hiding a fast-churning new cohort" width="640" height="250" loading="lazy" decoding="async" />
 
 Imagine a SaaS company with 1,000 customers and 2% monthly churn. Healthy, right? Now split by acquisition cohort: customers acquired through referrals churn at 1%, while a new paid-acquisition channel brings customers who churn at 8%. The blended 2% hides a cohort that is bleeding.
 

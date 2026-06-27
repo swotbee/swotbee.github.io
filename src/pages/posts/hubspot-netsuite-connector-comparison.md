@@ -40,7 +40,7 @@ For the foundational concepts, start with our [HubSpot NetSuite integration pill
 
 Before comparing tools, score your own requirements: how many records sync per day, whether you run one NetSuite subsidiary or many, whether you use custom records and complex line items, and how much conditional logic you need. Those four factors decide the connector more than price does. A team with standard objects and one subsidiary has very different needs from a OneWorld manufacturer syncing tens of thousands of products.
 
-![HubSpot NetSuite connector comparison by data volume and complexity](/assets/posts/diagrams/netsuite-connector-comparison.svg)
+<img src="/assets/posts/diagrams/netsuite-connector-comparison.svg" alt="HubSpot NetSuite connector comparison by data volume and complexity" width="800" height="360" loading="lazy" decoding="async" />
 
 Whatever you choose, the job is the same: keep a clean data flow between HubSpot and NetSuite. A good connector gives you bi-directional, real-time sync for the records that need it (a new HubSpot contact, a deal record, customer data), and reliable batch sync for the rest. It should connect HubSpot and NetSuite so a deal can create a sales order in NetSuite, sync NetSuite customers and records back into HubSpot, and automate the data sync in both directions (HubSpot to NetSuite and NetSuite to HubSpot). Map your core use cases first, then judge each connector, or a custom integration, on how well it supports the data between HubSpot and NetSuite, plus the error handling and monitoring it brings.
 

@@ -43,7 +43,7 @@ The reason to integrate HubSpot and NetSuite is simple: the same customer, deal,
 
 ## What Data Can Be Synced Between HubSpot and NetSuite?
 
-![What data syncs between HubSpot and NetSuite](/assets/posts/diagrams/hubspot-netsuite-sync-map.svg)
+<img src="/assets/posts/diagrams/hubspot-netsuite-sync-map.svg" alt="What data syncs between HubSpot and NetSuite" width="800" height="320" loading="lazy" decoding="async" />
 
 The core records that sync between HubSpot and NetSuite:
 

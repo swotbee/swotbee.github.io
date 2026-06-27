@@ -39,7 +39,7 @@ The Growth Suite was HubSpot's all-in-one bundle, sold from 2018, that combined 
 
 ### The Naming Lineage
 
-![HubSpot product naming lineage from Growth Stack to Customer Platform](/assets/posts/diagrams/hubspot-naming-lineage.svg)
+<img src="/assets/posts/diagrams/hubspot-naming-lineage.svg" alt="HubSpot product naming lineage from Growth Stack to Customer Platform" width="800" height="290" loading="lazy" decoding="async" />
 
 The product lineage explains why so much stale content survives:
 

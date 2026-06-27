@@ -32,7 +32,7 @@ pillarUrl: "/posts/hubspot-netsuite-integration"
 
 **The most critical challenge in connecting HubSpot and NetSuite sits one layer below the integration tool itself: the two systems hold different data models and different opinions about how objects relate.** HubSpot is built for flexible relationship management, while NetSuite is a strict financial and operational database. Mapping data between them without careful planning routinely produces silent errors, duplicate records, and broken workflows. These seven pitfalls cause most failed integrations, and each one is avoidable once you know where to look. The common thread is the integration method matters less than how you map the fields in HubSpot to the fields in NetSuite, and which system owns each one.
 
-![Seven HubSpot NetSuite data mapping pitfalls](/assets/posts/diagrams/netsuite-data-mapping-pitfalls.svg)
+<img src="/assets/posts/diagrams/netsuite-data-mapping-pitfalls.svg" alt="Seven HubSpot NetSuite data mapping pitfalls" width="800" height="330" loading="lazy" decoding="async" />
 
 Field mapping is the foundation of any [HubSpot NetSuite integration](/posts/hubspot-netsuite-integration), and getting it wrong undermines every connector choice and workflow you build on top. Whether you integrate with the native NetSuite sync connector, Celigo, or a custom API integration, the data model decides whether the sync helps your sales and finance teams or quietly corrupts their customer data. Clean mapping across both systems is what gives you accurate data, a single source of truth, and the scalability to grow, while poor mapping causes the sync conflicts and bi-directional overwrites below.
 

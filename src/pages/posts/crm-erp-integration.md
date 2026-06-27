@@ -42,7 +42,7 @@ Without integration, the same customer, order, or invoice gets entered twice, on
 
 ## How Does CRM and ERP Integration Work?
 
-![How CRM and ERP integration connects front office and back office](/assets/posts/diagrams/crm-erp-integration-flow.svg)
+<img src="/assets/posts/diagrams/crm-erp-integration-flow.svg" alt="How CRM and ERP integration connects front office and back office" width="800" height="260" loading="lazy" decoding="async" />
 
 At a high level, an integration maps objects between the two systems and keeps them consistent. A CRM event (a won deal, a new account) triggers a create or update in the ERP; an ERP event (an invoice, a shipment, updated inventory levels) flows back to the CRM. The core mappings are usually:
 

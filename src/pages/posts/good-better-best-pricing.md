@@ -38,7 +38,7 @@ Three choices beat one. This guide explains what good-better-best is, why it wor
 
 ## What Is Good-Better-Best Pricing?
 
-![Good, better, best pricing tiers with the premium tier anchoring price](/assets/posts/diagrams/good-better-best-tiers.svg)
+<img src="/assets/posts/diagrams/good-better-best-tiers.svg" alt="Good, better, best pricing tiers with the premium tier anchoring price" width="640" height="260" loading="lazy" decoding="async" />
 
 Good-better-best is a tiered pricing approach with three options:
 

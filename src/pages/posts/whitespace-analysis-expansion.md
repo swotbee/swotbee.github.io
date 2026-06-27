@@ -38,7 +38,7 @@ You already have the accounts; whitespace analysis shows you the unsold opportun
 
 ## What Is Whitespace Analysis in Sales?
 
-![Whitespace grid of departments against products showing untapped cells](/assets/posts/diagrams/whitespace-grid.svg)
+<img src="/assets/posts/diagrams/whitespace-grid.svg" alt="Whitespace grid of departments against products showing untapped cells" width="640" height="225" loading="lazy" decoding="async" />
 
 Whitespace analysis (or white space analysis) is the practice of mapping what a customer currently owns against everything they could own, then identifying the gaps. The "white space" is the untapped area: products they don't use yet, departments not yet covered, or seats not yet sold.
 

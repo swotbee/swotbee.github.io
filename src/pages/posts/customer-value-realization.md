@@ -38,7 +38,7 @@ Adoption is a means; value realization is the end. This guide explains what valu
 
 ## What Is Customer Value Realization?
 
-![The value realization loop from define to expand](/assets/posts/diagrams/value-loop.svg)
+<img src="/assets/posts/diagrams/value-loop.svg" alt="The value realization loop from define to expand" width="640" height="155" loading="lazy" decoding="async" />
 
 Customer value realization is the stage in the customer lifecycle where the customer receives and recognizes the value your product promised. There are two halves, and both matter:
 

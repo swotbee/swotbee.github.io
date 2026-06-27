@@ -43,7 +43,7 @@ The math is simple. If you retain customers and grow them, new sales add to a st
 
 ## How to Measure B2B Customer Retention
 
-![The levers of B2B customer retention: onboarding, value, relationships, expansion](/assets/posts/diagrams/b2b-retention-levers.svg)
+<img src="/assets/posts/diagrams/b2b-retention-levers.svg" alt="The levers of B2B customer retention: onboarding, value, relationships, expansion" width="800" height="270" loading="lazy" decoding="async" />
 
 You cannot improve what you do not measure. The core metric is the customer retention rate: the percentage of customers (or revenue) you keep over a period.
 

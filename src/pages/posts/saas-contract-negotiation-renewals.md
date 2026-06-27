@@ -38,7 +38,7 @@ Procurement's job is to extract concessions; yours is to anchor on value. This g
 
 ## Why Renewal Negotiation Is Different
 
-![Renewal negotiation: what to hold and what to flex](/assets/posts/diagrams/negotiation-levers.svg)
+<img src="/assets/posts/diagrams/negotiation-levers.svg" alt="Renewal negotiation: what to hold and what to flex" width="640" height="225" loading="lazy" decoding="async" />
 
 A renewal negotiation is not a fresh sale. The customer is already using your product, which changes the dynamics:
 

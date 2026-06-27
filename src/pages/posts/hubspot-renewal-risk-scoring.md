@@ -40,7 +40,7 @@ Done well, this is one of the highest-leverage things you can build in HubSpot C
 
 ## What Is Renewal Risk Scoring?
 
-![Renewal health score bands from at risk to healthy](/assets/posts/diagrams/health-gauge.svg)
+<img src="/assets/posts/diagrams/health-gauge.svg" alt="Renewal health score bands from at risk to healthy" width="640" height="170" loading="lazy" decoding="async" />
 
 A customer health score is a single score that summarizes how healthy a customer relationship is. Renewal risk scoring is that health score viewed through one lens: how likely is this account to renew?
 

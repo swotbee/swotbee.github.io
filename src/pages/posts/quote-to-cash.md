@@ -43,7 +43,7 @@ Quote-to-cash, often abbreviated Q2C or QTC, is the full revenue lifecycle from 
 
 ## The Steps in the Quote-to-Cash Process
 
-![The quote-to-cash process from quote to payment](/assets/posts/diagrams/quote-to-cash-steps.svg)
+<img src="/assets/posts/diagrams/quote-to-cash-steps.svg" alt="The quote-to-cash process from quote to payment" width="800" height="230" loading="lazy" decoding="async" />
 
 A typical quote-to-cash process involves these steps:
 

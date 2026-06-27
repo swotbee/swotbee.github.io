@@ -38,7 +38,7 @@ If you acquire customers expensively and they churn early, you lose money on eve
 
 ## What Is the LTV to CAC Ratio?
 
-![LTV to CAC ratio with the 3 to 1 benchmark](/assets/posts/diagrams/ltv-cac-ratio.svg)
+<img src="/assets/posts/diagrams/ltv-cac-ratio.svg" alt="LTV to CAC ratio with the 3 to 1 benchmark" width="640" height="245" loading="lazy" decoding="async" />
 
 Two metrics, one relationship:
 

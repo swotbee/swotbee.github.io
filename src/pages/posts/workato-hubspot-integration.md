@@ -54,7 +54,7 @@ Native connectors win on simplicity and, for NetSuite, on API efficiency. Workat
 
 ### Managing Multiple Applications Simultaneously
 
-![Workato recipe architecture: one trigger fans out to many actions](/assets/posts/diagrams/netsuite-workato-recipe.svg)
+<img src="/assets/posts/diagrams/netsuite-workato-recipe.svg" alt="Workato recipe architecture: one trigger fans out to many actions" width="800" height="360" loading="lazy" decoding="async" />
 
 Workato shines when one event must fan out across many systems. A single trigger, when a NetSuite sales order ships, can update HubSpot, post to Slack, and create a task in a project tool at the same time, with conditional routing so the path changes by deal stage, amount, or region. A native HubSpot NetSuite connector cannot orchestrate beyond its two endpoints; Workato is built for exactly that.
 

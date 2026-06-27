@@ -35,7 +35,7 @@ pillarUrl: "/posts/does-hubspot-crm-scale"
 
 ## The HubSpot Growth Frameworks, Finally Mapped Together
 
-![HubSpot growth frameworks mapped: Four Fits, funnel, flywheel, Loop Marketing](/assets/posts/diagrams/hubspot-growth-frameworks.svg)
+<img src="/assets/posts/diagrams/hubspot-growth-frameworks.svg" alt="HubSpot growth frameworks mapped: Four Fits, funnel, flywheel, Loop Marketing" width="800" height="360" loading="lazy" decoding="async" />
 
 Most articles describe one framework and ignore how it relates to the others. Here is the hierarchy:
 

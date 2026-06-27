@@ -35,7 +35,7 @@ This pillar is about winning your customers' renewals, not managing your own Saa
 
 ## Why SaaS Renewals Are Won Early
 
-![The 365-day renewal timeline from onboarding to close](/assets/posts/diagrams/renewal-365-timeline.svg)
+<img src="/assets/posts/diagrams/renewal-365-timeline.svg" alt="The 365-day renewal timeline from onboarding to close" width="640" height="185" loading="lazy" decoding="async" />
 
 The single biggest mistake in renewal management is treating the renewal as an event at the renewal date rather than the outcome of the whole contract term. By the time the renewal window opens, the renewal decision is largely made: the customer has either realized value or they have not.
 

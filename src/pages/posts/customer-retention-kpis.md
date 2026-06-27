@@ -39,7 +39,7 @@ For the strategy behind the numbers, start with our [B2B customer retention guid
 
 ## The Core Customer Retention KPIs
 
-![Customer retention KPI dashboard: the metrics that matter together](/assets/posts/diagrams/retention-kpi-dashboard.svg)
+<img src="/assets/posts/diagrams/retention-kpi-dashboard.svg" alt="Customer retention KPI dashboard: the metrics that matter together" width="800" height="320" loading="lazy" decoding="async" />
 
 | KPI | What it measures | How to read it |
 |-----|------------------|----------------|

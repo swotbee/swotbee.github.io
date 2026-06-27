@@ -38,7 +38,7 @@ If you track only one revenue retention rate, you are missing half the story. GR
 
 ## GRR vs NRR: The Core Difference
 
-![GRR caps at 100% while NRR adds expansion and can exceed 100%](/assets/posts/diagrams/grr-vs-nrr.svg)
+<img src="/assets/posts/diagrams/grr-vs-nrr.svg" alt="GRR caps at 100% while NRR adds expansion and can exceed 100%" width="640" height="250" loading="lazy" decoding="async" />
 
 Both metrics measure the percentage of recurring revenue retained from your existing customer base over a period, but they treat expansion revenue differently:
 

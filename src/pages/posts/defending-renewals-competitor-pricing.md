@@ -38,7 +38,7 @@ Competitive price pressure is a test of nerve and preparation. This guide covers
 
 ## Why Panic-Discounting Fails
 
-![Competitive price reaction matrix](/assets/posts/diagrams/price-reaction-matrix.svg)
+<img src="/assets/posts/diagrams/price-reaction-matrix.svg" alt="Competitive price reaction matrix" width="640" height="220" loading="lazy" decoding="async" />
 
 Matching a competitor's lower price feels safe but is usually a mistake:
 

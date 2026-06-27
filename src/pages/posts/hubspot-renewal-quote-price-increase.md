@@ -38,7 +38,7 @@ A renewal quote is where revenue is won or lost. Get the renewal pricing, contra
 
 ## How to Create a Renewal Quote in HubSpot
 
-![Applying a standard renewal uplift to pricing](/assets/posts/diagrams/renewal-uplift.svg)
+<img src="/assets/posts/diagrams/renewal-uplift.svg" alt="Applying a standard renewal uplift to pricing" width="640" height="220" loading="lazy" decoding="async" />
 
 You build a renewal quote on the renewal deal in your renewal pipeline, so the quote, the deal, and the contract term all stay linked.
 

@@ -38,7 +38,7 @@ Contract value is a critical SaaS metric, but only if you keep TCV, ARR, and ACV
 
 ## TCV vs ARR vs ACV: The Difference
 
-![TCV vs ARR vs ACV for a three-year 300k dollar contract](/assets/posts/diagrams/tcv-arr-acv.svg)
+<img src="/assets/posts/diagrams/tcv-arr-acv.svg" alt="TCV vs ARR vs ACV for a three-year 300k dollar contract" width="640" height="250" loading="lazy" decoding="async" />
 
 Three metrics, three jobs:
 

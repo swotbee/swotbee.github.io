@@ -40,7 +40,7 @@ This deal pipeline setup is aimed at a B2B SaaS business with annual contracts, 
 
 ## Renewal Pipeline Stages (Copy This)
 
-![Renewal pipeline stage template from Active Contract to Closed Won](/assets/posts/diagrams/renewal-pipeline-stages.svg)
+<img src="/assets/posts/diagrams/renewal-pipeline-stages.svg" alt="Renewal pipeline stage template from Active Contract to Closed Won" width="640" height="180" loading="lazy" decoding="async" />
 
 Create a new pipeline in HubSpot called "Renewals" and add these deal stages. This is a proven B2B SaaS structure for annual contracts; for alternative models, see the [renewal pipeline stages guide](/posts/hubspot-renewal-pipeline-stages).
 

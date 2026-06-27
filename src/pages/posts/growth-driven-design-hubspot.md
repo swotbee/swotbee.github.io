@@ -54,7 +54,7 @@ Traditional web design front-loads everything and then leaves the site to age. G
 
 ## How Does Growth-Driven Design Work? The Three Stages
 
-![The three stages of Growth-Driven Design: strategy, launch pad, continuous improvement](/assets/posts/diagrams/gdd-three-stages.svg)
+<img src="/assets/posts/diagrams/gdd-three-stages.svg" alt="The three stages of Growth-Driven Design: strategy, launch pad, continuous improvement" width="800" height="290" loading="lazy" decoding="async" />
 
 GDD runs in three stages:
 

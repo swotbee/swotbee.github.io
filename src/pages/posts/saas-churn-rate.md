@@ -44,7 +44,7 @@ In a SaaS company, churn is when existing customers stop paying, either by cance
 
 ## How to Calculate SaaS Churn Rate
 
-![SaaS churn rate formula and benchmark bands](/assets/posts/diagrams/saas-churn-formula.svg)
+<img src="/assets/posts/diagrams/saas-churn-formula.svg" alt="SaaS churn rate formula and benchmark bands" width="800" height="320" loading="lazy" decoding="async" />
 
 The basic customer churn rate formula:
 

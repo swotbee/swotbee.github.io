@@ -38,7 +38,7 @@ The renewal is the natural expansion moment: the customer has seen value and is 
 
 ## What Is the Land and Expand Strategy?
 
-![Land, expand, explode phases of account growth](/assets/posts/diagrams/land-expand-phases.svg)
+<img src="/assets/posts/diagrams/land-expand-phases.svg" alt="Land, expand, explode phases of account growth" width="640" height="185" loading="lazy" decoding="async" />
 
 Land and expand is a growth strategy built on a simple sequence: land a small deal with a single team or use case, then expand once you have proven the product or service works. The "land" is intentionally modest, low risk for the customer, fast to value. The "expand" is where the real revenue is: more seats, new departments, and additional products.
 

@@ -108,7 +108,7 @@ The connectors fail at scale because they are synchronous and chatty. A custom i
 
 ### Utilizing Asynchronous Message Queues
 
-![Custom NetSuite integration asynchronous queue architecture](/assets/posts/diagrams/netsuite-custom-architecture.svg)
+<img src="/assets/posts/diagrams/netsuite-custom-architecture.svg" alt="Custom NetSuite integration asynchronous queue architecture" width="800" height="330" loading="lazy" decoding="async" />
 
 Put a message queue between the two systems. When the CRM emits an event, publish it to a queue; a worker pool consumes from the queue and writes to NetSuite at a rate your concurrency budget allows. This buys you several things at once: throughput smoothing so spikes do not breach the cap, automatic retry with exponential backoff on 429 and 403 responses, a dead-letter queue for records that keep failing, and idempotent processing so replays are safe.
 
