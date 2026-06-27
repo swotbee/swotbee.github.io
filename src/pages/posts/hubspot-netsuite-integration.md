@@ -29,7 +29,7 @@ seriesName: "HubSpot NetSuite Integration"
 
 **A HubSpot NetSuite integration connects HubSpot, your front-office CRM, with NetSuite, your back-office ERP, so that customer, deal, and order data sync between the two systems instead of being re-keyed by hand.** Done well, it turns a closed-won HubSpot deal into a NetSuite sales order automatically, gives sales teams real-time visibility into invoices and inventory, and gives finance a clean source of truth. Done badly, it silently drops records, rolls back dates, and erodes trust in both systems. This guide covers how the integration works, the three integration methods, where the native connector fails at scale, and when to integrate, migrate, or leave things alone.
 
-This is the pillar for our HubSpot and NetSuite series. It links to the deep-dive guides on each decision: comparison, setup, connectors, migration, and custom builds.
+This is the pillar for our HubSpot and NetSuite series, the most common real-world example of [CRM and ERP integration](/posts/crm-erp-integration). It links to the deep-dive guides on each decision: comparison, setup, [what data syncs](/posts/hubspot-netsuite-sync), connectors, migration, and custom builds.
 
 ---
 

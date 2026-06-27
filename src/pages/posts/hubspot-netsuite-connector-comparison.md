@@ -42,7 +42,7 @@ Before comparing tools, score your own requirements: how many records sync per d
 
 ![HubSpot NetSuite connector comparison by data volume and complexity](/assets/posts/diagrams/netsuite-connector-comparison.svg)
 
-Whatever you choose, the job is the same: keep a clean data flow between HubSpot and NetSuite. A good connector gives you bi-directional, real-time sync for the records that need it (a new HubSpot contact, a deal record, customer data), and reliable batch sync for the rest. Map your core use cases first, then judge each connector on how well it supports them and on the best practices, error handling, and monitoring it brings.
+Whatever you choose, the job is the same: keep a clean data flow between HubSpot and NetSuite. A good connector gives you bi-directional, real-time sync for the records that need it (a new HubSpot contact, a deal record, customer data), and reliable batch sync for the rest. It should connect HubSpot and NetSuite so a deal can create a sales order in NetSuite, sync NetSuite customers and records back into HubSpot, and automate the data sync in both directions (HubSpot to NetSuite and NetSuite to HubSpot). Map your core use cases first, then judge each connector, or a custom integration, on how well it supports the data between HubSpot and NetSuite, plus the error handling and monitoring it brings.
 
 ---
 

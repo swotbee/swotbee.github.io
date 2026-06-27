@@ -34,7 +34,7 @@ pillarUrl: "/posts/hubspot-netsuite-integration"
 
 ![Seven HubSpot NetSuite data mapping pitfalls](/assets/posts/diagrams/netsuite-data-mapping-pitfalls.svg)
 
-Field mapping is the foundation of any [HubSpot NetSuite integration](/posts/hubspot-netsuite-integration), and getting it wrong undermines every connector choice and workflow you build on top. Whether you connect HubSpot and NetSuite with the native connector, Celigo, or a custom integration, the data model decides whether the sync helps your sales teams and finance teams or quietly corrupts their customer data.
+Field mapping is the foundation of any [HubSpot NetSuite integration](/posts/hubspot-netsuite-integration), and getting it wrong undermines every connector choice and workflow you build on top. Whether you integrate with the native NetSuite sync connector, Celigo, or a custom API integration, the data model decides whether the sync helps your sales and finance teams or quietly corrupts their customer data. Clean mapping across both systems is what gives you accurate data, a single source of truth, and the scalability to grow, while poor mapping causes the sync conflicts and bi-directional overwrites below.
 
 ---
 

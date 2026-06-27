@@ -79,6 +79,31 @@ Clusters link BACK to pillar + to siblings:
 
 Competitor ceilings (74 to 85) are HubSpot's own KB and large integrators; on-brand band per playbook.
 
+## Expansion (2026-06-27): umbrella pillar + winnable clusters
+
+Winnability sweep (probes scored against google.co.uk via second NeuronWriter account)
+found weaker, net-new SERPs above and beside the existing cluster. Added:
+
+| post | keyword | final score | competitor median |
+|------|---------|-------------|-------------------|
+| crm-erp-integration (NEW umbrella pillar) | crm erp integration | 63 | 51 |
+| quote-to-cash | quote to cash | 49 | 36 |
+| order-to-cash-process | order to cash process | 49 | 49 |
+| hubspot-netsuite-sync | hubspot netsuite sync | 55 | 46 |
+
+The `crm-erp-integration` pillar sits ABOVE `hubspot-netsuite-integration` (broad CRM-ERP
+traffic funneling down to the HubSpot+NetSuite worked example). quote-to-cash and
+order-to-cash sit under it; hubspot-netsuite-sync sits under the existing HubSpot+NetSuite
+pillar (positioned as "what syncs / troubleshooting", distinct from setup and data-mapping).
+
+Also re-optimized two soft existing posts against fresh queries:
+- hubspot-netsuite-connector-comparison: now 55 (median 51).
+- hubspot-netsuite-data-mapping: now 58 (median 47).
+
+Note: probes/scoring used a second NeuronWriter key on a different account (the original key
+hit its monthly query limit), running queries under an available project with engine/language
+overridden to google.co.uk / English.
+
 ## 5. Linkable-asset hooks (diagrams to build, one unique per post)
 
 - P: integrate-migrate-decide decision-tree diagram + object-mapping (Deal -> Sales Order) diagram
