@@ -1,4 +1,5 @@
 ---
+noindex: true
 layout: ../../layouts/BlogPostLayout.astro
 title: "RecurPost vs HubSpot: Feature & Pricing Comparison"
 pubDate: "2025-04-03"

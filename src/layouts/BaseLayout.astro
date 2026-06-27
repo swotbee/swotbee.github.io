@@ -36,6 +36,8 @@ const {
   robots = "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
 } = Astro.props;
 
+const isNoindex = robots.includes("noindex");
+
 // Use utility functions for consistent URL generation
 const finalOgImage = ogImage || generateOgImage();
 const finalCanonicalURL =
@@ -143,7 +145,7 @@ const finalCanonicalURL =
           },
         ],
       }}
-      robots={{ index: true, follow: true }}
+      robots={{ index: !isNoindex, follow: true }}
       additionalLinkTags={[{ rel: "canonical", href: finalCanonicalURL }]}
     />
     <!-- Preconnect to external origins -->

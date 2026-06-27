@@ -1,4 +1,5 @@
 ---
+noindex: true
 layout: ../../layouts/BlogPostLayout.astro
 title: "Hootsuite vs HubSpot: Ultimate Tool Comparison"
 pubDate: "2025-04-09"

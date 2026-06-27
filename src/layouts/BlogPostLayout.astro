@@ -47,6 +47,7 @@ const displayPosts = relatedPosts.length >= 2
   canonicalURL={canonicalURL}
   keywords={frontmatter.tags?.join(', ')}
   author={frontmatter.author?.name}
+  robots={frontmatter.noindex ? "noindex, follow" : undefined}
 >
   <!-- Open Graph -->
   <meta property="og:title" content={pageTitle} />

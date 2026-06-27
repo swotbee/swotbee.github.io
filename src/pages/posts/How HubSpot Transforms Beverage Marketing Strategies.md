@@ -1,4 +1,5 @@
 ---
+noindex: true
 layout: ../../layouts/BlogPostLayout.astro
 title: "HubSpot Success for Food & Beverage Clients"
 pubDate: "2025-04-16"

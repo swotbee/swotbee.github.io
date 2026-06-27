@@ -1,4 +1,5 @@
 ---
+noindex: true
 layout: ../../layouts/BlogPostLayout.astro
 title: "Maximize Your Marketing: HubSpot Free Guide"
 pubDate: "2025-06-04"

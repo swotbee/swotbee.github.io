@@ -1,4 +1,5 @@
 ---
+noindex: true
 layout: ../../layouts/BlogPostLayout.astro
 title: "Optimize Marketing with Amplitude HubSpot Integration"
 pubDate: "2025-04-16"

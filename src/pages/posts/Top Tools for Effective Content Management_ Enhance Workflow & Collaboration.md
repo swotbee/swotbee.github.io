@@ -1,4 +1,5 @@
 ---
+noindex: true
 layout: ../../layouts/BlogPostLayout.astro
 title: "Top Tools for Effective Content Management: Enhance Workflow & Collaboration"
 pubDate: "2025-06-18"

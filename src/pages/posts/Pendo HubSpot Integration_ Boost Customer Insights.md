@@ -1,4 +1,5 @@
 ---
+noindex: true
 layout: ../../layouts/BlogPostLayout.astro
 title: "Pendo HubSpot Integration: Boost Customer Insights"
 pubDate: "2025-04-09"

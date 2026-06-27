@@ -1,4 +1,5 @@
 ---
+noindex: true
 layout: ../../layouts/BlogPostLayout.astro
 title: "Step-by-Step Guide to HubSpot WordPress Setup​"
 pubDate: "2025-06-25"
