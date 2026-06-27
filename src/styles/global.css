@@ -151,7 +151,7 @@
 
   /* V6 Mid-tones palette */
   /* Blue */
-  --color-v6-blue: #1A7AB5;
+  --color-v6-blue: #1871a8; /* darkened from #1A7AB5 for WCAG AA text contrast */
   --color-v6-blue-50: #e8f4fb;
   --color-v6-blue-100: #a7d8e8;
   --color-v6-blue-200: #6db8d5;
@@ -165,7 +165,7 @@
   --color-v6-blue-950: #051520;
 
   /* Teal */
-  --color-v6-teal: #5AAB9D;
+  --color-v6-teal: #3d776d; /* darkened from #5AAB9D for WCAG AA text contrast */
   --color-v6-teal-50: #e8f5f2;
   --color-v6-teal-100: #b5ddd4;
   --color-v6-teal-200: #7ec4b8;
@@ -178,7 +178,7 @@
   --color-v6-teal-900: #0e3028;
 
   /* Copper (CTA) */
-  --color-v6-copper: #C47A2A;
+  --color-v6-copper: #9a6021; /* darkened from #C47A2A for WCAG AA text/CTA contrast */
   --color-v6-copper-50: #fdf0de;
   --color-v6-copper-100: #f5d5a8;
   --color-v6-copper-200: #e8a850;
