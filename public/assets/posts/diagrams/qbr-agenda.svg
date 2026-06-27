@@ -1,4 +1,4 @@
-<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 261' role='img' aria-label='EBR agenda' font-family='Hanken Grotesk, DM Sans, Arial, sans-serif'>
+<svg width='640' height='261' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 261' role='img' aria-label='EBR agenda' font-family='Hanken Grotesk, DM Sans, Arial, sans-serif'>
 <rect width='640' height='261' fill='white'/>
 <text x='320' y='26' font-size='15' fill='#213343' text-anchor='middle' font-weight='700'>Executive Business Review Agenda</text>
 <rect x='160' y='55' width='320' height='34' rx='6' fill='#5AAB9D' stroke='none'/>

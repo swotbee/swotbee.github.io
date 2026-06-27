@@ -1,4 +1,4 @@
-<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 245' role='img' aria-label='LTV to CAC ratio' font-family='Hanken Grotesk, DM Sans, Arial, sans-serif'>
+<svg width='640' height='245' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 245' role='img' aria-label='LTV to CAC ratio' font-family='Hanken Grotesk, DM Sans, Arial, sans-serif'>
 <rect width='640' height='245' fill='white'/>
 <text x='320' y='28' font-size='17' fill='#213343' text-anchor='middle' font-weight='700'>LTV : CAC and Payback</text>
 <rect x='150' y='150' width='90' height='30' rx='8' fill='#C47A2A' stroke='none'/>

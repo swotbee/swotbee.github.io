@@ -1,4 +1,4 @@
-<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 220' role='img' aria-label='Renewal uplift pricing' font-family='Hanken Grotesk, DM Sans, Arial, sans-serif'>
+<svg width='640' height='220' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 220' role='img' aria-label='Renewal uplift pricing' font-family='Hanken Grotesk, DM Sans, Arial, sans-serif'>
 <rect width='640' height='220' fill='white'/>
 <text x='320' y='28' font-size='16' fill='#213343' text-anchor='middle' font-weight='700'>Renewal Uplift</text>
 <rect x='150' y='120' width='90' height='40' rx='8' fill='#5AAB9D' stroke='none'/>

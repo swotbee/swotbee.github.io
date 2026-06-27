@@ -1,4 +1,4 @@
-<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 220' role='img' aria-label='Price reaction matrix' font-family='Hanken Grotesk, DM Sans, Arial, sans-serif'>
+<svg width='640' height='220' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 220' role='img' aria-label='Price reaction matrix' font-family='Hanken Grotesk, DM Sans, Arial, sans-serif'>
 <rect width='640' height='220' fill='white'/>
 <text x='320' y='24' font-size='15' fill='#213343' text-anchor='middle' font-weight='700'>Competitive Price Reaction</text>
 <rect x='170' y='50' width='150' height='60' rx='6' fill='#5AAB9D' stroke='none'/>

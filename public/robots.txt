@@ -39,7 +39,7 @@ User-agent: SemrushBot
 Disallow: /
 
 # Sitemaps
-Sitemap: https://swotbee.com/sitemap.xml
+Sitemap: https://swotbee.com/sitemap-index.xml
 
 # Host directive for canonical domain
 Host: https://swotbee.com
