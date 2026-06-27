@@ -26,8 +26,12 @@ sparser term models); the trade is deliberate, ranking probability over vanity s
 | C3 | SaaS Customer Retention Strategies | saas customer retention strategies | 90 / 23 | `saas-customer-retention-strategies` |
 | C4 | SaaS Churn Rate: Formula, Benchmarks, and How to Reduce It | saas churn rate | 480 / 24 | `saas-churn-rate` |
 | C5 | Shopify Customer Retention Strategies | shopify customer retention strategies | 40 / 6 | `shopify-customer-retention` |
-| C6 | Customer Retention KPIs and Metrics | customer retention kpis | 140 / 17 | `customer-retention-kpis` (written unscored: NW monthly query limit) |
-| C7 | Customer Retention Consulting (commercial) | customer retention consulting | 30 / 4 | `customer-retention-consulting` (written unscored: NW monthly query limit) |
+| C6 | Customer Retention KPIs and Metrics | customer retention kpis | 140 / 17 | `customer-retention-kpis` (score 60, median 56) |
+| C7 | Customer Retention Consulting (commercial) | customer retention consulting | 30 / 4 | `customer-retention-consulting` (score 59, median 46) |
+
+Note: C6/C7 were initially written unscored when the first NeuronWriter key hit its monthly
+query limit. They were later scored and optimized using a second key (different account), with
+the queries run under an available project using engine/language override (google.co.uk / English).
 
 Build order (priority): P -> C1 (CRM/HubSpot edge) -> C2 (software, KD 9) -> C4 (churn, biggest
 volume) -> C3 -> C5.
