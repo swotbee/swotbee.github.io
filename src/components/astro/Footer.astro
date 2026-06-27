@@ -14,19 +14,6 @@ import LogoHoneycomb from "./LogoHoneycomb.astro";
         <p class="text-sm text-v6-blue-300 leading-relaxed max-w-xs">
           Expert HubSpot consulting to streamline your experience and boost conversions.
         </p>
-        <div class="mt-5">
-          <p class="text-sm font-semibold mb-2">Stay Updated</p>
-          <form class="flex gap-2">
-            <input
-              type="email"
-              placeholder="Your email"
-              class="flex-1 px-3 py-2 rounded-lg bg-v6-blue-900 border border-v6-blue-700 text-white text-sm placeholder:text-v6-blue-300 focus:ring-2 focus:ring-v6-copper focus:outline-none"
-            />
-            <button type="submit" class="bg-v6-copper text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-v6-copper-600 transition-colors">
-              Subscribe
-            </button>
-          </form>
-        </div>
       </div>
 
       <!-- Company links -->
@@ -58,12 +45,29 @@ import LogoHoneycomb from "./LogoHoneycomb.astro";
     </div>
 
     <!-- Bottom bar -->
-    <div class="border-t border-v6-blue-800 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4">
-      <p class="text-xs text-v6-blue-300">© 2026 SWOTbee. All rights reserved.</p>
-      <div class="flex gap-4">
-        <a href="mailto:info@swotbee.com" class="text-xs text-v6-blue-300 hover:text-white transition-colors">Email</a>
-        <a href="https://www.linkedin.com/company/swotbee" class="text-xs text-v6-blue-300 hover:text-white transition-colors">LinkedIn</a>
-        <a href="https://x.com/SWOTBee" class="text-xs text-v6-blue-300 hover:text-white transition-colors">Twitter</a>
+    <div class="border-t border-v6-blue-800 pt-8 flex flex-col gap-6">
+      <!-- Newsletter -->
+      <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+        <p class="text-sm font-semibold">Stay Updated</p>
+        <form class="flex w-full max-w-md gap-2">
+          <input
+            type="email"
+            placeholder="Your email"
+            class="min-w-0 flex-1 px-3 py-2 rounded-lg bg-v6-blue-900 border border-v6-blue-700 text-white text-sm placeholder:text-v6-blue-300 focus:ring-2 focus:ring-v6-copper focus:outline-none"
+          />
+          <button type="submit" class="shrink-0 bg-v6-copper text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-v6-copper-600 transition-colors">
+            Subscribe
+          </button>
+        </form>
+      </div>
+      <!-- Copyright + social -->
+      <div class="flex flex-col sm:flex-row justify-between items-center gap-4 border-t border-v6-blue-800/60 pt-6">
+        <p class="text-xs text-v6-blue-300">© 2026 SWOTbee. All rights reserved.</p>
+        <div class="flex gap-4">
+          <a href="mailto:info@swotbee.com" class="text-xs text-v6-blue-300 hover:text-white transition-colors">Email</a>
+          <a href="https://www.linkedin.com/company/swotbee" class="text-xs text-v6-blue-300 hover:text-white transition-colors">LinkedIn</a>
+          <a href="https://x.com/SWOTBee" class="text-xs text-v6-blue-300 hover:text-white transition-colors">Twitter</a>
+        </div>
       </div>
     </div>
   </div>
