@@ -1,0 +1,47 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navbar from '../../components/astro/Navbar.astro';
+import Footer from '../../components/astro/Footer.astro';
+// NEW page (lead magnet 3). Form action placeholder: wire before launch.
+---
+<BaseLayout
+  title="Grade Your Renewal Operation in 10 Minutes | SWOTBee"
+  description="A free self-assessment scorecard: 6 dimensions, an honest grade, and what A-grade renewal operations look like."
+  robots="noindex, follow"
+>
+  <Navbar />
+  <section class="bg-gradient-to-b from-v6-bg to-white px-4 sm:px-6 lg:px-8 pt-14 pb-10">
+    <div class="max-w-2xl mx-auto text-center">
+      <h1 class="text-3xl sm:text-4xl font-bold text-v6-dark leading-tight mb-4">
+        If your renewal operation got a report card, <span class="text-v6-copper">what grade would it get?</span>
+      </h1>
+      <p class="text-lg text-v6-text-muted mb-2">Score yourself across 6 dimensions in 10 minutes: visibility, deal creation, line items, escalations, multi-year chains, and reporting. Honest bands from A to F, and what each grade usually costs.</p>
+      <p class="text-sm text-gray-500">The average HubSpot recurring-contract company scores a C. The money hides in dimensions 4 and 5.</p>
+    </div>
+  </section>
+
+  <section class="bg-white px-4 sm:px-6 lg:px-8 pb-16 pt-4">
+    <div class="max-w-xl mx-auto bg-v6-bg border border-v6-border rounded-2xl p-8">
+      <form method="POST" action="/api/lead-magnet" class="flex flex-col gap-4">
+        <input type="hidden" name="magnet" value="renewal-health-scorecard" />
+        <label class="text-sm font-semibold text-v6-dark">Work email
+          <input required type="email" name="email" placeholder="you@company.com" class="mt-1 w-full border border-gray-300 rounded-lg px-4 py-3" />
+        </label>
+        <label class="text-sm font-semibold text-v6-dark">How renewals are tracked today
+          <select required name="tracking" class="mt-1 w-full border border-gray-300 rounded-lg px-4 py-3 bg-white">
+            <option value="">Select...</option><option>Spreadsheet</option><option>HubSpot workflows</option><option>A dedicated app</option><option>Memory and calendars</option>
+          </select>
+        </label>
+        <label class="text-sm font-semibold text-v6-dark">Renewal cadence
+          <select name="cadence" class="mt-1 w-full border border-gray-300 rounded-lg px-4 py-3 bg-white">
+            <option value="">Select...</option><option>Monthly</option><option>Quarterly</option><option>Six-month</option><option>Annual</option><option>Multi-year</option>
+          </select>
+        </label>
+        <button type="submit" class="bg-v6-copper text-white font-semibold rounded-xl px-6 py-3 hover:bg-v6-copper-600 transition-colors">Send me the scorecard</button>
+        <p class="text-xs text-gray-500 text-center">One email with the scorecard. Grade yourself privately; nobody sees your score.</p>
+      </form>
+    </div>
+    <p class="text-center text-sm text-v6-text-muted mt-8 max-w-xl mx-auto">A self-assessment cannot see which deals are at risk next quarter or which workflows break at year 3. The paid renewal audit scores this same rubric against your actual portal, with names and numbers, and it is credited toward any build.</p>
+  </section>
+  <Footer />
+</BaseLayout>

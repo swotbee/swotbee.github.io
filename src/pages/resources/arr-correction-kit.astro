@@ -1,0 +1,47 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navbar from '../../components/astro/Navbar.astro';
+import Footer from '../../components/astro/Footer.astro';
+// NEW page (lead magnet 4). Form action placeholder: wire before launch.
+---
+<BaseLayout
+  title="Fix HubSpot's ARR Math on Multi-Year Deals | SWOTBee"
+  description="A free correction kit: the spreadsheet and three checks that catch multi-year ARR misreporting before your board does."
+  robots="noindex, follow"
+>
+  <Navbar />
+  <section class="bg-gradient-to-b from-v6-bg to-white px-4 sm:px-6 lg:px-8 pt-14 pb-10">
+    <div class="max-w-2xl mx-auto text-center">
+      <h1 class="text-3xl sm:text-4xl font-bold text-v6-dark leading-tight mb-4">
+        Multi-year deals? <span class="text-v6-copper">HubSpot's ARR math is probably wrong.</span>
+      </h1>
+      <p class="text-lg text-v6-text-muted mb-2">The ACV/ARR calculations ignore line-item start dates and term lengths. Users describe pipelines "overstated enormously" and multi-year analytics that are "useless." This kit computes the correct numbers in under an hour.</p>
+      <p class="text-sm text-gray-500">Includes the export recipe, the correction columns, and the three checks that catch the classic errors.</p>
+    </div>
+  </section>
+
+  <section class="bg-white px-4 sm:px-6 lg:px-8 pb-16 pt-4">
+    <div class="max-w-xl mx-auto bg-v6-bg border border-v6-border rounded-2xl p-8">
+      <form method="POST" action="/api/lead-magnet" class="flex flex-col gap-4">
+        <input type="hidden" name="magnet" value="arr-correction-kit" />
+        <label class="text-sm font-semibold text-v6-dark">Work email
+          <input required type="email" name="email" placeholder="you@company.com" class="mt-1 w-full border border-gray-300 rounded-lg px-4 py-3" />
+        </label>
+        <label class="text-sm font-semibold text-v6-dark">Do you close multi-year contracts?
+          <select required name="multiyear" class="mt-1 w-full border border-gray-300 rounded-lg px-4 py-3 bg-white">
+            <option value="">Select...</option><option>Yes, most deals</option><option>Yes, some</option><option>Rarely</option>
+          </select>
+        </label>
+        <label class="text-sm font-semibold text-v6-dark">Which numbers go to your board?
+          <select name="board_metrics" class="mt-1 w-full border border-gray-300 rounded-lg px-4 py-3 bg-white">
+            <option value="">Select...</option><option>ARR / NRR</option><option>Renewal rate</option><option>Forecast accuracy</option><option>All of these</option>
+          </select>
+        </label>
+        <button type="submit" class="bg-v6-copper text-white font-semibold rounded-xl px-6 py-3 hover:bg-v6-copper-600 transition-colors">Send me the correction kit</button>
+        <p class="text-xs text-gray-500 text-center">One email with the kit. Your board never needs to know.</p>
+      </form>
+    </div>
+    <p class="text-center text-sm text-v6-text-muted mt-8 max-w-xl mx-auto">The durable fix is structural: multi-year deals existing as correct per-year pipeline, created automatically. The renewal audit includes an ARR integrity check against your actual portal.</p>
+  </section>
+  <Footer />
+</BaseLayout>

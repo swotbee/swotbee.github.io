@@ -1,0 +1,54 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navbar from '../../components/astro/Navbar.astro';
+import Footer from '../../components/astro/Footer.astro';
+// NEW page (lead magnet 2). Form action placeholder: wire before launch.
+---
+<BaseLayout
+  title="Find Unbilled Price Increases in 60 Minutes | SWOTBee"
+  description="A free checklist to find the escalation uplifts you already earned but never invoiced. Most contract businesses find real money."
+  robots="noindex, follow"
+>
+  <Navbar />
+  <section class="bg-gradient-to-b from-v6-bg to-white px-4 sm:px-6 lg:px-8 pt-14 pb-10">
+    <div class="max-w-2xl mx-auto text-center">
+      <h1 class="text-3xl sm:text-4xl font-bold text-v6-dark leading-tight mb-4">
+        Your contracts include price increases.<br /><span class="text-v6-copper">Did your invoices?</span>
+      </h1>
+      <p class="text-lg text-v6-text-muted mb-2">Escalation clauses only pay when someone remembers to apply them, at the right moment, every year. This 60-minute checklist finds what slipped: it is money you already earned.</p>
+    </div>
+  </section>
+
+  <section class="bg-white px-4 sm:px-6 lg:px-8 pb-4">
+    <div class="max-w-2xl mx-auto grid sm:grid-cols-3 gap-4 text-center">
+      <div class="bg-v6-bg rounded-xl p-4"><div class="font-bold text-v6-teal text-lg">Step 1</div><div class="text-sm text-v6-text-muted">List every escalation clause</div></div>
+      <div class="bg-v6-bg rounded-xl p-4"><div class="font-bold text-v6-teal text-lg">Step 2</div><div class="text-sm text-v6-text-muted">Compare contracted vs invoiced</div></div>
+      <div class="bg-v6-bg rounded-xl p-4"><div class="font-bold text-v6-teal text-lg">Step 3</div><div class="text-sm text-v6-text-muted">Total, recover, prevent</div></div>
+    </div>
+  </section>
+
+  <section class="bg-white px-4 sm:px-6 lg:px-8 pb-16 pt-8">
+    <div class="max-w-xl mx-auto bg-v6-bg border border-v6-border rounded-2xl p-8">
+      <form method="POST" action="/api/lead-magnet" class="flex flex-col gap-4">
+        <input type="hidden" name="magnet" value="uplift-recovery-checklist" />
+        <label class="text-sm font-semibold text-v6-dark">Work email
+          <input required type="email" name="email" placeholder="you@company.com" class="mt-1 w-full border border-gray-300 rounded-lg px-4 py-3" />
+        </label>
+        <label class="text-sm font-semibold text-v6-dark">Do your contracts include escalation or annual-increase clauses?
+          <select required name="escalations" class="mt-1 w-full border border-gray-300 rounded-lg px-4 py-3 bg-white">
+            <option value="">Select...</option><option>Yes, most</option><option>Some</option><option>No</option><option>Not sure</option>
+          </select>
+        </label>
+        <label class="text-sm font-semibold text-v6-dark">Contracts renewing per year
+          <select required name="contracts_per_year" class="mt-1 w-full border border-gray-300 rounded-lg px-4 py-3 bg-white">
+            <option value="">Select...</option><option>Fewer than 25</option><option>25 to 100</option><option>100 to 300</option><option>300+</option>
+          </select>
+        </label>
+        <button type="submit" class="bg-v6-copper text-white font-semibold rounded-xl px-6 py-3 hover:bg-v6-copper-600 transition-colors">Send me the checklist</button>
+        <p class="text-xs text-gray-500 text-center">One email with the checklist PDF. That is it.</p>
+      </form>
+    </div>
+    <p class="text-center text-sm text-v6-text-muted mt-8 max-w-xl mx-auto">Why this happens: applying uplifts in HubSpot means re-reading contracts at renewal time; there is no native rule for it. Multi-year contracts miss most often, at year 2 and 3.</p>
+  </section>
+  <Footer />
+</BaseLayout>
