@@ -1,0 +1,195 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/astro/Navbar.astro';
+import Footer from '../components/astro/Footer.astro';
+// Landing page for Ad Group 6 (MSP vertical), per
+// marketing/user-survey/14-landing-pages-build-plan.md Page C: the v3 skeleton
+// with vertical-native vocabulary (agreements, seats, devices, co-terms,
+// true-ups, PSA). MSP ranked highest on renewal intent in every SSR run and
+// r/MSP was the richest corpus source. The PSA-overlap objection is answered
+// above the fold: PSA-synced tooling "has only taken 20% of the admin away"
+// (verbatim, r/MSP). No fabricated MSP testimonial: proof band reuses
+// cross-industry stats until a real MSP case study exists.
+// NeuronWriter query e062a2cfd2a008de. Ad launch waits for demo (option B).
+
+const agitation = [
+  { icon: '📄', title: 'Agreements renew at last year\'s seat counts', desc: 'Client seats and devices changed all year, but the renewal quote is a copy of last year\'s agreement. The true-up never happens, and the delta is margin you already earned.' },
+  { icon: '🧾', title: 'Uplifts slip on auto-renew', desc: 'The agreement allows an annual increase. Applying it means someone re-quoting every line by hand, so quietly, it does not happen.' },
+  { icon: '🗓️', title: 'Co-termed agreements, un-co-termed chaos', desc: 'Hardware, licenses, and services all renew on different dates for the same client. Nobody sees the whole account picture at renewal time.' },
+  { icon: '📊', title: 'MRR reporting that finance does not trust', desc: 'Renewal, expansion, and new business blur together in the pipeline, so recurring-revenue reporting is a month-end spreadsheet exercise.' },
+];
+
+const faqs = [
+  { q: 'What is MSP contract renewal software?', a: 'Software that tracks every client agreement\'s renewal date, creates the renewal opportunity automatically with current seat and device counts, applies contractual price increases, and reports recurring revenue. For MSPs running HubSpot as the sales CRM, we build that renewal automation natively in your HubSpot portal rather than selling you another standalone tool.' },
+  { q: 'Our PSA (ConnectWise/Autotask) already manages contracts. Why would we need this?', a: 'Keep the PSA; it is the system of record for tickets, billing, and service delivery. What MSPs tell us, verbatim, is that PSA-side tooling "has only taken 20% of the admin away from having to deal with renewal." The other 80% is sales-side: the renewal opportunity with updated counts and uplifted pricing, the expansion conversation before the date, and pipeline-level recurring-revenue forecasting. That lives in your CRM, and that is the layer we automate.' },
+  { q: 'What are the key features to look for?', a: 'Four things: renewal opportunities created automatically from agreement dates (not from someone remembering), line items carried over with seat/device true-ups and uplifts applied, co-term visibility across each client\'s agreements, and NRR/GRR reporting native in the CRM. If a tool only sends reminder emails, it is a calendar, not renewal software.' },
+  { q: 'How does this handle month-to-month vs annual agreements?', a: 'Both. Annual and multi-year agreements get scheduled renewal deals with uplift math; month-to-month books get tracked as recurring revenue with expansion flags, so the move-to-annual conversation happens deliberately instead of never.' },
+  { q: 'We are not on HubSpot. Is this still relevant?', a: 'This particular build is for MSPs running HubSpot Professional or Enterprise as their sales CRM alongside the PSA. If sales lives entirely in your PSA, we are honestly not the right fit.' },
+  { q: 'What does it cost?', a: 'Scoped after a free 30-minute audit of your agreement renewal flow. Fixed-scope build, clear handover, no long-term contracts, and you own everything we build in your portal. If you want a sense of the money at stake before any call, start with the free 1-page leakage estimate instead: 5 questions, answered by email.' },
+];
+
+const guides = [
+  { href: '/posts/hubspot-co-terming-renewals', label: 'Co-terming renewals in HubSpot: proration and mid-term changes' },
+  { href: '/posts/hubspot-renewal-quote-price-increase', label: 'Renewal quotes and price increases: applying the uplift' },
+  { href: '/posts/hubspot-renewal-pipeline-complete-guide', label: 'Building a renewal pipeline in HubSpot: the complete guide' },
+  { href: '/posts/hubspot-renewal-reminders', label: 'Renewal reminders and alerts in HubSpot, step by step' },
+  { href: '/posts/hubspot-renewal-deal-workflow-automation', label: 'Automating renewal deal creation with workflows' },
+  { href: '/posts/hubspot-renewal-nrr-grr-dashboard-reporting', label: 'NRR/GRR dashboards and recurring-revenue reporting' },
+];
+
+const faqSchema = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+});
+---
+<BaseLayout
+  title="MSP Contract Renewal Software, Built In Your HubSpot"
+  description="Client agreements that renew on time with true-ups and uplifts applied, co-term visibility, and MRR reporting. For MSPs running HubSpot alongside their PSA."
+>
+  <Navbar />
+
+  <!-- HERO -->
+  <section class="bg-gradient-to-b from-v6-bg to-white px-4 sm:px-6 lg:px-8 pt-16 pb-12">
+    <div class="max-w-3xl mx-auto text-center">
+      <p class="text-sm font-semibold uppercase tracking-[0.2em] text-v6-copper mb-3">For MSPs Drowning In Agreement Renewals</p>
+      <h1 class="text-3xl sm:text-5xl font-bold text-v6-dark leading-tight mb-5 text-balance">
+        Client Agreements That Renew On Time, <span class="text-v6-copper">With The Uplift Applied</span>
+      </h1>
+      <p class="text-lg sm:text-xl text-v6-text-muted mb-4 leading-relaxed">
+        Renewal opportunities created on schedule with current seat and device counts, uplifts applied automatically, co-terms visible per client, and recurring revenue your finance person finally trusts. Inside HubSpot, alongside your PSA.
+      </p>
+      <p class="text-base text-v6-text-muted mb-6">Your PSA runs service delivery. This runs the renewal and expansion motion your PSA was never built for.</p>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center items-center">
+        <div class="text-center">
+          <a href="/resources/renewal-leakage-estimate" class="block bg-v6-copper text-white px-8 py-3.5 rounded-xl text-base font-semibold hover:bg-v6-copper-600 transition-colors">Estimate Your Renewal Leakage →</a>
+          <p class="text-xs text-gray-500 mt-1.5">5 questions. 1 page by email. No call.</p>
+        </div>
+        <div class="text-center">
+          <a href="/contactus" class="block border border-gray-300 text-v6-dark px-8 py-3.5 rounded-xl text-base font-medium hover:bg-gray-50 transition-colors">Book A Free Renewal Audit →</a>
+          <p class="text-xs text-gray-500 mt-1.5">30 minutes. No prep, no obligation.</p>
+        </div>
+      </div>
+      <p class="text-sm text-gray-500 mt-4">For MSPs on HubSpot Pro or Enterprise. Works alongside ConnectWise, Autotask, and whatever else runs your shop.</p>
+    </div>
+  </section>
+
+  <!-- AGITATION: MSP-native pains -->
+  <section class="bg-white px-4 sm:px-6 lg:px-8 py-14">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl sm:text-3xl font-bold text-v6-dark mb-3 text-center">Sound Familiar?</h2>
+      <p class="text-base text-v6-text-muted text-center mb-10 max-w-2xl mx-auto">The renewal process breaks the same way at almost every MSP we talk to.</p>
+      <div class="grid sm:grid-cols-2 gap-5">
+        {agitation.map(a => (
+          <div class="bg-v6-bg rounded-xl p-6 border border-v6-border">
+            <div class="text-2xl mb-3">{a.icon}</div>
+            <h3 class="text-base font-semibold text-v6-dark mb-2">{a.title}</h3>
+            <p class="text-sm text-v6-text-muted leading-relaxed">{a.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- PSA COEXISTENCE (the objection, answered above the fold of the pitch) -->
+  <section class="bg-v6-teal-50/40 border-y border-v6-border px-4 sm:px-6 lg:px-8 py-14">
+    <div class="max-w-3xl mx-auto text-center">
+      <p class="text-sm font-semibold uppercase tracking-[0.2em] text-v6-copper mb-3">Keep The PSA. We Handle The Renewal Motion.</p>
+      <h2 class="text-2xl sm:text-3xl font-bold text-v6-dark mb-4">"But Our PSA Already Tracks Contracts"</h2>
+      <p class="text-base text-v6-text-muted leading-relaxed max-w-2xl mx-auto mb-4">
+        It does, for billing and delivery. But as one MSP put it about their PSA-synced license tooling: it <em>"has only taken 20% of the admin away from having to deal with renewal."</em> The other 80% is the sales side: building the renewal quote with this year's counts, applying the uplift the agreement allows, spotting the expansion before the date, and forecasting recurring revenue across all clients.
+      </p>
+      <p class="text-base text-v6-text-muted leading-relaxed max-w-2xl mx-auto">
+        That work happens in your CRM, or in somebody's spreadsheet. We automate it in HubSpot: agreement dates drive renewal deals, line items true-up, uplift math runs itself, and the PSA keeps doing what it is good at. You own everything we build.
+      </p>
+      <div class="mt-8">
+        <a href="/resources/renewal-leakage-estimate" class="inline-block bg-v6-copper text-white px-7 py-3 rounded-xl text-base font-semibold hover:bg-v6-copper-600 transition-colors">See what the other 80% is costing you →</a>
+        <p class="text-xs text-gray-500 mt-1.5">1-page estimate by email. No call needed.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW WE WORK -->
+  <section class="bg-white px-4 sm:px-6 lg:px-8 py-14">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl sm:text-3xl font-bold text-v6-dark mb-10 text-center">How We Work</h2>
+      <div class="grid sm:grid-cols-3 gap-6">
+        <div class="text-center">
+          <div class="w-12 h-12 rounded-full bg-v6-copper text-white font-bold text-lg flex items-center justify-center mx-auto mb-4">1</div>
+          <h3 class="text-base font-semibold text-v6-dark mb-2">Discovery & Audit (Week 1-2)</h3>
+          <p class="text-sm text-v6-text-muted leading-relaxed">We map your agreements, renewal dates, uplift terms, and where revenue leaks today, across HubSpot and the PSA. This builds on the free 30-minute audit call; you are not paying to be audited twice.</p>
+        </div>
+        <div class="text-center">
+          <div class="w-12 h-12 rounded-full bg-v6-copper text-white font-bold text-lg flex items-center justify-center mx-auto mb-4">2</div>
+          <h3 class="text-base font-semibold text-v6-dark mb-2">Quick Wins Live (Week 3-4)</h3>
+          <p class="text-sm text-v6-text-muted leading-relaxed">Tracked renewal dates, a renewal pipeline, and alerts ship first, so nothing expires unnoticed while we build.</p>
+        </div>
+        <div class="text-center">
+          <div class="w-12 h-12 rounded-full bg-v6-copper text-white font-bold text-lg flex items-center justify-center mx-auto mb-4">3</div>
+          <h3 class="text-base font-semibold text-v6-dark mb-2">Full Engine (Month 2+)</h3>
+          <p class="text-sm text-v6-text-muted leading-relaxed">Automated renewal deals with true-ups and uplifts, co-term views per client, and NRR/GRR dashboards, with docs so your team owns it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROOF BAND: cross-industry stats, honestly labeled (no MSP case study yet) -->
+  <section class="bg-v6-dark px-4 sm:px-6 lg:px-8 py-12">
+    <div class="max-w-3xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
+      <div><p class="text-3xl font-bold text-white">~50%</p><p class="text-sm text-gray-300 mt-1">lift in renewal accuracy</p></div>
+      <div><p class="text-3xl font-bold text-white">90%</p><p class="text-sm text-gray-300 mt-1">less quote-creation effort</p></div>
+      <div><p class="text-3xl font-bold text-white">2 wks</p><p class="text-sm text-gray-300 mt-1">to first results</p></div>
+    </div>
+    <p class="text-sm text-gray-300 text-center mt-6 max-w-xl mx-auto">These numbers come from recurring-contract HubSpot engagements in Energy, Manufacturing, and SaaS. We will not invent an MSP stat for this page.</p>
+    <div class="text-center mt-5">
+      <a href="/resources/renewal-leakage-estimate" class="inline-block border border-white/60 text-white px-7 py-3 rounded-xl text-base font-semibold hover:bg-white/10 transition-colors">Want a number for your MSP instead? Get your own estimate →</a>
+    </div>
+    <p class="text-xs text-gray-400 text-center mt-4">No long-term contracts, ever. Your results depend on your data and process.</p>
+  </section>
+
+  <!-- RELATED GUIDES (self-serve path for research-mode visitors; placed before FAQ/CTA closing sequence) -->
+  <section class="bg-white px-4 sm:px-6 lg:px-8 pt-14">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-xl sm:text-2xl font-bold text-v6-dark mb-3 text-center">In Research Mode? The Renewal Guides</h2>
+      <p class="text-sm text-v6-text-muted text-center mb-6 max-w-xl mx-auto">How the pieces work under the hood: uplifts, co-terms, pipelines, and reporting. Free, no email required.</p>
+      <ul class="grid sm:grid-cols-2 gap-3">
+        {guides.map(g => (
+          <li><a href={g.href} class="block bg-v6-bg border border-v6-border rounded-xl px-4 py-3 text-sm font-medium text-v6-dark hover:border-v6-copper transition-colors">{g.label} →</a></li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg-white px-4 sm:px-6 lg:px-8 py-14">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-2xl sm:text-3xl font-bold text-v6-dark mb-8 text-center">Frequently Asked Questions</h2>
+      <div class="flex flex-col gap-3">
+        {faqs.map(f => (
+          <details class="group bg-v6-bg border border-v6-border rounded-xl px-5 py-4">
+            <summary class="cursor-pointer text-base font-semibold text-v6-dark list-none flex justify-between items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-v6-copper rounded-lg">
+              {f.q}<span aria-hidden="true" class="text-v6-copper group-open:rotate-45 transition-transform text-xl leading-none">+</span>
+            </summary>
+            <p class="text-sm text-v6-text-muted leading-relaxed mt-3">{f.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+  <script is:inline type="application/ld+json" set:html={faqSchema} />
+
+  <!-- RISK REVERSAL CTA -->
+  <section class="bg-gradient-to-br from-v6-copper to-v6-copper-600 px-4 sm:px-6 lg:px-8 py-16">
+    <div class="max-w-2xl mx-auto text-center">
+      <h2 class="text-2xl sm:text-3xl font-bold text-white mb-4">How Much Is Renewal Admin Costing Your MSP?</h2>
+      <p class="text-base text-white/90 mb-7 leading-relaxed">Get the 1-page leakage estimate (no call needed), or book a free 30-minute audit of your agreement renewal flow. Findings are yours to keep either way.</p>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center">
+        <a href="/resources/renewal-leakage-estimate" class="inline-block bg-white text-v6-copper px-8 py-3.5 rounded-xl text-base font-semibold hover:bg-gray-100 transition-colors">Estimate Your Renewal Leakage →</a>
+        <a href="/contactus" class="inline-block border border-white/60 text-white px-8 py-3.5 rounded-xl text-base font-semibold hover:bg-white/10 transition-colors">Book A Free Renewal Audit →</a>
+      </div>
+      <p class="text-sm text-white/80 mt-4">No long-term contracts. We earn your trust month by month.</p>
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>

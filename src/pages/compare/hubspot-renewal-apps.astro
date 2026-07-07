@@ -1,0 +1,229 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navbar from '../../components/astro/Navbar.astro';
+import Footer from '../../components/astro/Footer.astro';
+// Landing page for Ad Group 3 (competitor/marketplace searchers), per
+// marketing/user-survey/14-landing-pages-build-plan.md Page A.
+// Persona: RevOps leader / ops admin in evaluation mode, already using or
+// comparing a deal-cloning app. The page CONCEDES cloning (the corpus shows
+// those apps are genuinely liked for it) and widens the frame to the renewal
+// system. Reviewer quotes below are verbatim from the harvested review corpus.
+// PENDING before publish: NeuronWriter term/score pass (needs NEURON_API_KEY).
+
+const rows = [
+  { cap: 'Self-serve install in minutes, low cost', clone: 'yes', us: 'no', note: 'cloning apps win here: we are a scoped service, not a plugin' },
+  { cap: 'Duplicate a deal in one click', clone: 'yes', us: 'yes' },
+  { cap: 'Copy line items to the new deal', clone: 'partial', us: 'yes', note: 'reviewers report out-of-order line items and no way to exclude properties' },
+  { cap: 'Create the renewal deal automatically on schedule', clone: 'no', us: 'yes' },
+  { cap: 'Survive year-3 multi-year chains', clone: 'no', us: 'yes', note: 'HubSpot auto-stops workflows that look self-triggering ("loop protection"), which silently breaks workflow-cloned renewal chains after 2 to 3 cycles' },
+  { cap: 'Apply price escalations and uplifts automatically', clone: 'no', us: 'yes' },
+  { cap: 'Renewal pipeline with dates, owners, and alerts', clone: 'no', us: 'yes' },
+  { cap: 'NRR/GRR (net and gross revenue retention) and renewal-accuracy reporting', clone: 'no', us: 'yes' },
+];
+const mark = (v: string) => v === 'yes' ? '✓' : v === 'partial' ? '~' : '✗';
+const markClass = (v: string) => v === 'yes' ? 'text-v6-teal font-bold' : v === 'partial' ? 'text-v6-amber font-bold' : 'text-gray-400 font-bold';
+
+const faqs = [
+  { q: 'Is a cloning app enough for my renewals?', a: 'If your renewals are low-volume, single-year, flat-priced, and someone reliably remembers to run them, yes, a cloning app plus discipline can be enough. The gaps appear at scale: renewal dates nobody tracks, escalation clauses that never make it into the copy, and multi-year chains that silently stop in year 3.' },
+  { q: 'Why is a dedicated renewal pipeline important in HubSpot?', a: 'Renewals mixed into your new-business pipeline hide from reporting: win rates blend, renewal dates disappear, and nobody sees which contracts are at risk. A dedicated renewal pipeline in your HubSpot CRM gives every renewal a stage, an owner, and a date, and it is what makes renewal-rate and NRR reporting possible at all.' },
+  { q: 'Can HubSpot workflows automate renewal reminders?', a: 'Yes, workflows can create tasks and reminder emails from a close date, and that is a fine start. What workflows alone cannot do reliably is create the renewal deal with correct line items and escalated pricing year after year: HubSpot\'s loop protection interferes with workflow-cloned deals in multi-year chains, which is where most self-built renewal automation eventually breaks.' },
+  { q: 'What about subscription and recurring revenue renewals?', a: 'The same system applies whether you sell annual service contracts, subscriptions, or multi-year agreements: the renewal deal is created on schedule in the pipeline, line items and pricing carry over with uplifts applied, and recurring revenue reporting stays accurate in HubSpot.' },
+  { q: 'Do I have to replace my cloning app?', a: 'No. Keep whatever your team already uses and likes. We add the renewal layer around it: scheduled deal creation, escalation math, dates and alerts, and revenue-retention (NRR/GRR) reporting. You own everything we build, in your portal.' },
+  { q: 'Why not just build this with HubSpot workflows?', a: 'Many teams do, and it works, until HubSpot\'s loop protection silently stops a workflow-cloned renewal chain, usually around year 3. Community threads document the infinite-loop problem with cloning deals through workflows. We build chains that survive it.' },
+  { q: 'What does this cost?', a: 'Every business is different, so we scope after a free 30-minute audit of your renewal process. No long-term contracts; we earn your trust month by month.' },
+  { q: 'What happens in the free audit?', a: '30 minutes, no prep. We map how renewals run today, where manual work and leakage hide, and what to fix first. You leave with the picture whether or not you work with us.' },
+];
+
+const guides = [
+  { href: '/posts/hubspot-deal-cloning-apps-compared', label: 'CloneNer vs Deal Duplicator vs Clone a Deal: cloning apps compared' },
+  { href: '/posts/hubspot-clone-deal-complete-guide', label: 'How to clone a deal in HubSpot: the complete guide' },
+  { href: '/posts/hubspot-clone-deal-line-items', label: 'Cloning deals with line items: the complete fix' },
+  { href: '/posts/hubspot-renewal-workflow-infinite-loop-fix', label: 'The workflow infinite-loop problem that breaks renewal chains' },
+  { href: '/posts/hubspot-renewal-pipeline-complete-guide', label: 'Building a renewal pipeline in HubSpot: the complete guide' },
+  { href: '/posts/hubspot-renewal-quote-price-increase', label: 'Renewal quotes and price increases in HubSpot' },
+];
+
+const faqSchema = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+});
+---
+<BaseLayout
+  title="HubSpot Renewal Apps Compared: Cloning Is Just Step One"
+  description="Deal cloning apps copy deals well. Renewals need dates, uplifts, multi-year chains, and NRR reporting. An honest comparison of HubSpot renewal apps."
+>
+  <Navbar />
+
+  <!-- HERO: continuity with the pinned ad headline "Cloning Is Just Step One" -->
+  <section class="bg-gradient-to-b from-v6-bg to-white px-4 sm:px-6 lg:px-8 pt-16 pb-12">
+    <div class="max-w-3xl mx-auto text-center">
+      <p class="text-sm font-semibold uppercase tracking-[0.2em] text-v6-copper mb-3">For Teams Comparing HubSpot Renewal Apps</p>
+      <h1 class="text-3xl sm:text-5xl font-bold text-v6-dark leading-tight mb-5 text-balance">
+        Cloning Is Just <span class="text-v6-copper">Step One</span>
+      </h1>
+      <p class="text-lg sm:text-xl text-v6-text-muted mb-4 leading-relaxed">
+        Deal cloning apps are good at what they do. But a renewal is not a copy of last year's deal: it has a date someone must not miss, an escalation clause someone must apply, and a chain that must still work in year 3.
+      </p>
+      <p class="text-base text-v6-text-muted mb-6">Here is the honest comparison, including the row where cloning apps beat us. And if a cloning app really is all you need, the audit will say exactly that: it is a diagnosis you keep, not a pitch.</p>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center">
+        <a href="#comparison" class="bg-v6-copper text-white px-8 py-3.5 rounded-xl text-base font-semibold hover:bg-v6-copper-600 transition-colors">See The Comparison ↓</a>
+        <a href="/contactus" class="border border-gray-300 text-v6-dark px-8 py-3.5 rounded-xl text-base font-medium hover:bg-gray-50 transition-colors">Book Your Free Renewal Audit →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- HONESTY SECTION: concede what cloning apps do well -->
+  <section class="bg-white px-4 sm:px-6 lg:px-8 py-12">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-2xl sm:text-3xl font-bold text-v6-dark mb-4 text-center">First, Credit Where It's Due</h2>
+      <p class="text-base text-v6-text-muted text-center max-w-2xl mx-auto mb-8 leading-relaxed">
+        Marketplace cloning apps earn their reviews. Users call them clean, simple, and time-saving, and they are right. If duplication is your whole problem, install one and be happy.
+      </p>
+      <div class="grid sm:grid-cols-2 gap-4 mb-6">
+        <blockquote class="bg-v6-bg border border-v6-border rounded-xl p-5 text-sm text-v6-dark leading-relaxed">"Quick, seamless duplication of assets within HubSpot."<span class="block mt-2 text-xs text-gray-500">HubSpot Marketplace review of a cloning app</span></blockquote>
+        <blockquote class="bg-v6-bg border border-v6-border rounded-xl p-5 text-sm text-v6-dark leading-relaxed">"Saves us so much time and frustration related to manual data entry."<span class="block mt-2 text-xs text-gray-500">HubSpot Marketplace review of a cloning app</span></blockquote>
+      </div>
+      <p class="text-base text-v6-text-muted text-center max-w-2xl mx-auto leading-relaxed">
+        But read the critical reviews and the community threads, and a pattern shows: <em>"out of order line items after copy"</em>, <em>"double-check all duplicated properties"</em>, and workflows that clone deals hitting <em>"infinite loop"</em> protection. Cloning gets you a copy. Renewals need a system.
+      </p>
+    </div>
+  </section>
+
+  <!-- COMPARISON TABLE -->
+  <section id="comparison" class="bg-v6-bg px-4 sm:px-6 lg:px-8 py-14 border-y border-v6-border">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl sm:text-3xl font-bold text-v6-dark mb-3 text-center">Cloning Apps vs Renewal Operations</h2>
+      <p class="text-base text-v6-text-muted text-center mb-8 max-w-2xl mx-auto">What each covers, capability by capability. "~" means it works with caveats reviewers themselves report.</p>
+      <div class="overflow-x-auto rounded-2xl border border-v6-border bg-white">
+        <table class="w-full text-sm text-left">
+          <thead>
+            <tr class="border-b border-v6-border bg-v6-bg">
+              <th class="px-5 py-4 font-semibold text-v6-dark">Capability</th>
+              <th class="px-5 py-4 font-semibold text-v6-dark text-center">Deal cloning apps</th>
+              <th class="px-5 py-4 font-semibold text-v6-dark text-center">SWOTBee Renewal Operations</th>
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map(r => (
+              <tr class="border-b border-v6-border last:border-0">
+                <td class="px-5 py-4 text-v6-dark">{r.cap}{r.note && <span class="block text-xs text-gray-500 mt-1">{r.note}</span>}</td>
+                <td class={`px-5 py-4 text-center text-lg ${markClass(r.clone)}`}>{mark(r.clone)}</td>
+                <td class={`px-5 py-4 text-center text-lg ${markClass(r.us)}`}>{mark(r.us)}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="text-xs text-gray-500 text-center mt-4">"Deal cloning apps" refers to the HubSpot Marketplace duplication category generally; individual apps vary. Caveats quoted from public marketplace reviews.</p>
+      <div class="text-center mt-8">
+        <a href="/resources/renewal-leakage-estimate" class="inline-block border border-v6-copper text-v6-copper px-7 py-3 rounded-xl text-base font-semibold hover:bg-v6-copper-50 transition-colors">Curious what the right column is worth? Get a 1-page leakage estimate (no call) →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT THE RENEWAL LAYER ADDS -->
+  <section class="bg-white px-4 sm:px-6 lg:px-8 py-14">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl sm:text-3xl font-bold text-v6-dark mb-3 text-center">What The Renewal Layer Adds</h2>
+      <p class="text-base text-v6-text-muted text-center mb-10 max-w-2xl mx-auto">Keep your cloning app if you like it. These are the parts a copy button cannot reach.</p>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div class="bg-v6-bg rounded-xl p-6 border border-v6-border">
+          <div class="text-2xl mb-3">📅</div>
+          <h3 class="text-base font-semibold text-v6-dark mb-2">Deals that create themselves</h3>
+          <p class="text-sm text-v6-text-muted leading-relaxed">Renewal deals appear on schedule, in a renewal pipeline, with an owner and alerts. Nobody has to remember to click.</p>
+        </div>
+        <div class="bg-v6-bg rounded-xl p-6 border border-v6-border">
+          <div class="text-2xl mb-3">🧾</div>
+          <h3 class="text-base font-semibold text-v6-dark mb-2">Escalations applied, not forgotten</h3>
+          <p class="text-sm text-v6-text-muted leading-relaxed">Uplift and escalation math runs automatically, so contract price increases stop slipping through as flat renewals.</p>
+        </div>
+        <div class="bg-v6-bg rounded-xl p-6 border border-v6-border">
+          <div class="text-2xl mb-3">🔗</div>
+          <h3 class="text-base font-semibold text-v6-dark mb-2">Multi-year chains that hold</h3>
+          <p class="text-sm text-v6-text-muted leading-relaxed">Workflow-cloned chains hit HubSpot's loop protection, often silently, around year 3. Ours are built to survive it.</p>
+        </div>
+        <div class="bg-v6-bg rounded-xl p-6 border border-v6-border">
+          <div class="text-2xl mb-3">📊</div>
+          <h3 class="text-base font-semibold text-v6-dark mb-2">ARR you can trust</h3>
+          <p class="text-sm text-v6-text-muted leading-relaxed">Renewal and expansion revenue separated, NRR/GRR dashboards native in HubSpot, so leadership forecasts instead of guessing.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEO SUPPORT: how to evaluate renewal apps (covers the questions searchers ask) -->
+  <section class="bg-v6-bg px-4 sm:px-6 lg:px-8 py-14 border-y border-v6-border">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-2xl sm:text-3xl font-bold text-v6-dark mb-4 text-center">How To Choose A HubSpot Renewal App</h2>
+      <p class="text-base text-v6-text-muted mb-6 leading-relaxed">Whether you pick a marketplace app or a built service, the HubSpot app marketplace search for "renewals" returns mostly duplication tools. Use these four questions to evaluate any of them against how renewals actually run in your CRM:</p>
+      <ol class="list-decimal list-inside flex flex-col gap-4 text-base text-v6-dark">
+        <li><strong>Does it create the renewal, or just copy a deal?</strong><span class="block text-sm text-v6-text-muted mt-1 ml-5">Automation means the renewal deal appears in the renewal pipeline on schedule, without a human remembering to click. A copy button is a convenience; a workflow that triggers from the contract date is a system.</span></li>
+        <li><strong>What happens to line items and pricing?</strong><span class="block text-sm text-v6-text-muted mt-1 ml-5">Line items should carry over in order, with escalation clauses and uplifts applied to the new pricing, not pasted flat from last year.</span></li>
+        <li><strong>Does it survive year 3?</strong><span class="block text-sm text-v6-text-muted mt-1 ml-5">Multi-year renewal chains are where workflow-based cloning breaks, because HubSpot's loop protection stops a workflow from re-triggering on its own output. Ask the vendor directly how their integration handles it.</span></li>
+        <li><strong>Can leadership see renewal revenue?</strong><span class="block text-sm text-v6-text-muted mt-1 ml-5">Renewal rate, NRR/GRR, and expansion-vs-renewal splits should land in HubSpot dashboards. If the app only moves deals, your forecast is still a spreadsheet.</span></li>
+      </ol>
+      <div class="mt-8 bg-white border border-v6-border rounded-2xl p-6 text-center">
+        <p class="text-base font-semibold text-v6-dark mb-2">Want to score your current setup against these four questions?</p>
+        <p class="text-sm text-v6-text-muted mb-4">The Renewal Health Scorecard is the graded self-assessment version: answer a few questions, get your score. No call, no pitch.</p>
+        <a href="/resources/renewal-health-scorecard" class="inline-block bg-v6-copper text-white px-7 py-3 rounded-xl text-base font-semibold hover:bg-v6-copper-600 transition-colors">Get Your Renewal Health Score →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- RELATED GUIDES (self-serve path for research-mode visitors; placed before the proof/CTA closing sequence) -->
+  <section class="bg-white px-4 sm:px-6 lg:px-8 py-14">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-xl sm:text-2xl font-bold text-v6-dark mb-3 text-center">Still In Research Mode? The Deep-Dive Guides</h2>
+      <p class="text-sm text-v6-text-muted text-center mb-6 max-w-xl mx-auto">Everything on this page, in step-by-step detail. Free, no email required. The audit is for when you want your specific setup diagnosed instead.</p>
+      <ul class="grid sm:grid-cols-2 gap-3">
+        {guides.map(g => (
+          <li><a href={g.href} class="block bg-v6-bg border border-v6-border rounded-xl px-4 py-3 text-sm font-medium text-v6-dark hover:border-v6-copper transition-colors">{g.label} →</a></li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- PROOF BAND -->
+  <section class="bg-v6-dark px-4 sm:px-6 lg:px-8 py-12">
+    <div class="max-w-4xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
+      <div><p class="text-3xl font-bold text-white">~50%</p><p class="text-sm text-gray-300 mt-1">lift in renewal accuracy</p></div>
+      <div><p class="text-3xl font-bold text-white">90%</p><p class="text-sm text-gray-300 mt-1">less quote-creation effort</p></div>
+      <div><p class="text-3xl font-bold text-white">2 wks</p><p class="text-sm text-gray-300 mt-1">to first results</p></div>
+      <div><p class="text-3xl font-bold text-white">0</p><p class="text-sm text-gray-300 mt-1">long-term contracts required</p></div>
+    </div>
+    <blockquote class="max-w-2xl mx-auto text-center mt-8 text-base text-gray-200 leading-relaxed">"Renewal accuracy up about 50%. The team shifted from admin work to growth."<span class="block mt-2 text-sm text-gray-400">VP Sales, Energy & Utilities company (80+ employees, HubSpot Enterprise)</span></blockquote>
+    <blockquote class="max-w-2xl mx-auto text-center mt-5 text-base text-gray-200 leading-relaxed">"Quote response 65% faster, and distributor satisfaction up 30%."<span class="block mt-2 text-sm text-gray-400">Sales Operations Manager, Manufacturing</span></blockquote>
+    <p class="text-xs text-gray-400 text-center mt-5 max-w-xl mx-auto">Outcomes from client engagements, shared with permission and anonymized. Your results depend on your data and process. You own everything we build, in your portal: if we part ways, it keeps working.</p>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg-white px-4 sm:px-6 lg:px-8 py-14">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-2xl sm:text-3xl font-bold text-v6-dark mb-8 text-center">Frequently Asked Questions</h2>
+      <div class="flex flex-col gap-3">
+        {faqs.map(f => (
+          <details class="group bg-v6-bg border border-v6-border rounded-xl px-5 py-4">
+            <summary class="cursor-pointer text-base font-semibold text-v6-dark list-none flex justify-between items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-v6-copper rounded-lg">
+              {f.q}<span aria-hidden="true" class="text-v6-copper group-open:rotate-45 transition-transform text-xl leading-none">+</span>
+            </summary>
+            <p class="text-sm text-v6-text-muted leading-relaxed mt-3">{f.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+  <script is:inline type="application/ld+json" set:html={faqSchema} />
+
+  <!-- RISK REVERSAL CTA -->
+  <section class="bg-gradient-to-br from-v6-copper to-v6-copper-600 px-4 sm:px-6 lg:px-8 py-16">
+    <div class="max-w-2xl mx-auto text-center">
+      <h2 class="text-2xl sm:text-3xl font-bold text-white mb-4">Not Sure Which You Need? Let's Look At Your Renewals.</h2>
+      <p class="text-base text-white/90 mb-7 leading-relaxed">A free 30-minute audit of how renewals run in your HubSpot today. No prep, no obligation, and the findings are yours to keep whatever you decide. If a cloning app really is all you need, the audit will say so in writing.</p>
+      <a href="/contactus" class="inline-block bg-white text-v6-copper px-8 py-3.5 rounded-xl text-base font-semibold hover:bg-gray-100 transition-colors">Book Your Free Renewal Audit →</a>
+      <p class="text-sm text-white/80 mt-4">No long-term contracts. We earn your trust month by month.</p>
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>

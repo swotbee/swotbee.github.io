@@ -1,0 +1,181 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navbar from '../../components/astro/Navbar.astro';
+import Footer from '../../components/astro/Footer.astro';
+// Landing page for Ad Group 7 (integration-pain searchers), per
+// marketing/user-survey/14-landing-pages-build-plan.md Page B.
+// Persona: ops admin / RevOps leader debugging a live HubSpot-NetSuite sync
+// problem. The page meets them in the failure modes FIRST (all six are
+// verbatim from harvested community threads), then widens to the renewal
+// layer. NeuronWriter query 9dacbe13851ce00b (target ~1200 words).
+// Ad launch waits for the demo asset per option B (pagetest-summary.md).
+
+const failureModes = [
+  { n: 1, title: 'Line items do not sync from Deals to Sales Orders', quote: "HubSpot's native integration with NetSuite does not support syncing line items from Deals to Opportunities directly", cause: 'The native connector syncs deal-level fields; line-level data needs custom mapping or middleware.', fix: 'config', href: '/posts/hubspot-netsuite-data-mapping', action: 'See the line-item mapping fix →' },
+  { n: 2, title: 'Edits break what the initial sync built', quote: 'it usually works just enough on create, then breaks down as soon as edits happen on either side', cause: 'Create events are easy; bi-directional update events collide when both systems change the same record.', fix: 'layer', href: '/posts/hubspot-netsuite-sync', action: 'See how to keep the sync reliable →' },
+  { n: 3, title: 'Line-level changes silently stop flowing', quote: "when changes are made on the line level in HubSpot, those changes aren't syncing over properly, and vice versa", cause: 'HubSpot line items lack a reliable external ID that persists across updates, so middleware loses track of which line is which.', fix: 'layer', href: '/posts/hubspot-netsuite-data-mapping', action: 'See the data-ownership fix →' },
+  { n: 4, title: 'Delete-and-recreate vs update-in-place', quote: 'NetSuite SuiteScript often treats line item updates as delete-and-recreate operations, while HubSpot updates in place', cause: 'The two systems disagree about what an "update" is, so naive sync duplicates or orphans lines.', fix: 'layer', href: '/posts/custom-netsuite-crm-integration', action: 'See the sync architecture that prevents this →' },
+  { n: 5, title: 'Invoice fields that cannot be mapped', quote: 'certain NetSuite fields, especially on invoices, cannot be mapped directly into HubSpot custom properties', cause: 'Field-type mismatches between NetSuite invoices and HubSpot properties need transformation logic, not just mapping.', fix: 'config', href: '/posts/hubspot-netsuite-data-mapping', action: 'See which fields need transformation →' },
+  { n: 6, title: 'Renewals never make it back to the CRM', quote: 'renewal deals recreated by hand every year because the sync only covers new business', cause: 'Most connector setups sync the first sale and stop; renewal deals, uplifted pricing, and multi-year chains are out of scope by default.', fix: 'layer', href: '#renewal-layer', action: 'See the renewal layer (below) →' },
+];
+
+const guides = [
+  { href: '/posts/hubspot-netsuite-integration', label: 'HubSpot NetSuite integration: the complete guide' },
+  { href: '/posts/hubspot-netsuite-sync', label: 'What syncs, what breaks, and how to keep it reliable' },
+  { href: '/posts/hubspot-netsuite-data-mapping', label: 'Data mapping: the 7 mismatches that cause most sync bugs' },
+  { href: '/posts/hubspot-netsuite-connector-comparison', label: 'Native vs Celigo vs Workato vs custom: connector comparison' },
+  { href: '/posts/hubspot-to-netsuite-integration-setup', label: 'Step-by-step setup and field mappings' },
+  { href: '/posts/custom-netsuite-crm-integration', label: 'Custom integration: API limits, architecture, cost' },
+  { href: '/posts/netsuite-crm-vs-hubspot', label: 'NetSuite CRM vs HubSpot: a complete RevOps comparison' },
+  { href: '/posts/hubspot-erp-integration', label: 'HubSpot ERP integration: the complete guide (all ERPs)' },
+];
+
+const faqs = [
+  { q: 'Can HubSpot integrate with NetSuite?', a: 'Yes. Options range from the native HubSpot-NetSuite connector to middleware platforms like Workato and Celigo to custom API integration. The right method depends on what must sync: contact and company records are straightforward; deals to sales orders with line items, bi-directional edits, and renewal data are where the standard methods need help.' },
+  { q: 'What are the most common HubSpot NetSuite integration issues?', a: 'The six above cover what the community reports most: line items not syncing to sales orders, edits breaking the initial sync, line-level changes flowing one way only, delete-and-recreate conflicts, unmappable invoice fields, and renewals falling outside the sync scope entirely.' },
+  { q: 'What data syncs between HubSpot and NetSuite?', a: 'In a typical setup: contacts, companies, and deal-level fields sync well. Sales orders, invoices, payment status, and line items need deliberate mapping. Renewal deals, escalated pricing, and multi-year contract chains usually do not sync at all unless the integration is built for them, which is the gap this page is about.' },
+  { q: 'How can integration problems be fixed or avoided?', a: 'Start by classifying each failure: mapping problems (fixable with connector configuration) versus structural problems (the two systems disagree about IDs and update semantics, which needs an integration layer with its own line-item registry). Our free audit does exactly this classification on your setup before anything is built.' },
+  { q: 'We already have a connector. Do we rip it out?', a: 'No. If your connector handles contacts and new-business deals, keep it. We add the renewal layer around what works: renewal deals created on schedule in HubSpot with correct line items and uplifts, synced to NetSuite without the delete-and-recreate mess. You own everything we build.', tag: 'Most asked' },
+  { q: 'What does this cost?', a: 'Integration work is fixed-scope with a clear handover, priced after the free 30-minute audit of your sync and renewal setup. No long-term contracts; you keep the audit findings either way.', tag: 'Most asked' },
+];
+
+const faqSchema = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+});
+---
+<BaseLayout
+  title="HubSpot NetSuite Integration Issues, Fixed: Renewals Included"
+  description="The six HubSpot-NetSuite sync failures the community reports most, what causes each, which are config-fixable, and how the renewal layer closes the rest."
+>
+  <Navbar />
+
+  <!-- HERO: continuity with the pinned ad headline "HubSpot + Your ERP, In Sync" -->
+  <section class="bg-gradient-to-b from-v6-bg to-white px-4 sm:px-6 lg:px-8 pt-16 pb-12">
+    <div class="max-w-3xl mx-auto text-center">
+      <p class="text-sm font-semibold uppercase tracking-[0.2em] text-v6-copper mb-3">For Teams Fighting A HubSpot-NetSuite Sync</p>
+      <h1 class="text-3xl sm:text-5xl font-bold text-v6-dark leading-tight mb-5 text-balance">
+        HubSpot + Your ERP, <span class="text-v6-copper">In Sync</span>
+      </h1>
+      <p class="text-lg sm:text-xl text-v6-text-muted mb-4 leading-relaxed">
+        If you are here, something in your HubSpot-NetSuite integration is not doing what the connector page promised. You are not alone: the same six failures show up in community thread after community thread.
+      </p>
+      <p class="text-base text-v6-text-muted mb-6">Below: each failure, what actually causes it, and which ones a config change can fix versus which need an integration layer. Diagnosis first, pitch second.</p>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center">
+        <a href="#failure-modes" class="border border-gray-300 text-v6-dark px-8 py-3.5 rounded-xl text-base font-medium hover:bg-gray-50 transition-colors">Find Your Failure Mode ↓</a>
+        <a href="/contactus" class="bg-v6-copper text-white px-8 py-3.5 rounded-xl text-base font-semibold hover:bg-v6-copper-600 transition-colors">Book A Free Sync & Renewal Audit →</a>
+      </div>
+      <p class="text-sm text-gray-500 mt-4">Not on NetSuite? The same failure patterns apply to QuickBooks, Xero, and Sage integrations; the audit covers your stack as it is.</p>
+    </div>
+  </section>
+
+  <!-- FAILURE MODES -->
+  <section id="failure-modes" class="bg-white px-4 sm:px-6 lg:px-8 py-14">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl sm:text-3xl font-bold text-v6-dark mb-3 text-center">Find Your Failure Mode</h2>
+      <p class="text-base text-v6-text-muted text-center mb-10 max-w-2xl mx-auto">Six failures cover most of what goes wrong between HubSpot and NetSuite (each quote is from a public community thread). Find yours: every one links to a guide with the actual fix, whether or not you ever talk to us.</p>
+      <div class="flex flex-col gap-5">
+        {failureModes.map(m => (
+          <div class="bg-v6-bg border border-v6-border rounded-2xl p-6 sm:flex gap-6 items-start">
+            <div class="flex-shrink-0 w-10 h-10 rounded-full bg-v6-copper-50 text-v6-copper font-bold flex items-center justify-center mb-3 sm:mb-0">{m.n}</div>
+            <div class="flex-1">
+              <h3 class="text-base font-semibold text-v6-dark mb-2">{m.title}</h3>
+              <blockquote class="text-sm italic text-v6-text-muted border-l-2 border-v6-copper pl-3 mb-2">"{m.quote}"</blockquote>
+              <p class="text-sm text-v6-text-muted leading-relaxed mb-2">{m.cause}</p>
+              <div class="flex flex-wrap items-center gap-3">
+                <span class={`inline-block text-xs font-semibold px-3 py-1 rounded-full ${m.fix === 'config' ? 'bg-v6-teal-50 text-v6-teal' : 'bg-v6-copper-50 text-v6-copper'}`}>
+                  {m.fix === 'config' ? 'Often fixable with connector configuration' : 'Needs an integration layer'}
+                </span>
+                <a href={m.href} class="text-sm font-semibold text-v6-copper hover:underline">{m.action}</a>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+      <p class="text-center mt-8">
+        <a href="/contactus" class="text-base font-semibold text-v6-copper hover:underline">Not sure which one is yours? We classify it in the free audit →</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- HONEST SPLIT TABLE -->
+  <section class="bg-v6-bg px-4 sm:px-6 lg:px-8 py-14 border-y border-v6-border">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-2xl sm:text-3xl font-bold text-v6-dark mb-3 text-center">What A Connector Fixes vs What Needs More</h2>
+      <p class="text-base text-v6-text-muted text-center mb-8 max-w-2xl mx-auto">Connectors and middleware (native, Workato, Celigo) are the right tool for a lot of this. Being honest about the split is the fastest way to the right fix.</p>
+      <div class="overflow-x-auto rounded-2xl border border-v6-border bg-white">
+        <table class="w-full text-sm text-left">
+          <thead><tr class="border-b border-v6-border bg-v6-bg">
+            <th class="px-5 py-4 font-semibold text-v6-dark">Job</th>
+            <th class="px-5 py-4 font-semibold text-v6-dark text-center">Connector / middleware</th>
+            <th class="px-5 py-4 font-semibold text-v6-dark text-center">Integration + renewal layer</th>
+          </tr></thead>
+          <tbody>
+            <tr class="border-b border-v6-border"><td class="px-5 py-4">Contacts, companies, deal-level fields</td><td class="px-5 py-4 text-center text-v6-teal font-bold">✓</td><td class="px-5 py-4 text-center text-v6-teal font-bold">✓</td></tr>
+            <tr class="border-b border-v6-border"><td class="px-5 py-4">One-way create of sales orders from won deals</td><td class="px-5 py-4 text-center text-v6-amber font-bold">~</td><td class="px-5 py-4 text-center text-v6-teal font-bold">✓</td></tr>
+            <tr class="border-b border-v6-border"><td class="px-5 py-4">Line items that survive edits on both sides</td><td class="px-5 py-4 text-center text-gray-400 font-bold">✗</td><td class="px-5 py-4 text-center text-v6-teal font-bold">✓</td></tr>
+            <tr class="border-b border-v6-border"><td class="px-5 py-4">Invoice and payment status visible on the HubSpot deal</td><td class="px-5 py-4 text-center text-v6-amber font-bold">~</td><td class="px-5 py-4 text-center text-v6-teal font-bold">✓</td></tr>
+            <tr class="border-b border-v6-border"><td class="px-5 py-4">Renewal deals created on schedule with uplifted pricing</td><td class="px-5 py-4 text-center text-gray-400 font-bold">✗</td><td class="px-5 py-4 text-center text-v6-teal font-bold">✓</td></tr>
+            <tr><td class="px-5 py-4">ARR/NRR (annual recurring revenue / net revenue retention) reporting that matches the ERP</td><td class="px-5 py-4 text-center text-gray-400 font-bold"><span title="Not supported" aria-label="Not supported">✗</span></td><td class="px-5 py-4 text-center text-v6-teal font-bold"><span title="Fully supported" aria-label="Fully supported">✓</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-center mt-8">
+        <a href="/contactus" class="inline-block border border-v6-copper text-v6-copper px-7 py-3 rounded-xl text-base font-semibold hover:bg-v6-copper-50 transition-colors">Not sure which column your setup falls in? Get it classified, free →</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- THE RENEWAL ANGLE -->
+  <section id="renewal-layer" class="bg-white px-4 sm:px-6 lg:px-8 py-14">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-2xl sm:text-3xl font-bold text-v6-dark mb-4 text-center">Why Renewals Are Where Syncs Go To Die</h2>
+      <p class="text-base text-v6-text-muted leading-relaxed mb-4">A first sale flows through most integrations fine: deal closes, sales order appears, invoice goes out. The renewal is where it unravels. The renewal deal is often created by hand (or by a workflow that HubSpot's loop protection eventually stops), the escalation uplift is applied in one system but not the other, and by year 3 the ARR number in HubSpot and the revenue number in NetSuite are two different stories.</p>
+      <p class="text-base text-v6-text-muted leading-relaxed mb-4">Our integration work is built around that lifecycle, not just the field mapping: renewal deals created automatically in a renewal pipeline, line items carried over with uplifts applied, synced to NetSuite in a way that survives edits, and NRR/GRR reporting that finance and RevOps both trust. Fixed scope, clear handover, and you own everything we build in your portal.</p>
+    </div>
+  </section>
+
+  <!-- DEEP-DIVE GUIDES (pillar links: self-serve path for research-mode visitors) -->
+  <section class="bg-white px-4 sm:px-6 lg:px-8 pb-14">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-xl sm:text-2xl font-bold text-v6-dark mb-3 text-center">In Research Mode? The Deep-Dive Guides</h2>
+      <p class="text-sm text-v6-text-muted text-center mb-6 max-w-xl mx-auto">Everything above, in step-by-step detail. Free, no email required. The audit is for when you want your specific setup diagnosed instead.</p>
+      <ul class="grid sm:grid-cols-2 gap-3">
+        {guides.map(g => (
+          <li><a href={g.href} class="block bg-v6-bg border border-v6-border rounded-xl px-4 py-3 text-sm font-medium text-v6-dark hover:border-v6-copper transition-colors">{g.label} →</a></li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg-v6-bg px-4 sm:px-6 lg:px-8 py-14 border-t border-v6-border">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-2xl sm:text-3xl font-bold text-v6-dark mb-8 text-center">Frequently Asked Questions</h2>
+      <div class="flex flex-col gap-3">
+        {faqs.map(f => (
+          <details class="group bg-white border border-v6-border rounded-xl px-5 py-4">
+            <summary class="cursor-pointer text-base font-semibold text-v6-dark list-none flex justify-between items-center gap-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-v6-copper rounded-lg">
+              <span>{f.q} {f.tag && <span class="ml-2 align-middle text-[10px] font-bold uppercase tracking-wide bg-v6-copper-50 text-v6-copper px-2 py-0.5 rounded-full">{f.tag}</span>}</span><span aria-hidden="true" class="text-v6-copper group-open:rotate-45 transition-transform text-xl leading-none">+</span>
+            </summary>
+            <p class="text-sm text-v6-text-muted leading-relaxed mt-3">{f.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+  <script is:inline type="application/ld+json" set:html={faqSchema} />
+
+  <!-- RISK REVERSAL CTA -->
+  <section class="bg-gradient-to-br from-v6-copper to-v6-copper-600 px-4 sm:px-6 lg:px-8 py-16">
+    <div class="max-w-2xl mx-auto text-center">
+      <h2 class="text-2xl sm:text-3xl font-bold text-white mb-4">Get Your Sync Diagnosed Before Anyone Builds Anything</h2>
+      <p class="text-base text-white/90 mb-7 leading-relaxed">A free 30-minute audit of your HubSpot-NetSuite setup and renewal flow. We classify each problem as config-fixable or structural, in writing, and you keep the findings whatever you decide. If a config change is all you need, that is what we will tell you.</p>
+      <a href="/contactus" class="inline-block bg-white text-v6-copper px-8 py-3.5 rounded-xl text-base font-semibold hover:bg-gray-100 transition-colors">Book A Free Sync & Renewal Audit →</a>
+      <p class="text-sm text-white/80 mt-4">Fixed-scope projects, clear handover, no long-term contracts.</p>
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>
