@@ -30,7 +30,9 @@ export default defineConfig({
 
   server: {
     headers: {
-      "Content-Type": "text/html; charset=utf-8",
+      // NOTE: Do not set a global "Content-Type" here. It overrides the per-asset
+      // MIME types Vite sends, so JS/CSS modules get "text/html" and the browser
+      // (with nosniff) refuses to execute them, breaking client scripts and HMR.
       "Content-Security-Policy": [
   //       "default-src * 'unsafe-inline' 'unsafe-eval' data: blob:;",
   //       "script-src * 'unsafe-inline' 'unsafe-eval' data: blob:;",
