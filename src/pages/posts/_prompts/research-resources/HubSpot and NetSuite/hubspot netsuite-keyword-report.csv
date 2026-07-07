@@ -1,0 +1,15 @@
+﻿Keyword,Intent,Volume,Trend,"Keyword Difficulty","CPC (USD)","Number of Results"
+"hubspot and netsuite",Commercial,70,"0.64,0.52,0.41,0.41,0.64,0.41,0.29,0.29,0.23,0.29,0.17,1.00",19,18.69,107
+"hubspot to netsuite integration",Informational,170,"0.03,0.04,0.03,0.07,0.07,0.04,0.07,0.03,0.04,0.07,0.07,0.10",19,12.37,108
+"hubspot and netsuite integration",Navigational,480,"0.04,0.04,0.05,0.13,0.05,0.04,0.13,0.08,0.05,0.07,0.03,0.11",26,12.47,1300000
+"hubspot netsuite integration",Navigational,720,"0.16,0.11,0.11,0.13,0.13,0.13,0.16,0.11,0.11,0.20,0.11,0.13",19,12.47,889000
+"hubspot to netsuite","Informational, Navigational",70,"0.63,0.81,0.63,0.45,0.63,0.63,0.45,0.45,0.36,0.45,0.18,1.00",17,21.12,108
+"netsuite hubspot integration",Navigational,260,"0.15,0.23,0.19,0.19,1.00,0.12,0.29,0.10,0.36,0.44,0.36,0.15",19,12.47,106
+"netsuite integration hubspot",Informational,30,"0.11,0.44,0.22,0.22,0.77,0.44,0.11,0.11,0.55,0.11,0.22,1.00",24,12.47,945000
+"hubspot netsuite connector",Informational,40,"0.22,0.33,0.33,0.77,0.55,0.55,0.77,0.22,0.44,1.00,0.77,0.77",18,283.41,107
+"netsuite and hubspot integration",Navigational,390,"0.01,0.01,0.01,0.03,0.07,0.05,0.03,0.05,0.04,0.04,0.07,0.08",21,12.47,106
+"netsuite migrated to hubspot",Informational,40,"1.00,0.50,0.00,0.00",0,0,95300
+"netsuite crm vs hubspot","Informational, Commercial",50,"0.02,0.02,0.02,0.09,0.11,0.11,0.07,0.07,0.07,0.03,0.07,0.07",0,45.63,1100000
+"netsuite crm integration",Informational,320,"0.10,0.19,0.10,0.29,0.44,0.44,0.12,0.54,0.29,1.00,0.54,0.19",24,19.18,108
+"netsuite crm integrations","Informational, Commercial",260,"0.03,0.03,0.03,0.84,0.16,0.07,0.13,0.02,0.05,0.07,0.04,0.08",7,35.52,109
+"workato hubspot integration","Informational, Transactional",30,"0.40,0.40,0.40,1.00,1.00,1.00,0.40,0.80,0.80,0.40,0.40,1.00",11,30,101
