@@ -6,7 +6,7 @@ description: "A complete guide to CRM and ERP integration: what it is, how it wo
 category:
   title: "Revenue Operations"
   href: "/categories/revenue-operations"
-modifiedDate: "2026-06-27"
+modifiedDate: "2026-07-06"
 author:
   name: "SWOTBee Team"
   url: "https://swotbee.com"
@@ -29,6 +29,8 @@ seriesName: "CRM and ERP Integration"
 **CRM and ERP integration is the process of connecting your CRM (the front-office system for sales, marketing, and service) with your ERP (the back-office system for finance, inventory, and operations) so that customer, order, and financial data sync between them instead of being re-keyed by hand.** Done well, it gives every team one source of truth, automates the deal-to-cash handoff, and removes the manual data entry that slows growth. This guide covers what CRM and ERP integration is, how it works, the benefits, the methods, the challenges, and the best practices.
 
 This is the umbrella pillar for integration on swotbee.com. For the most common real-world pairing, see our detailed [HubSpot and NetSuite integration guide](/posts/hubspot-netsuite-integration).
+
+If your CRM is HubSpot, start with our [HubSpot ERP integration guide](/posts/hubspot-erp-integration): it applies everything in this article to HubSpot specifically, covering which ERPs connect natively, how HubSpot's data model maps to ERP objects, and the connector options for NetSuite, SAP, Dynamics, and the other major ERP platforms. This page stays platform-neutral; that one is the HubSpot playbook.
 
 ---
 

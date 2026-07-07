@@ -126,6 +126,8 @@ Most failures are data-mapping issues: the "company should be present" block, du
 **How do I keep the sync reliable?**
 Set match keys and deduplication, sequence dependent records, use a hybrid real-time and batch cadence, monitor with alerts, and test changes in a sandbox first.
 
+**Fighting a live sync problem right now?** We catalogued the [six most-reported HubSpot NetSuite sync failures and their fixes](/integrations/hubspot-netsuite-renewals), including which ones a config change can solve and which need an integration layer.
+
 ---
 
 **SWOTBee builds and maintains reliable HubSpot NetSuite syncs, the mappings, match keys, and monitoring that keep your CRM and ERP in agreement.** No duplicates, no silent failures.

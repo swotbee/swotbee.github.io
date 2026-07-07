@@ -2,7 +2,7 @@
 layout: ../../layouts/BlogPostLayout.astro
 title: "Building a Churn Prevention Workflow in HubSpot: Health Scores, Alerts & Playbooks"
 pubDate: "2026-04-02"
-modifiedDate: "2026-06-23"
+modifiedDate: "2026-07-06"
 description: "From health score setup to at-risk alert workflows, churn reason taxonomies, and win-back sequences. A practical guide to preventing churn before the renewal conversation starts."
 category:
   title: "Revenue Operations"
@@ -33,7 +33,7 @@ This article shows you how to build that system in HubSpot.
 
 ---
 
-## Building a Customer Health Score in HubSpot
+## Building a HubSpot Customer Health Score
 
 
 The foundation of churn prevention is a customer health score in HubSpot: a single number that summarizes the health of each account. To build a customer health score, decide your score criteria and the customer data that feeds it, then store the result on the company record so the whole team shares one view of customer health.
@@ -66,7 +66,7 @@ The research suggests 10-20% churn reduction is achievable with proactive automa
 
 ## Health Score Option 1: HubSpot's Native CS Workspace
 
-If you have **[Service Hub Professional or Enterprise](https://www.hubspot.com/pricing/service)**, HubSpot offers built-in health scoring through the [Customer Success Workspace](https://knowledge.hubspot.com/customer-success/set-up-and-manage-the-customer-success-workspace). [HubSpot Academy's lesson on account health checks](https://academy.hubspot.com/lessons/customer-success-and-account-health-checks) covers the fundamentals. For a deeper framework on building health scores, [ChurnZero's Customer Health Score Handbook](https://churnzero.com/guides/the-customer-health-score-handbook/) is an excellent resource.
+If you have **[Service Hub Professional or Enterprise](https://www.hubspot.com/pricing/service)**, HubSpot offers built-in health scoring through the [Customer Success Workspace](https://knowledge.hubspot.com/customer-success/set-up-and-manage-the-customer-success-workspace); our [Customer Success Workspace guide](/posts/hubspot-customer-success-workspace) covers the full setup beyond health scores. [HubSpot Academy's lesson on account health checks](https://academy.hubspot.com/lessons/customer-success-and-account-health-checks) covers the fundamentals. For a deeper framework on building health scores, [ChurnZero's Customer Health Score Handbook](https://churnzero.com/guides/the-customer-health-score-handbook/) is an excellent resource.
 
 ### What You Get
 
@@ -283,6 +283,13 @@ Health scores aren't useful if they exist in isolation. They need to influence w
 **Healthy + 60 days to renewal:** Standard process. Send renewal proposal with confidence.
 
 Set up the [health score properties](/posts/hubspot-renewal-pipeline-properties) before building these workflows.
+
+---
+
+## Frequently Asked Questions
+
+**What is a customer health score in HubSpot?**
+A customer health score in HubSpot is a single number or status (for example, Healthy, Passive, At Risk) that summarizes how likely an account is to renew, based on signals like product usage, email engagement, support tickets, and meeting activity. It lives on the company record, either through the native Customer Success Workspace scoring (Service Hub Professional and Enterprise) or a custom property updated by workflows. Its job is to surface at-risk accounts months before the renewal conversation, so your team can intervene while there is still time.
 
 ---
 

@@ -77,6 +77,10 @@ Credentials will be passed as environment variables at call time, not written to
 ### Active run config (first run: renewal cluster extension)
 - Project: `reputebee.com` -> `NEURON_PROJECT_ID = 4dbab1e6a21ced91`.
 - Engine: `google.co.uk` (project default; SERP analysis is UK-based, not US).
+
+### Config update (2026-07-06, landing-pages run)
+- Live values re-verified via `/list-projects`: `reputebee.com` -> `NEURON_PROJECT_ID = 3dcebed4e4031ff3`, engine `google.com` (US). The values above are stale; use these.
+- Key location: `website/.env` (gitignored), variable `NEURON_API_KEY`.
 - Language: English.
 - Topic: extend the existing "HubSpot Renewal Pipeline" cluster (pillar:
   `/posts/hubspot-renewal-pipeline-complete-guide`, 9 clusters already published).

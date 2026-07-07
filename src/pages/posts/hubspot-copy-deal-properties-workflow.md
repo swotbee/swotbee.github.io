@@ -245,6 +245,8 @@ Before enabling your workflow on live data:
 
 These workflows also power [the 90-60-30 engagement cadence](/posts/hubspot-renewal-deal-workflow-automation). If properties aren't copying correctly, the entire downstream automation breaks.
 
+**Evaluating apps for renewals specifically?** Cloning is only step one of a renewal system. See our [honest comparison of HubSpot renewal apps](/compare/hubspot-renewal-apps), including the capabilities a copy button cannot reach.
+
 ---
 
 **Property copying between deals is deceptively simple in theory and surprisingly hard in practice.** SWOTBee has built deal property workflows for dozens of mid-market companies, handling the edge cases, timing issues, and data integrity challenges that trip up most teams.

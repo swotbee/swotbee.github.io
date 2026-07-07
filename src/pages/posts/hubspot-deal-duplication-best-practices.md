@@ -197,6 +197,8 @@ Even apps that copy line items can miss edge cases: deleted products, changed pr
 
 For the full list of renewal pipeline mistakes, see [12 Mistakes That Are Costing You Revenue](/posts/hubspot-renewal-pipeline-mistakes-costing-revenue).
 
+**Evaluating apps for renewals specifically?** Cloning is only step one of a renewal system. See our [honest comparison of HubSpot renewal apps](/compare/hubspot-renewal-apps), including the capabilities a copy button cannot reach.
+
 ---
 
 **SWOTBee audits and optimizes HubSpot pipeline governance for mid-market teams.** We set up cloning workflows with proper naming, property mapping, permissions, and audit trails, so your data stays clean as you scale.

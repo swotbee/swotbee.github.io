@@ -127,6 +127,8 @@ The deal tried to sync before its parent company reached NetSuite. Sequence the 
 **Can the native connector handle multiple NetSuite subsidiaries?**
 No. The native connector is subsidiary-blind and uses a single subsidiary. Multiple subsidiaries need custom middleware or a database-driven sync engine.
 
+**Fighting a live sync problem right now?** We catalogued the [six most-reported HubSpot NetSuite sync failures and their fixes](/integrations/hubspot-netsuite-renewals), including which ones a config change can solve and which need an integration layer.
+
 ---
 
 **SWOTBee maps HubSpot and NetSuite at the data-model layer first, so the integration holds up instead of silently corrupting records.** We define ownership, match keys, and structure before a single field syncs.

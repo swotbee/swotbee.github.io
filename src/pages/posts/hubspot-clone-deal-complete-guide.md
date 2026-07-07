@@ -6,7 +6,7 @@ description: "The only vendor-neutral guide to cloning deals in HubSpot: native 
 category:
   title: "Revenue Operations"
   href: "/categories/revenue-operations"
-modifiedDate: "2026-04-02"
+modifiedDate: "2026-07-06"
 author:
   name: "SWOTBee Team"
   url: "https://swotbee.com"
@@ -257,6 +257,15 @@ For the full best practices framework, see [HubSpot Deal Duplication Best Practi
 
 ## FAQ: Common Questions About Cloning Deals in HubSpot
 
+**How do I duplicate a deal in HubSpot?**
+Open the deal record, click the **Actions** dropdown (top-left), and select **Clone**. HubSpot creates a copy with the same properties and associations; update the name, close date, and stage before saving. Line items are not copied, so if the deal has products you'll need a [marketplace app](/posts/hubspot-deal-cloning-apps-compared) or the API (Methods 3 and 4 above).
+
+**Can you bulk duplicate deals in HubSpot?**
+Not natively; HubSpot's Clone action works one deal at a time. For bulk duplication, use a marketplace app (Deal Duplicator batch-clones 200 deals in about 10 seconds, and CloneNer handles batches via templates) or a workflow-triggered cloning action that fires as deals meet your criteria. High-volume teams (500+ clones per month) often go straight to the HubSpot API.
+
+**Is there a way to duplicate a deal with its line items?**
+Yes, but not with native cloning or workflows; line items are the number one gap. You need a marketplace app (CloneNer, Deal Duplicator, Clone a Deal, and Clone Attack all copy line items) or a custom API integration that reads the source deal's line items and recreates them on the copy. We cover every option in [How to Clone HubSpot Deals with Line Items](/posts/hubspot-clone-deal-line-items).
+
 **Can I clone a deal in HubSpot without an app?**
 Yes. HubSpot added native deal cloning. Click Actions → Clone on any deal. But it doesn't copy line items, can't be automated, and doesn't work in workflows.
 
@@ -286,6 +295,8 @@ It depends on your use case. See our [full comparison](/posts/hubspot-deal-cloni
 ## Next Steps
 
 Deal cloning is the operational foundation of any recurring revenue process. Whether you're building a renewal pipeline, scaling upsells, or standardizing deal templates, getting cloning right saves hours per week and keeps your data clean.
+
+**Evaluating apps for renewals specifically?** Cloning is only step one of a renewal system. See our [honest comparison of HubSpot renewal apps](/compare/hubspot-renewal-apps), including the capabilities a copy button cannot reach.
 
 **Need help setting this up?** SWOTBee builds deal cloning automation for mid-market teams in Energy, Manufacturing, SaaS, and Construction. We handle the workflow architecture, app selection, line item setup, and team training.
 

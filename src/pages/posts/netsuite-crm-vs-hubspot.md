@@ -6,7 +6,7 @@ description: "NetSuite CRM vs HubSpot compared for RevOps: capabilities, pricing
 category:
   title: "Revenue Operations"
   href: "/categories/revenue-operations"
-modifiedDate: "2026-06-26"
+modifiedDate: "2026-07-06"
 author:
   name: "SWOTBee Team"
   url: "https://swotbee.com"
@@ -84,7 +84,7 @@ For RevOps, adoption is the deciding factor more often than features. NetSuite i
 
 ## When to Combine Both Platforms
 
-The most common mistake is assuming you must use NetSuite CRM just because you run NetSuite accounting. You do not. The mainstream mid-market answer is to combine both platforms: HubSpot wins and manages the customer, NetSuite serves and invoices the customer, and an integration keeps them in sync. Can HubSpot integrate with NetSuite? Yes, through a native connector, an iPaaS such as Celigo or Workato, or a custom build.
+The most common mistake is assuming you must use NetSuite CRM just because you run NetSuite accounting. You do not. The mainstream mid-market answer is to combine both platforms: HubSpot wins and manages the customer, NetSuite serves and invoices the customer, and an integration keeps them in sync. Can HubSpot integrate with NetSuite? Yes, through a native connector, an iPaaS such as Celigo or Workato, or a custom build; our [HubSpot ERP integration guide](/posts/hubspot-erp-integration) walks through these options for NetSuite and the other major ERPs.
 
 ### Eliminating Manual Data Entry and Consolidating Revenue Reporting
 

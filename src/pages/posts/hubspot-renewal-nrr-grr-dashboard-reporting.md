@@ -2,7 +2,7 @@
 layout: ../../layouts/BlogPostLayout.astro
 title: "How to Track NRR, GRR & Renewal Rate in HubSpot Dashboards"
 pubDate: "2026-04-02"
-modifiedDate: "2026-06-23"
+modifiedDate: "2026-07-06"
 description: "HubSpot has no native NRR report. Here's how to build renewal dashboards using custom properties, calculated fields, and custom reports: including board-ready metrics."
 category:
   title: "Revenue Operations"
@@ -230,7 +230,11 @@ It's worth evaluating, but most mid-market teams find custom dashboards more fle
 
 ## Tracking Recurring Revenue in HubSpot
 
-Before the dashboards, get your recurring revenue data right. Whether you track HubSpot MRR through native recurring revenue properties or custom objects, the goal is a real-time, single source of revenue data in your core CRM. A few notes:
+Before the dashboards, get your recurring revenue data right. Whether you track HubSpot MRR through native recurring revenue properties or custom objects, the goal is a real-time, single source of revenue data in your core CRM.
+
+Start with where the fields live. HubSpot's recurring revenue properties sit on the deal record: Annual recurring revenue (ARR), Monthly recurring revenue (MRR), Annual contract value (ACV), and Total contract value (TCV). They are calculated automatically from line items, using each line item's recurring billing frequency and term, so they are only as accurate as your line-item hygiene. If you skip line items and type amounts directly onto deals, these fields stay empty and both Revenue Analytics and your custom revenue reports lose their data source.
+
+Dashboards consume these properties the same way they consume any deal field: sum ARR or MRR in the custom report builder, break it down by Deal Type or pipeline, and trend it by close date. Teams that cannot use line items can mirror the same idea with custom currency properties (a manual "ARR" field populated by workflow), which keeps the dashboards below working at the cost of automatic calculation. A few notes on making the numbers meaningful:
 
 - **Track recurring revenue by tier and pricing model.** Segment MRR by plan tier so HubSpot revenue reporting shows where growth comes from. If you run usage-based pricing, model how revenue changes as usage grows; see [forecasting usage-based revenue](/posts/usage-based-revenue-forecasting).
 - **Separate new customers from existing.** Landing new customers grows MRR, but revenue retention in HubSpot is about keeping and growing existing accounts. Report both so the sales team and leadership see acquisition and retention side by side.

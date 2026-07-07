@@ -1,8 +1,9 @@
 ---
 layout: ../../layouts/BlogPostLayout.astro
-title: "Best HubSpot Deal Cloning Apps Compared: CloneNer vs Deal Duplicator vs Clone a Deal (2026)"
+title: "Best HubSpot Deal Cloning Apps Compared: CloneNer vs Deal Duplicator vs Clone Attack (2026)"
 pubDate: "2026-04-02"
-description: "The only neutral comparison of HubSpot deal cloning apps: CloneNer, Deal Duplicator, Clone a Deal, and Clone Attack. Pricing, features, limitations, and which one fits your team."
+modifiedDate: "2026-07-06"
+description: "The only neutral comparison of HubSpot deal cloning apps: CloneNer, Deal Duplicator, Clone a Deal, and Clone Attack. Pricing, features, object coverage, limitations, and which one fits your team."
 category:
   title: "Revenue Operations"
   href: "/categories/revenue-operations"
@@ -22,6 +23,7 @@ tags:
   - "Deal Cloning"
   - "CloneNer"
   - "Deal Duplicator"
+  - "Clone Attack"
   - "CRM Tools"
 seriesName: "HubSpot Deal Cloning"
 pillarUrl: "/posts/hubspot-clone-deal-complete-guide"
@@ -39,7 +41,7 @@ HubSpot's built-in deal cloning (Actions → Clone) copies deal properties and a
 
 For a team managing [renewal pipelines](/posts/hubspot-renewal-pipeline-complete-guide), upsells, or multi-location deals, native cloning means manually recreating line items every single time. According to [Instrumental Group](https://www.instrumental.net/blog/beyond-the-basics-why-native-deal-cloning-falls-short-for-high-efficiency-sales-teams), reps spend 5-15 minutes per deal on post-clone cleanup: rebuilding line items, fixing dates, and correcting associations. At 50+ renewals per quarter, that's 4-12 hours of pure admin.
 
-That's why [1,300+ companies](https://www.instrumental.net/apps/deal-duplicator-for-hubspot) use Deal Duplicator, [1,500+ use CloneNer](https://ecosystem.hubspot.com/marketplace/apps/clonener-2156213), and several hundred more use Clone a Deal or Clone Attack.
+That's why [1,300+ companies](https://www.instrumental.net/apps/deal-duplicator-for-hubspot) use Deal Duplicator, [1,500+ use CloneNer](https://ecosystem.hubspot.com/marketplace/apps/clonener-2156213), roughly 1,000 use Clone Attack, and several hundred more use Clone a Deal.
 
 ---
 
@@ -65,9 +67,13 @@ A workflow-native action, not a standalone app. You install it and it adds a "Cl
 
 ### [Clone Attack](https://ecosystem.hubspot.com/marketplace/apps/appchemist-clone-attack-229629) by hapily
 
-A newer entrant with configurable presets and a free tier. Less established than CloneNer or Deal Duplicator but growing.
+The widest object coverage in this cohort. Clone Attack (formerly by appchemist, now hapily) clones deals, contacts, companies, tickets, engagements, line items, quotes, and custom objects: the only app here that covers all of them. It sits at roughly 1,000 installs with a 4.7 rating across 63 reviews on the HubSpot Marketplace at the time of writing.
 
-**Standout features:** Free tier available, configurable field presets, [starter guide documentation](https://docs.hapily.com/clone-attack-starter-guide).
+Its reusable "Clone Configurations" work like templates: you define which properties to exclude, set default values for the clone, and apply dynamic date offsets (Source Date+X or Today+X) so close dates land where they should. The workflow action is gated at the Pro tier ($60/mo, as of mid-2026); the free tier is manual-only at 10 clones per month.
+
+**Standout features:** Widest object coverage (including engagements and quotes), reusable Clone Configurations with property exclusion and default values, dynamic date offsets, [starter guide documentation](https://docs.hapily.com/clone-attack-starter-guide).
+
+**Renewal limitation:** Clone Attack copies records, but it has no renewal data model: no parent-child deal lineage, no scheduled deal creation, and per-clone quotas that cap large renewal books (100 clones/month on Basic, 1,500 on Enterprise). For a 500-deal renewal book, that quota math matters.
 
 ---
 
@@ -77,16 +83,16 @@ A newer entrant with configurable presets and a free tier. Less established than
 |---------|----------|-----------------|--------------|-------------|
 | **Clone deal properties** | All editable | All editable | All editable | All editable |
 | **Clone line items** | Yes | Yes | Yes (checkbox) | Yes |
-| **Clone associations** | Contacts, companies, custom | Contacts, companies; tickets on Pro+ | Configurable | Configurable |
-| **Clone engagements** | No | Coming soon | No | Unconfirmed |
-| **Clone quotes** | No | No | Yes | No |
-| **Clone tickets** | Yes | No | No | No |
-| **Clone custom objects** | Yes | No | No | No |
-| **Workflow action** | Yes ($49+/mo) | Yes ($35+/mo) | Core feature | Higher tiers |
+| **Clone associations** | Contacts, companies, custom | Contacts, companies; tickets on Pro+ | Configurable | Contacts, companies, tickets, custom |
+| **Clone engagements** | No | Coming soon | No | Yes |
+| **Clone quotes** | No | No | Yes | Yes |
+| **Clone tickets** | Yes | No | No | Yes |
+| **Clone custom objects** | Yes | No | No | Yes |
+| **Workflow action** | Yes ($49+/mo) | Yes ($35+/mo) | Core feature | Pro tier ($60+/mo) |
 | **Manual cloning (CRM card)** | Yes (all plans) | Yes (all plans) | No (workflow only) | Yes |
-| **Auto-Rules (IFTTT triggers)** | Yes (all paid) | Yes (Pro+) | No | Workflow-based |
-| **Templates** | 1 free, unlimited on paid | No | No | Configurable presets |
-| **Dynamic date offsets** | Yes ("+20 days") | No | No | No |
+| **Auto-Rules (IFTTT triggers)** | Yes (all paid) | Yes (Pro+) | No | Via workflow action (Pro+) |
+| **Templates** | 1 free, unlimited on paid | No | No | Clone Configurations |
+| **Dynamic date offsets** | Yes ("+20 days") | No | No | Yes (Source Date+X, Today+X) |
 | **Cross-pipeline cloning** | Yes | Yes | Yes | Yes |
 | **Batch cloning** | Via templates | Yes (200 in 10s) | Via workflows | Via workflows |
 
@@ -96,17 +102,17 @@ A newer entrant with configurable presets and a free tier. Less established than
 
 | Tier | CloneNer | Deal Duplicator | Clone a Deal | Clone Attack |
 |------|----------|-----------------|--------------|-------------|
-| **Free** | 45 clones/mo, 1 template, manual only | Single user, manual only | N/A | Limited tier |
-| **Starter** | $19/mo (60 clones) | $19/mo | $9.99/mo (unlimited) | Tiered |
-| **Professional** | $49/mo (900 clones) | $35/mo | $9.99/mo (same) | Tiered |
-| **Enterprise** | $149/mo (9,000 clones) | $59/mo | $9.99/mo (same) | Tiered |
+| **Free** | 45 clones/mo, 1 template, manual only | Single user, manual only | N/A | 10 clones/mo, manual only |
+| **Starter** | $19/mo (60 clones) | $19/mo | $9.99/mo (unlimited) | Basic $30/mo (100 clones) |
+| **Professional** | $49/mo (900 clones) | $35/mo | $9.99/mo (same) | Pro $60/mo (workflow action) |
+| **Enterprise** | $149/mo (9,000 clones) | $59/mo | $9.99/mo (same) | $120/mo (1,500 clones) |
 | **Annual discount** | Up to 30% | ~$15-49/mo | $99.99/yr | Not confirmed |
 
 **Hidden costs to watch:**
 - **CloneNer:** Clone limits per tier. If you exceed 900 clones/month on Professional, you need Enterprise ($149/mo). Templates and Auto-Rules require the Professional tier.
 - **Deal Duplicator:** Automation rules require Pro+ ($35/mo). Engagement cloning (when released) will likely be Enterprise-only.
 - **Clone a Deal:** No hidden costs at a flat $9.99/mo. But it's workflow-only, with no manual CRM card cloning, no auto-rules, no templates.
-- **Clone Attack:** Pricing tiers aren't publicly transparent.
+- **Clone Attack:** The workflow action requires Pro ($60/mo). Per-clone quotas on every tier (10, 100, 1,500 per month) can cap a large renewal book, so size your monthly clone volume before choosing a tier.
 
 ---
 
@@ -120,8 +126,9 @@ A newer entrant with configurable presets and a free tier. Less established than
 | **Simple deal copying (manual)** | Deal Duplicator | Simplest UX, one-click from CRM card |
 | **High-volume cloning (500+/mo)** | CloneNer Enterprise | 9,000 clones/mo at $149 vs. Deal Duplicator's limits |
 | **Budget-conscious teams** | Clone a Deal | $9.99/mo flat, unlimited, workflow-native |
-| **Ticket + deal cloning** | CloneNer | Only app that clones tickets and custom objects |
-| **Need engagement history** | Deal Duplicator (when released) | Only app with engagement cloning on roadmap |
+| **Ticket + deal cloning** | CloneNer or Clone Attack | Both clone tickets and custom objects |
+| **Need engagement history** | Clone Attack | Clones engagements today; Deal Duplicator has it on the roadmap |
+| **Widest object coverage** | Clone Attack | Deals, contacts, companies, tickets, engagements, line items, quotes, custom objects |
 | **Developer teams (API preference)** | None: use HubSpot API | Full control without app dependency |
 
 ---
@@ -148,6 +155,8 @@ CloneNer Professional ($49/mo) or Deal Duplicator Pro ($35/mo). Both give you wo
 
 **Enterprise teams (20+ reps, 500+ deals/month):**
 CloneNer Enterprise ($149/mo) for high-volume cloning with templates and custom objects. Or build a custom API integration if you need logic that no app supports.
+
+**Evaluating apps for renewals specifically?** Cloning is only step one of a renewal system. See our [honest comparison of HubSpot renewal apps](/compare/hubspot-renewal-apps), including the capabilities a copy button cannot reach.
 
 ---
 
