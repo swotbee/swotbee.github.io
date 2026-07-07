@@ -1,0 +1,63 @@
+---
+// BeeBlob.astro — mascot TYPE 2: "round blob buddy".
+// Single plump body (no separate head), waving with an animated hand + flutter.
+interface Props { id: string; class?: string; flip?: boolean; delay?: number; }
+const { id, class: className = "", flip = false, delay = 0 } = Astro.props;
+const bg = `blobGrad-${id}`; const wg = `blobWing-${id}`; const bc = `blobClip-${id}`;
+---
+<div class={`bee-char ${className}`} data-style="blob" aria-hidden="true"
+  style={`--bee-delay:${delay}s; ${flip ? "transform: scaleX(-1);" : ""}`}>
+  <div class="bee-bob">
+    <svg viewBox="0 0 140 120" class="w-full h-full overflow-visible">
+      <defs>
+        <radialGradient id={bg} cx="38%" cy="26%" r="82%">
+          <stop offset="0%" stop-color="#F8CB66" /><stop offset="55%" stop-color="#D4960A" /><stop offset="100%" stop-color="#B97F1E" />
+        </radialGradient>
+        <linearGradient id={wg} x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#eafbf7" stop-opacity="0.95" /><stop offset="100%" stop-color="#9ed6cb" stop-opacity="0.75" />
+        </linearGradient>
+        <clipPath id={bc}><ellipse cx="68" cy="66" rx="33" ry="34" /></clipPath>
+      </defs>
+      <ellipse cx="68" cy="113" rx="26" ry="4.5" fill="#213343" opacity="0.12" />
+      <g class="bee-wings" style="transform-origin: 68px 46px;">
+        <ellipse cx="46" cy="42" rx="15" ry="22" fill={`url(#${wg})`} stroke="#5AAB9D" stroke-width="1.2" stroke-opacity="0.4" transform="rotate(-28 46 42)" />
+        <ellipse cx="90" cy="42" rx="15" ry="22" fill={`url(#${wg})`} stroke="#5AAB9D" stroke-width="1.2" stroke-opacity="0.4" transform="rotate(28 90 42)" />
+      </g>
+      <path d="M58 33 Q52 18 57 12" fill="none" stroke="#213343" stroke-width="2.4" stroke-linecap="round" />
+      <path d="M78 33 Q84 18 79 12" fill="none" stroke="#213343" stroke-width="2.4" stroke-linecap="round" />
+      <circle cx="57" cy="11" r="3" fill="#C47A2A" /><circle cx="79" cy="11" r="3" fill="#C47A2A" />
+      <!-- left arm + waving right arm -->
+      <path d="M44 78 Q38 84 37 92" fill="none" stroke="#D4960A" stroke-width="6" stroke-linecap="round" />
+      <circle cx="37" cy="93" r="5" fill="#E0A92E" stroke="#213343" stroke-opacity="0.12" />
+      <g class="mascot-wave" style="transform-origin: 92px 74px;">
+        <path d="M90 74 Q101 62 107 50" fill="none" stroke="#D4960A" stroke-width="6" stroke-linecap="round" />
+        <circle cx="108" cy="48" r="5.5" fill="#E0A92E" stroke="#213343" stroke-opacity="0.12" />
+      </g>
+      <g class="mascot-wavelines">
+        <path d="M114 40 Q118 45 115 50" fill="none" stroke="#C47A2A" stroke-width="1.8" stroke-linecap="round" />
+        <path d="M118 38 Q123 45 119 53" fill="none" stroke="#C47A2A" stroke-width="1.8" stroke-linecap="round" />
+      </g>
+      <!-- body -->
+      <ellipse cx="68" cy="66" rx="33" ry="34" fill={`url(#${bg})`} />
+      <g clip-path={`url(#${bc})`}>
+        <path d="M34 80 Q68 74 102 80 L102 90 Q68 84 34 90 Z" fill="#213343" />
+        <path d="M40 94 Q68 89 96 94 L96 103 Q68 98 40 103 Z" fill="#213343" />
+        <ellipse cx="56" cy="46" rx="11" ry="6" fill="#ffffff" opacity="0.22" />
+      </g>
+      <ellipse cx="68" cy="66" rx="33" ry="34" fill="none" stroke="#213343" stroke-width="1.6" opacity="0.12" />
+      <ellipse cx="53" cy="62" rx="3.6" ry="2.6" fill="#ff8a5c" opacity="0.4" /><ellipse cx="83" cy="62" rx="3.6" ry="2.6" fill="#ff8a5c" opacity="0.4" />
+      <ellipse cx="60" cy="56" rx="5.6" ry="6.8" fill="#ffffff" /><ellipse cx="78" cy="56" rx="5.6" ry="6.8" fill="#ffffff" />
+      <g class="bee-pupil"><circle cx="60" cy="57" r="3.1" fill="#213343" /><circle cx="58.7" cy="55.1" r="1.2" fill="#ffffff" /></g>
+      <g class="bee-pupil"><circle cx="78" cy="57" r="3.1" fill="#213343" /><circle cx="76.7" cy="55.1" r="1.2" fill="#ffffff" /></g>
+      <path d="M61 65 Q69 72 77 65" fill="none" stroke="#213343" stroke-width="2" stroke-linecap="round" />
+    </svg>
+  </div>
+</div>
+<style>
+  @media (prefers-reduced-motion: no-preference) {
+    .mascot-wave { animation: blobWave 1.7s ease-in-out infinite; }
+    .mascot-wavelines { animation: blobPulse 1.7s ease-in-out infinite; }
+  }
+  @keyframes blobWave { 0%, 100% { transform: rotate(-7deg); } 50% { transform: rotate(10deg); } }
+  @keyframes blobPulse { 0%, 100% { opacity: 0.25; } 50% { opacity: 0.85; } }
+</style>

@@ -1,0 +1,37 @@
+---
+// BeeHexBody.astro — "Hexagon Body, Side View" (straight lines only).
+// The body is a single elongated hexagon; stripes are straight vertical bands;
+// wings and stinger are flat triangles. Cursor-reactive pupils via .bee-pupil.
+interface Props { id: string; class?: string; flip?: boolean; delay?: number; }
+const { id, class: className = "", flip = false, delay = 0 } = Astro.props;
+const cid = `hexbody-${id}`;
+const body = "M24 58 L39 41 L71 41 L86 58 L71 75 L39 75 Z";
+---
+<div class={`bee-char ${className}`} data-style="hexbody" aria-hidden="true"
+  style={`--bee-delay:${delay}s; ${flip ? "transform: scaleX(-1);" : ""}`}>
+  <div class="bee-bob">
+    <svg viewBox="0 0 120 100" class="w-full h-full overflow-visible">
+      <defs><clipPath id={cid}><path d={body} /></clipPath></defs>
+      <!-- stinger -->
+      <path d="M24 58 L13 53 L23 63 Z" fill="#213343" />
+      <!-- wings (flat triangles) -->
+      <g class="bee-wings" style="transform-origin: 46px 42px;">
+        <path d="M40 44 L22 24 L54 40 Z" fill="#5AAB9D" opacity="0.5" />
+        <path d="M52 42 L74 28 L66 46 Z" fill="#5AAB9D" opacity="0.34" />
+      </g>
+      <!-- antennae (straight) -->
+      <polyline points="69,42 73,30 79,26" fill="none" stroke="#213343" stroke-width="2.2" stroke-linejoin="round" />
+      <path d="M79 23 L82 26 L79 29 L76 26 Z" fill="#C47A2A" />
+      <!-- body + stripes (theme tokens: v6-amber body, v6-dark stripes) -->
+      <path d={body} fill="#D4960A" />
+      <g clip-path={`url(#${cid})`}>
+        <rect x="46" y="40" width="10" height="36" fill="#213343" />
+        <rect x="62" y="40" width="10" height="36" fill="#213343" />
+      </g>
+      <path d={body} fill="none" stroke="#213343" stroke-width="2" stroke-linejoin="round" />
+      <!-- eyes (diamonds) -->
+      <path d="M74 54 L79 58 L74 62 L69 58 Z" fill="#ffffff" />
+      <path class="bee-pupil" d="M74 56 L76.4 58 L74 60 L71.6 58 Z" fill="#213343" />
+    </svg>
+  </div>
+</div>

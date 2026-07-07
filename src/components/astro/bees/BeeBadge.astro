@@ -1,0 +1,44 @@
+---
+// BeeBadge.astro — "Hexagon Emblem" bee style.
+// A simplified bee centered in a honeycomb hexagon. Reads as a polished logo /
+// trust mark, the most corporate option. Pupils stay subtle (.bee-pupil).
+interface Props { id: string; class?: string; flip?: boolean; delay?: number; }
+const { id, class: className = "", flip = false, delay = 0 } = Astro.props;
+const cid = `badge-${id}`;
+// pointy-top hexagon centered at (60,50), radius 42
+const hex = "M60 8 L96 29 L96 71 L60 92 L24 71 L24 29 Z";
+---
+<div class={`bee-char ${className}`} data-style="badge" aria-hidden="true"
+  style={`--bee-delay:${delay}s; ${flip ? "transform: scaleX(-1);" : ""}`}>
+  <div class="bee-bob">
+    <svg viewBox="0 0 120 100" class="w-full h-full overflow-visible">
+      <defs>
+        <clipPath id={cid}><ellipse cx="60" cy="54" rx="20" ry="15" /></clipPath>
+      </defs>
+      <!-- hex badge -->
+      <path d={hex} fill="#F7F5F1" stroke="#C47A2A" stroke-width="3.5" stroke-linejoin="round" />
+      <path d={hex} fill="none" stroke="#C47A2A" stroke-width="1" stroke-linejoin="round" opacity="0.4"
+        transform="translate(60 50) scale(0.84) translate(-60 -50)" />
+      <!-- wings -->
+      <g class="bee-wings" style="transform-origin: 55px 40px;">
+        <ellipse cx="52" cy="40" rx="11" ry="7.5" fill="#5AAB9D" opacity="0.55" transform="rotate(-20 52 40)" />
+        <ellipse cx="64" cy="39" rx="10" ry="6.5" fill="#5AAB9D" opacity="0.4" transform="rotate(16 64 39)" />
+      </g>
+      <!-- antennae -->
+      <path d="M67 41 Q70 32 75 30" stroke="#213343" stroke-width="2" fill="none" stroke-linecap="round" />
+      <circle cx="75" cy="30" r="2.2" fill="#C47A2A" />
+      <!-- body + stripes -->
+      <g clip-path={`url(#${cid})`}>
+        <rect x="38" y="38" width="44" height="32" fill="#F2B134" />
+        <rect x="56" y="38" width="8" height="32" fill="#213343" />
+        <rect x="70" y="38" width="8" height="32" fill="#213343" />
+      </g>
+      <ellipse cx="60" cy="54" rx="20" ry="15" fill="none" stroke="#213343" stroke-width="1.4" opacity="0.15" />
+      <!-- eyes -->
+      <circle cx="68" cy="52" r="3.6" fill="#ffffff" />
+      <circle class="bee-pupil" cx="69" cy="53" r="1.8" fill="#213343" />
+      <!-- smile -->
+      <path d="M66 59 Q70 62 75 59" stroke="#213343" stroke-width="1.5" fill="none" stroke-linecap="round" />
+    </svg>
+  </div>
+</div>

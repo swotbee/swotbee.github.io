@@ -1,0 +1,42 @@
+---
+// BeeTop.astro — "Top-Down View" (straight lines only).
+// The bee seen from above: vertical hexagon abdomen with horizontal stripes,
+// symmetric triangular wings, a V of antennae. Cursor-reactive pupils.
+// Theme tokens: v6-amber #D4960A, v6-dark #213343, v6-teal #5AAB9D, v6-copper #C47A2A.
+interface Props { id: string; class?: string; flip?: boolean; delay?: number; }
+const { id, class: className = "", flip = false, delay = 0 } = Astro.props;
+const cid = `top-${id}`;
+const body = "M60 34 L75 46 L75 70 L60 84 L45 70 L45 46 Z";
+const head = "M60 22 L68 30 L60 38 L52 30 Z";
+---
+<div class={`bee-char ${className}`} data-style="top" aria-hidden="true"
+  style={`--bee-delay:${delay}s; ${flip ? "transform: scaleX(-1);" : ""}`}>
+  <div class="bee-bob">
+    <svg viewBox="0 0 120 100" class="w-full h-full overflow-visible">
+      <defs><clipPath id={cid}><path d={body} /></clipPath></defs>
+      <!-- wings (symmetric triangles) -->
+      <g class="bee-wings" style="transform-origin: 60px 50px;">
+        <path d="M46 48 L16 38 L30 64 Z" fill="#5AAB9D" opacity="0.48" />
+        <path d="M74 48 L104 38 L90 64 Z" fill="#5AAB9D" opacity="0.48" />
+      </g>
+      <!-- antennae -->
+      <polyline points="56,28 50,16 47,12" fill="none" stroke="#213343" stroke-width="2.2" stroke-linejoin="round" />
+      <polyline points="64,28 70,16 73,12" fill="none" stroke="#213343" stroke-width="2.2" stroke-linejoin="round" />
+      <path d="M47 9 L50 12 L47 15 L44 12 Z" fill="#C47A2A" />
+      <path d="M73 9 L76 12 L73 15 L70 12 Z" fill="#C47A2A" />
+      <!-- head -->
+      <path d={head} fill="#213343" />
+      <path class="bee-pupil" d="M56 29 L58.4 31 L56 33 L53.6 31 Z" fill="#ffffff" />
+      <path class="bee-pupil" d="M64 29 L66.4 31 L64 33 L61.6 31 Z" fill="#ffffff" />
+      <!-- abdomen + horizontal stripes -->
+      <path d={body} fill="#D4960A" />
+      <g clip-path={`url(#${cid})`}>
+        <rect x="44" y="50" width="32" height="7" fill="#213343" />
+        <rect x="44" y="63" width="32" height="7" fill="#213343" />
+      </g>
+      <path d={body} fill="none" stroke="#213343" stroke-width="2" stroke-linejoin="round" />
+      <!-- stinger -->
+      <path d="M60 84 L56 95 L64 95 Z" fill="#213343" />
+    </svg>
+  </div>
+</div>

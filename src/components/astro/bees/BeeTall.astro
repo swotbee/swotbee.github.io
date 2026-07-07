@@ -1,0 +1,73 @@
+---
+// BeeTall.astro — mascot TYPE 4: "the analyst".
+// Taller egg-shaped body, smart glasses for a professional read. Holds a chart
+// card whose bars grow (animated).
+interface Props { id: string; class?: string; flip?: boolean; delay?: number; }
+const { id, class: className = "", flip = false, delay = 0 } = Astro.props;
+const bg = `tallGrad-${id}`; const wg = `tallWing-${id}`; const bc = `tallClip-${id}`;
+---
+<div class={`bee-char ${className}`} data-style="tall" aria-hidden="true"
+  style={`--bee-delay:${delay}s; ${flip ? "transform: scaleX(-1);" : ""}`}>
+  <div class="bee-bob">
+    <svg viewBox="0 0 140 120" class="w-full h-full overflow-visible">
+      <defs>
+        <radialGradient id={bg} cx="38%" cy="24%" r="84%">
+          <stop offset="0%" stop-color="#F8CB66" /><stop offset="55%" stop-color="#D4960A" /><stop offset="100%" stop-color="#B97F1E" />
+        </radialGradient>
+        <linearGradient id={wg} x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#eafbf7" stop-opacity="0.95" /><stop offset="100%" stop-color="#9ed6cb" stop-opacity="0.75" />
+        </linearGradient>
+        <clipPath id={bc}><ellipse cx="64" cy="82" rx="20" ry="26" /></clipPath>
+      </defs>
+      <ellipse cx="64" cy="113" rx="20" ry="4" fill="#213343" opacity="0.12" />
+      <g class="bee-wings" style="transform-origin: 64px 56px;">
+        <ellipse cx="48" cy="54" rx="13" ry="20" fill={`url(#${wg})`} stroke="#5AAB9D" stroke-width="1.2" stroke-opacity="0.4" transform="rotate(-26 48 54)" />
+        <ellipse cx="80" cy="54" rx="13" ry="20" fill={`url(#${wg})`} stroke="#5AAB9D" stroke-width="1.2" stroke-opacity="0.4" transform="rotate(26 80 54)" />
+      </g>
+      <path d="M58 26 Q52 13 57 8" fill="none" stroke="#213343" stroke-width="2.4" stroke-linecap="round" />
+      <path d="M72 26 Q78 13 73 8" fill="none" stroke="#213343" stroke-width="2.4" stroke-linecap="round" />
+      <circle cx="57" cy="7" r="3" fill="#C47A2A" /><circle cx="73" cy="7" r="3" fill="#C47A2A" />
+      <!-- abdomen -->
+      <ellipse cx="64" cy="82" rx="20" ry="26" fill={`url(#${bg})`} />
+      <g clip-path={`url(#${bc})`}>
+        <path d="M40 74 Q64 69 88 74 L88 82 Q64 77 40 82 Z" fill="#213343" />
+        <path d="M42 90 Q64 85 86 90 L86 98 Q64 93 42 98 Z" fill="#213343" />
+      </g>
+      <ellipse cx="64" cy="82" rx="20" ry="26" fill="none" stroke="#213343" stroke-width="1.6" opacity="0.12" />
+      <path d="M64 106 Q60 112 64 115 Q68 112 64 106 Z" fill="#213343" />
+      <!-- chart card (bars grow) -->
+      <path d="M82 78 Q92 78 97 76" fill="none" stroke="#D4960A" stroke-width="5.5" stroke-linecap="round" />
+      <rect x="96" y="54" width="32" height="30" rx="4" fill="#ffffff" stroke="#213343" stroke-width="1.3" stroke-opacity="0.7" />
+      <rect class="mascot-bar mascot-bar-1" style="transform-origin: 102.5px 80px;" x="100" y="72" width="5" height="8" rx="1" fill="#5AAB9D" />
+      <rect class="mascot-bar mascot-bar-2" style="transform-origin: 110.5px 80px;" x="108" y="67" width="5" height="13" rx="1" fill="#5AAB9D" />
+      <rect class="mascot-bar mascot-bar-3" style="transform-origin: 118.5px 80px;" x="116" y="61" width="5" height="19" rx="1" fill="#C47A2A" />
+      <path d="M99 70 L107 64 L113 60 L121 54 M116 54 L121 54 L121 59" fill="none" stroke="#C47A2A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      <circle cx="101" cy="76" r="5" fill="#E0A92E" stroke="#213343" stroke-opacity="0.12" />
+      <!-- head -->
+      <circle cx="64" cy="40" r="17" fill={`url(#${bg})`} />
+      <ellipse cx="56" cy="32" rx="7" ry="4.5" fill="#ffffff" opacity="0.28" />
+      <circle cx="64" cy="40" r="17" fill="none" stroke="#213343" stroke-width="1.6" opacity="0.12" />
+      <ellipse cx="51" cy="45" rx="3.2" ry="2.3" fill="#ff8a5c" opacity="0.4" /><ellipse cx="77" cy="45" rx="3.2" ry="2.3" fill="#ff8a5c" opacity="0.4" />
+      <!-- eyes -->
+      <circle cx="58" cy="40" r="4.6" fill="#ffffff" /><circle cx="70" cy="40" r="4.6" fill="#ffffff" />
+      <g class="bee-pupil"><circle cx="58" cy="41" r="2.6" fill="#213343" /><circle cx="56.9" cy="39.4" r="1.1" fill="#ffffff" /></g>
+      <g class="bee-pupil"><circle cx="70" cy="41" r="2.6" fill="#213343" /><circle cx="68.9" cy="39.4" r="1.1" fill="#ffffff" /></g>
+      <!-- glasses -->
+      <g fill="none" stroke="#213343" stroke-width="2">
+        <rect x="52" y="34" width="12" height="11" rx="3.5" />
+        <rect x="66" y="34" width="12" height="11" rx="3.5" />
+        <line x1="64" y1="39" x2="66" y2="39" />
+        <line x1="52" y1="38" x2="47" y2="37" />
+      </g>
+      <path d="M60 50 Q64 53 68 50" fill="none" stroke="#213343" stroke-width="1.8" stroke-linecap="round" />
+    </svg>
+  </div>
+</div>
+<style>
+  @media (prefers-reduced-motion: no-preference) {
+    .mascot-bar { animation: tallBar 3.2s ease-in-out infinite; }
+    .mascot-bar-2 { animation-delay: 0.22s; }
+    .mascot-bar-3 { animation-delay: 0.44s; }
+  }
+  @keyframes tallBar { 0% { transform: scaleY(0.12); } 55%, 100% { transform: scaleY(1); } }
+</style>

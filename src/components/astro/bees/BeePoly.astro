@@ -1,0 +1,44 @@
+---
+// BeePoly.astro — "Low-Poly Faceted, Side View" (straight lines only).
+// The body is an octagon split into triangular facets in graded theme ambers,
+// with two navy facets reading as stripes. Cursor-reactive pupils via .bee-pupil.
+// Theme tokens: v6-amber #D4960A, v6-copper #C47A2A, v6-dark #213343, v6-teal #5AAB9D.
+interface Props { id: string; class?: string; flip?: boolean; delay?: number; }
+const { id, class: className = "", flip = false, delay = 0 } = Astro.props;
+const facets = [
+  { d: "M58 58 L30 56 L44 40 Z", fill: "#D4960A" },
+  { d: "M58 58 L44 40 L62 36 Z", fill: "#E0A92E" },
+  { d: "M58 58 L62 36 L78 42 Z", fill: "#213343" },
+  { d: "M58 58 L78 42 L86 58 Z", fill: "#C47A2A" },
+  { d: "M58 58 L86 58 L76 74 Z", fill: "#D4960A" },
+  { d: "M58 58 L76 74 L56 80 Z", fill: "#213343" },
+  { d: "M58 58 L56 80 L38 70 Z", fill: "#E0A92E" },
+  { d: "M58 58 L38 70 L30 56 Z", fill: "#C47A2A" },
+];
+const outline = "M30 56 L44 40 L62 36 L78 42 L86 58 L76 74 L56 80 L38 70 Z";
+---
+<div class={`bee-char ${className}`} data-style="poly" aria-hidden="true"
+  style={`--bee-delay:${delay}s; ${flip ? "transform: scaleX(-1);" : ""}`}>
+  <div class="bee-bob">
+    <svg viewBox="0 0 120 100" class="w-full h-full overflow-visible">
+      <!-- stinger -->
+      <path d="M30 56 L18 52 L28 62 Z" fill="#213343" />
+      <!-- wings -->
+      <g class="bee-wings" style="transform-origin: 48px 42px;">
+        <path d="M44 42 L24 22 L58 38 Z" fill="#5AAB9D" opacity="0.5" />
+        <path d="M56 40 L78 26 L70 44 Z" fill="#5AAB9D" opacity="0.34" />
+      </g>
+      <!-- antennae -->
+      <polyline points="74,40 79,28 85,24" fill="none" stroke="#213343" stroke-width="2.2" stroke-linejoin="round" />
+      <path d="M85 21 L88 24 L85 27 L82 24 Z" fill="#C47A2A" />
+      <!-- faceted body -->
+      {facets.map(f => <path d={f.d} fill={f.fill} />)}
+      <path d={outline} fill="none" stroke="#213343" stroke-width="2" stroke-linejoin="round" />
+      <!-- eyes (diamonds) -->
+      <path d="M74 50 L78 53.5 L74 57 L70 53.5 Z" fill="#ffffff" />
+      <path d="M82 54 L85.5 57 L82 60 L78.5 57 Z" fill="#ffffff" />
+      <path class="bee-pupil" d="M74 51.5 L76 53.5 L74 55.5 L72 53.5 Z" fill="#213343" />
+      <path class="bee-pupil" d="M82 55.5 L83.8 57 L82 58.5 L80.2 57 Z" fill="#213343" />
+    </svg>
+  </div>
+</div>

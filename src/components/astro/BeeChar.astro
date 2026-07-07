@@ -1,0 +1,117 @@
+---
+// BeeChar.astro
+// A small, friendly brand "bee" character used as an interaction-moment decal.
+// Cursor-reactive (body lean + pupil tracking) and scroll-reactive (flies in when
+// its section reveals). Four moods let the bee carry the page narrative without
+// clutter: cheerful in the hero, worried where things break, excited at the
+// solution, celebrating at the CTA. Purely decorative (aria-hidden, no pointer).
+//
+// Props:
+//   id    - unique slug (needed for the SVG clip-path / per-bee animation offset)
+//   mood  - "happy" | "worried" | "excited" | "celebrate"
+//   class - positioning utilities passed through from the page
+//   flip  - face left instead of right
+//   delay - idle-bob phase offset in seconds (so multiple bees don't bob in sync)
+interface Props {
+  id: string;
+  mood?: "happy" | "worried" | "excited" | "celebrate";
+  class?: string;
+  flip?: boolean;
+  delay?: number;
+}
+const { id, mood = "happy", class: className = "", flip = false, delay = 0 } = Astro.props;
+
+// Slightly muted body for the worried bee; bright amber otherwise.
+const bodyColor = mood === "worried" ? "#E6C271" : "#F2B134";
+const cid = `beebody-${id}`;
+---
+
+<div
+  class={`bee-char ${className}`}
+  data-mood={mood}
+  aria-hidden="true"
+  style={`--bee-delay:${delay}s; ${flip ? "transform: scaleX(-1);" : ""}`}
+>
+  <div class="bee-bob">
+    <svg viewBox="0 0 120 100" class="w-full h-full overflow-visible">
+      <defs>
+        <clipPath id={cid}>
+          <ellipse cx="55" cy="58" rx="30" ry="23" />
+        </clipPath>
+      </defs>
+
+      <!-- motion lines (excited bee only) -->
+      {mood === "excited" && (
+        <g stroke="#5AAB9D" stroke-width="2.5" stroke-linecap="round" opacity="0.55">
+          <line x1="6" y1="50" x2="20" y2="50" />
+          <line x1="2" y1="62" x2="14" y2="62" />
+          <line x1="8" y1="74" x2="18" y2="74" />
+        </g>
+      )}
+
+      <!-- stinger (behind body) -->
+      <path d="M26 58 L12 53 L25 64 Z" fill="#213343" opacity="0.85" />
+
+      <!-- wings -->
+      <g class="bee-wings" style="transform-origin: 48px 40px;">
+        <ellipse cx="44" cy="37" rx="16" ry="11" fill="#bfe3dd" opacity="0.7" transform="rotate(-22 44 37)" />
+        <ellipse cx="59" cy="35" rx="14" ry="9" fill="#dcefe9" opacity="0.6" transform="rotate(15 59 35)" />
+      </g>
+
+      <!-- antennae -->
+      <g class="bee-antennae" style="transform-origin: 75px 42px;">
+        <path d="M72 41 Q76 26 82 24" stroke="#213343" stroke-width="2" fill="none" stroke-linecap="round" />
+        <path d="M78 43 Q85 30 91 30" stroke="#213343" stroke-width="2" fill="none" stroke-linecap="round" />
+        <circle cx="82" cy="24" r="2.6" fill="#C47A2A" />
+        <circle cx="91" cy="30" r="2.6" fill="#C47A2A" />
+      </g>
+
+      <!-- body + stripes (clipped to the body ellipse for clean edges) -->
+      <g clip-path={`url(#${cid})`}>
+        <rect x="20" y="30" width="80" height="58" fill={bodyColor} />
+        <rect x="38" y="30" width="11" height="58" fill="#213343" />
+        <rect x="58" y="30" width="11" height="58" fill="#213343" />
+      </g>
+      <ellipse cx="55" cy="58" rx="30" ry="23" fill="none" stroke="#213343" stroke-width="1.5" opacity="0.12" />
+
+      <!-- cheeks -->
+      <circle cx="68" cy="62" r="3.4" fill="#ff8a5c" opacity="0.35" />
+      <circle cx="86" cy="62" r="3.4" fill="#ff8a5c" opacity="0.35" />
+
+      <!-- eyes -->
+      <g class="bee-eyes">
+        <circle cx="73" cy="54" r="5" fill="#ffffff" />
+        <circle cx="84" cy="54" r="5" fill="#ffffff" />
+        <circle class="bee-pupil" cx="74" cy="55" r="2.4" fill="#213343" />
+        <circle class="bee-pupil" cx="85" cy="55" r="2.4" fill="#213343" />
+      </g>
+
+      <!-- mouth (per mood) -->
+      {mood === "happy" && (
+        <path d="M73 63 Q79 69 85 63" stroke="#213343" stroke-width="1.8" fill="none" stroke-linecap="round" />
+      )}
+      {mood === "celebrate" && (
+        <path d="M72 62 Q79 71 86 62 Z" fill="#213343" />
+      )}
+      {mood === "excited" && (
+        <ellipse cx="79" cy="65" rx="3" ry="3.6" fill="#213343" />
+      )}
+      {mood === "worried" && (
+        <path d="M73 66 Q79 61 85 66" stroke="#213343" stroke-width="1.8" fill="none" stroke-linecap="round" />
+      )}
+
+      <!-- worried sweat drop -->
+      {mood === "worried" && (
+        <path class="bee-sweat" d="M93 45 q-3.2 5 0 7.5 q3.2 -2.5 0 -7.5 Z" fill="#7CC4E8" opacity="0.85" />
+      )}
+
+      <!-- celebrate sparkles -->
+      {mood === "celebrate" && (
+        <g class="bee-sparkles" fill="#D4960A">
+          <path d="M100 28 l1.6 4 4 1.6 -4 1.6 -1.6 4 -1.6 -4 -4 -1.6 4 -1.6 Z" />
+          <path d="M14 30 l1.2 3 3 1.2 -3 1.2 -1.2 3 -1.2 -3 -3 -1.2 3 -1.2 Z" opacity="0.8" />
+        </g>
+      )}
+    </svg>
+  </div>
+</div>

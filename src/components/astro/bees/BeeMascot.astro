@@ -1,0 +1,179 @@
+---
+// BeeMascot.astro — stylish, professional cartoon mascot bee (rounded, shaded).
+// One refined character in four poses, each representing a facet of the site:
+//   wave     -> friendly consultant
+//   magnify  -> the free renewal audit (diagnose / inspect)
+//   chart    -> hidden revenue / growth
+//   clipboard-> process & business rules
+// Gradient body, glossy cursor-tracking eyes (.bee-pupil), translucent wings,
+// soft ground shadow. Theme tokens: v6-amber, v6-dark, v6-teal, v6-copper.
+interface Props {
+  id: string;
+  pose?: "wave" | "magnify" | "chart" | "clipboard";
+  class?: string;
+  flip?: boolean;
+  delay?: number;
+}
+const { id, pose = "wave", class: className = "", flip = false, delay = 0 } = Astro.props;
+const bg = `bodyGrad-${id}`;
+const wg = `wing-${id}`;
+const bclip = `bclip-${id}`;
+---
+<div class={`bee-char ${className}`} data-style="mascot" aria-hidden="true"
+  style={`--bee-delay:${delay}s; ${flip ? "transform: scaleX(-1);" : ""}`}>
+  <div class="bee-bob">
+    <svg viewBox="0 0 140 120" class="w-full h-full overflow-visible">
+      <defs>
+        <radialGradient id={bg} cx="38%" cy="28%" r="80%">
+          <stop offset="0%" stop-color="#F8CB66" />
+          <stop offset="55%" stop-color="#D4960A" />
+          <stop offset="100%" stop-color="#B97F1E" />
+        </radialGradient>
+        <linearGradient id={wg} x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#eafbf7" stop-opacity="0.95" />
+          <stop offset="100%" stop-color="#9ed6cb" stop-opacity="0.75" />
+        </linearGradient>
+        <clipPath id={bclip}><ellipse cx="70" cy="80" rx="26" ry="22" /></clipPath>
+      </defs>
+
+      <!-- ground shadow -->
+      <ellipse cx="70" cy="113" rx="24" ry="4.5" fill="#213343" opacity="0.12" />
+
+      <!-- wings -->
+      <g class="bee-wings" style="transform-origin: 70px 50px;">
+        <ellipse cx="50" cy="46" rx="15" ry="21" fill={`url(#${wg})`} stroke="#5AAB9D" stroke-width="1.2" stroke-opacity="0.4" transform="rotate(-26 50 46)" />
+        <ellipse cx="90" cy="46" rx="15" ry="21" fill={`url(#${wg})`} stroke="#5AAB9D" stroke-width="1.2" stroke-opacity="0.4" transform="rotate(26 90 46)" />
+        <ellipse cx="50" cy="44" rx="7" ry="12" fill="#ffffff" opacity="0.25" transform="rotate(-26 50 44)" />
+        <ellipse cx="90" cy="44" rx="7" ry="12" fill="#ffffff" opacity="0.25" transform="rotate(26 90 44)" />
+      </g>
+
+      <!-- antennae -->
+      <path d="M63 27 Q56 13 61 8" fill="none" stroke="#213343" stroke-width="2.4" stroke-linecap="round" />
+      <path d="M77 27 Q84 13 79 8" fill="none" stroke="#213343" stroke-width="2.4" stroke-linecap="round" />
+      <circle cx="61" cy="7" r="3" fill="#C47A2A" />
+      <circle cx="79" cy="7" r="3" fill="#C47A2A" />
+
+      <!-- abdomen -->
+      <ellipse cx="70" cy="80" rx="26" ry="22" fill={`url(#${bg})`} />
+      <g clip-path={`url(#${bclip})`}>
+        <path d="M40 72 Q70 66 100 72 L100 82 Q70 76 40 82 Z" fill="#213343" />
+        <path d="M42 86 Q70 81 98 86 L98 95 Q70 90 42 95 Z" fill="#213343" />
+        <ellipse cx="60" cy="73" rx="9" ry="5" fill="#ffffff" opacity="0.18" />
+      </g>
+      <ellipse cx="70" cy="80" rx="26" ry="22" fill="none" stroke="#213343" stroke-width="1.6" opacity="0.12" />
+      <!-- stinger -->
+      <path d="M70 101 Q66 108 70 111 Q74 108 70 101 Z" fill="#213343" />
+
+      <!-- ===== POSE: arms + props drawn behind/around the head ===== -->
+      {pose === "wave" && (
+        <g>
+          <path d="M52 84 Q46 90 44 96" fill="none" stroke="#D4960A" stroke-width="6" stroke-linecap="round" />
+          <circle cx="44" cy="97" r="5" fill="#E0A92E" stroke="#213343" stroke-opacity="0.12" />
+          <g class="mascot-wave" style="transform-origin: 90px 78px;">
+            <path d="M88 78 Q99 66 105 54" fill="none" stroke="#D4960A" stroke-width="6" stroke-linecap="round" />
+            <circle cx="106" cy="52" r="5.5" fill="#E0A92E" stroke="#213343" stroke-opacity="0.12" />
+          </g>
+          <g class="mascot-wavelines">
+            <path d="M112 44 Q116 49 113 54" fill="none" stroke="#C47A2A" stroke-width="1.8" stroke-linecap="round" />
+            <path d="M116 42 Q121 49 117 57" fill="none" stroke="#C47A2A" stroke-width="1.8" stroke-linecap="round" />
+          </g>
+        </g>
+      )}
+
+      {pose === "magnify" && (
+        <g>
+          <path d="M52 86 Q46 92 45 98" fill="none" stroke="#D4960A" stroke-width="6" stroke-linecap="round" />
+          <circle cx="45" cy="99" r="5" fill="#E0A92E" stroke="#213343" stroke-opacity="0.12" />
+          <path d="M90 84 Q100 86 107 86" fill="none" stroke="#D4960A" stroke-width="6" stroke-linecap="round" />
+          <g class="mascot-mag" style="transform-origin: 108px 80px;">
+            <line x1="115" y1="84" x2="124" y2="94" stroke="#C47A2A" stroke-width="4.5" stroke-linecap="round" />
+            <circle cx="108" cy="74" r="12" fill="#bfe3dd" fill-opacity="0.5" stroke="#C47A2A" stroke-width="3.5" />
+            <path d="M102 70 Q105 67 110 68" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" opacity="0.8" />
+            <circle cx="110" cy="86" r="5" fill="#E0A92E" stroke="#213343" stroke-opacity="0.12" />
+          </g>
+        </g>
+      )}
+
+      {pose === "chart" && (
+        <g>
+          <path d="M52 86 Q46 92 45 98" fill="none" stroke="#D4960A" stroke-width="6" stroke-linecap="round" />
+          <circle cx="45" cy="99" r="5" fill="#E0A92E" stroke="#213343" stroke-opacity="0.12" />
+          <rect x="96" y="60" width="32" height="30" rx="4" fill="#ffffff" stroke="#213343" stroke-width="1.3" stroke-opacity="0.7" />
+          <rect class="mascot-bar mascot-bar-1" style="transform-origin: 102.5px 86px;" x="100" y="78" width="5" height="8" rx="1" fill="#5AAB9D" />
+          <rect class="mascot-bar mascot-bar-2" style="transform-origin: 110.5px 86px;" x="108" y="73" width="5" height="13" rx="1" fill="#5AAB9D" />
+          <rect class="mascot-bar mascot-bar-3" style="transform-origin: 118.5px 86px;" x="116" y="67" width="5" height="19" rx="1" fill="#C47A2A" />
+          <path d="M99 76 L107 70 L113 66 L121 60" fill="none" stroke="#C47A2A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M116 60 L121 60 L121 65" fill="none" stroke="#C47A2A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M90 82 Q96 82 99 80" fill="none" stroke="#D4960A" stroke-width="6" stroke-linecap="round" />
+          <circle cx="99" cy="80" r="5" fill="#E0A92E" stroke="#213343" stroke-opacity="0.12" />
+        </g>
+      )}
+
+      {pose === "clipboard" && (
+        <g>
+          <path d="M52 86 Q46 92 45 98" fill="none" stroke="#D4960A" stroke-width="6" stroke-linecap="round" />
+          <circle cx="45" cy="99" r="5" fill="#E0A92E" stroke="#213343" stroke-opacity="0.12" />
+          <rect x="96" y="60" width="28" height="34" rx="4" fill="#213343" />
+          <rect x="99" y="65" width="22" height="26" rx="2" fill="#ffffff" />
+          <rect x="104" y="56" width="12" height="7" rx="2" fill="#C47A2A" />
+          <line x1="112" y1="73" x2="117" y2="73" stroke="#cbd5d1" stroke-width="2" stroke-linecap="round" />
+          <line x1="112" y1="82" x2="117" y2="82" stroke="#cbd5d1" stroke-width="2" stroke-linecap="round" />
+          <path class="mascot-check mascot-check-1" d="M102 73 l2.4 2.4 4.6 -5" fill="none" stroke="#5AAB9D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          <path class="mascot-check mascot-check-2" d="M102 82 l2.4 2.4 4.6 -5" fill="none" stroke="#5AAB9D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          <g class="mascot-pencil" style="transform-origin: 116px 90px;">
+            <line x1="113" y1="92" x2="122" y2="83" stroke="#D4960A" stroke-width="3.2" stroke-linecap="round" />
+            <path d="M122 83 l2.4 -2.4" stroke="#C47A2A" stroke-width="3.2" stroke-linecap="round" />
+            <circle cx="112.6" cy="92.4" r="1" fill="#213343" />
+          </g>
+          <path d="M90 82 Q95 80 98 78" fill="none" stroke="#D4960A" stroke-width="6" stroke-linecap="round" />
+          <circle cx="98" cy="78" r="5" fill="#E0A92E" stroke="#213343" stroke-opacity="0.12" />
+        </g>
+      )}
+
+      <!-- head -->
+      <circle cx="70" cy="42" r="20" fill={`url(#${bg})`} />
+      <ellipse cx="62" cy="33" rx="8" ry="5" fill="#ffffff" opacity="0.28" />
+      <circle cx="70" cy="42" r="20" fill="none" stroke="#213343" stroke-width="1.6" opacity="0.12" />
+
+      <!-- cheeks -->
+      <ellipse cx="55" cy="48" rx="3.6" ry="2.6" fill="#ff8a5c" opacity="0.4" />
+      <ellipse cx="85" cy="48" rx="3.6" ry="2.6" fill="#ff8a5c" opacity="0.4" />
+
+      <!-- eyes (glossy, cursor-tracking) -->
+      <ellipse cx="62" cy="42" rx="5.4" ry="6.6" fill="#ffffff" />
+      <ellipse cx="78" cy="42" rx="5.4" ry="6.6" fill="#ffffff" />
+      <g class="bee-pupil">
+        <circle cx="62" cy="43" r="3" fill="#213343" />
+        <circle cx="60.8" cy="41.2" r="1.2" fill="#ffffff" />
+      </g>
+      <g class="bee-pupil">
+        <circle cx="78" cy="43" r="3" fill="#213343" />
+        <circle cx="76.8" cy="41.2" r="1.2" fill="#ffffff" />
+      </g>
+
+      <!-- smile -->
+      <path d="M64 50 Q70 56 76 50" fill="none" stroke="#213343" stroke-width="2" stroke-linecap="round" />
+    </svg>
+  </div>
+</div>
+
+<style>
+  /* Interactive prop animations (idle loops). Gated behind reduced-motion. */
+  @media (prefers-reduced-motion: no-preference) {
+    .mascot-wave { animation: masWave 1.7s ease-in-out infinite; }
+    .mascot-wavelines { animation: masPulse 1.7s ease-in-out infinite; }
+    .mascot-mag { animation: masMag 2.6s ease-in-out infinite; }
+    .mascot-bar { animation: masBar 3.2s ease-in-out infinite; }
+    .mascot-bar-2 { animation-delay: 0.22s; }
+    .mascot-bar-3 { animation-delay: 0.44s; }
+    .mascot-check { stroke-dasharray: 16; stroke-dashoffset: 16; animation: masCheck 3.4s ease-in-out infinite; }
+    .mascot-check-2 { animation-delay: 0.5s; }
+    .mascot-pencil { animation: masPencil 3.4s ease-in-out infinite; }
+  }
+  @keyframes masWave { 0%, 100% { transform: rotate(-7deg); } 50% { transform: rotate(10deg); } }
+  @keyframes masPulse { 0%, 100% { opacity: 0.25; } 50% { opacity: 0.85; } }
+  @keyframes masMag { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.18); } }
+  @keyframes masBar { 0% { transform: scaleY(0.12); } 55%, 100% { transform: scaleY(1); } }
+  @keyframes masCheck { 0%, 8% { stroke-dashoffset: 16; } 42%, 86% { stroke-dashoffset: 0; } 100% { stroke-dashoffset: 16; } }
+  @keyframes masPencil { 0%, 100% { transform: translate(0, 0) rotate(0); } 50% { transform: translate(-2.5px, 1.5px) rotate(-7deg); } }
+</style>

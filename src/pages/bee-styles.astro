@@ -1,0 +1,299 @@
+---
+// bee-styles.astro — internal preview gallery.
+// Renders every candidate bee style so we can pick the one that best fits
+// SWOTBee's character, then use it for the 4 placements on the animated page.
+import Layout from "../layouts/Layout.astro";
+import BeeChar from "../components/astro/BeeChar.astro";
+import BeeFlat from "../components/astro/bees/BeeFlat.astro";
+import BeeLine from "../components/astro/bees/BeeLine.astro";
+import BeeBadge from "../components/astro/bees/BeeBadge.astro";
+import BeeHex from "../components/astro/bees/BeeHex.astro";
+import BeeHexBody from "../components/astro/bees/BeeHexBody.astro";
+import BeePoly from "../components/astro/bees/BeePoly.astro";
+import BeeTop from "../components/astro/bees/BeeTop.astro";
+import BeeFront from "../components/astro/bees/BeeFront.astro";
+import BeeMascot from "../components/astro/bees/BeeMascot.astro";
+import BeeBlob from "../components/astro/bees/BeeBlob.astro";
+import BeeRound from "../components/astro/bees/BeeRound.astro";
+import BeeTall from "../components/astro/bees/BeeTall.astro";
+import BeeWide from "../components/astro/bees/BeeWide.astro";
+import BeeAnalyst from "../components/astro/bees/BeeAnalyst.astro";
+
+const analystStages = [
+  { stage: "audit", step: "Entry point", name: "The Renewal Audit", desc: "Magnifier zooms in. The free audit where we inspect how renewals run today." },
+  { stage: "won", step: "Stage 1", name: "Closed Won", desc: "A 'won' seal stamps onto the deal. The moment a deal closes and the renewal clock starts." },
+  { stage: "renewal", step: "Stage 2", name: "Renewal Pipeline", desc: "Recurring arrows spin. Renewal opportunities get created automatically, on cycle." },
+  { stage: "risk", step: "Signal", name: "Revenue At Risk", desc: "An alert bell rings. At-risk renewals get flagged before the revenue slips away." },
+  { stage: "expansion", step: "Stage 3", name: "Expansion Pipeline", desc: "Chart bars grow. Hidden upsell and expansion revenue surfaces before renewal." },
+  { stage: "forecast", step: "Stage 4", name: "Confident Forecast", desc: "A trend line draws to target. Leadership finally gets a forecast they trust." },
+];
+
+const mascotTypes = [
+  { key: "blob", name: "Type 2 · Round Blob Buddy", best: "One plump body, no neck. The most huggable / approachable. Waves hello (animated hand)." },
+  { key: "round", name: "Type 3 · Big-Eyed Kawaii", best: "Oversized head and eyes, tiny body. Modern, charming. Holds a magnifier that zooms (animated)." },
+  { key: "tall", name: "Type 4 · The Analyst", best: "Taller, with smart glasses. Most polished / professional. Reads a chart whose bars grow (animated)." },
+  { key: "wide", name: "Type 5 · Classic Bumblebee", best: "Wide, rounded, traditional bee shape. Takes notes on a clipboard, checks draw in + pencil writes (animated)." },
+];
+
+const mascot = [
+  { pose: "wave", name: "The friendly consultant", best: "Waving hello. Approachable, human, the SWOTBee that greets you in the hero." },
+  { pose: "magnify", name: "The renewal audit", best: "Holding a magnifying glass. Diagnose and inspect, ties straight to the free audit CTA." },
+  { pose: "chart", name: "Hidden revenue / growth", best: "Holding an up-trend chart. Expansion revenue and the upside you're missing." },
+  { pose: "clipboard", name: "Process & business rules", best: "Holding a checklist clipboard. The consistent, rules-driven renewal process." },
+];
+
+const geo = [
+  { key: "hexbody", name: "A · Hexagon Body (side)", best: "One clean hexagon for the body, straight vertical stripes, flat triangle wings. Side profile. The most literal 'hexagon bee'." },
+  { key: "poly", name: "B · Low-Poly Faceted (side)", best: "Body cut into triangular facets in graded ambers with two navy facets as stripes. Crafted, geometric, premium." },
+  { key: "top", name: "C · Top-Down", best: "The bee seen from directly above: symmetric wings spread out, horizontal stripes, antennae in a V. Distinct, mark-like." },
+  { key: "front", name: "D · Front-Facing", best: "Looking right at you with two big diamond eyes that track the cursor. Most characterful of the geometric set." },
+];
+
+const styles = [
+  {
+    key: "rounded", name: "1 · Rounded Cartoon",
+    best: "Warm, friendly, approachable. Most personality. Good if you want the bee to feel like a helpful mascot.",
+  },
+  {
+    key: "flat", name: "2 · Flat Geometric",
+    best: "Clean and modern, minimal detail. Feels like a contemporary SaaS brand mark. Safe and current.",
+  },
+  {
+    key: "line", name: "3 · Minimal Line Art",
+    best: "The most restrained and premium. Quiet, professional, never competes with the copy. Best for a serious B2B tone.",
+  },
+  {
+    key: "badge", name: "4 · Hexagon Emblem",
+    best: "Reads as a polished logo / trust mark. Corporate and structured. The honeycomb frames the bee.",
+  },
+  {
+    key: "hex", name: "5 · Honeycomb Tech",
+    best: "Body built from honeycomb cells: a nod to automation and systems. The most 'product + tech' flavored.",
+  },
+];
+---
+<Layout robots="noindex, follow" title="Bee Style Picker" description="Internal preview">
+  <main class="bg-v6-bg min-h-screen py-12 px-6">
+    <div class="max-w-5xl mx-auto">
+      <h1 class="text-3xl font-bold text-v6-dark mb-2">Pick a bee style</h1>
+      <p class="text-v6-text-muted mb-8">Move your cursor near each bee, they track it. Each is shown on a light card and a dark strip (the CTA uses a dark/copper background). Tell me which you like and I'll place 4 across the page.</p>
+
+      <!-- CHOSEN: The Analyst across the renewal process -->
+      <div class="rounded-2xl border-2 border-v6-copper bg-white p-6 mb-12">
+        <h2 class="text-2xl font-bold text-v6-dark mb-1">The Analyst, across the renewal process <span class="text-v6-copper">(chosen)</span></h2>
+        <p class="text-v6-text-muted mb-6">The same Analyst character in six animated stages, each standing in for a step of Renewal Operations. The idea: as the visitor scrolls the page, the bee carries them through the journey. (Animations loop live in the browser, hover/scroll to a fresh one to catch the full loop.)</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {analystStages.map(s => (
+            <div class="rounded-2xl border border-v6-border overflow-hidden flex flex-col">
+              <div class="flex items-center justify-center py-6 bg-v6-bg">
+                <div class="w-40"><BeeAnalyst id={`as-${s.stage}`} stage={s.stage} delay={0} /></div>
+              </div>
+              <div class="flex items-center justify-center py-5 bg-gradient-to-br from-v6-copper to-v6-copper-600">
+                <div class="w-24"><BeeAnalyst id={`asd-${s.stage}`} stage={s.stage} delay={0.3} /></div>
+              </div>
+              <div class="p-4 border-t border-v6-border flex-grow">
+                <p class="text-[10px] font-semibold uppercase tracking-wider text-v6-copper mb-0.5">{s.step}</p>
+                <h3 class="text-sm font-semibold text-v6-dark mb-1">{s.name}</h3>
+                <p class="text-xs text-v6-text-muted leading-relaxed">{s.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Stylish cartoon mascot (the new direction) -->
+      <div class="rounded-2xl border-2 border-v6-copper bg-white p-6 mb-12">
+        <h2 class="text-2xl font-bold text-v6-dark mb-1">Stylish cartoon mascot <span class="text-v6-copper">(recommended)</span></h2>
+        <p class="text-v6-text-muted mb-6">One polished character (gradient body, glossy cursor-tracking eyes, soft shadow) in four poses. Each pose represents a facet of the website, so the four bees on the page tell your story instead of just decorating it.</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {mascot.map(m => (
+            <div class="rounded-2xl border border-v6-border overflow-hidden flex flex-col">
+              <div class="flex items-center justify-center py-6 bg-v6-bg">
+                <div class="w-36"><BeeMascot id={`mas-${m.pose}`} pose={m.pose} delay={0} /></div>
+              </div>
+              <div class="flex items-center justify-center py-5 bg-gradient-to-br from-v6-copper to-v6-copper-600">
+                <div class="w-24"><BeeMascot id={`masd-${m.pose}`} pose={m.pose} delay={0.3} /></div>
+              </div>
+              <div class="p-4 border-t border-v6-border flex-grow">
+                <h3 class="text-sm font-semibold text-v6-dark mb-1">{m.name}</h3>
+                <p class="text-xs text-v6-text-muted leading-relaxed">{m.best}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- 4 more mascot types -->
+      <div class="rounded-2xl border-2 border-v6-teal bg-white p-6 mb-12">
+        <h2 class="text-2xl font-bold text-v6-dark mb-1">4 more mascot types <span class="text-v6-teal">(with animation)</span></h2>
+        <p class="text-v6-text-muted mb-6">Same polished direction, four different characters to pick a personality from. Each shows one of the animations you asked for: waving hand, magnifier zoom, growing chart bars, note-taking pencil + checkmarks. (Animations loop live in the browser, they won't show in a static image.)</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {mascotTypes.map(m => (
+            <div class="rounded-2xl border border-v6-border overflow-hidden flex flex-col">
+              <div class="flex items-center justify-center py-6 bg-v6-bg">
+                <div class="w-36">
+                  {m.key === "blob" && <BeeBlob id={`t-${m.key}`} delay={0} />}
+                  {m.key === "round" && <BeeRound id={`t-${m.key}`} delay={0} />}
+                  {m.key === "tall" && <BeeTall id={`t-${m.key}`} delay={0} />}
+                  {m.key === "wide" && <BeeWide id={`t-${m.key}`} delay={0} />}
+                </div>
+              </div>
+              <div class="flex items-center justify-center py-5 bg-gradient-to-br from-v6-copper to-v6-copper-600">
+                <div class="w-24">
+                  {m.key === "blob" && <BeeBlob id={`td-${m.key}`} delay={0.3} />}
+                  {m.key === "round" && <BeeRound id={`td-${m.key}`} delay={0.3} />}
+                  {m.key === "tall" && <BeeTall id={`td-${m.key}`} delay={0.3} />}
+                  {m.key === "wide" && <BeeWide id={`td-${m.key}`} delay={0.3} />}
+                </div>
+              </div>
+              <div class="p-4 border-t border-v6-border flex-grow">
+                <h3 class="text-sm font-semibold text-v6-dark mb-1">{m.name}</h3>
+                <p class="text-xs text-v6-text-muted leading-relaxed">{m.best}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <h2 class="text-2xl font-bold text-v6-dark mb-2">Earlier styles (for comparison)</h2>
+      <p class="text-v6-text-muted mb-6">The simpler rounded and emblem options.</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {styles.map(s => (
+          <div class="bg-white rounded-2xl border border-v6-border overflow-hidden flex flex-col">
+            <div class="relative flex items-center justify-center gap-6 py-8 bg-white">
+              <div class="w-28">
+                {s.key === "rounded" && <BeeChar id={`g-${s.key}`} mood="happy" delay={0} />}
+                {s.key === "flat" && <BeeFlat id={`g-${s.key}`} delay={0} />}
+                {s.key === "line" && <BeeLine id={`g-${s.key}`} delay={0} />}
+                {s.key === "badge" && <BeeBadge id={`g-${s.key}`} delay={0} />}
+                {s.key === "hex" && <BeeHex id={`g-${s.key}`} delay={0} />}
+              </div>
+              <div class="w-16 opacity-90">
+                {s.key === "rounded" && <BeeChar id={`gs-${s.key}`} mood="happy" delay={0.6} />}
+                {s.key === "flat" && <BeeFlat id={`gs-${s.key}`} delay={0.6} />}
+                {s.key === "line" && <BeeLine id={`gs-${s.key}`} delay={0.6} />}
+                {s.key === "badge" && <BeeBadge id={`gs-${s.key}`} delay={0.6} />}
+                {s.key === "hex" && <BeeHex id={`gs-${s.key}`} delay={0.6} />}
+              </div>
+            </div>
+            <div class="flex items-center justify-center py-5 bg-gradient-to-br from-v6-copper to-v6-copper-600">
+              <div class="w-20">
+                {s.key === "rounded" && <BeeChar id={`gd-${s.key}`} mood="celebrate" delay={0.3} />}
+                {s.key === "flat" && <BeeFlat id={`gd-${s.key}`} delay={0.3} />}
+                {s.key === "line" && <BeeLine id={`gd-${s.key}`} delay={0.3} />}
+                {s.key === "badge" && <BeeBadge id={`gd-${s.key}`} delay={0.3} />}
+                {s.key === "hex" && <BeeHex id={`gd-${s.key}`} delay={0.3} />}
+              </div>
+            </div>
+            <div class="p-5 border-t border-v6-border flex-grow">
+              <h2 class="text-base font-semibold text-v6-dark mb-1">{s.name}</h2>
+              <p class="text-sm text-v6-text-muted leading-relaxed">{s.best}</p>
+            </div>
+          </div>
+        ))}
+
+        <!-- Rounded moods (only the chosen style carries the per-section narrative) -->
+        <div class="bg-white rounded-2xl border border-v6-border p-5 flex flex-col">
+          <h2 class="text-base font-semibold text-v6-dark mb-1">Mood range</h2>
+          <p class="text-sm text-v6-text-muted leading-relaxed mb-4">If you pick a style with a face, the 4 placements can each carry a mood that matches the section: happy in the hero, worried where things break, excited at the solution, celebrating at the CTA.</p>
+          <div class="flex items-end justify-around gap-2 mt-auto">
+            <div class="w-16"><BeeChar id="m-happy" mood="happy" delay={0} /></div>
+            <div class="w-16"><BeeChar id="m-worried" mood="worried" delay={0.4} /></div>
+            <div class="w-16"><BeeChar id="m-excited" mood="excited" delay={0.8} /></div>
+            <div class="w-16"><BeeChar id="m-celebrate" mood="celebrate" delay={1.2} /></div>
+          </div>
+          <div class="flex items-center justify-around gap-2 text-[10px] text-v6-text-muted mt-1">
+            <span>happy</span><span>worried</span><span>excited</span><span>celebrate</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Geometric / straight-line set -->
+      <h2 class="text-2xl font-bold text-v6-dark mt-12 mb-2">Geometric / straight-line bees</h2>
+      <p class="text-v6-text-muted mb-6">Angular, no curves, four different viewpoints. All use the site theme colours (v6-amber body, v6-dark stripes, v6-teal wings, v6-copper accents).</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {geo.map(s => (
+          <div class="bg-white rounded-2xl border border-v6-border overflow-hidden flex flex-col">
+            <div class="flex items-center justify-center gap-5 py-8 bg-white">
+              <div class="w-28">
+                {s.key === "hexbody" && <BeeHexBody id={`g-${s.key}`} delay={0} />}
+                {s.key === "poly" && <BeePoly id={`g-${s.key}`} delay={0} />}
+                {s.key === "top" && <BeeTop id={`g-${s.key}`} delay={0} />}
+                {s.key === "front" && <BeeFront id={`g-${s.key}`} delay={0} />}
+              </div>
+              <div class="w-14 opacity-90">
+                {s.key === "hexbody" && <BeeHexBody id={`gs-${s.key}`} delay={0.6} />}
+                {s.key === "poly" && <BeePoly id={`gs-${s.key}`} delay={0.6} />}
+                {s.key === "top" && <BeeTop id={`gs-${s.key}`} delay={0.6} />}
+                {s.key === "front" && <BeeFront id={`gs-${s.key}`} delay={0.6} />}
+              </div>
+            </div>
+            <div class="flex items-center justify-center py-5 bg-gradient-to-br from-v6-copper to-v6-copper-600">
+              <div class="w-20">
+                {s.key === "hexbody" && <BeeHexBody id={`gd-${s.key}`} delay={0.3} />}
+                {s.key === "poly" && <BeePoly id={`gd-${s.key}`} delay={0.3} />}
+                {s.key === "top" && <BeeTop id={`gd-${s.key}`} delay={0.3} />}
+                {s.key === "front" && <BeeFront id={`gd-${s.key}`} delay={0.3} />}
+              </div>
+            </div>
+            <div class="p-5 border-t border-v6-border flex-grow">
+              <h3 class="text-base font-semibold text-v6-dark mb-1">{s.name}</h3>
+              <p class="text-sm text-v6-text-muted leading-relaxed">{s.best}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .bee-char {
+    --tx: 0px; --ty: 0px;
+    transform: translate(var(--tx), var(--ty));
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .bee-bob { animation: beeBob 4s ease-in-out infinite; animation-delay: var(--bee-delay, 0s); }
+  @keyframes beeBob {
+    0%, 100% { transform: translateY(0) rotate(-2deg); }
+    50% { transform: translateY(-7px) rotate(2deg); }
+  }
+  .bee-wings { animation: beeFlutter 0.18s ease-in-out infinite alternate; transform-box: fill-box; }
+  @keyframes beeFlutter {
+    from { transform: scaleY(1) rotate(0deg); }
+    to { transform: scaleY(0.78) rotate(-6deg); }
+  }
+  .bee-pupil { transition: transform 0.25s ease-out; transform: translate(var(--px, 0px), var(--py, 0px)); }
+  @media (prefers-reduced-motion: reduce) {
+    .bee-bob, .bee-wings { animation: none !important; }
+    .bee-char { transform: none !important; }
+  }
+</style>
+
+<script>
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const bees = Array.from(document.querySelectorAll(".bee-char"));
+  if (!reduce && bees.length) {
+    let raf = 0;
+    const clamp = (v, m) => Math.max(-m, Math.min(m, v));
+    window.addEventListener("mousemove", (e) => {
+      if (raf) return;
+      raf = requestAnimationFrame(() => {
+        raf = 0;
+        bees.forEach((bee) => {
+          const r = bee.getBoundingClientRect();
+          if (!r.width) return;
+          const dx = (e.clientX - (r.left + r.width / 2)) / window.innerWidth;
+          const dy = (e.clientY - (r.top + r.height / 2)) / window.innerHeight;
+          bee.style.setProperty("--tx", `${clamp(dx * 36, 9)}px`);
+          bee.style.setProperty("--ty", `${clamp(dy * 36, 7)}px`);
+          const px = clamp(dx * 9, 2.4), py = clamp(dy * 9, 2.4);
+          bee.querySelectorAll(".bee-pupil").forEach((p) => {
+            p.style.setProperty("--px", `${px}px`);
+            p.style.setProperty("--py", `${py}px`);
+          });
+        });
+      });
+    }, { passive: true });
+  }
+</script>

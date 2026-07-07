@@ -1,0 +1,73 @@
+---
+// BeeWide.astro — mascot TYPE 5: "classic bumblebee".
+// Wide, friendly bumblebee silhouette. Holds a clipboard and takes notes:
+// checkmarks draw in and a pencil writes (animated).
+interface Props { id: string; class?: string; flip?: boolean; delay?: number; }
+const { id, class: className = "", flip = false, delay = 0 } = Astro.props;
+const bg = `wideGrad-${id}`; const wg = `wideWing-${id}`; const bc = `wideClip-${id}`;
+---
+<div class={`bee-char ${className}`} data-style="wide" aria-hidden="true"
+  style={`--bee-delay:${delay}s; ${flip ? "transform: scaleX(-1);" : ""}`}>
+  <div class="bee-bob">
+    <svg viewBox="0 0 140 120" class="w-full h-full overflow-visible">
+      <defs>
+        <radialGradient id={bg} cx="38%" cy="26%" r="80%">
+          <stop offset="0%" stop-color="#F8CB66" /><stop offset="55%" stop-color="#D4960A" /><stop offset="100%" stop-color="#B97F1E" />
+        </radialGradient>
+        <linearGradient id={wg} x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#eafbf7" stop-opacity="0.95" /><stop offset="100%" stop-color="#9ed6cb" stop-opacity="0.75" />
+        </linearGradient>
+        <clipPath id={bc}><ellipse cx="62" cy="80" rx="34" ry="19" /></clipPath>
+      </defs>
+      <ellipse cx="62" cy="103" rx="28" ry="4.5" fill="#213343" opacity="0.12" />
+      <g class="bee-wings" style="transform-origin: 62px 56px;">
+        <ellipse cx="46" cy="52" rx="16" ry="20" fill={`url(#${wg})`} stroke="#5AAB9D" stroke-width="1.2" stroke-opacity="0.4" transform="rotate(-30 46 52)" />
+        <ellipse cx="80" cy="52" rx="16" ry="20" fill={`url(#${wg})`} stroke="#5AAB9D" stroke-width="1.2" stroke-opacity="0.4" transform="rotate(30 80 52)" />
+      </g>
+      <path d="M54 30 Q48 16 53 11" fill="none" stroke="#213343" stroke-width="2.4" stroke-linecap="round" />
+      <path d="M70 30 Q76 16 71 11" fill="none" stroke="#213343" stroke-width="2.4" stroke-linecap="round" />
+      <circle cx="53" cy="10" r="3" fill="#C47A2A" /><circle cx="71" cy="10" r="3" fill="#C47A2A" />
+      <!-- wide abdomen -->
+      <ellipse cx="62" cy="80" rx="34" ry="19" fill={`url(#${bg})`} />
+      <g clip-path={`url(#${bc})`}>
+        <rect x="50" y="60" width="11" height="40" fill="#213343" /><rect x="68" y="60" width="11" height="40" fill="#213343" />
+        <ellipse cx="48" cy="72" rx="9" ry="5" fill="#ffffff" opacity="0.18" />
+      </g>
+      <ellipse cx="62" cy="80" rx="34" ry="19" fill="none" stroke="#213343" stroke-width="1.6" opacity="0.12" />
+      <path d="M96 80 Q103 79 108 80 Q103 82 96 80 Z" fill="#213343" />
+      <!-- clipboard + note taking -->
+      <path d="M84 78 Q92 78 96 76" fill="none" stroke="#D4960A" stroke-width="5.5" stroke-linecap="round" />
+      <rect x="96" y="56" width="28" height="34" rx="4" fill="#213343" />
+      <rect x="99" y="61" width="22" height="26" rx="2" fill="#ffffff" />
+      <rect x="104" y="52" width="12" height="7" rx="2" fill="#C47A2A" />
+      <line x1="112" y1="69" x2="117" y2="69" stroke="#cbd5d1" stroke-width="2" stroke-linecap="round" />
+      <line x1="112" y1="78" x2="117" y2="78" stroke="#cbd5d1" stroke-width="2" stroke-linecap="round" />
+      <path class="mascot-check mascot-check-1" d="M102 69 l2.4 2.4 4.6 -5" fill="none" stroke="#5AAB9D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      <path class="mascot-check mascot-check-2" d="M102 78 l2.4 2.4 4.6 -5" fill="none" stroke="#5AAB9D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      <g class="mascot-pencil" style="transform-origin: 120px 90px;">
+        <line x1="117" y1="92" x2="126" y2="83" stroke="#D4960A" stroke-width="3.2" stroke-linecap="round" />
+        <path d="M126 83 l2.4 -2.4" stroke="#C47A2A" stroke-width="3.2" stroke-linecap="round" />
+        <circle cx="116.6" cy="92.4" r="1" fill="#213343" />
+      </g>
+      <circle cx="96" cy="76" r="5" fill="#E0A92E" stroke="#213343" stroke-opacity="0.12" />
+      <!-- head -->
+      <circle cx="62" cy="46" r="18" fill={`url(#${bg})`} />
+      <ellipse cx="53" cy="37" rx="8" ry="5" fill="#ffffff" opacity="0.28" />
+      <circle cx="62" cy="46" r="18" fill="none" stroke="#213343" stroke-width="1.6" opacity="0.12" />
+      <ellipse cx="48" cy="52" rx="3.4" ry="2.4" fill="#ff8a5c" opacity="0.4" /><ellipse cx="76" cy="52" rx="3.4" ry="2.4" fill="#ff8a5c" opacity="0.4" />
+      <ellipse cx="55" cy="46" rx="5" ry="6" fill="#ffffff" /><ellipse cx="69" cy="46" rx="5" ry="6" fill="#ffffff" />
+      <g class="bee-pupil"><circle cx="55" cy="47" r="2.8" fill="#213343" /><circle cx="53.9" cy="45.3" r="1.1" fill="#ffffff" /></g>
+      <g class="bee-pupil"><circle cx="69" cy="47" r="2.8" fill="#213343" /><circle cx="67.9" cy="45.3" r="1.1" fill="#ffffff" /></g>
+      <path d="M57 54 Q62 59 67 54" fill="none" stroke="#213343" stroke-width="2" stroke-linecap="round" />
+    </svg>
+  </div>
+</div>
+<style>
+  @media (prefers-reduced-motion: no-preference) {
+    .mascot-check { stroke-dasharray: 16; stroke-dashoffset: 16; animation: wideCheck 3.4s ease-in-out infinite; }
+    .mascot-check-2 { animation-delay: 0.5s; }
+    .mascot-pencil { animation: widePencil 3.4s ease-in-out infinite; }
+  }
+  @keyframes wideCheck { 0%, 8% { stroke-dashoffset: 16; } 42%, 86% { stroke-dashoffset: 0; } 100% { stroke-dashoffset: 16; } }
+  @keyframes widePencil { 0%, 100% { transform: translate(0, 0) rotate(0); } 50% { transform: translate(-2.5px, 1.5px) rotate(-7deg); } }
+</style>

@@ -1,0 +1,180 @@
+---
+// BeeAnalyst.astro — the chosen mascot ("The Analyst", glasses) parametrized by
+// a renewal-process STAGE. Each stage swaps the prop the bee holds and the
+// animation, so a bee can stand in for each step of Renewal Operations:
+//   audit     -> the free renewal audit (magnifier zooms)            [entry point]
+//   won       -> Closed Won (a "won" seal stamps onto the deal)      [stage 1]
+//   renewal   -> Renewal Pipeline (recurring arrows spin)            [stage 2]
+//   risk      -> Revenue at risk (alert bell rings)                  [signal]
+//   expansion -> Expansion Pipeline (chart bars grow)               [stage 3]
+//   forecast  -> Confident Forecast (trend line draws + target)      [stage 4]
+// Body, glasses, and cursor-tracking eyes are shared. Theme tokens throughout.
+interface Props {
+  id: string;
+  stage?: "audit" | "won" | "renewal" | "risk" | "expansion" | "forecast";
+  class?: string;
+  flip?: boolean;
+  delay?: number;
+}
+const { id, stage = "expansion", class: className = "", flip = false, delay = 0 } = Astro.props;
+const bg = `anGrad-${id}`; const wg = `anWing-${id}`; const bc = `anClip-${id}`;
+---
+<div class={`bee-char ${className}`} data-style="analyst" aria-hidden="true"
+  style={`--bee-delay:${delay}s; ${flip ? "transform: scaleX(-1);" : ""}`}>
+  <div class="bee-bob">
+    <svg viewBox="0 0 140 120" class="w-full h-full overflow-visible">
+      <defs>
+        <radialGradient id={bg} cx="38%" cy="24%" r="84%">
+          <stop offset="0%" stop-color="#F8CB66" /><stop offset="55%" stop-color="#D4960A" /><stop offset="100%" stop-color="#B97F1E" />
+        </radialGradient>
+        <linearGradient id={wg} x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#eafbf7" stop-opacity="0.95" /><stop offset="100%" stop-color="#9ed6cb" stop-opacity="0.75" />
+        </linearGradient>
+        <clipPath id={bc}><ellipse cx="64" cy="82" rx="20" ry="26" /></clipPath>
+      </defs>
+
+      <ellipse cx="64" cy="113" rx="20" ry="4" fill="#213343" opacity="0.12" />
+      <g class="bee-wings" style="transform-origin: 64px 56px;">
+        <ellipse cx="48" cy="54" rx="13" ry="20" fill={`url(#${wg})`} stroke="#5AAB9D" stroke-width="1.2" stroke-opacity="0.4" transform="rotate(-26 48 54)" />
+        <ellipse cx="80" cy="54" rx="13" ry="20" fill={`url(#${wg})`} stroke="#5AAB9D" stroke-width="1.2" stroke-opacity="0.4" transform="rotate(26 80 54)" />
+      </g>
+      <path d="M58 26 Q52 13 57 8" fill="none" stroke="#213343" stroke-width="2.4" stroke-linecap="round" />
+      <path d="M72 26 Q78 13 73 8" fill="none" stroke="#213343" stroke-width="2.4" stroke-linecap="round" />
+      <circle cx="57" cy="7" r="3" fill="#C47A2A" /><circle cx="73" cy="7" r="3" fill="#C47A2A" />
+
+      <!-- abdomen -->
+      <ellipse cx="64" cy="82" rx="20" ry="26" fill={`url(#${bg})`} />
+      <g clip-path={`url(#${bc})`}>
+        <path d="M40 74 Q64 69 88 74 L88 82 Q64 77 40 82 Z" fill="#213343" />
+        <path d="M42 90 Q64 85 86 90 L86 98 Q64 93 42 98 Z" fill="#213343" />
+      </g>
+      <ellipse cx="64" cy="82" rx="20" ry="26" fill="none" stroke="#213343" stroke-width="1.6" opacity="0.12" />
+      <path d="M64 106 Q60 112 64 115 Q68 112 64 106 Z" fill="#213343" />
+
+      <!-- arm reaching to the prop (shared) -->
+      <path d="M82 80 Q92 80 98 78" fill="none" stroke="#D4960A" stroke-width="6" stroke-linecap="round" />
+
+      <!-- ===== STAGE PROPS ===== -->
+      {stage === "audit" && (
+        <g>
+          <g class="an-audit" style="transform-origin: 110px 74px;">
+            <line x1="116" y1="80" x2="125" y2="90" stroke="#C47A2A" stroke-width="4.5" stroke-linecap="round" />
+            <circle cx="110" cy="74" r="11" fill="#bfe3dd" fill-opacity="0.5" stroke="#C47A2A" stroke-width="3.5" />
+            <path d="M104 70 Q107 67 112 68" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" opacity="0.8" />
+          </g>
+          <circle cx="100" cy="80" r="5" fill="#E0A92E" stroke="#213343" stroke-opacity="0.12" />
+        </g>
+      )}
+
+      {stage === "won" && (
+        <g>
+          <circle cx="99" cy="79" r="5" fill="#E0A92E" stroke="#213343" stroke-opacity="0.12" />
+          <rect x="98" y="54" width="30" height="32" rx="4" fill="#ffffff" stroke="#213343" stroke-width="1.3" stroke-opacity="0.7" />
+          <line x1="103" y1="61" x2="117" y2="61" stroke="#cbd5d1" stroke-width="2" stroke-linecap="round" />
+          <line x1="103" y1="67" x2="113" y2="67" stroke="#cbd5d1" stroke-width="2" stroke-linecap="round" />
+          <g class="an-stamp" style="transform-origin: 113px 74px;">
+            <circle cx="113" cy="74" r="10" fill="none" stroke="#5AAB9D" stroke-width="2.6" />
+            <path d="M108 74 l3.2 3.4 6 -7" fill="none" stroke="#5AAB9D" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" />
+          </g>
+          <path class="an-spark" d="M124 56 l1.4 3.4 3.4 1.4 -3.4 1.4 -1.4 3.4 -1.4 -3.4 -3.4 -1.4 3.4 -1.4 Z" fill="#D4960A" />
+        </g>
+      )}
+
+      {stage === "renewal" && (
+        <g>
+          <circle cx="99" cy="79" r="5" fill="#E0A92E" stroke="#213343" stroke-opacity="0.12" />
+          <rect x="101" y="64" width="22" height="20" rx="2.5" fill="#ffffff" stroke="#213343" stroke-width="1.3" stroke-opacity="0.6" />
+          <rect x="101" y="64" width="22" height="6" rx="2.5" fill="#C47A2A" />
+          <circle cx="106" cy="62" r="1.6" fill="#213343" /><circle cx="118" cy="62" r="1.6" fill="#213343" />
+          <g class="an-renew" style="transform-origin: 112px 74px;">
+            <path d="M112 60 A14 14 0 0 1 124 81" fill="none" stroke="#5AAB9D" stroke-width="2.6" stroke-linecap="round" />
+            <path d="M124 81 l3 -4 -5 -1 Z" fill="#5AAB9D" />
+            <path d="M112 88 A14 14 0 0 1 100 67" fill="none" stroke="#5AAB9D" stroke-width="2.6" stroke-linecap="round" />
+            <path d="M100 67 l-3 4 5 1 Z" fill="#5AAB9D" />
+          </g>
+        </g>
+      )}
+
+      {stage === "risk" && (
+        <g>
+          <circle cx="99" cy="80" r="5" fill="#E0A92E" stroke="#213343" stroke-opacity="0.12" />
+          <g class="an-bell" style="transform-origin: 112px 60px;">
+            <path d="M104 78 Q104 60 112 58 Q120 60 120 78 Z" fill="#C47A2A" />
+            <rect x="103" y="78" width="18" height="3.4" rx="1.7" fill="#B97F1E" />
+            <circle cx="112" cy="85" r="2.6" fill="#B97F1E" />
+            <circle cx="112" cy="56" r="2" fill="#B97F1E" />
+          </g>
+          <circle cx="124" cy="60" r="6.5" fill="#ff5c35" />
+          <rect x="123" y="56" width="2" height="5" rx="1" fill="#ffffff" />
+          <circle cx="124" cy="63.5" r="1.1" fill="#ffffff" />
+        </g>
+      )}
+
+      {stage === "expansion" && (
+        <g>
+          <rect x="98" y="54" width="32" height="30" rx="4" fill="#ffffff" stroke="#213343" stroke-width="1.3" stroke-opacity="0.7" />
+          <rect class="an-bar an-bar-1" style="transform-origin: 104.5px 80px;" x="102" y="72" width="5" height="8" rx="1" fill="#5AAB9D" />
+          <rect class="an-bar an-bar-2" style="transform-origin: 112.5px 80px;" x="110" y="67" width="5" height="13" rx="1" fill="#5AAB9D" />
+          <rect class="an-bar an-bar-3" style="transform-origin: 120.5px 80px;" x="118" y="61" width="5" height="19" rx="1" fill="#C47A2A" />
+          <path d="M101 70 L109 64 L115 60 L123 54 M118 54 L123 54 L123 59" fill="none" stroke="#C47A2A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          <circle cx="100" cy="78" r="5" fill="#E0A92E" stroke="#213343" stroke-opacity="0.12" />
+        </g>
+      )}
+
+      {stage === "forecast" && (
+        <g>
+          <circle cx="99" cy="79" r="5" fill="#E0A92E" stroke="#213343" stroke-opacity="0.12" />
+          <rect x="98" y="54" width="32" height="30" rx="4" fill="#ffffff" stroke="#213343" stroke-width="1.3" stroke-opacity="0.7" />
+          <path d="M103 60 L103 78 L126 78" fill="none" stroke="#cbd5d1" stroke-width="1.6" stroke-linecap="round" />
+          <path class="an-line" d="M104 75 L110 69 L115 65 L123 58" fill="none" stroke="#C47A2A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" />
+          <circle class="an-dot" cx="123" cy="58" r="2.8" fill="#C47A2A" />
+        </g>
+      )}
+
+      <!-- head -->
+      <circle cx="64" cy="40" r="17" fill={`url(#${bg})`} />
+      <ellipse cx="56" cy="32" rx="7" ry="4.5" fill="#ffffff" opacity="0.28" />
+      <circle cx="64" cy="40" r="17" fill="none" stroke="#213343" stroke-width="1.6" opacity="0.12" />
+      <ellipse cx="51" cy="45" rx="3.2" ry="2.3" fill="#ff8a5c" opacity="0.4" /><ellipse cx="77" cy="45" rx="3.2" ry="2.3" fill="#ff8a5c" opacity="0.4" />
+      <circle cx="58" cy="40" r="4.6" fill="#ffffff" /><circle cx="70" cy="40" r="4.6" fill="#ffffff" />
+      <g class="bee-pupil"><circle cx="58" cy="41" r="2.6" fill="#213343" /><circle cx="56.9" cy="39.4" r="1.1" fill="#ffffff" /></g>
+      <g class="bee-pupil"><circle cx="70" cy="41" r="2.6" fill="#213343" /><circle cx="68.9" cy="39.4" r="1.1" fill="#ffffff" /></g>
+      <g fill="none" stroke="#213343" stroke-width="2">
+        <rect x="52" y="34" width="12" height="11" rx="3.5" />
+        <rect x="66" y="34" width="12" height="11" rx="3.5" />
+        <line x1="64" y1="39" x2="66" y2="39" />
+        <line x1="52" y1="38" x2="47" y2="37" />
+      </g>
+      <path d="M60 50 Q64 53 68 50" fill="none" stroke="#213343" stroke-width="1.8" stroke-linecap="round" />
+    </svg>
+  </div>
+</div>
+
+<style>
+  @media (prefers-reduced-motion: no-preference) {
+    .an-audit { animation: anAudit 2.6s ease-in-out infinite; }
+    .an-stamp { animation: anStamp 2.8s ease-in-out infinite; }
+    .an-spark { animation: anSpark 2.8s ease-in-out infinite; transform-origin: 124px 60px; }
+    .an-renew { animation: anRenew 3.4s linear infinite; }
+    .an-bell { animation: anBell 1.4s ease-in-out infinite; }
+    .an-bar { animation: anBar 3.2s ease-in-out infinite; }
+    .an-bar-2 { animation-delay: 0.22s; }
+    .an-bar-3 { animation-delay: 0.44s; }
+    .an-line { stroke-dasharray: 40; stroke-dashoffset: 40; animation: anLine 3s ease-in-out infinite; }
+    .an-dot { animation: anDot 3s ease-in-out infinite; }
+  }
+  @keyframes anAudit { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.18); } }
+  @keyframes anStamp {
+    0%, 12% { transform: scale(1.6) rotate(-8deg); opacity: 0; }
+    24% { transform: scale(0.95) rotate(0); opacity: 1; }
+    32% { transform: scale(1) rotate(0); opacity: 1; }
+    86% { transform: scale(1) rotate(0); opacity: 1; }
+    100% { transform: scale(1.6) rotate(-8deg); opacity: 0; }
+  }
+  @keyframes anSpark { 0%, 18%, 100% { transform: scale(0); opacity: 0; } 40%, 80% { transform: scale(1); opacity: 1; } }
+  @keyframes anRenew { from { transform: rotate(0); } to { transform: rotate(360deg); } }
+  @keyframes anBell { 0%, 70%, 100% { transform: rotate(0); } 78% { transform: rotate(-13deg); } 86% { transform: rotate(11deg); } 94% { transform: rotate(-5deg); } }
+  @keyframes anBar { 0% { transform: scaleY(0.12); } 55%, 100% { transform: scaleY(1); } }
+  @keyframes anLine { 0%, 10% { stroke-dashoffset: 40; } 55%, 88% { stroke-dashoffset: 0; } 100% { stroke-dashoffset: 40; } }
+  @keyframes anDot { 0%, 55% { transform: scale(0); opacity: 0; } 70% { transform: scale(1.5); opacity: 1; } 88% { transform: scale(1); opacity: 1; } 100% { transform: scale(0); opacity: 0; } }
+</style>

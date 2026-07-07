@@ -1,0 +1,42 @@
+---
+// BeeFront.astro — "Front-Facing View" (straight lines only).
+// The bee looking straight at you: hexagon body, two big diamond eyes that track
+// the cursor, a straight-chevron smile, symmetric wings and antennae.
+// Theme tokens: v6-amber #D4960A, v6-dark #213343, v6-teal #5AAB9D, v6-copper #C47A2A.
+interface Props { id: string; class?: string; flip?: boolean; delay?: number; }
+const { id, class: className = "", flip = false, delay = 0 } = Astro.props;
+const cid = `front-${id}`;
+const body = "M60 30 L84 44 L84 70 L60 84 L36 70 L36 44 Z";
+---
+<div class={`bee-char ${className}`} data-style="front" aria-hidden="true"
+  style={`--bee-delay:${delay}s; ${flip ? "transform: scaleX(-1);" : ""}`}>
+  <div class="bee-bob">
+    <svg viewBox="0 0 120 100" class="w-full h-full overflow-visible">
+      <defs><clipPath id={cid}><path d={body} /></clipPath></defs>
+      <!-- wings behind body (symmetric) -->
+      <g class="bee-wings" style="transform-origin: 60px 46px;">
+        <path d="M42 44 L12 32 L26 58 Z" fill="#5AAB9D" opacity="0.48" />
+        <path d="M78 44 L108 32 L94 58 Z" fill="#5AAB9D" opacity="0.48" />
+      </g>
+      <!-- antennae -->
+      <polyline points="54,32 48,18 45,14" fill="none" stroke="#213343" stroke-width="2.2" stroke-linejoin="round" />
+      <polyline points="66,32 72,18 75,14" fill="none" stroke="#213343" stroke-width="2.2" stroke-linejoin="round" />
+      <path d="M45 11 L48 14 L45 17 L42 14 Z" fill="#C47A2A" />
+      <path d="M75 11 L78 14 L75 17 L72 14 Z" fill="#C47A2A" />
+      <!-- body + vertical stripes -->
+      <path d={body} fill="#D4960A" />
+      <g clip-path={`url(#${cid})`}>
+        <rect x="50" y="60" width="9" height="24" fill="#213343" />
+        <rect x="61" y="60" width="9" height="24" fill="#213343" />
+      </g>
+      <path d={body} fill="none" stroke="#213343" stroke-width="2" stroke-linejoin="round" />
+      <!-- eyes (big diamonds) -->
+      <path d="M50 44 L57 51 L50 58 L43 51 Z" fill="#ffffff" stroke="#213343" stroke-width="1.5" stroke-linejoin="round" />
+      <path d="M70 44 L77 51 L70 58 L63 51 Z" fill="#ffffff" stroke="#213343" stroke-width="1.5" stroke-linejoin="round" />
+      <path class="bee-pupil" d="M50 48 L53 51 L50 54 L47 51 Z" fill="#213343" />
+      <path class="bee-pupil" d="M70 48 L73 51 L70 54 L67 51 Z" fill="#213343" />
+      <!-- chevron smile -->
+      <polyline points="52,65 60,71 68,65" fill="none" stroke="#213343" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" />
+    </svg>
+  </div>
+</div>

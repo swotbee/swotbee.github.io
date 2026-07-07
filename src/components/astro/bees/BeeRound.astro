@@ -1,0 +1,61 @@
+---
+// BeeRound.astro — mascot TYPE 3: "big-eyed kawaii".
+// Oversized head + tiny body, huge expressive cursor-tracking eyes. Holds a
+// magnifying glass that zooms (animated).
+interface Props { id: string; class?: string; flip?: boolean; delay?: number; }
+const { id, class: className = "", flip = false, delay = 0 } = Astro.props;
+const bg = `rndGrad-${id}`; const wg = `rndWing-${id}`; const bc = `rndClip-${id}`;
+---
+<div class={`bee-char ${className}`} data-style="round" aria-hidden="true"
+  style={`--bee-delay:${delay}s; ${flip ? "transform: scaleX(-1);" : ""}`}>
+  <div class="bee-bob">
+    <svg viewBox="0 0 140 120" class="w-full h-full overflow-visible">
+      <defs>
+        <radialGradient id={bg} cx="38%" cy="26%" r="82%">
+          <stop offset="0%" stop-color="#F8CB66" /><stop offset="55%" stop-color="#D4960A" /><stop offset="100%" stop-color="#B97F1E" />
+        </radialGradient>
+        <linearGradient id={wg} x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#eafbf7" stop-opacity="0.95" /><stop offset="100%" stop-color="#9ed6cb" stop-opacity="0.75" />
+        </linearGradient>
+        <clipPath id={bc}><ellipse cx="66" cy="92" rx="18" ry="13" /></clipPath>
+      </defs>
+      <ellipse cx="66" cy="112" rx="20" ry="4" fill="#213343" opacity="0.12" />
+      <g class="bee-wings" style="transform-origin: 66px 84px;">
+        <ellipse cx="50" cy="84" rx="11" ry="15" fill={`url(#${wg})`} stroke="#5AAB9D" stroke-width="1.1" stroke-opacity="0.4" transform="rotate(-30 50 84)" />
+        <ellipse cx="82" cy="84" rx="11" ry="15" fill={`url(#${wg})`} stroke="#5AAB9D" stroke-width="1.1" stroke-opacity="0.4" transform="rotate(30 82 84)" />
+      </g>
+      <!-- tiny body -->
+      <ellipse cx="66" cy="92" rx="18" ry="13" fill={`url(#${bg})`} />
+      <g clip-path={`url(#${bc})`}>
+        <rect x="48" y="86" width="36" height="5" fill="#213343" /><rect x="48" y="95" width="36" height="5" fill="#213343" />
+      </g>
+      <ellipse cx="66" cy="92" rx="18" ry="13" fill="none" stroke="#213343" stroke-width="1.4" opacity="0.12" />
+      <!-- magnifier (held to the right, animated zoom) -->
+      <path d="M82 90 Q92 90 98 88" fill="none" stroke="#D4960A" stroke-width="5.5" stroke-linecap="round" />
+      <g class="mascot-mag" style="transform-origin: 106px 80px;">
+        <line x1="113" y1="84" x2="122" y2="94" stroke="#C47A2A" stroke-width="4.5" stroke-linecap="round" />
+        <circle cx="106" cy="74" r="11" fill="#bfe3dd" fill-opacity="0.5" stroke="#C47A2A" stroke-width="3.5" />
+        <path d="M100 70 Q103 67 108 68" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" opacity="0.8" />
+        <circle cx="102" cy="88" r="5" fill="#E0A92E" stroke="#213343" stroke-opacity="0.12" />
+      </g>
+      <!-- big head -->
+      <path d="M55 26 Q50 14 55 9" fill="none" stroke="#213343" stroke-width="2.4" stroke-linecap="round" />
+      <path d="M77 26 Q82 14 77 9" fill="none" stroke="#213343" stroke-width="2.4" stroke-linecap="round" />
+      <circle cx="55" cy="8" r="3" fill="#C47A2A" /><circle cx="77" cy="8" r="3" fill="#C47A2A" />
+      <circle cx="66" cy="48" r="24" fill={`url(#${bg})`} />
+      <ellipse cx="56" cy="37" rx="9" ry="6" fill="#ffffff" opacity="0.28" />
+      <circle cx="66" cy="48" r="24" fill="none" stroke="#213343" stroke-width="1.6" opacity="0.12" />
+      <ellipse cx="50" cy="55" rx="4" ry="2.8" fill="#ff8a5c" opacity="0.4" /><ellipse cx="82" cy="55" rx="4" ry="2.8" fill="#ff8a5c" opacity="0.4" />
+      <ellipse cx="57" cy="48" rx="7.2" ry="8.6" fill="#ffffff" /><ellipse cx="75" cy="48" rx="7.2" ry="8.6" fill="#ffffff" />
+      <g class="bee-pupil"><circle cx="57" cy="49" r="4.2" fill="#213343" /><circle cx="55.2" cy="46.5" r="1.7" fill="#ffffff" /></g>
+      <g class="bee-pupil"><circle cx="75" cy="49" r="4.2" fill="#213343" /><circle cx="73.2" cy="46.5" r="1.7" fill="#ffffff" /></g>
+      <path d="M61 60 Q66 64 71 60" fill="none" stroke="#213343" stroke-width="2" stroke-linecap="round" />
+    </svg>
+  </div>
+</div>
+<style>
+  @media (prefers-reduced-motion: no-preference) {
+    .mascot-mag { animation: rndMag 2.6s ease-in-out infinite; }
+  }
+  @keyframes rndMag { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.2); } }
+</style>
