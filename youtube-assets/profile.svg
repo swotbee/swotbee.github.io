@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="800" viewBox="0 0 800 800">
+<rect width="800" height="800" fill="#213343"/>
+<g transform="translate(244.0,157.0) scale(2.6)"><polygon points="38,8 54,18 54,36 38,46 22,36 22,18" fill="#D4960A"/><polygon points="72,8 88,18 88,36 72,46 56,36 56,18" fill="#0A3D6B"/><polygon points="21,40 37,50 37,68 21,78 5,68 5,50" fill="#5AAB9D"/><polygon points="55,40 71,50 71,68 55,78 39,68 39,50" fill="#D4960A"/><polygon points="89,40 105,50 105,68 89,78 73,68 73,50" fill="#1A7AB5"/><polygon points="38,72 54,82 54,100 38,110 22,100 22,82" fill="#3D8A7A"/><polygon points="72,72 88,82 88,100 72,110 56,100 56,82" fill="#C48800"/></g>
+<text x="400" y="560" font-family="DejaVu Sans" font-weight="bold" font-size="96" fill="#ffffff" text-anchor="middle">SWOTbee</text>
+</svg>
