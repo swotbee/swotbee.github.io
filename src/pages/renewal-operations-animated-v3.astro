@@ -346,6 +346,7 @@ const toneMap: Record<string, string> = {
       </p>
       <div class="reveal rounded-2xl border border-v6-border bg-v6-bg shadow-xl overflow-hidden max-w-3xl mx-auto">
         <video
+          id="renewal-demo-video"
           class="w-full h-auto block bg-v6-dark"
           controls
           preload="none"
@@ -357,7 +358,7 @@ const toneMap: Record<string, string> = {
         </video>
       </div>
       <div class="reveal flex flex-col sm:flex-row gap-3 justify-center items-center mt-8">
-        <a href="/contactus" class="bg-v6-copper text-white px-8 py-3.5 rounded-xl text-base font-semibold hover:bg-v6-copper-600 transition-colors text-center">
+        <a href="/contactus" data-ga-cta="demo_page_book_review" class="bg-v6-copper text-white px-8 py-3.5 rounded-xl text-base font-semibold hover:bg-v6-copper-600 transition-colors text-center">
           Book Your Free Renewal Review →
         </a>
         <a href="#roi" class="border border-gray-300 text-v6-dark px-8 py-3.5 rounded-xl text-base font-medium hover:bg-gray-50 transition-colors text-center">
@@ -1091,5 +1092,32 @@ const toneMap: Record<string, string> = {
       });
     }, { threshold: 0.5 });
     io.observe(stakeCta);
+  }
+
+  // GA4 video event taxonomy for the demo walkthrough (play, 50% watched, complete).
+  {
+    const demoVideo = document.getElementById("renewal-demo-video");
+    if (demoVideo) {
+      const gaEvent = (name, params) => {
+        if (window.gtag) window.gtag("event", name, params || {});
+      };
+      let playFired = false;
+      let halfFired = false;
+      demoVideo.addEventListener("play", () => {
+        if (!playFired) {
+          playFired = true;
+          gaEvent("video_play", { video_name: "renewal_demo" });
+        }
+      });
+      demoVideo.addEventListener("timeupdate", () => {
+        if (!halfFired && demoVideo.duration && demoVideo.currentTime / demoVideo.duration >= 0.5) {
+          halfFired = true;
+          gaEvent("video_50", { video_name: "renewal_demo" });
+        }
+      });
+      demoVideo.addEventListener("ended", () => {
+        gaEvent("video_complete", { video_name: "renewal_demo" });
+      });
+    }
   }
 </script>

@@ -171,6 +171,58 @@ const finalCanonicalURL =
         gtag('config', ga4Id);
       </script>
     )}
+    {import.meta.env.PUBLIC_GA4_ID && (
+      <script is:inline>
+        // Site-wide GA4 event taxonomy per research/conversion-optimization/00-swotbee-cro-framework.md's
+        // pre-launch instrumentation gate: scroll_depth, cta_click, outbound_click here (global,
+        // delegated); form_start/form_submit/form_error and video_* events are wired per-page
+        // where the relevant form/video markup lives (they need page-specific context this
+        // global script doesn't have).
+        (function () {
+          function fire(name, params) {
+            if (window.gtag) window.gtag('event', name, params || {});
+          }
+
+          // scroll_depth: 25/50/75/90, each fires once per page load.
+          var scrollThresholds = [25, 50, 75, 90];
+          var scrollFired = {};
+          function checkScrollDepth() {
+            var doc = document.documentElement;
+            var scrollable = doc.scrollHeight - doc.clientHeight;
+            if (scrollable <= 0) return;
+            var pct = Math.round((window.scrollY / scrollable) * 100);
+            scrollThresholds.forEach(function (t) {
+              if (pct >= t && !scrollFired[t]) {
+                scrollFired[t] = true;
+                fire('scroll_depth', { percent: t });
+              }
+            });
+          }
+          window.addEventListener('scroll', checkScrollDepth, { passive: true });
+
+          // outbound_click: any link to a different hostname.
+          // cta_click: any element carrying data-ga-cta="<label>" (used for the funnel's
+          // primary CTAs so clicks are labeled, not just "a link was clicked somewhere").
+          document.addEventListener('click', function (e) {
+            var el = e.target.closest ? e.target.closest('a[href]') : null;
+            if (!el) return;
+            var href = el.getAttribute('href') || '';
+            var ctaLabel = el.getAttribute('data-ga-cta');
+            if (ctaLabel) {
+              fire('cta_click', { cta: ctaLabel, href: href });
+            }
+            try {
+              var url = new URL(href, window.location.href);
+              if (url.hostname && url.hostname !== window.location.hostname) {
+                fire('outbound_click', { url: url.href });
+              }
+            } catch (_err) {
+              // relative/invalid hrefs (e.g. "#section") are not outbound, ignore
+            }
+          });
+        })();
+      </script>
+    )}
   </head>
   <body class="min-h-full bg-custom">
     <main>

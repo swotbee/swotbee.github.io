@@ -78,6 +78,22 @@ import Footer from '../../components/astro/Footer.astro';
     const success = document.getElementById("uplift-form-success");
     const errorMsg = document.getElementById("uplift-form-error");
 
+    function gaEvent(name: string, params?: Record<string, unknown>) {
+      const w = window as typeof window & { gtag?: (...args: unknown[]) => void };
+      if (w.gtag) w.gtag("event", name, params || {});
+    }
+    let formStartFired = false;
+    form?.addEventListener(
+      "focusin",
+      () => {
+        if (!formStartFired) {
+          formStartFired = true;
+          gaEvent("form_start", { form_name: "uplift_recovery_checklist" });
+        }
+      },
+      { once: true }
+    );
+
     const params = new URLSearchParams(window.location.search);
     ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"].forEach((k) => {
       const input = form?.querySelector<HTMLInputElement>(`input[name="${k}"]`);
@@ -111,8 +127,10 @@ import Footer from '../../components/astro/Footer.astro';
         if (!res.ok) throw new Error(`HubSpot responded ${res.status}`);
         form.classList.add("hidden");
         success?.classList.remove("hidden");
+        gaEvent("form_submit", { form_name: "uplift_recovery_checklist" });
       } catch (_err) {
         errorMsg?.classList.remove("hidden");
+        gaEvent("form_error", { form_name: "uplift_recovery_checklist" });
       }
     });
   </script>

@@ -62,5 +62,20 @@ import Footer from "../components/astro/Footer.astro";
       config: { theme: "light" },
     });
     Cal("ui", { styles: { branding: { brandColor: "#C47A2A" } }, hideEventTypeDetails: false, layout: "month_view" });
+
+    // GA4 call_booked event, the S4 "lead -> discovery call attended" conversion per the
+    // CRO framework's KPI tree. bookingSuccessfulV2 is Cal.com's current documented
+    // success event (bookingSuccessful is deprecated).
+    Cal("on", {
+      action: "bookingSuccessfulV2",
+      callback: (e) => {
+        if (window.gtag) {
+          window.gtag("event", "call_booked", {
+            booking_uid: e.detail?.data?.uid,
+            event_type_id: e.detail?.data?.eventTypeId,
+          });
+        }
+      },
+    });
   </script>
 </Layout>
