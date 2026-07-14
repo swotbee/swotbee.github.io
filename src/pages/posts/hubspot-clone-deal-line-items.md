@@ -66,6 +66,8 @@ This is a fundamental platform architecture choice, not a bug. But the impact is
 
 For context on how this fits into renewal automation, see our [renewal deal workflow automation guide](/posts/hubspot-renewal-deal-workflow-automation).
 
+**This isn't unique to renewals.** Any HubSpot use case that needs to copy line items between deals, whether that's duplicating a deal in another pipeline, splitting one deal into multiple deals for different customers, or building a renewal from an associated deal, hits the same platform limitation. The question is never "is it possible to clone a deal", cloning the deal itself is a solved problem, it's specifically whether the line items across those deals carry over automatically or need to be manually re-added from the product library each time.
+
 ---
 
 ## Solution 1: Marketplace Apps (Fastest to Implement)

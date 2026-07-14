@@ -50,6 +50,14 @@ Before building the reports below, verify the operational layer: [renewal deal a
 
 ---
 
+## What These Metrics Tell Sales, Success, And Finance
+
+Net revenue retention rate and gross retention rate are the two numbers that answer different questions about the same customer base. Retention rate on its own tells you whether subscription customers stuck around; net revenue retention rate tells you whether the customer mix as a whole grew or shrank in dollar terms once expansion, contraction, and churn are netted out. Customer success teams watch it as a post-sales health signal; finance watches it as a revenue growth driver; the board watches it as one of the handful of KPIs that predicts whether growth is durable.
+
+The key drivers worth breaking out separately, rather than reporting one blended number, are: new logo growth, expansion within the existing customer base, contraction (downgrades that don't fully churn), and churn itself. A cohort analysis by renewal year, month, or contract-start date usually reveals which driver is actually moving the number, better retention in year one accounts often masks weaker retention in year three, for example, and that pattern only shows up once you segment.
+
+---
+
 ## The Four Metrics You Need
 
 

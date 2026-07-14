@@ -66,6 +66,8 @@ This is by design. HubSpot workflows are object-scoped; they operate on one reco
 
 According to [Validity's 2025 State of CRM Data report](https://www.validity.com/resource-center/the-state-of-crm-data-management-in-2025/), 47% of reps say inaccurate data is worse than a year ago. Workarounds that introduce intermediate steps create more opportunities for data inconsistency, so pick the simplest method that works for your situation.
 
+The same limitation applies beyond the deal record. A contact property or a ticket property has the same enrolled-record restriction: a workflow enrolled on a contact object can't reach into an associated deal's properties any more easily than a deal-based workflow can reach a newly created deal. Whatever pattern you pick below, from a company record pass-through to a custom code action, is really a workaround for the same underlying limitation, HubSpot workflows can read and write the enrolled record's own fields, but copying a source property's value onto a different, related record always needs an intermediary step. Sales and service teams both run into this: sales copies deal data forward at renewal, service teams often need the same pattern to carry a property field from a closed ticket onto a follow-up ticket or associated deal.
+
 ---
 
 ## Workaround 1: The Company Record Pass-Through

@@ -45,6 +45,14 @@ Use this workflow with the [deal-cloning guide](/posts/hubspot-clone-deal-comple
 
 ---
 
+## Why Sales And Customer Success Both Need This
+
+Renewal automation is not a sales-only concern. In most B2B SaaS teams, customer success owns the day-to-day renewal process (health scores, churn risk signals, expansion revenue conversations) while sales or RevOps owns the deal record and contract data. If those two functions work from different sources of truth, contract management gets messy fast: the customer success team can see churn risk but not the actual renewal deal, and the sales team can see the deal stage but not the health signals driving it.
+
+Automating renewal deal creation is what lets both sides work off the same HubSpot record. A well-built renewal workflow tracks contract end date, renewal term, and renewal value automatically, so customer success can flag churn risk early and sales can see it reflected in the deal stages without a separate handoff meeting. That shared record is also what makes net revenue retention and renewal rate reportable at all, see the [NRR/GRR dashboard guide](/posts/hubspot-renewal-nrr-grr-dashboard-reporting/) for how the metric layer consumes this data.
+
+---
+
 ## Prerequisites
 
 Before building these workflows, you need:

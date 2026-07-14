@@ -45,7 +45,7 @@ Use this comparison alongside the [HubSpot renewal apps page](/compare/hubspot-r
 
 ## Why Native HubSpot Deal Cloning Isn't Enough
 
-HubSpot's built-in deal cloning (Actions → Clone) copies deal properties and associations, but nothing else. No line items. No workflow automation. No templates. No cross-pipeline cloning.
+HubSpot's built-in deal cloning (Actions → Clone) copies deal properties and associations, but nothing else. No line items. No workflow automation. No templates. No cross-pipeline cloning. The native cloning feature is fine for a one-off duplicate deal; it's not built for teams that need consistency and accuracy across dozens of duplicate deals a month, which is where a dedicated app or a workflow-based approach earns its cost.
 
 For a team managing [renewal pipelines](/posts/hubspot-renewal-pipeline-complete-guide), upsells, or multi-location deals, native cloning means manually recreating line items every single time. According to [Instrumental Group](https://www.instrumental.net/blog/beyond-the-basics-why-native-deal-cloning-falls-short-for-high-efficiency-sales-teams), reps spend 5-15 minutes per deal on post-clone cleanup: rebuilding line items, fixing dates, and correcting associations. At 50+ renewals per quarter, that's 4-12 hours of pure admin.
 
