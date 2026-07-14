@@ -1,8 +1,9 @@
 ---
 layout: ../../layouts/BlogPostLayout.astro
-title: "How to Clone HubSpot Deals with Line Items: The Complete Fix"
+title: "Clone HubSpot Deals With Line Items For Renewal Automation"
 pubDate: "2026-04-02"
-description: "HubSpot can't copy line items when cloning deals: here are 4 proven solutions. Marketplace apps, Zapier, custom code, and API integration with step-by-step instructions."
+modifiedDate: "2026-07-14"
+description: "HubSpot workflows cannot copy deal line items into renewal deals. Compare marketplace apps, Zapier, custom code, and API options for preserving products, pricing, and quantities."
 category:
   title: "Revenue Operations"
   href: "/categories/revenue-operations"
@@ -24,6 +25,7 @@ tags:
   - "Workflow Automation"
   - "Revenue Operations"
 seriesName: "HubSpot Deal Cloning"
+funnelCta: "renewal-audit"
 pillarUrl: "/posts/hubspot-clone-deal-complete-guide"
 howto: true
 howtoSteps:
@@ -42,6 +44,13 @@ HubSpot workflows cannot copy line items from one deal to another. This means ev
 This is the [#2 most-requested feature in HubSpot's Ideas forum](https://community.hubspot.com/t5/HubSpot-Ideas/Copy-line-items-from-one-deal-to-another-in-order-to-manage/idi-p/722785), and as of 2026, there's still no native fix.
 
 > This article is part of our [Complete Guide to Cloning Deals in HubSpot](/posts/hubspot-clone-deal-complete-guide).
+
+
+## Why Line Items Matter Most On Renewal Deals
+
+A renewal deal without line items is not ready for a quote, forecast, or CSM handoff. The amount may look correct, but the product mix, quantity, discounts, and recurring terms are missing. That forces the team to rebuild the renewal from the original deal and creates the exact manual work automation was supposed to remove.
+
+If line items are the blocker, read this with the [renewal deal workflow guide](/posts/hubspot-renewal-deal-workflow-automation/) and the [renewal apps comparison](/compare/hubspot-renewal-apps/). The practical test is simple: can the new renewal deal be quoted and reported without someone opening the old deal in another tab?
 
 ---
 

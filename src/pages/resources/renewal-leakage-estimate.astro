@@ -3,9 +3,8 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Navbar from '../../components/astro/Navbar.astro';
 import Footer from '../../components/astro/Footer.astro';
 // Lead magnet 1. Submits client-side to the HubSpot Forms API (portal 243398671, same
-// portal as the ContactUs embed). ONE REMAINING SETUP STEP: create a form in HubSpot
-// (Marketing > Forms) with fields matching the input names below, then paste its GUID
-// into FORM_GUID in the script at the bottom of this file.
+// portal as the ContactUs embed). Form + properties created via API 2026-07-14, see
+// marketing/automation/n8n-kit-lead-magnet/README.md.
 // The two 1-to-5 questions are the W5.4 calibration Likert items (see
 // marketing/user-survey/05-ssr-synthetic-validation-plan.md): they accumulate the human
 // sample that calibrates the synthetic panel. Do not remove or reword them casually;
@@ -30,34 +29,40 @@ import Footer from '../../components/astro/Footer.astro';
   <section class="bg-white px-4 sm:px-6 lg:px-8 pb-16">
     <div class="max-w-xl mx-auto bg-v6-bg border border-v6-border rounded-2xl p-8">
       <form id="leakage-form" class="flex flex-col gap-4" novalidate>
-        <input type="hidden" name="magnet" value="leakage-estimate" />
-        <input type="hidden" name="utm_source" /><input type="hidden" name="utm_medium" /><input type="hidden" name="utm_campaign" /><input type="hidden" name="utm_term" />
+        <input type="hidden" name="funnel_stage_entry" value="leakage_estimate" />
+        <input type="hidden" name="page_variant" value="v1-leakage-estimate" />
+        <input type="hidden" name="utm_source" /><input type="hidden" name="utm_medium" /><input type="hidden" name="utm_campaign" /><input type="hidden" name="utm_content" /><input type="hidden" name="utm_term" />
         <label class="text-sm font-semibold text-v6-dark">Work email
           <input required type="email" name="email" placeholder="you@company.com" class="mt-1 w-full border border-gray-300 rounded-lg px-4 py-3" />
         </label>
         <label class="text-sm font-semibold text-v6-dark">Contracts renewing per year
           <select required name="contracts_per_year" class="mt-1 w-full border border-gray-300 rounded-lg px-4 py-3 bg-white">
-            <option value="">Select...</option><option>Fewer than 25</option><option>25 to 100</option><option>100 to 300</option><option>300+</option>
+            <option value="">Select...</option><option><25</option><option>25-100</option><option>100-300</option><option>300+</option>
           </select>
         </label>
         <label class="text-sm font-semibold text-v6-dark">Average contract value
-          <select required name="avg_value" class="mt-1 w-full border border-gray-300 rounded-lg px-4 py-3 bg-white">
-            <option value="">Select...</option><option>Under $5k</option><option>$5k to $25k</option><option>$25k to $100k</option><option>$100k+</option>
+          <select required name="avg_contract_value" class="mt-1 w-full border border-gray-300 rounded-lg px-4 py-3 bg-white">
+            <option value="">Select...</option><option>Under $5k</option><option>$5k-25k</option><option>$25k-100k</option><option>$100k+</option>
           </select>
         </label>
         <label class="text-sm font-semibold text-v6-dark">How renewals are tracked today
-          <select required name="tracking" class="mt-1 w-full border border-gray-300 rounded-lg px-4 py-3 bg-white">
+          <select required name="renewal_tracking_method" class="mt-1 w-full border border-gray-300 rounded-lg px-4 py-3 bg-white">
             <option value="">Select...</option><option>Spreadsheet</option><option>HubSpot workflows</option><option>A dedicated app</option><option>Memory and calendars</option>
           </select>
         </label>
         <label class="text-sm font-semibold text-v6-dark">Accounting system
-          <select name="accounting" class="mt-1 w-full border border-gray-300 rounded-lg px-4 py-3 bg-white">
+          <select name="accounting_system" class="mt-1 w-full border border-gray-300 rounded-lg px-4 py-3 bg-white">
             <option value="">Select...</option><option>QuickBooks</option><option>Xero</option><option>Sage</option><option>NetSuite</option><option>Other</option>
           </select>
         </label>
         <label class="text-sm font-semibold text-v6-dark">PSA, if you run one <span class="font-normal text-gray-500">(MSPs: this calibrates your estimate)</span>
           <select name="psa" class="mt-1 w-full border border-gray-300 rounded-lg px-4 py-3 bg-white">
-            <option value="">None / not an MSP</option><option>ConnectWise</option><option>Autotask</option><option>HaloPSA</option><option>Other PSA</option>
+            <option>None / not an MSP</option><option>ConnectWise</option><option>Autotask</option><option>HaloPSA</option><option>Other PSA</option>
+          </select>
+        </label>
+        <label class="text-sm font-semibold text-v6-dark">How did you first hear about us? <span class="font-normal text-gray-500">(optional)</span>
+          <select name="self_reported_attribution" class="mt-1 w-full border border-gray-300 rounded-lg px-4 py-3 bg-white">
+            <option value="">Select...</option><option>Google search</option><option>LinkedIn</option><option>Referral</option><option>Cold email</option><option>Other</option>
           </select>
         </label>
         <fieldset class="mt-1">
@@ -102,12 +107,11 @@ import Footer from '../../components/astro/Footer.astro';
 
   <script>
     // Submits to the HubSpot Forms API (same portal as the ContactUs embed).
-    // TODO (one-time): create the form in HubSpot with matching field names
-    // (email, contracts_per_year, avg_value, tracking, accounting, magnet,
-    // pain_severity, budget_intent, utm_source, utm_medium, utm_campaign, utm_term)
-    // and paste its GUID here.
+    // Form "SwotBee - Renewal Leakage Estimate" (id b321d585-8cbc-4a55-bcd4-ec4526194fd1)
+    // and its backing contact properties were created via the CRM Properties API +
+    // Marketing Forms API on 2026-07-14, see marketing/automation/n8n-kit-lead-magnet/README.md.
     const PORTAL_ID = "243398671";
-    const FORM_GUID = ""; // <- paste the HubSpot form GUID before launch
+    const FORM_GUID = "b321d585-8cbc-4a55-bcd4-ec4526194fd1";
 
     const form = document.getElementById("leakage-form") as HTMLFormElement | null;
     const success = document.getElementById("leakage-form-success");
@@ -115,7 +119,7 @@ import Footer from '../../components/astro/Footer.astro';
 
     // Capture ad attribution from the landing URL into the hidden fields.
     const params = new URLSearchParams(window.location.search);
-    ["utm_source", "utm_medium", "utm_campaign", "utm_term"].forEach((k) => {
+    ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"].forEach((k) => {
       const input = form?.querySelector<HTMLInputElement>(`input[name="${k}"]`);
       if (input) input.value = params.get(k) ?? "";
     });

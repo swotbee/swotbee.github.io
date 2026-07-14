@@ -1,8 +1,9 @@
 ---
 layout: ../../layouts/BlogPostLayout.astro
-title: "How to Automate Renewal Deal Creation in HubSpot (Step-by-Step)"
+title: "HubSpot Renewal Deal Automation: Create Renewal Deals Without Leakage"
 pubDate: "2026-04-02"
-description: "Step-by-step guide to automating renewal deals in HubSpot: from auto-creating deals on Closed Won to the 90-60-30 day engagement cadence. Includes workflow logic and property mappings."
+modifiedDate: "2026-07-14"
+description: "Build HubSpot workflows that create renewal deals, copy the right properties, preserve renewal context, trigger 90-60-30 tasks, and avoid data leakage in NRR and GRR reporting."
 category:
   title: "Revenue Operations"
   href: "/categories/revenue-operations"
@@ -18,7 +19,15 @@ tags:
   - "Deal Automation"
   - "Revenue Operations"
 seriesName: "HubSpot Renewal Pipeline"
+funnelCta: "renewal-audit"
 pillarUrl: "/posts/hubspot-renewal-pipeline-complete-guide"
+faqs:
+  - q: "Can HubSpot automate contract renewals for recurring services?"
+    a: "Yes, with custom workflows, not a native recurring-services feature. Set a workflow to fire on Deal Won that clones the deal (or creates a new one) into a renewal pipeline, copies the properties that matter (previous contract value, renewal date, owner, line items), and sets a stage-based reminder cadence. HubSpot has no built-in recurring renewal object, everything described here is workflow logic on top of standard deals."
+  - q: "Does HubSpot have a native renewal automation feature?"
+    a: "No. There is no dedicated renewal object or automatic recurring-deal creation in HubSpot. The workflows in this guide (auto-create on Closed Won, time-based stage progression, the 90-60-30 cadence, and the loop that creates next year's deal) are how mid-market teams build renewal automation on the standard CRM."
+  - q: "What breaks most often in HubSpot renewal deal automation?"
+    a: "Two things: line items not carrying over to the new deal (native cloning can't copy them, workflows need explicit property-copy actions), and loop protection silently stopping a workflow from re-enrolling the deal it just created, which breaks the chain at year two or three without an obvious error."
 ---
 
 The moment a new business deal closes as Won, the renewal clock starts ticking. If your team manually creates renewal deals, or worse, tracks renewals in a spreadsheet, you're guaranteeing that some will slip through the cracks.
@@ -26,6 +35,13 @@ The moment a new business deal closes as Won, the renewal clock starts ticking. 
 This article walks through the foundational HubSpot workflows for renewal automation: auto-creating deals, copying the right properties, setting the correct dates, and building the 90-60-30 day engagement cadence that keeps renewals on track. ([HubSpot Academy covers the basics](https://academy.hubspot.com/lessons/maximizing-customer-retention-automate-your-renewal-process); here we go much deeper.)
 
 > This article is part of our [Complete Guide to Building a Renewal Pipeline in HubSpot](/posts/hubspot-renewal-pipeline-complete-guide).
+
+
+## The Revenue Leakage Test
+
+Before building this workflow, ask one question: if a customer renewed tomorrow, would HubSpot already know the renewal owner, date, amount, products, original contract value, and next task? If the answer is no, the gap is not cosmetic. It will show up later as late outreach, missing renewal deals, weak forecasts, and NRR/GRR numbers that finance does not trust.
+
+Use this workflow with the [deal-cloning guide](/posts/hubspot-clone-deal-complete-guide/), [line-item cloning guide](/posts/hubspot-clone-deal-line-items/), and [renewal dashboard guide](/posts/hubspot-renewal-nrr-grr-dashboard-reporting/) so automation, quoting, and reporting share the same data model.
 
 ---
 
@@ -218,6 +234,19 @@ If the chain breaks at Year 2, that's the [infinite loop problem](/posts/hubspot
 Add [health-triggered alerts](/posts/hubspot-churn-prevention-health-scores-workflows) to your renewal cadence for accounts showing risk signals.
 
 **Pro tip:** If you use subscription billing platforms like [Chargebee](https://www.chargebee.com/integrations/hubspot/) or [Stripe](https://docs.stripe.com/billing/subscriptions/overview), you can trigger HubSpot workflows from billing events, creating renewal deals automatically when subscriptions approach their renewal date.
+
+---
+
+## Frequently Asked Questions
+
+**Can HubSpot automate contract renewals for recurring services?**
+Yes, with custom workflows, not a native recurring-services feature. Set a workflow to fire on Deal Won that clones the deal (or creates a new one) into a renewal pipeline, copies the properties that matter (previous contract value, renewal date, owner, line items), and sets a stage-based reminder cadence. HubSpot has no built-in recurring renewal object, everything above is workflow logic on top of standard deals.
+
+**Does HubSpot have a native renewal automation feature?**
+No. There is no dedicated renewal object or automatic recurring-deal creation in HubSpot. The workflows above (auto-create on Closed Won, time-based stage progression, the 90-60-30 cadence, and the loop that creates next year's deal) are how mid-market teams build renewal automation on the standard CRM.
+
+**What breaks most often in HubSpot renewal deal automation?**
+Two things: line items not carrying over to the new deal (native cloning can't copy them, workflows need explicit property-copy actions), and loop protection silently stopping a workflow from re-enrolling the deal it just created, which breaks the chain at year two or three without an obvious error.
 
 ---
 

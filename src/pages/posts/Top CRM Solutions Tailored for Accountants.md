@@ -1,4 +1,6 @@
 ---
+strategicStatus: "excluded-from-renewal-gtm"
+noindex: true
 layout: ../../layouts/BlogPostLayout.astro
 title: "Top CRM Solutions for Accountants: Best Picks & Benefits"
 pubDate: "2025-05-14"

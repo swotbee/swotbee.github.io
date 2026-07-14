@@ -1,0 +1,121 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Navbar from "../../components/astro/Navbar.astro";
+import Footer from "../../components/astro/Footer.astro";
+import StructuredData from "../../components/astro/StructuredData.astro";
+// NEW page: system-specific tuning of /services/integrations.astro per
+// marketing/user-survey/revised-assets/integration-pages-audit.md. Original
+// integrations.astro is untouched.
+
+const title = "HubSpot–QuickBooks Integration | Deals to Invoices, No Re-Keying | SWOTBee";
+const description = "Fixed-scope HubSpot to QuickBooks integration: closed deals become invoices automatically, line items match, reconciliation stops being a headache.";
+
+const painPoints = [
+  "Reconciliation between HubSpot and QuickBooks is a headache and prone to errors",
+  "Someone re-keys every closed deal into a QuickBooks invoice by hand",
+  "Invoice line items don't always match what was actually sold in HubSpot",
+  "Escalation clauses in the contract never make it to the QuickBooks invoice",
+  "No visibility into invoice/payment status from inside the HubSpot deal",
+];
+
+const faqs = [
+  {
+    q: "How much does a HubSpot-QuickBooks integration cost?",
+    a: "Fixed scope, typically toward the lower-to-middle of our $8,000-$15,000 range for a standard QuickBooks setup — most QuickBooks integrations are more contained than NetSuite/ERP work. You get one fixed number before anything starts.",
+  },
+  {
+    q: "We already have a manual process that mostly works. Why change it?",
+    a: "You don't have to change how sales or finance actually works — this removes the re-keying step, not the workflow. Most clients keep their process and just stop manually copying deal data into QuickBooks by hand. A free 30-minute audit shows exactly what the manual step is costing you.",
+  },
+  {
+    q: "Will the sync still work after we edit a deal or invoice?",
+    a: "Yes — we build sync logic that re-validates on every edit, not just on creation, with retry logic and real-time alerts if something fails. You get documentation on exactly how edits propagate, so this isn't a black box.",
+  },
+  {
+    q: "Can it apply our escalation/price-increase clauses automatically?",
+    a: "Yes. If your contracts include annual increases or renewal escalations, we can map those terms so invoices reflect them automatically instead of relying on someone remembering to apply the increase.",
+  },
+  {
+    q: "How long does it take?",
+    a: "4-8 weeks from audit to go-live for a standard HubSpot-QuickBooks integration.",
+  },
+];
+---
+
+<Layout title={title} description={description}>
+  <StructuredData
+    type="service"
+    data={{
+      name: "HubSpot QuickBooks Integration",
+      description: description,
+      serviceType: "CRM Integration Consulting",
+      url: "https://swotbee.com/services/integrations-quickbooks",
+    }}
+  />
+  <StructuredData type="faq" data={{ faqs }} />
+  <Navbar />
+
+  <section class="bg-gradient-to-b from-v6-bg to-white px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20 pb-10 sm:pb-14">
+    <div class="max-w-3xl mx-auto text-center">
+      <span class="bg-v6-teal-50 text-v6-teal text-xs font-semibold px-3 py-1 rounded-full inline-block mb-6">HubSpot ↔ QuickBooks</span>
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-v6-dark leading-tight mb-5 text-balance">
+        Closed Deals Become <span class="text-v6-copper">QuickBooks Invoices</span> — No Re-Keying
+      </h1>
+      <p class="text-base sm:text-lg text-v6-text-muted max-w-xl mx-auto mb-3 leading-relaxed">
+        The reconciliation headache between HubSpot and QuickBooks, solved: line items match, invoices generate automatically, escalation clauses actually get billed.
+      </p>
+      <p class="text-sm font-semibold text-v6-copper mb-8">Fixed scope, $8,000–$15,000 range. 4–8 weeks. One number, no surprises.</p>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center mb-4">
+        <a href="/contactus" class="bg-v6-copper text-white px-8 py-3.5 rounded-xl text-base font-semibold hover:bg-v6-copper-600 transition-colors text-center">
+          Get a Free QuickBooks Integration Audit
+        </a>
+        <a href="/resources/uplift-recovery-checklist" class="border border-gray-300 text-v6-dark px-8 py-3.5 rounded-xl text-base font-medium hover:bg-gray-50 transition-colors text-center">
+          Find Unbilled Price Increases (Free Checklist)
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-v6-bg py-14 sm:py-18 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-2xl sm:text-3xl font-bold text-v6-dark mb-8 text-center">Sound Familiar?</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        {painPoints.map(point => (
+          <div class="flex gap-3 items-start bg-white rounded-lg p-4 border border-v6-border">
+            <span class="text-v6-copper text-lg flex-shrink-0 mt-0.5">→</span>
+            <p class="text-sm text-v6-text-muted leading-relaxed">{point}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white py-14 sm:py-18 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-2xl sm:text-3xl font-bold text-v6-dark mb-8 text-center">Frequently Asked Questions</h2>
+      <div class="space-y-4">
+        {faqs.map(faq => (
+          <details class="bg-v6-bg rounded-xl border border-v6-border group">
+            <summary class="flex items-center justify-between cursor-pointer px-6 py-4 text-base font-semibold text-v6-dark">
+              {faq.q}
+              <svg class="w-5 h-5 text-v6-text-muted flex-shrink-0 ml-4 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+            </summary>
+            <div class="px-6 pb-5 text-sm text-v6-text-muted leading-relaxed">{faq.a}</div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-gradient-to-br from-v6-copper to-v6-copper-600 py-16 sm:py-20 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-2xl mx-auto text-center">
+      <h2 class="text-2xl sm:text-3xl font-bold text-white mb-4">Zero Risk to Get Started</h2>
+      <p class="text-v6-copper-50 text-base sm:text-lg mb-8">Free 30-minute QuickBooks integration audit. No commitment, no sales pitch.</p>
+      <a href="/contactus" class="bg-white text-v6-copper px-8 py-3.5 rounded-xl text-base font-semibold hover:bg-gray-50 transition-colors inline-block">
+        Book Your Free Audit
+      </a>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

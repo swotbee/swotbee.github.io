@@ -4,7 +4,6 @@ Allow: /
 # Disallow access to certain directories
 Disallow: /admin/
 Disallow: /api/
-Disallow: /_astro/
 Disallow: /assets/js/
 Disallow: /assets/lib/
 Disallow: /docs/
@@ -13,6 +12,7 @@ Disallow: /node_modules/
 Disallow: /.git/
 
 # Allow access to CSS and JS files for rendering
+Allow: /_astro/
 Allow: /assets/css/
 Allow: /assets/images/
 Allow: /assets/home-images/
@@ -37,6 +37,10 @@ Disallow: /
 
 User-agent: SemrushBot
 Disallow: /
+
+# Important: do not Disallow pages that use meta robots noindex.
+# Google must be able to crawl those HTML pages to see the noindex directive.
+# Broad CRM/free-plan/social/affiliate posts are handled with noindex + sitemap exclusion, not robots.txt blocking.
 
 # Sitemaps
 Sitemap: https://swotbee.com/sitemap-index.xml

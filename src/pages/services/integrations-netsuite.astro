@@ -1,0 +1,121 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Navbar from "../../components/astro/Navbar.astro";
+import Footer from "../../components/astro/Footer.astro";
+import StructuredData from "../../components/astro/StructuredData.astro";
+// NEW page: system-specific tuning of /services/integrations.astro per
+// marketing/user-survey/revised-assets/integration-pages-audit.md. Original
+// integrations.astro is untouched.
+
+const title = "HubSpot–NetSuite Integration | Line Items, ARR & Quote-to-Cash | SWOTBee";
+const description = "Fixed-scope HubSpot to NetSuite integration: line items, multi-year ARR integrity, and quote-to-cash flowing automatically. $8k-15k, 4-8 weeks.";
+
+const painPoints = [
+  "Multi-year deals show the wrong ARR because line-item term dates never sync to NetSuite",
+  "Sales closes a deal in HubSpot; finance re-keys it into NetSuite by hand",
+  "Line-item drift: what NetSuite invoices quietly diverges from what HubSpot says was sold",
+  "No single source of truth for quote-to-cash across the two systems",
+  "A sync broke and nobody noticed for two weeks — duplicate records everywhere",
+];
+
+const faqs = [
+  {
+    q: "How much does a HubSpot-NetSuite integration cost?",
+    a: "Fixed scope, $8,000-$15,000 depending on line-item complexity and whether ARR/multi-year logic needs custom handling. Most NetSuite integrations run at the higher end of that band because of ERP-grade field mapping. You get a fixed number before work starts, not an hourly estimate.",
+  },
+  {
+    q: "Does the sync survive edits after go-live?",
+    a: "Yes — this is the single most common question we get, and the right one to ask. We build sync logic that re-validates on every edit, not just on creation, plus retry logic and real-time failure alerts. Documentation on exactly how edits propagate is delivered with every project.",
+  },
+  {
+    q: "We already have a workaround. Why switch?",
+    a: "You don't have to switch anything sales or finance already do — the integration removes the re-keying step, not your process. Most clients keep their exact workflow and just stop manually copying data. Worth a 30-minute audit to see what the workaround is actually costing in hours and error rate.",
+  },
+  {
+    q: "Can this fix multi-year ARR reporting specifically?",
+    a: "Yes. We map line-item start/end dates so ARR reflects the correct per-year amount instead of the full contract value, and reconcile that against what NetSuite reports. This is one of the most requested fixes we build.",
+  },
+  {
+    q: "How long does it take?",
+    a: "4-8 weeks from audit to go-live for a standard HubSpot-NetSuite integration. Multi-entity or heavily customized NetSuite instances run longer; scoped exactly during the audit.",
+  },
+];
+---
+
+<Layout title={title} description={description}>
+  <StructuredData
+    type="service"
+    data={{
+      name: "HubSpot NetSuite Integration",
+      description: description,
+      serviceType: "CRM Integration Consulting",
+      url: "https://swotbee.com/services/integrations-netsuite",
+    }}
+  />
+  <StructuredData type="faq" data={{ faqs }} />
+  <Navbar />
+
+  <section class="bg-gradient-to-b from-v6-bg to-white px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20 pb-10 sm:pb-14">
+    <div class="max-w-3xl mx-auto text-center">
+      <span class="bg-v6-teal-50 text-v6-teal text-xs font-semibold px-3 py-1 rounded-full inline-block mb-6">HubSpot ↔ NetSuite</span>
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-v6-dark leading-tight mb-5 text-balance">
+        Your ARR Number Should Match Between <span class="text-v6-copper">HubSpot and NetSuite</span>
+      </h1>
+      <p class="text-base sm:text-lg text-v6-text-muted max-w-xl mx-auto mb-3 leading-relaxed">
+        Multi-year deals, line items, and quote-to-cash — flowing automatically, with the correction most NetSuite integrations miss: per-year ARR that's actually right.
+      </p>
+      <p class="text-sm font-semibold text-v6-copper mb-8">Fixed scope: $8,000–$15,000. 4–8 weeks. Price stated up front, no surprises.</p>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center mb-4">
+        <a href="/contactus" class="bg-v6-copper text-white px-8 py-3.5 rounded-xl text-base font-semibold hover:bg-v6-copper-600 transition-colors text-center">
+          Get a Free NetSuite Integration Audit
+        </a>
+        <a href="/resources/arr-correction-kit" class="border border-gray-300 text-v6-dark px-8 py-3.5 rounded-xl text-base font-medium hover:bg-gray-50 transition-colors text-center">
+          See if Your ARR Math Is Wrong (Free Kit)
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-v6-bg py-14 sm:py-18 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-2xl sm:text-3xl font-bold text-v6-dark mb-8 text-center">Sound Familiar?</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        {painPoints.map(point => (
+          <div class="flex gap-3 items-start bg-white rounded-lg p-4 border border-v6-border">
+            <span class="text-v6-copper text-lg flex-shrink-0 mt-0.5">→</span>
+            <p class="text-sm text-v6-text-muted leading-relaxed">{point}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white py-14 sm:py-18 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-2xl sm:text-3xl font-bold text-v6-dark mb-8 text-center">Frequently Asked Questions</h2>
+      <div class="space-y-4">
+        {faqs.map(faq => (
+          <details class="bg-v6-bg rounded-xl border border-v6-border group">
+            <summary class="flex items-center justify-between cursor-pointer px-6 py-4 text-base font-semibold text-v6-dark">
+              {faq.q}
+              <svg class="w-5 h-5 text-v6-text-muted flex-shrink-0 ml-4 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+            </summary>
+            <div class="px-6 pb-5 text-sm text-v6-text-muted leading-relaxed">{faq.a}</div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-gradient-to-br from-v6-copper to-v6-copper-600 py-16 sm:py-20 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-2xl mx-auto text-center">
+      <h2 class="text-2xl sm:text-3xl font-bold text-white mb-4">Zero Risk to Get Started</h2>
+      <p class="text-v6-copper-50 text-base sm:text-lg mb-8">Free 30-minute NetSuite integration audit. No commitment, no sales pitch.</p>
+      <a href="/contactus" class="bg-white text-v6-copper px-8 py-3.5 rounded-xl text-base font-semibold hover:bg-gray-50 transition-colors inline-block">
+        Book Your Free Audit
+      </a>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

@@ -1,4 +1,6 @@
 ---
+strategicStatus: "excluded-from-renewal-gtm"
+noindex: true
 layout: ../../layouts/BlogPostLayout.astro
 title: "Best Practices for Implementing CRM Solutions: Free & Inexpensive Options"
 pubDate: "2025-06-11"

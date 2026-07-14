@@ -1,8 +1,9 @@
 ---
 layout: ../../layouts/BlogPostLayout.astro
-title: "How to Copy Deal Properties Between Deals in HubSpot Workflows"
+title: "Copy Deal Properties In HubSpot Workflows For Renewal Deals"
 pubDate: "2026-04-02"
-description: "HubSpot's 'Copy Property' action updates the wrong deal. Here are 4 workarounds: company pass-through, sync properties, custom code, and Operations Hub. With step-by-step instructions."
+modifiedDate: "2026-07-14"
+description: "HubSpot's Copy Property action updates the enrolled deal, not the new renewal deal. Use these workflow patterns to copy ARR, contract term, renewal date, and owner fields safely."
 category:
   title: "Revenue Operations"
   href: "/categories/revenue-operations"
@@ -24,6 +25,7 @@ tags:
   - "CRM Automation"
   - "Revenue Operations"
 seriesName: "HubSpot Deal Cloning"
+funnelCta: "renewal-audit"
 pillarUrl: "/posts/hubspot-clone-deal-complete-guide"
 howto: true
 howtoSteps:
@@ -44,6 +46,13 @@ This [trips up nearly every HubSpot user](https://community.hubspot.com/t5/CRM/C
 Here are four workarounds, from simplest to most powerful.
 
 > This article is part of our [Complete Guide to Cloning Deals in HubSpot](/posts/hubspot-clone-deal-complete-guide).
+
+
+## Renewal Field Checklist Before You Build The Workflow
+
+Before choosing a workaround, decide which fields must survive into the renewal deal. At minimum, most teams need Previous Contract Value, Contract Term, Renewal Date, Renewal Year, Deal Type, Original Deal ID, owner, company association, contact association, and the line items or products that drive the next quote.
+
+This is why property-copy workflows should be designed together with your [renewal pipeline properties](/posts/hubspot-renewal-pipeline-properties/) and [NRR/GRR dashboard setup](/posts/hubspot-renewal-nrr-grr-dashboard-reporting/). A copied value is only useful if it feeds the renewal process and the revenue reports that depend on it.
 
 ---
 

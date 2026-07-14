@@ -1,4 +1,6 @@
 ---
+strategicStatus: "excluded-from-renewal-gtm"
+noindex: true
 layout: ../../layouts/BlogPostLayout.astro
 title: "The Future of HubSpot CRM: AI-Powered Automation and Personalization"
 pubDate: "2025-04-30"

@@ -2,7 +2,24 @@
 import Layout from "../layouts/Layout.astro";
 import Navbar from "../components/astro/Navbar.astro";
 import Footer from "../components/astro/Footer.astro";
+// GitHub Pages serves this file for any unmatched path. astro.config.mjs sets
+// trailingSlash: "always", so every real route is emitted as .../index.html under a
+// trailing-slash directory. Internal links written without a trailing slash (a
+// site-wide legacy pattern predating that config, not something worth rewriting
+// everywhere at once) land here instead of a redirect. Retry once with a trailing
+// slash before showing the not-found page; if that also 404s, this same script no-ops
+// on the retry since the path already ends in "/".
 ---
+
+<script is:inline>
+  (function () {
+    var path = window.location.pathname;
+    var looksLikeFile = /\.[a-zA-Z0-9]+$/.test(path);
+    if (!looksLikeFile && path !== "" && !path.endsWith("/")) {
+      window.location.replace(path + "/" + window.location.search + window.location.hash);
+    }
+  })();
+</script>
 
 <Layout title="Page Not Found | SWOTBee" description="The page you're looking for doesn't exist." robots="noindex, follow">
   <Navbar />

@@ -2,8 +2,8 @@
 // renewal-operations-animated-v3.astro
 // Tier-1 sales-asset-audit revision of renewal-operations-animated-v2.astro.
 // Copy source: marketing/content/page-copy/renewal-v2-page-revised.md
-// (gap audit vs 4,520 persona responses + 545 corroborated real-world records;
-//  revised copy beat the v2 copy in the 60-persona comparative test, 3.21 -> 3.37).
+// (gap audit grounded in 545 corroborated real-world records; SSR/persona
+//  comparison data stays internal and is not quoted publicly).
 // Changes vs v2:
 //  - Hero: benefit-led H1, subhead names the four corroborated USPs (line items
 //    carried over, escalations automatic, ARR you can trust, HubSpot-native),
@@ -686,9 +686,9 @@ const toneMap: Record<string, string> = {
           <div>
             <div class="flex justify-between items-baseline mb-2">
               <label for="roi-slip" class="text-sm font-semibold text-v6-dark">Renewals that slip or churn from process gaps</label>
-              <output id="roi-slip-out" class="text-base font-bold text-v6-copper">8%</output>
+              <output id="roi-slip-out" class="text-base font-bold text-v6-copper">5%</output>
             </div>
-            <input id="roi-slip" type="range" min="1" max="30" step="1" value="8" class="roi-range" />
+            <input id="roi-slip" type="range" min="1" max="30" step="1" value="5" class="roi-range" />
           </div>
         </div>
 
@@ -698,11 +698,11 @@ const toneMap: Record<string, string> = {
             <p id="roi-risk" class="text-3xl font-bold text-v6-dark">$1,000,000</p>
           </div>
           <div class="rounded-xl bg-v6-teal-50 border border-v6-teal-100 p-5 text-center">
-            <p class="text-xs font-semibold uppercase tracking-wider text-v6-teal mb-1">Potentially recoverable</p>
-            <p id="roi-recover" class="text-3xl font-bold text-v6-dark">$700,000</p>
+            <p class="text-xs font-semibold uppercase tracking-wider text-v6-teal mb-1">Secondary recovery estimate</p>
+            <p id="roi-recover" class="text-3xl font-bold text-v6-dark">$437,500</p>
           </div>
         </div>
-        <p class="text-xs text-v6-text-muted text-center mt-4">Directional estimate, not a quote. The recoverable figure assumes a process that closes most preventable slippage.</p>
+        <p class="text-xs text-v6-text-muted text-center mt-4">Directional estimate, not a quote. The default uses the conservative doc-13 model: 5% leakage. The secondary recovery estimate assumes a process can close 70% of preventable slippage.</p>
         <div class="text-center mt-6">
           <a href="/contactus" class="inline-block bg-v6-copper text-white px-7 py-3 rounded-xl text-base font-semibold hover:bg-v6-copper-600 transition-colors">
             Find My Hidden Renewal Revenue →
