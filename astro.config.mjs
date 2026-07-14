@@ -74,6 +74,7 @@ export default defineConfig({
           '/resources/renewal-health-scorecard/',
           '/resources/renewal-leakage-estimate/',
           '/resources/uplift-recovery-checklist/',
+          '/pay-renewal-audit/',
           '/services/hubspot-onboarding-old/',
           '/services/integrations-old/',
           '/services/sales-revops-old/',
