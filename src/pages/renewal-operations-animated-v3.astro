@@ -1,9 +1,9 @@
 ---
 // renewal-operations-animated-v3.astro
 // Tier-1 sales-asset-audit revision of renewal-operations-animated-v2.astro.
-// Copy source: marketing/user-survey/revised-assets/renewal-v2-page-revised.md
-// (gap audit vs 4,520 persona responses + 545 corroborated real-world records;
-//  revised copy beat the v2 copy in the 60-persona comparative test, 3.21 -> 3.37).
+// Copy source: marketing/content/page-copy/renewal-v2-page-revised.md
+// (gap audit grounded in 545 corroborated real-world records; SSR/persona
+//  comparison data stays internal and is not quoted publicly).
 // Changes vs v2:
 //  - Hero: benefit-led H1, subhead names the four corroborated USPs (line items
 //    carried over, escalations automatic, ARR you can trust, HubSpot-native),
@@ -182,6 +182,19 @@ const toneMap: Record<string, string> = {
     ]}}
   />
 
+  <!-- Motion gate: add .anim synchronously BEFORE first paint so scroll-reveal
+       elements start hidden and never flash visible-then-hidden (FOUC fix).
+       No-JS users never get .anim, so they see all content normally. -->
+  <script is:inline>
+    (function () {
+      try {
+        if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+          document.documentElement.classList.add("anim");
+        }
+      } catch (e) {}
+    })();
+  </script>
+
   <!-- Scroll progress bar -->
   <div id="scroll-progress" class="fixed top-0 left-0 right-0 h-1 z-50 origin-left bg-v6-copper" aria-hidden="true"></div>
 
@@ -213,9 +226,9 @@ const toneMap: Record<string, string> = {
 
         <div class="reveal flex flex-col sm:flex-row gap-3 justify-center lg:justify-start mb-4 items-center">
           <div class="cta-group relative inline-block">
-            <!-- TODO: restore "2-Minute Demo" label and point at the video when the demo asset ships (sales-asset audit task #3). Label softened until then so the promise matches the destination. -->
-            <a href="/contactus" class="bg-v6-copper text-white px-8 py-3.5 rounded-xl text-base font-semibold hover:bg-v6-copper-600 transition-colors text-center block">
-              See It In Action →
+            <!-- Demo asset is live (public/demo/renewal-demo.mp4); CTA now points at the on-page #demo section. -->
+            <a href="#demo" class="bg-v6-copper text-white px-8 py-3.5 rounded-xl text-base font-semibold hover:bg-v6-copper-600 transition-colors text-center block">
+              Watch The 2-Minute Demo →
             </a>
             <div class="cta-pop absolute bottom-full left-1/2 mb-3 w-60 -translate-x-1/2 rounded-xl bg-v6-dark px-4 py-3 text-left shadow-xl">
               <p class="text-sm font-semibold text-white mb-1">See it working, first</p>
@@ -331,6 +344,42 @@ const toneMap: Record<string, string> = {
         <!-- Audience line moved into the hero microcopy; caption keeps the honesty note. -->
         <p class="text-center text-xs text-v6-text-muted mt-3">Illustrative. Your live HubSpot data, surfaced the moment it matters.</p>
       </div>
+    </div>
+  </section>
+
+
+  <!-- ============ DEMO VIDEO ============ -->
+  <section id="demo" class="scroll-mt-24 bg-white px-4 sm:px-6 lg:px-8 pt-14 sm:pt-16 pb-12 sm:pb-14">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="reveal text-sm font-semibold uppercase tracking-[0.2em] text-v6-copper mb-3">See It In Action</p>
+      <h2 class="reveal text-2xl sm:text-3xl lg:text-4xl font-bold text-v6-dark mb-3 text-balance">
+        Watch A Renewal Build Itself. Two Minutes.
+      </h2>
+      <p class="reveal text-base sm:text-lg text-v6-text-muted mb-8 max-w-2xl mx-auto leading-relaxed">
+        A deal closes won, and its renewal creates itself in a separate pipeline, line items carried over exactly with the uplift already applied. No retyping, no missed dates. This is the whole idea in one short walkthrough.
+      </p>
+      <div class="reveal rounded-2xl border border-v6-border bg-v6-bg shadow-xl overflow-hidden max-w-3xl mx-auto">
+        <video
+          id="renewal-demo-video"
+          class="w-full h-auto block bg-v6-dark"
+          controls
+          preload="none"
+          playsinline
+          poster="/demo/renewal-demo-poster.jpg"
+        >
+          <source src="/demo/renewal-demo.mp4" type="video/mp4" />
+          Your browser does not support embedded video. <a href="/demo/renewal-demo.mp4" class="text-v6-copper underline">Download the walkthrough</a> instead.
+        </video>
+      </div>
+      <div class="reveal flex flex-col sm:flex-row gap-3 justify-center items-center mt-8">
+        <a href="/renewal-audit-call/" data-ga-cta="demo_page_book_review" class="bg-v6-copper text-white px-8 py-3.5 rounded-xl text-base font-semibold hover:bg-v6-copper-600 transition-colors text-center">
+          Book Your Free Renewal Review →
+        </a>
+        <a href="#roi" class="border border-gray-300 text-v6-dark px-8 py-3.5 rounded-xl text-base font-medium hover:bg-gray-50 transition-colors text-center">
+          Estimate Your Renewal Leakage ↓
+        </a>
+      </div>
+      <p class="reveal text-xs text-gray-500 mt-4">Built on the real product. Northwind is an illustrative account; your walkthrough runs on your own HubSpot.</p>
     </div>
   </section>
 
@@ -623,6 +672,60 @@ const toneMap: Record<string, string> = {
 
 
   <!-- ============ ROI CALCULATOR ============ -->
+  <section id="roi" class="bg-white py-14 sm:py-18 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl mx-auto">
+      <p class="reveal text-sm font-semibold uppercase tracking-[0.2em] text-v6-copper mb-3 text-center">See What's At Stake</p>
+      <h2 class="reveal text-2xl sm:text-3xl lg:text-4xl font-bold text-v6-dark mb-3 text-center text-balance">
+        How Much Revenue Is Hiding In Your Renewals?
+      </h2>
+      <p class="reveal text-v6-text-muted text-center mb-10 max-w-lg mx-auto">
+        Move the sliders to your numbers. This is a directional estimate of the renewal revenue at risk each year when the process leaks. We pressure-test these numbers against your real HubSpot data in the paid renewal audit ($750, credited to your build).
+      </p>
+
+      <div class="reveal rounded-2xl border border-v6-border bg-v6-bg p-6 sm:p-8">
+        <div class="space-y-7">
+          <div>
+            <div class="flex justify-between items-baseline mb-2">
+              <label for="roi-renewals" class="text-sm font-semibold text-v6-dark">Renewals per year</label>
+              <output id="roi-renewals-out" class="text-base font-bold text-v6-copper">500</output>
+            </div>
+            <input id="roi-renewals" type="range" min="50" max="5000" step="50" value="500" class="roi-range" />
+          </div>
+          <div>
+            <div class="flex justify-between items-baseline mb-2">
+              <label for="roi-acv" class="text-sm font-semibold text-v6-dark">Average contract value</label>
+              <output id="roi-acv-out" class="text-base font-bold text-v6-copper">$25,000</output>
+            </div>
+            <input id="roi-acv" type="range" min="1000" max="250000" step="1000" value="25000" class="roi-range" />
+          </div>
+          <div>
+            <div class="flex justify-between items-baseline mb-2">
+              <label for="roi-slip" class="text-sm font-semibold text-v6-dark">Renewals that slip or churn from process gaps</label>
+              <output id="roi-slip-out" class="text-base font-bold text-v6-copper">5%</output>
+            </div>
+            <input id="roi-slip" type="range" min="1" max="30" step="1" value="5" class="roi-range" />
+          </div>
+        </div>
+
+        <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="rounded-xl bg-v6-copper-50 border border-v6-copper-100 p-5 text-center">
+            <p class="text-xs font-semibold uppercase tracking-wider text-v6-copper mb-1">Revenue at risk / year</p>
+            <p id="roi-risk" class="text-3xl font-bold text-v6-dark">$1,000,000</p>
+          </div>
+          <div class="rounded-xl bg-v6-teal-50 border border-v6-teal-100 p-5 text-center">
+            <p class="text-xs font-semibold uppercase tracking-wider text-v6-teal mb-1">Secondary recovery estimate</p>
+            <p id="roi-recover" class="text-3xl font-bold text-v6-dark">$437,500</p>
+          </div>
+        </div>
+        <p class="text-xs text-v6-text-muted text-center mt-4">Directional estimate, not a quote. The default uses the conservative doc-13 model: 5% leakage. The secondary recovery estimate assumes a process can close 70% of preventable slippage.</p>
+        <div class="text-center mt-6">
+          <a href="/renewal-audit-call/" data-ga-cta="v3_mid_book_review" class="inline-block bg-v6-copper text-white px-7 py-3 rounded-xl text-base font-semibold hover:bg-v6-copper-600 transition-colors">
+            Find My Hidden Renewal Revenue →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
   <RenewalRoiCalculator />
 
 
@@ -687,12 +790,12 @@ const toneMap: Record<string, string> = {
   <!-- ============ AUDIT CHECKLIST ============ -->
   <section class="bg-white py-14 sm:py-18 px-4 sm:px-6 lg:px-8">
     <div class="max-w-3xl mx-auto">
-      <p class="reveal text-sm font-semibold uppercase tracking-[0.2em] text-v6-copper mb-3 text-center">Your Free Renewal Audit</p>
+      <p class="reveal text-sm font-semibold uppercase tracking-[0.2em] text-v6-copper mb-3 text-center">Your Free Renewal Review</p>
       <h2 class="reveal text-2xl sm:text-3xl lg:text-4xl font-bold text-v6-dark mb-3 text-center text-balance">
         See Your Renewal Revenue Leakage In 30 Minutes
       </h2>
       <p class="reveal text-v6-text-muted text-center mb-10 max-w-lg mx-auto">
-        Your free renewal audit covers these six areas:
+        Your free renewal review covers these six areas:
       </p>
       <div class="stagger grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
         {auditOutcomes.map(item => (
@@ -706,12 +809,11 @@ const toneMap: Record<string, string> = {
         We start by understanding your process, data, and business rules. Most companies don't have perfect CRM data, that's part of the reason we begin with an audit. You leave with a clear picture of what is leaking and what to fix first.
       </p>
       <div class="reveal flex flex-col sm:flex-row gap-3 justify-center mt-8">
-        <a href="/contactus" class="bg-v6-copper text-white px-7 py-3 rounded-xl text-base font-semibold hover:bg-v6-copper-600 transition-colors text-center">
-          Book Your Free Renewal Audit (30 minutes, no prep) →
+        <a href="/renewal-audit-call/" data-ga-cta="v3_stake_book_review" class="bg-v6-copper text-white px-7 py-3 rounded-xl text-base font-semibold hover:bg-v6-copper-600 transition-colors text-center">
+          Book Your Free Renewal Review (30 minutes, no prep) →
         </a>
-        <!-- TODO: restore "2-Minute Demo" label and point at the video when the demo asset ships. -->
-        <a href="/contactus" class="border border-gray-300 text-v6-dark px-7 py-3 rounded-xl text-base font-medium hover:bg-gray-50 transition-colors text-center">
-          See It In Action →
+        <a href="#demo" class="border border-gray-300 text-v6-dark px-7 py-3 rounded-xl text-base font-medium hover:bg-gray-50 transition-colors text-center">
+          Watch The 2-Minute Demo →
         </a>
       </div>
     </div>
@@ -746,14 +848,14 @@ const toneMap: Record<string, string> = {
       <p class="text-xs font-semibold uppercase tracking-[0.2em] text-white/70 mb-3">Zero Risk To Start</p>
       <h2 class="text-2xl sm:text-3xl font-bold text-white mb-4">Let's Find Out.</h2>
       <p class="text-v6-copper-50 text-base sm:text-lg mb-4">
-        Book your free renewal audit. No commitment, no sales pitch, just an honest look at the revenue hiding in your renewal process.
+        Book your free renewal review. No commitment, no sales pitch, just an honest look at the revenue hiding in your renewal process.
       </p>
       <p class="text-white/80 text-sm mb-8 max-w-xl mx-auto">
         If you decide to work with us: no long-term contracts. We earn your trust month by month, and at the 30-day mark we check in and adjust the plan at no extra cost if the direction doesn't feel right.
       </p>
       <div class="cta-group cta-group-light relative inline-block">
-        <a href="/contactus" class="bg-white text-v6-copper px-8 py-3.5 rounded-xl text-base font-semibold hover:bg-gray-50 transition-colors inline-block">
-          Book Your Free Renewal Audit →
+        <a href="/renewal-audit-call/" data-ga-cta="v3_final_book_review" class="bg-white text-v6-copper px-8 py-3.5 rounded-xl text-base font-semibold hover:bg-gray-50 transition-colors inline-block">
+          Book Your Free Renewal Review →
         </a>
         <div class="cta-pop absolute bottom-full left-1/2 mb-3 w-60 -translate-x-1/2 rounded-xl bg-v6-dark px-4 py-3 text-left shadow-xl">
           <p class="text-sm font-semibold text-white mb-1">Here's what to expect</p>
@@ -762,9 +864,8 @@ const toneMap: Record<string, string> = {
         </div>
       </div>
       <p class="mt-5">
-        <!-- TODO: restore "watch the 2-minute demo" label and point at the video when the demo asset ships. -->
-        <a href="/contactus" class="text-white/90 text-sm font-medium underline underline-offset-4 hover:text-white transition-colors">
-          Prefer to see it working first? Ask for a walkthrough →
+        <a href="#demo" class="text-white/90 text-sm font-medium underline underline-offset-4 hover:text-white transition-colors">
+          Prefer to see it working first? Watch the 2-minute demo →
         </a>
       </p>
     </div>
@@ -774,11 +875,15 @@ const toneMap: Record<string, string> = {
 </Layout>
 
 <style>
-  /* ===== Scroll-reveal primitives (gated behind .anim, added by JS) ===== */
-  .anim .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; will-change: opacity, transform; }
+  /* ===== Scroll-reveal primitives (gated behind .anim, added by JS) =====
+     Easing is the GSAP-style "expo out" curve (fast in, long soft settle) for a
+     modern, premium feel. Reveals add a barely-there scale so blocks glide up
+     into place instead of just sliding. Motion is subtle by design: it leads the
+     eye down the page toward the CTA without ever competing for attention. */
+  .anim .reveal { opacity: 0; transform: translateY(24px) scale(0.985); transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1); will-change: opacity, transform; }
   .anim .reveal.in { opacity: 1; transform: none; }
 
-  .anim .stagger > * { opacity: 0; transform: translateY(16px); transition: opacity 0.55s ease-out, transform 0.55s ease-out; will-change: opacity, transform; }
+  .anim .stagger > * { opacity: 0; transform: translateY(20px) scale(0.985); transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1); will-change: opacity, transform; }
   .anim .stagger.in > * { opacity: 1; transform: none; }
   .anim .stagger.in > *:nth-child(1) { transition-delay: 0.04s; }
   .anim .stagger.in > *:nth-child(2) { transition-delay: 0.10s; }
@@ -847,7 +952,8 @@ const toneMap: Record<string, string> = {
 
 <script>
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  document.documentElement.classList.add("anim");
+  // .anim is added synchronously by the inline head script (FOUC fix), gated on
+  // reduced-motion. Here we only wire the observers.
 
   // --- Scroll reveals ---
   const revealEls = Array.from(document.querySelectorAll(".reveal, .stagger"));
@@ -869,6 +975,21 @@ const toneMap: Record<string, string> = {
     );
     revealEls.forEach((el) => { if (!el.classList.contains("in")) io.observe(el); });
   }
+
+  // --- Smooth in-page anchor scrolling (reduced-motion aware) ---
+  // Makes the "Watch the 2-minute demo" / "Estimate your leakage" CTAs glide to
+  // their section instead of hard-jumping, reinforcing the guided path to the CTA.
+  document.querySelectorAll('a[href^="#"]').forEach((a) => {
+    a.addEventListener("click", (e) => {
+      const id = (a as HTMLAnchorElement).getAttribute("href");
+      if (!id || id === "#") return;
+      const target = document.querySelector(id);
+      if (!target) return;
+      e.preventDefault();
+      target.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
+      history.replaceState(null, "", id);
+    });
+  });
 
   // --- Scroll progress bar ---
   const bar = document.getElementById("scroll-progress");
@@ -953,5 +1074,32 @@ const toneMap: Record<string, string> = {
       });
     }, { threshold: 0.5 });
     io.observe(stakeCta);
+  }
+
+  // GA4 video event taxonomy for the demo walkthrough (play, 50% watched, complete).
+  {
+    const demoVideo = document.getElementById("renewal-demo-video");
+    if (demoVideo) {
+      const gaEvent = (name, params) => {
+        if (window.gtag) window.gtag("event", name, params || {});
+      };
+      let playFired = false;
+      let halfFired = false;
+      demoVideo.addEventListener("play", () => {
+        if (!playFired) {
+          playFired = true;
+          gaEvent("video_play", { video_name: "renewal_demo" });
+        }
+      });
+      demoVideo.addEventListener("timeupdate", () => {
+        if (!halfFired && demoVideo.duration && demoVideo.currentTime / demoVideo.duration >= 0.5) {
+          halfFired = true;
+          gaEvent("video_50", { video_name: "renewal_demo" });
+        }
+      });
+      demoVideo.addEventListener("ended", () => {
+        gaEvent("video_complete", { video_name: "renewal_demo" });
+      });
+    }
   }
 </script>

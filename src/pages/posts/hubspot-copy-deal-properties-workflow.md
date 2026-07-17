@@ -1,8 +1,9 @@
 ---
 layout: ../../layouts/BlogPostLayout.astro
-title: "How to Copy Deal Properties Between Deals in HubSpot Workflows"
+title: "Copy Deal Properties In HubSpot Workflows For Renewal Deals"
 pubDate: "2026-04-02"
-description: "HubSpot's 'Copy Property' action updates the wrong deal. Here are 4 workarounds: company pass-through, sync properties, custom code, and Operations Hub. With step-by-step instructions."
+modifiedDate: "2026-07-14"
+description: "HubSpot's Copy Property action updates the enrolled deal, not the new renewal deal. Use these workflow patterns to copy ARR, contract term, renewal date, and owner fields safely."
 category:
   title: "Revenue Operations"
   href: "/categories/revenue-operations"
@@ -24,6 +25,7 @@ tags:
   - "CRM Automation"
   - "Revenue Operations"
 seriesName: "HubSpot Deal Cloning"
+funnelCta: "renewal-audit"
 pillarUrl: "/posts/hubspot-clone-deal-complete-guide"
 howto: true
 howtoSteps:
@@ -45,6 +47,13 @@ Here are four workarounds, from simplest to most powerful.
 
 > This article is part of our [Complete Guide to Cloning Deals in HubSpot](/posts/hubspot-clone-deal-complete-guide).
 
+
+## Renewal Field Checklist Before You Build The Workflow
+
+Before choosing a workaround, decide which fields must survive into the renewal deal. At minimum, most teams need Previous Contract Value, Contract Term, Renewal Date, Renewal Year, Deal Type, Original Deal ID, owner, company association, contact association, and the line items or products that drive the next quote.
+
+This is why property-copy workflows should be designed together with your [renewal pipeline properties](/posts/hubspot-renewal-pipeline-properties/) and [NRR/GRR dashboard setup](/posts/hubspot-renewal-nrr-grr-dashboard-reporting/). A copied value is only useful if it feeds the renewal process and the revenue reports that depend on it.
+
 ---
 
 ## Why HubSpot's "Copy Property" Updates the Wrong Deal
@@ -56,6 +65,8 @@ The "Create Record" action creates a new deal, but it doesn't change which deal 
 This is by design. HubSpot workflows are object-scoped; they operate on one record throughout the workflow. There's no "switch context to the newly created record" action.
 
 According to [Validity's 2025 State of CRM Data report](https://www.validity.com/resource-center/the-state-of-crm-data-management-in-2025/), 47% of reps say inaccurate data is worse than a year ago. Workarounds that introduce intermediate steps create more opportunities for data inconsistency, so pick the simplest method that works for your situation.
+
+The same limitation applies beyond the deal record. A contact property or a ticket property has the same enrolled-record restriction: a workflow enrolled on a contact object can't reach into an associated deal's properties any more easily than a deal-based workflow can reach a newly created deal. Whatever pattern you pick below, from a company record pass-through to a custom code action, is really a workaround for the same underlying limitation, HubSpot workflows can read and write the enrolled record's own fields, but copying a source property's value onto a different, related record always needs an intermediary step. Sales and service teams both run into this: sales copies deal data forward at renewal, service teams often need the same pattern to carry a property field from a closed ticket onto a follow-up ticket or associated deal.
 
 ---
 

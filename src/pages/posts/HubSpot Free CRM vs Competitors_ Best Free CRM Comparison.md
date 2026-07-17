@@ -1,4 +1,6 @@
 ---
+strategicStatus: "excluded-from-renewal-gtm"
+noindex: true
 layout: ../../layouts/BlogPostLayout.astro
 title: "HubSpot Free CRM vs Competitors: Best Free CRM Comparison"
 pubDate: "2025-05-28"

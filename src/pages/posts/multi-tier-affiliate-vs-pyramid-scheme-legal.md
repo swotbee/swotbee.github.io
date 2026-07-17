@@ -1,4 +1,6 @@
 ---
+strategicStatus: "excluded-from-renewal-gtm"
+noindex: true
 layout: ../../layouts/BlogPostLayout.astro
 title: "Multi-Tier Affiliate Programs vs. Pyramid Schemes: Where's the Legal Line?"
 pubDate: "2026-04-24"

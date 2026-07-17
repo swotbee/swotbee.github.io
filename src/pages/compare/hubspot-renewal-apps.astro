@@ -3,7 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Navbar from '../../components/astro/Navbar.astro';
 import Footer from '../../components/astro/Footer.astro';
 // Landing page for Ad Group 3 (competitor/marketplace searchers), per
-// marketing/user-survey/14-landing-pages-build-plan.md Page A.
+// marketing/ads/14-landing-pages-build-plan.md Page A.
 // Persona: RevOps leader / ops admin in evaluation mode, already using or
 // comparing a deal-cloning app. The page CONCEDES cloning (the corpus shows
 // those apps are genuinely liked for it) and widens the frame to the renewal
@@ -30,8 +30,8 @@ const faqs = [
   { q: 'What about subscription and recurring revenue renewals?', a: 'The same system applies whether you sell annual service contracts, subscriptions, or multi-year agreements: the renewal deal is created on schedule in the pipeline, line items and pricing carry over with uplifts applied, and recurring revenue reporting stays accurate in HubSpot.' },
   { q: 'Do I have to replace my cloning app?', a: 'No. Keep whatever your team already uses and likes. We add the renewal layer around it: scheduled deal creation, escalation math, dates and alerts, and revenue-retention (NRR/GRR) reporting. You own everything we build, in your portal.' },
   { q: 'Why not just build this with HubSpot workflows?', a: 'Many teams do, and it works, until HubSpot\'s loop protection silently stops a workflow-cloned renewal chain, usually around year 3. Community threads document the infinite-loop problem with cloning deals through workflows. We build chains that survive it.' },
-  { q: 'What does this cost?', a: 'Every business is different, so we scope after a free 30-minute audit of your renewal process. No long-term contracts; we earn your trust month by month.' },
-  { q: 'What happens in the free audit?', a: '30 minutes, no prep. We map how renewals run today, where manual work and leakage hide, and what to fix first. You leave with the picture whether or not you work with us.' },
+  { q: 'What does this cost?', a: 'Every business is different, so we scope after a free 30-minute renewal review of how your renewals run today. No long-term contracts; we earn your trust month by month.' },
+  { q: 'What happens in the free renewal review?', a: '30 minutes, no prep. We map how renewals run today, where manual work and leakage hide, and what to fix first. You leave with the picture whether or not you work with us.' },
 ];
 
 const guides = [
@@ -65,10 +65,10 @@ const faqSchema = JSON.stringify({
       <p class="text-lg sm:text-xl text-v6-text-muted mb-4 leading-relaxed">
         Deal cloning apps are good at what they do. But a renewal is not a copy of last year's deal: it has a date someone must not miss, an escalation clause someone must apply, and a chain that must still work in year 3.
       </p>
-      <p class="text-base text-v6-text-muted mb-6">Here is the honest comparison, including the row where cloning apps beat us. And if a cloning app really is all you need, the audit will say exactly that: it is a diagnosis you keep, not a pitch.</p>
+      <p class="text-base text-v6-text-muted mb-6">Here is the honest comparison, including the row where cloning apps beat us. And if a cloning app really is all you need, the review will say exactly that: it is a diagnosis you keep, not a pitch.</p>
       <div class="flex flex-col sm:flex-row gap-3 justify-center">
         <a href="#comparison" class="bg-v6-copper text-white px-8 py-3.5 rounded-xl text-base font-semibold hover:bg-v6-copper-600 transition-colors">See The Comparison ↓</a>
-        <a href="/contactus" class="border border-gray-300 text-v6-dark px-8 py-3.5 rounded-xl text-base font-medium hover:bg-gray-50 transition-colors">Book Your Free Renewal Audit →</a>
+        <a href="/renewal-audit-call/" data-ga-cta="compare_hero_book_review" class="border border-gray-300 text-v6-dark px-8 py-3.5 rounded-xl text-base font-medium hover:bg-gray-50 transition-colors">Book Your Free Renewal Review →</a>
       </div>
     </div>
   </section>
@@ -117,7 +117,7 @@ const faqSchema = JSON.stringify({
       </div>
       <p class="text-xs text-gray-500 text-center mt-4">"Deal cloning apps" refers to the HubSpot Marketplace duplication category generally; individual apps vary. Caveats quoted from public marketplace reviews.</p>
       <div class="text-center mt-8">
-        <a href="/resources/renewal-leakage-estimate" class="inline-block border border-v6-copper text-v6-copper px-7 py-3 rounded-xl text-base font-semibold hover:bg-v6-copper-50 transition-colors">Curious what the right column is worth? Get a 1-page leakage estimate (no call) →</a>
+        <a href="/resources/renewal-leakage-estimate/" data-ga-cta="compare_midpage_leakage_estimate" class="inline-block border border-v6-copper text-v6-copper px-7 py-3 rounded-xl text-base font-semibold hover:bg-v6-copper-50 transition-colors">Curious what the right column is worth? Get a 1-page leakage estimate (no call) →</a>
       </div>
     </div>
   </section>
@@ -165,8 +165,8 @@ const faqSchema = JSON.stringify({
       </ol>
       <div class="mt-8 bg-white border border-v6-border rounded-2xl p-6 text-center">
         <p class="text-base font-semibold text-v6-dark mb-2">Want to score your current setup against these four questions?</p>
-        <p class="text-sm text-v6-text-muted mb-4">The Renewal Health Scorecard is the graded self-assessment version: answer a few questions, get your score. No call, no pitch.</p>
-        <a href="/resources/renewal-health-scorecard" class="inline-block bg-v6-copper text-white px-7 py-3 rounded-xl text-base font-semibold hover:bg-v6-copper-600 transition-colors">Get Your Renewal Health Score →</a>
+        <p class="text-sm text-v6-text-muted mb-4">Use the 1-page leakage estimate first. It is the launch-ready path for turning these questions into a concrete number without booking a call.</p>
+        <a href="/resources/renewal-leakage-estimate/" data-ga-cta="compare_footer_leakage_estimate" class="inline-block bg-v6-copper text-white px-7 py-3 rounded-xl text-base font-semibold hover:bg-v6-copper-600 transition-colors">Get Your 1-Page Leakage Estimate →</a>
       </div>
     </div>
   </section>
@@ -175,7 +175,7 @@ const faqSchema = JSON.stringify({
   <section class="bg-white px-4 sm:px-6 lg:px-8 py-14">
     <div class="max-w-3xl mx-auto">
       <h2 class="text-xl sm:text-2xl font-bold text-v6-dark mb-3 text-center">Still In Research Mode? The Deep-Dive Guides</h2>
-      <p class="text-sm text-v6-text-muted text-center mb-6 max-w-xl mx-auto">Everything on this page, in step-by-step detail. Free, no email required. The audit is for when you want your specific setup diagnosed instead.</p>
+      <p class="text-sm text-v6-text-muted text-center mb-6 max-w-xl mx-auto">Everything on this page, in step-by-step detail. Free, no email required. The renewal review is for when you want your specific setup diagnosed instead.</p>
       <ul class="grid sm:grid-cols-2 gap-3">
         {guides.map(g => (
           <li><a href={g.href} class="block bg-v6-bg border border-v6-border rounded-xl px-4 py-3 text-sm font-medium text-v6-dark hover:border-v6-copper transition-colors">{g.label} →</a></li>
@@ -219,8 +219,8 @@ const faqSchema = JSON.stringify({
   <section class="bg-gradient-to-br from-v6-copper to-v6-copper-600 px-4 sm:px-6 lg:px-8 py-16">
     <div class="max-w-2xl mx-auto text-center">
       <h2 class="text-2xl sm:text-3xl font-bold text-white mb-4">Not Sure Which You Need? Let's Look At Your Renewals.</h2>
-      <p class="text-base text-white/90 mb-7 leading-relaxed">A free 30-minute audit of how renewals run in your HubSpot today. No prep, no obligation, and the findings are yours to keep whatever you decide. If a cloning app really is all you need, the audit will say so in writing.</p>
-      <a href="/contactus" class="inline-block bg-white text-v6-copper px-8 py-3.5 rounded-xl text-base font-semibold hover:bg-gray-100 transition-colors">Book Your Free Renewal Audit →</a>
+      <p class="text-base text-white/90 mb-7 leading-relaxed">A free 30-minute renewal review of how renewals run in your HubSpot today. No prep, no obligation, and the findings are yours to keep whatever you decide. If a cloning app really is all you need, the review will say so in writing.</p>
+      <a href="/renewal-audit-call/" data-ga-cta="compare_final_book_review" class="inline-block bg-white text-v6-copper px-8 py-3.5 rounded-xl text-base font-semibold hover:bg-gray-100 transition-colors">Book Your Free Renewal Review →</a>
       <p class="text-sm text-white/80 mt-4">No long-term contracts. We earn your trust month by month.</p>
     </div>
   </section>

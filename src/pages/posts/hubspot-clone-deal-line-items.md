@@ -1,8 +1,9 @@
 ---
 layout: ../../layouts/BlogPostLayout.astro
-title: "How to Clone HubSpot Deals with Line Items: The Complete Fix"
+title: "Clone HubSpot Deals With Line Items For Renewal Automation"
 pubDate: "2026-04-02"
-description: "HubSpot can't copy line items when cloning deals: here are 4 proven solutions. Marketplace apps, Zapier, custom code, and API integration with step-by-step instructions."
+modifiedDate: "2026-07-14"
+description: "HubSpot workflows cannot copy deal line items into renewal deals. Compare marketplace apps, Zapier, custom code, and API options for preserving products, pricing, and quantities."
 category:
   title: "Revenue Operations"
   href: "/categories/revenue-operations"
@@ -24,6 +25,7 @@ tags:
   - "Workflow Automation"
   - "Revenue Operations"
 seriesName: "HubSpot Deal Cloning"
+funnelCta: "renewal-audit"
 pillarUrl: "/posts/hubspot-clone-deal-complete-guide"
 howto: true
 howtoSteps:
@@ -43,6 +45,13 @@ This is the [#2 most-requested feature in HubSpot's Ideas forum](https://communi
 
 > This article is part of our [Complete Guide to Cloning Deals in HubSpot](/posts/hubspot-clone-deal-complete-guide).
 
+
+## Why Line Items Matter Most On Renewal Deals
+
+A renewal deal without line items is not ready for a quote, forecast, or CSM handoff. The amount may look correct, but the product mix, quantity, discounts, and recurring terms are missing. That forces the team to rebuild the renewal from the original deal and creates the exact manual work automation was supposed to remove.
+
+If line items are the blocker, read this with the [renewal deal workflow guide](/posts/hubspot-renewal-deal-workflow-automation/) and the [renewal apps comparison](/compare/hubspot-renewal-apps/). The practical test is simple: can the new renewal deal be quoted and reported without someone opening the old deal in another tab?
+
 ---
 
 ## Why HubSpot Workflows Can't Copy Line Items
@@ -56,6 +65,8 @@ This is a fundamental platform architecture choice, not a bug. But the impact is
 - **Quotes can't be generated.** HubSpot quotes pull from line items. A deal without line items = no quote = the renewal proposal has to be built manually.
 
 For context on how this fits into renewal automation, see our [renewal deal workflow automation guide](/posts/hubspot-renewal-deal-workflow-automation).
+
+**This isn't unique to renewals.** Any HubSpot use case that needs to copy line items between deals, whether that's duplicating a deal in another pipeline, splitting one deal into multiple deals for different customers, or building a renewal from an associated deal, hits the same platform limitation. The question is never "is it possible to clone a deal", cloning the deal itself is a solved problem, it's specifically whether the line items across those deals carry over automatically or need to be manually re-added from the product library each time.
 
 ---
 

@@ -6,7 +6,7 @@ description: "How customer success platforms Vitally, Planhat, Totango, Catalyst
 category:
   title: "Revenue Operations"
   href: "/categories/revenue-operations"
-modifiedDate: "2026-07-06"
+modifiedDate: "2026-07-07"
 author:
   name: "SWOTBee Team"
   url: "https://swotbee.com"
@@ -40,7 +40,7 @@ This comparison stays practical: what each integration syncs, which direction, w
 
 ## What a Customer Success Platform HubSpot Integration Must Sync
 
-Before comparing vendors, define the bar. The point of connecting a customer success platform to your CRM is a 360° view of your customers across the customer lifecycle: post-sale health tracking, usage data, and revenue context in one place, so CSMs can leverage data from both systems instead of toggling between tools, and CS work is data-driven instead of anecdotal. For that to hold, the integration needs to cover five data domains:
+Before comparing vendors, define the bar. The point of connecting a customer success platform to your CRM is a 360° view of your customers across the customer lifecycle: post-sale customer health tracking, usage data, and revenue context in one place, so CSMs can leverage data from both systems instead of toggling between tools, and CS work is data-driven instead of anecdotal. For that to hold, the integration needs to cover five data domains:
 
 | Data domain | Direction needed | Why it matters |
 |-------------|-----------------|----------------|
@@ -104,7 +104,7 @@ Planhat's connector generates the most evaluation questions from HubSpot teams i
 
 ### What Planhat's HubSpot V2 Integration Syncs
 
-Planhat's current connector, described in its docs as the HubSpot V2 integration, maps HubSpot objects to Planhat objects rather than mirroring the whole CRM, which gives admins control over exactly how the two systems sync data:
+Planhat's current connector, described in its docs as the HubSpot V2 integration, maps HubSpot objects to Planhat objects rather than mirroring the whole CRM: because the model is flexible, almost any HubSpot object can be synced into Planhat and mapped to almost any Planhat model, which gives admins control over exactly how the two systems sync data:
 
 | HubSpot object | Planhat object | Notes (as documented) |
 |----------------|----------------|-----------------------|

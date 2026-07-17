@@ -2,7 +2,10 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Navbar from '../../components/astro/Navbar.astro';
 import Footer from '../../components/astro/Footer.astro';
-// NEW page (lead magnet 2). Form action placeholder: wire before launch.
+// Lead magnet 2. Submits client-side to the HubSpot Forms API (portal 243398671), same
+// pattern as renewal-leakage-estimate.astro. Form "SwotBee - Uplift Recovery Checklist"
+// (id 58333f13-64ed-4bb9-a57d-6795cd9b0afd) created via the Marketing Forms API on
+// 2026-07-14, see marketing/automation/n8n-kit-lead-magnet/README.md.
 ---
 <BaseLayout
   title="Find Unbilled Price Increases in 60 Minutes | SWOTBee"
@@ -29,8 +32,10 @@ import Footer from '../../components/astro/Footer.astro';
 
   <section class="bg-white px-4 sm:px-6 lg:px-8 pb-16 pt-8">
     <div class="max-w-xl mx-auto bg-v6-bg border border-v6-border rounded-2xl p-8">
-      <form method="POST" action="/api/lead-magnet" class="flex flex-col gap-4">
-        <input type="hidden" name="magnet" value="uplift-recovery-checklist" />
+      <form id="uplift-form" class="flex flex-col gap-4" novalidate>
+        <input type="hidden" name="funnel_stage_entry" value="uplift_checklist" />
+        <input type="hidden" name="page_variant" value="v1-uplift-checklist" />
+        <input type="hidden" name="utm_source" /><input type="hidden" name="utm_medium" /><input type="hidden" name="utm_campaign" /><input type="hidden" name="utm_content" /><input type="hidden" name="utm_term" />
         <label class="text-sm font-semibold text-v6-dark">Work email
           <input required type="email" name="email" placeholder="you@company.com" class="mt-1 w-full border border-gray-300 rounded-lg px-4 py-3" />
         </label>
@@ -41,14 +46,92 @@ import Footer from '../../components/astro/Footer.astro';
         </label>
         <label class="text-sm font-semibold text-v6-dark">Contracts renewing per year
           <select required name="contracts_per_year" class="mt-1 w-full border border-gray-300 rounded-lg px-4 py-3 bg-white">
-            <option value="">Select...</option><option>Fewer than 25</option><option>25 to 100</option><option>100 to 300</option><option>300+</option>
+            <option value="">Select...</option><option><25</option><option>25-100</option><option>100-300</option><option>300+</option>
+          </select>
+        </label>
+        <label class="text-sm font-semibold text-v6-dark">How did you first hear about us? <span class="font-normal text-gray-500">(optional)</span>
+          <select name="self_reported_attribution" class="mt-1 w-full border border-gray-300 rounded-lg px-4 py-3 bg-white">
+            <option value="">Select...</option><option>Google search</option><option>LinkedIn</option><option>Referral</option><option>Cold email</option><option>Other</option>
           </select>
         </label>
         <button type="submit" class="bg-v6-copper text-white font-semibold rounded-xl px-6 py-3 hover:bg-v6-copper-600 transition-colors">Send me the checklist</button>
         <p class="text-xs text-gray-500 text-center">One email with the checklist PDF. That is it.</p>
+        <p id="uplift-form-error" class="hidden text-sm text-red-600 text-center">Something went wrong sending the form. Please try again, or email us at info@swotbee.com and we will send the checklist directly.</p>
       </form>
+      <div id="uplift-form-success" class="hidden text-center py-6">
+        <p class="text-2xl mb-3">✅</p>
+        <p class="text-lg font-semibold text-v6-dark mb-2">Got it. Your checklist is on its way.</p>
+        <p class="text-sm text-v6-text-muted">One email with the checklist PDF. That is it.</p>
+      </div>
     </div>
     <p class="text-center text-sm text-v6-text-muted mt-8 max-w-xl mx-auto">Why this happens: applying uplifts in HubSpot means re-reading contracts at renewal time; there is no native rule for it. Multi-year contracts miss most often, at year 2 and 3.</p>
   </section>
   <Footer />
+
+  <script>
+    // Submits to the HubSpot Forms API (same portal as the ContactUs embed and
+    // renewal-leakage-estimate.astro).
+    const PORTAL_ID = "243398671";
+    const FORM_GUID = "58333f13-64ed-4bb9-a57d-6795cd9b0afd";
+
+    const form = document.getElementById("uplift-form") as HTMLFormElement | null;
+    const success = document.getElementById("uplift-form-success");
+    const errorMsg = document.getElementById("uplift-form-error");
+
+    function gaEvent(name: string, params?: Record<string, unknown>) {
+      const w = window as typeof window & { gtag?: (...args: unknown[]) => void };
+      if (w.gtag) w.gtag("event", name, params || {});
+    }
+    let formStartFired = false;
+    form?.addEventListener(
+      "focusin",
+      () => {
+        if (!formStartFired) {
+          formStartFired = true;
+          gaEvent("form_start", { form_name: "uplift_recovery_checklist" });
+        }
+      },
+      { once: true }
+    );
+
+    const params = new URLSearchParams(window.location.search);
+    ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"].forEach((k) => {
+      const input = form?.querySelector<HTMLInputElement>(`input[name="${k}"]`);
+      if (input) input.value = params.get(k) ?? "";
+    });
+
+    form?.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      if (!form.reportValidity()) return;
+      errorMsg?.classList.add("hidden");
+
+      const data = new FormData(form);
+      const fields = [...data.entries()].map(([name, value]) => ({
+        objectTypeId: "0-1",
+        name,
+        value: String(value),
+      }));
+
+      try {
+        const res = await fetch(
+          `https://api.hsforms.com/submissions/v3/integration/submit/${PORTAL_ID}/${FORM_GUID}`,
+          {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              fields,
+              context: { pageUri: window.location.href, pageName: document.title },
+            }),
+          }
+        );
+        if (!res.ok) throw new Error(`HubSpot responded ${res.status}`);
+        form.classList.add("hidden");
+        success?.classList.remove("hidden");
+        gaEvent("form_submit", { form_name: "uplift_recovery_checklist" });
+      } catch (_err) {
+        errorMsg?.classList.remove("hidden");
+        gaEvent("form_error", { form_name: "uplift_recovery_checklist" });
+      }
+    });
+  </script>
 </BaseLayout>

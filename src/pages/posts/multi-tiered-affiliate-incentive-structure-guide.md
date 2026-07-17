@@ -1,4 +1,6 @@
 ---
+strategicStatus: "excluded-from-renewal-gtm"
+noindex: true
 layout: ../../layouts/BlogPostLayout.astro
 title: "Multi-Tiered Affiliate Incentive Structures: How to Reward Sales Teams for Building Revenue Networks"
 pubDate: "2026-05-05"

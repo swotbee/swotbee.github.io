@@ -6,7 +6,8 @@ description: "The definitive guide to building a HubSpot renewal pipeline: from 
 category:
   title: "Revenue Operations"
   href: "/categories/revenue-operations"
-modifiedDate: "2026-04-02"
+modifiedDate: "2026-07-14"
+funnelCta: "renewal-audit"
 author:
   name: "SWOTBee Team"
   url: "https://swotbee.com"
@@ -137,7 +138,7 @@ Automation is the difference between a renewal pipeline that works and a glorifi
 
 When a new business deal closes, a workflow creates the renewal deal, pre-populated with the renewal date (close date + contract term), deal amount, associated company and contacts, and the CSM as deal owner.
 
-Follow our [step-by-step automation guide](/posts/hubspot-renewal-deal-workflow-automation) for the full workflow setup.
+Follow our [step-by-step automation guide](/posts/hubspot-renewal-deal-workflow-automation) for the full workflow setup. The part teams get wrong most often is line items: native HubSpot cloning drops them, and a renewal deal without line items isn't ready to quote or report on. See our [complete guide to cloning deals in HubSpot](/posts/hubspot-clone-deal-complete-guide) and the [line-item cloning fix](/posts/hubspot-clone-deal-line-items) for the workarounds, and the [deal-cloning apps comparison](/posts/hubspot-deal-cloning-apps-compared) if you'd rather use a marketplace app than build the workflow yourself.
 
 ### Workflow 2: Time-Based Stage Progression
 

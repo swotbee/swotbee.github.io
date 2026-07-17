@@ -88,6 +88,22 @@ All service pages use V6 color tokens (`v6-copper`, `v6-teal`, `v6-dark`, `v6-te
 - `docs/plans/service-page-answers.md` — client decisions on pricing (no prices on site), engagement models, timelines, and deferred items
 - `docs/hubspot-apps-copy-brief.md` — copy brief for 4 HubSpot marketplace apps (Smart Company Picker, Deal Inspector, Renewal Builder, Deal Copilot)
 
+## Video Assets and Embeds
+
+If work in this repo involves creating, editing, or embedding a video, use the workspace
+video project template first:
+
+`../marketing/content/video-project-template/`
+
+The copied project folder should hold intake, decisions/Q&A, asset inventory, script,
+storyboard, production plan, QA, publish package, drafts, and final exports. Do not infer
+or invent missing video decisions inside site components; record them in the copied
+project folder's `02-decisions.md`, then embed the approved final asset in the site.
+
+For the broader runbook, read:
+
+`../research/video-creation-framework/Video Creation Automation Playbook.md`
+
 ## SEO Blog Content Pipeline
 
 Blog posts are produced with a repeatable, research-driven pipeline that merges three frameworks. Use this process for every new article or cluster. The full spec lives in `docs/plans/seo-content-pipeline-neuronwriter-merged.md`, and the practical step-by-step playbook (with real learnings and improvements from building 3 pillar clusters) is in `docs/plans/blog-creation-playbook.md`; read both before starting.

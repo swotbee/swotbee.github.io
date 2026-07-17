@@ -109,6 +109,14 @@ const displayPosts = relatedPosts.length >= 2
     />
   )}
 
+  {/* FAQPage schema for posts with a frontmatter faqs array */}
+  {frontmatter.faqs && frontmatter.faqs.length > 0 && (
+    <StructuredData
+      type="faq"
+      data={{ faqs: frontmatter.faqs }}
+    />
+  )}
+
   {/* isPartOf schema for cluster posts in a series */}
   {frontmatter.seriesName && frontmatter.pillarUrl && (
     <script type="application/ld+json" set:html={JSON.stringify({
@@ -236,6 +244,20 @@ const displayPosts = relatedPosts.length >= 2
 
     <!-- Post Footer Section -->
     <div class="max-w-[680px] mx-auto px-4 sm:px-6 pb-16">
+
+      {frontmatter.funnelCta === 'renewal-audit' && (
+        <section class="mb-10 rounded-xl border border-v6-teal-200 bg-v6-teal-50 p-6" aria-label="Renewal operations next step">
+          <p class="text-xs font-semibold uppercase tracking-wide text-v6-teal-700 mb-2">Next step</p>
+          <h2 class="text-xl font-bold text-v6-dark mb-2">Find the renewal leakage hiding in your HubSpot setup.</h2>
+          <p class="text-sm text-v6-text-muted leading-relaxed mb-4">
+            If cloning, renewal dates, line items, or NRR reporting are still manual, start with a quick leakage estimate and then review the QBR demo workflow.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-3">
+            <a href="/resources/renewal-leakage-estimate/" data-ga-cta="blog_funnelcta_leakage_estimate" class="inline-flex items-center justify-center rounded-lg bg-v6-teal-700 px-4 py-2.5 text-sm font-semibold text-white hover:bg-v6-teal-800 transition-colors">Get the leakage estimate</a>
+            <a href="/renewal-operations-animated-v3/#demo" data-ga-cta="blog_funnelcta_demo" class="inline-flex items-center justify-center rounded-lg border border-v6-teal-300 bg-white px-4 py-2.5 text-sm font-semibold text-v6-teal-800 hover:bg-v6-teal-100 transition-colors">Watch the demo</a>
+          </div>
+        </section>
+      )}
 
       <!-- Tags (bottom) -->
       {frontmatter.tags && frontmatter.tags.length > 0 && (

@@ -1,9 +1,9 @@
 ---
 layout: ../../layouts/BlogPostLayout.astro
-title: "How to Track NRR, GRR & Renewal Rate in HubSpot Dashboards"
+title: "HubSpot NRR And GRR Dashboards For Renewal Revenue Reporting"
 pubDate: "2026-04-02"
-modifiedDate: "2026-07-06"
-description: "HubSpot has no native NRR report. Here's how to build renewal dashboards using custom properties, calculated fields, and custom reports: including board-ready metrics."
+modifiedDate: "2026-07-14"
+description: "How to report NRR, GRR, renewal rate, churn, expansion, and contraction in HubSpot using renewal properties, clean deal lineage, and custom dashboards."
 category:
   title: "Revenue Operations"
   href: "/categories/revenue-operations"
@@ -20,7 +20,15 @@ tags:
   - "Revenue Reporting"
   - "Dashboards"
 seriesName: "HubSpot Renewal Pipeline"
+funnelCta: "renewal-audit"
 pillarUrl: "/posts/hubspot-renewal-pipeline-complete-guide"
+faqs:
+  - q: "What is net revenue retention in HubSpot?"
+    a: "Net revenue retention (NRR) in HubSpot is a calculated metric, not a native field: (starting MRR + expansion - contraction - churn) / starting MRR for a cohort of existing customers, over a period. HubSpot stores the deal-level inputs (MRR, ARR, close date, deal type) but does not ship a report that rolls them into NRR, you build that with custom properties and the custom report builder, covered below."
+  - q: "Does HubSpot calculate NRR and GRR automatically with workflows?"
+    a: "No. Workflows can automate the inputs, keeping Deal Type, Renewal Date, and Previous Contract Value populated so the numbers are accurate, but the NRR/GRR calculation itself happens in a custom report or dashboard, not inside a workflow. Sales Hub Enterprise's Revenue Analytics tool gets closer to automatic, but only if your data already sits in HubSpot's native recurring revenue properties."
+  - q: "What is HubSpot NRR reporting used for if there's no native report?"
+    a: "Board and CFO reporting on retention and expansion. Most mid-market teams build it as a custom dashboard on top of deal-level ARR/MRR properties, segmented by Renewal Year or pipeline, rather than waiting on a native HubSpot NRR report to exist."
 ---
 
 Your board wants to see NRR. Your CFO wants GRR. Your CS leader wants renewal rate by segment. And HubSpot doesn't have a native report for any of them.
@@ -32,6 +40,21 @@ The good news: you can build these dashboards with custom properties, calculated
 These are the revenue metrics every RevOps team reports on: monthly recurring revenue (MRR), annual recurring revenue (ARR), and the retention metrics built on top of them. HubSpot tracks deal revenue, but calculating NRR, GRR, and renewal rate from it takes deliberate setup. We will cover the revenue reporting you can do inside HubSpot, and where you still need Google Sheets to finish the math. For the metric definitions themselves, see our [guide to SaaS renewal metrics](/posts/renewal-metrics-explained) and the deep dive on [gross vs net revenue retention](/posts/gross-vs-net-revenue-retention).
 
 > This article is part of our [Complete Guide to Building a Renewal Pipeline in HubSpot](/posts/hubspot-renewal-pipeline-complete-guide).
+
+
+## Reporting Depends On Renewal Deal Hygiene
+
+NRR and GRR dashboards only work if renewal deals are created consistently. If some renewals are cloned manually, some are spreadsheet-tracked, and some are missing line items or previous contract value, the dashboard becomes a debate instead of a decision tool.
+
+Before building the reports below, verify the operational layer: [renewal deal automation](/posts/hubspot-renewal-deal-workflow-automation/), [renewal pipeline properties](/posts/hubspot-renewal-pipeline-properties/), and [line-item cloning for renewal deals](/posts/hubspot-clone-deal-line-items/). The metric layer should summarize clean renewal data, not compensate for missing workflow design.
+
+---
+
+## What These Metrics Tell Sales, Success, And Finance
+
+Net revenue retention rate and gross retention rate are the two numbers that answer different questions about the same customer base. Retention rate on its own tells you whether subscription customers stuck around; net revenue retention rate tells you whether the customer mix as a whole grew or shrank in dollar terms once expansion, contraction, and churn are netted out. Customer success teams watch it as a post-sales health signal; finance watches it as a revenue growth driver; the board watches it as one of the handful of KPIs that predicts whether growth is durable.
+
+The key drivers worth breaking out separately, rather than reporting one blended number, are: new logo growth, expansion within the existing customer base, contraction (downgrades that don't fully churn), and churn itself. A cohort analysis by renewal year, month, or contract-start date usually reveals which driver is actually moving the number, better retention in year one accounts often masks weaker retention in year three, for example, and that pattern only shows up once you segment.
 
 ---
 
@@ -251,6 +274,19 @@ These inputs feed every dashboard below, and they connect retention to customer 
 3. **Don't mix pipeline reports.** Always filter by Pipeline = Renewal Pipeline. Cross-pipeline reports are useful for total revenue, but they'll double-count if you're not careful.
 4. **Report on cohorts.** Filter by "Renewal Year" to see if Year 2 customers renew at higher or lower rates than Year 1. This tells you whether your product is getting stickier over time.
 5. **Benchmark externally.** Compare your NRR against public cloud companies using the [BVP Nasdaq Emerging Cloud Index](https://cloudindex.bvp.com/), or against private SaaS using [David Skok's SaaS Metrics 2.0 framework](https://www.forentrepreneurs.com/saas-metrics-2/).
+
+---
+
+## Frequently Asked Questions
+
+**What is net revenue retention in HubSpot?**
+Net revenue retention (NRR) is a calculated metric, not a native field: (starting MRR + expansion, less contraction, less churn) divided by starting MRR for a cohort of existing customers, over a period. HubSpot stores the deal-level inputs (MRR, ARR, close date, deal type) but does not ship a report that rolls them into NRR, you build that with custom properties and the custom report builder, covered above.
+
+**Does HubSpot calculate NRR and GRR automatically with workflows?**
+No. Workflows automate the inputs, keeping Deal Type, Renewal Date, and Previous Contract Value populated, but the NRR/GRR calculation itself happens in a custom report or dashboard, not inside a workflow. Sales Hub Enterprise's Revenue Analytics tool gets closer to automatic, but only if your data already sits in HubSpot's native recurring revenue properties.
+
+**What is HubSpot NRR reporting used for if there's no native report?**
+Board and CFO reporting on retention and expansion. Most mid-market teams build it as a custom dashboard on top of deal-level ARR/MRR properties, segmented by Renewal Year or pipeline, rather than waiting on a native HubSpot NRR report to exist.
 
 ---
 

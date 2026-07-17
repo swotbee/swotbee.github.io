@@ -1,4 +1,5 @@
 ---
+strategicStatus: "excluded-from-renewal-gtm"
 noindex: true
 layout: ../../layouts/BlogPostLayout.astro
 title: "Hootsuite vs HubSpot: Ultimate Tool Comparison"

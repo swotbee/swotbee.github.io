@@ -1,0 +1,81 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/astro/Navbar.astro";
+import Footer from "../components/astro/Footer.astro";
+// Scheduler destination for the renewal-audit funnel (deal-cloning posts, renewal-ops
+// posts, the leakage-estimate lead-magnet sequence). Distinct from the generic /contactus
+// page per marketing/gtm/pipeline-build/25-renewal-audit-funnel-launch-package.md D1: the
+// $750 audit is never framed as free. This call is free; it is the step that leads to the
+// paid audit, not the audit itself. Embeds Cal.com (swotbee/your-renewal-audit) inline.
+---
+<Layout
+  title="Book Your Renewal Audit Call | SWOTBee"
+  description="Free 30-minute call to walk through your renewal leakage estimate and scope the paid renewal audit. No pressure, no generic sales pitch."
+>
+  <Navbar />
+
+  <section class="bg-gradient-to-b from-v6-bg to-white px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20 pb-8">
+    <div class="max-w-3xl mx-auto text-center">
+      <span class="bg-v6-teal-50 text-v6-teal text-xs font-semibold px-3 py-1 rounded-full inline-block mb-6">Free 30-minute call</span>
+      <h1 class="text-3xl sm:text-4xl font-bold text-v6-dark mb-4">Book Your Renewal Audit Call</h1>
+      <p class="text-base sm:text-lg text-v6-text-muted max-w-xl mx-auto leading-relaxed">
+        We'll walk through your leakage estimate, answer what it does and doesn't tell you, and scope whether the paid renewal audit ($750, credited in full toward any build) is worth doing on your actual HubSpot data.
+      </p>
+    </div>
+  </section>
+
+  <section class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 pb-4">
+    <div class="grid sm:grid-cols-3 gap-4 text-center">
+      <div class="bg-v6-bg rounded-xl p-4">
+        <div class="font-bold text-v6-teal text-lg">This call</div>
+        <div class="text-sm text-v6-text-muted">Free. 30 minutes. No pitch deck.</div>
+      </div>
+      <div class="bg-v6-bg rounded-xl p-4">
+        <div class="font-bold text-v6-teal text-lg">The audit</div>
+        <div class="text-sm text-v6-text-muted">$750, credited in full toward any build.</div>
+      </div>
+      <div class="bg-v6-bg rounded-xl p-4">
+        <div class="font-bold text-v6-teal text-lg">Your decision</div>
+        <div class="text-sm text-v6-text-muted">You choose after the call. No pressure either way.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 pb-6">
+    <p class="text-center text-sm text-v6-text-muted bg-white border border-v6-border rounded-xl p-4">
+      View-only access. Nothing leaves your portal. NDA available on request. Access revoked at audit end.
+    </p>
+  </section>
+
+  <section class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+    <div id="renewal-audit-cal-inline" style="width:100%;min-height:600px;overflow:scroll;"></div>
+  </section>
+
+  <Footer />
+
+  <script is:inline>
+    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+    Cal("init", { origin: "https://cal.com" });
+    Cal("inline", {
+      elementOrSelector: "#renewal-audit-cal-inline",
+      calLink: "swotbee/your-renewal-audit",
+      config: { theme: "light" },
+    });
+    Cal("ui", { styles: { branding: { brandColor: "#C47A2A" } }, hideEventTypeDetails: false, layout: "month_view" });
+
+    // GA4 call_booked event, the S4 "lead -> discovery call attended" conversion per the
+    // CRO framework's KPI tree. bookingSuccessfulV2 is Cal.com's current documented
+    // success event (bookingSuccessful is deprecated).
+    Cal("on", {
+      action: "bookingSuccessfulV2",
+      callback: (e) => {
+        if (window.gtag) {
+          window.gtag("event", "call_booked", {
+            booking_uid: e.detail?.data?.uid,
+            event_type_id: e.detail?.data?.eventTypeId,
+          });
+        }
+      },
+    });
+  </script>
+</Layout>

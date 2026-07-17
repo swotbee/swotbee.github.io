@@ -1,12 +1,12 @@
 ---
 layout: ../../layouts/BlogPostLayout.astro
-title: "How to Clone a Deal in HubSpot: The Complete Guide (2026)"
+title: "How to Clone a Deal in HubSpot for Renewals: Complete Guide (2026)"
 pubDate: "2026-04-02"
-description: "The only vendor-neutral guide to cloning deals in HubSpot: native cloning, workflows, marketplace apps, and API. Covers the line item gap, 10 use cases, and best practices."
+description: "How to clone HubSpot deals for renewals without losing line items, ARR fields, owners, dates, or audit history. Covers native cloning, workflows, apps, and API options."
 category:
   title: "Revenue Operations"
   href: "/categories/revenue-operations"
-modifiedDate: "2026-07-06"
+modifiedDate: "2026-07-14"
 author:
   name: "SWOTBee Team"
   url: "https://swotbee.com"
@@ -25,6 +25,7 @@ tags:
   - "Revenue Operations"
   - "Sales Productivity"
 seriesName: "HubSpot Deal Cloning"
+funnelCta: "renewal-audit"
 pillarUrl: "/posts/hubspot-clone-deal-complete-guide"
 ---
 
@@ -33,6 +34,13 @@ Cloning a deal in HubSpot means creating an exact copy of an existing deal (with
 The problem: HubSpot's native cloning is limited, workflows can't copy line items, and every existing guide is written by a vendor promoting their own app. This guide is different. We cover all four methods: native, workflows, marketplace apps, and API, with honest pros and cons for each.
 
 > **This is the pillar article in our HubSpot Deal Cloning series.** Each section links to deeper guides where we go step-by-step.
+
+
+## Renewal Operations Angle: Why Deal Cloning Becomes A Revenue Problem
+
+Deal cloning is rarely just a productivity shortcut. For recurring-revenue teams, it decides whether the renewal deal has the right contract value, product line items, renewal date, owner, and original deal reference. When those fields are recreated manually, NRR and GRR reporting starts from incomplete data.
+
+If you are cloning deals for renewals, connect this guide with the [renewal deal workflow automation guide](/posts/hubspot-renewal-deal-workflow-automation/), the [renewal pipeline properties checklist](/posts/hubspot-renewal-pipeline-properties/), and the [HubSpot renewal apps comparison](/compare/hubspot-renewal-apps/). The goal is not just a copied deal; it is a renewal system that can create the next opportunity, preserve line items, and report revenue without spreadsheet cleanup.
 
 ---
 

@@ -1,4 +1,6 @@
 ---
+strategicStatus: "excluded-from-renewal-gtm"
+noindex: true
 layout: ../../layouts/BlogPostLayout.astro
 title: "Who Gets Credit for the Sale? Attribution Models for Affiliate & Partner Programs"
 pubDate: "2026-04-28"

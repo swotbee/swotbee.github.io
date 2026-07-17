@@ -51,8 +51,18 @@ export function generateKeywords(keywords: string[] | string): string {
  */
 export function generateCanonicalUrl(path: string = ''): string {
   const baseUrl = 'https://swotbee.com';
-  const cleanPath = path.startsWith('/') ? path : `/${path}`;
-  return `${baseUrl}${cleanPath}`;
+  const [rawPath, queryOrHash = ''] = path.split(/(?=[?#])/, 2);
+  let cleanPath = rawPath.startsWith('/') ? rawPath : `/${rawPath}`;
+
+  // The static Astro build emits directory URLs. Normalize canonicals to the
+  // same trailing-slash format so /posts/foo and /posts/foo/ do not self-canonicalize differently.
+  const lastSegment = cleanPath.split('/').pop() || '';
+  const looksLikeFile = lastSegment.includes('.');
+  if (!looksLikeFile && cleanPath !== '/' && !cleanPath.endsWith('/')) {
+    cleanPath += '/';
+  }
+
+  return `${baseUrl}${cleanPath}${queryOrHash}`;
 }
 
 /**

@@ -1,4 +1,6 @@
 ---
+strategicStatus: "excluded-from-renewal-gtm"
+noindex: true
 layout: ../../layouts/BlogPostLayout.astro
 title: "Multi-Tier Affiliate Software Platforms Compared: What to Look for in 2026"
 pubDate: "2026-05-05"

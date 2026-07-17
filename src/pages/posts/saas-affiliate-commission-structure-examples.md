@@ -1,4 +1,6 @@
 ---
+strategicStatus: "excluded-from-renewal-gtm"
+noindex: true
 layout: ../../layouts/BlogPostLayout.astro
 title: "How 5 SaaS Companies Structure Affiliate Commissions (And What You Can Steal)"
 pubDate: "2026-05-01"

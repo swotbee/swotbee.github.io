@@ -1,4 +1,6 @@
 ---
+strategicStatus: "excluded-from-renewal-gtm"
+noindex: true
 layout: ../../layouts/BlogPostLayout.astro
 title: "Step-by-Step Guide: How to Onboard Your Team with HubSpot CRM Free Plan Setup"
 pubDate: "2025-07-09"
