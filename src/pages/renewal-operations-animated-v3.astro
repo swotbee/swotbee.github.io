@@ -25,6 +25,7 @@ import Layout from "../layouts/Layout.astro";
 import Navbar from "../components/astro/Navbar.astro";
 import Footer from "../components/astro/Footer.astro";
 import StructuredData from "../components/astro/StructuredData.astro";
+import RenewalRoiCalculator from "../components/astro/RenewalRoiCalculator.astro";
 
 const title = "Renewal Operations for HubSpot | Stop Losing Revenue To Missed Renewals";
 const description = "Renewal deals that create themselves, line items carried over exactly, escalations applied automatically, and ARR you can finally trust. Inside HubSpot Professional and Enterprise.";
@@ -64,6 +65,8 @@ const pains = [
   { desc: "Deals go dark for weeks and nobody notices until the QBR.", icon: "🕳", color: "text-v6-copper", bg: "bg-v6-copper-50" },
   { desc: "Renewals live in a spreadsheet, and 3 expired last quarter without anyone following up.", icon: "📄", color: "text-v6-teal", bg: "bg-v6-teal-50" },
   { desc: "Sales reps spend more time on data entry than selling.", icon: "⌛", color: "text-v6-amber", bg: "bg-v6-amber-50" },
+  { desc: "Every rep runs renewals their own way, because the rules that matter live in people's heads instead of the system.", icon: "🎲", color: "text-v6-teal", bg: "bg-v6-teal-50" },
+  { desc: "No one has a complete picture of upcoming renewals, expansion opportunities, and contract changes until something slips.", icon: "🌫️", color: "text-v6-blue", bg: "bg-v6-blue-50" },
 ];
 
 // ROOT CAUSE comparison.
@@ -73,6 +76,8 @@ const decisions = [
   { simple: "Carry forward the pricing", decision: "Which escalations, discounts, and contract terms apply?" },
   { simple: "Follow the renewal process", decision: "Which customers require different rules, approvals, or notice periods?" },
   { simple: "Forecast future revenue", decision: "Which renewals are at risk and which accounts are ready to grow?" },
+  
+  
 ];
 
 // HOW WE WORK: 3 numbered steps (from the approved "first month" FAQ).
@@ -101,11 +106,20 @@ const stats = [
   { value: "2 wks", label: "to first results", tone: "text-v6-amber" },
 ];
 
-// TESTIMONIALS: client-approved, anonymous, metric-rich.
+// TESTIMONIALS
 const testimonials = [
-  { quote: "Before SWOTBee, our sales team couldn't tell which building they were selling to. We have multiple contracts per company across different sites, and renewals were completely manual. SWOTBee automated our renewal pipeline and integrated HubSpot with NetSuite and Monday.com. Renewal accuracy jumped by nearly 50%, and our team now focuses on growth instead of admin work.", metric: "Renewal accuracy up ~50%", role: "VP Sales", context: "Energy Sector", initials: "EN" },
-  { quote: "Each university contract has unique approval workflows that feed into invoicing. Before SWOTBee this was a manual nightmare during peak admission months. They built a custom integration between HubSpot, Xero, and our application that automates the entire flow. It cut our approval cycles by more than half and improved billing accuracy by 40%.", metric: "Billing accuracy up 40%", role: "Operations Director", context: "Education Sector", initials: "ED" },
-  { quote: "We needed to connect our ecommerce site to HubSpot, automate lead qualification for our distributor network, and create OEM quote pipelines that trigger production on close-won. SWOTBee set up the sequences and tracking that prioritize upsells. Within two months, online quote response time dropped by 65%, and distributor satisfaction improved by 30%.", metric: "Quote response 65% faster", role: "Sales Operations Manager", context: "Manufacturing", initials: "MF" },
+  {
+    quote: "Working with Siva has been transformative for our team. He quickly grasped our complex workflows and immediately began identifying optimization opportunities. What sets him apart is how he functions as a true extension of our team, handling both technical implementation and strategic guidance. This partnership has freed our internal team to focus on high-level initiatives while maintaining confidence that execution will be exceptional.",
+    initials: "RO",
+    role: "Revenue Operations Lead",
+    context: "Mid-Market B2B",
+  },
+  {
+    quote: "Sharmi helped our team do the foundational work that launched our ABM strategy. She took unstructured goals and, by applying her customer-focused insight and technical know-how, turned them into specific solutions that optimized our entire enrichment project in HubSpot. She's fast, dependable, and brings a curiosity mindset that makes her work exceed expectations.",
+    initials: "MO",
+    role: "Marketing Operations Lead",
+    context: "B2B SaaS",
+  },
 ];
 
 // CASE STUDY (anonymous).
@@ -494,23 +508,23 @@ const toneMap: Record<string, string> = {
     <div class="max-w-4xl mx-auto">
       <p class="reveal text-sm font-semibold uppercase tracking-[0.2em] text-v6-copper mb-3 text-center">How It Works</p>
       <h2 class="reveal text-2xl sm:text-3xl lg:text-4xl font-bold text-v6-dark mb-3 text-center text-balance">
-        What If Every Renewal Followed The Right Rules, Automatically?
+        What If Every Renewal Followed The Rules You Set, Automatically?
       </h2>
       <p class="reveal text-v6-text-muted text-center mb-10 max-w-2xl mx-auto">
-        We design and automate the business rules that drive renewals, expansion revenue, and forecast visibility. Every renewal. Every expansion. Every revenue decision, handled consistently.
+        On top of what you already run: you set the rules, we automate them. We design the business rules that drive renewals, expansion revenue, and forecast visibility, then apply them consistently. Every renewal, every expansion, every revenue decision, handled the way you defined it. You own all of it, in your portal.
       </p>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div class="reveal bg-white rounded-xl p-6 border border-v6-border">
-          <p class="text-xs font-semibold uppercase tracking-wider text-v6-text-muted opacity-70 mb-5">Most companies today</p>
+          <p class="text-xs font-semibold uppercase tracking-wider text-v6-text-muted opacity-70 mb-5">Manual or DIY today</p>
           <div class="flex flex-col gap-3">
             <div class="rounded-lg bg-v6-teal-50 text-v6-teal text-sm sm:text-base font-semibold px-4 py-3 text-center">Closed Won</div>
             <div class="text-center text-v6-text-muted opacity-40 text-lg leading-none">↓</div>
-            <div class="rounded-lg border border-dashed border-gray-300 bg-gray-50 text-gray-400 text-sm font-semibold px-4 py-3 text-center tracking-widest">? ? ?</div>
+            <div class="rounded-lg border border-dashed border-gray-300 bg-gray-50 text-gray-500 text-sm font-semibold px-4 py-3 text-center">Manual tracking or DIY workflows</div>
             <div class="text-center text-v6-text-muted opacity-40 text-lg leading-none">↓</div>
             <div class="rounded-lg bg-gray-100 text-v6-text-muted text-sm font-semibold px-4 py-3 text-center">Forecast Meeting</div>
           </div>
-          <p class="text-xs text-v6-text-muted opacity-70 mt-5 text-center">A black hole after Closed Won. No visibility, no tracked renewals.</p>
+          <p class="text-xs text-v6-text-muted opacity-70 mt-5 text-center">Manual tracking or brittle DIY workflows, the kind that quietly break at year 3.</p>
         </div>
         <div class="reveal bg-white rounded-xl p-6 border-2 border-v6-teal-200 shadow-sm">
           <p class="text-xs font-semibold uppercase tracking-wider text-v6-teal mb-5">With Renewal Operations <span class="bolt-pulse inline-block">⚡</span></p>
@@ -609,60 +623,7 @@ const toneMap: Record<string, string> = {
 
 
   <!-- ============ ROI CALCULATOR ============ -->
-  <section id="roi" class="bg-white py-14 sm:py-18 px-4 sm:px-6 lg:px-8">
-    <div class="max-w-3xl mx-auto">
-      <p class="reveal text-sm font-semibold uppercase tracking-[0.2em] text-v6-copper mb-3 text-center">See What's At Stake</p>
-      <h2 class="reveal text-2xl sm:text-3xl lg:text-4xl font-bold text-v6-dark mb-3 text-center text-balance">
-        How Much Revenue Is Hiding In Your Renewals?
-      </h2>
-      <p class="reveal text-v6-text-muted text-center mb-10 max-w-lg mx-auto">
-        Move the sliders to your numbers. This is a directional estimate of the renewal revenue at risk each year when the process leaks. We pressure-test these numbers against your real HubSpot data in the free audit.
-      </p>
-
-      <div class="reveal rounded-2xl border border-v6-border bg-v6-bg p-6 sm:p-8">
-        <div class="space-y-7">
-          <div>
-            <div class="flex justify-between items-baseline mb-2">
-              <label for="roi-renewals" class="text-sm font-semibold text-v6-dark">Renewals per year</label>
-              <output id="roi-renewals-out" class="text-base font-bold text-v6-copper">500</output>
-            </div>
-            <input id="roi-renewals" type="range" min="50" max="5000" step="50" value="500" class="roi-range" />
-          </div>
-          <div>
-            <div class="flex justify-between items-baseline mb-2">
-              <label for="roi-acv" class="text-sm font-semibold text-v6-dark">Average contract value</label>
-              <output id="roi-acv-out" class="text-base font-bold text-v6-copper">$25,000</output>
-            </div>
-            <input id="roi-acv" type="range" min="1000" max="250000" step="1000" value="25000" class="roi-range" />
-          </div>
-          <div>
-            <div class="flex justify-between items-baseline mb-2">
-              <label for="roi-slip" class="text-sm font-semibold text-v6-dark">Renewals that slip or churn from process gaps</label>
-              <output id="roi-slip-out" class="text-base font-bold text-v6-copper">8%</output>
-            </div>
-            <input id="roi-slip" type="range" min="1" max="30" step="1" value="8" class="roi-range" />
-          </div>
-        </div>
-
-        <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div class="rounded-xl bg-v6-copper-50 border border-v6-copper-100 p-5 text-center">
-            <p class="text-xs font-semibold uppercase tracking-wider text-v6-copper mb-1">Revenue at risk / year</p>
-            <p id="roi-risk" class="text-3xl font-bold text-v6-dark">$1,000,000</p>
-          </div>
-          <div class="rounded-xl bg-v6-teal-50 border border-v6-teal-100 p-5 text-center">
-            <p class="text-xs font-semibold uppercase tracking-wider text-v6-teal mb-1">Potentially recoverable</p>
-            <p id="roi-recover" class="text-3xl font-bold text-v6-dark">$700,000</p>
-          </div>
-        </div>
-        <p class="text-xs text-v6-text-muted text-center mt-4">Directional estimate, not a quote. The recoverable figure assumes a process that closes most preventable slippage.</p>
-        <div class="text-center mt-6">
-          <a href="/contactus" class="inline-block bg-v6-copper text-white px-7 py-3 rounded-xl text-base font-semibold hover:bg-v6-copper-600 transition-colors">
-            Find My Hidden Renewal Revenue →
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
+  <RenewalRoiCalculator />
 
 
   <!-- ============ TESTIMONIALS + CASE STUDY ============ -->
@@ -674,11 +635,11 @@ const toneMap: Record<string, string> = {
       </h2>
       <p class="reveal text-v6-text-muted text-center mb-10 max-w-lg mx-auto">We start with your process, data, and business rules, then automate what's ready. Here is what that produced.</p>
 
-      <div class="stagger grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+      <div class="stagger grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
         {testimonials.map(t => (
-          <div class="anim-card bg-white rounded-xl p-6 border border-v6-border flex flex-col">
-            <span class="inline-block self-start bg-v6-teal-50 text-v6-teal text-xs font-bold px-3 py-1 rounded-full mb-4">{t.metric}</span>
-            <blockquote class="text-sm text-v6-dark leading-relaxed mb-5 flex-grow">{t.quote}</blockquote>
+          <div class="anim-card bg-white rounded-xl p-7 border border-v6-border flex flex-col">
+            <div class="text-v6-copper text-3xl leading-none mb-3">“</div>
+            <blockquote class="text-sm sm:text-base text-v6-dark leading-relaxed mb-6 flex-grow">{t.quote}</blockquote>
             <div class="flex items-center gap-3 pt-4 border-t border-v6-border">
               <div class="w-10 h-10 rounded-full bg-v6-teal-100 flex items-center justify-center text-v6-teal font-bold text-sm flex-shrink-0">{t.initials}</div>
               <div>
@@ -767,11 +728,11 @@ const toneMap: Record<string, string> = {
       <div class="stagger space-y-3">
         {faqs.map(f => (
           <details class="group bg-white rounded-xl border border-v6-border overflow-hidden">
-            <summary class="flex justify-between items-center gap-4 cursor-pointer list-none px-5 py-4 text-base font-semibold text-v6-dark hover:bg-v6-bg transition-colors">
+            <summary class="flex justify-between items-center gap-4 cursor-pointer list-none px-5 py-4 text-base font-semibold text-v6-dark hover:bg-v6-copper-50 transition-colors">
               <span>{f.q}</span>
               <span class="text-v6-copper text-xl leading-none flex-shrink-0 transition-transform group-open:rotate-45">+</span>
             </summary>
-            <div class="px-5 pb-5 -mt-1 text-sm text-v6-text-muted leading-relaxed">{f.a}</div>
+            <div class="px-5 pb-5 pt-1 text-sm text-v6-text-muted leading-relaxed">{f.a}</div>
           </details>
         ))}
       </div>
@@ -870,11 +831,6 @@ const toneMap: Record<string, string> = {
   /* ===== Scroll progress bar ===== */
   #scroll-progress { transform: scaleX(0); transition: transform 0.1s linear; }
 
-  /* ===== ROI range sliders ===== */
-  .roi-range { -webkit-appearance: none; appearance: none; width: 100%; height: 6px; border-radius: 999px; background: #E5E2DA; outline: none; }
-  .roi-range::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 22px; height: 22px; border-radius: 50%; background: #C47A2A; cursor: pointer; border: 3px solid #fff; box-shadow: 0 1px 4px rgba(0,0,0,0.2); }
-  .roi-range::-moz-range-thumb { width: 22px; height: 22px; border-radius: 50%; background: #C47A2A; cursor: pointer; border: 3px solid #fff; box-shadow: 0 1px 4px rgba(0,0,0,0.2); }
-
   /* ===== FAQ ===== */
   details summary::-webkit-details-marker { display: none; }
 
@@ -955,34 +911,6 @@ const toneMap: Record<string, string> = {
       });
     };
     window.addEventListener("mousemove", onMove, { passive: true });
-  }
-
-  // --- ROI calculator ---
-  const fmt = new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 });
-  const renewalsEl = document.getElementById("roi-renewals") as HTMLInputElement | null;
-  const acvEl = document.getElementById("roi-acv") as HTMLInputElement | null;
-  const slipEl = document.getElementById("roi-slip") as HTMLInputElement | null;
-  const renewalsOut = document.getElementById("roi-renewals-out");
-  const acvOut = document.getElementById("roi-acv-out");
-  const slipOut = document.getElementById("roi-slip-out");
-  const riskOut = document.getElementById("roi-risk");
-  const recoverOut = document.getElementById("roi-recover");
-
-  if (renewalsEl && acvEl && slipEl && renewalsOut && acvOut && slipOut && riskOut && recoverOut) {
-    const RECOVERABLE = 0.7; // share of preventable slippage a solid renewal process recovers
-    const calc = () => {
-      const renewals = Number(renewalsEl.value);
-      const acv = Number(acvEl.value);
-      const slip = Number(slipEl.value) / 100;
-      const atRisk = renewals * acv * slip;
-      renewalsOut.textContent = renewals.toLocaleString("en-US");
-      acvOut.textContent = fmt.format(acv);
-      slipOut.textContent = `${slipEl.value}%`;
-      riskOut.textContent = fmt.format(atRisk);
-      recoverOut.textContent = fmt.format(atRisk * RECOVERABLE);
-    };
-    [renewalsEl, acvEl, slipEl].forEach((el) => el.addEventListener("input", calc));
-    calc();
   }
 
   // --- Idle curiosity cue (one-shot per session) ---
