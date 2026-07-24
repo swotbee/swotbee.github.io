@@ -1,12 +1,12 @@
 ---
 layout: ../../layouts/BlogPostLayout.astro
-title: "HubSpot Billing Integrations Compared: Stripe, Chargebee, Maxio, Zuora, Recurly"
+title: "HubSpot Billing Integration: Choosing the Right Subscription Platform for Renewal Data"
 pubDate: "2026-07-06"
+modifiedDate: "2026-07-24"
 description: "HubSpot billing integration options compared: Stripe, Chargebee, Maxio, Zuora, and Recurly. Sync scope, best-fit profiles, and how renewal data should flow."
 category:
   title: "Revenue Operations"
   href: "/categories/revenue-operations"
-modifiedDate: "2026-07-07"
 author:
   name: "SWOTBee Team"
   url: "https://swotbee.com"
