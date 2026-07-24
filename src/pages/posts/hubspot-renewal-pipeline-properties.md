@@ -30,6 +30,14 @@ faqs:
     a: "You can't, reliably. Expansion and contraction are both a comparison between this renewal's amount and the prior contract's amount; without storing that prior value on the deal, NRR and GRR calculations have no baseline to compare against. See our NRR/GRR dashboard guide for how this property feeds the reporting layer."
   - q: "Should Health Score live on the Deal or the Company record?"
     a: "Company, when a customer can have multiple concurrent deals, since health reflects the account relationship, not any single contract. Put it on the Deal only if your business is strictly one-deal-per-customer."
+howto: true
+howtoSteps:
+  - name: "Go to Properties settings"
+    text: "Navigate to Settings, then Properties, and select the object (Deal or Company) you're adding a property to."
+  - name: "Create the property"
+    text: "Click Create property, choose a group (or create a Renewal Properties group to keep them organized), and set the field type and dropdown options."
+  - name: "Make it required where it matters"
+    text: "For properties like Churn Reason, configure it as required at the relevant pipeline stage under Settings, Deals, Pipelines, Edit stage, Required properties."
 ---
 
 Your HubSpot renewal pipeline is only as good as the data feeding it. Workflows need properties to trigger on. Forecast and ARR reports need properties to calculate from. CSMs need properties to understand what's happening with a SaaS account and whether churn or expansion revenue is the more likely outcome at contract renewal.

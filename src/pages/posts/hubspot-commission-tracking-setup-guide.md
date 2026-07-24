@@ -26,6 +26,16 @@ tags:
   - "CRM"
 seriesName: "Sales Commission Tracking"
 pillarUrl: "/posts/hubspot-sales-commission-tracking-complete-guide"
+howto: true
+howtoSteps:
+  - name: "Navigate to Deal Properties"
+    text: "Go to Settings, then Properties, and select Deal properties from the object dropdown."
+  - name: "Create a calculated property"
+    text: "Click Create property, name it Commission Earned, and set the field type to Calculation with Equation as the calculation type."
+  - name: "Write the formula"
+    text: "Multiply deal_amount by your commission rate, for example deal_amount * 0.10 for a 10 percent flat rate."
+  - name: "Verify it works"
+    text: "Open a few closed deals that already have an amount populated and confirm the Commission Earned value calculates correctly."
 ---
 
 # How to Set Up Commission Tracking in HubSpot Without Buying New Software

@@ -30,6 +30,12 @@ faqs:
     a: "No. Forecast each pipeline separately, then combine: total = new business + renewal + expansion − contraction − churn."
   - q: "How far out can I forecast renewals?"
     a: "One to two quarters accurately. Beyond that, customer situations change too much to be reliable."
+howto: true
+howtoSteps:
+  - name: "Set renewal pipeline probabilities"
+    text: "Go to Settings, Objects, Deals, Pipelines, then your renewal pipeline, and assign stage probabilities that reflect renewal reality, generally 80 to 100 percent, not new-business close rates."
+  - name: "Calibrate against historical data"
+    text: "After one quarter, pull actual renewal outcomes for each stage, calculate the real close rate, and update your probabilities to match. Repeat quarterly until they converge on reality."
 ---
 
 If your forecast includes both new business and renewal deals using the same probability weights, your number is wrong. It's not "a little off." It's structurally broken.

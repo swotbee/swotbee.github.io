@@ -43,6 +43,20 @@ faqs:
     a: "The spreadsheet template in this article is the best free renewal tracker for a small contract book; it costs nothing and takes 20 minutes to build. Some SaaS management platforms offer free trials or limited free tiers (offerings change, so verify current terms), but past 20 or so contracts the real constraint is alerting and ownership, not price."
   - q: "How does renewal tracking software help optimize costs and negotiation?"
     a: "On the revenue side it enforces uplift discipline, so no contract silently renews flat. On the vendor side it gives procurement usage data and lead time before the renewal window opens, which is what turns a renewal into a negotiation instead of an auto-charge."
+howto: true
+howtoSteps:
+  - name: "Clean the spreadsheet first"
+    text: "Standardize customer names to match your CRM company records, fill every blank end date, and confirm ACV against your invoicing system before migrating."
+  - name: "Create the renewal properties in HubSpot"
+    text: "Add Contract Start Date, Contract End Date, Contract Term, Auto-Renew flag, and Planned Uplift % as deal properties."
+  - name: "Create a dedicated renewal pipeline"
+    text: "Build a separate pipeline with stages that mirror your spreadsheet's stage column, rather than mixing renewals into your sales pipeline."
+  - name: "Import each contract row as a renewal deal"
+    text: "Export the sheet to CSV, import it as deals mapped to the properties above, and associate each deal with the right company."
+  - name: "Turn on the automation"
+    text: "Set up date-based renewal workflows that send reminders at 90/60/30 days and automatically create the next renewal deal, so future cycles no longer depend on a human updating a row."
+  - name: "Retire the spreadsheet loudly"
+    text: "Announce a cutover date, make the sheet read-only, and link to the HubSpot renewal pipeline view from its first row."
 ---
 
 > This article is part of our [Complete B2B Guide to Contract Renewal Management](/posts/contract-renewal-management-complete-guide).

@@ -26,6 +26,16 @@ tags:
   - "Customer Retention"
   - "CRM Automation"
   - "SaaS Renewals"
+howto: true
+howtoSteps:
+  - name: "Create the pipeline"
+    text: "Go to Settings, Objects, Deals, Pipelines, and click Create Pipeline. Name it something your team will recognize, like Renewal Pipeline."
+  - name: "Configure stages with probability weights"
+    text: "Add stages and assign probability weights that reflect renewal reality, not new-business reality, since renewal probabilities should be much higher across the board."
+  - name: "Add required properties"
+    text: "Make critical fields required at specific stages, for example requiring Churn Reason when a deal moves to Closed Lost, and Renewal Amount when a deal enters Renewal Sent."
+  - name: "Check your HubSpot tier"
+    text: "Confirm you have Sales Hub Professional or higher for workflow automation, and add Operations Hub Professional if you need calculated properties like Days to Renewal."
 ---
 
 If you manage recurring revenue (subscriptions, annual contracts, retainers) and you're running renewals through your sales pipeline, you're almost certainly losing deals you shouldn't be.

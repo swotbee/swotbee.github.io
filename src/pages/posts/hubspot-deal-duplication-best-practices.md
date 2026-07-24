@@ -27,6 +27,16 @@ seriesName: "HubSpot Deal Cloning"
 pillarUrl: "/posts/hubspot-clone-deal-complete-guide"
 modifiedDate: "2026-07-24"
 funnelCta: "renewal-audit"
+howto: true
+howtoSteps:
+  - name: "Create an Original Deal ID property"
+    text: "Add a single-line text property on deals that links a cloned deal back to its source."
+  - name: "Set it during cloning"
+    text: "Whether cloning via workflow, marketplace app, or API, copy the source deal's Record ID into this property on the new deal."
+  - name: "Create a Deal Generation property"
+    text: "Add a number property where 1 means the original sale, 2 means the first renewal, 3 means the second renewal, and so on."
+  - name: "Report on deal lineage"
+    text: "Use Original Deal ID and Deal Generation together to group deals by customer journey and trace lifetime revenue in reports."
 ---
 
 Cloning deals saves time. Cloning deals without governance creates a data quality nightmare. Duplicate names, inherited close dates from last year, wrong pipeline stages, and ghost deals that break your forecast. We see these in nearly every HubSpot portal we audit.

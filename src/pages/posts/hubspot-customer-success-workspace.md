@@ -47,6 +47,18 @@ faqs:
     a: "Yes, through the same routes as the rest of the HubSpot ecosystem: HubSpot Marketplace integrations, custom events via the API, and reverse ETL syncs. The most valuable integration for the workspace is product usage data, since it feeds the health score."
   - q: "How much does a customer success manager at HubSpot make?"
     a: "That question is about careers at HubSpot the company, not the workspace feature. Compensation varies widely by location and seniority, so check current listings and salary aggregation sites for reported ranges. If you landed here looking for the software, the rest of this guide covers the Customer Success Workspace itself."
+howto: true
+howtoSteps:
+  - name: "Confirm seats and check workspace settings"
+    text: "Assign Service Hub Professional or Enterprise seats to every CSM who needs the workspace, then review the workspace settings available in your portal."
+  - name: "Define the book of business"
+    text: "Make sure every customer company has an owner, or a dedicated CSM Owner property, so each CSM's portfolio populates automatically with health, activity, and renewal columns."
+  - name: "Configure customer health scores"
+    text: "Choose the inputs (usage, tickets, surveys, engagement) that actually predict churn for your business, then validate the output against accounts you already know are at risk."
+  - name: "Build segments and custom views"
+    text: "Create working views such as Renewals next 90 days, At risk, Going quiet, and Onboarding so CSMs can filter their portfolio into daily priorities."
+  - name: "Pipe in usage data"
+    text: "If product usage lives outside HubSpot, send it in via custom events, a reverse ETL sync, or a marketplace integration, so health scores reflect real adoption, not just email opens."
 ---
 
 > This article is part of our [guide to running customer success in HubSpot](/posts/customer-success-in-hubspot).
