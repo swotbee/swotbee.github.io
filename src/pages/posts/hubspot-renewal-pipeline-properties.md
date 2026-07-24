@@ -254,6 +254,22 @@ These properties power [your automation workflows](/posts/hubspot-renewal-deal-w
 
 ---
 
+## Frequently Asked Questions
+
+**What custom properties does a HubSpot renewal pipeline need that aren't built in?**
+HubSpot's default deal properties are built for new business, not renewals. At minimum, add Deal Type, Renewal Date, Contract Term, and Previous Contract Value; the full list of 15 above covers reporting, forecasting, and churn analysis too, not just the basics.
+
+**Do I need Operations Hub to track Days to Renewal?**
+Only for the calculated version that updates automatically. Without Operations Hub, use a manually-maintained "Days to Renewal Range" dropdown updated by date-comparison workflows instead. Less precise, but it works on any tier.
+
+**How do I calculate expansion and contraction revenue without Previous Contract Value?**
+You can't, reliably. Expansion and contraction are both a comparison between this renewal's amount and the prior contract's amount; without storing that prior value on the deal, NRR and GRR calculations have no baseline to compare against. See our [NRR/GRR dashboard guide](/posts/hubspot-renewal-nrr-grr-dashboard-reporting) for how this property feeds the reporting layer.
+
+**Should Health Score live on the Deal or the Company record?**
+Company, when a customer can have multiple concurrent deals, since health reflects the account relationship, not any single contract. Put it on the Deal only if your business is strictly one-deal-per-customer.
+
+---
+
 **Need help setting up your renewal properties?** SWOTBee configures renewal pipelines end-to-end for mid-market teams, including all 15 properties, workflow automation, and reporting dashboards.
 
 [Book a free 30-minute discovery call →](/contactus)

@@ -197,6 +197,22 @@ Assign probability weights to [improve your forecast accuracy](/posts/hubspot-re
 
 ---
 
+## Frequently Asked Questions
+
+**How many stages should a HubSpot renewal pipeline have?**
+Six to eight for most mid-market teams. Fewer than that and stages stop mapping to a specific action; more than that and CSMs stop updating them accurately. The hybrid model above (10 to 12 stages) only makes sense once your team has the automation maturity to keep every stage current.
+
+**Should renewal pipeline probabilities match my sales pipeline probabilities?**
+No. Renewals close at 85 to 95 percent industry-wide; new business closes at 20 to 30 percent. Reusing sales-pipeline probability weights on a renewal pipeline understates your real forecast, sometimes by tens of thousands of dollars a month. See [why your renewal forecast is wrong](/posts/hubspot-renewal-forecasting-accuracy) for the full breakdown.
+
+**Can I combine time-based and activity-based renewal stages?**
+Yes, this is the hybrid model covered above, and it is the most common setup once a team outgrows a single model. Customer-journey stages before the renewal window, time-based stages during the 90-day countdown, activity-based stages for the final negotiation.
+
+**Do I need Operations Hub Professional to build a renewal pipeline?**
+Only for the time-based model's calculated "Days to Renewal" property. The activity-based and customer-journey models work on any HubSpot tier since they trigger off manual updates and logged activities, not calculated date fields.
+
+---
+
 **Want help configuring your renewal stages?** SWOTBee sets up renewal pipelines with the right stage model for your team size, contract complexity, and reporting needs.
 
 [Book a free 30-minute discovery call →](/contactus)
