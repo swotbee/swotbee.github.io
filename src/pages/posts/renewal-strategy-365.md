@@ -142,6 +142,8 @@ A renewal strategy needs the right scoreboard. The key metrics to measure renewa
 
 Strategy and systems work together. Renewal automation handles the mechanics (renewal reminders, deal creation, risk alerts) so your team spends its time on the high-value relationship work: QBRs, multi-threading, and expansion. The [renewal pipeline](/posts/hubspot-renewal-pipeline-complete-guide) and [risk scoring](/posts/hubspot-renewal-risk-scoring) are the engine; this strategy is how you drive it.
 
+**What good SaaS renewal automation actually covers, and what it doesn't.** It should reliably create the renewal deal on schedule, surface at-risk accounts before the CSM has to notice manually, and keep renewal reminders firing on a 90-60-30 cadence without anyone maintaining a spreadsheet. It should not be mistaken for the strategy itself: an automated reminder cadence layered on top of a customer who never realized value still produces a lost renewal, just a well-documented one. Renewal management software is a force multiplier for a good renewal strategy, not a substitute for one.
+
 ---
 
 ## Common Challenges in Renewal Management
