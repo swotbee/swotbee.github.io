@@ -26,6 +26,27 @@ tags:
   - "Revenue Operations"
 seriesName: "Customer Success in HubSpot"
 pillarUrl: "/posts/customer-success-in-hubspot"
+faqs:
+  - q: "What HubSpot tier includes the Customer Success Workspace?"
+    a: "Service Hub Professional and Enterprise seats include it. It is not available on Starter, and users holding only Sales Hub seats see the sales workspace instead. Feature depth (especially health score customization) increases at Enterprise."
+  - q: "Can the Customer Success Workspace create renewal deals?"
+    a: "No. It can display renewal dates and flag upcoming renewals, but it does not create a renewal deal with line items, uplift, and an owner. You need workflow automation or a purpose-built app on top of a renewal pipeline for that."
+  - q: "How customizable are HubSpot's customer health scores?"
+    a: "You choose inputs like usage, tickets, surveys, and engagement, and HubSpot calculates a health label. It is less configurable than dedicated CS platforms, and the deeper customization options are Enterprise-leaning, so validate the score against known at-risk accounts before relying on it."
+  - q: "Is the Customer Success Workspace a replacement for Gainsight or ChurnZero?"
+    a: "For many mid-market teams, yes, especially on cost. You trade advanced scoring models and in-app engagement tooling for native CRM context and a much lower bill. Larger CS organizations with complex scoring and engagement needs may still justify a platform. There is no single best customer success platform; the right choice depends on team size, scoring complexity, and budget."
+  - q: "How do CSMs get a book of business in the workspace?"
+    a: "The workspace builds it from company ownership. Assign an owner (or a dedicated CSM owner property) to every customer company, and each CSM's portfolio appears automatically with health, activity, and renewal columns."
+  - q: "Does the workspace work without product usage data?"
+    a: "It works, but health scores will lean on email engagement, tickets, and surveys, which lag real adoption problems. Sending product usage events into HubSpot makes the score meaningfully more predictive."
+  - q: "What is the difference between HubSpot Service Hub and the Customer Success Workspace?"
+    a: "Service Hub is the product: the service and support layer with help desk and tickets, knowledge base, surveys, and (at Professional and above) customer health scores. HubSpot’s Customer Success Workspace is a screen included with Service Hub Professional and Enterprise seats that pulls those pieces into one view for CSMs. You buy Service Hub; the workspace comes with it."
+  - q: "Is HubSpot a CRM like Salesforce?"
+    a: "Yes. HubSpot is a full CRM and customer platform in the same category as Salesforce, built to manage customer relationships across marketing, sales, and service on one database. Dedicated customer success platforms such as Gainsight, ChurnZero, Vitally, and Planhat are not CRMs; they sit on top of one. The workspace is HubSpot's answer to needing less of that extra layer."
+  - q: "Can the Customer Success Workspace be integrated with other tools?"
+    a: "Yes, through the same routes as the rest of the HubSpot ecosystem: HubSpot Marketplace integrations, custom events via the API, and reverse ETL syncs. The most valuable integration for the workspace is product usage data, since it feeds the health score."
+  - q: "How much does a customer success manager at HubSpot make?"
+    a: "That question is about careers at HubSpot the company, not the workspace feature. Compensation varies widely by location and seniority, so check current listings and salary aggregation sites for reported ranges. If you landed here looking for the software, the rest of this guide covers the Customer Success Workspace itself."
 ---
 
 > This article is part of our [guide to running customer success in HubSpot](/posts/customer-success-in-hubspot).

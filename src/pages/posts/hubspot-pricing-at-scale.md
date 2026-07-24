@@ -25,6 +25,17 @@ tags:
   - "Revenue Operations"
 seriesName: "HubSpot for Business Growth"
 pillarUrl: "/posts/does-hubspot-crm-scale"
+faqs:
+  - q: "How much does HubSpot cost at scale?"
+    a: "Far more than the headline. A 10-person team's 3-year TCO is about $110,000, roughly 62% over the naive estimate, once seats, contact tiers, onboarding, and add-ons are included."
+  - q: "Why did my HubSpot bill jump?"
+    a: "Almost always the marketing-contact tier. Crossing a 1,000-contact increment auto-upgrades your tier, and it never auto-downgrades. Contact-tier hygiene prevents it."
+  - q: "Are there hidden HubSpot fees?"
+    a: "Yes: mandatory onboarding ($1,500 to $7,000), add-ons like a dedicated IP and advanced reporting, and SMS overages, none of which appear on the headline price."
+  - q: "Can you negotiate HubSpot pricing?"
+    a: "Yes. Professional and Enterprise pricing is negotiable, and many mid-market customers get 30% or more off list, especially at renewal."
+  - q: "Which HubSpot plan is right for my size?"
+    a: "Starter for small teams with simple needs, Professional for growing mid-market teams that need automation and reporting, and Enterprise for advanced controls, custom objects, and large databases."
 ---
 
 > This article is part of our [honest guide to whether HubSpot scales with business growth](/posts/does-hubspot-crm-scale).

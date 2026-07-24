@@ -24,6 +24,25 @@ tags:
   - "Integration"
   - "NetSuite"
   - "Revenue Operations"
+faqs:
+  - q: "Can HubSpot be used as an ERP?"
+    a: "No. HubSpot is a CRM with commerce features (quotes, invoices, payment links), but it has no general ledger, no inventory management, no supply chain management or procurement modules, and no revenue recognition. Companies that try to stretch HubSpot into an ERP hit those walls quickly; the workable pattern is HubSpot for the front office connected to a real ERP for financial and operational data."
+  - q: "Can HubSpot integrate with SAP?"
+    a: "Yes, though not through a first-party connector as of mid-2026. Connecting HubSpot with SAP runs through iPaaS platforms, SAP-focused middleware, or custom API integration, and SAP projects usually land at the top of the cost ranges above. Validate connector claims against your specific SAP product and version."
+  - q: "Can a CRM be integrated with an ERP?"
+    a: "Yes; connecting CRM and ERP is one of the most common integration patterns in B2B and B2C companies alike. Enterprise resource planning connects with customer relationship management systems through native connectors, middleware, or APIs that keep customer, order, and invoice data synchronized and reduce manual data entry on both sides. Our CRM ERP integration guide covers the pattern independent of vendor."
+  - q: "Does HubSpot integrate with ERP systems natively?"
+    a: "HubSpot offers first-party data sync integrations for some systems (NetSuite, QuickBooks Online, Dynamics 365 Sales, among others, as of mid-2026) and relies on marketplace or iPaaS connectors for the rest. Coverage and sync scope change, so always check the current App Marketplace listing for your ERP."
+  - q: "Which ERP integrates best with HubSpot?"
+    a: "For most mid-market teams the best ERP fit is NetSuite, which has the most mature ecosystem: a first-party sync, multiple established iPaaS connectors, and plenty of implementation partners. See our NetSuite connector comparison for the tool-by-tool breakdown."
+  - q: "Should the ERP or HubSpot be the system of record?"
+    a: "Both, split by domain. The ERP should own customers-as-billing-entities, products, invoices, and payments. HubSpot should own contacts and deals plus marketing activity. Problems start when one system tries to own everything."
+  - q: "Can an ERP integration handle renewals automatically?"
+    a: "Only partially, out of the box. Most connectors will sync a contract end date into HubSpot, but none of the mainstream ones create a renewal deal with line items and an uplift in a renewal pipeline. That layer is either custom automation or a purpose-built renewal app on top of the sync."
+  - q: "How long does a HubSpot ERP integration take?"
+    a: "A native connector with clean data can be live in days. An iPaaS build typically runs 4 to 8 weeks including mapping and testing. Custom builds run longer. Dirty data extends every one of these timelines more than tooling does."
+  - q: "Do I need an iPaaS if a native connector exists?"
+    a: "Not always. If your process fits the connector's default mappings, use it. Move to iPaaS or custom when you hit custom fields, multi-entity routing, line item logic, or renewal automation the connector cannot express."
 ---
 
 **A HubSpot ERP integration connects the HubSpot CRM (your front office) to your enterprise resource planning system (NetSuite, Sage Intacct, Microsoft Dynamics, SAP, Odoo, Acumatica, or QuickBooks) so customer data, orders, invoices, and payment data flow between the two systems automatically.** There are three ways to integrate HubSpot with an ERP system: a native or marketplace connector, an iPaaS platform like Celigo, Workato, or Boomi, or a custom API integration. The right choice depends on your ERP, your data volume, and how much of the quote-to-cash process you want to automate. This guide compares all three methods, walks through each major ERP, and covers the piece most integrations skip: renewal data.

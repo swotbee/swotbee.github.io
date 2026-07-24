@@ -25,6 +25,17 @@ tags:
   - "Customer Success"
 seriesName: "B2B SaaS Customer Retention"
 pillarUrl: "/posts/b2b-saas-customer-retention"
+faqs:
+  - q: "What is customer retention consulting?"
+    a: "Expert help to reduce churn and grow your existing customers: diagnosing why customers leave, designing the retention strategy, and building the systems (health scores, automation, renewal pipelines) that make retention repeatable."
+  - q: "What does a customer retention consultant do?"
+    a: "They diagnose churn causes, design a retention strategy across the customer lifecycle, build the operational backbone in your CRM, and enable your team to run and measure it."
+  - q: "When should I hire a retention consultant?"
+    a: "When churn is rising and unexplained, you cannot see at-risk accounts early, renewals are reactive, or your team lacks the systems and time to run retention consistently."
+  - q: "How much does customer retention consulting cost?"
+    a: "It varies by scope, from a focused audit to a full build-and-enable engagement. The return usually justifies it quickly, because retention improvements compound across recurring revenue."
+  - q: "What should I look for in a retention consulting partner?"
+    a: "One that builds systems (not just strategy), knows your CRM deeply, commits to moving specific retention KPIs, and transfers knowledge so your team owns the program."
 ---
 
 > This article is part of our [complete guide to B2B customer retention](/posts/b2b-saas-customer-retention).

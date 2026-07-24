@@ -24,6 +24,23 @@ tags:
   - "Renewal Pipeline"
   - "Revenue Operations"
   - "Customer Retention"
+faqs:
+  - q: "What is contract renewal management software?"
+    a: "It is any tool that tracks contract end dates and drives the renewal process: creating renewal opportunities, alerting owners on a schedule, applying uplifts, and reporting on renewal rate and revenue retention. Renewal management software platforms span simple standalone trackers, CLM suites, and CRM-native automation built on platforms like HubSpot."
+  - q: "What are the key features of contract renewal management software?"
+    a: "Five capabilities matter most: a contract repository with tracked end dates and contract terms, automatic creation of the renewal opportunity with a value and an owner, escalating renewal alerts, uplift and pricing support on renewal quotes, and reporting on renewal rate and revenue retention. A sixth, integration with your CRM, comes free when the tool is CRM-native."
+  - q: "What are the benefits of using contract renewal management software?"
+    a: "Fewer missed renewal opportunities, earlier customer conversations, and uplifts applied consistently instead of occasionally. Teams also gain forecast accuracy, because every upcoming renewal becomes a staged deal with a value, plus an audit trail of who did what on each renewal."
+  - q: "How far in advance should we start working a renewal?"
+    a: "Ninety days before expiration is the practical minimum for B2B contracts, and 120 days is safer for accounts with procurement or legal review. The renewal record itself should be created even earlier, ideally the moment the original contract is signed, so the date is never untracked."
+  - q: "Do we need a CLM tool for renewal management?"
+    a: "Only if contract drafting and legal approval are your bottleneck. CLM manages documents; renewal management manages the revenue event. Many teams run renewals entirely in their CRM and store the signed contract as an attachment or in a lightweight repository. Full contract management systems earn their cost when clause complexity and approval chains are the daily reality."
+  - q: "Can HubSpot handle contract renewal management natively?"
+    a: "Mostly. Properties, pipelines, date-based workflows, and reports cover tracking, reminders, and dashboards on Professional tier and above. The weak spot is renewal deal creation itself: workflow-created deals do not carry line items and multi-year chains hit loop protection, which is why teams add an app or custom automation for that step."
+  - q: "What is a good renewal rate for B2B SaaS?"
+    a: "Gross revenue retention in the high 80s to low 90s is typical for mid-market B2B, with best-in-class teams above 95 percent. More useful than the benchmark is your trend: a working renewal process shows up within two quarters as fewer late-stage surprises and a measurable lift in on-time engagement."
+  - q: "Who should own renewals: sales or customer success?"
+    a: "There is no universal answer, only a rule you enforce. Common splits: CS owns healthy renewals and sales takes expansion-eligible or at-risk ones, or a dedicated renewals manager owns everything past a value threshold. The failure mode is not choosing the wrong owner; it is leaving ownership ambiguous."
 ---
 
 **Contract renewal management is the discipline of tracking every customer contract's end date, opening a renewal opportunity early enough to act on it, and closing it with deliberate pricing instead of a last-minute scramble.** It combines a repeatable renewal management process (owners, timelines, checklists) with renewal tracking that watches dates for you: anything from a spreadsheet to contract renewal management software built into your CRM. Done well, it shows up directly in your renewal rate, gross revenue retention, and net revenue retention.

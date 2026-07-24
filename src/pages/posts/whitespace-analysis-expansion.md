@@ -26,6 +26,17 @@ tags:
   - "Revenue Operations"
 seriesName: "Renewal Strategy"
 pillarUrl: "/posts/renewal-strategy-365"
+faqs:
+  - q: "What is whitespace analysis in sales?"
+    a: "Mapping what a customer owns against what they could own to find untapped cross-sell and upsell opportunities (the \"white space\") in existing accounts."
+  - q: "How does whitespace analysis work?"
+    a: "Build a grid of the customer's departments against your products; empty cells are white space opportunities to prioritize and pursue."
+  - q: "What are the benefits of whitespace analysis?"
+    a: "It uncovers hidden sales, focuses effort on the biggest gaps, strengthens account plans, and feeds the expansion pipeline."
+  - q: "How do you identify white space opportunities?"
+    a: "Inventory what each account owns, map the departments not yet covered, match products to needs, score the gaps, and tie the top ones to the renewal."
+  - q: "Why do whitespace analysis at renewal?"
+    a: "The renewal is when the customer is deciding their next 12 months, so expansion opportunities fold naturally into one conversation."
 ---
 
 > This article is part of our [365-day renewal strategy guide](/posts/renewal-strategy-365).

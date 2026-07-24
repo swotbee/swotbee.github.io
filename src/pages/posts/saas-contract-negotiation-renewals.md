@@ -26,6 +26,17 @@ tags:
   - "Revenue Operations"
 seriesName: "Renewal Strategy"
 pillarUrl: "/posts/renewal-strategy-365"
+faqs:
+  - q: "How do you negotiate a SaaS renewal?"
+    a: "Lead with proven value, hold firm on price while flexing on terms like contract length, multi-thread to the economic buyer, and trade every concession for something in return."
+  - q: "What are the key terms to negotiate at renewal?"
+    a: "Price and uplift, contract term, auto-renewal and notice clauses, payment terms, and governed discounts."
+  - q: "How do you respond to a competitor's lower price?"
+    a: "Don't panic-discount. Reinforce your unique value and quantify the cost of switching, then defend margin with tiered options."
+  - q: "What mistakes should you avoid in renewal negotiation?"
+    a: "Panic-discounting, negotiating only with procurement, engaging too late, and giving free feature work without reciprocal commitment."
+  - q: "Why start renewal negotiation early?"
+    a: "Engaging months ahead through QBRs and multi-threading preserves leverage, so the renewal is not held hostage in the final week."
 ---
 
 > This article is part of our [365-day renewal strategy guide](/posts/renewal-strategy-365).

@@ -26,6 +26,17 @@ tags:
   - "Renewal Pipeline"
 seriesName: "Renewal Metrics"
 pillarUrl: "/posts/renewal-metrics-explained"
+faqs:
+  - q: "What is a usage-based revenue model?"
+    a: "A pricing model where customers pay for actual consumption (API calls, data, compute) rather than a fixed subscription fee, so revenue scales with usage."
+  - q: "What is consumption-based forecasting?"
+    a: "Forecasting revenue from usage data and patterns rather than fixed contracts, projecting how much customers will consume and therefore pay."
+  - q: "How does usage-based revenue differ from a subscription model?"
+    a: "Subscription revenue is fixed and recurring; usage-based revenue is variable and tied to consumption, which makes it less predictable but more aligned with value."
+  - q: "What are the challenges of forecasting usage-based revenue?"
+    a: "Variability in consumption, low-usage churn risk, revenue recognition complexity, and lumpy expansion from large customers."
+  - q: "How can you make usage-based revenue more predictable?"
+    a: "Add minimum commitments, watch usage trends early, blend subscription with usage, and keep usage data accurate and real-time."
 ---
 
 > This article is part of our [guide to SaaS renewal metrics](/posts/renewal-metrics-explained).

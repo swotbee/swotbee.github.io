@@ -26,6 +26,17 @@ tags:
   - "Revenue Operations"
 seriesName: "HubSpot Renewal Pipeline"
 pillarUrl: "/posts/hubspot-renewal-pipeline-complete-guide"
+faqs:
+  - q: "What is a customer health score and why does it matter for renewals?"
+    a: "It is a single score summarizing the health of a customer relationship. For renewals it predicts renewal likelihood, so you can identify at-risk renewals early and intervene before the contract end date."
+  - q: "What metrics should be in a HubSpot customer health score?"
+    a: "Product usage, support ticket volume, NPS or customer sentiment, engagement recency, and whether the customer is achieving their goals. Weight leading indicators like usage highest."
+  - q: "How do I set up customer health scores in HubSpot?"
+    a: "Create scoring properties, define a weighted health score model, calculate it with a workflow, map ranges to a health status, and copy the score onto the renewal deal."
+  - q: "How does HubSpot help detect renewal risk early?"
+    a: "By scoring customer health continuously and surfacing it on upcoming renewals, so a falling score near the renewal date triggers a task before churn happens."
+  - q: "How is renewal risk scoring different from lead scoring?"
+    a: "Lead scoring ranks prospects by buying intent; renewal risk scoring ranks existing customers by churn risk. Both use HubSpot's scoring tools, but the inputs and goals differ."
 ---
 
 > This article is part of our [Complete Guide to Building a Renewal Pipeline in HubSpot](/posts/hubspot-renewal-pipeline-complete-guide).

@@ -26,6 +26,25 @@ tags:
   - "Pricing"
 seriesName: "Customer Success in HubSpot"
 pillarUrl: "/posts/customer-success-in-hubspot"
+faqs:
+  - q: "What is Gainsight and how does it work?"
+    a: "Gainsight is an enterprise customer success platform. It pulls customer data from your CRM, support desk, and product telemetry, scores customer health on multi-layer scorecards, and drives CSM work through calls-to-action, success plans, and playbooks, with PX adding product analytics and in-app engagement. It works alongside a CRM, not instead of one."
+  - q: "Is Gainsight like Salesforce or other CRM systems?"
+    a: "No. Salesforce and HubSpot are CRMs, the system of record for companies, contacts, deals, and revenue. Gainsight sits on top of a CRM and specializes in post-sale customer health, playbooks, and CS analytics. Gainsight grew up on Salesforce and integrates most deeply there, which is exactly why HubSpot teams should scope its HubSpot connector carefully."
+  - q: "Is Gainsight owned by Vista?"
+    a: "Yes. Vista Equity Partners acquired Gainsight in 2020, and Gainsight has continued expanding the product family since, including PX, Customer Communities, Skilljar by Gainsight for customer education, and AI capabilities."
+  - q: "How much does Gainsight cost per year?"
+    a: "Gainsight does not publish pricing. As of mid-2026, buyers report annual contracts from the mid five figures for smaller deployments to six figures at enterprise scale, plus a significant year-one implementation. Gainsight pricing varies significantly with seats, modules, account volume, and data volume; treat any online figure as one negotiated data point."
+  - q: "Is there a cheaper version of Gainsight?"
+    a: "Gainsight has offered packaging aimed at smaller teams at various points, and quotes scale down with scope, but buyer reports still place it above lighter rivals for comparable deployments. Vitally, Planhat, Catalyst, and ChurnZero are the commonly evaluated lower-cost platform alternatives; all are quote-based."
+  - q: "Does Gainsight work with HubSpot?"
+    a: "Yes, via a HubSpot connector that syncs companies, contacts, and deal data into Gainsight and can push fields like health scores back. Its depth has historically trailed Gainsight's native Salesforce experience, so scope the sync explicitly during evaluation and pilot it against your real customer data."
+  - q: "What is the best Gainsight alternative for a small business?"
+    a: "For small teams already on HubSpot Professional or Enterprise, the strongest-value alternative is usually HubSpot itself: the Customer Success Workspace, health scores, and workflow-driven playbooks cover the core jobs without a platform contract. Among dedicated platforms, Vitally and ClientSuccess are frequently shortlisted at the smaller end."
+  - q: "Can Gainsight create renewal deals in HubSpot?"
+    a: "No CS platform builds a complete HubSpot renewal deal. Gainsight can flag upcoming renewals, score risk, and prompt CSMs through CTAs, but the deal with line items, uplift pricing, and a close date must be created in HubSpot, manually or through HubSpot-native automation."
+  - q: "Why do CS platforms cost so much more than HubSpot Service Hub?"
+    a: "They are standalone systems of record with their own data pipelines, scoring engines, and analytics layers, sold through enterprise sales motions with implementation services. A platform like Gainsight adds that entire second stack on top of the CRM you already run. You are paying for depth and for the second system itself; whether that depth is usable at your scale is the entire buying decision."
 ---
 
 > This article is part of our [guide to running customer success in HubSpot without a separate CS platform](/posts/customer-success-in-hubspot).

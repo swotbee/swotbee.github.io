@@ -25,6 +25,19 @@ tags:
   - "Loyalty"
 seriesName: "B2B SaaS Customer Retention"
 pillarUrl: "/posts/b2b-saas-customer-retention"
+faqs:
+  - q: "What are effective Shopify customer retention strategies?"
+    a: "Loyalty programs, subscriptions for replenishable products, a strong post-purchase experience, email and SMS lifecycle marketing, personalization, and acting on customer reviews and feedback."
+  - q: "How do you measure customer retention on Shopify?"
+    a: "Track repeat customer rate, customer retention rate, purchase frequency, and customer lifetime value. Shopify analytics provides the data; the goal is to grow repeat purchases over time."
+  - q: "What is a good customer retention rate for Shopify stores?"
+    a: "A repeat customer rate of roughly 20% to 30% is healthy, though it varies by category, with consumables higher and considered purchases lower."
+  - q: "What are the best Shopify apps for customer retention?"
+    a: "Loyalty and rewards apps, subscription apps, email and SMS marketing apps, reviews apps, and analytics apps, ideally ones that integrate so customer data stays unified."
+  - q: "How do loyalty programs improve Shopify customer retention?"
+    a: "They reward repeat purchases with points, perks, or tiers, giving customers a concrete reason to return and increasing purchase frequency and lifetime value."
+  - q: "Why do some Shopify stores fail despite heavy ad spend?"
+    a: "Because they rely on acquisition without retention. Rising ad costs make one-time buyers unprofitable; only a strong repeat purchase rate makes the unit economics work."
 ---
 
 > This article is part of our [complete guide to customer retention](/posts/b2b-saas-customer-retention).

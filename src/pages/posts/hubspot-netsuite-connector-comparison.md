@@ -26,6 +26,17 @@ tags:
   - "Revenue Operations"
 seriesName: "HubSpot NetSuite Integration"
 pillarUrl: "/posts/hubspot-netsuite-integration"
+faqs:
+  - q: "Can HubSpot connect to NetSuite?"
+    a: "Yes. HubSpot connects to NetSuite through a native marketplace connector, iPaaS platforms such as Celigo, Workato, and Boomi, or a custom API integration."
+  - q: "What does a HubSpot NetSuite connector do?"
+    a: "It syncs records between the two systems: contacts, companies, deals, products, orders, and invoices, so a closed-won HubSpot deal can become a NetSuite sales order without manual re-entry."
+  - q: "Which HubSpot NetSuite connector is best?"
+    a: "There is no single best connector. Native suits simple standard syncs, Celigo and Workato suit most mid-market RevOps, Boomi suits complex estates, and custom builds suit bespoke schemas."
+  - q: "Does the native connector support multiple NetSuite subsidiaries?"
+    a: "No. The native connector is subsidiary-blind and syncs to a single subsidiary. Multiple subsidiaries require middleware or a custom build."
+  - q: "How much does a HubSpot NetSuite connector cost?"
+    a: "The native app is the cheapest, iPaaS platforms run a monthly subscription that scales with flows or tasks, and custom builds start in the five figures plus maintenance. Fighting a live sync problem right now? We catalogued the six most-reported HubSpot NetSuite sync failures and their fixes, including which ones a config change can solve and which need an integration layer."
 ---
 
 > This article is part of our [complete guide to HubSpot and NetSuite integration](/posts/hubspot-netsuite-integration).

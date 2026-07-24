@@ -21,6 +21,15 @@ seriesName: "HubSpot Renewal Pipeline"
 pillarUrl: "/posts/hubspot-renewal-pipeline-complete-guide"
 modifiedDate: "2026-07-24"
 funnelCta: "renewal-audit"
+faqs:
+  - q: "How many stages should a HubSpot renewal pipeline have?"
+    a: "Six to eight for most mid-market teams. Fewer than that and stages stop mapping to a specific action; more than that and CSMs stop updating them accurately. The hybrid model above (10 to 12 stages) only makes sense once your team has the automation maturity to keep every stage current."
+  - q: "Should renewal pipeline probabilities match my sales pipeline probabilities?"
+    a: "No. Renewals close at 85 to 95 percent industry-wide; new business closes at 20 to 30 percent. Reusing sales-pipeline probability weights on a renewal pipeline understates your real forecast, sometimes by tens of thousands of dollars a month. See why your renewal forecast is wrong for the full breakdown."
+  - q: "Can I combine time-based and activity-based renewal stages?"
+    a: "Yes, this is the hybrid model covered above, and it is the most common setup once a team outgrows a single model. Customer-journey stages before the renewal window, time-based stages during the 90-day countdown, activity-based stages for the final negotiation."
+  - q: "Do I need Operations Hub Professional to build a renewal pipeline?"
+    a: "Only for the time-based model's calculated \"Days to Renewal\" property. The activity-based and customer-journey models work on any HubSpot tier since they trigger off manual updates and logged activities, not calculated date fields."
 ---
 
 The stages in your HubSpot renewal pipeline aren't just labels. They drive your automation triggers, your team's daily workflow, your forecast accuracy, and your ability to spot at-risk accounts before it's too late. Unlike [traditional sales pipeline stages](https://www.salesforce.com/sales/pipeline/management/) built around new business buyer intent, renewal pipeline stages are built around time and customer health.

@@ -25,6 +25,17 @@ tags:
   - "Revenue Operations"
 seriesName: "B2B SaaS Customer Retention"
 pillarUrl: "/posts/b2b-saas-customer-retention"
+faqs:
+  - q: "What are the most important customer retention KPIs?"
+    a: "Customer retention rate, churn rate, net and gross revenue retention, customer lifetime value, and a leading indicator like NPS or product usage. Track them together, not in isolation."
+  - q: "How do you calculate customer retention rate?"
+    a: "Subtract new customers acquired in a period from the customers at the end, divide by the customers at the start, and multiply by 100."
+  - q: "What is the difference between gross and net revenue retention?"
+    a: "Gross revenue retention caps at 100% and shows pure revenue lost to churn and downgrades; net revenue retention adds expansion and can exceed 100%."
+  - q: "What is a good customer retention rate?"
+    a: "Roughly 85% or higher by logo for B2B SaaS, with best-in-class companies achieving net revenue retention above 110% through expansion."
+  - q: "What is the difference between leading and lagging retention metrics?"
+    a: "Lagging metrics (retention rate, churn rate) report what already happened; leading metrics (usage, health scores, NPS) move before churn, giving you time to intervene."
 ---
 
 > This article is part of our [complete guide to B2B customer retention](/posts/b2b-saas-customer-retention).

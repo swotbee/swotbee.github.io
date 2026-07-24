@@ -26,6 +26,17 @@ tags:
   - "Revenue Operations"
 seriesName: "Renewal Strategy"
 pillarUrl: "/posts/renewal-strategy-365"
+faqs:
+  - q: "What is a customer success qualified lead (CSQL)?"
+    a: "An expansion opportunity identified by the customer success team based on a customer's success and intent, then passed to sales to close."
+  - q: "How do CSQLs differ from MQLs and PQLs?"
+    a: "MQLs come from marketing engagement and PQLs from product usage; CSQLs come from the CS team's direct knowledge of the account, blending data with human insight."
+  - q: "Why are CSQLs important for revenue growth?"
+    a: "They convert faster and cheaper than cold leads and feed expansion, which lifts net revenue retention."
+  - q: "How do you identify CSQLs?"
+    a: "Define qualifying criteria, watch product usage and customer health, capture flags in the CRM, and set a clear handoff to sales."
+  - q: "When should a CSQL be passed to sales?"
+    a: "As soon as the signal is clear, ideally 60 to 90 days before renewal so the expansion folds into the renewal conversation."
 ---
 
 > This article is part of our [365-day renewal strategy guide](/posts/renewal-strategy-365).

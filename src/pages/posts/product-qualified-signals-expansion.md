@@ -26,6 +26,17 @@ tags:
   - "Renewal Pipeline"
 seriesName: "Renewal Metrics"
 pillarUrl: "/posts/renewal-metrics-explained"
+faqs:
+  - q: "What is a product-qualified lead (PQL)?"
+    a: "An account or user that has shown buying intent through product usage. For expansion, it is an existing customer whose usage signals readiness for a higher tier, more seats, or an add-on."
+  - q: "How do PQLs differ from MQLs and SQLs?"
+    a: "MQLs and SQLs infer intent from marketing engagement and sales vetting; PQLs measure intent from actual product usage, which predicts buying intent far more reliably."
+  - q: "What are expansion signals?"
+    a: "Usage triggers like hitting a quota, adopting advanced features, or adding users that indicate an existing customer is ready to expand."
+  - q: "How do you score PQLs?"
+    a: "Combine product usage, engagement data, and account fit into a score that ranks accounts by expansion readiness, then route high scorers to sales or customer success."
+  - q: "When should you act on a PQL for expansion?"
+    a: "Ideally 60 to 90 days before renewal, so the upsell folds into the renewal conversation."
 ---
 
 > This article is part of our [guide to SaaS renewal metrics](/posts/renewal-metrics-explained).

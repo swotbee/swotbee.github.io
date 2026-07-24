@@ -26,6 +26,17 @@ tags:
   - "Revenue Operations"
 seriesName: "HubSpot Renewal Pipeline"
 pillarUrl: "/posts/hubspot-renewal-pipeline-complete-guide"
+faqs:
+  - q: "Can HubSpot send renewal reminders automatically?"
+    a: "Yes. A date-based workflow triggered on the renewal date can create tasks, send internal notifications, and email reminders without manual effort. This automated renewal reminder setup is the heart of renewal management in HubSpot."
+  - q: "How far in advance should renewals be created in HubSpot?"
+    a: "Create the renewal deal as soon as the original deal closes, and start reminders 90 days before the renewal date (120 days for procurement-heavy accounts)."
+  - q: "Can HubSpot create renewal tasks automatically?"
+    a: "Yes. The workflow can generate a task for the deal owner at each reminder checkpoint, with a due date tied to the renewal window."
+  - q: "How does HubSpot make sure renewals are not missed?"
+    a: "By watching the Renewal Date property and firing alerts at fixed intervals, so the deal owner is notified well before the contract ends rather than after."
+  - q: "Do I need a custom object to track renewals?"
+    a: "Not for most teams. A dedicated renewal pipeline with a Renewal Date property is enough to track renewals in HubSpot. Custom objects help only when you track multiple licenses or subscriptions per customer and need to manage license renewals individually."
 ---
 
 > This article is part of our [Complete Guide to Building a Renewal Pipeline in HubSpot](/posts/hubspot-renewal-pipeline-complete-guide).

@@ -25,6 +25,17 @@ tags:
   - "Net Revenue Retention"
   - "Churn"
 seriesName: "Renewal Metrics"
+faqs:
+  - q: "What are the most important SaaS renewal metrics?"
+    a: "Renewal rate, net revenue retention (NRR), gross revenue retention (GRR), churn rate, and LTV relative to CAC. Together they show whether recurring revenue is safe and growing."
+  - q: "How is the SaaS renewal rate calculated?"
+    a: "Divide the customers (or ARR) that renewed by the customers (or ARR) up for renewal in the period, then multiply by 100. Measure only the cohort actually expiring (at-bat)."
+  - q: "What is a good SaaS renewal rate?"
+    a: "Around 90% or higher for annual B2B contracts; 80% or below signals a retention problem. Enterprise SaaS typically renews higher than self-serve."
+  - q: "What is the difference between renewal rate and retention rate?"
+    a: "Renewal rate measures contracts up for renewal in a window; retention rate measures the overall customer base over time."
+  - q: "What is the relationship between churn rate and renewal rate?"
+    a: "They are inverses on the revenue you keep: a higher churn rate pulls your renewal and retention rates down."
 ---
 
 **SaaS renewal metrics are the numbers that tell you whether your recurring revenue is safe: renewal rate, net revenue retention (NRR), gross revenue retention (GRR), churn rate, and the forecasting and unit-economics metrics that sit behind them.** This RevOps guide explains each metric, how to calculate it, what a good benchmark looks like, and how to catch churn risk before it hits the bottom line. The goal: cut through vanity metrics to a single source of truth.

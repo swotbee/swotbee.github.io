@@ -26,6 +26,21 @@ tags:
   - "Pricing"
 seriesName: "Customer Success in HubSpot"
 pillarUrl: "/posts/customer-success-in-hubspot"
+faqs:
+  - q: "How much does ChurnZero cost in 2026?"
+    a: "ChurnZero does not publish pricing; all deals are quoted. As of mid-2026, buyers most commonly report mid-five-figure annual contracts for mid-market deployments, with smaller and larger reports on either side. Account volume, usage data, and modules drive the spread, so treat reported figures as directional only."
+  - q: "Is ChurnZero a CRM?"
+    a: "No. ChurnZero is a customer success management platform, not a customer relationship management system. It sits on top of your CRM (HubSpot, Salesforce, or others), pulls in account and usage data, and adds health scoring, plays, and in-app engagement. Your deals, revenue, and forecasts stay in the CRM."
+  - q: "Does ChurnZero have a free trial or free tier?"
+    a: "No self-serve free tier is offered; evaluation happens through sales-led demos and, in some reported cases, guided pilots. Budget evaluation time accordingly."
+  - q: "Does ChurnZero integrate with HubSpot?"
+    a: "Yes, there is a native integration that brings HubSpot account, contact, and deal data into ChurnZero and can push fields like health scores back. Its usefulness depends heavily on the cleanliness of your HubSpot data, and it does not create or manage renewal deals in HubSpot."
+  - q: "Is ChurnZero worth it for a small CS team?"
+    a: "Usually not below roughly ten CSMs unless churn risk genuinely lives in product telemetry, and either way you will need a dedicated admin or CS ops owner for the platform. Smaller teams on HubSpot Professional typically get the core jobs (health visibility, playbooks, renewal tracking) from the CRM at a fraction of the cost."
+  - q: "What is the cheapest alternative to ChurnZero?"
+    a: "For HubSpot customers, the cheapest credible alternative is usually the HubSpot you already pay for: Service Hub's CS features plus workflow automation. Among platforms, lighter tools like Vitally are commonly reported as lower-cost entry points, though all are quote-based; verify current pricing directly."
+  - q: "Can ChurnZero manage renewals in HubSpot?"
+    a: "It can surface renewal dates, score risk, and prompt CSMs, which is valuable signaling. It cannot build the HubSpot renewal deal with line items, uplift pricing, and multi-year chaining; that remains manual unless you automate it inside HubSpot itself."
 ---
 
 > This article is part of our [guide to running customer success in HubSpot without a separate CS platform](/posts/customer-success-in-hubspot).

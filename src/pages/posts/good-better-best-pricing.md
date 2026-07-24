@@ -26,6 +26,17 @@ tags:
   - "Revenue Operations"
 seriesName: "Renewal Strategy"
 pillarUrl: "/posts/renewal-strategy-365"
+faqs:
+  - q: "What is a good-better-best pricing strategy?"
+    a: "A tiered pricing approach offering three packages at different price points, designed so the target (usually middle) tier is the obvious choice."
+  - q: "Why does good-better-best pricing work?"
+    a: "It uses anchoring and the compromise effect: the premium tier makes the target tier look reasonable, and offering choice lifts conversion versus a single price."
+  - q: "How do you implement good-better-best pricing?"
+    a: "Define the target tier first, make the entry tier real but limited, load the premium tier to anchor, use clear value gaps, and present exactly three options."
+  - q: "How does good-better-best help at renewal?"
+    a: "It turns an upgrade into a simple tier choice, anchoring the customer toward the target package and driving expansion without hard selling."
+  - q: "How many pricing tiers should you offer?"
+    a: "Three. More than that causes decision paralysis and dilutes the anchoring effect."
 ---
 
 > This article is part of our [365-day renewal strategy guide](/posts/renewal-strategy-365).

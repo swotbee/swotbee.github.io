@@ -25,6 +25,17 @@ tags:
   - "Integration"
 seriesName: "CRM and ERP Integration"
 pillarUrl: "/posts/crm-erp-integration"
+faqs:
+  - q: "What is the order-to-cash process?"
+    a: "The set of steps from when a customer places an order to when the cash is collected and recorded: order entry, credit, fulfillment, invoicing, payment collection, and reconciliation."
+  - q: "What are the steps in the order-to-cash process?"
+    a: "Order entry, credit management, order fulfillment, invoicing, payment collection, cash application and reconciliation, and reporting."
+  - q: "What is the difference between order-to-cash and quote-to-cash?"
+    a: "Quote-to-cash starts at the quote and includes pricing and contracting; order-to-cash starts at the order and runs through fulfillment, invoicing, and payment. O2C is the back half of quote-to-cash."
+  - q: "Why is the order-to-cash process important?"
+    a: "It is where revenue becomes cash. An efficient O2C process protects cash flow, reduces errors and disputes, and improves customer satisfaction; a slow one ties up working capital."
+  - q: "How does automation optimize order-to-cash?"
+    a: "By syncing orders from the CRM to the ERP, automating invoicing, using AI to prioritize collections, and giving teams real-time visibility, automation shortens the cycle and reduces errors."
 ---
 
 > This article is part of our [complete guide to CRM and ERP integration](/posts/crm-erp-integration).

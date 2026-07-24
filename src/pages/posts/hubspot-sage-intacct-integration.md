@@ -26,6 +26,25 @@ tags:
   - "Revenue Operations"
 seriesName: "HubSpot ERP & Billing Integrations"
 pillarUrl: "/posts/hubspot-erp-integration"
+faqs:
+  - q: "Can HubSpot integrate with Sage?"
+    a: "Yes. For Sage Intacct, the paths are the ones in this guide: iPaaS, a specialist connector, or a custom API build. Other Sage products (Sage 50, Sage 100, Sage 200, Sage X3) each have their own third-party connector ecosystems of varying depth; search the HubSpot App Marketplace for your specific Sage product before assuming coverage."
+  - q: "Does Sage Intacct have a CRM?"
+    a: "No. Sage Intacct is cloud-based financial management software, one of the ERP systems built for the finance office, not a CRM. It handles financials, not lead management or pipeline, which is why it pairs with a CRM. Its longest-standing prebuilt CRM pairing is with Salesforce, which is HubSpot's biggest competitor in the CRM market; other CRMs can connect to Intacct too, but HubSpot teams get the equivalent connection through the iPaaS, connector, or custom options covered above."
+  - q: "Does Sage Intacct have an API?"
+    a: "Yes. Intacct's long-standing web services API (XML-based) covers most objects, and Sage has been rolling out a REST API as of mid-2026; check the current Sage developer documentation for coverage. Every integration path in this guide, including the no-code ones, ultimately runs on these APIs."
+  - q: "Is there a native HubSpot Sage Intacct integration?"
+    a: "No. As of mid-2026 neither HubSpot nor Sage offers a first-party connector between the two. Working integrations use an iPaaS (Workato, Celigo, Tray, Boomi), a specialist prebuilt connector from an integration vendor, or a custom build on the two APIs. Check the HubSpot App Marketplace for the current third-party options."
+  - q: "What does a HubSpot Sage Intacct integration cost?"
+    a: "Hedged ranges, since pricing changes: specialist connectors are often low four figures annually; iPaaS platforms typically run four to five figures annually plus implementation; custom builds are usually a five-figure project plus ongoing maintenance. Get current quotes; the bigger cost variable is usually your entity and dimension complexity, not the tool."
+  - q: "Can I sync Sage Intacct invoices into HubSpot?"
+    a: "Yes, and it is usually the first thing worth syncing. Invoice records and payment status land on the HubSpot company record so account owners see open, paid, and overdue balances without asking finance. Both major iPaaS platforms and most specialist connectors support this direction."
+  - q: "Should smaller companies use QuickBooks or Xero with HubSpot instead?"
+    a: "Often, yes. Both have native HubSpot integrations, both handle recurring invoices for simple subscription billing, and both avoid middleware entirely. If you do not need multi-entity accounting or revenue recognition, the QuickBooks or Xero path delivers most of the value at a fraction of the effort."
+  - q: "Can the integration handle contract renewals automatically?"
+    a: "Partially. The integration can sync contract end dates from Intacct into HubSpot, but no connector we are aware of creates the renewal deal itself. You need a HubSpot-side layer (date-driven workflows or purpose-built renewal automation) that reads the synced date and builds the renewal deal with line items, an owner, and an uplift."
+  - q: "How long does implementation take?"
+    a: "A specialist connector with standard requirements can be live in days to weeks. An iPaaS build for a typical mid-market scope (customers, invoices, closed-won deals) usually runs four to eight weeks including testing. Custom API projects run longer. Data cleanup on both sides is the most commonly underestimated line item."
 ---
 
 > This article is part of our [complete guide to HubSpot ERP integration](/posts/hubspot-erp-integration).

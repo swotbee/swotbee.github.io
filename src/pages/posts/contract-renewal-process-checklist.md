@@ -26,6 +26,25 @@ tags:
   - "Revenue Operations"
 seriesName: "Contract Renewal Management"
 pillarUrl: "/posts/contract-renewal-management-complete-guide"
+faqs:
+  - q: "What are the steps in the contract renewal process?"
+    a: "Five phases: assess the account's health and stakeholders, set the renewal strategy (uplift, term, risks), engage the customer with a value-led conversation, propose and negotiate the new term, then close and hand off to billing while scheduling the next cycle. Each phase has a named owner and a deadline counted back from the contract end date, which is what separates well-run contract renewals from ad hoc ones."
+  - q: "How long before expiration should the renewal process start?"
+    a: "Start work at 120 days out for contracts with procurement or legal review, and no later than 90 days for standard B2B contracts. The first customer conversation should happen by 75 days out; starting inside 30 days reliably costs either the uplift or the renewal itself."
+  - q: "Who should own contract renewals?"
+    a: "One person per renewal, assigned by rule. A common split gives CSMs the relationship and health assessment while an account manager or renewals manager owns the quote, negotiation, and close, with finance consulted on pricing before the proposal goes out. The specific split matters less than removing ambiguity. Who decides whether the contract renews is, ultimately, the customer's economic buyer, which is why the Engage phase books them and not only the day-to-day contact."
+  - q: "What is the difference between a contract renewal and a contract extension?"
+    a: "A renewal creates a new term, usually through a contract negotiation that produces a revised contract with updated pricing, dates, and contract terms; it is the moment to apply an uplift and adjust scope. An extension prolongs the original contract unchanged for a short period, most often to bridge a negotiation or budget cycle. Extensions are a useful bridge and a bad habit: serial extensions mean the renewal process started too late."
+  - q: "What happens if a contract is not renewed or a renewal is missed?"
+    a: "One of three things, none good: the contract lapses and revenue or service stops, it auto-renews at stale pricing with no uplift, or it limps into a rushed negotiation where the customer holds all the leverage. A missed renewal can also create compliance exposure if work continues without a valid agreement in place."
+  - q: "What are the benefits and disadvantages of automatic contract renewals?"
+    a: "Auto-renewal guarantees continuity and cuts admin for both sides, which is why it is standard in SaaS. The disadvantages: pricing goes stale because no uplift conversation happens, silent churn builds unnoticed, and notice-period windows can trap either party. Keep the auto-renew clause, but run the same T-120 process against the notice date so every renewal is still a deliberate decision."
+  - q: "Should we raise prices at renewal?"
+    a: "In most B2B contexts, yes, modestly and predictably. A standard annual uplift in the 5 to 8 percent range, justified with delivered value and communicated at proposal time rather than invoice time, protects margin without spiking churn. Check each contract for caps or index clauses before proposing, regardless of the type of contract."
+  - q: "What should a contract renewal checklist include?"
+    a: "Verification that the renewal record exists with correct dates and an owner, an account health and stakeholder review, a written strategy with an uplift target, an engagement deadline, quote and negotiation steps, and closing items: signature filed in the contract repository, CRM and billing updated, and the next cycle's renewal scheduled."
+  - q: "Can the renewal process be automated?"
+    a: "Most of it. CRM workflows can create the renewal record, assign owners, generate phase tasks, fire escalating reminders, and handle the billing handoff. The judgment steps (health verdict, negotiation) stay human; automation's job is making sure they happen on time, every time."
 ---
 
 > This article is part of our [Complete Guide to Contract Renewal Management](/posts/contract-renewal-management-complete-guide).

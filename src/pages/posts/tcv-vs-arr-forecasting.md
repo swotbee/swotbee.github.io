@@ -26,6 +26,17 @@ tags:
   - "Renewal Pipeline"
 seriesName: "Renewal Metrics"
 pillarUrl: "/posts/renewal-metrics-explained"
+faqs:
+  - q: "What is the difference between TCV and ARR?"
+    a: "TCV is the total value of a contract over its full term including one-time fees; ARR is the recurring revenue normalized to one year. TCV is a total; ARR is an annual run-rate."
+  - q: "Is TCV the same as ARR?"
+    a: "No. For any contract longer than a year or with one-time fees, TCV is larger than ARR. They match only for a one-year, purely recurring deal."
+  - q: "How do you calculate ARR from TCV?"
+    a: "Subtract one-time fees from TCV, then divide by the contract term in years."
+  - q: "What is the difference between TCV and revenue?"
+    a: "TCV is the contracted total value; recognized revenue is earned over time as the service is delivered. TCV is committed, not yet all earned."
+  - q: "When should you use TCV versus ARR?"
+    a: "Use ARR for forecasting, run-rate, and valuation; use TCV for total deal size, bookings, and commissions."
 ---
 
 > This article is part of our [guide to SaaS renewal metrics](/posts/renewal-metrics-explained).

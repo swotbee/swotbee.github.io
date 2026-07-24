@@ -26,6 +26,17 @@ tags:
   - "SaaS"
 seriesName: "HubSpot Renewal Pipeline"
 pillarUrl: "/posts/hubspot-renewal-pipeline-complete-guide"
+faqs:
+  - q: "What is co-terming in the context of renewals?"
+    a: "Co-terming aligns multiple contracts or line items for one customer to a single, shared renewal date, so they renew together rather than on separate end dates."
+  - q: "How do I co-term contracts in HubSpot?"
+    a: "Issue a change quote that aligns line items to the common contract end date, let HubSpot prorate the partial term, and record the shared renewal date on a single renewal deal."
+  - q: "How does proration work when co-terming?"
+    a: "HubSpot prorates changes daily based on the number of days remaining in the billing term, so the customer pays only for the time left until the shared renewal date."
+  - q: "Why should I co-term renewals?"
+    a: "It reduces multiple renewal cycles to one per customer, simplifies forecasting, and gives both your team and the customer a single renewal to manage."
+  - q: "Where should the co-termed renewal date live?"
+    a: "On the renewal deal in your renewal pipeline, as the single Renewal Date property that all reminders and automations read from. Running an MSP? Agreement renewals with seat true-ups, uplifts, and co-term visibility are their own discipline. See how we automate agreement renewals for MSPs in HubSpot."
 ---
 
 > This article is part of our [Complete Guide to Building a Renewal Pipeline in HubSpot](/posts/hubspot-renewal-pipeline-complete-guide).

@@ -26,6 +26,23 @@ tags:
   - "Revenue Operations"
 seriesName: "Contract Renewal Management"
 pillarUrl: "/posts/contract-renewal-management-complete-guide"
+faqs:
+  - q: "What is a renewal playbook?"
+    a: "A short written spec defining owners, triggers, and plays for every contract renewal: who takes the account after sales, what happens at each date checkpoint from Closed Won to T-0, and how the motion changes for healthy versus at-risk accounts. Its job is consistency, so outcomes stop depending on which CSM caught the account."
+  - q: "Who should own renewals: sales, CS, or account management?"
+    a: "Pick one owner per stage and write it down; the specific choice matters less than its clarity. A common mid-market pattern: CSM owns the relationship and the renewal through T-60, with a manager co-owning negotiation on large or red-tier accounts. What fails is shared ownership, because shared means nobody."
+  - q: "When should the renewal process start?"
+    a: "The playbook starts at Closed Won with the handoff, because renewal likelihood is mostly set by onboarding and adoption. The active renewal motion starts at T-120 for at-risk or procurement-heavy accounts and T-90 for healthy ones."
+  - q: "How do risk tiers change the renewal play?"
+    a: "Green accounts get the standard timeline, full uplift, and an expansion audit. Yellow accounts start earlier and get a re-discovery call before any pricing conversation. Red accounts get a save plan owned above the CSM, executive engagement by T-90, and no uplift until the core issue is fixed."
+  - q: "How is a renewal playbook different from a renewal checklist?"
+    a: "The checklist is the task list inside one renewal cycle (T-120 to T-0). The playbook is the layer above it: ownership rules, handoff spec, risk tiers, uplift policy, and escalation paths that decide which tasks apply to which account. You need both; the checklist executes what the playbook decides."
+  - q: "How do renewal playbooks differ from sales playbooks?"
+    a: "A sales playbook moves a stranger toward a first purchase over weeks; a renewal playbook manages an existing relationship across an entire contract term. The inputs differ (health scores and adoption data instead of lead qualification), the owner differs (the CS team instead of sales teams), and the clock starts at Closed Won rather than at first contact. Copying sales stages into a renewal pipeline is how teams end up prospecting their own customers."
+  - q: "How can customer success platforms help with renewals?"
+    a: "Customer success platforms are strong at the signal layer: health scores, usage trends, automated playbook triggers, and CSM task queues. What they do not do is create the renewal deal in your CRM with line items and uplift applied, so plan for that gap explicitly. If your renewals live in HubSpot, weigh whether the platform's signal layer justifies its cost on top of what the CRM already covers."
+  - q: "Where can I get a free customer success renewal playbook template?"
+    a: "The template in this article is a complete free customer success renewal playbook: copy Sections 1 through 5 into your own document, set the bracketed thresholds, and wire the triggers into your CRM. It is deliberately short; a playbook your CSMs actually open under pressure beats a 40-page one they never do."
 ---
 
 > This article is part of our [Complete B2B Guide to Contract Renewal Management](/posts/contract-renewal-management-complete-guide).

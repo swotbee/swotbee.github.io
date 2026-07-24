@@ -26,6 +26,17 @@ tags:
   - "Customer Retention"
 seriesName: "Renewal Strategy"
 pillarUrl: "/posts/renewal-strategy-365"
+faqs:
+  - q: "What is customer value realization?"
+    a: "The point at which a customer achieves and recognizes the business outcomes they bought your product for. It combines delivering value and proving it."
+  - q: "What is value realization in customer success?"
+    a: "The customer success practice of ensuring customers reach their goals with your product and see that value clearly, which drives retention and expansion."
+  - q: "Why is customer value realization important?"
+    a: "It is the true driver of renewals. Adoption alone does not guarantee renewal; proven value does."
+  - q: "What are the stages of value realization?"
+    a: "Define value, deliver value, measure value, communicate value, and expand value, mapped across the customer lifecycle."
+  - q: "How do you measure value realization?"
+    a: "Baseline the customer's metric, track the outcome (not just usage), quantify ROI, and roll it into a health score."
 ---
 
 > This article is part of our [365-day renewal strategy guide](/posts/renewal-strategy-365).

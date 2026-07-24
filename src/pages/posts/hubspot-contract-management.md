@@ -26,6 +26,23 @@ tags:
   - "Revenue Operations"
 seriesName: "Contract Renewal Management"
 pillarUrl: "/posts/contract-renewal-management-complete-guide"
+faqs:
+  - q: "Does HubSpot have a contract object?"
+    a: "No. HubSpot has no native contract object at any tier. Contracts are modeled on deals with custom date properties, or on a custom object in Enterprise portals. The signed document itself is stored as an attachment, a quote, or in an integrated CLM."
+  - q: "Is CLM the same as CRM?"
+    a: "No. A CRM like HubSpot manages customer relationships and revenue: contacts, deals, pipeline, and reporting. CLM (contract lifecycle management) software manages the contract document itself: drafting, negotiation, approvals, signature, and obligations. They overlap on contract dates and counterparties, which is exactly the data a good HubSpot integration syncs between them."
+  - q: "How do I track contract end dates in HubSpot?"
+    a: "Use HubSpot to track contract end dates by creating a Contract End Date deal property (date picker type), populating it when the deal closes, and building a filtered view or report on it. Add a date-based workflow to alert owners at 90, 60, and 30 days before the date so tracking becomes proactive instead of a manual check."
+  - q: "Can HubSpot automate contract renewals?"
+    a: "Partially. Professional-tier workflows can create a renewal deal, assign it, and run reminder tasks off the Contract End Date. The native gaps are line items (workflow-created deals do not carry them) and multi-year renewal chains (loop protection), which most teams close with an app or custom code."
+  - q: "What is the most popular contract management software?"
+    a: "No single tool dominates. As of mid-2026, PandaDoc and DocuSign are the names HubSpot teams mention most for document generation and e-signature, while Ironclad, Icertis, and Concord come up for legal-heavy CLM. More useful than popularity is fit: when you select a contract management software, prioritize the one that syncs dates and status back into your HubSpot properties cleanly."
+  - q: "Will contract management be replaced by AI?"
+    a: "Parts of it, mostly the reading. AI contract analysis already extracts dates, terms, and renewal clauses from signed documents and flags risky language faster than manual review. What AI does not replace is accountability: someone still owns the renewal, approves the pricing, and makes the call, which makes the ownership and workflow layer in your CRM matter more, not less."
+  - q: "Do I need HubSpot Enterprise to manage contracts?"
+    a: "No. Professional covers the property schema, workflows, and reporting you need to manage your contracts. Enterprise adds custom objects, which only matter if customers hold many concurrent contracts, plus advanced permissions and calculated property headroom."
+  - q: "Where should the renewal uplift live in HubSpot?"
+    a: "As a number property (Renewal Uplift %) on the renewal deal, set when the deal is created. Storing it as a property makes it reportable (average uplift achieved by segment) and available to automation, instead of living in each rep's head during negotiation."
 ---
 
 > This article is part of our [Complete Guide to Contract Renewal Management](/posts/contract-renewal-management-complete-guide).

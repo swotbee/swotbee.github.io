@@ -26,6 +26,17 @@ tags:
   - "Revenue Operations"
 seriesName: "HubSpot Renewal Pipeline"
 pillarUrl: "/posts/hubspot-renewal-pipeline-complete-guide"
+faqs:
+  - q: "Who should own renewals, customer success or sales?"
+    a: "Customer success should own most renewals because they hold the relationship and see risk early; sales should own or support negotiation-heavy and expansion deals."
+  - q: "How do I handle renewals within HubSpot?"
+    a: "Create renewal deals in a dedicated renewal pipeline, set a clear Deal Owner, surface customer health on the deal, and automate the CS-to-sales handoff with a workflow."
+  - q: "What is the difference between CS and sales for renewals?"
+    a: "CS manages the ongoing customer relationship and outcomes; sales manages the commercial transaction, pricing, and negotiation."
+  - q: "Can HubSpot automate the renewal handoff?"
+    a: "Yes. A workflow can reassign the deal owner, create a task, and notify the new owner when a renewal reaches a stage or risk threshold."
+  - q: "Does HubSpot replace a customer success platform like Gainsight?"
+    a: "For many mid-market teams, HubSpot's customer success workspace and renewal pipeline cover the core renewals process without a separate platform, though very complex CS operations may still use a dedicated tool."
 ---
 
 > This article is part of our [Complete Guide to Building a Renewal Pipeline in HubSpot](/posts/hubspot-renewal-pipeline-complete-guide).

@@ -25,6 +25,17 @@ tags:
   - "Sync"
 seriesName: "HubSpot NetSuite Integration"
 pillarUrl: "/posts/hubspot-netsuite-integration"
+faqs:
+  - q: "What data syncs between HubSpot and NetSuite?"
+    a: "Contacts, companies, deals (as opportunities or sales orders), products, and invoices or payments. A closed deal can create a NetSuite sales order, and invoice status can flow back into HubSpot."
+  - q: "Is the HubSpot NetSuite sync one-way or two-way?"
+    a: "It can be either. One-way is simpler and avoids conflicts; two-way keeps records aligned in both directions but needs one system of record per field to prevent data drift."
+  - q: "Is the HubSpot NetSuite sync real time?"
+    a: "The native connector polls on a schedule, so it is near-real-time at best. For true real-time sync, an iPaaS such as Celigo or Workato is the usual choice."
+  - q: "Why is my HubSpot NetSuite sync failing?"
+    a: "Most failures are data-mapping issues: the \"company should be present\" block, duplicate records, midnight-UTC date shifts, or API timeouts on complex sales orders."
+  - q: "How do I keep the sync reliable?"
+    a: "Set match keys and deduplication, sequence dependent records, use a hybrid real-time and batch cadence, monitor with alerts, and test changes in a sandbox first. Fighting a live sync problem right now? We catalogued the six most-reported HubSpot NetSuite sync failures and their fixes, including which ones a config change can solve and which need an integration layer."
 ---
 
 > This article is part of our [complete guide to HubSpot and NetSuite integration](/posts/hubspot-netsuite-integration).

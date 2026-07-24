@@ -26,6 +26,17 @@ tags:
   - "Workflows"
 seriesName: "HubSpot NetSuite Integration"
 pillarUrl: "/posts/hubspot-netsuite-integration"
+faqs:
+  - q: "Does HubSpot have a native NetSuite integration?"
+    a: "Yes. HubSpot offers a native NetSuite connector in its app marketplace that syncs standard objects for single-subsidiary setups. Complex needs usually move to an iPaaS or custom integration."
+  - q: "Can I map custom fields, or only standard fields?"
+    a: "The native connector maps standard fields out of the box; custom property mappings require a paid HubSpot Data Hub subscription, and NetSuite internal IDs cannot be mapped."
+  - q: "Does it sync historical data, or only new records?"
+    a: "You can load historical data through a planned initial import run in batches, then enable the live sync. Treat the historical load as a separate step from the ongoing real-time sync."
+  - q: "Can NetSuite update HubSpot properties?"
+    a: "Yes, with a two-way sync. Set sync direction by ownership so NetSuite writes the fields it owns (such as invoice and payment status) back into HubSpot."
+  - q: "Do I need developers to maintain the integration?"
+    a: "The native connector and iPaaS tools are largely no-code, but complex workflows, custom records, and API-limit tuning often need developer or RevOps support to maintain. Fighting a live sync problem right now? We catalogued the six most-reported HubSpot NetSuite sync failures and their fixes, including which ones a config change can solve and which need an integration layer."
 ---
 
 > This article is part of our [complete guide to HubSpot and NetSuite integration](/posts/hubspot-netsuite-integration).

@@ -26,6 +26,17 @@ tags:
   - "Renewal Pipeline"
 seriesName: "Renewal Metrics"
 pillarUrl: "/posts/renewal-metrics-explained"
+faqs:
+  - q: "What is the difference between GRR and NRR?"
+    a: "GRR measures recurring revenue retained after churn and downgrades (capped at 100%); NRR adds expansion revenue on top, so it can exceed 100%. The difference is expansion."
+  - q: "How do you calculate net revenue retention?"
+    a: "NRR = (starting MRR − churn − downgrades + expansion) ÷ starting MRR × 100, measured on existing customers only."
+  - q: "What is a good NRR benchmark?"
+    a: "110% is healthy and 120%+ is best-in-class for B2B SaaS; investors particularly reward NRR over 115%."
+  - q: "What does 120% NRR mean?"
+    a: "Your existing customer base grew its recurring revenue 20% over the period, with expansion outpacing all churn and downgrades."
+  - q: "Is net revenue retention the same as net dollar retention?"
+    a: "Yes. NRR and NDR are two names for the same metric."
 ---
 
 > This article is part of our [guide to SaaS renewal metrics](/posts/renewal-metrics-explained).

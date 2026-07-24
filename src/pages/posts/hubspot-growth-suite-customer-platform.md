@@ -25,6 +25,17 @@ tags:
   - "Pricing"
 seriesName: "HubSpot for Business Growth"
 pillarUrl: "/posts/does-hubspot-crm-scale"
+faqs:
+  - q: "What is the HubSpot Growth Suite?"
+    a: "It was HubSpot's all-in-one bundle from 2018 combining CRM, Marketing, Sales, and Service Hubs at a discount. It has been renamed and repackaged as the Customer Platform."
+  - q: "What products are included in the HubSpot Growth Suite?"
+    a: "The modern equivalent, the Customer Platform, includes the Smart CRM plus Marketing, Sales, Service, Content, Operations, and Commerce Hubs, with Breeze AI across them."
+  - q: "How does HubSpot Growth Suite pricing work now?"
+    a: "There is no Growth Suite SKU. Customer Platform pricing is tiered: Free, Starter (~$7 per seat), Professional (~$1,300 per month), and Enterprise (~$4,700 per month), plus contact tiers and onboarding."
+  - q: "What is the difference between Starter, Professional, and Enterprise?"
+    a: "Starter is basic and cheap per seat; Professional unlocks automation and reporting at a roughly 5x step up plus onboarding; Enterprise adds advanced controls, custom objects, and higher limits."
+  - q: "Is there a free version?"
+    a: "Yes. The free Smart CRM supports up to 2 users and is the foundation you build on as you scale."
 ---
 
 > This article is part of our [honest guide to whether HubSpot scales with business growth](/posts/does-hubspot-crm-scale).

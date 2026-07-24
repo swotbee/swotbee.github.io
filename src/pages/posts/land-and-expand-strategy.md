@@ -26,6 +26,17 @@ tags:
   - "Customer Success"
 seriesName: "Renewal Strategy"
 pillarUrl: "/posts/renewal-strategy-365"
+faqs:
+  - q: "What is the land and expand strategy?"
+    a: "A sales strategy that starts with a small deal in one team, proves value, then expands into more seats, departments, and products, often at renewal."
+  - q: "What are the benefits of a land and expand strategy?"
+    a: "Lower entry barrier, higher customer lifetime value, lower churn, and more efficient growth than new-customer acquisition."
+  - q: "How do you implement a land and expand strategy?"
+    a: "Design a landable entry offer, prove value fast, map whitespace, multi-thread the account, and time expansion to the renewal."
+  - q: "What are the phases of land and expand?"
+    a: "Land, onboard and prove value, identify expansion opportunities, expand, and repeat each renewal cycle."
+  - q: "Why is the renewal the best time to expand?"
+    a: "The customer has seen value and is deciding their next 12 months, so expansion folds naturally into one renewal conversation."
 ---
 
 > This article is part of our [365-day renewal strategy guide](/posts/renewal-strategy-365).

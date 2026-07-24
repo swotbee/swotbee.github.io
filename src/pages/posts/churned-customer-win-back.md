@@ -26,6 +26,17 @@ tags:
   - "Win-Back"
 seriesName: "Renewal Strategy"
 pillarUrl: "/posts/renewal-strategy-365"
+faqs:
+  - q: "What is a customer win-back campaign?"
+    a: "A structured effort to re-engage churned or lapsed customers and bring them back, run as a specialized pipeline with its own messaging and offers."
+  - q: "How can you win back lost customers?"
+    a: "Understand why they left, segment your churned list, craft personalized win-back messaging around what's changed, use a short email series, and route high-value accounts to a human."
+  - q: "Why is a win-back strategy important?"
+    a: "Re-engaging former customers recovers revenue at far lower cost than new acquisition, because they already know and once valued your product."
+  - q: "What are common win-back mistakes?"
+    a: "Generic blasts, ignoring the churn reason, leading with discounts, and failing to measure results."
+  - q: "How do you measure win-back success?"
+    a: "Track reactivation rate, recovered revenue, and cost per win-back, and compare it to new customer acquisition cost."
 ---
 
 > This article is part of our [365-day renewal strategy guide](/posts/renewal-strategy-365).

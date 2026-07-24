@@ -25,6 +25,17 @@ tags:
   - "Business Growth"
 seriesName: "HubSpot for Business Growth"
 pillarUrl: "/posts/does-hubspot-crm-scale"
+faqs:
+  - q: "What does product-led growth mean?"
+    a: "It is a go-to-market strategy where the product drives acquisition, conversion, and expansion, typically through freemium or free trials, rather than relying on a sales team to close every deal."
+  - q: "How does HubSpot support a product-led growth strategy?"
+    a: "HubSpot captures product usage data, models it with custom objects, scores product-qualified leads, and automates onboarding and upgrade paths, so product signals drive the go-to-market motion."
+  - q: "What are examples of product-led growth companies?"
+    a: "Slack, Calendly, Zoom, and Dropbox are classic PLG companies. HubSpot itself is a hybrid PLG company with a freemium model plus a sales-assisted motion."
+  - q: "How is PLG different from sales-led growth?"
+    a: "In PLG the product acquires and converts users through self-service; in sales-led growth reps drive deals through a structured sales process. Most SaaS companies blend the two."
+  - q: "What metrics matter for product-led growth?"
+    a: "Activation rate, signup-to-paid conversion, product-qualified lead volume, and net expansion are the core PLG metrics to track in HubSpot."
 ---
 
 > This article is part of our [honest guide to whether HubSpot scales with business growth](/posts/does-hubspot-crm-scale).

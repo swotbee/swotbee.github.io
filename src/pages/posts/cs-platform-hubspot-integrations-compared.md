@@ -26,6 +26,25 @@ tags:
   - "Revenue Operations"
 seriesName: "Customer Success in HubSpot"
 pillarUrl: "/posts/customer-success-in-hubspot"
+faqs:
+  - q: "Which CS platform has the best HubSpot integration?"
+    a: "There is no universal answer, but Vitally is most often cited by users for HubSpot-first depth, while Planhat offers the richest data model at the cost of heavier mapping. Totango and Catalyst have historically been Salesforce-first, and ClientSuccess covers the basics for smaller teams. Verify current object coverage in a trial; all five iterate regularly."
+  - q: "Do these CS platforms sync renewal dates with HubSpot?"
+    a: "Generally yes: renewal dates and related fields can be synced or mapped in each platform, as documented by the vendors. The reported risk is two-way drift, where a date edited in both systems stops matching. Pick one system of record for renewal fields and make the sync one-directional for them."
+  - q: "Can any of these platforms create a renewal deal in HubSpot?"
+    a: "No. All five track renewals inside their own platform and can surface renewal signals, but none creates a HubSpot deal with line items, uplift, and an owner. Teams handle that with manual creation, HubSpot workflows (which have line-item and loop-protection limits), or purpose-built renewal automation."
+  - q: "What should we fix in HubSpot before connecting a CS platform?"
+    a: "Deduplicate companies and contacts, standardize lifecycle stages, ensure every customer account has an owner, and clean renewal date properties. Duplicate and inconsistent CRM data is the most commonly reported cause of broken CS platform syncs."
+  - q: "What do these platforms cost compared to running CS in HubSpot?"
+    a: "Most are quote-based. User-reported totals commonly range from the low five figures annually for lighter platforms to substantially more for enterprise deployments, before admin time. Running the motion in HubSpot uses subscription capacity many teams already pay for, which is the core cost argument examined in our customer success in HubSpot guide."
+  - q: "Did Totango and Catalyst really merge?"
+    a: "Yes, the two companies merged in 2024 and have been converging their products since. For buyers, the practical impact is roadmap uncertainty on each product's HubSpot connector, so ask directly about integration investment plans during evaluation."
+  - q: "Is the Planhat HubSpot integration bi-directional, and how is data integrity maintained?"
+    a: "As documented, yes: mapped fields can sync bidirectionally, but the direction is configured per field. Data integrity comes from that control. Designate one system of record for each field and sync it one way; bidirectional sync on volatile fields like renewal dates is the most commonly reported source of drift."
+  - q: "Can HubSpot events trigger workflows or onboarding processes in Planhat?"
+    a: "Yes, as documented: data fetched from HubSpot, such as a deal reaching closed won or a lifecycle stage change, can trigger playbooks in Planhat, so an onboarding workflow can start the moment sales closes. Verify the exact trigger options in the Planhat Help Center, since automation capabilities evolve."
+  - q: "How do Planhat and HubSpot compare as customer success platforms?"
+    a: "They are different categories, so the Planhat vs HubSpot framing is usually a false choice. HubSpot is the CRM and system of record where marketing and sales already work; Planhat is a post-sale customer success layer that sits on top of a CRM. The real question is whether you need that layer at all, or whether HubSpot's native Customer Success Workspace plus a renewal pipeline covers your team."
 ---
 
 > This article is part of our [guide to running customer success in HubSpot](/posts/customer-success-in-hubspot).

@@ -25,6 +25,17 @@ tags:
   - "Business Growth"
 seriesName: "HubSpot for Business Growth"
 pillarUrl: "/posts/does-hubspot-crm-scale"
+faqs:
+  - q: "What are the key components of a HubSpot growth strategy?"
+    a: "A chosen growth framework (Four Fits, flywheel, or Loop Marketing), HubSpot's tools to execute it (inbound, automation, CRM, service), clean data for attribution, and the right growth metrics."
+  - q: "What is the difference between the funnel, flywheel, and Loop Marketing?"
+    a: "The funnel is a linear process model, the flywheel is a philosophy about momentum from happy customers, and Loop Marketing is an execution method for the AI era. The flywheel is the why; Loop Marketing is the how."
+  - q: "How does HubSpot help with business growth?"
+    a: "It runs your whole growth engine on one platform: inbound marketing and SEO to attract, automation to nurture, the CRM and pipeline to convert, and reporting to measure and scale what works."
+  - q: "How can AI be used in a HubSpot growth strategy?"
+    a: "HubSpot's Breeze AI accelerates content creation, lead scoring, and analysis. It amplifies a sound strategy but does not replace the need for one."
+  - q: "Is HubSpot good for SMB growth?"
+    a: "Yes. SMBs benefit most from running a complete growth strategy on a single platform, without the cost and complexity of stitching many tools together."
 ---
 
 > This article is part of our [honest guide to whether HubSpot scales with business growth](/posts/does-hubspot-crm-scale).

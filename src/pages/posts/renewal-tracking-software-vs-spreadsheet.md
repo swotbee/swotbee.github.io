@@ -26,6 +26,23 @@ tags:
   - "CRM Migration"
 seriesName: "Contract Renewal Management"
 pillarUrl: "/posts/contract-renewal-management-complete-guide"
+faqs:
+  - q: "What is renewal tracking software and why does it matter?"
+    a: "It is any system that centralizes contract dates and terms, sends automated renewal reminders, creates the renewal deal or task, and reports on upcoming renewals. It matters because manual tracking fails silently: nothing looks wrong until a missed renewal or an unwanted auto-renewal shows up in revenue or spend."
+  - q: "Is a spreadsheet good enough for tracking contract renewals?"
+    a: "Yes, up to roughly 20 active contracts with a single owner and simple terms. Use the full column template above, add conditional formatting on days to renewal, and review it monthly. Past that scale, missed dates and stale data start costing more than software."
+  - q: "What columns should a renewal tracking spreadsheet have?"
+    a: "At minimum: customer, contract ID, start date, end date, term, auto-renew flag, notice deadline, current ACV, planned uplift %, renewal target ACV, owner, risk rating, stage, last touch, and next action. The notice deadline and uplift columns are the two most commonly missing."
+  - q: "What is the difference between renewal tracking software and a CRM?"
+    a: "Renewal tracking software is a category, and a CRM with the right properties, pipeline, and automation is one way to build it (usually the best way if you already own the CRM). Standalone renewal tools track dates and alerts but sit outside the system where quotes, emails, and reporting live."
+  - q: "When should I move renewals from a spreadsheet to a CRM?"
+    a: "When two or more failure signals fire: a missed date, multiple editors, inconsistent uplift, reporting you cannot produce, or a tracker that is chronically stale. For most B2B teams that happens between 20 and 50 contracts."
+  - q: "Can HubSpot replace a renewal tracking spreadsheet?"
+    a: "Yes. Deals with contract date properties, a dedicated renewal pipeline, date-based alert workflows, and automated renewal deal creation cover everything the spreadsheet did, plus the alerting and reporting it never could. The import path above takes about a week."
+  - q: "Is there a free tool to track software contract renewals?"
+    a: "The spreadsheet template in this article is the best free renewal tracker for a small contract book; it costs nothing and takes 20 minutes to build. Some SaaS management platforms offer free trials or limited free tiers (offerings change, so verify current terms), but past 20 or so contracts the real constraint is alerting and ownership, not price."
+  - q: "How does renewal tracking software help optimize costs and negotiation?"
+    a: "On the revenue side it enforces uplift discipline, so no contract silently renews flat. On the vendor side it gives procurement usage data and lead time before the renewal window opens, which is what turns a renewal into a negotiation instead of an auto-charge."
 ---
 
 > This article is part of our [Complete B2B Guide to Contract Renewal Management](/posts/contract-renewal-management-complete-guide).

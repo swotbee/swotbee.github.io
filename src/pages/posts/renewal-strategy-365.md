@@ -26,6 +26,17 @@ tags:
   - "Account Management"
 seriesName: "Renewal Strategy"
 funnelCta: "renewal-audit"
+faqs:
+  - q: "What is a SaaS renewal strategy?"
+    a: "A vendor's plan to secure and expand customer contracts through continuous value realization, multi-threading, strategic QBRs, expansion, and disciplined negotiation across the whole contract term."
+  - q: "Why is the renewal won before it expires?"
+    a: "Because the renewal decision reflects whether the customer realized value over the term. Work done early (value, relationships, expansion) determines the outcome long before the renewal date."
+  - q: "What is a good renewal rate for a SaaS company?"
+    a: "Around 90% or higher on a count basis for annual B2B contracts, with net revenue retention above 110% considered healthy."
+  - q: "How do you expand a contract at renewal?"
+    a: "Use whitespace analysis to find untapped departments and products, generate customer success qualified leads, and anchor upgrades with good-better-best pricing, folding expansion into the renewal conversation."
+  - q: "How do you negotiate a SaaS renewal?"
+    a: "Lead with proven value, multi-thread so you are not at the mercy of one buyer, avoid panic discounts against competitor pricing, and use tiered pricing to anchor the target package."
 ---
 
 **A SaaS renewal strategy is the go-to-market and relationship plan a vendor uses to secure and expand customer contracts. The core principle: the renewal is won or lost long before the contract expires.** Teams that treat the renewal as a year-long motion (continuous value realization, executive multi-threading, and expansion) keep more revenue and grow it; teams that scramble in the final 30 days discount, lose, or barely hold. This guide lays out the strategy and links to the tactics behind each part.
