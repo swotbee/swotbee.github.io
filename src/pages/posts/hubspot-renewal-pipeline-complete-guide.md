@@ -179,6 +179,8 @@ Renewals rarely happen in isolation. Customers expand, downgrade, add products, 
 
 How to [handle expansions and downgrades](/posts/hubspot-renewal-expansion-pipeline-structure) alongside renewals.
 
+Clean deal ownership and Deal Type data here also determines whether commission calculations for the renewal are even possible: see [commission tracking tools compared](/posts/hubspot-commission-tracking-tools-compared) for how renewal and expansion commission depends on the pipeline data above being accurate.
+
 For the commercial side, see how to [build renewal quotes and price increases](/posts/hubspot-renewal-quote-price-increase), and how to [co-term renewals onto a single date](/posts/hubspot-co-terming-renewals) when a customer has multiple contracts.
 
 ---
