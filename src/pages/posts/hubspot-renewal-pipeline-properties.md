@@ -19,6 +19,8 @@ tags:
   - "Revenue Operations"
 seriesName: "HubSpot Renewal Pipeline"
 pillarUrl: "/posts/hubspot-renewal-pipeline-complete-guide"
+modifiedDate: "2026-07-24"
+funnelCta: "renewal-audit"
 ---
 
 Your renewal pipeline is only as good as the data feeding it. Workflows need properties to trigger on. Reports need properties to calculate from. CSMs need properties to understand what's happening with an account.

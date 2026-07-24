@@ -2,7 +2,6 @@
 layout: ../../layouts/BlogPostLayout.astro
 title: "HubSpot Renewal Forecasting: Why Your Numbers Are Wrong (And How to Fix Them)"
 pubDate: "2026-04-02"
-modifiedDate: "2026-06-23"
 description: "Renewal deals close at 85-95% while new business closes at 20-30%. If you're using the same forecast model for both, your numbers are fiction. Here's how to fix HubSpot renewal forecasting."
 category:
   title: "Revenue Operations"
@@ -20,6 +19,8 @@ tags:
   - "Revenue Operations"
 seriesName: "HubSpot Renewal Pipeline"
 pillarUrl: "/posts/hubspot-renewal-pipeline-complete-guide"
+modifiedDate: "2026-07-24"
+funnelCta: "renewal-audit"
 ---
 
 If your forecast includes both new business and renewal deals using the same probability weights, your number is wrong. It's not "a little off." It's structurally broken.

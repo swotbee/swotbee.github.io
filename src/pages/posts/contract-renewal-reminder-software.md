@@ -6,7 +6,7 @@ description: "Contract renewal reminder software compared: how to design a 90/60
 category:
   title: "Revenue Operations"
   href: "/categories/revenue-operations"
-modifiedDate: "2026-07-06"
+modifiedDate: "2026-07-24"
 author:
   name: "SWOTBee Team"
   url: "https://swotbee.com"
@@ -26,6 +26,7 @@ tags:
   - "Revenue Operations"
 seriesName: "Contract Renewal Management"
 pillarUrl: "/posts/contract-renewal-management-complete-guide"
+funnelCta: "renewal-audit"
 ---
 
 > This article is part of our [Complete B2B Guide to Contract Renewal Management](/posts/contract-renewal-management-complete-guide).

@@ -25,6 +25,8 @@ tags:
   - "Data Quality"
 seriesName: "HubSpot Deal Cloning"
 pillarUrl: "/posts/hubspot-clone-deal-complete-guide"
+modifiedDate: "2026-07-24"
+funnelCta: "renewal-audit"
 ---
 
 Cloning deals saves time. Cloning deals without governance creates a data quality nightmare. Duplicate names, inherited close dates from last year, wrong pipeline stages, and ghost deals that break your forecast. We see these in nearly every HubSpot portal we audit.

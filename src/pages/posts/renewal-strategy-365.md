@@ -6,7 +6,7 @@ description: "A complete SaaS renewal strategy for vendors: why the renewal is w
 category:
   title: "Revenue Operations"
   href: "/categories/revenue-operations"
-modifiedDate: "2026-06-23"
+modifiedDate: "2026-07-24"
 author:
   name: "SWOTBee Team"
   url: "https://swotbee.com"
@@ -25,6 +25,7 @@ tags:
   - "Revenue Operations"
   - "Account Management"
 seriesName: "Renewal Strategy"
+funnelCta: "renewal-audit"
 ---
 
 **A SaaS renewal strategy is the go-to-market and relationship plan a vendor uses to secure and expand customer contracts. The core principle: the renewal is won or lost long before the contract expires.** Teams that treat the renewal as a year-long motion (continuous value realization, executive multi-threading, and expansion) keep more revenue and grow it; teams that scramble in the final 30 days discount, lose, or barely hold. This guide lays out the strategy and links to the tactics behind each part.
