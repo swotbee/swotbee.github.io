@@ -23,9 +23,9 @@ modifiedDate: "2026-07-24"
 funnelCta: "renewal-audit"
 ---
 
-Your renewal pipeline is only as good as the data feeding it. Workflows need properties to trigger on. Reports need properties to calculate from. CSMs need properties to understand what's happening with an account.
+Your HubSpot renewal pipeline is only as good as the data feeding it. Workflows need properties to trigger on. Forecast and ARR reports need properties to calculate from. CSMs need properties to understand what's happening with a SaaS account and whether churn or expansion revenue is the more likely outcome at contract renewal.
 
-HubSpot includes [a set of default deal properties](https://knowledge.hubspot.com/properties/hubspots-default-deal-properties) out of the box, but they're built for new business, not renewals. This article lists the 15 custom properties you need to add, with exact field types, recommended dropdown values, and explanations of where each one is used.
+HubSpot includes [a set of default deal properties](https://knowledge.hubspot.com/properties/hubspots-default-deal-properties) on every deal pipeline out of the box, but they're built for new business, not a separate renewal pipeline. This article lists the 15 custom properties you need to add, with exact field types, recommended dropdown values, and explanations of where each one is used, the property setup best practices we apply on every renewal pipeline we build.
 
 > This article is part of our [Complete Guide to Building a Renewal Pipeline in HubSpot](/posts/hubspot-renewal-pipeline-complete-guide).
 
@@ -109,7 +109,7 @@ HubSpot includes [a set of default deal properties](https://knowledge.hubspot.co
 **Field type:** Dropdown select
 **Values:** `Auto-Renew` | `Manual Renewal` | `Opt-Out Window`
 
-**Why:** Auto-renewing contracts need different handling. You still want a renewal deal in the pipeline (for forecasting and health monitoring), but the urgency and outreach cadence is different. A CSM doesn't need to "close" an auto-renewal, they need to ensure the customer doesn't cancel before the auto-renew date.
+**Why:** Auto-renewing contract renewal deals need different handling. You still want a renewal deal in the pipeline (for forecast accuracy and customer health monitoring), but the urgency and outreach cadence is different. A CSM doesn't need to "close" an auto-renewal, they need to ensure the customer doesn't cancel before the auto-renew date.
 
 **How it's used:**
 - Different workflow branches for auto-renew vs. manual
@@ -122,7 +122,7 @@ HubSpot includes [a set of default deal properties](https://knowledge.hubspot.co
 **Object:** Deal
 **Field type:** Currency
 
-**Why:** Essential for calculating expansion and contraction revenue. If the renewal amount is $120K and the previous contract was $100K, that's $20K expansion. Without this property, you can't calculate NRR.
+**Why:** Essential for calculating expansion revenue and contraction revenue against ARR. If the renewal amount is $120K and the previous contract was $100K, that's $20K of expansion revenue. Without this property, you can't calculate NRR.
 
 **How to set it:** When the renewal deal is created by a workflow, copy the Amount from the prior deal to this property. The current deal's Amount field then reflects the new contract value (which may be higher or lower).
 
@@ -241,7 +241,7 @@ This isn't for reporting, it's for the CSM who opens this deal in 6 months and n
 
 ---
 
-## Creating Properties in HubSpot
+## Creating Renewal Pipeline Custom Properties in HubSpot
 
 1. Go to **Settings → Properties**
 2. Select the object (Deal or Company)
