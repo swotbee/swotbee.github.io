@@ -1,0 +1,425 @@
+---
+// RenewalRoiCalculator.astro
+// Interactive renewal-revenue ROI calculator, extracted from
+// renewal-operations-animated-v3.astro so the page can `include` it.
+//
+// Left column: five cascading selectors (industry, company size, how you track
+// renewals today, renewal cadence, role) drive three refinable sliders. Right
+// column: a hand-built inline-SVG 5-year projection (thick copper "at risk" line
+// vs teal "recoverable" line) plus the two result cards.
+//
+// Core math (unchanged from the original calculator):
+//   at risk / year   = renewals * ACV * (slip / 100)
+//   recoverable      = 70% of at risk
+//
+// Selector responsibilities are kept separate:
+//   industry  -> renewals + ACV defaults, slider nouns, biggest-leak line
+//   size      -> multiplies the industry renewals + ACV defaults
+//   tracking  -> sets slip % directly (overrides the slider)
+//   cadence   -> copy only (multi-year forces the leak line); no math change
+//   role      -> reframes the OUTPUT labels only, never the sliders
+//
+// Numbers are typical mid-market estimates, not measured data. No new deps:
+// vanilla JS inline, Tailwind v4, v6 design tokens. House rule: no em/en dashes.
+---
+
+<section id="roi" class="bg-white py-14 sm:py-18 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-6xl mx-auto">
+    <p class="reveal text-sm font-semibold uppercase tracking-[0.2em] text-v6-copper mb-3 text-center">See What's At Stake</p>
+    <h2 class="reveal text-2xl sm:text-3xl lg:text-4xl font-bold text-v6-dark mb-3 text-center text-balance">
+      How Much Revenue Is Hiding In Your Renewals?
+    </h2>
+    <p class="reveal text-v6-text-muted text-center mb-10 max-w-xl mx-auto">
+      Pick your situation, then refine with the sliders. This is a directional estimate of the renewal revenue at risk each year when the process leaks. We pressure-test these numbers against your real HubSpot data in the free audit.
+    </p>
+
+    <div class="reveal rounded-2xl border border-v6-border bg-v6-bg p-6 sm:p-8">
+      <!-- Industry pills: the primary driver. Framed and tinted so it reads as the control that cascades into the sliders, chart, and cards below. -->
+      <div class="mb-10 rounded-xl border border-v6-copper-100 bg-white p-4 sm:p-5">
+        <div class="flex flex-wrap items-baseline gap-x-2 gap-y-1 mb-3">
+          <span class="text-[11px] font-bold uppercase tracking-wider text-v6-copper">Start here</span>
+          <span class="text-sm font-medium text-v6-text-muted">Pick the closest fit to set the baseline the sliders and estimate build on.</span>
+        </div>
+        <div id="roi-industry" role="group" aria-label="Industry" data-value="energy" class="flex flex-wrap gap-2">
+          <button type="button" class="roi-pill is-active" data-value="energy" aria-pressed="true">Energy / utilities</button>
+          <button type="button" class="roi-pill" data-value="field" aria-pressed="false">Field service</button>
+          <button type="button" class="roi-pill" data-value="mfg" aria-pressed="false">Industrial / manufacturing</button>
+          <button type="button" class="roi-pill" data-value="msp" aria-pressed="false">MSP (managed services)</button>
+          <button type="button" class="roi-pill" data-value="iot" aria-pressed="false">IoT</button>
+          <button type="button" class="roi-pill" data-value="saas" aria-pressed="false">SaaS</button>
+          <button type="button" class="roi-pill" data-value="proptech" aria-pressed="false">Proptech</button>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10">
+
+        <!-- ===== LEFT: inputs ===== -->
+        <div class="lg:col-span-5">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+            <div>
+              <label for="roi-size" class="block text-xs font-semibold text-v6-dark mb-1.5">Company size</label>
+              <select id="roi-size" class="roi-select">
+                <option value="25-49">25 to 49 employees</option>
+                <option value="50-100" selected>50 to 100 employees</option>
+                <option value="101-250">101 to 250 employees</option>
+                <option value="251-500">251 to 500 employees</option>
+              </select>
+            </div>
+            <div>
+              <label for="roi-track" class="block text-xs font-semibold text-v6-dark mb-1.5">How you track renewals today</label>
+              <select id="roi-track" class="roi-select">
+                <option value="nothing">Nothing (memory + calendars)</option>
+                <option value="spreadsheets" selected>Spreadsheets</option>
+                <option value="system">A system (partial automation)</option>
+                <option value="custom">Custom-built workflows</option>
+              </select>
+            </div>
+            {/* Role selector commented out per request. The result card label
+                stays fixed at "Revenue at risk / year" while this is disabled.
+            <div class="sm:col-span-2">
+              <label for="roi-role" class="block text-xs font-semibold text-v6-dark mb-1.5">Your role</label>
+              <select id="roi-role" class="roi-select">
+                <option value="revops" selected>RevOps leader</option>
+                <option value="vpsales">VP Sales / Revenue leader</option>
+                <option value="ops">Ops admin</option>
+                <option value="cs">CS lead</option>
+                <option value="founder">Founder / CEO</option>
+              </select>
+            </div>
+            */}
+          </div>
+
+          <div class="space-y-6">
+            <div>
+              <div class="flex justify-between items-baseline mb-2 gap-3">
+                <label id="roi-renewals-label" for="roi-renewals" class="text-sm font-semibold text-v6-dark">Service agreements per year</label>
+                <output id="roi-renewals-out" class="text-base font-bold text-v6-copper shrink-0">300</output>
+              </div>
+              <input id="roi-renewals" type="range" min="50" max="5000" step="50" value="300" class="roi-range" />
+            </div>
+            <div>
+              <div class="flex justify-between items-baseline mb-2 gap-3">
+                <label id="roi-acv-label" for="roi-acv" class="text-sm font-semibold text-v6-dark">Average contract value</label>
+                <output id="roi-acv-out" class="text-base font-bold text-v6-copper shrink-0">$50,000</output>
+              </div>
+              <input id="roi-acv" type="range" min="0" max="1000" step="1" value="459" class="roi-range" />
+            </div>
+            <div>
+              <div class="flex justify-between items-baseline mb-2 gap-3">
+                <label for="roi-slip" class="text-sm font-semibold text-v6-dark">Renewals that slip or churn from process gaps</label>
+                <output id="roi-slip-out" class="text-base font-bold text-v6-copper shrink-0">10%</output>
+              </div>
+              <input id="roi-slip" type="range" min="1" max="30" step="1" value="10" class="roi-range" />
+            </div>
+          </div>
+
+          {/* "Sounds like a ... ops team tracking renewals ..." vignette commented out per request.
+          <p id="roi-vignette" class="mt-7 text-sm text-v6-text-muted italic leading-relaxed"></p>
+          */}
+          <p class="mt-7 text-sm text-v6-dark leading-relaxed"><span class="font-semibold text-v6-copper">Biggest leak:</span> <span id="roi-leak"></span></p>
+        </div>
+
+        <!-- ===== RIGHT: outputs ===== -->
+        <div class="flex flex-col lg:col-span-7">
+          <p class="text-xs font-semibold uppercase tracking-wider text-v6-text-muted mb-3">Five-year outlook</p>
+          <svg id="roi-chart" viewBox="0 0 400 260" class="w-full h-auto" role="img" aria-label="Projected renewal revenue at risk versus recoverable over five years">
+            <g id="roi-grid"></g>
+            <path id="roi-area" fill="#e8f5f2" stroke="none"></path>
+            <polyline id="roi-line-risk" fill="none" stroke="#C47A2A" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"></polyline>
+            <polyline id="roi-line-recover" fill="none" stroke="#5AAB9D" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"></polyline>
+            <circle id="roi-dot-risk" r="4.5" fill="#C47A2A"></circle>
+            <circle id="roi-dot-recover" r="4.5" fill="#5AAB9D"></circle>
+            <g id="roi-xlabels"></g>
+          </svg>
+          <div class="flex flex-wrap gap-x-5 gap-y-1.5 mt-1 mb-6 text-xs text-v6-text-muted">
+            <span class="flex items-center gap-1.5"><span class="inline-block w-4 h-1 rounded-full" style="background:#C47A2A"></span> 5-yr at risk <b id="roi-risk5" class="text-v6-dark font-semibold">&nbsp;</b></span>
+            <span class="flex items-center gap-1.5"><span class="inline-block w-4 h-1 rounded-full" style="background:#5AAB9D"></span> 5-yr recoverable <b id="roi-recover5" class="text-v6-dark font-semibold">&nbsp;</b></span>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="rounded-xl bg-v6-copper-50 border border-v6-copper-100 p-5 text-center">
+              <p id="roi-card1-label" class="text-xs font-semibold uppercase tracking-wider text-v6-copper mb-1">Revenue at risk / year</p>
+              <p id="roi-risk" class="text-3xl font-bold text-v6-dark">$1,500,000</p>
+              <p id="roi-card1-helper" class="text-xs text-v6-text-muted mt-1.5 leading-snug hidden"></p>
+            </div>
+            <div class="rounded-xl bg-v6-teal-50 border border-v6-teal-100 p-5 text-center">
+              <p class="text-xs font-semibold uppercase tracking-wider text-v6-teal mb-1">Potentially recoverable</p>
+              <p id="roi-recover" class="text-3xl font-bold text-v6-dark">$1,050,000</p>
+            </div>
+          </div>
+          <div class="mt-3 space-y-1 text-center">
+            <p id="roi-extra-hours" class="text-sm font-semibold text-v6-dark"></p>
+            <p id="roi-extra-retention" class="text-sm font-semibold text-v6-dark"></p>
+          </div>
+        </div>
+      </div>
+
+      <p class="text-xs text-v6-text-muted text-center mt-7 max-w-2xl mx-auto">
+        These are typical mid-market estimates, not measured data and not a quote. The recoverable figure assumes a process that closes most preventable slippage. We pressure-test every number against your real HubSpot data in the free audit.
+      </p>
+      <div class="text-center mt-5">
+        <a href="/contactus" class="inline-block bg-v6-copper text-white px-7 py-3 rounded-xl text-base font-semibold hover:bg-v6-copper-600 transition-colors">
+          Find My Hidden Renewal Revenue →
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* ===== Scroll reveal =====
+     Driven by the page's shared observer: it adds .anim to <html> and .in to
+     any .reveal in the document. .anim is the JS-added global ancestor, so it
+     stays :global(); .reveal is scoped to this component's elements. Gating the
+     hidden state behind .anim keeps content visible if JS never runs. */
+  :global(.anim) .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; will-change: opacity, transform; }
+  :global(.anim) .reveal.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) {
+    :global(.anim) .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+  }
+
+  /* ===== ROI range sliders (moved from the page so this component is self-contained) ===== */
+  .roi-range { -webkit-appearance: none; appearance: none; width: 100%; height: 6px; border-radius: 999px; background: #E5E2DA; outline: none; }
+  .roi-range::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 22px; height: 22px; border-radius: 50%; background: #C47A2A; cursor: pointer; border: 3px solid #fff; box-shadow: 0 1px 4px rgba(0,0,0,0.2); }
+  .roi-range::-moz-range-thumb { width: 22px; height: 22px; border-radius: 50%; background: #C47A2A; cursor: pointer; border: 3px solid #fff; box-shadow: 0 1px 4px rgba(0,0,0,0.2); }
+
+  /* ===== Selectors ===== */
+  .roi-select {
+    -webkit-appearance: none; appearance: none; width: 100%;
+    background-color: #fff; border: 1px solid #E5E2DA; border-radius: 0.5rem;
+    padding: 0.5rem 2rem 0.5rem 0.75rem; font-size: 0.875rem; font-weight: 600;
+    color: #1a2530; cursor: pointer; line-height: 1.3;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235a6a78' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat; background-position: right 0.65rem center; background-size: 0.7rem;
+  }
+  .roi-select:focus { outline: none; border-color: #C47A2A; box-shadow: 0 0 0 3px rgba(196,122,42,0.15); }
+
+  /* ===== Industry pills =====
+     Unselected pills carry a light copper tint so the whole group reads as the
+     branded primary control (distinct from the neutral white selects below);
+     the active pill is solid copper. */
+  .roi-pill {
+    -webkit-appearance: none; appearance: none; cursor: pointer;
+    border: 1px solid #f0d9b5; background: #fdf0de; color: #8a5518;
+    font-size: 0.8125rem; font-weight: 600; line-height: 1;
+    padding: 0.5rem 0.85rem; border-radius: 999px;
+    transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+  }
+  .roi-pill:hover { background: #f9e4c4; border-color: #C47A2A; color: #7a4715; }
+  .roi-pill:focus-visible { outline: none; box-shadow: 0 0 0 3px rgba(196,122,42,0.25); }
+  .roi-pill.is-active { background: #C47A2A; border-color: #C47A2A; color: #fff; }
+  .roi-pill.is-active:hover { background: #b06e26; color: #fff; }
+</style>
+
+<script>
+  const fmt = new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 });
+  const RECOVERABLE = 0.7; // share of preventable slippage a solid renewal process recovers
+
+  const INDUSTRY = {
+    energy:   { renewals: 300, acv: 50000, noun: "service agreements",          acvLabel: "Average contract value",              leak: "multi-year escalations that never get applied",       vig: "energy / utilities" },
+    field:    { renewals: 800, acv: 12000, noun: "maintenance contracts / AMCs", acvLabel: "Average contract value",              leak: "high-volume renewals slipping unnoticed",             vig: "field-service" },
+    mfg:      { renewals: 200, acv: 80000, noun: "service contracts",            acvLabel: "Average contract value",              leak: "year-3 multi-year deals HubSpot never creates",       vig: "industrial" },
+    msp:      { renewals: 600, acv: 18000, noun: "managed-services contracts",   acvLabel: "Average contract value (MRR x 12)",   leak: "monthly churn compounding across MRR",                vig: "managed-services" },
+    iot:      { renewals: 350, acv: 30000, noun: "device + subscription contracts", acvLabel: "Average contract value",           leak: "hardware-plus-subscription renewals falling through", vig: "IoT" },
+    saas:     { renewals: 700, acv: 15000, noun: "subscriptions",               acvLabel: "Average contract value",              leak: "expansion revenue left on the table",                 vig: "SaaS" },
+    proptech: { renewals: 300, acv: 22000, noun: "platform contracts",          acvLabel: "Average contract value",              leak: "renewal dates tracked off-CRM",                       vig: "proptech" },
+  };
+  const SIZE = {
+    "25-49":   { rMul: 0.5, aMul: 0.85, label: "25 to 49" },
+    "50-100":  { rMul: 1.0, aMul: 1.0,  label: "50 to 100" },
+    "101-250": { rMul: 2.0, aMul: 1.3,  label: "101 to 250" },
+    "251-500": { rMul: 4.0, aMul: 1.6,  label: "251 to 500" },
+  };
+  const TRACKING = {
+    nothing:      { slip: 12, vig: "on memory and calendars" },
+    spreadsheets: { slip: 10, vig: "in spreadsheets" },
+    system:       { slip: 7,  vig: "in a partial system" },
+    custom:       { slip: 5,  vig: "with custom-built workflows", leakAppend: ", and the year-3 cliff when HubSpot loop protection stops creating deals" },
+  };
+  const ROLE = {
+    revops:  { card1: "Revenue at risk / year" },
+    vpsales: { card1: "ARR exposed to renewal leakage", helper: "the slice of your forecast that leaks before it's booked" },
+    ops:     { card1: "Revenue at risk / year", extra: "hours" },
+    cs:      { card1: "Net revenue retention at risk", extra: "retention" },
+    founder: { card1: "Total renewal revenue leaking each year" },
+  };
+
+  const byId = (id) => document.getElementById(id);
+
+  const industryGroup = byId("roi-industry");
+  const sizeSel = byId("roi-size");
+  const trackSel = byId("roi-track");
+  const roleSel = byId("roi-role");
+
+  const renewalsEl = byId("roi-renewals");
+  const acvEl = byId("roi-acv");
+  const slipEl = byId("roi-slip");
+  const renewalsOut = byId("roi-renewals-out");
+  const acvOut = byId("roi-acv-out");
+  const slipOut = byId("roi-slip-out");
+  const renewalsLabel = byId("roi-renewals-label");
+  const acvLabel = byId("roi-acv-label");
+
+  const riskOut = byId("roi-risk");
+  const recoverOut = byId("roi-recover");
+  const card1Label = byId("roi-card1-label");
+  const card1Helper = byId("roi-card1-helper");
+  const extraHoursEl = byId("roi-extra-hours");
+  const extraRetentionEl = byId("roi-extra-retention");
+  const vignetteEl = byId("roi-vignette");
+  const leakEl = byId("roi-leak");
+
+  const chart = byId("roi-chart");
+  const lineRisk = byId("roi-line-risk");
+  const lineRecover = byId("roi-line-recover");
+  const areaEl = byId("roi-area");
+  const dotRisk = byId("roi-dot-risk");
+  const dotRecover = byId("roi-dot-recover");
+  const risk5 = byId("roi-risk5");
+  const recover5 = byId("roi-recover5");
+
+  // Only wire up if the calculator markup is actually on the page.
+  if (industryGroup && renewalsEl && acvEl && slipEl && chart) {
+    const SVG_NS = "http://www.w3.org/2000/svg";
+    const X0 = 14, X1 = 376, Y0 = 16, Y1 = 230, YEARS = 5;
+
+    const cap = (s) => s.charAt(0).toUpperCase() + s.slice(1);
+    const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
+    const roundTo = (v, step) => Math.round(v / step) * step;
+    const yearX = (i) => X0 + (i / YEARS) * (X1 - X0);
+    const getIndustry = () => industryGroup.dataset.value || "energy"; // active pill
+
+    // ACV slider runs on a logarithmic position (0..1000) so the common
+    // mid-market band ($1k..$100k) gets most of the travel while the long tail
+    // up to $5M still fits. posToAcv/acvToPos convert position <-> dollars, and
+    // niceAcv snaps to readable increments that scale with magnitude.
+    const ACV_MIN = 1000, ACV_MAX = 5000000, ACV_STEPS = 1000;
+    const ACV_RATIO = Math.log(ACV_MAX / ACV_MIN);
+    const niceAcv = (v) => {
+      if (v < 10000) return Math.round(v / 500) * 500;
+      if (v < 100000) return Math.round(v / 1000) * 1000;
+      if (v < 1000000) return Math.round(v / 5000) * 5000;
+      return Math.round(v / 50000) * 50000;
+    };
+    const posToAcv = (pos) => niceAcv(ACV_MIN * Math.exp((pos / ACV_STEPS) * ACV_RATIO));
+    const acvToPos = (acv) => Math.round((Math.log(clamp(acv, ACV_MIN, ACV_MAX) / ACV_MIN) / ACV_RATIO) * ACV_STEPS);
+
+    // Build the static chart furniture once: horizontal gridlines + year ticks.
+    (function initChart() {
+      const grid = byId("roi-grid");
+      const xl = byId("roi-xlabels");
+      for (let k = 0; k <= 4; k++) {
+        const y = Y0 + (k * (Y1 - Y0)) / 4;
+        const ln = document.createElementNS(SVG_NS, "line");
+        ln.setAttribute("x1", String(X0)); ln.setAttribute("x2", String(X1));
+        ln.setAttribute("y1", String(y)); ln.setAttribute("y2", String(y));
+        ln.setAttribute("stroke", k === 4 ? "#cfcabd" : "#E5E2DA");
+        ln.setAttribute("stroke-width", k === 4 ? "1.5" : "1");
+        grid.appendChild(ln);
+      }
+      for (let i = 1; i <= YEARS; i++) {
+        const t = document.createElementNS(SVG_NS, "text");
+        t.setAttribute("x", String(yearX(i))); t.setAttribute("y", String(Y1 + 18));
+        t.setAttribute("fill", "#5a6a78"); t.setAttribute("font-size", "11"); t.setAttribute("text-anchor", "middle");
+        t.textContent = "Yr " + i;
+        xl.appendChild(t);
+      }
+    })();
+
+    const drawChart = (perRisk, perRecover) => {
+      const maxV = perRisk * YEARS || 1;
+      const riskPts = [], recPts = [];
+      for (let i = 0; i <= YEARS; i++) {
+        const x = yearX(i);
+        riskPts.push(x.toFixed(1) + "," + (Y1 - (perRisk * i / maxV) * (Y1 - Y0)).toFixed(1));
+        recPts.push(x.toFixed(1) + "," + (Y1 - (perRecover * i / maxV) * (Y1 - Y0)).toFixed(1));
+      }
+      lineRisk.setAttribute("points", riskPts.join(" "));
+      lineRecover.setAttribute("points", recPts.join(" "));
+      // Shaded band under the recoverable line = revenue a fixed process keeps.
+      areaEl.setAttribute("d", "M " + X0 + "," + Y1 + " L " + recPts.join(" L ") + " L " + X1 + "," + Y1 + " Z");
+      const endRisk = riskPts[YEARS].split(",");
+      const endRec = recPts[YEARS].split(",");
+      dotRisk.setAttribute("cx", endRisk[0]); dotRisk.setAttribute("cy", endRisk[1]);
+      dotRecover.setAttribute("cx", endRec[0]); dotRecover.setAttribute("cy", endRec[1]);
+      risk5.textContent = fmt.format(perRisk * YEARS);
+      recover5.textContent = fmt.format(perRecover * YEARS);
+    };
+
+    // Cascade industry + size into the renewals/ACV slider defaults and relabel.
+    const applyDefaults = () => {
+      const ind = INDUSTRY[getIndustry()];
+      const size = SIZE[sizeSel.value];
+      renewalsEl.value = String(clamp(roundTo(ind.renewals * size.rMul, 50), Number(renewalsEl.min), Number(renewalsEl.max)));
+      acvEl.value = String(acvToPos(niceAcv(ind.acv * size.aMul))); // acvToPos clamps to $1k..$5M
+      renewalsLabel.textContent = cap(ind.noun) + " per year";
+      acvLabel.textContent = ind.acvLabel;
+    };
+
+    const updateVignette = () => {
+      if (!vignetteEl) return; // vignette markup is commented out
+      const ind = INDUSTRY[getIndustry()];
+      vignetteEl.textContent =
+        "Sounds like a " + SIZE[sizeSel.value].label + " employee " + ind.vig +
+        " ops team tracking renewals " + TRACKING[trackSel.value].vig + ".";
+    };
+
+    const updateLeak = () => {
+      let leak = INDUSTRY[getIndustry()].leak;
+      if (trackSel.value === "custom") leak += TRACKING.custom.leakAppend;
+      leakEl.textContent = leak + ".";
+    };
+
+    // Role selector is commented out, so the card label stays fixed at its
+    // static "Revenue at risk / year". Both derived readouts show at all times.
+    const updateReadouts = (renewals, slipPct) => {
+      if (extraHoursEl) {
+        const hours = Math.round(renewals * 0.33); // ~20 min per renewal, tunable
+        extraHoursEl.textContent = "~ " + hours.toLocaleString("en-US") + " hrs/year of manual renewal chasing";
+      }
+      if (extraRetentionEl) {
+        extraRetentionEl.textContent = "~ " + slipPct + " pts of gross retention at risk";
+      }
+    };
+
+    const calc = () => {
+      const renewals = Number(renewalsEl.value);
+      const acv = posToAcv(Number(acvEl.value));
+      const slipPct = Number(slipEl.value);
+      const atRisk = renewals * acv * (slipPct / 100);
+      const recover = atRisk * RECOVERABLE;
+
+      renewalsOut.textContent = renewals.toLocaleString("en-US");
+      acvOut.textContent = fmt.format(acv);
+      slipOut.textContent = slipPct + "%";
+      riskOut.textContent = fmt.format(atRisk);
+      recoverOut.textContent = fmt.format(recover);
+
+      updateReadouts(renewals, slipPct);
+      updateVignette();
+      updateLeak();
+      drawChart(atRisk, recover);
+    };
+
+    const pills = Array.from(industryGroup.querySelectorAll(".roi-pill"));
+    pills.forEach((btn) => btn.addEventListener("click", () => {
+      industryGroup.dataset.value = btn.dataset.value;
+      pills.forEach((b) => {
+        const on = b === btn;
+        b.classList.toggle("is-active", on);
+        b.setAttribute("aria-pressed", on ? "true" : "false");
+      });
+      applyDefaults();
+      calc();
+    }));
+    sizeSel.addEventListener("change", () => { applyDefaults(); calc(); });
+    trackSel.addEventListener("change", () => { slipEl.value = String(TRACKING[trackSel.value].slip); calc(); });
+    if (roleSel) roleSel.addEventListener("change", calc); // role selector is commented out
+    [renewalsEl, acvEl, slipEl].forEach((el) => el.addEventListener("input", calc));
+
+    // Initial cascade so the visitor sees realistic numbers without touching anything.
+    applyDefaults();
+    slipEl.value = String(TRACKING[trackSel.value].slip);
+    calc();
+  }
+</script>
