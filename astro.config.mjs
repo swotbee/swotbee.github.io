@@ -27,7 +27,7 @@ function noindexedPostSitemapPatterns() {
         const frontmatter = readFileSync(join(postsDir, f), "utf-8").split("---", 3)[1] || "";
         return /^noindex:\s*true\s*$/m.test(frontmatter);
       })
-      .map((f) => `/posts/${encodeURIComponent(f.replace(/\.md$/, ""))}`);
+      .map((f) => `/posts/${f.replace(/\.md$/, "")}`);
   } catch {
     return [];
   }
@@ -80,7 +80,12 @@ export default defineConfig({
           '/services/sales-revops-old/',
           ...noindexedPostSitemapPatterns(),
         ];
-        return !blocked.some((pattern) => page.includes(pattern));
+        // `page` arrives percent-encoded (spaces as %20, etc.) but leaves characters like
+        // `&` as a literal character rather than `%26`. Decode before matching so patterns
+        // stay plain, readable strings instead of needing to guess the exact encoding the
+        // sitemap integration used for every special character in a filename.
+        const decodedPage = decodeURIComponent(page);
+        return !blocked.some((pattern) => decodedPage.includes(pattern));
       },
     })
   ],

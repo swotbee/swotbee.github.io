@@ -1,4 +1,6 @@
 ---
+strategicStatus: "excluded-from-renewal-gtm"
+noindex: true
 layout: ../../layouts/BlogPostLayout.astro
 title: "Top Affordable HubSpot Alternatives for Startups"
 pubDate: "2025-05-07"

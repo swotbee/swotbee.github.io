@@ -1,4 +1,6 @@
 ---
+strategicStatus: "excluded-from-renewal-gtm"
+noindex: true
 layout: ../../layouts/BlogPostLayout.astro
 title: "HubSpot for Startups: Costs, Benefits, and Growth Tips"
 pubDate: "2025-03-12"

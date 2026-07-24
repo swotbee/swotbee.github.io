@@ -1,4 +1,5 @@
 ---
+noindex: true
 layout: ../../layouts/BlogPostLayout.astro
 title: "Strategic Account Management: The game plan for effective stakeholder collaboration"
 pubDate: "2025-10-02"
