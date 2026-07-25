@@ -297,10 +297,10 @@ const toneMap: Record<string, string> = {
             </div>
           </div>
         </div>
-        <p class="reveal text-sm text-v6-text-muted max-w-xl mx-auto lg:mx-0 mb-3 leading-relaxed">
+        <p class="reveal text-base text-v6-text-muted max-w-xl mx-auto lg:mx-0 mb-3 leading-relaxed">
           Works with your existing HubSpot and your accounting stack: QuickBooks, Xero, Sage, or NetSuite. No migration needed. Built for Energy, Manufacturing, Construction, and SaaS teams managing hundreds to thousands of renewals a year.
         </p>
-        <p class="reveal text-sm text-gray-500">No commitment, no sales pitch. No long-term contracts, ever. We earn your trust month by month.</p>
+        <p class="reveal text-base text-gray-500 leading-relaxed">No commitment, no sales pitch. No long-term contracts, ever. We earn your trust month by month.</p>
       </div>
 
       <!-- Right: Renewal Command Center dashboard mock (show, don't tell) -->
@@ -427,21 +427,21 @@ const toneMap: Record<string, string> = {
         <div class="anim-card bg-white rounded-xl p-6 border border-v6-border">
           <div class="anim-emoji w-11 h-11 rounded-lg bg-v6-copper-50 flex items-center justify-center text-v6-copper text-xl mb-4">⌨️</div>
           <h3 class="text-base font-semibold text-v6-dark mb-2">Re-keyed line items</h3>
-          <p class="text-sm text-v6-text-muted leading-relaxed">Rebuilding one renewal deal by hand means re-keying every line item, recalculating uplifts, and resetting dates. Multiply by every renewal, every year, and it adds up to weeks of ops time.</p>
+          <p class="text-base text-v6-text-muted leading-relaxed">Rebuilding one renewal deal by hand means re-keying every line item, recalculating uplifts, and resetting dates. Multiply by every renewal, every year, and it adds up to weeks of ops time.</p>
         </div>
         <div class="anim-card bg-white rounded-xl p-6 border border-v6-border">
           <div class="anim-emoji w-11 h-11 rounded-lg bg-v6-amber-50 flex items-center justify-center text-v6-amber text-xl mb-4">🧾</div>
           <h3 class="text-base font-semibold text-v6-dark mb-2">Missed escalation clauses</h3>
-          <p class="text-sm text-v6-text-muted leading-relaxed">Escalation clauses that never make it into the renewal are pure margin left unbilled, quarter after quarter.</p>
+          <p class="text-base text-v6-text-muted leading-relaxed">Escalation clauses that never make it into the renewal are pure margin left unbilled, quarter after quarter.</p>
         </div>
         <div class="anim-card bg-white rounded-xl p-6 border border-v6-border">
           <div class="anim-emoji w-11 h-11 rounded-lg bg-v6-blue-50 flex items-center justify-center text-v6-blue text-xl mb-4">👻</div>
           <h3 class="text-base font-semibold text-v6-dark mb-2">Ownerless accounts</h3>
-          <p class="text-sm text-v6-text-muted leading-relaxed">Accounts nobody owns don't get renewed in time. That is revenue lost to churn, quietly.</p>
+          <p class="text-base text-v6-text-muted leading-relaxed">Accounts nobody owns don't get renewed in time. That is revenue lost to churn, quietly.</p>
         </div>
       </div>
 
-      <p class="reveal text-sm text-v6-text-muted text-center max-w-xl mx-auto mb-6 leading-relaxed">
+      <p class="reveal text-base text-v6-text-muted text-center max-w-xl mx-auto mb-6 leading-relaxed">
         The ROI calculator below is directional, not a quote. But it shows what's on the table: revenue that is already yours, quietly slipping.
       </p>
       <div class="reveal text-center">
@@ -488,7 +488,7 @@ const toneMap: Record<string, string> = {
       <p class="reveal text-base sm:text-lg text-v6-text-muted text-center mb-3 max-w-2xl mx-auto leading-relaxed">
         One renewal is easy. Thousands of renewals expose every exception in your business.
       </p>
-      <p class="reveal text-v6-text-muted text-center mb-10 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">
+      <p class="reveal text-v6-text-muted text-center mb-10 max-w-2xl mx-auto text-base leading-relaxed">
         Multi-year contracts. Product bundles. Pricing escalations. Notice periods. Every company has its own renewal rules.
       </p>
 
@@ -502,11 +502,11 @@ const toneMap: Record<string, string> = {
             <div class={`grid grid-cols-1 sm:grid-cols-2 ${i !== decisions.length - 1 ? 'border-b border-v6-border' : ''}`}>
               <div class="px-6 py-4 flex items-center gap-3 bg-white">
                 <span class="text-v6-text-muted text-sm flex-shrink-0">✓</span>
-                <span class="text-sm sm:text-base text-v6-text-muted">{d.simple}</span>
+                <span class="text-base text-v6-text-muted">{d.simple}</span>
               </div>
               <div class="px-6 py-4 flex items-start gap-3 bg-v6-copper-50/40 sm:border-l border-v6-border">
                 <span class="text-v6-copper text-sm flex-shrink-0 mt-0.5">→</span>
-                <span class="text-sm sm:text-base font-medium text-v6-dark">{d.decision}</span>
+                <span class="text-base font-medium text-v6-dark">{d.decision}</span>
               </div>
             </div>
           ))}
@@ -518,7 +518,7 @@ const toneMap: Record<string, string> = {
         <p class="text-lg sm:text-xl text-white leading-relaxed mb-2">
           The challenge isn't creating a renewal. It's making thousands of revenue decisions consistently.
         </p>
-        <p class="text-sm text-gray-300">Every product. Every contract. Every customer. Every time.</p>
+        <p class="text-base text-gray-300 leading-relaxed">Every product. Every contract. Every customer. Every time.</p>
       </div>
     </div>
   </section>
@@ -607,7 +607,7 @@ const toneMap: Record<string, string> = {
             <div class="w-10 h-10 rounded-full bg-v6-copper text-white flex items-center justify-center font-bold text-lg mb-4">{s.n}</div>
             <p class="text-xs font-semibold uppercase tracking-wider text-v6-copper mb-1">{s.when}</p>
             <h3 class="text-lg font-semibold text-v6-dark mb-2">{s.title}</h3>
-            <p class="text-sm text-v6-text-muted leading-relaxed">{s.desc}</p>
+            <p class="text-base text-v6-text-muted leading-relaxed">{s.desc}</p>
           </div>
         ))}
       </div>
@@ -641,7 +641,7 @@ const toneMap: Record<string, string> = {
             <h3 class="text-base font-semibold text-v6-dark mb-4 leading-snug">{c.title}</h3>
             <ul class="space-y-2.5">
               {c.points.map(p => (
-                <li class="flex gap-2.5 text-sm text-v6-text-muted leading-relaxed">
+                <li class="flex gap-2.5 text-base text-v6-text-muted leading-relaxed">
                   <span class="text-v6-teal flex-shrink-0 mt-0.5">✓</span>
                   <span>{p}</span>
                 </li>
@@ -742,7 +742,7 @@ const toneMap: Record<string, string> = {
         {testimonials.map(t => (
           <div class="anim-card bg-white rounded-xl p-7 border border-v6-border flex flex-col">
             <div class="text-v6-copper text-3xl leading-none mb-3">“</div>
-            <blockquote class="text-sm sm:text-base text-v6-dark leading-relaxed mb-6 flex-grow">{t.quote}</blockquote>
+            <blockquote class="text-base text-v6-dark leading-relaxed mb-6 flex-grow">{t.quote}</blockquote>
             <div class="flex items-center gap-3 pt-4 border-t border-v6-border">
               <div class="w-10 h-10 rounded-full bg-v6-teal-100 flex items-center justify-center text-v6-teal font-bold text-sm flex-shrink-0">{t.initials}</div>
               <div>
@@ -766,19 +766,19 @@ const toneMap: Record<string, string> = {
           <div class="p-6">
             <p class="text-xs font-semibold uppercase tracking-wider text-v6-text-muted mb-3">Before</p>
             <ul class="space-y-2">
-              {caseStudy.before.map(b => (<li class="flex gap-2 text-sm text-v6-text-muted leading-relaxed"><span class="text-gray-400 flex-shrink-0">•</span><span>{b}</span></li>))}
+              {caseStudy.before.map(b => (<li class="flex gap-2 text-base text-v6-text-muted leading-relaxed"><span class="text-gray-400 flex-shrink-0">•</span><span>{b}</span></li>))}
             </ul>
           </div>
           <div class="p-6">
             <p class="text-xs font-semibold uppercase tracking-wider text-v6-teal mb-3">What We Did</p>
             <ul class="space-y-2">
-              {caseStudy.after.map(a => (<li class="flex gap-2 text-sm text-v6-text-muted leading-relaxed"><span class="text-v6-teal flex-shrink-0">✓</span><span>{a}</span></li>))}
+              {caseStudy.after.map(a => (<li class="flex gap-2 text-base text-v6-text-muted leading-relaxed"><span class="text-v6-teal flex-shrink-0">✓</span><span>{a}</span></li>))}
             </ul>
           </div>
           <div class="p-6 bg-v6-copper-50/40">
             <p class="text-xs font-semibold uppercase tracking-wider text-v6-copper mb-3">Results</p>
             <ul class="space-y-2">
-              {caseStudy.results.map(r => (<li class="flex gap-2 text-sm font-medium text-v6-dark leading-relaxed"><span class="text-v6-copper flex-shrink-0">→</span><span>{r}</span></li>))}
+              {caseStudy.results.map(r => (<li class="flex gap-2 text-base font-medium text-v6-dark leading-relaxed"><span class="text-v6-copper flex-shrink-0">→</span><span>{r}</span></li>))}
             </ul>
           </div>
         </div>
@@ -801,11 +801,11 @@ const toneMap: Record<string, string> = {
         {auditOutcomes.map(item => (
           <div class="anim-card flex gap-3 items-start bg-v6-bg rounded-lg p-4 border border-v6-border">
             <span class="text-v6-teal text-lg flex-shrink-0 mt-0.5">✓</span>
-            <p class="text-sm text-v6-dark leading-relaxed">{item}</p>
+            <p class="text-base text-v6-dark leading-relaxed">{item}</p>
           </div>
         ))}
       </div>
-      <p class="reveal text-sm text-v6-text-muted text-center max-w-2xl mx-auto leading-relaxed">
+      <p class="reveal text-base text-v6-text-muted text-center max-w-2xl mx-auto leading-relaxed">
         We start by understanding your process, data, and business rules. Most companies don't have perfect CRM data, that's part of the reason we begin with an audit. You leave with a clear picture of what is leaking and what to fix first.
       </p>
       <div class="reveal flex flex-col sm:flex-row gap-3 justify-center mt-8">
@@ -850,7 +850,7 @@ const toneMap: Record<string, string> = {
       <p class="text-v6-copper-50 text-base sm:text-lg mb-4">
         Book your free renewal review. No commitment, no sales pitch, just an honest look at the revenue hiding in your renewal process.
       </p>
-      <p class="text-white/80 text-sm mb-8 max-w-xl mx-auto">
+      <p class="text-white/80 text-base leading-relaxed mb-8 max-w-xl mx-auto">
         If you decide to work with us: no long-term contracts. We earn your trust month by month, and at the 30-day mark we check in and adjust the plan at no extra cost if the direction doesn't feel right.
       </p>
       <div class="cta-group cta-group-light relative inline-block">
