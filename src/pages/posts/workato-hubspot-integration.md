@@ -26,6 +26,17 @@ tags:
   - "Revenue Operations"
 seriesName: "HubSpot NetSuite Integration"
 pillarUrl: "/posts/hubspot-netsuite-integration"
+faqs:
+  - q: "Is Workato an integration platform?"
+    a: "Yes. Workato is an enterprise integration and automation platform (an iPaaS) that connects apps such as HubSpot, NetSuite, and Slack through recipes built from triggers and actions."
+  - q: "How does a Workato HubSpot integration work?"
+    a: "A recipe triggers on a HubSpot or connected-app event, then runs actions across other systems, so one deal update can create a NetSuite order, post to Slack, and update other tools at once."
+  - q: "When should I use Workato instead of the native HubSpot NetSuite connector?"
+    a: "Use Workato when the integration spans three or more systems, needs conditional routing, or needs human approvals. Use the native connector or Celigo for a straightforward two-system NetSuite sync."
+  - q: "How is Workato priced?"
+    a: "Workato bills by task, where each connector action is one task and loops multiply tasks by rows. Batch operations and longer poll intervals are the main ways to control cost."
+  - q: "Can I trigger HubSpot workflows from Workato events?"
+    a: "Yes. Workato can update HubSpot records and properties that in turn enroll contacts or deals in HubSpot workflows, linking Workato orchestration to native HubSpot automation."
 ---
 
 > This article is part of our [complete guide to HubSpot and NetSuite integration](/posts/hubspot-netsuite-integration).

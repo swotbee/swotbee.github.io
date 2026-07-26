@@ -26,6 +26,17 @@ tags:
   - "Renewal Pipeline"
 seriesName: "Renewal Metrics"
 pillarUrl: "/posts/renewal-metrics-explained"
+faqs:
+  - q: "What is the difference between cross-selling and upselling?"
+    a: "Upselling sells more or a higher tier of the same product; cross-selling sells a complementary product or service. Upsell deepens an existing purchase; cross-sell broadens it."
+  - q: "What is an example of upselling?"
+    a: "Moving a customer from a Pro to an Enterprise plan, or adding seats to their existing subscription."
+  - q: "What is an example of cross-selling?"
+    a: "Selling an analytics add-on to a customer who already uses your core product."
+  - q: "Why track upsell and cross-sell separately?"
+    a: "They convert at different rates and reveal different growth levers; blending them hides which expansion strategy works and distorts forecasting."
+  - q: "What are the risks of cross-selling and upselling?"
+    a: "Pushing too early, offering irrelevant products, over-bundling, and relying on discounts, all of which can erode trust and margin."
 ---
 
 > This article is part of our [guide to SaaS renewal metrics](/posts/renewal-metrics-explained).

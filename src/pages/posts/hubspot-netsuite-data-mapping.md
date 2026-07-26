@@ -26,6 +26,17 @@ tags:
   - "Revenue Operations"
 seriesName: "HubSpot NetSuite Integration"
 pillarUrl: "/posts/hubspot-netsuite-integration"
+faqs:
+  - q: "Why is HubSpot NetSuite data mapping so hard?"
+    a: "Because the two systems use different data models. HubSpot is flexible relationship management; NetSuite is a strict financial database. Mapping objects without planning causes silent errors, duplicates, and broken syncs."
+  - q: "What causes duplicate customers in a HubSpot NetSuite sync?"
+    a: "Running a live two-way sync without deduplication rules. Match on exact email or normalized domain and assign one system of record per object to prevent duplicates within the first week."
+  - q: "Why do my dates shift by a day in NetSuite?"
+    a: "HubSpot stores date-picker fields at midnight UTC, so NetSuite in a westward time zone rolls them back a day. Map to DateTime fields or correct the offset in a script or middleware."
+  - q: "Why does my deal fail with a \"company should exist\" error?"
+    a: "The deal tried to sync before its parent company reached NetSuite. Sequence the sync so companies land first, then re-trigger the deal."
+  - q: "Can the native connector handle multiple NetSuite subsidiaries?"
+    a: "No. The native connector is subsidiary-blind and uses a single subsidiary. Multiple subsidiaries need custom middleware or a database-driven sync engine. Fighting a live sync problem right now? We catalogued the six most-reported HubSpot NetSuite sync failures and their fixes, including which ones a config change can solve and which need an integration layer."
 ---
 
 > This article is part of our [complete guide to HubSpot and NetSuite integration](/posts/hubspot-netsuite-integration).

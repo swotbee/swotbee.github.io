@@ -1,4 +1,6 @@
 ---
+strategicStatus: "excluded-from-renewal-gtm"
+noindex: true
 layout: ../../layouts/BlogPostLayout.astro
 title: "Maximize Customer Support with HubSpot: Key Tools & Tips"
 pubDate: "2025-07-02"

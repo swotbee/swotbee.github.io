@@ -26,6 +26,17 @@ tags:
   - "Revenue Operations"
 seriesName: "Renewal Strategy"
 pillarUrl: "/posts/renewal-strategy-365"
+faqs:
+  - q: "Should you match a competitor's lower price at renewal?"
+    a: "Usually no. Panic-discounting erodes margin and sets a precedent. Reinforce your value and the cost of switching instead."
+  - q: "What is the proper response to competitive price pressure?"
+    a: "Qualify whether the threat is real, reframe around proven value, quantify switching costs, differentiate, and flex on terms rather than list price."
+  - q: "How do you defend margins against competitor price-dropping?"
+    a: "Build switching costs through realized value, multi-thread the account, use value-based pricing and tiers, and maintain pricing power by consistently proving value."
+  - q: "When should you flex on price?"
+    a: "For strategically important accounts, a verified competitive gap, or a multi-year trade, always structured as a trade for something in return."
+  - q: "Why avoid a price war?"
+    a: "Direct price competition is a race to the bottom that a deeper-pocketed competitor can win; competing on value is more defensible."
 ---
 
 > This article is part of our [365-day renewal strategy guide](/posts/renewal-strategy-365).

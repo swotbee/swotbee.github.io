@@ -27,6 +27,16 @@ tags:
 seriesName: "HubSpot Deal Cloning"
 funnelCta: "renewal-audit"
 pillarUrl: "/posts/hubspot-clone-deal-complete-guide"
+howto: true
+howtoSteps:
+  - name: "Navigate to the deal record"
+    text: "Open the deal you want to clone from your pipeline."
+  - name: "Open the Actions menu"
+    text: "Click the Actions dropdown in the top-left of the deal record."
+  - name: "Select Clone"
+    text: "HubSpot creates a copy of the deal's properties and associations, but not its line items, engagements, or quotes."
+  - name: "Review and adjust the clone"
+    text: "Update the name, close date, stage, and owner before saving. Native cloning is manual and one deal at a time; for automation or line items, see the marketplace app and API methods covered below."
 ---
 
 Cloning a deal in HubSpot means creating an exact copy of an existing deal (with its properties, associations, and ideally line items) so you don't have to rebuild it from scratch. It's one of the [most-requested features in HubSpot history](https://community.hubspot.com/t5/HubSpot-Ideas/Cloning-a-Deal/idi-p/28845), with 500+ upvotes on the Ideas forum.

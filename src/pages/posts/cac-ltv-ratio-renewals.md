@@ -26,6 +26,17 @@ tags:
   - "Renewal Pipeline"
 seriesName: "Renewal Metrics"
 pillarUrl: "/posts/renewal-metrics-explained"
+faqs:
+  - q: "What is a good LTV to CAC ratio?"
+    a: "Around 3:1. It means each customer returns three times their acquisition cost over their lifetime, leaving healthy margin to fund the business."
+  - q: "Why is a 3x LTV to CAC ratio considered good?"
+    a: "It balances profitability and growth: enough return to be sustainable, with room to keep investing in acquisition."
+  - q: "How is the LTV to CAC ratio calculated?"
+    a: "Divide customer lifetime value by customer acquisition cost. CAC is total sales and marketing spend divided by new customers acquired."
+  - q: "Why does high CAC require longer renewals?"
+    a: "CAC is paid up front and recovered through renewals over time. A higher CAC lengthens the payback period, so customers must renew longer before the deal becomes profitable."
+  - q: "How do you improve the LTV to CAC ratio?"
+    a: "Raise LTV through retention and expansion, reduce CAC through more efficient acquisition, and shorten the payback period with faster onboarding."
 ---
 
 > This article is part of our [guide to SaaS renewal metrics](/posts/renewal-metrics-explained).

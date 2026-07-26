@@ -26,6 +26,23 @@ tags:
   - "Revenue Operations"
 seriesName: "HubSpot ERP & Billing Integrations"
 pillarUrl: "/posts/hubspot-erp-integration"
+faqs:
+  - q: "Is the Chargebee HubSpot integration free?"
+    a: "The integration itself is included with qualifying Chargebee plans as of mid-2026, but plan requirements have shifted over time; check Chargebee's current pricing page and the HubSpot marketplace listing before assuming it is available on your tier."
+  - q: "Does Chargebee sync invoices into HubSpot?"
+    a: "Yes, invoice data (status, amounts, due dates) is part of the native sync as of mid-2026, surfaced on the CRM record. Confirm the exact invoice fields available in the current documentation."
+  - q: "Can Chargebee create deals in HubSpot?"
+    a: "The integration can be configured to reflect subscription activity on deals, but it does not create renewal deals with line items and uplifts in a renewal pipeline. That requires separate automation on the HubSpot side."
+  - q: "Should Chargebee or HubSpot be the source of truth for MRR?"
+    a: "Chargebee. It is the billing system; its MRR is what customers actually pay. Sync it into HubSpot read-only, and treat HubSpot deal amounts as forecast until closed and amended in Chargebee."
+  - q: "How do I stop the integration creating duplicate contacts?"
+    a: "Dedupe HubSpot by email and domain before the first sync, standardize on one email per billing contact, and spot-check the initial backfill. Most duplicate problems are pre-existing CRM hygiene surfacing, not integration bugs."
+  - q: "Can I create or update subscriptions directly from HubSpot?"
+    a: "Only in a limited way. The integration is built to flow subscription data from Chargebee into HubSpot, not to manage subscriptions from the CRM; as of mid-2026, creating or amending a subscription generally happens in Chargebee (or via API automation triggered by a closed-won deal). Check the Chargebee docs for the current list of subscription actions supported from HubSpot."
+  - q: "Is the sync one-way or two-way?"
+    a: "For billing objects it is effectively one-way, Chargebee to HubSpot, which is the direction you want: Chargebee stays the source of truth for customer and subscription objects, and HubSpot consumes them. Some configurations support lead or contact capture flowing the other way; treat anything HubSpot-to-Chargebee as an explicit design decision, not a default."
+  - q: "What are the pros and cons of the native integration?"
+    a: "Pros: turnkey setup with no middleware, subscription and invoice data as ordinary HubSpot properties, and workflow triggers on billing events. Cons: limited flexibility on custom fields and complex catalogs, little control over sync timing, and no renewal deal creation. If your gaps are in the last item, the fix is HubSpot-side automation rather than a different connector."
 ---
 
 > This article is part of our [complete guide to HubSpot ERP integration](/posts/hubspot-erp-integration).

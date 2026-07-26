@@ -26,6 +26,17 @@ tags:
   - "Renewal Pipeline"
 seriesName: "Renewal Metrics"
 pillarUrl: "/posts/renewal-metrics-explained"
+faqs:
+  - q: "What is silent churn?"
+    a: "Customer churn that happens without any complaint or warning: the customer disengages, stops using the product, and does not renew, without saying a word."
+  - q: "Why is silent churn important to understand?"
+    a: "Because it is invisible until the renewal is lost, and replacing a churned customer costs far more than retaining one given high customer acquisition costs."
+  - q: "What are the warning signs of silent churn?"
+    a: "Declining product usage, unanswered emails, skipped check-ins, fewer active users, and falling NPS or CSAT with no follow-up."
+  - q: "How can businesses detect silent churn?"
+    a: "By tracking usage and engagement data, building a health score, and automating alerts when activity drops, so customer success acts early."
+  - q: "Do customers who complain churn more?"
+    a: "Usually less. Complaining customers are engaged; the bigger flight risk is the quiet customer who has already disengaged."
 ---
 
 > This article is part of our [guide to SaaS renewal metrics](/posts/renewal-metrics-explained).

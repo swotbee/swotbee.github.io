@@ -21,6 +21,19 @@ tags:
   - "Revenue Operations"
 seriesName: "HubSpot Renewal Pipeline"
 pillarUrl: "/posts/hubspot-renewal-pipeline-complete-guide"
+faqs:
+  - q: "What is a customer health score in HubSpot?"
+    a: "A customer health score in HubSpot is a single number or status (for example, Healthy, Passive, At Risk) that summarizes how likely an account is to renew, based on signals like product usage, email engagement, support tickets, and meeting activity. It lives on the company record, either through the native Customer Success Workspace scoring (Service Hub Professional and Enterprise) or a custom property updated by workflows. Its job is to surface at-risk accounts months before the renewal conversation, so your team can intervene while there is still time."
+howto: true
+howtoSteps:
+  - name: "Build a customer health score"
+    text: "Decide the inputs (product usage, support tickets, engagement, outcomes), combine them into a weighted score with a workflow, and map the result to a status like Healthy, Passive, or At Risk on the company record."
+  - name: "Configure the at-risk alert workflow"
+    text: "Trigger when Account Health changes to At Risk, then notify the account owner, post to Slack, create a follow-up task, and escalate automatically if the renewal is within 90 days."
+  - name: "Build a churn reason taxonomy"
+    text: "Add a required Churn Reason dropdown that fires when a deal moves to Closed Lost, with a companion free-text field, so churn analysis is structured instead of guesswork."
+  - name: "Set up a win-back sequence"
+    text: "Add a Win-Back Potential property on lost deals and trigger a 30/60/90-day outreach cadence for accounts rated High or Medium potential."
 ---
 
 By the time a CSM opens a renewal deal and sees that the customer is unhappy, it's usually too late. The decision to leave was made months ago: after a bad support experience, after the champion left, after product usage dropped to zero.

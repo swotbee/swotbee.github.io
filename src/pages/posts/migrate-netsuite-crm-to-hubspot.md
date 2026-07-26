@@ -25,6 +25,17 @@ tags:
   - "Revenue Operations"
 seriesName: "HubSpot NetSuite Integration"
 pillarUrl: "/posts/hubspot-netsuite-integration"
+faqs:
+  - q: "What does it mean to migrate NetSuite CRM to HubSpot?"
+    a: "It means moving your front-office CRM data and processes (contacts, companies, deals, and activity) out of NetSuite into HubSpot, usually while keeping NetSuite for finance and connecting the two with a sync."
+  - q: "Why migrate from NetSuite CRM to HubSpot?"
+    a: "Teams migrate for ease of use, marketing automation, faster time to value, and higher sales adoption, while leaving accounting, inventory, and revenue recognition in NetSuite."
+  - q: "What data can be migrated from NetSuite to HubSpot?"
+    a: "Contacts, companies, deals or opportunities, products, and historical activity. Formula and lookup fields and custom records need special handling, and imported activity carries the import date unless you store original dates."
+  - q: "How long does a NetSuite to HubSpot migration take?"
+    a: "Typically four to eight weeks depending on data volume, custom fields, and the number of workflows to rebuild."
+  - q: "Do I still need NetSuite after migrating CRM to HubSpot?"
+    a: "Usually yes, for finance. Most teams migrate CRM to HubSpot and keep NetSuite for billing and operations, connected by an ongoing integration."
 ---
 
 > This article is part of our [complete guide to HubSpot and NetSuite integration](/posts/hubspot-netsuite-integration).

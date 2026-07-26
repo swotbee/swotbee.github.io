@@ -1,4 +1,6 @@
 ---
+strategicStatus: "excluded-from-renewal-gtm"
+noindex: true
 layout: ../../layouts/BlogPostLayout.astro
 title: "Transform Your Workflow with HubSpot Zapier Integration"
 pubDate: "2025-03-09"

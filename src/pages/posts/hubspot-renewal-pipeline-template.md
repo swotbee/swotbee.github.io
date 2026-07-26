@@ -26,6 +26,17 @@ tags:
   - "SaaS"
 seriesName: "HubSpot Renewal Pipeline"
 pillarUrl: "/posts/hubspot-renewal-pipeline-complete-guide"
+faqs:
+  - q: "How do I set up a renewal pipeline in HubSpot?"
+    a: "Create a separate \"Renewals\" deal pipeline, add the deal stages and custom properties from the template above, then build the automation checklist to create renewal deals and reminders automatically."
+  - q: "Should renewals be in the same pipeline as new business deals?"
+    a: "No. A dedicated renewal pipeline keeps forecasting clean and lets you measure renewal rate, NRR, and churn separately from new business."
+  - q: "What stages should a HubSpot renewal pipeline include?"
+    a: "A simple, proven set: Active Contract, Upcoming Renewal, Renewal Outreach, Proposal, Renewal Confirmed, then Closed Won or Closed Lost."
+  - q: "Who should own renewal deals in HubSpot?"
+    a: "Usually the CSM or account manager responsible for the account, so the deal owner is the person who will manage the renewal end to end."
+  - q: "How far in advance should renewal deals be created?"
+    a: "Create the renewal deal as soon as the original deal is closed won, and start outreach 90 days before the renewal date."
 ---
 
 > This article is part of our [Complete Guide to Building a Renewal Pipeline in HubSpot](/posts/hubspot-renewal-pipeline-complete-guide).

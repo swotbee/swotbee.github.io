@@ -26,6 +26,19 @@ tags:
   - "Metrics"
 seriesName: "B2B SaaS Customer Retention"
 pillarUrl: "/posts/b2b-saas-customer-retention"
+faqs:
+  - q: "What is churn rate in SaaS?"
+    a: "It is the percentage of customers or recurring revenue a SaaS business loses over a period. It is the core measure of how well a SaaS company retains its customers and revenue."
+  - q: "How do you calculate SaaS churn rate?"
+    a: "Divide the customers (or revenue) lost during a period by the number at the start, then multiply by 100. You can measure it on logos (customer churn) or on MRR (revenue churn)."
+  - q: "What is a good churn rate for SaaS?"
+    a: "Roughly 5% to 7% annually by customer for established B2B SaaS, higher for SMB-focused products, and best-in-class companies achieve under 5% with negative revenue churn."
+  - q: "What is a negative churn rate?"
+    a: "When expansion revenue from existing customers exceeds the revenue lost to churn, so recurring revenue grows even without new customers. It is driven by strong net revenue retention."
+  - q: "What are the types of churn in SaaS?"
+    a: "Voluntary versus involuntary churn, and customer (logo) versus revenue (MRR) churn. The type tells you whether the fix is billing, value, or experience."
+  - q: "How do you reduce SaaS churn?"
+    a: "Improve onboarding, track usage and health to intervene early, fix involuntary churn with dunning, multi-thread relationships, and drive expansion so net churn trends negative."
 ---
 
 > This article is part of our [complete guide to B2B customer retention](/posts/b2b-saas-customer-retention).

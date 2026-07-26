@@ -25,6 +25,17 @@ tags:
   - "Integration"
 seriesName: "CRM and ERP Integration"
 pillarUrl: "/posts/crm-erp-integration"
+faqs:
+  - q: "What is quote-to-cash?"
+    a: "The end-to-end process from building a customer quote to collecting the cash, including CPQ, contracts, order management, fulfillment, invoicing, payment, and revenue recognition across the CRM and ERP."
+  - q: "What is the difference between CPQ and quote-to-cash?"
+    a: "CPQ (configure, price, quote) is one step within quote-to-cash that produces an accurate quote. Quote-to-cash is the full lifecycle from quote through cash collection, which includes CPQ."
+  - q: "What is the difference between quote-to-cash and order-to-cash?"
+    a: "Quote-to-cash covers the whole lifecycle starting at the quote; order-to-cash starts at the order and runs through fulfillment, invoicing, and payment. Order-to-cash is the back half of quote-to-cash."
+  - q: "What are the steps in the quote-to-cash process?"
+    a: "Configure-price-quote, approval, contract and signature, order creation, fulfillment, invoicing, payment and collections, and revenue recognition."
+  - q: "How do you automate the quote-to-cash process?"
+    a: "Use CPQ for quoting, sync the order to the ERP automatically on close, automate billing, flow status back to the CRM, and integrate the systems so the workflow runs on real-time data."
 ---
 
 > This article is part of our [complete guide to CRM and ERP integration](/posts/crm-erp-integration).

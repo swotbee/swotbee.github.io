@@ -26,6 +26,17 @@ tags:
   - "Revenue Operations"
 seriesName: "HubSpot Renewal Pipeline"
 pillarUrl: "/posts/hubspot-renewal-pipeline-complete-guide"
+faqs:
+  - q: "How do I create a renewal quote in HubSpot?"
+    a: "Open the renewal deal, create a quote, pull in the existing line items, set the new contract term, apply any uplift or discount, and send it for signature."
+  - q: "What is a renewal uplift?"
+    a: "A planned price increase applied at renewal, usually a fixed percentage, to account for inflation, expanded usage, or moving off a legacy discount."
+  - q: "Can I automate renewal quotes in HubSpot?"
+    a: "Yes. A workflow can pre-create a draft quote with last year's line items and a default uplift when the renewal enters its window, leaving the rep to review and send."
+  - q: "How do I handle a downgrade at renewal?"
+    a: "Reflect the reduced seats or tier on the renewal quote and update the renewal amount so your forecast and reporting stay accurate."
+  - q: "How should I present a price increase to a customer?"
+    a: "Lead with the value and outcomes delivered, then present the new price at the line-item level so the change is transparent and defensible. Running an MSP? Agreement renewals with seat true-ups, uplifts, and co-term visibility are their own discipline. See how we automate agreement renewals for MSPs in HubSpot."
 ---
 
 > This article is part of our [Complete Guide to Building a Renewal Pipeline in HubSpot](/posts/hubspot-renewal-pipeline-complete-guide).

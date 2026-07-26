@@ -26,6 +26,17 @@ tags:
   - "Renewal Pipeline"
 seriesName: "Renewal Metrics"
 pillarUrl: "/posts/renewal-metrics-explained"
+faqs:
+  - q: "What is the SaaS quick ratio?"
+    a: "A growth-efficiency metric comparing recurring revenue gained (new + expansion MRR) to recurring revenue lost (churned + contraction MRR)."
+  - q: "How is the SaaS quick ratio calculated?"
+    a: "(New MRR + expansion MRR) ÷ (churned MRR + contraction MRR)."
+  - q: "What is a good SaaS quick ratio?"
+    a: "4 or higher is the common benchmark for healthy, efficient growth. Below 1 means the business is shrinking."
+  - q: "How does the quick ratio compare to the Rule of 40?"
+    a: "The Rule of 40 balances growth and profitability; the quick ratio balances growth and churn. They are complementary, not interchangeable."
+  - q: "Is the SaaS quick ratio the same as the accounting quick ratio?"
+    a: "No. The accounting (acid test) quick ratio measures a company's ability to meet current liabilities; the SaaS quick ratio measures growth efficiency."
 ---
 
 > This article is part of our [guide to SaaS renewal metrics](/posts/renewal-metrics-explained).

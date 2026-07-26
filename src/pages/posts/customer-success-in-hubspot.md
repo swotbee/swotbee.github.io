@@ -24,6 +24,25 @@ tags:
   - "Renewal Pipeline"
   - "Revenue Operations"
   - "CS Platforms"
+faqs:
+  - q: "Can HubSpot be used for customer success?"
+    a: "Yes. For SMB and mid-market teams, using HubSpot as a customer success platform is a proven pattern: Service Hub provides the workspace, health scores, and surveys, while pipelines and automation carry the renewal motion. The main prerequisites are Service Hub Professional (or above) and a clean data model with renewal dates and owners on every account."
+  - q: "What is the difference between a CSM and a CRM?"
+    a: "A CSM (customer success manager) is a person: the owner of a book of accounts, responsible for adoption, retention, and renewals. A CRM (customer relationship management system) is the software that holds those accounts, their contacts, deals, and history. The question behind the question is usually whether CSMs need software beyond the CRM, and for most mid-market teams the answer is no."
+  - q: "What are the 4 pillars of customer success?"
+    a: "The framing most CS leaders use is onboarding, adoption, retention, and expansion. HubSpot can instrument all four: onboarding via ticket pipelines and playbooks, adoption via usage events and health scores, retention via the renewal pipeline, and expansion via upsell deals attached to the same records."
+  - q: "Can HubSpot replace a customer success platform?"
+    a: "For most mid-market teams, yes. Service Hub Professional covers health scores, a CSM workspace, surveys, and ticketing, and deal pipelines handle renewals. The cases where it cannot are deep product-usage analytics and large CS orgs needing layered scorecards; those justify a dedicated platform."
+  - q: "What does customer success in HubSpot cost compared to a CS platform?"
+    a: "CS platforms are quote-based, with buyers reporting roughly 12k to 90k+ USD per year as of mid-2026 depending on vendor and scale. Running CS in HubSpot costs Service Hub Professional seats for the CS team plus any one-time automation build, which is typically a fraction of a platform contract for teams under about ten CSMs."
+  - q: "Does HubSpot have customer health scores?"
+    a: "Yes. HubSpot supports configurable customer health scores that can weight usage events, ticket volume, survey results, and engagement. They are less layered than Gainsight's scorecards but sufficient for a red/yellow/green model that drives real workflows."
+  - q: "Which HubSpot tier do I need to run customer success?"
+    a: "Service Hub Professional is the practical floor: it includes the Customer Success Workspace, health scores, and surveys. You also need workflow automation (Professional tier in any hub) for renewal reminders and automated deal creation."
+  - q: "Can a CS platform create renewal deals in HubSpot?"
+    a: "Not in a complete way. CS platforms surface renewal dates and risk, and some can push fields or create bare records through their sync, but none build a proper HubSpot renewal deal with line items, uplift pricing, and multi-year chaining. That step stays manual unless you automate it inside HubSpot."
+  - q: "When should a HubSpot team buy Gainsight or ChurnZero anyway?"
+    a: "When the CS org is large (roughly 10 to 15+ CSMs), the health model depends on deep product telemetry, and there is budget for both the contract and a platform admin. At that scale the analytics depth is worth the second system of record."
 ---
 
 **For most mid-market B2B teams, customer success can run entirely inside HubSpot: health visibility, renewal ownership, playbooks, and retention reporting, without a separate CS platform.** Using HubSpot for customer success means Service Hub Professional gives your customer success team the Customer Success Workspace, configurable health scores, surveys, and ticketing, while deal pipelines and workflows handle the renewal motion itself. A dedicated platform like Gainsight or ChurnZero earns its price when you have a large CS team, heavy product-usage data, and enterprise budgets. Below that threshold, the platform usually duplicates your CRM at 12k to 90k+ USD per year and still cannot create the renewal deal in HubSpot.

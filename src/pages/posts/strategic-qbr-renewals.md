@@ -26,6 +26,17 @@ tags:
   - "Account Management"
 seriesName: "Renewal Strategy"
 pillarUrl: "/posts/renewal-strategy-365"
+faqs:
+  - q: "What is an executive business review (EBR)?"
+    a: "A strategic meeting with a customer's executives that proves business outcomes and ROI and aligns on what's next, rather than demonstrating features."
+  - q: "What is the difference between an EBR and a QBR?"
+    a: "A QBR is a quarterly review often with the working team; an EBR is higher-altitude, with executives and the economic buyer, focused on business value and strategic alignment."
+  - q: "What are the key components of a successful EBR?"
+    a: "Business outcomes achieved, ROI and metrics, strategic alignment to executive priorities, a clear next-12-months plan, and the right decision-makers present."
+  - q: "Why are executive business reviews important?"
+    a: "They prove value to the people who sign the renewal, support multi-threading, and make the renewal decision long before the contract expires."
+  - q: "How often should you run EBRs?"
+    a: "Typically quarterly for QBRs with at least one or two executive-level EBRs per year for strategic accounts."
 ---
 
 > This article is part of our [365-day renewal strategy guide](/posts/renewal-strategy-365).

@@ -25,6 +25,17 @@ tags:
   - "Revenue Operations"
   - "Scalability"
 seriesName: "HubSpot for Business Growth"
+faqs:
+  - q: "Does HubSpot CRM scale with business growth?"
+    a: "Yes, well, from small business to mid-market and up to roughly 300 to 400 active sales users. It scales through modular hubs and a single Smart CRM. Beyond that ceiling or with very complex data, you may hit architectural limits."
+  - q: "What are the limitations of HubSpot CRM?"
+    a: "The main ones are marketing-contact tier bill shock, feature-gating that pushes you to higher tiers as you grow, custom objects gated to Enterprise, weak native subscription and renewal reporting, and data export friction."
+  - q: "How much does HubSpot cost as you scale?"
+    a: "More than the headline. A 10-person team's 3-year TCO can run about 62% over the naive estimate once contact tiers, onboarding, and add-ons are included. See our pricing-at-scale guide for the full model."
+  - q: "When should you migrate off HubSpot to Salesforce?"
+    a: "Generally when you pass roughly 400 sales users or need deep, industry-specific customization and have the engineering to run it. Below that, scaling on HubSpot usually costs less and moves faster."
+  - q: "Is HubSpot good for small businesses that plan to grow?"
+    a: "Yes. Its higher floor means fast time-to-value, and the modular model lets a small business add hubs as it scales without replacing the system."
 ---
 
 **Yes, HubSpot CRM scales with business growth for most companies up to roughly 300 to 400 active sales users, and it scales especially well from startup to mid-market because the platform is modular, easy to adopt, and keeps admin overhead low. Beyond that ceiling, or with highly complex data, you start hitting architectural limits and the cost climbs faster than the headline price suggests.** The honest rule of thumb practitioners repeat: HubSpot has a higher floor and Salesforce has a higher ceiling. This guide gives the real answer, the real numbers, and a decision framework, not the "it just scales" hand-waving you find everywhere else.

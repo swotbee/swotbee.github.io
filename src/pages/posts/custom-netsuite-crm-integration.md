@@ -26,6 +26,17 @@ tags:
   - "Revenue Operations"
 seriesName: "HubSpot NetSuite Integration"
 pillarUrl: "/posts/hubspot-netsuite-integration"
+faqs:
+  - q: "What CRMs integrate with NetSuite?"
+    a: "HubSpot, Salesforce, Zoho, and most major CRMs integrate with NetSuite through native connectors, iPaaS platforms, or custom API builds against NetSuite's SOAP and REST APIs."
+  - q: "How does a NetSuite CRM integration work?"
+    a: "A CRM event calls a NetSuite API to create or update a record, and NetSuite events flow back to the CRM, with match keys, sync direction, and conflict rules keeping both systems consistent within NetSuite's API governance."
+  - q: "What are the challenges of NetSuite CRM integration?"
+    a: "The main challenges are low shared concurrency limits, the single-record REST write model, SOAP timeouts on complex orders, line-item array-position conflicts, duplicate customers, and the permanent maintenance burden."
+  - q: "How much does a NetSuite CRM integration cost?"
+    a: "A native connector is the cheapest, an iPaaS runs a monthly subscription, and a custom build starts in the five figures plus ongoing maintenance. Budget NetSuite-side licensing such as SuiteCloud Plus separately."
+  - q: "What is SuiteCloud Plus and do I need it?"
+    a: "SuiteCloud Plus adds 10 concurrent API slots per license. You need it when your integration volume exceeds your account's base concurrency, which is common for high-volume or multi-integration environments. Fighting a live sync problem right now? We catalogued the six most-reported HubSpot NetSuite sync failures and their fixes, including which ones a config change can solve and which need an integration layer."
 ---
 
 > This article is part of our [complete guide to HubSpot and NetSuite integration](/posts/hubspot-netsuite-integration).

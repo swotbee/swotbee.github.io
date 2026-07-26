@@ -1,11 +1,12 @@
-# SWOTBee — HubSpot & Shopify Consulting
+# SWOTBee: HubSpot & Shopify Consulting
 # https://swotbee.com
-# Updated: 2026-04-02
+# Updated: 2026-07-24
 
 SWOTBee is a HubSpot and Shopify consulting firm serving mid-sized companies
-(50–100 employees) in Energy, Utilities, SaaS, Construction, and Manufacturing.
-We help RevOps and Sales Ops teams implement HubSpot, build renewal pipelines,
-integrate third-party tools, and optimize marketing automation.
+(50 to 100 employees) in Energy, Utilities, SaaS, Construction, and Manufacturing.
+We help RevOps and Customer Success teams build renewal pipelines, automate
+deal cloning for renewals, fix commission tracking, and stop revenue leakage
+in HubSpot.
 
 ## Key Pages
 - Homepage: https://swotbee.com/
@@ -13,21 +14,45 @@ integrate third-party tools, and optimize marketing automation.
 - Marketing Automation: https://swotbee.com/services/marketing
 - Sales & RevOps: https://swotbee.com/services/sales-revops
 - Integrations: https://swotbee.com/services/integrations
+- HubSpot Renewal Apps Compared: https://swotbee.com/compare/hubspot-renewal-apps
 - Blog: https://swotbee.com/blog
 - Contact: https://swotbee.com/contactus
 
-## Top Blog Posts — HubSpot Renewal Pipeline Series
-- Complete Guide to HubSpot Renewal Pipeline: https://swotbee.com/posts/hubspot-renewal-pipeline-complete-guide
+## HubSpot Renewal Pipeline Series
+- Complete Guide to Building a Renewal Pipeline in HubSpot: https://swotbee.com/posts/hubspot-renewal-pipeline-complete-guide
 - Renewal Pipeline vs Sales Pipeline: https://swotbee.com/posts/hubspot-renewal-pipeline-vs-sales-pipeline
-- Renewal Pipeline Stages: https://swotbee.com/posts/hubspot-renewal-pipeline-stages
+- Renewal Pipeline Stages (3 proven models): https://swotbee.com/posts/hubspot-renewal-pipeline-stages
+- The 15 Custom Properties Every Renewal Pipeline Needs: https://swotbee.com/posts/hubspot-renewal-pipeline-properties
 - Renewal Deal Workflow Automation: https://swotbee.com/posts/hubspot-renewal-deal-workflow-automation
-- Fixing the Infinite Loop: https://swotbee.com/posts/hubspot-renewal-workflow-infinite-loop-fix
-- NRR GRR Dashboard Reporting: https://swotbee.com/posts/hubspot-renewal-nrr-grr-dashboard-reporting
+- Fixing the Renewal Workflow Infinite Loop: https://swotbee.com/posts/hubspot-renewal-workflow-infinite-loop-fix
+- NRR and GRR Dashboard Reporting: https://swotbee.com/posts/hubspot-renewal-nrr-grr-dashboard-reporting
 - Renewal Forecasting Accuracy: https://swotbee.com/posts/hubspot-renewal-forecasting-accuracy
-- Renewal Pipeline Properties: https://swotbee.com/posts/hubspot-renewal-pipeline-properties
 - Expansion Pipeline Structure: https://swotbee.com/posts/hubspot-renewal-expansion-pipeline-structure
-- Churn Prevention Health Scores: https://swotbee.com/posts/hubspot-churn-prevention-health-scores-workflows
-- Renewal Pipeline Mistakes: https://swotbee.com/posts/hubspot-renewal-pipeline-mistakes-costing-revenue
+- Churn Prevention with Health Scores: https://swotbee.com/posts/hubspot-churn-prevention-health-scores-workflows
+- 12 Renewal Pipeline Mistakes Costing Revenue: https://swotbee.com/posts/hubspot-renewal-pipeline-mistakes-costing-revenue
+
+## HubSpot Deal Cloning Series
+- Complete Guide to Cloning a Deal in HubSpot for Renewals: https://swotbee.com/posts/hubspot-clone-deal-complete-guide
+- HubSpot Deal Cloning Apps Compared (CloneNer, Deal Duplicator, Clone a Deal): https://swotbee.com/posts/hubspot-deal-cloning-apps-compared
+- Copy Deal Properties in HubSpot Workflows: https://swotbee.com/posts/hubspot-copy-deal-properties-workflow
+- Cloning Deals with Line Items: https://swotbee.com/posts/hubspot-clone-deal-line-items
+- Deal Duplication Best Practices (governance framework): https://swotbee.com/posts/hubspot-deal-duplication-best-practices
+
+## Contract Renewal Management Series
+- Complete Guide to Contract Renewal Management: https://swotbee.com/posts/contract-renewal-management-complete-guide
+- Contract Renewal Reminder Software: https://swotbee.com/posts/contract-renewal-reminder-software
+
+## Renewal Strategy and Commission
+- The 365-Day Renewal (SaaS renewal strategy): https://swotbee.com/posts/renewal-strategy-365
+- Complete Guide to Sales Commission Tracking in HubSpot: https://swotbee.com/posts/hubspot-sales-commission-tracking-complete-guide
+- 10 Commission Tracking Tools for HubSpot Compared: https://swotbee.com/posts/hubspot-commission-tracking-tools-compared
+
+## Free Tools and Lead Magnets
+- Renewal Leakage Estimate (1-page, no call): https://swotbee.com/resources/renewal-leakage-estimate
+- Renewal Health Scorecard: https://swotbee.com/resources/renewal-health-scorecard
+- Uplift Recovery Checklist: https://swotbee.com/resources/uplift-recovery-checklist
+- ARR Correction Kit: https://swotbee.com/resources/arr-correction-kit
+- Book a Renewal Audit Call: https://swotbee.com/renewal-audit-call
 
 ## Proprietary HubSpot Apps
 - Smart Company Picker: Intelligent company association for HubSpot deals

@@ -25,6 +25,17 @@ tags:
   - "Revenue Operations"
   - "ERP"
 seriesName: "HubSpot NetSuite Integration"
+faqs:
+  - q: "Does HubSpot have a native NetSuite integration?"
+    a: "Yes. HubSpot offers a native NetSuite connector in its marketplace for standard objects and single-subsidiary setups, but most mid-market teams outgrow it and move to an iPaaS or custom integration."
+  - q: "How does a HubSpot Deal map to a NetSuite Sales Order?"
+    a: "When a deal reaches closed-won, the integration creates a NetSuite sales order with the deal's line items, quantities, and pricing, so finance can invoice without re-entering data."
+  - q: "Can you do a two-way sync between HubSpot and NetSuite?"
+    a: "Yes, but assign one system of record per object first. Real-time two-way sync without a clear source of truth creates loops and duplicate records."
+  - q: "Can historical data be synced between HubSpot and NetSuite?"
+    a: "Yes, through a planned initial data load run in batches and reconciled before the live sync is switched on. Treat historical migration separately from ongoing sync."
+  - q: "Do I need HubSpot Operations Hub for a NetSuite integration?"
+    a: "Not necessarily. The native connector and iPaaS tools work without it, but Operations Hub helps if you want custom-coded workflow actions on the HubSpot side. Fighting a live sync problem right now? We catalogued the six most-reported HubSpot NetSuite sync failures and their fixes, including which ones a config change can solve and which need an integration layer."
 ---
 
 **A HubSpot NetSuite integration connects HubSpot, your front-office CRM, with NetSuite, your back-office ERP, so that customer, deal, and order data sync between the two systems instead of being re-keyed by hand.** Done well, it turns a closed-won HubSpot deal into a NetSuite sales order automatically, gives sales teams real-time visibility into invoices and inventory, and gives finance a clean source of truth. Done badly, it silently drops records, rolls back dates, and erodes trust in both systems. This guide covers how the integration works, the three integration methods, where the native connector fails at scale, and when to integrate, migrate, or leave things alone.

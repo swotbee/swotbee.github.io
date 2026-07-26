@@ -26,6 +26,17 @@ tags:
   - "Churn"
 seriesName: "Renewal Metrics"
 pillarUrl: "/posts/renewal-metrics-explained"
+faqs:
+  - q: "How do you calculate renewal rate?"
+    a: "Divide the customers (or ARR) that renewed by the customers (or ARR) up for renewal in the period, then multiply by 100. Use only the cohort actually up for renewal (at-bat)."
+  - q: "How do you calculate net renewal rate?"
+    a: "Include expansion revenue from renewing customers in the numerator: net renewal rate = renewed revenue (with expansion) ÷ revenue up for renewal. It can exceed 100%."
+  - q: "What is the difference between renewal rate and retention rate?"
+    a: "Renewal rate measures customers up for renewal in a window; retention rate measures the overall customer base over time."
+  - q: "What is a good renewal rate?"
+    a: "Around 90%+ for annual B2B SaaS on a count basis; below 80% signals a retention problem."
+  - q: "How can you improve your renewal rate?"
+    a: "Start renewals early, detect at-risk and silent-churn accounts, deliver continuous value, and measure the correct at-bat cohort."
 ---
 
 > This article is part of our [guide to SaaS renewal metrics](/posts/renewal-metrics-explained).

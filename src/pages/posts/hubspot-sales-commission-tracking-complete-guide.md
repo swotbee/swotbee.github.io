@@ -25,6 +25,16 @@ tags:
   - "Revenue Operations"
   - "Sales Compensation"
   - "CRM"
+howto: true
+howtoSteps:
+  - name: "Create the commission properties"
+    text: "On the deal object, create Commission Rate (%), Commission Earned ($) as a calculated property, Commission Status (a dropdown: Unpaid, Approved, Paid, Disputed), and Commission Period (text, e.g. 2026-Q2)."
+  - name: "Build the tier logic"
+    text: "Write the calculated property formula using nested IF statements, for example 5% on deals under $50K, 4% between $50K and $150K, and 3% above $150K."
+  - name: "Automate with workflows"
+    text: "Create a workflow that sets Commission Status to Unpaid and notifies finance when a deal moves to Closed Won, and a second workflow that notifies the deal owner when Commission Status changes to Approved."
+  - name: "Build the dashboard"
+    text: "Add reports for Total Commissions by Rep, Commission Status Breakdown, Commission Trend, Disputed Commissions, and a Top Earners leaderboard."
 ---
 
 # Sales Commission Tracking in HubSpot: The Complete Guide for Growing Teams (2026)

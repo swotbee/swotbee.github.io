@@ -25,6 +25,17 @@ tags:
   - "Business Growth"
 seriesName: "HubSpot for Business Growth"
 pillarUrl: "/posts/does-hubspot-crm-scale"
+faqs:
+  - q: "What is Growth-Driven Design?"
+    a: "A website methodology that replaces the big one-time redesign with a fast launch-pad site plus continuous, data-driven improvement, reducing the cost and risk of traditional web design."
+  - q: "What are the three stages of Growth-Driven Design?"
+    a: "Strategy (research and goals, 2 to 4 weeks), Launch Pad (ship the highest-impact pages, about 12 weeks), and Continuous Improvement (ongoing data-driven iteration)."
+  - q: "How is GDD different from traditional web design?"
+    a: "Traditional design is a big upfront build that ages until the next redesign. GDD launches sooner and improves continuously based on real user data instead of assumptions."
+  - q: "Is the HubSpot Growth-Driven Design certification still available?"
+    a: "No. The HubSpot Academy GDD certification is retired and the course page no longer resolves, although outdated pages still present it as live."
+  - q: "Is Growth-Driven Design worth it?"
+    a: "Yes, if your website is a revenue channel and you will commit to ongoing iteration. For a rarely-updated brochure site, a focused traditional redesign is usually enough."
 ---
 
 > This article is part of our [honest guide to whether HubSpot scales with business growth](/posts/does-hubspot-crm-scale).

@@ -24,6 +24,17 @@ tags:
   - "Integration"
   - "Revenue Operations"
 seriesName: "CRM and ERP Integration"
+faqs:
+  - q: "What is CRM and ERP integration?"
+    a: "It is connecting your CRM (sales, marketing, service) with your ERP (finance, inventory, operations) so customer, order, and financial data sync automatically between them, giving one source of truth."
+  - q: "What are the benefits of integrating CRM and ERP systems?"
+    a: "One source of truth, less manual data entry, faster deal-to-cash, real-time visibility into inventory and payments, a better customer experience, and reporting that reconciles across teams."
+  - q: "How does CRM and ERP integration work?"
+    a: "The integration maps objects between the systems (accounts to customers, deals to sales orders) and syncs them, real time for fast-moving records and batch for heavier data, with one system of record per object."
+  - q: "What are the methods for CRM and ERP integration?"
+    a: "A native connector, an iPaaS (integration platform) such as Celigo or Workato, or a custom API build. The right choice depends on data volume, complexity, and the maintenance you can sustain."
+  - q: "What are the biggest challenges of CRM-ERP integration?"
+    a: "Data-model mismatches, duplicate records, source-of-truth conflicts, and ERP API limits. The data layer, not the connector, is where most integrations succeed or fail."
 ---
 
 **CRM and ERP integration is the process of connecting your CRM (the front-office system for sales, marketing, and service) with your ERP (the back-office system for finance, inventory, and operations) so that customer, order, and financial data sync between them instead of being re-keyed by hand.** Done well, it gives every team one source of truth, automates the deal-to-cash handoff, and removes the manual data entry that slows growth. This guide covers what CRM and ERP integration is, how it works, the benefits, the methods, the challenges, and the best practices.

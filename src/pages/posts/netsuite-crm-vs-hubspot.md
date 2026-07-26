@@ -26,6 +26,19 @@ tags:
   - "ERP"
 seriesName: "HubSpot NetSuite Integration"
 pillarUrl: "/posts/hubspot-netsuite-integration"
+faqs:
+  - q: "Is NetSuite similar to HubSpot?"
+    a: "Not really. HubSpot is a dedicated CRM and marketing platform; NetSuite CRM is a module inside an ERP. They overlap on contact and opportunity management but serve different jobs."
+  - q: "Does NetSuite have a CRM tool?"
+    a: "Yes. NetSuite CRM is part of the broader NetSuite ERP and covers sales force automation, forecasting, and basic marketing, with customer data living next to finance and inventory."
+  - q: "Which CRM is better, NetSuite or HubSpot?"
+    a: "For sales and marketing velocity, adoption, and ease of use, HubSpot is better. For an ERP-centric single source of truth tied to financials, NetSuite CRM fits. Many mid-market teams use both."
+  - q: "Is NetSuite CRM any good?"
+    a: "It is strong when you already run NetSuite ERP and want one system, with forecasting tied to financials. It is weaker on marketing automation and ease of use compared with HubSpot."
+  - q: "Can HubSpot integrate with NetSuite?"
+    a: "Yes. HubSpot integrates with NetSuite via a native connector, iPaaS platforms, or a custom API build, which is how most companies run both together."
+  - q: "How do NetSuite CRM and HubSpot compare on pricing?"
+    a: "HubSpot is per-seat and published; NetSuite is quote-based per-user plus a platform fee. NetSuite's hidden costs (admins and developers) often make it the more expensive option to operate."
 ---
 
 > This article is part of our [complete guide to HubSpot and NetSuite integration](/posts/hubspot-netsuite-integration).

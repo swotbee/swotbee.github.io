@@ -25,6 +25,18 @@ tags:
   - "Data Quality"
 seriesName: "HubSpot Deal Cloning"
 pillarUrl: "/posts/hubspot-clone-deal-complete-guide"
+modifiedDate: "2026-07-24"
+funnelCta: "renewal-audit"
+howto: true
+howtoSteps:
+  - name: "Create an Original Deal ID property"
+    text: "Add a single-line text property on deals that links a cloned deal back to its source."
+  - name: "Set it during cloning"
+    text: "Whether cloning via workflow, marketplace app, or API, copy the source deal's Record ID into this property on the new deal."
+  - name: "Create a Deal Generation property"
+    text: "Add a number property where 1 means the original sale, 2 means the first renewal, 3 means the second renewal, and so on."
+  - name: "Report on deal lineage"
+    text: "Use Original Deal ID and Deal Generation together to group deals by customer journey and trace lifetime revenue in reports."
 ---
 
 Cloning deals saves time. Cloning deals without governance creates a data quality nightmare. Duplicate names, inherited close dates from last year, wrong pipeline stages, and ghost deals that break your forecast. We see these in nearly every HubSpot portal we audit.
@@ -32,6 +44,18 @@ Cloning deals saves time. Cloning deals without governance creates a data qualit
 This article is the governance framework. It covers when to clone, what to clone, what to reset, and how to keep your pipeline clean as cloning scales.
 
 > This article is part of our [Complete Guide to Cloning Deals in HubSpot](/posts/hubspot-clone-deal-complete-guide).
+
+---
+
+## Deal Duplication vs. Deal Deduplication: Two Different Problems
+
+"Deal duplication" means two different things in HubSpot, and it matters which one you're actually trying to solve.
+
+**Intentional deal cloning** (this article's topic) is deliberately creating a new deal from an existing one, on purpose, to carry forward customer context for a renewal, upsell, or template. This is a governance problem: how to clone cleanly without corrupting your pipeline.
+
+**Accidental duplicate records** are a different, and more common, complaint: the same deal, contact, or company existing twice in your CRM database because of a duplicate form submission, an import error, or two reps creating deals for the same customer independently. That's a data hygiene problem, not a cloning strategy problem. HubSpot's native deduplication tools handle simple cases; for messier CRMs, dedicated deduplication tools like Insycle or Dedupely can merge duplicate records at scale, checking multiple records against match rules and consolidating them rather than deleting one and losing its history.
+
+If you landed here because your team keeps creating duplicate deals by accident, not on purpose, deduplication (finding and merging existing duplicate records) is what you need, not the cloning governance framework below. If you're deliberately duplicating deals for renewals, upsells, or templates, keep reading, that's exactly what this article covers.
 
 ---
 

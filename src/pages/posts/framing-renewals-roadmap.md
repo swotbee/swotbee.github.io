@@ -26,6 +26,17 @@ tags:
   - "Revenue Operations"
 seriesName: "Renewal Strategy"
 pillarUrl: "/posts/renewal-strategy-365"
+faqs:
+  - q: "What is a renewal conversation?"
+    a: "The discussion where a customer decides whether to renew, best started 60 to 90 days ahead and framed around future goals rather than just past usage."
+  - q: "Why frame renewals around the next 12 months?"
+    a: "Forward-framing changes the question from \"was it worth it?\" to \"what's next?\", which deepens the relationship, builds trust, and opens expansion."
+  - q: "How do you run a forward-framed renewal conversation?"
+    a: "Open with the customer's goals, briefly prove past results, pitch the roadmap tied to those goals, co-create a 12-month plan, and make renewing the obvious next step."
+  - q: "What is the purpose of a renewal meeting?"
+    a: "To align on the customer's future goals and how you will help achieve them, so the renewal is a commitment to a shared plan, not a transaction."
+  - q: "When should the renewal conversation start?"
+    a: "60 to 90 days before the renewal date, building on value proven across the whole contract term."
 ---
 
 > This article is part of our [365-day renewal strategy guide](/posts/renewal-strategy-365).

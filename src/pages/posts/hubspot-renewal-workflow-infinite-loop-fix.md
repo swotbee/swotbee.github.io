@@ -19,6 +19,16 @@ tags:
   - "Revenue Operations"
 seriesName: "HubSpot Renewal Pipeline"
 pillarUrl: "/posts/hubspot-renewal-pipeline-complete-guide"
+howto: true
+howtoSteps:
+  - name: "Create the Renewal Created property"
+    text: "Add a boolean (Yes/No) deal property called Renewal Created, defaulting to No."
+  - name: "Build the create-next-renewal workflow"
+    text: "Trigger on Deal Stage is Closed Won AND Renewal Created is No, with re-enrollment enabled when Deal Stage changes to Closed Won."
+  - name: "Flip the toggle and create the next deal"
+    text: "Set Renewal Created to Yes on the current deal, create the new renewal deal, wait 31 minutes for HubSpot to register it, then set Renewal Created to No on the new deal so it can trigger the chain again next cycle."
+  - name: "Test the full chain"
+    text: "Close a test deal as Won, verify the next year's deal is created, wait for the re-enrollment window, then close that deal too and confirm a third deal appears."
 ---
 
 Your renewal workflow works perfectly for Year 1. A deal closes as Won, the workflow creates Year 2's renewal deal, and everything looks great.

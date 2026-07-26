@@ -6,7 +6,7 @@ description: "The definitive guide to building a HubSpot renewal pipeline: from 
 category:
   title: "Revenue Operations"
   href: "/categories/revenue-operations"
-modifiedDate: "2026-07-14"
+modifiedDate: "2026-07-24"
 funnelCta: "renewal-audit"
 author:
   name: "SWOTBee Team"
@@ -26,6 +26,16 @@ tags:
   - "Customer Retention"
   - "CRM Automation"
   - "SaaS Renewals"
+howto: true
+howtoSteps:
+  - name: "Create the pipeline"
+    text: "Go to Settings, Objects, Deals, Pipelines, and click Create Pipeline. Name it something your team will recognize, like Renewal Pipeline."
+  - name: "Configure stages with probability weights"
+    text: "Add stages and assign probability weights that reflect renewal reality, not new-business reality, since renewal probabilities should be much higher across the board."
+  - name: "Add required properties"
+    text: "Make critical fields required at specific stages, for example requiring Churn Reason when a deal moves to Closed Lost, and Renewal Amount when a deal enters Renewal Sent."
+  - name: "Check your HubSpot tier"
+    text: "Confirm you have Sales Hub Professional or higher for workflow automation, and add Operations Hub Professional if you need calculated properties like Days to Renewal."
 ---
 
 If you manage recurring revenue (subscriptions, annual contracts, retainers) and you're running renewals through your sales pipeline, you're almost certainly losing deals you shouldn't be.
@@ -179,6 +189,8 @@ Renewals rarely happen in isolation. Customers expand, downgrade, add products, 
 
 How to [handle expansions and downgrades](/posts/hubspot-renewal-expansion-pipeline-structure) alongside renewals.
 
+Clean deal ownership and Deal Type data here also determines whether commission calculations for the renewal are even possible: see [commission tracking tools compared](/posts/hubspot-commission-tracking-tools-compared) for how renewal and expansion commission depends on the pipeline data above being accurate.
+
 For the commercial side, see how to [build renewal quotes and price increases](/posts/hubspot-renewal-quote-price-increase), and how to [co-term renewals onto a single date](/posts/hubspot-co-terming-renewals) when a customer has multiple contracts.
 
 ---
@@ -208,6 +220,8 @@ Build three dashboards:
 Build your first [renewal dashboard with NRR tracking](/posts/hubspot-renewal-nrr-grr-dashboard-reporting).
 
 Learn why your [renewal forecast is wrong](/posts/hubspot-renewal-forecasting-accuracy) and how to fix it.
+
+Renewal deals aren't the only recurring-revenue asset worth tracking on a schedule. If your team also manages standalone service contracts (not just HubSpot deals), see our guide to [contract renewal reminder software](/posts/contract-renewal-reminder-software/) for the 90-60-30 reminder cadence applied outside the pipeline itself.
 
 ---
 
@@ -269,6 +283,8 @@ Avoid the [12 most common mistakes](/posts/hubspot-renewal-pipeline-mistakes-cos
 Building a renewal pipeline isn't a weekend project. It requires alignment between Sales, Customer Success, and RevOps on ownership, process, and metrics.
 
 But the payoff is real: predictable revenue, fewer missed renewals, and a team that knows exactly which accounts need attention and when.
+
+The pipeline architecture above is the mechanics. For the surrounding strategy, how to make the renewal conversation itself go well, when to negotiate versus escalate, and what a healthy renewal rate actually looks like, see our [year-round SaaS renewal strategy guide](/posts/renewal-strategy-365/).
 
 **Need help building this?** SWOTBee sets up renewal pipelines for mid-market teams in Energy, Manufacturing, SaaS, and more. We handle the pipeline architecture, workflow automation, dashboard setup, and team training, so your team can focus on actually renewing customers.
 

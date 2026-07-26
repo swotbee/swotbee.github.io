@@ -26,6 +26,17 @@ tags:
   - "Sales Automation"
 seriesName: "HubSpot Renewal Pipeline"
 pillarUrl: "/posts/hubspot-renewal-pipeline-complete-guide"
+faqs:
+  - q: "What is the difference between HubSpot workflows and sequences?"
+    a: "Sequences send one-to-one sales emails from a connected inbox and stop when the contact replies. Workflows send one-to-many automated emails on a schedule and keep going regardless of replies. Use sequences for personal renewal outreach, workflows for high-volume automation."
+  - q: "Can I use sequences in the free version of HubSpot?"
+    a: "No. Sequences require Sales Hub Professional or Enterprise. On free or Starter, use marketing email plus a workflow instead."
+  - q: "How many emails should be in a renewal sequence?"
+    a: "Three to five. A 90/60/30/7-day structure covers the renewal window without overwhelming the contact."
+  - q: "What are the send limits for HubSpot sequences?"
+    a: "Sequence emails count against your connected inbox daily send limit (a few hundred per day, depending on provider and plan). Large renewal volumes should move to a workflow."
+  - q: "Can HubSpot enroll contacts in a sequence automatically?"
+    a: "Yes. Use workflow enrollment to enroll contacts in a sequence when a renewal deal reaches a defined stage, so the cadence starts without manual effort."
 ---
 
 > This article is part of our [Complete Guide to Building a Renewal Pipeline in HubSpot](/posts/hubspot-renewal-pipeline-complete-guide).

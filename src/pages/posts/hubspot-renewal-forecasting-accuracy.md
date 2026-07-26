@@ -2,7 +2,6 @@
 layout: ../../layouts/BlogPostLayout.astro
 title: "HubSpot Renewal Forecasting: Why Your Numbers Are Wrong (And How to Fix Them)"
 pubDate: "2026-04-02"
-modifiedDate: "2026-06-23"
 description: "Renewal deals close at 85-95% while new business closes at 20-30%. If you're using the same forecast model for both, your numbers are fiction. Here's how to fix HubSpot renewal forecasting."
 category:
   title: "Revenue Operations"
@@ -20,6 +19,23 @@ tags:
   - "Revenue Operations"
 seriesName: "HubSpot Renewal Pipeline"
 pillarUrl: "/posts/hubspot-renewal-pipeline-complete-guide"
+modifiedDate: "2026-07-24"
+funnelCta: "renewal-audit"
+faqs:
+  - q: "Why is my HubSpot renewal forecast wrong?"
+    a: "Most likely because renewal deals use the same stage probabilities as new business. Renewals close at 85 to 95%, so applying new-business probabilities understates the forecast by 30 to 50%."
+  - q: "How do I forecast renewal revenue in HubSpot?"
+    a: "Use a separate renewal pipeline with renewal-specific probabilities, filter by contract end date for the period, and forecast from deal amount (as ARR), historical renewal rate, and expansion or contraction."
+  - q: "Should renewals and new business share a forecast?"
+    a: "No. Forecast each pipeline separately, then combine: total = new business + renewal + expansion − contraction − churn."
+  - q: "How far out can I forecast renewals?"
+    a: "One to two quarters accurately. Beyond that, customer situations change too much to be reliable."
+howto: true
+howtoSteps:
+  - name: "Set renewal pipeline probabilities"
+    text: "Go to Settings, Objects, Deals, Pipelines, then your renewal pipeline, and assign stage probabilities that reflect renewal reality, generally 80 to 100 percent, not new-business close rates."
+  - name: "Calibrate against historical data"
+    text: "After one quarter, pull actual renewal outcomes for each stage, calculate the real close rate, and update your probabilities to match. Repeat quarterly until they converge on reality."
 ---
 
 If your forecast includes both new business and renewal deals using the same probability weights, your number is wrong. It's not "a little off." It's structurally broken.

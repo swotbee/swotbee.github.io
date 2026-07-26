@@ -26,6 +26,17 @@ tags:
   - "Renewal Pipeline"
 seriesName: "Renewal Metrics"
 pillarUrl: "/posts/renewal-metrics-explained"
+faqs:
+  - q: "What is SaaS cohort analysis?"
+    a: "It groups customers (usually by signup period) and tracks how each group retains, churns, or expands over time, instead of averaging everyone into one blended number."
+  - q: "What are the types of cohort analysis?"
+    a: "Acquisition cohorts (by signup time), behavioral cohorts (by action taken), and revenue cohorts (by plan or revenue). Each answers a different retention question."
+  - q: "How do you perform a cohort analysis?"
+    a: "Define cohorts, build a cohort table (cohorts as rows, months-since-signup as columns), plot the retention curve, then compare cohorts and segment further."
+  - q: "Why is blended churn misleading?"
+    a: "It averages healthy and unhealthy cohorts together, so a toxic new cohort can be hidden by loyal older customers until it is large enough to hurt."
+  - q: "How does cohort analysis help estimate LTV?"
+    a: "The retention curve from older cohorts shows how long customers stay, which is the core input for modeling customer lifetime value for newer cohorts."
 ---
 
 > This article is part of our [guide to SaaS renewal metrics](/posts/renewal-metrics-explained).
