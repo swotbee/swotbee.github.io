@@ -2,7 +2,11 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Navbar from '../../components/astro/Navbar.astro';
 import Footer from '../../components/astro/Footer.astro';
-// NEW page (lead magnet 4). Form action placeholder: wire before launch.
+// Lead magnet 4. Submits client-side to the HubSpot Forms API (portal 243398671), same
+// pattern as renewal-leakage-estimate.astro / uplift-recovery-checklist.astro. Form
+// "SwotBee - ARR Correction Kit" (id 99dd4e6e-433e-4446-8bc2-5915d8e7e3bf) created via
+// the Marketing Forms API on 2026-07-15, see
+// marketing/automation/n8n-kit-lead-magnet/README.md.
 ---
 <BaseLayout
   title="Fix HubSpot's ARR Math on Multi-Year Deals | SWOTBee"
@@ -13,35 +17,129 @@ import Footer from '../../components/astro/Footer.astro';
   <section class="bg-gradient-to-b from-v6-bg to-white px-4 sm:px-6 lg:px-8 pt-14 pb-10">
     <div class="max-w-2xl mx-auto text-center">
       <h1 class="text-3xl sm:text-4xl font-bold text-v6-dark leading-tight mb-4">
-        Multi-year deals? <span class="text-v6-copper">HubSpot's ARR math is probably wrong.</span>
+        Multi-year deals?<br /><span class="text-v6-copper">HubSpot's ARR math is probably wrong.</span>
       </h1>
       <p class="text-lg text-v6-text-muted mb-2">The ACV/ARR calculations ignore line-item start dates and term lengths. Users describe pipelines "overstated enormously" and multi-year analytics that are "useless." This kit computes the correct numbers in under an hour.</p>
       <p class="text-sm text-gray-500">Includes the export recipe, the correction columns, and the three checks that catch the classic errors.</p>
     </div>
   </section>
 
-  <section class="bg-white px-4 sm:px-6 lg:px-8 pb-16 pt-4">
+  <section class="bg-white px-4 sm:px-6 lg:px-8 pb-4">
+    <div class="max-w-2xl mx-auto grid sm:grid-cols-3 gap-4 text-center">
+      <div class="bg-v6-bg rounded-xl p-4"><div class="font-bold text-v6-teal text-lg">Step 1</div><div class="text-sm text-v6-text-muted">Export deals with the right columns</div></div>
+      <div class="bg-v6-bg rounded-xl p-4"><div class="font-bold text-v6-teal text-lg">Step 2</div><div class="text-sm text-v6-text-muted">Apply the correction formulas</div></div>
+      <div class="bg-v6-bg rounded-xl p-4"><div class="font-bold text-v6-teal text-lg">Step 3</div><div class="text-sm text-v6-text-muted">Run the three integrity checks</div></div>
+    </div>
+  </section>
+
+  <section class="bg-white px-4 sm:px-6 lg:px-8 pb-16 pt-8">
     <div class="max-w-xl mx-auto bg-v6-bg border border-v6-border rounded-2xl p-8">
-      <form method="POST" action="/api/lead-magnet" class="flex flex-col gap-4">
-        <input type="hidden" name="magnet" value="arr-correction-kit" />
+      <form id="arr-form" class="flex flex-col gap-4" novalidate>
+        <input type="hidden" name="funnel_stage_entry" value="arr_kit" />
+        <input type="hidden" name="page_variant" value="v1-arr-kit" />
+        <input type="hidden" name="utm_source" /><input type="hidden" name="utm_medium" /><input type="hidden" name="utm_campaign" /><input type="hidden" name="utm_content" /><input type="hidden" name="utm_term" />
+        <input type="hidden" name="ga_client_id" />
         <label class="text-sm font-semibold text-v6-dark">Work email
           <input required type="email" name="email" placeholder="you@company.com" class="mt-1 w-full border border-gray-300 rounded-lg px-4 py-3" />
         </label>
         <label class="text-sm font-semibold text-v6-dark">Do you close multi-year contracts?
-          <select required name="multiyear" class="mt-1 w-full border border-gray-300 rounded-lg px-4 py-3 bg-white">
+          <select required name="closes_multiyear" class="mt-1 w-full border border-gray-300 rounded-lg px-4 py-3 bg-white">
             <option value="">Select...</option><option>Yes, most deals</option><option>Yes, some</option><option>Rarely</option>
           </select>
         </label>
-        <label class="text-sm font-semibold text-v6-dark">Which numbers go to your board?
-          <select name="board_metrics" class="mt-1 w-full border border-gray-300 rounded-lg px-4 py-3 bg-white">
+        <label class="text-sm font-semibold text-v6-dark">Which numbers go to your board? <span class="font-normal text-gray-500">(optional)</span>
+          <select name="board_reporting_metric" class="mt-1 w-full border border-gray-300 rounded-lg px-4 py-3 bg-white">
             <option value="">Select...</option><option>ARR / NRR</option><option>Renewal rate</option><option>Forecast accuracy</option><option>All of these</option>
+          </select>
+        </label>
+        <label class="text-sm font-semibold text-v6-dark">How did you first hear about us? <span class="font-normal text-gray-500">(optional)</span>
+          <select name="self_reported_attribution" class="mt-1 w-full border border-gray-300 rounded-lg px-4 py-3 bg-white">
+            <option value="">Select...</option><option>Google search</option><option>LinkedIn</option><option>Referral</option><option>Cold email</option><option>Other</option>
           </select>
         </label>
         <button type="submit" class="bg-v6-copper text-white font-semibold rounded-xl px-6 py-3 hover:bg-v6-copper-600 transition-colors">Send me the correction kit</button>
         <p class="text-xs text-gray-500 text-center">One email with the kit. Your board never needs to know.</p>
+        <p id="arr-form-error" class="hidden text-sm text-red-600 text-center">Something went wrong sending the form. Please try again, or email us at info@swotbee.com and we will send the kit directly.</p>
       </form>
+      <div id="arr-form-success" class="hidden text-center py-6">
+        <p class="text-2xl mb-3">✅</p>
+        <p class="text-lg font-semibold text-v6-dark mb-2">Got it. Your correction kit is on its way.</p>
+        <p class="text-sm text-v6-text-muted">One email with the kit. That is it.</p>
+      </div>
     </div>
     <p class="text-center text-sm text-v6-text-muted mt-8 max-w-xl mx-auto">The durable fix is structural: multi-year deals existing as correct per-year pipeline, created automatically. The renewal audit includes an ARR integrity check against your actual portal.</p>
   </section>
   <Footer />
+
+  <script>
+    // Submits to the HubSpot Forms API (same portal as the ContactUs embed and the other
+    // lead-magnet pages).
+    const PORTAL_ID = "243398671";
+    const FORM_GUID = "99dd4e6e-433e-4446-8bc2-5915d8e7e3bf";
+
+    const form = document.getElementById("arr-form") as HTMLFormElement | null;
+    const success = document.getElementById("arr-form-success");
+    const errorMsg = document.getElementById("arr-form-error");
+
+    function gaEvent(name: string, params?: Record<string, unknown>) {
+      const w = window as typeof window & { gtag?: (...args: unknown[]) => void };
+      if (w.gtag) w.gtag("event", name, params || {});
+    }
+    let formStartFired = false;
+    form?.addEventListener(
+      "focusin",
+      () => {
+        if (!formStartFired) {
+          formStartFired = true;
+          gaEvent("form_start", { form_name: "arr_correction_kit" });
+        }
+      },
+      { once: true }
+    );
+
+    const params = new URLSearchParams(window.location.search);
+    ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"].forEach((k) => {
+      const input = form?.querySelector<HTMLInputElement>(`input[name="${k}"]`);
+      if (input) input.value = params.get(k) ?? "";
+    });
+
+    // GA client id from the _ga cookie (GA1.1.<clientId>) so HubSpot and GA can be stitched.
+    const gaMatch = document.cookie.match(/_ga=GA\d\.\d\.(\d+\.\d+)/);
+    const gaInput = form?.querySelector<HTMLInputElement>('input[name="ga_client_id"]');
+    if (gaInput && gaMatch) gaInput.value = gaMatch[1];
+
+    form?.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      if (!form.reportValidity()) return;
+      errorMsg?.classList.add("hidden");
+
+      const data = new FormData(form);
+      const fields = [...data.entries()].map(([name, value]) => ({
+        objectTypeId: "0-1",
+        name,
+        value: String(value),
+      }));
+
+      try {
+        const res = await fetch(
+          `https://api.hsforms.com/submissions/v3/integration/submit/${PORTAL_ID}/${FORM_GUID}`,
+          {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              fields,
+              context: { pageUri: window.location.href, pageName: document.title },
+            }),
+          }
+        );
+        if (!res.ok) throw new Error(`HubSpot responded ${res.status}`);
+        form.classList.add("hidden");
+        success?.classList.remove("hidden");
+        gaEvent("form_submit", { form_name: "arr_correction_kit" });
+      } catch (_err) {
+        errorMsg?.classList.remove("hidden");
+        gaEvent("form_error", { form_name: "arr_correction_kit" });
+      }
+    });
+  </script>
 </BaseLayout>
