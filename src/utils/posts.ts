@@ -17,6 +17,7 @@ interface BlogPost {
   image: string;
   tags?: string[];
   authorName?: string;
+  category?: { title: string; href: string };
 }
 
 interface PostsResult {
@@ -73,6 +74,7 @@ export const getAllPosts = async (): Promise<BlogPost[]> => {
         image: post.frontmatter.image,
         tags: post.frontmatter.tags || [],
         authorName: post.frontmatter.author?.name || 'SWOTBee Team',
+        category: post.frontmatter.category,
       };
     })
   );
@@ -80,4 +82,22 @@ export const getAllPosts = async (): Promise<BlogPost[]> => {
   return allPosts.sort((a, b) =>
     new Date(b.pubDate).getTime() - new Date(a.pubDate).getTime()
   );
+}
+
+export const getPostsByCategory = async (slug: string): Promise<BlogPost[]> => {
+  const allPosts = await getAllPosts();
+  return allPosts.filter(post => post.category?.href === `/categories/${slug}`);
+}
+
+export const getAllCategories = async (): Promise<Array<{ slug: string; title: string }>> => {
+  const allPosts = await getAllPosts();
+  const seen = new Map<string, string>();
+
+  allPosts.forEach(post => {
+    if (!post.category?.href?.startsWith('/categories/')) return;
+    const slug = post.category.href.replace('/categories/', '');
+    if (!seen.has(slug)) seen.set(slug, post.category.title);
+  });
+
+  return Array.from(seen.entries()).map(([slug, title]) => ({ slug, title }));
 }

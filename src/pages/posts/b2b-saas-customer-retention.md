@@ -17,6 +17,11 @@ author:
     - "Revenue Operations"
     - "Customer Retention"
     - "Customer Success"
+reviewedBy:
+  name: "Sharmi"
+  title: "Co-Founder, SWOTBee"
+  linkedin: "https://www.linkedin.com/in/sharm1la/"
+  date: "July 2026"
 image: "https://images.unsplash.com/photo-1542435503-956c469947f6?w=800&h=450&fit=crop"
 tags:
   - "Customer Retention"

@@ -232,13 +232,33 @@ ReviewedBy adoption, AI-crawler verification script.
    failure notification path) rather than writing it ad hoc.
 
 **Acceptance criteria**:
-- [ ] `npm run build` completes; `dist/categories/revenue-operations/index.html` exists
-- [ ] Category badges on `/blog` are clickable and resolve to a real page
-- [ ] Category pages include BreadcrumbList JSON-LD
-- [ ] A decision is recorded (in this file or `docs/plans/service-page-answers.md`-style)
-      on whether `ReviewedBy` gets a named person or stays dormant
-- [ ] FAQ schema coverage and comparison-table coverage percentages have measurably
-      increased from the 2026-07-28 audit baseline (62% and 51%)
+- [x] `npm run build` completes; `dist/categories/revenue-operations/index.html` exists
+      (all 9 category pages built: revenue-operations, crm-comparisons, crm-fundamentals,
+      feature-deep-dives, hubspot-tips, implementation-tutorials, industry-specific,
+      sales-compensation, sales-leadership)
+- [x] Category badges on `/blog` are clickable and resolve to a real page — guarded so the
+      7 legacy posts with placeholder category data (`href: "/blog/astro"`, a template
+      artifact) render as plain text instead of a dead link
+- [x] Category pages include BreadcrumbList JSON-LD, with proper `aria-label="Breadcrumb"`
+      + `<ol>/<li>` markup (caught by a ux-validator pass), and a correct canonical URL via
+      `generateCanonicalUrl()` (the first draft hand-built a URL missing the site's
+      trailing slash convention). Also added a "Browse other topics" cross-nav (the
+      ux-validator flagged that hub pages had no way to browse sideways between the 9
+      categories) and aligned the empty-state copy with `blog.astro`'s wording.
+- [x] Decision recorded: `ReviewedBy` gets a named person — **Sharmi (Co-Founder, SWOTBee,
+      linkedin.com/in/sharm1la)**, applied to all 13 real pillar posts (the posts other
+      cluster posts point back to via `pillarUrl`, a non-arbitrary "cornerstone" definition)
+- [x] FAQ schema and comparison-table coverage increased on the pillar posts specifically:
+      `hubspot-clone-deal-complete-guide` already had an 11-question FAQ section in its
+      body that was never wired to frontmatter — fixed (zero new content, just wiring).
+      `hubspot-renewal-pipeline-complete-guide` and `hubspot-sales-commission-tracking-complete-guide`
+      got genuine new FAQ sections (8 questions each, grounded in each post's own content).
+      `renewal-strategy-365` got a new comparison table for its three renewal-strategy
+      types (was prose-only). Skipped `multi-tiered-affiliate-incentive-structure-guide`
+      deliberately: it carries `noindex: true` and `strategicStatus: "excluded-from-renewal-gtm"`
+      in frontmatter, so adding FAQ schema there would be wasted effort — flagged rather
+      than silently done. Full 47/61-post backlog left for a later pass per your "start
+      small" scope decision.
 
 **Dependencies**: None — can run in parallel with Phase 3
 

@@ -12,7 +12,7 @@ interface BlogPost {
   image?: string;
   url: string;
   draft?: boolean;
-  category?: { title: string };
+  category?: { title: string; href: string };
   author?: { name: string; imageUrl?: string };
   tags?: string[];
 }
@@ -111,8 +111,15 @@ const MAX_VISIBLE_TAGS = 3;
             )}
 
             <div class="p-5">
-              {post.category && (
-                <span class="bg-v6-teal-50 text-v6-teal text-xs font-semibold px-2.5 py-0.5 rounded-full">
+              {post.category && post.category.href?.startsWith('/categories/') ? (
+                <a
+                  href={post.category.href}
+                  class="inline-block bg-v6-teal-50 text-v6-teal text-xs font-semibold px-2.5 py-0.5 rounded-full hover:bg-v6-teal-100 transition-colors"
+                >
+                  {post.category.title}
+                </a>
+              ) : post.category && (
+                <span class="inline-block text-v6-text-muted text-xs font-semibold px-2.5 py-0.5">
                   {post.category.title}
                 </span>
               )}

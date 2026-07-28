@@ -18,6 +18,11 @@ author:
     - "HubSpot CRM"
     - "Renewal Pipelines"
     - "Revenue Operations"
+reviewedBy:
+  name: "Sharmi"
+  title: "Co-Founder, SWOTBee"
+  linkedin: "https://www.linkedin.com/in/sharm1la/"
+  date: "July 2026"
 image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=450&fit=crop"
 tags:
   - "HubSpot"
@@ -26,6 +31,23 @@ tags:
   - "Customer Retention"
   - "CRM Automation"
   - "SaaS Renewals"
+faqs:
+  - q: "Do I need a separate pipeline for renewals in HubSpot?"
+    a: "Yes, if you have recurring revenue at any real scale. Mixing renewals into your sales pipeline breaks forecasting (new business closes at 20-30%, renewals at 85-95%), lets renewals get deprioritized behind new logos, and leaves no clear owner for the renewal motion."
+  - q: "What stages should a HubSpot renewal pipeline have?"
+    a: "There are three proven models: time-based (12+ Months Out through Renewal Sent), activity-based (Active Contract through Renewal Proposal Sent), and customer-journey (Onboarding through Renewal Sent). The right one depends on your sales cycle and team size."
+  - q: "Who should own the renewal pipeline: sales or customer success?"
+    a: "Most commonly Customer Success owns individual renewal deals, while RevOps owns the pipeline architecture, automation, and reporting regardless of who works the deals."
+  - q: "What HubSpot tier do I need for a renewal pipeline?"
+    a: "At minimum, Sales Hub Professional for workflow automation plus Operations Hub Professional for calculated properties like Days to Renewal. Service Hub Professional adds native health scores via the Customer Success Workspace."
+  - q: "What automations does a renewal pipeline need?"
+    a: "Five core workflows: auto-creating the renewal deal on Closed Won, time-based stage progression, a 90-60-30 day engagement cadence, a multi-year renewal chain, and churn/at-risk alerts."
+  - q: "How do I avoid the renewal workflow infinite loop?"
+    a: "HubSpot's re-enrollment blocking stops a Year 1 to Year 2 renewal chain from continuing to Year 3. Fix it with the boolean toggle pattern or a dual-workflow (odd/even) pattern."
+  - q: "What metrics should I track for a renewal pipeline?"
+    a: "Renewal rate (target 90%+), net revenue retention (target 110%+), gross revenue retention (target 90%+), and churn rate (target under 5% annually)."
+  - q: "What's the most common mistake in HubSpot renewal pipelines?"
+    a: "Mixing deal types in one pipeline, which breaks reports, forecasts, and automation at once. Close behind: no churn reason taxonomy, and starting renewal conversations at 90 days instead of 6 months for enterprise contracts."
 howto: true
 howtoSteps:
   - name: "Create the pipeline"
@@ -275,6 +297,34 @@ Avoid the [12 most common mistakes](/posts/hubspot-renewal-pipeline-mistakes-cos
 | **Days to Renewal** | Calculated field: Renewal Date minus today |
 | **Health Score** | Composite metric of account health (usage, support, engagement) |
 | **QBR** | Quarterly Business Review, structured account review meeting |
+
+---
+
+## Frequently Asked Questions
+
+**Do I need a separate pipeline for renewals in HubSpot?**
+Yes, if you have recurring revenue at any real scale. Mixing renewals into your sales pipeline breaks forecasting (new business closes at 20-30%, renewals at 85-95%), lets renewals get deprioritized behind new logos, and leaves no clear owner for the renewal motion.
+
+**What stages should a HubSpot renewal pipeline have?**
+There are three proven models: time-based (12+ Months Out through Renewal Sent), activity-based (Active Contract through Renewal Proposal Sent), and customer-journey (Onboarding through Renewal Sent). The right one depends on your sales cycle and team size.
+
+**Who should own the renewal pipeline: sales or customer success?**
+Most commonly Customer Success owns individual renewal deals, while RevOps owns the pipeline architecture, automation, and reporting regardless of who works the deals.
+
+**What HubSpot tier do I need for a renewal pipeline?**
+At minimum, Sales Hub Professional for workflow automation plus Operations Hub Professional for calculated properties like Days to Renewal. Service Hub Professional adds native health scores via the Customer Success Workspace.
+
+**What automations does a renewal pipeline need?**
+Five core workflows: auto-creating the renewal deal on Closed Won, time-based stage progression, a 90-60-30 day engagement cadence, a multi-year renewal chain, and churn/at-risk alerts.
+
+**How do I avoid the renewal workflow infinite loop?**
+HubSpot's re-enrollment blocking stops a Year 1 to Year 2 renewal chain from continuing to Year 3. Fix it with the boolean toggle pattern or a dual-workflow (odd/even) pattern.
+
+**What metrics should I track for a renewal pipeline?**
+Renewal rate (target 90%+), net revenue retention (target 110%+), gross revenue retention (target 90%+), and churn rate (target under 5% annually).
+
+**What's the most common mistake in HubSpot renewal pipelines?**
+Mixing deal types in one pipeline, which breaks reports, forecasts, and automation at once. Close behind: no churn reason taxonomy, and starting renewal conversations at 90 days instead of 6 months for enterprise contracts.
 
 ---
 

@@ -17,6 +17,11 @@ author:
     - "Revenue Operations"
     - "SaaS Metrics"
     - "Renewal Forecasting"
+reviewedBy:
+  name: "Sharmi"
+  title: "Co-Founder, SWOTBee"
+  linkedin: "https://www.linkedin.com/in/sharm1la/"
+  date: "July 2026"
 image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop"
 tags:
   - "SaaS Metrics"
