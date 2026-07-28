@@ -117,6 +117,18 @@ const displayPosts = relatedPosts.length >= 2
     />
   )}
 
+  {/* BreadcrumbList schema — same helper already wired into every service page */}
+  <StructuredData
+    type="breadcrumb"
+    data={{
+      breadcrumbs: [
+        { name: "Home", url: "https://swotbee.com" },
+        { name: "Blog", url: "https://swotbee.com/blog" },
+        { name: frontmatter.title, url: canonicalURL },
+      ],
+    }}
+  />
+
   {/* isPartOf schema for cluster posts in a series */}
   {frontmatter.seriesName && frontmatter.pillarUrl && (
     <script type="application/ld+json" set:html={JSON.stringify({
