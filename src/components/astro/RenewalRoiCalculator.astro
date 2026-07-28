@@ -1,41 +1,61 @@
 ---
 // RenewalRoiCalculator.astro
-// Interactive renewal-revenue ROI calculator, extracted from
+// Interactive renewal-growth-ceiling calculator, extracted from
 // renewal-operations-animated-v3.astro so the page can `include` it.
 //
 // Left column: five cascading selectors (industry, company size, how you track
-// renewals today, renewal cadence, role) drive three refinable sliders. Right
-// column: a hand-built inline-SVG 5-year projection (thick copper "at risk" line
-// vs teal "recoverable" line) plus the two result cards.
+// renewals today) drive three refinable sliders. Right column: a hand-built inline-SVG
+// chart showing the "growth ceiling" effect described in Jason Cohen's MicroConf US
+// 2026 talk ("cancellation always wins" / the elephant curve): churn scales with the
+// size of your renewal book, new business added by marketing does not, so the book
+// converges on a ceiling of new business / churn rate. Recovering part of that churn
+// raises the ceiling.
 //
-// Core math (unchanged from the original calculator):
-//   at risk / year   = renewals * ACV * (slip / 100)
-//   recoverable      = 70% of at risk
+// Core math:
+//   ceiling, if nothing changes = renewals / START_FRACTION_OF_CEILING, * acv
+//     (today's actual renewals are illustrated as partway to the ceiling current churn
+//     implies, not already sitting at it: see START_FRACTION_OF_CEILING below. This is
+//     what makes the "if nothing changes" line genuinely rise then visibly stall,
+//     matching the video's elephant-curve shape, instead of being flat from year 0.)
+//   new business/year (implied) = ceiling-if-nothing-changes (in units) * slip%
+//   effective slip, if fixed    = slip% * (1 - recovery%)
+//   ceiling, if fixed           = (new business / effective slip%) * acv
+//   book size at year t (either path) = size(t-1) * (1 - <that path's slip%>) + new
+//     business, both paths starting from today's actual renewals at year 0
 //
-// Selector responsibilities are kept separate:
-//   industry  -> renewals + ACV defaults, slider nouns, biggest-leak line
+// Selector responsibilities:
+//   industry  -> renewals + ACV defaults, slider nouns, biggest-leak line, the
+//                per-industry slip-by-tracking-method table, and the recovery rate
 //   size      -> multiplies the industry renewals + ACV defaults
-//   tracking  -> sets slip % directly (overrides the slider)
-//   cadence   -> copy only (multi-year forces the leak line); no math change
-//   role      -> reframes the OUTPUT labels only, never the sliders
+//   tracking  -> looks up slip% from the ACTIVE industry's slip table. This is no
+//                longer a single shared ladder: research showed slip-by-tracking
+//                maturity varies 2-7x by vertical (e.g. Field Service manual tracking
+//                runs ~70% slip in ServiceTitan's real data, not the ~12% generic
+//                figure this calculator used before that research pass).
 //
-// Numbers are typical mid-market estimates, not measured data. No new deps:
-// vanilla JS inline, Tailwind v4, v6 design tokens. House rule: no em/en dashes.
+// Renewals/ACV/slip/recovery are sourced from published industry benchmarks where the
+// research found usable data, and clearly-unvalidated placeholders where it did not
+// (kept internally at docs/research/renewal-benchmarks-by-industry.md, with full
+// citations per industry). Company size (50-100 employees) and tracking method
+// (spreadsheets) are illustrative starting points every industry pill sets, not sourced
+// per-industry claims: no benchmark exists for "what size company is typical per
+// vertical," so they stay the same across all seven pills.  No new deps: vanilla JS
+// inline, Tailwind v4, v6 design tokens. House rule: no em/en dashes.
 ---
 
-<section id="roi" class="bg-white py-14 sm:py-18 px-4 sm:px-6 lg:px-8">
+<section id="roi" class="bg-white py-10 sm:py-14 px-4 sm:px-6 lg:px-8">
   <div class="max-w-6xl mx-auto">
     <p class="reveal text-sm font-semibold uppercase tracking-[0.2em] text-v6-copper mb-3 text-center">See What's At Stake</p>
     <h2 class="reveal text-2xl sm:text-3xl lg:text-4xl font-bold text-v6-dark mb-3 text-center text-balance">
       How Much Revenue Is Hiding In Your Renewals?
     </h2>
-    <p class="reveal text-v6-text-muted text-center mb-10 max-w-xl mx-auto">
-      Pick your situation, then refine with the sliders. This is a directional estimate of the renewal revenue at risk each year when the process leaks. We pressure-test these numbers against your real HubSpot data in the free audit.
+    <p class="reveal text-v6-text-muted text-center mb-6 max-w-xl mx-auto">
+      Pick your situation, then refine with the sliders. Renewal slippage does not just cost revenue this year: it caps how big your renewal book can ever get. Watch growth stall as the leak catches up, and how much further it climbs once that leak is fixed. We pressure-test these numbers against your real HubSpot data in the paid renewal audit.
     </p>
 
     <div class="reveal rounded-2xl border border-v6-border bg-v6-bg p-6 sm:p-8">
       <!-- Industry pills: the primary driver. Framed and tinted so it reads as the control that cascades into the sliders, chart, and cards below. -->
-      <div class="mb-10 rounded-xl border border-v6-copper-100 bg-white p-4 sm:p-5">
+      <div class="mb-6 rounded-xl border border-v6-copper-100 bg-white p-4 sm:p-5">
         <div class="flex flex-wrap items-baseline gap-x-2 gap-y-1 mb-3">
           <span class="text-[11px] font-bold uppercase tracking-wider text-v6-copper">Start here</span>
           <span class="text-sm font-medium text-v6-text-muted">Pick the closest fit to set the baseline the sliders and estimate build on.</span>
@@ -55,9 +75,9 @@
 
         <!-- ===== LEFT: inputs ===== -->
         <div class="lg:col-span-5">
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
             <div>
-              <label for="roi-size" class="block text-xs font-semibold text-v6-dark mb-1.5">Company size</label>
+              <label for="roi-size" class="block text-sm font-semibold text-v6-dark mb-1.5">Company size</label>
               <select id="roi-size" class="roi-select">
                 <option value="25-49">25 to 49 employees</option>
                 <option value="50-100" selected>50 to 100 employees</option>
@@ -66,7 +86,7 @@
               </select>
             </div>
             <div>
-              <label for="roi-track" class="block text-xs font-semibold text-v6-dark mb-1.5">How you track renewals today</label>
+              <label for="roi-track" class="block text-sm font-semibold text-v6-dark mb-1.5">How you track renewals today</label>
               <select id="roi-track" class="roi-select">
                 <option value="nothing">Nothing (memory + calendars)</option>
                 <option value="spreadsheets" selected>Spreadsheets</option>
@@ -74,10 +94,10 @@
                 <option value="custom">Custom-built workflows</option>
               </select>
             </div>
-            {/* Role selector commented out per request. The result card label
-                stays fixed at "Revenue at risk / year" while this is disabled.
+            {/* Role selector commented out per request. Card labels stay fixed while
+                this is disabled.
             <div class="sm:col-span-2">
-              <label for="roi-role" class="block text-xs font-semibold text-v6-dark mb-1.5">Your role</label>
+              <label for="roi-role" class="block text-sm font-semibold text-v6-dark mb-1.5">Your role</label>
               <select id="roi-role" class="roi-select">
                 <option value="revops" selected>RevOps leader</option>
                 <option value="vpsales">VP Sales / Revenue leader</option>
@@ -89,79 +109,91 @@
             */}
           </div>
 
-          <div class="space-y-6">
+          <div class="space-y-5">
             <div>
               <div class="flex justify-between items-baseline mb-2 gap-3">
-                <label id="roi-renewals-label" for="roi-renewals" class="text-sm font-semibold text-v6-dark">Service agreements per year</label>
+                <label id="roi-renewals-label" for="roi-renewals" class="text-base font-semibold text-v6-dark">Service agreements per year</label>
                 <output id="roi-renewals-out" class="text-base font-bold text-v6-copper shrink-0">300</output>
               </div>
               <input id="roi-renewals" type="range" min="50" max="5000" step="50" value="300" class="roi-range" />
             </div>
             <div>
               <div class="flex justify-between items-baseline mb-2 gap-3">
-                <label id="roi-acv-label" for="roi-acv" class="text-sm font-semibold text-v6-dark">Average contract value</label>
+                <label id="roi-acv-label" for="roi-acv" class="text-base font-semibold text-v6-dark">Average contract value</label>
                 <output id="roi-acv-out" class="text-base font-bold text-v6-copper shrink-0">$50,000</output>
               </div>
               <input id="roi-acv" type="range" min="0" max="1000" step="1" value="459" class="roi-range" />
             </div>
             <div>
               <div class="flex justify-between items-baseline mb-2 gap-3">
-                <label for="roi-slip" class="text-sm font-semibold text-v6-dark">Renewals that slip or churn from process gaps</label>
-                <output id="roi-slip-out" class="text-base font-bold text-v6-copper shrink-0">10%</output>
+                <label for="roi-slip" class="text-base font-semibold text-v6-dark">Renewals that slip or churn from process gaps</label>
+                <output id="roi-slip-out" class="text-base font-bold text-v6-copper shrink-0">16%</output>
               </div>
-              <input id="roi-slip" type="range" min="1" max="30" step="1" value="10" class="roi-range" />
+              <input id="roi-slip" type="range" min="1" max="90" step="1" value="16" class="roi-range" />
             </div>
           </div>
 
           {/* "Sounds like a ... ops team tracking renewals ..." vignette commented out per request.
-          <p id="roi-vignette" class="mt-7 text-sm text-v6-text-muted italic leading-relaxed"></p>
+          <p id="roi-vignette" class="mt-5 text-sm text-v6-text-muted italic leading-relaxed"></p>
           */}
-          <p class="mt-7 text-sm text-v6-dark leading-relaxed"><span class="font-semibold text-v6-copper">Biggest leak:</span> <span id="roi-leak"></span></p>
+          <p class="mt-5 text-sm text-v6-dark leading-relaxed"><span class="font-semibold text-v6-copper">Biggest leak:</span> <span id="roi-leak"></span></p>
         </div>
 
         <!-- ===== RIGHT: outputs ===== -->
         <div class="flex flex-col lg:col-span-7">
-          <p class="text-xs font-semibold uppercase tracking-wider text-v6-text-muted mb-3">Five-year outlook</p>
-          <svg id="roi-chart" viewBox="0 0 400 260" class="w-full h-auto" role="img" aria-label="Projected renewal revenue at risk versus recoverable over five years">
+          <p class="text-xs font-semibold uppercase tracking-wider text-v6-text-muted mb-2">Your growth ceiling</p>
+          <svg id="roi-chart" viewBox="0 0 400 200" class="w-full h-auto" role="img" aria-label="Your renewal book's value over five years: flat if nothing changes, rising if you fix the preventable churn">
             <g id="roi-grid"></g>
             <path id="roi-area" fill="#e8f5f2" stroke="none"></path>
-            <polyline id="roi-line-risk" fill="none" stroke="#C47A2A" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"></polyline>
-            <polyline id="roi-line-recover" fill="none" stroke="#5AAB9D" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"></polyline>
-            <circle id="roi-dot-risk" r="4.5" fill="#C47A2A"></circle>
-            <circle id="roi-dot-recover" r="4.5" fill="#5AAB9D"></circle>
+            <polyline id="roi-line-current" fill="none" stroke="#C47A2A" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"></polyline>
+            <polyline id="roi-line-recovered" fill="none" stroke="#5AAB9D" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"></polyline>
+            <circle id="roi-dot-current" r="4.5" fill="#C47A2A"></circle>
+            <circle id="roi-dot-recovered" r="4.5" fill="#5AAB9D"></circle>
+            <!-- Badge calling out the $ gap directly on the chart, fades in just after the lines finish drawing -->
+            <g id="roi-gap-callout"></g>
+            <!-- Y-axis $ labels painted last so they stay legible even where a data line crosses a gridline -->
+            <g id="roi-ylabels"></g>
             <g id="roi-xlabels"></g>
           </svg>
-          <div class="flex flex-wrap gap-x-5 gap-y-1.5 mt-1 mb-6 text-xs text-v6-text-muted">
-            <span class="flex items-center gap-1.5"><span class="inline-block w-4 h-1 rounded-full" style="background:#C47A2A"></span> 5-yr at risk <b id="roi-risk5" class="text-v6-dark font-semibold">&nbsp;</b></span>
-            <span class="flex items-center gap-1.5"><span class="inline-block w-4 h-1 rounded-full" style="background:#5AAB9D"></span> 5-yr recoverable <b id="roi-recover5" class="text-v6-dark font-semibold">&nbsp;</b></span>
+          <div class="flex flex-wrap gap-x-5 gap-y-1.5 mt-1 mb-4 text-xs text-v6-text-muted">
+            <span class="flex items-center gap-1.5"><span class="inline-block w-4 h-1 rounded-full" style="background:#C47A2A"></span> If nothing changes <b id="roi-ceiling-current-label" class="text-v6-dark font-semibold">&nbsp;</b></span>
+            <span class="flex items-center gap-1.5"><span class="inline-block w-4 h-1 rounded-full" style="background:#5AAB9D"></span> If you fix the leak <b id="roi-ceiling-recovered-label" class="text-v6-dark font-semibold">&nbsp;</b></span>
           </div>
 
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div class="rounded-xl bg-v6-copper-50 border border-v6-copper-100 p-5 text-center">
-              <p id="roi-card1-label" class="text-xs font-semibold uppercase tracking-wider text-v6-copper mb-1">Revenue at risk / year</p>
-              <p id="roi-risk" class="text-3xl font-bold text-v6-dark">$1,500,000</p>
-              <p id="roi-card1-helper" class="text-xs text-v6-text-muted mt-1.5 leading-snug hidden"></p>
+          <!-- Three headline numbers in one compact row instead of two large cards plus a
+               third stacked below: same information, without a visitor needing to subtract
+               the first two to find the third, and without the extra vertical space three
+               separate stacked cards used to take. -->
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <div class="rounded-lg bg-v6-copper-50 border border-v6-copper-100 py-3 px-2 text-center">
+              <p class="text-[10px] font-semibold uppercase tracking-wide text-v6-copper mb-0.5">If nothing changes</p>
+              <p id="roi-ceiling-current" class="text-xl font-bold text-v6-dark">$15.0M</p>
             </div>
-            <div class="rounded-xl bg-v6-teal-50 border border-v6-teal-100 p-5 text-center">
-              <p class="text-xs font-semibold uppercase tracking-wider text-v6-teal mb-1">Potentially recoverable</p>
-              <p id="roi-recover" class="text-3xl font-bold text-v6-dark">$1,050,000</p>
+            <div class="rounded-lg bg-v6-teal-50 border border-v6-teal-100 py-3 px-2 text-center">
+              <p class="text-[10px] font-semibold uppercase tracking-wide text-v6-teal mb-0.5">If you fix the leak</p>
+              <p id="roi-ceiling-recovered" class="text-xl font-bold text-v6-dark">$19.2M</p>
+            </div>
+            <div class="rounded-lg bg-gradient-to-r from-v6-copper to-v6-teal py-3 px-2 text-center">
+              <p class="text-[10px] font-semibold uppercase tracking-wide text-white/80 mb-0.5">Growth left on the table</p>
+              <p id="roi-growth-left" class="text-xl font-bold text-white">$4.2M</p>
             </div>
           </div>
-          <div class="mt-3 space-y-1 text-center">
+
+          <div class="mt-2 space-y-1 text-center">
             <p id="roi-extra-hours" class="text-sm font-semibold text-v6-dark"></p>
             <p id="roi-extra-retention" class="text-sm font-semibold text-v6-dark"></p>
           </div>
         </div>
       </div>
 
-      <p class="text-xs text-v6-text-muted text-center mt-7 max-w-2xl mx-auto">
-        These are typical mid-market estimates, not measured data and not a quote. The recoverable figure assumes a process that closes most preventable slippage. We pressure-test every number against your real HubSpot data in the free audit.
-      </p>
-      <div class="text-center mt-5">
-        <a href="/contactus" class="inline-block bg-v6-copper text-white px-7 py-3 rounded-xl text-base font-semibold hover:bg-v6-copper-600 transition-colors">
-          Find My Hidden Renewal Revenue →
+      <div class="text-center mt-4">
+        <a id="roi-cta" href="/contactus" class="inline-block bg-v6-copper text-white px-7 py-3 rounded-xl text-base font-semibold hover:bg-v6-copper-600 transition-colors">
+          Find My Hidden <span id="roi-cta-gap">$4.2M</span>/Year →
         </a>
       </div>
+      <p class="text-xs text-v6-text-muted text-center mt-4 max-w-2xl mx-auto">
+        Renewal volume, contract value, and churn rates are informed by published industry benchmarks where available; some figures remain directional where no reliable industry data exists. The growth-ceiling model illustrates today's renewal book as partway toward the ceiling its current churn implies, so the chart shows the climb and the stall: a simplification, not a prediction. We pressure-test every number against your real HubSpot data in the paid renewal audit.
+      </p>
     </div>
   </div>
 </section>
@@ -176,6 +208,28 @@
   :global(.anim) .reveal.in { opacity: 1; transform: none; }
   @media (prefers-reduced-motion: reduce) {
     :global(.anim) .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+  }
+
+  /* ===== "Fly to CTA" number micro-interaction =====
+     .roi-flyer is a short-lived element created and removed by JS (see revealChart).
+     It's never part of the compiled template, so it never receives Astro's scoping
+     attribute; a scoped .roi-flyer rule silently never matches it (transition/background
+     both no-op). :global() is required here, same reason the .anim rule above is global.
+     roi-cta-land, by contrast, toggles onto the CTA button that DOES exist in the
+     template, so it already carries the scope attribute and doesn't need :global(). */
+  :global(.roi-flyer) {
+    position: fixed; z-index: 60; pointer-events: none;
+    background: #C47A2A; color: #fff; font-weight: 700; font-size: 1.25rem;
+    padding: 0.5rem 0.9rem; border-radius: 999px; white-space: nowrap;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+    transition: left 0.8s cubic-bezier(0.4,0,0.2,1), top 0.8s cubic-bezier(0.4,0,0.2,1),
+                transform 0.8s cubic-bezier(0.4,0,0.2,1), opacity 0.8s cubic-bezier(0.4,0,0.2,1);
+  }
+  @keyframes roi-cta-land { 0% { transform: scale(1); } 45% { transform: scale(1.07); } 100% { transform: scale(1); } }
+  .roi-cta-land { animation: roi-cta-land 0.4s ease-out; }
+  @media (prefers-reduced-motion: reduce) {
+    :global(.roi-flyer) { display: none; }
+    .roi-cta-land { animation: none; }
   }
 
   /* ===== ROI range sliders (moved from the page so this component is self-contained) ===== */
@@ -213,16 +267,28 @@
 
 <script>
   const fmt = new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 });
-  const RECOVERABLE = 0.7; // share of preventable slippage a solid renewal process recovers
+  const fmtCompact = new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", notation: "compact", maximumFractionDigits: 1 });
 
+  // Renewals/ACV/slip/recovery sourced from published industry benchmarks where
+  // available; unvalidated figures kept as clearly-directional placeholders where the
+  // research found no usable data. Full citations per industry, including exactly
+  // which numbers are sourced vs. directional, live in
+  // docs/research/renewal-benchmarks-by-industry.md.
   const INDUSTRY = {
-    energy:   { renewals: 300, acv: 50000, noun: "service agreements",          acvLabel: "Average contract value",              leak: "multi-year escalations that never get applied",       vig: "energy / utilities" },
-    field:    { renewals: 800, acv: 12000, noun: "maintenance contracts / AMCs", acvLabel: "Average contract value",              leak: "high-volume renewals slipping unnoticed",             vig: "field-service" },
-    mfg:      { renewals: 200, acv: 80000, noun: "service contracts",            acvLabel: "Average contract value",              leak: "year-3 multi-year deals HubSpot never creates",       vig: "industrial" },
-    msp:      { renewals: 600, acv: 18000, noun: "managed-services contracts",   acvLabel: "Average contract value (MRR x 12)",   leak: "monthly churn compounding across MRR",                vig: "managed-services" },
-    iot:      { renewals: 350, acv: 30000, noun: "device + subscription contracts", acvLabel: "Average contract value",           leak: "hardware-plus-subscription renewals falling through", vig: "IoT" },
-    saas:     { renewals: 700, acv: 15000, noun: "subscriptions",               acvLabel: "Average contract value",              leak: "expansion revenue left on the table",                 vig: "SaaS" },
-    proptech: { renewals: 300, acv: 22000, noun: "platform contracts",          acvLabel: "Average contract value",              leak: "renewal dates tracked off-CRM",                       vig: "proptech" },
+    energy:   { renewals: 300, acv: 50000, noun: "service agreements",              acvLabel: "Average contract value",              leak: "multi-year escalations that never get applied",       vig: "energy / utilities",
+                slip: { nothing: 0.20, spreadsheets: 0.16, system: 0.12, custom: 0.08 }, recovery: 0.22 },
+    field:    { renewals: 800, acv: 5000,  noun: "maintenance contracts / AMCs",     acvLabel: "Average contract value",              leak: "high-volume renewals slipping unnoticed",              vig: "field-service",
+                slip: { nothing: 0.72, spreadsheets: 0.70, system: 0.58, custom: 0.51 }, recovery: 0.65 },
+    mfg:      { renewals: 200, acv: 80000, noun: "service contracts",                acvLabel: "Average contract value",              leak: "year-3 multi-year deals HubSpot never creates",        vig: "industrial",
+                slip: { nothing: 0.20, spreadsheets: 0.16, system: 0.12, custom: 0.08 }, recovery: 0.70 },
+    msp:      { renewals: 400, acv: 27000, noun: "managed-services contracts",       acvLabel: "Average contract value (MRR x 12)",   leak: "monthly churn compounding across MRR",                 vig: "managed-services",
+                slip: { nothing: 0.12, spreadsheets: 0.10, system: 0.07, custom: 0.05 }, recovery: 0.45 },
+    iot:      { renewals: 350, acv: 30000, noun: "device + subscription contracts",  acvLabel: "Average contract value",              leak: "hardware-plus-subscription renewals falling through", vig: "IoT",
+                slip: { nothing: 0.25, spreadsheets: 0.18, system: 0.10, custom: 0.03 }, recovery: 0.40 },
+    saas:     { renewals: 325, acv: 28000, noun: "subscriptions",                    acvLabel: "Average contract value",              leak: "expansion revenue left on the table",                  vig: "SaaS",
+                slip: { nothing: 0.15, spreadsheets: 0.11, system: 0.08, custom: 0.05 }, recovery: 0.70 },
+    proptech: { renewals: 300, acv: 20000, noun: "platform contracts",               acvLabel: "Average contract value",              leak: "renewal dates tracked off-CRM",                        vig: "proptech",
+                slip: { nothing: 0.18, spreadsheets: 0.13, system: 0.09, custom: 0.05 }, recovery: 0.50 },
   };
   const SIZE = {
     "25-49":   { rMul: 0.5, aMul: 0.85, label: "25 to 49" },
@@ -230,18 +296,29 @@
     "101-250": { rMul: 2.0, aMul: 1.3,  label: "101 to 250" },
     "251-500": { rMul: 4.0, aMul: 1.6,  label: "251 to 500" },
   };
+  // Illustrative starting point every industry pill resets to. Not a sourced claim
+  // about what's typical per vertical, unlike the data above: no benchmark exists for
+  // "what size company / what tracking maturity is typical in Energy vs. MSP", so both
+  // stay constant across all seven pills rather than varying per industry.
+  const DEFAULT_SIZE = "50-100";
+  const DEFAULT_TRACKING = "spreadsheets";
+  // Illustrative dramatization, not a sourced figure: how far into its current-churn
+  // ceiling today's actual renewal volume is assumed to already be. This is what makes
+  // the "if nothing changes" path visibly rise before it stalls (matching the video's
+  // elephant-curve shape) instead of being flat from year 0. There's no way to source
+  // "how far along its own growth curve is a typical company today" the way churn/ACV
+  // were researched, so this stays one shared constant, not a per-industry claim.
+  // Kept high (close to 1) so the stall reads clearly within 5 years even for
+  // low-churn industries, where convergence toward the ceiling is naturally slow: the
+  // "if you fix the leak" path always has a lower effective churn rate by construction
+  // (recovery% > 0), so it keeps climbing visibly even once "if nothing changes" has
+  // flattened out.
+  const START_FRACTION_OF_CEILING = 0.8;
   const TRACKING = {
-    nothing:      { slip: 12, vig: "on memory and calendars" },
-    spreadsheets: { slip: 10, vig: "in spreadsheets" },
-    system:       { slip: 7,  vig: "in a partial system" },
-    custom:       { slip: 5,  vig: "with custom-built workflows", leakAppend: ", and the year-3 cliff when HubSpot loop protection stops creating deals" },
-  };
-  const ROLE = {
-    revops:  { card1: "Revenue at risk / year" },
-    vpsales: { card1: "ARR exposed to renewal leakage", helper: "the slice of your forecast that leaks before it's booked" },
-    ops:     { card1: "Revenue at risk / year", extra: "hours" },
-    cs:      { card1: "Net revenue retention at risk", extra: "retention" },
-    founder: { card1: "Total renewal revenue leaking each year" },
+    nothing:      { vig: "on memory and calendars" },
+    spreadsheets: { vig: "in spreadsheets" },
+    system:       { vig: "in a partial system" },
+    custom:       { vig: "with custom-built workflows", leakAppend: ", and the year-3 cliff when HubSpot loop protection stops creating deals" },
   };
 
   const byId = (id) => document.getElementById(id);
@@ -249,7 +326,6 @@
   const industryGroup = byId("roi-industry");
   const sizeSel = byId("roi-size");
   const trackSel = byId("roi-track");
-  const roleSel = byId("roi-role");
 
   const renewalsEl = byId("roi-renewals");
   const acvEl = byId("roi-acv");
@@ -260,28 +336,30 @@
   const renewalsLabel = byId("roi-renewals-label");
   const acvLabel = byId("roi-acv-label");
 
-  const riskOut = byId("roi-risk");
-  const recoverOut = byId("roi-recover");
-  const card1Label = byId("roi-card1-label");
-  const card1Helper = byId("roi-card1-helper");
+  const ceilingCurrentOut = byId("roi-ceiling-current");
+  const ceilingRecoveredOut = byId("roi-ceiling-recovered");
+  const ceilingCurrentLabel = byId("roi-ceiling-current-label");
+  const ceilingRecoveredLabel = byId("roi-ceiling-recovered-label");
+  const growthLeftOut = byId("roi-growth-left");
+  const ctaGapOut = byId("roi-cta-gap");
+  const ctaButton = byId("roi-cta");
   const extraHoursEl = byId("roi-extra-hours");
   const extraRetentionEl = byId("roi-extra-retention");
   const vignetteEl = byId("roi-vignette");
   const leakEl = byId("roi-leak");
 
   const chart = byId("roi-chart");
-  const lineRisk = byId("roi-line-risk");
-  const lineRecover = byId("roi-line-recover");
+  const lineCurrent = byId("roi-line-current");
+  const lineRecovered = byId("roi-line-recovered");
   const areaEl = byId("roi-area");
-  const dotRisk = byId("roi-dot-risk");
-  const dotRecover = byId("roi-dot-recover");
-  const risk5 = byId("roi-risk5");
-  const recover5 = byId("roi-recover5");
+  const dotCurrent = byId("roi-dot-current");
+  const dotRecovered = byId("roi-dot-recovered");
+  const gapCalloutGroup = byId("roi-gap-callout");
 
   // Only wire up if the calculator markup is actually on the page.
   if (industryGroup && renewalsEl && acvEl && slipEl && chart) {
     const SVG_NS = "http://www.w3.org/2000/svg";
-    const X0 = 14, X1 = 376, Y0 = 16, Y1 = 230, YEARS = 5;
+    const X0 = 14, X1 = 376, Y0 = 14, Y1 = 170, YEARS = 5;
 
     const cap = (s) => s.charAt(0).toUpperCase() + s.slice(1);
     const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
@@ -304,10 +382,190 @@
     const posToAcv = (pos) => niceAcv(ACV_MIN * Math.exp((pos / ACV_STEPS) * ACV_RATIO));
     const acvToPos = (acv) => Math.round((Math.log(clamp(acv, ACV_MIN, ACV_MAX) / ACV_MIN) / ACV_RATIO) * ACV_STEPS);
 
-    // Build the static chart furniture once: horizontal gridlines + year ticks.
+    // Static chart furniture: X-axis year ticks only. Gridlines and Y-axis dollar
+    // labels depend on the live inputs (the ceiling scale differs by industry and
+    // slider position) so they're redrawn on every calc() inside drawChart().
     (function initChart() {
-      const grid = byId("roi-grid");
       const xl = byId("roi-xlabels");
+      for (let i = 0; i <= YEARS; i++) {
+        const t = document.createElementNS(SVG_NS, "text");
+        t.setAttribute("x", String(yearX(i))); t.setAttribute("y", String(Y1 + 18));
+        t.setAttribute("fill", "#5a6a78"); t.setAttribute("font-size", "11");
+        t.setAttribute("text-anchor", i === 0 ? "start" : "middle");
+        t.textContent = i === 0 ? "Now" : "Yr " + i;
+        xl.appendChild(t);
+      }
+    })();
+
+    // Growth-ceiling model: given today's renewals, ACV, slip%, and the industry's
+    // recovery rate, project the book's value for each of the next 5 years under two
+    // paths, both starting from today's actual renewals. Today's book is illustrated as
+    // partway (START_FRACTION_OF_CEILING) to the ceiling its current churn implies, so
+    // the "current" path genuinely rises before it visibly decelerates into that ceiling
+    // ("cancellation always wins", the video's elephant-curve stall), instead of being
+    // flat from year 0. "Recovered" shares the same starting point and new-business
+    // rate, but lowers the effective churn rate by the recoverable share, so it climbs
+    // past the stall toward a higher ceiling instead of flattening there.
+    const projectCeilings = (renewals, acv, slipPct, recoveryFrac) => {
+      const slip = slipPct / 100;
+      const ceilingCurrentUnits = renewals / START_FRACTION_OF_CEILING;
+      const newBusiness = ceilingCurrentUnits * slip;
+      const effectiveSlip = slip * (1 - recoveryFrac);
+      const current = [renewals];
+      const recovered = [renewals];
+      for (let i = 1; i <= YEARS; i++) {
+        current.push(current[i - 1] * (1 - slip) + newBusiness);
+        recovered.push(recovered[i - 1] * (1 - effectiveSlip) + newBusiness);
+      }
+      return {
+        currentBook: current.map((v) => v * acv),
+        recoveredBook: recovered.map((v) => v * acv),
+        ceilingCurrent: ceilingCurrentUnits * acv,
+        ceilingRecovered: effectiveSlip > 0 ? (newBusiness / effectiveSlip) * acv : ceilingCurrentUnits * acv,
+      };
+    };
+
+    const prefersReducedMotion = () => window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    let hasPlayedIntroDraw = false;
+
+    // "Fly to CTA" micro-interaction: a clone of the headline number lifts off the
+    // gradient card and flies down into the CTA button, landing with a small pulse.
+    // Reads the number fresh at fire-time (not captured earlier) in case the visitor
+    // changed something during the delay before this fires.
+    const flyNumberToButton = () => {
+      const sourceRect = growthLeftOut.getBoundingClientRect();
+      const targetRect = ctaButton.getBoundingClientRect();
+      const flyer = document.createElement("div");
+      flyer.className = "roi-flyer";
+      flyer.textContent = ctaGapOut.textContent;
+      flyer.style.left = (sourceRect.left + sourceRect.width / 2) + "px";
+      flyer.style.top = (sourceRect.top + sourceRect.height / 2) + "px";
+      flyer.style.transform = "translate(-50%, -50%) scale(1)";
+      flyer.style.opacity = "1";
+      document.body.appendChild(flyer);
+
+      let landed = false;
+      const land = () => {
+        if (landed) return; // transitionend and the safety-net timeout can both fire
+        landed = true;
+        flyer.remove();
+        ctaButton.classList.add("roi-cta-land");
+        setTimeout(() => ctaButton.classList.remove("roi-cta-land"), 450);
+      };
+      flyer.addEventListener("transitionend", land, { once: true });
+      setTimeout(land, 1000); // safety net: guarantees cleanup even if transitionend never fires
+
+      // A newly-inserted element needs a full paint with its "from" styles before the
+      // "to" styles are set, or the browser can skip straight to the end state without
+      // running the transition at all (and transitionend then never fires). A single
+      // forced reflow isn't reliably enough for a just-appended element; double rAF is
+      // the standard fix, guaranteeing a paint has happened in between.
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          flyer.style.left = (targetRect.left + targetRect.width / 2) + "px";
+          flyer.style.top = (targetRect.top + targetRect.height / 2) + "px";
+          flyer.style.transform = "translate(-50%, -50%) scale(0.35)";
+          flyer.style.opacity = "0";
+        });
+      });
+    };
+
+    // Fires the fly-to-CTA flourish relative to when the CTA is actually on screen, not
+    // just relative to when the chart above it was revealed: on a tall page those can be
+    // two different scroll positions, and firing it while the CTA is off-screen means
+    // the visitor never sees it happen at all. introDuration is the line-draw's own
+    // ~1.6s: if the CTA is already visible, still wait for that to finish first, or the
+    // number would fly into the button before the chart has finished revealing itself.
+    const scheduleFlyToButton = (introDuration) => {
+      const ctaRect = ctaButton.getBoundingClientRect();
+      const ctaAlreadyVisible = ctaRect.top < window.innerHeight && ctaRect.bottom > 0;
+      if (ctaAlreadyVisible) {
+        setTimeout(flyNumberToButton, introDuration + 700);
+        return;
+      }
+      if (!("IntersectionObserver" in window)) return;
+      const ctaObserver = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+          ctaObserver.disconnect();
+          setTimeout(flyNumberToButton, 400);
+        }
+      }, { threshold: 0.6 });
+      ctaObserver.observe(ctaButton);
+    };
+
+    // Animates the two lines "drawing in" left to right via stroke-dashoffset (the
+    // standard technique for this effect, no charting library needed for a 2-line
+    // chart this small). The full ~1.6s sweep plays once, the first time the chart is
+    // revealed, so both lines visibly rise together before the copper one decelerates
+    // into its stall while the teal one keeps climbing past it. Every change after that
+    // (a visitor clicking through industries to compare) gets a fast ~300ms crossfade
+    // instead: re-running the full slow sweep on every click would mean a quick explorer
+    // never sees a settled chart before triggering the next one.
+    const revealChart = (animate) => {
+      if (prefersReducedMotion()) animate = false;
+      const isIntroDraw = animate && !hasPlayedIntroDraw;
+      const duration = isIntroDraw ? 1600 : 300;
+      if (animate) hasPlayedIntroDraw = true;
+
+      [lineCurrent, lineRecovered].forEach((line) => {
+        line.style.transition = "none";
+        if (!animate) {
+          line.style.strokeDasharray = "none";
+          line.style.strokeDashoffset = "0";
+          void line.getBoundingClientRect();
+          line.style.transition = "";
+          return;
+        }
+        const len = line.getTotalLength();
+        line.style.strokeDasharray = String(len);
+        line.style.strokeDashoffset = String(len);
+        void line.getBoundingClientRect(); // force reflow so the "hidden" state registers before animating
+        line.style.transition = "stroke-dashoffset " + duration + "ms cubic-bezier(0.22,1,0.36,1)";
+        line.style.strokeDashoffset = "0";
+      });
+
+      const fadeDelay = animate ? Math.max(duration - 250, 0) : 0;
+      [dotCurrent, dotRecovered, areaEl, gapCalloutGroup].forEach((el) => {
+        el.style.transition = "none";
+        if (!animate) {
+          el.style.opacity = "1";
+          void el.getBoundingClientRect();
+          el.style.transition = "";
+          return;
+        }
+        el.style.opacity = "0";
+        void el.getBoundingClientRect();
+        el.style.transition = "opacity 250ms ease-out " + fadeDelay + "ms";
+        el.style.opacity = "1";
+      });
+
+      // Grand-finale flourish: once per session (isIntroDraw only), not on every
+      // subsequent industry/dropdown change, for the same reason the full line-draw
+      // doesn't replay on every click either. Scheduling (not firing directly) because
+      // on a tall page the CTA may not be on screen yet when the chart itself is.
+      if (isIntroDraw) {
+        scheduleFlyToButton(duration);
+      }
+    };
+
+    const drawChart = (currentBook, recoveredBook, animate, growthLeft) => {
+      const grid = byId("roi-grid");
+      const ylabels = byId("roi-ylabels");
+      grid.replaceChildren();
+      ylabels.replaceChildren();
+
+      // Zoom the axis to the range the two lines actually occupy, instead of forcing
+      // it down to $0. The gap this chart exists to show is often a small slice of the
+      // book's total value (e.g. a few % for a low-recovery industry), so a 0-based
+      // axis squeezes it into a sliver at the top. Padding both ends keeps the lines
+      // off the plot edges; axis labels stay honestly numbered either way.
+      const allValues = [...currentBook, ...recoveredBook];
+      const rawMin = Math.min(...allValues);
+      const rawMax = Math.max(...allValues);
+      const pad = (rawMax - rawMin) * 0.15 || rawMax * 0.1 || 1;
+      const minV = Math.max(0, rawMin - pad);
+      const maxV = rawMax + pad;
+
       for (let k = 0; k <= 4; k++) {
         const y = Y0 + (k * (Y1 - Y0)) / 4;
         const ln = document.createElementNS(SVG_NS, "line");
@@ -316,34 +574,73 @@
         ln.setAttribute("stroke", k === 4 ? "#cfcabd" : "#E5E2DA");
         ln.setAttribute("stroke-width", k === 4 ? "1.5" : "1");
         grid.appendChild(ln);
-      }
-      for (let i = 1; i <= YEARS; i++) {
-        const t = document.createElementNS(SVG_NS, "text");
-        t.setAttribute("x", String(yearX(i))); t.setAttribute("y", String(Y1 + 18));
-        t.setAttribute("fill", "#5a6a78"); t.setAttribute("font-size", "11"); t.setAttribute("text-anchor", "middle");
-        t.textContent = "Yr " + i;
-        xl.appendChild(t);
-      }
-    })();
 
-    const drawChart = (perRisk, perRecover) => {
-      const maxV = perRisk * YEARS || 1;
-      const riskPts = [], recPts = [];
-      for (let i = 0; i <= YEARS; i++) {
-        const x = yearX(i);
-        riskPts.push(x.toFixed(1) + "," + (Y1 - (perRisk * i / maxV) * (Y1 - Y0)).toFixed(1));
-        recPts.push(x.toFixed(1) + "," + (Y1 - (perRecover * i / maxV) * (Y1 - Y0)).toFixed(1));
+        const label = document.createElementNS(SVG_NS, "text");
+        label.setAttribute("x", String(X0 - 4)); label.setAttribute("y", String(y - 3));
+        label.setAttribute("fill", "#5a6a78"); label.setAttribute("font-size", "9.5"); label.setAttribute("text-anchor", "start");
+        // White halo so the label stays legible where a data line crosses right behind it.
+        label.setAttribute("stroke", "#fff"); label.setAttribute("stroke-width", "3"); label.setAttribute("paint-order", "stroke");
+        label.textContent = fmtCompact.format(maxV - (k / 4) * (maxV - minV));
+        ylabels.appendChild(label);
       }
-      lineRisk.setAttribute("points", riskPts.join(" "));
-      lineRecover.setAttribute("points", recPts.join(" "));
-      // Shaded band under the recoverable line = revenue a fixed process keeps.
-      areaEl.setAttribute("d", "M " + X0 + "," + Y1 + " L " + recPts.join(" L ") + " L " + X1 + "," + Y1 + " Z");
-      const endRisk = riskPts[YEARS].split(",");
-      const endRec = recPts[YEARS].split(",");
-      dotRisk.setAttribute("cx", endRisk[0]); dotRisk.setAttribute("cy", endRisk[1]);
-      dotRecover.setAttribute("cx", endRec[0]); dotRecover.setAttribute("cy", endRec[1]);
-      risk5.textContent = fmt.format(perRisk * YEARS);
-      recover5.textContent = fmt.format(perRecover * YEARS);
+
+      const toPts = (arr) => arr.map((v, i) => yearX(i).toFixed(1) + "," + (Y1 - ((v - minV) / (maxV - minV)) * (Y1 - Y0)).toFixed(1));
+      const currentPts = toPts(currentBook);
+      const recoveredPts = toPts(recoveredBook);
+
+      lineCurrent.setAttribute("points", currentPts.join(" "));
+      lineRecovered.setAttribute("points", recoveredPts.join(" "));
+
+      // Shaded band = the growth the leak is currently costing: the gap that opens up
+      // between the flat "if nothing changes" line and the rising "if fixed" line.
+      areaEl.setAttribute(
+        "d",
+        "M " + recoveredPts.join(" L ") + " L " + currentPts.slice().reverse().join(" L ") + " Z"
+      );
+
+      const endCurrent = currentPts[YEARS].split(",");
+      const endRecovered = recoveredPts[YEARS].split(",");
+      dotCurrent.setAttribute("cx", endCurrent[0]); dotCurrent.setAttribute("cy", endCurrent[1]);
+      dotRecovered.setAttribute("cx", endRecovered[0]); dotRecovered.setAttribute("cy", endRecovered[1]);
+
+      // Badge calling out the $ gap directly on the chart, anchored at Year 3 (clear of
+      // the year-5 dots) at the vertical midpoint between the two lines there. Shows the
+      // same headline "growth left on the table" figure as the card and CTA below, not a
+      // separate year-3 snapshot value, so the number is consistent everywhere it appears
+      // rather than looking like a second, contradictory claim. Solid dark fill behind the
+      // text, not a tint or outline, so it stays legible regardless of which line or
+      // shading happens to sit behind it at that point.
+      gapCalloutGroup.replaceChildren();
+      const calloutIdx = 3;
+      if (growthLeft > 0) {
+        const calloutX = currentPts[calloutIdx].split(",")[0];
+        const calloutCurrentY = parseFloat(currentPts[calloutIdx].split(",")[1]);
+        const calloutRecoveredY = parseFloat(recoveredPts[calloutIdx].split(",")[1]);
+        const calloutY = (calloutCurrentY + calloutRecoveredY) / 2;
+
+        const text = document.createElementNS(SVG_NS, "text");
+        text.setAttribute("x", calloutX);
+        text.setAttribute("y", String(calloutY + 4));
+        text.setAttribute("text-anchor", "middle");
+        text.setAttribute("font-size", "11");
+        text.setAttribute("font-weight", "700");
+        text.setAttribute("fill", "#ffffff");
+        text.textContent = fmtCompact.format(growthLeft) + "/yr left on the table";
+        gapCalloutGroup.appendChild(text);
+
+        const bbox = text.getBBox();
+        const padX = 8, padY = 4;
+        const rect = document.createElementNS(SVG_NS, "rect");
+        rect.setAttribute("x", String(bbox.x - padX));
+        rect.setAttribute("y", String(bbox.y - padY));
+        rect.setAttribute("width", String(bbox.width + padX * 2));
+        rect.setAttribute("height", String(bbox.height + padY * 2));
+        rect.setAttribute("rx", "6");
+        rect.setAttribute("fill", "#1a2530");
+        gapCalloutGroup.insertBefore(rect, text);
+      }
+
+      revealChart(animate);
     };
 
     // Cascade industry + size into the renewals/ACV slider defaults and relabel.
@@ -354,6 +651,13 @@
       acvEl.value = String(acvToPos(niceAcv(ind.acv * size.aMul))); // acvToPos clamps to $1k..$5M
       renewalsLabel.textContent = cap(ind.noun) + " per year";
       acvLabel.textContent = ind.acvLabel;
+    };
+
+    // Slip% comes from the ACTIVE industry's own slip-by-tracking-method table, not a
+    // shared ladder: research showed this varies too much by vertical to share.
+    const applyTrackingSlip = () => {
+      const pct = INDUSTRY[getIndustry()].slip[trackSel.value] * 100;
+      slipEl.value = String(Math.round(pct));
     };
 
     const updateVignette = () => {
@@ -370,8 +674,6 @@
       leakEl.textContent = leak + ".";
     };
 
-    // Role selector is commented out, so the card label stays fixed at its
-    // static "Revenue at risk / year". Both derived readouts show at all times.
     const updateReadouts = (renewals, slipPct) => {
       if (extraHoursEl) {
         const hours = Math.round(renewals * 0.33); // ~20 min per renewal, tunable
@@ -382,23 +684,37 @@
       }
     };
 
-    const calc = () => {
+    // animate=true for discrete "new scenario" actions (pill click, dropdown change);
+    // false for continuous slider dragging, which should stay instant/responsive and
+    // never fight an in-flight animation on every pixel of the drag.
+    const calc = (animate = false) => {
+      const ind = INDUSTRY[getIndustry()];
       const renewals = Number(renewalsEl.value);
       const acv = posToAcv(Number(acvEl.value));
       const slipPct = Number(slipEl.value);
-      const atRisk = renewals * acv * (slipPct / 100);
-      const recover = atRisk * RECOVERABLE;
 
       renewalsOut.textContent = renewals.toLocaleString("en-US");
       acvOut.textContent = fmt.format(acv);
       slipOut.textContent = slipPct + "%";
-      riskOut.textContent = fmt.format(atRisk);
-      recoverOut.textContent = fmt.format(recover);
+
+      const { currentBook, recoveredBook, ceilingCurrent, ceilingRecovered } =
+        projectCeilings(renewals, acv, slipPct, ind.recovery);
+
+      // Compact formatting to fit the smaller, consolidated card row (full precision
+      // stayed too wide once these went from 2 large cards + 1 below to one tight row).
+      ceilingCurrentOut.textContent = fmtCompact.format(ceilingCurrent);
+      ceilingRecoveredOut.textContent = fmtCompact.format(ceilingRecovered);
+      ceilingCurrentLabel.textContent = fmt.format(currentBook[YEARS]);
+      ceilingRecoveredLabel.textContent = fmt.format(recoveredBook[YEARS]);
+
+      const growthLeft = ceilingRecovered - ceilingCurrent;
+      growthLeftOut.textContent = fmtCompact.format(growthLeft);
+      ctaGapOut.textContent = fmtCompact.format(growthLeft);
 
       updateReadouts(renewals, slipPct);
       updateVignette();
       updateLeak();
-      drawChart(atRisk, recover);
+      drawChart(currentBook, recoveredBook, animate, growthLeft);
     };
 
     const pills = Array.from(industryGroup.querySelectorAll(".roi-pill"));
@@ -409,17 +725,37 @@
         b.classList.toggle("is-active", on);
         b.setAttribute("aria-pressed", on ? "true" : "false");
       });
+      sizeSel.value = DEFAULT_SIZE;
+      trackSel.value = DEFAULT_TRACKING;
       applyDefaults();
-      calc();
+      applyTrackingSlip();
+      calc(true);
     }));
-    sizeSel.addEventListener("change", () => { applyDefaults(); calc(); });
-    trackSel.addEventListener("change", () => { slipEl.value = String(TRACKING[trackSel.value].slip); calc(); });
-    if (roleSel) roleSel.addEventListener("change", calc); // role selector is commented out
-    [renewalsEl, acvEl, slipEl].forEach((el) => el.addEventListener("input", calc));
+    sizeSel.addEventListener("change", () => { applyDefaults(); calc(true); });
+    trackSel.addEventListener("change", () => { applyTrackingSlip(); calc(true); });
+    [renewalsEl, acvEl, slipEl].forEach((el) => el.addEventListener("input", () => calc(false)));
 
     // Initial cascade so the visitor sees realistic numbers without touching anything.
+    // Instant, not animated: this usually runs off-screen before the visitor has
+    // scrolled anywhere near the calculator, so an animation here would just be wasted.
+    sizeSel.value = DEFAULT_SIZE;
+    trackSel.value = DEFAULT_TRACKING;
     applyDefaults();
-    slipEl.value = String(TRACKING[trackSel.value].slip);
-    calc();
+    applyTrackingSlip();
+    calc(false);
+
+    // Play the signature "line draws in" moment once, the first time the calculator
+    // actually scrolls into view. Reads whatever the visitor has already set at that
+    // point (not the page-load defaults), in case they changed something first.
+    const section = chart.closest("section");
+    if (section && "IntersectionObserver" in window) {
+      const io = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+          calc(true);
+          io.disconnect();
+        }
+      }, { threshold: 0.3 });
+      io.observe(section);
+    }
   }
 </script>

@@ -672,60 +672,6 @@ const toneMap: Record<string, string> = {
 
 
   <!-- ============ ROI CALCULATOR ============ -->
-  <section id="roi" class="bg-white py-14 sm:py-18 px-4 sm:px-6 lg:px-8">
-    <div class="max-w-3xl mx-auto">
-      <p class="reveal text-sm font-semibold uppercase tracking-[0.2em] text-v6-copper mb-3 text-center">See What's At Stake</p>
-      <h2 class="reveal text-2xl sm:text-3xl lg:text-4xl font-bold text-v6-dark mb-3 text-center text-balance">
-        How Much Revenue Is Hiding In Your Renewals?
-      </h2>
-      <p class="reveal text-v6-text-muted text-center mb-10 max-w-lg mx-auto">
-        Move the sliders to your numbers. This is a directional estimate of the renewal revenue at risk each year when the process leaks. We pressure-test these numbers against your real HubSpot data in the paid renewal audit ($500, credited to your build).
-      </p>
-
-      <div class="reveal rounded-2xl border border-v6-border bg-v6-bg p-6 sm:p-8">
-        <div class="space-y-7">
-          <div>
-            <div class="flex justify-between items-baseline mb-2">
-              <label for="roi-renewals" class="text-sm font-semibold text-v6-dark">Renewals per year</label>
-              <output id="roi-renewals-out" class="text-base font-bold text-v6-copper">500</output>
-            </div>
-            <input id="roi-renewals" type="range" min="50" max="5000" step="50" value="500" class="roi-range" />
-          </div>
-          <div>
-            <div class="flex justify-between items-baseline mb-2">
-              <label for="roi-acv" class="text-sm font-semibold text-v6-dark">Average contract value</label>
-              <output id="roi-acv-out" class="text-base font-bold text-v6-copper">$25,000</output>
-            </div>
-            <input id="roi-acv" type="range" min="1000" max="250000" step="1000" value="25000" class="roi-range" />
-          </div>
-          <div>
-            <div class="flex justify-between items-baseline mb-2">
-              <label for="roi-slip" class="text-sm font-semibold text-v6-dark">Renewals that slip or churn from process gaps</label>
-              <output id="roi-slip-out" class="text-base font-bold text-v6-copper">5%</output>
-            </div>
-            <input id="roi-slip" type="range" min="1" max="30" step="1" value="5" class="roi-range" />
-          </div>
-        </div>
-
-        <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div class="rounded-xl bg-v6-copper-50 border border-v6-copper-100 p-5 text-center">
-            <p class="text-xs font-semibold uppercase tracking-wider text-v6-copper mb-1">Revenue at risk / year</p>
-            <p id="roi-risk" class="text-3xl font-bold text-v6-dark">$1,000,000</p>
-          </div>
-          <div class="rounded-xl bg-v6-teal-50 border border-v6-teal-100 p-5 text-center">
-            <p class="text-xs font-semibold uppercase tracking-wider text-v6-teal mb-1">Secondary recovery estimate</p>
-            <p id="roi-recover" class="text-3xl font-bold text-v6-dark">$437,500</p>
-          </div>
-        </div>
-        <p class="text-xs text-v6-text-muted text-center mt-4">Directional estimate, not a quote. The default uses the conservative doc-13 model: 5% leakage. The secondary recovery estimate assumes a process can close 70% of preventable slippage.</p>
-        <div class="text-center mt-6">
-          <a href="/renewal-audit-call/" data-ga-cta="v3_mid_book_review" class="inline-block bg-v6-copper text-white px-7 py-3 rounded-xl text-base font-semibold hover:bg-v6-copper-600 transition-colors">
-            Find My Hidden Renewal Revenue →
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
   <RenewalRoiCalculator />
 
 
