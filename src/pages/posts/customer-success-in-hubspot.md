@@ -64,7 +64,7 @@ Customer success platforms exist for a reason. When Gainsight and ChurnZero emer
 
 That is no longer the world HubSpot customers live in. HubSpot has spent years building customer success management capability into Service Hub, and for a team of two to ten customer success managers (CSMs) covering a few hundred accounts, the honest answer is that the CRM usually covers 80 to 90 percent of what a platform demo shows you.
 
-The question to ask is not "is Gainsight more powerful than HubSpot?" (it is, in specific areas). The question is: **which specific jobs does my CS team need done, and which of those jobs can the system I already own do?** Buying a platform to get one missing feature means paying five figures a year for a second system of record, a sync to maintain, and another admin burden. That trade is sometimes worth it. It is worth it far less often than platform vendors suggest.
+The question to ask is not "is Gainsight more powerful than HubSpot?" (it is, in specific areas). The question is: **which specific jobs does my CS team need done, and which of those jobs can the system I already own do?** Buying a platform to get one missing feature means paying five figures a year for a second system of record, a sync to maintain, and another admin burden. That trade is sometimes worth it. It is worth it far less often than platform vendors suggest, and it's worth going in with [a clear-eyed read on how much peer-reviewed evidence actually backs CSM's returns](/posts/customer-success-management-roi-research) before sizing that spend.
 
 ---
 

@@ -104,7 +104,7 @@ The workspace builds each CSM's book of business from company ownership. Before 
 
 ### Step 3: Configure customer health scores
 
-Setting up health scores is the highest-leverage step. HubSpot's customer health score weighs signals like product usage, support ticket volume, survey scores, and engagement to label accounts healthy, neutral, or at risk. Set it up in the health score settings, choose the inputs that actually predict churn for your business, and validate the output against the accounts your team already knows are shaky. If the score calls your five riskiest accounts healthy, adjust the inputs before anyone starts trusting it.
+Setting up health scores is the highest-leverage step. HubSpot's customer health score weighs signals like product usage, support ticket volume, survey scores, and engagement to label accounts healthy, neutral, or at risk. Set it up in the health score settings, choose the inputs that actually predict churn for your business, and validate the output against the accounts your team already knows are shaky. If the score calls your five riskiest accounts healthy, adjust the inputs before anyone starts trusting it. [Research on what customer health actually measures](/posts/customer-success-management-roi-research) points to three dimensions worth covering: relationship quality, product usage, and value realization, not usage data alone.
 
 Configurability is tier-dependent: deeper customization (multiple scores, custom-weighted attributes) has been an Enterprise-leaning capability, so Professional teams should test what they can actually tune in their portal rather than assuming full control (threads in the HubSpot Community are a useful reality check on current limits).
 
