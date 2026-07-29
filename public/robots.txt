@@ -31,6 +31,30 @@ User-agent: Bingbot
 Allow: /
 Crawl-delay: 1
 
+# AI answer-engine crawlers (AEO) — explicit allow so a future WAF/CDN rule
+# can't silently block one of these by name. Functionally a no-op today:
+# the wildcard "Allow: /" above already permits them.
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
 # Block unwanted bots
 User-agent: AhrefsBot
 Disallow: /

@@ -91,7 +91,7 @@ A disciplined reaction to competitive price moves follows a sequence:
 
 To mitigate price competition without a price war:
 
-- **Build switching costs through value.** The more value realized and the more departments using you (via [land-and-expand](/posts/land-and-expand-strategy)), the harder you are to displace.
+- **Build switching costs through value.** The more value realized and the more departments using you (via [land-and-expand](/posts/land-and-expand-strategy)), the harder you are to displace; [research shows relational switching costs, not contract terms, do the actual work here](/posts/switching-costs-b2b-renewal-research).
 - **Multi-thread.** A competitor's price lands harder when you only know one contact; broad [relationships](/posts/single-threaded-renewals-multithreading) give you defenders inside the account.
 - **Use value-based pricing.** Anchor on the value delivered, not the competitor's number, and use [good-better-best tiers](/posts/good-better-best-pricing) to offer choice without dropping your target price.
 - **Hold pricing power.** Brands that consistently prove value possess pricing power and can defend premium pricing through a renewal.

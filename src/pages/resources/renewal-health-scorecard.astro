@@ -2,7 +2,11 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Navbar from '../../components/astro/Navbar.astro';
 import Footer from '../../components/astro/Footer.astro';
-// NEW page (lead magnet 3). Form action placeholder: wire before launch.
+// Lead magnet 3. Submits client-side to the HubSpot Forms API (portal 243398671), same
+// pattern as renewal-leakage-estimate.astro / uplift-recovery-checklist.astro. Form
+// "SwotBee - Renewal Health Scorecard" (id f8a01a91-7b22-4bf3-940b-f5e427d4a423) created
+// via the Marketing Forms API on 2026-07-15, see
+// marketing/automation/n8n-kit-lead-magnet/README.md.
 ---
 <BaseLayout
   title="Grade Your Renewal Operation in 10 Minutes | SWOTBee"
@@ -13,35 +17,129 @@ import Footer from '../../components/astro/Footer.astro';
   <section class="bg-gradient-to-b from-v6-bg to-white px-4 sm:px-6 lg:px-8 pt-14 pb-10">
     <div class="max-w-2xl mx-auto text-center">
       <h1 class="text-3xl sm:text-4xl font-bold text-v6-dark leading-tight mb-4">
-        If your renewal operation got a report card, <span class="text-v6-copper">what grade would it get?</span>
+        If your renewal operation got a report card,<br /><span class="text-v6-copper">what grade would it get?</span>
       </h1>
       <p class="text-lg text-v6-text-muted mb-2">Score yourself across 6 dimensions in 10 minutes: visibility, deal creation, line items, escalations, multi-year chains, and reporting. Honest bands from A to F, and what each grade usually costs.</p>
       <p class="text-sm text-gray-500">The average HubSpot recurring-contract company scores a C. The money hides in dimensions 4 and 5.</p>
     </div>
   </section>
 
-  <section class="bg-white px-4 sm:px-6 lg:px-8 pb-16 pt-4">
+  <section class="bg-white px-4 sm:px-6 lg:px-8 pb-4">
+    <div class="max-w-2xl mx-auto grid sm:grid-cols-3 gap-4 text-center">
+      <div class="bg-v6-bg rounded-xl p-4"><div class="font-bold text-v6-teal text-lg">Step 1</div><div class="text-sm text-v6-text-muted">Score 6 dimensions honestly</div></div>
+      <div class="bg-v6-bg rounded-xl p-4"><div class="font-bold text-v6-teal text-lg">Step 2</div><div class="text-sm text-v6-text-muted">Get your A to F grade</div></div>
+      <div class="bg-v6-bg rounded-xl p-4"><div class="font-bold text-v6-teal text-lg">Step 3</div><div class="text-sm text-v6-text-muted">See what each grade costs</div></div>
+    </div>
+  </section>
+
+  <section class="bg-white px-4 sm:px-6 lg:px-8 pb-16 pt-8">
     <div class="max-w-xl mx-auto bg-v6-bg border border-v6-border rounded-2xl p-8">
-      <form method="POST" action="/api/lead-magnet" class="flex flex-col gap-4">
-        <input type="hidden" name="magnet" value="renewal-health-scorecard" />
+      <form id="scorecard-form" class="flex flex-col gap-4" novalidate>
+        <input type="hidden" name="funnel_stage_entry" value="scorecard" />
+        <input type="hidden" name="page_variant" value="v1-scorecard" />
+        <input type="hidden" name="utm_source" /><input type="hidden" name="utm_medium" /><input type="hidden" name="utm_campaign" /><input type="hidden" name="utm_content" /><input type="hidden" name="utm_term" />
+        <input type="hidden" name="ga_client_id" />
         <label class="text-sm font-semibold text-v6-dark">Work email
           <input required type="email" name="email" placeholder="you@company.com" class="mt-1 w-full border border-gray-300 rounded-lg px-4 py-3" />
         </label>
         <label class="text-sm font-semibold text-v6-dark">How renewals are tracked today
-          <select required name="tracking" class="mt-1 w-full border border-gray-300 rounded-lg px-4 py-3 bg-white">
+          <select required name="renewal_tracking_method" class="mt-1 w-full border border-gray-300 rounded-lg px-4 py-3 bg-white">
             <option value="">Select...</option><option>Spreadsheet</option><option>HubSpot workflows</option><option>A dedicated app</option><option>Memory and calendars</option>
           </select>
         </label>
         <label class="text-sm font-semibold text-v6-dark">Renewal cadence
-          <select name="cadence" class="mt-1 w-full border border-gray-300 rounded-lg px-4 py-3 bg-white">
+          <select required name="renewal_cadence" class="mt-1 w-full border border-gray-300 rounded-lg px-4 py-3 bg-white">
             <option value="">Select...</option><option>Monthly</option><option>Quarterly</option><option>Six-month</option><option>Annual</option><option>Multi-year</option>
+          </select>
+        </label>
+        <label class="text-sm font-semibold text-v6-dark">How did you first hear about us? <span class="font-normal text-gray-500">(optional)</span>
+          <select name="self_reported_attribution" class="mt-1 w-full border border-gray-300 rounded-lg px-4 py-3 bg-white">
+            <option value="">Select...</option><option>Google search</option><option>LinkedIn</option><option>Referral</option><option>Cold email</option><option>Other</option>
           </select>
         </label>
         <button type="submit" class="bg-v6-copper text-white font-semibold rounded-xl px-6 py-3 hover:bg-v6-copper-600 transition-colors">Send me the scorecard</button>
         <p class="text-xs text-gray-500 text-center">One email with the scorecard. Grade yourself privately; nobody sees your score.</p>
+        <p id="scorecard-form-error" class="hidden text-sm text-red-600 text-center">Something went wrong sending the form. Please try again, or email us at info@swotbee.com and we will send the scorecard directly.</p>
       </form>
+      <div id="scorecard-form-success" class="hidden text-center py-6">
+        <p class="text-2xl mb-3">✅</p>
+        <p class="text-lg font-semibold text-v6-dark mb-2">Got it. Your scorecard is on its way.</p>
+        <p class="text-sm text-v6-text-muted">One email with the scorecard. That is it.</p>
+      </div>
     </div>
     <p class="text-center text-sm text-v6-text-muted mt-8 max-w-xl mx-auto">A self-assessment cannot see which deals are at risk next quarter or which workflows break at year 3. The paid renewal audit scores this same rubric against your actual portal, with names and numbers, and it is credited toward any build.</p>
   </section>
   <Footer />
+
+  <script>
+    // Submits to the HubSpot Forms API (same portal as the ContactUs embed and the other
+    // lead-magnet pages).
+    const PORTAL_ID = "243398671";
+    const FORM_GUID = "f8a01a91-7b22-4bf3-940b-f5e427d4a423";
+
+    const form = document.getElementById("scorecard-form") as HTMLFormElement | null;
+    const success = document.getElementById("scorecard-form-success");
+    const errorMsg = document.getElementById("scorecard-form-error");
+
+    function gaEvent(name: string, params?: Record<string, unknown>) {
+      const w = window as typeof window & { gtag?: (...args: unknown[]) => void };
+      if (w.gtag) w.gtag("event", name, params || {});
+    }
+    let formStartFired = false;
+    form?.addEventListener(
+      "focusin",
+      () => {
+        if (!formStartFired) {
+          formStartFired = true;
+          gaEvent("form_start", { form_name: "renewal_health_scorecard" });
+        }
+      },
+      { once: true }
+    );
+
+    const params = new URLSearchParams(window.location.search);
+    ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"].forEach((k) => {
+      const input = form?.querySelector<HTMLInputElement>(`input[name="${k}"]`);
+      if (input) input.value = params.get(k) ?? "";
+    });
+
+    // GA client id from the _ga cookie (GA1.1.<clientId>) so HubSpot and GA can be stitched.
+    const gaMatch = document.cookie.match(/_ga=GA\d\.\d\.(\d+\.\d+)/);
+    const gaInput = form?.querySelector<HTMLInputElement>('input[name="ga_client_id"]');
+    if (gaInput && gaMatch) gaInput.value = gaMatch[1];
+
+    form?.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      if (!form.reportValidity()) return;
+      errorMsg?.classList.add("hidden");
+
+      const data = new FormData(form);
+      const fields = [...data.entries()].map(([name, value]) => ({
+        objectTypeId: "0-1",
+        name,
+        value: String(value),
+      }));
+
+      try {
+        const res = await fetch(
+          `https://api.hsforms.com/submissions/v3/integration/submit/${PORTAL_ID}/${FORM_GUID}`,
+          {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              fields,
+              context: { pageUri: window.location.href, pageName: document.title },
+            }),
+          }
+        );
+        if (!res.ok) throw new Error(`HubSpot responded ${res.status}`);
+        form.classList.add("hidden");
+        success?.classList.remove("hidden");
+        gaEvent("form_submit", { form_name: "renewal_health_scorecard" });
+      } catch (_err) {
+        errorMsg?.classList.remove("hidden");
+        gaEvent("form_error", { form_name: "renewal_health_scorecard" });
+      }
+    });
+  </script>
 </BaseLayout>

@@ -1,0 +1,152 @@
+# SWOTBee: HubSpot & Shopify Consulting (Full Reference)
+# https://swotbee.com
+# Updated: 2026-07-28
+
+> SWOTBee is a HubSpot and Shopify consulting firm serving mid-sized companies
+> (50 to 100 employees) in Energy, Utilities, SaaS, Construction, and Manufacturing.
+> We help RevOps and Customer Success teams build renewal pipelines, automate
+> deal cloning for renewals, fix commission tracking, and stop revenue leakage
+> in HubSpot.
+
+This file expands on /llms.txt with a short description under every linked page, so an
+LLM can decide relevance without fetching each URL first.
+
+## Key Pages
+
+### [Homepage](https://swotbee.com/)
+Stop losing revenue to missed renewals. Deals that renew themselves. Line items that filter automatically. Revenue you can finally see.
+
+### [HubSpot Onboarding](https://swotbee.com/services/hubspot-onboarding)
+Get your team on HubSpot with an adoption plan that actually works.
+
+### [Marketing Automation](https://swotbee.com/services/marketing)
+Get your HubSpot Marketing Hub actually generating pipeline. Email sequences that convert, event workflows that run themselves, and attribution you can trust.
+
+### [Sales & RevOps](https://swotbee.com/services/sales-revops)
+Every missed renewal is revenue walking out the door. Automate renewals, fix your pipeline, and make forecasting reliable again.
+
+### [Integrations](https://swotbee.com/services/integrations)
+Connect HubSpot to DocuSign, NetSuite, Xero, Zoom, and everything else. One connected workflow from quote to cash.
+
+### [HubSpot Renewal Apps Compared](https://swotbee.com/compare/hubspot-renewal-apps)
+Deal cloning apps copy deals well. Renewals need dates, uplifts, multi-year chains, and NRR reporting. An honest comparison of HubSpot renewal apps.
+
+### [Blog](https://swotbee.com/blog)
+HubSpot tips, RevOps strategies, and CRM automation guides for mid-market teams.
+
+### [Contact](https://swotbee.com/contactus)
+Book a free consultation to scope a HubSpot renewal, onboarding, or integration project.
+
+---
+
+## HubSpot Renewal Pipeline Series
+
+### [Complete Guide to Building a Renewal Pipeline in HubSpot](https://swotbee.com/posts/hubspot-renewal-pipeline-complete-guide)
+The definitive guide to building a HubSpot renewal pipeline: from architecture and automation to dashboards and churn prevention. Everything mid-market teams need to stop losing renewals.
+
+### [Renewal Pipeline vs Sales Pipeline](https://swotbee.com/posts/hubspot-renewal-pipeline-vs-sales-pipeline)
+The #1 HubSpot community debate: should renewals live in your sales pipeline or get their own? A decision framework based on team size, contract complexity, and reporting needs.
+
+### [Renewal Pipeline Stages (3 proven models)](https://swotbee.com/posts/hubspot-renewal-pipeline-stages)
+Three proven HubSpot renewal pipeline stage models: time-based, activity-based, and customer-journey, with exact stage definitions, probability weights, and when to use each.
+
+### [The 15 Custom Properties Every Renewal Pipeline Needs](https://swotbee.com/posts/hubspot-renewal-pipeline-properties)
+Complete property setup guide for HubSpot renewal pipelines: deal type, renewal date, contract term, churn reason, health score, and 10 more. Exact field types, dropdown values, and where each lives.
+
+### [Renewal Deal Workflow Automation](https://swotbee.com/posts/hubspot-renewal-deal-workflow-automation)
+Build HubSpot workflows that create renewal deals, copy the right properties, preserve renewal context, trigger 90-60-30 tasks, and avoid data leakage in NRR and GRR reporting.
+
+### [Fixing the Renewal Workflow Infinite Loop](https://swotbee.com/posts/hubspot-renewal-workflow-infinite-loop-fix)
+HubSpot's re-enrollment blocking breaks multi-year renewal automation after Year 1. Here are four proven solutions, from the dual-workflow pattern to boolean toggles, that keep the chain going.
+
+### [NRR and GRR Dashboard Reporting](https://swotbee.com/posts/hubspot-renewal-nrr-grr-dashboard-reporting)
+How to report NRR, GRR, renewal rate, churn, expansion, and contraction in HubSpot using renewal properties, clean deal lineage, and custom dashboards.
+
+### [Renewal Forecasting Accuracy](https://swotbee.com/posts/hubspot-renewal-forecasting-accuracy)
+Renewal deals close at 85 to 95 percent while new business closes at 20 to 30 percent. If you are using the same forecast model for both, your numbers are fiction. Here is how to fix HubSpot renewal forecasting.
+
+### [Expansion Pipeline Structure](https://swotbee.com/posts/hubspot-renewal-expansion-pipeline-structure)
+Where should expansion revenue live in HubSpot? How do you prevent double-counting? This guide covers multi-pipeline architecture for renewals, expansions, and downgrades.
+
+### [Churn Prevention with Health Scores](https://swotbee.com/posts/hubspot-churn-prevention-health-scores-workflows)
+From health score setup to at-risk alert workflows, churn reason taxonomies, and win-back sequences. A practical guide to preventing churn before the renewal conversation starts.
+
+### [12 Renewal Pipeline Mistakes Costing Revenue](https://swotbee.com/posts/hubspot-renewal-pipeline-mistakes-costing-revenue)
+The most common renewal pipeline mistakes we see in HubSpot: from mixing deal types to ignoring silence, timing collisions, and unstandardized churn logging. Each mistake includes the fix.
+
+---
+
+## HubSpot Deal Cloning Series
+
+### [Complete Guide to Cloning a Deal in HubSpot for Renewals](https://swotbee.com/posts/hubspot-clone-deal-complete-guide)
+How to clone HubSpot deals for renewals without losing line items, ARR fields, owners, dates, or audit history. Covers native cloning, workflows, apps, and API options.
+
+### [HubSpot Deal Cloning Apps Compared](https://swotbee.com/posts/hubspot-deal-cloning-apps-compared)
+Compare CloneNer, Deal Duplicator, Clone a Deal, Clone Attack, and native HubSpot workflows: pricing, features, object coverage, limitations, and which one fits HubSpot teams that need clean renewal deals with line items.
+
+### [Copy Deal Properties in HubSpot Workflows](https://swotbee.com/posts/hubspot-copy-deal-properties-workflow)
+HubSpot's Copy Property action updates the enrolled deal, not the new renewal deal. Use these workflow patterns to copy ARR, contract term, renewal date, and owner fields safely.
+
+### [Cloning Deals with Line Items](https://swotbee.com/posts/hubspot-clone-deal-line-items)
+HubSpot workflows cannot copy deal line items into renewal deals. Compare marketplace apps, Zapier, custom code, and API options for preserving products, pricing, and quantities.
+
+### [Deal Duplication Best Practices](https://swotbee.com/posts/hubspot-deal-duplication-best-practices)
+When to clone vs. create fresh, naming conventions, which properties to copy, how cloning affects forecasting: the governance framework nobody else covers.
+
+---
+
+## Contract Renewal Management Series
+
+### [Complete Guide to Contract Renewal Management](https://swotbee.com/posts/contract-renewal-management-complete-guide)
+The complete B2B guide to contract renewal management: the end-to-end process, contract renewal management software compared, HubSpot setup, and metrics.
+
+### [Contract Renewal Reminder Software](https://swotbee.com/posts/contract-renewal-reminder-software)
+Contract renewal reminder software compared: how to design a 90/60/30 cadence, calendar vs standalone vs CRM tools, and three copy-paste email templates.
+
+---
+
+## Renewal Strategy and Commission
+
+### [The 365-Day Renewal](https://swotbee.com/posts/renewal-strategy-365)
+A complete SaaS renewal strategy for vendors: why the renewal is won long before the contract expires, and how continuous value realization, multi-threading, and expansion tactics secure and grow enterprise contracts.
+
+### [Complete Guide to Sales Commission Tracking in HubSpot](https://swotbee.com/posts/hubspot-sales-commission-tracking-complete-guide)
+The definitive guide to tracking sales commissions in HubSpot: from DIY calculated properties to enterprise software. Everything mid-market teams need to stop losing money, time, and trust to broken commission processes.
+
+### [10 Commission Tracking Tools for HubSpot Compared](https://swotbee.com/posts/hubspot-commission-tracking-tools-compared)
+Every commission tool says they are the best. We compared 10 based on actual user reviews, HubSpot integration depth, pricing transparency, and how well each handles renewal and expansion revenue commission, so you do not have to.
+
+---
+
+## Free Tools and Lead Magnets
+
+### [Renewal Leakage Estimate](https://swotbee.com/resources/renewal-leakage-estimate)
+Answer 5 questions, get a personalized 1-page estimate of what manual renewals cost you per year. No call needed.
+
+### [Renewal Health Scorecard](https://swotbee.com/resources/renewal-health-scorecard)
+A free self-assessment scorecard: 6 dimensions, an honest grade, and what A-grade renewal operations look like.
+
+### [Uplift Recovery Checklist](https://swotbee.com/resources/uplift-recovery-checklist)
+A free checklist to find the escalation uplifts you already earned but never invoiced. Most contract businesses find real money.
+
+### [ARR Correction Kit](https://swotbee.com/resources/arr-correction-kit)
+A free correction kit: the spreadsheet and three checks that catch multi-year ARR misreporting before your board does.
+
+### [Book a Renewal Audit Call](https://swotbee.com/renewal-audit-call)
+Free 30-minute call to walk through your renewal leakage estimate and scope the paid renewal audit. No pressure, no generic sales pitch.
+
+---
+
+## Proprietary HubSpot Apps
+
+- **Smart Company Picker**: Intelligent company association for HubSpot deals.
+- **Smart Deal Inspector**: Deal health monitoring and anomaly detection.
+- **Renewal Deal Builder**: Automated renewal deal creation and management.
+- **Deal Copilot**: AI-assisted deal guidance and recommendations.
+
+All four are available on the HubSpot Marketplace.
+
+## Contact
+
+- Free consultation: https://swotbee.com/contactus
+- LinkedIn: https://linkedin.com/company/swotbee

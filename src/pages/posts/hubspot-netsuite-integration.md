@@ -17,6 +17,11 @@ author:
     - "Revenue Operations"
     - "Systems Integration"
     - "CRM Migration"
+reviewedBy:
+  name: "Sharmi"
+  title: "Co-Founder, SWOTBee"
+  linkedin: "https://www.linkedin.com/in/sharm1la/"
+  date: "July 2026"
 image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=450&fit=crop"
 tags:
   - "HubSpot"

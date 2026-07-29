@@ -17,6 +17,11 @@ author:
     - "Systems Integration"
     - "Revenue Operations"
     - "ERP and CRM"
+reviewedBy:
+  name: "Sharmi"
+  title: "Co-Founder, SWOTBee"
+  linkedin: "https://www.linkedin.com/in/sharm1la/"
+  date: "July 2026"
 image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=800&h=450&fit=crop"
 tags:
   - "CRM"

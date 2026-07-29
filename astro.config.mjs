@@ -39,6 +39,14 @@ export default defineConfig({
   output: "static",
   trailingSlash: "always",
 
+  // 301-equivalent redirects for renamed posts. Astro's static output can't emit real
+  // HTTP 301 headers (GitHub Pages serves plain files), so this generates a stub HTML
+  // page at the old path with a canonical tag + instant meta-refresh to the new URL,
+  // which Google treats as passing ranking signal, the standard pattern for static hosts.
+  redirects: {
+    "/posts/Pendo HubSpot Integration_ Boost Customer Insights": "/posts/pendo-hubspot-integration",
+  },
+
   markdown: {
     smartypants: true,
   },
@@ -78,6 +86,7 @@ export default defineConfig({
           '/services/hubspot-onboarding-old/',
           '/services/integrations-old/',
           '/services/sales-revops-old/',
+          '/posts/Pendo HubSpot Integration_ Boost Customer Insights/',
           ...noindexedPostSitemapPatterns(),
         ];
         // `page` arrives percent-encoded (spaces as %20, etc.) but leaves characters like

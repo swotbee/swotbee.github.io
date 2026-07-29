@@ -1,0 +1,174 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/astro/Navbar.astro';
+import Footer from '../../components/astro/Footer.astro';
+import StructuredData from '../../components/astro/StructuredData.astro';
+import { Picture } from 'astro:assets';
+import { getAllPosts, getAllCategories } from '../../utils/posts';
+import { generateCanonicalUrl } from '../../utils/seo';
+
+const CATEGORY_INTROS: Record<string, string> = {
+  'revenue-operations': 'Frameworks for aligning sales, marketing, and customer success around renewal, retention, and revenue data in HubSpot.',
+  'crm-comparisons': 'Side-by-side breakdowns of HubSpot against competing tools and marketplace apps, with the tradeoffs that matter for renewal-heavy teams.',
+  'crm-fundamentals': 'The core HubSpot concepts, objects, and properties every RevOps team needs in place before automating anything.',
+  'feature-deep-dives': 'Deep, practical guides to specific HubSpot features: what they actually do, where they break, and how to configure them for renewals.',
+  'hubspot-tips': 'Practical configuration tips, workflow recipes, and feature walkthroughs for getting more out of HubSpot.',
+  'implementation-tutorials': 'Step-by-step build guides for the workflows, properties, and pipelines covered elsewhere on this blog.',
+  'industry-specific': 'How renewal, commission, and CRM operations differ by industry, from Energy and Manufacturing to SaaS and Construction.',
+  'sales-compensation': 'Commission tracking, comp plan structure, and the reporting gaps that cost reps money in HubSpot.',
+  'sales-leadership': 'Forecasting, pipeline reviews, and the operational discipline that separates predictable renewal revenue from guesswork.',
+};
+
+export async function getStaticPaths() {
+  const categories = await getAllCategories();
+
+  return categories.map(({ slug, title }) => ({
+    params: { slug },
+    props: { categoryTitle: title },
+  }));
+}
+
+const { slug } = Astro.params;
+const { categoryTitle } = Astro.props;
+
+const allPosts = await getAllPosts();
+const posts = allPosts.filter(post => post.category?.href === `/categories/${slug}`);
+const otherCategories = (await getAllCategories()).filter(cat => cat.slug !== slug);
+
+const isExternalUrl = (url: string) => {
+  try { new URL(url); return url.startsWith('http://') || url.startsWith('https://'); } catch { return false; }
+};
+
+const BLOG_IMAGE_DIMENSIONS = { width: 800, height: 450 };
+
+const formatDate = (dateString: string) => {
+  const date = new Date(dateString);
+  if (isNaN(date.getTime())) return 'Invalid Date';
+  return date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+};
+
+const intro = CATEGORY_INTROS[slug as string] || `Guides and strategies on ${categoryTitle.toLowerCase()}.`;
+const canonicalURL = generateCanonicalUrl(Astro.url.pathname);
+---
+
+<Layout
+  title={`${categoryTitle} | SWOTBee Blog`}
+  description={intro}
+  canonicalURL={canonicalURL}
+>
+  <StructuredData
+    type="breadcrumb"
+    data={{ breadcrumbs: [
+      { name: "Home", url: "https://swotbee.com" },
+      { name: "Blog", url: "https://swotbee.com/blog" },
+      { name: categoryTitle, url: canonicalURL },
+    ]}}
+  />
+
+  <Navbar />
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-b from-v6-bg to-white px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20 pb-10">
+    <div class="max-w-3xl mx-auto text-center">
+      <nav aria-label="Breadcrumb" class="text-xs text-v6-text-muted mb-4">
+        <ol class="inline-flex items-center">
+          <li><a href="/" class="py-1 inline-block hover:text-v6-dark transition-colors">Home</a></li>
+          <li aria-hidden="true" class="mx-1.5">&rsaquo;</li>
+          <li><a href="/blog" class="py-1 inline-block hover:text-v6-dark transition-colors">Blog</a></li>
+          <li aria-hidden="true" class="mx-1.5">&rsaquo;</li>
+          <li class="text-v6-dark" aria-current="page">{categoryTitle}</li>
+        </ol>
+      </nav>
+      <h1 class="text-3xl sm:text-4xl font-bold text-v6-dark mb-4">{categoryTitle}</h1>
+      <p class="text-base sm:text-lg text-v6-text-muted max-w-xl mx-auto leading-relaxed mb-3">
+        {intro}
+      </p>
+      <p class="text-sm text-v6-text-muted">{posts.length} {posts.length === 1 ? 'article' : 'articles'}</p>
+    </div>
+  </section>
+
+  <!-- Post Grid -->
+  <section class="bg-white px-4 sm:px-6 lg:px-8 pb-16">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {posts.map((post) => (
+          <article class="bg-v6-bg rounded-xl border border-v6-border overflow-hidden hover:shadow-lg transition-shadow">
+            {post.image && (
+              <a href={`/posts/${post.slug}`}>
+                <div class="aspect-video overflow-hidden">
+                  {isExternalUrl(post.image) ? (
+                    <img
+                      src={post.image}
+                      alt={post.title}
+                      width={BLOG_IMAGE_DIMENSIONS.width}
+                      height={BLOG_IMAGE_DIMENSIONS.height}
+                      class="w-full h-full object-cover"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  ) : (
+                    <Picture
+                      src={post.image}
+                      alt={post.title}
+                      width={BLOG_IMAGE_DIMENSIONS.width}
+                      height={BLOG_IMAGE_DIMENSIONS.height}
+                      widths={[400, 800]}
+                      formats={['webp', 'avif', 'jpg']}
+                      inferSize
+                      class="w-full h-full object-cover"
+                    />
+                  )}
+                </div>
+              </a>
+            )}
+            <div class="p-5">
+              <h2 class="mb-2 text-lg font-bold text-v6-dark leading-snug">
+                <a href={`/posts/${post.slug}`} class="hover:text-v6-copper transition-colors">{post.title}</a>
+              </h2>
+              <p class="text-sm text-v6-text-muted leading-relaxed line-clamp-3 mb-4">
+                {post.description}
+              </p>
+              <div class="flex items-center justify-between pt-3 border-t border-v6-border">
+                <span class="text-xs font-medium text-v6-dark">{post.authorName}</span>
+                <span class="text-xs text-v6-text-muted">{formatDate(post.pubDate)}</span>
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+
+      {posts.length === 0 && (
+        <div class="text-center py-16">
+          <p class="text-v6-text-muted text-lg">No posts yet. Check back soon!</p>
+        </div>
+      )}
+
+      <div class="text-center mt-10">
+        <a href="/blog" class="inline-flex items-center gap-1.5 text-sm font-semibold text-v6-copper hover:text-v6-copper-600 transition-colors">
+          &larr; Back to all articles
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Browse Other Categories -->
+  {otherCategories.length > 0 && (
+    <section class="bg-v6-bg border-t border-v6-border px-4 sm:px-6 lg:px-8 py-12">
+      <div class="max-w-6xl mx-auto text-center">
+        <p class="text-xs font-semibold uppercase tracking-wide text-v6-text-muted mb-4">Browse other topics</p>
+        <div class="flex flex-wrap justify-center gap-2.5">
+          {otherCategories.map((cat) => (
+            <a
+              href={`/categories/${cat.slug}`}
+              class="bg-white text-v6-dark text-sm font-medium px-4 py-2 rounded-full border border-v6-border hover:border-v6-teal hover:text-v6-teal transition-colors"
+            >
+              {cat.title}
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <Footer />
+</Layout>

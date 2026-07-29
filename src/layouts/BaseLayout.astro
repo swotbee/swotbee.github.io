@@ -56,6 +56,22 @@ const finalCanonicalURL =
     <meta name="revisit-after" content="7 days" />
     <meta name="theme-color" content="#1f2937" />
 
+    <!-- Preload critical fonts (body + heading) -->
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      href="/fonts/hanken-grotesk-latin-wght-normal.woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      href="/fonts/rokkitt-latin-wght-normal.woff2"
+      crossorigin="anonymous"
+    />
+
     <!-- Additional SEO meta tags -->
     <meta property="og:locale" content="en_US" />
     <meta property="og:site_name" content="SWOTBee" />
@@ -151,6 +167,9 @@ const finalCanonicalURL =
     <!-- Preconnect to external origins -->
     <link rel="preconnect" href="https://images.unsplash.com" />
     <link rel="dns-prefetch" href="https://images.unsplash.com" />
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+    <link rel="preconnect" href="https://www.google-analytics.com" />
     <!-- Prefetch key pages -->
     <link rel="prefetch" href="/services/hubspot-onboarding" />
     <link rel="prefetch" href="/contactus" />
