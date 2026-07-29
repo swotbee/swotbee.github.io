@@ -66,7 +66,7 @@ faqs:
 
 ## What the Pendo HubSpot Integration Actually Does
 
-The integration has two distinct halves, and most vendor pages blur them together. The **pull** brings HubSpot Contact and Company data into Pendo, so Pendo Visitor and Account profiles are enriched with CRM context like lifecycle stage, deal status, or any custom HubSpot property you choose to map. The **push** sends Pendo data the other way: Visitor and Account metadata, plus optional Page, Feature, and Track events, land in HubSpot as properties and custom events on the matching Contact and Company records.
+The integration has two distinct halves, and most vendor pages blur them together. Before you connect Pendo to HubSpot, it helps to understand both directions separately. The **pull** brings HubSpot Contact and Company data into Pendo, so Pendo's account and visitor profiles are enriched with CRM context like lifecycle stage, deal status, or any custom HubSpot property you choose to map. The **push** is what actually gets Pendo into HubSpot in a form your team can act on: Visitor and Account metadata, plus optional Page, Feature, and Track events, land in HubSpot as properties and custom events on the matching Contact and Company records.
 
 That second half is the part worth paying attention to. Once product-usage events exist as custom events in HubSpot, they can feed HubSpot's own [customer health scores](/posts/hubspot-churn-prevention-health-scores-workflows), trigger workflows, and build lists for outreach, all without your CS or marketing team ever opening Pendo. Sales and marketing get a live view of product engagement; product and CS get CRM context without switching tools. It also replaces an older "legacy" HubSpot integration Pendo previously offered, if your instance still shows that version, confirm you're not building new workflows on the connection that's being phased out.
 
@@ -86,7 +86,7 @@ Both platforms also require **admin-level access** to establish the connection. 
 The setup itself, from Pendo's own configuration flow, runs in seven steps:
 
 1. **Start the integration.** In Pendo, go to Settings > Integrations, find the HubSpot tile, and select Set up and activate.
-2. **Connect to HubSpot.** Authenticate the native connection, no separate middleware account needed.
+2. **Connect to HubSpot.** Authenticate the native connection to your HubSpot account, no separate middleware account needed.
 3. **Map objects.** Map Pendo Visitors to HubSpot Contacts, and Pendo Accounts to HubSpot Companies. These are two separate mapping steps, don't skip one assuming the other covers it.
 4. **Configure the pull.** Choose which HubSpot properties flow into Pendo.
 5. **Configure the push.** Choose which Pendo metadata flows into HubSpot.
@@ -99,7 +99,7 @@ Budget more time for step 3 than the interface suggests. Getting the field mappi
 
 The sync is not real time. Pendo runs an initial sync of roughly 20 minutes after activation, then automatic nightly syncs between midnight and 6am in your subscription's time zone. For most RevOps use cases, health scores, segmentation, save-play triggers, that cadence is fine; a churn signal from yesterday's usage drop is still actionable today. If your use case genuinely needs near-real-time data (live in-app triggers reacting within minutes), the native integration alone won't get you there, see the alternatives below.
 
-Pendo's in-app NPS surveys can also be part of what syncs, giving you a sentiment signal alongside raw usage data, useful context for customer engagement scoring, though our [own research on health scores](/posts/health-score-churn-prediction-research) suggests NPS-style sentiment correlates with retention less reliably than practitioners often assume, so weight it as one signal among several, not the anchor.
+Pendo's in-app NPS surveys can also be part of what syncs, giving you a customer satisfaction signal alongside raw usage data, useful context for customer engagement scoring, though our [own research on health scores](/posts/health-score-churn-prediction-research) suggests NPS-style sentiment correlates with retention less reliably than practitioners often assume, so weight it as one signal among several, not the anchor.
 
 ## The Cost and Limitation Most Reviews Skip
 
@@ -120,7 +120,7 @@ Most failed syncs trace back to one of three things: a **permission** gap (the c
 
 - **Feed real usage into your health score**, not just email opens and ticket volume. Our [research on what actually predicts churn](/posts/health-score-churn-prediction-research) found relational and transactional signals often outperform usage-only data, Pendo events give you the usage half of that picture without manual exports.
 - **Trigger expansion plays from feature adoption**, tying directly into [product-qualified signals and expansion](/posts/product-qualified-signals-expansion) rather than waiting for a QBR to surface upsell whitespace.
-- **Give CS a single view without a second login.** Once Pendo data lives in HubSpot properties, CSMs working in the [Customer Success Workspace](/posts/hubspot-customer-success-workspace) see product engagement alongside deal and ticket history, one consistent view of the customer journey, customer interactions, and customer behavior instead of two disconnected tools.
+- **Give CS a single view without a second login.** Once data from Pendo lives in HubSpot properties, CSMs working in the [Customer Success Workspace](/posts/hubspot-customer-success-workspace) see product engagement alongside deal and ticket history, one consistent view of the customer journey, customer interactions, and customer behavior instead of two disconnected tools.
 - **Personalize outreach and campaign targeting** using real product data instead of guesswork, marketing can build a campaign around actual feature adoption, not assumed interest.
 
 Done well, the integration doesn't just automate data movement, it gives sales, marketing, and CS a shared, accurate picture of customer experience to optimize and integrate into how each team already works, without anyone needing a second login to get product insights.
