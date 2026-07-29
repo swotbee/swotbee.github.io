@@ -1,12 +1,22 @@
 ---
 layout: ../../layouts/BlogPostLayout.astro
-title: "Contract Renewal Reminder Software: Alerts, Workflows, and Email Templates"
+title: "Contract Renewal Reminder Software: Alerts and Email Templates"
 pubDate: "2026-07-06"
 description: "Contract renewal reminder software compared: how to design a 90/60/30 cadence, calendar vs standalone vs CRM tools, and three copy-paste email templates."
 category:
   title: "Revenue Operations"
   href: "/categories/revenue-operations"
-modifiedDate: "2026-07-24"
+modifiedDate: "2026-07-29"
+howto: true
+howtoSteps:
+  - name: "Store the renewal date"
+    text: "Add a Renewal Date (or Contract End Date) property on every renewal deal. No date, no reminder."
+  - name: "Build one date-based workflow"
+    text: "Trigger on the renewal date and schedule actions at 90, 60, and 30 days before it: create a task, notify the owner, and escalate at each checkpoint."
+  - name: "Add the guardrails"
+    text: "Unenroll the workflow on Closed Won, track which checkpoint fired in a property to prevent duplicates, and flag renewal deals missing a date."
+  - name: "Separate the customer emails"
+    text: "Keep customer-facing renewal emails in their own workflow so tone and timing stay under commercial control."
 author:
   name: "SWOTBee Team"
   url: "https://swotbee.com"

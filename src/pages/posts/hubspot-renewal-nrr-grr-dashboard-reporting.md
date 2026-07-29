@@ -2,8 +2,22 @@
 layout: ../../layouts/BlogPostLayout.astro
 title: "HubSpot NRR And GRR Dashboards For Renewal Revenue Reporting"
 pubDate: "2026-04-02"
-modifiedDate: "2026-07-14"
-description: "How to report NRR, GRR, renewal rate, churn, expansion, and contraction in HubSpot using renewal properties, clean deal lineage, and custom dashboards."
+modifiedDate: "2026-07-29"
+description: "Build 3 HubSpot revenue dashboards and 10 ready-to-use reports for NRR, GRR, renewal rate, and churn, metrics HubSpot does not report natively."
+howto: true
+howtoSteps:
+  - name: "Create the report"
+    text: "In HubSpot, go to Reports and open the Custom Report Builder."
+  - name: "Set the data source"
+    text: "Choose Deals as the data source."
+  - name: "Filter to renewal deals"
+    text: "Filter Deal Type equals Renewal and Pipeline equals Renewal Pipeline."
+  - name: "Set the rows"
+    text: "Group rows by Close Date, quarterly."
+  - name: "Set the columns"
+    text: "Show count of deals, segmented by Deal Stage, Closed Won versus Closed Lost."
+  - name: "Calculate the renewal rate"
+    text: "Download the report and divide the Closed Won count by the total closed count, since HubSpot's report builder cannot do this division natively."
 category:
   title: "Revenue Operations"
   href: "/categories/revenue-operations"
