@@ -100,7 +100,7 @@ before drafting any of these — see notes).
 | 1 | CSM interventions → renewal/NRR (#1) | Direct match to SwotBee's core renewal consulting pitch; CSM is the exact function SwotBee's clients run | B — **published** 2026-07-29 as `customer-success-management-roi-research.md` | Heavy operational overlap (`customer-success-in-hubspot.md`, `hubspot-customer-success-workspace.md`) — frame as an evidence layer on top of those, cross-link, don't duplicate the how-to |
 | 2 | Switching costs & relationship quality → renewal (#2) | The contrarian "lock-in can backfire" hook is a natural extension of SwotBee's renewal-strategy content and a strong mythbusting angle | B — **published** 2026-07-29 | Some overlap (`hubspot-co-terming-renewals.md`, `renewal-strategy-365.md`); differentiate as a research-evidence piece, not another how-to |
 | 3 | Predictive health scores / ML churn prediction (#3) | SwotBee already builds HubSpot health-score/risk-scoring workflows — this is a literal literature review of the mechanism behind SwotBee's own product feature | B — **published** 2026-07-29 as `health-score-churn-prediction-research.md` | Heavy overlap (`hubspot-renewal-risk-scoring.md`, `hubspot-churn-prevention-health-scores-workflows.md`, `silent-churn-detection.md`) — position as "does the literature agree with how we teach this to be built," not a new how-to |
-| 4 | Product-usage adoption metrics → SaaS renewal (#7) | Directly usable by a HubSpot consultancy advising clients on what to actually track pre-renewal | B (was C, downgraded 2026-07-29, same reason) | Overlap with `product-qualified-signals-expansion.md`, `customer-value-realization.md` — extend, don't duplicate |
+| 4 | Product-usage adoption metrics → SaaS renewal (#7) | Directly usable by a HubSpot consultancy advising clients on what to actually track pre-renewal | B — **published** 2026-07-31 as `product-usage-metrics-renewal-research.md` | Overlap with `product-qualified-signals-expansion.md`, `customer-value-realization.md` — cross-linked both ways, not duplicated |
 | 5 | Executive sponsorship → enterprise renewal (#8) | Matches SwotBee's existing QBR/strategic-account content and mid-market/enterprise renewal focus | B | Overlap with `strategic-qbr-renewals.md`, `Strategic_Account_Management_Plan.md` — good candidate to become the "research backing" these already reference informally |
 | 6 | Sales-marketing alignment → revenue (#5) | SwotBee's whole positioning is RevOps (sales+marketing+CS unification); debunking the "208%" stat ties straight into the pitch | B — **published** 2026-07-29 | Low direct overlap — no existing post specifically on sales-marketing alignment as its own topic; net-new |
 | 7 | AI/automation in B2B RevOps → productivity (#9) | Timely, matches SwotBee's own workflow-automation positioning; scoping review is honest and light to produce (no missing-stats problem, since the finding *is* "evidence is thin") | B | Low overlap — existing AI mentions are one-sentence asides in growth-strategy posts, not a dedicated piece |
@@ -153,11 +153,30 @@ monthly analysis quota was already exhausted. See `[[seo-blog-pipeline]]` memory
 detail. Both articles above were produced via manual WebSearch/WebFetch research instead
 and can be retrofitted through NeuronWriter once a working key is available.
 
-The remaining six top-10 topics are recorded here for later pickup, in rank order, once
-the four above are done:
+5. **#4 Product-usage adoption metrics → SaaS renewal** (Track B) — **published**
+   2026-07-31 as `src/pages/posts/product-usage-metrics-renewal-research.md`. Real
+   primary source: Rask, E. (2025), Aalto University master's thesis using real
+   anonymized CRM data from Lime Technologies Finland (337 customers, 2019-2024) —
+   corrected from the source doc's vague "Lahtinen 2023" / "Aalto SaaS Retention
+   Analysis (2024)" citations, which didn't resolve to a real, findable paper; the
+   actual thesis is dated 2025 (also corrected the year in
+   `health-score-churn-prediction-research.md`, which cites the same thesis). Finding:
+   raw usage telemetry (logins, license activity) had to be dropped from the dataset
+   entirely for data-quality reasons before modeling even started; the usage metric that
+   did make it in was not statistically significant once a relationship-strength
+   composite was in the model; a pricing signal (average license rate) outranked every
+   usage metric too. Cross-referenced a second real but closed-access paper (Sanchez
+   Ramirez, Coussement, De Caigny, Benoit & Guliyev, 2024, *Industrial Marketing
+   Management*) for its existence/scope only, flagged its specific findings as
+   unverified since the full text wasn't accessible. NeuronWriter-scored (working key,
+   see `[[seo-blog-pipeline]]`): 34 → 62 on a single optimization pass, above both median
+   (37) and top (54) competitor, the strongest relative result of the whole series so
+   far, likely because this SERP is thin (matches the source doc's own "Medium"
+   feasibility rating for this topic, the least standardized of the six built).
 
-5. **#4 Product-usage adoption metrics → SaaS renewal** (Track C — telemetry from client
-   HubSpot instances) — same DPA question as #1/#3 will apply.
+The remaining five top-10 topics are recorded here for later pickup, in rank order,
+once the five above are done:
+
 6. **#5 Executive sponsorship → enterprise renewal** (Track B).
 7. **#7 AI/automation in B2B RevOps → productivity** (Track B) — light to produce, the
    finding itself is "evidence is thin," no missing-stats problem.

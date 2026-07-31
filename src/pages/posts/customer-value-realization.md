@@ -138,7 +138,7 @@ Baseline the customer's metric, track the outcome (not just usage), quantify ROI
 
 ---
 
-Value realization is the foundation of the [365-day renewal strategy](/posts/renewal-strategy-365).
+Value realization is the foundation of the [365-day renewal strategy](/posts/renewal-strategy-365). This claim, that adoption alone doesn't guarantee renewal, has real quantitative backing too: see our [research on which product usage metric actually predicts renewal](/posts/product-usage-metrics-renewal-research).
 
 **Customers renew outcomes, not features.** SWOTBee builds value-realization and customer health programs for mid-market companies across Energy, Manufacturing, and SaaS.
 

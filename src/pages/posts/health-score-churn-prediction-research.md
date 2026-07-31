@@ -35,7 +35,7 @@ faqs:
   - q: "Do customer health scores actually predict churn?"
     a: "Some inputs predict it well, others poorly. Mirkovic et al.'s 2022 peer-reviewed study in Applied Sciences found that invoice-level LRFM data alone (Length, Recency, Frequency, Monetary) built robust B2B churn models, with Random Forest significantly outperforming logistic regression. The predictive power comes from specific signal types, not from having a health score at all."
   - q: "Do relationship signals or usage telemetry predict SaaS churn better?"
-    a: "A 2024 Aalto University research study comparing the two in a Nordic B2B SaaS company found relation-strength metrics outperformed usage telemetry at predicting churn, though as a single institutional study (not yet a peer-reviewed meta-analysis), this should be treated as a strong data point rather than a settled finding."
+    a: "A 2025 Aalto University research study comparing the two in a Nordic B2B SaaS company found relation-strength metrics outperformed usage telemetry at predicting churn, though as a single institutional study (not yet a peer-reviewed meta-analysis), this should be treated as a strong data point rather than a settled finding."
   - q: "Is NPS a reliable input for a customer health score?"
     a: "Practitioner data pushes back on this harder than most health score frameworks assume. A widely-discussed analysis by CS consultant Greg Daines reported that satisfaction and NPS scores showed close to zero correlation with retention in his data, and that survey non-respondents churned at more than twice the rate of respondents, a genuinely counterintuitive finding worth testing against your own data before leaning on NPS as a health signal."
   - q: "Why do health scores sometimes fail to catch churn in time?"
@@ -52,7 +52,7 @@ faqs:
 
 Mirkovic et al.'s 2022 peer-reviewed study in *Applied Sciences* tested whether B2B churn could be predicted using nothing but invoice-level data: no support tickets, no NPS, no product usage telemetry, just Length, Recency, Frequency, and Monetary (LRFM) features derived from billing history. The finding: robust churn prediction models can be built from invoice data alone, and Random Forest classifiers significantly outperformed both logistic regression and support vector machines on AUC and detection rate. That's a meaningful data point for any B2B company without mature product analytics: you don't need usage telemetry to start predicting churn, transactional patterns you already have in your billing system carry real predictive signal.
 
-A separate 2024 research study out of Aalto University, conducted inside a Nordic B2B SaaS company, tested a more direct question: does relationship strength or product usage telemetry predict churn better? The finding favored relationship strength metrics over usage data. As a single institutional study rather than a peer-reviewed meta-analysis, this is a strong data point, not a settled fact, but it lines up with the broader pattern our [research on switching costs and B2B renewal](/posts/switching-costs-b2b-renewal-research) already surfaced: relational signals consistently outpredict transactional or usage-only signals across the B2B retention literature.
+A separate 2025 research study out of Aalto University, conducted inside a Nordic B2B SaaS company, tested a more direct question: does relationship strength or product usage telemetry predict churn better? The finding favored relationship strength metrics over usage data. As a single institutional study rather than a peer-reviewed meta-analysis, this is a strong data point, not a settled fact, but it lines up with the broader pattern our [research on switching costs and B2B renewal](/posts/switching-costs-b2b-renewal-research) already surfaced: relational signals consistently outpredict transactional or usage-only signals across the B2B retention literature.
 
 ## What Customer Health Actually Is, According to the Research
 
@@ -97,7 +97,7 @@ The practical failure mode to avoid is building the score once and never revisit
 Some inputs predict it well, others poorly. Mirkovic et al.'s 2022 peer-reviewed study in *Applied Sciences* found that invoice-level LRFM data alone (Length, Recency, Frequency, Monetary) built robust B2B churn models, with Random Forest significantly outperforming logistic regression. The predictive power comes from specific signal types, not from having a health score at all.
 
 **Do relationship signals or usage telemetry predict SaaS churn better?**
-A 2024 Aalto University research study comparing the two in a Nordic B2B SaaS company found relation-strength metrics outperformed usage telemetry at predicting churn, though as a single institutional study (not yet a peer-reviewed meta-analysis), this should be treated as a strong data point rather than a settled finding.
+A 2025 Aalto University research study comparing the two in a Nordic B2B SaaS company found relation-strength metrics outperformed usage telemetry at predicting churn, though as a single institutional study (not yet a peer-reviewed meta-analysis), this should be treated as a strong data point rather than a settled finding.
 
 **Is NPS a reliable input for a customer health score?**
 Practitioner data pushes back on this harder than most health score frameworks assume. A widely-discussed analysis by CS consultant Greg Daines reported that satisfaction and NPS scores showed close to zero correlation with retention in his data, and that survey non-respondents churned at more than twice the rate of respondents, a genuinely counterintuitive finding worth testing against your own data before leaning on NPS as a health signal.
@@ -107,7 +107,7 @@ Because most are built on lagging indicators like usage drop-off, which show up 
 
 ---
 
-This piece pairs with our guides to [renewal risk scoring](/posts/hubspot-renewal-risk-scoring) and [churn-prevention health-score workflows](/posts/hubspot-churn-prevention-health-scores-workflows) in HubSpot, and with our research on [customer success management ROI](/posts/customer-success-management-roi-research) and [switching costs and B2B renewal](/posts/switching-costs-b2b-renewal-research).
+This piece pairs with our guides to [renewal risk scoring](/posts/hubspot-renewal-risk-scoring) and [churn-prevention health-score workflows](/posts/hubspot-churn-prevention-health-scores-workflows) in HubSpot, and with our research on [customer success management ROI](/posts/customer-success-management-roi-research), [switching costs and B2B renewal](/posts/switching-costs-b2b-renewal-research), and [which product usage metric actually predicts renewal](/posts/product-usage-metrics-renewal-research).
 
 **Most health scores are built on assumptions, not validation. SWOTBee builds HubSpot health-score and risk-scoring workflows grounded in what the evidence and your own churned-account history actually show, not just the default inputs a template ships with.**
 
