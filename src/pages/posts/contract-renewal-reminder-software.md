@@ -86,6 +86,8 @@ Adjust for contract reality: procurement-heavy or enterprise accounts need a 120
 
 Customer notices are not alerts; they are commercial communication. They need their own timing (typically 90 and 45 to 60 days out), a human sender (the account owner, not a noreply address), and coordination with any uplift you plan to apply. Never let an automated "your contract is expiring" email reach a customer who already renewed; that single mistake erodes more trust than the reminder ever earned.
 
+Getting a contact into that customer-facing track without someone manually adding them is its own small automation problem, separate from the internal alert workflow. If you are on HubSpot, this usually means a workflow action that enrolls the contact into a Sequence the moment the renewal deal crosses a date threshold, with pacing control so a cluster of renewals near a fiscal year end does not enroll a few hundred contacts in the same hour. Our [FlowNer vs Enrollem comparison](/posts/flowner-vs-enrollem-comparison) walks through the two leading apps for this specific job.
+
 Two cadence rules that save teams repeatedly:
 
 1. **Every internal reminder creates a task, not just a notification.** Notifications get dismissed; tasks sit in a queue until done.

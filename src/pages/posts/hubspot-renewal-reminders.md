@@ -126,6 +126,8 @@ HubSpot workflows can power both internal and external reminders, but there are 
 - **Internal alerts** tell your team a renewal is approaching (tasks, notifications, escalations). This is what the workflow above handles.
 - **Customer-facing emails** remind the buyer their contract is ending. These belong in a separate, carefully timed sequence so you control tone and frequency.
 
+Getting the contact into that customer-facing sequence automatically, at the same checkpoints as your internal alerts, needs one more piece: a workflow action that enrolls the contact the moment the renewal deal crosses a date threshold. HubSpot's own Sequences tool can do this natively on Professional tier through its Automation tab for simple cases. If you need pacing control on top of it, so a batch of renewals clustering around a fiscal year end does not enroll two hundred contacts into a sequence in the same hour, a dedicated enrollment app is worth it. See our comparison of [FlowNer vs Enrollem](/posts/flowner-vs-enrollem-comparison) for how the two leading options handle this.
+
 Keep the two separate. Internal alerts are a shared responsibility across sales and customer success, so route them to whoever owns the account. For health-based escalations on accounts showing risk signals, layer in [health-triggered alerts](/posts/hubspot-churn-prevention-health-scores-workflows) on top of the date-based reminders.
 
 ---
