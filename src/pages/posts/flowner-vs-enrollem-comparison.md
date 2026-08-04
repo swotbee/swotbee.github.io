@@ -31,7 +31,7 @@ faqs:
     a: "FlowNer, on a per enrollment basis. FlowNer's Starter plan is $19 to $29 a month for 1,000 enrollments. Enrollem's closest equivalent, its Professional plan, is roughly 40 euros a month for 250 enrollments. Even allowing for the euro to dollar conversion, FlowNer works out meaningfully cheaper per enrollment at that tier."
 ---
 
-FlowNer is the newer, cheaper app with the stronger feature set: it is the only one of the two with real enrollment throttling, and it costs meaningfully less per enrollment. Enrollem's main thing going for it is tenure: it has been listed longer and has more Marketplace reviews. If you are choosing today, that is the actual tradeoff.
+[FlowNer](https://ecosystem.hubspot.com/marketplace/listing/automated-sequence-enrollment-by-flowner) is the newer, cheaper app with the stronger feature set: it is the only one of the two with real enrollment throttling, and it costs meaningfully less per enrollment. Enrollem's main thing going for it is tenure: it has been listed longer and has more Marketplace reviews. If you are choosing today, that is the actual tradeoff.
 
 Both apps solve the same problem. HubSpot's own Sequences tool has no native way to auto enroll a contact from a workflow unless you're on Sales Hub or Service Hub Enterprise. FlowNer and Enrollem are both HubSpot Marketplace apps that close that gap on the Professional tier, using a custom workflow action instead of HubSpot's built in enterprise automation. Both exist to do one job well: automate sequence enrollment without upgrading your subscription.
 
@@ -57,8 +57,8 @@ We looked at both directly (their own sites, their HubSpot Marketplace listings,
 | Automated unenrollment on a condition change | Yes | Yes |
 | Sender assignment (fixed user or dynamic contact owner) | Yes, both modes | Yes, both modes |
 | Enrollment throttling (spread enrollments by minute, hour, or day) | Yes | Not found in Enrollem's documentation, site, or Marketplace listing |
-| Enrollment logs / usage dashboard | Not confirmed on FlowNer's site | Handled through HubSpot's native Workflow Action Logs |
-| Independent reviews (HubSpot Marketplace, G2, Capterra) | None found as of this writing | Roughly 20 to 23 Marketplace reviews, 4.3 out of 5 |
+| Enrollment logs / usage dashboard | Yes, "Monitor app usage and logs": activity logs, install history, enrollment types, plan limits, and enrollment status, filterable by date or contact | Handled through HubSpot's native Workflow Action Logs |
+| Independent reviews (HubSpot Marketplace, G2, Capterra) | 6 Marketplace reviews, 5.0 out of 5 | Roughly 20 to 23 Marketplace reviews, 4.3 out of 5 |
 
 The pattern is fairly clean once you set the two feature lists side by side: the mechanics of how each app lets you enroll contacts are close to identical, and the one capability that stands out as a genuine gap on Enrollem's side is throttling. If pacing your outbound volume, protecting sender reputation while warming up a new inbox, or spreading load across SDRs is the reason you're buying an app in the first place, that's a real point in FlowNer's favor.
 
@@ -88,9 +88,9 @@ One caveat worth flagging honestly: FlowNer's newest feature, enrolling directly
 
 Enrollem has been on the HubSpot Marketplace for years, with roughly 20 to 23 reviews and a 4.3 out of 5 rating. A few reviewers mention costs climbing quickly once you need higher send volume.
 
-FlowNer is newer. Its developer, 4CRMs, is an established HubSpot partner behind CloneNer, an app with its own track record and reviews on G2, but FlowNer itself only began development in 2026 and is still marked "Join Beta" on 4CRMs' own site. The most recent Marketplace data we could verify (from April 2026) showed roughly 20 installs and zero reviews for FlowNer specifically.
+FlowNer is newer. Its developer, 4CRMs, is an established HubSpot partner behind CloneNer, an app with its own track record and reviews on G2, but FlowNer itself only began development in 2026 and is still marked "Join Beta" on 4CRMs' own site. FlowNer's [HubSpot Marketplace listing](https://ecosystem.hubspot.com/marketplace/listing/automated-sequence-enrollment-by-flowner) now shows 100+ installs and a 5.0 out of 5 rating across 6 reviews, up from roughly 20 installs and zero reviews when we first checked in April 2026.
 
-None of that makes FlowNer unreliable: it means FlowNer hasn't yet built up the review history Enrollem has. That's worth weighing if a longer track record matters more to you than the feature gap, but it's the only real argument in Enrollem's favor here.
+FlowNer has fewer total reviews than Enrollem, 6 against roughly 20 to 23, but a higher rating, 5.0 against 4.3. Read that however you weigh it: Enrollem has more track record to judge consistency at scale, FlowNer has a perfect score on what it does have. Neither number settles it on its own.
 
 ---
 
@@ -108,7 +108,7 @@ If throttling matters for this use case specifically, it's worth calling out dir
 
 Check whether you actually need a third party app to automate this at all. HubSpot's own Sequences tool includes an Automation tab, available on Sales Hub or Service Hub Professional, that can auto enroll and auto unenroll contacts on a trigger without installing anything. It's narrower than either FlowNer or Enrollem (no cross object triggers, no throttling), but if your use case is simple, it's free and it's native.
 
-If neither FlowNer nor Enrollem fits, a third option, Sequence Enroll, is also worth a look. It's priced similarly to Enrollem and explicitly markets a real time usage dashboard, a detail neither FlowNer nor Enrollem clearly claims.
+If neither FlowNer nor Enrollem fits, a third option, Sequence Enroll, is also worth a look. It's priced similarly to Enrollem and leads with a real time usage dashboard as its main selling point, though FlowNer covers that same ground now too, through its own Marketplace listed "Monitor app usage and logs" panel.
 
 ---
 
