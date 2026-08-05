@@ -47,6 +47,11 @@ import MagnetObjections from '../../components/astro/MagnetObjections.astro';
         <label class="text-sm font-semibold text-v6-dark">Work email
           <input required type="email" name="email" placeholder="you@company.com" class="mt-1 w-full border border-gray-300 rounded-lg px-4 py-3" />
         </label>
+        <label class="text-sm font-semibold text-v6-dark">Your role
+          <select required name="self_reported_role" class="mt-1 w-full border border-gray-300 rounded-lg px-4 py-3 bg-white">
+            <option value="">Select...</option><option>Decision maker (VP/Exec/Owner)</option><option>RevOps / Ops practitioner</option><option>Consultant / Agency</option><option>Other</option>
+          </select>
+        </label>
         <label class="text-sm font-semibold text-v6-dark">Do you close multi-year contracts?
           <select required name="closes_multiyear" class="mt-1 w-full border border-gray-300 rounded-lg px-4 py-3 bg-white">
             <option value="">Select...</option><option>Yes, most deals</option><option>Yes, some</option><option>Rarely</option>
