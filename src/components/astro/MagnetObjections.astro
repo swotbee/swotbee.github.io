@@ -1,0 +1,13 @@
+---
+// Reusable 3-item objection block for the lead-magnet opt-ins (funnel #3). Sits directly
+// under the form. Copy is passed per magnet via `items` ([{ q, a }]); nothing fabricated.
+const { items = [] } = Astro.props;
+---
+<div class="max-w-xl mx-auto mt-8 grid gap-3 sm:grid-cols-3">
+  {items.map((it) => (
+    <div class="bg-v6-bg border border-v6-border rounded-xl p-4 text-center">
+      <p class="text-sm font-semibold text-v6-dark mb-1">{it.q}</p>
+      <p class="text-xs text-v6-text-muted leading-relaxed">{it.a}</p>
+    </div>
+  ))}
+</div>

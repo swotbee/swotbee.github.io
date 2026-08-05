@@ -2,6 +2,8 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Navbar from '../../components/astro/Navbar.astro';
 import Footer from '../../components/astro/Footer.astro';
+import ClientLogoStrip from '../../components/astro/ClientLogoStrip.astro';
+import MagnetObjections from '../../components/astro/MagnetObjections.astro';
 // Lead magnet 4. Submits client-side to the HubSpot Forms API (portal 243398671), same
 // pattern as renewal-leakage-estimate.astro / uplift-recovery-checklist.astro. Form
 // "SwotBee - ARR Correction Kit" (id 99dd4e6e-433e-4446-8bc2-5915d8e7e3bf) created via
@@ -32,6 +34,8 @@ import Footer from '../../components/astro/Footer.astro';
       <div class="bg-v6-bg rounded-xl p-4"><div class="font-bold text-v6-teal text-lg">Step 3</div><div class="text-sm text-v6-text-muted">Run the three integrity checks</div></div>
     </div>
   </section>
+
+  <ClientLogoStrip caption="Trusted by revenue and operations teams at" />
 
   <section class="bg-white px-4 sm:px-6 lg:px-8 pb-16 pt-8">
     <div class="max-w-xl mx-auto bg-v6-bg border border-v6-border rounded-2xl p-8">
@@ -68,6 +72,11 @@ import Footer from '../../components/astro/Footer.astro';
         <p class="text-sm text-v6-text-muted">One email with the kit. That is it.</p>
       </div>
     </div>
+    <MagnetObjections items={[
+      { q: "Is it really free?", a: "Yes. One email with the kit. No card, no sales pitch." },
+      { q: "How long does it take?", a: "About 45 minutes to run the four steps." },
+      { q: "Will you spam me?", a: "No. A short, useful renewal sequence. Unsubscribe anytime." },
+    ]} />
     <p class="text-center text-sm text-v6-text-muted mt-8 max-w-xl mx-auto">The durable fix is structural: multi-year deals existing as correct per-year pipeline, created automatically. The renewal audit includes an ARR integrity check against your actual portal.</p>
   </section>
   <Footer />

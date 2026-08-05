@@ -2,6 +2,8 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Navbar from '../../components/astro/Navbar.astro';
 import Footer from '../../components/astro/Footer.astro';
+import ClientLogoStrip from '../../components/astro/ClientLogoStrip.astro';
+import MagnetObjections from '../../components/astro/MagnetObjections.astro';
 // Lead magnet 1. Submits client-side to the HubSpot Forms API (portal 243398671, same
 // portal as the ContactUs embed). Form + properties created via API 2026-07-14, see
 // marketing/automation/n8n-kit-lead-magnet/README.md.
@@ -26,6 +28,8 @@ import Footer from '../../components/astro/Footer.astro';
       <p class="text-sm text-gray-500">Directional, not a quote. Built from your inputs, not benchmarks alone.</p>
     </div>
   </section>
+
+  <ClientLogoStrip caption="Trusted by revenue and operations teams at" />
 
   <section class="bg-white px-4 sm:px-6 lg:px-8 pb-16">
     <div class="max-w-xl mx-auto bg-v6-bg border border-v6-border rounded-2xl p-8">
@@ -103,6 +107,11 @@ import Footer from '../../components/astro/Footer.astro';
         <p class="text-sm text-v6-text-muted">One email, usually within a business day: slipped renewals, unbilled uplifts, and ops hours, from your inputs.</p>
       </div>
     </div>
+    <MagnetObjections items={[
+      { q: "Is it really free?", a: "Yes. One email with your estimate. No card, no sales pitch." },
+      { q: "How accurate is it?", a: "It is a directional estimate. The paid audit verifies it against your real HubSpot data." },
+      { q: "Will you spam me?", a: "No. A short, useful renewal sequence. Unsubscribe anytime." },
+    ]} />
     <p class="text-center text-sm text-v6-text-muted mt-8 max-w-xl mx-auto">Context worth knowing: poor CRM data quality costs companies 12 to 25% of revenue (MIT Sloan), and HubSpot has no native renewal automation (the community thread asking for it has 26,000+ views).</p>
   </section>
   <Footer />

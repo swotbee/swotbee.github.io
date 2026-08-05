@@ -2,6 +2,8 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Navbar from '../../components/astro/Navbar.astro';
 import Footer from '../../components/astro/Footer.astro';
+import ClientLogoStrip from '../../components/astro/ClientLogoStrip.astro';
+import MagnetObjections from '../../components/astro/MagnetObjections.astro';
 // Lead magnet 2. Submits client-side to the HubSpot Forms API (portal 243398671), same
 // pattern as renewal-leakage-estimate.astro. Form "SwotBee - Uplift Recovery Checklist"
 // (id 58333f13-64ed-4bb9-a57d-6795cd9b0afd) created via the Marketing Forms API on
@@ -30,6 +32,8 @@ import Footer from '../../components/astro/Footer.astro';
       <div class="bg-v6-bg rounded-xl p-4"><div class="font-bold text-v6-teal text-lg">Step 3</div><div class="text-sm text-v6-text-muted">Total, recover, prevent</div></div>
     </div>
   </section>
+
+  <ClientLogoStrip caption="Trusted by revenue and operations teams at" />
 
   <section class="bg-white px-4 sm:px-6 lg:px-8 pb-16 pt-8">
     <div class="max-w-xl mx-auto bg-v6-bg border border-v6-border rounded-2xl p-8">
@@ -65,6 +69,11 @@ import Footer from '../../components/astro/Footer.astro';
         <p class="text-sm text-v6-text-muted">One email with the checklist PDF. That is it.</p>
       </div>
     </div>
+    <MagnetObjections items={[
+      { q: "Is it really free?", a: "Yes. One email with the checklist. No card, no sales pitch." },
+      { q: "How long does it take?", a: "About an hour to run it across your contracts." },
+      { q: "Will you spam me?", a: "No. A short, useful renewal sequence. Unsubscribe anytime." },
+    ]} />
     <p class="text-center text-sm text-v6-text-muted mt-8 max-w-xl mx-auto">Why this happens: applying uplifts in HubSpot means re-reading contracts at renewal time; there is no native rule for it. Multi-year contracts miss most often, at year 2 and 3.</p>
   </section>
   <Footer />

@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Navbar from '../../components/astro/Navbar.astro';
 import Footer from '../../components/astro/Footer.astro';
 import ClientLogoStrip from '../../components/astro/ClientLogoStrip.astro';
+import MagnetObjections from '../../components/astro/MagnetObjections.astro';
 // Lead magnet 3. Submits client-side, through the n8n reCAPTCHA-verify proxy, to the
 // HubSpot Forms API (portal 243398671), same pattern as renewal-leakage-estimate.astro /
 // uplift-recovery-checklist.astro / arr-correction-kit.astro. Form "SwotBee - Renewal
@@ -71,20 +72,11 @@ import ClientLogoStrip from '../../components/astro/ClientLogoStrip.astro';
         <p class="text-sm text-v6-text-muted">One email with the scorecard. That is it.</p>
       </div>
     </div>
-    <div class="max-w-xl mx-auto mt-8 grid gap-3 sm:grid-cols-3">
-      <div class="bg-v6-bg border border-v6-border rounded-xl p-4 text-center">
-        <p class="text-sm font-semibold text-v6-dark mb-1">Is it really free?</p>
-        <p class="text-xs text-v6-text-muted leading-relaxed">Yes. One email with the scorecard. No card, no sales pitch.</p>
-      </div>
-      <div class="bg-v6-bg border border-v6-border rounded-xl p-4 text-center">
-        <p class="text-sm font-semibold text-v6-dark mb-1">How long does it take?</p>
-        <p class="text-xs text-v6-text-muted leading-relaxed">About 10 minutes to grade yourself across the six dimensions.</p>
-      </div>
-      <div class="bg-v6-bg border border-v6-border rounded-xl p-4 text-center">
-        <p class="text-sm font-semibold text-v6-dark mb-1">Will you spam me?</p>
-        <p class="text-xs text-v6-text-muted leading-relaxed">No. A short, useful renewal sequence. Unsubscribe anytime.</p>
-      </div>
-    </div>
+    <MagnetObjections items={[
+      { q: "Is it really free?", a: "Yes. One email with the scorecard. No card, no sales pitch." },
+      { q: "How long does it take?", a: "About 10 minutes to grade yourself across the six dimensions." },
+      { q: "Will you spam me?", a: "No. A short, useful renewal sequence. Unsubscribe anytime." },
+    ]} />
     <p class="text-center text-sm text-v6-text-muted mt-8 max-w-xl mx-auto">A self-assessment cannot see which deals are at risk next quarter or which workflows break at year 3. The paid renewal audit scores this same rubric against your actual portal, with names and numbers, and it is credited toward any build.</p>
   </section>
   <Footer />

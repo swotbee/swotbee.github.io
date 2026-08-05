@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import Navbar from "../components/astro/Navbar.astro";
 import Footer from "../components/astro/Footer.astro";
 import ContactUs from "../components/astro/ContactUs.astro";
+import ClientLogoStrip from "../components/astro/ClientLogoStrip.astro";
 ---
 
 <Layout
@@ -20,7 +21,9 @@ import ContactUs from "../components/astro/ContactUs.astro";
     </div>
   </section>
 
-  <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+  <ClientLogoStrip caption="Trusted by revenue and operations teams at" />
+
+  <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 pt-12">
     <ContactUs />
   </section>
 
