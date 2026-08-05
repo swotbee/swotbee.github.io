@@ -22,6 +22,33 @@ import ClientLogoStrip from "../components/astro/ClientLogoStrip.astro";
       <p class="text-base sm:text-lg text-v6-text-muted max-w-xl mx-auto leading-relaxed">
         We'll walk through your leakage estimate, answer what it does and doesn't tell you, and scope whether the paid renewal audit ($500, credited in full toward any build) is worth doing on your actual HubSpot data.
       </p>
+      <!-- Role-tailored pitch (#6): revealed client-side from ?role= or the sb_role cookie. -->
+      <div id="role-pitch" class="hidden mt-5 max-w-xl mx-auto bg-white border border-v6-border rounded-xl p-4 text-left">
+        <p id="role-pitch-title" class="text-sm font-semibold text-v6-dark mb-1"></p>
+        <p id="role-pitch-body" class="text-sm text-v6-text-muted leading-relaxed"></p>
+      </div>
+      <script is:inline>
+        (function () {
+          var el = document.getElementById("role-pitch");
+          if (!el) return;
+          var p = new URLSearchParams(location.search).get("role");
+          var role = "";
+          if (p) { role = decodeURIComponent(p); }
+          else { var m = document.cookie.match(/(?:^|; )sb_role=([^;]*)/); role = m ? decodeURIComponent(m[1]) : ""; }
+          role = role.toLowerCase();
+          var v = null;
+          if (role.indexOf("decision maker") >= 0) {
+            v = { t: "You own the number, so here is what you walk away with", b: "A quantified figure for the revenue leaking out of your renewals, and what recovering it is worth, in terms you can take to the board. A revenue conversation, not a tools one." };
+          } else if (role.indexOf("revops") >= 0 || role.indexOf("ops practitioner") >= 0) {
+            v = { t: "You run renewals, so here is what you walk away with", b: "The exact mechanics: which deals are missing line items, which workflows break at year 3, which renewals have no date, named, with a scored fix roadmap you can act on." };
+          }
+          if (v) {
+            document.getElementById("role-pitch-title").textContent = v.t;
+            document.getElementById("role-pitch-body").textContent = v.b;
+            el.classList.remove("hidden");
+          }
+        })();
+      </script>
     </div>
   </section>
 

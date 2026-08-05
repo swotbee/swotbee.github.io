@@ -268,5 +268,16 @@ const finalCanonicalURL =
       window.Alpine = Alpine;
       Alpine.start();
     </script>
+    <!-- Capture self-reported role on any opt-in form submit into a first-party cookie so the
+         audit-call page can tailor its pitch (ROI vs how-it-works) for same-browser journeys (#6). -->
+    <script is:inline>
+      document.addEventListener("submit", function (e) {
+        var f = e.target;
+        var r = f && f.querySelector && f.querySelector('[name="self_reported_role"]');
+        if (r && r.value) {
+          document.cookie = "sb_role=" + encodeURIComponent(r.value) + ";path=/;max-age=7776000;samesite=lax";
+        }
+      }, true);
+    </script>
   </body>
 </html>
