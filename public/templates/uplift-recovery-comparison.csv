@@ -1,0 +1,8 @@
+Account,Contract start,Term (months),Uplift mechanism,Uplift %,Anniversary due,Price at signing,Contracted renewal 1,Invoiced renewal 1,Delta owed R1,Contracted renewal 2,Invoiced renewal 2,Delta owed R2,Total owed
+Acme Ltd,2023-01-01,12,Fixed %,5,2024-01-01,50000,52500,50000,2500,55125,50000,5125,7625
+Northwind Services,2022-06-01,12,CPI-linked,4,2023-06-01,80000,83200,83200,0,86528,83200,3328,3328
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+NOTES,,,,,,,,,,,,,
+Contracted renewal = prior price x (1 + uplift %). Compare to what you actually invoiced. Any row where invoiced is lower is revenue you are contractually owed and never collected.,,,,,,,,,,,,,
+Under-billing one year also resets the base: every future year then compounds off the wrong number (see the worked example in the guide).,,,,,,,,,,,,,

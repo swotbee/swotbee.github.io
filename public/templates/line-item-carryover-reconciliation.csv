@@ -1,0 +1,10 @@
+Account,Line item,Recurring or one-time,Quantity,Unit price,Line total,Carry to renewal?,On renewal deal?,Notes
+Acme Ltd,Software subscription,Recurring,1,40000,40000,Yes,,
+Acme Ltd,Onboarding,One-time,1,8000,8000,No,,One-time implementation. Exclude from the renewal.
+Acme Ltd,Support plan,Recurring,1,6000,6000,Yes,,
+,,,,,,,,
+CONTRACTED RENEWAL TOTAL,,,,,46000,,,Sum of the recurring lines only (40000 + 6000). Not 54000.
+,,,,,,,,
+NOTES,,,,,,,,
+HubSpot Clone and the workflow Create-record action do NOT copy line items. A renewal built the normal way arrives empty and its amount drifts from what was contracted.,,,,,,,,
+Carry recurring lines at the correct price/quantity/term/dates. Drop one-time fees (implementation/onboarding) and any retired SKU. Reconcile the renewal total to the contract before it becomes an invoice.,,,,,,,,

@@ -1,0 +1,26 @@
+---
+import RenewalGuide from "../../components/astro/RenewalGuide.astro";
+const props = {
+  title: "How to copy line items onto a renewal deal in HubSpot",
+  description: "HubSpot does not copy line items on clone or in workflows. Here is the API method to carry them onto a renewal exactly, with the edge cases that trip people up.",
+  h1: "How to carry your line items onto a renewal, exactly",
+  intro: "When a renewal amount is typed in as a single number, or re-keyed line by line, it drifts, and you invoice the renewal for the wrong figure. Here is how to carry line items across accurately in HubSpot, starting with the uncomfortable fact that HubSpot will not do it for you.",
+  steps: [
+    { n: 1, t: "Know the gap", time: "5 min", body: "Be clear-eyed: HubSpot's <strong>Clone</strong> and the workflow <strong>Create record</strong> action <strong>both do not copy line items</strong>. A renewal deal built the normal way arrives empty of products, and its amount silently diverges from what was contracted." },
+    { n: 2, t: "The API sequence", time: "code", body: "The only reliable path is custom code or an external API call: GET the source deal, GET its line-item associations, POST the new renewal deal, then POST each line item and associate it to the deal (association type 20), preserving price, quantity, term, dates, and SKU." },
+    { n: 3, t: "Handle the edge cases", time: "code", body: "Skip $0 and one-time items (implementation, onboarding) so they don't recur on the renewal. Drop retired or end-of-life SKUs with a warning rather than carrying a dead product. And note that line items sitting on a published <strong>Quote</strong> cannot be pulled by Zapier at all." },
+    { n: 4, t: "Reconcile", time: "10 min", body: "Compare the renewal's line-item total to the contracted figure and fix any drift before it becomes an invoice." },
+  ],
+  example: "A three-line deal, software $40k recurring, onboarding $8k one-time, support $6k recurring, should renew at $46k, not $54k. Carry the onboarding fee across and you over-bill; miss the support line and you under-bill. Do it by hand across a few hundred renewals and both happen.",
+  template: { href: "/templates/line-item-carryover-reconciliation.csv", label: "Download the line-item carryover reconciliation template (CSV)" },
+  burden: "Because HubSpot won't copy line items at all, doing it right means custom code that re-creates each item with its price, quantity, term, and dates, plus per-item logic for recurring-versus-one-time and dead SKUs, all under a 20-second timeout that can fail on large deals. Do it by hand instead and every renewal is a re-typing exercise where a single slip changes what you bill.",
+  bridge: "The build re-creates every line item on the renewal, preserving price, quantity, term, dates, and SKU, classifies recurring versus one-time and drops the one-time fees by rule, and shows a side-by-side original-versus-renewal diff before anything is created. The audit shows which of your current renewals are missing line items or billing the wrong amount.",
+  faq: [
+    { q: "Doesn't a clone app copy the line items?", a: "Some copy them, but they still leave term dates, start and end dates, and one-time-versus-recurring logic wrong, so you hand-fix every renewal deal anyway. Copying the products is the easy part; getting the terms right is where it leaks." },
+    { q: "It's only a few minutes per deal, is it worth automating?", a: "Multiply those minutes by your renewal count and your loaded cost, then add the under-billing that re-keyed line items introduce. That drift is money, and it compounds into your ARR reporting." },
+  ],
+  ctaHeading: "Find the renewals billing the wrong amount",
+  ctaBody: "The renewal audit checks your renewal deals against their contracts and flags the ones with missing or mispriced line items, by deal. $500, credited in full toward any build. It starts with a free 30-minute call.",
+};
+---
+<RenewalGuide {...props} />

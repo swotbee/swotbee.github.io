@@ -1,0 +1,25 @@
+---
+import RenewalGuide from "../../components/astro/RenewalGuide.astro";
+const props = {
+  title: "How to recover unbilled escalation uplifts in HubSpot (step by step)",
+  description: "The exact manual steps to find the contractual price increases you earned but never invoiced, and how to stop it happening again in HubSpot.",
+  h1: "How to recover the escalation uplifts you already earned",
+  intro: "If your contracts have escalation, indexation, or annual-increase clauses, you are almost certainly owed money you never billed. An uplift only gets applied if someone remembers to re-read the contract at exactly the right moment and change the invoice. Here is the exact manual process to find what slipped and recover it. It takes about an hour, and it is the fastest found money on this list.",
+  steps: [
+    { n: 1, t: "Build your clause list", time: "15 min", body: "You are looking for every active contract with an escalation, indexation (CPI), or annual-increase clause. HubSpot does not store contract clauses natively, so pull them from your signed agreements (the deal's attached documents, DocuSign, or a contracts property if you keep one). In a sheet, capture account, contract start date, term, uplift mechanism (fixed percent, CPI-linked, or tiered), the uplift percent, and the anniversary date it is due. Flag multi-year contracts separately, they miss uplifts most often, at years 2 and 3." },
+    { n: 2, t: "Pull what you actually invoiced", time: "20 min", body: "For each contract, get the last two renewal amounts you billed, from wherever invoicing really happens (Stripe, QuickBooks, NetSuite, or HubSpot line items if you invoice through HubSpot). Record three numbers: the price at signing, at renewal 1, and at renewal 2." },
+    { n: 3, t: "The comparison", time: "15 min", body: "For each contract, the contracted price after uplift is the prior price times (1 + uplift percent). Compare it to what you invoiced, mark every case where invoiced is lower, and total the delta. That total is revenue you are contractually owed and never collected.", example: "A $50,000 contract with a 5 percent annual uplift should invoice $52,500 in year 2 and $55,125 in year 3. Invoice $50,000 in year 2 and you are not just short $2,500, you have also reset the base, so every future year compounds off the wrong number." },
+    { n: 4, t: "Recover, then make it structural", time: "10 min", body: "For what is recoverable now, draft a short, factual adjustment note that references the clause and the corrected figure. Then fix the cause: the only durable prevention is to apply uplifts by rule at renewal-deal creation, so the renewal's line items are created at the uplifted price automatically, rather than someone typing it from memory." },
+  ],
+  template: { href: "/templates/uplift-recovery-comparison.csv", label: "Download the uplift recovery comparison template (CSV)" },
+  burden: "About an hour the first time. Then someone has to re-read every contract at exactly the right anniversary, every year, for every contract, and apply the increase before the invoice goes out. Miss the window and that uplift is gone, quietly, with no error message and no one flagging it. It works right up until the person who remembers is on holiday, busy, or leaves. Memory is not a billing system.",
+  bridge: "The build applies the uplift as a rule at renewal creation, a flat percentage or fixed amount per renewal rule, and stamps the adjusted price on each line item so the change is auditable, instead of hand-editing prices every cycle. The renewal audit runs the comparison above against your live portal and hands you the itemized unbilled uplifts, by contract, with the dollar figure attached.",
+  faq: [
+    { q: "We're already on top of our increases, is there really money here?", a: "Almost every service business with escalation clauses is owed something. The check above takes an hour and is designed to surface a number that surprises you. If it doesn't, you have your answer and it cost you an hour." },
+    { q: "Won't back-billing a customer damage the relationship?", a: "Most customers accept a contracted increase without dispute when you show them the clause. You are not renegotiating, you are applying what was already agreed. The awkward part is usually internal, not with the customer." },
+  ],
+  ctaHeading: "Have the audit find yours",
+  ctaBody: "Itemized unbilled uplifts, named at-risk renewals, and a scored roadmap, against your actual HubSpot portal. $500, credited in full toward any build. It starts with a free 30-minute call.",
+};
+---
+<RenewalGuide {...props} />

@@ -24,6 +24,16 @@ const grades = [
   { g: "D", range: "7-9", note: "Renewals depend on heroics. The cost is hours and missed revenue." },
   { g: "F", range: "<7", note: "Every renewal is a small miracle. The good news: fixes pay back fastest here." },
 ];
+// Per-dimension how-to guide the results page routes the reader's two weakest scores to (E1).
+const guides = {
+  visibility: { slug: "renewal-pipeline-visibility-hubspot", label: "Get renewal visibility in HubSpot" },
+  deal_creation: { slug: "auto-create-renewal-deals-hubspot", label: "Make renewal deals create themselves" },
+  line_items: { slug: "copy-line-items-renewal-hubspot", label: "Carry line items onto renewals exactly" },
+  uplifts: { slug: "recover-unbilled-uplifts", label: "Recover unbilled escalation uplifts" },
+  multi_year: { slug: "multi-year-renewal-chains-hubspot", label: "Keep multi-year chains renewing past year 3" },
+  reporting: { slug: "nrr-grr-renewal-reporting-hubspot", label: "Report NRR, GRR and renewal rate accurately" },
+};
+const dimOrder = dimensions.map((d) => d.key); // deterministic tie-break for "two weakest"
 ---
 <Layout title="Renewal Health Scorecard" description="Score your renewal operation across six dimensions and see, live, where revenue is leaking and what to fix first.">
   <Navbar />
@@ -82,6 +92,14 @@ const grades = [
         <div class="text-white/70 mt-1"><span id="sc-r-total">0</span> / 18</div>
         <p id="sc-r-note" class="text-white/85 text-sm mt-4 max-w-lg mx-auto leading-relaxed"></p>
       </div>
+
+      <!-- Start here: the reader's two weakest dimensions -> the how-to guides -->
+      <div id="sc-weakest" class="hidden p-6 sm:p-8 border-b border-v6-border">
+        <p class="text-xs font-semibold uppercase tracking-[0.15em] text-v6-copper mb-2">Start here: your two weakest dimensions</p>
+        <p class="text-sm text-v6-text-muted leading-relaxed mb-4">Here is exactly how to fix each one in HubSpot, by hand, step by step, free. Once you see how much manual work it takes to keep them right every renewal, where the audit fits will be obvious.</p>
+        <ul id="sc-weakest-list" class="space-y-3 list-none p-0 m-0"></ul>
+      </div>
+
       <div class="p-6 sm:p-8 text-center">
         <p class="text-v6-text-muted text-sm leading-relaxed max-w-xl mx-auto mb-6">
           A self-assessment cannot see which specific deals are at risk in the next 90 days, how much unbilled uplift sits in your contracts, or which workflows will break at year 3. The renewal audit scores this same rubric against your actual HubSpot portal and hands you those three lists, with names and numbers.
@@ -101,7 +119,7 @@ const grades = [
     .sc-cell.t.selected { background:#4f9e8f; border-color:#4f9e8f; }
   </style>
 
-  <script is:inline define:vars={{ N8N_SUBMIT }}>
+  <script is:inline define:vars={{ N8N_SUBMIT, guides, dimOrder }}>
     (function () {
       var scores = {};
       var form = document.getElementById("sc-form");
@@ -152,6 +170,30 @@ const grades = [
         var results = document.getElementById("sc-results");
         results.classList.remove("hidden");
         results.scrollIntoView({ behavior: "smooth", block: "start" });
+
+        // Route the reader to their two weakest dimensions' how-to guides.
+        // Sort keys by score ascending; tie-break by display order so it is deterministic.
+        var weakest = dimOrder.slice().sort(function (a, b) {
+          var d = (scores[a] || 0) - (scores[b] || 0);
+          return d !== 0 ? d : dimOrder.indexOf(a) - dimOrder.indexOf(b);
+        }).slice(0, 2);
+        var listEl = document.getElementById("sc-weakest-list");
+        listEl.innerHTML = "";
+        weakest.forEach(function (k) {
+          var g = guides[k];
+          if (!g) return;
+          var li = document.createElement("li");
+          var a = document.createElement("a");
+          a.href = "/guides/" + g.slug + "/";
+          a.target = "_blank";
+          a.rel = "noopener noreferrer";
+          a.className = "flex items-center justify-between gap-3 rounded-xl border border-v6-border bg-v6-bg px-4 py-3 hover:border-v6-copper transition-colors";
+          a.innerHTML = '<span class="text-sm font-semibold text-v6-dark">' + g.label + '</span><span class="text-v6-copper font-bold" aria-hidden="true">&rarr;</span>';
+          if (window.gtag) a.addEventListener("click", function () { window.gtag("event", "scorecard_guide_click", { dimension: k }); });
+          li.appendChild(a);
+          listEl.appendChild(li);
+        });
+        document.getElementById("sc-weakest").classList.remove("hidden");
 
         // Fire-and-forget capture (B2 endpoint). Results already shown regardless.
         try {
