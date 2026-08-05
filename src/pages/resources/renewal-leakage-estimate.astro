@@ -32,7 +32,7 @@ import MagnetObjections from '../../components/astro/MagnetObjections.astro';
   <ClientLogoStrip caption="Trusted by revenue and operations teams at" />
 
   <section class="bg-white px-4 sm:px-6 lg:px-8 pb-16">
-    <div class="max-w-xl mx-auto bg-v6-bg border border-v6-border rounded-2xl p-8">
+    <div class="max-w-xl mx-auto bg-v6-bg border border-v6-border rounded-2xl p-5 sm:p-8">
       <form id="leakage-form" class="flex flex-col gap-4" novalidate>
         <input type="hidden" name="funnel_stage_entry" value="leakage_estimate" />
         <input type="hidden" name="page_variant" value="v1-leakage-estimate" />
@@ -78,27 +78,31 @@ import MagnetObjections from '../../components/astro/MagnetObjections.astro';
         </label>
         <fieldset class="mt-1">
           <legend class="text-sm font-semibold text-v6-dark mb-2">How painful is managing renewals today?</legend>
-          <div class="flex items-center justify-between gap-1">
-            <span class="text-xs text-gray-500">Runs fine</span>
+          <div class="flex justify-between text-xs text-gray-500 mb-1">
+            <span>Runs fine</span>
+            <span>Constant firefighting</span>
+          </div>
+          <div class="flex justify-between gap-1">
             {[1,2,3,4,5].map(n => (
               <label class="flex flex-col items-center text-xs text-v6-text-muted cursor-pointer px-1">
                 <input required type="radio" name="pain_severity" value={n} class="mb-1 accent-[#C47A2A]" />{n}
               </label>
             ))}
-            <span class="text-xs text-gray-500">Constant firefighting</span>
           </div>
         </fieldset>
 
         <fieldset>
           <legend class="text-sm font-semibold text-v6-dark mb-2">How likely are you to put budget toward fixing renewals in the next 12 months?</legend>
-          <div class="flex items-center justify-between gap-1">
-            <span class="text-xs text-gray-500">Not a priority</span>
+          <div class="flex justify-between text-xs text-gray-500 mb-1">
+            <span>Not a priority</span>
+            <span>Budgeting this quarter</span>
+          </div>
+          <div class="flex justify-between gap-1">
             {[1,2,3,4,5].map(n => (
               <label class="flex flex-col items-center text-xs text-v6-text-muted cursor-pointer px-1">
                 <input required type="radio" name="budget_intent" value={n} class="mb-1 accent-[#C47A2A]" />{n}
               </label>
             ))}
-            <span class="text-xs text-gray-500">Budgeting this quarter</span>
           </div>
         </fieldset>
 

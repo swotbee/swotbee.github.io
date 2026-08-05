@@ -192,7 +192,9 @@ const dimOrder = dimensions.map((d) => d.key); // deterministic tie-break for "t
           a.target = "_blank";
           a.rel = "noopener noreferrer";
           a.className = "flex items-center justify-between gap-3 rounded-xl border border-v6-border bg-v6-bg px-4 py-3 hover:border-v6-copper transition-colors";
-          a.innerHTML = '<span class="text-sm font-semibold text-v6-dark">' + g.label + '</span><span class="text-v6-copper font-bold" aria-hidden="true">&rarr;</span>';
+          a.innerHTML = '<span class="text-sm font-semibold text-v6-dark">' + g.label + '</span><span class="text-v6-copper font-bold" aria-hidden="true">&#8599;</span>';
+          a.title = "Opens in a new tab";
+          a.setAttribute("aria-label", g.label + " (opens in a new tab)");
           if (window.gtag) a.addEventListener("click", function () { window.gtag("event", "scorecard_guide_click", { dimension: k }); });
           li.appendChild(a);
           listEl.appendChild(li);
