@@ -80,6 +80,30 @@ Future pillar article + a LinkedIn lead-magnet post pointing back to it. Overlap
 the already-published `hubspot-deal-duplication-best-practices.md` (deduplication vs.
 cloning distinction) — gap-check before writing.
 
+## churn/ — HubSpot churn-prevention implementation catalogue + video research
+
+Two files, not yet gap-checked against site content.
+
+- **`churn howto with hubspot.md`** — the substantial one (332 lines): 11 churn
+  categories (definitions/measurement, customer fit, onboarding, product adoption, value
+  realization, health scores, risk response, cancellation recovery, failed payments,
+  renewals/expansion, feedback loops) x 5 concrete HubSpot implementation ideas each (55
+  total), every idea naming the exact HubSpot feature to use plus 4 measurement metrics
+  (operational, behavioral, retention, guardrail). Includes a weighted usefulness-scoring
+  formula and a final ranked top-15 shortlist with reasoning. Dense enough to be a pillar
+  article or an internal playbook on its own.
+- **`10-churn-focused-videos.md`** — a curated list of 10 external churn/retention
+  webinars and talks (MicroConf, ProfitWell, Paddle Retain, Gainsight x3, SaaStr, a Drip
+  founder case study) with relevance notes and links. Raw reference material, not a
+  standalone deliverable.
+
+**Overlap flag:** SWOTBee already has 7 published churn-adjacent posts
+(`hubspot-churn-prevention-health-scores-workflows.md`, `silent-churn-detection.md`,
+`churned-customer-win-back.md`, `cohort-retention-analysis-churn.md`,
+`health-score-churn-prediction-research.md`, `saas-churn-rate.md`,
+`churnzero-pricing-alternatives.md`) — gap-check the health-score and prevention-workflow
+angles especially closely before picking any of the 55 ideas up.
+
 ## nonporfit/, nonprofit_keywords.md, webdesign/kanopi...md — nonprofit keyword research
 
 Three files (`nonprofit_keywords.md`, `nonporfit/donorbox-Categorized Nonprofit-Related
