@@ -297,6 +297,9 @@ const toneMap: Record<string, string> = {
             </div>
           </div>
         </div>
+        <p class="reveal text-sm max-w-xl mx-auto lg:mx-0 mb-3">
+          <a href="/resources/renewal-health-scorecard/" class="text-v6-copper font-semibold hover:underline">Or grade your renewal operation in 10 minutes &rarr;</a>
+        </p>
         <p class="reveal text-sm text-v6-text-muted max-w-xl mx-auto lg:mx-0 mb-3 leading-relaxed">
           Works with your existing HubSpot and your accounting stack: QuickBooks, Xero, Sage, or NetSuite. No migration needed. Built for Energy, Manufacturing, Construction, and SaaS teams managing hundreds to thousands of renewals a year.
         </p>
@@ -553,7 +556,7 @@ const toneMap: Record<string, string> = {
 
 
   <!-- ============ SOLUTION ============ -->
-  <section id="how-it-works" class="bg-v6-bg py-14 sm:py-18 px-4 sm:px-6 lg:px-8">
+  <section id="how-it-works" class="scroll-mt-24 bg-v6-bg py-14 sm:py-18 px-4 sm:px-6 lg:px-8">
     <div class="max-w-4xl mx-auto">
       <p class="reveal text-sm font-semibold uppercase tracking-[0.2em] text-v6-copper mb-3 text-center">How It Works</p>
       <h2 class="reveal text-2xl sm:text-3xl lg:text-4xl font-bold text-v6-dark mb-3 text-center text-balance">
@@ -637,7 +640,7 @@ const toneMap: Record<string, string> = {
       <div class="stagger grid grid-cols-1 md:grid-cols-2 gap-6">
         {capabilities.map(c => (
           <div class={`anim-card bg-white rounded-xl p-6 border border-v6-border border-t-4 ${c.color} hover:shadow-lg transition-shadow`}>
-            <div class="anim-emoji text-2xl mb-3">{c.icon}</div>
+            <div class="cap-icon inline-block text-2xl leading-none mb-3">{c.icon}</div>
             <h3 class="text-base font-semibold text-v6-dark mb-4 leading-snug">{c.title}</h3>
             <ul class="space-y-2.5">
               {c.points.map(p => (
@@ -850,6 +853,12 @@ const toneMap: Record<string, string> = {
   .anim-emoji { transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); }
   .anim-card:hover .anim-emoji { transform: translateY(-2px) scale(1.12) rotate(-4deg); }
 
+  /* Capability card icons: a plain inline-block (not a fixed-size flex box like
+     .anim-emoji elsewhere), so it must transform-scale from its own glyph
+     center, not translate/rotate, or the hover motion visibly shifts it. */
+  .cap-icon { display: inline-block; transform-origin: center; transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); }
+  .anim-card:hover .cap-icon { transform: scale(1.22); }
+
   /* ===== Bee character ===== */
   #bee { --tx: 0px; --ty: 0px; transform: translate(var(--tx), var(--ty)); transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1); }
   .bee-bob { animation: beeBob 4s ease-in-out infinite; }
@@ -892,7 +901,7 @@ const toneMap: Record<string, string> = {
     #bee { transform: none !important; }
     /* Bubble still appears on the idle cue, just without the slide. */
     .stake-bubble { transition: none !important; transform: translate(-50%, 0) !important; }
-    .anim-card, .anim-emoji, .cta-pop, #scroll-progress { transition: none !important; }
+    .anim-card, .anim-emoji, .cap-icon, .cta-pop, #scroll-progress { transition: none !important; }
   }
 </style>
 
