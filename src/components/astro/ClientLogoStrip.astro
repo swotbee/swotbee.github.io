@@ -1,0 +1,30 @@
+---
+// Reusable client-logo trust strip for the lead-magnet / opt-in pages (funnel #3, social
+// proof near the form). Logos are hosted locally under public/logos/clients/ (downloaded,
+// not hotlinked). Only logos that read on a LIGHT background are included; the Embrio mark
+// supplied was a reversed (white) version that disappears on light, held pending a light
+// variant. Heights are tuned per-logo so wordmarks and the Jirav badge read at similar weight.
+const { caption = "Trusted by teams at" } = Astro.props;
+const logos = [
+  { src: "/logos/clients/zenergy.png", alt: "Zenergy", w: 351, h: 90, cls: "h-5 sm:h-6" },
+  { src: "/logos/clients/knape-vogt.png", alt: "Knape & Vogt", w: 446, h: 313, cls: "h-10 sm:h-12" },
+  { src: "/logos/clients/jirav.png", alt: "Jirav", w: 862, h: 794, cls: "h-9 sm:h-10" },
+];
+---
+<section class="border-y border-v6-border bg-v6-bg px-4 py-6">
+  <div class="max-w-3xl mx-auto text-center">
+    <p class="text-xs font-semibold uppercase tracking-[0.18em] text-v6-text-muted mb-4">{caption}</p>
+    <div class="flex flex-wrap items-center justify-center gap-x-8 sm:gap-x-12 gap-y-4">
+      {logos.map((l) => (
+        <img
+          src={l.src}
+          alt={l.alt}
+          width={l.w}
+          height={l.h}
+          loading="lazy"
+          class={`${l.cls} w-auto object-contain opacity-80 hover:opacity-100 transition-opacity`}
+        />
+      ))}
+    </div>
+  </div>
+</section>
