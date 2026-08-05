@@ -200,4 +200,4 @@ Then they build. In that order.
 
 **SWOTBee has seen all 12 of these mistakes (and fixed them) across mid-market companies in Energy, Manufacturing, SaaS, and more. If your renewal pipeline isn't performing, we can audit it and build you one that works.**
 
-[Book a free 30-minute discovery call →](/contactus)
+[Book a free 30-minute discovery call →](/contactus/)

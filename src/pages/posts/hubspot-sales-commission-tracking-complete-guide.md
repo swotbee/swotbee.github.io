@@ -492,7 +492,7 @@ Our services include:
 - **Software evaluation and implementation**. We evaluate third-party commission tools against your requirements, negotiate contracts, and manage the implementation.
 - **Ongoing optimization**. Commission plans change. We provide quarterly reviews to ensure your tracking system evolves with your business.
 
-**Ready to fix your commission tracking?** [Book a free consultation](/contactus), we will audit your current setup, identify the gaps, and recommend next steps. No pitch, no pressure. Just a clear-eyed assessment of where you are and what it would take to get where you need to be.
+**Ready to fix your commission tracking?** [Book a free consultation](/contactus/), we will audit your current setup, identify the gaps, and recommend next steps. No pitch, no pressure. Just a clear-eyed assessment of where you are and what it would take to get where you need to be.
 
 ---
 

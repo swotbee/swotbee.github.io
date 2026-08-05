@@ -1,0 +1,217 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/astro/Navbar.astro";
+import Footer from "../components/astro/Footer.astro";
+// B1 of the live-scorecard build (see marketing/.../swotbee-live-scorecard-plan). GATED entry:
+// reached via the per-contact magic link (?t=<dl_token>) from the Kit scorecard email. Client-side
+// scoring of the 6 renewal dimensions -> a live grade out of 18. On submit it POSTs {token, scores}
+// to the n8n capture endpoint (B2, /webhook/scorecard-submit) which saves the scores to HubSpot +
+// tags in Kit + GA4; results still render client-side even if that call fails. Design mirrors the
+// approved scorecard template.
+const N8N_SUBMIT = "https://auto.zippylens.com/webhook/scorecard-submit";
+const dimensions = [
+  { key: "visibility", name: "Renewal visibility", low: "You find out a renewal was due when the customer tells you.", high: "Every future renewal exists as a pipeline deal today, visible by quarter, with at-risk flags." },
+  { key: "deal_creation", name: "Renewal deal creation", low: "Renewals are rebuilt by hand from memory.", high: "Renewal deals create themselves: right pipeline, right date, right owner, every time." },
+  { key: "line_items", name: "Line items", low: "Renewal amounts are typed in as a single number.", high: "Line items carry over exactly, terms and dates correct, untouched by hand." },
+  { key: "uplifts", name: "Escalations and uplifts", low: "What escalation clauses?", high: "Uplifts are data, applied to line items by rules at renewal creation." },
+  { key: "multi_year", name: "Multi-year chains", low: "Multi-year contracts are tracked outside the CRM entirely.", high: "Chains renew indefinitely without intervention." },
+  { key: "reporting", name: "Revenue reporting", low: "Renewal revenue is assembled in a spreadsheet at quarter end.", high: "NRR, GRR, and renewal rate are live, correct, and quoted to the board without caveats." },
+];
+const grades = [
+  { g: "A", range: "16-18", note: "Genuinely automated. You likely do not need help." },
+  { g: "B", range: "13-15", note: "Strong bones; the gaps are probably uplifts and multi-year edges." },
+  { g: "C", range: "10-12", note: "The average for companies running HubSpot with recurring contracts. Real leakage is very likely.", hot: true },
+  { g: "D", range: "7-9", note: "Renewals depend on heroics. The cost is hours and missed revenue." },
+  { g: "F", range: "<7", note: "Every renewal is a small miracle. The good news: fixes pay back fastest here." },
+];
+// Per-dimension how-to guide the results page routes the reader's two weakest scores to (E1).
+const guides = {
+  visibility: { slug: "renewal-pipeline-visibility-hubspot", label: "Get renewal visibility in HubSpot" },
+  deal_creation: { slug: "auto-create-renewal-deals-hubspot", label: "Make renewal deals create themselves" },
+  line_items: { slug: "copy-line-items-renewal-hubspot", label: "Carry line items onto renewals exactly" },
+  uplifts: { slug: "recover-unbilled-uplifts", label: "Recover unbilled escalation uplifts" },
+  multi_year: { slug: "multi-year-renewal-chains-hubspot", label: "Keep multi-year chains renewing past year 3" },
+  reporting: { slug: "nrr-grr-renewal-reporting-hubspot", label: "Report NRR, GRR and renewal rate accurately" },
+};
+const dimOrder = dimensions.map((d) => d.key); // deterministic tie-break for "two weakest"
+---
+<Layout title="Renewal Health Scorecard" description="Score your renewal operation across six dimensions and see, live, where revenue is leaking and what to fix first.">
+  <Navbar />
+
+  <section class="bg-gradient-to-b from-v6-bg to-white px-4 sm:px-6 lg:px-8 pt-14 pb-6">
+    <div class="max-w-3xl mx-auto text-center">
+      <span class="text-xs font-semibold uppercase tracking-[0.2em] text-v6-copper">Self-assessment</span>
+      <h1 class="text-3xl sm:text-4xl font-bold text-v6-dark mt-3 mb-3 text-balance">Renewal Health Scorecard</h1>
+      <p class="text-base text-v6-text-muted max-w-xl mx-auto leading-relaxed">
+        Score each of the six dimensions from <strong>0 to 3</strong>, pick the line that matches your reality. Your grade updates as you go. Be honest, the grade is for you.
+      </p>
+    </div>
+  </section>
+
+  <section class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+    <div id="sc-card" class="bg-white border border-v6-border rounded-2xl shadow-sm overflow-hidden">
+      <form id="sc-form" class="divide-y divide-v6-border">
+        {dimensions.map((d, i) => (
+          <div class="sc-dim p-5 sm:p-6" data-key={d.key}>
+            <div class="flex items-start gap-3 mb-3">
+              <span class="flex-none w-7 h-7 rounded-full bg-v6-dark text-white text-sm font-bold flex items-center justify-center mt-0.5">{i + 1}</span>
+              <div>
+                <h3 class="font-bold text-v6-dark text-base">{d.name}</h3>
+                <p class="text-xs text-v6-text-muted mt-1 leading-relaxed"><span class="font-semibold" style="color:#bd4a2c">0:</span> {d.low}</p>
+                <p class="text-xs text-v6-text-muted mt-0.5 leading-relaxed"><span class="font-semibold" style="color:#4f9e8f">3:</span> {d.high}</p>
+              </div>
+            </div>
+            <div class="flex gap-2 sm:pl-10" role="radiogroup" aria-label={d.name}>
+              {[0, 1, 2, 3].map((v) => (
+                <button type="button" role="radio" aria-checked="false" class="sc-cell flex-1 sm:flex-none sm:w-12 h-11 rounded-lg border border-v6-border text-v6-text-muted font-semibold hover:border-v6-copper focus:outline-none focus:ring-2 focus:ring-v6-copper transition-colors" data-val={v} aria-label={`Score ${v}`}>{v}</button>
+              ))}
+            </div>
+          </div>
+        ))}
+      </form>
+
+      <div class="bg-v6-dark text-white p-5 sm:p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="text-center sm:text-left">
+          <div class="text-xs uppercase tracking-[0.18em] text-white/60">Your score</div>
+          <div class="text-2xl font-bold mt-1" aria-live="polite"><span id="sc-total">0</span><span class="text-white/50 text-lg"> / 18</span>
+            <span id="sc-grade" class="ml-3 text-v6-amber"></span>
+          </div>
+        </div>
+        <button id="sc-submit" type="button" disabled
+          class="w-full sm:w-auto bg-v6-copper text-white px-7 py-3 rounded-xl text-base font-semibold hover:bg-v6-copper-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
+          Answer all six to see your results
+        </button>
+      </div>
+    </div>
+
+    <!-- RESULTS (hidden until submit) -->
+    <div id="sc-results" class="hidden mt-8 bg-white border border-v6-border rounded-2xl shadow-sm overflow-hidden">
+      <div class="bg-v6-dark text-white p-6 sm:p-8 text-center">
+        <div class="text-xs uppercase tracking-[0.2em] text-white/60 mb-2">Your renewal health grade</div>
+        <div class="text-5xl font-bold text-v6-amber"><span id="sc-r-grade">C</span></div>
+        <div class="text-white/70 mt-1"><span id="sc-r-total">0</span> / 18</div>
+        <p id="sc-r-note" class="text-white/85 text-sm mt-4 max-w-lg mx-auto leading-relaxed"></p>
+      </div>
+
+      <!-- Start here: the reader's two weakest dimensions -> the how-to guides -->
+      <div id="sc-weakest" class="hidden p-6 sm:p-8 border-b border-v6-border">
+        <p class="text-xs font-semibold uppercase tracking-[0.15em] text-v6-copper mb-2">Start here: your two weakest dimensions</p>
+        <p class="text-sm text-v6-text-muted leading-relaxed mb-4">Here is exactly how to fix each one in HubSpot, by hand, step by step, free. Once you see how much manual work it takes to keep them right every renewal, where the audit fits will be obvious.</p>
+        <ul id="sc-weakest-list" class="space-y-3 list-none p-0 m-0"></ul>
+      </div>
+
+      <div class="p-6 sm:p-8 text-center">
+        <p class="text-v6-text-muted text-sm leading-relaxed max-w-xl mx-auto mb-6">
+          A self-assessment cannot see which specific deals are at risk in the next 90 days, how much unbilled uplift sits in your contracts, or which workflows will break at year 3. The renewal audit scores this same rubric against your actual HubSpot portal and hands you those three lists, with names and numbers.
+        </p>
+        <a href="/renewal-audit-call/" class="inline-block bg-v6-copper text-white px-8 py-3.5 rounded-xl text-base font-semibold hover:bg-v6-copper-600 transition-colors">Book your renewal audit</a>
+        <p class="text-xs text-v6-text-muted mt-3"><strong>$500</strong>, credited in full toward any build. It starts with a free 30-minute call.</p>
+        <p id="sc-saved" class="text-xs text-v6-teal mt-4" role="status" aria-live="polite"></p>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+
+  <style>
+    .sc-cell.selected { background:#213343; border-color:#213343; color:#fff; }
+    .sc-cell.z.selected { background:#bd4a2c; border-color:#bd4a2c; }
+    .sc-cell.t.selected { background:#4f9e8f; border-color:#4f9e8f; }
+  </style>
+
+  <script is:inline define:vars={{ N8N_SUBMIT, guides, dimOrder }}>
+    (function () {
+      var scores = {};
+      var form = document.getElementById("sc-form");
+      var totalEl = document.getElementById("sc-total");
+      var gradeEl = document.getElementById("sc-grade");
+      var submit = document.getElementById("sc-submit");
+      var dims = Array.prototype.slice.call(document.querySelectorAll(".sc-dim"));
+      var token = new URLSearchParams(window.location.search).get("t") || "";
+      // A "+" in an email address renders raw into the magic-link URL, and URLSearchParams
+      // decodes "+" to a space. Email local-parts never contain spaces, so any space here was
+      // a "+". Restore it so the capture matches the HubSpot contact (e.g. jo+renewals@x.com).
+      token = token.replace(/ /g, "+");
+
+      function gradeFor(t) {
+        if (t >= 16) return { g: "A", note: "Genuinely automated. You likely do not need help." };
+        if (t >= 13) return { g: "B", note: "Strong bones; the gaps are probably uplifts and multi-year edges." };
+        if (t >= 10) return { g: "C", note: "The average for companies running HubSpot with recurring contracts. Real leakage is very likely." };
+        if (t >= 7)  return { g: "D", note: "Renewals depend on heroics. The cost is hours and missed revenue." };
+        return { g: "F", note: "Every renewal is a small miracle. The good news: fixes pay back fastest here." };
+      }
+      function refresh() {
+        var keys = Object.keys(scores);
+        var total = keys.reduce(function (s, k) { return s + scores[k]; }, 0);
+        totalEl.textContent = total;
+        var all = keys.length === dims.length;
+        gradeEl.textContent = all ? gradeFor(total).g : "";
+        submit.disabled = !all;
+        if (all) submit.textContent = "See my results";
+      }
+      dims.forEach(function (dim) {
+        var key = dim.getAttribute("data-key");
+        var cells = Array.prototype.slice.call(dim.querySelectorAll(".sc-cell"));
+        cells.forEach(function (cell, idx) {
+          if (idx === 0) cell.classList.add("z");
+          if (idx === 3) cell.classList.add("t");
+          cell.addEventListener("click", function () {
+            cells.forEach(function (c) { c.classList.remove("selected"); c.setAttribute("aria-checked", "false"); });
+            cell.classList.add("selected"); cell.setAttribute("aria-checked", "true");
+            scores[key] = parseInt(cell.getAttribute("data-val"), 10);
+            refresh();
+          });
+        });
+      });
+
+      submit.addEventListener("click", function () {
+        var total = Object.keys(scores).reduce(function (s, k) { return s + scores[k]; }, 0);
+        var gr = gradeFor(total);
+        document.getElementById("sc-r-grade").textContent = gr.g;
+        document.getElementById("sc-r-total").textContent = total;
+        document.getElementById("sc-r-note").textContent = gr.note;
+        document.getElementById("sc-card").classList.add("hidden");
+        var results = document.getElementById("sc-results");
+        results.classList.remove("hidden");
+        results.scrollIntoView({ behavior: "smooth", block: "start" });
+
+        // Route the reader to their two weakest dimensions' how-to guides.
+        // Sort keys by score ascending; tie-break by display order so it is deterministic.
+        var weakest = dimOrder.slice().sort(function (a, b) {
+          var d = (scores[a] || 0) - (scores[b] || 0);
+          return d !== 0 ? d : dimOrder.indexOf(a) - dimOrder.indexOf(b);
+        }).slice(0, 2);
+        var listEl = document.getElementById("sc-weakest-list");
+        listEl.innerHTML = "";
+        weakest.forEach(function (k) {
+          var g = guides[k];
+          if (!g) return;
+          var li = document.createElement("li");
+          var a = document.createElement("a");
+          a.href = "/guides/" + g.slug + "/";
+          a.target = "_blank";
+          a.rel = "noopener noreferrer";
+          a.className = "flex items-center justify-between gap-3 rounded-xl border border-v6-border bg-v6-bg px-4 py-3 hover:border-v6-copper transition-colors";
+          a.innerHTML = '<span class="text-sm font-semibold text-v6-dark">' + g.label + '</span><span class="text-v6-copper font-bold" aria-hidden="true">&rarr;</span>';
+          if (window.gtag) a.addEventListener("click", function () { window.gtag("event", "scorecard_guide_click", { dimension: k }); });
+          li.appendChild(a);
+          listEl.appendChild(li);
+        });
+        document.getElementById("sc-weakest").classList.remove("hidden");
+
+        // Fire-and-forget capture (B2 endpoint). Results already shown regardless.
+        try {
+          fetch(N8N_SUBMIT, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ token: token, scores: scores, total: total, grade: gr.g })
+          }).then(function (r) {
+            if (r.ok) document.getElementById("sc-saved").textContent = "Your scores are saved. We'll tailor your follow-up to them.";
+          }).catch(function () {});
+        } catch (e) {}
+
+        if (window.gtag) window.gtag("event", "scorecard_completed", { grade: gr.g, total: total });
+      });
+    })();
+  </script>
+</Layout>

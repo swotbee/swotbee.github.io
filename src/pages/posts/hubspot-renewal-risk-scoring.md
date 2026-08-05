@@ -161,4 +161,4 @@ Lead scoring ranks prospects by buying intent; renewal risk scoring ranks existi
 
 **Renewal risk scoring is simple to start and easy to overbuild:** the win is a score the team trusts and acts on. SWOTBee builds customer health scoring and renewal automation for mid-market companies across Energy, Manufacturing, and SaaS.
 
-[Book a free 30-minute discovery call →](/contactus)
+[Book a free 30-minute discovery call →](/contactus/)

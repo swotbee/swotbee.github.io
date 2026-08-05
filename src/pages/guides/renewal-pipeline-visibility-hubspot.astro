@@ -1,0 +1,24 @@
+---
+import RenewalGuide from "../../components/astro/RenewalGuide.astro";
+const props = {
+  title: "How to make your renewals visible as a pipeline in HubSpot",
+  description: "Set up a renewal pipeline, the right fields, and 30/60/90-day at-risk views so renewals stop surprising you. Step by step in HubSpot.",
+  h1: "How to make every renewal visible in HubSpot, before it slips",
+  intro: "If you find out a renewal was due when the customer tells you, or when they quietly don't, the real problem is that your renewals do not exist as live deals. They live in a spreadsheet someone checks sometimes. Here is how to turn every renewal into a visible, at-risk-flagged pipeline deal in HubSpot. It is a real afternoon of setup, and the honest question underneath is whether you want to build and maintain all of it by hand.",
+  steps: [
+    { n: 1, t: "Create a dedicated Renewal pipeline", time: "30 min", body: "In Settings &rarr; Objects &rarr; Deals &rarr; Pipelines, add a Renewal pipeline separate from your sales pipeline, with renewal stages (Active contract, Upcoming 90-180 days, 90 / 60 / 30-day, Overdue, Renewed, Churned). Set stage probabilities to the 80-95% renewals actually convert at, not the 10-60% sales defaults, otherwise your forecast understates your safest revenue." },
+    { n: 2, t: "Add the fields that make a renewal trackable", time: "20 min", body: "Renewals need their own data: a <strong>Deal Type</strong> dropdown (New business / Renewal / Expansion / Contraction), a dedicated <strong>Renewal Date</strong> distinct from Close Date, <strong>Contract Term</strong>, and a <strong>Health</strong> dropdown (Healthy / Passive / At risk). Close Date is when the sale closed, not when the contract lapses, so reusing it for renewals is the first thing that breaks your reporting." },
+    { n: 3, t: "Build the 30 / 60 / 90-day views", time: "20 min", body: "Create saved deal views filtered to Pipeline = Renewal and Renewal Date within 30, 60, and 90 days, plus an Overdue view. Note a live <em>Days to Renewal</em> countdown property needs Operations Hub Pro; without it, use a workflow to stamp a bucket dropdown so the views still sort." },
+    { n: 4, t: "Flag at-risk automatically", time: "20 min", body: "Set the Health dropdown to At risk with a workflow on real signals: open high-priority tickets, no engagement in 60-90 days, a bounce on the champion's email. Without Service Hub Pro's native health score this is all hand-wired, and it still gives you only a <em>list</em> of at-risk deals, not the dollars attached to them." },
+  ],
+  burden: "You are hand-building an eight-stage pipeline, five-plus custom properties, and a stack of workflows, then maintaining all of it. The single most useful field, a live Days-to-Renewal countdown, is paywalled behind Operations Hub Pro. Health scoring needs Service Hub Pro or bespoke workflows. And none of it answers the one question leadership actually asks: <strong>how many dollars of renewal slip in the next 90 days?</strong> Silence looks like satisfaction, right up until a renewal you never saw coming churns.",
+  bridge: "The renewal audit hands you the list a dashboard can't build itself: which renewals are at risk in your next 90 days, with the dollar exposure attached. The build then stands the renewal pipeline up from a template and reports renewals due 30 / 60 / 90 as live figures, instead of an afternoon of hand-wiring you own forever.",
+  faq: [
+    { q: "Isn't a spreadsheet of renewal dates enough?", a: "A static list tells you a date; it does not tell you which renewals are slipping right now, and it only stays accurate while someone remembers to update it. The moment that person is busy or leaves, it goes stale and you are back to hearing it from the customer." },
+    { q: "Do I need Operations Hub Pro for this?", a: "Only for a live <em>Days to Renewal</em> calculated field. A free workflow that stamps a 30 / 60 / 90 / overdue bucket gets you most of the way, it is just one more thing to build and keep working." },
+  ],
+  ctaHeading: "See which renewals are actually at risk",
+  ctaBody: "The renewal audit returns your named at-risk renewals in the next 90 days, with the dollars attached, against your real HubSpot portal. $500, credited in full toward any build. It starts with a free 30-minute call.",
+};
+---
+<RenewalGuide {...props} />

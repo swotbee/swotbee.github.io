@@ -148,4 +148,4 @@ Multi-threading is the relationship foundation of the [365-day renewal strategy]
 
 **The renewal you lose is usually the one that depended on a single person.** SWOTBee builds account-mapping and renewal playbooks for mid-market companies across Energy, Manufacturing, and SaaS.
 
-[Book a free 30-minute discovery call →](/contactus)
+[Book a free 30-minute discovery call →](/contactus/)

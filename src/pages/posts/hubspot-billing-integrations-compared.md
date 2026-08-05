@@ -225,4 +225,4 @@ For Stripe and Chargebee, usually not; native apps cover common cases. For Zuora
 
 **SWOTBee builds HubSpot-native renewal operations for mid-market teams: your billing data becomes worked renewal deals with line items, uplifts, and NRR reporting, and you own everything we build in your portal.**
 
-[Book a free 30-minute discovery call →](/contactus)
+[Book a free 30-minute discovery call →](/contactus/)

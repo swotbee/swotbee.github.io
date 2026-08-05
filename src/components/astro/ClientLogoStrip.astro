@@ -1,0 +1,35 @@
+---
+// Reusable client-logo trust strip for the lead-magnet / opt-in pages (funnel #3, social
+// proof near the form). Logos are hosted locally under public/logos/clients/ (downloaded,
+// not hotlinked). The Embrio mark is a reversed (red + white) logo built for dark grounds,
+// so it renders inside its own dark chip (dark:true) while the light-ground logos sit
+// directly on the strip. Rendered as a SINGLE horizontal row: centered when it fits, and
+// horizontally scrollable (never wrapping to a second line) on narrow screens.
+const { caption = "Trusted by teams at" } = Astro.props;
+const logos = [
+  { src: "/logos/clients/zenergy.png", alt: "Zenergy", w: 351, h: 90, cls: "h-5 sm:h-6" },
+  { src: "/logos/clients/knape-vogt.png", alt: "Knape & Vogt", w: 446, h: 313, cls: "h-10 sm:h-12" },
+  { src: "/logos/clients/embryo.png", alt: "Embrio", w: 297, h: 62, cls: "h-5 sm:h-6", dark: true },
+  { src: "/logos/clients/jirav.png", alt: "Jirav", w: 862, h: 794, cls: "h-9 sm:h-10" },
+  { src: "/logos/clients/wellstat.png", alt: "WellStat", w: 700, h: 148, cls: "h-6 sm:h-7" },
+  { src: "/logos/clients/gwcdata.png", alt: "GWC Data.AI", w: 700, h: 188, cls: "h-8 sm:h-10" },
+];
+---
+<section class="border-y border-v6-border bg-v6-bg px-4 py-6">
+  <div class="max-w-5xl mx-auto">
+    <p class="text-xs font-semibold uppercase tracking-[0.18em] text-v6-text-muted mb-4 text-center">{caption}</p>
+    <div class="overflow-x-auto">
+      <div class="flex flex-nowrap items-center justify-center gap-6 sm:gap-10 w-max min-w-full px-1">
+        {logos.map((l) => (
+          l.dark ? (
+            <span class="flex-none inline-flex items-center rounded-lg bg-v6-dark px-3 py-2.5">
+              <img src={l.src} alt={l.alt} width={l.w} height={l.h} loading="lazy" class={`${l.cls} w-auto object-contain`} />
+            </span>
+          ) : (
+            <img src={l.src} alt={l.alt} width={l.w} height={l.h} loading="lazy" class={`${l.cls} w-auto object-contain flex-none opacity-80 hover:opacity-100 transition-opacity`} />
+          )
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

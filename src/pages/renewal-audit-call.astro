@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Navbar from "../components/astro/Navbar.astro";
 import Footer from "../components/astro/Footer.astro";
+import ClientLogoStrip from "../components/astro/ClientLogoStrip.astro";
 // Scheduler destination for the renewal-audit funnel (deal-cloning posts, renewal-ops
 // posts, the leakage-estimate lead-magnet sequence). Distinct from the generic /contactus
 // page per marketing/gtm/pipeline-build/25-renewal-audit-funnel-launch-package.md D1: the
@@ -9,7 +10,7 @@ import Footer from "../components/astro/Footer.astro";
 // paid audit, not the audit itself. Embeds Cal.com (swotbee/your-renewal-audit) inline.
 ---
 <Layout
-  title="Book Your Renewal Audit Call | SWOTBee"
+  title="Book Your Renewal Audit Call"
   description="Free 30-minute call to walk through your renewal leakage estimate and scope the paid renewal audit. No pressure, no generic sales pitch."
 >
   <Navbar />
@@ -47,8 +48,55 @@ import Footer from "../components/astro/Footer.astro";
     </p>
   </section>
 
+  <ClientLogoStrip caption="Trusted by revenue and operations teams at" />
+
+  <section class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 pb-10">
+    <div id="renewal-audit-cal-inline" style="width:100%;min-height:600px;"></div>
+  </section>
+
+  <section class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 pb-10">
+    <h2 class="text-2xl font-bold text-v6-dark text-center mb-6">Before you book, the honest answers</h2>
+    <div class="space-y-3">
+      <details class="bg-v6-bg rounded-xl border border-v6-border p-4">
+        <summary class="cursor-pointer font-semibold text-v6-dark">Is the audit really $500, with nothing hidden?</summary>
+        <p class="mt-3 text-sm text-v6-text-muted leading-relaxed">Yes. A flat $500, credited in full toward any build you do with us afterward. So if you go ahead, the audit effectively costs nothing. This call is free either way.</p>
+      </details>
+      <details class="bg-v6-bg rounded-xl border border-v6-border p-4">
+        <summary class="cursor-pointer font-semibold text-v6-dark">What do you need access to?</summary>
+        <p class="mt-3 text-sm text-v6-text-muted leading-relaxed">For this call, nothing. For the audit, view-only access to your HubSpot portal. Nothing leaves your portal, and access is revoked the moment the audit ends. NDA on request.</p>
+      </details>
+      <details class="bg-v6-bg rounded-xl border border-v6-border p-4">
+        <summary class="cursor-pointer font-semibold text-v6-dark">What will I actually walk away with?</summary>
+        <p class="mt-3 text-sm text-v6-text-muted leading-relaxed">From this call, a straight read on whether the audit is worth doing for your situation, with no pressure. From the audit, three lists built against your real portal: the renewals at risk in the next 90 days, the unbilled uplift sitting in your contracts, and the workflows that break at year 3, with names and numbers.</p>
+      </details>
+      <details class="bg-v6-bg rounded-xl border border-v6-border p-4">
+        <summary class="cursor-pointer font-semibold text-v6-dark">How long does it take?</summary>
+        <p class="mt-3 text-sm text-v6-text-muted leading-relaxed">The call is 30 minutes. On it we scope the audit and agree a timeline that works for you.</p>
+      </details>
+      <details class="bg-v6-bg rounded-xl border border-v6-border p-4">
+        <summary class="cursor-pointer font-semibold text-v6-dark">What if we turn out not to be a fit?</summary>
+        <p class="mt-3 text-sm text-v6-text-muted leading-relaxed">Then we will tell you. The call is free, and if the audit would not pay for itself for you, we would rather say so than sell you one.</p>
+      </details>
+    </div>
+  </section>
+
   <section class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
-    <div id="renewal-audit-cal-inline" style="width:100%;min-height:600px;overflow:scroll;"></div>
+    <h2 class="text-xl font-bold text-v6-dark text-center mb-1">Your three options</h2>
+    <p class="text-center text-sm text-v6-text-muted mb-6">Only one of them is us, and it is fine if the answer is one of the others.</p>
+    <div class="grid sm:grid-cols-3 gap-4">
+      <div class="bg-white border border-v6-border rounded-xl p-4">
+        <div class="font-semibold text-v6-dark mb-1">Do nothing</div>
+        <p class="text-sm text-v6-text-muted leading-relaxed">The leakage keeps compounding quietly. You usually find out at renewal or at year 3, when it is hardest to fix.</p>
+      </div>
+      <div class="bg-white border border-v6-border rounded-xl p-4">
+        <div class="font-semibold text-v6-dark mb-1">Do it yourself</div>
+        <p class="text-sm text-v6-text-muted leading-relaxed">You can rebuild these checks in HubSpot. It is doable, but fiddly and slow, and a self-check still cannot easily show which specific deals are exposed right now.</p>
+      </div>
+      <div class="bg-v6-bg border border-v6-teal rounded-xl p-4">
+        <div class="font-semibold text-v6-teal mb-1">The renewal audit</div>
+        <p class="text-sm text-v6-text-muted leading-relaxed">We run the checks against your actual portal and hand you the named lists, for $500 credited toward any build.</p>
+      </div>
+    </div>
   </section>
 
   <Footer />

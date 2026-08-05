@@ -132,4 +132,4 @@ Land and expand is the growth engine of the [365-day renewal strategy](/posts/re
 
 **The biggest deals usually start as the smallest ones, grown deliberately.** SWOTBee builds expansion and renewal playbooks for mid-market companies across Energy, Manufacturing, and SaaS.
 
-[Book a free 30-minute discovery call →](/contactus)
+[Book a free 30-minute discovery call →](/contactus/)

@@ -246,4 +246,4 @@ Designing that plan requires data, not guesswork. Pull your performance history.
 
 If the answer to both is yes, you have a plan worth implementing.
 
-If you are rethinking your commission structure and want to make sure the design actually works inside your CRM, [we help mid-market teams build commission plans](/contactus) that balance motivation with margin, and we can show you exactly how to automate the tracking in HubSpot so nobody is arguing over spreadsheets at the end of the quarter.
+If you are rethinking your commission structure and want to make sure the design actually works inside your CRM, [we help mid-market teams build commission plans](/contactus/) that balance motivation with margin, and we can show you exactly how to automate the tracking in HubSpot so nobody is arguing over spreadsheets at the end of the quarter.

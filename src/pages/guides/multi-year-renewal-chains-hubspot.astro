@@ -1,0 +1,24 @@
+---
+import RenewalGuide from "../../components/astro/RenewalGuide.astro";
+const props = {
+  title: "How to renew multi-year contracts in HubSpot without the year-3 break",
+  description: "Multi-year renewal chains silently stop at year 3 on HubSpot's re-enrollment limit. Here is the manual workaround, and the durable fix.",
+  h1: "How to keep multi-year renewals chaining in HubSpot",
+  intro: "Year 1 renews fine. Year 2 is manual. And year 3 quietly never generates at all, because HubSpot's loop protection stops a workflow from firing on a deal it created. A renewal that silently never appears is invisible churn: no error, no alert, the revenue just stops. Here is how to chain multi-year renewals in HubSpot, and why the workarounds are so brittle.",
+  steps: [
+    { n: 1, t: "Add the chain fields", time: "10 min", body: "Add a <strong>Renewal Year</strong> number that increments each cycle, a <strong>Deal Generation</strong> number, and an <strong>Original Deal ID</strong> text property so each renewal links back to its source." },
+    { n: 2, t: "Understand the wall", time: "5 min", body: "HubSpot's <strong>re-enrollment blocking</strong> stops a workflow from triggering on a deal it created. So a renewal workflow can make year 2, but it cannot make year 3 from that year-2 deal. The chain silently stalls, with no error." },
+    { n: 3, t: "Pick a workaround", time: "45 min", body: "The documented fixes are all hacks: a <strong>Boolean-Toggle</strong> (flip a 'renewal created' flag, wait 31 minutes for the re-enrollment buffer, reset it on the new deal), a <strong>dual odd/even-year workflow</strong> pattern, or a per-year dropdown with one branch each." },
+    { n: 4, t: "Keep forecasts honest", time: "10 min", body: "Exclude multi-year deals from near-term forecasts by filtering on Renewal Date, or they inflate the pipeline for quarters they will not actually close in." },
+  ],
+  burden: "The 31-minute buffer and odd/even contortions exist only to work around a HubSpot platform limit. They are brittle, painful to test (you wait 31 minutes between each simulated close), and a single mis-set flag silently breaks the chain at year 2 or spawns duplicates. There is no first-class 'here is this customer's renewal ladder' view, you reconstruct it by hopping Original Deal IDs.",
+  bridge: "The build tracks the chain in a real parent-child ledger and creates each renewal <strong>server-side, outside HubSpot's workflow enrollment</strong>, so the 31-minute and odd/even hacks are unnecessary and year 3 and beyond never stall. The audit tells you which of your chains are set to break, before they do.",
+  faq: [
+    { q: "Our workflow already handles renewals, aren't we fine?", a: "You have probably only tested year 1 to year 2. Year 3 is where HubSpot's re-enrollment limit silently stops the chain, with no error, so most teams don't discover it until a multi-year renewal simply never appeared. The audit tells you which chains will break at year 3 before it costs you." },
+    { q: "Isn't this just a HubSpot configuration issue?", a: "It is a platform limitation, not a setting, and the workarounds all fight it. The durable fix is a real parent-child ledger that creates renewals outside the workflow engine." },
+  ],
+  ctaHeading: "Find the chains about to break",
+  ctaBody: "The renewal audit tells you which multi-year chains HubSpot will silently fail to renew at year 3, before the revenue stops. $500, credited in full toward any build. It starts with a free 30-minute call.",
+};
+---
+<RenewalGuide {...props} />

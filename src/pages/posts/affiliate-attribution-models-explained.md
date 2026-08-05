@@ -135,4 +135,4 @@ The right model, clearly communicated and consistently applied, does the opposit
 
 If you are building out your attribution approach, these related pieces might help: [how multi-tier commission programs keep partners engaged across the funnel](/posts/multi-tier-commission-programs-explained), and [why commission disputes erode trust faster than low payouts](/posts/sales-commission-disputes-trust).
 
-**Designing a partner program and not sure which attribution model fits your sales motion?** [Let us walk through it together](/contactus), we will map your partner types, sales cycle, and revenue goals to the model that actually makes sense.
+**Designing a partner program and not sure which attribution model fits your sales motion?** [Let us walk through it together](/contactus/), we will map your partner types, sales cycle, and revenue goals to the model that actually makes sense.

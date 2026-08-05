@@ -245,4 +245,4 @@ The key is knowing your complexity budget and staying within it. Pick the two or
 
 A comp plan does not need to be sophisticated to be effective. It needs to be understood.
 
-**Need help designing a commission plan that balances simplicity with real-world complexity?** [We do this for mid-market teams every day](/contactus). Whether you are starting from scratch or untangling a plan that has grown too complex, we can help you build something your reps will actually understand and your finance team will actually trust.
+**Need help designing a commission plan that balances simplicity with real-world complexity?** [We do this for mid-market teams every day](/contactus/). Whether you are starting from scratch or untangling a plan that has grown too complex, we can help you build something your reps will actually understand and your finance team will actually trust.

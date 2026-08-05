@@ -1,12 +1,22 @@
 ---
 layout: ../../layouts/BlogPostLayout.astro
-title: "Contract Renewal Reminder Software: Alerts, Workflows, and Email Templates"
+title: "Contract Renewal Reminder Software: Alerts and Email Templates"
 pubDate: "2026-07-06"
 description: "Contract renewal reminder software compared: how to design a 90/60/30 cadence, calendar vs standalone vs CRM tools, and three copy-paste email templates."
 category:
   title: "Revenue Operations"
   href: "/categories/revenue-operations"
-modifiedDate: "2026-07-24"
+modifiedDate: "2026-07-29"
+howto: true
+howtoSteps:
+  - name: "Store the renewal date"
+    text: "Add a Renewal Date (or Contract End Date) property on every renewal deal. No date, no reminder."
+  - name: "Build one date-based workflow"
+    text: "Trigger on the renewal date and schedule actions at 90, 60, and 30 days before it: create a task, notify the owner, and escalate at each checkpoint."
+  - name: "Add the guardrails"
+    text: "Unenroll the workflow on Closed Won, track which checkpoint fired in a property to prevent duplicates, and flag renewal deals missing a date."
+  - name: "Separate the customer emails"
+    text: "Keep customer-facing renewal emails in their own workflow so tone and timing stay under commercial control."
 author:
   name: "SWOTBee Team"
   url: "https://swotbee.com"
@@ -75,6 +85,8 @@ Adjust for contract reality: procurement-heavy or enterprise accounts need a 120
 ### Customer-facing reminders: a separate track
 
 Customer notices are not alerts; they are commercial communication. They need their own timing (typically 90 and 45 to 60 days out), a human sender (the account owner, not a noreply address), and coordination with any uplift you plan to apply. Never let an automated "your contract is expiring" email reach a customer who already renewed; that single mistake erodes more trust than the reminder ever earned.
+
+Getting a contact into that customer-facing track without someone manually adding them is its own small automation problem, separate from the internal alert workflow. If you are on HubSpot, this usually means a workflow action that enrolls the contact into a Sequence the moment the renewal deal crosses a date threshold, with pacing control so a cluster of renewals near a fiscal year end does not enroll a few hundred contacts in the same hour. Our [FlowNer vs Enrollem comparison](/posts/flowner-vs-enrollem-comparison) walks through the two leading apps for this specific job.
 
 Two cadence rules that save teams repeatedly:
 
@@ -249,4 +261,4 @@ Because a reminder only announces the work. If nobody builds the renewal deal wi
 
 **SWOTBee builds HubSpot-native renewal operations for mid-market teams: scheduled renewal deals with line items and uplifts, alert cadences, and NRR reporting, all inside your portal, and you own everything we build.**
 
-[Book a free 30-minute discovery call →](/contactus)
+[Book a free 30-minute discovery call →](/contactus/)

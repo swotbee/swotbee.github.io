@@ -222,4 +222,4 @@ If you are evaluating whether multi-tier commissions fit your business, start wi
 
 For more on how to structure the attribution logic behind these programs, see our [guide to affiliate attribution models](/posts/affiliate-attribution-models-explained). If you are ready to implement, our [guide to building tiered commissions in HubSpot](/posts/hubspot-tiered-commission-model-setup) walks through the CRM configuration step by step.
 
-**Thinking about a multi-tier program for your team?** [Let's design it together](/contactus). We help mid-market companies build commission structures that scale -- from program design through CRM implementation and ongoing optimization.
+**Thinking about a multi-tier program for your team?** [Let's design it together](/contactus/). We help mid-market companies build commission structures that scale -- from program design through CRM implementation and ongoing optimization.

@@ -151,4 +151,4 @@ Lead with the value and outcomes delivered, then present the new price at the li
 
 **Renewal quoting is where margin quietly leaks:** inconsistent uplifts, ungoverned discounts, and quotes that drift from the deal. SWOTBee builds renewal quoting and pricing automation for mid-market companies across Energy, Manufacturing, and SaaS.
 
-[Book a free 30-minute discovery call →](/contactus)
+[Book a free 30-minute discovery call →](/contactus/)

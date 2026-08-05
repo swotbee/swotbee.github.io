@@ -1,0 +1,73 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Navbar from "./Navbar.astro";
+import Footer from "./Footer.astro";
+// Shared template for the renewal-health how-to guides (/guides/*). Renders the tight
+// 4-step + "what this costs you by hand" burden callout + "the faster way" audit bridge +
+// light FAQ + CTA format, and emits HowTo + FAQPage schema.org JSON-LD so the pages are
+// LLM/answer-engine readable (decision 2026-08-05). Content is passed in per page; body
+// strings may contain inline HTML (we author them, no user input).
+const { title, description, eyebrow = "Renewal Fix Guide", h1, intro, steps = [],
+  burden, bridge, faq = [], ctaHeading, ctaBody, template } = Astro.props;
+const howToLd = { "@context": "https://schema.org", "@type": "HowTo", name: h1,
+  description, step: steps.map((s, i) => ({ "@type": "HowToStep", position: i + 1, name: s.t, text: s.body.replace(/<[^>]*>/g, "") })) };
+const faqLd = faq.length ? { "@context": "https://schema.org", "@type": "FAQPage",
+  mainEntity: faq.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a.replace(/<[^>]*>/g, "") } })) } : null;
+---
+<Layout title={title} description={description}>
+  <Navbar />
+  <script type="application/ld+json" set:html={JSON.stringify(howToLd)} />
+  {faqLd && <script type="application/ld+json" set:html={JSON.stringify(faqLd)} />}
+
+  <article class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <p class="text-xs font-semibold uppercase tracking-[0.2em] text-v6-copper">{eyebrow}</p>
+    <h1 class="text-3xl sm:text-4xl font-bold text-v6-dark mt-2 mb-4 text-balance">{h1}</h1>
+    <p class="text-base text-v6-text-muted leading-relaxed" set:html={intro}></p>
+
+    <ol class="mt-8 space-y-6 list-none p-0">
+      {steps.map((s) => (
+        <li class="flex gap-4">
+          <span class="flex-none w-8 h-8 rounded-full bg-v6-dark text-white font-bold flex items-center justify-center mt-0.5">{s.n}</span>
+          <div>
+            <h2 class="text-lg font-bold text-v6-dark">{s.t} {s.time && (<span class="text-sm font-medium text-v6-text-muted">· {s.time}</span>)}</h2>
+            <p class="text-sm text-v6-text-muted leading-relaxed mt-1.5" set:html={s.body}></p>
+            {s.example && (<div class="mt-3 bg-v6-bg border border-v6-border rounded-lg p-4 text-sm text-v6-dark leading-relaxed"><span class="font-semibold">Worked example. </span><span set:html={s.example}></span></div>)}
+          </div>
+        </li>
+      ))}
+    </ol>
+
+    {template && (<p class="mt-6"><a href={template.href} class="inline-flex items-center gap-2 text-v6-copper font-semibold text-sm hover:underline">&darr; {template.label}</a></p>)}
+
+    <div class="mt-8 rounded-xl border border-amber-200 bg-amber-50 p-5">
+      <p class="text-xs font-bold uppercase tracking-[0.12em] text-amber-800 mb-1.5">What this costs you to run by hand</p>
+      <p class="text-sm text-amber-900 leading-relaxed" set:html={burden}></p>
+    </div>
+
+    <div class="mt-6 border-l-4 border-v6-teal pl-5">
+      <p class="text-sm text-v6-dark leading-relaxed"><span class="font-semibold">The faster way. </span><span set:html={bridge}></span></p>
+    </div>
+
+    {faq.length > 0 && (
+      <div class="mt-10">
+        <h2 class="text-xl font-bold text-v6-dark mb-4">Common questions</h2>
+        <div class="space-y-3">
+          {faq.map((f) => (
+            <details class="bg-v6-bg rounded-xl border border-v6-border p-4">
+              <summary class="cursor-pointer font-semibold text-v6-dark">{f.q}</summary>
+              <p class="mt-2.5 text-sm text-v6-text-muted leading-relaxed" set:html={f.a}></p>
+            </details>
+          ))}
+        </div>
+      </div>
+    )}
+
+    <div class="mt-10 bg-gradient-to-br from-v6-copper to-v6-copper-600 rounded-2xl p-6 sm:p-8 text-center">
+      <h2 class="text-xl sm:text-2xl font-bold text-white mb-2 text-balance">{ctaHeading}</h2>
+      <p class="text-v6-copper-50 text-sm leading-relaxed max-w-lg mx-auto mb-5" set:html={ctaBody}></p>
+      <a href="/renewal-audit-call/" class="inline-block bg-white text-v6-copper px-8 py-3.5 rounded-xl text-base font-semibold hover:bg-gray-50 transition-colors">Book your renewal audit</a>
+    </div>
+  </article>
+
+  <Footer />
+</Layout>

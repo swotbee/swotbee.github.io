@@ -1,0 +1,25 @@
+---
+import RenewalGuide from "../../components/astro/RenewalGuide.astro";
+const props = {
+  title: "How to report NRR, GRR and renewal rate accurately in HubSpot",
+  description: "HubSpot has no native NRR or GRR report. Here is how to build them correctly, and the traps (Close Date, double-counted expansion) that make board numbers wrong.",
+  h1: "How to get NRR, GRR and renewal rate right in HubSpot",
+  intro: "When renewal revenue is assembled in a spreadsheet at quarter end, the number you take to the board is stale the moment it is built and easy to get wrong. If you have ever thought 'I don't trust our forecast, but I have to defend it anyway,' this is why. Here is how to report NRR, GRR, and renewal rate accurately in HubSpot, starting with the fact that HubSpot does not have these reports.",
+  steps: [
+    { n: 1, t: "Build the inputs", time: "30 min", body: "HubSpot has <strong>no native NRR or GRR report</strong>, so you build the inputs first: a <strong>Previous Contract Value</strong> property (populated by workflow at renewal), a <strong>Deal Type</strong> (Renewal / Expansion / Contraction), and a <strong>Churn Reason</strong>." },
+    { n: 2, t: "The formulas", time: "10 min", body: "Renewal Rate = renewed / due. GRR = (starting − contraction − churn) / starting. NRR = (starting + expansion − contraction − churn) / starting. As a health check, NRR above 110% is strong; GRR above 90%." },
+    { n: 3, t: "Build the reports, finish in a spreadsheet", time: "45 min", body: "Create custom deal reports segmented by Deal Type and filtered to Pipeline = Renewal, then do the final division in a spreadsheet or BI tool. Partial automation exists only on paid tiers: Operations Hub Enterprise datasets, or Sales Hub Enterprise Revenue Analytics, which needs you to re-model onto HubSpot's recurring-revenue line-item properties." },
+    { n: 4, t: "Avoid the two traps", time: "10 min", body: "Forecast by <strong>Renewal Date, not Close Date</strong>, or multi-year deals distort every quarter. And do not double-count expansion on both the renewal deal and a separate expansion deal." },
+  ],
+  template: { href: "/templates/nrr-grr-calculator.csv", label: "Download the NRR / GRR calculator template (CSV)" },
+  burden: "The number leadership reports to the board is assembled by hand in a spreadsheet from custom reports, so it is stale the moment it is built and easy to get wrong: double-counted expansion, mixed pipelines, or Close Date instead of Renewal Date. Automating it properly means paying for Operations Hub or Sales Hub Enterprise and re-modelling your data. Meanwhile you are defending a figure you privately don't fully believe, every board meeting.",
+  bridge: "The build snapshots ARR, MRR, and the full revenue waterfall daily and computes NRR and GRR for your renewal book without Operations Hub or Sales Hub Enterprise, with renewal type as a hard category so expansion is never double-counted. The audit's ARR integrity check tells you the exact percent your current reporting is off, and the specific deals that cause it.",
+  faq: [
+    { q: "Our numbers are basically fine, aren't they?", a: "Run three checks and see: double-count (ramped deals summed into one ARR figure), flat-line (year-2 increases invisible because line items share a start date), and term-blind (ACV equal to TCV means the term was ignored). If the gap is over 5 percent, decide which number the board should hear going forward." },
+    { q: "Isn't this a finance or BI problem, not a HubSpot fix?", a: "The reports are wrong by construction because the underlying deals are structured wrong: missing line items, no renewal dates, multi-year deals miscounted. Fix the renewal operations upstream and the reports come out right, without a separate BI project." },
+  ],
+  ctaHeading: "Find out how wrong your board number is",
+  ctaBody: "The renewal audit's ARR integrity check gives you the exact percent your reporting is off and the deals behind it, against your real portal. $500, credited in full toward any build. It starts with a free 30-minute call.",
+};
+---
+<RenewalGuide {...props} />

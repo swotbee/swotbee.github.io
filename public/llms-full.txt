@@ -34,7 +34,7 @@ Deal cloning apps copy deals well. Renewals need dates, uplifts, multi-year chai
 ### [Blog](https://swotbee.com/blog)
 HubSpot tips, RevOps strategies, and CRM automation guides for mid-market teams.
 
-### [Contact](https://swotbee.com/contactus)
+### [Contact](https://swotbee.com/contactus/)
 Book a free consultation to scope a HubSpot renewal, onboarding, or integration project.
 
 ---
@@ -148,5 +148,5 @@ All four are available on the HubSpot Marketplace.
 
 ## Contact
 
-- Free consultation: https://swotbee.com/contactus
+- Free consultation: https://swotbee.com/contactus/
 - LinkedIn: https://linkedin.com/company/swotbee

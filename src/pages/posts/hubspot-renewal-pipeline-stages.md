@@ -234,4 +234,4 @@ Only for the time-based model's calculated "Days to Renewal" property. The activ
 
 **Want help configuring your renewal stages?** SWOTBee sets up renewal pipelines with the right stage model for your team size, contract complexity, and reporting needs.
 
-[Book a free 30-minute discovery call →](/contactus)
+[Book a free 30-minute discovery call →](/contactus/)

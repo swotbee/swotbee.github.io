@@ -218,4 +218,4 @@ If line items aren't copying correctly, check our [infinite loop troubleshooting
 
 **Line item cloning is one of the trickiest HubSpot automation challenges.** SWOTBee has solved it for dozens of mid-market companies with contracts from 1 to 100+ line items per deal. We handle the tool selection, configuration, testing, and edge cases.
 
-[Book a free 30-minute discovery call →](/contactus)
+[Book a free 30-minute discovery call →](/contactus/)

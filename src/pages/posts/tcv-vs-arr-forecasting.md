@@ -157,4 +157,4 @@ TCV vs ARR is one piece of clean renewal forecasting; see the full picture in ou
 
 **Multi-year deals quietly break most forecasts:** TCV masquerading as ARR, one-time fees inflating run-rate. SWOTBee builds clean renewal forecasting and pipeline reporting for mid-market companies across Energy, Manufacturing, and SaaS.
 
-[Book a free 30-minute discovery call →](/contactus)
+[Book a free 30-minute discovery call →](/contactus/)

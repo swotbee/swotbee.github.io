@@ -338,4 +338,4 @@ The pipeline architecture above is the mechanics. For the surrounding strategy, 
 
 **Need help building this?** SWOTBee sets up renewal pipelines for mid-market teams in Energy, Manufacturing, SaaS, and more. We handle the pipeline architecture, workflow automation, dashboard setup, and team training, so your team can focus on actually renewing customers.
 
-[Book a free 30-minute discovery call →](/contactus)
+[Book a free 30-minute discovery call →](/contactus/)

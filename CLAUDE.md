@@ -79,7 +79,7 @@ All 4 service pages (`src/pages/services/`) follow the same 10-section conversio
 9. **FAQ accordion** — 7 questions using native `<details>` elements
 10. **Risk Reversal CTA** — copper gradient with white CTA button
 
-All service pages use V6 color tokens (`v6-copper`, `v6-teal`, `v6-dark`, `v6-text-muted`, `v6-bg`, `v6-border`). CTAs link to `/contactus`. New service pages should follow this template.
+All service pages use V6 color tokens (`v6-copper`, `v6-teal`, `v6-dark`, `v6-text-muted`, `v6-bg`, `v6-border`). CTAs link to `/contactus/`. New service pages should follow this template.
 
 ## Key Content Documents
 
@@ -134,7 +134,7 @@ Blog posts are produced with a repeatable, research-driven pipeline that merges 
 - Open with a blockquote linking to the pillar, then an answer-first bold paragraph.
 - Use `---` between sections, descriptive H2/H3, tables for property/step references, a `## Frequently Asked Questions` block (bold question + short answer) for passage ranking.
 - Internal links: contextual, descriptive keyword anchors to other `/posts/...` pages; verify every link resolves to an existing file before building.
-- Close with a bold differentiator line plus the CTA `[Book a free 30-minute discovery call →](/contactus)`.
+- Close with a bold differentiator line plus the CTA `[Book a free 30-minute discovery call →](/contactus/)`.
 - Follow the global no em/en dash rule in all generated content.
 
 ### Where things live

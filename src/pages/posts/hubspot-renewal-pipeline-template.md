@@ -151,4 +151,4 @@ Create the renewal deal as soon as the original deal is closed won, and start ou
 
 **A template gets you 80% of the way; the last 20% is the automation that makes it run without babysitting.** SWOTBee installs full renewal pipelines, properties, and workflows for mid-market companies across Energy, Manufacturing, and SaaS.
 
-[Book a free 30-minute discovery call →](/contactus)
+[Book a free 30-minute discovery call →](/contactus/)

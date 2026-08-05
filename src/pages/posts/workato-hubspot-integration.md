@@ -116,4 +116,4 @@ Yes. Workato can update HubSpot records and properties that in turn enroll conta
 
 **SWOTBee builds Workato recipes that orchestrate HubSpot, NetSuite, and Slack without runaway task bills.** We design the triggers, routing, and batching so your automation scales predictably.
 
-[Book a free 30-minute discovery call →](/contactus)
+[Book a free 30-minute discovery call →](/contactus/)

@@ -246,4 +246,4 @@ Most of it. CRM workflows can create the renewal record, assign owners, generate
 
 **SWOTBee turns this checklist into a running system inside your HubSpot portal: scheduled renewal deal creation with line items and uplifts, pipeline alerts, and NRR/GRR reporting, and you own everything we build.**
 
-[Book a free 30-minute discovery call →](/contactus)
+[Book a free 30-minute discovery call →](/contactus/)

@@ -242,4 +242,4 @@ The formula is not complicated:
 
 Jake and Sarah have the same talent. The difference between coasting and crushing is not motivation, not training, and not management. It is plan design. Build the plan that creates more Sarahs.
 
-**Designing your next comp plan?** [We model accelerator structures for mid-market teams](/contactus) -- including the HubSpot implementation. Whether you need a comp plan audit, a HubSpot commission workflow, or help evaluating third-party tools, we will get you to a plan that drives the right behavior without blowing your budget.
+**Designing your next comp plan?** [We model accelerator structures for mid-market teams](/contactus/) -- including the HubSpot implementation. Whether you need a comp plan audit, a HubSpot commission workflow, or help evaluating third-party tools, we will get you to a plan that drives the right behavior without blowing your budget.

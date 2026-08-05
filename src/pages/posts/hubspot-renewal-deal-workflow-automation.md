@@ -2,8 +2,18 @@
 layout: ../../layouts/BlogPostLayout.astro
 title: "HubSpot Renewal Deal Automation: Create Renewal Deals Without Leakage"
 pubDate: "2026-04-02"
-modifiedDate: "2026-07-14"
-description: "Build HubSpot workflows that create renewal deals, copy the right properties, preserve renewal context, trigger 90-60-30 tasks, and avoid data leakage in NRR and GRR reporting."
+modifiedDate: "2026-07-29"
+description: "Build HubSpot workflows that auto-create renewal deals, copy the right properties, trigger 90-60-30 tasks, and stop leakage in NRR and GRR reporting."
+howto: true
+howtoSteps:
+  - name: "Set the enrollment trigger"
+    text: "Create a deal-based workflow that enrolls when Deal Stage is Closed Won and Deal Pipeline is your new-business Sales Pipeline. Add a filter for Deal Type is New Business so renewal deals cannot re-trigger the same workflow."
+  - name: "Create the renewal deal"
+    text: "Set Deal Name, Pipeline to Renewal Pipeline, Deal Stage to the first stage, Deal Type to Renewal, Amount and Contract Term copied from the enrolled deal, Renewal Date as Close Date plus Contract Term, and Deal Owner routed to the CSM."
+  - name: "Associate the new deal"
+    text: "Associate the new renewal deal with the same Company and Contacts as the original deal."
+  - name: "Create a review task"
+    text: "Create a task for the new deal owner to review the renewal deal, due in 7 days."
 category:
   title: "Revenue Operations"
   href: "/categories/revenue-operations"
@@ -260,4 +270,4 @@ Two things: line items not carrying over to the new deal (native cloning can't c
 
 **This is where most teams get stuck.** Workflow automation looks simple in theory but breaks in subtle ways: wrong dates, missing associations, duplicate deals, infinite loops. SWOTBee has built renewal automation for dozens of mid-market companies across Energy, Manufacturing, and SaaS.
 
-[Book a free 30-minute discovery call →](/contactus)
+[Book a free 30-minute discovery call →](/contactus/)

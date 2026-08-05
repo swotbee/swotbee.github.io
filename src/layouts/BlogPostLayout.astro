@@ -10,7 +10,7 @@ import { getRecentPosts } from '../utils/posts';
 const { frontmatter } = Astro.props;
 const { recentPosts } = await getRecentPosts();
 
-const pageTitle = `${frontmatter.title} | SWOTBee`;
+const pageTitle = frontmatter.title;
 const pageDescription = frontmatter.description || 'Read our latest blog post on SWOTBee';
 const canonicalURL = generateCanonicalUrl(Astro.url.pathname);
 

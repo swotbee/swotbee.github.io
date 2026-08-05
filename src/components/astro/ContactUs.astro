@@ -1,8 +1,195 @@
 ---
-
+// Native contact form -> n8n reCAPTCHA-verify proxy -> HubSpot Forms Submission API (portal
+// 243398671, form 33b1abe2-20bd-4dc7-985a-5b4793af0312, created 2026-08-05 with reCAPTCHA
+// disabled on the HubSpot form itself so its direct API accepts submissions). Replaces the
+// js-na2.hsforms.net embed widget, which adblockers commonly block (form renders blank).
+// Bot defense: an off-screen honeypot (dropped client-side) plus Google reCAPTCHA v3
+// (invisible, score-based). HubSpot's direct Forms API has no way to accept a reCAPTCHA
+// token, so the token is verified server-side by an n8n webhook
+// (auto.zippylens.com/webhook/swotbee-form-submit, workflow "SwotBee - Form Submit
+// reCAPTCHA Proxy") which only then forwards the submission to HubSpot. See
+// marketing/automation/n8n-kit-lead-magnet notes.
+const PORTAL_ID = "243398671";
+const FORM_ID = "33b1abe2-20bd-4dc7-985a-5b4793af0312";
+const RECAPTCHA_SITE_KEY = "6Ld3OHYtAAAAADJ8LKDmjsk4qrg2Ih9-FxxV2PSR";
+const RECAPTCHA_ACTION = "contact_form";
+const N8N_WEBHOOK_URL = "https://auto.zippylens.com/webhook/swotbee-form-submit";
+// Show the self-reported role dropdown only where wanted (e.g. /contactus), not on the
+// shared newsletter page. Optional field, so a missing value never blocks submission.
+const { role = false } = Astro.props;
 ---
+<script is:inline src={`https://www.google.com/recaptcha/api.js?render=${RECAPTCHA_SITE_KEY}`}></script>
+<section id="contact" class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+  <form
+    id="contact-form"
+    class="bg-white border border-v6-border rounded-2xl shadow-sm p-6 sm:p-8 space-y-5"
+    data-portal={PORTAL_ID}
+    data-form={FORM_ID}
+    data-recaptcha-site-key={RECAPTCHA_SITE_KEY}
+    data-recaptcha-action={RECAPTCHA_ACTION}
+    data-webhook={N8N_WEBHOOK_URL}
+    novalidate
+  >
+    <!-- Honeypot: off-screen, hidden from people; bots fill it and get dropped client-side. -->
+    <div style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;" aria-hidden="true">
+      <label>Company website<input type="text" name="company_website" tabindex="-1" autocomplete="off" /></label>
+    </div>
 
-<section id="contact" class="max-w-4xl bg-highlight-25 mx-auto px-4 py-12">
-  <script src="https://js-na2.hsforms.net/forms/embed/243398671.js" defer></script>
-<div class="hs-form-frame" data-region="na2" data-form-id="dbb5b4e3-b1ec-43e9-b1e8-22c78a844801" data-portal-id="243398671"></div>
+    <div class="grid sm:grid-cols-2 gap-4">
+      <div class="space-y-1.5">
+        <label for="cf-first" class="block text-sm font-semibold text-v6-dark">First name</label>
+        <input id="cf-first" name="firstname" type="text" autocomplete="given-name"
+          class="w-full rounded-lg border border-v6-border px-3.5 py-3 text-v6-dark focus:outline-none focus:ring-2 focus:ring-v6-copper focus:border-v6-copper" />
+      </div>
+      <div class="space-y-1.5">
+        <label for="cf-last" class="block text-sm font-semibold text-v6-dark">Last name</label>
+        <input id="cf-last" name="lastname" type="text" autocomplete="family-name"
+          class="w-full rounded-lg border border-v6-border px-3.5 py-3 text-v6-dark focus:outline-none focus:ring-2 focus:ring-v6-copper focus:border-v6-copper" />
+      </div>
+    </div>
+
+    <div class="space-y-1.5">
+      <label for="cf-email" class="block text-sm font-semibold text-v6-dark">Email <span class="text-v6-copper">*</span></label>
+      <input id="cf-email" name="email" type="email" required autocomplete="email"
+        class="w-full rounded-lg border border-v6-border px-3.5 py-3 text-v6-dark focus:outline-none focus:ring-2 focus:ring-v6-copper focus:border-v6-copper" />
+    </div>
+
+    <div class="space-y-1.5">
+      <label for="cf-phone" class="block text-sm font-semibold text-v6-dark">Phone <span class="text-v6-text-muted font-normal">(optional)</span></label>
+      <input id="cf-phone" name="phone" type="tel" autocomplete="tel"
+        class="w-full rounded-lg border border-v6-border px-3.5 py-3 text-v6-dark focus:outline-none focus:ring-2 focus:ring-v6-copper focus:border-v6-copper" />
+    </div>
+
+    {role && (
+      <div class="space-y-1.5">
+        <label for="cf-role" class="block text-sm font-semibold text-v6-dark">Your role <span class="text-v6-text-muted font-normal">(optional)</span></label>
+        <select id="cf-role" name="self_reported_role"
+          class="w-full rounded-lg border border-v6-border px-3.5 py-3 text-v6-dark bg-white focus:outline-none focus:ring-2 focus:ring-v6-copper focus:border-v6-copper">
+          <option value="">Select...</option>
+          <option>Decision maker (VP/Exec/Owner)</option>
+          <option>RevOps / Ops practitioner</option>
+          <option>Consultant / Agency</option>
+          <option>Other</option>
+        </select>
+      </div>
+    )}
+
+    <div class="space-y-1.5">
+      <label for="cf-msg" class="block text-sm font-semibold text-v6-dark">How can we help?</label>
+      <textarea id="cf-msg" name="message" rows="4"
+        class="w-full rounded-lg border border-v6-border px-3.5 py-3 text-v6-dark focus:outline-none focus:ring-2 focus:ring-v6-copper focus:border-v6-copper resize-y"></textarea>
+    </div>
+
+    <button type="submit" id="cf-submit"
+      class="w-full sm:w-auto bg-v6-copper text-white px-8 py-3 rounded-xl text-base font-semibold hover:bg-v6-copper-600 transition-colors disabled:opacity-60 disabled:cursor-not-allowed">
+      Send message
+    </button>
+
+    <p id="cf-status" role="status" aria-live="polite" class="text-sm leading-relaxed m-0"></p>
+  </form>
 </section>
+
+<script is:inline>
+  (function () {
+    var form = document.getElementById("contact-form");
+    if (!form) return;
+    var status = document.getElementById("cf-status");
+    var btn = document.getElementById("cf-submit");
+    var portal = form.getAttribute("data-portal");
+    var formId = form.getAttribute("data-form");
+    var siteKey = form.getAttribute("data-recaptcha-site-key");
+    var action = form.getAttribute("data-recaptcha-action");
+    var webhookUrl = form.getAttribute("data-webhook");
+
+    function setStatus(msg, kind) {
+      status.textContent = msg;
+      status.style.color = kind === "error" ? "#b3462f" : (kind === "ok" ? "#3f7d6f" : "");
+    }
+
+    function getRecaptchaToken() {
+      return new Promise(function (resolve, reject) {
+        if (typeof grecaptcha === "undefined" || !grecaptcha.ready) {
+          reject(new Error("recaptcha_unavailable"));
+          return;
+        }
+        var settled = false;
+        var timer = setTimeout(function () {
+          settled = true;
+          reject(new Error("recaptcha_unavailable"));
+        }, 5000);
+        grecaptcha.ready(function () {
+          grecaptcha.execute(siteKey, { action: action }).then(function (token) {
+            if (settled) return;
+            clearTimeout(timer);
+            resolve(token);
+          }).catch(function () {
+            if (settled) return;
+            clearTimeout(timer);
+            reject(new Error("recaptcha_unavailable"));
+          });
+        });
+      });
+    }
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      // Honeypot filled -> a bot. Pretend success, send nothing.
+      var hp = form.querySelector('[name="company_website"]');
+      if (hp && hp.value) { form.reset(); setStatus("Thanks, your message has been sent.", "ok"); return; }
+
+      var email = (form.email.value || "").trim();
+      if (!email || email.indexOf("@") < 1) {
+        setStatus("Please enter a valid email so we can reply.", "error");
+        form.email.focus();
+        return;
+      }
+
+      var roleEl = form.querySelector('[name="self_reported_role"]');
+      var fields = [
+        { name: "firstname", value: (form.firstname.value || "").trim() },
+        { name: "lastname", value: (form.lastname.value || "").trim() },
+        { name: "email", value: email },
+        { name: "phone", value: (form.phone.value || "").trim() },
+        { name: "message", value: (form.message.value || "").trim() },
+        { name: "self_reported_role", value: roleEl ? roleEl.value : "" }
+      ].filter(function (f) { return f.value; });
+
+      var original = btn.textContent;
+      btn.disabled = true;
+      btn.textContent = "Sending...";
+      setStatus("", "");
+
+      getRecaptchaToken().then(function (token) {
+        return fetch(webhookUrl, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            recaptchaToken: token,
+            expectedAction: action,
+            portalId: portal,
+            formGuid: formId,
+            fields: fields,
+            context: { pageUri: window.location.href, pageName: document.title }
+          })
+        });
+      }).then(function (res) {
+        if (res.ok) {
+          form.reset();
+          setStatus("Thanks, we've got your message and will reply within one business day.", "ok");
+        } else {
+          throw new Error("bad status " + res.status);
+        }
+      }).catch(function (err) {
+        if (err && err.message === "recaptcha_unavailable") {
+          setStatus("Verification didn't load, this can happen with strict ad or privacy blockers. Please disable blocking for this site and try again, or email us directly at info@swotbee.com.", "error");
+        } else {
+          setStatus("Something went wrong sending that. Please try again in a moment.", "error");
+        }
+      }).finally(function () {
+        btn.disabled = false;
+        btn.textContent = original;
+      });
+    });
+  })();
+</script>

@@ -164,4 +164,4 @@ LTV:CAC is the unit-economics metric in our [SaaS renewal metrics guide](/posts/
 
 **Acquisition gets the headlines; renewals pay the bills.** SWOTBee builds retention, renewal forecasting, and unit-economics reporting for mid-market companies across Energy, Manufacturing, and SaaS.
 
-[Book a free 30-minute discovery call →](/contactus)
+[Book a free 30-minute discovery call →](/contactus/)

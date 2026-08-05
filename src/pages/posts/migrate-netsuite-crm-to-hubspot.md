@@ -119,4 +119,4 @@ Usually yes, for finance. Most teams migrate CRM to HubSpot and keep NetSuite fo
 
 **SWOTBee migrates mid-market teams from NetSuite CRM to HubSpot without losing pipeline or history.** We audit, map, dedupe, and rebuild so go-live is a clean cutover, not a scramble.
 
-[Book a free 30-minute discovery call →](/contactus)
+[Book a free 30-minute discovery call →](/contactus/)

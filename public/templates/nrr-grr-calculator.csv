@@ -1,0 +1,16 @@
+Input (fill these in for the period),Value,Notes
+Starting ARR,,ARR at the start of the period from the cohort due to renew
+Expansion,,Upsell / cross-sell added on renewals
+Contraction,,Downgrades on renewals
+Churn,,Lost ARR from non-renewals
+Renewed count,,Number of accounts that renewed
+Due-for-renewal count,,Number of accounts due in the period
+,,
+Metric,Formula,Result (fill in)
+Renewal Rate,Renewed / Due,
+GRR,(Starting - Contraction - Churn) / Starting,
+NRR,(Starting + Expansion - Contraction - Churn) / Starting,
+,,
+HEALTH CHECK,,
+NRR above 110% is strong; GRR above 90% is healthy.,,
+Two traps to avoid: forecast by Renewal Date not Close Date (multi-year deals distort every quarter); never double-count expansion on both the renewal deal and a separate expansion deal.,,

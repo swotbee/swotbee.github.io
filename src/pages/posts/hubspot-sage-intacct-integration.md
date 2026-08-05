@@ -193,4 +193,4 @@ A specialist connector with standard requirements can be live in days to weeks. 
 
 **SWOTBee builds renewal operations natively inside your HubSpot portal: synced contract dates become scheduled renewal deals with line items, uplifts, and NRR reporting, and you own everything we build.**
 
-[Book a free 30-minute discovery call →](/contactus)
+[Book a free 30-minute discovery call →](/contactus/)

@@ -177,4 +177,4 @@ Data-model mismatches, duplicate records, source-of-truth conflicts, and ERP API
 
 **SWOTBee integrates CRM and ERP systems for mid-market companies, most often HubSpot and NetSuite, so your front office and back office finally share one source of truth.** We handle the data model, not just the connection.
 
-[Book a free 30-minute discovery call →](/contactus)
+[Book a free 30-minute discovery call →](/contactus/)

@@ -379,4 +379,4 @@ If you need a dedicated solution, third-party commission software integrates wit
 
 For guidance on more advanced commission scenarios within HubSpot, including multi-rep splits and clawback handling, read our [commission splits, clawbacks, and accelerators guide](/posts/commission-splits-clawbacks-accelerators-guide).
 
-**Need help setting this up, or need something more advanced?** [We build commission systems in HubSpot](/contactus) for mid-market teams. Free consultation, no lock-in, and we can usually get a tiered commission model live in your portal within a week.
+**Need help setting this up, or need something more advanced?** [We build commission systems in HubSpot](/contactus/) for mid-market teams. Free consultation, no lock-in, and we can usually get a tiered commission model live in your portal within a week.

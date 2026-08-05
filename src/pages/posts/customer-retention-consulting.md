@@ -137,4 +137,4 @@ One that builds systems (not just strategy), knows your CRM deeply, commits to m
 
 **SWOTBee is a customer retention consulting partner for mid-market B2B and SaaS: we diagnose churn, build the retention system on HubSpot, and hand your team a program they own.** Stop losing customers you already won.
 
-[Book a free 30-minute discovery call →](/contactus)
+[Book a free 30-minute discovery call →](/contactus/)

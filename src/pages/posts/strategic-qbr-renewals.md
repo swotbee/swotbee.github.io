@@ -121,4 +121,4 @@ The EBR is where the [365-day renewal strategy](/posts/renewal-strategy-365) is 
 
 **A check-in informs; an EBR persuades.** SWOTBee builds QBR and EBR programs that tie product value to business outcomes for mid-market companies across Energy, Manufacturing, and SaaS.
 
-[Book a free 30-minute discovery call →](/contactus)
+[Book a free 30-minute discovery call →](/contactus/)

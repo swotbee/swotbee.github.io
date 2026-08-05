@@ -1,0 +1,24 @@
+---
+import RenewalGuide from "../../components/astro/RenewalGuide.astro";
+const props = {
+  title: "How to auto-create renewal deals in HubSpot (and why workflows break)",
+  description: "The workflow and custom-code steps to make renewal deals create themselves in HubSpot, and the re-enrollment limit that silently stops multi-year chains.",
+  h1: "How to make renewal deals create themselves in HubSpot",
+  intro: "Rebuilding a renewal deal by hand from the old one takes 15 to 30 minutes each, and at a few hundred renewals a quarter that is a full-time job of retyping. Here is how to automate it in HubSpot, and the platform limit that makes the do-it-yourself version fragile.",
+  steps: [
+    { n: 1, t: "Trigger on Closed Won, with the right filters", time: "15 min", body: "Build a workflow that triggers on Deal Stage = Closed Won, Pipeline = Sales, and <strong>Deal Type = New business</strong>. That last filter is essential: without it the workflow re-fires on the renewals it creates and spawns duplicates." },
+    { n: 2, t: "Create the deal (here is the catch)", time: "code", body: "HubSpot's native <strong>Clone</strong> action cannot run inside a workflow, the workflow <strong>Create record</strong> action does not copy line items, and <strong>Copy property value</strong> writes back to the source deal, not the new one. So you need an Operations Hub <strong>Custom Code</strong> action (roughly a 20-second limit) that POSTs a new deal through the API." },
+    { n: 3, t: "Set every renewal field", time: "code", body: "In that code, set Pipeline = Renewal, Stage = first renewal stage, Deal Type = Renewal, Renewal Date = Close Date + Contract Term, Renewal Year = prior + 1, re-assign the owner from AE to CSM, and re-associate the company and contacts. Every one of those is a line you write and maintain." },
+    { n: 4, t: "Guard against the loop and duplicates", time: "15 min", body: "The closed-won trigger has a re-enrollment problem (see below), and a manual-plus-workflow race routinely creates duplicate renewal deals, so add a dedupe check before you create anything." },
+  ],
+  burden: "Every field the renewal needs is a separate action or a block of custom code you own. Worse, HubSpot blocks a workflow from re-triggering on a deal it created, so <strong>year 2 never spawns year 3</strong>, forcing 31-minute-buffer or odd/even-workflow hacks. It is fragile RevOps plumbing that breaks silently, usually when the person who built it has moved on.",
+  bridge: "The build creates renewals off the closed-won or a time-based trigger <strong>server-side, outside HubSpot's workflow enrollment</strong>, so the loop hacks simply do not apply, and a rule sets the pipeline, date, owner, and name every time. The audit shows you which closed-won deals have no renewal built today, and the revenue sitting in them.",
+  faq: [
+    { q: "Can't we just build this with a workflow or Zapier?", a: "You can get part way, but HubSpot cannot clone a deal inside a workflow, the create-record action drops your line items, and the chain silently stops at year 3 because HubSpot won't re-trigger a workflow on a deal it created. Those are platform limits, not effort problems, which is why do-it-yourself renewal automation tends to leak." },
+    { q: "Why not a cheap clone app?", a: "A cloner copies a deal, which is the easy 10%. It gives you no renewal pipeline, no revenue analytics, and no date-shifting, so the renewal leak, the other 90%, is untouched." },
+  ],
+  ctaHeading: "Find the renewals that never got created",
+  ctaBody: "The renewal audit finds the closed-won deals with no renewal built, and the revenue attached, against your real portal. $500, credited in full toward any build. It starts with a free 30-minute call.",
+};
+---
+<RenewalGuide {...props} />

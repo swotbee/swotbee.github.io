@@ -127,4 +127,4 @@ CSQLs are how customer success fuels expansion in the [365-day renewal strategy]
 
 **Your CSMs hear buying intent every day; CSQLs are how you act on it.** SWOTBee builds CSQL and expansion programs for mid-market companies across Energy, Manufacturing, and SaaS.
 
-[Book a free 30-minute discovery call →](/contactus)
+[Book a free 30-minute discovery call →](/contactus/)

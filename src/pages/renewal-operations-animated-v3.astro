@@ -389,14 +389,8 @@ const toneMap: Record<string, string> = {
   <Navbar />
 
   <!-- ============ HERO ============ -->
-  <section
-    class="relative overflow-hidden bg-gradient-to-b from-v6-bg to-white px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20 pb-12 sm:pb-16"
-  >
-    <!-- The Analyst bee lives beside the secondary CTA below and points at it. -->
-
-    <div
-      class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-10 lg:gap-12 items-center relative"
-    >
+  <section class="relative overflow-hidden bg-gradient-to-b from-v6-bg to-white px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20 pb-12 sm:pb-16">
+    <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-10 lg:gap-12 items-center relative">
       <!-- Left: copy -->
       <div class="text-center lg:text-left">
         <!-- <div class="reveal flex flex-wrap justify-center lg:justify-start gap-3 mb-6">
@@ -639,15 +633,9 @@ const toneMap: Record<string, string> = {
           > instead.
         </video>
       </div>
-      <div
-        class="reveal flex flex-col sm:flex-row gap-3 justify-center items-center mt-8"
-      >
-        <a
-          href="/renewal-audit-call/"
-          data-ga-cta="demo_page_book_review"
-          class="bg-v6-copper text-white px-8 py-3.5 rounded-xl text-base font-semibold hover:bg-v6-copper-600 transition-colors text-center"
-        >
-          Book Your Free Renewal Review →
+      <div class="reveal flex flex-col sm:flex-row gap-3 justify-center items-center mt-8">
+        <a href="/renewal-audit-call/" data-ga-cta="demo_page_book_review" class="bg-v6-copper text-white px-8 py-3.5 rounded-xl text-base font-semibold hover:bg-v6-copper-600 transition-colors text-center">
+          Book Your Renewal Audit →
         </a>
         <a
           href="#roi"
@@ -877,10 +865,7 @@ const toneMap: Record<string, string> = {
   <RenewalRoiCalculator />
 
   <!-- ============ SOLUTION ============ -->
-  <section
-    id="how-it-works"
-    class="bg-v6-bg py-14 sm:py-18 px-4 sm:px-6 lg:px-8"
-  >
+  <section id="how-it-works" class="scroll-mt-24 bg-v6-bg py-14 sm:py-18 px-4 sm:px-6 lg:px-8">
     <div class="max-w-4xl mx-auto">
       <p
         class="reveal text-sm font-semibold uppercase tracking-[0.2em] text-v6-copper mb-3 text-center"
@@ -1026,7 +1011,7 @@ const toneMap: Record<string, string> = {
             <div
               class={`anim-card bg-v6-bg rounded-xl p-6 border border-v6-border border-t-4 ${c.color} hover:shadow-lg transition-shadow`}
             >
-              <div class="anim-emoji text-2xl mb-3">{c.icon}</div>
+              <div class="cap-icon inline-block text-2xl leading-none mb-3">{c.icon}</div>
               <h3 class="text-base font-semibold text-v6-dark mb-4 leading-snug">
                 {c.title}
               </h3>
@@ -1304,18 +1289,12 @@ const toneMap: Record<string, string> = {
   <!-- ============ AUDIT CHECKLIST ============ -->
   <section class="bg-white py-14 sm:py-18 px-4 sm:px-6 lg:px-8">
     <div class="max-w-3xl mx-auto">
-      <p
-        class="reveal text-sm font-semibold uppercase tracking-[0.2em] text-v6-copper mb-3 text-center"
-      >
-        Your Free Renewal Review
-      </p>
-      <h2
-        class="reveal text-2xl sm:text-3xl lg:text-4xl font-bold text-v6-dark mb-3 text-center text-balance"
-      >
+      <p class="reveal text-sm font-semibold uppercase tracking-[0.2em] text-v6-copper mb-3 text-center">Your Renewal Audit</p>
+      <h2 class="reveal text-2xl sm:text-3xl lg:text-4xl font-bold text-v6-dark mb-3 text-center text-balance">
         See Your Renewal Revenue Leakage In 30 Minutes
       </h2>
       <p class="reveal text-v6-text-muted text-center mb-10 max-w-lg mx-auto">
-        Your free renewal review covers these six areas:
+        It starts with a free 30-minute call. Your renewal audit covers these six areas:
       </p>
       <div class="stagger grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
         {
@@ -1336,12 +1315,8 @@ const toneMap: Record<string, string> = {
         and what to fix first.
       </p>
       <div class="reveal flex flex-col sm:flex-row gap-3 justify-center mt-8">
-        <a
-          href="/renewal-audit-call/"
-          data-ga-cta="v3_stake_book_review"
-          class="bg-v6-copper text-white px-7 py-3 rounded-xl text-base font-semibold hover:bg-v6-copper-600 transition-colors text-center"
-        >
-          Book Your Free Renewal Review (30 minutes, no prep) →
+        <a href="/renewal-audit-call/" data-ga-cta="v3_stake_book_review" class="bg-v6-copper text-white px-7 py-3 rounded-xl text-base font-semibold hover:bg-v6-copper-600 transition-colors text-center">
+          Book Your Renewal Audit (starts with a free 30-min call) →
         </a>
         <a
           href="#demo"
@@ -1400,8 +1375,7 @@ const toneMap: Record<string, string> = {
         Let's Find Out.
       </h2>
       <p class="text-v6-copper-50 text-base sm:text-lg mb-4">
-        Book your free renewal review. No commitment, no sales pitch, just an
-        honest look at the revenue hiding in your renewal process.
+        Book your renewal audit. It starts with a free 30-minute call, no commitment, no sales pitch, just an honest look at the revenue hiding in your renewal process.
       </p>
       <p class="text-white/80 text-base leading-relaxed mb-8 max-w-xl mx-auto">
         If you decide to work with us: no long-term contracts. We earn your
@@ -1409,12 +1383,8 @@ const toneMap: Record<string, string> = {
         plan at no extra cost if the direction doesn't feel right.
       </p>
       <div class="cta-group cta-group-light relative inline-block">
-        <a
-          href="/renewal-audit-call/"
-          data-ga-cta="v3_final_book_review"
-          class="bg-white text-v6-copper px-8 py-3.5 rounded-xl text-base font-semibold hover:bg-gray-50 transition-colors inline-block"
-        >
-          Book Your Free Renewal Review →
+        <a href="/renewal-audit-call/" data-ga-cta="v3_final_book_review" class="bg-white text-v6-copper px-8 py-3.5 rounded-xl text-base font-semibold hover:bg-gray-50 transition-colors inline-block">
+          Book Your Renewal Audit →
         </a>
         <div
           class="cta-pop absolute bottom-full left-1/2 mb-3 w-60 -translate-x-1/2 rounded-xl bg-v6-dark px-4 py-3 text-left shadow-xl"
@@ -1486,37 +1456,23 @@ const toneMap: Record<string, string> = {
   .anim .flow-build.in > *:nth-child(6) { transition-delay: 0.4s; }
   .anim .flow-build.in > *:nth-child(7) { transition-delay: 0.48s; }
 
-  .anim-card {
-    transition:
-      transform 0.2s ease-out,
-      box-shadow 0.2s ease-out;
-  }
-  .anim-card:hover {
-    transform: translateY(-2px);
-  }
+  .anim-card { transition: transform 0.25s ease-out, box-shadow 0.25s ease-out; }
+  .anim-card:hover { transform: translateY(-4px); }
+  .anim-emoji { transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); }
+  .anim-card:hover .anim-emoji { transform: translateY(-2px) scale(1.12) rotate(-4deg); }
 
-  /* The command center comes online in three quiet beats, reinforcing that
-     the system surfaces signals rather than merely displaying a static mockup. */
-  .anim .hero-metric {
-    opacity: 0;
-    transform: translateY(6px);
-    transition:
-      opacity 0.3s ease-out,
-      transform 0.3s ease-out;
-  }
-  .anim .hero-dashboard.metrics-ready .hero-metric {
-    opacity: 1;
-    transform: none;
-  }
-  .anim .hero-dashboard.metrics-ready .hero-metric:nth-child(2) { transition-delay: 0.08s; }
-  .anim .hero-dashboard.metrics-ready .hero-metric:nth-child(3) { transition-delay: 0.16s; }
+  /* Capability card icons: a plain inline-block (not a fixed-size flex box like
+     .anim-emoji elsewhere), so it must transform-scale from its own glyph
+     center, not translate/rotate, or the hover motion visibly shifts it. */
+  .cap-icon { display: inline-block; transform-origin: center; transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); }
+  .anim-card:hover .cap-icon { transform: scale(1.22); }
 
-  /* A live indicator is the only continuous motion: it communicates status. */
-  .live-dot { animation: livePulse 2.4s ease-out infinite; }
-  @keyframes livePulse {
-    0%, 100% { box-shadow: 0 0 0 0 rgb(13 148 136 / 0); }
-    45% { box-shadow: 0 0 0 5px rgb(13 148 136 / 0.16); }
-  }
+  /* Curiosity speech bubble: hidden until the idle cue reveals it. */
+  .stake-bubble { opacity: 0; transform: translate(-50%, 8px); transition: opacity 0.35s ease-out, transform 0.35s ease-out; pointer-events: none; }
+  #stake-cta.cue .stake-bubble { opacity: 1; transform: translate(-50%, 0); }
+
+  .bolt-pulse { animation: boltPulse 2.2s ease-in-out infinite; }
+  @keyframes boltPulse { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.25); opacity: 0.65; } }
 
   /* ===== CTA hover/focus micro-reveal ===== */
   .cta-pop {
@@ -1546,18 +1502,12 @@ const toneMap: Record<string, string> = {
 
   /* ===== Reduced motion ===== */
   @media (prefers-reduced-motion: reduce) {
-    .anim .reveal,
-    .anim .stagger > * {
-      opacity: 1 !important;
-      transform: none !important;
-      transition: none !important;
-    }
-    .anim-card,
-    .cta-pop,
-    #scroll-progress {
-      transition: none !important;
-    }
-    .live-dot { animation: none !important; }
+    .anim .reveal, .anim .stagger > * { opacity: 1 !important; transform: none !important; transition: none !important; }
+    .bee-bob, .bee-wings, .bee-point, .bolt-pulse { animation: none !important; }
+    #bee { transform: none !important; }
+    /* Bubble still appears on the idle cue, just without the slide. */
+    .stake-bubble { transition: none !important; transform: translate(-50%, 0) !important; }
+    .anim-card, .anim-emoji, .cta-pop, #scroll-progress { transition: none !important; }
   }
 </style>
 
@@ -1627,43 +1577,34 @@ const toneMap: Record<string, string> = {
     bar.style.opacity = "0";
   }
 
-  // The command-center metrics receive a brief post-load beat so the opening
-  // state reads as live information arriving, even though the hero is visible.
-  const heroDashboard = document.querySelector<HTMLElement>(".hero-dashboard");
-  if (heroDashboard) {
-    if (reduce) heroDashboard.classList.add("metrics-ready");
-    else window.setTimeout(() => heroDashboard.classList.add("metrics-ready"), 300);
-  }
+  // --- Idle curiosity cue (one-shot per session) ---
+  // If the visitor lingers in the hero without engaging, a curiosity bubble
+  // points them at the ROI calculator. Fires once per
+  // session, cancels the moment they interact, and never nags twice.
+  const stakeCta = document.getElementById("stake-cta");
+  if (stakeCta && !sessionStorage.getItem("stakeCueShown")) {
+    const IDLE_MS = 6000;
+    let timer = 0;
+    let fired = false;
 
-  // --- Outcome count-ups ---
-  // Numbers move only in the proof band, where the motion helps visitors read
-  // the scale of the outcome rather than adding decoration elsewhere.
-  const statValues = Array.from(
-    document.querySelectorAll<HTMLElement>(".stat-value[data-stat-value]"),
-  );
-  if (!reduce && statValues.length) {
-    const countStat = (el: HTMLElement) => {
-      const value = el.dataset.statValue || "";
-      const match = value.match(/^(.*?)(\d+)(.*)$/);
-      if (!match) return;
-      const [, prefix, number, suffix] = match;
-      const target = Number(number);
-      const duration = 700;
-      const started = performance.now();
-      const update = (now: number) => {
-        const progress = Math.min((now - started) / duration, 1);
-        const eased = 1 - Math.pow(1 - progress, 3);
-        el.textContent = `${prefix}${Math.round(target * eased)}${suffix}`;
-        if (progress < 1) requestAnimationFrame(update);
-      };
-      requestAnimationFrame(update);
+    const dismiss = () => stakeCta.classList.remove("cue");
+    // Mouse movement is normal reading, so it does NOT reset the timer. Only
+    // real engagement (scroll, CTA hover, click) cancels the pending cue.
+    const cancel = () => { fired = true; clearTimeout(timer); timer = 0; };
+    const fire = () => {
+      if (fired) return;
+      fired = true;
+      sessionStorage.setItem("stakeCueShown", "1");
+      stakeCta.classList.add("cue");
+      window.setTimeout(dismiss, 9000);
     };
 
-    statValues.forEach((el) => {
-      const value = el.dataset.statValue || "";
-      const match = value.match(/^(.*?)(\d+)(.*)$/);
-      if (match) el.textContent = `${match[1]}0${match[3]}`;
-    });
+    window.addEventListener("scroll", () => {
+      if (stakeCta.classList.contains("cue")) dismiss();
+      else cancel();
+    }, { passive: true });
+    stakeCta.addEventListener("mouseenter", cancel);
+    stakeCta.addEventListener("click", () => { cancel(); dismiss(); });
 
     const statsObserver = new IntersectionObserver(
       (entries, observer) => {

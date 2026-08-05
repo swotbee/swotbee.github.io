@@ -137,8 +137,8 @@ Ideally 60 to 90 days before renewal, so the upsell folds into the renewal conve
 
 ---
 
-Product-qualified signals are one of the expansion metrics in our [SaaS renewal metrics guide](/posts/renewal-metrics-explained).
+Product-qualified signals are one of the expansion metrics in our [SaaS renewal metrics guide](/posts/renewal-metrics-explained). For what the evidence actually says about using usage data to predict renewal risk itself, rather than expansion timing, see our [research on which usage metric actually predicts renewal](/posts/product-usage-metrics-renewal-research).
 
 **Expansion is won by evidence, not guesswork:** usage signals beat gut feel every time. SWOTBee connects product usage data to the renewal pipeline for mid-market companies across Energy, Manufacturing, and SaaS.
 
-[Book a free 30-minute discovery call →](/contactus)
+[Book a free 30-minute discovery call →](/contactus/)

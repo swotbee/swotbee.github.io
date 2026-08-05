@@ -136,4 +136,4 @@ Starter for small teams with simple needs, Professional for growing mid-market t
 
 **SWOTBee builds your HubSpot total cost of ownership model before you sign or renew, and tunes seats and contact tiers so you stop overpaying.** The bill should never surprise you.
 
-[Book a free 30-minute discovery call →](/contactus)
+[Book a free 30-minute discovery call →](/contactus/)

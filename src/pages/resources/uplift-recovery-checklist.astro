@@ -2,16 +2,19 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Navbar from '../../components/astro/Navbar.astro';
 import Footer from '../../components/astro/Footer.astro';
+import ClientLogoStrip from '../../components/astro/ClientLogoStrip.astro';
+import MagnetObjections from '../../components/astro/MagnetObjections.astro';
 // Lead magnet 2. Submits client-side to the HubSpot Forms API (portal 243398671), same
 // pattern as renewal-leakage-estimate.astro. Form "SwotBee - Uplift Recovery Checklist"
 // (id 58333f13-64ed-4bb9-a57d-6795cd9b0afd) created via the Marketing Forms API on
 // 2026-07-14, see marketing/automation/n8n-kit-lead-magnet/README.md.
 ---
 <BaseLayout
-  title="Find Unbilled Price Increases in 60 Minutes | SWOTBee"
+  title="Find Unbilled Price Increases in 60 Minutes"
   description="A free checklist to find the escalation uplifts you already earned but never invoiced. Most contract businesses find real money."
   robots="noindex, follow"
 >
+  <script is:inline src="https://www.google.com/recaptcha/api.js?render=6Ld3OHYtAAAAADJ8LKDmjsk4qrg2Ih9-FxxV2PSR"></script>
   <Navbar />
   <section class="bg-gradient-to-b from-v6-bg to-white px-4 sm:px-6 lg:px-8 pt-14 pb-10">
     <div class="max-w-2xl mx-auto text-center">
@@ -30,6 +33,8 @@ import Footer from '../../components/astro/Footer.astro';
     </div>
   </section>
 
+  <ClientLogoStrip caption="Trusted by revenue and operations teams at" />
+
   <section class="bg-white px-4 sm:px-6 lg:px-8 pb-16 pt-8">
     <div class="max-w-xl mx-auto bg-v6-bg border border-v6-border rounded-2xl p-8">
       <form id="uplift-form" class="flex flex-col gap-4" novalidate>
@@ -38,6 +43,11 @@ import Footer from '../../components/astro/Footer.astro';
         <input type="hidden" name="utm_source" /><input type="hidden" name="utm_medium" /><input type="hidden" name="utm_campaign" /><input type="hidden" name="utm_content" /><input type="hidden" name="utm_term" />
         <label class="text-sm font-semibold text-v6-dark">Work email
           <input required type="email" name="email" placeholder="you@company.com" class="mt-1 w-full border border-gray-300 rounded-lg px-4 py-3" />
+        </label>
+        <label class="text-sm font-semibold text-v6-dark">Your role
+          <select required name="self_reported_role" class="mt-1 w-full border border-gray-300 rounded-lg px-4 py-3 bg-white">
+            <option value="">Select...</option><option>Decision maker (VP/Exec/Owner)</option><option>RevOps / Ops practitioner</option><option>Consultant / Agency</option><option>Other</option>
+          </select>
         </label>
         <label class="text-sm font-semibold text-v6-dark">Do your contracts include escalation or annual-increase clauses?
           <select required name="escalations" class="mt-1 w-full border border-gray-300 rounded-lg px-4 py-3 bg-white">
@@ -64,19 +74,61 @@ import Footer from '../../components/astro/Footer.astro';
         <p class="text-sm text-v6-text-muted">One email with the checklist PDF. That is it.</p>
       </div>
     </div>
+    <MagnetObjections items={[
+      { q: "Is it really free?", a: "Yes. One email with the checklist. No card, no sales pitch." },
+      { q: "How long does it take?", a: "About an hour to run it across your contracts." },
+      { q: "Will you spam me?", a: "No. A short, useful renewal sequence. Unsubscribe anytime." },
+    ]} />
     <p class="text-center text-sm text-v6-text-muted mt-8 max-w-xl mx-auto">Why this happens: applying uplifts in HubSpot means re-reading contracts at renewal time; there is no native rule for it. Multi-year contracts miss most often, at year 2 and 3.</p>
   </section>
   <Footer />
 
   <script>
-    // Submits to the HubSpot Forms API (same portal as the ContactUs embed and
-    // renewal-leakage-estimate.astro).
+    // Submits through the n8n reCAPTCHA-verify proxy to the HubSpot Forms API (same portal
+    // as the ContactUs embed and renewal-leakage-estimate.astro).
     const PORTAL_ID = "243398671";
     const FORM_GUID = "58333f13-64ed-4bb9-a57d-6795cd9b0afd";
+    const RECAPTCHA_SITE_KEY = "6Ld3OHYtAAAAADJ8LKDmjsk4qrg2Ih9-FxxV2PSR";
+    const RECAPTCHA_ACTION = "uplift_form";
+    const N8N_WEBHOOK_URL = "https://auto.zippylens.com/webhook/swotbee-form-submit";
+
+    declare const grecaptcha: {
+      ready: (cb: () => void) => void;
+      execute: (siteKey: string, opts: { action: string }) => Promise<string>;
+    };
+
+    function getRecaptchaToken(): Promise<string> {
+      return new Promise((resolve, reject) => {
+        if (typeof grecaptcha === "undefined" || !grecaptcha.ready) {
+          reject(new Error("recaptcha_unavailable"));
+          return;
+        }
+        let settled = false;
+        const timer = setTimeout(() => {
+          settled = true;
+          reject(new Error("recaptcha_unavailable"));
+        }, 5000);
+        grecaptcha.ready(() => {
+          grecaptcha
+            .execute(RECAPTCHA_SITE_KEY, { action: RECAPTCHA_ACTION })
+            .then((token) => {
+              if (settled) return;
+              clearTimeout(timer);
+              resolve(token);
+            })
+            .catch(() => {
+              if (settled) return;
+              clearTimeout(timer);
+              reject(new Error("recaptcha_unavailable"));
+            });
+        });
+      });
+    }
 
     const form = document.getElementById("uplift-form") as HTMLFormElement | null;
     const success = document.getElementById("uplift-form-success");
     const errorMsg = document.getElementById("uplift-form-error");
+    const defaultErrorText = errorMsg?.textContent ?? "";
 
     function gaEvent(name: string, params?: Record<string, unknown>) {
       const w = window as typeof window & { gtag?: (...args: unknown[]) => void };
@@ -113,22 +165,30 @@ import Footer from '../../components/astro/Footer.astro';
       }));
 
       try {
-        const res = await fetch(
-          `https://api.hsforms.com/submissions/v3/integration/submit/${PORTAL_ID}/${FORM_GUID}`,
-          {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-              fields,
-              context: { pageUri: window.location.href, pageName: document.title },
-            }),
-          }
-        );
-        if (!res.ok) throw new Error(`HubSpot responded ${res.status}`);
+        const recaptchaToken = await getRecaptchaToken();
+        const res = await fetch(N8N_WEBHOOK_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            recaptchaToken,
+            expectedAction: RECAPTCHA_ACTION,
+            portalId: PORTAL_ID,
+            formGuid: FORM_GUID,
+            fields,
+            context: { pageUri: window.location.href, pageName: document.title },
+          }),
+        });
+        if (!res.ok) throw new Error(`proxy responded ${res.status}`);
         form.classList.add("hidden");
         success?.classList.remove("hidden");
         gaEvent("form_submit", { form_name: "uplift_recovery_checklist" });
-      } catch (_err) {
+      } catch (err) {
+        if (errorMsg) {
+          errorMsg.textContent =
+            err instanceof Error && err.message === "recaptcha_unavailable"
+              ? "Verification didn't load, this can happen with strict ad or privacy blockers. Please disable blocking for this site and try again, or email us at info@swotbee.com and we will send the checklist directly."
+              : defaultErrorText;
+        }
         errorMsg?.classList.remove("hidden");
         gaEvent("form_error", { form_name: "uplift_recovery_checklist" });
       }
