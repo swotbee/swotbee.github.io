@@ -2,17 +2,18 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Navbar from '../../components/astro/Navbar.astro';
 import Footer from '../../components/astro/Footer.astro';
-// Lead magnet 3. Submits client-side to the HubSpot Forms API (portal 243398671), same
-// pattern as renewal-leakage-estimate.astro / uplift-recovery-checklist.astro. Form
-// "SwotBee - Renewal Health Scorecard" (id f8a01a91-7b22-4bf3-940b-f5e427d4a423) created
-// via the Marketing Forms API on 2026-07-15, see
-// marketing/automation/n8n-kit-lead-magnet/README.md.
+// Lead magnet 3. Submits client-side, through the n8n reCAPTCHA-verify proxy, to the
+// HubSpot Forms API (portal 243398671), same pattern as renewal-leakage-estimate.astro /
+// uplift-recovery-checklist.astro / arr-correction-kit.astro. Form "SwotBee - Renewal
+// Health Scorecard" (id f8a01a91-7b22-4bf3-940b-f5e427d4a423) created via the Marketing
+// Forms API on 2026-07-15, see marketing/automation/n8n-kit-lead-magnet/README.md.
 ---
 <BaseLayout
   title="Grade Your Renewal Operation in 10 Minutes"
   description="A free self-assessment scorecard: 6 dimensions, an honest grade, and what A-grade renewal operations look like."
   robots="noindex, follow"
 >
+  <script is:inline src="https://www.google.com/recaptcha/api.js?render=6Ld3OHYtAAAAADJ8LKDmjsk4qrg2Ih9-FxxV2PSR"></script>
   <Navbar />
   <section class="bg-gradient-to-b from-v6-bg to-white px-4 sm:px-6 lg:px-8 pt-14 pb-10">
     <div class="max-w-2xl mx-auto text-center">
@@ -72,14 +73,52 @@ import Footer from '../../components/astro/Footer.astro';
   <Footer />
 
   <script>
-    // Submits to the HubSpot Forms API (same portal as the ContactUs embed and the other
-    // lead-magnet pages).
+    // Submits through the n8n reCAPTCHA-verify proxy to the HubSpot Forms API (same portal
+    // as the ContactUs embed and the other lead-magnet pages). See ContactUs.astro for the
+    // full explanation of why HubSpot's direct API needs this proxy in front of it.
     const PORTAL_ID = "243398671";
     const FORM_GUID = "f8a01a91-7b22-4bf3-940b-f5e427d4a423";
+    const RECAPTCHA_SITE_KEY = "6Ld3OHYtAAAAADJ8LKDmjsk4qrg2Ih9-FxxV2PSR";
+    const RECAPTCHA_ACTION = "scorecard_form";
+    const N8N_WEBHOOK_URL = "https://auto.zippylens.com/webhook/swotbee-form-submit";
+
+    declare const grecaptcha: {
+      ready: (cb: () => void) => void;
+      execute: (siteKey: string, opts: { action: string }) => Promise<string>;
+    };
+
+    function getRecaptchaToken(): Promise<string> {
+      return new Promise((resolve, reject) => {
+        if (typeof grecaptcha === "undefined" || !grecaptcha.ready) {
+          reject(new Error("recaptcha_unavailable"));
+          return;
+        }
+        let settled = false;
+        const timer = setTimeout(() => {
+          settled = true;
+          reject(new Error("recaptcha_unavailable"));
+        }, 5000);
+        grecaptcha.ready(() => {
+          grecaptcha
+            .execute(RECAPTCHA_SITE_KEY, { action: RECAPTCHA_ACTION })
+            .then((token) => {
+              if (settled) return;
+              clearTimeout(timer);
+              resolve(token);
+            })
+            .catch(() => {
+              if (settled) return;
+              clearTimeout(timer);
+              reject(new Error("recaptcha_unavailable"));
+            });
+        });
+      });
+    }
 
     const form = document.getElementById("scorecard-form") as HTMLFormElement | null;
     const success = document.getElementById("scorecard-form-success");
     const errorMsg = document.getElementById("scorecard-form-error");
+    const defaultErrorText = errorMsg?.textContent ?? "";
 
     function gaEvent(name: string, params?: Record<string, unknown>) {
       const w = window as typeof window & { gtag?: (...args: unknown[]) => void };
@@ -121,22 +160,30 @@ import Footer from '../../components/astro/Footer.astro';
       }));
 
       try {
-        const res = await fetch(
-          `https://api.hsforms.com/submissions/v3/integration/submit/${PORTAL_ID}/${FORM_GUID}`,
-          {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-              fields,
-              context: { pageUri: window.location.href, pageName: document.title },
-            }),
-          }
-        );
-        if (!res.ok) throw new Error(`HubSpot responded ${res.status}`);
+        const recaptchaToken = await getRecaptchaToken();
+        const res = await fetch(N8N_WEBHOOK_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            recaptchaToken,
+            expectedAction: RECAPTCHA_ACTION,
+            portalId: PORTAL_ID,
+            formGuid: FORM_GUID,
+            fields,
+            context: { pageUri: window.location.href, pageName: document.title },
+          }),
+        });
+        if (!res.ok) throw new Error(`proxy responded ${res.status}`);
         form.classList.add("hidden");
         success?.classList.remove("hidden");
         gaEvent("form_submit", { form_name: "renewal_health_scorecard" });
-      } catch (_err) {
+      } catch (err) {
+        if (errorMsg) {
+          errorMsg.textContent =
+            err instanceof Error && err.message === "recaptcha_unavailable"
+              ? "Verification didn't load, this can happen with strict ad or privacy blockers. Please disable blocking for this site and try again, or email us at info@swotbee.com and we will send the scorecard directly."
+              : defaultErrorText;
+        }
         errorMsg?.classList.remove("hidden");
         gaEvent("form_error", { form_name: "renewal_health_scorecard" });
       }
