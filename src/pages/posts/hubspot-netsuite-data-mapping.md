@@ -144,4 +144,4 @@ No. The native connector is subsidiary-blind and uses a single subsidiary. Multi
 
 **SWOTBee maps HubSpot and NetSuite at the data-model layer first, so the integration holds up instead of silently corrupting records.** We define ownership, match keys, and structure before a single field syncs.
 
-[Book a free 30-minute discovery call →](/contactus)
+[Book a free 30-minute discovery call →](/contactus/)

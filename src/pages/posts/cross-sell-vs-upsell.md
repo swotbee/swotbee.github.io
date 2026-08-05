@@ -174,4 +174,4 @@ Cross-sell and upsell are the expansion levers in our [SaaS renewal metrics guid
 
 **Expansion done wrong feels like pressure; done right it feels like help.** SWOTBee builds expansion tracking and renewal pipelines for mid-market companies across Energy, Manufacturing, and SaaS.
 
-[Book a free 30-minute discovery call →](/contactus)
+[Book a free 30-minute discovery call →](/contactus/)

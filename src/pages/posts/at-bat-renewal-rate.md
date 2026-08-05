@@ -151,4 +151,4 @@ The at-bat renewal rate is one metric in our [SaaS renewal metrics guide](/posts
 
 **Renewal rate is the metric teams most often miscalculate:** wrong denominator, blended cohorts, count-vs-dollar confusion. SWOTBee builds accurate renewal reporting for mid-market companies across Energy, Manufacturing, and SaaS.
 
-[Book a free 30-minute discovery call →](/contactus)
+[Book a free 30-minute discovery call →](/contactus/)

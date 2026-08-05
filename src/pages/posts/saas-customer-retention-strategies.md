@@ -157,4 +157,4 @@ Large. Responsive support and acting on customer feedback build the trust and re
 
 **SWOTBee builds SaaS customer retention programs on HubSpot: onboarding, health scores, automation, and expansion plays that lift your retention rate and net revenue retention.** Retention is a system we build with you.
 
-[Book a free 30-minute discovery call →](/contactus)
+[Book a free 30-minute discovery call →](/contactus/)

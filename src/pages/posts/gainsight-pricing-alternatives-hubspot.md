@@ -197,4 +197,4 @@ They are standalone systems of record with their own data pipelines, scoring eng
 
 **SWOTBee builds renewal operations natively inside your HubSpot portal (automated renewal deals with line items and uplifts, pipeline alerts, NRR/GRR reporting), and you own everything we build.**
 
-[Book a free 30-minute discovery call →](/contactus)
+[Book a free 30-minute discovery call →](/contactus/)

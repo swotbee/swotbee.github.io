@@ -287,6 +287,6 @@ Here is what we recommend:
 
 If you are not ready for dedicated software yet, you have options. We wrote a companion guide on [how to set up commission tracking directly inside HubSpot](/posts/hubspot-commission-tracking-setup-guide) using calculated properties, workflows, and custom reports. It is free, it works for simple plans, and it gives you a baseline to evaluate whether paid tools are worth the upgrade.
 
-And if you want a shortcut through the evaluation process, [we have implemented commission tracking for dozens of HubSpot teams](/contactus) across energy, SaaS, manufacturing, and construction. We know which tools work for which situations, which integrations break under pressure, and which vendors deliver on their promises. A 30-minute conversation can save you months of trial and error.
+And if you want a shortcut through the evaluation process, [we have implemented commission tracking for dozens of HubSpot teams](/contactus/) across energy, SaaS, manufacturing, and construction. We know which tools work for which situations, which integrations break under pressure, and which vendors deliver on their promises. A 30-minute conversation can save you months of trial and error.
 
 The spreadsheet got you here. Pick the right tool, and you will never go back to it.

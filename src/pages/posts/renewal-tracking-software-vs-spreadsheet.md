@@ -251,4 +251,4 @@ On the revenue side it enforces uplift discipline, so no contract silently renew
 
 **SWOTBee builds renewal operations natively inside your HubSpot portal (scheduled renewal deal creation with line items and uplifts, alerts, and NRR reporting), and you own everything we build.**
 
-[Book a free 30-minute discovery call →](/contactus)
+[Book a free 30-minute discovery call →](/contactus/)

@@ -149,4 +149,4 @@ For many mid-market teams, HubSpot's customer success workspace and renewal pipe
 
 **Ownership gaps are where renewals quietly die:** no owner, late handoffs, lost context. SWOTBee designs renewal ownership models and CS-to-sales handoffs in HubSpot for mid-market companies across Energy, Manufacturing, and SaaS.
 
-[Book a free 30-minute discovery call →](/contactus)
+[Book a free 30-minute discovery call →](/contactus/)

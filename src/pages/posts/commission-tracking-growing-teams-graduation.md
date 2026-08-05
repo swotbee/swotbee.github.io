@@ -180,6 +180,6 @@ If you are reading this article, your commission spreadsheet is probably already
 
 The best time to upgrade is before the spreadsheet breaks in a way that affects your team's paychecks and trust. Not after. The migration does not have to be painful, expensive, or disruptive -- but it does have to happen intentionally, with a clear plan and a parallel testing period that gives everyone confidence.
 
-Start with the self-assessment above. If it tells you it is time, pick the path that matches your stage and your complexity. And if you are not sure which path fits your team -- or you want someone to sanity-check your commission setup before you invest in a new tool -- [we will help you figure it out](/contactus). No strings attached, no sales pitch. Just a conversation about where you are and what makes sense for where you are headed.
+Start with the self-assessment above. If it tells you it is time, pick the path that matches your stage and your complexity. And if you are not sure which path fits your team -- or you want someone to sanity-check your commission setup before you invest in a new tool -- [we will help you figure it out](/contactus/). No strings attached, no sales pitch. Just a conversation about where you are and what makes sense for where you are headed.
 
 *This article is part of our [Sales Commission Tracking](/posts/hubspot-sales-commission-tracking-complete-guide) series, where we cover everything from basic HubSpot setup to enterprise platform comparisons.*

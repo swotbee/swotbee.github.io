@@ -114,4 +114,4 @@ Activation rate, signup-to-paid conversion, product-qualified lead volume, and n
 
 **SWOTBee builds product-led growth motions on HubSpot: product data synced, PQLs scored, and the signup-to-revenue path automated.** We connect the product to the pipeline.
 
-[Book a free 30-minute discovery call →](/contactus)
+[Book a free 30-minute discovery call →](/contactus/)

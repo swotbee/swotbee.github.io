@@ -145,4 +145,4 @@ The quick ratio is one of the efficiency metrics in our [SaaS renewal metrics gu
 
 **Growth that outruns churn looks healthy until the churn catches up:** the quick ratio is how you tell the difference. SWOTBee builds growth-efficiency and retention reporting for mid-market companies across Energy, Manufacturing, and SaaS.
 
-[Book a free 30-minute discovery call →](/contactus)
+[Book a free 30-minute discovery call →](/contactus/)

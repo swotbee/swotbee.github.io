@@ -141,4 +141,4 @@ Negotiation is the final act of the [365-day renewal strategy](/posts/renewal-st
 
 **Discounting is a tactic of last resort, not a renewal strategy.** SWOTBee builds renewal negotiation playbooks for mid-market companies across Energy, Manufacturing, and SaaS.
 
-[Book a free 30-minute discovery call →](/contactus)
+[Book a free 30-minute discovery call →](/contactus/)

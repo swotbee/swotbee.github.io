@@ -148,4 +148,4 @@ Win-back is the recovery motion in the [365-day renewal strategy](/posts/renewal
 
 **A churned customer is not a lost customer; they're an untapped pipeline.** SWOTBee builds win-back and retention programs for mid-market companies across Energy, Manufacturing, and SaaS.
 
-[Book a free 30-minute discovery call →](/contactus)
+[Book a free 30-minute discovery call →](/contactus/)

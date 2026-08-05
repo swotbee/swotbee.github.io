@@ -148,4 +148,4 @@ This guide pairs with our guides to [product-qualified signals and expansion](/p
 
 **Most integration guides stop at "click connect." SWOTBee builds the mapping, event tagging, and downstream workflows that turn customer data into customer insights your team actually acts on, not data sitting unused in a property field.**
 
-[Book a free 30-minute discovery call →](/contactus)
+[Book a free 30-minute discovery call →](/contactus/)

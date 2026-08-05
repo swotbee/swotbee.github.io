@@ -199,4 +199,4 @@ Expansion confusion is one of the [12 common mistakes](/posts/hubspot-renewal-pi
 
 **Multi-pipeline architecture is one of those things that's easy to set up and hard to get right.** SWOTBee designs pipeline architectures for mid-market companies across Energy, Manufacturing, and SaaS, including the reporting and automation that make multiple pipelines actually work.
 
-[Book a free 30-minute discovery call →](/contactus)
+[Book a free 30-minute discovery call →](/contactus/)

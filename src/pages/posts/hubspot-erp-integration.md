@@ -228,4 +228,4 @@ Not always. If your process fits the connector's default mappings, use it. Move 
 
 **SWOTBee builds HubSpot-native renewal operations for mid-market teams: ERP contract data in, automated renewal deals with line items and uplifts out, and you own everything we build in your portal.**
 
-[Book a free 30-minute discovery call →](/contactus)
+[Book a free 30-minute discovery call →](/contactus/)

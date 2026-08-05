@@ -214,4 +214,4 @@ When the CS org is large (roughly 10 to 15+ CSMs), the health model depends on d
 
 **SWOTBee builds renewal operations natively inside your HubSpot portal: automated renewal deals with line items and uplifts, a renewal pipeline with alerts, and NRR/GRR reporting, and you own everything we build.**
 
-[Book a free 30-minute discovery call →](/contactus)
+[Book a free 30-minute discovery call →](/contactus/)

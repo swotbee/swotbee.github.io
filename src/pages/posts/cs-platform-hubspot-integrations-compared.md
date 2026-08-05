@@ -242,4 +242,4 @@ They are different categories, so the Planhat vs HubSpot framing is usually a fa
 
 **SWOTBee builds renewal operations natively inside your HubSpot portal: scheduled renewal deal creation with line items and uplifts, a renewal pipeline with alerts, and NRR reporting, with no second platform to sync and you own everything we build.**
 
-[Book a free 30-minute discovery call →](/contactus)
+[Book a free 30-minute discovery call →](/contactus/)

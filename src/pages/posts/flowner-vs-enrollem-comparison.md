@@ -138,4 +138,4 @@ FlowNer, on a per enrollment basis. FlowNer's Starter plan is $19 to $29 a month
 
 **Picking the right sequence automation app is a small part of a bigger question: whether your renewal deals are actually triggering the outreach cadence they should.** SWOTBee builds HubSpot renewal automation for mid-market RevOps and Sales Ops teams, from auto creating the renewal deal itself to the workflows that enroll the right contact into the right cadence at the right stage.
 
-[Book a free 30-minute discovery call →](/contactus)
+[Book a free 30-minute discovery call →](/contactus/)

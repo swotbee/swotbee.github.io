@@ -146,4 +146,4 @@ This piece pairs with our [HubSpot growth strategy guide](/posts/hubspot-growth-
 
 **Most sales and marketing alignment content repeats the same unverified number. SWOTBee builds the RevOps systems, shared CRM, and unified reporting that make alignment structural instead of aspirational.**
 
-[Book a free 30-minute discovery call →](/contactus)
+[Book a free 30-minute discovery call →](/contactus/)

@@ -306,4 +306,4 @@ Board and CFO reporting on retention and expansion. Most mid-market teams build 
 
 **Building renewal dashboards that your board can actually use is harder than it looks.** SWOTBee builds NRR/GRR reporting for mid-market teams in Energy, Manufacturing, and SaaS, from property setup to executive-ready dashboards.
 
-[Book a free 30-minute discovery call →](/contactus)
+[Book a free 30-minute discovery call →](/contactus/)

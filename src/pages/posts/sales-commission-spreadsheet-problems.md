@@ -173,4 +173,4 @@ Ready to set up commission tracking in HubSpot without buying new software? Read
 
 If your plans are complex enough that you need a dedicated tool, we've done the research for you. Check our [2026 buyer's guide to commission tracking tools for HubSpot](/posts/hubspot-commission-tracking-tools-compared) for a side-by-side comparison of the options that actually integrate well.
 
-**Not sure if you've outgrown your spreadsheet?** [Talk to us](/contactus), we'll audit your current commission setup and tell you honestly whether you need to change anything at all. No pitch, no pressure. If the spreadsheet is still working for you, we'll say so.
+**Not sure if you've outgrown your spreadsheet?** [Talk to us](/contactus/), we'll audit your current commission setup and tell you honestly whether you need to change anything at all. No pitch, no pressure. If the spreadsheet is still working for you, we'll say so.

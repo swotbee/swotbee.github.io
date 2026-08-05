@@ -111,4 +111,4 @@ This piece pairs with our guides to [renewal risk scoring](/posts/hubspot-renewa
 
 **Most health scores are built on assumptions, not validation. SWOTBee builds HubSpot health-score and risk-scoring workflows grounded in what the evidence and your own churned-account history actually show, not just the default inputs a template ships with.**
 
-[Book a free 30-minute discovery call →](/contactus)
+[Book a free 30-minute discovery call →](/contactus/)

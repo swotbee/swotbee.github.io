@@ -124,4 +124,4 @@ This piece pairs with the operating playbook in our [365-day renewal strategy gu
 
 **Most renewal strategies are built on an assumption the research doesn't fully support. SWOTBee builds renewal strategy, health scoring, and retention systems for mid-market companies grounded in what actually predicts renewal, not just what's easiest to put in a contract.**
 
-[Book a free 30-minute discovery call →](/contactus)
+[Book a free 30-minute discovery call →](/contactus/)

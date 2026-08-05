@@ -311,7 +311,7 @@ Here is what that looks like in practice.
 
 **Ongoing optimization.** Commission structures are not set-and-forget. We help clients review their programs quarterly or semi-annually, analyzing performance data to identify where rates need adjusting, where quality gates need tightening, and where new accelerators could unlock the next wave of growth.
 
-Thinking about a multi-tier incentive program? [We will design it with you](/contactus), first consultation is free. No commitment, no sales pitch. Just an honest conversation about whether this structure fits your business and what it would take to build it right.
+Thinking about a multi-tier incentive program? [We will design it with you](/contactus/), first consultation is free. No commitment, no sales pitch. Just an honest conversation about whether this structure fits your business and what it would take to build it right.
 
 ## Where to Go from Here
 

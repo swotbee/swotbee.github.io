@@ -159,4 +159,4 @@ Because they rely on acquisition without retention. Rising ad costs make one-tim
 
 **SWOTBee helps Shopify merchants build retention engines, loyalty, subscriptions, lifecycle marketing, and CRM integration, so repeat customers, not just ad spend, drive growth.** We connect your store to the full customer picture.
 
-[Book a free 30-minute discovery call →](/contactus)
+[Book a free 30-minute discovery call →](/contactus/)

@@ -140,4 +140,4 @@ Yes. Use workflow enrollment to enroll contacts in a sequence when a renewal dea
 
 **A renewal sequence is easy to start and easy to get wrong:** the wrong tool, missed send limits, or emails that keep firing after a customer replies. SWOTBee builds renewal email automation and full renewal pipelines for mid-market companies across Energy, Manufacturing, and SaaS.
 
-[Book a free 30-minute discovery call →](/contactus)
+[Book a free 30-minute discovery call →](/contactus/)

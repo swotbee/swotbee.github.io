@@ -118,4 +118,4 @@ This piece pairs with our guides to [customer success in HubSpot](/posts/custome
 
 **CSM is one of the fastest-growing functions in B2B, and one of the least independently measured. SWOTBee builds the health-score workflows and renewal systems to actually track whether yours is working, not just assume it is.**
 
-[Book a free 30-minute discovery call →](/contactus)
+[Book a free 30-minute discovery call →](/contactus/)

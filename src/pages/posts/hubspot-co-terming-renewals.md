@@ -133,4 +133,4 @@ On the renewal deal in your renewal pipeline, as the single Renewal Date propert
 
 **Co-terming is simple in principle and fiddly in practice:** proration, mid-term changes, and keeping one source of truth. SWOTBee sets up co-termed renewals and contract automation for mid-market companies across Energy, Manufacturing, and SaaS.
 
-[Book a free 30-minute discovery call →](/contactus)
+[Book a free 30-minute discovery call →](/contactus/)

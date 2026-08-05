@@ -151,4 +151,4 @@ Commission disputes feel like small operational hiccups. They're not. They're tr
 
 The good news is that fixing this doesn't require perfection. It requires transparency, speed, and the willingness to treat your reps' paychecks with the same urgency you'd want someone to treat yours.
 
-**Want help building a commission system your reps actually trust? [Let's talk](/contactus).**
+**Want help building a commission system your reps actually trust? [Let's talk](/contactus/).**

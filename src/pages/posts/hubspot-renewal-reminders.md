@@ -186,4 +186,4 @@ A well-built reminder system streamlines renewal management: it keeps renewal da
 
 **Reminders are simple in theory and easy to get wrong in practice:** missing dates, duplicate alerts, and messages sent to customers who already renewed. SWOTBee has built renewal automation and contract management workflows for dozens of mid-market companies across Energy, Manufacturing, and SaaS.
 
-[Book a free 30-minute discovery call →](/contactus)
+[Book a free 30-minute discovery call →](/contactus/)

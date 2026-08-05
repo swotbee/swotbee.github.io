@@ -199,4 +199,4 @@ GRR and NRR are two of the core numbers in our [SaaS renewal metrics guide](/pos
 
 **Retention metrics are easy to misread and easy to game:** one big expansion can flatter a leaky base. SWOTBee builds clean retention reporting and churn-risk scoring for mid-market companies across Energy, Manufacturing, and SaaS.
 
-[Book a free 30-minute discovery call →](/contactus)
+[Book a free 30-minute discovery call →](/contactus/)

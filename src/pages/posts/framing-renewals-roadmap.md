@@ -125,4 +125,4 @@ Forward-framing is how you close the [365-day renewal strategy](/posts/renewal-s
 
 **Renewals are easier to win when they're about tomorrow, not yesterday.** SWOTBee builds renewal and customer success programs for mid-market companies across Energy, Manufacturing, and SaaS.
 
-[Book a free 30-minute discovery call →](/contactus)
+[Book a free 30-minute discovery call →](/contactus/)

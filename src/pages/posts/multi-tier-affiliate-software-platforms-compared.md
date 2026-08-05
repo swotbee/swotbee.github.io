@@ -270,4 +270,4 @@ The best platform matches your business model, not your ambition. A startup with
 
 If you are still building the business case for multi-tier commissions, start with the fundamentals: [how multi-tier programs work](/posts/multi-tier-commission-programs-explained) covers the structural decisions you need to make before selecting software, and [building tiered commissions in HubSpot](/posts/hubspot-tiered-commission-model-setup) walks through implementation for teams already on HubSpot.
 
-**Need help selecting and implementing the right affiliate platform?** [We have done this for dozens of mid-market teams -- let us help you skip the trial-and-error phase.](/contactus)
+**Need help selecting and implementing the right affiliate platform?** [We have done this for dozens of mid-market teams -- let us help you skip the trial-and-error phase.](/contactus/)

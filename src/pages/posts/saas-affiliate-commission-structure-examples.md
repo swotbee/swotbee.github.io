@@ -193,4 +193,4 @@ The minimum viable affiliate program requires exactly four decisions: a commissi
 
 For a deeper dive into the technology that powers these programs, see our guide to [multi-tier affiliate software platforms](/posts/multi-tier-affiliate-software-platforms-compared). And if you want to understand the mechanics behind escalating commission tiers, read [how multi-tier commission programs work](/posts/multi-tier-commission-programs-explained).
 
-**Want help designing an affiliate commission structure for your product?** We build partner programs and commission tracking systems for mid-market SaaS companies -- from initial program design to CRM-integrated tracking and automated payouts. [Let's talk about your program](/contactus).
+**Want help designing an affiliate commission structure for your product?** We build partner programs and commission tracking systems for mid-market SaaS companies -- from initial program design to CRM-integrated tracking and automated payouts. [Let's talk about your program](/contactus/).

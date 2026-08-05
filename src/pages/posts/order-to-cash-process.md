@@ -147,4 +147,4 @@ By syncing orders from the CRM to the ERP, automating invoicing, using AI to pri
 
 **SWOTBee streamlines the order-to-cash process by integrating CRM and ERP, so orders, invoices, and payments flow automatically and cash arrives faster.** Less manual work, healthier cash flow.
 
-[Book a free 30-minute discovery call →](/contactus)
+[Book a free 30-minute discovery call →](/contactus/)
