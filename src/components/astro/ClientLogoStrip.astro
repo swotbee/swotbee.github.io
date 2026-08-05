@@ -3,8 +3,8 @@
 // proof near the form). Logos are hosted locally under public/logos/clients/ (downloaded,
 // not hotlinked). The Embrio mark is a reversed (red + white) logo built for dark grounds,
 // so it renders inside its own dark chip (dark:true) while the light-ground logos sit
-// directly on the strip. Heights are tuned per-logo so wordmarks, the stacked monogram, and
-// the Jirav badge read at similar visual weight.
+// directly on the strip. Rendered as a SINGLE horizontal row: centered when it fits, and
+// horizontally scrollable (never wrapping to a second line) on narrow screens.
 const { caption = "Trusted by teams at" } = Astro.props;
 const logos = [
   { src: "/logos/clients/zenergy.png", alt: "Zenergy", w: 351, h: 90, cls: "h-5 sm:h-6" },
@@ -16,18 +16,20 @@ const logos = [
 ];
 ---
 <section class="border-y border-v6-border bg-v6-bg px-4 py-6">
-  <div class="max-w-3xl mx-auto text-center">
-    <p class="text-xs font-semibold uppercase tracking-[0.18em] text-v6-text-muted mb-4">{caption}</p>
-    <div class="flex flex-wrap items-center justify-center gap-x-8 sm:gap-x-12 gap-y-4">
-      {logos.map((l) => (
-        l.dark ? (
-          <span class="inline-flex items-center rounded-lg bg-v6-dark px-3 py-2.5">
-            <img src={l.src} alt={l.alt} width={l.w} height={l.h} loading="lazy" class={`${l.cls} w-auto object-contain`} />
-          </span>
-        ) : (
-          <img src={l.src} alt={l.alt} width={l.w} height={l.h} loading="lazy" class={`${l.cls} w-auto object-contain opacity-80 hover:opacity-100 transition-opacity`} />
-        )
-      ))}
+  <div class="max-w-5xl mx-auto">
+    <p class="text-xs font-semibold uppercase tracking-[0.18em] text-v6-text-muted mb-4 text-center">{caption}</p>
+    <div class="overflow-x-auto">
+      <div class="flex flex-nowrap items-center justify-center gap-6 sm:gap-10 w-max min-w-full px-1">
+        {logos.map((l) => (
+          l.dark ? (
+            <span class="flex-none inline-flex items-center rounded-lg bg-v6-dark px-3 py-2.5">
+              <img src={l.src} alt={l.alt} width={l.w} height={l.h} loading="lazy" class={`${l.cls} w-auto object-contain`} />
+            </span>
+          ) : (
+            <img src={l.src} alt={l.alt} width={l.w} height={l.h} loading="lazy" class={`${l.cls} w-auto object-contain flex-none opacity-80 hover:opacity-100 transition-opacity`} />
+          )
+        ))}
+      </div>
     </div>
   </div>
 </section>
