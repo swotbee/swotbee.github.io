@@ -63,7 +63,7 @@ const dimOrder = dimensions.map((d) => d.key); // deterministic tie-break for "t
             </div>
             <div class="flex gap-2 sm:pl-10" role="radiogroup" aria-label={d.name}>
               {[0, 1, 2, 3].map((v) => (
-                <button type="button" class="sc-cell flex-1 sm:flex-none sm:w-12 h-11 rounded-lg border border-v6-border text-v6-text-muted font-semibold hover:border-v6-copper focus:outline-none focus:ring-2 focus:ring-v6-copper transition-colors" data-val={v} aria-label={`Score ${v}`}>{v}</button>
+                <button type="button" role="radio" aria-checked="false" class="sc-cell flex-1 sm:flex-none sm:w-12 h-11 rounded-lg border border-v6-border text-v6-text-muted font-semibold hover:border-v6-copper focus:outline-none focus:ring-2 focus:ring-v6-copper transition-colors" data-val={v} aria-label={`Score ${v}`}>{v}</button>
               ))}
             </div>
           </div>
@@ -73,7 +73,7 @@ const dimOrder = dimensions.map((d) => d.key); // deterministic tie-break for "t
       <div class="bg-v6-dark text-white p-5 sm:p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
         <div class="text-center sm:text-left">
           <div class="text-xs uppercase tracking-[0.18em] text-white/60">Your score</div>
-          <div class="text-2xl font-bold mt-1"><span id="sc-total">0</span><span class="text-white/50 text-lg"> / 18</span>
+          <div class="text-2xl font-bold mt-1" aria-live="polite"><span id="sc-total">0</span><span class="text-white/50 text-lg"> / 18</span>
             <span id="sc-grade" class="ml-3 text-v6-amber"></span>
           </div>
         </div>
