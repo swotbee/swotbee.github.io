@@ -14,6 +14,9 @@ const FORM_ID = "33b1abe2-20bd-4dc7-985a-5b4793af0312";
 const RECAPTCHA_SITE_KEY = "6Ld3OHYtAAAAADJ8LKDmjsk4qrg2Ih9-FxxV2PSR";
 const RECAPTCHA_ACTION = "contact_form";
 const N8N_WEBHOOK_URL = "https://auto.zippylens.com/webhook/swotbee-form-submit";
+// Show the self-reported role dropdown only where wanted (e.g. /contactus), not on the
+// shared newsletter page. Optional field, so a missing value never blocks submission.
+const { role = false } = Astro.props;
 ---
 <script is:inline src={`https://www.google.com/recaptcha/api.js?render=${RECAPTCHA_SITE_KEY}`}></script>
 <section id="contact" class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -56,6 +59,20 @@ const N8N_WEBHOOK_URL = "https://auto.zippylens.com/webhook/swotbee-form-submit"
       <input id="cf-phone" name="phone" type="tel" autocomplete="tel"
         class="w-full rounded-lg border border-v6-border px-3.5 py-3 text-v6-dark focus:outline-none focus:ring-2 focus:ring-v6-copper focus:border-v6-copper" />
     </div>
+
+    {role && (
+      <div class="space-y-1.5">
+        <label for="cf-role" class="block text-sm font-semibold text-v6-dark">Your role <span class="text-v6-text-muted font-normal">(optional)</span></label>
+        <select id="cf-role" name="self_reported_role"
+          class="w-full rounded-lg border border-v6-border px-3.5 py-3 text-v6-dark bg-white focus:outline-none focus:ring-2 focus:ring-v6-copper focus:border-v6-copper">
+          <option value="">Select...</option>
+          <option>Decision maker (VP/Exec/Owner)</option>
+          <option>RevOps / Ops practitioner</option>
+          <option>Consultant / Agency</option>
+          <option>Other</option>
+        </select>
+      </div>
+    )}
 
     <div class="space-y-1.5">
       <label for="cf-msg" class="block text-sm font-semibold text-v6-dark">How can we help?</label>
@@ -128,12 +145,14 @@ const N8N_WEBHOOK_URL = "https://auto.zippylens.com/webhook/swotbee-form-submit"
         return;
       }
 
+      var roleEl = form.querySelector('[name="self_reported_role"]');
       var fields = [
         { name: "firstname", value: (form.firstname.value || "").trim() },
         { name: "lastname", value: (form.lastname.value || "").trim() },
         { name: "email", value: email },
         { name: "phone", value: (form.phone.value || "").trim() },
-        { name: "message", value: (form.message.value || "").trim() }
+        { name: "message", value: (form.message.value || "").trim() },
+        { name: "self_reported_role", value: roleEl ? roleEl.value : "" }
       ].filter(function (f) { return f.value; });
 
       var original = btn.textContent;
