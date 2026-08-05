@@ -128,6 +128,10 @@ const dimOrder = dimensions.map((d) => d.key); // deterministic tie-break for "t
       var submit = document.getElementById("sc-submit");
       var dims = Array.prototype.slice.call(document.querySelectorAll(".sc-dim"));
       var token = new URLSearchParams(window.location.search).get("t") || "";
+      // A "+" in an email address renders raw into the magic-link URL, and URLSearchParams
+      // decodes "+" to a space. Email local-parts never contain spaces, so any space here was
+      // a "+". Restore it so the capture matches the HubSpot contact (e.g. jo+renewals@x.com).
+      token = token.replace(/ /g, "+");
 
       function gradeFor(t) {
         if (t >= 16) return { g: "A", note: "Genuinely automated. You likely do not need help." };
