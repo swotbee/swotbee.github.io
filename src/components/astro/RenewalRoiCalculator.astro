@@ -62,72 +62,6 @@
     </p>
 
     <div class="reveal rounded-2xl border border-v6-border bg-v6-bg p-6 sm:p-8">
-      <!-- Industry pills: the primary driver. Framed and tinted so it reads as the control that cascades into the sliders, chart, and cards below. -->
-      <div
-        class="mb-6 rounded-xl border border-v6-copper-100 bg-white p-4 sm:p-5"
-      >
-        <div class="flex flex-wrap items-baseline gap-x-2 gap-y-1 mb-3">
-          <span
-            class="text-[11px] font-bold uppercase tracking-wider text-v6-copper"
-            >Start here</span
-          >
-          <span class="text-sm font-medium text-v6-text-muted"
-            >Pick the closest fit to set the baseline the sliders and estimate
-            build on.</span
-          >
-        </div>
-        <div
-          id="roi-industry"
-          role="group"
-          aria-label="Industry"
-          data-value="energy"
-          class="flex flex-wrap gap-2"
-        >
-          <button
-            type="button"
-            class="roi-pill is-active"
-            data-value="energy"
-            aria-pressed="true">Energy / utilities</button
-          >
-          <button
-            type="button"
-            class="roi-pill"
-            data-value="field"
-            aria-pressed="false">Field service</button
-          >
-          <button
-            type="button"
-            class="roi-pill"
-            data-value="mfg"
-            aria-pressed="false">Industrial / manufacturing</button
-          >
-          <button
-            type="button"
-            class="roi-pill"
-            data-value="msp"
-            aria-pressed="false">MSP (managed services)</button
-          >
-          <button
-            type="button"
-            class="roi-pill"
-            data-value="iot"
-            aria-pressed="false">IoT</button
-          >
-          <button
-            type="button"
-            class="roi-pill"
-            data-value="saas"
-            aria-pressed="false">SaaS</button
-          >
-          <button
-            type="button"
-            class="roi-pill"
-            data-value="proptech"
-            aria-pressed="false">Proptech</button
-          >
-        </div>
-      </div>
-
       <div class="lg:grid lg:grid-cols-5 lg:gap-x-12 lg:gap-y-8">
       <!-- The graph takes three-fifths of the desktop layout; outcomes live alongside it. -->
       <div class="mb-8 rounded-xl border border-v6-border bg-white px-4 py-4 sm:px-5 sm:py-5 lg:col-span-3 lg:mb-0 lg:h-full">
@@ -191,6 +125,18 @@
       <div class="grid grid-cols-1 lg:contents gap-8 lg:gap-14">
         <!-- ===== LEFT: inputs ===== -->
         <div class="lg:col-span-5 lg:row-start-2 grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-y-5 sm:gap-x-0 rounded-xl border border-v6-border bg-white p-4 sm:p-5">
+          <div class="sm:col-span-2">
+            <label class="block text-sm font-semibold text-v6-dark mb-2">Industry</label>
+            <div id="roi-industry" role="group" aria-label="Industry" data-value="energy" class="flex flex-wrap gap-2">
+              <button type="button" class="roi-pill is-active" data-value="energy" aria-pressed="true">Energy / utilities</button>
+              <button type="button" class="roi-pill" data-value="field" aria-pressed="false">Field service</button>
+              <button type="button" class="roi-pill" data-value="mfg" aria-pressed="false">Industrial / manufacturing</button>
+              <button type="button" class="roi-pill" data-value="msp" aria-pressed="false">MSP</button>
+              <button type="button" class="roi-pill" data-value="iot" aria-pressed="false">IoT</button>
+              <button type="button" class="roi-pill" data-value="saas" aria-pressed="false">SaaS</button>
+              <button type="button" class="roi-pill" data-value="proptech" aria-pressed="false">Proptech</button>
+            </div>
+          </div>
           <div class="sm:pr-5">
             <p class="text-xs font-semibold uppercase tracking-wider text-v6-copper mb-3">Your renewal process</p>
             <div>
@@ -278,7 +224,7 @@
           <details class="sm:col-span-2 rounded-xl border border-v6-border bg-white p-4">
             <summary class="cursor-pointer text-sm font-semibold text-v6-dark">Fine-tune the estimate <span class="font-normal text-v6-text-muted">(optional)</span></summary>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-5">
-              <div class="sm:col-span-2">
+              <div>
                 <div class="flex justify-between items-baseline mb-2 gap-3"><label for="roi-slip" class="text-sm font-semibold text-v6-dark">Renewals that slip or churn from process gaps</label><output id="roi-slip-out" class="text-sm font-bold text-v6-copper shrink-0">16%</output></div>
                 <input id="roi-slip" type="range" min="1" max="90" step="1" value="16" class="roi-range" />
               </div>
