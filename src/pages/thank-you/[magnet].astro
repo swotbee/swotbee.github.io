@@ -1,0 +1,135 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Navbar from "../../components/astro/Navbar.astro";
+import Footer from "../../components/astro/Footer.astro";
+
+// Dedicated post-opt-in thank-you pages for the four lead magnets. Each magnet form
+// redirects here on a GENUINE server-confirmed submit (never on the error/blocker path,
+// so this page is never a false "thank you"). One dynamic route renders four static,
+// noindex URLs (/thank-you/scorecard/, /leakage/, /uplift/, /arr/) so each has a clean
+// conversion URL for pixels while the copy stays DRY. Grounded in the funnel plan's
+// "results/confirmation view = confirm + what-happens-next + next-action" pattern and
+// UX_FRAMEWORK "After the Action" (confirm, next recommended action, micro-celebration).
+
+export function getStaticPaths() {
+  return [
+    { params: { magnet: "scorecard" } },
+    { params: { magnet: "leakage" } },
+    { params: { magnet: "uplift" } },
+    { params: { magnet: "arr" } },
+  ];
+}
+
+const COPY = {
+  scorecard: {
+    title: "Your renewal scorecard is on its way",
+    thing: "renewal scorecard",
+    open: "open your scorecard and start grading",
+    secondary: { label: "Estimate what you are leaking", href: "/renewal-leakage-tool/", sub: "A live calculator, no email needed" },
+  },
+  leakage: {
+    title: "Your renewal leakage estimate is on its way",
+    thing: "leakage estimate",
+    open: "open your estimate",
+    secondary: { label: "Grade your renewal operation", href: "/resources/renewal-health-scorecard/", sub: "A 10-minute self-assessment across 6 dimensions" },
+  },
+  uplift: {
+    title: "Your uplift recovery checklist is on its way",
+    thing: "uplift recovery checklist",
+    open: "open your checklist",
+    secondary: { label: "How to recover unbilled uplifts", href: "/guides/recover-unbilled-uplifts/", sub: "The step-by-step guide, free to read now" },
+  },
+  arr: {
+    title: "Your multi-year ARR correction kit is on its way",
+    thing: "ARR correction kit",
+    open: "open your kit",
+    secondary: { label: "Fix NRR and GRR reporting in HubSpot", href: "/guides/nrr-grr-renewal-reporting-hubspot/", sub: "The reporting guide, free to read now" },
+  },
+};
+
+const { magnet } = Astro.params;
+const c = COPY[magnet] ?? COPY.scorecard;
+---
+
+<BaseLayout
+  title={c.title}
+  description="Thanks for requesting your SwotBee renewal resource. Here is what happens next, and where to go while you wait."
+  robots="noindex, follow"
+>
+  <Navbar />
+
+  <main class="bg-gradient-to-b from-v6-bg to-white px-4 sm:px-6 lg:px-8 pt-14 pb-16 min-h-[70vh]">
+    <div class="max-w-2xl mx-auto">
+
+      <!-- Confirm -->
+      <div class="text-center" role="status">
+        <div class="tick mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-v6-teal/15">
+          <svg viewBox="0 0 24 24" class="h-9 w-9 text-v6-teal" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>
+        </div>
+        <h1 class="text-3xl sm:text-4xl font-bold text-v6-dark leading-tight mb-3">You are in. {c.title}.</h1>
+        <p class="text-lg text-v6-text-muted">Check your inbox for one email. It carries the link to {c.open}.</p>
+      </div>
+
+      <!-- What happens next -->
+      <section class="mt-10 bg-white border border-v6-border rounded-2xl p-6 sm:p-8">
+        <h2 class="text-lg font-bold text-v6-dark mb-4">What happens next</h2>
+        <ol class="flex flex-col gap-4">
+          <li class="flex gap-3.5">
+            <span class="shrink-0 flex h-7 w-7 items-center justify-center rounded-full bg-v6-copper text-white text-sm font-bold">1</span>
+            <p class="text-v6-text-muted pt-0.5">Look for an email from <strong class="text-v6-dark">sharmi@swotbee.org</strong>. It usually lands within a business day, often sooner.</p>
+          </li>
+          <li class="flex gap-3.5">
+            <span class="shrink-0 flex h-7 w-7 items-center justify-center rounded-full bg-v6-copper text-white text-sm font-bold">2</span>
+            <p class="text-v6-text-muted pt-0.5">Not there? Check Promotions and Spam, and add that address to your contacts so the next ones land in your inbox.</p>
+          </li>
+          <li class="flex gap-3.5">
+            <span class="shrink-0 flex h-7 w-7 items-center justify-center rounded-full bg-v6-copper text-white text-sm font-bold">3</span>
+            <p class="text-v6-text-muted pt-0.5">Click the link inside to {c.open}. That is the whole thing: no card, no sales pitch.</p>
+          </li>
+        </ol>
+      </section>
+
+      <!-- Explore more -->
+      <section class="mt-8">
+        <h2 class="text-lg font-bold text-v6-dark mb-1">While you are here</h2>
+        <p class="text-sm text-v6-text-muted mb-4">A self-assessment or estimate cannot see which specific deals are at risk, or how much unbilled uplift sits in your contracts. The renewal audit scores the same ground against your real HubSpot portal, with names and numbers, credited toward any build.</p>
+        <div class="flex flex-col gap-3">
+          <a href="/renewal-audit-call/" data-ga-cta="thankyou_book_audit" class="group flex items-center justify-between gap-4 rounded-xl bg-v6-copper px-5 py-4 text-white transition-colors hover:bg-v6-copper-600">
+            <span>
+              <span class="block font-semibold">Book your renewal audit</span>
+              <span class="block text-sm text-white/80">The 30-minute review of your actual renewal book</span>
+            </span>
+            <span aria-hidden="true" class="text-xl transition-transform group-hover:translate-x-0.5">&rarr;</span>
+          </a>
+          <a href={c.secondary.href} class="group flex items-center justify-between gap-4 rounded-xl border border-v6-border bg-white px-5 py-4 text-v6-dark transition-colors hover:border-v6-copper hover:bg-v6-copper-50">
+            <span>
+              <span class="block font-semibold">{c.secondary.label}</span>
+              <span class="block text-sm text-v6-text-muted">{c.secondary.sub}</span>
+            </span>
+            <span aria-hidden="true" class="text-xl text-v6-copper transition-transform group-hover:translate-x-0.5">&rarr;</span>
+          </a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <Footer />
+
+  <script is:inline define:vars={{ magnet }}>
+    // Fire a conversion event on this dedicated URL. page_view is automatic; this adds an
+    // explicit lead event keyed to the magnet for GA4 / ad-pixel conversion setup.
+    if (window.gtag) window.gtag("event", "generate_lead", { magnet: magnet, source: "magnet_optin" });
+  </script>
+
+  <style>
+    @media (prefers-reduced-motion: no-preference) {
+      .tick { animation: tick-pop 0.5s ease-out both; }
+      @keyframes tick-pop {
+        0% { transform: scale(0.6); opacity: 0; }
+        60% { transform: scale(1.08); }
+        100% { transform: scale(1); opacity: 1; }
+      }
+    }
+  </style>
+</BaseLayout>

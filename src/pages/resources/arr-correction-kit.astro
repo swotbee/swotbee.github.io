@@ -190,6 +190,7 @@ import MagnetObjections from '../../components/astro/MagnetObjections.astro';
         form.classList.add("hidden");
         success?.classList.remove("hidden");
         gaEvent("form_submit", { form_name: "arr_correction_kit" });
+        window.location.assign("/thank-you/arr/");
       } catch (err) {
         if (errorMsg) {
           errorMsg.textContent =

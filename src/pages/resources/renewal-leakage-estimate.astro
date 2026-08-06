@@ -238,6 +238,7 @@ import MagnetObjections from '../../components/astro/MagnetObjections.astro';
         form.classList.add("hidden");
         success?.classList.remove("hidden");
         gaEvent("form_submit", { form_name: "leakage_estimate" });
+        window.location.assign("/thank-you/leakage/");
       } catch (err) {
         if (errorMsg) {
           errorMsg.textContent =

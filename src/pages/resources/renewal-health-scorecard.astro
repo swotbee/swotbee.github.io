@@ -191,6 +191,7 @@ import MagnetObjections from '../../components/astro/MagnetObjections.astro';
         form.classList.add("hidden");
         success?.classList.remove("hidden");
         gaEvent("form_submit", { form_name: "renewal_health_scorecard" });
+        window.location.assign("/thank-you/scorecard/");
       } catch (err) {
         if (errorMsg) {
           errorMsg.textContent =
