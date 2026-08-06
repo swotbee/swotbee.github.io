@@ -34,9 +34,9 @@ const faqs = [
   { q: 'Can HubSpot integrate with NetSuite?', a: 'Yes. Options range from the native HubSpot-NetSuite connector to middleware platforms like Workato and Celigo to custom API integration. The right method depends on what must sync: contact and company records are straightforward; deals to sales orders with line items, bi-directional edits, and renewal data are where the standard methods need help.' },
   { q: 'What are the most common HubSpot NetSuite integration issues?', a: 'The six above cover what the community reports most: line items not syncing to sales orders, edits breaking the initial sync, line-level changes flowing one way only, delete-and-recreate conflicts, unmappable invoice fields, and renewals falling outside the sync scope entirely.' },
   { q: 'What data syncs between HubSpot and NetSuite?', a: 'In a typical setup: contacts, companies, and deal-level fields sync well. Sales orders, invoices, payment status, and line items need deliberate mapping. Renewal deals, escalated pricing, and multi-year contract chains usually do not sync at all unless the integration is built for them, which is the gap this page is about.' },
-  { q: 'How can integration problems be fixed or avoided?', a: 'Start by classifying each failure: mapping problems (fixable with connector configuration) versus structural problems (the two systems disagree about IDs and update semantics, which needs an integration layer with its own line-item registry). Our free audit does exactly this classification on your setup before anything is built.' },
+  { q: 'How can integration problems be fixed or avoided?', a: 'Start by classifying each failure: mapping problems (fixable with connector configuration) versus structural problems (the two systems disagree about IDs and update semantics, which needs an integration layer with its own line-item registry). The free 30-minute call does exactly this classification on your setup before anything is built.' },
   { q: 'We already have a connector. Do we rip it out?', a: 'No. If your connector handles contacts and new-business deals, keep it. We add the renewal layer around what works: renewal deals created on schedule in HubSpot with correct line items and uplifts, synced to NetSuite without the delete-and-recreate mess. You own everything we build.', tag: 'Most asked' },
-  { q: 'What does this cost?', a: 'Integration work is fixed-scope with a clear handover, priced after the free 30-minute audit of your sync and renewal setup. No long-term contracts; you keep the audit findings either way.', tag: 'Most asked' },
+  { q: 'What does this cost?', a: 'Integration work is fixed-scope with a clear handover, priced after the free 30-minute call about your sync and renewal setup. No long-term contracts; you keep the findings either way.', tag: 'Most asked' },
 ];
 
 const faqSchema = JSON.stringify({
@@ -94,7 +94,7 @@ const faqSchema = JSON.stringify({
         ))}
       </div>
       <p class="text-center mt-8">
-        <a href="/contactus/" class="text-base font-semibold text-v6-copper hover:underline">Not sure which one is yours? We classify it in the free audit →</a>
+        <a href="/contactus/" class="text-base font-semibold text-v6-copper hover:underline">Not sure which one is yours? We classify it on the free call →</a>
       </p>
     </div>
   </section>
@@ -171,7 +171,7 @@ const faqSchema = JSON.stringify({
   <section class="bg-gradient-to-br from-v6-copper to-v6-copper-600 px-4 sm:px-6 lg:px-8 py-16">
     <div class="max-w-2xl mx-auto text-center">
       <h2 class="text-2xl sm:text-3xl font-bold text-white mb-4">Get Your Sync Diagnosed Before Anyone Builds Anything</h2>
-      <p class="text-base text-white/90 mb-7 leading-relaxed">A free 30-minute audit of your HubSpot-NetSuite setup and renewal flow. We classify each problem as config-fixable or structural, in writing, and you keep the findings whatever you decide. If a config change is all you need, that is what we will tell you.</p>
+      <p class="text-base text-white/90 mb-7 leading-relaxed">A free 30-minute call about your HubSpot-NetSuite setup and renewal flow. We classify each problem as config-fixable or structural, in writing, and you keep the findings whatever you decide. If a config change is all you need, that is what we will tell you.</p>
       <a href="/contactus/" class="inline-block bg-white text-v6-copper px-8 py-3.5 rounded-xl text-base font-semibold hover:bg-gray-100 transition-colors">Book A Free Sync & Renewal Audit →</a>
       <p class="text-sm text-white/80 mt-4">Fixed-scope projects, clear handover, no long-term contracts.</p>
     </div>
