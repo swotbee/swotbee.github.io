@@ -40,49 +40,174 @@
 // inline, Tailwind v4, v6 design tokens. House rule: no em/en dashes.
 ---
 
-<section id="roi" class="scroll-mt-24 bg-white py-10 sm:py-14 px-4 sm:px-6 lg:px-8">
-  <div class="max-w-6xl mx-auto">
-    <p class="reveal text-sm font-semibold uppercase tracking-[0.2em] text-v6-copper mb-3 text-center">See What's At Stake</p>
-    <h2 class="reveal text-2xl sm:text-3xl lg:text-4xl font-bold text-v6-dark mb-3 text-center text-balance">
+<section
+  id="roi"
+  class="scroll-mt-24 bg-white py-10 sm:py-14 px-4 sm:px-6 lg:px-8"
+>
+  <div class="max-w-[1440px] mx-auto">
+    <p
+      class="reveal text-sm font-semibold uppercase tracking-[0.2em] text-v6-copper mb-3 text-center"
+    >
+      See What's At Stake
+    </p>
+    <h2
+      class="reveal text-2xl sm:text-3xl lg:text-4xl font-bold text-v6-dark mb-3 text-center text-balance"
+    >
       How Much Revenue Is Hiding In Your Renewals?
     </h2>
     <p class="reveal text-v6-text-muted text-center mb-6 max-w-xl mx-auto">
-      Pick your situation, then refine with the sliders. Renewal slippage does not just cost revenue this year: it caps how big your renewal book can ever get. Watch growth stall as the leak catches up, and how much further it climbs once that leak is fixed. We pressure-test these numbers against your real HubSpot data in the paid renewal audit.
+      Renewal slippage does not just cost revenue this year: it caps how big
+      your renewal book can ever get. Watch growth stall as the leak catches up,
+      and how much further it climbs once that leak is fixed.
     </p>
 
     <div class="reveal rounded-2xl border border-v6-border bg-v6-bg p-6 sm:p-8">
       <!-- Industry pills: the primary driver. Framed and tinted so it reads as the control that cascades into the sliders, chart, and cards below. -->
-      <div class="mb-6 rounded-xl border border-v6-copper-100 bg-white p-4 sm:p-5">
+      <div
+        class="mb-6 rounded-xl border border-v6-copper-100 bg-white p-4 sm:p-5"
+      >
         <div class="flex flex-wrap items-baseline gap-x-2 gap-y-1 mb-3">
-          <span class="text-[11px] font-bold uppercase tracking-wider text-v6-copper">Start here</span>
-          <span class="text-sm font-medium text-v6-text-muted">Pick the closest fit to set the baseline the sliders and estimate build on.</span>
+          <span
+            class="text-[11px] font-bold uppercase tracking-wider text-v6-copper"
+            >Start here</span
+          >
+          <span class="text-sm font-medium text-v6-text-muted"
+            >Pick the closest fit to set the baseline the sliders and estimate
+            build on.</span
+          >
         </div>
-        <div id="roi-industry" role="group" aria-label="Industry" data-value="energy" class="flex flex-wrap gap-2">
-          <button type="button" class="roi-pill is-active" data-value="energy" aria-pressed="true">Energy / utilities</button>
-          <button type="button" class="roi-pill" data-value="field" aria-pressed="false">Field service</button>
-          <button type="button" class="roi-pill" data-value="mfg" aria-pressed="false">Industrial / manufacturing</button>
-          <button type="button" class="roi-pill" data-value="msp" aria-pressed="false">MSP (managed services)</button>
-          <button type="button" class="roi-pill" data-value="iot" aria-pressed="false">IoT</button>
-          <button type="button" class="roi-pill" data-value="saas" aria-pressed="false">SaaS</button>
-          <button type="button" class="roi-pill" data-value="proptech" aria-pressed="false">Proptech</button>
+        <div
+          id="roi-industry"
+          role="group"
+          aria-label="Industry"
+          data-value="energy"
+          class="flex flex-wrap gap-2"
+        >
+          <button
+            type="button"
+            class="roi-pill is-active"
+            data-value="energy"
+            aria-pressed="true">Energy / utilities</button
+          >
+          <button
+            type="button"
+            class="roi-pill"
+            data-value="field"
+            aria-pressed="false">Field service</button
+          >
+          <button
+            type="button"
+            class="roi-pill"
+            data-value="mfg"
+            aria-pressed="false">Industrial / manufacturing</button
+          >
+          <button
+            type="button"
+            class="roi-pill"
+            data-value="msp"
+            aria-pressed="false">MSP (managed services)</button
+          >
+          <button
+            type="button"
+            class="roi-pill"
+            data-value="iot"
+            aria-pressed="false">IoT</button
+          >
+          <button
+            type="button"
+            class="roi-pill"
+            data-value="saas"
+            aria-pressed="false">SaaS</button
+          >
+          <button
+            type="button"
+            class="roi-pill"
+            data-value="proptech"
+            aria-pressed="false">Proptech</button
+          >
         </div>
       </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10">
+      <div class="lg:grid lg:grid-cols-5 lg:gap-x-12 lg:gap-y-8">
+      <!-- The graph takes three-fifths of the desktop layout; outcomes live alongside it. -->
+      <div class="mb-8 rounded-xl border border-v6-border bg-white px-4 py-4 sm:px-5 sm:py-5 lg:col-span-3 lg:mb-0 lg:h-full">
+        <div class="flex flex-wrap items-end justify-between gap-3 mb-2">
+          <p
+            class="text-xs font-semibold uppercase tracking-wider text-v6-text-muted"
+          >
+            Your growth ceiling
+          </p>
+          <div
+            class="flex flex-wrap gap-x-5 gap-y-1.5 text-xs text-v6-text-muted"
+          >
+            <span class="flex items-center gap-1.5"
+              ><span
+                class="inline-block w-4 h-1 rounded-full"
+                style="background:#64748B"></span> If nothing changes <b
+                id="roi-ceiling-current-label"
+                class="text-v6-dark font-semibold">&nbsp;</b
+              ></span
+            >
+            <span class="flex items-center gap-1.5"
+              ><span
+                class="inline-block w-4 h-1 rounded-full"
+                style="background:#5AAB9D"></span> If you fix the leak <b
+                id="roi-ceiling-recovered-label"
+                class="text-v6-dark font-semibold">&nbsp;</b
+              ></span
+            >
+          </div>
+        </div>
+        <svg
+          id="roi-chart"
+          viewBox="0 0 700 280"
+          class="w-full h-auto"
+          role="img"
+          aria-label="Your renewal book's value over five years: flat if nothing changes, rising if you fix the preventable churn"
+        >
+          <g id="roi-grid"></g>
+          <path id="roi-area" fill="#e8f5f2" stroke="none"></path>
+          <polyline
+            id="roi-line-current"
+            fill="none"
+            stroke="#64748B"
+            stroke-width="3.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"></polyline>
+          <polyline
+            id="roi-line-recovered"
+            fill="none"
+            stroke="#5AAB9D"
+            stroke-width="3.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"></polyline>
+          <circle id="roi-dot-current" r="4.5" fill="#64748B"></circle>
+          <circle id="roi-dot-recovered" r="4.5" fill="#5AAB9D"></circle>
+          <g id="roi-gap-callout"></g><g id="roi-ylabels"></g><g
+            id="roi-xlabels"></g>
+        </svg>
+      </div>
 
+      <div class="grid grid-cols-1 lg:contents gap-8 lg:gap-14">
         <!-- ===== LEFT: inputs ===== -->
-        <div class="lg:col-span-5">
-          <div class="mb-6">
+        <div class="lg:col-span-5 lg:row-start-2 grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-y-5 sm:gap-x-0 rounded-xl border border-v6-border bg-white p-4 sm:p-5">
+          <div class="sm:pr-5">
+            <p class="text-xs font-semibold uppercase tracking-wider text-v6-copper mb-3">Your renewal process</p>
             <div>
-              <label for="roi-track" class="block text-sm font-semibold text-v6-dark mb-1.5">How you track renewals today</label>
-              <select id="roi-track" class="roi-select">
+              <label
+                for="roi-track"
+                class="block text-sm font-semibold text-v6-dark mb-1.5"
+                >How you track renewals today</label
+              >
+              <select id="roi-track" class="roi-select max-w-sm">
                 <option value="nothing">Nothing (memory + calendars)</option>
                 <option value="spreadsheets" selected>Spreadsheets</option>
                 <option value="system">A system (partial automation)</option>
                 <option value="custom">Custom-built workflows</option>
               </select>
             </div>
-            {/* Role selector commented out per request. Card labels stay fixed while
+            {
+              /* Role selector commented out per request. Card labels stay fixed while
                 this is disabled.
             <div class="sm:col-span-2">
               <label for="roi-role" class="block text-sm font-semibold text-v6-dark mb-1.5">Your role</label>
@@ -94,94 +219,164 @@
                 <option value="founder">Founder / CEO</option>
               </select>
             </div>
-            */}
+            */
+            }
           </div>
 
           <div class="space-y-5">
+            <p class="text-xs font-semibold uppercase tracking-wider text-v6-copper">Your renewal book</p>
             <div>
               <div class="flex justify-between items-baseline mb-2 gap-3">
-                <label id="roi-renewals-label" for="roi-renewals" class="text-base font-semibold text-v6-dark">Service agreements per year</label>
-                <output id="roi-renewals-out" class="text-base font-bold text-v6-copper shrink-0">300</output>
+                <label
+                  id="roi-renewals-label"
+                  for="roi-renewals"
+                  class="text-base font-semibold text-v6-dark"
+                  >Service agreements per year</label
+                >
+                <output
+                  id="roi-renewals-out"
+                  class="text-base font-bold text-v6-copper shrink-0"
+                  >300</output
+                >
               </div>
-              <input id="roi-renewals" type="range" min="50" max="5000" step="50" value="300" class="roi-range" />
+              <input
+                id="roi-renewals"
+                type="range"
+                min="50"
+                max="5000"
+                step="50"
+                value="300"
+                class="roi-range"
+              />
             </div>
             <div>
               <div class="flex justify-between items-baseline mb-2 gap-3">
-                <label id="roi-acv-label" for="roi-acv" class="text-base font-semibold text-v6-dark">Average contract value</label>
-                <output id="roi-acv-out" class="text-base font-bold text-v6-copper shrink-0">$50,000</output>
+                <label
+                  id="roi-acv-label"
+                  for="roi-acv"
+                  class="text-base font-semibold text-v6-dark"
+                  >Average contract value</label
+                >
+                <output
+                  id="roi-acv-out"
+                  class="text-base font-bold text-v6-copper shrink-0"
+                  >$50,000</output
+                >
               </div>
-              <input id="roi-acv" type="range" min="0" max="1000" step="1" value="459" class="roi-range" />
-            </div>
-            <div>
-              <div class="flex justify-between items-baseline mb-2 gap-3">
-                <label for="roi-slip" class="text-base font-semibold text-v6-dark">Renewals that slip or churn from process gaps</label>
-                <output id="roi-slip-out" class="text-base font-bold text-v6-copper shrink-0">16%</output>
-              </div>
-              <input id="roi-slip" type="range" min="1" max="90" step="1" value="16" class="roi-range" />
+              <input
+                id="roi-acv"
+                type="range"
+                min="0"
+                max="1000"
+                step="1"
+                value="459"
+                class="roi-range"
+              />
             </div>
           </div>
 
-          {/* "Sounds like a ... ops team tracking renewals ..." vignette commented out per request.
+          <details class="sm:col-span-2 rounded-xl border border-v6-border bg-white p-4">
+            <summary class="cursor-pointer text-sm font-semibold text-v6-dark">Fine-tune the estimate <span class="font-normal text-v6-text-muted">(optional)</span></summary>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-5">
+              <div class="sm:col-span-2">
+                <div class="flex justify-between items-baseline mb-2 gap-3"><label for="roi-slip" class="text-sm font-semibold text-v6-dark">Renewals that slip or churn from process gaps</label><output id="roi-slip-out" class="text-sm font-bold text-v6-copper shrink-0">16%</output></div>
+                <input id="roi-slip" type="range" min="1" max="90" step="1" value="16" class="roi-range" />
+              </div>
+              <div>
+                <div class="flex justify-between items-baseline mb-2 gap-3"><label for="roi-eligible" class="text-sm font-semibold text-v6-dark">Contracts with escalations</label><output id="roi-eligible-out" class="text-sm font-bold text-v6-copper shrink-0">40%</output></div>
+                <input id="roi-eligible" type="range" min="0" max="100" step="5" value="40" class="roi-range" />
+              </div>
+              <div>
+                <div class="flex justify-between items-baseline mb-2 gap-3"><label for="roi-uplift" class="text-sm font-semibold text-v6-dark">Typical annual escalation</label><output id="roi-uplift-out" class="text-sm font-bold text-v6-copper shrink-0">5%</output></div>
+                <input id="roi-uplift" type="range" min="0" max="15" step="1" value="5" class="roi-range" />
+              </div>
+              <div>
+                <div class="flex justify-between items-baseline mb-2 gap-3"><label for="roi-hours" class="text-sm font-semibold text-v6-dark">Manual hours per renewal</label><output id="roi-hours-out" class="text-sm font-bold text-v6-copper shrink-0">2 hrs</output></div>
+                <input id="roi-hours" type="range" min="0" max="8" step="0.5" value="2" class="roi-range" />
+              </div>
+              <div>
+                <div class="flex justify-between items-baseline mb-2 gap-3"><label for="roi-owner-cost" class="text-sm font-semibold text-v6-dark">Renewal owner hourly cost</label><output id="roi-owner-cost-out" class="text-sm font-bold text-v6-copper shrink-0">$60</output></div>
+                <input id="roi-owner-cost" type="range" min="25" max="150" step="5" value="60" class="roi-range" />
+              </div>
+            </div>
+          </details>
+
+          {
+            /* "Sounds like a ... ops team tracking renewals ..." vignette commented out per request.
           <p id="roi-vignette" class="mt-5 text-sm text-v6-text-muted italic leading-relaxed"></p>
-          */}
-          <p class="mt-5 text-sm text-v6-dark leading-relaxed"><span class="font-semibold text-v6-copper">Biggest leak:</span> <span id="roi-leak"></span></p>
+          */
+          }
+          <p class="sm:col-span-2 text-sm text-v6-dark leading-relaxed">
+            <span class="font-semibold text-v6-copper">Biggest leak:</span>
+            <span id="roi-leak"></span>
+          </p>
         </div>
 
         <!-- ===== RIGHT: outputs ===== -->
-        <div class="flex flex-col lg:col-span-7">
-          <p class="text-xs font-semibold uppercase tracking-wider text-v6-text-muted mb-2">Your growth ceiling</p>
-          <svg id="roi-chart" viewBox="0 0 400 200" class="w-full h-auto" role="img" aria-label="Your renewal book's value over five years: flat if nothing changes, rising if you fix the preventable churn">
-            <g id="roi-grid"></g>
-            <path id="roi-area" fill="#e8f5f2" stroke="none"></path>
-            <polyline id="roi-line-current" fill="none" stroke="#64748B" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"></polyline>
-            <polyline id="roi-line-recovered" fill="none" stroke="#5AAB9D" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"></polyline>
-            <circle id="roi-dot-current" r="4.5" fill="#64748B"></circle>
-            <circle id="roi-dot-recovered" r="4.5" fill="#5AAB9D"></circle>
-            <!-- Badge calling out the $ gap directly on the chart, fades in just after the lines finish drawing -->
-            <g id="roi-gap-callout"></g>
-            <!-- Y-axis $ labels painted last so they stay legible even where a data line crosses a gridline -->
-            <g id="roi-ylabels"></g>
-            <g id="roi-xlabels"></g>
-          </svg>
-          <div class="flex flex-wrap gap-x-5 gap-y-1.5 mt-1 mb-4 text-xs text-v6-text-muted">
-            <span class="flex items-center gap-1.5"><span class="inline-block w-4 h-1 rounded-full" style="background:#64748B"></span> If nothing changes <b id="roi-ceiling-current-label" class="text-v6-dark font-semibold">&nbsp;</b></span>
-            <span class="flex items-center gap-1.5"><span class="inline-block w-4 h-1 rounded-full" style="background:#5AAB9D"></span> If you fix the leak <b id="roi-ceiling-recovered-label" class="text-v6-dark font-semibold">&nbsp;</b></span>
-          </div>
-
-          <!-- Three headline numbers in one compact row instead of two large cards plus a
-               third stacked below: same information, without a visitor needing to subtract
-               the first two to find the third, and without the extra vertical space three
-               separate stacked cards used to take. -->
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
-            <div class="rounded-lg bg-slate-50 border border-slate-200 py-3 px-2 text-center">
-              <p class="text-[10px] font-semibold uppercase tracking-wide text-slate-600 mb-0.5">If nothing changes</p>
-              <p id="roi-ceiling-current" class="text-xl font-bold text-v6-dark">$15.0M</p>
+        <div class="flex flex-col lg:col-span-2 lg:col-start-4 lg:row-start-1">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div
+              class="rounded-lg bg-slate-50 border border-slate-200 py-3 px-2 text-center"
+            >
+              <p
+                class="text-[10px] font-semibold uppercase tracking-wide text-slate-600 mb-0.5"
+              >
+                If nothing changes
+              </p>
+              <p
+                id="roi-ceiling-current"
+                class="text-xl font-bold text-v6-dark"
+              >
+                $15.0M
+              </p>
             </div>
-            <div class="rounded-lg bg-v6-teal-50 border border-v6-teal-100 py-3 px-2 text-center">
-              <p class="text-[10px] font-semibold uppercase tracking-wide text-v6-teal mb-0.5">If you fix the leak</p>
-              <p id="roi-ceiling-recovered" class="text-xl font-bold text-v6-dark">$19.2M</p>
-            </div>
-            <div class="rounded-lg bg-gradient-to-r from-v6-copper to-v6-teal py-3 px-2 text-center">
-              <p class="text-[10px] font-semibold uppercase tracking-wide text-white/80 mb-0.5">Growth left on the table</p>
-              <p id="roi-growth-left" class="text-xl font-bold text-white">$4.2M</p>
+            <div
+              class="rounded-lg bg-v6-teal-50 border border-v6-teal-100 py-3 px-2 text-center"
+            >
+              <p
+                class="text-[10px] font-semibold uppercase tracking-wide text-v6-teal mb-0.5"
+              >
+                If you fix the leak
+              </p>
+              <p
+                id="roi-ceiling-recovered"
+                class="text-xl font-bold text-v6-dark"
+              >
+                $19.2M
+              </p>
             </div>
           </div>
-
-          <div class="mt-2 space-y-1 text-center">
-            <p id="roi-extra-hours" class="text-sm font-semibold text-v6-dark"></p>
-            <p id="roi-extra-retention" class="text-sm font-semibold text-v6-dark"></p>
+          <div class="mt-6 space-y-2 text-center">
+            <p id="roi-extra-hours" class="text-sm font-semibold text-v6-dark">
+            </p>
+          </div>
+          <div
+            class="mt-7 rounded-xl border-2 border-red-200 bg-red-50 px-6 py-7 text-center"
+          >
+            <p
+              class="text-xs font-semibold uppercase tracking-[0.12em] text-red-700 mb-2"
+            >
+              Growth left on the table
+            </p>
+            <p
+              id="roi-growth-left"
+              class="text-3xl sm:text-4xl font-bold text-v6-dark"
+            >
+              $4.2M
+            </p>
+          </div>
+          <div class="text-center mt-8">
+            <a id="roi-cta" href="/renewal-audit-call/" class="inline-block bg-v6-copper text-white px-9 py-4 rounded-xl text-lg font-semibold hover:bg-v6-copper-600 transition-colors shadow-sm">
+              Find My Hidden <span id="roi-cta-gap">$4.2M</span>/Year →
+            </a>
           </div>
         </div>
       </div>
-
-      <div class="text-center mt-4">
-        <a id="roi-cta" href="/renewal-audit-call/" class="inline-block bg-v6-copper text-white px-7 py-3 rounded-xl text-base font-semibold hover:bg-v6-copper-600 transition-colors">
-          Find My Hidden <span id="roi-cta-gap">$4.2M</span>/Year →
-        </a>
       </div>
-      <p class="text-xs text-v6-text-muted text-center mt-4 max-w-2xl mx-auto">
-        Renewal volume, contract value, and churn rates are informed by published industry benchmarks where available; some figures remain directional where no reliable industry data exists. The growth-ceiling model illustrates today's renewal book as partway toward the ceiling its current churn implies, so the chart shows the climb and the stall: a simplification, not a prediction. We pressure-test every number against your real HubSpot data in the paid renewal audit.
-      </p>
+      <details class="mt-5 max-w-2xl mx-auto text-center text-xs text-v6-text-muted">
+        <summary class="cursor-pointer font-semibold">How this estimate works</summary>
+        <p class="mt-2">Renewal volume, contract value, and churn rates are informed by published industry benchmarks where available. The growth-ceiling model is directional, not a forecast; a renewal audit replaces these assumptions with your HubSpot data.</p>
+      </details>
     </div>
   </div>
 </section>
@@ -192,10 +387,24 @@
      any .reveal in the document. .anim is the JS-added global ancestor, so it
      stays :global(); .reveal is scoped to this component's elements. Gating the
      hidden state behind .anim keeps content visible if JS never runs. */
-  :global(.anim) .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; will-change: opacity, transform; }
-  :global(.anim) .reveal.in { opacity: 1; transform: none; }
+  :global(.anim) .reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition:
+      opacity 0.6s ease-out,
+      transform 0.6s ease-out;
+    will-change: opacity, transform;
+  }
+  :global(.anim) .reveal.in {
+    opacity: 1;
+    transform: none;
+  }
   @media (prefers-reduced-motion: reduce) {
-    :global(.anim) .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+    :global(.anim) .reveal {
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
+    }
   }
 
   /* ===== "Fly to CTA" number micro-interaction =====
@@ -206,56 +415,158 @@
      roi-cta-land, by contrast, toggles onto the CTA button that DOES exist in the
      template, so it already carries the scope attribute and doesn't need :global(). */
   :global(.roi-flyer) {
-    position: fixed; z-index: 60; pointer-events: none;
-    background: #C47A2A; color: #fff; font-weight: 700; font-size: 1.25rem;
-    padding: 0.5rem 0.9rem; border-radius: 999px; white-space: nowrap;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.25);
-    transition: left 0.8s cubic-bezier(0.4,0,0.2,1), top 0.8s cubic-bezier(0.4,0,0.2,1),
-                transform 0.8s cubic-bezier(0.4,0,0.2,1), opacity 0.8s cubic-bezier(0.4,0,0.2,1);
+    position: fixed;
+    z-index: 60;
+    pointer-events: none;
+    background: #c47a2a;
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.25rem;
+    padding: 0.5rem 0.9rem;
+    border-radius: 999px;
+    white-space: nowrap;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+    transition:
+      left 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+      top 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+      transform 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+      opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
   }
-  @keyframes roi-cta-land { 0% { transform: scale(1); } 45% { transform: scale(1.07); } 100% { transform: scale(1); } }
-  .roi-cta-land { animation: roi-cta-land 0.4s ease-out; }
+  @keyframes roi-cta-land {
+    0% {
+      transform: scale(1);
+    }
+    45% {
+      transform: scale(1.07);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  .roi-cta-land {
+    animation: roi-cta-land 0.4s ease-out;
+  }
   @media (prefers-reduced-motion: reduce) {
-    :global(.roi-flyer) { display: none; }
-    .roi-cta-land { animation: none; }
+    :global(.roi-flyer) {
+      display: none;
+    }
+    .roi-cta-land {
+      animation: none;
+    }
   }
 
   /* ===== ROI range sliders (moved from the page so this component is self-contained) ===== */
-  .roi-range { -webkit-appearance: none; appearance: none; width: 100%; height: 6px; border-radius: 999px; background: #E5E2DA; outline: none; }
-  .roi-range::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 22px; height: 22px; border-radius: 50%; background: #C47A2A; cursor: pointer; border: 3px solid #fff; box-shadow: 0 1px 4px rgba(0,0,0,0.2); }
-  .roi-range::-moz-range-thumb { width: 22px; height: 22px; border-radius: 50%; background: #C47A2A; cursor: pointer; border: 3px solid #fff; box-shadow: 0 1px 4px rgba(0,0,0,0.2); }
+  .roi-range {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 6px;
+    border-radius: 999px;
+    background: #e5e2da;
+    outline: none;
+  }
+  .roi-range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #c47a2a;
+    cursor: pointer;
+    border: 3px solid #fff;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  }
+  .roi-range::-moz-range-thumb {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #c47a2a;
+    cursor: pointer;
+    border: 3px solid #fff;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  }
 
   /* ===== Selectors ===== */
   .roi-select {
-    -webkit-appearance: none; appearance: none; width: 100%;
-    background-color: #fff; border: 1px solid #E5E2DA; border-radius: 0.5rem;
-    padding: 0.6rem 2rem 0.6rem 0.75rem; font-size: 1rem; font-weight: 600;
-    color: #1a2530; cursor: pointer; line-height: 1.3;
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #e5e2da;
+    border-radius: 0.5rem;
+    padding: 0.6rem 2rem 0.6rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1a2530;
+    cursor: pointer;
+    line-height: 1.3;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235a6a78' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
-    background-repeat: no-repeat; background-position: right 0.65rem center; background-size: 0.7rem;
+    background-repeat: no-repeat;
+    background-position: right 0.65rem center;
+    background-size: 0.7rem;
   }
-  .roi-select:focus { outline: none; border-color: #C47A2A; box-shadow: 0 0 0 3px rgba(196,122,42,0.15); }
+  .roi-select:focus {
+    outline: none;
+    border-color: #c47a2a;
+    box-shadow: 0 0 0 3px rgba(196, 122, 42, 0.15);
+  }
 
   /* ===== Industry pills =====
      Unselected pills carry a light copper tint so the whole group reads as the
      branded primary control (distinct from the neutral white selects below);
      the active pill is solid copper. */
   .roi-pill {
-    -webkit-appearance: none; appearance: none; cursor: pointer;
-    border: 1px solid #f0d9b5; background: #fdf0de; color: #8a5518;
-    font-size: 0.8125rem; font-weight: 600; line-height: 1;
-    padding: 0.6rem 1rem; border-radius: 999px; min-height: 44px; display: inline-flex; align-items: center;
-    transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    border: 1px solid #f0d9b5;
+    background: #fdf0de;
+    color: #8a5518;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    line-height: 1;
+    padding: 0.6rem 1rem;
+    border-radius: 999px;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    transition:
+      background-color 0.15s ease,
+      border-color 0.15s ease,
+      color 0.15s ease;
   }
-  .roi-pill:hover { background: #f9e4c4; border-color: #C47A2A; color: #7a4715; }
-  .roi-pill:focus-visible { outline: none; box-shadow: 0 0 0 3px rgba(196,122,42,0.25); }
-  .roi-pill.is-active { background: #C47A2A; border-color: #C47A2A; color: #fff; }
-  .roi-pill.is-active:hover { background: #b06e26; color: #fff; }
+  .roi-pill:hover {
+    background: #f9e4c4;
+    border-color: #c47a2a;
+    color: #7a4715;
+  }
+  .roi-pill:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(196, 122, 42, 0.25);
+  }
+  .roi-pill.is-active {
+    background: #c47a2a;
+    border-color: #c47a2a;
+    color: #fff;
+  }
+  .roi-pill.is-active:hover {
+    background: #b06e26;
+    color: #fff;
+  }
 </style>
 
 <script>
-  const fmt = new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 });
-  const fmtCompact = new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", notation: "compact", maximumFractionDigits: 1 });
+  const fmt = new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+    maximumFractionDigits: 0,
+  });
+  const fmtCompact = new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+    notation: "compact",
+    maximumFractionDigits: 1,
+  });
 
   // Renewals/ACV/slip/recovery sourced from published industry benchmarks where
   // available; unvalidated figures kept as clearly-directional placeholders where the
@@ -263,20 +574,76 @@
   // which numbers are sourced vs. directional, live in
   // docs/research/renewal-benchmarks-by-industry.md.
   const INDUSTRY = {
-    energy:   { renewals: 300, acv: 50000, noun: "service agreements",              acvLabel: "Average contract value",              leak: "multi-year escalations that never get applied",       vig: "energy / utilities",
-                slip: { nothing: 0.20, spreadsheets: 0.16, system: 0.12, custom: 0.08 }, recovery: 0.22 },
-    field:    { renewals: 800, acv: 5000,  noun: "maintenance contracts / AMCs",     acvLabel: "Average contract value",              leak: "high-volume renewals slipping unnoticed",              vig: "field-service",
-                slip: { nothing: 0.72, spreadsheets: 0.70, system: 0.58, custom: 0.51 }, recovery: 0.65 },
-    mfg:      { renewals: 200, acv: 80000, noun: "service contracts",                acvLabel: "Average contract value",              leak: "year-3 multi-year deals HubSpot never creates",        vig: "industrial",
-                slip: { nothing: 0.20, spreadsheets: 0.16, system: 0.12, custom: 0.08 }, recovery: 0.70 },
-    msp:      { renewals: 400, acv: 27000, noun: "managed-services contracts",       acvLabel: "Average contract value (MRR x 12)",   leak: "monthly churn compounding across MRR",                 vig: "managed-services",
-                slip: { nothing: 0.12, spreadsheets: 0.10, system: 0.07, custom: 0.05 }, recovery: 0.45 },
-    iot:      { renewals: 350, acv: 30000, noun: "device + subscription contracts",  acvLabel: "Average contract value",              leak: "hardware-plus-subscription renewals falling through", vig: "IoT",
-                slip: { nothing: 0.25, spreadsheets: 0.18, system: 0.10, custom: 0.03 }, recovery: 0.40 },
-    saas:     { renewals: 325, acv: 28000, noun: "subscriptions",                    acvLabel: "Average contract value",              leak: "expansion revenue left on the table",                  vig: "SaaS",
-                slip: { nothing: 0.15, spreadsheets: 0.11, system: 0.08, custom: 0.05 }, recovery: 0.70 },
-    proptech: { renewals: 300, acv: 20000, noun: "platform contracts",               acvLabel: "Average contract value",              leak: "renewal dates tracked off-CRM",                        vig: "proptech",
-                slip: { nothing: 0.18, spreadsheets: 0.13, system: 0.09, custom: 0.05 }, recovery: 0.50 },
+    energy: {
+      renewals: 300,
+      acv: 50000,
+      noun: "service agreements",
+      acvLabel: "Average contract value",
+      leak: "multi-year escalations that never get applied",
+      vig: "energy / utilities",
+      slip: { nothing: 0.2, spreadsheets: 0.16, system: 0.12, custom: 0.08 },
+      recovery: 0.22,
+    },
+    field: {
+      renewals: 800,
+      acv: 5000,
+      noun: "maintenance contracts / AMCs",
+      acvLabel: "Average contract value",
+      leak: "high-volume renewals slipping unnoticed",
+      vig: "field-service",
+      slip: { nothing: 0.72, spreadsheets: 0.7, system: 0.58, custom: 0.51 },
+      recovery: 0.65,
+    },
+    mfg: {
+      renewals: 200,
+      acv: 80000,
+      noun: "service contracts",
+      acvLabel: "Average contract value",
+      leak: "year-3 multi-year deals HubSpot never creates",
+      vig: "industrial",
+      slip: { nothing: 0.2, spreadsheets: 0.16, system: 0.12, custom: 0.08 },
+      recovery: 0.7,
+    },
+    msp: {
+      renewals: 400,
+      acv: 27000,
+      noun: "managed-services contracts",
+      acvLabel: "Average contract value (MRR x 12)",
+      leak: "monthly churn compounding across MRR",
+      vig: "managed-services",
+      slip: { nothing: 0.12, spreadsheets: 0.1, system: 0.07, custom: 0.05 },
+      recovery: 0.45,
+    },
+    iot: {
+      renewals: 350,
+      acv: 30000,
+      noun: "device + subscription contracts",
+      acvLabel: "Average contract value",
+      leak: "hardware-plus-subscription renewals falling through",
+      vig: "IoT",
+      slip: { nothing: 0.25, spreadsheets: 0.18, system: 0.1, custom: 0.03 },
+      recovery: 0.4,
+    },
+    saas: {
+      renewals: 325,
+      acv: 28000,
+      noun: "subscriptions",
+      acvLabel: "Average contract value",
+      leak: "expansion revenue left on the table",
+      vig: "SaaS",
+      slip: { nothing: 0.15, spreadsheets: 0.11, system: 0.08, custom: 0.05 },
+      recovery: 0.7,
+    },
+    proptech: {
+      renewals: 300,
+      acv: 20000,
+      noun: "platform contracts",
+      acvLabel: "Average contract value",
+      leak: "renewal dates tracked off-CRM",
+      vig: "proptech",
+      slip: { nothing: 0.18, spreadsheets: 0.13, system: 0.09, custom: 0.05 },
+      recovery: 0.5,
+    },
   };
   const DEFAULT_TRACKING = "spreadsheets";
   // Illustrative dramatization, not a sourced figure: how far into its current-churn
@@ -296,10 +663,16 @@
     // and how much of that leak a renewal-operations intervention can recover.
     // The multiplier preserves the vertical evidence base while making the selector
     // meaningfully change the "if fixed" path as well as the current path.
-    nothing:      { vig: "on memory and calendars", recoveryMultiplier: 1.0 },
-    spreadsheets: { vig: "in spreadsheets", recoveryMultiplier: 0.8 },
-    system:       { vig: "in a partial system", recoveryMultiplier: 0.55 },
-    custom:       { vig: "with custom-built workflows", recoveryMultiplier: 0.35, leakAppend: ", and the year-3 cliff when HubSpot loop protection stops creating deals" },
+    nothing: { vig: "on memory and calendars", recoveryMultiplier: 1.0, escalationMiss: 0.5 },
+    spreadsheets: { vig: "in spreadsheets", recoveryMultiplier: 0.8, escalationMiss: 0.4 },
+    system: { vig: "in a partial system", recoveryMultiplier: 0.55, escalationMiss: 0.25 },
+    custom: {
+      vig: "with custom-built workflows",
+      recoveryMultiplier: 0.35,
+      escalationMiss: 0.1,
+      leakAppend:
+        ", and the year-3 cliff when HubSpot loop protection stops creating deals",
+    },
   };
 
   const byId = (id) => document.getElementById(id);
@@ -310,9 +683,17 @@
   const renewalsEl = byId("roi-renewals");
   const acvEl = byId("roi-acv");
   const slipEl = byId("roi-slip");
+  const eligibleEl = byId("roi-eligible");
+  const upliftEl = byId("roi-uplift");
+  const hoursEl = byId("roi-hours");
+  const ownerCostEl = byId("roi-owner-cost");
   const renewalsOut = byId("roi-renewals-out");
   const acvOut = byId("roi-acv-out");
   const slipOut = byId("roi-slip-out");
+  const eligibleOut = byId("roi-eligible-out");
+  const upliftOut = byId("roi-uplift-out");
+  const hoursOut = byId("roi-hours-out");
+  const ownerCostOut = byId("roi-owner-cost-out");
   const renewalsLabel = byId("roi-renewals-label");
   const acvLabel = byId("roi-acv-label");
 
@@ -339,7 +720,11 @@
   // Only wire up if the calculator markup is actually on the page.
   if (industryGroup && renewalsEl && acvEl && slipEl && chart) {
     const SVG_NS = "http://www.w3.org/2000/svg";
-    const X0 = 14, X1 = 376, Y0 = 14, Y1 = 170, YEARS = 5;
+    const X0 = 14,
+      X1 = 676,
+      Y0 = 14,
+      Y1 = 245,
+      YEARS = 5;
 
     const cap = (s) => s.charAt(0).toUpperCase() + s.slice(1);
     const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
@@ -351,7 +736,9 @@
     // mid-market band ($1k..$100k) gets most of the travel while the long tail
     // up to $5M still fits. posToAcv/acvToPos convert position <-> dollars, and
     // niceAcv snaps to readable increments that scale with magnitude.
-    const ACV_MIN = 1000, ACV_MAX = 5000000, ACV_STEPS = 1000;
+    const ACV_MIN = 1000,
+      ACV_MAX = 5000000,
+      ACV_STEPS = 1000;
     const ACV_RATIO = Math.log(ACV_MAX / ACV_MIN);
     const niceAcv = (v) => {
       if (v < 10000) return Math.round(v / 500) * 500;
@@ -359,8 +746,13 @@
       if (v < 1000000) return Math.round(v / 5000) * 5000;
       return Math.round(v / 50000) * 50000;
     };
-    const posToAcv = (pos) => niceAcv(ACV_MIN * Math.exp((pos / ACV_STEPS) * ACV_RATIO));
-    const acvToPos = (acv) => Math.round((Math.log(clamp(acv, ACV_MIN, ACV_MAX) / ACV_MIN) / ACV_RATIO) * ACV_STEPS);
+    const posToAcv = (pos) =>
+      niceAcv(ACV_MIN * Math.exp((pos / ACV_STEPS) * ACV_RATIO));
+    const acvToPos = (acv) =>
+      Math.round(
+        (Math.log(clamp(acv, ACV_MIN, ACV_MAX) / ACV_MIN) / ACV_RATIO) *
+          ACV_STEPS,
+      );
 
     // Static chart furniture: X-axis year ticks only. Gridlines and Y-axis dollar
     // labels depend on the live inputs (the ceiling scale differs by industry and
@@ -369,8 +761,10 @@
       const xl = byId("roi-xlabels");
       for (let i = 0; i <= YEARS; i++) {
         const t = document.createElementNS(SVG_NS, "text");
-        t.setAttribute("x", String(yearX(i))); t.setAttribute("y", String(Y1 + 18));
-        t.setAttribute("fill", "#5a6a78"); t.setAttribute("font-size", "11");
+        t.setAttribute("x", String(yearX(i)));
+        t.setAttribute("y", String(Y1 + 18));
+        t.setAttribute("fill", "#5a6a78");
+        t.setAttribute("font-size", "11");
         t.setAttribute("text-anchor", i === 0 ? "start" : "middle");
         t.textContent = i === 0 ? "Now" : "Yr " + i;
         xl.appendChild(t);
@@ -386,11 +780,11 @@
     // flat from year 0. "Recovered" shares the same starting point and new-business
     // rate, but lowers the effective churn rate by the recoverable share, so it climbs
     // past the stall toward a higher ceiling instead of flattening there.
-    const projectCeilings = (renewals, acv, slipPct, recoveryFrac) => {
+    const projectCeilings = (renewals, acv, slipPct, recoveryFrac, expansionRate) => {
       const slip = slipPct / 100;
       const ceilingCurrentUnits = renewals / START_FRACTION_OF_CEILING;
       const newBusiness = ceilingCurrentUnits * slip;
-      const effectiveSlip = slip * (1 - recoveryFrac);
+      const effectiveSlip = Math.max(0.001, slip * (1 - recoveryFrac) - expansionRate);
       const current = [renewals];
       const recovered = [renewals];
       for (let i = 1; i <= YEARS; i++) {
@@ -401,11 +795,15 @@
         currentBook: current.map((v) => v * acv),
         recoveredBook: recovered.map((v) => v * acv),
         ceilingCurrent: ceilingCurrentUnits * acv,
-        ceilingRecovered: effectiveSlip > 0 ? (newBusiness / effectiveSlip) * acv : ceilingCurrentUnits * acv,
+        ceilingRecovered:
+          effectiveSlip > 0
+            ? (newBusiness / effectiveSlip) * acv
+            : ceilingCurrentUnits * acv,
       };
     };
 
-    const prefersReducedMotion = () => window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const prefersReducedMotion = () =>
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     let hasPlayedIntroDraw = false;
 
     // "Fly to CTA" micro-interaction: a clone of the headline number lifts off the
@@ -418,8 +816,8 @@
       const flyer = document.createElement("div");
       flyer.className = "roi-flyer";
       flyer.textContent = ctaGapOut.textContent;
-      flyer.style.left = (sourceRect.left + sourceRect.width / 2) + "px";
-      flyer.style.top = (sourceRect.top + sourceRect.height / 2) + "px";
+      flyer.style.left = sourceRect.left + sourceRect.width / 2 + "px";
+      flyer.style.top = sourceRect.top + sourceRect.height / 2 + "px";
       flyer.style.transform = "translate(-50%, -50%) scale(1)";
       flyer.style.opacity = "1";
       document.body.appendChild(flyer);
@@ -442,8 +840,8 @@
       // the standard fix, guaranteeing a paint has happened in between.
       requestAnimationFrame(() => {
         requestAnimationFrame(() => {
-          flyer.style.left = (targetRect.left + targetRect.width / 2) + "px";
-          flyer.style.top = (targetRect.top + targetRect.height / 2) + "px";
+          flyer.style.left = targetRect.left + targetRect.width / 2 + "px";
+          flyer.style.top = targetRect.top + targetRect.height / 2 + "px";
           flyer.style.transform = "translate(-50%, -50%) scale(0.35)";
           flyer.style.opacity = "0";
         });
@@ -458,18 +856,22 @@
     // number would fly into the button before the chart has finished revealing itself.
     const scheduleFlyToButton = (introDuration) => {
       const ctaRect = ctaButton.getBoundingClientRect();
-      const ctaAlreadyVisible = ctaRect.top < window.innerHeight && ctaRect.bottom > 0;
+      const ctaAlreadyVisible =
+        ctaRect.top < window.innerHeight && ctaRect.bottom > 0;
       if (ctaAlreadyVisible) {
         setTimeout(flyNumberToButton, introDuration + 700);
         return;
       }
       if (!("IntersectionObserver" in window)) return;
-      const ctaObserver = new IntersectionObserver((entries) => {
-        if (entries[0].isIntersecting) {
-          ctaObserver.disconnect();
-          setTimeout(flyNumberToButton, 400);
-        }
-      }, { threshold: 0.6 });
+      const ctaObserver = new IntersectionObserver(
+        (entries) => {
+          if (entries[0].isIntersecting) {
+            ctaObserver.disconnect();
+            setTimeout(flyNumberToButton, 400);
+          }
+        },
+        { threshold: 0.6 },
+      );
       ctaObserver.observe(ctaButton);
     };
 
@@ -500,7 +902,8 @@
         line.style.strokeDasharray = String(len);
         line.style.strokeDashoffset = String(len);
         void line.getBoundingClientRect(); // force reflow so the "hidden" state registers before animating
-        line.style.transition = "stroke-dashoffset " + duration + "ms cubic-bezier(0.22,1,0.36,1)";
+        line.style.transition =
+          "stroke-dashoffset " + duration + "ms cubic-bezier(0.22,1,0.36,1)";
         line.style.strokeDashoffset = "0";
       });
 
@@ -549,22 +952,35 @@
       for (let k = 0; k <= 4; k++) {
         const y = Y0 + (k * (Y1 - Y0)) / 4;
         const ln = document.createElementNS(SVG_NS, "line");
-        ln.setAttribute("x1", String(X0)); ln.setAttribute("x2", String(X1));
-        ln.setAttribute("y1", String(y)); ln.setAttribute("y2", String(y));
+        ln.setAttribute("x1", String(X0));
+        ln.setAttribute("x2", String(X1));
+        ln.setAttribute("y1", String(y));
+        ln.setAttribute("y2", String(y));
         ln.setAttribute("stroke", k === 4 ? "#cfcabd" : "#E5E2DA");
         ln.setAttribute("stroke-width", k === 4 ? "1.5" : "1");
         grid.appendChild(ln);
 
         const label = document.createElementNS(SVG_NS, "text");
-        label.setAttribute("x", String(X0 - 4)); label.setAttribute("y", String(y - 3));
-        label.setAttribute("fill", "#5a6a78"); label.setAttribute("font-size", "9.5"); label.setAttribute("text-anchor", "start");
+        label.setAttribute("x", String(X0 - 4));
+        label.setAttribute("y", String(y - 3));
+        label.setAttribute("fill", "#5a6a78");
+        label.setAttribute("font-size", "9.5");
+        label.setAttribute("text-anchor", "start");
         // White halo so the label stays legible where a data line crosses right behind it.
-        label.setAttribute("stroke", "#fff"); label.setAttribute("stroke-width", "3"); label.setAttribute("paint-order", "stroke");
+        label.setAttribute("stroke", "#fff");
+        label.setAttribute("stroke-width", "3");
+        label.setAttribute("paint-order", "stroke");
         label.textContent = fmtCompact.format(maxV - (k / 4) * (maxV - minV));
         ylabels.appendChild(label);
       }
 
-      const toPts = (arr) => arr.map((v, i) => yearX(i).toFixed(1) + "," + (Y1 - ((v - minV) / (maxV - minV)) * (Y1 - Y0)).toFixed(1));
+      const toPts = (arr) =>
+        arr.map(
+          (v, i) =>
+            yearX(i).toFixed(1) +
+            "," +
+            (Y1 - ((v - minV) / (maxV - minV)) * (Y1 - Y0)).toFixed(1),
+        );
       const currentPts = toPts(currentBook);
       const recoveredPts = toPts(recoveredBook);
 
@@ -575,13 +991,19 @@
       // between the flat "if nothing changes" line and the rising "if fixed" line.
       areaEl.setAttribute(
         "d",
-        "M " + recoveredPts.join(" L ") + " L " + currentPts.slice().reverse().join(" L ") + " Z"
+        "M " +
+          recoveredPts.join(" L ") +
+          " L " +
+          currentPts.slice().reverse().join(" L ") +
+          " Z",
       );
 
       const endCurrent = currentPts[YEARS].split(",");
       const endRecovered = recoveredPts[YEARS].split(",");
-      dotCurrent.setAttribute("cx", endCurrent[0]); dotCurrent.setAttribute("cy", endCurrent[1]);
-      dotRecovered.setAttribute("cx", endRecovered[0]); dotRecovered.setAttribute("cy", endRecovered[1]);
+      dotCurrent.setAttribute("cx", endCurrent[0]);
+      dotCurrent.setAttribute("cy", endCurrent[1]);
+      dotRecovered.setAttribute("cx", endRecovered[0]);
+      dotRecovered.setAttribute("cy", endRecovered[1]);
 
       // Badge calling out the $ gap directly on the chart, anchored at Year 3 (clear of
       // the year-5 dots) at the vertical midpoint between the two lines there. Shows the
@@ -594,8 +1016,12 @@
       const calloutIdx = 3;
       if (growthLeft > 0) {
         const calloutX = currentPts[calloutIdx].split(",")[0];
-        const calloutCurrentY = parseFloat(currentPts[calloutIdx].split(",")[1]);
-        const calloutRecoveredY = parseFloat(recoveredPts[calloutIdx].split(",")[1]);
+        const calloutCurrentY = parseFloat(
+          currentPts[calloutIdx].split(",")[1],
+        );
+        const calloutRecoveredY = parseFloat(
+          recoveredPts[calloutIdx].split(",")[1],
+        );
         const calloutY = (calloutCurrentY + calloutRecoveredY) / 2;
 
         const text = document.createElementNS(SVG_NS, "text");
@@ -605,11 +1031,13 @@
         text.setAttribute("font-size", "11");
         text.setAttribute("font-weight", "700");
         text.setAttribute("fill", "#ffffff");
-        text.textContent = fmtCompact.format(growthLeft) + "/yr left on the table";
+        text.textContent =
+          fmtCompact.format(growthLeft) + "/yr left on the table";
         gapCalloutGroup.appendChild(text);
 
         const bbox = text.getBBox();
-        const padX = 8, padY = 4;
+        const padX = 8,
+          padY = 4;
         const rect = document.createElementNS(SVG_NS, "rect");
         rect.setAttribute("x", String(bbox.x - padX));
         rect.setAttribute("y", String(bbox.y - padY));
@@ -626,7 +1054,13 @@
     // Industry sets editable renewal-volume and contract-value defaults and labels.
     const applyDefaults = () => {
       const ind = INDUSTRY[getIndustry()];
-      renewalsEl.value = String(clamp(roundTo(ind.renewals, 50), Number(renewalsEl.min), Number(renewalsEl.max)));
+      renewalsEl.value = String(
+        clamp(
+          roundTo(ind.renewals, 50),
+          Number(renewalsEl.min),
+          Number(renewalsEl.max),
+        ),
+      );
       acvEl.value = String(acvToPos(niceAcv(ind.acv))); // acvToPos clamps to $1k..$5M
       renewalsLabel.textContent = cap(ind.noun) + " per year";
       acvLabel.textContent = ind.acvLabel;
@@ -643,7 +1077,11 @@
       if (!vignetteEl) return; // vignette markup is commented out
       const ind = INDUSTRY[getIndustry()];
       vignetteEl.textContent =
-        "Sounds like a " + ind.vig + " ops team tracking renewals " + TRACKING[trackSel.value].vig + ".";
+        "Sounds like a " +
+        ind.vig +
+        " ops team tracking renewals " +
+        TRACKING[trackSel.value].vig +
+        ".";
     };
 
     const updateLeak = () => {
@@ -652,14 +1090,21 @@
       leakEl.textContent = leak + ".";
     };
 
-    const updateReadouts = (renewals, slipPct, recovery) => {
+    const updateReadouts = (renewals, slipPct, recovery, hoursPerRenewal, ownerHourlyCost) => {
       if (extraHoursEl) {
-        const hours = Math.round(renewals * 0.33); // ~20 min per renewal, tunable
-        extraHoursEl.textContent = "~ " + hours.toLocaleString("en-US") + " hrs/year of manual renewal chasing";
+        const hours = Math.round(renewals * hoursPerRenewal);
+        const manualCost = hours * ownerHourlyCost;
+        extraHoursEl.textContent =
+          "~ " +
+          hours.toLocaleString("en-US") +
+          " hrs/year · " + fmtCompact.format(manualCost) + "/year in manual renewal work";
       }
       if (extraRetentionEl) {
         const recoverablePoints = Math.max(1, Math.round(slipPct * recovery));
-        extraRetentionEl.textContent = "~ " + recoverablePoints + " pts of gross retention potentially recoverable";
+        extraRetentionEl.textContent =
+          "~ " +
+          recoverablePoints +
+          " pts of gross retention potentially recoverable";
       }
     };
 
@@ -671,14 +1116,24 @@
       const renewals = Number(renewalsEl.value);
       const acv = posToAcv(Number(acvEl.value));
       const slipPct = Number(slipEl.value);
-      const recovery = ind.recovery * TRACKING[trackSel.value].recoveryMultiplier;
+      const eligiblePct = Number(eligibleEl.value);
+      const upliftPct = Number(upliftEl.value);
+      const hoursPerRenewal = Number(hoursEl.value);
+      const ownerHourlyCost = Number(ownerCostEl.value);
+      const recovery =
+        ind.recovery * TRACKING[trackSel.value].recoveryMultiplier;
+      const escalationRecoveryRate = (eligiblePct / 100) * (upliftPct / 100) * TRACKING[trackSel.value].escalationMiss * recovery;
 
       renewalsOut.textContent = renewals.toLocaleString("en-US");
       acvOut.textContent = fmt.format(acv);
       slipOut.textContent = slipPct + "%";
+      eligibleOut.textContent = eligiblePct + "%";
+      upliftOut.textContent = upliftPct + "%";
+      hoursOut.textContent = hoursPerRenewal + " hrs";
+      ownerCostOut.textContent = fmt.format(ownerHourlyCost);
 
       const { currentBook, recoveredBook, ceilingCurrent, ceilingRecovered } =
-        projectCeilings(renewals, acv, slipPct, recovery);
+        projectCeilings(renewals, acv, slipPct, recovery, escalationRecoveryRate);
 
       // Compact formatting to fit the smaller, consolidated card row (full precision
       // stayed too wide once these went from 2 large cards + 1 below to one tight row).
@@ -691,27 +1146,34 @@
       growthLeftOut.textContent = fmtCompact.format(growthLeft);
       ctaGapOut.textContent = fmtCompact.format(growthLeft);
 
-      updateReadouts(renewals, slipPct, recovery);
+      updateReadouts(renewals, slipPct, recovery, hoursPerRenewal, ownerHourlyCost);
       updateVignette();
       updateLeak();
       drawChart(currentBook, recoveredBook, animate, growthLeft);
     };
 
     const pills = Array.from(industryGroup.querySelectorAll(".roi-pill"));
-    pills.forEach((btn) => btn.addEventListener("click", () => {
-      industryGroup.dataset.value = btn.dataset.value;
-      pills.forEach((b) => {
-        const on = b === btn;
-        b.classList.toggle("is-active", on);
-        b.setAttribute("aria-pressed", on ? "true" : "false");
-      });
-      trackSel.value = DEFAULT_TRACKING;
-      applyDefaults();
+    pills.forEach((btn) =>
+      btn.addEventListener("click", () => {
+        industryGroup.dataset.value = btn.dataset.value;
+        pills.forEach((b) => {
+          const on = b === btn;
+          b.classList.toggle("is-active", on);
+          b.setAttribute("aria-pressed", on ? "true" : "false");
+        });
+        trackSel.value = DEFAULT_TRACKING;
+        applyDefaults();
+        applyTrackingSlip();
+        calc(true);
+      }),
+    );
+    trackSel.addEventListener("change", () => {
       applyTrackingSlip();
       calc(true);
-    }));
-    trackSel.addEventListener("change", () => { applyTrackingSlip(); calc(true); });
-    [renewalsEl, acvEl, slipEl].forEach((el) => el.addEventListener("input", () => calc(false)));
+    });
+    [renewalsEl, acvEl, slipEl, eligibleEl, upliftEl, hoursEl, ownerCostEl].forEach((el) =>
+      el.addEventListener("input", () => calc(false)),
+    );
 
     // Initial cascade so the visitor sees realistic numbers without touching anything.
     // Instant, not animated: this usually runs off-screen before the visitor has
@@ -726,12 +1188,15 @@
     // point (not the page-load defaults), in case they changed something first.
     const section = chart.closest("section");
     if (section && "IntersectionObserver" in window) {
-      const io = new IntersectionObserver((entries) => {
-        if (entries[0].isIntersecting) {
-          calc(true);
-          io.disconnect();
-        }
-      }, { threshold: 0.3 });
+      const io = new IntersectionObserver(
+        (entries) => {
+          if (entries[0].isIntersecting) {
+            calc(true);
+            io.disconnect();
+          }
+        },
+        { threshold: 0.3 },
+      );
       io.observe(section);
     }
   }
