@@ -1,0 +1,109 @@
+---
+// Reusable chart for the research report pages (/research/*).
+//
+// Deliberately a server-rendered inline <svg> with no charting library and no client JS:
+// the data is fixed at build time, and this page's primary audience includes journalists
+// verifying a stat and AI answer engines parsing raw HTML. A raster chart would be invisible
+// to both. Inline SVG is Ctrl-F searchable, prints as vector, scales at 200% zoom, and works
+// with JS disabled. Precedent: RenewalRoiCalculator.astro already hand-builds inline SVG.
+//
+// The data TABLE is the ground truth and renders open by default underneath, not behind a
+// <details>. Hiding the most citation-ready artifact on a credibility asset signals the wrong
+// thing. It is visually de-emphasised so the eye still lands on the chart first.
+interface Bar {
+  label: string;
+  value: number;      // drives bar length
+  display: string;    // what to print at the end of the bar
+  color?: string;
+  lowBase?: boolean;  // renders hatched + flagged, survives greyscale and colourblind viewing
+}
+interface Props {
+  id: string;
+  title: string;
+  bars: Bar[];
+  altText: string;
+  unit?: string;
+  table: { caption: string; headers: string[]; rows: string[][] };
+  note?: string;
+}
+const { id, title, bars, altText, table, note, unit = "" } = Astro.props as Props;
+
+const ROW_H = 34;
+const LABEL_W = 190;
+const BAR_MAX = 320;
+const PAD_T = 10;
+const W = LABEL_W + BAR_MAX + 74;
+const H = PAD_T * 2 + bars.length * ROW_H;
+const max = Math.max(...bars.map((b) => b.value));
+const DEFAULT = "#8A94A6";
+---
+
+<figure id={id} class="report-figure my-8 scroll-mt-24">
+  <figcaption class="text-sm font-bold text-v6-dark mb-3">{title}</figcaption>
+
+  <div class="overflow-x-auto">
+    <svg
+      viewBox={`0 0 ${W} ${H}`}
+      width={W}
+      height={H}
+      role="img"
+      aria-labelledby={`${id}-t ${id}-d`}
+      class="max-w-full h-auto"
+    >
+      <title id={`${id}-t`}>{title}</title>
+      <desc id={`${id}-d`}>{altText}</desc>
+      <defs>
+        <pattern id={`${id}-hatch`} width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+          <rect width="6" height="6" fill="#B9C0CC"></rect>
+          <line x1="0" y1="0" x2="0" y2="6" stroke="#6B7686" stroke-width="3"></line>
+        </pattern>
+      </defs>
+      {bars.map((b, i) => {
+        const y = PAD_T + i * ROW_H;
+        const w = max > 0 ? Math.max(2, (b.value / max) * BAR_MAX) : 2;
+        return (
+          <g>
+            <text x={LABEL_W - 10} y={y + 15} text-anchor="end" font-size="12.5" fill="#3D4654">{b.label}</text>
+            <rect
+              x={LABEL_W} y={y + 3} width={w} height={17} rx="2"
+              fill={b.lowBase ? `url(#${id}-hatch)` : (b.color || DEFAULT)}
+            ></rect>
+            <text x={LABEL_W + w + 8} y={y + 16} font-size="12.5" font-weight="700" fill="#1F2733">
+              {b.display}{unit}
+            </text>
+          </g>
+        );
+      })}
+    </svg>
+  </div>
+
+  {bars.some((b) => b.lowBase) && (
+    <p class="text-xs text-v6-text-muted mt-1.5">
+      Hatched bar = base too small to rank. Reported for completeness, not ranked.
+    </p>
+  )}
+
+  <div class="report-table-wrap overflow-x-auto mt-4">
+    <table class="w-full text-sm border-collapse">
+      <caption class="text-left text-xs text-v6-text-muted pb-2">{table.caption}</caption>
+      <thead>
+        <tr>
+          {table.headers.map((h) => (
+            <th scope="col" class="text-left font-semibold text-v6-dark border-b border-v6-border py-1.5 pr-4 whitespace-nowrap">{h}</th>
+          ))}
+        </tr>
+      </thead>
+      <tbody>
+        {table.rows.map((r) => (
+          <tr>
+            {r.map((c, ci) => (
+              <td class={`py-1.5 pr-4 border-b border-v6-border/60 tabular-nums ${ci === 0 ? "text-v6-dark" : "text-v6-text-muted"}`} set:html={c}></td>
+            ))}
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+
+  {note && <p class="text-xs text-v6-text-muted mt-2 leading-relaxed" set:html={note}></p>}
+</figure>

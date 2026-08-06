@@ -87,6 +87,19 @@ const { role = false } = Astro.props;
 
     <p id="cf-status" role="status" aria-live="polite" class="text-sm leading-relaxed m-0"></p>
   </form>
+
+  <!-- Post-submit thank-you panel: revealed only on a genuine server-confirmed success. -->
+  <div id="cf-success" class="hidden bg-white border border-v6-border rounded-2xl shadow-sm p-6 sm:p-8" role="status">
+    <div class="flex h-14 w-14 items-center justify-center rounded-full bg-v6-teal/15 mb-4">
+      <svg viewBox="0 0 24 24" class="h-8 w-8 text-v6-teal" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>
+    </div>
+    <h3 id="cf-success-title" class="text-xl font-bold text-v6-dark mb-2">Thanks. Your message is in.</h3>
+    <p class="text-v6-text-muted mb-5">We reply within one business day. If your renewal is moving right now, you do not have to wait, grab a time straight away or see the numbers for yourself.</p>
+    <div class="flex flex-col sm:flex-row gap-3">
+      <a href="/renewal-audit-call/" class="inline-flex items-center justify-center bg-v6-copper text-white px-6 py-3 rounded-xl text-base font-semibold hover:bg-v6-copper-600 transition-colors">Book a renewal audit call</a>
+      <a href="/renewal-leakage-tool/" class="inline-flex items-center justify-center border border-v6-border text-v6-dark px-6 py-3 rounded-xl text-base font-semibold hover:border-v6-copper hover:bg-v6-copper-50 transition-colors">See what you are leaking</a>
+    </div>
+  </div>
 </section>
 
 <script is:inline>
@@ -104,6 +117,17 @@ const { role = false } = Astro.props;
     function setStatus(msg, kind) {
       status.textContent = msg;
       status.style.color = kind === "error" ? "#b3462f" : (kind === "ok" ? "#3f7d6f" : "");
+    }
+
+    function showSuccess(firstName) {
+      var panel = document.getElementById("cf-success");
+      var title = document.getElementById("cf-success-title");
+      if (title && firstName) title.textContent = "Thanks, " + firstName + ". Your message is in.";
+      form.classList.add("hidden");
+      if (panel) {
+        panel.classList.remove("hidden");
+        panel.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
     }
 
     function getRecaptchaToken() {
@@ -175,8 +199,9 @@ const { role = false } = Astro.props;
         });
       }).then(function (res) {
         if (res.ok) {
+          var first = ((form.firstname && form.firstname.value) || "").trim();
           form.reset();
-          setStatus("Thanks, we've got your message and will reply within one business day.", "ok");
+          showSuccess(first);
         } else {
           throw new Error("bad status " + res.status);
         }

@@ -1,0 +1,102 @@
+---
+// Reusable newsletter opt-in. Email only, honeypot-guarded, posts to the n8n
+// "SwotBee - Newsletter Subscribe" workflow (Kdqfiknf3UQth5Fn) which creates a Kit
+// subscriber tagged "newsletter" (not enrolled in the magnet nurture). Shows an inline
+// thank-you on genuine server confirmation. One hoisted script wires every instance on
+// the page, so it is safe to render more than once (e.g. footer + a page section).
+//
+// variant: "footer" (dark footer band) | "onColor" (white text on a colored band) |
+//          "light" (dark text on a light background).
+const { variant = "light" } = Astro.props;
+const WEBHOOK = "https://auto.zippylens.com/webhook/newsletter-subscribe";
+
+const S = {
+  footer: {
+    form: "flex w-full max-w-md gap-2",
+    input: "min-w-0 flex-1 px-3 py-2 rounded-lg bg-v6-blue-900 border border-v6-blue-700 text-white text-sm placeholder:text-v6-blue-300 focus:ring-2 focus:ring-v6-copper focus:outline-none",
+    button: "shrink-0 bg-v6-copper text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-v6-copper-600 transition-colors disabled:opacity-60",
+    helper: "text-xs text-v6-blue-300 mt-2",
+    error: "text-xs text-red-300 mt-2",
+    success: "text-sm text-white mt-1",
+  },
+  onColor: {
+    form: "flex flex-col sm:flex-row gap-3 max-w-md mx-auto",
+    input: "flex-1 px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder:text-v6-blue-200 focus:ring-2 focus:ring-v6-copper focus:outline-none text-sm",
+    button: "bg-v6-copper text-white px-6 py-3 rounded-xl text-sm font-semibold hover:bg-v6-copper-600 transition-colors disabled:opacity-60",
+    helper: "text-xs text-white/70 mt-3 text-center sm:text-left",
+    error: "text-sm text-red-200 mt-3 text-center",
+    success: "text-white mt-1 text-center",
+  },
+  light: {
+    form: "flex flex-col sm:flex-row gap-3 max-w-md mx-auto",
+    input: "flex-1 px-4 py-3 rounded-xl bg-white border border-v6-border text-v6-dark placeholder:text-v6-text-muted focus:ring-2 focus:ring-v6-copper focus:outline-none text-sm",
+    button: "bg-v6-copper text-white px-6 py-3 rounded-xl text-sm font-semibold hover:bg-v6-copper-600 transition-colors disabled:opacity-60",
+    helper: "text-xs text-v6-text-muted mt-3 text-center sm:text-left",
+    error: "text-sm text-red-600 mt-3 text-center",
+    success: "text-v6-dark mt-1 text-center",
+  },
+}[variant] ?? {};
+---
+
+<div data-newsletter>
+  <form data-newsletter-form data-webhook={WEBHOOK} class={S.form} novalidate>
+    <!-- Honeypot: off-screen, hidden from people; bots fill it and get dropped client-side. -->
+    <div style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;" aria-hidden="true">
+      <label>Company website<input type="text" name="company_website" tabindex="-1" autocomplete="off" /></label>
+    </div>
+    <label for={`nl-email-${variant}`} class="sr-only">Email address</label>
+    <input id={`nl-email-${variant}`} name="email" type="email" required autocomplete="email" placeholder="Your email address" class={S.input} />
+    <button type="submit" class={S.button}>Subscribe</button>
+    <p class={`${S.helper} basis-full`}>One short email when there is something worth your time. Unsubscribe anytime.</p>
+  </form>
+  <p data-newsletter-error role="alert" class={`${S.error} hidden`}></p>
+  <div data-newsletter-success role="status" class={`${S.success} hidden`}>
+    <span class="font-semibold">You are on the list.</span> Thanks for subscribing. We only send something when it is genuinely useful.
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll("[data-newsletter-form]").forEach(function (form) {
+    var wrap = form.closest("[data-newsletter]");
+    var webhook = form.getAttribute("data-webhook");
+    var successEl = wrap ? wrap.querySelector("[data-newsletter-success]") : null;
+    var errorEl = wrap ? wrap.querySelector("[data-newsletter-error]") : null;
+    var btn = form.querySelector('button[type="submit"]');
+
+    function showSuccess() {
+      form.classList.add("hidden");
+      if (successEl) successEl.classList.remove("hidden");
+    }
+    function showError(msg) {
+      if (!errorEl) return;
+      errorEl.textContent = msg;
+      errorEl.classList.remove("hidden");
+    }
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      if (errorEl) errorEl.classList.add("hidden");
+      var hp = form.querySelector('[name="company_website"]');
+      var emailEl = form.querySelector('[name="email"]');
+      var email = ((emailEl && emailEl.value) || "").trim();
+      // Honeypot filled -> a bot. Pretend success, send nothing.
+      if (hp && hp.value) { showSuccess(); return; }
+      if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) { showError("Please enter a valid email address."); return; }
+      var original = btn ? btn.textContent : "";
+      if (btn) { btn.disabled = true; btn.textContent = "Subscribing..."; }
+      fetch(webhook, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: email, company_website: "" }),
+      })
+        .then(function (res) {
+          if (!res.ok) throw new Error("bad status " + res.status);
+          var g = window.gtag;
+          if (g) g("event", "newsletter_subscribe");
+          showSuccess();
+        })
+        .catch(function () { showError("That did not go through. Please try again, or email us at info@swotbee.com."); })
+        .finally(function () { if (btn) { btn.disabled = false; btn.textContent = original; } });
+    });
+  });
+</script>

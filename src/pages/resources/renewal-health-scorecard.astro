@@ -38,7 +38,7 @@ import MagnetObjections from '../../components/astro/MagnetObjections.astro';
   <ClientLogoStrip caption="Trusted by revenue and operations teams at" />
 
   <section class="bg-white px-4 sm:px-6 lg:px-8 pb-16 pt-8">
-    <div class="max-w-xl mx-auto bg-v6-bg border border-v6-border rounded-2xl p-8">
+    <div class="max-w-xl mx-auto bg-v6-bg border border-v6-border rounded-2xl p-5 sm:p-8">
       <form id="scorecard-form" class="flex flex-col gap-4" novalidate>
         <input type="hidden" name="funnel_stage_entry" value="scorecard" />
         <input type="hidden" name="page_variant" value="v1-scorecard" />
@@ -191,6 +191,7 @@ import MagnetObjections from '../../components/astro/MagnetObjections.astro';
         form.classList.add("hidden");
         success?.classList.remove("hidden");
         gaEvent("form_submit", { form_name: "renewal_health_scorecard" });
+        window.location.assign("/thank-you/scorecard/");
       } catch (err) {
         if (errorMsg) {
           errorMsg.textContent =

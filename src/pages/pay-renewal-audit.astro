@@ -2,18 +2,21 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Navbar from "../components/astro/Navbar.astro";
 import Footer from "../components/astro/Footer.astro";
-// Payment destination for the $500 renewal audit, sent directly by the founder after a
+// Payment destination for the $600 renewal audit, sent directly by the founder after a
 // qualified discovery call (per marketing/gtm/pipeline-build/25-renewal-audit-funnel-launch-package.md:
 // "payment is taken manually on the discovery call" until an on-site checkout exists).
 // Not a public funnel step, noindexed, nothing links here publicly, only a direct link
-// sent post-call. Wraps the Wise payment link (wise.com/pay/r/w3zCdIbg5WRoPAg) with the
-// scope/risk-reversal framing so the payer isn't clicking out to a bare payment form with
-// no context.
-const WISE_PAY_LINK = "https://wise.com/pay/r/w3zCdIbg5WRoPAg";
+// sent post-call. Wraps the Wise payment link with the scope/risk-reversal framing so the
+// payer isn't clicking out to a bare payment form with no context.
+// The link amount is fixed on Wise's side and is NOT derived from this page, so the two can
+// silently drift. They did: the fee went to $600 on 2026-08-06 while the link still charged
+// $500. If the displayed price below ever changes, reissue the Wise link and update this
+// constant in the same commit. See docs/AUDIT-FEE-PRICE-REGISTER.md item E1.
+const WISE_PAY_LINK = "https://wise.com/pay/r/NDCtiNKDa0GGvqA";
 ---
 <BaseLayout
   title="Pay for Your Renewal Audit"
-  description="Complete payment for your $500 renewal audit, credited in full toward any build."
+  description="Complete payment for your $600 renewal audit, credited in full toward any build."
   robots="noindex, follow"
 >
   <Navbar />
@@ -23,7 +26,7 @@ const WISE_PAY_LINK = "https://wise.com/pay/r/w3zCdIbg5WRoPAg";
       <span class="bg-v6-teal-50 text-v6-teal text-xs font-semibold px-3 py-1 rounded-full inline-block mb-6">Renewal Audit</span>
       <h1 class="text-3xl sm:text-4xl font-bold text-v6-dark mb-4">Complete Your Audit Payment</h1>
       <p class="text-base sm:text-lg text-v6-text-muted max-w-xl mx-auto leading-relaxed">
-        Following up from your call. Here's the $500 for the renewal audit we discussed, credited in full toward any build if you move forward.
+        Following up from your call. Here's the $600 for the renewal audit we discussed, credited in full toward any build if you move forward.
       </p>
     </div>
   </section>
@@ -31,7 +34,7 @@ const WISE_PAY_LINK = "https://wise.com/pay/r/w3zCdIbg5WRoPAg";
   <section class="max-w-md mx-auto px-4 sm:px-6 lg:px-8 pb-6">
     <div class="bg-white border border-v6-border rounded-2xl p-8 text-center shadow-sm">
       <p class="text-sm font-semibold text-v6-text-muted uppercase tracking-wide mb-2">Amount due</p>
-      <p class="text-4xl font-bold text-v6-dark mb-6">$500 USD</p>
+      <p class="text-4xl font-bold text-v6-dark mb-6">$600 USD</p>
       <a
         href={WISE_PAY_LINK}
         target="_blank"
@@ -53,7 +56,7 @@ const WISE_PAY_LINK = "https://wise.com/pay/r/w3zCdIbg5WRoPAg";
       </div>
       <div class="bg-v6-bg rounded-xl p-4">
         <div class="font-bold text-v6-teal text-sm mb-1">Credited to your build</div>
-        <div class="text-sm text-v6-text-muted">If you move forward with a build afterward, the full $500 comes off the top. If not, you keep the findings either way.</div>
+        <div class="text-sm text-v6-text-muted">If you move forward with a build afterward, the full $600 comes off the top. If not, you keep the findings either way.</div>
       </div>
     </div>
   </section>

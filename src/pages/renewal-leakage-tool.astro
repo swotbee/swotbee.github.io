@@ -1,0 +1,31 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/astro/Navbar.astro';
+import Footer from '../components/astro/Footer.astro';
+import RenewalRoiCalculator from '../components/astro/RenewalRoiCalculator.astro';
+// #8: leakage magnet elevated to a LIVE tool. Gated: reached via the tracked magnet-email link
+// (/webhook/dl?magnet=leakage&t=<email>, which logs engagement then redirects here). Reuses the
+// ROI/leakage calculator, which already carries the audit CTA + "verified in the paid audit"
+// framing. noindex, follow (funnel asset, not for search).
+---
+<BaseLayout
+  title="Your Renewal Leakage, Live"
+  description="See what your renewal operation is likely leaking, adjust the inputs, and get the verified number from a renewal audit."
+  robots="noindex, follow"
+>
+  <Navbar />
+
+  <section class="bg-gradient-to-b from-v6-bg to-white px-4 sm:px-6 lg:px-8 pt-14 pb-2">
+    <div class="max-w-2xl mx-auto text-center">
+      <span class="text-xs font-semibold uppercase tracking-[0.2em] text-v6-copper">Your leakage estimate</span>
+      <h1 class="text-3xl sm:text-4xl font-bold text-v6-dark mt-3 mb-3 text-balance">See what your renewals are quietly leaking</h1>
+      <p class="text-base text-v6-text-muted max-w-xl mx-auto leading-relaxed">
+        Set your situation below and watch the number move. It is a directional estimate: the renewal audit verifies it against your real HubSpot data, deal by deal.
+      </p>
+    </div>
+  </section>
+
+  <RenewalRoiCalculator />
+
+  <Footer />
+</BaseLayout>

@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import Navbar from "../components/astro/Navbar.astro";
 import Footer from "../components/astro/Footer.astro";
 import StructuredData from "../components/astro/StructuredData.astro";
+import NewsletterForm from "../components/astro/NewsletterForm.astro";
 import { Picture } from 'astro:assets';
 
 interface BlogPost {
@@ -172,17 +173,8 @@ const MAX_VISIBLE_TAGS = 3;
   <section class="bg-gradient-to-br from-v6-blue to-v6-blue-600 py-14 px-4 sm:px-6 lg:px-8">
     <div class="max-w-2xl mx-auto text-center">
       <h2 class="text-2xl sm:text-3xl font-bold text-white mb-3">Stay in the Loop</h2>
-      <p class="text-v6-blue-100 text-base mb-6">HubSpot tips, RevOps strategies, and growth insights — delivered to your inbox.</p>
-      <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-        <input
-          type="email"
-          placeholder="Your email address"
-          class="flex-1 px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder:text-v6-blue-200 focus:ring-2 focus:ring-v6-copper focus:outline-none text-sm"
-        />
-        <button type="submit" class="bg-v6-copper text-white px-6 py-3 rounded-xl text-sm font-semibold hover:bg-v6-copper-600 transition-colors">
-          Subscribe
-        </button>
-      </form>
+      <p class="text-v6-blue-100 text-base mb-6">HubSpot tips, RevOps strategies, and growth insights, delivered to your inbox.</p>
+      <NewsletterForm variant="onColor" />
     </div>
   </section>
 
