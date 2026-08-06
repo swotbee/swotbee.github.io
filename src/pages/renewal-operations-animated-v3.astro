@@ -26,6 +26,7 @@ import Navbar from "../components/astro/Navbar.astro";
 import Footer from "../components/astro/Footer.astro";
 import StructuredData from "../components/astro/StructuredData.astro";
 import RenewalRoiCalculator from "../components/astro/RenewalRoiCalculator.astro";
+import RenewalDemoYoutube from "../components/react/RenewalDemoYoutube.jsx";
 
 const title =
   "Renewal Operations for HubSpot | Stop Losing Revenue To Missed Renewals";
@@ -254,16 +255,18 @@ const testimonials = [
   {
     quote:
       "Working with Siva has been transformative for our team. He quickly grasped our complex workflows and immediately began identifying optimization opportunities. What sets him apart is how he functions as a true extension of our team, handling both technical implementation and strategic guidance. This partnership has freed our internal team to focus on high-level initiatives while maintaining confidence that execution will be exceptional.",
+    name: "Samantha Ross",
     initials: "RO",
-    role: "Revenue Operations Lead",
-    context: "Mid-Market B2B",
+    context: "Postgrad",
+    image: "/assets/testimonials/Samantha_Ross.webp",
   },
   {
     quote:
       "Sharmi helped our team do the foundational work that launched our ABM strategy. She took unstructured goals and, by applying her customer-focused insight and technical know-how, turned them into specific solutions that optimized our entire enrichment project in HubSpot. She's fast, dependable, and brings a curiosity mindset that makes her work exceed expectations.",
+    name: "Shreyas Mecheri",
     initials: "MO",
-    role: "Marketing Operations Lead",
-    context: "B2B SaaS",
+    context: "Jirav",
+    image: "/assets/testimonials/Shreyas_Mecheri.jpg",
   },
 ];
 
@@ -389,8 +392,12 @@ const toneMap: Record<string, string> = {
   <Navbar />
 
   <!-- ============ HERO ============ -->
-  <section class="relative overflow-hidden bg-gradient-to-b from-v6-bg to-white px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20 pb-12 sm:pb-16">
-    <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-10 lg:gap-12 items-center relative">
+  <section
+    class="relative overflow-hidden bg-gradient-to-b from-v6-bg to-white px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20 pb-12 sm:pb-16"
+  >
+    <div
+      class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-10 lg:gap-12 items-center relative"
+    >
       <!-- Left: copy -->
       <div class="text-center lg:text-left">
         <!-- <div class="reveal flex flex-wrap justify-center lg:justify-start gap-3 mb-6">
@@ -398,7 +405,7 @@ const toneMap: Record<string, string> = {
           <span class="bg-v6-copper-50 text-v6-copper text-xs font-semibold px-3 py-1 rounded-full">Renewal Operations</span>
         </div> -->
         <p
-          class="reveal text-sm font-semibold uppercase tracking-[0.2em] text-v6-copper mb-3"
+          class="reveal text-sm font-semibold tracking-[0.1em] text-v6-copper mb-3"
         >
           For RevOps Teams Drowning In Renewal Admin
         </p>
@@ -417,7 +424,7 @@ const toneMap: Record<string, string> = {
         <p
           class="reveal text-base sm:text-lg text-v6-text-muted max-w-xl mx-auto lg:mx-0 mb-5 leading-relaxed"
         >
-          Your next growth bottleneck may not be pipeline generation. It may be
+          Your next growth bottleneck is not pipeline generation. It is
           everything that happens after Closed Won.
         </p>
         <p
@@ -431,7 +438,7 @@ const toneMap: Record<string, string> = {
           class="reveal flex flex-col sm:flex-row gap-3 justify-center lg:justify-start mt-8 mb-4 items-center"
         >
           <div class="cta-group relative inline-block">
-            <!-- Demo asset is live (public/demo/renewal-demo.mp4); CTA now points at the on-page #demo section. -->
+            <!-- CTA points at the on-page YouTube demo section. -->
             <a
               href="#demo"
               class="bg-v6-copper text-white px-8 py-3.5 rounded-xl text-base font-semibold hover:bg-v6-copper-600 transition-colors text-center block"
@@ -605,36 +612,29 @@ const toneMap: Record<string, string> = {
       <h2
         class="reveal text-2xl sm:text-3xl lg:text-4xl font-bold text-v6-dark mb-3 text-balance"
       >
-        Watch A Renewal Build Itself. Two Minutes.
+        From Missed Renewals to a Command Center — Watch every renewal fall into
+        place.
       </h2>
       <p
         class="reveal text-base sm:text-lg text-v6-text-muted mb-8 max-w-2xl mx-auto leading-relaxed"
       >
-        A deal closes won, and its renewal creates itself in a separate
-        pipeline, line items carried over exactly with the uplift already
-        applied. No retyping, no missed dates. This is the whole idea in one
-        short walkthrough.
+        Watch Swotbee turn a closed-won deal into a renewal process that runs
+        itself: the right line items, uplift, timing, ownership, and
+        follow-up—without spreadsheet chasing or renewal gaps.
       </p>
       <div
         class="reveal rounded-2xl border border-v6-border bg-v6-bg shadow-xl overflow-hidden max-w-3xl mx-auto"
       >
-        <video
-          id="renewal-demo-video"
-          class="w-full h-auto block bg-v6-dark"
-          controls
-          preload="none"
-          playsinline
-          poster="/demo/renewal-demo-poster.jpg"
-        >
-          <source src="/demo/renewal-demo.mp4" type="video/mp4" />
-          Your browser does not support embedded video. <a
-            href="/demo/renewal-demo.mp4"
-            class="text-v6-copper underline">Download the walkthrough</a
-          > instead.
-        </video>
+        <RenewalDemoYoutube client:visible />
       </div>
-      <div class="reveal flex flex-col sm:flex-row gap-3 justify-center items-center mt-8">
-        <a href="/renewal-audit-call/" data-ga-cta="demo_page_book_review" class="bg-v6-copper text-white px-8 py-3.5 rounded-xl text-base font-semibold hover:bg-v6-copper-600 transition-colors text-center">
+      <div
+        class="reveal flex flex-col sm:flex-row gap-3 justify-center items-center mt-8"
+      >
+        <a
+          href="/renewal-audit-call/"
+          data-ga-cta="demo_page_book_review"
+          class="bg-v6-copper text-white px-8 py-3.5 rounded-xl text-base font-semibold hover:bg-v6-copper-600 transition-colors text-center"
+        >
           Book Your Renewal Audit →
         </a>
         <a
@@ -735,8 +735,10 @@ const toneMap: Record<string, string> = {
                 <dt class="font-semibold text-v6-dark">
                   <span
                     class="absolute top-0.5 left-0 flex size-5 items-center justify-center rounded-full bg-v6-copper-50 text-sm font-bold text-v6-copper"
-                    aria-hidden="true">?</span
+                    aria-hidden="true"
                   >
+                    ?
+                  </span>
                   {d.simple}
                 </dt>
                 <dd class="mt-2 leading-relaxed">{d.decision}</dd>
@@ -865,7 +867,10 @@ const toneMap: Record<string, string> = {
   <RenewalRoiCalculator />
 
   <!-- ============ SOLUTION ============ -->
-  <section id="how-it-works" class="scroll-mt-24 bg-v6-bg py-14 sm:py-18 px-4 sm:px-6 lg:px-8">
+  <section
+    id="how-it-works"
+    class="scroll-mt-24 bg-v6-bg py-14 sm:py-18 px-4 sm:px-6 lg:px-8"
+  >
     <div class="max-w-4xl mx-auto">
       <p
         class="reveal text-sm font-semibold uppercase tracking-[0.2em] text-v6-copper mb-3 text-center"
@@ -879,8 +884,8 @@ const toneMap: Record<string, string> = {
       </h2>
       <p class="reveal text-v6-text-muted text-center mb-10 max-w-2xl mx-auto">
         We map the rules behind your renewals, expansion revenue, and
-        forecasting—then build them into HubSpot so they run consistently,
-        every time.
+        forecasting—then build them into HubSpot so they run consistently, every
+        time.
       </p>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -1011,7 +1016,9 @@ const toneMap: Record<string, string> = {
             <div
               class={`anim-card bg-v6-bg rounded-xl p-6 border border-v6-border border-t-4 ${c.color} hover:shadow-lg transition-shadow`}
             >
-              <div class="cap-icon inline-block text-2xl leading-none mb-3">{c.icon}</div>
+              <div class="cap-icon inline-block text-2xl leading-none mb-3">
+                {c.icon}
+              </div>
               <h3 class="text-base font-semibold text-v6-dark mb-4 leading-snug">
                 {c.title}
               </h3>
@@ -1047,18 +1054,18 @@ const toneMap: Record<string, string> = {
         Already Built Your Own Renewal Workflows?
       </h2>
       <p
-        class="reveal text-base sm:text-lg text-v6-text-muted text-center mb-10 max-w-2xl mx-auto leading-relaxed"
+        class="reveal text-base sm:text-lg text-v6-text-muted  text-center text-balance mb-10 max-w-2xl mx-auto leading-relaxed"
       >
         Most ops teams we meet have built something: workflows that clone deals,
-        spreadsheets that track dates. It works, until year 3, when HubSpot's
+        spreadsheets that track dates. <br />  <br />It works, until year 3, when HubSpot's
         loop protection silently stops creating renewal deals, or a price uplift
-        ships without the escalation applied. Then it becomes a firefighting
+        ships without the escalation applied. <br/> <br />Then it becomes a firefighting
         sprint instead of a predictable process.
       </p>
       <div
         class="reveal bg-white rounded-2xl border border-v6-border p-6 sm:p-8 max-w-3xl mx-auto"
       >
-        <p class="text-base text-v6-dark leading-relaxed mb-5">
+        <p class="text-lg font-semibold text-v6-copper-700 leading-relaxed mb-5">
           We do not replace what you built. We add the parts DIY cannot reach:
         </p>
         <ul class="space-y-3 mb-6">
@@ -1079,7 +1086,7 @@ const toneMap: Record<string, string> = {
             >
           </li>
         </ul>
-        <div
+        <!-- <div
           class="flex flex-col sm:flex-row sm:items-center gap-4 pt-4 border-t border-v6-border"
         >
           <p class="text-sm font-semibold text-v6-dark flex-grow">
@@ -1090,7 +1097,7 @@ const toneMap: Record<string, string> = {
             class="text-v6-copper font-semibold text-base hover:underline whitespace-nowrap"
             >See how we layer on top →</a
           >
-        </div>
+        </div> -->
       </div>
     </div>
   </section>
@@ -1109,7 +1116,6 @@ const toneMap: Record<string, string> = {
         Results In The First Month, Not The Next Fiscal Year.
       </h2>
       <p class="reveal text-v6-text-muted text-center mb-10 max-w-lg mx-auto">
-        Move the sliders to your numbers. This is a directional estimate of the renewal revenue at risk each year when the process leaks. We pressure-test these numbers against your real HubSpot data in the paid renewal audit ($500, credited to your build).
       </p>
       <div class="stagger grid grid-cols-1 md:grid-cols-3 gap-6">
         {
@@ -1191,11 +1197,22 @@ const toneMap: Record<string, string> = {
                 {t.quote}
               </blockquote>
               <div class="flex items-center gap-3 pt-4 border-t border-v6-border">
-                <div class="w-10 h-10 rounded-full bg-v6-teal-100 flex items-center justify-center text-v6-teal font-bold text-sm flex-shrink-0">
-                  {t.initials}
-                </div>
+                {t.image ? (
+                  <img
+                    src={t.image}
+                    alt={t.name}
+                    class="w-10 h-10 rounded-full object-cover flex-shrink-0"
+                    loading="lazy"
+                  />
+                ) : (
+                  <div class="w-10 h-10 rounded-full bg-v6-teal-100 flex items-center justify-center text-v6-teal font-bold text-sm flex-shrink-0">
+                    {t.initials}
+                  </div>
+                )}
                 <div>
-                  <p class="text-sm font-semibold text-v6-dark">{t.role}</p>
+                  <p class="text-sm font-semibold text-v6-dark">
+                    {t.name ?? t.role}
+                  </p>
                   <p class="text-xs text-v6-text-muted">{t.context}</p>
                 </div>
               </div>
@@ -1289,12 +1306,19 @@ const toneMap: Record<string, string> = {
   <!-- ============ AUDIT CHECKLIST ============ -->
   <section class="bg-white py-14 sm:py-18 px-4 sm:px-6 lg:px-8">
     <div class="max-w-3xl mx-auto">
-      <p class="reveal text-sm font-semibold uppercase tracking-[0.2em] text-v6-copper mb-3 text-center">Your Renewal Audit</p>
-      <h2 class="reveal text-2xl sm:text-3xl lg:text-4xl font-bold text-v6-dark mb-3 text-center text-balance">
+      <p
+        class="reveal text-sm font-semibold uppercase tracking-[0.2em] text-v6-copper mb-3 text-center"
+      >
+        Your Renewal Audit
+      </p>
+      <h2
+        class="reveal text-2xl sm:text-3xl lg:text-4xl font-bold text-v6-dark mb-3 text-center text-balance"
+      >
         See Your Renewal Revenue Leakage In 30 Minutes
       </h2>
       <p class="reveal text-v6-text-muted text-center mb-10 max-w-lg mx-auto">
-        It starts with a free 30-minute call. Your renewal audit covers these six areas:
+        It starts with a free 30-minute call. Your renewal audit covers these
+        six areas:
       </p>
       <div class="stagger grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
         {
@@ -1315,7 +1339,11 @@ const toneMap: Record<string, string> = {
         and what to fix first.
       </p>
       <div class="reveal flex flex-col sm:flex-row gap-3 justify-center mt-8">
-        <a href="/renewal-audit-call/" data-ga-cta="v3_stake_book_review" class="bg-v6-copper text-white px-7 py-3 rounded-xl text-base font-semibold hover:bg-v6-copper-600 transition-colors text-center">
+        <a
+          href="/renewal-audit-call/"
+          data-ga-cta="v3_stake_book_review"
+          class="bg-v6-copper text-white px-7 py-3 rounded-xl text-base font-semibold hover:bg-v6-copper-600 transition-colors text-center"
+        >
           Book Your Renewal Audit (starts with a free 30-min call) →
         </a>
         <a
@@ -1375,7 +1403,9 @@ const toneMap: Record<string, string> = {
         Let's Find Out.
       </h2>
       <p class="text-v6-copper-50 text-base sm:text-lg mb-4">
-        Book your renewal audit. It starts with a free 30-minute call, no commitment, no sales pitch, just an honest look at the revenue hiding in your renewal process.
+        Book your renewal audit. It starts with a free 30-minute call, no
+        commitment, no sales pitch, just an honest look at the revenue hiding in
+        your renewal process.
       </p>
       <p class="text-white/80 text-base leading-relaxed mb-8 max-w-xl mx-auto">
         If you decide to work with us: no long-term contracts. We earn your
@@ -1383,7 +1413,11 @@ const toneMap: Record<string, string> = {
         plan at no extra cost if the direction doesn't feel right.
       </p>
       <div class="cta-group cta-group-light relative inline-block">
-        <a href="/renewal-audit-call/" data-ga-cta="v3_final_book_review" class="bg-white text-v6-copper px-8 py-3.5 rounded-xl text-base font-semibold hover:bg-gray-50 transition-colors inline-block">
+        <a
+          href="/renewal-audit-call/"
+          data-ga-cta="v3_final_book_review"
+          class="bg-white text-v6-copper px-8 py-3.5 rounded-xl text-base font-semibold hover:bg-gray-50 transition-colors inline-block"
+        >
           Book Your Renewal Audit →
         </a>
         <div
@@ -1440,39 +1474,95 @@ const toneMap: Record<string, string> = {
     opacity: 1;
     transform: none;
   }
-  h1.stagger.in > *:nth-child(2) { transition-delay: 0.06s; }
-  h1.stagger.in > *:nth-child(3) { transition-delay: 0.12s; }
-  h1.stagger.in > *:nth-child(4) { transition-delay: 0.18s; }
+  h1.stagger.in > *:nth-child(2) {
+    transition-delay: 0.06s;
+  }
+  h1.stagger.in > *:nth-child(3) {
+    transition-delay: 0.12s;
+  }
+  h1.stagger.in > *:nth-child(4) {
+    transition-delay: 0.18s;
+  }
   .anim .flow-build > * {
     transform: translateY(8px);
   }
   .anim .flow-build.in > * {
     transform: none;
   }
-  .anim .flow-build.in > *:nth-child(2) { transition-delay: 0.08s; }
-  .anim .flow-build.in > *:nth-child(3) { transition-delay: 0.16s; }
-  .anim .flow-build.in > *:nth-child(4) { transition-delay: 0.24s; }
-  .anim .flow-build.in > *:nth-child(5) { transition-delay: 0.32s; }
-  .anim .flow-build.in > *:nth-child(6) { transition-delay: 0.4s; }
-  .anim .flow-build.in > *:nth-child(7) { transition-delay: 0.48s; }
+  .anim .flow-build.in > *:nth-child(2) {
+    transition-delay: 0.08s;
+  }
+  .anim .flow-build.in > *:nth-child(3) {
+    transition-delay: 0.16s;
+  }
+  .anim .flow-build.in > *:nth-child(4) {
+    transition-delay: 0.24s;
+  }
+  .anim .flow-build.in > *:nth-child(5) {
+    transition-delay: 0.32s;
+  }
+  .anim .flow-build.in > *:nth-child(6) {
+    transition-delay: 0.4s;
+  }
+  .anim .flow-build.in > *:nth-child(7) {
+    transition-delay: 0.48s;
+  }
 
-  .anim-card { transition: transform 0.25s ease-out, box-shadow 0.25s ease-out; }
-  .anim-card:hover { transform: translateY(-4px); }
-  .anim-emoji { transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); }
-  .anim-card:hover .anim-emoji { transform: translateY(-2px) scale(1.12) rotate(-4deg); }
+  .anim-card {
+    transition:
+      transform 0.25s ease-out,
+      box-shadow 0.25s ease-out;
+  }
+  .anim-card:hover {
+    transform: translateY(-4px);
+  }
+  .anim-emoji {
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  .anim-card:hover .anim-emoji {
+    transform: translateY(-2px) scale(1.12) rotate(-4deg);
+  }
 
   /* Capability card icons: a plain inline-block (not a fixed-size flex box like
      .anim-emoji elsewhere), so it must transform-scale from its own glyph
      center, not translate/rotate, or the hover motion visibly shifts it. */
-  .cap-icon { display: inline-block; transform-origin: center; transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); }
-  .anim-card:hover .cap-icon { transform: scale(1.22); }
+  .cap-icon {
+    display: inline-block;
+    transform-origin: center;
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  .anim-card:hover .cap-icon {
+    transform: scale(1.22);
+  }
 
   /* Curiosity speech bubble: hidden until the idle cue reveals it. */
-  .stake-bubble { opacity: 0; transform: translate(-50%, 8px); transition: opacity 0.35s ease-out, transform 0.35s ease-out; pointer-events: none; }
-  #stake-cta.cue .stake-bubble { opacity: 1; transform: translate(-50%, 0); }
+  .stake-bubble {
+    opacity: 0;
+    transform: translate(-50%, 8px);
+    transition:
+      opacity 0.35s ease-out,
+      transform 0.35s ease-out;
+    pointer-events: none;
+  }
+  #stake-cta.cue .stake-bubble {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
 
-  .bolt-pulse { animation: boltPulse 2.2s ease-in-out infinite; }
-  @keyframes boltPulse { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.25); opacity: 0.65; } }
+  .bolt-pulse {
+    animation: boltPulse 2.2s ease-in-out infinite;
+  }
+  @keyframes boltPulse {
+    0%,
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.25);
+      opacity: 0.65;
+    }
+  }
 
   /* ===== CTA hover/focus micro-reveal ===== */
   .cta-pop {
@@ -1502,12 +1592,32 @@ const toneMap: Record<string, string> = {
 
   /* ===== Reduced motion ===== */
   @media (prefers-reduced-motion: reduce) {
-    .anim .reveal, .anim .stagger > * { opacity: 1 !important; transform: none !important; transition: none !important; }
-    .bee-bob, .bee-wings, .bee-point, .bolt-pulse { animation: none !important; }
-    #bee { transform: none !important; }
+    .anim .reveal,
+    .anim .stagger > * {
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
+    }
+    .bee-bob,
+    .bee-wings,
+    .bee-point,
+    .bolt-pulse {
+      animation: none !important;
+    }
+    #bee {
+      transform: none !important;
+    }
     /* Bubble still appears on the idle cue, just without the slide. */
-    .stake-bubble { transition: none !important; transform: translate(-50%, 0) !important; }
-    .anim-card, .anim-emoji, .cta-pop, #scroll-progress { transition: none !important; }
+    .stake-bubble {
+      transition: none !important;
+      transform: translate(-50%, 0) !important;
+    }
+    .anim-card,
+    .anim-emoji,
+    .cta-pop,
+    #scroll-progress {
+      transition: none !important;
+    }
   }
 </style>
 
@@ -1590,7 +1700,11 @@ const toneMap: Record<string, string> = {
     const dismiss = () => stakeCta.classList.remove("cue");
     // Mouse movement is normal reading, so it does NOT reset the timer. Only
     // real engagement (scroll, CTA hover, click) cancels the pending cue.
-    const cancel = () => { fired = true; clearTimeout(timer); timer = 0; };
+    const cancel = () => {
+      fired = true;
+      clearTimeout(timer);
+      timer = 0;
+    };
     const fire = () => {
       if (fired) return;
       fired = true;
@@ -1599,12 +1713,19 @@ const toneMap: Record<string, string> = {
       window.setTimeout(dismiss, 9000);
     };
 
-    window.addEventListener("scroll", () => {
-      if (stakeCta.classList.contains("cue")) dismiss();
-      else cancel();
-    }, { passive: true });
+    window.addEventListener(
+      "scroll",
+      () => {
+        if (stakeCta.classList.contains("cue")) dismiss();
+        else cancel();
+      },
+      { passive: true },
+    );
     stakeCta.addEventListener("mouseenter", cancel);
-    stakeCta.addEventListener("click", () => { cancel(); dismiss(); });
+    stakeCta.addEventListener("click", () => {
+      cancel();
+      dismiss();
+    });
 
     const statsObserver = new IntersectionObserver(
       (entries, observer) => {
@@ -1617,36 +1738,5 @@ const toneMap: Record<string, string> = {
       { threshold: 0.5 },
     );
     statsObserver.observe(statValues[0].closest("section") || statValues[0]);
-  }
-
-  // GA4 video event taxonomy for the demo walkthrough (play, 50% watched, complete).
-  {
-    const demoVideo = document.getElementById("renewal-demo-video");
-    if (demoVideo) {
-      const gaEvent = (name, params) => {
-        if (window.gtag) window.gtag("event", name, params || {});
-      };
-      let playFired = false;
-      let halfFired = false;
-      demoVideo.addEventListener("play", () => {
-        if (!playFired) {
-          playFired = true;
-          gaEvent("video_play", { video_name: "renewal_demo" });
-        }
-      });
-      demoVideo.addEventListener("timeupdate", () => {
-        if (
-          !halfFired &&
-          demoVideo.duration &&
-          demoVideo.currentTime / demoVideo.duration >= 0.5
-        ) {
-          halfFired = true;
-          gaEvent("video_50", { video_name: "renewal_demo" });
-        }
-      });
-      demoVideo.addEventListener("ended", () => {
-        gaEvent("video_complete", { video_name: "renewal_demo" });
-      });
-    }
   }
 </script>
