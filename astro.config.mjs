@@ -126,6 +126,18 @@ export default defineConfig({
   },
 
   vite: {
-    plugins: [tailwindcss()]
+    plugins: [tailwindcss()],
+    server: {
+      watch: {
+        // These are repository documentation and research inputs, not runtime source.
+        // Excluding them keeps Vite below common per-process file-descriptor limits
+        // without affecting page, component, or public-asset hot reloading.
+        ignored: ["**/docs/**", "**/src/pages/posts/_prompts/**"],
+        // Polling avoids one OS watch descriptor per dependency-graph path, which
+        // prevents EMFILE failures in shells with a low `ulimit -n` value.
+        usePolling: true,
+        interval: 1000,
+      },
+    },
   }
 });
