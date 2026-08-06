@@ -6,10 +6,13 @@ import Footer from "../components/astro/Footer.astro";
 // qualified discovery call (per marketing/gtm/pipeline-build/25-renewal-audit-funnel-launch-package.md:
 // "payment is taken manually on the discovery call" until an on-site checkout exists).
 // Not a public funnel step, noindexed, nothing links here publicly, only a direct link
-// sent post-call. Wraps the Wise payment link (wise.com/pay/r/w3zCdIbg5WRoPAg) with the
-// scope/risk-reversal framing so the payer isn't clicking out to a bare payment form with
-// no context.
-const WISE_PAY_LINK = "https://wise.com/pay/r/w3zCdIbg5WRoPAg";
+// sent post-call. Wraps the Wise payment link with the scope/risk-reversal framing so the
+// payer isn't clicking out to a bare payment form with no context.
+// The link amount is fixed on Wise's side and is NOT derived from this page, so the two can
+// silently drift. They did: the fee went to $600 on 2026-08-06 while the link still charged
+// $500. If the displayed price below ever changes, reissue the Wise link and update this
+// constant in the same commit. See docs/AUDIT-FEE-PRICE-REGISTER.md item E1.
+const WISE_PAY_LINK = "https://wise.com/pay/r/NDCtiNKDa0GGvqA";
 ---
 <BaseLayout
   title="Pay for Your Renewal Audit"
