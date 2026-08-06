@@ -12,7 +12,7 @@
   "dependencies": {
     "@astrojs/alpinejs": "^0.5.0",
     "@astrojs/react": "^5.0.3",
-    "@astrojs/rss": "^4.0.18",
+    "@astrojs/rss": "^4.0.19",
     "@astrojs/sitemap": "^3.7.2",
     "@element-plus/icons-vue": "^2.3.2",
     "@fontsource-variable/dm-sans": "^5.2.8",
@@ -22,7 +22,6 @@
     "@fontsource/lexend-deca": "^5.2.9",
     "@fontsource/vollkorn": "^5.2.8",
     "@heroicons/react": "^2.2.0",
-    "@iksaku/heroicons-astro": "^0.0.6",
     "@tailwindcss/vite": "^4.1.14",
     "@tailwindplus/elements": "^1.0.7",
     "@types/react": "^19.1.8",
@@ -35,12 +34,13 @@
     "flowbite": "^3.1.2",
     "framer-motion": "^12.23.7",
     "motion": "^12.23.3",
-    "postcss": "^8.5.5",
+    "postcss": "^8.5.23",
     "react": "^19.1.0",
     "react-cookie-consent": "^9.0.0",
     "react-dom": "^19.1.0",
     "react-icons": "^4.10.0",
-    "sharp": "^0.34.3",
+    "react-lite-youtube-embed": "^3.6.0",
+    "sharp": "0.35.3",
     "shiki": "^3.8.1",
     "tailwind-scrollbar": "^4.0.2",
     "tailwindcss": "^4.1.14"
@@ -51,13 +51,15 @@
     "flowbite-typography": "^1.0.5",
     "pagefind": "^1.4.0",
     "serve": "^14.2.4",
-    "vite": "^7.1.9"
+    "vite": "^7.3.6"
   },
   "pnpm": {
     "overrides": {
-      "cheerio>undici": "7.29.0",
-      "@iconify/tools>tar": "7.5.19",
-      "@iconify/tools>svgo": "3.3.4"
+      "js-cookie": "3.0.8",
+      "js-yaml": "4.3.1",
+      "fast-xml-parser": "5.10.1",
+      "sharp": "0.35.3",
+      "svgo": "4.0.2"
     }
   }
 }
