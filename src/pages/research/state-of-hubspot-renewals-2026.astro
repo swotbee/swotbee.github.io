@@ -1,0 +1,606 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Navbar from "../../components/astro/Navbar.astro";
+import Footer from "../../components/astro/Footer.astro";
+import ReportChart from "../../components/astro/ReportChart.astro";
+
+// Original-research asset. Its primary job is to be CITED (journalists, newsletters,
+// podcasts, AI answer engines), not to convert. Every design decision here follows from that:
+// ungated, stat-first hero with no CTA, methodology visible rather than buried, data tables
+// open rather than collapsed, exactly one soft CTA at the very end, inline SVG charts with no
+// client JS so every number is real parseable text.
+//
+// SHIPPED noindex FOR FOUNDER REVIEW (2026-08-06). Flip to "index, follow" to publish. Doing
+// so is the actual publish action; the distribution sequence in pitch-plan.md section 7 starts
+// from there. Leaving it noindex would defeat the page's entire purpose, so do not copy the
+// noindex default from the neighbouring funnel pages.
+const ROBOTS = "noindex, follow";
+
+const PAGE_URL = "https://swotbee.com/research/state-of-hubspot-renewals-2026/";
+const STAT_PACK = "/reports/state-of-hubspot-renewals-2026-stat-pack.csv";
+const PUBLISHED = "2026-08-06";
+
+// One colour per pain category, held constant across all six charts so a reader learns the
+// mapping once. Hex rather than Tailwind classes because these are SVG fill attributes.
+const C = {
+  renewal: "#C47A2A",   // v6-copper
+  integration: "#5AAB9D", // v6-teal
+  dataQuality: "#1A7AB5", // v6-blue
+  commissions: "#D4960A", // v6-amber
+  other: "#8A94A6",       // neutral: it is a catch-all, should not read as a real category
+};
+
+const findings = [
+  { n: 1, text: "Renewal-process pain is the most frequently voiced problem in HubSpot renewals: <strong>129 of 392</strong> trusted customer-voice records (33%) describe it, ahead of integration, commissions, and data quality." },
+  { n: 2, text: "Integration and accounting-sync pain is the most acute at any meaningful scale: <strong>64 of 92</strong> integration records (70%) are rated high-intensity. One smaller category rates higher (agency-overflow, 4 of 4 records), but on a base of four it is disclosed rather than ranked." },
+  { n: 3, text: "Integration alone accounts for <strong>44% of all acute pain</strong>: 64 of the 147 high-intensity trusted records, more than renewal (42) and data quality (16) combined." },
+  { n: 4, text: "Renewal and integration together make up <strong>56% of the corpus</strong>: 221 of 392 trusted records describe one or the other." },
+  { n: 5, text: "HubSpot renewal integration pain is an accounting-sync problem: <strong>66 of 92</strong> integration records (72%) name NetSuite, Xero, or QuickBooks as the system that will not stay in sync." },
+  { n: 6, text: "The accounting-sync theme is the most consistently severe slice of the study: <strong>38 of 43</strong> dedicated CRM-to-accounting records (88%) are rated high-intensity." },
+  { n: 7, text: "One third of renewal complaints are already at crisis level: <strong>42 of 129</strong> renewal records (33%) are high-intensity, and the recurring trigger is HubSpot blocking auto-created renewal deals to \"prevent an infinite loop.\"" },
+  { n: 8, text: "Commissions is a real but lower-acuteness pain: <strong>48 of 392</strong> records (12%) mention it, yet only 1 was rated high-intensity." },
+];
+
+const limitations = [
+  ["Not a survey.", "No respondent count, no sampling frame, no margin of error. Frequencies describe our collected records, which over-represent forums where people go to complain."],
+  ["Industry is unknown for most records.", "342 of 392 trusted records (87%) have no reliable industry tag, so we make no vertical-specific prevalence claims anywhere. SaaS is the best-represented known vertical (37 records) but that is a floor, not a measured share."],
+  ["Role is unknown for 221 of 392 records.", "Where role is known (171 records), operations admins and RevOps leaders dominate (142 of 171, 83%), which shapes whose voice this study captures."],
+  ["Snippet sources.", "Community records are sourced from search snippets (HubSpot Community blocks direct fetch), so quotes are verbatim from the snippet, not the full thread."],
+  ["Reddit sentiment is a collector artifact.", "The reddit sentiment field is uniformly \"complaint\" by how it was gathered, so we do not analyze reddit sentiment anywhere."],
+  ["LinkedIn attribution.", "Perplexity-LinkedIn records are anonymized to source-type and role; author affiliation was not independently re-verified, so we lean on them lightly."],
+  ["The renewal bucket is not monolithic.", "Most renewal records are about teams trying to build their own renewal automation, but a minority (mostly on r/hubspot) are complaints about HubSpot's own contract auto-renewal and pricing. We flag this rather than blend the two."],
+];
+
+const toc = [
+  { group: "Start here", items: [["#key-findings", "Key findings"], ["#methodology", "Methodology and limits"]] },
+  { group: "The findings", items: [["#concentration", "Where pain concentrates"], ["#automation-gap", "The renewal-automation gap"], ["#line-items", "Line items and cloning"], ["#accounting-sync", "Why accounting-sync hurts most"], ["#visibility", "NRR and multi-year math"], ["#commissions", "Commissions"], ["#hiring", "What teams are hiring to fix"]] },
+  { group: "Framework", items: [["#rli", "The Renewal Leakage Index"]] },
+  { group: "Close", items: [["#what-it-means", "What this means"], ["#data", "Download the data"], ["#cite", "How to cite this report"]] },
+];
+
+const articleLd = {
+  "@context": "https://schema.org", "@type": "Article",
+  headline: "The State of HubSpot Renewals 2026",
+  description: "A listening study of 545 real-world records on how renewals actually work in HubSpot.",
+  datePublished: PUBLISHED, dateModified: PUBLISHED,
+  author: { "@type": "Organization", name: "SwotBee", url: "https://swotbee.com" },
+  publisher: { "@type": "Organization", name: "SwotBee", url: "https://swotbee.com" },
+  mainEntityOfPage: PAGE_URL, isAccessibleForFree: true,
+};
+
+// Dataset schema is the single most direct lever for the "get cited by AI answer engines"
+// goal, and none of the site's existing structured-data types covered it.
+const datasetLd = {
+  "@context": "https://schema.org", "@type": "Dataset",
+  name: "The State of HubSpot Renewals 2026 corpus",
+  description: "545 hand-classified real-world records (392 trusted customer-voice) describing how renewal operations work in and around HubSpot, drawn from public practitioner discussion and first-party notes.",
+  creator: { "@type": "Organization", name: "SwotBee", url: "https://swotbee.com" },
+  datePublished: PUBLISHED, temporalCoverage: "../2026-07-05",
+  license: "https://creativecommons.org/licenses/by/4.0/",
+  isAccessibleForFree: true, url: PAGE_URL,
+  variableMeasured: [
+    { "@type": "PropertyValue", name: "pain_category", description: "renewal, integration, commissions, data quality, agency overflow, other" },
+    { "@type": "PropertyValue", name: "intensity", description: "low, medium, or high business impact" },
+    { "@type": "PropertyValue", name: "source_type", description: "reddit, reviews, HubSpot Community, accounting-sync, internal, LinkedIn" },
+  ],
+  distribution: [{ "@type": "DataDownload", encodingFormat: "text/csv", contentUrl: `https://swotbee.com${STAT_PACK}` }],
+};
+---
+
+<Layout
+  title="The State of HubSpot Renewals 2026 | Original Research"
+  description="A listening study of 545 real-world records on how renewals actually work in HubSpot. Renewal-process pain is the most common; accounting-sync is the most acute. Ungated data, full methodology."
+  robots={ROBOTS}
+>
+  <Navbar />
+  <script type="application/ld+json" set:html={JSON.stringify(articleLd)} />
+  <script type="application/ld+json" set:html={JSON.stringify(datasetLd)} />
+
+  <article class="report max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+    <!-- HERO: stat-first, no CTA, no logos. The restraint is itself the credibility signal. -->
+    <header>
+      <p class="text-xs font-semibold uppercase tracking-[0.2em] text-v6-copper">Original research &middot; August 2026</p>
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-v6-dark mt-2 mb-5 text-balance">
+        The State of HubSpot Renewals 2026
+      </h1>
+      <p class="text-lg sm:text-xl text-v6-text leading-relaxed">
+        <strong class="text-v6-dark">129 of 392</strong> real HubSpot renewal complaints trace to the same
+        mechanical cause: HubSpot can clone a deal, but not its line items, so renewal after renewal
+        gets rebuilt by hand or quietly skipped.
+      </p>
+      <p class="text-base text-v6-text-muted leading-relaxed mt-4">
+        We read 545 real-world records where teams describe how renewals actually work: Reddit threads,
+        G2 and Capterra reviews, HubSpot Community posts, RevOps forums, job descriptions, and interview
+        notes. This page is the full study, ungated, with the data behind every number.
+      </p>
+    </header>
+
+    <!-- AT A GLANCE: answers "is this real" inside the first screen, before any scrolling. -->
+    <dl class="grid grid-cols-2 sm:grid-cols-4 gap-px bg-v6-border border border-v6-border mt-8 rounded-lg overflow-hidden">
+      <div class="bg-white p-3.5"><dt class="text-[11px] uppercase tracking-wide text-v6-text-muted">Records analysed</dt><dd class="text-xl font-bold text-v6-dark tabular-nums mt-0.5">545</dd></div>
+      <div class="bg-white p-3.5"><dt class="text-[11px] uppercase tracking-wide text-v6-text-muted">Trusted base</dt><dd class="text-xl font-bold text-v6-dark tabular-nums mt-0.5">392</dd></div>
+      <div class="bg-white p-3.5"><dt class="text-[11px] uppercase tracking-wide text-v6-text-muted">Collected</dt><dd class="text-xl font-bold text-v6-dark tabular-nums mt-0.5">2026-07-05</dd></div>
+      <div class="bg-white p-3.5"><dt class="text-[11px] uppercase tracking-wide text-v6-text-muted">Method</dt><dd class="text-sm font-bold text-v6-dark mt-1.5">Listening study,<br />not a survey</dd></div>
+    </dl>
+
+    <!-- Self-selecting wayfinding: two audiences, one page, no forked content. -->
+    <p class="mt-4 text-sm text-v6-text-muted">
+      <a href="#methodology" class="text-v6-copper font-semibold hover:underline">Verifying a stat? Methodology and data tables &rarr;</a>
+      <span class="mx-2 text-v6-border">|</span>
+      <a href="#key-findings" class="text-v6-copper font-semibold hover:underline">Reading for insight? Key findings &rarr;</a>
+    </p>
+
+    <!-- A visible self-correction is a stronger trust signal than a claim of zero errors. -->
+    <aside class="mt-6 border-l-4 border-v6-teal bg-v6-bg pl-5 pr-4 py-4 rounded-r-lg">
+      <p class="text-xs font-bold uppercase tracking-[0.12em] text-v6-dark mb-1.5">How we check our own numbers</p>
+      <p class="text-sm text-v6-text-muted leading-relaxed">
+        Before publishing, all eight findings were independently recomputed from the raw records. Seven
+        reproduced exactly. One did not: an earlier draft called integration
+        <em>"the highest acuteness of any pain category"</em>, but agency-overflow rates 4 of 4 (100%)
+        against integration's 64 of 92 (70%). We corrected the claim and disclosed the smaller category
+        rather than quietly dropping it. Finding 5 counts the tool-mention field specifically; counting
+        quote text as well gives 68 of 92, so the figure we publish is the conservative one.
+      </p>
+    </aside>
+
+    <nav class="mt-8 border border-v6-border rounded-xl bg-v6-bg p-5" aria-label="Table of contents">
+      <p class="text-xs font-bold uppercase tracking-[0.12em] text-v6-dark mb-3">On this page</p>
+      <div class="grid sm:grid-cols-2 gap-x-6 gap-y-4">
+        {toc.map((g) => (
+          <div>
+            <p class="text-[11px] font-semibold uppercase tracking-wide text-v6-text-muted mb-1.5">{g.group}</p>
+            <ul class="space-y-1 list-none p-0 m-0">
+              {g.items.map(([href, label]) => (
+                <li><a href={href} class="text-sm text-v6-dark hover:text-v6-copper hover:underline">{label}</a></li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+      <p class="mt-4 pt-3 border-t border-v6-border text-xs text-v6-text-muted">
+        <a href={STAT_PACK} download class="text-v6-copper font-semibold hover:underline">&darr; Download the stat pack (CSV)</a>
+        <span class="mx-2">&middot;</span>
+        <button type="button" data-print class="text-v6-copper font-semibold hover:underline">Print or save as PDF</button>
+      </p>
+    </nav>
+
+    <!-- KEY FINDINGS: every line restates its own base, so a shared deep link still makes sense. -->
+    <h2 id="key-findings" class="text-2xl font-bold text-v6-dark mt-12 mb-2 scroll-mt-24">Key findings</h2>
+    <p class="text-sm text-v6-text-muted mb-5">
+      Self-contained and quotable. The base is stated on every line. Trusted customer-voice base is
+      392 records unless noted otherwise.
+    </p>
+    <ol class="list-none p-0 m-0 space-y-3">
+      {findings.map((f) => (
+        <li id={`finding-${f.n}`} class="finding relative border border-v6-border rounded-xl p-4 pr-12 bg-white scroll-mt-24">
+          <span class="absolute left-4 top-4 text-xs font-bold text-v6-copper tabular-nums">{String(f.n).padStart(2, "0")}</span>
+          <p class="text-[15px] text-v6-text leading-relaxed pl-7" set:html={f.text}></p>
+          <button
+            type="button"
+            class="copy-stat absolute top-3 right-3 text-[11px] text-v6-text-muted border border-v6-border rounded px-2 py-1 hover:text-v6-copper hover:border-v6-copper transition-colors"
+            data-anchor={`#finding-${f.n}`}
+            aria-label={`Copy finding ${f.n} with its source`}
+          >Copy</button>
+        </li>
+      ))}
+    </ol>
+
+    <!-- METHODOLOGY: full and open. These disclosures are what make the numbers citable. -->
+    <h2 id="methodology" class="text-2xl font-bold text-v6-dark mt-12 mb-4 scroll-mt-24">Methodology and honest limitations</h2>
+    <p class="text-[15px] text-v6-text leading-relaxed">
+      545 active real-world records, collected and hand-classified by SwotBee from public practitioner
+      discussion and first-party notes, accessed 2026-07-05. Each record carries a source, a pain
+      category, a role tag, an industry tag, an intensity rating, and a short verbatim quote.
+      <strong>This is a listening and content-analysis study, not a survey.</strong> We did not run a
+      panel or ask anyone questions. Read every percentage as "share of records that describe X", not
+      "share of people who answered X".
+    </p>
+
+    <div class="mt-5 rounded-xl border border-v6-border overflow-x-auto">
+      <table class="w-full text-sm border-collapse">
+        <caption class="text-left text-xs text-v6-text-muted p-3 pb-2">
+          The three tiers. Prevalence claims are computed only on the trusted tier.
+        </caption>
+        <thead>
+          <tr class="bg-v6-bg">
+            <th scope="col" class="text-left font-semibold text-v6-dark px-3 py-2">Tier</th>
+            <th scope="col" class="text-left font-semibold text-v6-dark px-3 py-2 tabular-nums">Records</th>
+            <th scope="col" class="text-left font-semibold text-v6-dark px-3 py-2">Used for percentages?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="px-3 py-2 border-t border-v6-border">Trusted customer-voice</td><td class="px-3 py-2 border-t border-v6-border tabular-nums font-semibold">392</td><td class="px-3 py-2 border-t border-v6-border text-v6-text-muted">Yes, every figure uses this base</td></tr>
+          <tr><td class="px-3 py-2 border-t border-v6-border">Job postings</td><td class="px-3 py-2 border-t border-v6-border tabular-nums">54</td><td class="px-3 py-2 border-t border-v6-border text-v6-text-muted">No, process evidence only</td></tr>
+          <tr><td class="px-3 py-2 border-t border-v6-border">Colour-only (vendor and consultant content)</td><td class="px-3 py-2 border-t border-v6-border tabular-nums">99</td><td class="px-3 py-2 border-t border-v6-border text-v6-text-muted">No, excluded from every statistic</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 class="text-lg font-bold text-v6-dark mt-7 mb-3">Honest limitations</h3>
+    <ul class="space-y-2.5 list-none p-0 m-0">
+      {limitations.map(([head, body]) => (
+        <li class="text-sm text-v6-text-muted leading-relaxed border-l-2 border-v6-border pl-4">
+          <strong class="text-v6-dark">{head}</strong> {body}
+        </li>
+      ))}
+    </ul>
+
+    <!-- FINDINGS, each paired with its chart rather than sending readers to an appendix. -->
+    <h2 id="concentration" class="text-2xl font-bold text-v6-dark mt-12 mb-4 scroll-mt-24">Where does HubSpot renewal pain actually concentrate?</h2>
+    <p class="text-[15px] text-v6-text leading-relaxed">
+      Renewal-process pain is the most common thing teams describe (<strong>129 of 392</strong> trusted
+      records, 33%), followed by integration (92, 23%), a catch-all "other" bucket (81, 21%), commissions
+      (48, 12%), data quality (38, 10%), and agency overflow (4, 1%). But frequency and severity are not
+      the same signal. Integration is less common than renewal yet far more acute: 70% of integration
+      records are high-intensity versus 33% of renewal records. Read together, the corpus says renewals
+      are where teams get stuck most often, and integrations are where they hurt most.
+    </p>
+
+    <ReportChart
+      id="chart-1"
+      title="Chart 1. Which pains show up most often"
+      altText="Bar chart of pain categories by record count among 392 trusted customer-voice records: renewal 129, integration 92, other 81, commissions 48, data quality 38, agency overflow 4."
+      bars={[
+        { label: "Renewal", value: 129, display: "129", color: C.renewal },
+        { label: "Integration", value: 92, display: "92", color: C.integration },
+        { label: "Other", value: 81, display: "81", color: C.other },
+        { label: "Commissions", value: 48, display: "48", color: C.commissions },
+        { label: "Data quality", value: 38, display: "38", color: C.dataQuality },
+        { label: "Agency overflow", value: 4, display: "4", lowBase: true },
+      ]}
+      table={{
+        caption: "Source data for the chart above. Pain categories by frequency. Base: n=392.",
+        headers: ["Pain category", "Records", "Share"],
+        rows: [["Renewal","129","32.9%"],["Integration","92","23.5%"],["Other","81","20.7%"],["Commissions","48","12.2%"],["Data quality","38","9.7%"],["Agency overflow","4","1.0%"]],
+      }}
+    />
+
+    <ReportChart
+      id="chart-2"
+      title="Chart 2. Which pains hurt most (acuteness)"
+      unit="%"
+      altText="Bar chart of acuteness, the share of records rated high-intensity, by pain category: integration 70%, data quality 42%, renewal 33%, other 25%, commissions 2%; agency overflow 100% is flagged as low base with only 4 records."
+      bars={[
+        { label: "Integration", value: 69.6, display: "69.6", color: C.integration },
+        { label: "Data quality", value: 42.1, display: "42.1", color: C.dataQuality },
+        { label: "Renewal", value: 32.6, display: "32.6", color: C.renewal },
+        { label: "Other", value: 24.7, display: "24.7", color: C.other },
+        { label: "Commissions", value: 2.1, display: "2.1", color: C.commissions },
+        { label: "Agency overflow", value: 100, display: "100", lowBase: true },
+      ]}
+      table={{
+        caption: "Source data for the chart above. Acuteness = share of a category rated high-intensity.",
+        headers: ["Pain category", "High-intensity", "Category total", "Acuteness"],
+        rows: [["Integration","64","92","69.6%"],["Data quality","16","38","42.1%"],["Renewal","42","129","32.6%"],["Other","20","81","24.7%"],["Commissions","1","48","2.1%"],["Agency overflow <em>(low base)</em>","4","4","100%"]],
+      }}
+      note="Agency overflow scores highest arithmetically but sits on only 4 records, so we disclose it and leave it out of the ranking."
+    />
+
+    <ReportChart
+      id="chart-3"
+      title="Chart 3. Where acute pain concentrates"
+      altText="Chart splitting the 147 high-intensity records by pain category: integration 64, renewal 42, other 20, data quality 16, agency overflow 4, commissions 1."
+      bars={[
+        { label: "Integration", value: 64, display: "64", color: C.integration },
+        { label: "Renewal", value: 42, display: "42", color: C.renewal },
+        { label: "Other", value: 20, display: "20", color: C.other },
+        { label: "Data quality", value: 16, display: "16", color: C.dataQuality },
+        { label: "Agency overflow", value: 4, display: "4", lowBase: true },
+        { label: "Commissions", value: 1, display: "1", color: C.commissions },
+      ]}
+      table={{
+        caption: "Source data for the chart above. Composition of the 147 high-intensity trusted records.",
+        headers: ["Pain category", "High-intensity records", "Share of 147"],
+        rows: [["Integration","64","43.5%"],["Renewal","42","28.6%"],["Other","20","13.6%"],["Data quality","16","10.9%"],["Agency overflow","4","2.7%"],["Commissions","1","0.7%"]],
+      }}
+    />
+
+    <h2 id="automation-gap" class="text-2xl font-bold text-v6-dark mt-12 mb-4 scroll-mt-24">Why can't teams just automate a HubSpot renewal?</h2>
+    <p class="text-[15px] text-v6-text leading-relaxed">
+      The most repeated story in the corpus is a team trying to auto-create next year's renewal deal and
+      hitting a wall. HubSpot blocks deals created by a workflow from re-triggering that same workflow,
+      so year-two renewals often generate but year-three renewals silently do not. Teams then bounce
+      between paired workflows or fall back to spreadsheets. Renewal is the single most frequent pain
+      (<strong>129 of 392</strong>, 33%), and 42 of those (33%) are already high-intensity.
+    </p>
+    <blockquote class="mt-5 border-l-4 border-v6-copper pl-5 text-[15px] text-v6-text italic leading-relaxed">
+      "The enrolled deal was created by this workflow, so this action was skipped to prevent an infinite loop."
+      <footer class="not-italic text-sm text-v6-text-muted mt-1.5">a RevOps leader on the HubSpot Community</footer>
+    </blockquote>
+    <blockquote class="mt-4 border-l-4 border-v6-copper pl-5 text-[15px] text-v6-text italic leading-relaxed">
+      "How we could automate creation of renewal deal with close date 12 months after we have put current deal into Closed won state? Same company, same deal name, same sales person."
+      <footer class="not-italic text-sm text-v6-text-muted mt-1.5">a poster on r/hubspot</footer>
+    </blockquote>
+    <p class="text-sm text-v6-text-muted leading-relaxed mt-4">
+      A nuance worth keeping honest: not every renewal record is about building automation. A minority,
+      mostly on r/hubspot, are complaints about HubSpot's own auto-renewal and pricing. We count these in
+      the renewal category but flag them as a distinct flavour from the automation problem above.
+    </p>
+
+    <h2 id="line-items" class="text-2xl font-bold text-v6-dark mt-12 mb-4 scroll-mt-24">What breaks a renewal after the deal is cloned?</h2>
+    <p class="text-[15px] text-v6-text leading-relaxed">
+      When teams do get a renewal deal to copy, <strong>the line items do not come with it</strong>.
+      Cloning copies the amount and deal properties but leaves the products behind, so someone re-enters
+      them by hand for every renewal. This is the mechanical root cause underneath the renewal-automation
+      gap, and it dominates the HubSpot Community evidence.
+    </p>
+    <blockquote class="mt-5 border-l-4 border-v6-copper pl-5 text-[15px] text-v6-text italic leading-relaxed">
+      "While it copies the 'Amount' and other info from the original deal, it does not copy the line items. This has to be done manually, which is extremely time-consuming and critical for issuing renewal quotes."
+      <footer class="not-italic text-sm text-v6-text-muted mt-1.5">a RevOps leader on the HubSpot Community</footer>
+    </blockquote>
+    <blockquote class="mt-4 border-l-4 border-v6-copper pl-5 text-[15px] text-v6-text italic leading-relaxed">
+      "I am setting up new deals for the year and having to click on it 12 times and then add the Start Date. Pretty time consuming and mind numbing."
+      <footer class="not-italic text-sm text-v6-text-muted mt-1.5">an operations admin on the HubSpot Community</footer>
+    </blockquote>
+    <p class="text-sm text-v6-text-muted leading-relaxed mt-4">
+      The market's answer, deal-cloning apps, is well liked for exactly the narrow job it does, but
+      reviewers also flag its limits: "out of order line items after copy, no customizability for
+      excluding certain properties from the clone." Cloning solves the easy part; the renewal pipeline,
+      at-risk visibility, and revenue math are the hard part.
+    </p>
+
+    <h2 id="accounting-sync" class="text-2xl font-bold text-v6-dark mt-12 mb-4 scroll-mt-24">Why is accounting-sync the most acute pain?</h2>
+    <p class="text-[15px] text-v6-text leading-relaxed">
+      Integration is where the corpus gets loudest. <strong>64 of 92</strong> integration records (70%)
+      are high-intensity, and integration alone accounts for 44% of all acute pain in the study. The
+      concentration is specific: 66 of 92 integration records (72%) name NetSuite, Xero, or QuickBooks,
+      and the dedicated accounting-sync set (43 records) is 88% high-intensity. The pattern practitioners
+      describe is a sync that works on record creation and then breaks the moment anyone edits either side.
+    </p>
+    <blockquote class="mt-5 border-l-4 border-v6-copper pl-5 text-[15px] text-v6-text italic leading-relaxed">
+      "This is one of the hardest parts of a NetSuite to HubSpot integration, and it usually works just enough on create, then breaks down as soon as edits happen on either side."
+      <footer class="not-italic text-sm text-v6-text-muted mt-1.5">a RevOps leader on the HubSpot Community</footer>
+    </blockquote>
+    <blockquote class="mt-4 border-l-4 border-v6-copper pl-5 text-[15px] text-v6-text italic leading-relaxed">
+      "I attempted 125 deals and 54 were successful in creating a Sales Order while 71 failed."
+      <footer class="not-italic text-sm text-v6-text-muted mt-1.5">a RevOps leader on the HubSpot Community (NetSuite)</footer>
+    </blockquote>
+    <p class="text-sm text-v6-text-muted leading-relaxed mt-4">
+      The business consequence is not just annoyance; it is revenue data that finance cannot trust. Deals
+      sync before their companies, invoices land against the wrong record, tax codes fail validation, and
+      cumulative revenue does not roll up to the company level. That is the seam where renewal revenue and
+      forecasting quietly leak.
+    </p>
+
+    <ReportChart
+      id="chart-4"
+      title="Chart 4. Integration pain is an accounting-sync problem"
+      altText="Bar chart of accounting and ERP systems named in the 92 integration records: Xero 24, NetSuite 23, QuickBooks 20, and 26 records naming none of the three."
+      bars={[
+        { label: "Xero", value: 24, display: "24", color: C.integration },
+        { label: "NetSuite", value: 23, display: "23", color: C.integration },
+        { label: "QuickBooks", value: 20, display: "20", color: C.integration },
+        { label: "Names none of the three", value: 26, display: "26", color: C.other },
+      ]}
+      table={{
+        caption: "Source data for the chart above. Systems named in the integration records. Base: n=92.",
+        headers: ["System named", "Records mentioning", "Share of 92"],
+        rows: [["Xero","24","26.1%"],["NetSuite","23","25.0%"],["QuickBooks","20","21.7%"],["<strong>Names at least one of the three</strong>","<strong>66</strong>","<strong>71.7%</strong>"],["Names none of the three","26","28.3%"]],
+      }}
+      note="Mentions sum to 67 because one record names QuickBooks, Xero and Sage together. 66 is the count of unique records naming at least one of the three, measured on the tool-mention field."
+    />
+
+    <h2 id="visibility" class="text-2xl font-bold text-v6-dark mt-12 mb-4 scroll-mt-24">Can teams even see their NRR and forecast?</h2>
+    <p class="text-[15px] text-v6-text leading-relaxed">
+      A distinct thread inside both renewal and data-quality records is that HubSpot's revenue math
+      misfires on multi-year and ramped deals. When teams model escalating contracts as separate line
+      items, <strong>HubSpot sums them and ignores the dates</strong>, inflating ARR, MRR, ACV, and the
+      pipeline that leadership forecasts against.
+    </p>
+    <blockquote class="mt-5 border-l-4 border-v6-copper pl-5 text-[15px] text-v6-text italic leading-relaxed">
+      "I am overstating my pipeline enormously on greenfield/growth deals, directly because of this mathematically incorrect handling."
+      <footer class="not-italic text-sm text-v6-text-muted mt-1.5">a RevOps leader on the HubSpot Community</footer>
+    </blockquote>
+    <blockquote class="mt-4 border-l-4 border-v6-copper pl-5 text-[15px] text-v6-text italic leading-relaxed">
+      "Renewals get missed. Forecasting becomes unreliable. Customer Success lacks visibility. Escalation fees are tracked manually. Expansion opportunities are overlooked."
+      <footer class="not-italic text-sm text-v6-text-muted mt-1.5">internal interview note (revenue leader)</footer>
+    </blockquote>
+    <p class="text-sm text-v6-text-muted leading-relaxed mt-4">
+      This is why the renewal problem is really a visibility problem. If the renewal deal never generates,
+      or generates without line items, or carries revenue the system miscalculates, then net revenue
+      retention and renewal forecasting are being run on numbers the team already knows are wrong.
+    </p>
+
+    <h2 id="commissions" class="text-2xl font-bold text-v6-dark mt-12 mb-4 scroll-mt-24">Is commissions part of the renewal problem too?</h2>
+    <p class="text-[15px] text-v6-text leading-relaxed">
+      Commissions shows a very different profile. It is reasonably common (<strong>48 of 392</strong>
+      records, 12%) but rarely acute: only 1 of those 48 is high-intensity. Much of the discussion is
+      design questions and spreadsheet fatigue rather than a system actively breaking. We include it for
+      completeness, but the data does not support treating it as an equal-severity pain to renewal or
+      accounting-sync.
+    </p>
+
+    <h2 id="hiring" class="text-2xl font-bold text-v6-dark mt-12 mb-4 scroll-mt-24">What are teams actually hiring to fix?</h2>
+    <p class="text-[15px] text-v6-text leading-relaxed">
+      Job descriptions are process evidence, not prevalence, so we put no percentage on them. But 54
+      renewal-related postings show organisations funding roles whose entire purpose is to stop the leaks
+      this study describes.
+    </p>
+    <blockquote class="mt-5 border-l-4 border-v6-copper pl-5 text-[15px] text-v6-text italic leading-relaxed">
+      "Proactively identifying and executing on revenue leakage across the entire funnel, from lead generation through deal closure and renewal."
+      <footer class="not-italic text-sm text-v6-text-muted mt-1.5">Revenue Operations Manager job description</footer>
+    </blockquote>
+    <p class="text-sm text-v6-text-muted leading-relaxed mt-4">
+      When a company creates a full-time job to chase renewal leakage and reconcile CRM against the ledger
+      by hand, the pain has crossed from annoyance into headcount.
+    </p>
+
+    <h2 id="rli" class="text-2xl font-bold text-v6-dark mt-12 mb-4 scroll-mt-24">The Renewal Leakage Index</h2>
+    <p class="text-[15px] text-v6-text leading-relaxed">
+      To rank where renewal revenue is most exposed, we combine the two signals this study measures: how
+      often a pain shows up, and how acute it is when it does.
+      <strong>This is a SwotBee construct, not an industry standard.</strong> For each pain category on
+      the trusted 392 base, Frequency % is category records divided by 392, Acuteness % is high-intensity
+      records divided by that category's total, and the Index is simply the two added together. We report
+      both components so the score is never a black box, and exclude any category with fewer than about
+      30 records as too thin to rank.
+    </p>
+
+    <ReportChart
+      id="chart-5"
+      title="Chart 5. The Renewal Leakage Index"
+      altText="Bar chart of the SwotBee Renewal Leakage Index. Integration scores 93.1, renewal 65.5, data quality 51.8, other 45.4, commissions 14.3."
+      bars={[
+        { label: "Integration / accounting-sync", value: 93.1, display: "93.1", color: C.integration },
+        { label: "Renewal process", value: 65.5, display: "65.5", color: C.renewal },
+        { label: "Data quality", value: 51.8, display: "51.8", color: C.dataQuality },
+        { label: "Other", value: 45.4, display: "45.4", color: C.other },
+        { label: "Commissions", value: 14.3, display: "14.3", color: C.commissions },
+      ]}
+      table={{
+        caption: "Source data for the chart above. Renewal Leakage Index = Frequency % + Acuteness %. Base: n=392.",
+        headers: ["Pain category", "Frequency %", "Acuteness %", "Index"],
+        rows: [["Integration / accounting-sync","23.5","69.6","<strong>93.1</strong>"],["Renewal process","32.9","32.6","<strong>65.5</strong>"],["Data quality","9.7","42.1","<strong>51.8</strong>"],["Other","20.7","24.7","<strong>45.4</strong>"],["Commissions","12.2","2.1","<strong>14.3</strong>"]],
+      }}
+      note="Agency overflow scores highest arithmetically (101.0) but sits on only 4 records, so it is excluded from the ranking."
+    />
+    <p class="text-[15px] text-v6-text leading-relaxed mt-2">
+      Integration tops the Index because it is both common and the most acute pain in the corpus. Renewal
+      is second because it is the most common pain even though only a third of its records are severe.
+      Commissions ranks low despite being fairly common, because it is rarely acute. The honest headline:
+      <strong>renewal revenue leaks worst where the CRM meets the ledger.</strong>
+    </p>
+
+    <ReportChart
+      id="chart-6"
+      title="Chart 6. What the study listened to"
+      altText="Bar chart of the 392 trusted records by source: Reddit 179, reviews 83, Perplexity-community 44, HubSpot Community 26, Perplexity-accounting 26, accounting-sync 17, internal 10, Perplexity-LinkedIn 7."
+      bars={[
+        { label: "Reddit", value: 179, display: "179", color: C.other },
+        { label: "Reviews (G2 / Capterra)", value: 83, display: "83", color: C.other },
+        { label: "Perplexity-community", value: 44, display: "44", color: C.other },
+        { label: "HubSpot Community", value: 26, display: "26", color: C.other },
+        { label: "Perplexity-accounting", value: 26, display: "26", color: C.other },
+        { label: "Accounting-sync", value: 17, display: "17", color: C.other },
+        { label: "Internal", value: 10, display: "10", color: C.other },
+        { label: "Perplexity-LinkedIn", value: 7, display: "7", color: C.other },
+      ]}
+      table={{
+        caption: "Source data for the chart above. Source mix of the trusted records. Base: n=392.",
+        headers: ["Source", "Records", "Share"],
+        rows: [["Reddit","179","45.7%"],["Reviews (G2 / Capterra / Marketplace)","83","21.2%"],["Perplexity-community","44","11.2%"],["HubSpot Community","26","6.6%"],["Perplexity-accounting","26","6.6%"],["Accounting-sync","17","4.3%"],["Internal","10","2.6%"],["Perplexity-LinkedIn","7","1.8%"]],
+      }}
+    />
+
+    <h2 id="what-it-means" class="text-2xl font-bold text-v6-dark mt-12 mb-4 scroll-mt-24">What this means for revenue teams</h2>
+    <p class="text-[15px] text-v6-text leading-relaxed">
+      If you run renewals in HubSpot, this corpus says three things clearly. First, the renewal process is
+      where you will get stuck most often, and the trigger is usually mechanical: a workflow that will not
+      re-create next year's deal, or a clone that drops the line items. Second, the deepest damage is at
+      the seam between HubSpot and your accounting system, where revenue and forecast numbers quietly stop
+      being trustworthy. Third, the two problems are the same problem wearing two hats: if the renewal deal
+      never forms correctly, or the revenue never reconciles to the ledger, your net revenue retention and
+      renewal forecast are running on numbers you already suspect are wrong.
+      <strong>Cloning a deal is the easy 10%.</strong> The renewal pipeline, at-risk visibility, escalation
+      math, and clean sync to finance are the 90% where the money leaks.
+    </p>
+
+    <h2 id="data" class="text-2xl font-bold text-v6-dark mt-12 mb-4 scroll-mt-24">Download the data</h2>
+    <div class="rounded-xl border border-v6-border bg-v6-bg p-5">
+      <p class="text-[15px] text-v6-text leading-relaxed">
+        Every table on this page, the tier structure, the eight findings in quotable form, and the
+        limitations, in one CSV. Free to cite and republish with attribution.
+      </p>
+      <p class="mt-3">
+        <a href={STAT_PACK} download class="inline-flex items-center gap-2 bg-v6-dark text-white px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-v6-dark/90 transition-colors">
+          &darr; Stat pack (CSV, no email required)
+        </a>
+      </p>
+    </div>
+
+    <h2 id="cite" class="text-2xl font-bold text-v6-dark mt-12 mb-4 scroll-mt-24">How to cite this report</h2>
+    <p class="text-sm text-v6-text-muted leading-relaxed mb-3">
+      Free to cite, quote, and republish with attribution and a link. If you quote a figure, please carry
+      its base with it (most are on the 392 trusted-record base, not 545).
+    </p>
+    <div class="rounded-xl border border-v6-border bg-white p-4">
+      <p id="citation-text" class="text-sm text-v6-text font-mono leading-relaxed">
+        SwotBee (2026). <em>The State of HubSpot Renewals 2026: a listening study of 545 real-world records.</em> {PAGE_URL}
+      </p>
+      <button type="button" data-copy-citation class="mt-3 text-xs text-v6-copper font-semibold border border-v6-copper rounded px-3 py-1.5 hover:bg-v6-copper hover:text-white transition-colors">
+        Copy citation
+      </button>
+    </div>
+
+    <!-- Exactly one CTA, last, deliberately quiet. A gradient block here would read as "the ad"
+         to the skimming journalist this page exists to earn. -->
+    <aside class="report-cta mt-12 rounded-xl border border-v6-border bg-v6-bg p-6">
+      <h2 class="text-lg font-bold text-v6-dark mb-2">If this sounded like your team</h2>
+      <p class="text-[15px] text-v6-text-muted leading-relaxed">
+        You can put a rough number on it. Answer 5 questions about how your renewals run and we will send
+        back a 1-page estimate of where your renewal process is most likely leaking, scored against the
+        same Renewal Leakage Index used above. No call, no hard sell, just a starting number and where to
+        look first.
+      </p>
+      <p class="mt-4 flex flex-col sm:flex-row sm:items-center gap-3">
+        <a href="/resources/renewal-leakage-estimate/" class="inline-block bg-v6-copper text-white px-6 py-3 rounded-lg text-sm font-semibold hover:bg-v6-copper-600 transition-colors">
+          Get your 1-page estimate, delivered by email
+        </a>
+        <a href="/renewal-audit-call/" class="text-sm text-v6-copper font-semibold hover:underline">
+          Or book a free 30-minute call &rarr;
+        </a>
+      </p>
+    </aside>
+  </article>
+
+  <Footer />
+</Layout>
+
+<style>
+  /* Journalists routinely print or save-as-PDF to file a source, and the site had no print
+     rules at all. Keep the data, drop the chrome. */
+  @media print {
+    nav, footer, .report-cta, .copy-stat, [data-print], [data-copy-citation] { display: none !important; }
+    .report { max-width: none; padding: 0; }
+    .report-figure { page-break-inside: avoid; break-inside: avoid; }
+    table { page-break-inside: auto; }
+    tr { page-break-inside: avoid; }
+    h2 { page-break-after: avoid; }
+    svg { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+    a[href^="/"]::after { content: " (swotbee.com" attr(href) ")"; font-size: 10px; }
+  }
+</style>
+
+<script is:inline>
+  // Progressive enhancement only. Everything above works with JS disabled; these just make
+  // it harder to quote a stat without its base traveling along.
+  (function () {
+    var REPORT = "The State of HubSpot Renewals 2026, SwotBee";
+    var base = window.location.origin + window.location.pathname;
+
+    function flash(btn, msg) {
+      var prev = btn.textContent;
+      btn.textContent = msg;
+      setTimeout(function () { btn.textContent = prev; }, 2000);
+    }
+    function copy(text, btn) {
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(function () { flash(btn, "Copied"); },
+          function () { flash(btn, "Press Ctrl+C"); });
+      } else {
+        flash(btn, "Press Ctrl+C");
+      }
+    }
+
+    document.querySelectorAll(".copy-stat").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var li = btn.closest("li");
+        var p = li ? li.querySelector("p") : null;
+        if (!p) return;
+        copy('"' + p.innerText.trim() + '" ' + REPORT + ". " + base + btn.dataset.anchor, btn);
+      });
+    });
+
+    var cite = document.querySelector("[data-copy-citation]");
+    if (cite) {
+      cite.addEventListener("click", function () {
+        var el = document.getElementById("citation-text");
+        if (el) copy(el.innerText.trim(), cite);
+      });
+    }
+
+    var pr = document.querySelector("[data-print]");
+    if (pr) pr.addEventListener("click", function () { window.print(); });
+  })();
+</script>
