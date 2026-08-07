@@ -15,13 +15,16 @@ import ClientLogoStrip from "../components/astro/ClientLogoStrip.astro";
 >
   <Navbar />
 
-  <section class="bg-gradient-to-b from-v6-bg to-white px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20 pb-8">
-    <div class="max-w-3xl mx-auto text-center">
-      <span class="bg-v6-teal-50 text-v6-teal text-xs font-semibold px-3 py-1 rounded-full inline-block mb-6">Free 30-minute call</span>
-      <h1 class="text-3xl sm:text-4xl font-bold text-v6-dark mb-4">Book Your Renewal Audit Call</h1>
-      <p class="text-base sm:text-lg text-v6-text-muted max-w-xl mx-auto leading-relaxed">
-        We'll walk through your leakage estimate, answer what it does and doesn't tell you, and scope whether the paid renewal audit ($600, credited in full toward any build) is worth doing on your actual HubSpot data.
-      </p>
+  <section class="bg-gradient-to-b from-v6-bg to-white px-4 sm:px-6 lg:px-8 pt-8 sm:pt-10 pb-10">
+    <div class="max-w-4xl mx-auto text-center">
+        <span class="bg-v6-teal-50 text-v6-teal text-sm font-semibold px-4 py-1.5 rounded-full inline-block mb-6">Free 30-minute call</span>
+        <h1 class="text-4xl sm:text-5xl font-bold text-v6-dark mb-5 text-balance">Book Your Renewal Audit Call</h1>
+        <p class="text-lg sm:text-xl text-v6-text-muted max-w-2xl mx-auto leading-relaxed">
+          We'll walk through your leakage estimate, answer what it does and doesn't tell you, and scope whether the paid renewal audit ($600, credited in full toward any build) is worth doing on your actual HubSpot data.
+        </p>
+        <!-- <div class="mt-7">
+          <a href="#book-a-time" class="inline-block bg-v6-copper text-white rounded-xl px-8 py-4 text-lg font-semibold hover:bg-v6-copper-600 transition-colors shadow-sm">Choose a time for your free call →</a>
+        </div> -->
       <!-- Role-tailored pitch (#6): revealed client-side from ?role= or the sb_role cookie. -->
       <div id="role-pitch" class="hidden mt-5 max-w-xl mx-auto bg-white border border-v6-border rounded-xl p-4 text-left">
         <p id="role-pitch-title" class="text-sm font-semibold text-v6-dark mb-1"></p>
@@ -52,36 +55,45 @@ import ClientLogoStrip from "../components/astro/ClientLogoStrip.astro";
     </div>
   </section>
 
-  <section class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 pb-4">
+  <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-6">
     <div class="grid sm:grid-cols-3 gap-4 text-center">
-      <div class="bg-v6-bg rounded-xl p-4">
-        <div class="font-bold text-v6-teal text-lg">This call</div>
-        <div class="text-sm text-v6-text-muted">Free. 30 minutes. No pitch deck.</div>
+      <div class="bg-white border border-v6-teal-100 rounded-xl p-5 shadow-sm">
+        <div class="font-bold text-v6-teal text-xl">First call</div>
+        <div class="mt-1 text-base text-v6-dark">Free. 30 minutes. We’ll tell you whether the audit is worth doing.</div>
       </div>
-      <div class="bg-v6-bg rounded-xl p-4">
-        <div class="font-bold text-v6-teal text-lg">The audit</div>
-        <div class="text-sm text-v6-text-muted">$600, credited in full toward any build.</div>
+      <div class="bg-white border border-v6-border rounded-xl p-5 shadow-sm">
+        <div class="font-bold text-v6-teal text-xl">Your decision</div>
+        <div class="mt-1 text-base text-v6-dark">You choose after the call. No pressure either way.</div>
       </div>
-      <div class="bg-v6-bg rounded-xl p-4">
-        <div class="font-bold text-v6-teal text-lg">Your decision</div>
-        <div class="text-sm text-v6-text-muted">You choose after the call. No pressure either way.</div>
+      <div class="bg-white border border-v6-border rounded-xl p-5 shadow-sm">
+        <div class="font-bold text-v6-teal text-xl">The audit</div>
+        <div class="mt-1 text-base text-v6-dark">$600, credited in full toward any build.</div>
       </div>
     </div>
   </section>
 
   <section class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 pb-6">
-    <p class="text-center text-sm text-v6-text-muted bg-white border border-v6-border rounded-xl p-4">
-      View-only access. Nothing leaves your portal. NDA available on request. Access revoked at audit end.
+    <p class="flex items-center justify-center gap-2 text-center text-sm text-v6-text-muted">
+      <svg aria-hidden="true" class="w-4 h-4 shrink-0 text-v6-teal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>
+      View-only access. Nothing leaves your portal. NDA available on request.
     </p>
+  </section>
+
+  <section id="book-a-time" class="scroll-mt-24 bg-v6-bg py-8 sm:py-10">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="rounded-2xl bg-white p-4 sm:p-6">
+        <div class="text-center mb-6">
+          <span class="inline-block text-sm font-semibold uppercase tracking-[0.14em] text-v6-copper mb-2">Book your free 30-minute renewal audit</span>
+          <h2 class="text-3xl sm:text-4xl font-bold text-v6-dark text-balance">Choose a time that works for you</h2>
+        </div>
+        <div id="renewal-audit-cal-inline" style="width:100%;min-height:600px;"></div>
+      </div>
+    </div>
   </section>
 
   <ClientLogoStrip caption="Trusted by revenue and operations teams at" />
 
-  <section class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 pb-10">
-    <div id="renewal-audit-cal-inline" style="width:100%;min-height:600px;"></div>
-  </section>
-
-  <section class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 pb-10">
+  <section class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-10">
     <h2 class="text-2xl font-bold text-v6-dark text-center mb-6">Before you book, the honest answers</h2>
     <div class="space-y-3">
       <details class="bg-v6-bg rounded-xl border border-v6-border p-4">
