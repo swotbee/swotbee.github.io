@@ -1,52 +1,41 @@
-# Astro Starter Kit: Basics
+# Swotbee website
+
+This Astro site uses **pnpm 9.12.3** as its only package manager. The exact version is pinned in `package.json`; enable Corepack once on a new machine so it selects that version automatically:
 
 ```sh
-npm create astro@latest -- --template basics
+corepack enable
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+## Getting started
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
+```sh
+pnpm install
+pnpm dev
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+The development server is available at `http://localhost:4321`.
 
-## 🧞 Commands
+## Commands
 
-All commands are run from the root of the project, from a terminal:
+Use pnpm directly, or use the matching `just` recipes below. Run `just` to list the recipes.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+| Task | pnpm | just |
+| --- | --- | --- |
+| Install dependencies | `pnpm install` | `just install` |
+| Start development | `pnpm dev` | `just dev` |
+| Production build | `pnpm build` | `just build` |
+| Preview the build | `pnpm preview` | `just preview` |
+| Run Astro CLI | `pnpm astro …` | `just astro …` |
+| Add a dependency | `pnpm add <package>` | `just add <package>` |
+| Add a development dependency | `pnpm add -D <package>` | `just add-dev <package>` |
+| Remove a dependency | `pnpm remove <package>` | `just remove <package>` |
+| Update dependencies | `pnpm update` | `just update` |
+| Check outdated packages | `pnpm outdated` | `just outdated` |
+| Audit dependencies | `pnpm audit` | `just audit` |
 
-## 👀 Want to learn more?
+## Dependency policy
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- Commit `pnpm-lock.yaml` whenever dependencies change.
+- Use `pnpm install --frozen-lockfile` in CI and when verifying a clean install.
+- Do not use npm, Yarn, or their lockfiles in this repository.
+- Dependency version overrides belong in the `pnpm.overrides` section of `package.json`.
