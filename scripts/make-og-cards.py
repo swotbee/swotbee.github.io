@@ -8,7 +8,9 @@ from PIL import Image, ImageDraw, ImageFont
 
 W, H = 1200, 627
 NAVY = (33, 51, 67)        # brand primary  #213343
-YELLOW = (255, 224, 102)   # brand secondary #ffe066
+# Matched to the honeycomb mark's gold (v6-amber) rather than the older brand
+# secondary #ffe066, which sat visibly apart from the logo.
+YELLOW = (212, 150, 10)    # v6-amber #D4960A
 WHITE = (255, 255, 255)
 MUTED = (200, 215, 228)    # primary-100 #c8d7e4
 
