@@ -75,7 +75,8 @@ export function generateOgImage(imagePath?: string): string {
     }
     return `https://swotbee.com${imagePath.startsWith('/') ? '' : '/'}${imagePath}`;
   }
-  return 'https://swotbee.com/assets/home-images/swotbee.png';
+  // 1200x627 social card. Square logos crop badly on LinkedIn, X and Slack.
+  return 'https://swotbee.com/assets/home-images/og-default.png';
 }
 
 /**
@@ -174,7 +175,7 @@ export function generateRobotsDirective(
 export const defaultSEOConfig = {
   siteName: 'SWOTBee',
   siteUrl: 'https://swotbee.com',
-  defaultImage: '/assets/home-images/swotbee.png',
+  defaultImage: '/assets/home-images/og-default.png',
   twitterHandle: '@swotbee',
   defaultKeywords: 'HubSpot consulting, Shopify integration, CRM optimization, marketing automation, sales funnel, business growth, HubSpot experts',
   defaultDescription: 'Expert HubSpot consulting services to optimize your sales funnel, boost conversions, and integrate seamlessly with Shopify, Kajabi, Xero, QuickBooks, and DocuSign.',
