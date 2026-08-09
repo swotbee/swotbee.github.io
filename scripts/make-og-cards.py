@@ -14,12 +14,26 @@ MUTED = (200, 215, 228)    # primary-100 #c8d7e4
 
 BOLD = "/usr/share/fonts/truetype/ubuntu/Ubuntu-B.ttf"
 REG = "/usr/share/fonts/truetype/ubuntu/Ubuntu-R.ttf"
-LOGO = "public/assets/home-images/swotbee.png"
+
+# The honeycomb mark, same as the navbar's LogoHoneycomb.astro.
+# It contains a navy hexagon (#0A3D6B) that would nearly vanish against the
+# navy card background, so the mark is set on a white chip to keep all seven
+# cells legible.
+LOGO = "src/assets/swotbee_logo.png"
+LOGO_CHIP = True
 
 MARGIN = 84
 TEXT_MAX = 800  # leaves room for the logo on the right
 
 CARDS = [
+    {
+        # Site-wide fallback, used by any page that does not set its own ogImage.
+        "file": "og-default.png",
+        "eyebrow": "SWOTBEE",
+        "headline": "HubSpot renewal operations, built to hold",
+        "size": 60,
+        "sub": "Line-item carryover, escalation uplifts, multi-year chains, and NRR and GRR reporting.",
+    },
     {
         "file": "og-nrr-grr-guide.png",
         "eyebrow": "GUIDE",
@@ -75,11 +89,24 @@ def build(card):
     img = Image.new("RGB", (W, H), NAVY)
     d = ImageDraw.Draw(img)
 
-    # bee logo, top right, subtle
+    # honeycomb mark, top right
     logo = Image.open(LOGO).convert("RGBA")
-    lh = 150
+    lh = 118
     logo = logo.resize((int(logo.width * lh / logo.height), lh), Image.LANCZOS)
-    img.paste(logo, (W - MARGIN - logo.width, MARGIN - 20), logo)
+
+    if LOGO_CHIP:
+        # White rounded chip behind the mark. Without it the navy hexagon
+        # (#0A3D6B) reads as a hole against the navy card.
+        pad, radius = 26, 28
+        chip_w, chip_h = logo.width + pad * 2, logo.height + pad * 2
+        chip = Image.new("RGBA", (chip_w, chip_h), (0, 0, 0, 0))
+        ImageDraw.Draw(chip).rounded_rectangle(
+            [0, 0, chip_w - 1, chip_h - 1], radius=radius, fill=(255, 255, 255, 255)
+        )
+        chip.paste(logo, (pad, pad), logo)
+        img.paste(chip, (W - MARGIN - chip_w, MARGIN - 24), chip)
+    else:
+        img.paste(logo, (W - MARGIN - logo.width, MARGIN - 20), logo)
 
     f_eye = ImageFont.truetype(BOLD, 22)
     f_head = ImageFont.truetype(BOLD, card["size"])
