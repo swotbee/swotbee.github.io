@@ -1,28 +1,29 @@
 #!/usr/bin/env python3
 """Generate per-page Open Graph / LinkedIn Featured cards for swotbee.com.
 
-1200x627, brand navy background, yellow accent, bee logo, left-aligned copy.
+1200x627, styled to match the homepage hero: warm off-white to white gradient,
+v6-dark headline, v6-copper accent, honeycomb mark, left-aligned copy.
 Run from the website repo root.
 """
 from PIL import Image, ImageDraw, ImageFont
 
 W, H = 1200, 627
-NAVY = (33, 51, 67)        # brand primary  #213343
-# Matched to the honeycomb mark's gold (v6-amber) rather than the older brand
-# secondary #ffe066, which sat visibly apart from the logo.
-YELLOW = (212, 150, 10)    # v6-amber #D4960A
-WHITE = (255, 255, 255)
-MUTED = (200, 215, 228)    # primary-100 #c8d7e4
+
+# Matched to the homepage hero: a bg-gradient-to-b from-v6-bg to-white section,
+# v6-dark headline, v6-copper accent, v6-text-muted supporting copy.
+BG_TOP = (247, 245, 241)   # v6-bg          #f7f5f1
+BG_BOTTOM = (255, 255, 255)
+INK = (26, 37, 48)         # v6-dark        #1a2530
+COPPER = (154, 96, 33)     # v6-copper      #9a6021
+MUTED = (90, 106, 120)     # v6-text-muted  #5a6a78
 
 BOLD = "/usr/share/fonts/truetype/ubuntu/Ubuntu-B.ttf"
 REG = "/usr/share/fonts/truetype/ubuntu/Ubuntu-R.ttf"
 
-# The honeycomb mark, same as the navbar's LogoHoneycomb.astro.
-# It contains a navy hexagon (#0A3D6B) that would nearly vanish against the
-# navy card background, so the mark is set on a white chip to keep all seven
-# cells legible.
+# The honeycomb mark, same as the navbar's LogoHoneycomb.astro. On the light
+# hero background every cell reads on its own, including the navy hexagon
+# (#0A3D6B), so it needs no chip behind it.
 LOGO = "src/assets/swotbee_logo.png"
-LOGO_CHIP = True
 
 MARGIN = 84
 TEXT_MAX = 800  # leaves room for the logo on the right
@@ -88,27 +89,21 @@ def wrap(draw, text, font, max_w):
 
 
 def build(card):
-    img = Image.new("RGB", (W, H), NAVY)
+    # Vertical gradient, mirroring the hero's from-v6-bg to-white
+    img = Image.new("RGB", (W, H), BG_TOP)
     d = ImageDraw.Draw(img)
-
-    # honeycomb mark, top right
-    logo = Image.open(LOGO).convert("RGBA")
-    lh = 118
-    logo = logo.resize((int(logo.width * lh / logo.height), lh), Image.LANCZOS)
-
-    if LOGO_CHIP:
-        # White rounded chip behind the mark. Without it the navy hexagon
-        # (#0A3D6B) reads as a hole against the navy card.
-        pad, radius = 26, 28
-        chip_w, chip_h = logo.width + pad * 2, logo.height + pad * 2
-        chip = Image.new("RGBA", (chip_w, chip_h), (0, 0, 0, 0))
-        ImageDraw.Draw(chip).rounded_rectangle(
-            [0, 0, chip_w - 1, chip_h - 1], radius=radius, fill=(255, 255, 255, 255)
+    for y in range(H):
+        t = y / (H - 1)
+        d.line(
+            [(0, y), (W, y)],
+            fill=tuple(round(a + (b - a) * t) for a, b in zip(BG_TOP, BG_BOTTOM)),
         )
-        chip.paste(logo, (pad, pad), logo)
-        img.paste(chip, (W - MARGIN - chip_w, MARGIN - 24), chip)
-    else:
-        img.paste(logo, (W - MARGIN - logo.width, MARGIN - 20), logo)
+
+    # honeycomb mark, top right, no chip needed on a light ground
+    logo = Image.open(LOGO).convert("RGBA")
+    lh = 128
+    logo = logo.resize((int(logo.width * lh / logo.height), lh), Image.LANCZOS)
+    img.paste(logo, (W - MARGIN - logo.width, MARGIN - 16), logo)
 
     f_eye = ImageFont.truetype(BOLD, 22)
     f_head = ImageFont.truetype(BOLD, card["size"])
@@ -128,11 +123,11 @@ def build(card):
     top, bottom = 140, H - 130
     y = top + max(0, ((bottom - top) - block_h) // 2)
 
-    d.text((MARGIN, y), track(card["eyebrow"]), font=f_eye, fill=YELLOW)
+    d.text((MARGIN, y), track(card["eyebrow"]), font=f_eye, fill=COPPER)
     y += EYE_GAP
 
     for line in head_lines:
-        d.text((MARGIN, y), line, font=f_head, fill=WHITE)
+        d.text((MARGIN, y), line, font=f_head, fill=INK)
         y += lh_step
 
     if sub_lines:
@@ -143,10 +138,10 @@ def build(card):
 
     # footer wordmark
     f_foot = ImageFont.truetype(BOLD, 26)
-    d.text((MARGIN, H - 100), "swotbee.com", font=f_foot, fill=YELLOW)
+    d.text((MARGIN, H - 100), "swotbee.com", font=f_foot, fill=COPPER)
 
     # accent bar
-    d.rectangle([0, H - 12, W, H], fill=YELLOW)
+    d.rectangle([0, H - 10, W, H], fill=COPPER)
 
     out = f"public/assets/home-images/{card['file']}"
     img.save(out, "PNG", optimize=True)
