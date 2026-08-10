@@ -68,6 +68,9 @@ export default defineConfig({
           '/admin/',
           '/api/',
           '/bee-styles/',
+          // brand asset render pages (LinkedIn banner etc.): noindexed, and
+          // only ever loaded locally to screenshot an export
+          '/brand/',
           '/design-index/',
           '/hero-preview/',
           '/index-old/',

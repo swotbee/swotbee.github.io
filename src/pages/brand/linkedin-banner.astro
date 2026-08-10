@@ -1,0 +1,368 @@
+---
+/**
+ * LinkedIn profile banner, 1584x396.
+ *
+ * Lives here rather than as a one-off HTML file so it stays wired to the
+ * site's real palette, fonts and logo assets. Change a v6 token in
+ * global.css and this banner follows.
+ *
+ * Route: /brand/linkedin-banner/   (noindex, and excluded from the sitemap
+ * in astro.config.mjs via the /brand/ pattern). The trailing slash is
+ * required: the site sets trailingSlash: "always", so the slashless URL
+ * 404s in dev.
+ *
+ * EXPORTING
+ * Add ?export to strip the page chrome, then screenshot at 2x. The
+ * virtual-time-budget flag matters against the dev server, which holds an
+ * HMR socket open and otherwise never reports the page as settled:
+ *
+ *   chromium --headless --hide-scrollbars --virtual-time-budget=6000 \
+ *     --window-size=1584,396 --force-device-scale-factor=2 \
+ *     --screenshot=linkedin-banner.png \
+ *     "http://localhost:4321/brand/linkedin-banner/?export"
+ *
+ * The 2x is not optional. LinkedIn's "1584x396" is a CSS-pixel spec, so a
+ * file at that literal size is upscaled by any high-DPI screen and uploads
+ * soft. Export 3168x792.
+ *
+ * Add ?guides to check a change against the profile-photo overlap and the
+ * safe area before shipping it.
+ *
+ * COPY IS LOCKED. The headline won three rounds and 49 persona reactions
+ * (marketing/awareness-channels/linkedin-plan/16-DECISIONS-LOG.md,
+ * decision 5). Do not reword it here. The subline was replaced by Siva on
+ * 2026-08-09.
+ *
+ * OPEN ITEM: the partner badge artwork reads "Solutions Partner Program",
+ * but the previously shipped banner used a "Technology Partner Program,
+ * Rising" badge. Those are two different HubSpot programs, so at most one
+ * is right. Confirm the program and tier, and HubSpot's current brand-usage
+ * rules, before this is published anywhere.
+ */
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout robots="noindex, follow" title="LinkedIn Banner">
+  <div class="page">
+    <div class="page-chrome">
+      <h1>LinkedIn banner</h1>
+      <p>
+        1584x396. Add <code>?export</code> to strip this chrome, or
+        <code>?guides</code> to show the profile-photo and safe-area guides.
+        Export at 2x (3168x792) or it uploads soft.
+      </p>
+    </div>
+
+    <div class="banner">
+      <img class="watermark" src="/assets/ico/logo-honeycomb-3c.svg" alt="" />
+
+      <div class="badge-corner">
+        <img
+          class="partner-badge"
+          src="/assets/brand/hubspot-partner-badge.webp"
+          alt="HubSpot Partner Program"
+        />
+      </div>
+
+      <div class="content">
+        <div class="lockup">
+          <img src="/assets/ico/logo-honeycomb-3c.svg" alt="SwotBee" />
+          <span>SWOTBEE</span>
+        </div>
+
+        <div class="headline">
+          <div>What if your HubSpot renewals</div>
+          <div>didn't need a <span class="mark">last-minute rescue?</span></div>
+        </div>
+
+        <p class="subline">
+          I build renewal automation inside HubSpot: carryover, uplifts,
+          multi-year chains.
+        </p>
+      </div>
+
+      <div class="ribbon">
+        <span class="works-label">Works with</span>
+        <div class="works-logos">
+          <img class="hs" src="/assets/integrationLogos/hubspot.svg" alt="HubSpot" />
+          <span class="netsuite-item">
+            <img src="/assets/integrationLogos/netsuite.svg" alt="NetSuite" />
+            <span>NetSuite</span>
+          </span>
+          <img class="xero" src="/assets/integrationLogos/xero.svg" alt="Xero" />
+          <span class="qb">QuickBooks</span>
+        </div>
+      </div>
+
+      <div class="guides">
+        <div class="guides-avatar"></div>
+        <div class="guides-safe"></div>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
+
+<script is:inline>
+  // ?export strips the page chrome for a clean screenshot; ?guides shows the
+  // LinkedIn overlap guides. Both are view modes only, nothing persists.
+  const q = window.location.search;
+  if (q.includes("export")) document.body.classList.add("is-export");
+  if (q.includes("guides")) document.body.classList.add("is-guides");
+</script>
+
+<style>
+  /* ------------------------------------------------------------------
+     Colours come from the site's v6 tokens (global.css) so this banner
+     tracks the brand automatically.
+
+     Two of them carry a literal fallback: Tailwind v4 only emits @theme
+     variables that something actually uses, and nothing on the site
+     currently uses amber-100 or bg-warm (51 v6 tokens are declared, 31
+     reach the built CSS). The fallback is the real token value, so if
+     either starts being used the variable simply takes over.
+     ------------------------------------------------------------------ */
+  .page {
+    padding: 40px 24px 80px;
+  }
+  .page-chrome {
+    max-width: 1584px;
+    margin: 0 auto 24px;
+  }
+  .page-chrome h1 {
+    font-family: "Rokkitt Variable", serif;
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--color-v6-dark);
+  }
+  .page-chrome p {
+    margin-top: 6px;
+    font-size: 15px;
+    color: var(--color-v6-text-muted);
+  }
+  .page-chrome code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 13px;
+    background: var(--color-v6-border);
+    padding: 1px 5px;
+    border-radius: 4px;
+  }
+
+  /* ==================================================================
+     THE BANNER  -  fixed 1584x396, LinkedIn's exact size.
+     Do not change these dimensions.
+     ================================================================== */
+  .banner {
+    position: relative;
+    width: 1584px;
+    height: 396px;
+    overflow: hidden;
+    margin: 0 auto;
+    background: linear-gradient(
+      170deg,
+      var(--color-v6-bg) 0%,
+      var(--color-v6-bg-warm, #f5f3ef) 100%
+    );
+    font-family: "Hanken Grotesk Variable", system-ui, sans-serif;
+    color: var(--color-v6-dark);
+    box-shadow: 0 4px 24px rgba(26, 37, 48, 0.18);
+  }
+
+  /* the brand rule along the top edge; z-index keeps it over the watermark */
+  .banner::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 6px;
+    z-index: 3;
+    background: linear-gradient(
+      90deg,
+      var(--color-v6-amber-100, #fdd96b) 0%,
+      var(--color-v6-amber) 38%,
+      var(--color-v6-teal-300) 100%
+    );
+  }
+
+  /* oversized honeycomb, bled off the right edge. Texture only: it must
+     never read as a shape in its own right. */
+  .watermark {
+    position: absolute;
+    right: -150px;
+    top: -60px;
+    width: 400px;
+    opacity: 0.045;
+    pointer-events: none;
+  }
+
+  /* The partner badge sits in the gutter left of the copy, centred on
+     x=250. That is clear of the profile photo, which starts around y=204.
+     It is deliberately smaller than it was: SwotBee's own lockup should
+     stay the dominant mark on SwotBee's own banner. */
+  .badge-corner {
+    position: absolute;
+    left: 0;
+    top: 42px;
+    width: 500px;
+    display: flex;
+    justify-content: center;
+  }
+  .badge-corner img {
+    height: 90px;
+    width: auto;
+    display: block;
+  }
+
+  /* Copy starts at 400px, not the more obvious 300px: LinkedIn drops the
+     profile photo over the bottom-left and crops the sides, and a real
+     upload showed it still clipping text at 300. */
+  .content {
+    position: absolute;
+    left: 400px;
+    top: 28px;
+    width: 1160px;
+  }
+
+  .lockup {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .lockup img {
+    height: 32px;
+    display: block;
+  }
+  .lockup span {
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: 0.08em;
+    color: var(--color-v6-dark);
+  }
+
+  /* 75px holds two lines and runs to about x=1489. Height is the binding
+     constraint, not width: the tight 1.11 line-height, the 70px ribbon and
+     the 28px top offset are what make two lines of it fit at all. */
+  .headline {
+    margin-top: 18px;
+    font-family: "Rokkitt Variable", serif;
+    font-weight: 600;
+    font-size: 75px;
+    line-height: 83px;
+    letter-spacing: -0.008em;
+    color: var(--color-v6-dark);
+  }
+  /* dark text on amber, never white: white on this amber is about 2.5:1,
+     the dark ink is about 11:1 */
+  .headline .mark {
+    background: var(--color-v6-amber-100, #fdd96b);
+    border-radius: 11px;
+    padding: 2px 18px 6px;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+  }
+
+  .subline {
+    margin-top: 14px;
+    font-size: 28px;
+    line-height: 38px;
+    color: var(--color-v6-text-muted);
+  }
+
+  /* ---------- bottom ribbon, same idea as ClientLogoStrip ---------- */
+  .ribbon {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 70px;
+    background: var(--color-v6-border);
+    display: flex;
+    align-items: center;
+    gap: 36px;
+    padding-left: 400px;
+  }
+  .works-label {
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--color-v6-text-muted);
+    white-space: nowrap;
+  }
+  .works-logos {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+  .works-logos img {
+    width: auto;
+    display: block;
+    object-fit: contain;
+    opacity: 0.85;
+  }
+  /* heights are tuned per mark, not shared: these SVGs carry different
+     amounts of internal padding, so equal heights look unequal */
+  .works-logos .hs {
+    height: 40px;
+  }
+  .works-logos .xero {
+    height: 24px;
+  }
+  .netsuite-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+  }
+  .netsuite-item img {
+    height: 26px;
+  }
+  .netsuite-item span {
+    font-size: 12px;
+    color: var(--color-v6-text-muted);
+  }
+  /* QuickBooks is text on purpose: no QuickBooks logo file exists anywhere
+     in the workspace and none was fabricated. */
+  .qb {
+    font-weight: 700;
+    font-size: 19px;
+    color: var(--color-v6-text-muted);
+  }
+
+  /* ---------- view modes ---------- */
+  .guides {
+    display: none;
+  }
+  :global(body.is-guides) .guides {
+    display: block;
+  }
+  .guides-avatar {
+    position: absolute;
+    left: 16px;
+    bottom: -76px;
+    width: 268px;
+    height: 268px;
+    border-radius: 50%;
+    border: 2px dashed rgba(255, 92, 53, 0.9);
+    background: rgba(255, 92, 53, 0.12);
+  }
+  .guides-safe {
+    position: absolute;
+    left: 400px;
+    right: 40px;
+    top: 20px;
+    bottom: 20px;
+    border: 2px dashed rgba(92, 98, 214, 0.8);
+  }
+
+  :global(body.is-export) {
+    background: transparent;
+  }
+  :global(body.is-export) .page {
+    padding: 0;
+  }
+  :global(body.is-export) .page-chrome {
+    display: none;
+  }
+  :global(body.is-export) .banner {
+    box-shadow: none;
+  }
+</style>
