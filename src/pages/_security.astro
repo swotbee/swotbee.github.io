@@ -20,6 +20,20 @@ import Footer from "../components/astro/Footer.astro";
 //     controls to this page before they exist in the operational docs.
 //
 // Open placeholders: {{firm_legal_name}} and the audit-evidence-log storage location.
+//
+// NOT ROUTED. The leading underscore in the filename is load-bearing: Astro excludes
+// underscore-prefixed files in src/pages/ from the router, so this page is not built and
+// not deployed at all. noindex only hides a page from search; the URL still resolves for
+// anyone who has it. For an unfinished *security* statement, which is a public trust
+// claim, undiscoverable was not the same as unpublished.
+//
+// TO PUBLISH, five things together (was four before the rename):
+//   1. rename this file back to security.astro
+//   2. remove robots="noindex, follow" from <Layout> below
+//   3. remove the DRAFT MARKER block below
+//   4. remove '/security/' from the sitemap filter in astro.config.mjs
+//   5. restore the footer link in components/astro/Footer.astro
+// Do not do any of them until both placeholders above are filled and Sharmi signs off.
 const linkClass =
   "text-v6-copper underline underline-offset-2 hover:text-v6-copper-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-v6-copper rounded-sm";
 const subprocessors = [

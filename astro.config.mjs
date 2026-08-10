@@ -73,8 +73,10 @@ export default defineConfig({
           '/brand/',
           '/design-index/',
           // DRAFT until the two placeholders are filled and Sharmi signs off.
-          // Remove this line, the noindex on the page, the draft banner, and
-          // restore the footer link, all four together, when it goes live.
+          // The page source is src/pages/_security.astro: the underscore keeps it out
+          // of the router entirely, so it is not built or deployed and this filter entry
+          // is belt-and-braces. See the restore checklist at the top of that file, which
+          // lists all five steps to publish it.
           '/security/',
           '/hero-preview/',
           '/index-old/',
