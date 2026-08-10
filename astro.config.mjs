@@ -72,6 +72,10 @@ export default defineConfig({
           // only ever loaded locally to screenshot an export
           '/brand/',
           '/design-index/',
+          // DRAFT until the two placeholders are filled and Sharmi signs off.
+          // Remove this line, the noindex on the page, the draft banner, and
+          // restore the footer link, all four together, when it goes live.
+          '/security/',
           '/hero-preview/',
           '/index-old/',
           '/logo-',

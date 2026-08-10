@@ -82,10 +82,20 @@ const subprocessors = [
 ---
 
 <Layout
+  robots="noindex, follow"
   title="Security and Access"
   description="Exactly what access SWOTBee asks for during a HubSpot renewal audit, what we never ask for, what we do with it, when it is revoked, and which certifications we do not hold."
 >
   <Navbar />
+
+  {/* DRAFT MARKER. Remove this block, the noindex on <Layout> above, the
+      '/security/' sitemap exclusion in astro.config.mjs, and restore the footer
+      link in Footer.astro, all four together, when this page goes live. */}
+  <div class="bg-v6-amber-50 border-y border-v6-amber-200 px-4 py-3">
+    <p class="max-w-3xl mx-auto text-sm text-v6-dark">
+      <strong>Draft, not published.</strong> This page is unlinked and set to noindex while two details are confirmed. It is not yet an accurate public statement.
+    </p>
+  </div>
 
   <section class="bg-gradient-to-b from-v6-bg to-white px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20 pb-8">
     <div class="max-w-3xl mx-auto text-center">
@@ -211,10 +221,13 @@ const subprocessors = [
       <ul class="space-y-2 text-base text-v6-text-muted leading-relaxed">
         <li><span class="font-semibold text-v6-dark">SWOTBee does not hold a SOC 2 Type I or SOC 2 Type II attestation.</span></li>
         <li><span class="font-semibold text-v6-dark">SWOTBee is not ISO 27001 certified.</span></li>
-        <li><span class="font-semibold text-v6-dark">SWOTBee holds no security certification of any kind</span>, and no HubSpot badge, partner tier, or accreditation.</li>
+        <li><span class="font-semibold text-v6-dark">SWOTBee holds no security certification of any kind.</span></li>
       </ul>
       <p class="mt-4 text-base text-v6-text-muted leading-relaxed">
-        We say that plainly because it is the sort of thing a procurement team will check anyway. Everything on this page is a self-published description of how we work. It has not been audited by anyone.
+        We are a paid HubSpot Technology Partner. That is a commercial relationship with HubSpot and a real one, but it is worth being precise about what it means: it says nothing about our security posture, and HubSpot has not reviewed or approved how we handle your data. Do not read it as a security credential, because it is not one.
+      </p>
+      <p class="mt-3 text-base text-v6-text-muted leading-relaxed">
+        We say all of this plainly because it is the sort of thing a procurement team will check anyway. Everything on this page is a self-published description of how we work. It has not been audited by anyone.
       </p>
       <p class="mt-3 text-base text-v6-text-muted leading-relaxed">
         We also do not describe ourselves as "GDPR compliant." Whether a specific engagement meets GDPR obligations depends on the data, the contract, and the roles involved, and that is a question for your legal team and ours, not a claim to put on a web page.
