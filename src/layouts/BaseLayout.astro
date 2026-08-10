@@ -173,7 +173,17 @@ const finalCanonicalURL =
     <!-- Prefetch key pages -->
     <link rel="prefetch" href="/services/hubspot-onboarding" />
     <link rel="prefetch" href="/contactus/" />
+    <!-- Icons. All rendered from public/assets/brand/logo-honeycomb-square.svg,
+         which is the header mark on a centred square canvas. Before this, only
+         the SVG was declared and the raster icons were cut off along the bottom,
+         because the source viewBox (0 0 120 110) is not square. -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <!-- iOS ignores transparency, so this one has a white ground baked in -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
     <link rel="sitemap" type="application/xml" href="/sitemap-index.xml" />
     <link rel="alternate" type="application/rss+xml" title="SWOTBee Blog" href="/rss.xml" />
     {import.meta.env.PUBLIC_GSC_VERIFICATION && (
