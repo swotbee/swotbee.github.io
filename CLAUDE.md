@@ -15,18 +15,71 @@ SWOTBee is a HubSpot & Shopify consulting firm targeting mid-sized companies (50
 
 ## Commands
 
+**This repo is pnpm-only.** `AGENTS.md` is the authoritative rule and says never to run
+`npm install`, `npm ci`, or Yarn here. `package.json` pins `packageManager: pnpm@9.12.3`,
+`pnpm-lock.yaml` is the only lockfile, and `package-lock.json` is gitignored.
+
 ```bash
-npm install --legacy-peer-deps   # Install dependencies (--legacy-peer-deps required due to peer dep conflicts)
-npm run dev                      # Dev server at localhost:4321 (binds to all interfaces)
-npm run build                    # Production build to ./dist/
-npm run preview                  # Preview production build locally
+corepack enable                  # One-time, if pnpm is not on PATH
+pnpm install --frozen-lockfile   # Install exactly what CI installs
+pnpm dev                         # Dev server at localhost:4321 (binds to all interfaces)
+pnpm build                       # Production build to ./dist/
+pnpm preview                     # Preview production build locally
 ```
 
-No test runner or linter is configured. Validate changes with `npm run build` — Astro's build will catch type errors, broken imports, and template issues.
+A `Justfile` wraps the same recipes (`just dev`, `just build`, `just install`, `just audit`,
+`just astro check`). `just` is a convenience only and is not installed on every machine; the
+`pnpm` commands above always work.
+
+**Why this matters, not just style.** npm does not fail loudly here. `npm run dev` and
+`npm run build` both succeed and produce a working site against an npm-built `node_modules`,
+so nothing tells you the tree has diverged from what CI installs. The divergence is real
+(no `.pnpm` store, a resurrected `package-lock.json`) and it is what CI will not reproduce.
+If a stray `package-lock.json` appears, someone ran npm: delete it, remove `node_modules`,
+and re-run `pnpm install --frozen-lockfile`.
+
+### `504 (Outdated Optimize Dep)` in dev is NORMAL, not a bug
+
+You will see this in the browser console on a cold dev server, typically for
+`/@id/astro/runtime/client/dev-toolbar/entrypoint.js`. **It is Vite working as designed and
+needs no fix.** Do not go hunting for it.
+
+Vite pre-bundles dependencies and then serves them only at a URL carrying the current
+optimizer hash, `?v=<browserHash>`. The HTML references the module bare, with no `?v=`. So the
+first request after Vite optimizes a dep returns `504 Outdated Optimize Dep` with an empty
+body, which is Vite's signal to the client to reload; the reload then requests the module with
+the correct hash and gets `200`. Proven on this repo:
+
+```
+/@id/astro/runtime/client/dev-toolbar/entrypoint.js?v=275048bb   200
+/@id/astro/runtime/client/dev-toolbar/entrypoint.js              504
+```
+
+Two consequences worth knowing before anyone repeats this investigation:
+
+- **Do not diagnose it with `curl`.** curl never performs Vite's reload, so it sees `504`
+  forever and makes a self-healing mechanism look like a hard failure. Judge it in a browser:
+  if the page renders, there is nothing wrong. This 504 is unrelated to npm vs pnpm, to Node
+  version, to `--host`/`--verbose`, and to the Astro 6 upgrade. All were tested and cleared.
+- It appears to "come and go" because a bare URL returns `200` before Vite has optimized that
+  module and `504` after. That is the same mechanism, not two different states.
+
+To silence it entirely, set `devToolbar: { enabled: false }` in `astro.config.mjs`. That
+removes the toolbar script, and with it the console noise. Cosmetic only.
+
+Genuinely worth avoiding, for a different reason: running `pnpm build`/`pnpm preview` while
+`pnpm dev` is live, and leaving orphaned dev servers around. They share one
+`node_modules/.vite`, so they force needless re-optimization. Run one server at a time.
+Killing them is fiddlier than it looks: the process is
+`node .../astro/bin/astro.mjs dev`, so `pkill -f "astro dev"` matches nothing, and killing the
+`sh -c`/`npx` wrapper leaves the node child holding port 4321. Use `pkill -f "astro.mjs"`,
+then confirm with `ss -ltnp | grep 4321`.
+
+No test runner or linter is configured. Validate changes with `pnpm build` — Astro's build will catch type errors, broken imports, and template issues.
 
 ## Tech Stack
 
-- **Framework**: Astro 5.14 (static output) with React and Alpine.js integrations. Pending upgrade to Astro 6 (requires Node 22+).
+- **Framework**: Astro 6.4.8 (static output) with React 19 and Alpine.js integrations. The Astro 6 upgrade is DONE (Sharmi, Aug 2026); CI runs Node 22. Alpine is started by the `@astrojs/alpinejs` integration alone — never add a second `Alpine.start()`.
 - **Styling**: Tailwind CSS v4 via `@tailwindcss/vite` plugin (NOT the older `@astrojs/tailwind` integration)
 - **Tailwind plugins**: Loaded via `@plugin` in `src/styles/global.css` — flowbite, flowbite-typography, tailwind-scrollbar
 - **UI Libraries**: Flowbite, Embla Carousel, Framer Motion
@@ -120,7 +173,7 @@ Blog posts are produced with a repeatable, research-driven pipeline that merges 
 4. **Research.** Mine web + Reddit + community automatically; reuse existing dumps in `src/pages/posts/_prompts/research-resources/` when present. Write a scored insight bank to `docs/research/blog/<topic>/`.
 5. **Write.** Cover the NeuronWriter terms, use the `topic_matrix` questions as H2/FAQ, write answer-first passages, and match house style (below).
 6. **Optimize.** Score the draft with `/evaluate-content` and revise (add missing terms, hit the word-count target) until it beats the top competitor score. NeuronWriter scoring rewards both term coverage and reaching the word-count target.
-7. **Publish.** Push the final draft to the NeuronWriter editor with `/import-content`, write the `.md` to `src/pages/posts/`, apply the internal linking graph (and add back-links from the pillar), then run `npm run build` to validate.
+7. **Publish.** Push the final draft to the NeuronWriter editor with `/import-content`, write the `.md` to `src/pages/posts/`, apply the internal linking graph (and add back-links from the pillar), then run `pnpm build` to validate.
 
 ### NeuronWriter API
 - Base URL: `https://app.neuronwriter.com/neuron-api/0.5/writer`; auth header `X-API-KEY` (pass as an env var at call time, never commit the key); `Content-Type: application/json`.
@@ -154,4 +207,19 @@ When iterating on page designs, old versions are kept as `*-old.astro` files (e.
 
 ## Deployment
 
-Pushes to `main` auto-deploy via `.github/workflows/pages-deploy.yml`. The workflow uses `npm ci --legacy-peer-deps` and Node 18. Output goes to `./dist/` and is deployed to GitHub Pages. Node version must be bumped to 22 before upgrading to Astro 6.
+Pushes to `main` auto-deploy via `.github/workflows/pages-deploy.yml`: `pnpm/action-setup@v4`
+(pnpm 9.12.3), Node 22, `pnpm install --frozen-lockfile`, then `pnpm build`. Output goes to
+`./dist/` (gitignored, built in CI, never committed) and is deployed to GitHub Pages.
+
+Two consequences worth knowing:
+
+- `--frozen-lockfile` **fails the build** if `package.json` and `pnpm-lock.yaml` disagree. Any
+  dependency change must commit the regenerated `pnpm-lock.yaml` alongside it. Content-only
+  and component-only changes never touch the lockfile and are always safe.
+- `PUBLIC_GA4_ID` and `PUBLIC_CLARITY_ID` are injected from repo secrets **at build time**.
+  Local builds have neither, so GA4 and Clarity are absent locally. Local Lighthouse scores
+  are therefore optimistic: production loads ~195 KB of third-party analytics that local
+  builds do not. Measure the live URL before trusting a performance number.
+
+There is no `.nvmrc`/`.node-version`, so local Node is not pinned to CI's Node 22. Adding one
+is worth doing; until then, check `node -v` if local behaviour diverges from CI.
