@@ -1,0 +1,144 @@
+---
+// Cookie consent banner + the client half of Google Consent Mode v2.
+//
+// The defaults ("denied" before any choice) are set in BaseLayout's <head>, BEFORE
+// gtag.js loads, because Consent Mode only works if the default arrives before the tag.
+// This component is the UI that upgrades that default, plus the loader for Clarity,
+// which is held back entirely until consent because session recording is the most
+// invasive thing the site does.
+//
+// Deliberate choices, do not "simplify" these away:
+//   - Accept and Reject are the same size, weight and shape. A reject button that is
+//     smaller, greyer or hidden behind "Manage options" is the exact dark pattern EU
+//     regulators have been fining, and it is also just dishonest.
+//   - No pre-ticked anything, and no "by continuing to browse you agree". Continuing to
+//     browse is not consent under GDPR/PECR.
+//   - Dismissing without choosing is not possible: there is no X. Closing without a
+//     choice would leave consent ambiguous, and ambiguous defaults to denied anyway, so
+//     the X would only mislead.
+//   - The choice is stored in localStorage, not a cookie, so that storing the decision
+//     does not itself require consent.
+---
+
+<div
+  id="sb-consent"
+  role="dialog"
+  aria-modal="false"
+  aria-labelledby="sb-consent-title"
+  aria-describedby="sb-consent-body"
+  hidden
+  class="fixed inset-x-0 bottom-0 z-[60] p-3 sm:p-4"
+>
+  <div
+    class="mx-auto max-w-3xl rounded-xl border border-v6-border bg-white p-4 shadow-2xl sm:p-5"
+  >
+    <h2 id="sb-consent-title" class="text-base font-semibold text-v6-dark">
+      Cookies on swotbee.com
+    </h2>
+    <p id="sb-consent-body" class="mt-1.5 text-sm leading-relaxed text-v6-text">
+      We use analytics cookies to understand which pages help people and which ones
+      don't. They are off until you say yes. Essential cookies that make the site work
+      are always on. Read our <a
+        href="/cookie/"
+        class="text-v6-copper underline underline-offset-2 hover:text-v6-copper-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-v6-copper rounded-sm"
+        >Cookie Policy</a
+      >.
+    </p>
+    <div class="mt-4 flex flex-col gap-2.5 sm:flex-row">
+      <button
+        type="button"
+        id="sb-consent-accept"
+        class="min-h-[44px] flex-1 rounded-lg bg-v6-copper px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-v6-copper-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-v6-copper"
+      >
+        Accept analytics cookies
+      </button>
+      <button
+        type="button"
+        id="sb-consent-reject"
+        class="min-h-[44px] flex-1 rounded-lg border-2 border-v6-dark bg-white px-5 py-2.5 text-sm font-semibold text-v6-dark transition-colors hover:bg-gray-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-v6-dark"
+      >
+        Reject analytics cookies
+      </button>
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+  (function () {
+    var KEY = "sb_consent";
+    var el = document.getElementById("sb-consent");
+    if (!el) return;
+
+    function read() {
+      try {
+        return localStorage.getItem(KEY);
+      } catch (e) {
+        // Private mode or storage disabled. Treat as undecided and re-ask; we cannot
+        // remember the answer, but we must not silently assume consent.
+        return null;
+      }
+    }
+
+    function write(v) {
+      try {
+        localStorage.setItem(KEY, v);
+      } catch (e) {}
+    }
+
+    function apply(granted) {
+      if (typeof window.gtag === "function") {
+        window.gtag("consent", "update", {
+          ad_storage: granted ? "granted" : "denied",
+          analytics_storage: granted ? "granted" : "denied",
+          ad_user_data: granted ? "granted" : "denied",
+          ad_personalization: granted ? "granted" : "denied",
+        });
+      }
+      // Clarity is never loaded on a denied or undecided visit.
+      if (granted && typeof window.__sbLoadClarity === "function") {
+        window.__sbLoadClarity();
+      }
+    }
+
+    function close() {
+      el.hidden = true;
+    }
+
+    var stored = read();
+    if (stored === "granted") {
+      apply(true);
+      return; // already decided, never show the banner again
+    }
+    if (stored === "denied") {
+      return;
+    }
+
+    el.hidden = false;
+
+    document
+      .getElementById("sb-consent-accept")
+      .addEventListener("click", function () {
+        write("granted");
+        apply(true);
+        close();
+      });
+
+    document
+      .getElementById("sb-consent-reject")
+      .addEventListener("click", function () {
+        write("denied");
+        apply(false);
+        close();
+      });
+
+    // Footer "Cookie settings" link reopens the banner so a choice can be withdrawn as
+    // easily as it was given, which GDPR requires and which most banners quietly skip.
+    document.addEventListener("click", function (e) {
+      var t = e.target.closest ? e.target.closest("[data-consent-reopen]") : null;
+      if (!t) return;
+      e.preventDefault();
+      el.hidden = false;
+      document.getElementById("sb-consent-accept").focus();
+    });
+  })();
+</script>

@@ -11,6 +11,7 @@ import {
 import "@fontsource-variable/hanken-grotesk";     // Body — variable font covers all weights
 // Rokkitt loaded via @font-face in global.css (variable woff2, no separate import needed)
 import "../styles/global.css";
+import ConsentBanner from "../components/astro/ConsentBanner.astro";
 
 interface Props {
   title: string;
@@ -182,6 +183,35 @@ const finalCanonicalURL =
     {import.meta.env.PUBLIC_GSC_VERIFICATION && (
       <meta name="google-site-verification" content={import.meta.env.PUBLIC_GSC_VERIFICATION} />
     )}
+    {/* Google Consent Mode v2 defaults. This block MUST stay above the gtag.js tag
+        below: Consent Mode only takes effect if the default arrives before the tag
+        loads, and a default that lands afterwards silently does nothing. Everything
+        starts denied, so an undecided visitor is never measured. A returning visitor's
+        stored choice is read synchronously here rather than waiting for the banner
+        script, otherwise every page load would begin denied and flip a moment later,
+        losing the first events of the session. */}
+    {import.meta.env.PUBLIC_GA4_ID && (
+      <script is:inline>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        (function () {
+          var granted = false;
+          try { granted = localStorage.getItem('sb_consent') === 'granted'; } catch (e) {}
+          var state = granted ? 'granted' : 'denied';
+          gtag('consent', 'default', {
+            ad_storage: state,
+            analytics_storage: state,
+            ad_user_data: state,
+            ad_personalization: state,
+            // Strictly necessary. These carry no cross-site or advertising signal and
+            // are what keeps the site functional, so they are not gated.
+            functionality_storage: 'granted',
+            security_storage: 'granted',
+            wait_for_update: 500,
+          });
+        })();
+      </script>
+    )}
     {import.meta.env.PUBLIC_GA4_ID && (
       <script async src={`https://www.googletagmanager.com/gtag/js?id=${import.meta.env.PUBLIC_GA4_ID}`}></script>
     )}
@@ -254,11 +284,26 @@ const finalCanonicalURL =
         // costs a per-page conditional; site-wide trivially covers the renewal-ops,
         // leakage-estimate, uplift-checklist, and compare pages the framework calls out
         // by name, plus everything else for free.
-        (function (c, l, a, r, i, t, y) {
-          c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments); };
-          t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
-          y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
-        })(window, document, "clarity", "script", clarityId);
+        //
+        // CONSENT-GATED. This no longer self-executes. Clarity records the session, which
+        // is the most invasive thing this site does, so it must not load on an undecided
+        // or refused visit. Consent Mode alone would not help here: Clarity is not a
+        // Google tag and ignores those signals entirely, so the only correct gate is not
+        // loading the script. ConsentBanner.astro calls this on accept, and BaseLayout
+        // calls it on load for a visitor who already accepted. Idempotent, so a double
+        // call is harmless.
+        window.__sbLoadClarity = function () {
+          if (window.__sbClarityLoaded) return;
+          window.__sbClarityLoaded = true;
+          (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments); };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+          })(window, document, "clarity", "script", clarityId);
+        };
+        try {
+          if (localStorage.getItem('sb_consent') === 'granted') window.__sbLoadClarity();
+        } catch (e) {}
       </script>
     )}
   </head>
@@ -266,6 +311,11 @@ const finalCanonicalURL =
     <main>
       <slot />
     </main>
+    {/* Rendered only when there is something to consent to. With no analytics IDs
+        configured (local builds) nothing is collected, so a banner would be theatre. */}
+    {(import.meta.env.PUBLIC_GA4_ID || import.meta.env.PUBLIC_CLARITY_ID) && (
+      <ConsentBanner />
+    )}
     <!-- Alpine is started by the @astrojs/alpinejs integration (it injects a
          page script that sets window.Alpine and calls start() on DOMContentLoaded).
          A second manual Alpine.start() used to live here, so every page in the site

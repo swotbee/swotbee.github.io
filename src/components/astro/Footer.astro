@@ -47,6 +47,10 @@ import NewsletterForm from "./NewsletterForm.astro";
         <a href="/privacy" class="block text-sm text-v6-blue-300 hover:text-white py-1 transition-colors">Privacy Policy</a>
         <a href="/terms" class="block text-sm text-v6-blue-300 hover:text-white py-1 transition-colors">Terms of Use</a>
         <a href="/cookie" class="block text-sm text-v6-blue-300 hover:text-white py-1 transition-colors">Cookie Policy</a>
+        {/* Reopens the consent banner. GDPR requires withdrawing consent to be as easy as
+            giving it, which a banner that only ever appears once does not satisfy.
+            data-consent-reopen is the hook ConsentBanner.astro listens for. */}
+        <button type="button" data-consent-reopen class="block text-left text-sm text-v6-blue-300 hover:text-white py-1 transition-colors">Cookie settings</button>
       </div>
     </div>
 
