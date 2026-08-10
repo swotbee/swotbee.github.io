@@ -28,10 +28,17 @@ import StructuredData from "../components/astro/StructuredData.astro";
 import RenewalRoiCalculator from "../components/astro/RenewalRoiCalculator.astro";
 import RenewalDemoYoutube from "../components/react/RenewalDemoYoutube.jsx";
 
-const title =
-  "Renewal Operations for HubSpot | Stop Losing Revenue To Missed Renewals";
+// SERP budget: BaseLayout appends " | SWOTBee" to every title, so the string below
+// must stay under ~50 chars to keep the rendered title inside Google's ~60-char cut.
+// Description stays under ~155 for the same reason.
+const title = "HubSpot Renewal Operations | Stop Revenue Leakage";
 const description =
-  "Renewal deals that create themselves, line items carried over exactly, escalations applied automatically, and ARR you can finally trust. Inside HubSpot Professional and Enterprise.";
+  "Renewal deals that create themselves, line items carried over exactly, escalations applied automatically, and ARR you can finally trust.";
+
+// Schema URLs are derived from the page's own URL rather than hardcoded, so they stay
+// correct if this page is ever moved or promoted to a different path (e.g. the homepage).
+const pageUrl = new URL(Astro.url.pathname, Astro.site ?? "https://swotbee.com").href;
+const isHomepage = Astro.url.pathname === "/";
 
 // Real client logos (greyscale). Files live in public/assets/customerLogos/.
 const clientLogos = [
@@ -246,7 +253,9 @@ const signals = [
 const stats = [
   { value: "98%", label: "lift in renewal accuracy", tone: "text-v6-teal" },
   { value: "90%", label: "less quote-creation effort", tone: "text-v6-copper" },
-  { value: "65%", label: "faster quote response time", tone: "text-v6-blue" },
+  // blue-300, not blue: the band sits on bg-v6-dark, where the base blue lands at
+  // 2.9:1 and fails WCAG AA. blue-300 is 5.0:1 on the same background.
+  { value: "65%", label: "faster quote response time", tone: "text-v6-blue-300" },
   { value: "2 wks", label: "to first results", tone: "text-v6-amber" },
 ];
 
@@ -341,7 +350,8 @@ const toneMap: Record<string, string> = {
   copper: "bg-v6-copper-50 text-v6-copper",
   teal: "bg-v6-teal-50 text-v6-teal",
   blue: "bg-v6-blue-50 text-v6-blue",
-  amber: "bg-v6-amber-50 text-v6-amber",
+  // amber-800, not amber: base amber on amber-50 is 2.4:1 and fails WCAG AA.
+  amber: "bg-v6-amber-50 text-v6-amber-800",
 };
 ---
 
@@ -352,21 +362,27 @@ const toneMap: Record<string, string> = {
       name: "Renewal Operations for HubSpot",
       description: description,
       serviceType: "Renewal Operations & Revenue Automation Consulting",
-      url: "https://swotbee.com/renewal-operations",
+      url: pageUrl,
     }}
   />
-  <StructuredData
-    type="breadcrumb"
-    data={{
-      breadcrumbs: [
-        { name: "Home", url: "https://swotbee.com" },
-        {
-          name: "Renewal Operations",
-          url: "https://swotbee.com/renewal-operations",
-        },
-      ],
-    }}
-  />
+  <!-- The page's own FAQ block, exposed for FAQ rich results. Same source array as
+       the rendered accordion, so the two can never drift apart. -->
+  <StructuredData type="faq" data={{ faqs }} />
+  {
+    /* A breadcrumb that starts at Home is meaningless when this page IS Home,
+       so it is emitted only when the page sits at a sub-path. */
+    !isHomepage && (
+      <StructuredData
+        type="breadcrumb"
+        data={{
+          breadcrumbs: [
+            { name: "Home", url: "https://swotbee.com" },
+            { name: "Renewal Operations", url: pageUrl },
+          ],
+        }}
+      />
+    )
+  }
 
   <!-- Motion gate: add .anim synchronously BEFORE first paint so scroll-reveal
        elements start hidden and never flash visible-then-hidden (FOUC fix).
@@ -392,7 +408,10 @@ const toneMap: Record<string, string> = {
   <Navbar />
 
   <!-- ============ HERO ============ -->
+  <!-- id is load-bearing: the LCP guard in the stylesheet targets #hero to keep
+       above-the-fold content painted at first paint. See ".anim #hero" below. -->
   <section
+    id="hero"
     class="relative overflow-hidden bg-gradient-to-b from-v6-bg to-white px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20 pb-12 sm:pb-16"
   >
     <div
@@ -400,10 +419,20 @@ const toneMap: Record<string, string> = {
     >
       <!-- Left: copy -->
       <div class="text-center lg:text-left">
-        <!-- <div class="reveal flex flex-wrap justify-center lg:justify-start gap-3 mb-6">
-          <span class="bg-v6-teal-50 text-v6-teal text-xs font-semibold px-3 py-1 rounded-full">HubSpot Solutions Partner</span>
-          <span class="bg-v6-copper-50 text-v6-copper text-xs font-semibold px-3 py-1 rounded-full">Renewal Operations</span>
-        </div> -->
+        <!-- Partner status is a confirmed, checkable fact and the strongest
+             above-the-fold trust signal this page has. It is deliberately ON. -->
+        <div
+          class="reveal flex flex-wrap justify-center lg:justify-start gap-3 mb-6"
+        >
+          <span
+            class="bg-v6-teal-50 text-v6-teal text-xs font-semibold px-3 py-1 rounded-full"
+            >HubSpot Solutions Partner</span
+          >
+          <span
+            class="bg-v6-copper-50 text-v6-copper text-xs font-semibold px-3 py-1 rounded-full"
+            >Renewal Operations</span
+          >
+        </div>
         <p
           class="reveal text-sm font-semibold tracking-[0.1em] text-v6-copper mb-3"
         >
@@ -460,7 +489,7 @@ const toneMap: Record<string, string> = {
               ></span>
             </div>
           </div>
-          <div id="stake-cta" class="relative inline-block">
+          <div class="relative inline-block">
             <a
               href="#roi"
               class="border border-gray-300 text-v6-dark px-8 py-3.5 rounded-xl text-base font-medium hover:bg-gray-50 transition-colors text-center block"
@@ -565,16 +594,13 @@ const toneMap: Record<string, string> = {
   <!-- ============ TRUST BAR ============ -->
   <section class="mt-6 sm:mt-8 bg-v6-bg border-y border-v6-border py-6 px-4">
     <div class="max-w-5xl mx-auto">
-      <!-- <div class="reveal flex flex-wrap justify-center items-center gap-x-10 gap-y-5 mb-5">
-        <span class="text-xs text-gray-500 font-medium uppercase tracking-wider">Trusted by revenue teams at</span>
-        {clientLogos.map(logo => (
-          <img src={logo.src} alt={logo.name} class="flex-none h-8 w-auto max-w-[130px] object-contain grayscale opacity-60 hover:opacity-90 transition-opacity" loading="lazy" />
-        ))}
-      </div> -->
+      <!-- The 5 approved client logos, same set the service-page template uses.
+           Explicit width/height so the row reserves its space before the images
+           decode (no layout shift). -->
       <div
         class="reveal flex flex-wrap justify-center items-center gap-x-8 gap-y-3 pt-3"
       >
-        <span class="text-xs text-gray-500 font-medium uppercase tracking-wider"
+        <span class="text-xs text-gray-600 font-medium uppercase tracking-wider"
           >Works with</span
         >
         {
@@ -583,8 +609,11 @@ const toneMap: Record<string, string> = {
               <img
                 src={t.img}
                 alt={t.name}
+                width="120"
+                height="32"
                 class="flex-none h-8 w-auto max-w-[120px] object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition"
                 loading="lazy"
+                decoding="async"
               />
               {t.label && (
                 <span class="text-sm font-semibold text-v6-text-muted">
@@ -612,7 +641,7 @@ const toneMap: Record<string, string> = {
       <h2
         class="reveal text-2xl sm:text-3xl lg:text-4xl font-bold text-v6-dark mb-3 text-balance"
       >
-        From Missed Renewals to a Command Center — Watch every renewal fall into
+        From Missed Renewals to a Command Center: Watch every renewal fall into
         place.
       </h2>
       <p
@@ -620,7 +649,7 @@ const toneMap: Record<string, string> = {
       >
         Watch Swotbee turn a closed-won deal into a renewal process that runs
         itself: the right line items, uplift, timing, ownership, and
-        follow-up—without spreadsheet chasing or renewal gaps.
+        follow-up, without spreadsheet chasing or renewal gaps.
       </p>
       <div
         class="reveal rounded-2xl border border-v6-border bg-v6-bg shadow-xl overflow-hidden max-w-3xl mx-auto"
@@ -632,7 +661,7 @@ const toneMap: Record<string, string> = {
       >
         <a
           href="/renewal-audit-call/"
-          data-ga-cta="demo_page_book_review"
+          data-ga-cta="renewal_demo_book_audit"
           class="bg-v6-copper text-white px-8 py-3.5 rounded-xl text-base font-semibold hover:bg-v6-copper-600 transition-colors text-center"
         >
           Book Your Renewal Audit →
@@ -854,7 +883,7 @@ const toneMap: Record<string, string> = {
       </p>
       <div class="reveal text-center">
         <a
-          href="/resources/renewal-leakage-estimate"
+          href="/resources/renewal-leakage-estimate/"
           class="inline-block border border-v6-copper text-v6-copper px-7 py-3 rounded-xl text-base font-semibold hover:bg-v6-copper-50 transition-colors"
         >
           Get Your 1-Page Renewal Leakage Estimate (no call needed) →
@@ -884,14 +913,14 @@ const toneMap: Record<string, string> = {
       </h2>
       <p class="reveal text-v6-text-muted text-center mb-10 max-w-2xl mx-auto">
         We map the rules behind your renewals, expansion revenue, and
-        forecasting—then build them into HubSpot so they run consistently, every
-        time.
+        forecasting, then build them into HubSpot so they run consistently,
+        every time.
       </p>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div class="reveal bg-white rounded-xl p-6 border border-v6-border">
           <p
-            class="text-xs font-semibold uppercase tracking-wider text-v6-text-muted opacity-70 mb-5"
+            class="text-xs font-semibold uppercase tracking-wider text-v6-text-muted mb-5"
           >
             Manual or DIY today
           </p>
@@ -922,7 +951,7 @@ const toneMap: Record<string, string> = {
               Forecast Meeting
             </div>
           </div>
-          <p class="text-xs text-v6-text-muted opacity-70 mt-5 text-center">
+          <p class="text-xs text-v6-text-muted mt-5 text-center">
             Manual tracking or brittle DIY workflows, the kind that quietly
             break at year 3.
           </p>
@@ -1201,8 +1230,11 @@ const toneMap: Record<string, string> = {
                   <img
                     src={t.image}
                     alt={t.name}
+                    width="40"
+                    height="40"
                     class="w-10 h-10 rounded-full object-cover flex-shrink-0"
                     loading="lazy"
+                    decoding="async"
                   />
                 ) : (
                   <div class="w-10 h-10 rounded-full bg-v6-teal-100 flex items-center justify-center text-v6-teal font-bold text-sm flex-shrink-0">
@@ -1341,7 +1373,7 @@ const toneMap: Record<string, string> = {
       <div class="reveal flex flex-col sm:flex-row gap-3 justify-center mt-8">
         <a
           href="/renewal-audit-call/"
-          data-ga-cta="v3_stake_book_review"
+          data-ga-cta="renewal_checklist_book_audit"
           class="bg-v6-copper text-white px-7 py-3 rounded-xl text-base font-semibold hover:bg-v6-copper-600 transition-colors text-center"
         >
           Book Your Renewal Audit (starts with a free 30-min call) →
@@ -1415,7 +1447,7 @@ const toneMap: Record<string, string> = {
       <div class="cta-group cta-group-light relative inline-block">
         <a
           href="/renewal-audit-call/"
-          data-ga-cta="v3_final_book_review"
+          data-ga-cta="renewal_final_book_audit"
           class="bg-white text-v6-copper px-8 py-3.5 rounded-xl text-base font-semibold hover:bg-gray-50 transition-colors inline-block"
         >
           Book Your Renewal Audit →
@@ -1447,9 +1479,11 @@ const toneMap: Record<string, string> = {
   </section>
 
   <Footer />
-</Layout>
 
-<style>
+  <!-- <style> and <script> live INSIDE <Layout>. Outside it they render after the
+       layout has already closed </body></html>, which emits stray markup past the
+       document end. Keep them here. -->
+  <style>
   /* ===== Motion is reserved for reading order and the renewal-system flow. ===== */
   .anim .reveal {
     opacity: 0;
@@ -1473,6 +1507,18 @@ const toneMap: Record<string, string> = {
   .anim .stagger.in > * {
     opacity: 1;
     transform: none;
+  }
+
+  /* ===== LCP guard =====
+     The hero is above the fold and its H1 is the LCP element. Fading it in from
+     opacity 0 means the browser cannot record LCP until the reveal script has
+     parsed, run, and added .in, which pushes LCP out by the whole script-execution
+     window for no design benefit. Hero content therefore animates on transform
+     only: it is painted at first paint and still slides into place. Everything
+     below the fold keeps the opacity fade, where it costs nothing. */
+  .anim #hero .reveal,
+  .anim #hero .stagger > * {
+    opacity: 1;
   }
   h1.stagger.in > *:nth-child(2) {
     transition-delay: 0.06s;
@@ -1535,20 +1581,6 @@ const toneMap: Record<string, string> = {
     transform: scale(1.22);
   }
 
-  /* Curiosity speech bubble: hidden until the idle cue reveals it. */
-  .stake-bubble {
-    opacity: 0;
-    transform: translate(-50%, 8px);
-    transition:
-      opacity 0.35s ease-out,
-      transform 0.35s ease-out;
-    pointer-events: none;
-  }
-  #stake-cta.cue .stake-bubble {
-    opacity: 1;
-    transform: translate(-50%, 0);
-  }
-
   .bolt-pulse {
     animation: boltPulse 2.2s ease-in-out infinite;
   }
@@ -1606,11 +1638,6 @@ const toneMap: Record<string, string> = {
     }
     #bee {
       transform: none !important;
-    }
-    /* Bubble still appears on the idle cue, just without the slide. */
-    .stake-bubble {
-      transition: none !important;
-      transform: translate(-50%, 0) !important;
     }
     .anim-card,
     .anim-emoji,
@@ -1687,56 +1714,71 @@ const toneMap: Record<string, string> = {
     bar.style.opacity = "0";
   }
 
-  // --- Idle curiosity cue (one-shot per session) ---
-  // If the visitor lingers in the hero without engaging, a curiosity bubble
-  // points them at the ROI calculator. Fires once per
-  // session, cancels the moment they interact, and never nags twice.
-  const stakeCta = document.getElementById("stake-cta");
-  if (stakeCta && !sessionStorage.getItem("stakeCueShown")) {
-    const IDLE_MS = 6000;
-    let timer = 0;
-    let fired = false;
-
-    const dismiss = () => stakeCta.classList.remove("cue");
-    // Mouse movement is normal reading, so it does NOT reset the timer. Only
-    // real engagement (scroll, CTA hover, click) cancels the pending cue.
-    const cancel = () => {
-      fired = true;
-      clearTimeout(timer);
-      timer = 0;
+  // --- Stat band count-up ---
+  // Each .stat-value renders its real value server-side and repeats it in
+  // data-stat-value, so crawlers, screen readers and no-JS visitors always read the
+  // true figure. We only parse the leading number and re-attach whatever suffix it
+  // had, which lets a non-numeric value ("2 wks") animate the digits and keep its
+  // unit. Anything that does not parse is simply left alone.
+  const parseStat = (el: HTMLElement) => {
+    const raw = (el.dataset.statValue ?? el.textContent ?? "").trim();
+    const match = raw.match(/^(\D*?)(\d+(?:\.\d+)?)(.*)$/);
+    if (!match) return null;
+    const [, prefix, numText, suffix] = match;
+    return {
+      raw,
+      prefix,
+      suffix,
+      target: parseFloat(numText),
+      decimals: (numText.split(".")[1] || "").length,
     };
-    const fire = () => {
-      if (fired) return;
-      fired = true;
-      sessionStorage.setItem("stakeCueShown", "1");
-      stakeCta.classList.add("cue");
-      window.setTimeout(dismiss, 9000);
+  };
+
+  const statEls = Array.from(
+    document.querySelectorAll<HTMLElement>(".stat-value"),
+  );
+
+  // Reduced motion keeps the server-rendered numbers exactly as they are.
+  if (statEls.length && !reduce) {
+    const statsRoot = statEls[0].closest("section") ?? statEls[0];
+    const parsed = statEls
+      .map((el) => {
+        const p = parseStat(el);
+        return p ? { el, ...p } : null;
+      })
+      .filter((s): s is NonNullable<typeof s> => s !== null);
+
+    const DURATION = 900;
+    const start = performance.now();
+    const tick = (now: number) => {
+      const p = Math.min((now - start) / DURATION, 1);
+      // easeOutCubic: quick climb, gentle settle, so the final figure is readable
+      const eased = 1 - Math.pow(1 - p, 3);
+      parsed.forEach((s) => {
+        s.el.textContent =
+          p < 1
+            ? s.prefix + (s.target * eased).toFixed(s.decimals) + s.suffix
+            : s.raw; // restore the exact source string, never a rounded rebuild
+      });
+      if (p < 1) requestAnimationFrame(tick);
     };
 
-    window.addEventListener(
-      "scroll",
-      () => {
-        if (stakeCta.classList.contains("cue")) dismiss();
-        else cancel();
-      },
-      { passive: true },
-    );
-    stakeCta.addEventListener("mouseenter", cancel);
-    stakeCta.addEventListener("click", () => {
-      cancel();
-      dismiss();
-    });
-
+    // rootMargin starts the run a screen early, while the band is still behind the
+    // stagger fade. That matters for more than smoothness: the real figures stay in
+    // the DOM until the instant the animation begins and are written back the frame
+    // it ends, so a crawler, screenshot or reader that never scrolls here can never
+    // capture a zeroed "0%" in place of the actual claim.
     const statsObserver = new IntersectionObserver(
       (entries, observer) => {
         entries.forEach((entry) => {
           if (!entry.isIntersecting) return;
-          statValues.forEach(countStat);
           observer.disconnect();
+          requestAnimationFrame(tick);
         });
       },
-      { threshold: 0.5 },
+      { rootMargin: "100% 0px 0px 0px" },
     );
-    statsObserver.observe(statValues[0].closest("section") || statValues[0]);
+    statsObserver.observe(statsRoot);
   }
-</script>
+  </script>
+</Layout>
