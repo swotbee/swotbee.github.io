@@ -162,7 +162,10 @@ const finalCanonicalURL =
          trailingSlash:"always", so the unslashed path 404s and every page in the
          site logged a console error for it. -->
     <link rel="prefetch" href="/services/hubspot-onboarding/" />
-    <link rel="prefetch" href="/contactus/" />
+    <!-- The navbar CTA now points at the renewal funnel, so prefetch what visitors
+         are actually most likely to open next. /contactus/ is still linked from the
+         Contact nav item and the footer, just no longer the primary destination. -->
+    <link rel="prefetch" href="/renewal-audit-call/" />
     <!-- Icons. All rendered from public/assets/brand/logo-honeycomb-square.svg,
          which is the header mark on a centred square canvas. Before this, only
          the SVG was declared and the raster icons were cut off along the bottom,
