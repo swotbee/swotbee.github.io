@@ -9,10 +9,6 @@ import {
 // Body: Hanken Grotesk (primary), DM Sans (fallback), Lexend Deca (fallback)
 // Headings: Rokkitt Variable (custom @font-face in global.css), Vollkorn (fallback)
 import "@fontsource-variable/hanken-grotesk";     // Body — variable font covers all weights
-import "@fontsource-variable/dm-sans";             // Body fallback
-import "@fontsource/lexend-deca";                  // Body fallback (weight 400 only)
-import "@fontsource/vollkorn/400.css";             // Heading fallback (regular)
-import "@fontsource/vollkorn/700.css";             // Heading fallback (bold)
 // Rokkitt loaded via @font-face in global.css (variable woff2, no separate import needed)
 import "../styles/global.css";
 
@@ -56,21 +52,14 @@ const finalCanonicalURL =
     <meta name="revisit-after" content="7 days" />
     <meta name="theme-color" content="#1f2937" />
 
-    <!-- Preload critical fonts (body + heading) -->
-    <link
-      rel="preload"
-      as="font"
-      type="font/woff2"
-      href="/fonts/hanken-grotesk-latin-wght-normal.woff2"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="preload"
-      as="font"
-      type="font/woff2"
-      href="/fonts/rokkitt-latin-wght-normal.woff2"
-      crossorigin="anonymous"
-    />
+    <!-- No font preloads on purpose. These used to preload /fonts/*.woff2, but the
+         @font-face rules that actually render text resolve to the hashed bundled
+         copies under /_astro/, so the preloaded files were a different URL and were
+         never used: every page downloaded both copies of both fonts, ~64 KB of pure
+         waste, and Chrome logged "preloaded but not used" for each. The fonts are
+         font-display:swap, so text paints immediately in the fallback either way and
+         the preload was buying nothing. Re-adding one is only correct if it points at
+         the exact URL the built CSS requests. -->
 
     <!-- Additional SEO meta tags -->
     <meta property="og:locale" content="en_US" />
@@ -161,7 +150,6 @@ const finalCanonicalURL =
           },
         ],
       }}
-      robots={{ index: !isNoindex, follow: true }}
       additionalLinkTags={[{ rel: "canonical", href: finalCanonicalURL }]}
     />
     <!-- Preconnect to external origins -->
@@ -170,8 +158,10 @@ const finalCanonicalURL =
     <link rel="preconnect" href="https://www.googletagmanager.com" />
     <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
     <link rel="preconnect" href="https://www.google-analytics.com" />
-    <!-- Prefetch key pages -->
-    <link rel="prefetch" href="/services/hubspot-onboarding" />
+    <!-- Prefetch key pages. Trailing slash is REQUIRED: the site builds with
+         trailingSlash:"always", so the unslashed path 404s and every page in the
+         site logged a console error for it. -->
+    <link rel="prefetch" href="/services/hubspot-onboarding/" />
     <link rel="prefetch" href="/contactus/" />
     <!-- Icons. All rendered from public/assets/brand/logo-honeycomb-square.svg,
          which is the header mark on a centred square canvas. Before this, only
@@ -273,11 +263,12 @@ const finalCanonicalURL =
     <main>
       <slot />
     </main>
-    <script>
-      import Alpine from "alpinejs";
-      window.Alpine = Alpine;
-      Alpine.start();
-    </script>
+    <!-- Alpine is started by the @astrojs/alpinejs integration (it injects a
+         page script that sets window.Alpine and calls start() on DOMContentLoaded).
+         A second manual Alpine.start() used to live here, so every page in the site
+         initialised Alpine twice and logged "Alpine has already been initialized".
+         Double initialisation double-binds directives, so do not re-add it. To run
+         setup code before start, use the integration's `entrypoint` option instead. -->
     <!-- Capture self-reported role on any opt-in form submit into a first-party cookie so the
          audit-call page can tailor its pitch (ROI vs how-it-works) for same-browser journeys (#6). -->
     <script is:inline>
