@@ -1,0 +1,282 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/astro/Navbar.astro";
+import Footer from "../components/astro/Footer.astro";
+// Public port of marketing/gtm/pipeline-build/security-and-access-one-pager.md, the
+// buyer-facing answer to "what access do you need". Kept consistent with clauses 2, 3 and
+// 5 of audit-order-form-terms-of-engagement.md (access, data handling, revocation).
+//
+// Written against research/trust-and-authority/01-authority-objections-evidence-map.md
+// section 5 ("Build a truthful public trust centre"), which rates this page's downside
+// risk as VERY HIGH if it overstates controls. Standing constraints from that research,
+// do not relax them without new evidence:
+//   - No SOC 2, no ISO 27001, no security certification of any kind may be claimed
+//     or implied. The page states their absence explicitly, which the research ranks
+//     as a positive trust signal.
+//   - No unqualified "GDPR compliant" claim.
+//   - No HubSpot badge, tier, accreditation or "HubSpot-vetted" implication.
+//   - No "guaranteed", "zero-risk", "100% safe" or "bank-level security" language.
+//   - Every control described here must exist in the source one-pager. Do not add
+//     controls to this page before they exist in the operational docs.
+//
+// Open placeholders: {{firm_legal_name}} and the audit-evidence-log storage location.
+const linkClass =
+  "text-v6-copper underline underline-offset-2 hover:text-v6-copper-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-v6-copper rounded-sm";
+const subprocessors = [
+  {
+    tool: "HubSpot",
+    use: "Our own CRM, holding your contact details and the record of your engagement. Separately, the view-only seat you grant us in your portal during an audit.",
+    data: "Contact and company details you give us. Your portal data stays in your portal.",
+  },
+  {
+    tool: "n8n (self-hosted)",
+    use: "Routes submissions from the forms on this website and triggers our internal notifications.",
+    data: "Whatever you type into a form on swotbee.com.",
+  },
+  {
+    tool: "Kit (kit.com)",
+    use: "Sends the lead-magnet and newsletter emails you opt in to.",
+    data: "Name, email address, and which of those emails you opened or clicked.",
+  },
+  {
+    tool: "Cal.com",
+    use: "Booking the renewal audit call.",
+    data: "Name, email address, and anything you enter on the booking form.",
+  },
+  {
+    tool: "Wise",
+    use: "Issuing the invoice for the audit fee and receiving payment.",
+    data: "The billing details you provide when you pay.",
+  },
+  {
+    tool: "Slack",
+    use: "Internal alert to the two of us when a form is submitted.",
+    data: "Name and contact details from the form submission.",
+  },
+  {
+    tool: "Google Workspace (Gmail)",
+    use: "Our business email.",
+    data: "Anything you send us by email.",
+  },
+  {
+    tool: "Google Analytics 4",
+    use: "Measuring traffic and conversions on this website.",
+    data: "Website usage, device and approximate location derived from IP.",
+  },
+  {
+    tool: "Google reCAPTCHA v3",
+    use: "Spam protection on the forms on this website.",
+    data: "The signals Google collects to score a form submission.",
+  },
+  {
+    tool: "Microsoft Clarity",
+    use: "Website analytics, including session replay of pages on swotbee.com.",
+    data: "Website usage and recorded interaction with this site.",
+  },
+  {
+    tool: "GitHub Pages",
+    use: "Hosting for swotbee.com. The site is static, with no database behind it.",
+    data: "Standard web request logs.",
+  },
+];
+---
+
+<Layout
+  title="Security and Access"
+  description="Exactly what access SWOTBee asks for during a HubSpot renewal audit, what we never ask for, what we do with it, when it is revoked, and which certifications we do not hold."
+>
+  <Navbar />
+
+  <section class="bg-gradient-to-b from-v6-bg to-white px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20 pb-8">
+    <div class="max-w-3xl mx-auto text-center">
+      <span class="bg-v6-teal-50 text-v6-teal text-xs font-semibold px-3 py-1 rounded-full inline-block mb-6">Security and access</span>
+      <h1 class="text-3xl sm:text-4xl font-bold text-v6-dark mb-4">What we ask for, and what we don't</h1>
+      <p class="text-base sm:text-lg text-v6-text-muted max-w-xl mx-auto leading-relaxed">
+        This page is for whoever internally has to approve a third party looking at your HubSpot portal. It says exactly what access the renewal audit needs, what it does not need, what happens to what we see, and when the access ends.
+      </p>
+    </div>
+  </section>
+
+  <section class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pb-10">
+    <h2 class="text-2xl font-bold text-v6-dark mb-4">The short version</h2>
+    <div class="grid sm:grid-cols-2 gap-4">
+      <div class="bg-v6-bg rounded-xl p-4">
+        <div class="font-semibold text-v6-dark mb-1">View-only access</div>
+        <p class="text-sm text-v6-text-muted leading-relaxed">One seat, scoped to view-only across Sales Hub. No admin, no billing, no bulk export.</p>
+      </div>
+      <div class="bg-v6-bg rounded-xl p-4">
+        <div class="font-semibold text-v6-dark mb-1">Nothing leaves your portal</div>
+        <p class="text-sm text-v6-text-muted leading-relaxed">We read and take notes. We do not modify anything. This is a diagnostic, not a build.</p>
+      </div>
+      <div class="bg-v6-bg rounded-xl p-4">
+        <div class="font-semibold text-v6-dark mb-1">NDA on request</div>
+        <p class="text-sm text-v6-text-muted leading-relaxed">Standard mutual confidentiality, signed before access is granted if you prefer.</p>
+      </div>
+      <div class="bg-v6-bg rounded-xl p-4">
+        <div class="font-semibold text-v6-dark mb-1">Access ends with the audit</div>
+        <p class="text-sm text-v6-text-muted leading-relaxed">Removed the same day the audit is delivered. We hold no standing access.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pb-10">
+    <h2 class="text-2xl font-bold text-v6-dark mb-4">What we ask for at the audit stage</h2>
+    <div class="space-y-4">
+      <div class="bg-white border border-v6-border rounded-xl p-5">
+        <p class="font-semibold text-v6-dark mb-2">View-only HubSpot access</p>
+        <p class="text-base text-v6-text-muted leading-relaxed">
+          One user, added by you under <span class="font-medium text-v6-dark">Settings &gt; Users &amp; Teams</span>, with a permission set scoped to view-only across Sales Hub: deals, contacts, companies, and their associated properties. No admin permissions, no billing access, no ability to edit, and no ability to export in bulk.
+        </p>
+      </div>
+      <div class="bg-white border border-v6-border rounded-xl p-5">
+        <p class="font-semibold text-v6-dark mb-2">Optionally, two or three sample contracts</p>
+        <p class="text-base text-v6-text-muted leading-relaxed">
+          Only if you have escalation or annual-increase clauses and you want the uplift-leakage number to be exact rather than directional. It is the single input that turns an estimate into a real figure. The audit runs without it if you would rather not share contracts at this stage.
+        </p>
+      </div>
+    </div>
+    <p class="mt-4 text-base text-v6-text-muted leading-relaxed">
+      That is the entire access request. Nothing else is needed to run the audit.
+    </p>
+  </section>
+
+  <section class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pb-10">
+    <h2 class="text-2xl font-bold text-v6-dark mb-4">What we never ask for</h2>
+    <ul class="space-y-3">
+      <li class="bg-v6-bg rounded-xl p-4 text-base text-v6-text-muted leading-relaxed">
+        <span class="font-semibold text-v6-dark">Admin rights.</span> We do not need them for a read-only diagnostic, so we do not ask for them.
+      </li>
+      <li class="bg-v6-bg rounded-xl p-4 text-base text-v6-text-muted leading-relaxed">
+        <span class="font-semibold text-v6-dark">Billing details or billing access.</span> Not your HubSpot billing, not your payment methods.
+      </li>
+      <li class="bg-v6-bg rounded-xl p-4 text-base text-v6-text-muted leading-relaxed">
+        <span class="font-semibold text-v6-dark">Customer PII beyond what is already in your HubSpot portal.</span> No separate customer list, no export, no spreadsheet.
+      </li>
+      <li class="bg-v6-bg rounded-xl p-4 text-base text-v6-text-muted leading-relaxed">
+        <span class="font-semibold text-v6-dark">Access to any system outside HubSpot.</span> Not your ERP, not your billing platform, not your data warehouse, not your email.
+      </li>
+    </ul>
+  </section>
+
+  <section class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pb-10">
+    <h2 class="text-2xl font-bold text-v6-dark mb-4">What we do with the access</h2>
+    <p class="text-base text-v6-text-muted leading-relaxed mb-4">
+      We read the portal to complete the seven-point diagnostic in the audit: at-risk renewals, uplift leakage, workflow chain integrity, ARR accuracy, line-item drift, date and notice coverage, and the overall scorecard. We take notes and screenshots for the readout.
+    </p>
+    <p class="text-base text-v6-text-muted leading-relaxed">
+      We do not modify anything in your portal. This is a diagnostic, not a build. Changes only happen if you approve a build engagement afterward.
+    </p>
+  </section>
+
+  <section class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pb-10">
+    <h2 class="text-2xl font-bold text-v6-dark mb-4">Where the findings live</h2>
+    <p class="text-base text-v6-text-muted leading-relaxed mb-4">
+      Findings live in an internal audit-evidence log until the readout is delivered, and then in your final report. That log is held in <span class="font-mono text-sm bg-v6-bg px-1.5 py-0.5 rounded border border-v6-border">&#123;&#123;verify: storage location for the audit-evidence log&#125;&#125;</span>.
+    </p>
+    <p class="text-base text-v6-text-muted leading-relaxed">
+      Nothing is shared externally, published, or used as a case study without your explicit written permission, anonymised or otherwise.
+    </p>
+  </section>
+
+  <section class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pb-10">
+    <h2 class="text-2xl font-bold text-v6-dark mb-4">NDA</h2>
+    <p class="text-base text-v6-text-muted leading-relaxed">
+      Available on request, and signed before access is granted if you would rather have it in place first. Standard mutual confidentiality. Ask and we will send it.
+    </p>
+  </section>
+
+  <section class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pb-10">
+    <h2 class="text-2xl font-bold text-v6-dark mb-4">Access revocation</h2>
+    <p class="text-base text-v6-text-muted leading-relaxed mb-4">
+      Access is removed from your HubSpot portal the same day the audit is delivered. We do not hold standing access "just in case."
+    </p>
+    <p class="text-base text-v6-text-muted leading-relaxed">
+      You can also remove the seat yourself at any point, from the same Settings screen you used to create it, without asking us and without stopping mid-audit being a problem for anyone but us.
+    </p>
+  </section>
+
+  <section class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pb-10">
+    <h2 class="text-2xl font-bold text-v6-dark mb-4">If a build engagement follows</h2>
+    <p class="text-base text-v6-text-muted leading-relaxed mb-4">
+      A build is a separate decision and a separate access grant. Audit access is revoked at the end of the audit regardless, and if you go ahead with a build, access is granted again as a new step, scoped to what that engagement actually needs, under that engagement's own terms.
+    </p>
+    <p class="text-base text-v6-text-muted leading-relaxed">
+      We are not describing build-stage controls on this page yet. Those terms are still being written, and we would rather publish them once than describe them from memory. Ask us directly if you are evaluating a build now and we will tell you where they stand.
+    </p>
+  </section>
+
+  <section class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pb-10">
+    <h2 class="text-2xl font-bold text-v6-dark mb-4">Certifications we do not hold</h2>
+    <div class="bg-white border border-v6-border rounded-xl p-5">
+      <ul class="space-y-2 text-base text-v6-text-muted leading-relaxed">
+        <li><span class="font-semibold text-v6-dark">SWOTBee does not hold a SOC 2 Type I or SOC 2 Type II attestation.</span></li>
+        <li><span class="font-semibold text-v6-dark">SWOTBee is not ISO 27001 certified.</span></li>
+        <li><span class="font-semibold text-v6-dark">SWOTBee holds no security certification of any kind</span>, and no HubSpot badge, partner tier, or accreditation.</li>
+      </ul>
+      <p class="mt-4 text-base text-v6-text-muted leading-relaxed">
+        We say that plainly because it is the sort of thing a procurement team will check anyway. Everything on this page is a self-published description of how we work. It has not been audited by anyone.
+      </p>
+      <p class="mt-3 text-base text-v6-text-muted leading-relaxed">
+        We also do not describe ourselves as "GDPR compliant." Whether a specific engagement meets GDPR obligations depends on the data, the contract, and the roles involved, and that is a question for your legal team and ours, not a claim to put on a web page.
+      </p>
+      <p class="mt-3 text-base text-v6-text-muted leading-relaxed">
+        If your procurement process requires an independent attestation before a vendor touches your CRM, we will not pass it. Better that you know that now than three weeks into a process.
+      </p>
+    </div>
+  </section>
+
+  <section class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pb-10">
+    <h2 class="text-2xl font-bold text-v6-dark mb-4">Tools we use</h2>
+    <p class="text-base text-v6-text-muted leading-relaxed mb-5">
+      These are the third-party services SWOTBee runs its own business and this website on. It is not a list of what is installed in your portal.
+    </p>
+    <div class="overflow-x-auto rounded-xl border border-v6-border bg-white">
+      <table class="w-full min-w-[36rem] text-left text-sm border-collapse">
+        <caption class="sr-only">Third-party services SWOTBee uses, what each is used for, and the data involved</caption>
+        <thead>
+          <tr class="bg-v6-bg">
+            <th scope="col" class="px-4 py-3 font-semibold text-v6-dark border-b border-v6-border">Service</th>
+            <th scope="col" class="px-4 py-3 font-semibold text-v6-dark border-b border-v6-border">What we use it for</th>
+            <th scope="col" class="px-4 py-3 font-semibold text-v6-dark border-b border-v6-border">Data involved</th>
+          </tr>
+        </thead>
+        <tbody>
+          {subprocessors.map((s) => (
+            <tr class="border-b border-v6-border last:border-b-0 align-top">
+              <th scope="row" class="px-4 py-3 font-semibold text-v6-dark whitespace-nowrap">{s.tool}</th>
+              <td class="px-4 py-3 text-v6-text-muted leading-relaxed">{s.use}</td>
+              <td class="px-4 py-3 text-v6-text-muted leading-relaxed">{s.data}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <p class="mt-4 text-base text-v6-text-muted leading-relaxed">
+      How we handle personal data more generally is in our <a href="/privacy/" class={linkClass}>Privacy Policy</a>.
+    </p>
+  </section>
+
+  <section class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pb-10">
+    <h2 class="text-2xl font-bold text-v6-dark mb-4">Who holds the access, and who we are</h2>
+    <p class="text-base text-v6-text-muted leading-relaxed mb-4">
+      SWOTBee is two people. The founders, Siva and Sharmi, are the people who hold the seat in your portal and who do the audit work themselves. You are not handing access to a rotating delivery pool.
+    </p>
+    <p class="text-base text-v6-text-muted leading-relaxed">
+      The legal entity behind SWOTBee is <span class="font-mono text-sm bg-v6-bg px-1.5 py-0.5 rounded border border-v6-border">&#123;&#123;firm_legal_name&#125;&#125;</span>, a registered partnership firm in India. Engagements are contracted with, and invoiced by, that entity.
+    </p>
+  </section>
+
+  <section class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+    <div class="bg-v6-bg border border-v6-border rounded-xl p-5 sm:p-6">
+      <h2 class="text-2xl font-bold text-v6-dark mb-3">Talk to us before you grant anything</h2>
+      <p class="text-base text-v6-text-muted leading-relaxed mb-4">
+        If your security or IT team would rather ask us directly before anyone provisions a seat, have them contact us at <a href="mailto:info@swotbee.com" class={linkClass}>info@swotbee.com</a>. This is a common enough question that a straight answer is always ready, and it does not delay anything.
+      </p>
+      <p class="text-base text-v6-text-muted leading-relaxed">
+        If you have not booked yet, the <a href="/renewal-audit-call/" class={linkClass}>renewal audit call</a> is free and needs no access to anything.
+      </p>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
