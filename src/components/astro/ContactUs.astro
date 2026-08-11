@@ -35,6 +35,18 @@ import RecaptchaLazy from "./RecaptchaLazy.astro";
     <div style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;" aria-hidden="true">
       <label>Company website<input type="text" name="company_website" tabindex="-1" autocomplete="off" /></label>
     </div>
+    <!-- Attribution, filled by AttributionCapture (BaseLayout) from the campaign held for
+         the session. This form previously captured nothing at all, so a lead who arrived
+         from an advert and then used the contact form was indistinguishable from one who
+         typed the URL. Each name matches a property on the HubSpot form; the Forms API
+         rejects the whole submission if sent a field the form does not define. -->
+    <input type="hidden" name="utm_source" /><input type="hidden" name="utm_medium" /><input
+      type="hidden"
+      name="utm_campaign"
+    /><input type="hidden" name="utm_content" /><input type="hidden" name="utm_term" /><input
+      type="hidden"
+      name="gclid"
+    /><input type="hidden" name="sb_landing_page" /><input type="hidden" name="sb_referrer" />
 
     <div class="grid sm:grid-cols-2 gap-4">
       <div class="space-y-1.5">
@@ -163,6 +175,23 @@ import RecaptchaLazy from "./RecaptchaLazy.astro";
         { name: "message", value: (form.message.value || "").trim() },
         { name: "self_reported_role", value: roleEl ? roleEl.value : "" }
       ].filter(function (f) { return f.value; });
+
+      // Attribution. Filled here rather than at page load because this is an is:inline
+      // script, so it runs while the document is still parsing, before
+      // AttributionCapture at the end of <body> has defined the helper. Submit time is
+      // also simply the most accurate moment to read it.
+      //
+      // Only these names are sent, and only when non-empty: each one must exist both as
+      // a hidden input above and as a field on the HubSpot form, because the Forms API
+      // rejects the entire submission if given a field the form does not define.
+      if (typeof window.__sbFillAttribution === "function") {
+        window.__sbFillAttribution(form);
+      }
+      ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term",
+       "gclid", "sb_landing_page", "sb_referrer"].forEach(function (n) {
+        var el = form.querySelector('input[name="' + n + '"]');
+        if (el && el.value) fields.push({ name: n, value: el.value });
+      });
 
       var original = btn.textContent;
       btn.disabled = true;
