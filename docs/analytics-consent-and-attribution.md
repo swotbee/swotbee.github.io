@@ -208,6 +208,25 @@ would need a client-side country lookup.
 - `ConsentBanner.astro`'s header comment records the decision at the point someone would try
   to "restore" the old copy.
 
+**The retargeting audience, created 2026-08-11:** `All swotbee.com visitors`, built from the
+Insight Tag, rule **URL contains `swotbee.com`**. "Contains" rather than "starts with" on
+purpose: LinkedIn's own example hedges between `example.com` and `https://www.example.com`,
+so "starts with" depends on how it normalises the URL, while "contains" cannot be tripped by
+protocol, `www`, or path. There is no downside, because the tag only fires on our own pages,
+so the audience cannot pick up anything else. (The engagement window was set in the same
+dialog; longest available is right at this traffic level, so early visitors are not aged out
+before the audience is usable. Not confirmed back which value was chosen.)
+
+**Created before the deploy, deliberately.** LinkedIn audiences fill from creation forward
+and do not backfill, so anything arriving between a deploy and the audience existing is lost.
+
+**Two limits to expect, neither a fault:** the audience takes up to 48 hours to process, and
+LinkedIn will not let it be targeted until roughly **300 members**. Separately, LinkedIn
+applies **its own EEA and Switzerland opt-in** on top of ours: European members are only
+matched if they have enabled it in their LinkedIn ad settings. So the ungated tag buys
+materially less in the EEA than it does in the UK and US, which is worth remembering before
+concluding the audience is under-filling.
+
 **Not enabled: Enhanced Matching.** It uploads customer email addresses to LinkedIn for
 matching. That is a materially larger privacy commitment than a retargeting pixel and needs
 its own decision, not a checkbox taken in passing on the install screen.
