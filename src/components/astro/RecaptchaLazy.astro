@@ -1,0 +1,96 @@
+---
+// Lazy loader for Google reCAPTCHA v3, shared by every form on the site.
+//
+// Replaces a static <script src="...recaptcha/api.js?render=..."> in the page head. That
+// tag ran for every visitor on page load, which meant Google was contacted (IP plus page
+// URL) before anyone had consented to anything, on pages that exist to receive paid
+// traffic. reCAPTCHA v3 also runs continuous behavioural scoring once loaded.
+//
+// It sets no cookie until it executes, so this is not the same class of problem as an
+// analytics tag, and the consent banner deliberately does NOT gate it: bot defence on a
+// form is a legitimate-interest security measure, and gating it would mean anyone who
+// declines analytics cannot submit a form. What we fix here is the timing. Nothing is
+// requested until the visitor actually touches a form, so a visitor who lands and leaves,
+// which is most paid traffic, never touches Google at all, and the landing pages carry
+// less weight.
+//
+// Loading is warmed on first focus inside any form, not deferred to submit, so the script
+// has the entire form-filling duration to arrive. getToken() also awaits the loader, so a
+// submit still works if warming never happened; it is just slower.
+interface Props {
+  siteKey?: string;
+}
+const { siteKey = "6Ld3OHYtAAAAADJ8LKDmjsk4qrg2Ih9-FxxV2PSR" } = Astro.props;
+---
+
+<script is:inline define:vars={{ siteKey }}>
+  (function () {
+    var loading = null;
+
+    function load() {
+      if (loading) return loading;
+      loading = new Promise(function (resolve, reject) {
+        var s = document.createElement("script");
+        s.src = "https://www.google.com/recaptcha/api.js?render=" + encodeURIComponent(siteKey);
+        s.async = true;
+        s.onload = function () {
+          if (typeof window.grecaptcha === "undefined" || !window.grecaptcha.ready) {
+            loading = null;
+            reject(new Error("recaptcha_unavailable"));
+            return;
+          }
+          window.grecaptcha.ready(function () { resolve(window.grecaptcha); });
+        };
+        s.onerror = function () {
+          // Null it out so a later attempt can retry rather than reusing a dead promise.
+          loading = null;
+          reject(new Error("recaptcha_unavailable"));
+        };
+        document.head.appendChild(s);
+      });
+      return loading;
+    }
+
+    // The whole token dance, centralised: load if needed, execute, and fail after 5s so a
+    // blocked or slow Google never leaves the submit button spinning forever. Callers get
+    // the same "recaptcha_unavailable" rejection the inline versions used to produce.
+    window.__sbRecaptchaToken = function (action) {
+      return new Promise(function (resolve, reject) {
+        var settled = false;
+        var timer = setTimeout(function () {
+          settled = true;
+          reject(new Error("recaptcha_unavailable"));
+        }, 5000);
+        load()
+          .then(function (grecaptcha) {
+            return grecaptcha.execute(siteKey, { action: action });
+          })
+          .then(function (token) {
+            if (settled) return;
+            clearTimeout(timer);
+            resolve(token);
+          })
+          .catch(function () {
+            if (settled) return;
+            clearTimeout(timer);
+            reject(new Error("recaptcha_unavailable"));
+          });
+      });
+    };
+
+    // Warm on the first focus inside any form. Delegated on document, so it works no
+    // matter where this component sits relative to the form in the DOM.
+    //
+    // Deliberately NOT { once: true }: that removes the listener on the first focusin
+    // anywhere on the page, so a visitor who keyboard-focuses a nav link before reaching
+    // the form would kill the warm-up and pay the load cost at submit instead. Unhook it
+    // by hand once a form has actually been focused.
+    function warm(e) {
+      var t = e.target;
+      if (!t || !t.closest || !t.closest("form")) return;
+      document.removeEventListener("focusin", warm, true);
+      load().catch(function () {});
+    }
+    document.addEventListener("focusin", warm, true);
+  })();
+</script>

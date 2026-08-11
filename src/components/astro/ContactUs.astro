@@ -17,8 +17,9 @@ const N8N_WEBHOOK_URL = "https://auto.zippylens.com/webhook/swotbee-form-submit"
 // Show the self-reported role dropdown only where wanted (e.g. /contactus), not on the
 // shared newsletter page. Optional field, so a missing value never blocks submission.
 const { role = false } = Astro.props;
+import RecaptchaLazy from "./RecaptchaLazy.astro";
 ---
-<script is:inline src={`https://www.google.com/recaptcha/api.js?render=${RECAPTCHA_SITE_KEY}`}></script>
+<RecaptchaLazy siteKey={RECAPTCHA_SITE_KEY} />
 <section id="contact" class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
   <form
     id="contact-form"
@@ -130,29 +131,13 @@ const { role = false } = Astro.props;
       }
     }
 
+    // reCAPTCHA is loaded on first form focus by RecaptchaLazy, not on page load.
+    // __sbRecaptchaToken handles loading, execution and the 5s timeout.
     function getRecaptchaToken() {
-      return new Promise(function (resolve, reject) {
-        if (typeof grecaptcha === "undefined" || !grecaptcha.ready) {
-          reject(new Error("recaptcha_unavailable"));
-          return;
-        }
-        var settled = false;
-        var timer = setTimeout(function () {
-          settled = true;
-          reject(new Error("recaptcha_unavailable"));
-        }, 5000);
-        grecaptcha.ready(function () {
-          grecaptcha.execute(siteKey, { action: action }).then(function (token) {
-            if (settled) return;
-            clearTimeout(timer);
-            resolve(token);
-          }).catch(function () {
-            if (settled) return;
-            clearTimeout(timer);
-            reject(new Error("recaptcha_unavailable"));
-          });
-        });
-      });
+      if (typeof window.__sbRecaptchaToken !== "function") {
+        return Promise.reject(new Error("recaptcha_unavailable"));
+      }
+      return window.__sbRecaptchaToken(action);
     }
 
     form.addEventListener("submit", function (e) {

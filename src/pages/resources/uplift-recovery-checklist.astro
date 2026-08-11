@@ -4,6 +4,7 @@ import Navbar from '../../components/astro/Navbar.astro';
 import Footer from '../../components/astro/Footer.astro';
 import ClientLogoStrip from '../../components/astro/ClientLogoStrip.astro';
 import MagnetObjections from '../../components/astro/MagnetObjections.astro';
+import RecaptchaLazy from '../../components/astro/RecaptchaLazy.astro';
 // Lead magnet 2. Submits client-side to the HubSpot Forms API (portal 243398671), same
 // pattern as renewal-leakage-estimate.astro. Form "SwotBee - Uplift Recovery Checklist"
 // (id 58333f13-64ed-4bb9-a57d-6795cd9b0afd) created via the Marketing Forms API on
@@ -14,7 +15,7 @@ import MagnetObjections from '../../components/astro/MagnetObjections.astro';
   description="A free checklist to find the escalation uplifts you already earned but never invoiced. Most contract businesses find real money."
   robots="noindex, follow"
 >
-  <script is:inline src="https://www.google.com/recaptcha/api.js?render=6Ld3OHYtAAAAADJ8LKDmjsk4qrg2Ih9-FxxV2PSR"></script>
+  <RecaptchaLazy />
   <Navbar />
   <section class="bg-gradient-to-b from-v6-bg to-white px-4 sm:px-6 lg:px-8 pt-14 pb-10">
     <div class="max-w-2xl mx-auto text-center">
@@ -92,37 +93,16 @@ import MagnetObjections from '../../components/astro/MagnetObjections.astro';
     const RECAPTCHA_ACTION = "uplift_form";
     const N8N_WEBHOOK_URL = "https://auto.zippylens.com/webhook/swotbee-form-submit";
 
-    declare const grecaptcha: {
-      ready: (cb: () => void) => void;
-      execute: (siteKey: string, opts: { action: string }) => Promise<string>;
-    };
-
+    // reCAPTCHA is loaded on first form focus by RecaptchaLazy, not on page load.
+    // __sbRecaptchaToken handles loading, execution and the 5s timeout.
     function getRecaptchaToken(): Promise<string> {
-      return new Promise((resolve, reject) => {
-        if (typeof grecaptcha === "undefined" || !grecaptcha.ready) {
-          reject(new Error("recaptcha_unavailable"));
-          return;
-        }
-        let settled = false;
-        const timer = setTimeout(() => {
-          settled = true;
-          reject(new Error("recaptcha_unavailable"));
-        }, 5000);
-        grecaptcha.ready(() => {
-          grecaptcha
-            .execute(RECAPTCHA_SITE_KEY, { action: RECAPTCHA_ACTION })
-            .then((token) => {
-              if (settled) return;
-              clearTimeout(timer);
-              resolve(token);
-            })
-            .catch(() => {
-              if (settled) return;
-              clearTimeout(timer);
-              reject(new Error("recaptcha_unavailable"));
-            });
-        });
-      });
+      const get = (window as typeof window & {
+        __sbRecaptchaToken?: (action: string) => Promise<string>;
+      }).__sbRecaptchaToken;
+      if (typeof get !== "function") {
+        return Promise.reject(new Error("recaptcha_unavailable"));
+      }
+      return get(RECAPTCHA_ACTION);
     }
 
     const form = document.getElementById("uplift-form") as HTMLFormElement | null;
