@@ -246,6 +246,14 @@ const PROBE = `(() => {
       .map(s => s.src)
       .filter(s => /clarity\\.ms|snap\\.licdn\\.com|connect\\.facebook\\.net/.test(s)).length,
     consentCalls: dl.filter(a => a[0] === 'consent'),
+    // Read the RAW dataLayer, not the mapped copy above: gtag pushes arguments objects,
+    // which Array.from flattens fine, but a plain object push like
+    // {event:'sb_consent_granted'} is not array-like and Array.from turns it into [],
+    // silently destroying exactly what this assertion looks for.
+    consentEvents: Array.from(window.dataLayer || [])
+      .filter(a => a && !Array.isArray(a) && typeof a.length !== 'number' && a.event)
+      .map(a => String(a.event))
+      .filter(e => e.indexOf('sb_consent') === 0),
     cookies: document.cookie.split(';').map(c => c.trim().split('=')[0]).filter(Boolean),
   };
 })()`;
@@ -391,6 +399,8 @@ async function run(opts) {
     ["update grants analytics_storage",
       JSON.stringify(p2.probe.consentCalls).includes('"analytics_storage":"granted"')],
     ["banner closes once a choice is made", p2.probe.bannerVisible === false],
+    ["accept pushes a dataLayer event GTM triggers can read",
+      (p2.probe.consentEvents || []).includes("sb_consent_granted")],
     ["a returning visitor is not asked again", p3.probe.bannerVisible === false],
     ["gated scripts load for a consented visitor", p3.probe.gatedTags >= 1],
     ["the footer control can withdraw consent", p4.probe.stored === "denied"],

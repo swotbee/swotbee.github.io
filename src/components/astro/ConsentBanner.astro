@@ -101,6 +101,16 @@
           ad_personalization: granted ? "granted" : "denied",
         });
       }
+      // Tell Google Tag Manager, in the one language a tag's own trigger understands.
+      // The gtag consent update above is what GTM's built-in consent checks read, but a
+      // tag still needs a trigger to fire on, and triggers listen to the dataLayer. Without
+      // this push, a consent-gated tag in the container would have to poll localStorage to
+      // discover the answer, or worse, be left on All Pages and fire before the visitor
+      // ever chose. Fires on denial too, so a tag can react to withdrawal rather than only
+      // to consent.
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event: granted ? "sb_consent_granted" : "sb_consent_denied" });
+
       // Clarity is never loaded on a denied or undecided visit.
       if (granted && typeof window.__sbLoadClarity === "function") {
         window.__sbLoadClarity();

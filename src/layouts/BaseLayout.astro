@@ -190,8 +190,12 @@ const finalCanonicalURL =
         starts denied, so an undecided visitor is never measured. A returning visitor's
         stored choice is read synchronously here rather than waiting for the banner
         script, otherwise every page load would begin denied and flip a moment later,
-        losing the first events of the session. */}
-    {import.meta.env.PUBLIC_GA4_ID && (
+        losing the first events of the session.
+
+        Gated on GA4 *or* GTM, not GA4 alone. A build with a GTM container but no GA4
+        id would otherwise ship no consent defaults at all, and every consent-gated tag
+        inside the container would be free to fire on an undecided visit. */}
+    {(import.meta.env.PUBLIC_GA4_ID || import.meta.env.PUBLIC_GTM_ID) && (
       <script is:inline>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
@@ -211,6 +215,36 @@ const finalCanonicalURL =
             wait_for_update: 500,
           });
         })();
+      </script>
+    )}
+    {/* Google Tag Manager container. Holds the LinkedIn Insight Tag and any future
+        advertising pixels.
+
+        Placement is deliberate and must not move ABOVE the Consent Mode defaults: GTM
+        reads the current consent state as it initialises, so a container loading first
+        would start with no defaults and a consent-gated tag inside it could fire on an
+        undecided visit. That is the whole failure this file's ordering exists to prevent.
+
+        GA4 is deliberately NOT routed through this container and keeps loading directly
+        below. Moving a working GA4 install into GTM risks double-counting every pageview
+        for no gain.
+
+        The `<noscript>` iframe from GTM's own install instructions is deliberately
+        omitted. A visitor without JavaScript cannot be shown the consent banner and
+        cannot consent, so an unconditional container load for them is exactly the
+        ungated fire this setup is built to avoid. It costs nothing: the noscript
+        fallback cannot run tags anyway. */}
+    {import.meta.env.PUBLIC_GTM_ID && (
+      <script is:inline define:vars={{ gtmId: import.meta.env.PUBLIC_GTM_ID }}>
+        (function(w,d,s,l,i){
+          w[l]=w[l]||[];
+          w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});
+          var f=d.getElementsByTagName(s)[0], j=d.createElement(s),
+              dl = l!='dataLayer' ? '&l='+l : '';
+          j.async=true;
+          j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+          f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer',gtmId);
       </script>
     )}
     {import.meta.env.PUBLIC_GA4_ID && (

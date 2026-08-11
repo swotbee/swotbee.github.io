@@ -17,6 +17,7 @@ watching the network.
 | Consent Mode v2 defaults | `src/layouts/BaseLayout.astro` | `<head>`, before gtag.js |
 | gtag.js (GA4) | `src/layouts/BaseLayout.astro` | always, on every page |
 | Clarity loader | `src/layouts/BaseLayout.astro` | only on accept |
+| GTM container | `src/layouts/BaseLayout.astro` | always, AFTER the consent defaults |
 | Consent banner | `src/components/astro/ConsentBanner.astro` | when undecided |
 | Attribution capture | `src/components/astro/AttributionCapture.astro` | every page, always |
 | reCAPTCHA loader | `src/components/astro/RecaptchaLazy.astro` | first focus inside a form |
@@ -88,6 +89,32 @@ policy rather than glossed over, because a reader would otherwise reasonably inf
 rejecting means no contact at all.
 
 ---
+
+## 3a. Google Tag Manager
+
+GTM holds the LinkedIn Insight Tag and future advertising pixels. Three rules, all load
+bearing:
+
+- **The container must load AFTER the Consent Mode defaults.** GTM reads consent state as
+  it initialises, so a container loading first starts with no defaults and a gated tag
+  inside it can fire on an undecided visit. Verified in the built HTML: the defaults appear
+  at byte 6997, `gtm.js` at 7865.
+- **GA4 stays out of the container** and keeps loading directly. Moving a working GA4
+  install into GTM risks double-counting every pageview for no gain.
+- **The `<noscript>` iframe is deliberately omitted.** A visitor without JavaScript cannot
+  be shown the banner and cannot consent, so an unconditional container load for them is
+  precisely the ungated fire this setup prevents. It costs nothing, since the noscript
+  fallback cannot run tags anyway.
+
+The consent defaults block is gated on `PUBLIC_GA4_ID || PUBLIC_GTM_ID`, not GA4 alone: a
+build with a container but no GA4 id would otherwise ship no defaults at all.
+
+`apply()` in `ConsentBanner.astro` also pushes `sb_consent_granted` / `sb_consent_denied`
+to the dataLayer. gtag's consent update is what GTM's built-in consent checks read, but a
+tag still needs a *trigger*, and triggers listen to the dataLayer. Use these events as the
+trigger for every consent-gated tag in the container, rather than All Pages. The denial
+event fires too, so a tag can react to withdrawal. `pnpm check:consent` asserts the granted
+event is pushed.
 
 ## 4. Adding a pixel (LinkedIn, Meta, anything)
 
