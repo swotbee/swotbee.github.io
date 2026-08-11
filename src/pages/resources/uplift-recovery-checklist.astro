@@ -65,7 +65,7 @@ import RecaptchaLazy from '../../components/astro/RecaptchaLazy.astro';
             <option value="">Select...</option><option>Google search</option><option>LinkedIn</option><option>Referral</option><option>Cold email</option><option>Other</option>
           </select>
         </label>
-        <button type="submit" class="bg-v6-copper text-white font-semibold rounded-xl px-6 py-3 hover:bg-v6-copper-600 transition-colors">Send me the checklist</button>
+        <button type="submit" class="bg-v6-copper text-white font-semibold rounded-xl px-6 py-3 hover:bg-v6-copper-600 transition-colors disabled:opacity-60 disabled:cursor-not-allowed">Send me the checklist</button>
         <p class="text-xs text-gray-500 text-center">One email with the checklist PDF. That is it.</p>
         <p id="uplift-form-error" class="hidden text-sm text-red-600 text-center">Something went wrong sending the form. Please try again, or email us at info@swotbee.com and we will send the checklist directly.</p>
       </form>
@@ -134,10 +134,24 @@ import RecaptchaLazy from '../../components/astro/RecaptchaLazy.astro';
       __sbFillAttribution?: (f: HTMLFormElement | null) => void;
     }).__sbFillAttribution?.(form);
 
+    // One submit at a time. See renewal-leakage-estimate.astro for the incident this came
+    // from: a double-click fires a second grecaptcha.execute() mid-await, and two tokens
+    // from one browser moments apart is what reCAPTCHA v3 scores as automation.
+    const submitBtn = form?.querySelector<HTMLButtonElement>('button[type="submit"]');
+    let submitting = false;
+
     form?.addEventListener("submit", async (e) => {
       e.preventDefault();
+      if (submitting) return;
       if (!form.reportValidity()) return;
       errorMsg?.classList.add("hidden");
+
+      submitting = true;
+      const originalLabel = submitBtn?.textContent ?? "";
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Sending...";
+      }
 
       const data = new FormData(form);
       const fields = [...data.entries()].map(([name, value]) => ({
@@ -166,6 +180,12 @@ import RecaptchaLazy from '../../components/astro/RecaptchaLazy.astro';
         gaEvent("form_submit", { form_name: "uplift_recovery_checklist" });
         window.location.assign("/thank-you/uplift/");
       } catch (err) {
+        // Restored only on failure; the success path navigates away.
+        submitting = false;
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalLabel;
+        }
         if (errorMsg) {
           errorMsg.textContent =
             err instanceof Error && err.message === "recaptcha_unavailable"
