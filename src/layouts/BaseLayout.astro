@@ -12,6 +12,7 @@ import "@fontsource-variable/hanken-grotesk";     // Body — variable font cove
 // Rokkitt loaded via @font-face in global.css (variable woff2, no separate import needed)
 import "../styles/global.css";
 import ConsentBanner from "../components/astro/ConsentBanner.astro";
+import AttributionCapture from "../components/astro/AttributionCapture.astro";
 
 interface Props {
   title: string;
@@ -220,6 +221,16 @@ const finalCanonicalURL =
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
+        // When a visitor declines, Google Ads loses the click ID it normally reads from a
+        // cookie, and the conversion becomes unattributable. url_passthrough carries
+        // gclid/gbraid/wbraid in the URL across internal navigation instead, so paid
+        // conversions stay measurable without storing anything on the device. It only has
+        // an effect while ad_storage is denied.
+        //
+        // ads_data_redaction is deliberately NOT enabled. It is the opposite lever: it
+        // strips those identifiers when consent is denied. Off is the default and is the
+        // right setting while the goal is measuring a paid campaign.
+        gtag('set', 'url_passthrough', true);
         gtag('config', ga4Id);
       </script>
     )}
@@ -316,6 +327,12 @@ const finalCanonicalURL =
     {(import.meta.env.PUBLIC_GA4_ID || import.meta.env.PUBLIC_CLARITY_ID) && (
       <ConsentBanner />
     )}
+    {/* Unconditional, unlike the banner above: this is not analytics. It carries the
+        campaign that produced a visit into the form the visitor chooses to submit, which
+        is the only attribution that survives someone declining cookies. It must be on
+        every page, because the landing page and the page with the form are usually
+        different. */}
+    <AttributionCapture />
     <!-- Alpine is started by the @astrojs/alpinejs integration (it injects a
          page script that sets window.Alpine and calls start() on DOMContentLoaded).
          A second manual Alpine.start() used to live here, so every page in the site

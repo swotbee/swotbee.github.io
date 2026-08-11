@@ -172,11 +172,13 @@ import RecaptchaLazy from '../../components/astro/RecaptchaLazy.astro';
     );
 
     // Capture ad attribution from the landing URL into the hidden fields.
-    const params = new URLSearchParams(window.location.search);
-    ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"].forEach((k) => {
-      const input = form?.querySelector<HTMLInputElement>(`input[name="${k}"]`);
-      if (input) input.value = params.get(k) ?? "";
-    });
+    // Attribution comes from AttributionCapture (BaseLayout), which remembers the
+    // campaign for the whole session. Reading window.location.search directly, as this
+    // did before, only worked when the form sat on the exact landing URL and lost the
+    // campaign the moment the visitor clicked through to another page.
+    (window as typeof window & {
+      __sbFillAttribution?: (f: HTMLFormElement | null) => void;
+    }).__sbFillAttribution?.(form);
 
     // Capture the GA4 client_id from the _ga cookie so the server-side form_submit hit
     // (fired from n8n after this submission) merges into the same GA4 session instead of

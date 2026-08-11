@@ -1,0 +1,105 @@
+---
+// Remembers where a visitor came from, so a form submitted three pages later still
+// carries its campaign.
+//
+// Why this exists at all: GA4 attribution only covers people who accept analytics
+// cookies, and Google's conversion modelling needs traffic volumes this site will not
+// reach for a long time. A form submission, by contrast, is data the visitor actively
+// hands over. Attaching the campaign to it works for 100% of leads, at any traffic
+// volume, whether or not they consented. For a site whose leads are counted in tens per
+// month rather than thousands, this is worth more than the analytics.
+//
+// The gap it closes: the four resource forms already read utm_* from the current page's
+// query string. That only works if the form is on the exact landing URL. Land on a guide
+// with ?utm_campaign=..., read it, click through to /contactus/, and the campaign is
+// gone. Which is precisely the journey a paid visitor takes.
+//
+// Storage choice. This uses sessionStorage, not a cookie and not localStorage:
+//   - It is first-party and never sent to a third party for tracking.
+//   - It dies when the tab closes, so it cannot build a profile across visits.
+//   - It is only ever read to populate a form the visitor chooses to submit.
+// That is a defensible basis for treating it as necessary to handle an enquiry rather
+// than as analytics storage, and it is disclosed in the cookie policy. It is a judgement
+// call rather than a settled one: the strict alternative is to read the query string only
+// at the moment of submit, which is what the resource pages did, and which loses the
+// multi-page journey entirely.
+//
+// Last-touch, not first-touch: the campaign that produced the visit is the one being
+// measured, and it is what the ad platforms report against.
+---
+
+<script is:inline>
+  (function () {
+    var KEY = "sb_attr";
+
+    // utm_* is the campaign. The *clid parameters are the click IDs each ad platform
+    // stamps on its own traffic, and are what make an offline conversion importable
+    // back into that platform later.
+    var TRACKED = [
+      "utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term",
+      "gclid", "gbraid", "wbraid", "msclkid", "fbclid", "li_fat_id", "ttclid",
+    ];
+
+    function read() {
+      try {
+        return JSON.parse(sessionStorage.getItem(KEY) || "{}");
+      } catch (e) {
+        return {};
+      }
+    }
+
+    var params = new URLSearchParams(window.location.search);
+    var incoming = {};
+    var found = false;
+    TRACKED.forEach(function (k) {
+      var v = params.get(k);
+      if (v) {
+        incoming[k] = v.slice(0, 255); // HubSpot single-line text limit
+        found = true;
+      }
+    });
+
+    var stored = read();
+
+    if (found) {
+      // A new campaign overwrites the old one wholesale rather than merging, so a
+      // Google visit followed by a LinkedIn visit does not report a chimera carrying
+      // both a gclid and a li_fat_id.
+      stored = incoming;
+      stored.sb_landing_page = window.location.pathname;
+      stored.sb_referrer = document.referrer ? document.referrer.slice(0, 255) : "";
+    } else if (!stored.sb_landing_page) {
+      // No campaign on this visit. Still worth keeping the entry point and referrer,
+      // which is all the attribution an organic or direct lead will ever have.
+      stored.sb_landing_page = window.location.pathname;
+      stored.sb_referrer = document.referrer ? document.referrer.slice(0, 255) : "";
+    }
+
+    try {
+      sessionStorage.setItem(KEY, JSON.stringify(stored));
+    } catch (e) {
+      // Private mode or storage disabled. Attribution degrades to whatever is on the
+      // current URL, which is the behaviour that existed before this component.
+    }
+
+    // Fills any hidden input whose name matches a captured key. Deliberately fills only
+    // inputs that already exist: HubSpot's Forms API rejects the whole submission if it
+    // is sent a field the form does not define, so a form silently gains attribution
+    // when its hidden input and matching HubSpot property are added, and is never
+    // broken by this script in the meantime.
+    window.__sbFillAttribution = function (form) {
+      if (!form) return;
+      var data = read();
+      // Prefer a value on the current URL over the stored one: if someone re-enters
+      // through a second ad mid-session, the click that produced this submit wins.
+      var live = new URLSearchParams(window.location.search);
+      Object.keys(data).forEach(function (k) {
+        var input = form.querySelector('input[name="' + k + '"]');
+        if (!input) return;
+        input.value = live.get(k) || data[k] || "";
+      });
+    };
+
+    window.__sbAttribution = read;
+  })();
+</script>
