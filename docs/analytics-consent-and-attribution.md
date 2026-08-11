@@ -224,6 +224,37 @@ Tag](https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/webs
 CAPI](https://docs.metarouter.io/docs/linkedin-ads-conversions), [300-member
 minimum](https://www.linkedin.com/help/lms/answer/a420433).
 
+## 3d. GA4 is currently downloaded twice
+
+**Known cost, measured 2026-08-11, deliberately not fixed yet.** Traced by initiator on the
+live site:
+
+```
+gtag/js?id=G-6X3GTENZTW                  initiator: parser  <- our HTML
+gtm.js?id=GTM-WV9TQ6FH                   initiator: script  <- our HTML
+gtag/js?id=G-6X3GTENZTW&cx=c&gtm=4e68    initiator: script  <- gtm.js
+```
+
+GTM loads GA4's `gtag.js` on top of the copy our own HTML loads. Different URLs, so
+different cache entries, so both download: roughly **145 KB each, about 290 KB for one
+analytics library**. The container holds no GA4 tag; GTM pulls it because the measurement id
+is associated with the container through Google's tag ecosystem.
+
+So the present setup is the worst of the three options available: GA4 managed separately
+from GTM **and** paid for twice. The prize in moving GA4 into the container is deleting the
+duplicate, not "central management".
+
+**Why it is not fixed yet.** `scroll_depth`, `cta_click` and `outbound_click` have shown
+zero events for 90 days while firing correctly in a browser, and the cause is still unknown
+(memory `ga4-custom-events-missing-discrepancy`, recheck around 2026-08-18). Those events
+call `window.gtag` directly. Changing how `gtag` reaches the page while an unexplained
+silent drop is open would confound that diagnosis and could produce a second silent failure
+indistinguishable from the first.
+
+**Order of operations:** resolve the missing-events question first, then move GA4 into GTM
+and remove our direct `gtag/js` tag. Two changes, in that order, each independently
+measurable.
+
 ## 4. Adding a pixel (LinkedIn, Meta, anything)
 
 > **LinkedIn is now an exception to this whole section. Read section 4a first.** The steps
