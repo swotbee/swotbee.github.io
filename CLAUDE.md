@@ -44,6 +44,31 @@ whose listener sat below an early `return`, so it was dead for everyone who had 
 chosen, and analytics cookies that reappeared after being cleared, because GA4 rewrites
 its cookie during unload.
 
+## Measuring performance locally
+
+**Use `pnpm serve:dist`, never `python -m http.server`.** Both serve the same files, but
+python sends everything uncompressed while GitHub Pages gzips. That single difference read
+as a 16-point Lighthouse gap and a doubled LCP:
+
+| | uncompressed | gzip (production-like) |
+|---|---|---|
+| Mobile performance | 81 | **97** |
+| LCP | 4.0s | **2.1s** |
+| CSS transferred | 164 KB | 27 KB |
+
+The uncompressed run sent me hunting a "slow LCP" that does not exist in production, and
+produced a recommendation to optimise an image that was not even the LCP element. Verify
+against the real thing when it matters: `curl -sI -H 'Accept-Encoding: gzip'
+https://swotbee.com/` shows `content-encoding: gzip`.
+
+Also build with analytics ids before measuring, or the tag stack is absent and the numbers
+flatter the page:
+
+```bash
+PUBLIC_GA4_ID=G-TEST PUBLIC_CLARITY_ID=test pnpm build
+pnpm serve:dist            # then run Lighthouse against http://127.0.0.1:4395/
+```
+
 ## Analytics, consent and attribution
 
 **Read `docs/analytics-consent-and-attribution.md` before adding any tag, pixel, third-party
