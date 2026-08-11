@@ -134,6 +134,9 @@ event is pushed.
 
 ## 4. Adding a pixel (LinkedIn, Meta, anything)
 
+> **LinkedIn is now an exception to this whole section. Read section 4a first.** The steps
+> below remain correct for every *gated* pixel, and Meta should still follow them.
+
 **The rule: Consent Mode does nothing for non-Google tags.** LinkedIn and Meta read no
 consent signal. `gtag('consent', ...)` will not gate them. The only real gate is not
 loading the script.
@@ -161,6 +164,63 @@ on page load for everyone and undoes all of this.
 8. Drop the `<noscript>` tracking pixel both vendors supply. It is an `<img>` that fires
    unconditionally with no way to gate it.
 9. Run `pnpm check:consent`.
+
+---
+
+## 4a. LinkedIn Insight Tag: ungated, deliberately
+
+**Partner id `9775948`**, ad account **SWOTBee 510190797**, purpose **retargeting**. Lives in
+GTM (`GTM-WV9TQ6FH`) as tag "LinkedIn Insight", firing on **All Pages**. Version 3, published
+2026-08-11.
+
+**It is not gated on consent.** Siva's decision, taken with the trade-off stated: the
+retargeting audience needs roughly 300 members before LinkedIn will let it be targeted, and
+gating it to consenting visitors only would have made that take months rather than weeks.
+
+**The condition attached to that decision, which is not optional:** the banner and
+`/cookie/` were rewritten in the same change so the site does not claim otherwise. The old
+banner said "Analytics cookies are off until you say yes." Leaving that while an advertising
+tag fired regardless would have made a public statement on our own site false. If the tag's
+gating changes again, that copy changes with it, in the same commit.
+
+What the public copy now commits to, and must keep saying while this holds:
+
+- LinkedIn advertising cookies are set on **every visit**, including before the banner is
+  answered and including on Reject.
+- Analytics stay off until accepted.
+- **"Reject" is real but partial.** It stops Google and Microsoft. It does not stop LinkedIn.
+- Withdrawal sweeps the LinkedIn cookies, but the tag re-sets them on the next page load, so
+  clearing them does not keep them cleared. `/cookie/` says this.
+
+**The exposure this accepts, recorded so it is not rediscovered as a surprise.** The UK is
+the primary market; PECR requires prior consent for non-essential cookies; an advertising
+retargeting pixel is not "strictly necessary"; and the LinkedIn Ads Agreement puts that
+obligation on the advertiser. US visitors are unaffected, being an opt-out regime. **The
+middle option, still available:** a geo-split, firing unconditionally for US and gating for
+UK and EU. Not taken because a static GitHub Pages site has no server-side geo detection and
+would need a client-side country lookup.
+
+**Two things were changed to match, and would silently rot otherwise:**
+
+- `scripts/verify-consent-gating.mjs`: `snap.licdn.com` removed from `GATED` **and** from the
+  in-page `gatedTags` probe, which is a second list that is easy to miss. Both carry a note.
+  Put LinkedIn back in both if it is ever re-gated.
+- `ConsentBanner.astro`'s header comment records the decision at the point someone would try
+  to "restore" the old copy.
+
+**Not enabled: Enhanced Matching.** It uploads customer email addresses to LinkedIn for
+matching. That is a materially larger privacy commitment than a retargeting pixel and needs
+its own decision, not a checkbox taken in passing on the install screen.
+
+**Where the Insight Tag hides in Campaign Manager**, because it took five attempts to find:
+**Data → Signals manager** (`/campaignmanager/accounts/<id>/buyer-actions-manager`), then the
+"Create Insight Tag" banner, then the **"I will use a tag manager"** accordion. It is not
+under Measurement, not under Assets, and `/insight-tag` renders blank. A new ad account is
+force-fed a campaign wizard first; **"Create later"** at the bottom left escapes it.
+
+**Do not use LinkedIn's own "Google Tag Manager" tile** in Signals manager, or the
+"Link to tag manager" links on the Insight Tag page. That guided integration installs its own
+tag configuration and takes the trigger out of your hands.
 
 ---
 

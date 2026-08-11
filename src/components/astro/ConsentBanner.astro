@@ -18,6 +18,15 @@
 //     the X would only mislead.
 //   - The choice is stored in localStorage, not a cookie, so that storing the decision
 //     does not itself require consent.
+//
+// CHANGED 2026-08-11, deliberately, on Siva's decision: the LinkedIn Insight Tag fires on
+// All Pages in GTM and is NOT gated on consent. Everything else here still is. The banner
+// and the cookie policy were rewritten in the same change so the site does not claim
+// otherwise, which is the only part of this that was not optional: the previous copy said
+// "Analytics cookies are off until you say yes", and leaving that in place while an
+// advertising tag fired regardless would have made a public statement on our own site
+// false. Note this means "Reject" is now partial: it stops Google and Microsoft, and does
+// not stop LinkedIn. Both the banner text and section 1 of /cookie/ say so plainly.
 ---
 
 <div
@@ -39,8 +48,8 @@
       Cookies on swotbee.com
     </h2>
     <p id="sb-consent-body" class="mt-1 text-[13px] leading-relaxed text-v6-text">
-      Analytics cookies are off until you say yes. The essential ones that make the site
-      work are always on. See our <a
+      LinkedIn advertising cookies are set on every visit. Analytics cookies are off until
+      you say yes, and the essential ones that make the site work are always on. See our <a
         href="/cookie/"
         class="text-v6-copper underline underline-offset-2 hover:text-v6-copper-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-v6-copper rounded-sm"
         >Cookie Policy</a

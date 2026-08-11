@@ -229,8 +229,21 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 // Vendors that must not load before consent. Add a row here when a new pixel is
 // introduced, or the check silently stops covering it.
-const GATED = /clarity\.ms|snap\.licdn\.com|connect\.facebook\.net|bat\.bing\.com|hs-scripts\.com/i;
+//
+// `snap.licdn.com` (LinkedIn Insight Tag) was REMOVED 2026-08-11, deliberately, not
+// because it stopped mattering. Siva decided the tag fires on All Pages regardless of
+// consent so the retargeting audience fills from every visitor, and the banner and
+// /cookie/ were rewritten in the same change to say so plainly. Leaving LinkedIn in this
+// list would have failed three checks forever, and a suite that always fails is a suite
+// nobody reads, which would have cost us the coverage of the other fourteen.
+//
+// If LinkedIn is ever put back behind consent, put it back here in the same commit.
+const GATED = /clarity\.ms|connect\.facebook\.net|bat\.bing\.com|hs-scripts\.com/i;
 const THIRD_PARTY = /googletagmanager|google-analytics|doubleclick|clarity\.ms|licdn|facebook|bing\.com|hubspot|hsappstatic/i;
+// `li_sugr` stays listed: withdrawal should still sweep it, and the sweep is still correct
+// even though the tag re-sets it on the next page load (a limit /cookie/ now states). If
+// this line ever starts failing intermittently, that is why, and the fix is to exclude the
+// LinkedIn names here rather than to weaken the sweep in ConsentBanner.astro.
 const TRACKING_COOKIE = /^(_ga|_gid|_gcl|_clck|_clsk|_uetsid|_uetvid|_fbp|_fbc|li_sugr)/;
 
 const PROBE = `(() => {
@@ -244,7 +257,9 @@ const PROBE = `(() => {
     stored: (() => { try { return localStorage.getItem('sb_consent'); } catch (e) { return '<blocked>'; } })(),
     gatedTags: Array.from(document.querySelectorAll('script[src]'))
       .map(s => s.src)
-      .filter(s => /clarity\\.ms|snap\\.licdn\\.com|connect\\.facebook\\.net/.test(s)).length,
+      // Keep this list in step with GATED above. snap.licdn.com is deliberately absent:
+      // the LinkedIn tag is intentionally ungated as of 2026-08-11, see the note there.
+      .filter(s => /clarity\\.ms|connect\\.facebook\\.net/.test(s)).length,
     consentCalls: dl.filter(a => a[0] === 'consent'),
     // Read the RAW dataLayer, not the mapped copy above: gtag pushes arguments objects,
     // which Array.from flattens fine, but a plain object push like
