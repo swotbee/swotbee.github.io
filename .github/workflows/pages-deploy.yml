@@ -40,6 +40,10 @@ jobs:
         env:
           PUBLIC_GA4_ID: ${{ secrets.PUBLIC_GA4_ID }}
           PUBLIC_CLARITY_ID: ${{ secrets.PUBLIC_CLARITY_ID }}
+          # Google Tag Manager container, holding the LinkedIn Insight Tag. Without this
+          # line the secret never reaches the build and the container is silently absent
+          # from production, while local builds that export it look fine.
+          PUBLIC_GTM_ID: ${{ secrets.PUBLIC_GTM_ID }}
 
       - name: Upload Pages artifact
         id: upload
