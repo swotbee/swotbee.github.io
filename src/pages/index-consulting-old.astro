@@ -1,0 +1,160 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/astro/Navbar.astro';
+import Footer from '../components/astro/Footer.astro';
+import HeroPipelineV6 from '../components/astro/HeroPipelineV6.astro';
+
+const trustBadges = [
+  { icon: '✓', label: 'HubSpot Partner', sub: 'Solutions Provider', bg: 'bg-v6-teal-50', color: 'text-v6-teal' },
+  { icon: '★', label: '150+ Clients', sub: 'Across Industries', bg: 'bg-v6-copper-50', color: 'text-v6-copper' },
+  { icon: '⊕', label: '10+ Years', sub: 'Global Experience', bg: 'bg-v6-blue-50', color: 'text-v6-blue' },
+];
+
+const features = [
+  { icon: '📊', title: 'Proven ROI, Backed by Data', desc: 'Our strategies drive measurable ROI with data-backed decisions and optimized workflows tailored to your goals.' },
+  { icon: '⚙️', title: 'Seamless, Integrated Systems', desc: 'We connect your CRM, marketing, and analytics into one intuitive system — backed by expert support.' },
+  { icon: '💡', title: 'Innovation Without the Hassle', desc: 'We use cutting-edge tools and automation to streamline processes and accelerate growth.' },
+  { icon: '🤝', title: 'Transparent Partnership', desc: 'Clear communication, aligned objectives, and shared roadmaps — full transparency every step of the way.' },
+];
+
+const stats = [
+  { value: '150+', label: 'Clients Served' },
+  { value: '300+', label: 'Projects Delivered' },
+  { value: '10+', label: 'Years Experience' },
+  { value: '98%', label: 'Client Satisfaction' },
+];
+
+const services = [
+  { title: 'HubSpot Onboarding', desc: 'Get set up right from day one with custom CRM configuration and data migration.', color: 'border-t-v6-blue', link: 'text-v6-blue', href: '/services/hubspot-onboarding' },
+  { title: 'Marketing Automation', desc: 'Automated campaigns, lead scoring, and personalized email sequences.', color: 'border-t-v6-teal', link: 'text-v6-teal', href: '/services/marketing' },
+  { title: 'Renewal Automation', desc: 'Deals that renew themselves — with line item filtering and ARR tracking.', color: 'border-t-v6-copper', link: 'text-v6-copper', href: '/services/sales-revops' },
+];
+---
+
+<!-- The consulting-positioned homepage that served / until 2026-08-11, kept whole so it
+     can be restored by reversing the two renames in that commit rather than reconstructed
+     from history. Reachable at /index-consulting-old/ for eyeballing, and noindex so it
+     cannot compete with the real homepage or be found by anyone but us. The same pattern
+     the repo already uses for /index-old/.
+
+     To restore: rename this file back to index.astro, rename the current index.astro to
+     something else, drop the robots line below, and remove the redirect for
+     /renewal-operations-animated-v3 from astro.config.mjs. -->
+<BaseLayout
+  robots="noindex, follow"
+  title="SWOTBee - Expert HubSpot & Shopify Consulting Services"
+  description="Stop losing revenue to missed renewals. Deals that renew themselves. Line items that filter automatically. Revenue you can finally see."
+>
+
+  <Navbar />
+
+  <!-- ============ HERO ============ -->
+  <section class="bg-gradient-to-b from-v6-bg to-white px-4 sm:px-6 lg:px-8 pt-12 sm:pt-16 pb-4 sm:pb-6">
+    <div class="max-w-3xl mx-auto text-center">
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-v6-dark leading-tight mb-4 sm:mb-5 text-balance">
+        Stop losing revenue to <span class="text-v6-copper">missed renewals</span>
+      </h1>
+      <p class="text-base sm:text-lg text-v6-text-muted max-w-xl mx-auto mb-6 sm:mb-8 leading-relaxed">
+        Deals that renew themselves. Line items that filter automatically. Revenue you can finally see.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center mb-3">
+        <a href="/contactus/" class="bg-v6-copper text-white px-6 sm:px-8 py-3 rounded-xl text-base font-semibold hover:bg-v6-copper-600 transition-colors text-center">
+          See It In Action
+        </a>
+        <a href="/about" class="border border-gray-300 text-v6-dark px-6 sm:px-8 py-3 rounded-xl text-base font-medium hover:bg-gray-50 transition-colors text-center">
+          Learn more →
+        </a>
+      </div>
+      <p class="text-xs sm:text-sm text-gray-500">Works with your existing HubSpot. No migration needed.</p>
+    </div>
+  </section>
+
+  <!-- ============ HERO PIPELINE ANIMATION ============ -->
+  <section class="bg-v6-bg px-4 sm:px-6 lg:px-8 pb-6">
+    <div class="max-w-6xl mx-auto">
+      <HeroPipelineV6 />
+    </div>
+  </section>
+
+  <!-- ============ TRUST BADGES ============ -->
+  <section class="bg-white border-b border-v6-border py-4 px-4 sm:px-6">
+    <div class="max-w-4xl mx-auto flex flex-wrap justify-center gap-6 sm:gap-10">
+      {trustBadges.map(b => (
+        <div class="flex items-center gap-2.5">
+          <div class={`w-9 h-9 rounded-full ${b.bg} flex items-center justify-center ${b.color} text-base`}>
+            {b.icon}
+          </div>
+          <div>
+            <div class="text-sm font-semibold text-v6-dark">{b.label}</div>
+            <div class="text-xs text-gray-500">{b.sub}</div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- ============ FEATURES ============ -->
+  <section class="bg-v6-bg py-16 sm:py-20 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl sm:text-3xl font-bold text-v6-dark mb-2">Why Our Clients Rely on Us</h2>
+      <p class="text-v6-text-muted mb-10 max-w-xl text-base sm:text-lg">Personalized workflows, automations, and messaging aligned with your business goals.</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {features.map(f => (
+          <div class="flex gap-4 items-start">
+            <div class="w-10 h-10 rounded-lg bg-v6-blue-50 flex items-center justify-center flex-shrink-0 text-xl">
+              {f.icon}
+            </div>
+            <div>
+              <h3 class="text-base font-semibold text-v6-dark mb-1">{f.title}</h3>
+              <p class="text-sm text-v6-text-muted leading-relaxed">{f.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ STATS BAR ============ -->
+  <section class="bg-gradient-to-br from-v6-blue to-v6-blue-600 py-10 sm:py-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
+      {stats.map(s => (
+        <div>
+          <div class="text-2xl sm:text-3xl font-bold text-v6-copper-200">{s.value}</div>
+          <div class="text-xs sm:text-sm text-v6-blue-100 mt-1">{s.label}</div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- ============ SERVICES ============ -->
+  <section class="bg-white py-16 sm:py-20 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-2xl sm:text-3xl font-bold text-v6-dark mb-10 text-center">Our Services</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {services.map(s => (
+          <div class={`bg-v6-bg border border-v6-border rounded-xl overflow-hidden border-t-4 ${s.color} hover:shadow-lg transition-shadow`}>
+            <div class="p-6">
+              <h3 class="text-base font-semibold text-v6-dark mb-2">{s.title}</h3>
+              <p class="text-sm text-v6-text-muted leading-relaxed mb-4">{s.desc}</p>
+              <a href={s.href} class={`${s.link} text-sm font-semibold hover:underline`}>Learn more →</a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA ============ -->
+  <section class="bg-gradient-to-br from-v6-copper to-v6-copper-600 py-16 sm:py-20 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-2xl mx-auto text-center">
+      <h2 class="text-2xl sm:text-3xl font-bold text-white mb-4">Ready to grow your revenue?</h2>
+      <p class="text-v6-copper-50 text-base sm:text-lg mb-8">Book a free consultation and see how renewal automation can work for you.</p>
+      <a href="/contactus/" class="bg-white text-v6-copper px-8 py-3.5 rounded-xl text-base font-semibold hover:bg-gray-50 transition-colors inline-block">
+        Claim Your Free Consultation
+      </a>
+    </div>
+  </section>
+
+  <Footer />
+
+</BaseLayout>

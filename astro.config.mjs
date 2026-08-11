@@ -45,6 +45,11 @@ export default defineConfig({
   // which Google treats as passing ranking signal, the standard pattern for static hosts.
   redirects: {
     "/posts/Pendo HubSpot Integration_ Boost Customer Insights": "/posts/pendo-hubspot-integration",
+    // The renewal page became the homepage on 2026-08-11. It was noindex for its whole
+    // life so there is no ranking to preserve, but the URL is in ad plan docs, the
+    // baseline snapshot and anywhere it was shared, and a 404 would lose that traffic
+    // silently. It also stops the two URLs serving identical content.
+    "/renewal-operations-animated-v3": "/",
   },
 
   markdown: {
@@ -80,12 +85,19 @@ export default defineConfig({
           '/security/',
           '/hero-preview/',
           '/index-old/',
+          // The consulting-positioned homepage that served / until 2026-08-11. Kept
+          // routed and noindex so it can be eyeballed before any decision to restore it,
+          // but it must never appear in the sitemap: a noindex page listed for crawling
+          // is a contradiction, and this one is near-duplicate of a live page.
+          '/index-consulting-old/',
           '/logo-',
           '/sample-',
           '/org-chart-account-planning-hubspot/',
           '/renewal-operations/',
           '/renewal-operations-animated/',
           '/renewal-operations-animated-v2/',
+          // Now a redirect stub to /, not a page. Kept blocked so that if the redirect
+          // is ever replaced by a real page again it does not silently rejoin the sitemap.
           '/renewal-operations-animated-v3/',
           '/resources/arr-correction-kit/',
           '/resources/renewal-health-scorecard/',
