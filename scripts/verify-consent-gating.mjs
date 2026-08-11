@@ -240,10 +240,15 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 // If LinkedIn is ever put back behind consent, put it back here in the same commit.
 const GATED = /clarity\.ms|connect\.facebook\.net|bat\.bing\.com|hs-scripts\.com/i;
 const THIRD_PARTY = /googletagmanager|google-analytics|doubleclick|clarity\.ms|licdn|facebook|bing\.com|hubspot|hsappstatic/i;
-// `li_sugr` stays listed: withdrawal should still sweep it, and the sweep is still correct
-// even though the tag re-sets it on the next page load (a limit /cookie/ now states). If
-// this line ever starts failing intermittently, that is why, and the fix is to exclude the
-// LinkedIn names here rather than to weaken the sweep in ConsentBanner.astro.
+// `li_sugr` stays listed so the intent is recorded, but do NOT read a green suite as
+// proof that LinkedIn is swept on withdrawal. It is not, and cannot be: the probe reads
+// document.cookie, which by definition cannot see LinkedIn's cookies on .linkedin.com,
+// and no site can delete another domain's cookies anyway. Measured on a fresh profile,
+// LinkedIn sets seven cookies, all third-party. So this assertion genuinely covers the
+// Google and Microsoft cookies and is silent about LinkedIn, rather than the earlier note
+// here suggesting it might "start failing intermittently". It never will.
+// /cookie/ already tells visitors the truth: those cookies are cleared through browser
+// settings or LinkedIn's own controls, not by us.
 const TRACKING_COOKIE = /^(_ga|_gid|_gcl|_clck|_clsk|_uetsid|_uetvid|_fbp|_fbc|li_sugr)/;
 
 const PROBE = `(() => {
