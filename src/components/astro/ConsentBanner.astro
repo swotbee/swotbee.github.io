@@ -128,7 +128,15 @@
       if (parts.length > 2) domains.push("." + parts.slice(-2).join("."));
       document.cookie.split(";").forEach(function (c) {
         var name = c.trim().split("=")[0];
-        if (!/^(_ga|_gid|_gcl|_clck|_clsk|_uetsid|_uetvid)/.test(name)) return;
+        // Keep this in step with TRACKING_COOKIE in scripts/verify-consent-gating.mjs.
+        // The LinkedIn and Meta names are listed before those tags ship, so the sweep is
+        // never the thing that was forgotten. Harmless while the cookies do not exist.
+        //
+        // Honest limit: LinkedIn's bcookie/lidc/UserMatchHistory live on .linkedin.com and
+        // CANNOT be deleted by this site's JavaScript, because a page cannot write a
+        // cookie for another domain. Only the first-party ones actually clear. The cookie
+        // policy must not promise otherwise.
+        if (!/^(_ga|_gid|_gcl|_clck|_clsk|_uetsid|_uetvid|_fbp|_fbc|li_sugr|li_gc|bcookie|bscookie|lidc|UserMatchHistory|AnalyticsSyncHistory)/.test(name)) return;
         domains.forEach(function (d) {
           document.cookie =
             name + "=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/" +

@@ -88,6 +88,17 @@ import Navbar from "../components/astro/Navbar.astro";
             <td class="px-2 py-1 border">1 day</td>
           </tr>
           <tr>
+            <td class="px-2 py-1 border"><code>li_sugr</code>, <code>bcookie</code>,
+              <code>lidc</code>, <code>UserMatchHistory</code></td>
+            <td class="px-2 py-1 border">
+              Recognises you if you later see one of our adverts on LinkedIn, and measures
+              whether an advert led to an enquiry. Set only while we are running LinkedIn
+              advertising.
+            </td>
+            <td class="px-2 py-1 border">LinkedIn</td>
+            <td class="px-2 py-1 border">1 day to 1 year</td>
+          </tr>
+          <tr>
             <td class="px-2 py-1 border"><code>_gcl_au</code></td>
             <td class="px-2 py-1 border">
               Measures which advert led to an enquiry. Set only while we are running Google
@@ -168,7 +179,10 @@ import Navbar from "../components/astro/Navbar.astro";
     <p class="mt-3">
       If you switch from accepted to rejected, we delete the analytics and advertising
       cookies listed above and reload the page, so the session-recording script is not
-      running for the rest of your visit. We cannot delete data already collected and sent
+      running for the rest of your visit. One honest limit: some LinkedIn cookies are set
+      on LinkedIn's own domain rather than ours, and no website is technically able to
+      delete another domain's cookies. Those are cleared through your browser settings or
+      LinkedIn's own advertising controls. We cannot delete data already collected and sent
       to Google or Microsoft before you withdrew. To ask about that data, contact us using
       the details below.
     </p>
@@ -193,6 +207,7 @@ import Navbar from "../components/astro/Navbar.astro";
     <ul class="list-disc list-inside space-y-1">
       <li><strong>Google</strong> (Analytics, reCAPTCHA, and Ads when advertising is running)</li>
       <li><strong>Microsoft</strong> (Clarity, session analytics)</li>
+      <li><strong>LinkedIn</strong> (advertising measurement, when a LinkedIn campaign is running)</li>
       <li><strong>HubSpot</strong> (our CRM, for forms you submit and meetings you book)</li>
     </ul>
     <p class="mt-3">
