@@ -25,7 +25,24 @@ pnpm install --frozen-lockfile   # Install exactly what CI installs
 pnpm dev                         # Dev server at localhost:4321 (binds to all interfaces)
 pnpm build                       # Production build to ./dist/
 pnpm preview                     # Preview production build locally
+pnpm check:consent               # Verify nothing tracks before consent (needs ./dist)
 ```
+
+`pnpm check:consent` drives a real headless browser through five visitor states and
+asserts what happened on the wire. Run it after any change to analytics, the consent
+banner, or a third-party embed, and before adding a pixel. It needs a build made **with**
+the analytics IDs present, otherwise the banner is correctly absent and it cannot test
+anything:
+
+```bash
+PUBLIC_GA4_ID=G-TEST PUBLIC_CLARITY_ID=test pnpm build && pnpm check:consent
+```
+
+Do not substitute reading the code. Two separate consent bugs on this site survived a
+careful read and were caught only by watching the network: a footer withdrawal control
+whose listener sat below an early `return`, so it was dead for everyone who had already
+chosen, and analytics cookies that reappeared after being cleared, because GA4 rewrites
+its cookie during unload.
 
 A `Justfile` wraps the same recipes (`just dev`, `just build`, `just install`, `just audit`,
 `just astro check`). `just` is a convenience only and is not installed on every machine; the
