@@ -44,6 +44,21 @@ whose listener sat below an early `return`, so it was dead for everyone who had 
 chosen, and analytics cookies that reappeared after being cleared, because GA4 rewrites
 its cookie during unload.
 
+## Analytics, consent and attribution
+
+**Read `docs/analytics-consent-and-attribution.md` before adding any tag, pixel, third-party
+embed, or form field.** It is the source of truth for what loads when, and it records
+researched behaviour that is expensive to rediscover and in places contradicts the popular
+belief (HubSpot's Forms API silently drops undefined fields rather than rejecting the
+submission; Consent Mode does nothing at all for LinkedIn or Meta pixels, so they must be
+gated by not loading them).
+
+The short version: analytics and session recording are gated behind
+`src/components/astro/ConsentBanner.astro` and only load on accept; reCAPTCHA is not gated
+but loads on first form focus rather than page load; campaign attribution is captured into
+`sessionStorage` by `src/components/astro/AttributionCapture.astro` and attached to form
+submissions, because that is the only attribution that survives someone declining cookies.
+
 A `Justfile` wraps the same recipes (`just dev`, `just build`, `just install`, `just audit`,
 `just astro check`). `just` is a convenience only and is not installed on every machine; the
 `pnpm` commands above always work.
