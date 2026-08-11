@@ -164,6 +164,66 @@ the same direction, all worth avoiding:
    string. **Read `"version":"N"` out of `gtm.js` instead**; it is unambiguous, and a
    saved-but-unpublished change is otherwise invisible.
 
+## 3c. Why best practices reads 58, and why we are leaving it
+
+**Decision 2026-08-11: hold the LinkedIn tag as it is. Do not spend more on this.**
+
+Lighthouse best practices scores 58 on every page. Exactly three audits fail, all of them
+inside LinkedIn's own script, and 15 of 26 weighted points pass, which is precisely 58:
+
+| Audit | Weight | Source |
+|---|---|---|
+| `deprecations` | 5 | LinkedIn's deprecated Attribution Reporting call |
+| `third-party-cookies` | 5 | LinkedIn's seven cookies on `.linkedin.com` |
+| `inspector-issues` | 1 | the same cookies |
+
+Everything under our control already passes, including HTTPS, CSP, HSTS, COOP, clickjacking
+and Trusted Types.
+
+**None of it is configurable.** Traced to source rather than inferred:
+
+- `insight.min.js` hard-codes the URL of `insight.old.min.js` and loads it itself.
+- `insight.old.min.js` checks `featurePolicy.features().includes("attribution-reporting")`
+  and calls `px.ads.linkedin.com/attribution_trigger`. That is the deprecation.
+- The GTM tag exposes exactly one parameter, the partner id. There is no first-party cookie
+  toggle, no way to skip the legacy file, and swapping to LinkedIn's community GTM template
+  changes nothing, because the loader logic lives in LinkedIn's script either way.
+
+**The server-side answer does not apply here, despite being what every guide recommends.**
+Website retargeting audiences *require* the Insight Tag. The Conversions API sends
+conversions and cannot build Matched Audiences. Since firing ungated exists specifically to
+seed a retargeting audience, replacing the browser tag with CAPI would defeat the purpose,
+while adding roughly $20 to $50 a month of Cloud Run or Stape hosting. First-party cookie
+mode (`li_adsid`) is real but the browser tag still sets cookies on `linkedin.com`, and even
+if it did not, `deprecations` would still fail.
+
+So the option set is honestly three: accept 58, consent-gate the tag, or lose retargeting.
+
+**Keep it in proportion.** Best practices is not a ranking factor. Performance is, and after
+the Window Loaded change that is 96 mobile and 100 desktop.
+
+### The exit condition, so this does not quietly become permanent
+
+Firing ungated was chosen as a **time-limited** trade-off: LinkedIn needs about 300 members
+before an audience can be targeted, and gating to consenting visitors only would have made
+that months rather than weeks.
+
+**Once the audience clears 300 in Campaign Manager, gate the tag.** At that point the
+seeding argument has done its job, and gating returns best practices to 100 and closes the
+PECR exposure in section 4a at no remaining cost.
+
+The mechanism is GTM's per-tag **`consentSettings`** field, currently `notSet`, set to
+require `ad_storage`. That is a field on the tag, not a trigger. A "Consent granted" custom
+trigger existed and was deleted in container version 5 precisely because it was the wrong
+mechanism; the site still pushes `sb_consent_granted` to the dataLayer if a trigger is ever
+wanted again.
+
+Sources: [website retargeting requires the Insight
+Tag](https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/website-visitors-retargeting?view=li-lms-2026-05),
+[Matched Audiences unsupported via
+CAPI](https://docs.metarouter.io/docs/linkedin-ads-conversions), [300-member
+minimum](https://www.linkedin.com/help/lms/answer/a420433).
+
 ## 4. Adding a pixel (LinkedIn, Meta, anything)
 
 > **LinkedIn is now an exception to this whole section. Read section 4a first.** The steps
