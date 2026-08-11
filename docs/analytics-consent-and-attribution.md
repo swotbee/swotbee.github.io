@@ -92,7 +92,12 @@ rejecting means no contact at all.
 
 ## 3a. Google Tag Manager
 
-GTM holds the LinkedIn Insight Tag and future advertising pixels. Three rules, all load
+Container **`GTM-WV9TQ6FH`** (verified live 2026-08-11: `gtm.js` returns 321 KB against
+1.5 KB for a nonexistent id). At time of writing it holds no vendor tags; the
+`doubleclick` and `googleadservices` strings inside it are GTM's own runtime templates,
+which every container ships. Confirmed in a browser that it fires nothing before consent.
+
+It holds the LinkedIn Insight Tag and future advertising pixels. Three rules, all load
 bearing:
 
 - **The container must load AFTER the Consent Mode defaults.** GTM reads consent state as
@@ -210,16 +215,20 @@ the resource forms, n8n forwards `fields` verbatim, and submissions succeed whil
 field never appears on the contact. Silent dropping is its own hazard: a typo'd field name
 loses data with no error anywhere.
 
-**n8n applies no allowlist.** Workflow "SwotBee - Form Submit reCAPTCHA Proxy"
-(`GXvCCtkw9iwlIlNF`), node "Forward to HubSpot", forwards
-`$('Form Submit Webhook').item.json.body.fields` straight through. So the browser payload
+**n8n applies no allowlist.** The workflow "SwotBee - Form Submit reCAPTCHA Proxy", node
+"Forward to HubSpot", forwards `...body.fields` straight through. So the browser payload
 is what HubSpot receives.
 
 **Magnet delivery is not triggered by the form proxy.** It comes from a separate n8n
-webhook (`swotbee-leakage-estimate`), fired by a HubSpot workflow. The service token has
-no `automation` scope, so this could not be confirmed from the API. Practical consequence:
-**a test submission to a lead-magnet form probably sends a real email and creates a Kit
-subscriber.** Test against the contact form instead, which has no magnet.
+webhook fired by a HubSpot workflow. The service token has no `automation` scope, so this
+could not be confirmed from the API. Practical consequence: **a test submission to a
+lead-magnet form probably sends a real email and creates a Kit subscriber.** Test against
+the contact form instead, which has no magnet.
+
+> This repository is **public**. Internal identifiers (n8n workflow ids, non-public webhook
+> paths, credential locations) stay out of this file. They are in the private session
+> memory `hubspot-forms-api-gotchas`. The HubSpot portal id, form GUIDs and the GTM
+> container id below are already in the site's page source, so they are not secrets.
 
 **reCAPTCHA v3 sets no cookie until it executes.** Loading `api.js` contacts Google but
 stores nothing; `_GRECAPTCHA` appears when a token is generated. So moving it from page
