@@ -132,6 +132,38 @@ trigger for every consent-gated tag in the container, rather than All Pages. The
 event fires too, so a tag can react to withdrawal. `pnpm check:consent` asserts the granted
 event is pushed.
 
+## 3b. Tag timing, and what it cost
+
+**Fire advertising tags on Window Loaded, not All Pages.** Measured on production, homepage:
+
+| Mobile | LinkedIn on All Pages | on Window Loaded |
+|---|---|---|
+| Performance | 74 | **96** |
+| LCP | **5.0s** | **2.5s** |
+| FCP | 3.4s | 1.4s |
+
+On the wire, before: LinkedIn at +628ms with `load` at +2080ms. After: `load` at +1091ms and
+LinkedIn at +1093ms. The load event itself arrives a second earlier because the tag is no
+longer competing with the content render. Desktop was 100 either way, so this is a mobile
+bandwidth problem and invisible on a desktop check.
+
+Audience seeding is unaffected: the tag still fires for **every** visitor. The trade-off is
+that anyone leaving before `load` (~1.1s) is never counted. With an 80.9% bounce rate that
+is not nothing, so watch audience growth in Campaign Manager. A Timer trigger at ~500ms is
+the middle option if seeding slows.
+
+**Three measurement traps produced three wrong conclusions before this was found**, all in
+the same direction, all worth avoiding:
+
+1. Measuring against `python -m http.server`, which sends no compression. Read 81/4.0s where
+   the compressed figure was 97/2.1s. Use `pnpm serve:dist`.
+2. Running the "block the tag stack" experiment against that same uncompressed build. It
+   showed 81 to 79, "tags are not the cause", because the uncompressed CSS and HTML swamped
+   everything. Against production the same experiment showed 74 to 98.
+3. Inferring a GTM change had shipped from the container's byte size and a `gtm.load`
+   string. **Read `"version":"N"` out of `gtm.js` instead**; it is unambiguous, and a
+   saved-but-unpublished change is otherwise invisible.
+
 ## 4. Adding a pixel (LinkedIn, Meta, anything)
 
 > **LinkedIn is now an exception to this whole section. Read section 4a first.** The steps
@@ -163,6 +195,7 @@ on page load for everyone and undoes all of this.
 7. Add the cookies to the table in `src/pages/cookie.astro` and the vendor to section 5.
 8. Drop the `<noscript>` tracking pixel both vendors supply. It is an `<img>` that fires
    unconditionally with no way to gate it.
+8b. Fire it on **Window Loaded**, never All Pages. See section 3b for what All Pages cost.
 9. Run `pnpm check:consent`.
 
 ---
