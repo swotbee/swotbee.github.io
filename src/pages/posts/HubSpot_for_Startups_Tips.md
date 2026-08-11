@@ -107,7 +107,7 @@ Collaboration across teams is facilitated through HubSpot's platform. It encoura
   * Content creation and management tools
   * Marketing automation workflows
 
-![HubSpot Collaboration Features](/assets/posts/hubSpot-for-startups-costs-benefits/3.jpeg)by Walls.io (https://unsplash.com/@walls\_io)
+![HubSpot Collaboration Features](/assets/posts/hubSpot-for-startups-costs-benefits/3.jpeg)by Walls.io (https://unsplash.com/@walls_io)
 
 Ultimately, HubSpot’s features ensure startups can operate efficiently and focus on growth. The platform's flexibility and scalability make it an essential tool for emerging businesses.
 
@@ -119,7 +119,7 @@ A primary capability is contact management, which tracks customer interactions a
 
 Another noteworthy feature is task automation. Startups can automate routine tasks like follow-up emails and data entry. This saves time, enabling teams to concentrate on strategic growth initiatives.
 
-![HubSpot CRM Dashboard](/assets/posts/hubSpot-for-startups-costs-benefits/4.jpeg)by Nikhil C (https://unsplash.com/@nikhil\_c)
+![HubSpot CRM Dashboard](/assets/posts/hubSpot-for-startups-costs-benefits/4.jpeg)by Nikhil C (https://unsplash.com/@nikhil_c)
 
 Pipeline management within HubSpot CRM allows startups to visualize and manage sales processes. This tool aids in tracking deals and sales performance, helping startups hit their revenue targets.
 
@@ -345,7 +345,7 @@ Choosing the right tools is crucial for startup success. HubSpot for Startups of
 
 Consider your startup's growth stage and marketing needs. If you seek scalable marketing and sales tools with strong integration capabilities, HubSpot may suit you well. It provides robust CRM functionality and marketing automation at competitive pricing.
 
-![Evaluating HubSpot for Your Startup](/assets/posts/hubSpot-for-startups-costs-benefits/15.jpeg)by Walls.io (https://unsplash.com/@walls\_io)
+![Evaluating HubSpot for Your Startup](/assets/posts/hubSpot-for-startups-costs-benefits/15.jpeg)by Walls.io (https://unsplash.com/@walls_io)
 
 Assess your team’s technical expertise and readiness to adopt a comprehensive platform. HubSpot's offerings are vast, so evaluate if your team can leverage these tools effectively.
 

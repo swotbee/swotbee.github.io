@@ -118,7 +118,7 @@ Key features you should look for in free CRM software include:
 
 When exploring free CRM software, assess the ease of use. A user-friendly interface can significantly affect team adoption and productivity. Also, consider community and support availability. While free options provide limited support, active user communities can offer valuable insights and assistance.
 
-Infographic showing key features of free CRM softwareby Steve Johnson (https://unsplash.com/@steve\_j)
+Infographic showing key features of free CRM softwareby Steve Johnson (https://unsplash.com/@steve_j)
 
 Overall, free CRM solutions provide essential tools without the financial burden. Evaluate the functionality, user interface, and community support to ensure it meets your business requirements.
 
@@ -238,7 +238,7 @@ Support user adoption with resources and incentives:
 * **Incentives**: Reward effective use with recognition or bonuses.
 * **Help Desks**: Offer accessible technical support for swift troubleshooting.
 
-![Gradual Implementation of CRM System](/assets/posts/best-practices-for-implementing-CRM-solutions/6.png)by Wolfgang Hasselmann (https://unsplash.com/@wolfgang\_hasselmann)
+![Gradual Implementation of CRM System](/assets/posts/best-practices-for-implementing-CRM-solutions/6.png)by Wolfgang Hasselmann (https://unsplash.com/@wolfgang_hasselmann)
 
 Continuous communication is crucial during adoption. Regular updates align everyone and maintain momentum. A phased approach ensures a smoother transition, promoting successful long-term integration.
 
@@ -272,7 +272,7 @@ Key practices for data quality, security, and compliance include:
 * **Data Encryption**: Encrypt sensitive data at rest and in transit.
 * **Compliance Training**: Educate staff on relevant regulations.
 
-![Data Security and Compliance Measures](/assets/posts/best-practices-for-implementing-CRM-solutions/8.png)by Radu Prodan (https://unsplash.com/@r\_j\_me)
+![Data Security and Compliance Measures](/assets/posts/best-practices-for-implementing-CRM-solutions/8.png)by Radu Prodan (https://unsplash.com/@r_j_me)
 
 Taking proactive steps in these areas builds customer trust. By ensuring data quality, security, and compliance, businesses protect their reputation and foster a secure, reliable environment for their customers.
 
@@ -312,7 +312,7 @@ Key practices to overcome challenges include:
 * **Plan Thoroughly**: Allocate resources for training and migration.
 * **Seek Professional Support**: Consider expert guidance for technical issues.
 
-![Resolving CRM Challenges](/assets/posts/best-practices-for-implementing-CRM-solutions/9.png)by Ludovico Ceroseis (https://unsplash.com/@ludovico\_06)
+![Resolving CRM Challenges](/assets/posts/best-practices-for-implementing-CRM-solutions/9.png)by Ludovico Ceroseis (https://unsplash.com/@ludovico_06)
 
 By anticipating these challenges and applying strategic solutions, your CRM implementation can be successful and less stressful.
 
@@ -362,7 +362,7 @@ Inexpensive CRM solutions balance cost and features. Consider these options for 
 
 These affordable solutions provide expanded functionalities for growing businesses.
 
-![Inexpensive CRM Tools Features](/assets/posts/best-practices-for-implementing-CRM-solutions/11.png)by Ryno Marais (https://unsplash.com/@ryno\_marais)
+![Inexpensive CRM Tools Features](/assets/posts/best-practices-for-implementing-CRM-solutions/11.png)by Ryno Marais (https://unsplash.com/@ryno_marais)
 
 Choosing between free and inexpensive CRM options depends on your business's unique needs. Evaluate the feature set and scalability to make an informed decision. Look for tools that align with your goals and budget, ensuring long-term value and support for your operations.
 

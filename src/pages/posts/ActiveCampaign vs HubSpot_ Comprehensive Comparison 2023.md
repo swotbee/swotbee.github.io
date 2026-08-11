@@ -196,7 +196,7 @@ When choosing based on user experience, consider your team's technical skills. B
 
 Ease of use is essential for maximizing tool effectiveness. Both ActiveCampaign and HubSpot excel here. Choose one that aligns with your team's familiarity with tech.
 
-![Ease of use and user experience comparison](/assets/posts/activecampaign-vs-hubspot/6.png)by Walls.io (https://unsplash.com/@walls\_io)
+![Ease of use and user experience comparison](/assets/posts/activecampaign-vs-hubspot/6.png)by Walls.io (https://unsplash.com/@walls_io)
 
 ## **Integrations and App Ecosystem**
 
@@ -272,7 +272,7 @@ Each ActiveCampaign plan includes robust automation capabilities. This focus mak
 
 For businesses focused on email marketing, ActiveCampaign offers an affordable solution. Its pricing structure supports businesses of all sizes.
 
-![ActiveCampaign pricing options](/assets/posts/activecampaign-vs-hubspot/10.png)by Steve Johnson (https://unsplash.com/@steve\_j)
+![ActiveCampaign pricing options](/assets/posts/activecampaign-vs-hubspot/10.png)by Steve Johnson (https://unsplash.com/@steve_j)
 
 ## **Customer Support and Community**
 
@@ -310,7 +310,7 @@ HubSpot is also committed to maintaining high security standards. They comply wi
 
 Choosing a platform with robust security measures is vital. It safeguards your business data against potential breaches.
 
-Security features comparison between ActiveCampaign and HubSpotby Steve Johnson (https://unsplash.com/@steve\_j)
+Security features comparison between ActiveCampaign and HubSpotby Steve Johnson (https://unsplash.com/@steve_j)
 
 ## **Real-World Use Cases and Case Studies**
 
@@ -380,7 +380,7 @@ Consider these key aspects to guide your choice:
 
 Ultimately, the decision depends on your specific objectives and resources. Match these with the platform's features to ensure the best fit.
 
-![Decision-making flowchart for choosing between ActiveCampaign and HubSpot](/assets/posts/activecampaign-vs-hubspot/13.png)by Fr0ggy5 (https://unsplash.com/@fr0ggy5\_fr0ggy5)
+![Decision-making flowchart for choosing between ActiveCampaign and HubSpot](/assets/posts/activecampaign-vs-hubspot/13.png)by Fr0ggy5 (https://unsplash.com/@fr0ggy5_fr0ggy5)
 
 ## **Frequently Asked Questions (FAQ)**
 

@@ -217,7 +217,7 @@ Reasons to change actions may include:
 
 Adapting workflow actions keeps them relevant and effective.
 
-![Illustration showing the process of changing a workflow action in HubSpot](/assets/posts/master-hubSpot-workflows/9.jpeg)by Walls.io (https://unsplash.com/@walls\_io)
+![Illustration showing the process of changing a workflow action in HubSpot](/assets/posts/master-hubSpot-workflows/9.jpeg)by Walls.io (https://unsplash.com/@walls_io)
 
 ### **Can You Send Files in Workflows in HubSpot?**
 
@@ -258,7 +258,7 @@ Sales workflows focus on:
 
 Service workflows improve customer support and satisfaction. Automation helps streamline ticket responses and satisfaction surveys.
 
-![Customer service workflow to improve response times](/assets/posts/master-hubSpot-workflows/12.jpeg)by Swag Photography (https://unsplash.com/@arni\_gill)
+![Customer service workflow to improve response times](/assets/posts/master-hubSpot-workflows/12.jpeg)by Swag Photography (https://unsplash.com/@arni_gill)
 
 Service workflows can include:
 

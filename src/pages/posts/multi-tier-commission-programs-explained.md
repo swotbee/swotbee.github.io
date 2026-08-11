@@ -76,7 +76,7 @@ The anxiety is understandable. So let's address it head-on with a direct compari
 | **Legal risk** | Low | Higher (ongoing FTC scrutiny) |
 | **Average participant income** | Predictable, based on actual sales volume | [Research suggests](https://www.ftc.gov/sites/default/files/documents/public_comments/trade-regulation-rule-disclosure-requirements-and-prohibitions-concerning-business-opportunities-ftc.r511993-00008%C2%A0/00008-57281.pdf) the vast majority of MLM participants lose money |
 
-The distinction matters because the [FTC](https://www.ftc.gov/business-guidance/guidance/business-guidance-concerning-multi-level-marketing) has a straightforward test for legitimacy: **Can participants earn meaningful income from product sales alone, without recruiting anyone?**
+The distinction matters because the [FTC](https://www.ftc.gov/business-guidance/resources/business-guidance-concerning-multi-level-marketing) has a straightforward test for legitimacy: **Can participants earn meaningful income from product sales alone, without recruiting anyone?**
 
 If the answer is yes, you are operating a legitimate multi-tier program. Your Tier 1 sellers make money by selling. The override commissions are a bonus layer that rewards network building, not a requirement for basic income.
 

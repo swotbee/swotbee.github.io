@@ -291,7 +291,7 @@ Key distinctions include:
 * **Insightly**: Project management focus
 * **Capsule**: Streamlined sales pipeline functionality
 
-![Comparison of HubSpot vs Insightly and Capsule CRM][image7]by Steve Johnson (https://unsplash.com/@steve\_j)
+![Comparison of HubSpot vs Insightly and Capsule CRM][image7]by Steve Johnson (https://unsplash.com/@steve_j)
 
 Selecting between these depends on your priorities, whether you need advanced marketing, project management, or a simplified sales tool.
 

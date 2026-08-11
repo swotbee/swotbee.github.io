@@ -208,7 +208,7 @@ Using a template provides several benefits:
 * Easy tracking of objectives and progress
 * Simplified communication with stakeholders
 
-![Example of a Strategic Account Planning Template](/assets/posts/game-plan-for-effective-stakeholder-collaboration/4.jpeg) by Walls.io (https://unsplash.com/@walls\_io)
+![Example of a Strategic Account Planning Template](/assets/posts/game-plan-for-effective-stakeholder-collaboration/4.jpeg) by Walls.io (https://unsplash.com/@walls_io)
 
 An effective account planning template includes:
 
@@ -258,7 +258,7 @@ Analytics tools provide insights into client behavior and market trends. They en
 
 Collaboration tools enhance teamwork across departments. Platforms like Slack and Microsoft Teams facilitate real-time communication. They break down silos, encouraging the sharing of valuable information.
 
-![Modern Tools for Strategic Account Planning](/assets/posts/game-plan-for-effective-stakeholder-collaboration/6.jpeg) by Campaign Creators (https://unsplash.com/@campaign\_creators)
+![Modern Tools for Strategic Account Planning](/assets/posts/game-plan-for-effective-stakeholder-collaboration/6.jpeg) by Campaign Creators (https://unsplash.com/@campaign_creators)
 
 Consider using these key types of tools:
 
@@ -380,7 +380,7 @@ Key takeaways from these success stories include:
 * Leveraging strategic account planning tools.
 * Adapting strategies to client feedback.
 
-![Image showing a graph of client retention and revenue growth in different sectors](/assets/posts/game-plan-for-effective-stakeholder-collaboration/10.jpeg) by Steve Johnson (https://unsplash.com/@steve\_j)
+![Image showing a graph of client retention and revenue growth in different sectors](/assets/posts/game-plan-for-effective-stakeholder-collaboration/10.jpeg) by Steve Johnson (https://unsplash.com/@steve_j)
 
 These examples demonstrate how effective strategic account planning can lead to enhanced business performance and robust client partnerships.
 

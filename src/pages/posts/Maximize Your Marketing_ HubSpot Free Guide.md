@@ -181,7 +181,7 @@ Social media tools include:
 * Content creation tools
 * Engagement tracking and analytics
 
-![Social Media Management Interface](/assets/posts/maximize-your-marketing-with-hubSpot-free/3.png)by Mariia Shalabaieva (https://unsplash.com/@maria\_shalabaieva)
+![Social Media Management Interface](/assets/posts/maximize-your-marketing-with-hubSpot-free/3.png)by Mariia Shalabaieva (https://unsplash.com/@maria_shalabaieva)
 
 With these tools, you create a strong online presence. Engage effectively with your audience and sustain their interest in your brand.
 
@@ -284,7 +284,7 @@ Generating leads is crucial for business growth. HubSpot's free tools provide a 
 
 HubSpot offers several lead generation tools at no cost. Use forms to gather visitor information directly from your website. Pop-up forms can engage users at the right moments, prompting action.
 
-![Illustration of a website with a pop-up form](/assets/posts/maximize-your-marketing-with-hubSpot-free/8.png)by Yash Bindra (https://unsplash.com/@yb\_4)
+![Illustration of a website with a pop-up form](/assets/posts/maximize-your-marketing-with-hubSpot-free/8.png)by Yash Bindra (https://unsplash.com/@yb_4)
 
 Another effective tool is live chat. It allows instant interaction with visitors, boosting engagement. Quick communication can convert visitors into leads promptly.
 
@@ -322,7 +322,7 @@ Integrating additional tools with HubSpot can greatly expand its capabilities. H
 
 Consider linking HubSpot with popular e-commerce platforms. These connections can automate sales workflows and provide insights into customer behavior. Managing orders and customer data becomes more efficient with these links.
 
-Diagram showing HubSpot integration with various third-party toolsby Steve Johnson (https://unsplash.com/@steve\_j)
+Diagram showing HubSpot integration with various third-party toolsby Steve Johnson (https://unsplash.com/@steve_j)
 
 Explore integrations such as email marketing platforms and social media management tools. These can enhance your communication strategies and social media presence. By connecting these tools, you can unify your marketing efforts in one place.
 
@@ -340,7 +340,7 @@ While HubSpot Free offers a robust toolkit, it has certain limitations. These co
 
 Primarily, the free plan has limited customization options. Advanced marketing features like A/B testing are restricted. Access to premium templates and advanced automation workflows is only available on paid plans.
 
-![Comparison chart of HubSpot Free vs. Paid features](/assets/posts/maximize-your-marketing-with-hubSpot-free/10.png)by Pawel Czerwinski (https://unsplash.com/@pawel\_czerwinski)
+![Comparison chart of HubSpot Free vs. Paid features](/assets/posts/maximize-your-marketing-with-hubSpot-free/10.png)by Pawel Czerwinski (https://unsplash.com/@pawel_czerwinski)
 
 Businesses reaching their growth limit on free tools might consider upgrading. Transitioning to a paid plan unlocks features such as:
 
@@ -356,7 +356,7 @@ Many businesses have successfully leveraged HubSpot Free. These stories highligh
 
 A local bakery used HubSpot's CRM to streamline customer interactions. The CRM allowed them to manage their growing list of regulars efficiently. This led to improved customer satisfaction and repeat visits.
 
-![Small business team using HubSpot Free on multiple devices](/assets/posts/maximize-your-marketing-with-hubSpot-free/11.png)by Campaign Creators (https://unsplash.com/@campaign\_creators)
+![Small business team using HubSpot Free on multiple devices](/assets/posts/maximize-your-marketing-with-hubSpot-free/11.png)by Campaign Creators (https://unsplash.com/@campaign_creators)
 
 An emerging tech startup utilized HubSpot's lead generation tools. By implementing forms and live chat, they increased their lead capture by 25%. This helped the team to nurture prospects more effectively.
 
