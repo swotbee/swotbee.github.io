@@ -92,7 +92,18 @@ rejecting means no contact at all.
 
 ## 3a. Google Tag Manager
 
-Container **`GTM-WV9TQ6FH`** (verified live 2026-08-11: `gtm.js` returns 321 KB against
+Container **`GTM-WV9TQ6FH`**, committed as a default in `BaseLayout.astro` rather than
+held in a repo secret. The id is not a secret: it ships in the page source of every page,
+exactly like the GA4 and Clarity ids, and it grants nobody the ability to add or change a
+tag, which needs GTM account access. `PUBLIC_GTM_ID` still overrides it for testing
+against a different container.
+
+That default uses `||`, not `??`. GitHub Actions passes an **unset secret as an empty
+string**, and `""` is not nullish, so `??` keeps it and ships no container at all. Verified
+by reproducing it: `PUBLIC_GTM_ID="" pnpm build` emitted zero references to the id. The
+same trap applies to any other id given a committed fallback.
+
+(Verified live 2026-08-11: `gtm.js` returns 321 KB against
 1.5 KB for a nonexistent id). At time of writing it holds no vendor tags; the
 `doubleclick` and `googleadservices` strings inside it are GTM's own runtime templates,
 which every container ships. Confirmed in a browser that it fires nothing before consent.

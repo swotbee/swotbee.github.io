@@ -40,6 +40,21 @@ const isNoindex = robots.includes("noindex");
 const finalOgImage = ogImage || generateOgImage();
 const finalCanonicalURL =
   canonicalURL || generateCanonicalUrl(Astro.url.pathname);
+
+// Google Tag Manager container. Committed rather than kept in a repo secret, because it
+// is not one: the id ships in the page source of every rendered page, exactly like the
+// GA4 and Clarity ids. Keeping it in a secret only bought the ability to break production
+// silently by forgetting to set it. PUBLIC_GTM_ID still wins if set, so a different
+// container can be pointed at for a test without editing this file.
+//
+// The container id being public is not a weakness. It grants nobody the ability to add or
+// change a tag; that needs access to the GTM account.
+//
+// `||`, NOT `??`. GitHub Actions passes an unset secret as an empty string, and "" is not
+// nullish, so `??` would keep it and ship no container at all. That is exactly the silent
+// production failure this default exists to prevent, and it was reproduced before this
+// line was written: `PUBLIC_GTM_ID="" pnpm build` emitted zero references to the id.
+const gtmId = import.meta.env.PUBLIC_GTM_ID || "GTM-WV9TQ6FH";
 ---
 
 <!doctype html>
@@ -195,7 +210,7 @@ const finalCanonicalURL =
         Gated on GA4 *or* GTM, not GA4 alone. A build with a GTM container but no GA4
         id would otherwise ship no consent defaults at all, and every consent-gated tag
         inside the container would be free to fire on an undecided visit. */}
-    {(import.meta.env.PUBLIC_GA4_ID || import.meta.env.PUBLIC_GTM_ID) && (
+    {(import.meta.env.PUBLIC_GA4_ID || gtmId) && (
       <script is:inline>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
@@ -234,8 +249,8 @@ const finalCanonicalURL =
         cannot consent, so an unconditional container load for them is exactly the
         ungated fire this setup is built to avoid. It costs nothing: the noscript
         fallback cannot run tags anyway. */}
-    {import.meta.env.PUBLIC_GTM_ID && (
-      <script is:inline define:vars={{ gtmId: import.meta.env.PUBLIC_GTM_ID }}>
+    {gtmId && (
+      <script is:inline define:vars={{ gtmId }}>
         (function(w,d,s,l,i){
           w[l]=w[l]||[];
           w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});
@@ -357,8 +372,15 @@ const finalCanonicalURL =
       <slot />
     </main>
     {/* Rendered only when there is something to consent to. With no analytics IDs
-        configured (local builds) nothing is collected, so a banner would be theatre. */}
-    {(import.meta.env.PUBLIC_GA4_ID || import.meta.env.PUBLIC_CLARITY_ID) && (
+        configured (local builds) nothing is collected, so a banner would be theatre.
+
+        gtmId is in this condition deliberately. A tag container is a thing to consent to
+        even when it is currently empty, and leaving it out created a build shape that
+        loaded a container with no way for anyone to accept or decline: the consent-gated
+        tags inside it could never be granted, and anything not gated would have run
+        unchallenged. Now that gtmId has a committed default this condition is always
+        true in practice, which is the correct end state, not a reason to drop it. */}
+    {(import.meta.env.PUBLIC_GA4_ID || import.meta.env.PUBLIC_CLARITY_ID || gtmId) && (
       <ConsentBanner />
     )}
     {/* Unconditional, unlike the banner above: this is not analytics. It carries the
