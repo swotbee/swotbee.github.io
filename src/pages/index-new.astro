@@ -218,6 +218,7 @@ const renewalFlow = [
     icon: "🧮",
     title: "Confident Forecast",
     color: "bg-v6-copper-50 text-v6-copper",
+    completesFlow: true,
     points: [
       "Renewal and expansion revenue are separated",
       "ARR, NRR, and GRR dashboards support a forecast you can trust",
@@ -808,13 +809,15 @@ const toneMap: Record<string, string> = {
       </p>
 
       <div class="stagger relative max-w-5xl mx-auto">
-        <div
-          class="absolute left-5 sm:left-1/2 top-5 bottom-5 w-px -translate-x-1/2 bg-v6-copper-200"
-          aria-hidden="true"
-        ></div>
         {
           renewalFlow.map((stage, index) => (
             <div class="relative grid grid-cols-[2.5rem_1fr] sm:grid-cols-[1fr_3.5rem_1fr] gap-x-5 sm:gap-x-8 pb-8 last:pb-0">
+              {index < renewalFlow.length && (
+                <div
+                  class="absolute left-5 sm:left-1/2 top-5 -bottom-5 w-px -translate-x-1/2 bg-v6-copper-200"
+                  aria-hidden="true"
+                ></div>
+              )}
               <div class="relative z-10 col-start-1 row-start-1 sm:col-start-2 flex justify-center">
                 <div
                   class={`w-10 h-10 rounded-lg ${stage.color} flex items-center justify-center text-xl font-bold`}
@@ -822,8 +825,8 @@ const toneMap: Record<string, string> = {
                   {stage.icon}
                 </div>
               </div>
-              <div class="col-start-2 row-start-1 sm:col-start-1 sm:text-right sm:pt-1">
-                <p class="text-xs font-semibold uppercase tracking-wider text-v6-text-muted mb-2">
+              <div class="relative col-start-2 row-start-1 sm:col-start-1 sm:text-right">
+                <p class="absolute -top-4 left-0 sm:left-auto sm:right-0 text-[10px] font-semibold uppercase tracking-wider text-v6-text-muted whitespace-nowrap">
                   Step {index + 1}
                 </p>
                 <h3 class="text-lg sm:text-xl font-semibold text-v6-dark leading-snug">
@@ -841,6 +844,21 @@ const toneMap: Record<string, string> = {
             </div>
           ))
         }
+        <div class="relative grid grid-cols-[2.5rem_1fr] sm:grid-cols-[1fr_3.5rem_1fr] gap-x-5 sm:gap-x-8">
+          <div class="relative z-10 col-start-1 row-start-1 sm:col-start-2 flex justify-center">
+            <span class="inline-flex w-10 h-10 rounded-lg bg-v6-copper-50 text-v6-copper items-center justify-center text-xl font-semibold">
+              ↻
+            </span>
+          </div>
+          <div class="relative col-start-2 row-start-1 sm:col-start-1 sm:text-right">
+            <p class="absolute -top-4 left-0 sm:left-auto sm:right-0 text-[10px] font-semibold uppercase tracking-wider text-v6-text-muted whitespace-nowrap">
+              Step 6
+            </p>
+            <p class="text-lg sm:text-xl font-semibold text-v6-dark leading-snug">
+              Renews Flawlessly<br />Year After Year
+            </p>
+          </div>
+        </div>
       </div>
       <p class="reveal text-sm text-v6-text-muted text-center mt-8">
         Every deal flows into renewal, expansion, and forecast—automatically.
