@@ -1,0 +1,1529 @@
+---
+// renewal-operations-animated-v3.astro
+// Tier-1 sales-asset-audit revision of renewal-operations-animated-v2.astro.
+// Copy source: marketing/content/page-copy/renewal-v2-page-revised.md
+// (gap audit grounded in 545 corroborated real-world records; SSR/persona
+//  comparison data stays internal and is not quoted publicly).
+// Changes vs v2:
+//  - Hero: benefit-led H1, subhead names the four corroborated USPs (line items
+//    carried over, escalations automatic, ARR you can trust, HubSpot-native),
+//    demo-first CTA pair, quiet stack-fit microcopy (QuickBooks/Xero/Sage/NetSuite)
+//  - New "The Math" section: MIT Sloan 12 to 25% CRM data cost stat + the three
+//    named leaks (re-keyed line items, missed escalations, ownerless accounts),
+//    bridging pain to the ROI calculator
+//  - New "Keep What Works" section answering the top corroborated objection
+//    "we already built our own" (year-3 loop failure, escalation math, NRR/GRR)
+//  - Capabilities: cards 2/3 headlines simplified; card 5 reframed as
+//    "ARR You Can Trust" with explicit NRR/GRR analytics
+//  - Stat band callout names the verticals; ROI intro absorbs the pressure-test
+//    line; audit checklist reframed around leakage with a dual CTA (audit + demo)
+//  - FAQ: new "already built our own workflows" Q&A
+// Unproven client numbers ({{N}}/{{X}} in the source doc) stay OFF the page
+// pending the WellStat case study; only sourced stats are used.
+// All motion stays gated behind prefers-reduced-motion. v1 and v2 left untouched.
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/astro/Navbar.astro";
+import Footer from "../components/astro/Footer.astro";
+import StructuredData from "../components/astro/StructuredData.astro";
+import RenewalRoiCalculator from "../components/astro/RenewalRoiCalculator.astro";
+import RenewalDemoYoutube from "../components/react/RenewalDemoYoutube.jsx";
+
+// SERP budget: BaseLayout appends " | SWOTBee" to every title, so the string below
+// must stay under ~50 chars to keep the rendered title inside Google's ~60-char cut.
+// Description stays under ~155 for the same reason.
+const title = "HubSpot Renewal Operations | Stop Revenue Leakage";
+const description =
+  "Renewal deals that create themselves, line items carried over exactly, escalations applied automatically, and ARR you can finally trust.";
+
+// Schema URLs are derived from the page's own URL rather than hardcoded, so they stay
+// correct if this page is ever moved or promoted to a different path (e.g. the homepage).
+const pageUrl = new URL(Astro.url.pathname, Astro.site ?? "https://swotbee.com")
+  .href;
+const isHomepage = Astro.url.pathname === "/";
+
+// Real client logos (greyscale). Files live in public/assets/customerLogos/.
+const clientLogos = [
+  { name: "Wesco", src: "/assets/customerLogos/WescologoDefence.png" },
+  { name: "Big Lots", src: "/assets/customerLogos/BigLotsEcommerce.png" },
+  { name: "Insteon", src: "/assets/customerLogos/Insteon.svg" },
+  { name: "La Vie", src: "/assets/customerLogos/lavie.webp" },
+  { name: "Mytheresa", src: "/assets/customerLogos/MytheresaEcommerce.png" },
+];
+
+// Tools we connect renewals across. Local SVGs in public/assets/integrationLogos/.
+// NetSuite ships only as an icon mark, so it carries a text label to match the
+// visual weight of the wordmark logos.
+const integrations = [
+  { name: "HubSpot", img: "/assets/integrationLogos/hubspot.svg" },
+  {
+    name: "NetSuite",
+    img: "/assets/integrationLogos/netsuite.svg",
+    label: "NetSuite",
+  },
+  { name: "Xero", img: "/assets/integrationLogos/xero.svg" },
+  { name: "DocuSign", img: "/assets/integrationLogos/docusign.svg" },
+  { name: "Monday.com", img: "/assets/integrationLogos/monday.svg" },
+  { name: "Shopify", img: "/assets/integrationLogos/shopify.svg" },
+];
+
+// Hero dashboard mock rows.
+const cockpit = [
+  {
+    account: "Northwind Energy",
+    status: "At Risk",
+    tone: "copper",
+    detail: "Renews in 18 days",
+  },
+  {
+    account: "Atlas Manufacturing",
+    status: "Expansion",
+    tone: "teal",
+    detail: "New business unit",
+  },
+  {
+    account: "Vertex Utilities",
+    status: "Notice Period",
+    tone: "blue",
+    detail: "Notice due in 6 days",
+  },
+  {
+    account: "Cedar SaaS",
+    status: "Ownerless",
+    tone: "amber",
+    detail: "No owner assigned",
+  },
+];
+
+// AGITATION: renewal leakage modes and the operational pains they create.
+const pains = [
+  {
+    title: "Re-keyed line items",
+    desc: "Rebuilding one renewal deal by hand means re-keying every line item, recalculating uplifts, and resetting dates.",
+    icon: "⌨️",
+    color: "text-v6-copper",
+    bg: "bg-v6-copper-50",
+  },
+  {
+    title: "Missed escalation clauses",
+    desc: "Escalation clauses that never make it into the renewal are pure margin left unbilled, quarter after quarter.",
+    icon: "🧾",
+    color: "text-v6-amber",
+    bg: "bg-v6-amber-50",
+  },
+  {
+    title: "Ownerless accounts",
+    desc: "Accounts nobody owns don't get renewed in time. That is revenue lost to churn, quietly.",
+    icon: "👻",
+    color: "text-v6-teal",
+    bg: "bg-v6-teal-50",
+  },
+  {
+    title: "Sales Reps Stuck In Admin",
+    desc: "Sales reps spend precious selling time on data entry, rebuilding deals, and chasing down renewal details.",
+    icon: "⌛",
+    color: "text-v6-amber",
+    bg: "bg-v6-amber-50",
+  },
+  {
+    title: "Last-Minute Fire Drills",
+    desc: "Renewal risks surface too late, turning preventable work into urgent escalation.",
+    icon: "🚨",
+    color: "text-v6-copper",
+    bg: "bg-v6-copper-50",
+  },
+  {
+    title: "Workflows That Quietly Break",
+    desc: "DIY automation looks fine—until renewal loops, exceptions, or contract changes cause it to fail without warning.",
+    icon: "🔁",
+    color: "text-v6-teal",
+    bg: "bg-v6-teal-50",
+  },
+  {
+    title: "Frantic Forecasts",
+    desc: "Forecasts that go out of sync even as you present them because deal data is outdated and no one has a clear picture of upcoming renewals, expansion opportunities, and contract changes.",
+    icon: "📉",
+    color: "text-v6-copper",
+    bg: "bg-v6-copper-50",
+  },
+  {
+    title: "Rules Trapped In People's Heads",
+    desc: "Every rep follows different rules for discounts, escalations, approvals, or notice periods because the rules that matter never made it into the system.",
+    icon: "🎲",
+    color: "text-v6-teal",
+    bg: "bg-v6-teal-50",
+  },
+];
+
+// HOW WE WORK: 3 numbered steps (from the approved "first month" FAQ).
+const steps = [
+  {
+    n: "1",
+    title: "Discovery & Audit",
+    when: "Week 1 to 2",
+    desc: "We map your workflows, data, and business rules, then show you exactly where renewal revenue is leaking today.",
+  },
+  {
+    n: "2",
+    title: "Quick Wins Go Live",
+    when: "Week 3 to 4",
+    desc: "The high-impact fixes ship first. Tracked renewals, alerts, and clean pipelines that show results inside the first month.",
+  },
+  {
+    n: "3",
+    title: "Strategic Roadmap",
+    when: "Month 2 onward",
+    desc: "We build toward the full renewal and expansion engine, with training and docs so your team owns everything we build.",
+  },
+];
+
+// RENEWAL OPERATING FLOW.
+const renewalFlow = [
+  {
+    icon: "✓",
+    title: "Closed Won",
+    color: "bg-v6-copper-50 text-v6-copper",
+    points: [
+      "A customer deal closes in HubSpot",
+      "The right contract context is captured from day one",
+    ],
+  },
+  {
+    icon: "↻",
+    title: "Renewal Created",
+    color: "bg-v6-copper-50 text-v6-copper",
+    points: [
+      "The next renewal deal creates itself",
+      "The right line items and timing carry forward",
+    ],
+  },
+  {
+    icon: "⚙︎",
+    title: "Rules Applied",
+    color: "bg-v6-copper-50 text-v6-copper",
+    points: [
+      "Escalations, approvals, and notice periods run consistently",
+      "Customer-specific renewal rules are applied automatically",
+    ],
+  },
+  {
+    icon: "📈",
+    title: "Risks & Growth Surfaced",
+    color: "bg-v6-copper-50 text-v6-copper",
+    points: [
+      "At-risk and ownerless accounts are visible before the window closes",
+      "Expansion candidates surface while there is time to act",
+    ],
+  },
+  {
+    icon: "🧮",
+    title: "Confident Forecast",
+    color: "bg-v6-copper-50 text-v6-copper",
+    points: [
+      "Renewal and expansion revenue are separated",
+      "ARR, NRR, and GRR dashboards support a forecast you can trust",
+    ],
+  },
+];
+
+// Hard metrics from approved case studies / testimonials.
+const stats = [
+  { value: "98%", label: "lift in renewal accuracy", tone: "text-v6-teal" },
+  { value: "90%", label: "less quote-creation effort", tone: "text-v6-copper" },
+  // blue-300, not blue: the band sits on bg-v6-dark, where the base blue lands at
+  // 2.9:1 and fails WCAG AA. blue-300 is 5.0:1 on the same background.
+  {
+    value: "65%",
+    label: "faster quote response time",
+    tone: "text-v6-blue-300",
+  },
+  { value: "2 wks", label: "to first results", tone: "text-v6-amber" },
+];
+
+// TESTIMONIALS
+const testimonials = [
+  {
+    quote:
+      "Siva quickly grasped our complex workflows and immediately began identifying optimization opportunities. What sets him apart is how he functions as a true extension of our team, handling both technical implementation and strategic guidance.",
+    name: "Samantha Ross",
+    initials: "RO",
+    context: "Postgrad",
+    image: "/assets/testimonials/profile1.webp",
+  },
+  {
+    quote:
+      "Sharmi helped our team do the foundational work that launched our ABM strategy. She took unstructured goals and, by applying her customer-focused insight and technical know-how, turned them into specific solutions that optimized our entire enrichment project in HubSpot.",
+    name: "Shreyas Mecheri",
+    initials: "MO",
+    context: "Jirav",
+    image: "/assets/testimonials/profile2.jpg",
+  },
+];
+
+// CASE STUDY (anonymous).
+const caseStudy = {
+  industry: "Energy & Utilities",
+  size: "80+ employees",
+  tier: "HubSpot Enterprise",
+  before: [
+    "Inside sales, equipment, and multi-fuel divisions in separate pipelines with no cross-visibility",
+    "Multi-line renewals handled manually and error-prone",
+    "Slow, inconsistent custom quoting",
+  ],
+  after: [
+    "Unified pipelines across every division",
+    "Automated multi-line renewal workflows that read usage data to recommend plans",
+    "Quote templates that cut creation effort dramatically",
+  ],
+  results: [
+    "Renewal accuracy up 98%",
+    "Quote creation time down 90%",
+    "Team shifted from admin to growth",
+  ],
+};
+
+// FAQ (approved answers).
+const faqs = [
+  {
+    q: "How much does this cost?",
+    a: "Every business is different, so we tailor our approach to your needs and goals. We offer project-based, retainer, and hourly consulting models. Book a free 30-minute discovery call and we'll give you an honest recommendation.",
+  },
+  {
+    q: "How long does a typical project take?",
+    a: "Most engagements span 3 to 6 months depending on complexity. We start delivering results in the first 2 weeks with quick wins, then build toward the bigger goals.",
+  },
+  {
+    q: "What does the first month look like?",
+    a: "Week 1 to 2: discovery and audit, where we map your workflows, data, and pain points. Week 3 to 4: quick wins go live, the high-impact fixes that show immediate results. From there we build toward the strategic roadmap.",
+  },
+  {
+    q: "Do you work alongside our existing team?",
+    a: "Absolutely. We work as an extension of your team, building the automations, dashboards, and processes your people need. We provide hands-on training and documentation so your team owns everything we build, long after our engagement ends.",
+  },
+  {
+    q: "What HubSpot tiers do you work with?",
+    a: "All of them: Starter, Professional, and Enterprise across Sales, Marketing, and Service Hubs. Most of our clients are on Professional or Enterprise.",
+  },
+  {
+    q: "Can you integrate HubSpot with our other tools?",
+    a: "Yes. We've integrated HubSpot with NetSuite, Xero, DocuSign, Zoom, Monday.com, Shopify, Salesforce, Zapier, custom APIs, and more.",
+  },
+  {
+    q: "What if we already built our own renewal workflows?",
+    a: "Great! We build on top of what you've created. Our job is to add the parts DIY cannot reach: multi-year chains that survive HubSpot's renewal loops, automatic escalation math, and NRR/GRR analytics. You keep using your workflows; we layer on reliability and analytics. You own everything we build.",
+  },
+];
+
+// Hero headline split into words for staggered reveal.
+const headlineWords = ["Stop", "Losing", "Revenue", "To"];
+
+const toneMap: Record<string, string> = {
+  copper: "bg-v6-copper-50 text-v6-copper",
+  teal: "bg-v6-teal-50 text-v6-teal",
+  blue: "bg-v6-blue-50 text-v6-blue",
+  // amber-800, not amber: base amber on amber-50 is 2.4:1 and fails WCAG AA.
+  amber: "bg-v6-amber-50 text-v6-amber-800",
+};
+---
+
+{
+  /* No robots override: this is the homepage and must be indexable. It carried
+    robots="noindex, follow" for its whole life as /renewal-operations-animated-v3/, which
+    is what kept it out of the index and made it a clean measurement surface. Removing that
+    line IS the swap. */
+}
+<Layout title={title} description={description}>
+  <StructuredData
+    type="service"
+    data={{
+      name: "Renewal Operations for HubSpot",
+      description: description,
+      serviceType: "Renewal Operations & Revenue Automation Consulting",
+      url: pageUrl,
+    }}
+  />
+  <!-- The page's own FAQ block, exposed for FAQ rich results. Same source array as
+       the rendered accordion, so the two can never drift apart. -->
+  <StructuredData type="faq" data={{ faqs }} />
+  {
+    /* A breadcrumb that starts at Home is meaningless when this page IS Home,
+       so it is emitted only when the page sits at a sub-path. */
+    !isHomepage && (
+      <StructuredData
+        type="breadcrumb"
+        data={{
+          breadcrumbs: [
+            { name: "Home", url: "https://swotbee.com" },
+            { name: "Renewal Operations", url: pageUrl },
+          ],
+        }}
+      />
+    )
+  }
+
+  <!-- Motion gate: add .anim synchronously BEFORE first paint so scroll-reveal
+       elements start hidden and never flash visible-then-hidden (FOUC fix).
+       No-JS users never get .anim, so they see all content normally. -->
+  <script is:inline>
+    (function () {
+      try {
+        if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+          document.documentElement.classList.add("anim");
+        }
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- Scroll progress bar -->
+  <div
+    id="scroll-progress"
+    class="fixed top-0 left-0 right-0 h-1 z-50 origin-left bg-v6-copper"
+    aria-hidden="true"
+  >
+  </div>
+
+  <Navbar />
+
+  <!-- ============ HERO ============ -->
+  <!-- id is load-bearing: the LCP guard in the stylesheet targets #hero to keep
+       above-the-fold content painted at first paint. See ".anim #hero" below. -->
+  <section
+    id="hero"
+    class="relative overflow-hidden bg-gradient-to-b from-v6-bg to-white px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20 pb-12 sm:pb-16"
+  >
+    <div
+      class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-10 lg:gap-12 items-center relative"
+    >
+      <!-- Left: copy -->
+      <div class="text-center lg:text-left">
+        <!-- Partner status is a confirmed, checkable fact and the strongest
+             above-the-fold trust signal this page has. It is deliberately ON. -->
+        <div
+          class="reveal flex flex-wrap justify-center lg:justify-start gap-3 mb-6"
+        >
+          <span
+            class="bg-v6-teal-50 text-v6-teal text-xs font-semibold px-3 py-1 rounded-full"
+            >HubSpot Solutions Partner</span
+          >
+          <span
+            class="bg-v6-copper-50 text-v6-copper text-xs font-semibold px-3 py-1 rounded-full"
+            >Renewal Operations</span
+          >
+        </div>
+        <p
+          class="reveal text-sm font-semibold tracking-[0.1em] text-v6-copper mb-3"
+        >
+          For RevOps Teams Drowning In Renewal Admin
+        </p>
+        <h1
+          class="stagger text-3xl sm:text-5xl lg:text-[3.75rem] font-bold text-v6-dark leading-tight mb-5 text-balance"
+        >
+          {
+            headlineWords.map((w) => (
+              <>
+                <span class="inline-block">{w}</span>{" "}
+              </>
+            ))
+          }
+          <span class="inline-block text-v6-copper">Missed Renewals</span>
+        </h1>
+        <p
+          class="reveal text-base sm:text-lg text-v6-text-muted max-w-xl mx-auto lg:mx-0 mb-5 leading-relaxed"
+        >
+          Your next growth bottleneck is not pipeline generation. It is
+          everything that happens after Closed Won.
+        </p>
+        <p
+          class="reveal text-base sm:text-lg text-v6-text-muted max-w-xl mx-auto lg:mx-0 mb-4 leading-relaxed"
+        >
+          Renewal deals that create themselves, line items carried over exactly,
+          escalations applied, and ARR you can finally trust.
+        </p>
+
+        <div
+          class="reveal flex flex-col sm:flex-row gap-3 justify-center lg:justify-start mt-8 mb-4 items-center"
+        >
+          <div class="cta-group relative inline-block">
+            <!-- CTA points at the on-page YouTube demo section. -->
+            <a
+              href="#demo"
+              class="bg-v6-copper text-white px-8 py-3.5 rounded-xl text-base font-semibold hover:bg-v6-copper-600 transition-colors text-center block"
+            >
+              Watch The 2-Minute Demo →
+            </a>
+            <div
+              class="cta-pop absolute bottom-full left-1/2 mb-3 w-60 -translate-x-1/2 rounded-xl bg-v6-dark px-4 py-3 text-left shadow-xl"
+            >
+              <p class="text-sm font-semibold text-white mb-1">
+                See it working, first
+              </p>
+              <p class="text-sm leading-relaxed text-gray-300">
+                A short walkthrough of renewal deals creating themselves inside
+                HubSpot, line items intact.
+              </p>
+              <span
+                class="absolute top-full left-1/2 -translate-x-1/2 -mt-px border-x-8 border-t-8 border-x-transparent border-t-v6-dark"
+              ></span>
+            </div>
+          </div>
+          <div class="relative inline-block">
+            <a
+              href="#roi"
+              class="border border-gray-300 text-v6-dark px-8 py-3.5 rounded-xl text-base font-medium hover:bg-gray-50 transition-colors text-center block"
+            >
+              Estimate Your Renewal Leakage ↓
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Renewal Command Center dashboard mock (show, don't tell) -->
+      <div class="reveal hero-dashboard">
+        <div
+          class="rounded-2xl border border-v6-border bg-white shadow-xl overflow-hidden"
+        >
+          <div
+            class="flex items-center gap-2 px-4 py-3 border-b border-v6-border bg-v6-bg"
+          >
+            <span class="w-2.5 h-2.5 rounded-full bg-v6-copper/60"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-v6-amber/60"></span>
+            <span class="live-dot w-2.5 h-2.5 rounded-full bg-v6-teal"></span>
+            <span class="ml-2 text-xs font-semibold text-v6-text-muted"
+              >Renewal Command Center</span
+            >
+            <span
+              class="ml-auto text-[10px] font-semibold uppercase tracking-wider text-v6-teal"
+              >Live</span
+            >
+          </div>
+          <div class="p-5">
+            <div class="grid grid-cols-3 gap-3 mb-5">
+              <div class="hero-metric rounded-lg bg-v6-copper-50 p-3">
+                <p
+                  class="text-[10px] uppercase tracking-wider text-v6-copper font-semibold"
+                >
+                  At Risk
+                </p>
+                <p class="text-xl font-bold text-v6-dark">$1.2M</p>
+              </div>
+              <div class="hero-metric rounded-lg bg-v6-teal-50 p-3">
+                <p
+                  class="text-[10px] uppercase tracking-wider text-v6-teal font-semibold"
+                >
+                  Expansion
+                </p>
+                <p class="text-xl font-bold text-v6-dark">$840K</p>
+              </div>
+              <div class="hero-metric rounded-lg bg-v6-blue-50 p-3">
+                <p
+                  class="text-[10px] uppercase tracking-wider text-v6-blue font-semibold"
+                >
+                  Due 30d
+                </p>
+                <p class="text-xl font-bold text-v6-dark">37</p>
+              </div>
+            </div>
+            <div class="space-y-2">
+              {
+                cockpit.map((row) => (
+                  <div class="flex items-center justify-between rounded-lg border border-v6-border px-3 py-2.5">
+                    <div class="min-w-0">
+                      <p class="text-sm font-semibold text-v6-dark truncate">
+                        {row.account}
+                      </p>
+                      <p class="text-xs text-v6-text-muted truncate">
+                        {row.detail}
+                      </p>
+                    </div>
+                    <span
+                      class={`text-[11px] font-semibold px-2.5 py-1 rounded-full whitespace-nowrap ${toneMap[row.tone]}`}
+                    >
+                      {row.status}
+                    </span>
+                  </div>
+                ))
+              }
+            </div>
+          </div>
+        </div>
+        <!-- Audience line moved into the hero microcopy; caption keeps the honesty note. -->
+        <p class="text-center text-xs text-v6-text-muted mt-3">
+          Illustrative. Your live HubSpot data, surfaced the moment it matters.
+        </p>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="max-w-6xl mx-auto text-center mt-8 sm:mt-12">
+      <p
+        class="reveal text-base text-v6-text-muted mx-auto lg:mx-0 mb-3 leading-relaxed"
+      >
+        Built for Energy, Manufacturing, Construction, and SaaS teams managing
+        hundreds to thousands of renewals a year.
+      </p>
+      <!-- <p class="reveal text-base text-gray-500 leading-relaxed">
+          No commitment, no sales pitch. No long-term contracts, ever. We earn
+          your trust month by month.
+        </p> -->
+    </div>
+  </section>
+
+  <!-- ============ TRUST BAR ============ -->
+  <section class="mt-6 sm:mt-8 bg-v6-bg border-y border-v6-border py-6 px-4">
+    <div class="max-w-5xl mx-auto">
+      <!-- The 5 approved client logos, same set the service-page template uses.
+           Explicit width/height so the row reserves its space before the images
+           decode (no layout shift). -->
+      <div
+        class="reveal flex flex-wrap justify-center items-center gap-x-8 gap-y-3 pt-3"
+      >
+        <span class="text-xs text-gray-600 font-medium uppercase tracking-wider"
+          >Works with</span
+        >
+        {
+          integrations.map((t) => (
+            <span class="flex items-center gap-1.5">
+              <img
+                src={t.img}
+                alt={t.name}
+                width="120"
+                height="32"
+                class="flex-none h-8 w-auto max-w-[120px] object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition"
+                loading="lazy"
+                decoding="async"
+              />
+              {t.label && (
+                <span class="text-sm font-semibold text-v6-text-muted">
+                  {t.label}
+                </span>
+              )}
+            </span>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DEMO VIDEO ============ -->
+  <section
+    id="demo"
+    class="scroll-mt-24 bg-white px-4 sm:px-6 lg:px-8 pt-14 sm:pt-16 pb-12 sm:pb-14"
+  >
+    <div class="max-w-4xl mx-auto text-center">
+      <p
+        class="reveal text-sm font-semibold uppercase tracking-[0.2em] text-v6-copper mb-3"
+      >
+        See It In Action
+      </p>
+      <h2
+        class="reveal text-2xl sm:text-3xl lg:text-4xl font-bold text-v6-dark mb-3 text-balance"
+      >
+        From Missed Renewals to a Command Center: Watch every renewal fall into
+        place.
+      </h2>
+      <p
+        class="reveal text-base sm:text-lg text-v6-text-muted mb-8 max-w-2xl mx-auto leading-relaxed"
+      >
+        Watch Swotbee turn a closed-won deal into a renewal process that runs
+        itself: the right line items, uplift, timing, ownership, and follow-up.
+      </p>
+      <div
+        class="reveal rounded-2xl border border-v6-border bg-v6-bg shadow-xl overflow-hidden max-w-3xl mx-auto"
+      >
+        <RenewalDemoYoutube client:visible />
+      </div>
+      <div
+        class="reveal flex flex-col sm:flex-row gap-3 justify-center items-center mt-8"
+      >
+        <a
+          href="/renewal-audit-call/"
+          data-ga-cta="renewal_demo_book_audit"
+          class="bg-v6-copper text-white px-8 py-3.5 rounded-xl text-base font-semibold hover:bg-v6-copper-600 transition-colors text-center"
+        >
+          Book Your Renewal Audit →
+        </a>
+        <a
+          href="#roi"
+          class="border border-gray-300 text-v6-dark px-8 py-3.5 rounded-xl text-base font-medium hover:bg-gray-50 transition-colors text-center"
+        >
+          Estimate Your Renewal Leakage ↓
+        </a>
+      </div>
+      <!-- <p class="reveal text-xs text-gray-500 mt-4">
+        Built on the real product. Northwind is an illustrative account; your
+        walkthrough runs on your own HubSpot.
+      </p> -->
+    </div>
+  </section>
+
+  <!-- ============ AGITATION (Is This You?) ============ -->
+  <section class="bg-v6-bg py-14 sm:py-18 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto">
+      <p
+        class="reveal text-sm font-semibold uppercase tracking-[0.2em] text-v6-copper mb-3 text-center"
+      >
+        Why Renewals Break At Scale
+      </p>
+      <h2
+        class="reveal text-2xl sm:text-3xl lg:text-4xl font-bold text-v6-dark mb-3 text-center text-balance"
+      >
+        The Process That Works At 200 Renewals Rarely Works At 2,000.
+      </h2>
+      <p
+        class="reveal text-base sm:text-lg text-v6-text-muted mb-3 leading-relaxed text-center max-w-lg mx-auto"
+      >
+        One renewal is easy. Thousands of renewals expose every exception in
+        your business.
+      </p>
+      <p class="reveal text-base text-v6-text-muted leading-relaxed mb-10 text-center max-w-lg mx-auto">
+        Multi-year contracts. Product bundles. Pricing escalations. Notice
+        periods. <span class="font-semibold text-v6-dark"
+          >Every company has its own renewal rules.</span
+        >
+      </p>
+      <div class="stagger grid grid-cols-1 sm:grid-cols-2 gap-5">
+        {
+          pains.map((p) => (
+            <div class="anim-card bg-white rounded-xl p-6 border border-v6-border">
+              <div class="flex items-center gap-4 mb-4">
+                <div
+                  class={`anim-emoji w-11 h-11 rounded-lg ${p.bg} flex items-center justify-center ${p.color} text-xl flex-shrink-0`}
+                >
+                  {p.icon}
+                </div>
+                <h3 class="text-lg font-semibold text-v6-dark">
+                  {p.title}
+                </h3>
+              </div>
+              <p class="text-base text-v6-text-muted leading-relaxed">
+                {p.desc}
+              </p>
+            </div>
+          ))
+        }
+      </div>
+      <div
+        class="reveal mt-10 max-w-2xl mx-auto bg-v6-dark rounded-2xl p-8 text-center"
+      >
+        <p
+          class="text-xs font-semibold uppercase tracking-wider text-v6-copper-300 mb-3"
+        >
+          Key Insight
+        </p>
+        <p class="text-lg sm:text-xl text-white leading-relaxed mb-2">
+          The challenge isn't creating a renewal. It's making thousands of
+          revenue decisions consistently.
+        </p>
+        <p class="text-base text-gray-300 leading-relaxed">
+          Every product. Every contract. Every customer. Every time.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ THE MATH (what manual renewals cost) ============ -->
+  <section id="the-math" class="bg-white py-14 sm:py-18 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto">
+      <p
+        class="reveal text-sm font-semibold uppercase tracking-[0.2em] text-v6-copper mb-3 text-center"
+      >
+        The Math
+      </p>
+      <h2
+        class="reveal text-2xl sm:text-3xl lg:text-4xl font-bold text-v6-dark mb-8 text-center text-balance"
+      >
+        What Manual Renewals Actually Cost
+      </h2>
+
+      <blockquote
+        class="reveal relative max-w-3xl mx-auto rounded-2xl border border-v6-border border-l-4 border-l-v6-copper bg-v6-bg p-6 sm:p-8 mb-8 sm:flex items-center gap-7 text-center sm:text-left shadow-sm"
+      >
+        <span
+          class="absolute -top-5 left-6 text-6xl leading-none text-v6-copper-200"
+          aria-hidden="true"
+          >“</span
+        >
+        <p
+          class="text-4xl sm:text-5xl font-bold text-v6-copper flex-shrink-0 mb-3 sm:mb-0 whitespace-nowrap"
+        >
+          ~ 14%
+        </p>
+        <div>
+          <p class="text-base text-v6-dark leading-relaxed">
+            Companies that automate their renewals capture roughly 14% more of
+            their renewal revenue than those using spreadsheets.
+          </p>
+          <p class="text-base text-v6-text-muted leading-relaxed mt-3">
+            When maintenance, hardware, and service agreements are managed
+            manually, missed dates and quote errors directly drain your
+            recurring revenue.
+          </p>
+          <cite class="block text-sm font-medium text-v6-text-muted mt-4 not-italic">
+            Source: TSIA Industry Benchmark
+          </cite>
+        </div>
+      </blockquote>
+
+      {
+        /* The renewals-per-year and ops-hours figures from the revision doc stay off
+          the page until the WellStat case study lands; copy stays qualitative here. */
+      }
+      <p
+        class="reveal text-base text-v6-text-muted text-center max-w-xl mx-auto mb-6 leading-relaxed"
+      >
+        Multiply by every renewal, every year, and it adds up to months of ops
+        time and tons of lost revenue: revenue that is already yours, quietly
+        slipping.
+      </p>
+      <div class="reveal text-center">
+        <a
+          href="/resources/renewal-leakage-estimate/"
+          class="inline-block border border-v6-copper text-v6-copper px-7 py-3 rounded-xl text-base font-semibold hover:bg-v6-copper-50 transition-colors"
+        >
+          Get Your 1-Page Renewal Leakage Estimate (no call needed) →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ROI CALCULATOR ============ -->
+  <RenewalRoiCalculator />
+
+  <!-- ============ CAPABILITIES ============ -->
+  <section class="bg-white py-14 sm:py-18 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto">
+      <p
+        class="reveal text-sm font-semibold uppercase tracking-[0.2em] text-v6-copper mb-3 text-center"
+      >
+        Your Revenue Intelligence Layer
+      </p>
+      <h2
+        class="reveal text-2xl sm:text-3xl lg:text-4xl font-bold text-v6-dark mb-3 text-center text-balance"
+      >
+        Swotbee Turns Your Renewal Rules Into a System That Runs Itself.
+      </h2>
+      <p class="reveal text-v6-text-muted text-center mb-10 max-w-2xl mx-auto">
+        We map the rules behind your renewals, expansion revenue, and
+        forecasting, then build them into HubSpot so they run consistently,
+        every time.
+      </p>
+
+      <div class="stagger relative max-w-5xl mx-auto">
+        <div
+          class="absolute left-5 sm:left-1/2 top-5 bottom-5 w-px -translate-x-1/2 bg-v6-copper-200"
+          aria-hidden="true"
+        ></div>
+        {
+          renewalFlow.map((stage, index) => (
+            <div class="relative grid grid-cols-[2.5rem_1fr] sm:grid-cols-[1fr_3.5rem_1fr] gap-x-5 sm:gap-x-8 pb-8 last:pb-0">
+              <div class="relative z-10 col-start-1 row-start-1 sm:col-start-2 flex justify-center">
+                <div
+                  class={`w-10 h-10 rounded-lg ${stage.color} flex items-center justify-center text-xl font-bold`}
+                >
+                  {stage.icon}
+                </div>
+              </div>
+              <div class="col-start-2 row-start-1 sm:col-start-1 sm:text-right sm:pt-1">
+                <p class="text-xs font-semibold uppercase tracking-wider text-v6-text-muted mb-2">
+                  Step {index + 1}
+                </p>
+                <h3 class="text-lg sm:text-xl font-semibold text-v6-dark leading-snug">
+                  {stage.title}
+                </h3>
+              </div>
+              <ul class="col-start-2 row-start-2 sm:col-start-3 sm:row-start-1 space-y-2.5 rounded-xl border border-v6-border bg-v6-bg p-5">
+                {stage.points.map((point) => (
+                  <li class="flex gap-2 text-sm text-v6-text-muted leading-relaxed">
+                    <span class="text-v6-copper flex-shrink-0 mt-0.5">•</span>
+                    <span>{point}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))
+        }
+      </div>
+      <p class="reveal text-sm text-v6-text-muted text-center mt-8">
+        Every deal flows into renewal, expansion, and forecast—automatically.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ KEEP WHAT WORKS (the "we built our own" rebuttal) ============ -->
+  <section
+    id="keep-what-works"
+    class="bg-v6-teal-50/40 border-y border-v6-border py-14 sm:py-18 px-4 sm:px-6 lg:px-8"
+  >
+    <div class="max-w-4xl mx-auto">
+      <p
+        class="reveal text-sm font-semibold uppercase tracking-[0.2em] text-v6-copper mb-3 text-center"
+      >
+        Keep What Works. Swotbee Handles What Breaks.
+      </p>
+      <h2
+        class="reveal text-2xl sm:text-3xl lg:text-4xl font-bold text-v6-dark mb-3 text-center text-balance"
+      >
+        Already Built Your Own Renewal Workflows?
+      </h2>
+      <p
+        class="reveal text-base sm:text-lg text-v6-text-muted text-center text-balance mb-10 max-w-2xl mx-auto leading-relaxed"
+      >
+        Most ops teams we meet have built something. It works, until year 3,
+        when HubSpot's loop protection silently stops creating renewal deals, or
+        a price uplift ships without the escalation applied.
+      </p>
+      <div
+        class="reveal bg-white rounded-2xl border border-v6-border p-6 sm:p-8 max-w-3xl mx-auto"
+      >
+        <p
+          class="text-lg font-semibold text-v6-copper-700 leading-relaxed mb-5"
+        >
+          We do not replace what you built. We add the parts DIY cannot reach:
+        </p>
+        <ul class="space-y-3 mb-6">
+          <li class="flex gap-3 text-base text-v6-dark leading-relaxed">
+            <span class="text-v6-teal flex-shrink-0 mt-0.5">✓</span><span
+              >Renewal chains beyond HubSpot's loop limit</span
+            >
+          </li>
+          <li class="flex gap-3 text-base text-v6-dark leading-relaxed">
+            <span class="text-v6-teal flex-shrink-0 mt-0.5">✓</span><span
+              >Multi-year escalation applied automatically, so your earned
+              increases are not missed</span
+            >
+          </li>
+          <li class="flex gap-3 text-base text-v6-dark leading-relaxed">
+            <span class="text-v6-teal flex-shrink-0 mt-0.5">✓</span><span
+              >NRR/GRR analytics native in your dashboards</span
+            >
+          </li>
+        </ul>
+        <!-- <div
+          class="flex flex-col sm:flex-row sm:items-center gap-4 pt-4 border-t border-v6-border"
+        >
+          <p class="text-sm font-semibold text-v6-dark flex-grow">
+            You own everything we build, in your portal.
+          </p>
+          <a
+            href="#how-it-works"
+            class="text-v6-copper font-semibold text-base hover:underline whitespace-nowrap"
+            >See how we layer on top →</a
+          >
+        </div> -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HOW WE WORK (3 steps) ============ -->
+  <section class="bg-white py-14 sm:py-18 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto">
+      <p
+        class="reveal text-sm font-semibold uppercase tracking-[0.2em] text-v6-copper mb-3 text-center"
+      >
+        How Swotbee Delivers Results
+      </p>
+      <h2
+        class="reveal text-2xl sm:text-3xl lg:text-4xl font-bold text-v6-dark mb-3 text-center text-balance"
+      >
+        Results In The First Month, Not The Next Fiscal Year.
+      </h2>
+      <p class="reveal text-v6-text-muted text-center mb-10 max-w-lg mx-auto">
+      </p>
+      <div class="stagger grid grid-cols-1 md:grid-cols-3 gap-6">
+        {
+          steps.map((s) => (
+            <div class="anim-card bg-v6-bg rounded-xl p-6 border border-v6-border">
+              <div class="w-10 h-10 rounded-full bg-v6-copper text-white flex items-center justify-center font-bold text-lg mb-4">
+                {s.n}
+              </div>
+              <p class="text-xs font-semibold uppercase tracking-wider text-v6-copper mb-1">
+                {s.when}
+              </p>
+              <h3 class="text-lg font-semibold text-v6-dark mb-2">{s.title}</h3>
+              <p class="text-base text-v6-text-muted leading-relaxed">
+                {s.desc}
+              </p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ STAT BAND ============ -->
+  <section class="bg-v6-dark py-14 sm:py-16 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto">
+      <p
+        class="reveal text-xs font-semibold uppercase tracking-[0.2em] text-v6-copper-300 mb-8 text-center"
+      >
+        What Our Clients See
+      </p>
+      <div class="stagger grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        {
+          stats.map((s) => (
+            <div>
+              <p
+                class={`stat-value text-3xl sm:text-4xl font-bold ${s.tone} mb-1`}
+                data-stat-value={s.value}
+              >
+                {s.value}
+              </p>
+              <p class="text-sm text-gray-300 leading-snug">{s.label}</p>
+            </div>
+          ))
+        }
+      </div>
+      <p class="reveal text-xs text-gray-400 text-center mt-8 max-w-xl mx-auto">
+        Representative outcomes from recent HubSpot renewal engagements across
+        Energy, Manufacturing, and SaaS. Your results depend on your data and
+        process.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ TESTIMONIALS + CASE STUDY ============ -->
+  <section class="bg-v6-bg py-14 sm:py-18 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-5xl mx-auto">
+      <p
+        class="reveal text-sm font-semibold uppercase tracking-[0.2em] text-v6-copper mb-3 text-center"
+      >
+        Proof From Revenue Teams
+      </p>
+      <h2
+        class="reveal text-2xl sm:text-3xl lg:text-4xl font-bold text-v6-dark mb-3 text-center text-balance"
+      >
+        Every Renewal Process Is Different. That's Why We Don't Start With
+        Software.
+      </h2>
+      <p class="reveal text-v6-text-muted text-center mb-10 max-w-lg mx-auto">
+        We start with your process, data, and business rules, then automate
+        what's ready. Here is what that produced.
+      </p>
+
+      <div class="stagger grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+        {
+          testimonials.map((t) => (
+            <div class="anim-card bg-white rounded-xl p-7 border border-v6-border flex flex-col">
+              <div class="text-v6-copper text-3xl leading-none mb-3">“</div>
+              <blockquote class="text-base text-v6-dark leading-relaxed mb-6 flex-grow">
+                {t.quote}
+              </blockquote>
+              <div class="flex items-center gap-3 pt-4 border-t border-v6-border">
+                {t.image ? (
+                  <img
+                    src={t.image}
+                    alt={t.name}
+                    width="40"
+                    height="40"
+                    class="w-10 h-10 rounded-full object-cover flex-shrink-0"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                ) : (
+                  <div class="w-10 h-10 rounded-full bg-v6-teal-100 flex items-center justify-center text-v6-teal font-bold text-sm flex-shrink-0">
+                    {t.initials}
+                  </div>
+                )}
+                <div>
+                  <p class="text-sm font-semibold text-v6-dark">
+                    {t.name ?? t.role}
+                  </p>
+                  <p class="text-xs text-v6-text-muted">{t.context}</p>
+                </div>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+
+      <!-- Case study -->
+      <div
+        class="reveal bg-white rounded-2xl border border-v6-border overflow-hidden"
+      >
+        <div
+          class="px-6 py-4 bg-v6-dark flex flex-wrap items-center gap-x-4 gap-y-1"
+        >
+          <span
+            class="text-xs font-bold uppercase tracking-wider text-v6-copper-300"
+            >Case Study</span
+          >
+          <span class="text-sm text-white font-semibold"
+            >{caseStudy.industry}</span
+          >
+          <span class="text-xs text-gray-300">{caseStudy.size}</span>
+          <span class="text-xs text-gray-300">{caseStudy.tier}</span>
+        </div>
+        <div
+          class="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-v6-border"
+        >
+          <div class="p-6">
+            <p
+              class="text-xs font-semibold uppercase tracking-wider text-v6-text-muted mb-3"
+            >
+              Before
+            </p>
+            <ul class="space-y-2">
+              {
+                caseStudy.before.map((b) => (
+                  <li class="flex gap-2 text-base text-v6-text-muted leading-relaxed">
+                    <>
+                      <span class="text-gray-400 flex-shrink-0">•</span>
+                      <span>{b}</span>
+                    </>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+          <div class="p-6">
+            <p
+              class="text-xs font-semibold uppercase tracking-wider text-v6-teal mb-3"
+            >
+              What We Did
+            </p>
+            <ul class="space-y-2">
+              {
+                caseStudy.after.map((a) => (
+                  <li class="flex gap-2 text-base text-v6-text-muted leading-relaxed">
+                    <>
+                      <span class="text-v6-teal flex-shrink-0">✓</span>
+                      <span>{a}</span>
+                    </>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+          <div class="p-6 bg-v6-copper-50/40">
+            <p
+              class="text-xs font-semibold uppercase tracking-wider text-v6-copper mb-3"
+            >
+              Results
+            </p>
+            <ul class="space-y-2">
+              {
+                caseStudy.results.map((r) => (
+                  <li class="flex gap-2 text-base font-medium text-v6-dark leading-relaxed">
+                    <>
+                      <span class="text-v6-copper flex-shrink-0">→</span>
+                      <span>{r}</span>
+                    </>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ RENEWAL AUDIT ============ -->
+  <section class="bg-white py-14 sm:py-18 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl mx-auto text-center">
+      <p
+        class="text-sm font-semibold uppercase tracking-[0.2em] text-v6-copper mb-3"
+      >
+        Your Renewal Audit
+      </p>
+      <h2
+        class="text-2xl sm:text-3xl lg:text-4xl font-bold text-v6-dark mb-3"
+      >
+        See Your Renewal Revenue Leakage In 30 Minutes
+      </h2>
+      <p class="text-v6-text-muted mb-8 max-w-lg mx-auto">
+        It starts with a free 30-minute call: an honest look at how renewals are
+        managed, where manual work exists, which rules drive complexity, and
+        what leadership cannot yet see.
+      </p>
+      <a
+        href="/renewal-audit-call/"
+        class="inline-block bg-v6-copper text-white px-8 py-3.5 rounded-xl text-base font-semibold hover:bg-v6-copper-600"
+      >
+        Book Your Renewal Audit →
+      </a>
+      <p class="mt-5">
+        <a
+          href="#demo"
+          class="text-v6-copper font-medium underline underline-offset-4"
+        >
+          Prefer to see it working first? Watch the 2-minute demo →
+        </a>
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="bg-v6-bg py-14 sm:py-18 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl mx-auto">
+      <p
+        class="reveal text-sm font-semibold uppercase tracking-[0.2em] text-v6-copper mb-3 text-center"
+      >
+        Questions, Answered
+      </p>
+      <h2
+        class="reveal text-2xl sm:text-3xl lg:text-4xl font-bold text-v6-dark mb-10 text-center text-balance"
+      >
+        The Things Revenue Leaders Ask Us First.
+      </h2>
+      <div class="stagger space-y-3">
+        {
+          faqs.map((f) => (
+            <details class="group bg-white rounded-xl border border-v6-border overflow-hidden">
+              <summary class="flex justify-between items-center gap-4 cursor-pointer list-none px-5 py-4 text-base font-semibold text-v6-dark hover:bg-v6-copper-50 transition-colors">
+                <span>{f.q}</span>
+                <span class="text-v6-copper text-xl leading-none flex-shrink-0 transition-transform group-open:rotate-45">
+                  +
+                </span>
+              </summary>
+              <div class="px-5 pb-5 pt-1 text-sm text-v6-text-muted leading-relaxed">
+                {f.a}
+              </div>
+            </details>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FINAL CTA ============ -->
+  <section
+    class="bg-gradient-to-br from-v6-copper to-v6-copper-600 py-16 sm:py-20 px-4 sm:px-6 lg:px-8"
+  >
+    <div class="reveal max-w-2xl mx-auto text-center">
+      <p
+        class="text-xs font-semibold uppercase tracking-[0.2em] text-white/70 mb-3"
+      >
+        Your Renewal Audit
+      </p>
+      <h2 class="text-2xl sm:text-3xl font-bold text-white mb-4">
+        See Your Renewal Revenue Leakage In 30 Minutes
+      </h2>
+      <p class="text-v6-copper-50 text-base sm:text-lg mb-4">
+        A free, no-pressure call to see where renewal revenue may be slipping.
+      </p>
+      <a
+        href="/renewal-audit-call/"
+        data-ga-cta="renewal_final_book_audit"
+        class="bg-white text-v6-copper px-8 py-3.5 rounded-xl text-base font-semibold hover:bg-gray-50 transition-colors inline-block"
+      >
+        Book Your Renewal Audit →
+      </a>
+      <p class="mt-5">
+        <a
+          href="#demo"
+          class="text-white/90 text-sm font-medium underline underline-offset-4 hover:text-white transition-colors"
+        >
+          Prefer to see it working first? Watch the 2-minute demo →
+        </a>
+      </p>
+    </div>
+  </section>
+
+  <Footer />
+
+  <!-- <style> and <script> live INSIDE <Layout>. Outside it they render after the
+       layout has already closed </body></html>, which emits stray markup past the
+       document end. Keep them here. -->
+  <style>
+    /* ===== Motion is reserved for reading order and the renewal-system flow. ===== */
+    .anim .reveal {
+      opacity: 0;
+      transform: translateY(12px);
+      transition:
+        opacity 0.35s ease-out,
+        transform 0.35s ease-out;
+    }
+    .anim .reveal.in {
+      opacity: 1;
+      transform: none;
+    }
+
+    .anim .stagger > * {
+      opacity: 0;
+      transform: translateY(10px);
+      transition:
+        opacity 0.35s ease-out,
+        transform 0.35s ease-out;
+    }
+    .anim .stagger.in > * {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* ===== LCP guard =====
+     The hero is above the fold and its H1 is the LCP element. Fading it in from
+     opacity 0 means the browser cannot record LCP until the reveal script has
+     parsed, run, and added .in, which pushes LCP out by the whole script-execution
+     window for no design benefit. Hero content therefore animates on transform
+     only: it is painted at first paint and still slides into place. Everything
+     below the fold keeps the opacity fade, where it costs nothing. */
+    .anim #hero .reveal,
+    .anim #hero .stagger > * {
+      opacity: 1;
+    }
+    h1.stagger.in > *:nth-child(2) {
+      transition-delay: 0.06s;
+    }
+    h1.stagger.in > *:nth-child(3) {
+      transition-delay: 0.12s;
+    }
+    h1.stagger.in > *:nth-child(4) {
+      transition-delay: 0.18s;
+    }
+    .anim .flow-build > * {
+      transform: translateY(8px);
+    }
+    .anim .flow-build.in > * {
+      transform: none;
+    }
+    .anim .flow-build.in > *:nth-child(2) {
+      transition-delay: 0.08s;
+    }
+    .anim .flow-build.in > *:nth-child(3) {
+      transition-delay: 0.16s;
+    }
+    .anim .flow-build.in > *:nth-child(4) {
+      transition-delay: 0.24s;
+    }
+    .anim .flow-build.in > *:nth-child(5) {
+      transition-delay: 0.32s;
+    }
+    .anim .flow-build.in > *:nth-child(6) {
+      transition-delay: 0.4s;
+    }
+    .anim .flow-build.in > *:nth-child(7) {
+      transition-delay: 0.48s;
+    }
+
+    .anim-card {
+      transition:
+        transform 0.25s ease-out,
+        box-shadow 0.25s ease-out;
+    }
+    .anim-card:hover {
+      transform: translateY(-4px);
+    }
+    .anim-emoji {
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .anim-card:hover .anim-emoji {
+      transform: translateY(-2px) scale(1.12) rotate(-4deg);
+    }
+
+    /* Capability card icons: a plain inline-block (not a fixed-size flex box like
+     .anim-emoji elsewhere), so it must transform-scale from its own glyph
+     center, not translate/rotate, or the hover motion visibly shifts it. */
+    .cap-icon {
+      display: inline-block;
+      transform-origin: center;
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .anim-card:hover .cap-icon {
+      transform: scale(1.22);
+    }
+
+    .bolt-pulse {
+      animation: boltPulse 2.2s ease-in-out infinite;
+    }
+    @keyframes boltPulse {
+      0%,
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+      50% {
+        transform: scale(1.25);
+        opacity: 0.65;
+      }
+    }
+
+    /* ===== CTA hover/focus micro-reveal ===== */
+    .cta-pop {
+      opacity: 0;
+      transform: translate(-50%, 6px);
+      transition:
+        opacity 0.25s ease-out,
+        transform 0.25s ease-out;
+      pointer-events: none;
+    }
+    .cta-group:hover .cta-pop,
+    .cta-group:focus-within .cta-pop {
+      opacity: 1;
+      transform: translate(-50%, 0);
+    }
+
+    /* ===== Scroll progress bar ===== */
+    #scroll-progress {
+      transform: scaleX(0);
+      transition: transform 0.1s linear;
+    }
+
+    /* ===== FAQ ===== */
+    details summary::-webkit-details-marker {
+      display: none;
+    }
+
+    /* ===== Reduced motion ===== */
+    @media (prefers-reduced-motion: reduce) {
+      .anim .reveal,
+      .anim .stagger > * {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+      .bee-bob,
+      .bee-wings,
+      .bee-point,
+      .bolt-pulse {
+        animation: none !important;
+      }
+      #bee {
+        transform: none !important;
+      }
+      .anim-card,
+      .anim-emoji,
+      .cta-pop,
+      #scroll-progress {
+        transition: none !important;
+      }
+    }
+  </style>
+
+  <script>
+    const reduce = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+    // .anim is added synchronously by the inline head script (FOUC fix), gated on
+    // reduced-motion. Here we only wire the observers.
+
+    // --- Scroll reveals ---
+    const revealEls = Array.from(
+      document.querySelectorAll(".reveal, .stagger"),
+    );
+    if (reduce) {
+      revealEls.forEach((el) => el.classList.add("in"));
+    } else {
+      const inView = (el: Element) => {
+        const r = el.getBoundingClientRect();
+        return r.top < window.innerHeight * 0.9 && r.bottom > 0;
+      };
+      revealEls.forEach((el) => {
+        if (inView(el)) el.classList.add("in");
+      });
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("in");
+              io.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.15, rootMargin: "0px 0px -8% 0px" },
+      );
+      revealEls.forEach((el) => {
+        if (!el.classList.contains("in")) io.observe(el);
+      });
+    }
+
+    // --- Smooth in-page anchor scrolling (reduced-motion aware) ---
+    // Makes the "Watch the 2-minute demo" / "Estimate your leakage" CTAs glide to
+    // their section instead of hard-jumping, reinforcing the guided path to the CTA.
+    document.querySelectorAll('a[href^="#"]').forEach((a) => {
+      a.addEventListener("click", (e) => {
+        const id = (a as HTMLAnchorElement).getAttribute("href");
+        if (!id || id === "#") return;
+        const target = document.querySelector(id);
+        if (!target) return;
+        e.preventDefault();
+        target.scrollIntoView({
+          behavior: reduce ? "auto" : "smooth",
+          block: "start",
+        });
+        history.replaceState(null, "", id);
+      });
+    });
+
+    // --- Scroll progress bar ---
+    const bar = document.getElementById("scroll-progress");
+    if (bar && !reduce) {
+      const onScroll = () => {
+        const h = document.documentElement;
+        const max = h.scrollHeight - h.clientHeight;
+        const p = max > 0 ? h.scrollTop / max : 0;
+        bar.style.transform = `scaleX(${p})`;
+      };
+      onScroll();
+      window.addEventListener("scroll", onScroll, { passive: true });
+    } else if (bar) {
+      bar.style.opacity = "0";
+    }
+
+    // --- Stat band count-up ---
+    // Each .stat-value renders its real value server-side and repeats it in
+    // data-stat-value, so crawlers, screen readers and no-JS visitors always read the
+    // true figure. We only parse the leading number and re-attach whatever suffix it
+    // had, which lets a non-numeric value ("2 wks") animate the digits and keep its
+    // unit. Anything that does not parse is simply left alone.
+    const parseStat = (el: HTMLElement) => {
+      const raw = (el.dataset.statValue ?? el.textContent ?? "").trim();
+      const match = raw.match(/^(\D*?)(\d+(?:\.\d+)?)(.*)$/);
+      if (!match) return null;
+      const [, prefix, numText, suffix] = match;
+      return {
+        raw,
+        prefix,
+        suffix,
+        target: parseFloat(numText),
+        decimals: (numText.split(".")[1] || "").length,
+      };
+    };
+
+    const statEls = Array.from(
+      document.querySelectorAll<HTMLElement>(".stat-value"),
+    );
+
+    // Reduced motion keeps the server-rendered numbers exactly as they are.
+    if (statEls.length && !reduce) {
+      const statsRoot = statEls[0].closest("section") ?? statEls[0];
+      const parsed = statEls
+        .map((el) => {
+          const p = parseStat(el);
+          return p ? { el, ...p } : null;
+        })
+        .filter((s): s is NonNullable<typeof s> => s !== null);
+
+      const DURATION = 900;
+      const start = performance.now();
+      const tick = (now: number) => {
+        const p = Math.min((now - start) / DURATION, 1);
+        // easeOutCubic: quick climb, gentle settle, so the final figure is readable
+        const eased = 1 - Math.pow(1 - p, 3);
+        parsed.forEach((s) => {
+          s.el.textContent =
+            p < 1
+              ? s.prefix + (s.target * eased).toFixed(s.decimals) + s.suffix
+              : s.raw; // restore the exact source string, never a rounded rebuild
+        });
+        if (p < 1) requestAnimationFrame(tick);
+      };
+
+      // rootMargin starts the run a screen early, while the band is still behind the
+      // stagger fade. That matters for more than smoothness: the real figures stay in
+      // the DOM until the instant the animation begins and are written back the frame
+      // it ends, so a crawler, screenshot or reader that never scrolls here can never
+      // capture a zeroed "0%" in place of the actual claim.
+      const statsObserver = new IntersectionObserver(
+        (entries, observer) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            observer.disconnect();
+            requestAnimationFrame(tick);
+          });
+        },
+        { rootMargin: "100% 0px 0px 0px" },
+      );
+      statsObserver.observe(statsRoot);
+    }
+  </script>
+</Layout>
