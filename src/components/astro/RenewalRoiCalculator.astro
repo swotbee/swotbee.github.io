@@ -53,11 +53,16 @@
 
 <section
   id="roi"
-  class="scroll-mt-24 bg-white py-8 sm:py-12 px-4 sm:px-6 lg:px-8"
+  class="scroll-mt-24 bg-white py-6 sm:py-12 px-4 sm:px-6 lg:px-8"
 >
   <div class="max-w-[1440px] mx-auto">
+    <!-- The preamble is trimmed on phones, where it was costing about a third of the
+         first screen before the visitor could see a single control. The eyebrow goes
+         (the headline already says what the section is), and the standfirst keeps only
+         its first clause, which carries the argument; the second sentence narrates the
+         chart, which on mobile is right there to be looked at instead. -->
     <p
-      class="reveal text-sm font-semibold uppercase tracking-[0.2em] text-v6-copper mb-2 text-center"
+      class="reveal hidden sm:block text-sm font-semibold uppercase tracking-[0.2em] text-v6-copper mb-2 text-center"
     >
       See What's At Stake
     </p>
@@ -67,11 +72,13 @@
       How Much Revenue Is Hiding In Your Renewals?
     </h2>
     <p
-      class="reveal text-sm sm:text-base text-v6-text-muted text-center mb-5 max-w-2xl mx-auto text-balance"
+      class="reveal text-sm sm:text-base text-v6-text-muted text-center mb-4 sm:mb-5 max-w-2xl mx-auto text-balance"
     >
       Renewal slippage does not just cost revenue this year: it caps how big
-      your renewal book can ever get. Watch growth stall as the leak catches up,
-      and how much further it climbs once that leak is fixed.
+      your renewal book can ever get.<span class="hidden sm:inline">
+        Watch growth stall as the leak catches up, and how much further it
+        climbs once that leak is fixed.</span
+      >
     </p>
 
     <!-- The outer frame is what makes the chart and the controls read as one object
@@ -81,13 +88,33 @@
     <div
       class="reveal rounded-xl border border-v6-border bg-v6-bg p-3 sm:rounded-2xl sm:p-6"
     >
-      <div class="lg:grid lg:grid-cols-12 lg:gap-6 lg:items-start">
-        <!-- ===== LEFT: the graph, with the numbers it produces attached to it =====
-             Sticky from md up so the chart stays on screen while the visitor works
-             through the controls beside/below it. -->
-        <div
-          class="mb-3 sm:mb-6 lg:mb-0 lg:col-span-7 md:sticky md:top-4 md:self-start"
-        >
+      <!-- Three children, not two. The CTA is a sibling of the chart card rather than
+           living inside it, because the chart card is what gets pinned: with the CTA in
+           there the pinned block was 487px, which with the 65px sticky navbar covered
+           65% of an 844px phone and left the control panel scrolling behind it. Split
+           out, the pin is 389px and the controls keep a ~390px working window. On
+           desktop grid placement puts the CTA back under the chart in row 2, so the
+           layout there is unchanged; on mobile it lands where it belongs anyway, at the
+           end of the flow after the controls. -->
+      <div
+        class="lg:grid lg:grid-cols-12 lg:gap-x-6 lg:gap-y-4 lg:items-start"
+      >
+        <!-- This wrapper exists solely to bound the pin. A sticky element may travel
+             anywhere inside its containing block, so while the CTA was a sibling in the
+             same container, the chart was free to keep descending and slide right over
+             the button. Wrapping the chart and the controls together puts the bottom of
+             the pin's world at the bottom of the controls, which is exactly where the
+             CTA begins: the chart now releases and scrolls away just as the button
+             arrives, instead of covering it.
+             lg:contents dissolves this box on desktop so its two children go back to
+             being direct grid items of the container above, leaving that layout
+             untouched. -->
+        <div class="flex flex-col gap-3 sm:gap-6 lg:contents">
+        <!-- ===== The graph, with the numbers it produces attached to it ===== -->
+        <!-- The sticky class goes on the flex/grid CHILD, not the card inside it: a
+             sticky element's travel is bounded by its containing block, so pinning the
+             inner card would give it only its own height to move within, i.e. none. -->
+        <div class="roi-chart-col lg:col-span-7 lg:row-start-1">
           <div
             class="rounded-xl border border-v6-border bg-white shadow-sm overflow-hidden"
           >
@@ -224,39 +251,10 @@
             </div>
           </div>
 
-          <div class="mt-4 flex flex-col sm:flex-row sm:items-center gap-3">
-            <a
-              id="roi-cta"
-              href="/renewal-audit-call/"
-              class="inline-block text-center bg-v6-copper text-white px-6 py-3 rounded-xl text-base font-semibold hover:bg-v6-copper-600 transition-colors shadow-sm"
-            >
-              Find My Hidden <span id="roi-cta-gap">$4.2M</span>/Year &rarr;
-            </a>
-            <!-- Implementation time lives here, next to the CTA, not in the
-                 results strip above: that strip is entirely about what the leak
-                 costs, and "how long does the fix take" is a delivery answer to
-                 the objection the CTA raises, not another loss figure. -->
-            <div class="text-xs text-v6-text-muted leading-snug space-y-1">
-              <!-- Hidden below sm: it is a two-line diagnostic aside sitting between
-                   the CTA and the end of the section, where phone attention is
-                   scarcest. The element stays in the DOM so updateLeak needs no
-                   mobile branch. -->
-              <p class="hidden sm:block">
-                <span class="font-semibold text-v6-copper">Biggest leak:</span>
-                <span id="roi-leak"></span>
-              </p>
-              <p>
-                Typically fixed in <span
-                  id="roi-implementation"
-                  class="roi-figure font-semibold text-v6-dark">4 to 6 weeks</span
-                >.
-              </p>
-            </div>
-          </div>
         </div>
 
-        <!-- ===== RIGHT: the controls that drive it ===== -->
-        <div class="lg:col-span-5">
+        <!-- ===== The controls that drive it ===== -->
+        <div class="roi-controls lg:col-span-5 lg:col-start-8 lg:row-start-1 lg:row-span-2">
           <div
             class="rounded-xl border border-v6-border bg-white p-4 sm:p-5 space-y-4"
           >
@@ -418,6 +416,48 @@
             </p>
           </div>
         </div>
+        </div>
+
+        <!-- ===== Call to action =====
+             Last in the DOM, so on mobile it sits at the end of the controls where the
+             flow naturally lands: read the chart, adjust, act. It is deliberately NOT
+             part of the pinned block. Pinning it too would have put 487px of chart plus
+             button under a 65px sticky navbar, covering 65% of an 844px phone and
+             leaving the control panel to scroll behind it. Out of the pin, the graph
+             stays overhead while the button scrolls up into the gap beneath it, so both
+             are on screen together without either one crowding the controls.
+             On desktop, grid places it back in row 2 under the chart, unchanged. -->
+        <div
+          class="mt-3 sm:mt-6 lg:mt-0 lg:col-span-7 lg:col-start-1 lg:row-start-2 flex flex-col sm:flex-row sm:items-center gap-3"
+        >
+          <a
+            id="roi-cta"
+            href="/renewal-audit-call/"
+            class="inline-block text-center bg-v6-copper text-white px-6 py-3 rounded-xl text-base font-semibold hover:bg-v6-copper-600 transition-colors shadow-sm"
+          >
+            Find My Hidden <span id="roi-cta-gap">$4.2M</span>/Year &rarr;
+          </a>
+          <!-- Implementation time lives here, next to the CTA, not in the
+               results strip above: that strip is entirely about what the leak
+               costs, and "how long does the fix take" is a delivery answer to
+               the objection the CTA raises, not another loss figure. -->
+          <div class="text-xs text-v6-text-muted leading-snug space-y-1">
+            <!-- Hidden below sm: it is a two-line diagnostic aside sitting between
+                 the CTA and the end of the section, where phone attention is
+                 scarcest. The element stays in the DOM so updateLeak needs no
+                 mobile branch. -->
+            <p class="hidden sm:block">
+              <span class="font-semibold text-v6-copper">Biggest leak:</span>
+              <span id="roi-leak"></span>
+            </p>
+            <p>
+              Typically fixed in <span
+                id="roi-implementation"
+                class="roi-figure font-semibold text-v6-dark">4 to 6 weeks</span
+              >.
+            </p>
+          </div>
+        </div>
       </div>
       <details class="mt-5 max-w-2xl mx-auto text-center text-xs text-v6-text-muted">
         <summary class="cursor-pointer font-semibold">How this estimate works</summary>
@@ -501,15 +541,86 @@
     }
   }
 
+  /* ===== Pinned chart =====
+     Keeps the graph on screen while the controls below (mobile) or beside it
+     (desktop) are worked, which is the whole point of the section: a number that
+     moves out of sight as you change it may as well not be there.
+
+     top is 4.5rem, not the 1rem this used to be, because the site navbar is itself
+     position:sticky and 65px tall. At 1rem the pinned card slid underneath it and
+     lost its heading and legend to the nav.
+
+     The min-height gate is the landscape opt-out and more besides. Measured, the
+     pinned column is 487px on a phone: 58% of an 844px-tall viewport, 73% of a 667px
+     one, and 117% in landscape, where pinning it would leave nothing at all to
+     scroll. Below the threshold the chart simply scrolls with the page, which is the
+     correct behaviour when there is no room to spare. 780px keeps it on tall phones,
+     tablets and 900px-tall laptops; the 768px-tall laptops it excludes have only 57px
+     of sticky travel anyway, because there the two columns are nearly the same
+     height and there is almost nothing to scroll past. */
+  .roi-chart-col {
+    position: static;
+  }
+  /* Below lg only. From lg up the controls sit BESIDE the chart, so the chart is
+     already in view the whole time the visitor is using them and the pin buys nothing.
+     It also actively hurt there: at lg the wrapper below collapses to display:contents,
+     which hands the pin's containing block back to the full grid, CTA row included, and
+     a swept scroll found the pinned chart covering the button at 19 of 34 scroll
+     positions on a 1440x900 laptop. Confining sticky to the stacked layouts removes
+     that without giving anything up. */
+  @media (min-height: 780px) and (max-width: 1023.98px) {
+    .roi-chart-col {
+      position: sticky;
+      top: 4.5rem;
+      align-self: start;
+      /* A pinned element must win the paint order, or later siblings paint over it:
+         the control panel comes after this in the DOM and scrolled visibly through
+         it. 1 is enough and is deliberately low, because the site navbar is z-50 and
+         must still pass over the top of this. No background is needed here now that
+         the CTA has moved out and this wraps nothing but the opaque white card. */
+      z-index: 1;
+    }
+
+    /* Anything the browser scrolls to on its own (focusing a slider with the keyboard,
+       an anchor jump) would otherwise land under the pinned card, since scrolling only
+       accounts for the viewport edge and not for what is covering it. The margin
+       reserves the pinned block's height plus the navbar. */
+    .roi-controls {
+      scroll-margin-top: 32rem;
+    }
+  }
+
   /* ===== ROI range sliders (moved from the page so this component is self-contained) ===== */
+  /* The element's own height is the touch target, and the visible 5px track is
+     painted by the track pseudo-elements rather than by the input's background.
+     Previously the input WAS the 5px track, so its hit box was 5px tall and the 22px
+     thumb merely overflowed it: everything outside those 5px missed the control
+     entirely. Height here is deliberately larger than the track and invisible.
+
+     touch-action: pan-y is the other half. With the default `auto`, a touch that
+     starts on the slider is ambiguous, and the browser can claim the gesture for
+     scrolling partway through a drag, so the value jumps or sticks. pan-y hands
+     vertical gestures to the page (the visitor can still scroll from on top of a
+     slider) and horizontal ones to the input, which is exactly the split a
+     horizontal slider on a vertically scrolling page wants. */
   .roi-range {
     -webkit-appearance: none;
     appearance: none;
     width: 100%;
+    height: 22px;
+    background: transparent;
+    outline: none;
+    touch-action: pan-y;
+  }
+  .roi-range::-webkit-slider-runnable-track {
     height: 5px;
     border-radius: 999px;
     background: #e5e2da;
-    outline: none;
+  }
+  .roi-range::-moz-range-track {
+    height: 5px;
+    border-radius: 999px;
+    background: #e5e2da;
   }
   .roi-range::-webkit-slider-thumb {
     -webkit-appearance: none;
@@ -521,6 +632,10 @@
     cursor: pointer;
     border: 3px solid #fff;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+    /* WebKit aligns the thumb to the track's top edge, so it needs centring by
+       hand: (track height - thumb height) / 2. Firefox centres it itself, which is
+       why the -moz rule below has no equivalent. */
+    margin-top: -8.5px;
   }
   .roi-range::-moz-range-thumb {
     width: 22px;
@@ -530,6 +645,25 @@
     cursor: pointer;
     border: 3px solid #fff;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  }
+  /* Touch devices get a taller box and a bigger thumb. 36px rather than the usual
+     44px recommendation: a slider is dragged by its thumb rather than tapped, and
+     each extra pixel here is multiplied by every slider in a panel that has to share
+     a ~380px window with a pinned chart. 36 is a sevenfold improvement on the 5px
+     this used to offer. */
+  @media (pointer: coarse) {
+    .roi-range {
+      height: 36px;
+    }
+    .roi-range::-webkit-slider-thumb {
+      width: 28px;
+      height: 28px;
+      margin-top: -11.5px;
+    }
+    .roi-range::-moz-range-thumb {
+      width: 28px;
+      height: 28px;
+    }
   }
 
   /* ===== Selectors ===== */
@@ -858,6 +992,10 @@
     // a 306px canvas would be 103px; the ceiling stops a wide column from turning the
     // chart into a billboard. One monotonic rule, so there is no jump at any width.
     // NARROW_MAX below is a separate concern (horizontal room for labels), not height.
+    // MIN_HEIGHT is a mobile budget decision as much as a legibility one: the chart
+    // card is pinned on tall phones, so every pixel of chart height comes straight out
+    // of the window left for the controls beneath it. At 200 the pinned card is ~389px,
+    // which under the 65px navbar leaves ~390px on an 844px phone.
     const WIDE_RATIO = 2.97,
       MIN_HEIGHT = 200,
       MAX_HEIGHT = 280,
