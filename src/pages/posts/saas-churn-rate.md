@@ -41,11 +41,11 @@ faqs:
     a: "Improve onboarding, track usage and health to intervene early, fix involuntary churn with dunning, multi-thread relationships, and drive expansion so net churn trends negative."
 ---
 
-> This article is part of our [complete guide to B2B customer retention](/posts/b2b-saas-customer-retention).
+> This article is part of our [complete guide to B2B customer retention](/posts/b2b-saas-customer-retention/).
 
 **SaaS churn rate is the percentage of customers or revenue a SaaS business loses over a given period. You calculate it by dividing the customers (or revenue) lost during a period by the number at the start, then multiplying by 100.** A good annual SaaS churn rate is roughly 5% to 7% by customer for established B2B SaaS companies, and the best achieve negative net revenue churn. This guide covers what churn is, how to calculate churn rate, what a good churn rate looks like, the types of churn, and the strategies to reduce it.
 
-Churn is the mirror image of [customer retention](/posts/b2b-saas-customer-retention): every point of churn you remove flows straight to durable growth.
+Churn is the mirror image of [customer retention](/posts/b2b-saas-customer-retention/): every point of churn you remove flows straight to durable growth.
 
 ---
 
@@ -103,7 +103,7 @@ Understanding the type of churn focuses your effort: involuntary churn is a bill
 
 ## What Is Negative Churn Rate?
 
-Negative churn (or negative net revenue churn) is the holy grail of SaaS: when upsell and expansion from your existing customer base more than offset the revenue you lose to cancellations. A SaaS business with negative churn grows its recurring revenue even if it never adds a new customer. It is driven by strong [net revenue retention](/posts/gross-vs-net-revenue-retention) and a deliberate expansion motion like [whitespace analysis](/posts/whitespace-analysis-expansion).
+Negative churn (or negative net revenue churn) is the holy grail of SaaS: when upsell and expansion from your existing customer base more than offset the revenue you lose to cancellations. A SaaS business with negative churn grows its recurring revenue even if it never adds a new customer. It is driven by strong [net revenue retention](/posts/gross-vs-net-revenue-retention/) and a deliberate expansion motion like [whitespace analysis](/posts/whitespace-analysis-expansion/).
 
 ---
 
@@ -112,7 +112,7 @@ Negative churn (or negative net revenue churn) is the holy grail of SaaS: when u
 The headline churn rate is a starting point, not the whole picture. Mature SaaS companies layer in several churn metrics and run regular churn analysis to understand where they lose customers:
 
 - **Annual vs monthly churn rate.** Monthly churn rate is sensitive and good for spotting trends; annual churn rate is better for benchmarking. State which you mean.
-- **Churn by customer segment.** Average churn rate hides a lot. Segment churn rate by plan, industry, and cohort to see which customers you lose and why, the foundation of [cohort retention analysis](/posts/cohort-retention-analysis-churn).
+- **Churn by customer segment.** Average churn rate hides a lot. Segment churn rate by plan, industry, and cohort to see which customers you lose and why, the foundation of [cohort retention analysis](/posts/cohort-retention-analysis-churn/).
 - **Churn risk scoring.** Rather than waiting for churn to occur, score churn risk from usage and engagement so customer success can act on potential churn early.
 - **Renewal rate.** The inverse view: the share of contracts that renew. A low churn rate and a high renewal rate tell the same healthy story from two angles.
 
@@ -127,7 +127,7 @@ Churn rate measures the health of your recurring revenue, and small differences 
 The factors that drive a high churn rate are the inverse of retention:
 
 - Weak onboarding, so customers never reach value.
-- Declining product usage, the leading indicator of churn (see [silent churn detection](/posts/silent-churn-detection)).
+- Declining product usage, the leading indicator of churn (see [silent churn detection](/posts/silent-churn-detection/)).
 - Poor customer support and experience.
 - Single-threaded relationships that collapse when a champion leaves.
 - Involuntary churn from failed payments.
@@ -141,13 +141,13 @@ Churn rates also vary by industry and stage, but the underlying causes are consi
 Reducing churn is the same discipline as improving retention, applied with urgency:
 
 1. **Fix onboarding** so every new customer reaches first value fast.
-2. **Track usage and health** to catch at-risk accounts early, ideally with [health scores and workflows](/posts/hubspot-churn-prevention-health-scores-workflows).
+2. **Track usage and health** to catch at-risk accounts early, ideally with [health scores and workflows](/posts/hubspot-churn-prevention-health-scores-workflows/).
 3. **Solve involuntary churn** with dunning and card-update flows.
 4. **Multi-thread** so accounts do not hinge on one person.
 5. **Drive expansion** so net revenue churn trends toward negative.
-6. **Run cohort analysis** to see where and when churn happens (see [cohort retention analysis](/posts/cohort-retention-analysis-churn)).
+6. **Run cohort analysis** to see where and when churn happens (see [cohort retention analysis](/posts/cohort-retention-analysis-churn/)).
 
-The software to operationalize this is covered in our [customer retention software](/posts/customer-retention-software) guide, and the broader playbook in [SaaS customer retention strategies](/posts/saas-customer-retention-strategies).
+The software to operationalize this is covered in our [customer retention software](/posts/customer-retention-software/) guide, and the broader playbook in [SaaS customer retention strategies](/posts/saas-customer-retention-strategies/).
 
 ---
 

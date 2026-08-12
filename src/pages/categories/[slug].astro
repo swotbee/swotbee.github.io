@@ -60,7 +60,7 @@ const canonicalURL = generateCanonicalUrl(Astro.url.pathname);
     type="breadcrumb"
     data={{ breadcrumbs: [
       { name: "Home", url: "https://swotbee.com" },
-      { name: "Blog", url: "https://swotbee.com/blog" },
+      { name: "Blog", url: "https://swotbee.com/blog/" },
       { name: categoryTitle, url: canonicalURL },
     ]}}
   />
@@ -74,7 +74,7 @@ const canonicalURL = generateCanonicalUrl(Astro.url.pathname);
         <ol class="inline-flex items-center">
           <li><a href="/" class="py-1 inline-block hover:text-v6-dark transition-colors">Home</a></li>
           <li aria-hidden="true" class="mx-1.5">&rsaquo;</li>
-          <li><a href="/blog" class="py-1 inline-block hover:text-v6-dark transition-colors">Blog</a></li>
+          <li><a href="/blog/" class="py-1 inline-block hover:text-v6-dark transition-colors">Blog</a></li>
           <li aria-hidden="true" class="mx-1.5">&rsaquo;</li>
           <li class="text-v6-dark" aria-current="page">{categoryTitle}</li>
         </ol>
@@ -94,7 +94,7 @@ const canonicalURL = generateCanonicalUrl(Astro.url.pathname);
         {posts.map((post) => (
           <article class="bg-v6-bg rounded-xl border border-v6-border overflow-hidden hover:shadow-lg transition-shadow">
             {post.image && (
-              <a href={`/posts/${post.slug}`}>
+              <a href={`/posts/${post.slug}/`}>
                 <div class="aspect-video overflow-hidden">
                   {isExternalUrl(post.image) ? (
                     <img
@@ -123,7 +123,7 @@ const canonicalURL = generateCanonicalUrl(Astro.url.pathname);
             )}
             <div class="p-5">
               <h2 class="mb-2 text-lg font-bold text-v6-dark leading-snug">
-                <a href={`/posts/${post.slug}`} class="hover:text-v6-copper transition-colors">{post.title}</a>
+                <a href={`/posts/${post.slug}/`} class="hover:text-v6-copper transition-colors">{post.title}</a>
               </h2>
               <p class="text-sm text-v6-text-muted leading-relaxed line-clamp-3 mb-4">
                 {post.description}
@@ -144,7 +144,7 @@ const canonicalURL = generateCanonicalUrl(Astro.url.pathname);
       )}
 
       <div class="text-center mt-10">
-        <a href="/blog" class="inline-flex items-center gap-1.5 text-sm font-semibold text-v6-copper hover:text-v6-copper-600 transition-colors">
+        <a href="/blog/" class="inline-flex items-center gap-1.5 text-sm font-semibold text-v6-copper hover:text-v6-copper-600 transition-colors">
           &larr; Back to all articles
         </a>
       </div>

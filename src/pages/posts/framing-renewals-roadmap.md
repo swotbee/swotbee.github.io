@@ -39,7 +39,7 @@ faqs:
     a: "60 to 90 days before the renewal date, building on value proven across the whole contract term."
 ---
 
-> This article is part of our [365-day renewal strategy guide](/posts/renewal-strategy-365).
+> This article is part of our [365-day renewal strategy guide](/posts/renewal-strategy-365/).
 
 **The best renewal conversations are framed around the next 12 months, not the last. Instead of only reviewing past performance, you pitch the future roadmap, the outcomes the customer will achieve next, so renewing becomes a decision to keep moving forward.** A forward-framed renewal conversation shifts the customer from evaluating what they got to anticipating what they will get, which makes the successful renewal the natural next step.
 
@@ -64,9 +64,9 @@ Pitching the roadmap rather than the rear-view mirror works because:
 - **It changes the question.** From "was this worth it?" to "what could we do next?", which is far easier to say yes to.
 - **It deepens the relationship.** Talking about the customer's future goals positions you as a partner, not a vendor.
 - **It builds trust.** Showing new features and a clear plan signals momentum and investment in their success.
-- **It opens expansion.** A future-focused conversation naturally surfaces new use cases and [expansion opportunities](/posts/land-and-expand-strategy).
+- **It opens expansion.** A future-focused conversation naturally surfaces new use cases and [expansion opportunities](/posts/land-and-expand-strategy/).
 
-Of course, forward-framing only works on a foundation of [proven value](/posts/customer-value-realization); the future pitch is credible because the past delivered.
+Of course, forward-framing only works on a foundation of [proven value](/posts/customer-value-realization/); the future pitch is credible because the past delivered.
 
 ---
 
@@ -78,7 +78,7 @@ Of course, forward-framing only works on a foundation of [proven value](/posts/c
 4. **Co-create the plan.** Build a joint success plan for the next 12 months with milestones, so the renewal is a shared commitment.
 5. **Make renewal the obvious next step.** Position renewing as continuing a plan already in motion, not a transaction to re-justify.
 
-Run this through a structured [executive business review](/posts/strategic-qbr-renewals) so the right stakeholders hear the forward story.
+Run this through a structured [executive business review](/posts/strategic-qbr-renewals/) so the right stakeholders hear the forward story.
 
 ---
 
@@ -121,7 +121,7 @@ To align on the customer's future goals and how you will help achieve them, so t
 
 ---
 
-Forward-framing is how you close the [365-day renewal strategy](/posts/renewal-strategy-365): proving the past, then selling the future.
+Forward-framing is how you close the [365-day renewal strategy](/posts/renewal-strategy-365/): proving the past, then selling the future.
 
 **Renewals are easier to win when they're about tomorrow, not yesterday.** SWOTBee builds renewal and customer success programs for mid-market companies across Energy, Manufacturing, and SaaS.
 

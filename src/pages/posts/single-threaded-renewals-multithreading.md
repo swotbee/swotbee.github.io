@@ -39,7 +39,7 @@ faqs:
     a: "Yes. Renewals depend on relationships; a multi-threaded account survives reorganizations and renews far more reliably than a single-threaded one."
 ---
 
-> This article is part of our [365-day renewal strategy guide](/posts/renewal-strategy-365).
+> This article is part of our [365-day renewal strategy guide](/posts/renewal-strategy-365/).
 
 **A single-threaded renewal depends on one contact. If that champion leaves, gets reorganized, or goes quiet, the renewal dies with them. Multi-threading in sales is the practice of building relationships with multiple stakeholders, so the deal survives any single departure.** In enterprise deals with a buying committee, multi-threaded accounts renew and expand at far higher win rates than single-threaded ones.
 
@@ -85,11 +85,11 @@ Multi-threading is insurance against all three. With relationships across multip
 Engaging multiple stakeholders does more than de-risk the renewal:
 
 - **Higher win rates.** Deals with broad executive buy-in close and renew more reliably than single-threaded ones.
-- **Bigger deals.** More stakeholders means more use cases, which fuels expansion and a [land-and-expand](/posts/land-and-expand-strategy) motion.
+- **Bigger deals.** More stakeholders means more use cases, which fuels expansion and a [land-and-expand](/posts/land-and-expand-strategy/) motion.
 - **Faster decisions.** When the economic buyer is already engaged, the renewal does not stall waiting for an introduction.
 - **Better intelligence.** Multiple relationships surface budget shifts, reorganizations, and competitor activity early.
 
-This is why multi-threading sits at the center of a strong [renewal strategy](/posts/renewal-strategy-365).
+This is why multi-threading sits at the center of a strong [renewal strategy](/posts/renewal-strategy-365/).
 
 ---
 
@@ -111,8 +111,8 @@ Record each contact, their role, and your relationship strength on the account i
 
 1. **Set a coverage standard.** For enterprise accounts, require relationships with at least the economic buyer plus two influencers. No single-threaded renewals above a revenue threshold.
 2. **Tailor outreach per stakeholder.** Each role cares about different outcomes; tailor your sales conversations to what matters to that person.
-3. **Use QBRs to widen the thread.** An [executive business review](/posts/strategic-qbr-renewals) is the perfect venue to bring new stakeholders into the relationship.
-4. **Track coverage as a metric.** Report single-threaded accounts as a risk, the same way you track [renewal risk scoring](/posts/hubspot-renewal-risk-scoring).
+3. **Use QBRs to widen the thread.** An [executive business review](/posts/strategic-qbr-renewals/) is the perfect venue to bring new stakeholders into the relationship.
+4. **Track coverage as a metric.** Report single-threaded accounts as a risk, the same way you track [renewal risk scoring](/posts/hubspot-renewal-risk-scoring/).
 5. **Re-thread fast on change.** When a contact leaves, treat it as a priority play: reach the replacement and re-establish the value story immediately.
 
 ---
@@ -120,7 +120,7 @@ Record each contact, their role, and your relationship strength on the account i
 ## Examples of Multi-Threading in Action
 
 - A CSM brings the VP of Operations (economic buyer) into a QBR alongside the day-to-day admin (champion), so the renewal is no longer dependent on the admin.
-- An account executive, noticing usage spreading to a second team, builds a relationship with that team's lead, turning a single-department deal into a [whitespace expansion](/posts/whitespace-analysis-expansion) opportunity.
+- An account executive, noticing usage spreading to a second team, builds a relationship with that team's lead, turning a single-department deal into a [whitespace expansion](/posts/whitespace-analysis-expansion/) opportunity.
 - A seller maps a procurement blocker early and addresses security concerns months before renewal, removing a last-minute veto.
 
 ---
@@ -144,7 +144,7 @@ Yes. Renewals depend on relationships; a multi-threaded account survives reorgan
 
 ---
 
-Multi-threading is the relationship foundation of the [365-day renewal strategy](/posts/renewal-strategy-365).
+Multi-threading is the relationship foundation of the [365-day renewal strategy](/posts/renewal-strategy-365/).
 
 **The renewal you lose is usually the one that depended on a single person.** SWOTBee builds account-mapping and renewal playbooks for mid-market companies across Energy, Manufacturing, and SaaS.
 

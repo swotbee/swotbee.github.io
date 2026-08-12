@@ -51,7 +51,7 @@ This distinction matters more than most buyers realize, and getting it wrong mea
 
 Some companies need both. A SaaS company might pay internal SDRs tiered commissions while also running an external affiliate program. That is two separate software decisions.
 
-If your "affiliates" are actually your own sales reps earning tiered commissions, you are looking for the wrong category of tool. [See our commission tracking tools buyer's guide](/posts/hubspot-commission-tracking-tools-compared) for internal compensation platforms.
+If your "affiliates" are actually your own sales reps earning tiered commissions, you are looking for the wrong category of tool. [See our commission tracking tools buyer's guide](/posts/hubspot-commission-tracking-tools-compared/) for internal compensation platforms.
 
 If your affiliates are external partners who promote your product and earn commissions on referrals -- keep reading.
 
@@ -61,7 +61,7 @@ Every affiliate platform markets itself with a long feature list. Most of those 
 
 1. **Tier depth.** How many sub-affiliate levels does the platform support? For most businesses, two to three tiers is the practical ceiling. A direct affiliate earns on their own referrals. A tier-two affiliate earns a smaller percentage when their recruited sub-affiliates close deals. Anything beyond five tiers is theoretical for legitimate business programs and starts resembling structures you do not want to be associated with. Do not pay extra for tier depth you will never use.
 
-2. **Attribution model support.** Can you choose between first-touch, last-touch, and linear attribution? Or are you locked into one model? The attribution model determines which affiliate gets credit when a prospect clicks multiple affiliate links before converting. This is where disputes originate. [See our attribution guide](/posts/affiliate-attribution-models-explained) for a deeper breakdown of the tradeoffs.
+2. **Attribution model support.** Can you choose between first-touch, last-touch, and linear attribution? Or are you locked into one model? The attribution model determines which affiliate gets credit when a prospect clicks multiple affiliate links before converting. This is where disputes originate. [See our attribution guide](/posts/affiliate-attribution-models-explained/) for a deeper breakdown of the tradeoffs.
 
 3. **Fraud detection.** Self-referrals, cookie stuffing, click fraud, and CPA farming are real problems in affiliate programs. The platform should, at minimum, flag suspicious patterns automatically. Better platforms let you set rules -- like blocking commissions when the affiliate and customer share an IP address or email domain.
 
@@ -268,6 +268,6 @@ The best platform matches your business model, not your ambition. A startup with
 
 **For agencies and networks:** GoHighLevel and Scaleo offer the white-label and multi-client capabilities you need.
 
-If you are still building the business case for multi-tier commissions, start with the fundamentals: [how multi-tier programs work](/posts/multi-tier-commission-programs-explained) covers the structural decisions you need to make before selecting software, and [building tiered commissions in HubSpot](/posts/hubspot-tiered-commission-model-setup) walks through implementation for teams already on HubSpot.
+If you are still building the business case for multi-tier commissions, start with the fundamentals: [how multi-tier programs work](/posts/multi-tier-commission-programs-explained/) covers the structural decisions you need to make before selecting software, and [building tiered commissions in HubSpot](/posts/hubspot-tiered-commission-model-setup/) walks through implementation for teams already on HubSpot.
 
 **Need help selecting and implementing the right affiliate platform?** [We have done this for dozens of mid-market teams -- let us help you skip the trial-and-error phase.](/contactus/)

@@ -44,7 +44,7 @@ Your HubSpot renewal pipeline is only as good as the data feeding it. Workflows 
 
 HubSpot includes [a set of default deal properties](https://knowledge.hubspot.com/properties/hubspots-default-deal-properties) on every deal pipeline out of the box, but they're built for new business, not a separate renewal pipeline. This article lists the 15 custom properties you need to add, with exact field types, recommended dropdown values, and explanations of where each one is used, the property setup best practices we apply on every renewal pipeline we build.
 
-> This article is part of our [Complete Guide to Building a Renewal Pipeline in HubSpot](/posts/hubspot-renewal-pipeline-complete-guide).
+> This article is part of our [Complete Guide to Building a Renewal Pipeline in HubSpot](/posts/hubspot-renewal-pipeline-complete-guide/).
 
 ---
 
@@ -77,7 +77,7 @@ HubSpot includes [a set of default deal properties](https://knowledge.hubspot.co
 **How to set it:** For the first renewal, Renewal Date = Original Close Date + Contract Term. For subsequent renewals, it's the previous Renewal Date + Contract Term.
 
 **How it's used:**
-- [Stage progression workflows](/posts/hubspot-renewal-deal-workflow-automation) use this to move deals
+- [Stage progression workflows](/posts/hubspot-renewal-deal-workflow-automation/) use this to move deals
 - Dashboards show renewals by upcoming date
 - Forecast reports use this (not Close Date) for timing
 
@@ -99,7 +99,7 @@ HubSpot includes [a set of default deal properties](https://knowledge.hubspot.co
 **Field type:** Number
 **Default:** 1
 
-**Why:** Tracks which renewal cycle this deal represents. Year 1 = first renewal after original purchase. Year 2 = second renewal. Essential for the [dual-workflow pattern](/posts/hubspot-renewal-workflow-infinite-loop-fix) that solves the infinite loop problem.
+**Why:** Tracks which renewal cycle this deal represents. Year 1 = first renewal after original purchase. Year 2 = second renewal. Essential for the [dual-workflow pattern](/posts/hubspot-renewal-workflow-infinite-loop-fix/) that solves the infinite loop problem.
 
 **How it's used:**
 - Workflow routing (odd vs. even year patterns)
@@ -180,7 +180,7 @@ HubSpot includes [a set of default deal properties](https://knowledge.hubspot.co
 
 **Custom option:** For teams without Service Hub, a simple 3-value dropdown updated by workflows or manually is better than nothing.
 
-Health score properties feed [churn prevention workflows](/posts/hubspot-churn-prevention-health-scores-workflows).
+Health score properties feed [churn prevention workflows](/posts/hubspot-churn-prevention-health-scores-workflows/).
 
 ---
 
@@ -190,7 +190,7 @@ Health score properties feed [churn prevention workflows](/posts/hubspot-churn-p
 **Field type:** Yes/No (boolean)
 **Default:** No
 
-**Why:** Used by the boolean toggle pattern to [solve the infinite loop problem](/posts/hubspot-renewal-workflow-infinite-loop-fix). When a renewal deal creates the next year's deal, this property flips to "Yes", preventing the workflow from firing again on the same deal.
+**Why:** Used by the boolean toggle pattern to [solve the infinite loop problem](/posts/hubspot-renewal-workflow-infinite-loop-fix/). When a renewal deal creates the next year's deal, this property flips to "Yes", preventing the workflow from firing again on the same deal.
 
 ---
 
@@ -267,7 +267,7 @@ This isn't for reporting, it's for the CSM who opens this deal in 6 months and n
 5. Set the field type and options
 6. For required properties, configure this in the pipeline stage settings (Settings → Deals → Pipelines → Edit stage → Required properties)
 
-These properties power [your automation workflows](/posts/hubspot-renewal-deal-workflow-automation). Set them up before building any workflows.
+These properties power [your automation workflows](/posts/hubspot-renewal-deal-workflow-automation/). Set them up before building any workflows.
 
 ---
 
@@ -280,7 +280,7 @@ HubSpot's default deal properties are built for new business, not renewals. At m
 Only for the calculated version that updates automatically. Without Operations Hub, use a manually-maintained "Days to Renewal Range" dropdown updated by date-comparison workflows instead. Less precise, but it works on any tier.
 
 **How do I calculate expansion and contraction revenue without Previous Contract Value?**
-You can't, reliably. Expansion and contraction are both a comparison between this renewal's amount and the prior contract's amount; without storing that prior value on the deal, NRR and GRR calculations have no baseline to compare against. See our [NRR/GRR dashboard guide](/posts/hubspot-renewal-nrr-grr-dashboard-reporting) for how this property feeds the reporting layer.
+You can't, reliably. Expansion and contraction are both a comparison between this renewal's amount and the prior contract's amount; without storing that prior value on the deal, NRR and GRR calculations have no baseline to compare against. See our [NRR/GRR dashboard guide](/posts/hubspot-renewal-nrr-grr-dashboard-reporting/) for how this property feeds the reporting layer.
 
 **Should Health Score live on the Deal or the Company record?**
 Company, when a customer can have multiple concurrent deals, since health reflects the account relationship, not any single contract. Put it on the Deal only if your business is strictly one-deal-per-customer.

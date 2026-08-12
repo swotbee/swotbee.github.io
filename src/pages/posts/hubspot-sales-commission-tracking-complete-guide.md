@@ -97,7 +97,7 @@ The consequences fall into three categories:
 
 The good news is that you have options. Three paths, in fact, each suited to a different team size and complexity level. And all of them start with the deal data you already have in HubSpot.
 
-For a deeper dive into why spreadsheets specifically become dangerous as you scale, read [Why Your Commission Spreadsheet Is a Ticking Time Bomb](/posts/sales-commission-spreadsheet-problems).
+For a deeper dive into why spreadsheets specifically become dangerous as you scale, read [Why Your Commission Spreadsheet Is a Ticking Time Bomb](/posts/sales-commission-spreadsheet-problems/).
 
 ---
 
@@ -123,7 +123,7 @@ Time to set up: 30 minutes for a flat-rate plan, up to 2 hours for a simple tier
 
 The limitations are real, though. Calculated properties cannot handle quota-based accelerators (where the rate changes based on cumulative attainment). They struggle with split credits across multiple reps. They cannot trigger automated payouts. And they offer no built-in audit trail, if someone changes a deal amount after the commission was calculated, you might never know.
 
-For a complete step-by-step walkthrough of the DIY approach, see [How to Set Up Commission Tracking in HubSpot Without Buying New Software](/posts/hubspot-commission-tracking-setup-guide).
+For a complete step-by-step walkthrough of the DIY approach, see [How to Set Up Commission Tracking in HubSpot Without Buying New Software](/posts/hubspot-commission-tracking-setup-guide/).
 
 ### Path 2: HubSpot Commission Power-Up ($499 One-Time)
 
@@ -158,7 +158,7 @@ What you get:
 
 Time to set up: 1-8 weeks depending on platform complexity and plan intricacy.
 
-For a detailed comparison of 10 platforms with pricing, features, and real user reviews, see [10 Commission Tracking Tools for HubSpot Compared](/posts/hubspot-commission-tracking-tools-compared).
+For a detailed comparison of 10 platforms with pricing, features, and real user reviews, see [10 Commission Tracking Tools for HubSpot Compared](/posts/hubspot-commission-tracking-tools-compared/).
 
 ### Decision Framework
 
@@ -211,7 +211,7 @@ Commission data should flow to payroll without manual re-entry. Whether that mea
 
 If your current system does not deliver all five pillars, you are paying a "commission tax", an invisible surcharge on every pay cycle, measured in hours, errors, and the slow erosion of your team's trust in the process.
 
-For more on how commission errors specifically destroy team trust and what to do about it, read [Commission Disputes Are Quietly Destroying Your Sales Team's Trust](/posts/sales-commission-disputes-trust).
+For more on how commission errors specifically destroy team trust and what to do about it, read [Commission Disputes Are Quietly Destroying Your Sales Team's Trust](/posts/sales-commission-disputes-trust/).
 
 ---
 
@@ -245,7 +245,7 @@ A tiered structure pays different rates at different revenue thresholds. For exa
 
 **HubSpot implementation difficulty:** Moderate. Achievable with nested IF logic in calculated properties, but gets unwieldy beyond three tiers.
 
-For a detailed walkthrough of designing and implementing tiered structures, read [Tiered Commission Structures That Actually Motivate Your Sales Team](/posts/tiered-commission-structures-sales-motivation).
+For a detailed walkthrough of designing and implementing tiered structures, read [Tiered Commission Structures That Actually Motivate Your Sales Team](/posts/tiered-commission-structures-sales-motivation/).
 
 ### Accelerator / Decelerator
 
@@ -259,7 +259,7 @@ This structure ties the commission rate to quota attainment. Below quota, the re
 
 **HubSpot implementation difficulty:** High. HubSpot's calculated properties cannot natively track cumulative quota attainment across a period and adjust rates accordingly. This is where most teams outgrow DIY and move to dedicated software.
 
-For a complete guide to designing accelerator and decelerator models, see [Commission Accelerators and Decelerators: A Complete Guide](/posts/commission-accelerators-decelerators-guide).
+For a complete guide to designing accelerator and decelerator models, see [Commission Accelerators and Decelerators: A Complete Guide](/posts/commission-accelerators-decelerators-guide/).
 
 ### Split Commission
 
@@ -285,7 +285,7 @@ A multi-tiered structure pays commissions not only on your own sales but also on
 
 **HubSpot implementation difficulty:** High. Requires custom objects or external tracking to map the referral chain and calculate commissions at each level.
 
-For a deep dive into multi-tiered structures, read [Multi-Tiered Affiliate Incentive Structures: A Complete Guide](/posts/multi-tiered-affiliate-incentive-structure-guide).
+For a deep dive into multi-tiered structures, read [Multi-Tiered Affiliate Incentive Structures: A Complete Guide](/posts/multi-tiered-affiliate-incentive-structure-guide/).
 
 ### Structure Comparison
 
@@ -297,7 +297,7 @@ For a deep dive into multi-tiered structures, read [Multi-Tiered Affiliate Incen
 | Split Commission | Moderate-High | Partially | Any size | Moderate |
 | Multi-Tiered / Affiliate | High | No (need software) | Partner programs | High |
 
-For detailed guidance on implementing splits, clawbacks, and accelerators, the messy middle of compensation design, read [The Messy Middle of Sales Comp: Splits, Clawbacks, and Accelerators](/posts/commission-splits-clawbacks-accelerators-guide).
+For detailed guidance on implementing splits, clawbacks, and accelerators, the messy middle of compensation design, read [The Messy Middle of Sales Comp: Splits, Clawbacks, and Accelerators](/posts/commission-splits-clawbacks-accelerators-guide/).
 
 ---
 
@@ -329,9 +329,9 @@ For a team spending 8 hours per bi-weekly cycle at a $75/hour fully loaded cost 
 
 That is the cost of your "free" tool.
 
-For the full breakdown of spreadsheet risks and costs, read [Why Your Commission Spreadsheet Is a Ticking Time Bomb](/posts/sales-commission-spreadsheet-problems).
+For the full breakdown of spreadsheet risks and costs, read [Why Your Commission Spreadsheet Is a Ticking Time Bomb](/posts/sales-commission-spreadsheet-problems/).
 
-For a step-by-step migration plan from spreadsheets to a proper system, see [Commission Tracking for Growing Teams: When to Graduate from Spreadsheets](/posts/commission-tracking-growing-teams-graduation).
+For a step-by-step migration plan from spreadsheets to a proper system, see [Commission Tracking for Growing Teams: When to Graduate from Spreadsheets](/posts/commission-tracking-growing-teams-graduation/).
 
 ---
 
@@ -391,7 +391,7 @@ A tool that costs $25/user/month but requires a $10,000 implementation fee and a
 
 **100+ reps:** Everstage (approximately $41K/year) and CaptivateIQ (custom pricing) are built for enterprise-scale complexity. They handle global compensation plans, advanced analytics, and deep compliance requirements.
 
-For a full side-by-side comparison of 10 tools with pricing, HubSpot integration depth, and real user reviews, read [The 2026 Buyer's Guide to Commission Tracking Tools for HubSpot](/posts/hubspot-commission-tracking-tools-compared).
+For a full side-by-side comparison of 10 tools with pricing, HubSpot integration depth, and real user reviews, read [The 2026 Buyer's Guide to Commission Tracking Tools for HubSpot](/posts/hubspot-commission-tracking-tools-compared/).
 
 ---
 
@@ -445,7 +445,7 @@ Create a commission dashboard with these reports:
 
 This setup takes 1-2 hours and covers the basics for a team with a simple tiered plan. It will not handle quota-based accelerators, automated payroll export, or complex splits, but it will get you off the spreadsheet and into a system with visibility, accountability, and a clear audit path.
 
-For the full step-by-step guide with screenshots and advanced configurations, read [Building a Tiered Commission Model Inside HubSpot](/posts/hubspot-tiered-commission-model-setup).
+For the full step-by-step guide with screenshots and advanced configurations, read [Building a Tiered Commission Model Inside HubSpot](/posts/hubspot-tiered-commission-model-setup/).
 
 ---
 

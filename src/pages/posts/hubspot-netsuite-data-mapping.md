@@ -39,13 +39,13 @@ faqs:
     a: "No. The native connector is subsidiary-blind and uses a single subsidiary. Multiple subsidiaries need custom middleware or a database-driven sync engine. Fighting a live sync problem right now? We catalogued the six most-reported HubSpot NetSuite sync failures and their fixes, including which ones a config change can solve and which need an integration layer."
 ---
 
-> This article is part of our [complete guide to HubSpot and NetSuite integration](/posts/hubspot-netsuite-integration).
+> This article is part of our [complete guide to HubSpot and NetSuite integration](/posts/hubspot-netsuite-integration/).
 
 **The most critical challenge in connecting HubSpot and NetSuite sits one layer below the integration tool itself: the two systems hold different data models and different opinions about how objects relate.** HubSpot is built for flexible relationship management, while NetSuite is a strict financial and operational database. Mapping data between them without careful planning routinely produces silent errors, duplicate records, and broken workflows. These seven pitfalls cause most failed integrations, and each one is avoidable once you know where to look. The common thread is the integration method matters less than how you map the fields in HubSpot to the fields in NetSuite, and which system owns each one.
 
 <img src="/assets/posts/diagrams/netsuite-data-mapping-pitfalls.svg" alt="Seven HubSpot NetSuite data mapping pitfalls" width="800" height="330" loading="lazy" decoding="async" />
 
-Field mapping is the foundation of any [HubSpot NetSuite integration](/posts/hubspot-netsuite-integration), and getting it wrong undermines every connector choice and workflow you build on top. Whether you integrate with the native NetSuite sync connector, Celigo, or a custom API integration, the data model decides whether the sync helps your sales and finance teams or quietly corrupts their customer data. Clean mapping across both systems is what gives you accurate data, a single source of truth, and the scalability to grow, while poor mapping causes the sync conflicts and bi-directional overwrites below.
+Field mapping is the foundation of any [HubSpot NetSuite integration](/posts/hubspot-netsuite-integration/), and getting it wrong undermines every connector choice and workflow you build on top. Whether you integrate with the native NetSuite sync connector, Celigo, or a custom API integration, the data model decides whether the sync helps your sales and finance teams or quietly corrupts their customer data. Clean mapping across both systems is what gives you accurate data, a single source of truth, and the scalability to grow, while poor mapping causes the sync conflicts and bi-directional overwrites below.
 
 ---
 
@@ -57,7 +57,7 @@ Syncing line items between HubSpot Deals and NetSuite Opportunities or Sales Ord
 - **Update versus replace behavior.** HubSpot updates its line items in place, whereas NetSuite SuiteScript often treats sublist updates as delete-and-recreate operations. If your integration compares line items by array position, any reordering breaks the sync and causes partial overwrites, missed updates, or duplicates.
 - **No stable external ID.** Because there is no native, stable line-level external ID that both platforms respect, updates frequently fail after the initial creation.
 
-The fix is to match line items by a stable key rather than position and to map products by SKU to active NetSuite items. The engineering detail lives in our [custom NetSuite CRM integration guide](/posts/custom-netsuite-crm-integration), and if you manage deal line items by hand, our [HubSpot clone deal line items guide](/posts/hubspot-clone-deal-line-items) covers the property mechanics.
+The fix is to match line items by a stable key rather than position and to map products by SKU to active NetSuite items. The engineering detail lives in our [custom NetSuite CRM integration guide](/posts/custom-netsuite-crm-integration/), and if you manage deal line items by hand, our [HubSpot clone deal line items guide](/posts/hubspot-clone-deal-line-items/) covers the property mechanics.
 
 ---
 
@@ -65,7 +65,7 @@ The fix is to match line items by a stable key rather than position and to map p
 
 This is a frequent timing conflict in high-velocity sales. Reps often create a Deal in HubSpot directly from a Contact before the parent Company record has finished syncing to NetSuite.
 
-When the Deal tries to sync, NetSuite rejects the payload with a "Company should exist" error because the parent financial entity is not in its database yet. The error stalls the pipeline and forces an administrator to wait for the company to sync, then manually edit the Deal to re-trigger synchronization. Sequence the sync so companies land before their deals, and you avoid the block entirely. We cover the workaround in the [HubSpot to NetSuite integration setup guide](/posts/hubspot-to-netsuite-integration-setup).
+When the Deal tries to sync, NetSuite rejects the payload with a "Company should exist" error because the parent financial entity is not in its database yet. The error stalls the pipeline and forces an administrator to wait for the company to sync, then manually edit the Deal to re-trigger synchronization. Sequence the sync so companies land before their deals, and you avoid the block entirely. We cover the workaround in the [HubSpot to NetSuite integration setup guide](/posts/hubspot-to-netsuite-integration-setup/).
 
 ---
 
@@ -89,7 +89,7 @@ Certain NetSuite fields, particularly those on invoices or custom picklists, can
 
 A two-way sync sounds appealing, but it creates conflict records and data drift unless you define clear ownership rules first.
 
-By default the logic falls back to "last write wins" when both systems update the same field, which can quietly kill legitimate updates. And if you let HubSpot and NetSuite run a live sync without strict deduplication logic (exact email matches or normalized domains), you will generate duplicate customer records within the first week. Best practice is to assign one owner per object: HubSpot owns front-office relationship data (contacts and deals) while NetSuite owns the financial truth (invoices, payments, and realized revenue), and sync direction follows ownership. This is the same source-of-truth discipline we stress in the [integration pillar](/posts/hubspot-netsuite-integration).
+By default the logic falls back to "last write wins" when both systems update the same field, which can quietly kill legitimate updates. And if you let HubSpot and NetSuite run a live sync without strict deduplication logic (exact email matches or normalized domains), you will generate duplicate customer records within the first week. Best practice is to assign one owner per object: HubSpot owns front-office relationship data (contacts and deals) while NetSuite owns the financial truth (invoices, payments, and realized revenue), and sync direction follows ownership. This is the same source-of-truth discipline we stress in the [integration pillar](/posts/hubspot-netsuite-integration/).
 
 ---
 
@@ -97,13 +97,13 @@ By default the logic falls back to "last write wins" when both systems update th
 
 NetSuite imposes strict concurrency limits and server-side validation that can break bulk actions triggered by HubSpot.
 
-When deals closed in HubSpot create a large NetSuite sales order with many complex child items, NetSuite must synchronously run tax calculations, pricing logic, and validation. Native connectors often cannot extend their timeout thresholds to wait for that work, so they hit NetSuite's SOAP API timeout and the sales-order creation fails silently or throws an error. This is a common use case where the native connector breaks and a sales rep is left wondering why the order never appeared. The durable fix is small batches and asynchronous processing rather than one heavy synchronous call, which we detail in the [custom NetSuite CRM integration guide](/posts/custom-netsuite-crm-integration).
+When deals closed in HubSpot create a large NetSuite sales order with many complex child items, NetSuite must synchronously run tax calculations, pricing logic, and validation. Native connectors often cannot extend their timeout thresholds to wait for that work, so they hit NetSuite's SOAP API timeout and the sales-order creation fails silently or throws an error. This is a common use case where the native connector breaks and a sales rep is left wondering why the order never appeared. The durable fix is small batches and asynchronous processing rather than one heavy synchronous call, which we detail in the [custom NetSuite CRM integration guide](/posts/custom-netsuite-crm-integration/).
 
 ---
 
 ## 7. Multi-Subsidiary Isolation Challenges
 
-For global businesses running NetSuite OneWorld across multiple legal subsidiaries, native mapping is highly problematic. The native HubSpot NetSuite connector is subsidiary-blind: it cannot run separate, parallel syncs for one object type across different subsidiaries. Basic connector tiers force a single hardcoded subsidiary filter, so routing global data accurately requires custom middleware or a database-driven sync engine. If subsidiaries matter, factor this into your [connector choice](/posts/hubspot-netsuite-connector-comparison) from day one.
+For global businesses running NetSuite OneWorld across multiple legal subsidiaries, native mapping is highly problematic. The native HubSpot NetSuite connector is subsidiary-blind: it cannot run separate, parallel syncs for one object type across different subsidiaries. Basic connector tiers force a single hardcoded subsidiary filter, so routing global data accurately requires custom middleware or a database-driven sync engine. If subsidiaries matter, factor this into your [connector choice](/posts/hubspot-netsuite-connector-comparison/) from day one.
 
 ---
 

@@ -38,11 +38,11 @@ faqs:
     a: "Yes. By tracking customer behavior and triggering interventions before disengaged customers cancel, a CRM moves retention from reactive to proactive, which is what actually reduces churn."
 ---
 
-> This article is part of our [complete guide to B2B customer retention](/posts/b2b-saas-customer-retention).
+> This article is part of our [complete guide to B2B customer retention](/posts/b2b-saas-customer-retention/).
 
 **A CRM improves customer retention by giving you one complete view of every customer (their usage, history, health, and renewal date) and the automation to act on it, so you keep customers engaged and reduce churn instead of reacting after they leave.** CRM and customer retention are tightly linked: the customers most businesses lose are the ones nobody was watching. This guide explains how CRM helps with customer retention, the CRM strategies that work, the features to look for, and how to implement a retention strategy using your CRM.
 
-For the bigger picture, start with our [B2B customer retention guide](/posts/b2b-saas-customer-retention).
+For the bigger picture, start with our [B2B customer retention guide](/posts/b2b-saas-customer-retention/).
 
 ---
 
@@ -108,7 +108,7 @@ Implementation is where most retention programs succeed or stall. A practical se
 4. **Assign ownership.** Make sure every at-risk account has an owner and a play.
 5. **Measure and iterate.** Track customer retention rate and churn rate, and refine the model over time.
 
-We build exactly this on HubSpot, combining health scores, automation, and renewal pipelines, as detailed in our [churn prevention with health scores](/posts/hubspot-churn-prevention-health-scores-workflows) guide. The CRM is the system; dedicated [customer retention software](/posts/customer-retention-software) can extend it, and the strategies sit inside the broader [B2B customer retention](/posts/b2b-saas-customer-retention) program.
+We build exactly this on HubSpot, combining health scores, automation, and renewal pipelines, as detailed in our [churn prevention with health scores](/posts/hubspot-churn-prevention-health-scores-workflows/) guide. The CRM is the system; dedicated [customer retention software](/posts/customer-retention-software/) can extend it, and the strategies sit inside the broader [B2B customer retention](/posts/b2b-saas-customer-retention/) program.
 
 ---
 

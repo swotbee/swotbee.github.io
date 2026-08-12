@@ -201,8 +201,8 @@ The perception challenge is real but manageable. Business leaders who understand
 
 If you are building a multi-tier program, start with the 3-question test. If you pass, you are on the right track. If you do not, restructure before you launch. And regardless of where you land, get legal counsel involved before the first affiliate signs up.
 
-**Want to understand how legitimate multi-tier programs actually work in practice?** Read our guide on [how multi-tier commission programs are structured](/posts/multi-tier-commission-programs-explained) for a detailed breakdown of tier mechanics, attribution models, and payout calculations.
+**Want to understand how legitimate multi-tier programs actually work in practice?** Read our guide on [how multi-tier commission programs are structured](/posts/multi-tier-commission-programs-explained/) for a detailed breakdown of tier mechanics, attribution models, and payout calculations.
 
 **Designing a multi-tier program and want to make sure the structure is sound?** [We can help you architect a compliant compensation plan](/contactus/) that rewards the right behaviors and stands up to scrutiny.
 
-> *This article is part of our [Multi-Tiered Affiliate Incentives](/posts/multi-tiered-affiliate-incentive-structure-guide) series, where we break down every aspect of building, managing, and optimizing tiered partner compensation programs.*
+> *This article is part of our [Multi-Tiered Affiliate Incentives](/posts/multi-tiered-affiliate-incentive-structure-guide/) series, where we break down every aspect of building, managing, and optimizing tiered partner compensation programs.*

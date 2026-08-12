@@ -40,7 +40,7 @@ faqs:
     a: "Because they rely on acquisition without retention. Rising ad costs make one-time buyers unprofitable; only a strong repeat purchase rate makes the unit economics work."
 ---
 
-> This article is part of our [complete guide to customer retention](/posts/b2b-saas-customer-retention).
+> This article is part of our [complete guide to customer retention](/posts/b2b-saas-customer-retention/).
 
 **Shopify customer retention strategies are the tactics a Shopify store uses to turn one-time buyers into repeat customers: loyalty programs, subscriptions, post-purchase email and SMS, and a great customer experience. The goal is to lift your repeat customer rate, because returning customers spend more and cost less than acquiring new ones.** For Shopify store owners, retention is the most reliable path to profit: acquiring a customer through ads keeps getting more expensive, while a loyal customer base compounds. This guide covers how to measure Shopify retention, what a good repeat purchase rate looks like, and the strategies and apps that work.
 
@@ -110,7 +110,7 @@ Shopify's strength is its app ecosystem. The categories of retention apps worth 
 - **Reviews apps** to capture social proof and feedback.
 - **Analytics apps** to track repeat purchase rate and cohorts.
 
-Choose apps that integrate cleanly so customer data is not siloed, the same principle behind good [customer retention software](/posts/customer-retention-software) in any channel.
+Choose apps that integrate cleanly so customer data is not siloed, the same principle behind good [customer retention software](/posts/customer-retention-software/) in any channel.
 
 ---
 
@@ -131,7 +131,7 @@ Acquiring a new customer is far more expensive than keeping an existing customer
 
 ## Connecting Shopify Retention to Your CRM
 
-The most sophisticated Shopify brands do not keep retention data trapped in the store. Connecting Shopify to a CRM gives you one view of the customer across orders, email, and support, so retention is driven by the full picture, not just purchase history. This is the same [CRM for customer retention](/posts/crm-customer-retention) discipline that powers B2B retention, applied to ecommerce, and it is how a growing Shopify brand scales retention beyond apps.
+The most sophisticated Shopify brands do not keep retention data trapped in the store. Connecting Shopify to a CRM gives you one view of the customer across orders, email, and support, so retention is driven by the full picture, not just purchase history. This is the same [CRM for customer retention](/posts/crm-customer-retention/) discipline that powers B2B retention, applied to ecommerce, and it is how a growing Shopify brand scales retention beyond apps.
 
 ---
 

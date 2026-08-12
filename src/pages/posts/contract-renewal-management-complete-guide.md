@@ -79,7 +79,7 @@ Across the mid-market B2B teams we work with, from software companies to industr
 
 ### 1. No single owner
 
-New business has an unambiguous owner: the rep on the deal. Renewals sit in a gray zone between the CSM, the original salesperson, and sometimes finance. When ownership is ambiguous, the default action is nothing. The fix is boring and effective: every renewal is a record in the system with exactly one owner and a due date, assigned by rule (for example, CSM owns green accounts, sales owns expansion-eligible ones). We cover the ownership split in detail in the [contract renewal process and checklist](/posts/contract-renewal-process-checklist).
+New business has an unambiguous owner: the rep on the deal. Renewals sit in a gray zone between the CSM, the original salesperson, and sometimes finance. When ownership is ambiguous, the default action is nothing. The fix is boring and effective: every renewal is a record in the system with exactly one owner and a due date, assigned by rule (for example, CSM owns green accounts, sales owns expansion-eligible ones). We cover the ownership split in detail in the [contract renewal process and checklist](/posts/contract-renewal-process-checklist/).
 
 ### 2. No date tracking, or dates in five places
 
@@ -89,7 +89,7 @@ The contract end date exists in the signed PDF, in the billing system, maybe in 
 
 Even renewals that close on time leak money when there is no standard for price increases. If the default is "renew flat because it is easier," a 5 to 7 percent annual uplift you never proposed compounds into a large gap over three or four years. Uplift needs to be a field on the renewal record and a step in the process, not a judgment call each rep makes under pressure in the contract negotiation. If you want to see what this leakage costs at your contract volume, run the numbers with our [renewal leakage estimate](/resources/renewal-leakage-estimate).
 
-There is a fourth, quieter cause: **reminders without a deal**. Teams set calendar alerts, get the ping at 60 days, and still fumble because an alert is not an opportunity with a value, a stage, and a forecast. A missed renewal is rarely a missed alert; it is a missed handoff from alert to owned deal. Reminders are necessary and insufficient, a distinction we unpack in our guide to [contract renewal reminder software](/posts/contract-renewal-reminder-software).
+There is a fourth, quieter cause: **reminders without a deal**. Teams set calendar alerts, get the ping at 60 days, and still fumble because an alert is not an opportunity with a value, a stage, and a forecast. A missed renewal is rarely a missed alert; it is a missed handoff from alert to owned deal. Reminders are necessary and insufficient, a distinction we unpack in our guide to [contract renewal reminder software](/posts/contract-renewal-reminder-software/).
 
 ---
 
@@ -108,7 +108,7 @@ The strongest version of the renewal management process starts at contract signa
 | Negotiate | 45 to 20 days out | Procurement, legal, and pricing back-and-forth handled with time to spare |
 | Close | Before T-0 | Signature, CRM updated, billing notified, next renewal date captured |
 
-Two design principles matter more than the exact day counts. First, **the renewal record must exist before the work starts**, because tasks and reminders need something to attach to. Second, **the timeline scales with deal friction**: a 15k self-serve renewal might compress to 60 days, while an enterprise contract with procurement review needs the full 120 or more. The stage-by-stage detail, including who owns each step and a copy-paste checklist, lives in our [contract renewal process guide](/posts/contract-renewal-process-checklist).
+Two design principles matter more than the exact day counts. First, **the renewal record must exist before the work starts**, because tasks and reminders need something to attach to. Second, **the timeline scales with deal friction**: a 15k self-serve renewal might compress to 60 days, while an enterprise contract with procurement review needs the full 120 or more. The stage-by-stage detail, including who owns each step and a copy-paste checklist, lives in our [contract renewal process guide](/posts/contract-renewal-process-checklist/).
 
 Customer health data is the input that most improves renewal outcomes: an Assess phase built on real usage, support signals, and contract performance over the term tells you at T-90 whether this renewal cycle is an uplift conversation or a save plan. This structure is also how renewal management improves revenue forecasting. Once every upcoming renewal is a staged deal with a value and a close date, next quarter's renewable revenue is a report, not a guess.
 
@@ -133,7 +133,7 @@ Whatever tooling you choose, the same contract renewal process best practices ap
 
 A few honest notes on each:
 
-**Spreadsheets deserve more respect than software vendors give them.** With low volume and a single owner, a well-built sheet works. The failure signals that tell you it stopped working (missed dates, multiple owners, uplift math errors) are specific enough that we wrote a full renewal tracking breakdown of [when a renewal spreadsheet is enough and when you need software](/posts/renewal-tracking-software-vs-spreadsheet).
+**Spreadsheets deserve more respect than software vendors give them.** With low volume and a single owner, a well-built sheet works. The failure signals that tell you it stopped working (missed dates, multiple owners, uplift math errors) are specific enough that we wrote a full renewal tracking breakdown of [when a renewal spreadsheet is enough and when you need software](/posts/renewal-tracking-software-vs-spreadsheet/).
 
 **Standalone renewal management tools solve the reminder problem and create a data problem.** Your renewal dates end up accurate in a tool your sales and CS teams do not live in, which means the motion still is not connected to the account record, the health data, or the forecast.
 
@@ -153,8 +153,8 @@ This guide covers the selling side: renewing the contracts your customers hold w
 
 HubSpot has no contract object and no renewals feature, but it has all the raw materials to streamline the renewal motion with contract automation: deals, custom properties, date-based workflows, line items, and reporting. The working pattern looks like this:
 
-1. **Model contracts on deals with a property schema.** Add Contract Start Date, Contract End Date (or Renewal Date), Contract Term, Auto-Renew flag, and Uplift % as deal properties. This schema, including type choices and which objects to put fields on, is covered in our guide to [managing contracts in HubSpot](/posts/hubspot-contract-management).
-2. **Create a dedicated renewal pipeline.** Renewal deals get their own pipeline with stages like Upcoming, Engaged, Proposal Sent, Negotiation, Closed Won/Lost. Mixing renewals into the sales pipeline wrecks both forecasts. The full architecture is in our [complete guide to building a renewal pipeline in HubSpot](/posts/hubspot-renewal-pipeline-complete-guide).
+1. **Model contracts on deals with a property schema.** Add Contract Start Date, Contract End Date (or Renewal Date), Contract Term, Auto-Renew flag, and Uplift % as deal properties. This schema, including type choices and which objects to put fields on, is covered in our guide to [managing contracts in HubSpot](/posts/hubspot-contract-management/).
+2. **Create a dedicated renewal pipeline.** Renewal deals get their own pipeline with stages like Upcoming, Engaged, Proposal Sent, Negotiation, Closed Won/Lost. Mixing renewals into the sales pipeline wrecks both forecasts. The full architecture is in our [complete guide to building a renewal pipeline in HubSpot](/posts/hubspot-renewal-pipeline-complete-guide/).
 3. **Automate renewal deal creation.** A renewal workflow (Sales Hub Professional or above) watches Contract End Date and creates the renewal deal 120 days out, carrying over the amount, owner, and dates. This is the step native HubSpot handles worst: workflow-cloned deals skip line items, and multi-year workflow chains can trip HubSpot's loop protection, so most teams end up with an app or custom code for this step.
 4. **Layer on renewal alerts and tasks.** Date-based workflows fire owner tasks and escalations at 90, 60, and 30 days before the renewal date.
 5. **Report on it.** Deal-based reports on the renewal pipeline give you renewals due by quarter, renewal rate, and (with the right properties) NRR and GRR dashboards. Shared renewal calendars built from these reports give sales, CS, and finance the same forward view.
@@ -174,7 +174,7 @@ Renewal management earns its budget in numbers. Track these four:
 - **Net revenue retention (NRR):** the same calculation including expansion and uplift. NRR above 100 percent means your existing base is growing.
 - **On-time engagement rate:** the percentage of renewals where outreach started at or before the 90-day mark. This is the leading indicator; the other three are lagging.
 
-Reviewing renewal outcomes by segment tells you where the process, not the people, needs work. The definitions, formulas, and benchmarks are laid out in our guide to [renewal metrics](/posts/renewal-metrics-explained). One practical note: none of these are reportable if renewals are not modeled as deals with consistent properties. The reporting requirement is the strongest argument for the CRM-native approach, because a spreadsheet can hold dates but cannot give you an NRR trend line by segment.
+Reviewing renewal outcomes by segment tells you where the process, not the people, needs work. The definitions, formulas, and benchmarks are laid out in our guide to [renewal metrics](/posts/renewal-metrics-explained/). One practical note: none of these are reportable if renewals are not modeled as deals with consistent properties. The reporting requirement is the strongest argument for the CRM-native approach, because a spreadsheet can hold dates but cannot give you an NRR trend line by segment.
 
 A realistic before/after from a working system: teams typically move from starting renewal discussions inside 30 days to starting at 90 or more, from zero or ad hoc uplifts to a standard 5 to 8 percent proposed on every renewal, and from "renewal rate unknown" to a dashboard the CRO looks at weekly.
 
@@ -190,7 +190,7 @@ The last decision is how to choose the right contract renewal software, and for 
 
 **Buy a CS platform when** your primary problem is health visibility and CSM workflow at scale (hundreds of accounts per CSM), and you accept that these platforms signal the renewal but still do not create the renewal deal in HubSpot. Buyers report costs from the low five figures to well past 50k USD annually for these tools, which is hard to justify if the renewal motion itself is the gap.
 
-**Hybrid (most common in the mid-market):** CRM-native pipeline and reporting, an app or custom build for deal creation, and a documented contract renewal strategy playbook for the human steps. The playbook piece matters more than teams expect; a system that creates deals cannot decide plays by risk tier, which is why we published a full [renewal playbook template](/posts/renewal-playbook-template) covering handoffs, cadences, and expansion motions.
+**Hybrid (most common in the mid-market):** CRM-native pipeline and reporting, an app or custom build for deal creation, and a documented contract renewal strategy playbook for the human steps. The playbook piece matters more than teams expect; a system that creates deals cannot decide plays by risk tier, which is why we published a full [renewal playbook template](/posts/renewal-playbook-template/) covering handoffs, cadences, and expansion motions.
 
 Whichever path you take, sequence it the same way: schema first, pipeline second, automation third, reporting fourth, playbook always.
 

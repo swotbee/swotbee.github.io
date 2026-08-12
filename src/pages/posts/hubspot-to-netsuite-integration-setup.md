@@ -39,17 +39,17 @@ faqs:
     a: "The native connector and iPaaS tools are largely no-code, but complex workflows, custom records, and API-limit tuning often need developer or RevOps support to maintain. Fighting a live sync problem right now? We catalogued the six most-reported HubSpot NetSuite sync failures and their fixes, including which ones a config change can solve and which need an integration layer."
 ---
 
-> This article is part of our [complete guide to HubSpot and NetSuite integration](/posts/hubspot-netsuite-integration).
+> This article is part of our [complete guide to HubSpot and NetSuite integration](/posts/hubspot-netsuite-integration/).
 
 **A HubSpot to NetSuite integration setup connects your CRM and ERP so that contacts, deals, and orders sync between them: you align stakeholders, install or build the connector, define field mappings and sync directions, configure the core workflows, then test the data flow before going live.** Done in the right order, the setup turns a closed-won HubSpot deal into a NetSuite sales order automatically and keeps both systems updated in real time. This guide walks through each step.
 
-For the strategy behind the build (integrate, migrate, or choose), start with our [HubSpot NetSuite integration pillar](/posts/hubspot-netsuite-integration).
+For the strategy behind the build (integrate, migrate, or choose), start with our [HubSpot NetSuite integration pillar](/posts/hubspot-netsuite-integration/).
 
 ---
 
 ## Prerequisites for a HubSpot to NetSuite Integration
 
-Before you connect anything, get the foundations right. You need admin access to both HubSpot and NetSuite, a clear list of which objects to sync (contacts, companies, deals, products, orders, invoices), and a decision on your integration method. The native marketplace connector is fastest for standard, single-subsidiary setups; an iPaaS such as Celigo or Workato, or a custom build, is better for complex data. See our [HubSpot NetSuite connector comparison](/posts/hubspot-netsuite-connector-comparison) to choose. Be clear on the use case too, since the setup that streamlines a sales team quoting from real-time inventory differs from one a finance team uses to push NetSuite customers and invoices back into HubSpot.
+Before you connect anything, get the foundations right. You need admin access to both HubSpot and NetSuite, a clear list of which objects to sync (contacts, companies, deals, products, orders, invoices), and a decision on your integration method. The native marketplace connector is fastest for standard, single-subsidiary setups; an iPaaS such as Celigo or Workato, or a custom build, is better for complex data. See our [HubSpot NetSuite connector comparison](/posts/hubspot-netsuite-connector-comparison/) to choose. Be clear on the use case too, since the setup that streamlines a sales team quoting from real-time inventory differs from one a finance team uses to push NetSuite customers and invoices back into HubSpot.
 
 ### Aligning Sales and Finance Stakeholders
 

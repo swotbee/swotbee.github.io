@@ -38,7 +38,7 @@ faqs:
     a: "Yes, if your website is a revenue channel and you will commit to ongoing iteration. For a rarely-updated brochure site, a focused traditional redesign is usually enough."
 ---
 
-> This article is part of our [honest guide to whether HubSpot scales with business growth](/posts/does-hubspot-crm-scale).
+> This article is part of our [honest guide to whether HubSpot scales with business growth](/posts/does-hubspot-crm-scale/).
 
 **Growth-Driven Design (GDD) is a website methodology that replaces the big, risky one-time redesign with continuous, data-driven improvement: you launch a strong "launch pad" site fast, then improve it month over month based on real user data.** On HubSpot, GDD pairs naturally with the CMS and analytics, but it is not right for every organization, and the official HubSpot Academy certification is now retired even though many pages still present it as live. This honest 2026 guide covers what GDD is, how it works, and when it is genuinely worth it.
 
@@ -75,7 +75,7 @@ GDD runs in three stages:
 
 Each phase feeds the next in a flexible workflow rather than a one-and-done website development project. The objective is not a perfect launch but the optimal site over time: you go live with the launch pad, watch how the current website performs against real goals, and adapt. Creating a website this way treats web design methodology as a continuous discipline, which is why it tracks the trend of buyer behavior instead of freezing your site the day it ships.
 
-This is the same predict-build-learn loop that underpins HubSpot's broader [growth frameworks](/posts/hubspot-growth-strategy), applied to your website.
+This is the same predict-build-learn loop that underpins HubSpot's broader [growth frameworks](/posts/hubspot-growth-strategy/), applied to your website.
 
 ---
 
@@ -93,7 +93,7 @@ The HubSpot Academy growth driven design certification is retired: the course pa
 
 ## Is Growth-Driven Design Worth It?
 
-GDD is worth it when your website is a real revenue channel and you can commit to ongoing iteration: a continuous budget, someone owning the data, and the discipline to act on it. It is overkill for a small brochure site that rarely changes, or for a team that cannot sustain the monthly improvement cycle. In those cases a focused traditional redesign is fine. The honest test: if you will genuinely run the continuous-improvement loop, GDD pays off; if it will stall after launch pad, it will not. The same goes for the platform underneath it, which is why we cover whether [HubSpot scales with your business](/posts/does-hubspot-crm-scale) before you commit.
+GDD is worth it when your website is a real revenue channel and you can commit to ongoing iteration: a continuous budget, someone owning the data, and the discipline to act on it. It is overkill for a small brochure site that rarely changes, or for a team that cannot sustain the monthly improvement cycle. In those cases a focused traditional redesign is fine. The honest test: if you will genuinely run the continuous-improvement loop, GDD pays off; if it will stall after launch pad, it will not. The same goes for the platform underneath it, which is why we cover whether [HubSpot scales with your business](/posts/does-hubspot-crm-scale/) before you commit.
 
 ---
 

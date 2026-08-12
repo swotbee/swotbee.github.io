@@ -59,7 +59,7 @@ howtoSteps:
     text: "Announce a cutover date, make the sheet read-only, and link to the HubSpot renewal pipeline view from its first row."
 ---
 
-> This article is part of our [Complete B2B Guide to Contract Renewal Management](/posts/contract-renewal-management-complete-guide).
+> This article is part of our [Complete B2B Guide to Contract Renewal Management](/posts/contract-renewal-management-complete-guide/).
 
 **A spreadsheet is a perfectly good renewal tracker when you have fewer than about 20 active contracts and one person who owns the list.** Past that point, manual tracking starts costing you real money: renewal dates go stale, nobody gets automated alerts, uplifts get skipped, and renewals slip through the cracks. This guide gives you a free renewal tracking spreadsheet template to use while a spreadsheet still works, the five failure signals that mean you have outgrown it, and a step-by-step path for effective renewal management inside a CRM like HubSpot.
 
@@ -169,9 +169,9 @@ Software renewal tracking only earns its keep if it surfaces software renewal de
 | Create the renewal deal | A renewal opportunity with correct line items and uplift math, generated on schedule | No | Yes (this is the big one) |
 | Report | Renewal rate, NRR/GRR, pipeline coverage by quarter, without manual assembly | Painful | Built in |
 
-The third job is the one most buyers underestimate. Automated reminders tell you a renewal is coming; the renewal process still needs someone to build the renewal deal, carry over the line items, apply the uplift, and put it in a pipeline. Tools that stop at alerting leave the most error-prone manual step in place. This is exactly the gap [automated renewal deal creation](/posts/hubspot-renewal-deal-workflow-automation) closes in HubSpot: when a deal closes won, the renewal deal is created on schedule with line items and uplift already applied.
+The third job is the one most buyers underestimate. Automated reminders tell you a renewal is coming; the renewal process still needs someone to build the renewal deal, carry over the line items, apply the uplift, and put it in a pipeline. Tools that stop at alerting leave the most error-prone manual step in place. This is exactly the gap [automated renewal deal creation](/posts/hubspot-renewal-deal-workflow-automation/) closes in HubSpot: when a deal closes won, the renewal deal is created on schedule with line items and uplift already applied.
 
-A note on category choices: you rarely need a separate renewal product if you already run a CRM, though good contract management still depends on clean data. For teams on HubSpot, the deal object, custom date properties, and renewal workflows already form the skeleton of a renewal tracker; our guide to [managing contracts in HubSpot](/posts/hubspot-contract-management) covers the property schema and contract management in detail.
+A note on category choices: you rarely need a separate renewal product if you already run a CRM, though good contract management still depends on clean data. For teams on HubSpot, the deal object, custom date properties, and renewal workflows already form the skeleton of a renewal tracker; our guide to [managing contracts in HubSpot](/posts/hubspot-contract-management/) covers the property schema and contract management in detail.
 
 ---
 

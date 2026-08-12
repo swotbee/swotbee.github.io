@@ -38,13 +38,13 @@ faqs:
     a: "Lagging metrics (retention rate, churn rate) report what already happened; leading metrics (usage, health scores, NPS) move before churn, giving you time to intervene."
 ---
 
-> This article is part of our [complete guide to B2B customer retention](/posts/b2b-saas-customer-retention).
+> This article is part of our [complete guide to B2B customer retention](/posts/b2b-saas-customer-retention/).
 
 **Customer retention KPIs are the metrics that tell you how well you keep and grow your existing customers: the customer retention rate, churn rate, net and gross revenue retention, customer lifetime value, repeat purchase rate, and NPS. Tracked together, they turn retention from a feeling into a managed number.** No single metric captures retention, which is why the best teams watch a small set of complementary KPIs to track. This guide explains the key customer retention metrics, how to calculate each, and how to use them to improve customer loyalty.
 
 Knowing which KPIs to track for your business (and what each one actually measures) is the difference between guessing and managing. The customer retention rate measures the share of customers you keep; paired with metrics like repeat purchase rate, churn, and customer value over their lifetime, these retention metrics give a true indicator of customer loyalty. Measuring client retention KPIs consistently is essential, because customer retention metrics help you see what drives loyalty and where to act.
 
-For the strategy behind the numbers, start with our [B2B customer retention guide](/posts/b2b-saas-customer-retention).
+For the strategy behind the numbers, start with our [B2B customer retention guide](/posts/b2b-saas-customer-retention/).
 
 ---
 
@@ -90,13 +90,13 @@ Analyzing customer behavior across these metrics, segmented by customer segments
 - **Net revenue retention** = (starting MRR minus churn minus downgrades plus expansion) / starting MRR x 100.
 - **Customer lifetime value** = average revenue per customer x average customer lifespan (or average revenue divided by churn rate).
 
-For the deeper definitions of the revenue metrics, see [gross vs net revenue retention](/posts/gross-vs-net-revenue-retention) and the broader [renewal metrics explained](/posts/renewal-metrics-explained). For churn specifically, see [SaaS churn rate](/posts/saas-churn-rate).
+For the deeper definitions of the revenue metrics, see [gross vs net revenue retention](/posts/gross-vs-net-revenue-retention/) and the broader [renewal metrics explained](/posts/renewal-metrics-explained/). For churn specifically, see [SaaS churn rate](/posts/saas-churn-rate/).
 
 ---
 
 ## Leading vs Lagging Retention Metrics
 
-A crucial distinction: most retention KPIs are lagging (they report what already happened), but the most valuable signals are leading (they predict what will). Customer retention rate and churn rate are lagging. Product usage, customer health scores, and NPS are leading: they move before a customer churns, so they give you time to act. The best retention programs pair a lagging scoreboard (retention rate, NRR) with leading indicators (usage, health) so they can intervene early, the approach in [silent churn detection](/posts/silent-churn-detection).
+A crucial distinction: most retention KPIs are lagging (they report what already happened), but the most valuable signals are leading (they predict what will). Customer retention rate and churn rate are lagging. Product usage, customer health scores, and NPS are leading: they move before a customer churns, so they give you time to act. The best retention programs pair a lagging scoreboard (retention rate, NRR) with leading indicators (usage, health) so they can intervene early, the approach in [silent churn detection](/posts/silent-churn-detection/).
 
 ---
 
@@ -105,12 +105,12 @@ A crucial distinction: most retention KPIs are lagging (they report what already
 Metrics only matter if they drive action:
 
 1. **Set a baseline and benchmark.** Know your current retention rate and churn rate before you try to improve them.
-2. **Segment.** Track KPIs by cohort, plan, and industry, because the average hides where you actually lose customers (see [cohort retention analysis](/posts/cohort-retention-analysis-churn)).
+2. **Segment.** Track KPIs by cohort, plan, and industry, because the average hides where you actually lose customers (see [cohort retention analysis](/posts/cohort-retention-analysis-churn/)).
 3. **Pair leading with lagging.** Use health scores and usage to act before the retention rate moves.
 4. **Tie KPIs to owners and plays.** Each metric should have someone accountable and a playbook to move it.
 5. **Review on a cadence.** Watch monthly for trends, quarterly for benchmarking.
 
-Build these into a CRM dashboard so the numbers are live, not assembled in a spreadsheet once a quarter, the operational backbone covered in [CRM for customer retention](/posts/crm-customer-retention).
+Build these into a CRM dashboard so the numbers are live, not assembled in a spreadsheet once a quarter, the operational backbone covered in [CRM for customer retention](/posts/crm-customer-retention/).
 
 ## How to Improve Your Customer Retention Rate
 
@@ -133,7 +133,7 @@ You can track customer retention metrics in a spreadsheet, but it does not scale
 - **Analytics tools** for cohort and usage analysis.
 - **Survey and feedback tools** for CSAT and NPS.
 
-The best setup connects these so retention KPIs update automatically, the same principle behind dedicated [customer retention software](/posts/customer-retention-software).
+The best setup connects these so retention KPIs update automatically, the same principle behind dedicated [customer retention software](/posts/customer-retention-software/).
 
 ## Common Mistakes When Tracking Retention KPIs
 

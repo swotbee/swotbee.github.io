@@ -39,7 +39,7 @@ faqs:
     a: "As soon as the signal is clear, ideally 60 to 90 days before renewal so the expansion folds into the renewal conversation."
 ---
 
-> This article is part of our [365-day renewal strategy guide](/posts/renewal-strategy-365).
+> This article is part of our [365-day renewal strategy guide](/posts/renewal-strategy-365/).
 
 **A Customer Success Qualified Lead (CSQL) is an expansion opportunity identified by the customer success team based on a customer's success, usage, and intent, then passed to sales.** Because CSMs are closest to the customer, they spot expansion signals that marketing and sales miss, making CSQLs one of the highest-converting lead types and a key driver of net revenue growth. Training your post-sale team to generate CSQLs turns customer success into a revenue engine.
 
@@ -62,7 +62,7 @@ CSQLs sit at the intersection of customer success and sales: the CSM identifies 
 Different qualified leads come from different signals:
 
 - **MQL (marketing qualified lead):** qualified by marketing engagement (content, email).
-- **PQL ([product qualified lead](/posts/product-qualified-signals-expansion)):** qualified by product usage signals.
+- **PQL ([product qualified lead](/posts/product-qualified-signals-expansion/)):** qualified by product usage signals.
 - **CSQL:** qualified by the customer success team's direct knowledge of the account, combining product usage, relationship health, and stated needs.
 
 The CSQL is often the strongest of the three for expansion, because it blends data with human insight: the CSM knows not just that usage is high, but why, and what the customer wants next.
@@ -73,7 +73,7 @@ The CSQL is often the strongest of the three for expansion, because it blends da
 
 - **Higher conversion.** CSQLs come from customers already succeeding with your product, so they close faster than cold leads.
 - **Lower cost.** Expansion via CSQLs has near-zero customer acquisition cost compared to new business.
-- **Higher NRR.** A steady flow of CSQLs feeds expansion, lifting [net revenue retention](/posts/gross-vs-net-revenue-retention).
+- **Higher NRR.** A steady flow of CSQLs feeds expansion, lifting [net revenue retention](/posts/gross-vs-net-revenue-retention/).
 - **Stronger relationships.** Because the CSM initiates, expansion feels like help, not a sales push.
 
 ---
@@ -100,7 +100,7 @@ To operationalize it, give CSMs simple criteria (leads that show clear expansion
 
 ## Making the CS-to-Sales Handoff Work
 
-The CSQL only converts if the handoff is seamless. The CSM should pass the lead with the customer's context, the use case, the realized value, the stakeholders, so the sales rep continues the conversation rather than restarting it. Tie CSQLs into the renewal: an expansion opportunity surfaced 60 to 90 days before renewal can fold into one conversation. This alignment of customer success and sales is what turns post-sale teams into a long-term customer revenue engine, complementing [whitespace analysis](/posts/whitespace-analysis-expansion) and the broader [land-and-expand](/posts/land-and-expand-strategy) motion.
+The CSQL only converts if the handoff is seamless. The CSM should pass the lead with the customer's context, the use case, the realized value, the stakeholders, so the sales rep continues the conversation rather than restarting it. Tie CSQLs into the renewal: an expansion opportunity surfaced 60 to 90 days before renewal can fold into one conversation. This alignment of customer success and sales is what turns post-sale teams into a long-term customer revenue engine, complementing [whitespace analysis](/posts/whitespace-analysis-expansion/) and the broader [land-and-expand](/posts/land-and-expand-strategy/) motion.
 
 ---
 
@@ -123,7 +123,7 @@ As soon as the signal is clear, ideally 60 to 90 days before renewal so the expa
 
 ---
 
-CSQLs are how customer success fuels expansion in the [365-day renewal strategy](/posts/renewal-strategy-365).
+CSQLs are how customer success fuels expansion in the [365-day renewal strategy](/posts/renewal-strategy-365/).
 
 **Your CSMs hear buying intent every day; CSQLs are how you act on it.** SWOTBee builds CSQL and expansion programs for mid-market companies across Energy, Manufacturing, and SaaS.
 

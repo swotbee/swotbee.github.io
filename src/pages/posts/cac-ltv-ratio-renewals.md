@@ -39,7 +39,7 @@ faqs:
     a: "Raise LTV through retention and expansion, reduce CAC through more efficient acquisition, and shorten the payback period with faster onboarding."
 ---
 
-> This article is part of our [guide to SaaS renewal metrics](/posts/renewal-metrics-explained).
+> This article is part of our [guide to SaaS renewal metrics](/posts/renewal-metrics-explained/).
 
 **The LTV to CAC ratio measures the relationship between what a customer is worth (lifetime value) and what it cost to acquire them (customer acquisition cost). A good LTV to CAC ratio is around 3:1.** The hidden link: a high customer acquisition cost means you must keep customers renewing for longer to recover that cost and turn a profit. CAC sets the bar; renewals clear it. That is why retention is a unit-economics issue, not just a customer success one.
 
@@ -131,8 +131,8 @@ The CAC payback period is the companion metric to the LTV to CAC ratio: it measu
 
 You improve the ratio from both sides:
 
-- **Increase LTV** by lifting retention and expansion: catch [silent churn](/posts/silent-churn-detection) early, score [renewal risk](/posts/hubspot-renewal-risk-scoring), and grow accounts via [cross-sell and upsell](/posts/cross-sell-vs-upsell). Increasing your LTV is usually the highest-leverage move because it compounds across every renewal.
-- **Reduce CAC** by improving conversion of cheaper channels, leaning on [product-qualified leads](/posts/product-qualified-signals-expansion), and tightening sales and marketing efficiency.
+- **Increase LTV** by lifting retention and expansion: catch [silent churn](/posts/silent-churn-detection/) early, score [renewal risk](/posts/hubspot-renewal-risk-scoring/), and grow accounts via [cross-sell and upsell](/posts/cross-sell-vs-upsell/). Increasing your LTV is usually the highest-leverage move because it compounds across every renewal.
+- **Reduce CAC** by improving conversion of cheaper channels, leaning on [product-qualified leads](/posts/product-qualified-signals-expansion/), and tightening sales and marketing efficiency.
 - **Shorten payback** by improving onboarding so customers reach value (and the first renewal) faster.
 
 A healthy ratio is rarely won by cutting CAC alone; the durable gains come from higher LTV through retention.
@@ -160,7 +160,7 @@ Raise LTV through retention and expansion, reduce CAC through more efficient acq
 
 ---
 
-LTV:CAC is the unit-economics metric in our [SaaS renewal metrics guide](/posts/renewal-metrics-explained); renewals are what make it work.
+LTV:CAC is the unit-economics metric in our [SaaS renewal metrics guide](/posts/renewal-metrics-explained/); renewals are what make it work.
 
 **Acquisition gets the headlines; renewals pay the bills.** SWOTBee builds retention, renewal forecasting, and unit-economics reporting for mid-market companies across Energy, Manufacturing, and SaaS.
 

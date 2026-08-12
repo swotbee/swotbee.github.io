@@ -54,7 +54,7 @@ faqs:
 
 If you are reading this, you probably live the symptoms already. The sales team closes a deal in HubSpot, then someone re-keys the customer and order into the ERP: manual data entry that wastes hours and invites human error. Finance owns invoices and payment status, but the account manager cannot see any of it without asking. Contract end dates sit in the ERP while the renewal conversation is supposed to happen in the CRM, so renewals surface late or not at all. Two data silos, one revenue process.
 
-Teams that integrate HubSpot CRM with ERP data close this gap for good. The fix is not "more exports." It is a deliberate integration with one system of record per data domain, and a clear decision about which method carries the sync. This is the pillar guide for our ERP and billing series; it links into the deep dives on [Chargebee](/posts/chargebee-hubspot-integration), [billing platforms compared](/posts/hubspot-billing-integrations-compared), [Sage Intacct](/posts/hubspot-sage-intacct-integration), and the full NetSuite cluster.
+Teams that integrate HubSpot CRM with ERP data close this gap for good. The fix is not "more exports." It is a deliberate integration with one system of record per data domain, and a clear decision about which method carries the sync. This is the pillar guide for our ERP and billing series; it links into the deep dives on [Chargebee](/posts/chargebee-hubspot-integration/), [billing platforms compared](/posts/hubspot-billing-integrations-compared/), [Sage Intacct](/posts/hubspot-sage-intacct-integration/), and the full NetSuite cluster.
 
 ---
 
@@ -64,14 +64,14 @@ HubSpot and ERP systems solve different halves of the revenue problem. HubSpot i
 
 Connecting the two systems pays off in four concrete use cases:
 
-- **One quote-to-cash flow.** A closed-won HubSpot deal becomes an ERP order and invoice without re-entry, which eliminates manual double entry and streamlines order processing across departments. Our [quote-to-cash guide](/posts/quote-to-cash) covers this end to end.
+- **One quote-to-cash flow.** A closed-won HubSpot deal becomes an ERP order and invoice without re-entry, which eliminates manual double entry and streamlines order processing across departments. Our [quote-to-cash guide](/posts/quote-to-cash/) covers this end to end.
 - **One revenue truth.** Pipeline reporting in HubSpot reconciles with billed revenue in the ERP, so forecasts and board decks stop disagreeing, and leadership gets deeper insights into sales performance alongside billed revenue.
 - **Front-office visibility into back-office data.** Reps and CSMs get real-time visibility into invoice status, payment history, and open balances on the HubSpot company record instead of emailing finance; faster response times on overdue invoices are a direct cash flow win. For product businesses, visibility into inventory levels means the sales team quotes what the supply chain can actually deliver.
 - **Renewal-ready data.** Contract start dates, end dates, and billed amounts flow into HubSpot, where date-driven workflows can act on them.
 
 The common thread across these integration benefits: customer data and financial data stop living in separate business processes, and seamless data transfer between sales and operations happens automatically instead of by export. With HubSpot connected to the ERP, the two systems share data continuously, reps get a single view of the customer built from both connected systems, and records stay accurate and consistent across both platforms. Done well, this is how integrated teams improve operational efficiency across sales and finance.
 
-The broader concepts (system of record, sync direction, batch vs real time) apply to any CRM and ERP pair; we cover them in our [CRM and ERP integration guide](/posts/crm-erp-integration). This article is specifically about doing it with HubSpot.
+The broader concepts (system of record, sync direction, batch vs real time) apply to any CRM and ERP pair; we cover them in our [CRM and ERP integration guide](/posts/crm-erp-integration/). This article is specifically about doing it with HubSpot.
 
 ---
 
@@ -125,11 +125,11 @@ This section walks through ERP integration with HubSpot for each major system, s
 
 ### NetSuite
 
-Can you integrate HubSpot with NetSuite? Yes, and it is the most common pairing we see. The NetSuite ERP has the deepest connector ecosystem: HubSpot's own data sync, Celigo's integration app, Boomi and Workato recipes, and custom SuiteScript builds. We keep this section short because the deep content already exists: start with the [complete HubSpot NetSuite integration guide](/posts/hubspot-netsuite-integration), compare tools in the [NetSuite connector comparison](/posts/hubspot-netsuite-connector-comparison), and if renewals are your driver, see our [HubSpot NetSuite renewals integration](/integrations/hubspot-netsuite-renewals) page for how contract data in NetSuite becomes renewal deals in HubSpot.
+Can you integrate HubSpot with NetSuite? Yes, and it is the most common pairing we see. The NetSuite ERP has the deepest connector ecosystem: HubSpot's own data sync, Celigo's integration app, Boomi and Workato recipes, and custom SuiteScript builds. We keep this section short because the deep content already exists: start with the [complete HubSpot NetSuite integration guide](/posts/hubspot-netsuite-integration/), compare tools in the [NetSuite connector comparison](/posts/hubspot-netsuite-connector-comparison/), and if renewals are your driver, see our [HubSpot NetSuite renewals integration](/integrations/hubspot-netsuite-renewals) page for how contract data in NetSuite becomes renewal deals in HubSpot.
 
 ### Sage Intacct
 
-Sage Intacct has no native integration with HubSpot as of mid-2026, so the realistic paths are iPaaS (Workato, Celigo, Tray) or a specialist connector partner; check current listings before you scope. The pattern that works: customers, invoices, and payment status flow from Intacct into HubSpot; closed-won deals flow into Intacct as orders or draft invoices. We cover setup, field mapping, and the QuickBooks and Xero path for smaller teams in the dedicated [HubSpot Sage Intacct integration guide](/posts/hubspot-sage-intacct-integration).
+Sage Intacct has no native integration with HubSpot as of mid-2026, so the realistic paths are iPaaS (Workato, Celigo, Tray) or a specialist connector partner; check current listings before you scope. The pattern that works: customers, invoices, and payment status flow from Intacct into HubSpot; closed-won deals flow into Intacct as orders or draft invoices. We cover setup, field mapping, and the QuickBooks and Xero path for smaller teams in the dedicated [HubSpot Sage Intacct integration guide](/posts/hubspot-sage-intacct-integration/).
 
 ### Microsoft Dynamics 365 and Business Central
 
@@ -145,9 +145,9 @@ Can HubSpot integrate with SAP? Yes, but never through a first-party connector. 
 
 ### QuickBooks: the entry ERP
 
-Plenty of 50 to 200 person companies run QuickBooks Online as their de facto ERP. HubSpot has a native QuickBooks Online integration (invoice visibility on deals, invoice creation from HubSpot, as of mid-2026; check the listing for your region and plan). It is the simplest starting point, and its limits (single entity, light inventory, basic recurring billing) are usually what push companies to evaluate a new ERP such as NetSuite or Intacct later. If you are on QuickBooks with recurring contracts, the renewal flow in the [Sage Intacct guide](/posts/hubspot-sage-intacct-integration) covers the QuickBooks and Xero path too.
+Plenty of 50 to 200 person companies run QuickBooks Online as their de facto ERP. HubSpot has a native QuickBooks Online integration (invoice visibility on deals, invoice creation from HubSpot, as of mid-2026; check the listing for your region and plan). It is the simplest starting point, and its limits (single entity, light inventory, basic recurring billing) are usually what push companies to evaluate a new ERP such as NetSuite or Intacct later. If you are on QuickBooks with recurring contracts, the renewal flow in the [Sage Intacct guide](/posts/hubspot-sage-intacct-integration/) covers the QuickBooks and Xero path too.
 
-If your "ERP" is actually a subscription billing platform (Stripe, Chargebee, Maxio, Zuora, Recurly), that is its own category with its own tradeoffs; see the [billing integrations comparison](/posts/hubspot-billing-integrations-compared).
+If your "ERP" is actually a subscription billing platform (Stripe, Chargebee, Maxio, Zuora, Recurly), that is its own category with its own tradeoffs; see the [billing integrations comparison](/posts/hubspot-billing-integrations-compared/).
 
 ---
 
@@ -160,7 +160,7 @@ Think about where the data lives. The contract start date, end date, term, and b
 A renewal-ready integration adds three things:
 
 1. **Contract dates sync into HubSpot.** Contract end date (or next renewal date) lands on the HubSpot deal or company as a date property, kept current when finance amends the contract.
-2. **Something builds the renewal deal.** A date property alone does nothing. You need automation that creates a renewal deal in a renewal pipeline, with the correct line items and any uplift applied, at T-120 or T-90 (deal-based workflow automation requires HubSpot Sales Hub Professional or Operations Hub Professional). Our guide to [automated renewal deal creation](/posts/hubspot-renewal-deal-workflow-automation) covers the HubSpot side; note that native workflows cannot copy line items, which is exactly where most teams get stuck.
+2. **Something builds the renewal deal.** A date property alone does nothing. You need automation that creates a renewal deal in a renewal pipeline, with the correct line items and any uplift applied, at T-120 or T-90 (deal-based workflow automation requires HubSpot Sales Hub Professional or Operations Hub Professional). Our guide to [automated renewal deal creation](/posts/hubspot-renewal-deal-workflow-automation/) covers the HubSpot side; note that native workflows cannot copy line items, which is exactly where most teams get stuck.
 3. **The renewal outcome flows back.** When the renewal closes won, the ERP gets the new order or subscription amendment, and the cycle repeats.
 
 If contract dates currently live only in your ERP and renewals keep surprising you, this is the highest-ROI part of the whole integration. As a HubSpot partner, this is also the core of what we build at SWOTBee; see [renewal operations](/renewal-operations) for the full picture.
@@ -204,13 +204,13 @@ No. HubSpot is a CRM with commerce features (quotes, invoices, payment links), b
 Yes, though not through a first-party connector as of mid-2026. Connecting HubSpot with SAP runs through iPaaS platforms, SAP-focused middleware, or custom API integration, and SAP projects usually land at the top of the cost ranges above. Validate connector claims against your specific SAP product and version.
 
 **Can a CRM be integrated with an ERP?**
-Yes; connecting CRM and ERP is one of the most common integration patterns in B2B and B2C companies alike. Enterprise resource planning connects with customer relationship management systems through native connectors, middleware, or APIs that keep customer, order, and invoice data synchronized and reduce manual data entry on both sides. Our [CRM ERP integration guide](/posts/crm-erp-integration) covers the pattern independent of vendor.
+Yes; connecting CRM and ERP is one of the most common integration patterns in B2B and B2C companies alike. Enterprise resource planning connects with customer relationship management systems through native connectors, middleware, or APIs that keep customer, order, and invoice data synchronized and reduce manual data entry on both sides. Our [CRM ERP integration guide](/posts/crm-erp-integration/) covers the pattern independent of vendor.
 
 **Does HubSpot integrate with ERP systems natively?**
 HubSpot offers first-party data sync integrations for some systems (NetSuite, QuickBooks Online, Dynamics 365 Sales, among others, as of mid-2026) and relies on marketplace or iPaaS connectors for the rest. Coverage and sync scope change, so always check the current App Marketplace listing for your ERP.
 
 **Which ERP integrates best with HubSpot?**
-For most mid-market teams the best ERP fit is NetSuite, which has the most mature ecosystem: a first-party sync, multiple established iPaaS connectors, and plenty of implementation partners. See our [NetSuite connector comparison](/posts/hubspot-netsuite-connector-comparison) for the tool-by-tool breakdown.
+For most mid-market teams the best ERP fit is NetSuite, which has the most mature ecosystem: a first-party sync, multiple established iPaaS connectors, and plenty of implementation partners. See our [NetSuite connector comparison](/posts/hubspot-netsuite-connector-comparison/) for the tool-by-tool breakdown.
 
 **Should the ERP or HubSpot be the system of record?**
 Both, split by domain. The ERP should own customers-as-billing-entities, products, invoices, and payments. HubSpot should own contacts and deals plus marketing activity. Problems start when one system tries to own everything.

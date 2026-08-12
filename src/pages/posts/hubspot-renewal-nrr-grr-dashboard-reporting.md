@@ -51,9 +51,9 @@ This isn't a gap in your HubSpot setup, it's a gap in HubSpot itself. The platfo
 
 The good news: you can build these dashboards with custom properties, calculated fields, and HubSpot's custom report builder. This article shows you how.
 
-These are the revenue metrics every RevOps team reports on: monthly recurring revenue (MRR), annual recurring revenue (ARR), and the retention metrics built on top of them. HubSpot tracks deal revenue, but calculating NRR, GRR, and renewal rate from it takes deliberate setup. We will cover the revenue reporting you can do inside HubSpot, and where you still need Google Sheets to finish the math. For the metric definitions themselves, see our [guide to SaaS renewal metrics](/posts/renewal-metrics-explained) and the deep dive on [gross vs net revenue retention](/posts/gross-vs-net-revenue-retention).
+These are the revenue metrics every RevOps team reports on: monthly recurring revenue (MRR), annual recurring revenue (ARR), and the retention metrics built on top of them. HubSpot tracks deal revenue, but calculating NRR, GRR, and renewal rate from it takes deliberate setup. We will cover the revenue reporting you can do inside HubSpot, and where you still need Google Sheets to finish the math. For the metric definitions themselves, see our [guide to SaaS renewal metrics](/posts/renewal-metrics-explained/) and the deep dive on [gross vs net revenue retention](/posts/gross-vs-net-revenue-retention/).
 
-> This article is part of our [Complete Guide to Building a Renewal Pipeline in HubSpot](/posts/hubspot-renewal-pipeline-complete-guide).
+> This article is part of our [Complete Guide to Building a Renewal Pipeline in HubSpot](/posts/hubspot-renewal-pipeline-complete-guide/).
 
 
 ## Reporting Depends On Renewal Deal Hygiene
@@ -113,7 +113,7 @@ Before building anything, let's align on definitions:
 
 ## Properties You Need First
 
-These dashboards depend on [clean property data](/posts/hubspot-renewal-pipeline-properties). Make sure you have:
+These dashboards depend on [clean property data](/posts/hubspot-renewal-pipeline-properties/). Make sure you have:
 
 | Property | Type | Used For |
 |----------|------|---------|
@@ -239,7 +239,7 @@ This dashboard answers: "What revenue can we expect next quarter?"
 **Rows:** Renewal Date (monthly)
 **Columns:** Weighted deal amount (amount × stage probability)
 
-**Critical:** Make sure your stage probabilities reflect renewal reality (85, 95%), not sales reality (20, 40%). See [why your renewal forecast is wrong](/posts/hubspot-renewal-forecasting-accuracy).
+**Critical:** Make sure your stage probabilities reflect renewal reality (85, 95%), not sales reality (20, 40%). See [why your renewal forecast is wrong](/posts/hubspot-renewal-forecasting-accuracy/).
 
 ### Report 10: Pipeline Velocity
 
@@ -247,7 +247,7 @@ This dashboard answers: "What revenue can we expect next quarter?"
 
 This tells you how fast revenue moves through your renewal pipeline. Track monthly and watch for slowdowns.
 
-Segment your dashboard by [revenue type: renewal vs. expansion](/posts/hubspot-renewal-expansion-pipeline-structure) to keep the numbers clean.
+Segment your dashboard by [revenue type: renewal vs. expansion](/posts/hubspot-renewal-expansion-pipeline-structure/) to keep the numbers clean.
 
 ---
 
@@ -273,11 +273,11 @@ Start with where the fields live. HubSpot's recurring revenue properties sit on 
 
 Dashboards consume these properties the same way they consume any deal field: sum ARR or MRR in the custom report builder, break it down by Deal Type or pipeline, and trend it by close date. Teams that cannot use line items can mirror the same idea with custom currency properties (a manual "ARR" field populated by workflow), which keeps the dashboards below working at the cost of automatic calculation. A few notes on making the numbers meaningful:
 
-- **Track recurring revenue by tier and pricing model.** Segment MRR by plan tier so HubSpot revenue reporting shows where growth comes from. If you run usage-based pricing, model how revenue changes as usage grows; see [forecasting usage-based revenue](/posts/usage-based-revenue-forecasting).
+- **Track recurring revenue by tier and pricing model.** Segment MRR by plan tier so HubSpot revenue reporting shows where growth comes from. If you run usage-based pricing, model how revenue changes as usage grows; see [forecasting usage-based revenue](/posts/usage-based-revenue-forecasting/).
 - **Separate new customers from existing.** Landing new customers grows MRR, but revenue retention in HubSpot is about keeping and growing existing accounts. Report both so the sales team and leadership see acquisition and retention side by side.
 - **Watch year-over-year.** Compare NRR and renewal rate year-over-year to see whether the business is getting stickier, a key driver of unit economics for both SMB and enterprise customers.
 
-These inputs feed every dashboard below, and they connect retention to customer acquisition cost in your broader [unit economics](/posts/cac-ltv-ratio-renewals).
+These inputs feed every dashboard below, and they connect retention to customer acquisition cost in your broader [unit economics](/posts/cac-ltv-ratio-renewals/).
 
 ---
 

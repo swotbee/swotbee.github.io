@@ -39,11 +39,11 @@ faqs:
     a: "Yes. Workato can update HubSpot records and properties that in turn enroll contacts or deals in HubSpot workflows, linking Workato orchestration to native HubSpot automation."
 ---
 
-> This article is part of our [complete guide to HubSpot and NetSuite integration](/posts/hubspot-netsuite-integration).
+> This article is part of our [complete guide to HubSpot and NetSuite integration](/posts/hubspot-netsuite-integration/).
 
 **A Workato HubSpot integration uses Workato, an enterprise automation platform, to connect HubSpot with NetSuite, Slack, and the rest of your stack through recipes that trigger actions across multiple applications at once.** It is the right choice when your integration spans more than two systems or needs human approvals in the loop, and it trades the API efficiency of a NetSuite-native tool for cross-platform orchestration. This guide covers how Workato works, when it beats a native connector, the recipes that matter for RevOps, and how to keep task costs under control.
 
-To see how Workato compares with the native connector, Celigo, and a custom build, read our [HubSpot NetSuite connector comparison](/posts/hubspot-netsuite-connector-comparison).
+To see how Workato compares with the native connector, Celigo, and a custom build, read our [HubSpot NetSuite connector comparison](/posts/hubspot-netsuite-connector-comparison/).
 
 ---
 

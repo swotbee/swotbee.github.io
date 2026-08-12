@@ -38,7 +38,7 @@ faqs:
     a: "Activation rate, signup-to-paid conversion, product-qualified lead volume, and net expansion are the core PLG metrics to track in HubSpot."
 ---
 
-> This article is part of our [honest guide to whether HubSpot scales with business growth](/posts/does-hubspot-crm-scale).
+> This article is part of our [honest guide to whether HubSpot scales with business growth](/posts/does-hubspot-crm-scale/).
 
 **Product-led growth (PLG) is a go-to-market strategy where the product itself drives acquisition, conversion, and expansion, usually through a free trial or freemium model, and HubSpot supports it by capturing product usage data, scoring product-qualified leads, and automating the path from signup to paying customer.** HubSpot is itself a hybrid PLG company: freemium go-to-market, with a lot of revenue still coming through leads that sales interacts with. This guide shows how to run a PLG motion on HubSpot and how it differs from a sales-led approach.
 
@@ -83,13 +83,13 @@ The benefits of a product-led growth strategy are lower customer acquisition cos
 
 ## Where Loop Marketing Fits
 
-HubSpot's newer Loop Marketing framework (Express, Tailor, Amplify, Evolve) complements PLG rather than replacing it. Loop Marketing is the execution layer for the AI era, built around live iteration (predict, publish, monitor, adapt) because a growing share of search now ends without a click. For a PLG product, that means structuring content for answer engines and LLM discoverability so self-service buyers find you, then letting the product convert them. We map Loop Marketing alongside the funnel, flywheel, and Four Fits in our [HubSpot growth frameworks guide](/posts/hubspot-growth-strategy).
+HubSpot's newer Loop Marketing framework (Express, Tailor, Amplify, Evolve) complements PLG rather than replacing it. Loop Marketing is the execution layer for the AI era, built around live iteration (predict, publish, monitor, adapt) because a growing share of search now ends without a click. For a PLG product, that means structuring content for answer engines and LLM discoverability so self-service buyers find you, then letting the product convert them. We map Loop Marketing alongside the funnel, flywheel, and Four Fits in our [HubSpot growth frameworks guide](/posts/hubspot-growth-strategy/).
 
 ---
 
 ## Is HubSpot the Right CRM for PLG?
 
-For most B2B SaaS companies running a hybrid motion, yes. HubSpot gives you the CRM, automation, and reporting to operationalize PLG without stitching together separate tools, and it scales with you (see our guide on whether [HubSpot scales with business growth](/posts/does-hubspot-crm-scale)). The main watch-outs are the same as any HubSpot deployment at scale: model your product data deliberately in custom objects, and keep contact-tier costs in check as signups grow.
+For most B2B SaaS companies running a hybrid motion, yes. HubSpot gives you the CRM, automation, and reporting to operationalize PLG without stitching together separate tools, and it scales with you (see our guide on whether [HubSpot scales with business growth](/posts/does-hubspot-crm-scale/)). The main watch-outs are the same as any HubSpot deployment at scale: model your product data deliberately in custom objects, and keep contact-tier costs in check as signups grow.
 
 ---
 

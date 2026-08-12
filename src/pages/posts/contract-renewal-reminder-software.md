@@ -56,7 +56,7 @@ faqs:
     a: "Because a reminder only announces the work. If nobody builds the renewal deal with correct line items and uplift after the alert, the renewal is still invisible to forecasting and still gets handled late. Pair reminders with automated renewal deal creation so the deal exists before the first alert fires."
 ---
 
-> This article is part of our [Complete B2B Guide to Contract Renewal Management](/posts/contract-renewal-management-complete-guide).
+> This article is part of our [Complete B2B Guide to Contract Renewal Management](/posts/contract-renewal-management-complete-guide/).
 
 **Contract renewal reminder software is any tool that watches contract end dates and alerts the right people to an upcoming renewal early enough to act: 90, 60, and 30 days out for the internal team, and on a separate, deliberately-timed track for the customer.** Your real options fall into three categories (shared calendars, standalone reminder apps, and CRM workflows), and for most B2B teams the CRM wins because the reminder lands where the renewal work actually happens. This guide covers how to design the cadence, how the tool categories compare, and gives you three ready-to-use renewal reminder email templates.
 
@@ -86,7 +86,7 @@ Adjust for contract reality: procurement-heavy or enterprise accounts need a 120
 
 Customer notices are not alerts; they are commercial communication. They need their own timing (typically 90 and 45 to 60 days out), a human sender (the account owner, not a noreply address), and coordination with any uplift you plan to apply. Never let an automated "your contract is expiring" email reach a customer who already renewed; that single mistake erodes more trust than the reminder ever earned.
 
-Getting a contact into that customer-facing track without someone manually adding them is its own small automation problem, separate from the internal alert workflow. If you are on HubSpot, this usually means a workflow action that enrolls the contact into a Sequence the moment the renewal deal crosses a date threshold, with pacing control so a cluster of renewals near a fiscal year end does not enroll a few hundred contacts in the same hour. Our [FlowNer vs Enrollem comparison](/posts/flowner-vs-enrollem-comparison) walks through the two leading apps for this specific job.
+Getting a contact into that customer-facing track without someone manually adding them is its own small automation problem, separate from the internal alert workflow. If you are on HubSpot, this usually means a workflow action that enrolls the contact into a Sequence the moment the renewal deal crosses a date threshold, with pacing control so a cluster of renewals near a fiscal year end does not enroll a few hundred contacts in the same hour. Our [FlowNer vs Enrollem comparison](/posts/flowner-vs-enrollem-comparison/) walks through the two leading apps for this specific job.
 
 Two cadence rules that save teams repeatedly:
 
@@ -108,7 +108,7 @@ Contract reminder software (sometimes sold as contract tracking software or cont
 
 The pattern to notice: calendars fail on ownership, standalone apps fail on integration, a CLM management platform solves document-side contract management but stops short of the revenue motion, even as its software capabilities for document analysis keep improving, and CRM workflows only fail if the underlying contract data is bad. If you already run HubSpot or a comparable CRM, buying a standalone reminder app usually means paying to create a second, disconnected source of truth for your existing contract data. And if you need a broader contract management system (drafting, approvals, clause libraries), a CLM earns its keep; just do not expect it to close your renewals.
 
-For the full step-by-step HubSpot build (properties, the workflow trigger, task actions, and the mistakes to avoid), see our dedicated guide to [setting up renewal reminders and alerts in HubSpot](/posts/hubspot-renewal-reminders). This article stays at the category and template level so you can pick the right approach first.
+For the full step-by-step HubSpot build (properties, the workflow trigger, task actions, and the mistakes to avoid), see our dedicated guide to [setting up renewal reminders and alerts in HubSpot](/posts/hubspot-renewal-reminders/). This article stays at the category and template level so you can pick the right approach first.
 
 ---
 
@@ -212,7 +212,7 @@ Here is the uncomfortable truth about the entire reminder software category: a r
 
 After the alert fires, someone still has to create the renewal opportunity, rebuild the line items from the original deal, apply the uplift math, set the close date, and put the deal where forecasting can see it. In most teams that is 15 to 30 minutes of error-prone manual contract copying per renewal, and it is precisely the step that gets skipped when the quarter gets busy. The reminder was on time; the deal never got built; the renewal still slipped.
 
-That is why mature renewal operations pair reminders with automated renewal deal creation: when a deal closes won, the system schedules the renewal deal itself, with line items, uplift, and owner already set, and the reminder cadence attaches to that deal automatically. Reminders become the safety net instead of the whole system. The broader process this fits into is covered in our [contract renewal process checklist](/posts/contract-renewal-process-checklist), which maps every reminder checkpoint to the concrete task it should trigger as part of well-documented contract renewal processes.
+That is why mature renewal operations pair reminders with automated renewal deal creation: when a deal closes won, the system schedules the renewal deal itself, with line items, uplift, and owner already set, and the reminder cadence attaches to that deal automatically. Reminders become the safety net instead of the whole system. The broader process this fits into is covered in our [contract renewal process checklist](/posts/contract-renewal-process-checklist/), which maps every reminder checkpoint to the concrete task it should trigger as part of well-documented contract renewal processes.
 
 Evaluate any contract renewal software against this question: after it reminds me, how much manual work remains before the renewal is a real, forecastable deal? The best answer is "none."
 
@@ -227,7 +227,7 @@ Successful implementation is mostly data hygiene: collect every contract's end d
 3. **Add the guardrails.** Unenroll on Closed Won, track which checkpoint fired in a property to prevent duplicates, and flag renewal deals missing a date.
 4. **Keep customer emails in a separate workflow** so tone and timing stay under commercial control.
 
-The complete walkthrough with property names, trigger settings, and escalation routing lives in our [step-by-step HubSpot renewal reminder guide](/posts/hubspot-renewal-reminders).
+The complete walkthrough with property names, trigger settings, and escalation routing lives in our [step-by-step HubSpot renewal reminder guide](/posts/hubspot-renewal-reminders/).
 
 ---
 
@@ -240,7 +240,7 @@ Any tool that monitors contract expiration dates and automatically alerts owners
 Fewer missed renewals and unwanted auto-renewals, clear ownership with escalation on critical contract deadlines when nobody acts, an audit trail for compliance, and renewals that show up in forecasting instead of surfacing as surprises. Manual tracking fails silently; software fails loudly, which is exactly the property you are paying for.
 
 **What types of contracts can renewal reminder software track?**
-Anything with a contract expiration date or notice period: customer revenue contracts, vendor and supplier agreements, SaaS contract renewal cycles, leases, licensing deals, and NDAs with renewal clauses. Most teams start with revenue contracts because a missed customer renewal, including a saas renewal that auto-bills at the old price, costs the most; if your volume is mainly vendor-side, our comparison of [renewal tracking spreadsheets and software](/posts/renewal-tracking-software-vs-spreadsheet) covers the buying-side variant.
+Anything with a contract expiration date or notice period: customer revenue contracts, vendor and supplier agreements, SaaS contract renewal cycles, leases, licensing deals, and NDAs with renewal clauses. Most teams start with revenue contracts because a missed customer renewal, including a saas renewal that auto-bills at the old price, costs the most; if your volume is mainly vendor-side, our comparison of [renewal tracking spreadsheets and software](/posts/renewal-tracking-software-vs-spreadsheet/) covers the buying-side variant.
 
 **Are there free or low-cost contract reminder options for small businesses?**
 Yes. A shared calendar is free and works up to roughly 15 contracts, and a well-built spreadsheet with a monthly review stretches a little further. Past that, among low-cost contract reminder software solutions, the cheapest robust contract reminder option is usually the CRM you already pay for, since date-based workflows come included in mid-tier plans rather than sold separately.

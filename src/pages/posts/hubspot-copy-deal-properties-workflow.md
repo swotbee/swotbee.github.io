@@ -45,7 +45,7 @@ This [trips up nearly every HubSpot user](https://community.hubspot.com/t5/CRM/C
 
 Here are four workarounds, from simplest to most powerful.
 
-> This article is part of our [Complete Guide to Cloning Deals in HubSpot](/posts/hubspot-clone-deal-complete-guide).
+> This article is part of our [Complete Guide to Cloning Deals in HubSpot](/posts/hubspot-clone-deal-complete-guide/).
 
 
 ## Renewal Field Checklist Before You Build The Workflow
@@ -93,7 +93,7 @@ Use the associated Company record as an intermediary to shuttle property values 
 
 **Cons:**
 - **Fragile.** If the Company has multiple deals closing simultaneously, the "temp" properties get overwritten by the wrong deal.
-- **Workflow loop risk.** Workflow B triggers on deal creation, which happens inside Workflow A. You need careful re-enrollment settings to prevent loops. See our [infinite loop fix guide](/posts/hubspot-renewal-workflow-infinite-loop-fix).
+- **Workflow loop risk.** Workflow B triggers on deal creation, which happens inside Workflow A. You need careful re-enrollment settings to prevent loops. See our [infinite loop fix guide](/posts/hubspot-renewal-workflow-infinite-loop-fix/).
 - **Clutters the Company record** with "temp" properties that have no business meaning.
 - **Timing-sensitive.** Workflow B must fire *after* Workflow A updates the Company properties. HubSpot doesn't guarantee execution order.
 
@@ -236,10 +236,10 @@ Not every property should be carried forward. Here's the checklist:
 **Always reset:**
 - [ ] Deal Stage (first stage of target pipeline)
 - [ ] Deal Owner (route to correct person)
-- [ ] Renewal Created Boolean (set to "No", for [loop prevention](/posts/hubspot-renewal-workflow-infinite-loop-fix))
+- [ ] Renewal Created Boolean (set to "No", for [loop prevention](/posts/hubspot-renewal-workflow-infinite-loop-fix/))
 - [ ] Health Score (start fresh)
 
-For the full property setup, see [The 15 Custom Properties Every Renewal Pipeline Needs](/posts/hubspot-renewal-pipeline-properties).
+For the full property setup, see [The 15 Custom Properties Every Renewal Pipeline Needs](/posts/hubspot-renewal-pipeline-properties/).
 
 ---
 
@@ -254,7 +254,7 @@ Before enabling your workflow on live data:
 5. **Check timing:** If using the Company pass-through, are both workflows completing in the right order?
 6. **Test edge cases:** What happens with a $0 deal? A deal with no associated company? A deal already in the renewal pipeline?
 
-These workflows also power [the 90-60-30 engagement cadence](/posts/hubspot-renewal-deal-workflow-automation). If properties aren't copying correctly, the entire downstream automation breaks.
+These workflows also power [the 90-60-30 engagement cadence](/posts/hubspot-renewal-deal-workflow-automation/). If properties aren't copying correctly, the entire downstream automation breaks.
 
 **Evaluating apps for renewals specifically?** Cloning is only step one of a renewal system. See our [honest comparison of HubSpot renewal apps](/compare/hubspot-renewal-apps), including the capabilities a copy button cannot reach.
 

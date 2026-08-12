@@ -191,6 +191,6 @@ You do not need to be a $100M ARR SaaS company to build an effective affiliate p
 
 The minimum viable affiliate program requires exactly four decisions: a commission rate, an attribution model, a cookie duration, and a tracking mechanism. That is it. Everything else -- tiers, bonuses, partner portals, co-marketing programs -- can be added incrementally as you learn what your affiliates respond to. Do not over-engineer at launch. Ship the basics, measure what works, and iterate.
 
-For a deeper dive into the technology that powers these programs, see our guide to [multi-tier affiliate software platforms](/posts/multi-tier-affiliate-software-platforms-compared). And if you want to understand the mechanics behind escalating commission tiers, read [how multi-tier commission programs work](/posts/multi-tier-commission-programs-explained).
+For a deeper dive into the technology that powers these programs, see our guide to [multi-tier affiliate software platforms](/posts/multi-tier-affiliate-software-platforms-compared/). And if you want to understand the mechanics behind escalating commission tiers, read [how multi-tier commission programs work](/posts/multi-tier-commission-programs-explained/).
 
 **Want help designing an affiliate commission structure for your product?** We build partner programs and commission tracking systems for mid-market SaaS companies -- from initial program design to CRM-integrated tracking and automated payouts. [Let's talk about your program](/contactus/).

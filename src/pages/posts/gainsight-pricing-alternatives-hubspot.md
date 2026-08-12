@@ -47,7 +47,7 @@ faqs:
     a: "They are standalone systems of record with their own data pipelines, scoring engines, and analytics layers, sold through enterprise sales motions with implementation services. A platform like Gainsight adds that entire second stack on top of the CRM you already run. You are paying for depth and for the second system itself; whether that depth is usable at your scale is the entire buying decision."
 ---
 
-> This article is part of our [guide to running customer success in HubSpot without a separate CS platform](/posts/customer-success-in-hubspot).
+> This article is part of our [guide to running customer success in HubSpot without a separate CS platform](/posts/customer-success-in-hubspot/).
 
 **Gainsight does not publish pricing; every contract is custom-quoted.** As of mid-2026, buyers on procurement platforms and review sites report annual costs ranging from the mid five figures for smaller deployments to six figures and beyond at enterprise scale, typically with a separate implementation engagement in year one. Gainsight is the deepest customer success platform on the market, the product that largely defined customer success management as a category, and it is built, and priced, for large CS organizations. This guide covers what drives a Gainsight quote, why mid-market HubSpot teams often find it a mismatch, how the HubSpot integration actually behaves, and the realistic alternatives at each company size.
 
@@ -117,7 +117,7 @@ Friction points HubSpot teams should evaluate before buying, consistent with doc
 - **Two systems, one truth problem.** Revenue, deals, and forecasts stay in HubSpot; customer health and plays live in Gainsight. Keeping renewal dates and amounts agreeing across the sync is an ongoing admin task, and field disagreement is a recurring complaint pattern across this category.
 - **The renewal deal still is not built.** Gainsight can flag a renewal 120 days out, score its risk, and open a CTA. The HubSpot renewal deal, with line items, uplift, and close date, is still created by a human unless you automate it in HubSpot itself.
 
-For how the wider field handles the same sync problems, see our [comparison of CS platform HubSpot integrations](/posts/cs-platform-hubspot-integrations-compared).
+For how the wider field handles the same sync problems, see our [comparison of CS platform HubSpot integrations](/posts/cs-platform-hubspot-integrations-compared/).
 
 ---
 
@@ -132,7 +132,7 @@ The right alternative depends on scale, not preference:
 | Mid-market on HubSpot, 2 to 10 CSMs, usage-lite health model | CS in HubSpot: Service Hub Workspace, health scores, workflows | Covers the core CSM jobs on software you already pay for |
 | Any size, where the actual pain is renewals slipping | HubSpot-native renewal automation | Fixes the deal-creation and tracking problem no CS platform addresses |
 
-Two notes on fairness. First, "cheaper platform" reports are also quote-based; check each vendor's current listing for pricing starting points rather than relying on a secondhand figure, and verify everything before you shortlist. Second, if you are comparing ChurnZero specifically, we break down its reported costs and fit in our [ChurnZero pricing analysis](/posts/churnzero-pricing-alternatives), and the broader retention tooling landscape in our [customer retention software guide](/posts/customer-retention-software).
+Two notes on fairness. First, "cheaper platform" reports are also quote-based; check each vendor's current listing for pricing starting points rather than relying on a secondhand figure, and verify everything before you shortlist. Second, if you are comparing ChurnZero specifically, we break down its reported costs and fit in our [ChurnZero pricing analysis](/posts/churnzero-pricing-alternatives/), and the broader retention tooling landscape in our [customer retention software guide](/posts/customer-retention-software/).
 
 ### Gainsight and ChurnZero, Totango, and Other Customer Success Platforms Compared
 

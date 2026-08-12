@@ -43,7 +43,7 @@ Cloning deals saves time. Cloning deals without governance creates a data qualit
 
 This article is the governance framework. It covers when to clone, what to clone, what to reset, and how to keep your pipeline clean as cloning scales.
 
-> This article is part of our [Complete Guide to Cloning Deals in HubSpot](/posts/hubspot-clone-deal-complete-guide).
+> This article is part of our [Complete Guide to Cloning Deals in HubSpot](/posts/hubspot-clone-deal-complete-guide/).
 
 ---
 
@@ -101,7 +101,7 @@ The default cloned deal name is often "[Original Deal Name] (clone)", which is u
 3. **Include the time reference.** Year, quarter, or period. This prevents confusion between this year's renewal and last year's.
 4. **Never leave "(clone)" in the name.** It signals nobody reviewed the deal after cloning.
 
-If you're using [automated deal creation via workflows](/posts/hubspot-renewal-deal-workflow-automation), set the naming convention in the workflow's "Create Record" action using personalization tokens: `{Company Name}: Renewal: {Year}`.
+If you're using [automated deal creation via workflows](/posts/hubspot-renewal-deal-workflow-automation/), set the naming convention in the workflow's "Create Record" action using personalization tokens: `{Company Name}: Renewal: {Year}`.
 
 ---
 
@@ -129,7 +129,7 @@ This is where most teams get it wrong. They clone everything, including properti
 | Close Date / Renewal Date | Old dates corrupt forecasting | Calculated from contract term |
 | Deal Owner | May route to a different person | CSM, AM, or workflow-assigned owner |
 | Renewal Year | Increment by 1 | Previous value + 1 |
-| Renewal Created (Boolean) | Used for [infinite loop prevention](/posts/hubspot-renewal-workflow-infinite-loop-fix) | "No" |
+| Renewal Created (Boolean) | Used for [infinite loop prevention](/posts/hubspot-renewal-workflow-infinite-loop-fix/) | "No" |
 | Health Score | New deal starts with clean health | "Healthy" or blank |
 | Probability | Reflects new deal's stage | Stage default |
 
@@ -142,7 +142,7 @@ This is where most teams get it wrong. They clone everything, including properti
 | Revenue Change Reason | N/A, always blank on new deals | Always reset to blank |
 | Churn Reason | N/A, irrelevant for active deals | Always reset to blank |
 
-For the full property list, see [The 15 Custom Properties Every Renewal Pipeline Needs](/posts/hubspot-renewal-pipeline-properties).
+For the full property list, see [The 15 Custom Properties Every Renewal Pipeline Needs](/posts/hubspot-renewal-pipeline-properties/).
 
 ---
 
@@ -160,7 +160,7 @@ Cloning creates accurate deals, if done right. But it can also create phantom re
 
 **Problem 3: Stage probability mismatch.** The cloned deal might land in a stage with the wrong probability weight, especially if the target pipeline has different probabilities than the source pipeline.
 
-**Fix:** Always set the cloned deal's stage explicitly in the workflow. Don't let it inherit the source deal's stage. See [how to set renewal-specific probabilities](/posts/hubspot-renewal-forecasting-accuracy).
+**Fix:** Always set the cloned deal's stage explicitly in the workflow. Don't let it inherit the source deal's stage. See [how to set renewal-specific probabilities](/posts/hubspot-renewal-forecasting-accuracy/).
 
 According to [Salesforce's State of Sales](https://www.salesforce.com/news/stories/sales-research-2023/), 67% of sales reps didn't expect to meet quota in 2024. Bad forecasting from cloning mistakes makes this worse; reps plan against numbers that don't reflect reality.
 
@@ -181,7 +181,7 @@ Every cloned deal should trace back to its origin. This matters for:
 3. Create a **"Deal Generation"** number property: 1 = original sale, 2 = first renewal, 3 = second renewal
 4. In reports, use "Original Deal ID" to group deals by customer journey
 
-This connects naturally with the [renewal pipeline architecture](/posts/hubspot-renewal-pipeline-complete-guide) where you're tracking deal chains across years.
+This connects naturally with the [renewal pipeline architecture](/posts/hubspot-renewal-pipeline-complete-guide/) where you're tracking deal chains across years.
 
 ---
 
@@ -219,7 +219,7 @@ Three deals named "Acme Corp" in three pipelines with no type or date indicator.
 ### Mistake 5: Cloning without line item verification
 Even apps that copy line items can miss edge cases: deleted products, changed pricing tiers, discontinued SKUs. Always verify.
 
-For the full list of renewal pipeline mistakes, see [12 Mistakes That Are Costing You Revenue](/posts/hubspot-renewal-pipeline-mistakes-costing-revenue).
+For the full list of renewal pipeline mistakes, see [12 Mistakes That Are Costing You Revenue](/posts/hubspot-renewal-pipeline-mistakes-costing-revenue/).
 
 **Evaluating apps for renewals specifically?** Cloning is only step one of a renewal system. See our [honest comparison of HubSpot renewal apps](/compare/hubspot-renewal-apps), including the capabilities a copy button cannot reach.
 

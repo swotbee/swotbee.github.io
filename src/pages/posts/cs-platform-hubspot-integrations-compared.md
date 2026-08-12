@@ -47,7 +47,7 @@ faqs:
     a: "They are different categories, so the Planhat vs HubSpot framing is usually a false choice. HubSpot is the CRM and system of record where marketing and sales already work; Planhat is a post-sale customer success layer that sits on top of a CRM. The real question is whether you need that layer at all, or whether HubSpot's native Customer Success Workspace plus a renewal pipeline covers your team."
 ---
 
-> This article is part of our [guide to running customer success in HubSpot](/posts/customer-success-in-hubspot).
+> This article is part of our [guide to running customer success in HubSpot](/posts/customer-success-in-hubspot/).
 
 **All five major mid-market CS platforms (Vitally, Planhat, Totango, Catalyst, and ClientSuccess) offer HubSpot integrations that sync core CRM objects like companies, contacts, deals, and tickets into the CS platform.** The differences lie in sync direction, object coverage, and how gracefully each handles messy HubSpot data. And one thing is true of every platform on this list: they read renewal signals out of HubSpot, but none of them creates the renewal deal in HubSpot. If your renewal motion lives in your CRM, that gap matters more than any feature comparison.
 
@@ -167,7 +167,7 @@ Capabilities below are summarized from vendor documentation and user reports as 
 
 Notice the one column with no variation. Every platform tracks renewals internally, and none creates the renewal deal in HubSpot. We will come back to that.
 
-Pricing is quote-based across most of this list and varies widely; buyers commonly report totals from the low five figures for lighter platforms to well beyond that for larger deployments. For the two biggest names outside this comparison, see our breakdowns of [ChurnZero pricing and alternatives](/posts/churnzero-pricing-alternatives) and [Gainsight pricing for HubSpot teams](/posts/gainsight-pricing-alternatives-hubspot).
+Pricing is quote-based across most of this list and varies widely; buyers commonly report totals from the low five figures for lighter platforms to well beyond that for larger deployments. For the two biggest names outside this comparison, see our breakdowns of [ChurnZero pricing and alternatives](/posts/churnzero-pricing-alternatives/) and [Gainsight pricing for HubSpot teams](/posts/gainsight-pricing-alternatives-hubspot/).
 
 ---
 
@@ -198,9 +198,9 @@ So even after paying five figures for a CS platform, teams end up doing one of t
 
 For mid-market teams whose sellers, CSMs, and executives already live in HubSpot, there is a simpler architecture: keep the signals and the motion in one system.
 
-1. **Stand up a dedicated renewal pipeline** with stages that reflect a renewal cycle, not a sales cycle. Our [complete guide to building a renewal pipeline in HubSpot](/posts/hubspot-renewal-pipeline-complete-guide) walks through the full build.
+1. **Stand up a dedicated renewal pipeline** with stages that reflect a renewal cycle, not a sales cycle. Our [complete guide to building a renewal pipeline in HubSpot](/posts/hubspot-renewal-pipeline-complete-guide/) walks through the full build.
 2. **Automate renewal deal creation** so every closed contract schedules its own renewal deal, with line items, uplift, and owner set.
-3. **Use HubSpot's native CS tooling for health visibility.** The [Customer Success Workspace](/posts/hubspot-customer-success-workspace) gives CSMs a book of business and health scores inside the CRM, surfaced on a dashboard on a tier many teams already pay for.
+3. **Use HubSpot's native CS tooling for health visibility.** The [Customer Success Workspace](/posts/hubspot-customer-success-workspace/) gives CSMs a book of business and health scores inside the CRM, surfaced on a dashboard on a tier many teams already pay for.
 4. **Report NRR and GRR from the renewal pipeline**, where the deals actually are, on native dashboards; a BI or analytics stack can read the same deal data if you need more.
 
 That is the model we build for clients as a [HubSpot-native renewal operations service](/renewal-operations): no second platform, no sync to babysit, and the renewal deal exists on schedule instead of depending on someone reacting to an alert.
@@ -224,7 +224,7 @@ No. All five track renewals inside their own platform and can surface renewal si
 Deduplicate companies and contacts, standardize lifecycle stages, ensure every customer account has an owner, and clean renewal date properties. Duplicate and inconsistent CRM data is the most commonly reported cause of broken CS platform syncs.
 
 **What do these platforms cost compared to running CS in HubSpot?**
-Most are quote-based. User-reported totals commonly range from the low five figures annually for lighter platforms to substantially more for enterprise deployments, before admin time. Running the motion in HubSpot uses subscription capacity many teams already pay for, which is the core cost argument examined in our [customer success in HubSpot guide](/posts/customer-success-in-hubspot).
+Most are quote-based. User-reported totals commonly range from the low five figures annually for lighter platforms to substantially more for enterprise deployments, before admin time. Running the motion in HubSpot uses subscription capacity many teams already pay for, which is the core cost argument examined in our [customer success in HubSpot guide](/posts/customer-success-in-hubspot/).
 
 **Did Totango and Catalyst really merge?**
 Yes, the two companies merged in 2024 and have been converging their products since. For buyers, the practical impact is roadmap uncertainty on each product's HubSpot connector, so ask directly about integration investment plans during evaluation.

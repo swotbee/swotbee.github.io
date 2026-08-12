@@ -39,7 +39,7 @@ faqs:
     a: "Typically quarterly for QBRs with at least one or two executive-level EBRs per year for strategic accounts."
 ---
 
-> This article is part of our [365-day renewal strategy guide](/posts/renewal-strategy-365).
+> This article is part of our [365-day renewal strategy guide](/posts/renewal-strategy-365/).
 
 **An Executive Business Review (EBR) is a strategic meeting with a customer's decision-makers that proves business outcomes and frames what is next, not a feature tutorial.** Replacing monthly feature-dump check-ins with a focused EBR (or QBR) is one of the highest-leverage moves in customer success: it is where you prove ROI and earn the renewal signature months before the contract ends.
 
@@ -65,7 +65,7 @@ In practice, EBRs and QBRs are run together: regular QBRs keep the working relat
 A well-run EBR does three things a check-in cannot:
 
 - **Proves business value.** It connects your product to the customer's business objectives and quantifies return on investment.
-- **Aligns executives.** It puts your value in front of the economic buyer, supporting [multi-threading](/posts/single-threaded-renewals-multithreading).
+- **Aligns executives.** It puts your value in front of the economic buyer, supporting [multi-threading](/posts/single-threaded-renewals-multithreading/).
 - **De-risks the renewal.** When executives see measurable business impact each quarter, the renewal decision is made long before the renewal date.
 
 ---
@@ -74,10 +74,10 @@ A well-run EBR does three things a check-in cannot:
 
 An executive business review that drives impact includes:
 
-1. **Business outcomes achieved.** Lead with results against the customer's goals, not feature usage. This is where [customer value realization](/posts/customer-value-realization) becomes visible.
+1. **Business outcomes achieved.** Lead with results against the customer's goals, not feature usage. This is where [customer value realization](/posts/customer-value-realization/) becomes visible.
 2. **ROI and metrics.** Measurable proof: time saved, revenue influenced, cost reduced.
 3. **Strategic alignment.** Tie your roadmap to the customer's executive priorities.
-4. **What's next.** A success plan and clear action items for the next 12 months, framing [the renewal around the future](/posts/framing-renewals-roadmap).
+4. **What's next.** A success plan and clear action items for the next 12 months, framing [the renewal around the future](/posts/framing-renewals-roadmap/).
 5. **Decision-maker presence.** The right stakeholders in the room, especially the economic buyer.
 
 ---
@@ -117,7 +117,7 @@ Typically quarterly for QBRs with at least one or two executive-level EBRs per y
 
 ---
 
-The EBR is where the [365-day renewal strategy](/posts/renewal-strategy-365) is proven to the people who sign.
+The EBR is where the [365-day renewal strategy](/posts/renewal-strategy-365/) is proven to the people who sign.
 
 **A check-in informs; an EBR persuades.** SWOTBee builds QBR and EBR programs that tie product value to business outcomes for mid-market companies across Energy, Manufacturing, and SaaS.
 

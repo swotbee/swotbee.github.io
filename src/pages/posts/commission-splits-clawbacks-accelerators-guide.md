@@ -233,7 +233,7 @@ HubSpot's **Custom Report Builder** with formula fields can get you a reasonable
 
 For real-time accelerator tracking that reps can check themselves, you are likely looking at **Operations Hub** custom code actions or a dedicated commission tool like QuotaPath or Everstage. These tools integrate with HubSpot and handle the cumulative math that native properties struggle with.
 
-For more detail on setting up commission tracking in HubSpot, check out our [HubSpot commission setup guide](/posts/hubspot-commission-tracking-setup-guide). And if you are evaluating tools to handle the parts HubSpot cannot, our [commission tools comparison](/posts/hubspot-commission-tracking-tools-compared) breaks down the options.
+For more detail on setting up commission tracking in HubSpot, check out our [HubSpot commission setup guide](/posts/hubspot-commission-tracking-setup-guide/). And if you are evaluating tools to handle the parts HubSpot cannot, our [commission tools comparison](/posts/hubspot-commission-tracking-tools-compared/) breaks down the options.
 
 ## Wrapping Up
 

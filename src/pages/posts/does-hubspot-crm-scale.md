@@ -92,7 +92,7 @@ Knowing these up front is how you scale on HubSpot deliberately instead of being
 
 The headline price is not the cost at scale, and the gap is where growing teams get hurt. A 3-year total cost of ownership for a 10-person team on Marketing Pro plus Sales Pro runs around $110,000 against a naive expectation near $68,000, roughly a 62% overrun, once you add contact tiers, onboarding, and add-ons. A real 5-person team on Professional with 10,000 contacts pays $1,200 to $1,800 per month against the $890 headline.
 
-The drivers are predictable: per-seat pricing, the marketing-contact tier multiplier, mandatory onboarding fees ($1,500 to $7,000 depending on hub and tier), and add-ons like a dedicated IP or advanced reporting. We break the full model down, stage by stage, in our guide to [HubSpot pricing at scale](/posts/hubspot-pricing-at-scale). The naming has changed too: the old bundle is gone, and we cover what replaced it in [HubSpot Growth Suite is now the Customer Platform](/posts/hubspot-growth-suite-customer-platform).
+The drivers are predictable: per-seat pricing, the marketing-contact tier multiplier, mandatory onboarding fees ($1,500 to $7,000 depending on hub and tier), and add-ons like a dedicated IP or advanced reporting. We break the full model down, stage by stage, in our guide to [HubSpot pricing at scale](/posts/hubspot-pricing-at-scale/). The naming has changed too: the old bundle is gone, and we cover what replaced it in [HubSpot Growth Suite is now the Customer Platform](/posts/hubspot-growth-suite-customer-platform/).
 
 ---
 
@@ -133,7 +133,7 @@ Real outcomes from companies that scaled on HubSpot (vendor-reported, directiona
 | IMPACT | 26% more deals closed YoY, 39% faster closed-won |
 | Ving | 96% average yearly revenue increase after switching from Salesforce plus 6 tools |
 
-The pattern is consistent: businesses that pair HubSpot with a real growth strategy and clean operations scale revenue on it. HubSpot offers the advanced tools that help you scale ([sales and marketing alignment](/posts/sales-marketing-alignment-research), automated business processes, and reporting that shortens the sales cycle) so sales and service teams close deals on one connected customer relationship management system as the company grows. To build that strategy, see our guide to [HubSpot growth frameworks](/posts/hubspot-growth-strategy) and, for software companies, [HubSpot for product-led growth](/posts/hubspot-product-led-growth). If growth starts with your website, the [growth-driven design](/posts/growth-driven-design-hubspot) approach applies the same iterate-on-data philosophy.
+The pattern is consistent: businesses that pair HubSpot with a real growth strategy and clean operations scale revenue on it. HubSpot offers the advanced tools that help you scale ([sales and marketing alignment](/posts/sales-marketing-alignment-research/), automated business processes, and reporting that shortens the sales cycle) so sales and service teams close deals on one connected customer relationship management system as the company grows. To build that strategy, see our guide to [HubSpot growth frameworks](/posts/hubspot-growth-strategy/) and, for software companies, [HubSpot for product-led growth](/posts/hubspot-product-led-growth/). If growth starts with your website, the [growth-driven design](/posts/growth-driven-design-hubspot/) approach applies the same iterate-on-data philosophy.
 
 ---
 

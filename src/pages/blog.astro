@@ -33,7 +33,7 @@ const posts = await Promise.all(
   Object.entries(import.meta.glob<{ frontmatter: BlogPost }>("./posts/*.md")).map(
     async ([path, resolver]) => {
       const { frontmatter } = await resolver();
-      return { ...frontmatter, url: path.replace("./posts", "/posts").replace(".md", "") };
+      return { ...frontmatter, url: `${path.replace("./posts", "/posts").replace(".md", "")}/` };
     }
   )
 ).then(posts =>
@@ -60,7 +60,7 @@ const MAX_VISIBLE_TAGS = 3;
     type="breadcrumb"
     data={{ breadcrumbs: [
       { name: "Home", url: "https://swotbee.com" },
-      { name: "Blog", url: "https://swotbee.com/blog" }
+      { name: "Blog", url: "https://swotbee.com/blog/" }
     ]}}
   />
 

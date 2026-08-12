@@ -39,7 +39,7 @@ faqs:
     a: "The customer has seen value and is deciding their next 12 months, so expansion folds naturally into one renewal conversation."
 ---
 
-> This article is part of our [365-day renewal strategy guide](/posts/renewal-strategy-365).
+> This article is part of our [365-day renewal strategy guide](/posts/renewal-strategy-365/).
 
 **The land and expand strategy is a sales strategy where you start with a small initial deal in one team, prove value, then expand the relationship into more departments, seats, and products, often using the renewal as the gateway.** Instead of trying to win a massive enterprise-wide deployment upfront, you land a beachhead, deliver outcomes, and grow. For SaaS companies, land and expand is one of the most reliable engines of revenue growth and customer lifetime value.
 
@@ -62,8 +62,8 @@ It works because expansion revenue from an existing customer is cheaper and high
 A successful land and expand strategy has clear phases:
 
 1. **Land.** Win the initial deal with a focused use case and a team that will see value fast. Keep the entry point simple.
-2. **Onboard and prove value.** Drive the customer to [realized value](/posts/customer-value-realization) quickly; the expansion depends on it.
-3. **Identify expansion opportunities.** Map where else the product fits using [whitespace analysis](/posts/whitespace-analysis-expansion), and watch usage signals for [expansion intent](/posts/product-qualified-signals-expansion).
+2. **Onboard and prove value.** Drive the customer to [realized value](/posts/customer-value-realization/) quickly; the expansion depends on it.
+3. **Identify expansion opportunities.** Map where else the product fits using [whitespace analysis](/posts/whitespace-analysis-expansion/), and watch usage signals for [expansion intent](/posts/product-qualified-signals-expansion/).
 4. **Expand.** Grow into new departments, more seats, and additional use cases, ideally folded into the renewal.
 5. **Repeat.** Each renewal becomes the next expansion checkpoint, compounding revenue per account.
 
@@ -74,7 +74,7 @@ A successful land and expand strategy has clear phases:
 - **Lower barrier to entry.** A small initial deal is easier to close than a big-bang enterprise contract.
 - **Higher lifetime value.** Expanding existing customers compounds revenue per customer over time.
 - **Lower churn risk.** Multi-department, multi-use-case accounts are stickier and harder to displace.
-- **Efficient growth.** Expansion has a far lower cost than new acquisition, improving your [LTV:CAC ratio](/posts/cac-ltv-ratio-renewals).
+- **Efficient growth.** Expansion has a far lower cost than new acquisition, improving your [LTV:CAC ratio](/posts/cac-ltv-ratio-renewals/).
 
 These benefits are why land and expand is a core business strategy for modern SaaS.
 
@@ -86,8 +86,8 @@ Land and expand is one of several ways to grow an existing customer; the four ex
 
 1. **Seat expansion:** sell more licenses to the same team as adoption grows.
 2. **Department expansion:** spread from one department into new teams (the classic land and expand motion).
-3. **Cross-sell:** add complementary products, growing the relationship in breadth. See [cross-sell vs upsell](/posts/cross-sell-vs-upsell).
-4. **Tier upgrade (upsell):** move the customer to a higher tier with more capability, often using [good-better-best pricing](/posts/good-better-best-pricing).
+3. **Cross-sell:** add complementary products, growing the relationship in breadth. See [cross-sell vs upsell](/posts/cross-sell-vs-upsell/).
+4. **Tier upgrade (upsell):** move the customer to a higher tier with more capability, often using [good-better-best pricing](/posts/good-better-best-pricing/).
 
 A mature account management motion uses all four, sequenced across renewals. The land and expand strategy is the connective tissue: each renewal is a checkpoint to assess which expansion strategy fits the account next, based on use case, usage, and the customer relationship.
 
@@ -97,15 +97,15 @@ To use land and expand in action:
 
 - **Design a landable entry offer.** A focused package or use case that proves value in weeks, not quarters.
 - **Instrument value.** Tie usage to outcomes so you can prove ROI before asking to expand.
-- **Map the account.** Use whitespace analysis to see which departments and products are untapped, and [multi-thread](/posts/single-threaded-renewals-multithreading) so you have relationships beyond the first team.
-- **Time expansion to the renewal.** Fold the expand conversation into the renewal so it is one decision, distinguishing [upsell from cross-sell](/posts/cross-sell-vs-upsell) as you grow.
-- **Hand off post-sale signals to sales.** Let customer success generate [qualified expansion leads](/posts/customer-success-qualified-leads).
+- **Map the account.** Use whitespace analysis to see which departments and products are untapped, and [multi-thread](/posts/single-threaded-renewals-multithreading/) so you have relationships beyond the first team.
+- **Time expansion to the renewal.** Fold the expand conversation into the renewal so it is one decision, distinguishing [upsell from cross-sell](/posts/cross-sell-vs-upsell/) as you grow.
+- **Hand off post-sale signals to sales.** Let customer success generate [qualified expansion leads](/posts/customer-success-qualified-leads/).
 
 ---
 
 ## The "Land, Expand, Explode" Variant
 
-For key accounts, the strongest version adds a third phase: land a team, expand across departments, then "explode" into an enterprise-wide standard. The explosion happens when an executive sponsor standardizes your product across the organization, turning a department deal into a company-wide platform. Getting there requires executive [multi-threading](/posts/single-threaded-renewals-multithreading) and proven, quantified value at every step.
+For key accounts, the strongest version adds a third phase: land a team, expand across departments, then "explode" into an enterprise-wide standard. The explosion happens when an executive sponsor standardizes your product across the organization, turning a department deal into a company-wide platform. Getting there requires executive [multi-threading](/posts/single-threaded-renewals-multithreading/) and proven, quantified value at every step.
 
 ---
 
@@ -128,7 +128,7 @@ The customer has seen value and is deciding their next 12 months, so expansion f
 
 ---
 
-Land and expand is the growth engine of the [365-day renewal strategy](/posts/renewal-strategy-365).
+Land and expand is the growth engine of the [365-day renewal strategy](/posts/renewal-strategy-365/).
 
 **The biggest deals usually start as the smallest ones, grown deliberately.** SWOTBee builds expansion and renewal playbooks for mid-market companies across Energy, Manufacturing, and SaaS.
 

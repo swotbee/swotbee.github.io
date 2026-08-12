@@ -38,7 +38,7 @@ faqs:
     a: "Yes. SMBs benefit most from running a complete growth strategy on a single platform, without the cost and complexity of stitching many tools together."
 ---
 
-> This article is part of our [honest guide to whether HubSpot scales with business growth](/posts/does-hubspot-crm-scale).
+> This article is part of our [honest guide to whether HubSpot scales with business growth](/posts/does-hubspot-crm-scale/).
 
 **A HubSpot growth strategy is the plan for using HubSpot's tools and a clear growth framework to attract, convert, and retain customers as you scale. The confusion is that "HubSpot growth strategy" has two meanings: how HubSpot the company grew, and how you build your own growth strategy on HubSpot.** This guide handles both, and it does what no other ranking page does: maps HubSpot's four overlapping growth frameworks (funnel, flywheel, Loop Marketing, and Four Fits) together with clear "use this when" guidance.
 
@@ -69,7 +69,7 @@ HubSpot replaced the funnel with the flywheel in 2018 to capture that happy cust
 
 ### Loop Marketing: the Execution Layer for the AI Era
 
-Loop Marketing (Express, Tailor, Amplify, Evolve) is HubSpot's newest framework, built for a world where a large share of searches end without a click. It runs on live iteration: predict, publish, monitor, adapt, in days not quarters, and it leans into structuring content for answer engines and LLM discoverability. The honest verdict practitioners give is "a bit of both": real change plus some repackaging. It pairs naturally with [product-led growth](/posts/hubspot-product-led-growth).
+Loop Marketing (Express, Tailor, Amplify, Evolve) is HubSpot's newest framework, built for a world where a large share of searches end without a click. It runs on live iteration: predict, publish, monitor, adapt, in days not quarters, and it leans into structuring content for answer engines and LLM discoverability. The honest verdict practitioners give is "a bit of both": real change plus some repackaging. It pairs naturally with [product-led growth](/posts/hubspot-product-led-growth/).
 
 ---
 
@@ -89,7 +89,7 @@ For SMBs especially, HubSpot's strength is that this whole engine runs on one pl
 
 ## Common Challenges (and How to Avoid Them)
 
-The recurring failure is treating HubSpot as the strategy rather than the engine for one. A CRM without process adoption is a black hole, so the biggest challenge is not the tooling, it is clean data, defined process, and disciplined measurement. Teams that nail the RevOps foundation get compounding growth; teams that buy hubs and hope do not. This is the same lesson behind whether [HubSpot scales with your business](/posts/does-hubspot-crm-scale): the platform scales, but only on top of good operations.
+The recurring failure is treating HubSpot as the strategy rather than the engine for one. A CRM without process adoption is a black hole, so the biggest challenge is not the tooling, it is clean data, defined process, and disciplined measurement. Teams that nail the RevOps foundation get compounding growth; teams that buy hubs and hope do not. This is the same lesson behind whether [HubSpot scales with your business](/posts/does-hubspot-crm-scale/): the platform scales, but only on top of good operations.
 
 ---
 

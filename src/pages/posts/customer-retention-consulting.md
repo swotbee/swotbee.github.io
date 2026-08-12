@@ -38,11 +38,11 @@ faqs:
     a: "One that builds systems (not just strategy), knows your CRM deeply, commits to moving specific retention KPIs, and transfers knowledge so your team owns the program."
 ---
 
-> This article is part of our [complete guide to B2B customer retention](/posts/b2b-saas-customer-retention).
+> This article is part of our [complete guide to B2B customer retention](/posts/b2b-saas-customer-retention/).
 
 **Customer retention consulting is expert help to reduce churn and grow your existing customer base: a consultant diagnoses why customers leave, designs the strategy and systems to keep them, and builds the operational backbone (health scores, automation, renewal pipelines) to make retention repeatable.** It is the fastest way to fix retention when you know you are losing customers but do not have the time or in-house expertise to fix it. This guide explains what a customer retention consultant does, the signs you need one, and how to choose the right partner.
 
-For the underlying playbook, start with our [B2B customer retention guide](/posts/b2b-saas-customer-retention).
+For the underlying playbook, start with our [B2B customer retention guide](/posts/b2b-saas-customer-retention/).
 
 ---
 
@@ -98,7 +98,7 @@ A typical engagement moves through diagnosis, design, build, and enablement:
 1. **Audit.** Review your churn data, customer journey, and current systems to find where customers slip away.
 2. **Roadmap.** Prioritize the highest-impact fixes and sequence them.
 3. **Build.** Implement health scores, automation, and renewal pipelines in your CRM.
-4. **Measure.** Stand up the [retention KPIs](/posts/customer-retention-kpis) so you can see the program working.
+4. **Measure.** Stand up the [retention KPIs](/posts/customer-retention-kpis/) so you can see the program working.
 5. **Handover.** Train the team and document the playbook so the gains stick.
 
 The right partner leaves you with a system you own, not a dependency.
@@ -110,7 +110,7 @@ The right partner leaves you with a system you own, not a dependency.
 Choose a partner who:
 
 - **Builds systems, not just strategy.** Look for hands-on implementation in your actual CRM, not advice alone.
-- **Knows your stack.** Deep expertise in your platform (for many mid-market teams, HubSpot) means faster, cleaner results, the basis of our [CRM for customer retention](/posts/crm-customer-retention) work.
+- **Knows your stack.** Deep expertise in your platform (for many mid-market teams, HubSpot) means faster, cleaner results, the basis of our [CRM for customer retention](/posts/crm-customer-retention/) work.
 - **Ties work to metrics.** They should commit to moving specific retention KPIs, not vanity deliverables.
 - **Transfers knowledge.** The goal is a team that can run retention after they leave.
 

@@ -38,11 +38,11 @@ faqs:
     a: "Use CPQ for quoting, sync the order to the ERP automatically on close, automate billing, flow status back to the CRM, and integrate the systems so the workflow runs on real-time data."
 ---
 
-> This article is part of our [complete guide to CRM and ERP integration](/posts/crm-erp-integration).
+> This article is part of our [complete guide to CRM and ERP integration](/posts/crm-erp-integration/).
 
 **Quote-to-cash (Q2C) is the end-to-end business process that runs from creating a customer quote to collecting the cash: configure and price the quote, get it signed, turn it into an order, fulfill it, invoice, and collect payment.** It spans the front office (CRM and CPQ) and the back office (ERP billing and receivables), which is why a streamlined quote-to-cash process depends on a clean integration between the two. This guide covers the quote-to-cash steps, how Q2C differs from CPQ and order-to-cash, the benefits, and how to automate it.
 
-Quote-to-cash is one of the most valuable processes a [CRM and ERP integration](/posts/crm-erp-integration) automates.
+Quote-to-cash is one of the most valuable processes a [CRM and ERP integration](/posts/crm-erp-integration/) automates.
 
 ---
 
@@ -79,7 +79,7 @@ These terms overlap, which causes confusion:
 - **Quote-to-cash** is the whole lifecycle from quote through cash collection, including CPQ.
 - **Order-to-cash (O2C)** starts later, at the order, and runs through fulfillment, invoicing, and payment. It is the back half of quote-to-cash.
 
-In short, CPQ is a part of Q2C, and order-to-cash is the downstream portion. We cover the back half in detail in our [order-to-cash process guide](/posts/order-to-cash-process).
+In short, CPQ is a part of Q2C, and order-to-cash is the downstream portion. We cover the back half in detail in our [order-to-cash process guide](/posts/order-to-cash-process/).
 
 ---
 
@@ -125,10 +125,10 @@ When these are integrated, quote generation, the approval process, order creatio
 Automating quote-to-cash means removing the manual handoffs between systems:
 
 1. **Use CPQ** to generate accurate, approved quotes inside the CRM.
-2. **Sync the order to the ERP** automatically when the deal closes, so no one re-keys it. In a HubSpot and NetSuite stack, this is the closed-won deal to NetSuite sales order flow, covered in our [HubSpot to NetSuite setup guide](/posts/hubspot-to-netsuite-integration-setup).
+2. **Sync the order to the ERP** automatically when the deal closes, so no one re-keys it. In a HubSpot and NetSuite stack, this is the closed-won deal to NetSuite sales order flow, covered in our [HubSpot to NetSuite setup guide](/posts/hubspot-to-netsuite-integration-setup/).
 3. **Automate billing and invoicing** in the ERP from the order.
 4. **Flow status back to the CRM** so sales sees fulfillment and payment without leaving their system.
-5. **Integrate the systems** so the whole quote-to-cash workflow runs on real-time data, the foundation covered in our [CRM and ERP integration guide](/posts/crm-erp-integration).
+5. **Integrate the systems** so the whole quote-to-cash workflow runs on real-time data, the foundation covered in our [CRM and ERP integration guide](/posts/crm-erp-integration/).
 
 The result is an end-to-end, automated quote-to-cash process that shortens the cycle and protects revenue.
 

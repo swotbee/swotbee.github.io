@@ -39,7 +39,7 @@ faqs:
     a: "For many mid-market teams, HubSpot's customer success workspace and renewal pipeline cover the core renewals process without a separate platform, though very complex CS operations may still use a dedicated tool."
 ---
 
-> This article is part of our [Complete Guide to Building a Renewal Pipeline in HubSpot](/posts/hubspot-renewal-pipeline-complete-guide).
+> This article is part of our [Complete Guide to Building a Renewal Pipeline in HubSpot](/posts/hubspot-renewal-pipeline-complete-guide/).
 
 **Customer success should own most renewals, and sales should step in for negotiation-heavy or expansion-led deals.** The right answer depends on your motion, but the rule that matters is this: every renewal deal in HubSpot needs one clear owner and a defined handoff, so no contract renewal falls between CS and sales. This guide gives you a decision framework and shows how to set ownership and automate the handoff inside a dedicated renewal pipeline.
 
@@ -78,7 +78,7 @@ A handoff is not an email; it is a deal owner change plus context. In HubSpot, m
 3. **Context travels with the deal.** Customer health score, usage, open tickets, and notes are already on the deal and company record, so the new owner is not starting blind.
 4. **Both teams keep visibility.** Use the deal record and a shared dashboard so sales and customer success see the same renewal status.
 
-This is why a [dedicated renewal pipeline](/posts/hubspot-renewal-pipeline-vs-sales-pipeline) matters: it lets you quickly visualize how many renewals you have, who owns each, and which ones are getting closer to their renewal date.
+This is why a [dedicated renewal pipeline](/posts/hubspot-renewal-pipeline-vs-sales-pipeline/) matters: it lets you quickly visualize how many renewals you have, who owns each, and which ones are getting closer to their renewal date.
 
 ---
 
@@ -87,7 +87,7 @@ This is why a [dedicated renewal pipeline](/posts/hubspot-renewal-pipeline-vs-sa
 To manage renewals in HubSpot with clear ownership:
 
 - **Use the Deal Owner property** as the single source of truth for who is accountable for each renewal deal.
-- **Route new renewal deals automatically.** When HubSpot creates a new deal in the renewal pipeline, assign the deal owner based on the account's CSM, not the original sales rep. See [renewal deal creation](/posts/hubspot-renewal-deal-workflow-automation).
+- **Route new renewal deals automatically.** When HubSpot creates a new deal in the renewal pipeline, assign the deal owner based on the account's CSM, not the original sales rep. See [renewal deal creation](/posts/hubspot-renewal-deal-workflow-automation/).
 - **Use the Customer Success workspace.** HubSpot's customer success workspace enables customer success managers to monitor customer health, track renewals, and manage their book in one place.
 - **Add a collaborator for the other team.** When sales supports a CS-owned renewal (or vice versa), add them as a deal collaborator so both have visibility without losing single ownership.
 
@@ -98,7 +98,7 @@ To manage renewals in HubSpot with clear ownership:
 Manual handoffs get forgotten. Automate them with a workflow:
 
 - **Reassign or notify on stage change.** A workflow to automatically move deals into different stages can also create a task for the new owner and notify them, so the handoff happens the moment the deal qualifies.
-- **Escalate at-risk renewals to sales.** Tie this to [renewal risk scoring](/posts/hubspot-renewal-risk-scoring): when an account is At Risk, route it to a senior owner with a save play instead of the standard [renewal reminder](/posts/hubspot-renewal-reminders).
+- **Escalate at-risk renewals to sales.** Tie this to [renewal risk scoring](/posts/hubspot-renewal-risk-scoring/): when an account is At Risk, route it to a senior owner with a save play instead of the standard [renewal reminder](/posts/hubspot-renewal-reminders/).
 - **Flag expansion for sales.** When usage signals an upsell, create a task for sales while CS keeps the renewal relationship.
 
 Automation makes the handoff a property change plus a task, not a hope that someone remembers.

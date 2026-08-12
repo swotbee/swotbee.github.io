@@ -39,7 +39,7 @@ faqs:
     a: "Pushing too early, offering irrelevant products, over-bundling, and relying on discounts, all of which can erode trust and margin."
 ---
 
-> This article is part of our [guide to SaaS renewal metrics](/posts/renewal-metrics-explained).
+> This article is part of our [guide to SaaS renewal metrics](/posts/renewal-metrics-explained/).
 
 **Upselling sells the same customer more or a higher tier of what they already have; cross-selling sells them a complementary product or service. Both increase revenue from existing customers, but they are different motions and must be tracked separately.** Upsell is "more of the same, bigger"; cross-sell is "a related product alongside." Mixing them in your pipeline hides which expansion strategy actually works.
 
@@ -102,7 +102,7 @@ Lumping both into "expansion" hides which motion drives growth. Tracking them ap
 
 - **Which strategy scales.** If upsell drives most expansion, your tiering and packaging are working. If cross-sell leads, your product portfolio is the lever.
 - **Where to invest.** Separate data shows whether to build more tiers (upsell) or more complementary products (cross-sell).
-- **How to forecast.** Upsell and cross-sell convert at different rates and timelines, so blending them distorts your expansion forecast and your [net revenue retention](/posts/gross-vs-net-revenue-retention) analysis.
+- **How to forecast.** Upsell and cross-sell convert at different rates and timelines, so blending them distorts your expansion forecast and your [net revenue retention](/posts/gross-vs-net-revenue-retention/) analysis.
 
 In your CRM, tag expansion deals as upsell or cross-sell so the reporting is clean from the start.
 
@@ -112,7 +112,7 @@ In your CRM, tag expansion deals as upsell or cross-sell so the reporting is cle
 
 Effective cross-selling and upselling is timed and relevant, not pushy:
 
-- **Use product usage signals.** Let usage tell you who is ready, using [product-qualified signals](/posts/product-qualified-signals-expansion). A customer hitting a usage limit is primed for an upsell; one using a feature that pairs with an add-on is a cross-sell candidate.
+- **Use product usage signals.** Let usage tell you who is ready, using [product-qualified signals](/posts/product-qualified-signals-expansion/). A customer hitting a usage limit is primed for an upsell; one using a feature that pairs with an add-on is a cross-sell candidate.
 - **Time it to value, and to renewal.** The best moment to upsell or cross-sell is after the customer has seen results, ideally folded into the renewal conversation.
 - **Lead with the customer's goal.** Effective upselling and cross-selling frames the offer around the outcome the customer wants, not your revenue target.
 - **Use customer data.** Mine CRM and product data to find cross-selling opportunities, then personalize the offer to the account.
@@ -170,7 +170,7 @@ Pushing too early, offering irrelevant products, over-bundling, and relying on d
 
 ---
 
-Cross-sell and upsell are the expansion levers in our [SaaS renewal metrics guide](/posts/renewal-metrics-explained).
+Cross-sell and upsell are the expansion levers in our [SaaS renewal metrics guide](/posts/renewal-metrics-explained/).
 
 **Expansion done wrong feels like pressure; done right it feels like help.** SWOTBee builds expansion tracking and renewal pipelines for mid-market companies across Energy, Manufacturing, and SaaS.
 

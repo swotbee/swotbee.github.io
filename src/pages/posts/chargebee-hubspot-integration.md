@@ -45,7 +45,7 @@ faqs:
     a: "Pros: turnkey setup with no middleware, subscription and invoice data as ordinary HubSpot properties, and workflow triggers on billing events. Cons: limited flexibility on custom fields and complex catalogs, little control over sync timing, and no renewal deal creation. If your gaps are in the last item, the fix is HubSpot-side automation rather than a different connector."
 ---
 
-> This article is part of our [complete guide to HubSpot ERP integration](/posts/hubspot-erp-integration).
+> This article is part of our [complete guide to HubSpot ERP integration](/posts/hubspot-erp-integration/).
 
 **The Chargebee HubSpot integration syncs your billing data (customers, subscriptions, and invoices) into the HubSpot CRM so every record shows what each account actually pays, when it renews, and whether payments are healthy.** As of mid-2026, Chargebee offers a native HubSpot integration that maps Chargebee customers to HubSpot contacts and companies and surfaces subscription and invoice data on the CRM record; check the current listing for exact sync scope on your plan. What the integration does not do is run your renewal motion: it knows the renewal date, but it will not build the renewal deal.
 
@@ -91,7 +91,7 @@ Five practical notes:
 Sketch the relationship between objects in HubSpot and Chargebee before you sync anything: one customer to one company, one subscription to one deal or one set of properties. The integration cannot fix a mapping you never decided. The default mappings work, but two decisions repay thought:
 
 - **Where does subscription data live: company or deal?** For a single-subscription-per-account business, company properties are simpler and report cleanly. If accounts hold multiple subscriptions, map subscriptions to contacts and deals instead (each subscription becomes or updates a HubSpot deal), or use a custom object on Enterprise, because one set of company properties cannot represent three subscriptions.
-- **Which date is your renewal date?** Chargebee exposes both next billing date and current term end. For monthly billing on an annual contract, next billing date fires every month; **current term end is the renewal date** your workflows should read. Map it to the same renewal date property the rest of your [renewal pipeline](/posts/hubspot-renewal-pipeline-complete-guide) uses.
+- **Which date is your renewal date?** Chargebee exposes both next billing date and current term end. For monthly billing on an annual contract, next billing date fires every month; **current term end is the renewal date** your workflows should read. Map it to the same renewal date property the rest of your [renewal pipeline](/posts/hubspot-renewal-pipeline-complete-guide/) uses.
 
 ---
 
@@ -122,7 +122,7 @@ This is the part most teams discover late. The integration will faithfully tell 
 - apply your uplift policy to the renewal amount, or
 - give you a forecastable renewal pipeline with stages and owners.
 
-Chargebee's own renewal handling is billing-side: auto-renew charges the card or generates the invoice. That works for low-touch self-serve. For B2B contracts where a human negotiates the renewal, you need a renewal deal in HubSpot that an owner works through deal stages, and something has to create it with the right line items and amount. HubSpot's native workflows cannot copy line items into a new deal, which is why we treat [automated renewal deal creation](/posts/hubspot-renewal-deal-workflow-automation) as its own build. The pattern: Chargebee syncs the term end date, automation creates the renewal deal at T-90 with uplifted line items, and the closed-won renewal flows back to Chargebee as the subscription amendment. Done right, this turns the connector into a true HubSpot quote-to-cash integration: quote and deal in HubSpot, subscription and invoice in Chargebee, renewal deal back in HubSpot.
+Chargebee's own renewal handling is billing-side: auto-renew charges the card or generates the invoice. That works for low-touch self-serve. For B2B contracts where a human negotiates the renewal, you need a renewal deal in HubSpot that an owner works through deal stages, and something has to create it with the right line items and amount. HubSpot's native workflows cannot copy line items into a new deal, which is why we treat [automated renewal deal creation](/posts/hubspot-renewal-deal-workflow-automation/) as its own build. The pattern: Chargebee syncs the term end date, automation creates the renewal deal at T-90 with uplifted line items, and the closed-won renewal flows back to Chargebee as the subscription amendment. Done right, this turns the connector into a true HubSpot quote-to-cash integration: quote and deal in HubSpot, subscription and invoice in Chargebee, renewal deal back in HubSpot.
 
 ---
 
@@ -134,7 +134,7 @@ Once subscription MRR is a HubSpot property, you can build the reports finance n
 - **Renewal-quarter view:** a report of companies grouped by term end quarter, with MRR as the measure, showing how much revenue is up for renewal when.
 - **Churn and expansion movement**, if you snapshot MRR monthly into a separate property or use deal-based tracking.
 
-For proper NRR and GRR, deal-based tracking beats property snapshots; see our [NRR and GRR dashboard guide](/posts/hubspot-renewal-nrr-grr-dashboard-reporting) for the build.
+For proper NRR and GRR, deal-based tracking beats property snapshots; see our [NRR and GRR dashboard guide](/posts/hubspot-renewal-nrr-grr-dashboard-reporting/) for the build.
 
 ---
 
@@ -142,9 +142,9 @@ For proper NRR and GRR, deal-based tracking beats property snapshots; see our [N
 
 - **Zapier or Make.** Fine for one or two flows (new subscription to Slack, failed payment to task). Gets brittle and expensive as flows multiply, and neither handles historical backfill well.
 - **Custom API integration.** Chargebee's API and webhooks plus HubSpot's API give you full control: custom objects for subscriptions, renewal deal creation with line items, even the ability to create a subscription in Chargebee from a closed-won HubSpot deal. Worth it when the native mapping cannot represent your catalog or when renewal automation is the goal.
-- **iPaaS (Workato, Tray, Celigo).** The middle path if you already run one for other systems in your tech stack, as discussed in the [pillar guide](/posts/hubspot-erp-integration).
+- **iPaaS (Workato, Tray, Celigo).** The middle path if you already run one for other systems in your tech stack, as discussed in the [pillar guide](/posts/hubspot-erp-integration/).
 
-For how Chargebee compares to Stripe, Maxio, Zuora, and Recurly on the HubSpot dimension specifically, see the [billing integrations comparison](/posts/hubspot-billing-integrations-compared).
+For how Chargebee compares to Stripe, Maxio, Zuora, and Recurly on the HubSpot dimension specifically, see the [billing integrations comparison](/posts/hubspot-billing-integrations-compared/).
 
 ---
 

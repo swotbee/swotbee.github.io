@@ -39,7 +39,7 @@ faqs:
     a: "Lead scoring ranks prospects by buying intent; renewal risk scoring ranks existing customers by churn risk. Both use HubSpot's scoring tools, but the inputs and goals differ."
 ---
 
-> This article is part of our [Complete Guide to Building a Renewal Pipeline in HubSpot](/posts/hubspot-renewal-pipeline-complete-guide).
+> This article is part of our [Complete Guide to Building a Renewal Pipeline in HubSpot](/posts/hubspot-renewal-pipeline-complete-guide/).
 
 **Renewal risk scoring is a customer health score applied to your renewal deals, so you can identify at-risk renewals early and act before the contract end date.** In HubSpot, you combine product usage, support tickets, NPS, and engagement into a single health score on the company record, then surface that score on every upcoming renewal. The result: your customer success team sees renewal risk weeks or months early, instead of discovering churn the day a customer says no.
 
@@ -55,7 +55,7 @@ Done well, this is one of the highest-leverage things you can build in HubSpot C
 
 A customer health score is a single score that summarizes how healthy a customer relationship is. Renewal risk scoring is that health score viewed through one lens: how likely is this account to renew?
 
-The difference matters. A general customer health score tracks the overall customer experience. A renewal risk score focuses on renewal likelihood and is attached to the upcoming renewal, so renewal managers and CSMs can prioritize the accounts most likely to churn. For the underlying workflow build, see our guide to [health scores and churn-prevention workflows](/posts/hubspot-churn-prevention-health-scores-workflows); this article focuses on applying that score to renewals.
+The difference matters. A general customer health score tracks the overall customer experience. A renewal risk score focuses on renewal likelihood and is attached to the upcoming renewal, so renewal managers and CSMs can prioritize the accounts most likely to churn. For the underlying workflow build, see our guide to [health scores and churn-prevention workflows](/posts/hubspot-churn-prevention-health-scores-workflows/); this article focuses on applying that score to renewals.
 
 ---
 
@@ -116,9 +116,9 @@ Build a dashboard view filtered to "upcoming renewal AND health status is At Ris
 
 A score that nobody acts on is theatre. Wire the score into your renewal motion:
 
-- **Route at-risk renewals to a save play.** When a renewal deal is At Risk, create a task for the CSM and escalate to a manager, rather than sending the standard [renewal reminder](/posts/hubspot-renewal-reminders).
-- **Adjust the outreach.** Pull at-risk accounts out of the standard [renewal email sequence](/posts/hubspot-renewal-email-sequence) and into a human-led conversation.
-- **Feed forecasting.** Use renewal likelihood to weight your [renewal forecast](/posts/hubspot-renewal-forecasting-accuracy) so the number reflects real renewal risk, not just stage.
+- **Route at-risk renewals to a save play.** When a renewal deal is At Risk, create a task for the CSM and escalate to a manager, rather than sending the standard [renewal reminder](/posts/hubspot-renewal-reminders/).
+- **Adjust the outreach.** Pull at-risk accounts out of the standard [renewal email sequence](/posts/hubspot-renewal-email-sequence/) and into a human-led conversation.
+- **Feed forecasting.** Use renewal likelihood to weight your [renewal forecast](/posts/hubspot-renewal-forecasting-accuracy/) so the number reflects real renewal risk, not just stage.
 
 This is where sales and customer success align: the score tells everyone which renewal conversations need a person, not an automation.
 
@@ -136,7 +136,7 @@ This is where sales and customer success align: the score tells everyone which r
 
 ## Tracking Renewal Risk on a Dashboard
 
-Build a renewal risk dashboard that shows account health across the book: count of renewals by health status, renewal amount at risk, and renewal rate by health segment. Combining this with your [NRR and GRR reporting](/posts/hubspot-renewal-nrr-grr-dashboard-reporting) shows leadership not just what renewed, but how much revenue was at risk and saved. Over time, tracking renewal likelihood by customer segment reveals which success strategies improve renewal and expansion.
+Build a renewal risk dashboard that shows account health across the book: count of renewals by health status, renewal amount at risk, and renewal rate by health segment. Combining this with your [NRR and GRR reporting](/posts/hubspot-renewal-nrr-grr-dashboard-reporting/) shows leadership not just what renewed, but how much revenue was at risk and saved. Over time, tracking renewal likelihood by customer segment reveals which success strategies improve renewal and expansion.
 
 ---
 

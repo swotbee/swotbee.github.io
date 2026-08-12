@@ -12,7 +12,7 @@ export async function GET(context: APIContext) {
         title: fm.title,
         pubDate: new Date(fm.pubDate),
         description: fm.description || '',
-        link: `/posts/${slug}`,
+        link: `/posts/${slug}/`,
         categories: fm.tags || [],
       };
     })

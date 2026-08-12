@@ -46,7 +46,7 @@ faqs:
 
 **A SaaS renewal strategy is the go-to-market and relationship plan a vendor uses to secure and expand customer contracts. The core principle: the renewal is won or lost long before the contract expires.** Teams that treat the renewal as a year-long motion (continuous value realization, executive multi-threading, and expansion) keep more revenue and grow it; teams that scramble in the final 30 days discount, lose, or barely hold. This guide lays out the strategy and links to the tactics behind each part.
 
-This pillar is about winning your customers' renewals, not managing your own SaaS spend. It assumes you have the [pipeline to run renewals](/posts/hubspot-renewal-pipeline-complete-guide) and the [metrics to measure them](/posts/renewal-metrics-explained); here we focus on the strategy to win them.
+This pillar is about winning your customers' renewals, not managing your own SaaS spend. It assumes you have the [pipeline to run renewals](/posts/hubspot-renewal-pipeline-complete-guide/) and the [metrics to measure them](/posts/renewal-metrics-explained/); here we focus on the strategy to win them.
 
 ---
 
@@ -69,7 +69,7 @@ An effective SaaS renewal is a process, not a deadline. Mapping the renewal peri
 - **Day 270 to 330 (renewal window):** open renewal discussions early, present renewal terms and renewal options, and tee up expansion.
 - **Day 330 to 365 (close):** finalize the contract renewal, handle negotiation, and confirm.
 
-Treating subscription renewal this way (a tracked, proactive SaaS motion rather than a last-minute scramble) is what separates teams that renew their subscriptions at 95% from those stuck in firefighting. Good renewal tracking and renewal notifications, covered in our [renewal reminders guide](/posts/hubspot-renewal-reminders), keep every renewal deadline visible so nothing slips.
+Treating subscription renewal this way (a tracked, proactive SaaS motion rather than a last-minute scramble) is what separates teams that renew their subscriptions at 95% from those stuck in firefighting. Good renewal tracking and renewal notifications, covered in our [renewal reminders guide](/posts/hubspot-renewal-reminders/), keep every renewal deadline visible so nothing slips.
 
 ## Types of SaaS Renewal Strategies
 
@@ -103,23 +103,23 @@ Everything below serves those goals across the renewal cycle.
 
 ### 1. Continuous value realization
 
-High product adoption is not enough; the customer has to realize value against their core business problem, and you have to prove it. [Customer realized value](/posts/customer-value-realization) is the only true driver of renewals. Tie usage to the outcomes the customer bought, and surface that proof all year, not just at renewal time.
+High product adoption is not enough; the customer has to realize value against their core business problem, and you have to prove it. [Customer realized value](/posts/customer-value-realization/) is the only true driver of renewals. Tie usage to the outcomes the customer bought, and surface that proof all year, not just at renewal time.
 
 ### 2. Multi-threading the relationship
 
-If your only champion leaves, a single-threaded deal dies. A winning strategy maps and engages the economic buyer, influencers, and blockers, so the renewal does not depend on one person. See [why single-threaded renewals fail](/posts/single-threaded-renewals-multithreading).
+If your only champion leaves, a single-threaded deal dies. A winning strategy maps and engages the economic buyer, influencers, and blockers, so the renewal does not depend on one person. See [why single-threaded renewals fail](/posts/single-threaded-renewals-multithreading/).
 
 ### 3. Strategic QBRs, not feature dumps
 
-Replace monthly feature tutorials with [executive business reviews](/posts/strategic-qbr-renewals) that prove ROI and frame the next 12 months. The QBR is where you earn the renewal signature months early.
+Replace monthly feature tutorials with [executive business reviews](/posts/strategic-qbr-renewals/) that prove ROI and frame the next 12 months. The QBR is where you earn the renewal signature months early.
 
 ### 4. Expansion built into the renewal
 
-The renewal is the natural moment to grow the account. Use [whitespace analysis](/posts/whitespace-analysis-expansion) to find untapped departments and products, run a [land-and-expand strategy](/posts/land-and-expand-strategy), and let your post-sale team generate [customer success qualified leads](/posts/customer-success-qualified-leads). Expansion is what pushes [net revenue retention](/posts/gross-vs-net-revenue-retention) above 100%.
+The renewal is the natural moment to grow the account. Use [whitespace analysis](/posts/whitespace-analysis-expansion/) to find untapped departments and products, run a [land-and-expand strategy](/posts/land-and-expand-strategy/), and let your post-sale team generate [customer success qualified leads](/posts/customer-success-qualified-leads/). Expansion is what pushes [net revenue retention](/posts/gross-vs-net-revenue-retention/) above 100%.
 
 ### 5. Disciplined negotiation
 
-When procurement and the C-suite enter at renewal time, you need a plan for [SaaS contract negotiation](/posts/saas-contract-negotiation-renewals): handling budget-freeze bluffs, defending margin against [competitor price-dropping](/posts/defending-renewals-competitor-pricing), and using [good-better-best pricing](/posts/good-better-best-pricing) to anchor the upgrade. Strong renewal negotiation is grounded in proven value, not concessions: when you can show the customer the outcomes they realized, the conversation shifts from price to partnership, and you protect both the renewal and your margin. Contract terms and switching costs are a supplement to that value story, not a substitute for it; see [what the research actually shows about switching costs and B2B renewal](/posts/switching-costs-b2b-renewal-research) before leaning on lock-in as your primary retention plan.
+When procurement and the C-suite enter at renewal time, you need a plan for [SaaS contract negotiation](/posts/saas-contract-negotiation-renewals/): handling budget-freeze bluffs, defending margin against [competitor price-dropping](/posts/defending-renewals-competitor-pricing/), and using [good-better-best pricing](/posts/good-better-best-pricing/) to anchor the upgrade. Strong renewal negotiation is grounded in proven value, not concessions: when you can show the customer the outcomes they realized, the conversation shifts from price to partnership, and you protect both the renewal and your margin. Contract terms and switching costs are a supplement to that value story, not a substitute for it; see [what the research actually shows about switching costs and B2B renewal](/posts/switching-costs-b2b-renewal-research/) before leaning on lock-in as your primary retention plan.
 
 The goal across all five pillars is the same: make the renewal decision easy because the value is obvious, the relationship is broad, and the path to the next 12 months is clear.
 
@@ -136,10 +136,10 @@ Vendors who only sell to the economic buyer at renewal time are gambling that no
 ## Best Practices for Optimizing Your Renewal Strategy
 
 - **Start the renewal at kickoff.** Define success criteria on day one so value realization is measurable.
-- **Run the renewal as a 365-day calendar.** Map QBRs, value checkpoints, and the renewal window on a renewal calendar so nothing is last-minute. Pair it with [renewal reminders](/posts/hubspot-renewal-reminders).
+- **Run the renewal as a 365-day calendar.** Map QBRs, value checkpoints, and the renewal window on a renewal calendar so nothing is last-minute. Pair it with [renewal reminders](/posts/hubspot-renewal-reminders/).
 - **Multi-thread every enterprise account.** No single-threaded renewals above a revenue threshold.
-- **Frame renewals forward.** Pitch the [next 12 months and the roadmap](/posts/framing-renewals-roadmap), not just past performance.
-- **Have a win-back motion.** Treat churned customers as a [specialized win-back pipeline](/posts/churned-customer-win-back) to recover revenue at near-zero acquisition cost.
+- **Frame renewals forward.** Pitch the [next 12 months and the roadmap](/posts/framing-renewals-roadmap/), not just past performance.
+- **Have a win-back motion.** Treat churned customers as a [specialized win-back pipeline](/posts/churned-customer-win-back/) to recover revenue at near-zero acquisition cost.
 - **Never panic-discount.** Reinforce unique value before touching price.
 
 ---
@@ -156,13 +156,13 @@ Managing saas renewals proactively, rather than reactively responding to a cance
 
 ## Measuring Renewal Success
 
-A renewal strategy needs the right scoreboard. The key metrics to measure renewal success are renewal rate, gross and net revenue retention, and churn, plus leading indicators like health and value realization. See the full [SaaS renewal metrics guide](/posts/renewal-metrics-explained), and watch for [silent churn](/posts/silent-churn-detection) as an early warning. Track these renewal metrics across the renewal cycle so you can intervene while there is still time.
+A renewal strategy needs the right scoreboard. The key metrics to measure renewal success are renewal rate, gross and net revenue retention, and churn, plus leading indicators like health and value realization. See the full [SaaS renewal metrics guide](/posts/renewal-metrics-explained/), and watch for [silent churn](/posts/silent-churn-detection/) as an early warning. Track these renewal metrics across the renewal cycle so you can intervene while there is still time.
 
 ---
 
 ## How Automation Supports the Strategy
 
-Strategy and systems work together. Renewal automation handles the mechanics (renewal reminders, deal creation, risk alerts) so your team spends its time on the high-value relationship work: QBRs, multi-threading, and expansion. The [renewal pipeline](/posts/hubspot-renewal-pipeline-complete-guide) and [risk scoring](/posts/hubspot-renewal-risk-scoring) are the engine; this strategy is how you drive it.
+Strategy and systems work together. Renewal automation handles the mechanics (renewal reminders, deal creation, risk alerts) so your team spends its time on the high-value relationship work: QBRs, multi-threading, and expansion. The [renewal pipeline](/posts/hubspot-renewal-pipeline-complete-guide/) and [risk scoring](/posts/hubspot-renewal-risk-scoring/) are the engine; this strategy is how you drive it.
 
 **What good SaaS renewal automation actually covers, and what it doesn't.** It should reliably create the renewal deal on schedule, surface at-risk accounts before the CSM has to notice manually, and keep renewal reminders firing on a 90-60-30 cadence without anyone maintaining a spreadsheet. It should not be mistaken for the strategy itself: an automated reminder cadence layered on top of a customer who never realized value still produces a lost renewal, just a well-documented one. Renewal management software is a force multiplier for a good renewal strategy, not a substitute for one.
 
@@ -198,7 +198,7 @@ Lead with proven value, multi-thread so you are not at the mercy of one buyer, a
 
 ---
 
-The strategy here pairs with the [renewal pipeline to run it](/posts/hubspot-renewal-pipeline-complete-guide) and the [metrics to measure it](/posts/renewal-metrics-explained).
+The strategy here pairs with the [renewal pipeline to run it](/posts/hubspot-renewal-pipeline-complete-guide/) and the [metrics to measure it](/posts/renewal-metrics-explained/).
 
 **Renewals are won in the 360 days before the contract ends, not the last 5.** SWOTBee builds renewal strategy, automation, and expansion systems for mid-market companies across Energy, Manufacturing, and SaaS.
 

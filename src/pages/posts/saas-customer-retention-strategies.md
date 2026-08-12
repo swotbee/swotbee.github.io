@@ -40,11 +40,11 @@ faqs:
     a: "Large. Responsive support and acting on customer feedback build the trust and realized value that keep customers, while ignored feedback and poor service are leading causes of churn."
 ---
 
-> This article is part of our [complete guide to B2B customer retention](/posts/b2b-saas-customer-retention).
+> This article is part of our [complete guide to B2B customer retention](/posts/b2b-saas-customer-retention/).
 
 **SaaS customer retention strategies are the plays a SaaS business uses to keep customers subscribed and growing: strong onboarding, continuous value realization, proactive customer success, expansion, and acting on customer feedback. The principle is that retention is earned across the whole lifecycle, not won at the renewal.** Because SaaS revenue is recurring, retention is the primary growth lever, and a good SaaS customer retention rate (85% or higher by logo, with strong net revenue retention) compounds into durable revenue. This guide covers how to retain SaaS customers, how to measure it, and the strategies that work.
 
-For the full context, start with our [B2B customer retention guide](/posts/b2b-saas-customer-retention).
+For the full context, start with our [B2B customer retention guide](/posts/b2b-saas-customer-retention/).
 
 ---
 
@@ -68,7 +68,7 @@ You measure SaaS retention with a few complementary metrics:
 | SaaS churn rate | Customers or revenue lost |
 | Customer lifetime value | Total value of a retained account |
 
-A good SaaS customer retention rate is roughly 85% or higher by logo, and best-in-class B2B SaaS companies achieve net revenue retention above 110%, meaning expansion outpaces churn. To calculate retention, divide customers at period end (minus new customers added) by customers at the start, times 100. For the deeper metric definitions, see [gross vs net revenue retention](/posts/gross-vs-net-revenue-retention) and [SaaS churn rate](/posts/saas-churn-rate).
+A good SaaS customer retention rate is roughly 85% or higher by logo, and best-in-class B2B SaaS companies achieve net revenue retention above 110%, meaning expansion outpaces churn. To calculate retention, divide customers at period end (minus new customers added) by customers at the start, times 100. For the deeper metric definitions, see [gross vs net revenue retention](/posts/gross-vs-net-revenue-retention/) and [SaaS churn rate](/posts/saas-churn-rate/).
 
 ---
 
@@ -82,19 +82,19 @@ Customers who reach first value quickly stay; those who do not churn fastest. A 
 
 ### 2. Drive Continuous Value Realization
 
-Retention is the by-product of realized value. Tie the product to the customer's outcomes and revisit them in regular reviews, the discipline in our [customer value realization](/posts/customer-value-realization) guide.
+Retention is the by-product of realized value. Tie the product to the customer's outcomes and revisit them in regular reviews, the discipline in our [customer value realization](/posts/customer-value-realization/) guide.
 
 ### 3. Build a Proactive Customer Success Motion
 
-A customer success team armed with health scores intervenes before churn, not after. Score customer health from usage and engagement, and act when it drops (see [churn prevention with health scores](/posts/hubspot-churn-prevention-health-scores-workflows)).
+A customer success team armed with health scores intervenes before churn, not after. Score customer health from usage and engagement, and act when it drops (see [churn prevention with health scores](/posts/hubspot-churn-prevention-health-scores-workflows/)).
 
 ### 4. Track Usage as a Leading Indicator
 
-Declining usage predicts churn long before a cancellation. Monitoring it is how the best SaaS teams retain customers proactively, the approach in [silent churn detection](/posts/silent-churn-detection).
+Declining usage predicts churn long before a cancellation. Monitoring it is how the best SaaS teams retain customers proactively, the approach in [silent churn detection](/posts/silent-churn-detection/).
 
 ### 5. Multi-Thread Relationships
 
-Accounts that depend on one champion are fragile. Build relationships across the buying center so the account survives a personnel change (see [multi-threading renewals](/posts/single-threaded-renewals-multithreading)).
+Accounts that depend on one champion are fragile. Build relationships across the buying center so the account survives a personnel change (see [multi-threading renewals](/posts/single-threaded-renewals-multithreading/)).
 
 ### 6. Act on Customer Feedback
 
@@ -102,7 +102,7 @@ Use surveys, NPS, and customer support signals to hear customer needs, then clos
 
 ### 7. Drive Expansion
 
-Upsell and cross-sell deepen the relationship and lift net revenue retention. Expansion is the strongest retention signal, mapped in [whitespace analysis](/posts/whitespace-analysis-expansion).
+Upsell and cross-sell deepen the relationship and lift net revenue retention. Expansion is the strongest retention signal, mapped in [whitespace analysis](/posts/whitespace-analysis-expansion/).
 
 ---
 
@@ -129,7 +129,7 @@ Even good teams undermine retention with avoidable errors: treating onboarding a
 
 ## How CRM and Automation Support SaaS Retention
 
-Strategies need a system to run on. A CRM centralizes the customer view and automation makes the proactive plays repeatable: triggered onboarding, health-based alerts, and renewal reminders at scale. We cover the tooling in [CRM for customer retention](/posts/crm-customer-retention) and [customer retention software](/posts/customer-retention-software). For B2B SaaS, this operational backbone is what turns retention strategy into a consistent result rather than a heroic effort.
+Strategies need a system to run on. A CRM centralizes the customer view and automation makes the proactive plays repeatable: triggered onboarding, health-based alerts, and renewal reminders at scale. We cover the tooling in [CRM for customer retention](/posts/crm-customer-retention/) and [customer retention software](/posts/customer-retention-software/). For B2B SaaS, this operational backbone is what turns retention strategy into a consistent result rather than a heroic effort.
 
 ---
 

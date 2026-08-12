@@ -39,7 +39,7 @@ faqs:
     a: "Start renewals early, detect at-risk and silent-churn accounts, deliver continuous value, and measure the correct at-bat cohort."
 ---
 
-> This article is part of our [guide to SaaS renewal metrics](/posts/renewal-metrics-explained).
+> This article is part of our [guide to SaaS renewal metrics](/posts/renewal-metrics-explained/).
 
 **The renewal rate measures the percentage of customers (or revenue) that renew their subscriptions out of those actually up for renewal in a period.** The renewal rate formula is renewed ÷ up-for-renewal × 100. The trick most teams miss: only count the cohort whose contracts are genuinely expiring in the window (the "at-bat" customers), not your entire customer base. Get the denominator wrong and your renewal rate is fiction.
 
@@ -81,7 +81,7 @@ Just like retention, renewal rate has a gross and net version:
 - **Gross renewal rate** caps at 100%: it measures only renewed revenue against up-for-renewal revenue, ignoring expansion.
 - **Net renewal rate** includes expansion from renewing customers, so it can exceed 100% when upsells outweigh churn within the cohort.
 
-The difference mirrors [gross vs net revenue retention](/posts/gross-vs-net-revenue-retention): gross shows what you kept, net shows what you kept and grew.
+The difference mirrors [gross vs net revenue retention](/posts/gross-vs-net-revenue-retention/): gross shows what you kept, net shows what you kept and grew.
 
 ---
 
@@ -101,13 +101,13 @@ Notice the at-bat denominator is 50, not your whole customer base. If you had 50
 
 ## Renewal Rate vs Retention Rate
 
-People use these interchangeably, but they differ. Renewal rate tracks the specific customers whose contracts came up for renewal; retention and renewal rates diverge because retention rate measures the broader customer base over time. Renewal rate is the sharper operational metric for the renewal process; retention is the longer arc. See the distinction in our [renewal metrics guide](/posts/renewal-metrics-explained).
+People use these interchangeably, but they differ. Renewal rate tracks the specific customers whose contracts came up for renewal; retention and renewal rates diverge because retention rate measures the broader customer base over time. Renewal rate is the sharper operational metric for the renewal process; retention is the longer arc. See the distinction in our [renewal metrics guide](/posts/renewal-metrics-explained/).
 
 ---
 
 ## What Is a Good Renewal Rate?
 
-Benchmarks depend on segment, but for B2B SaaS, high renewal rates sit around 90% or above on a count basis and higher on a dollar basis for healthy businesses. Below 80% signals a retention problem. Measuring across customer cohorts (by segment, plan, or signup quarter) reveals where renewal rates differ, which a single blended number hides. See [cohort retention analysis](/posts/cohort-retention-analysis-churn) for why cohorts matter.
+Benchmarks depend on segment, but for B2B SaaS, high renewal rates sit around 90% or above on a count basis and higher on a dollar basis for healthy businesses. Below 80% signals a retention problem. Measuring across customer cohorts (by segment, plan, or signup quarter) reveals where renewal rates differ, which a single blended number hides. See [cohort retention analysis](/posts/cohort-retention-analysis-churn/) for why cohorts matter.
 
 ---
 
@@ -120,11 +120,11 @@ A strong SaaS renewal rate signals that you are meeting customers' needs and del
 ## How to Improve Your Renewal Rate
 
 - **Start early.** Open renewal conversations 90 days out so there is time to address concerns.
-- **Catch risk before the deadline.** Use [renewal risk scoring](/posts/hubspot-renewal-risk-scoring) and watch for [silent churn](/posts/silent-churn-detection).
+- **Catch risk before the deadline.** Use [renewal risk scoring](/posts/hubspot-renewal-risk-scoring/) and watch for [silent churn](/posts/silent-churn-detection/).
 - **Deliver value continuously.** Improving renewal rates comes from meeting customers' needs all year, not a renewal-week push.
 - **Measure the right cohort.** Track the at-bat renewal rate so improving renewal rates is grounded in real numbers, not vanity math.
 
-Track all of this in your [renewal pipeline dashboards](/posts/hubspot-renewal-nrr-grr-dashboard-reporting).
+Track all of this in your [renewal pipeline dashboards](/posts/hubspot-renewal-nrr-grr-dashboard-reporting/).
 
 ---
 
@@ -147,7 +147,7 @@ Start renewals early, detect at-risk and silent-churn accounts, deliver continuo
 
 ---
 
-The at-bat renewal rate is one metric in our [SaaS renewal metrics guide](/posts/renewal-metrics-explained).
+The at-bat renewal rate is one metric in our [SaaS renewal metrics guide](/posts/renewal-metrics-explained/).
 
 **Renewal rate is the metric teams most often miscalculate:** wrong denominator, blended cohorts, count-vs-dollar confusion. SWOTBee builds accurate renewal reporting for mid-market companies across Energy, Manufacturing, and SaaS.
 

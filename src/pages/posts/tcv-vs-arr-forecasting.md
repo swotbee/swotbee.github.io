@@ -39,7 +39,7 @@ faqs:
     a: "Use ARR for forecasting, run-rate, and valuation; use TCV for total deal size, bookings, and commissions."
 ---
 
-> This article is part of our [guide to SaaS renewal metrics](/posts/renewal-metrics-explained).
+> This article is part of our [guide to SaaS renewal metrics](/posts/renewal-metrics-explained/).
 
 **TCV (Total Contract Value) is the total value of a contract over its entire term, including one-time fees; ARR (Annual Recurring Revenue) is the recurring subscription revenue normalized to a single year.** They are not the same, and blending them is the fastest way to ruin your renewal forecasting. A three-year, $300,000 deal has a TCV of $300,000 but an ARR of $100,000. Forecast renewals off TCV and your numbers will be wrong by multiples.
 
@@ -100,7 +100,7 @@ Forecasting renewals means projecting recurring revenue that comes up for renewa
 - **One-time fees** (onboarding, services) never renew, but they sit inside TCV.
 - **Future contract years** are already committed, so they are not "at risk" in this period's renewal forecast.
 
-If your pipeline reports deal amount as TCV but your forecast assumes that figure recurs annually, every multi-year deal inflates the forecast. Separate the two in your pipeline: store ARR (or ACV) for run-rate and forecasting, and TCV for total deal size. This is the single biggest fix for the errors covered in [why your renewal forecast is wrong](/posts/hubspot-renewal-forecasting-accuracy).
+If your pipeline reports deal amount as TCV but your forecast assumes that figure recurs annually, every multi-year deal inflates the forecast. Separate the two in your pipeline: store ARR (or ACV) for run-rate and forecasting, and TCV for total deal size. This is the single biggest fix for the errors covered in [why your renewal forecast is wrong](/posts/hubspot-renewal-forecasting-accuracy/).
 
 ---
 
@@ -130,7 +130,7 @@ Contract value is not the same as recognized revenue. When a customer signs, the
 
 ## How TCV Relates to LTV and Other SaaS Metrics
 
-TCV is a contracted figure: the total revenue expected across the signed term. Customer lifetime value (LTV) is a projected figure: the total revenue expected across the entire relationship, including future renewals beyond the current contract. ACV often feeds LTV models (LTV is roughly ACV times expected customer lifetime), while ARR drives growth and retention metrics like [net revenue retention](/posts/gross-vs-net-revenue-retention). Keeping each metric in its lane keeps your SaaS revenue reporting honest.
+TCV is a contracted figure: the total revenue expected across the signed term. Customer lifetime value (LTV) is a projected figure: the total revenue expected across the entire relationship, including future renewals beyond the current contract. ACV often feeds LTV models (LTV is roughly ACV times expected customer lifetime), while ARR drives growth and retention metrics like [net revenue retention](/posts/gross-vs-net-revenue-retention/). Keeping each metric in its lane keeps your SaaS revenue reporting honest.
 
 ---
 
@@ -153,7 +153,7 @@ Use ARR for forecasting, run-rate, and valuation; use TCV for total deal size, b
 
 ---
 
-TCV vs ARR is one piece of clean renewal forecasting; see the full picture in our [SaaS renewal metrics guide](/posts/renewal-metrics-explained) and how to [measure at-bat renewal rate](/posts/at-bat-renewal-rate).
+TCV vs ARR is one piece of clean renewal forecasting; see the full picture in our [SaaS renewal metrics guide](/posts/renewal-metrics-explained/) and how to [measure at-bat renewal rate](/posts/at-bat-renewal-rate/).
 
 **Multi-year deals quietly break most forecasts:** TCV masquerading as ARR, one-time fees inflating run-rate. SWOTBee builds clean renewal forecasting and pipeline reporting for mid-market companies across Energy, Manufacturing, and SaaS.
 

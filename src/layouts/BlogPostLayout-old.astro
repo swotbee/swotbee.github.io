@@ -16,7 +16,7 @@ const canonicalURL = generateCanonicalUrl(Astro.url.pathname);
 
 // Define blog sections for left navigation
 const blogSections = [
-    { title: 'All Posts', href: '/blog' },
+    { title: 'All Posts', href: '/blog/' },
     { title: 'Marketing', href: '/categories/marketing' },
     { title: 'Business Strategy', href: '/categories/business-strategy' },
     { title: 'Product Management', href: '/categories/product-management' },
@@ -182,7 +182,7 @@ const blogSections = [
                                 </div>
                                 <div class="ml-4">
                                     <h5 class="text-sm font-medium text-gray-900">
-                                        <a href={`/posts/${post.slug}`} class="hover:underline">
+                                        <a href={`/posts/${post.slug}/`} class="hover:underline">
                                             {post.title}
                                         </a>
                                     </h5>

@@ -45,7 +45,7 @@ faqs:
     a: "As a number property (Renewal Uplift %) on the renewal deal, set when the deal is created. Storing it as a property makes it reportable (average uplift achieved by segment) and available to automation, instead of living in each rep's head during negotiation."
 ---
 
-> This article is part of our [Complete Guide to Contract Renewal Management](/posts/contract-renewal-management-complete-guide).
+> This article is part of our [Complete Guide to Contract Renewal Management](/posts/contract-renewal-management-complete-guide/).
 
 **HubSpot has no built-in contract object, but you can effectively manage contracts in HubSpot using deals, custom date properties, and workflows.** The working pattern: store contract start and end dates, term, and auto-renew status as deal properties, keep renewals in a dedicated pipeline, automate reminders and renewal deal creation from the Contract End Date property, and report on expirations with deal-based reports, all within HubSpot. Enterprise portals can model contracts as a custom object instead.
 
@@ -93,7 +93,7 @@ Three practical rules:
 2. **Use date pickers, not text fields.** Workflows and reports can only do date math on real date properties. A text field saying "March 2027" is decoration.
 3. **Put contract fields on the deal, not the company.** A company can hold multiple contracts; a deal maps one-to-one to a contract term. Company-level rollups (Next Renewal Date) can be set by workflow if you need an account view.
 
-This schema is a subset of the broader field architecture we recommend for renewal work; the full list, including stage-tracking and forecast properties, is in our guide to [renewal pipeline properties](/posts/hubspot-renewal-pipeline-properties).
+This schema is a subset of the broader field architecture we recommend for renewal work; the full list, including stage-tracking and forecast properties, is in our guide to [renewal pipeline properties](/posts/hubspot-renewal-pipeline-properties/).
 
 ---
 
@@ -120,7 +120,7 @@ If you are unsure, start with deals. Migrating from deals to a custom object lat
 
 With the schema in place, two workflows do the heavy lifting. Each contract workflow below requires Sales Hub or Service Hub Professional or above.
 
-**Workflow 1: the reminder engine.** Use this workflow to set reminders for contract renewals: a deal-based workflow with a date-based trigger on Contract End Date creates tasks and notifications that track contract milestones at 90, 60, and 30 days before expiration, routed to the deal owner with escalation to management as the date closes in. We maintain a full step-by-step build, including unenrollment rules and the duplicate-alert traps, in our guide to [renewal reminders in HubSpot](/posts/hubspot-renewal-reminders), so we will not repeat it here.
+**Workflow 1: the reminder engine.** Use this workflow to set reminders for contract renewals: a deal-based workflow with a date-based trigger on Contract End Date creates tasks and notifications that track contract milestones at 90, 60, and 30 days before expiration, routed to the deal owner with escalation to management as the date closes in. We maintain a full step-by-step build, including unenrollment rules and the duplicate-alert traps, in our guide to [renewal reminders in HubSpot](/posts/hubspot-renewal-reminders/), so we will not repeat it here.
 
 **Workflow 2: renewal deal creation.** At 120 days before Contract End Date, a workflow creates a new deal in the renewal pipeline, copies the amount and owner, and stamps the next term's dates. This is where native HubSpot is weakest: workflow-created deals do not carry line items from the source deal, and chaining year after year of renewals through workflows can trip HubSpot's loop protection. Small portals live with the gaps or handle line items manually; teams with product-level pricing usually add an app or custom code for this step.
 
@@ -190,7 +190,7 @@ Native properties plus workflows genuinely cover contract tracking, reminders, a
 2. **Multi-year chains.** Renewal 2027 should spawn renewal 2028. Workflow chains that create deals which re-enroll in the same workflow hit loop protection, and the workarounds are fragile.
 3. **Complex uplift and co-term math.** Proration, co-terming multiple contracts to one date, and tiered uplifts are beyond workflow arithmetic.
 
-If you are hitting these, the escalation path is not "buy a 40k CS platform"; those tools signal renewals but still do not build the deal in HubSpot. The fix is purpose-built automation inside your portal. That layer, plus the reminder and template side covered in our guide to [contract renewal reminder software](/posts/contract-renewal-reminder-software), completes the stack. It is exactly what our [renewal operations service](/renewal-operations) builds, and you own everything at the end.
+If you are hitting these, the escalation path is not "buy a 40k CS platform"; those tools signal renewals but still do not build the deal in HubSpot. The fix is purpose-built automation inside your portal. That layer, plus the reminder and template side covered in our guide to [contract renewal reminder software](/posts/contract-renewal-reminder-software/), completes the stack. It is exactly what our [renewal operations service](/renewal-operations) builds, and you own everything at the end.
 
 ---
 

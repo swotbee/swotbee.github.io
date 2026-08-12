@@ -77,7 +77,7 @@ Pair logo retention with revenue-based metrics, because expansion can offset chu
 | Customer churn rate | Share of customers lost |
 | Customer lifetime value | Total value of a retained account |
 
-For the full breakdown of these revenue metrics, see our guides to [customer retention KPIs and metrics](/posts/customer-retention-kpis), [gross vs net revenue retention](/posts/gross-vs-net-revenue-retention), and the broader [renewal metrics explained](/posts/renewal-metrics-explained).
+For the full breakdown of these revenue metrics, see our guides to [customer retention KPIs and metrics](/posts/customer-retention-kpis/), [gross vs net revenue retention](/posts/gross-vs-net-revenue-retention/), and the broader [renewal metrics explained](/posts/renewal-metrics-explained/).
 
 ---
 
@@ -88,10 +88,10 @@ Customer churn rarely happens at the renewal date; it builds over the contract. 
 - **Weak onboarding.** Customers who never reach first value churn fastest.
 - **Lack of value realization.** If the product does not visibly solve the customer's needs, retention suffers.
 - **Single-threaded relationships.** When you know only one stakeholder and they leave, the account is at risk.
-- **Silent disengagement.** Usage drops long before anyone cancels, the classic [silent churn](/posts/silent-churn-detection).
+- **Silent disengagement.** Usage drops long before anyone cancels, the classic [silent churn](/posts/silent-churn-detection/).
 - **Poor customer experience and support.** Slow or unhelpful service erodes trust.
 
-The leading indicator of churn is declining product usage, not a complaint. Tracking it is how proactive teams retain customers before the cancellation, which we cover in [cohort retention analysis](/posts/cohort-retention-analysis-churn).
+The leading indicator of churn is declining product usage, not a complaint. Tracking it is how proactive teams retain customers before the cancellation, which we cover in [cohort retention analysis](/posts/cohort-retention-analysis-churn/).
 
 ---
 
@@ -100,11 +100,11 @@ The leading indicator of churn is declining product usage, not a complaint. Trac
 The most effective B2B customer retention strategies share one trait: they deliver and prove value continuously, not just at renewal. The core plays:
 
 1. **Nail onboarding.** Get every new customer to first value fast, with a clear success plan.
-2. **Drive value realization.** Tie the product to the customer's outcomes and revisit them in QBRs, the heart of our [customer value realization](/posts/customer-value-realization) guide.
-3. **Multi-thread relationships.** Build trust with several stakeholders so the account does not hinge on one champion (see [multi-threading renewals](/posts/single-threaded-renewals-multithreading)).
-4. **Be proactive with health scores.** Use customer health and risk scoring to intervene before churn (see [churn prevention with health scores](/posts/hubspot-churn-prevention-health-scores-workflows)).
+2. **Drive value realization.** Tie the product to the customer's outcomes and revisit them in QBRs, the heart of our [customer value realization](/posts/customer-value-realization/) guide.
+3. **Multi-thread relationships.** Build trust with several stakeholders so the account does not hinge on one champion (see [multi-threading renewals](/posts/single-threaded-renewals-multithreading/)).
+4. **Be proactive with health scores.** Use customer health and risk scoring to intervene before churn (see [churn prevention with health scores](/posts/hubspot-churn-prevention-health-scores-workflows/)).
 5. **Make customers feel heard.** Close the loop on customer feedback and Net Promoter Score so customers feel the product evolves around their needs.
-6. **Grow accounts.** Upselling and cross-sell deepen the relationship and lift retention; expansion is the strongest retention signal, mapped in [whitespace analysis](/posts/whitespace-analysis-expansion).
+6. **Grow accounts.** Upselling and cross-sell deepen the relationship and lift retention; expansion is the strongest retention signal, mapped in [whitespace analysis](/posts/whitespace-analysis-expansion/).
 
 These plays compound. A customer who is onboarded well, sees value, knows several people at your company, and is growing simply does not churn.
 
@@ -120,15 +120,15 @@ To gauge whether it is working, track the effectiveness of your customer retenti
 
 ## How CRM and Automation Improve B2B Customer Retention
 
-Technology turns retention from a hope into a system. A CRM gives you one view of every customer (usage, support history, renewal date, health) so nothing slips, and automation makes the proactive plays repeatable at scale: triggered onboarding, renewal reminders, and health-based alerts. This is the operational backbone of retention, and we go deep on it in our [CRM for customer retention](/posts/crm-customer-retention) and [customer retention software](/posts/customer-retention-software) guides.
+Technology turns retention from a hope into a system. A CRM gives you one view of every customer (usage, support history, renewal date, health) so nothing slips, and automation makes the proactive plays repeatable at scale: triggered onboarding, renewal reminders, and health-based alerts. This is the operational backbone of retention, and we go deep on it in our [CRM for customer retention](/posts/crm-customer-retention/) and [customer retention software](/posts/customer-retention-software/) guides.
 
-For B2B SaaS specifically, the strategies and benchmarks have their own playbook, covered in [SaaS customer retention strategies](/posts/saas-customer-retention-strategies), and the metric to watch is your [SaaS churn rate](/posts/saas-churn-rate). If you sell on Shopify, the same principles adapt to repeat purchase in our [Shopify customer retention](/posts/shopify-customer-retention) guide.
+For B2B SaaS specifically, the strategies and benchmarks have their own playbook, covered in [SaaS customer retention strategies](/posts/saas-customer-retention-strategies/), and the metric to watch is your [SaaS churn rate](/posts/saas-churn-rate/). If you sell on Shopify, the same principles adapt to repeat purchase in our [Shopify customer retention](/posts/shopify-customer-retention/) guide.
 
 ---
 
 ## How to Win Back Churned B2B Customers
 
-Retention does not end at churn. A structured win-back program recovers a meaningful share of lost accounts, because they already know your product and the switching cost of coming back is low. Segment churned customers by why they left, fix that reason, and re-engage with a specific offer, the approach in our [churned customer win-back](/posts/churned-customer-win-back) guide.
+Retention does not end at churn. A structured win-back program recovers a meaningful share of lost accounts, because they already know your product and the switching cost of coming back is low. Segment churned customers by why they left, fix that reason, and re-engage with a specific offer, the approach in our [churned customer win-back](/posts/churned-customer-win-back/) guide.
 
 ---
 

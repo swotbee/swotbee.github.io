@@ -39,7 +39,7 @@ This is the #1 reported renewal automation issue in the [HubSpot Community](http
 
 This article explains why it happens and gives you four solutions, ranked from simplest to most powerful.
 
-> This article is part of our [Complete Guide to Building a Renewal Pipeline in HubSpot](/posts/hubspot-renewal-pipeline-complete-guide).
+> This article is part of our [Complete Guide to Building a Renewal Pipeline in HubSpot](/posts/hubspot-renewal-pipeline-complete-guide/).
 
 ---
 
@@ -183,7 +183,7 @@ For the most complex scenarios (variable contract terms per product line, mid-cy
 
 **Best for:** Companies with 500+ renewals annually and engineering resources to build and maintain custom code.
 
-Start with the [foundational workflow](/posts/hubspot-renewal-deal-workflow-automation) before adding multi-year complexity.
+Start with the [foundational workflow](/posts/hubspot-renewal-deal-workflow-automation/) before adding multi-year complexity.
 
 ---
 
@@ -219,7 +219,7 @@ If the chain breaks at any point, check:
 - Is re-enrollment enabled with the correct criteria?
 - Did you wait long enough between closings? (31-minute minimum)
 
-Infinite loops are just one of [12 common mistakes](/posts/hubspot-renewal-pipeline-mistakes-costing-revenue) we see in renewal pipelines.
+Infinite loops are just one of [12 common mistakes](/posts/hubspot-renewal-pipeline-mistakes-costing-revenue/) we see in renewal pipelines.
 
 ---
 

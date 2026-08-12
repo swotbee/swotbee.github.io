@@ -27,7 +27,7 @@ Where do those deals go?
 
 This is the second most common HubSpot pipeline architecture question after "should I separate renewals?" (and getting it wrong leads to double-counted revenue, confused ownership, and reports that nobody trusts. As [Tomasz Tunguz demonstrates](https://tomtunguz.com/negative-churn/), companies with strong expansion revenue (negative net churn) generate 73% more revenue over time) but only if that expansion is tracked cleanly.
 
-> This article is part of our [Complete Guide to Building a Renewal Pipeline in HubSpot](/posts/hubspot-renewal-pipeline-complete-guide).
+> This article is part of our [Complete Guide to Building a Renewal Pipeline in HubSpot](/posts/hubspot-renewal-pipeline-complete-guide/).
 
 ---
 
@@ -178,9 +178,9 @@ New Customer Closes → Sales Pipeline (Closed Won)
               └─ (Contraction tracked on renewal deal or separate deal)
 ```
 
-This builds on the [pipeline separation decision](/posts/hubspot-renewal-pipeline-vs-sales-pipeline). If you haven't decided whether to separate yet, start there.
+This builds on the [pipeline separation decision](/posts/hubspot-renewal-pipeline-vs-sales-pipeline/). If you haven't decided whether to separate yet, start there.
 
-Track expansion revenue in your [renewal dashboards](/posts/hubspot-renewal-nrr-grr-dashboard-reporting) for complete NRR reporting.
+Track expansion revenue in your [renewal dashboards](/posts/hubspot-renewal-nrr-grr-dashboard-reporting/) for complete NRR reporting.
 
 ---
 
@@ -193,7 +193,7 @@ For most mid-market teams:
 3. **Track contraction on the renewal deal** using Previous Contract Value and Revenue Change Reason properties, don't create a separate pipeline for it unless you have very complex product-level churn.
 4. **Always use Deal Type.** On every deal. No exceptions.
 
-Expansion confusion is one of the [12 common mistakes](/posts/hubspot-renewal-pipeline-mistakes-costing-revenue) we see, see the full list.
+Expansion confusion is one of the [12 common mistakes](/posts/hubspot-renewal-pipeline-mistakes-costing-revenue/) we see, see the full list.
 
 ---
 

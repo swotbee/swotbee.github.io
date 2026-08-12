@@ -44,7 +44,7 @@ Here's why: new business deals close at 20, 30%. Renewal deals close at 85, 95% 
 
 Your forecast just understated that deal by $50K. Multiply that across your pipeline and your CFO is making decisions on fantasy numbers.
 
-> This article is part of our [Complete Guide to Building a Renewal Pipeline in HubSpot](/posts/hubspot-renewal-pipeline-complete-guide).
+> This article is part of our [Complete Guide to Building a Renewal Pipeline in HubSpot](/posts/hubspot-renewal-pipeline-complete-guide/).
 
 ---
 
@@ -108,7 +108,7 @@ After one quarter, pull your actual renewal data:
 
 Repeat this calibration quarterly. Your probabilities should converge on reality within 2, 3 quarters.
 
-Forecast accuracy starts with [correct stage probabilities](/posts/hubspot-renewal-pipeline-stages), set these when you configure your pipeline.
+Forecast accuracy starts with [correct stage probabilities](/posts/hubspot-renewal-pipeline-stages/), set these when you configure your pipeline.
 
 ---
 
@@ -118,12 +118,12 @@ Accurate forecasting starts with clean deal data. To forecast recurring revenue 
 
 A few practices make renewal tracking reliable:
 
-- **Use deal amount as the renewal value**, normalized to ARR so multi-year contracts do not distort the number. See [TCV vs ARR forecasting](/posts/tcv-vs-arr-forecasting) for why this matters.
-- **Filter by contract end date** so the forecasting tool only counts renewals actually due in the period (the [at-bat renewal rate](/posts/at-bat-renewal-rate) principle).
+- **Use deal amount as the renewal value**, normalized to ARR so multi-year contracts do not distort the number. See [TCV vs ARR forecasting](/posts/tcv-vs-arr-forecasting/) for why this matters.
+- **Filter by contract end date** so the forecasting tool only counts renewals actually due in the period (the [at-bat renewal rate](/posts/at-bat-renewal-rate/) principle).
 - **Assign an account owner** to every renewal deal so the forecast rolls up by CSM and each owner can submit a forecast.
 - **Surface it in HubSpot dashboards** so leadership sees forecast versus actual in one view.
 
-The renewal process is predictable enough that, with clean deal data, your HubSpot renewal forecast can be far more accurate than a new-business forecast. For the underlying metrics (renewal rate, NRR, GRR), see our [guide to SaaS renewal metrics](/posts/renewal-metrics-explained).
+The renewal process is predictable enough that, with clean deal data, your HubSpot renewal forecast can be far more accurate than a new-business forecast. For the underlying metrics (renewal rate, NRR, GRR), see our [guide to SaaS renewal metrics](/posts/renewal-metrics-explained/).
 
 ---
 
@@ -214,7 +214,7 @@ HubSpot's [forecast tool](https://knowledge.hubspot.com/forecast/use-the-forecas
 
 This gives you a human-calibrated forecast alongside the weighted calculation. The best forecasts use both.
 
-Visualize your forecast in [custom dashboards](/posts/hubspot-renewal-nrr-grr-dashboard-reporting) for executive reporting.
+Visualize your forecast in [custom dashboards](/posts/hubspot-renewal-nrr-grr-dashboard-reporting/) for executive reporting.
 
 ---
 
@@ -234,8 +234,8 @@ This cadence catches drift early. Without it, your forecast degrades over time a
 
 Manual tracking is where forecasts go stale. Use HubSpot workflows to keep the pipeline (and forecast) current automatically:
 
-- **Automate renewal deal creation.** When a deal closes won, HubSpot automatically creates a renewal deal in your dedicated renewal pipeline, using renewal dates so every renewal is captured. See [renewal deal creation](/posts/hubspot-renewal-deal-workflow-automation).
-- **Automate renewal reminders.** Use workflows to create a follow-up task and notify the account owner 30 days before expiration (and at 60 and 90), so deals move through stages such as Upcoming Renewal on time. See [renewal reminders](/posts/hubspot-renewal-reminders).
+- **Automate renewal deal creation.** When a deal closes won, HubSpot automatically creates a renewal deal in your dedicated renewal pipeline, using renewal dates so every renewal is captured. See [renewal deal creation](/posts/hubspot-renewal-deal-workflow-automation/).
+- **Automate renewal reminders.** Use workflows to create a follow-up task and notify the account owner 30 days before expiration (and at 60 and 90), so deals move through stages such as Upcoming Renewal on time. See [renewal reminders](/posts/hubspot-renewal-reminders/).
 - **Alert on risk.** When a deal stalls in the renewal window, an automation can alert the CSM to reduce churn before it hits the forecast.
 
 Because these workflows handle the manual tracking, your forecast reflects real MRR and recurring revenue performance across multiple pipelines, giving sales teams and customer success one view of revenue performance. Automation, plus the growing power of AI in HubSpot, turns renewal forecasting from a monthly scramble into predictable revenue growth.

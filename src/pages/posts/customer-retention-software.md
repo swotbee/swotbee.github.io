@@ -40,11 +40,11 @@ faqs:
     a: "It ranges from free CRM tiers to enterprise customer success platforms costing thousands per month. Match the spend to your retention gap and team size rather than buying the most expensive option."
 ---
 
-> This article is part of our [complete guide to B2B customer retention](/posts/b2b-saas-customer-retention).
+> This article is part of our [complete guide to B2B customer retention](/posts/b2b-saas-customer-retention/).
 
 **Customer retention software is any tool that helps a business keep its existing customers by tracking customer behavior, surfacing churn risk, and automating the actions that improve retention.** It spans CRMs, customer success platforms, feedback tools, and analytics software, all aimed at the same goal: reduce customer churn and build lasting customer relationships. This guide explains what customer retention software is, the types of tools, the features that matter, how it compares to a CRM, and how to choose the right customer retention tool for your business.
 
-For the strategy these tools serve, start with our [B2B customer retention guide](/posts/b2b-saas-customer-retention).
+For the strategy these tools serve, start with our [B2B customer retention guide](/posts/b2b-saas-customer-retention/).
 
 ---
 
@@ -92,7 +92,7 @@ The right tool helps businesses reduce customer churn by making these capabiliti
 
 ## Predictive Analytics and Early-Warning Signals
 
-The most valuable customer retention software does not just report what happened; it predicts what will. Predictive analytics uses customer behavior, usage trends, and engagement to forecast which accounts are likely to churn, so customer success can intervene early. Early-warning-signal platforms turn declining usage (the leading indicator of churn) into an alert while there is still time to act. This is the difference between a tool that helps you understand churn and one that helps you prevent it, the proactive approach we detail in [silent churn detection](/posts/silent-churn-detection) and [cohort retention analysis](/posts/cohort-retention-analysis-churn).
+The most valuable customer retention software does not just report what happened; it predicts what will. Predictive analytics uses customer behavior, usage trends, and engagement to forecast which accounts are likely to churn, so customer success can intervene early. Early-warning-signal platforms turn declining usage (the leading indicator of churn) into an alert while there is still time to act. This is the difference between a tool that helps you understand churn and one that helps you prevent it, the proactive approach we detail in [silent churn detection](/posts/silent-churn-detection/) and [cohort retention analysis](/posts/cohort-retention-analysis-churn/).
 
 ---
 
@@ -104,7 +104,7 @@ The best customer retention software tools share a few traits: they unify custom
 
 ## CRM vs Customer Retention Software: What Is the Difference?
 
-This is a common question, and the answer is that the lines overlap. A CRM is a broad system of record for all customer relationships, including sales and retention. Dedicated customer retention software (such as a customer success platform) is purpose-built for the post-sale job of keeping customers. For many B2B teams, a strong CRM like HubSpot, configured with health scores and automation, is the customer retention software, and they add specialized tools only when they outgrow it. We cover that approach in [CRM for customer retention](/posts/crm-customer-retention).
+This is a common question, and the answer is that the lines overlap. A CRM is a broad system of record for all customer relationships, including sales and retention. Dedicated customer retention software (such as a customer success platform) is purpose-built for the post-sale job of keeping customers. For many B2B teams, a strong CRM like HubSpot, configured with health scores and automation, is the customer retention software, and they add specialized tools only when they outgrow it. We cover that approach in [CRM for customer retention](/posts/crm-customer-retention/).
 
 ---
 

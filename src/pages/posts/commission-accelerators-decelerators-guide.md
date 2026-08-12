@@ -220,7 +220,7 @@ With Operations Hub Professional or Enterprise, you can write custom-coded workf
 
 Tools like QuotaPath, Everstage, and CaptivateIQ were built specifically for this problem. They integrate with HubSpot, pull deal data automatically, and handle accelerator tiers, decelerators, SPIFs, and quota attainment tracking natively. For teams with more than ten reps on variable comp, this is almost always the right answer.
 
-For a deeper dive on building tiered structures in HubSpot, see our guide on [building tiered commissions in HubSpot](/posts/hubspot-tiered-commission-model-setup). For a comparison of the commission tracking tools available, check out [commission tools compared](/posts/hubspot-commission-tracking-tools-compared).
+For a deeper dive on building tiered structures in HubSpot, see our guide on [building tiered commissions in HubSpot](/posts/hubspot-tiered-commission-model-setup/). For a comparison of the commission tracking tools available, check out [commission tools compared](/posts/hubspot-commission-tracking-tools-compared/).
 
 **The honest assessment:** for true quota-based accelerators with real-time attainment tracking and dynamic rate application, HubSpot-native approaches are a stretch. They work for simple plans and small teams. They break down quickly as complexity grows. This is the single most common reason mid-market teams upgrade to dedicated commission software -- and it is a reasonable investment when you consider the cost of getting commissions wrong.
 

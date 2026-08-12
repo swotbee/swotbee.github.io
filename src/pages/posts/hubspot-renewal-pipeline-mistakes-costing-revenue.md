@@ -25,7 +25,7 @@ After building renewal pipelines for dozens of mid-market companies, we see the 
 
 Here are the 12 we see most often, and how to fix each one.
 
-> This article is part of our [Complete Guide to Building a Renewal Pipeline in HubSpot](/posts/hubspot-renewal-pipeline-complete-guide).
+> This article is part of our [Complete Guide to Building a Renewal Pipeline in HubSpot](/posts/hubspot-renewal-pipeline-complete-guide/).
 
 ---
 
@@ -37,7 +37,7 @@ Here are the 12 we see most often, and how to fix each one.
 
 **The cost:** Every multi-year customer stops getting automatic renewal deals after Year 1. Manual intervention is needed forever, and some renewals will be missed.
 
-**The fix:** Use the boolean toggle pattern or the dual-workflow pattern. This is the #1 most common renewal automation issue: we wrote an [entire article on fixing it](/posts/hubspot-renewal-workflow-infinite-loop-fix).
+**The fix:** Use the boolean toggle pattern or the dual-workflow pattern. This is the #1 most common renewal automation issue: we wrote an [entire article on fixing it](/posts/hubspot-renewal-workflow-infinite-loop-fix/).
 
 ---
 
@@ -53,7 +53,7 @@ Here are the 12 we see most often, and how to fix each one.
 - CSMs and AEs are working in the same pipeline with different processes
 - Reports can't cleanly separate revenue types without constant filtering
 
-**The fix:** [Separate your renewal pipeline](/posts/hubspot-renewal-pipeline-vs-sales-pipeline). Even if you keep a Deal Type property (you should), dedicated pipelines with dedicated stages give you accurate forecasting, clean automation, and clear ownership.
+**The fix:** [Separate your renewal pipeline](/posts/hubspot-renewal-pipeline-vs-sales-pipeline/). Even if you keep a Deal Type property (you should), dedicated pipelines with dedicated stages give you accurate forecasting, clean automation, and clear ownership.
 
 ---
 
@@ -77,7 +77,7 @@ Here are the 12 we see most often, and how to fix each one.
 
 **The cost:** You can't analyze churn patterns. Was it pricing? Product fit? The champion leaving? Without structured churn data, every quarter's churn is a surprise.
 
-**The fix:** Create a specific churn reason dropdown with 10, 12 values, including involuntary churn from payment failures, which [Recurly's research](https://recurly.com/blog/what-is-involuntary-churn-what-you-can-do-about-it/) shows can account for up to 6% of total churn. Make it required when a deal moves to Closed Lost. Add a companion freeform text field for details. Review churn reasons quarterly. See the full taxonomy in our [churn prevention guide](/posts/hubspot-churn-prevention-health-scores-workflows).
+**The fix:** Create a specific churn reason dropdown with 10, 12 values, including involuntary churn from payment failures, which [Recurly's research](https://recurly.com/blog/what-is-involuntary-churn-what-you-can-do-about-it/) shows can account for up to 6% of total churn. Make it required when a deal moves to Closed Lost. Add a companion freeform text field for details. Review churn reasons quarterly. See the full taxonomy in our [churn prevention guide](/posts/hubspot-churn-prevention-health-scores-workflows/).
 
 ---
 
@@ -89,7 +89,7 @@ Here are the 12 we see most often, and how to fix each one.
 
 **The cost:** Your revenue reports overstate reality. NRR calculations are inflated. Finance loses trust in CRM data.
 
-**The fix:** Establish a clear rule: renewal deals reflect same-terms value only. Any increase goes to an expansion deal. Any decrease is tracked via contraction properties on the renewal deal. See our [multi-pipeline architecture guide](/posts/hubspot-renewal-expansion-pipeline-structure) for the full framework.
+**The fix:** Establish a clear rule: renewal deals reflect same-terms value only. Any increase goes to an expansion deal. Any decrease is tracked via contraction properties on the renewal deal. See our [multi-pipeline architecture guide](/posts/hubspot-renewal-expansion-pipeline-structure/) for the full framework.
 
 ---
 
@@ -101,7 +101,7 @@ Here are the 12 we see most often, and how to fix each one.
 
 **The cost:** The customer has been quietly evaluating alternatives. By the time the renewal conversation starts, they've already chosen a competitor. [As Jason Lemkin notes](https://www.saastr.com/high-nrr-can-mask-a-lot-of-problems/), high NRR can mask this problem: a few large account expansions hide the fact that many smaller accounts are silently churning.
 
-**The fix:** Build proactive health monitoring. Track email engagement, meeting frequency, QBR attendance, and product usage (if available). A customer who goes quiet is a customer who needs attention. Build [health-based alert workflows](/posts/hubspot-churn-prevention-health-scores-workflows) that flag disengagement early.
+**The fix:** Build proactive health monitoring. Track email engagement, meeting frequency, QBR attendance, and product usage (if available). A customer who goes quiet is a customer who needs attention. Build [health-based alert workflows](/posts/hubspot-churn-prevention-health-scores-workflows/) that flag disengagement early.
 
 ---
 
@@ -113,7 +113,7 @@ Here are the 12 we see most often, and how to fix each one.
 
 **The cost:** Your renewal forecast chronically understates reality. A $2M renewal pipeline at "average 35% weighted probability" shows as $700K. The actual number is closer to $1.7M. Your CFO is planning based on the wrong number.
 
-**The fix:** Set renewal stage probabilities to 80, 95%. Calibrate quarterly against actuals. See [how to fix your renewal forecasting](/posts/hubspot-renewal-forecasting-accuracy).
+**The fix:** Set renewal stage probabilities to 80, 95%. Calibrate quarterly against actuals. See [how to fix your renewal forecasting](/posts/hubspot-renewal-forecasting-accuracy/).
 
 ---
 
@@ -125,7 +125,7 @@ Here are the 12 we see most often, and how to fix each one.
 
 **The cost:** Close Date represents when your team plans to close the deal. Renewal Date represents when the contract expires. These are different dates. Using Close Date for both means your time-based automations fire at the wrong time, and your "days to renewal" calculations are wrong.
 
-**The fix:** Create a dedicated "Renewal Date" property. Use it for all time-based automation and reporting. Close Date remains the date the deal was actually won or lost. Both dates serve different purposes. See the [full property setup guide](/posts/hubspot-renewal-pipeline-properties).
+**The fix:** Create a dedicated "Renewal Date" property. Use it for all time-based automation and reporting. Close Date remains the date the deal was actually won or lost. Both dates serve different purposes. See the [full property setup guide](/posts/hubspot-renewal-pipeline-properties/).
 
 ---
 
@@ -179,7 +179,7 @@ Here are the 12 we see most often, and how to fix each one.
 - Build a monthly report that flags deals where the amount changed by more than 10%, review these in team meetings
 - For Enterprise users, configure audit logs for pipeline changes
 
-Most automation mistakes start in the [initial workflow setup](/posts/hubspot-renewal-deal-workflow-automation), get that right and half these problems disappear.
+Most automation mistakes start in the [initial workflow setup](/posts/hubspot-renewal-deal-workflow-automation/), get that right and half these problems disappear.
 
 ---
 

@@ -143,7 +143,7 @@ You don't need a six-month project to start rebuilding commission trust. Here ar
 
 **2. Create a commission dispute channel with a 24-hour SLA.** Set up a dedicated Slack channel or simple form where reps can flag commission questions. Commit to acknowledging every submission within 24 hours, not resolving, just acknowledging. "We see it, we're on it, you'll hear back by Friday." This single change addresses the silence problem that drove Priya to the recruiters. It costs nothing to implement and signals that you take commission accuracy seriously.
 
-**3. Audit your current process.** If you're tracking commissions in spreadsheets, read our [commission setup guide](/posts/hubspot-commission-tracking-setup-guide) for a walkthrough of building a more reliable system inside HubSpot. If you're evaluating dedicated commission tools, our [commission tools buyer's guide](/posts/hubspot-commission-tracking-tools-compared) compares the leading options and helps you decide what fits your team's size and complexity.
+**3. Audit your current process.** If you're tracking commissions in spreadsheets, read our [commission setup guide](/posts/hubspot-commission-tracking-setup-guide/) for a walkthrough of building a more reliable system inside HubSpot. If you're evaluating dedicated commission tools, our [commission tools buyer's guide](/posts/hubspot-commission-tracking-tools-compared/) compares the leading options and helps you decide what fits your team's size and complexity.
 
 ---
 

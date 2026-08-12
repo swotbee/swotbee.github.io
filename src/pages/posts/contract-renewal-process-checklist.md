@@ -47,7 +47,7 @@ faqs:
     a: "Most of it. CRM workflows can create the renewal record, assign owners, generate phase tasks, fire escalating reminders, and handle the billing handoff. The judgment steps (health verdict, negotiation) stay human; automation's job is making sure they happen on time, every time."
 ---
 
-> This article is part of our [Complete Guide to Contract Renewal Management](/posts/contract-renewal-management-complete-guide).
+> This article is part of our [Complete Guide to Contract Renewal Management](/posts/contract-renewal-management-complete-guide/).
 
 **A reliable contract renewal process starts 120 days before the contract end date and moves through five phases: assess the account, set the renewal strategy, engage the customer, propose and negotiate, then close and hand off.** Understanding the contract renewal process typically includes five phases, and each renewal phase has one named owner and a hard deadline relative to T-0 (the expiration date). The checklist below is copy-paste ready; the rest of this guide explains the timeline, the ownership split between sales, CS, and finance, and how to automate every step in a CRM so contract renewals stop depending on memory.
 
@@ -82,7 +82,7 @@ Both rules exist to reduce risk: an early start protects the uplift, and a notic
 
 What should be done before renewing a contract? The Assess phase answers it. Review contract performance against the outcomes the current contract promised, and check the renewal provisions written into it: is usage trending up or down throughout the contract term, and did the relationship earn an uplift, a flat renewal, or a save plan? A robust review process answers that with evidence instead of gut feel; a renewal decision made without that review is a coin flip with revenue on it.
 
-If your team plans renewals as a once-a-quarter batch instead of a rolling motion, the timeline still applies per contract; our guide to running a [365-day renewal strategy](/posts/renewal-strategy-365) covers how to make the motion continuous rather than episodic.
+If your team plans renewals as a once-a-quarter batch instead of a rolling motion, the timeline still applies per contract; our guide to running a [365-day renewal strategy](/posts/renewal-strategy-365/) covers how to make the motion continuous rather than episodic.
 
 ---
 
@@ -110,7 +110,7 @@ Three boundary rules that prevent most turf problems:
 
 For regulated industries, add one more consulted party: legal or compliance confirms the renewed contract aligns with current regulatory requirements before the quote goes out, not after signature; their job is to align the contract with what the business actually needs going forward.
 
-The deeper spec for this (fields to pass at handoff, meeting formats, plays by risk tier) is in our [renewal playbook template](/posts/renewal-playbook-template).
+The deeper spec for this (fields to pass at handoff, meeting formats, plays by risk tier) is in our [renewal playbook template](/posts/renewal-playbook-template/).
 
 ---
 
@@ -175,9 +175,9 @@ Contract renewal strategies live or die on the uplift, because it is where unman
 - **Set a default, not a debate.** A standing policy (for example, 5 to 8 percent annually unless contractually capped) means reps propose it by default instead of deciding under pressure. Check the existing contract first: a cap or an index clause included in the contract often holds across renewal periods.
 - **Justify with the customer's own numbers.** Usage growth, seats added mid-term, support consumed, and outcomes delivered over the contract period. An uplift email with evidence lands differently than a bare price change, and it turns flat renewals into renewal opportunities to expand.
 - **Give the uplift 30 days of air.** Springing a price increase at T-15 guarantees resentment, unfavorable terms forced by time pressure, or a lapsed contract. Communicate it at proposal time (T-60), in writing.
-- **Trade, never donate.** If the customer pushes back, exchange the discount for term length, a reference, or expanded scope. Our guide to [renewal quotes and price increases in HubSpot](/posts/hubspot-renewal-quote-price-increase) covers the quoting mechanics.
+- **Trade, never donate.** If the customer pushes back, exchange the discount for term length, a reference, or expanded scope. Our guide to [renewal quotes and price increases in HubSpot](/posts/hubspot-renewal-quote-price-increase/) covers the quoting mechanics.
 
-For strategic accounts, the engagement phase should be a genuine business review rather than a renewal ambush; running [QBRs that set up the renewal](/posts/strategic-qbr-renewals) months ahead makes the uplift conversation a footnote instead of a fight.
+For strategic accounts, the engagement phase should be a genuine business review rather than a renewal ambush; running [QBRs that set up the renewal](/posts/strategic-qbr-renewals/) months ahead makes the uplift conversation a footnote instead of a fight.
 
 ---
 
@@ -201,7 +201,7 @@ Every checklist item above is either a data condition or a task, which means con
 
 - **Kickoff:** a workflow watches Contract End Date and creates the renewal deal at T-120 with owner, amount, and dates pre-filled, flagging that a contract is due for renewal well before anyone would notice manually. This is the automation with the highest return, because it guarantees the record exists.
 - **Assess and strategize:** stage-entry tasks. When the deal enters the Assess stage, HubSpot creates the health review and stakeholder map tasks with due dates. Required properties (Risk Tier, Uplift %) block stage progression until filled.
-- **Engage:** date-based renewal alerts and escalation tasks at T-90, T-60, and T-30, routed to the owner and then the manager. These reminders ensure that renewal conversations start on schedule rather than when someone happens to notice the date. The full workflow build, including unenrollment rules so closed renewals stop alerting, is in our step-by-step guide to [renewal reminders in HubSpot](/posts/hubspot-renewal-reminders).
+- **Engage:** date-based renewal alerts and escalation tasks at T-90, T-60, and T-30, routed to the owner and then the manager. These reminders ensure that renewal conversations start on schedule rather than when someone happens to notice the date. The full workflow build, including unenrollment rules so closed renewals stop alerting, is in our step-by-step guide to [renewal reminders in HubSpot](/posts/hubspot-renewal-reminders/).
 - **Propose and negotiate:** quote created from the renewal deal so line items and the uplift live on the record; a stalled-deal alert fires if the deal sits in Negotiation for more than 14 days.
 - **Close and hand off:** a Closed Won workflow notifies finance, stamps the new contract dates, and schedules the next cycle's renewal deal.
 

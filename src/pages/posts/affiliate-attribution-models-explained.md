@@ -133,6 +133,6 @@ The wrong model does not just misallocate commissions. It changes partner behavi
 
 The right model, clearly communicated and consistently applied, does the opposite. It tells each partner exactly how their work translates into compensation. It aligns incentives with the activities you actually want. And it builds the kind of trust that turns transactional affiliate relationships into genuine partnerships.
 
-If you are building out your attribution approach, these related pieces might help: [how multi-tier commission programs keep partners engaged across the funnel](/posts/multi-tier-commission-programs-explained), and [why commission disputes erode trust faster than low payouts](/posts/sales-commission-disputes-trust).
+If you are building out your attribution approach, these related pieces might help: [how multi-tier commission programs keep partners engaged across the funnel](/posts/multi-tier-commission-programs-explained/), and [why commission disputes erode trust faster than low payouts](/posts/sales-commission-disputes-trust/).
 
 **Designing a partner program and not sure which attribution model fits your sales motion?** [Let us walk through it together](/contactus/), we will map your partner types, sales cycle, and revenue goals to the model that actually makes sense.

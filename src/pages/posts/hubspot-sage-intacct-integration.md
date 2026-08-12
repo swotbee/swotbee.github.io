@@ -47,7 +47,7 @@ faqs:
     a: "A specialist connector with standard requirements can be live in days to weeks. An iPaaS build for a typical mid-market scope (customers, invoices, closed-won deals) usually runs four to eight weeks including testing. Custom API projects run longer. Data cleanup on both sides is the most commonly underestimated line item."
 ---
 
-> This article is part of our [complete guide to HubSpot ERP integration](/posts/hubspot-erp-integration).
+> This article is part of our [complete guide to HubSpot ERP integration](/posts/hubspot-erp-integration/).
 
 **There is no first-party HubSpot Sage Intacct integration; as of mid-2026, neither HubSpot nor Sage ships a native connector, so every working integration runs through an iPaaS platform (Workato, Celigo, Tray, Boomi), a specialist prebuilt connector from the HubSpot marketplace, or custom API development.** All three paths can sync customers, invoices, and payment status into HubSpot and push closed-won deals into Intacct as orders or invoices. This guide covers how to choose between them, what to sync in which direction, and the smaller-company alternative (QuickBooks or Xero) if Intacct is more finance system than you need.
 
@@ -83,7 +83,7 @@ Both HubSpot and Sage Intacct expose full APIs (REST for HubSpot; Intacct's XML-
 | Specialist connector | Days to weeks | Low to medium | Low (template-bound) | Low (vendor maintains) |
 | Custom API build | Months | High | Total | High (you maintain everything) |
 
-For the broader method tradeoffs across all ERPs, see our [CRM ERP integration guide](/posts/crm-erp-integration).
+For the broader method tradeoffs across all ERPs, see our [CRM ERP integration guide](/posts/crm-erp-integration/).
 
 ---
 
@@ -100,7 +100,7 @@ The single most important design rule: every field gets exactly one system of re
 
 ### HubSpot to Sage Intacct (kill the rekeying)
 
-- **Closed-won deals:** deal, company, and line-item data automatically create a customer (if new) and a sales order or invoice in Intacct. Automating the creation of that order helps reduce manual entry and removes the manual handoff in your [order-to-cash process](/posts/order-to-cash-process), allowing you to focus on the next deal instead of retyping the last one.
+- **Closed-won deals:** deal, company, and line-item data automatically create a customer (if new) and a sales order or invoice in Intacct. Automating the creation of that order helps reduce manual entry and removes the manual handoff in your [order-to-cash process](/posts/order-to-cash-process/), allowing you to focus on the next deal instead of retyping the last one.
 - **Customer and billing contact updates:** billing address and contact changes made by sales flow to finance.
 
 What not to sync: HubSpot deal stages and other sales activities into Intacct (finance does not need pipeline noise), and Intacct GL detail into HubSpot (the revenue team needs invoice status, not journal entries). Every extra object is permanent maintenance surface.
@@ -117,7 +117,7 @@ If you are under roughly 50 employees or your business needs are invoicing rathe
 
 **Xero:** a native HubSpot-Xero integration also exists, historically centered on contact sync and invoice creation and visibility. Xero's repeating invoices cover basic recurring billing. Again, verify current sync scope on the marketplace listing.
 
-The pattern for small teams: let QuickBooks or Xero own invoicing and recurring charges, sync invoice status into HubSpot, and run the renewal motion in HubSpot off a contract end date property. You get 80 percent of the Intacct integration's value with near-zero middleware. If you outgrow it (multi-entity, revenue recognition, deep dimensions), Intacct plus iPaaS is the upgrade path, and if subscription billing itself is the constraint, compare the dedicated platforms in our [HubSpot billing integrations comparison](/posts/hubspot-billing-integrations-compared).
+The pattern for small teams: let QuickBooks or Xero own invoicing and recurring charges, sync invoice status into HubSpot, and run the renewal motion in HubSpot off a contract end date property. You get 80 percent of the Intacct integration's value with near-zero middleware. If you outgrow it (multi-entity, revenue recognition, deep dimensions), Intacct plus iPaaS is the upgrade path, and if subscription billing itself is the constraint, compare the dedicated platforms in our [HubSpot billing integrations comparison](/posts/hubspot-billing-integrations-compared/).
 
 ---
 

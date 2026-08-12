@@ -43,7 +43,7 @@ faqs:
     a: "It can surface renewal dates, score risk, and prompt CSMs, which is valuable signaling. It cannot build the HubSpot renewal deal with line items, uplift pricing, and multi-year chaining; that remains manual unless you automate it inside HubSpot itself."
 ---
 
-> This article is part of our [guide to running customer success in HubSpot without a separate CS platform](/posts/customer-success-in-hubspot).
+> This article is part of our [guide to running customer success in HubSpot without a separate CS platform](/posts/customer-success-in-hubspot/).
 
 **ChurnZero does not publish pricing; every deal is quote-based.** As of mid-2026, buyers on procurement platforms and review sites most commonly report annual contracts in the mid five figures for mid-market companies, with smaller deployments reported below that and larger ones well above. Treat any specific number you see online as one buyer's negotiated outcome, not a price list. This guide covers what drives a ChurnZero quote, what you genuinely get for the money, where the HubSpot integration helps and where it does not, and a framework for deciding whether you need a platform at all.
 
@@ -129,7 +129,7 @@ The practical limits HubSpot teams should weigh, drawn from documented user repo
 - **HubSpot remains the system where revenue lives.** Deals, amounts, and forecasts stay in HubSpot; ChurnZero reads and signals. Your CSMs will work in two systems, and field-level disagreements between them (especially renewal dates and amounts) are a recurring buyer complaint category across CS tools.
 - **It does not build your renewal deal.** ChurnZero can tell you a renewal is at risk 90 days out. Someone still has to create the renewal deal in HubSpot with the right line items, uplift, and close date. That operational step is outside every CS platform's scope.
 
-We compare the HubSpot sync quality of the wider field, including Vitally, Planhat, Totango, Catalyst, and ClientSuccess, in our [CS platform HubSpot integrations comparison](/posts/cs-platform-hubspot-integrations-compared).
+We compare the HubSpot sync quality of the wider field, including Vitally, Planhat, Totango, Catalyst, and ClientSuccess, in our [CS platform HubSpot integrations comparison](/posts/cs-platform-hubspot-integrations-compared/).
 
 ---
 
@@ -179,7 +179,7 @@ There is no single best of the ChurnZero alternatives; there is a best alternati
 
 ### Gainsight vs ChurnZero
 
-The customer success platform market's two best-known names get compared constantly, so if you are evaluating Gainsight and ChurnZero side by side: an enterprise platform like Gainsight is the depth option, with buyer-reported costs that generally run higher than ChurnZero for comparable deployments and a heavier admin requirement to match its layered scorecards and analytics. ChurnZero is most often described as the stronger fit for mid-market SaaS teams that want usage-driven automation without Gainsight's operational weight. Whether ChurnZero or Gainsight fits comes down to scale, not quality. We break down the numbers in our [Gainsight pricing and alternatives guide](/posts/gainsight-pricing-alternatives-hubspot).
+The customer success platform market's two best-known names get compared constantly, so if you are evaluating Gainsight and ChurnZero side by side: an enterprise platform like Gainsight is the depth option, with buyer-reported costs that generally run higher than ChurnZero for comparable deployments and a heavier admin requirement to match its layered scorecards and analytics. ChurnZero is most often described as the stronger fit for mid-market SaaS teams that want usage-driven automation without Gainsight's operational weight. Whether ChurnZero or Gainsight fits comes down to scale, not quality. We break down the numbers in our [Gainsight pricing and alternatives guide](/posts/gainsight-pricing-alternatives-hubspot/).
 
 ### ChurnZero vs Totango and the Mid-Market Field
 
@@ -187,7 +187,7 @@ Totango (which merged with Catalyst in 2024) takes a more modular approach and h
 
 ### Running Customer Success in HubSpot Instead
 
-If you want a customer success solution without a platform contract and you run HubSpot Professional or Enterprise, the Customer Success Workspace, native health scores, surveys, and ticket signals cover the core CSM jobs. Pair them with [health-score-triggered churn prevention workflows](/posts/hubspot-churn-prevention-health-scores-workflows) and you have the signaling layer most mid-market teams actually use, inside the CRM you already pay for. Platforms like ChurnZero earn their keep when churn signals live in product data; if yours do not, the CRM covers it.
+If you want a customer success solution without a platform contract and you run HubSpot Professional or Enterprise, the Customer Success Workspace, native health scores, surveys, and ticket signals cover the core CSM jobs. Pair them with [health-score-triggered churn prevention workflows](/posts/hubspot-churn-prevention-health-scores-workflows/) and you have the signaling layer most mid-market teams actually use, inside the CRM you already pay for. Platforms like ChurnZero earn their keep when churn signals live in product data; if yours do not, the CRM covers it.
 
 ### When Your Real Problem Is Renewals, Not Signals
 

@@ -41,7 +41,7 @@ Tiered commission structures solve this. They create accelerating rewards that m
 
 This article walks through exactly how to design tiered structures that motivate without creating chaos, with real rate examples, actual dollar calculations, and the common mistakes that trip up mid-market teams.
 
-> This article is part of our [Complete Guide to HubSpot Sales Commission Tracking](/posts/hubspot-sales-commission-tracking-complete-guide).
+> This article is part of our [Complete Guide to HubSpot Sales Commission Tracking](/posts/hubspot-sales-commission-tracking-complete-guide/).
 
 ---
 
@@ -215,8 +215,8 @@ Once your tier structure is designed on paper, you need to make it operational. 
 
 We have written detailed implementation guides for both scenarios:
 
-- [Building a Tiered Commission Model in HubSpot](/posts/hubspot-tiered-commission-model-setup), step-by-step setup with formula examples
-- [HubSpot Commission Setup Without New Software](/posts/hubspot-commission-tracking-setup-guide), a complete walkthrough using only native HubSpot tools
+- [Building a Tiered Commission Model in HubSpot](/posts/hubspot-tiered-commission-model-setup/), step-by-step setup with formula examples
+- [HubSpot Commission Setup Without New Software](/posts/hubspot-commission-tracking-setup-guide/), a complete walkthrough using only native HubSpot tools
 
 If your plan is straightforward, you can absolutely manage it inside HubSpot without adding another tool to your stack. If your plan has more than four tiers, product-based splits, and mid-quarter adjustments, be honest about whether native tools will scale, and build accordingly.
 
@@ -232,7 +232,7 @@ We have helped dozens of mid-market teams design and implement tiered commission
 
 **3. Tiers that never reset.** Annual tier structures have a specific problem: a rep who hits the top tier in February spends the remaining ten months at the highest rate with no additional milestones to reach. Quarterly resets keep the motivation fresh but can feel punishing to reps who had one bad quarter. The right reset cadence depends on your sales cycle length. For deal cycles under 60 days, quarterly resets work well. For longer cycles, consider semi-annual or annual with quarterly checkpoints.
 
-**4. Changing tiers mid-year.** Nothing destroys trust faster than modifying the comp plan after reps have already been making decisions based on it. If a rep pushed hard to close a deal in March because she was chasing an accelerator tier, and you change the thresholds in April, you have broken a promise. Make your plan decisions before the period starts and commit to them. If the plan is not working, fix it for next period, not this one. For more on this topic, see our article on [handling commission disputes without losing trust](/posts/sales-commission-disputes-trust).
+**4. Changing tiers mid-year.** Nothing destroys trust faster than modifying the comp plan after reps have already been making decisions based on it. If a rep pushed hard to close a deal in March because she was chasing an accelerator tier, and you change the thresholds in April, you have broken a promise. Make your plan decisions before the period starts and commit to them. If the plan is not working, fix it for next period, not this one. For more on this topic, see our article on [handling commission disputes without losing trust](/posts/sales-commission-disputes-trust/).
 
 **5. Not communicating the "why."** Reps do not just need to know the numbers. They need to understand the strategy behind the structure. Why is the add-on module rate higher than the core platform rate? Because the company needs to grow that product line. Why is there a multi-year bonus? Because customer lifetime value matters more than a single-year contract. When reps understand the business logic behind their comp plan, they become strategic sellers, not just quota chasers. Take thirty minutes at the start of every comp period to walk the team through the reasoning, not just the rates.
 

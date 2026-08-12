@@ -39,7 +39,7 @@ faqs:
     a: "Direct price competition is a race to the bottom that a deeper-pocketed competitor can win; competing on value is more defensible."
 ---
 
-> This article is part of our [365-day renewal strategy guide](/posts/renewal-strategy-365).
+> This article is part of our [365-day renewal strategy guide](/posts/renewal-strategy-365/).
 
 **When a competitor drops their price at your renewal, panic-discounting is the wrong response: it erodes margin, sets a bad precedent, and competes on the one dimension where someone can always undercut you.** The right response to competitive pricing pressure is to reinforce your unique value proposition and the cost of switching, defending profitability rather than matching the lower price. You rarely win a price war; you win by making price the wrong question.
 
@@ -80,7 +80,7 @@ A useful mental model is a strategic price reaction matrix: weigh the threat (is
 A disciplined reaction to competitive price moves follows a sequence:
 
 1. **Stay calm and qualify.** Is the competitor quote real, or a procurement tactic? Often it is a bluff.
-2. **Reframe around value.** Return to proven outcomes ([value realization](/posts/customer-value-realization)) and the business impact at risk if they switch.
+2. **Reframe around value.** Return to proven outcomes ([value realization](/posts/customer-value-realization/)) and the business impact at risk if they switch.
 3. **Quantify switching cost.** Migration, retraining, integration rebuild, and risk are real costs the cheaper option ignores. Make them explicit.
 4. **Differentiate.** Reinforce what only you offer: the unique capabilities, support, and outcomes behind your value proposition.
 5. **Flex on terms, not list price.** If you must move, trade a smaller concession for a longer term or expansion, never a naked discount.
@@ -91,9 +91,9 @@ A disciplined reaction to competitive price moves follows a sequence:
 
 To mitigate price competition without a price war:
 
-- **Build switching costs through value.** The more value realized and the more departments using you (via [land-and-expand](/posts/land-and-expand-strategy)), the harder you are to displace; [research shows relational switching costs, not contract terms, do the actual work here](/posts/switching-costs-b2b-renewal-research).
-- **Multi-thread.** A competitor's price lands harder when you only know one contact; broad [relationships](/posts/single-threaded-renewals-multithreading) give you defenders inside the account.
-- **Use value-based pricing.** Anchor on the value delivered, not the competitor's number, and use [good-better-best tiers](/posts/good-better-best-pricing) to offer choice without dropping your target price.
+- **Build switching costs through value.** The more value realized and the more departments using you (via [land-and-expand](/posts/land-and-expand-strategy/)), the harder you are to displace; [research shows relational switching costs, not contract terms, do the actual work here](/posts/switching-costs-b2b-renewal-research/).
+- **Multi-thread.** A competitor's price lands harder when you only know one contact; broad [relationships](/posts/single-threaded-renewals-multithreading/) give you defenders inside the account.
+- **Use value-based pricing.** Anchor on the value delivered, not the competitor's number, and use [good-better-best tiers](/posts/good-better-best-pricing/) to offer choice without dropping your target price.
 - **Hold pricing power.** Brands that consistently prove value possess pricing power and can defend premium pricing through a renewal.
 
 ---
@@ -137,7 +137,7 @@ Direct price competition is a race to the bottom that a deeper-pocketed competit
 
 ---
 
-Defending value is part of the negotiation discipline in the [365-day renewal strategy](/posts/renewal-strategy-365).
+Defending value is part of the negotiation discipline in the [365-day renewal strategy](/posts/renewal-strategy-365/).
 
 **If price is the only reason a customer stays, you never really had them.** SWOTBee builds value-led renewal and pricing strategies for mid-market companies across Energy, Manufacturing, and SaaS.
 

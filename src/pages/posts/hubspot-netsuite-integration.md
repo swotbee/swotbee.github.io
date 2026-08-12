@@ -45,13 +45,13 @@ faqs:
 
 **A HubSpot NetSuite integration connects HubSpot, your front-office CRM, with NetSuite, your back-office ERP, so that customer, deal, and order data sync between the two systems instead of being re-keyed by hand.** Done well, it turns a closed-won HubSpot deal into a NetSuite sales order automatically, gives sales teams real-time visibility into invoices and inventory, and gives finance a clean source of truth. Done badly, it silently drops records, rolls back dates, and erodes trust in both systems. This guide covers how the integration works, the three integration methods, where the native connector fails at scale, and when to integrate, migrate, or leave things alone.
 
-This is the pillar for our HubSpot and NetSuite series, the most common real-world example of [CRM and ERP integration](/posts/crm-erp-integration). It links to the deep-dive guides on each decision: comparison, setup, [what data syncs](/posts/hubspot-netsuite-sync), connectors, migration, and custom builds.
+This is the pillar for our HubSpot and NetSuite series, the most common real-world example of [CRM and ERP integration](/posts/crm-erp-integration/). It links to the deep-dive guides on each decision: comparison, setup, [what data syncs](/posts/hubspot-netsuite-sync/), connectors, migration, and custom builds.
 
 ---
 
 ## HubSpot vs NetSuite Overview: Aligning Front Office and Back Office
 
-HubSpot and NetSuite solve different halves of the revenue problem. HubSpot is a marketing, sales, and service platform built for high-velocity go-to-market motions. NetSuite is an ERP whose CRM is one module beside finance, inventory, and order management. The question is rarely "which is better" but "how do these two platforms work together." For a full feature-by-feature breakdown, see our [NetSuite CRM vs HubSpot comparison](/posts/netsuite-crm-vs-hubspot).
+HubSpot and NetSuite solve different halves of the revenue problem. HubSpot is a marketing, sales, and service platform built for high-velocity go-to-market motions. NetSuite is an ERP whose CRM is one module beside finance, inventory, and order management. The question is rarely "which is better" but "how do these two platforms work together." For a full feature-by-feature breakdown, see our [NetSuite CRM vs HubSpot comparison](/posts/netsuite-crm-vs-hubspot/).
 
 ### High Velocity Lead Generation versus Complex Financial Ledgers
 
@@ -83,7 +83,7 @@ Signs you have outgrown the current setup: reps live in spreadsheets because Net
 
 <img src="/assets/posts/diagrams/netsuite-object-mapping.svg" alt="Object mapping between HubSpot and NetSuite records" width="800" height="360" loading="lazy" decoding="async" />
 
-The heart of any integration is object mapping: deciding which HubSpot record maps to which NetSuite record, and in which direction each field flows. Get this layer wrong and you get silent errors, duplicates, and broken workflows, which is why we devote a whole guide to the [HubSpot NetSuite data mapping pitfalls](/posts/hubspot-netsuite-data-mapping).
+The heart of any integration is object mapping: deciding which HubSpot record maps to which NetSuite record, and in which direction each field flows. Get this layer wrong and you get silent errors, duplicates, and broken workflows, which is why we devote a whole guide to the [HubSpot NetSuite data mapping pitfalls](/posts/hubspot-netsuite-data-mapping/).
 
 ### Aligning HubSpot Deals with NetSuite Sales Orders
 
@@ -105,7 +105,7 @@ There are three main integration methods, and choosing the right one is the sing
 | iPaaS (Celigo, Workato) | Most mid-market RevOps | Subscription cost, some learning curve |
 | Custom API | Complex schemas, high volume | Build time and long-term maintenance |
 
-For the full breakdown of connectors and middleware, see our [HubSpot NetSuite connector comparison](/posts/hubspot-netsuite-connector-comparison). For automation-platform recipes, see the [Workato HubSpot integration playbook](/posts/workato-hubspot-integration). To bypass API limitations with a build, see our [custom NetSuite CRM integration guide](/posts/custom-netsuite-crm-integration).
+For the full breakdown of connectors and middleware, see our [HubSpot NetSuite connector comparison](/posts/hubspot-netsuite-connector-comparison/). For automation-platform recipes, see the [Workato HubSpot integration playbook](/posts/workato-hubspot-integration/). To bypass API limitations with a build, see our [custom NetSuite CRM integration guide](/posts/custom-netsuite-crm-integration/).
 
 ### Evaluating Build Time and Long Term Maintenance
 
@@ -129,7 +129,7 @@ HubSpot stores date-picker fields as timestamps at midnight UTC, so a date arriv
 
 ## Step by Step Setup: Connecting HubSpot and NetSuite
 
-At a high level, you install the connection, define field mappings and sync directions, then test. The exact workflow configurations live in our [HubSpot to NetSuite integration setup guide](/posts/hubspot-to-netsuite-integration-setup).
+At a high level, you install the connection, define field mappings and sync directions, then test. The exact workflow configurations live in our [HubSpot to NetSuite integration setup guide](/posts/hubspot-to-netsuite-integration-setup/).
 
 ### Establishing Match Keys and Deduplication Rules
 
@@ -143,7 +143,7 @@ Plan the initial data load separately from the ongoing real-time sync. Load and 
 
 ## The NetSuite CRM to HubSpot Migration Playbook
 
-If the decision is to move CRM off NetSuite, treat it as a migration, not a sync. The exact steps are in our guide to [migrate NetSuite CRM to HubSpot](/posts/migrate-netsuite-crm-to-hubspot).
+If the decision is to move CRM off NetSuite, treat it as a migration, not a sync. The exact steps are in our guide to [migrate NetSuite CRM to HubSpot](/posts/migrate-netsuite-crm-to-hubspot/).
 
 ### Safeguarding Historical Activity Data
 
@@ -167,7 +167,7 @@ A high-volume integration often needs a SuiteCloud Plus license for additional A
 
 ## Anticipating Common Integration Challenges and Technical Bottlenecks
 
-Real-world NetSuite integrations hit predictable technical bottlenecks. We cover the engineering depth in our [custom NetSuite CRM integration guide](/posts/custom-netsuite-crm-integration).
+Real-world NetSuite integrations hit predictable technical bottlenecks. We cover the engineering depth in our [custom NetSuite CRM integration guide](/posts/custom-netsuite-crm-integration/).
 
 ### Resolving Line Item Array Position Conflicts
 
@@ -181,7 +181,7 @@ Complex orders with many line items can exceed SOAP (SuiteTalk) timeouts. High-v
 
 ## Specialized Use Cases: Industry and Team Applications
 
-The integration pays off differently by industry. Automation platforms expand what is possible, as shown in our [Workato HubSpot integration playbook](/posts/workato-hubspot-integration).
+The integration pays off differently by industry. Automation platforms expand what is possible, as shown in our [Workato HubSpot integration playbook](/posts/workato-hubspot-integration/).
 
 ### B2B Software and Subscription Billing Synchronization
 

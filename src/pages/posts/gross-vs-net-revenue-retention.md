@@ -39,7 +39,7 @@ faqs:
     a: "Yes. NRR and NDR are two names for the same metric."
 ---
 
-> This article is part of our [guide to SaaS renewal metrics](/posts/renewal-metrics-explained).
+> This article is part of our [guide to SaaS renewal metrics](/posts/renewal-metrics-explained/).
 
 **Gross revenue retention (GRR) measures how much recurring revenue you keep from existing customers after churn and downgrades; net revenue retention (NRR) adds expansion revenue on top, so it can exceed 100%.** GRR shows how well you patch leaks; NRR shows whether your existing customers fund growth on their own. The gap between the two is your expansion engine, and NRR is the metric investors use as a valuation multiplier.
 
@@ -76,7 +76,7 @@ GRR = (Starting MRR − churn − downgrades) ÷ Starting MRR × 100
 NRR = (Starting MRR − churn − downgrades + expansion revenue) ÷ Starting MRR × 100
 ```
 
-The only difference between the two formulas is the `+ expansion revenue` term. Note that neither uses new-customer revenue: both measure only revenue from existing customers, not new logos. To track these in your CRM, see [how to build NRR and GRR dashboards in HubSpot](/posts/hubspot-renewal-nrr-grr-dashboard-reporting).
+The only difference between the two formulas is the `+ expansion revenue` term. Note that neither uses new-customer revenue: both measure only revenue from existing customers, not new logos. To track these in your CRM, see [how to build NRR and GRR dashboards in HubSpot](/posts/hubspot-renewal-nrr-grr-dashboard-reporting/).
 
 ### Is NRR the Same as Net Dollar Retention?
 
@@ -160,8 +160,8 @@ In practice, track both. GRR is your floor; NRR is your ceiling.
 
 ## How to Improve Gross and Net Revenue Retention
 
-- **Lift GRR** by reducing revenue churn: better onboarding, proactive [renewal risk scoring](/posts/hubspot-renewal-risk-scoring), and catching [silent churn](/posts/silent-churn-detection) early.
-- **Lift NRR** by engineering expansion: track [cross-sell vs upsell](/posts/cross-sell-vs-upsell) separately and use [product-qualified signals](/posts/product-qualified-signals-expansion) to time the offer.
+- **Lift GRR** by reducing revenue churn: better onboarding, proactive [renewal risk scoring](/posts/hubspot-renewal-risk-scoring/), and catching [silent churn](/posts/silent-churn-detection/) early.
+- **Lift NRR** by engineering expansion: track [cross-sell vs upsell](/posts/cross-sell-vs-upsell/) separately and use [product-qualified signals](/posts/product-qualified-signals-expansion/) to time the offer.
 - **Measure it cleanly** by separating new, expansion, and churned revenue streams in your pipeline so the math is trustworthy.
 
 ---
@@ -195,7 +195,7 @@ Yes. NRR and NDR are two names for the same metric.
 
 ---
 
-GRR and NRR are two of the core numbers in our [SaaS renewal metrics guide](/posts/renewal-metrics-explained); the [HubSpot NRR/GRR dashboard guide](/posts/hubspot-renewal-nrr-grr-dashboard-reporting) shows how to report them.
+GRR and NRR are two of the core numbers in our [SaaS renewal metrics guide](/posts/renewal-metrics-explained/); the [HubSpot NRR/GRR dashboard guide](/posts/hubspot-renewal-nrr-grr-dashboard-reporting/) shows how to report them.
 
 **Retention metrics are easy to misread and easy to game:** one big expansion can flatter a leaky base. SWOTBee builds clean retention reporting and churn-risk scoring for mid-market companies across Energy, Manufacturing, and SaaS.
 

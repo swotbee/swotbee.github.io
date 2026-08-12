@@ -44,9 +44,9 @@ faqs:
 
 **CRM and ERP integration is the process of connecting your CRM (the front-office system for sales, marketing, and service) with your ERP (the back-office system for finance, inventory, and operations) so that customer, order, and financial data sync between them instead of being re-keyed by hand.** Done well, it gives every team one source of truth, automates the deal-to-cash handoff, and removes the manual data entry that slows growth. This guide covers what CRM and ERP integration is, how it works, the benefits, the methods, the challenges, and the best practices.
 
-This is the umbrella pillar for integration on swotbee.com. For the most common real-world pairing, see our detailed [HubSpot and NetSuite integration guide](/posts/hubspot-netsuite-integration).
+This is the umbrella pillar for integration on swotbee.com. For the most common real-world pairing, see our detailed [HubSpot and NetSuite integration guide](/posts/hubspot-netsuite-integration/).
 
-If your CRM is HubSpot, start with our [HubSpot ERP integration guide](/posts/hubspot-erp-integration): it applies everything in this article to HubSpot specifically, covering which ERPs connect natively, how HubSpot's data model maps to ERP objects, and the connector options for NetSuite, SAP, Dynamics, and the other major ERP platforms. This page stays platform-neutral; that one is the HubSpot playbook.
+If your CRM is HubSpot, start with our [HubSpot ERP integration guide](/posts/hubspot-erp-integration/): it applies everything in this article to HubSpot specifically, covering which ERPs connect natively, how HubSpot's data model maps to ERP objects, and the connector options for NetSuite, SAP, Dynamics, and the other major ERP platforms. This page stays platform-neutral; that one is the HubSpot playbook.
 
 ---
 
@@ -91,12 +91,12 @@ For mid-market companies especially, these benefits compound: the integration re
 
 CRM and ERP integration shows up in a few recurring patterns:
 
-- **Quote-to-cash automation.** Turning a CRM quote into an ERP order, invoice, and payment, covered in our [quote-to-cash guide](/posts/quote-to-cash).
-- **Order-to-cash visibility.** Flowing order status and receivables back to the customer record, covered in our [order-to-cash process guide](/posts/order-to-cash-process).
+- **Quote-to-cash automation.** Turning a CRM quote into an ERP order, invoice, and payment, covered in our [quote-to-cash guide](/posts/quote-to-cash/).
+- **Order-to-cash visibility.** Flowing order status and receivables back to the customer record, covered in our [order-to-cash process guide](/posts/order-to-cash-process/).
 - **Inventory visibility for sales.** Surfacing ERP stock and pricing inside the CRM so reps quote what can ship.
 - **Subscription billing sync.** Keeping recurring revenue aligned between a CRM renewal motion and ERP invoicing.
 
-The most common real-world example is connecting HubSpot (CRM) with NetSuite (ERP), which we cover end to end in our [HubSpot NetSuite integration pillar](/posts/hubspot-netsuite-integration).
+The most common real-world example is connecting HubSpot (CRM) with NetSuite (ERP), which we cover end to end in our [HubSpot NetSuite integration pillar](/posts/hubspot-netsuite-integration/).
 
 ---
 
@@ -110,7 +110,7 @@ There are three main ways to integrate CRM and ERP systems:
 | iPaaS (integration platform) | Most mid-market RevOps | Subscription cost, some setup |
 | Custom API | Complex schemas, high volume | Build time and maintenance |
 
-A native connector is fastest to turn on; an iPaaS such as Celigo or Workato is the mid-market default because it balances power and maintenance; a custom integration gives total control for complex needs. For the detailed comparison in a real pairing, see our [HubSpot NetSuite connector comparison](/posts/hubspot-netsuite-connector-comparison).
+A native connector is fastest to turn on; an iPaaS such as Celigo or Workato is the mid-market default because it balances power and maintenance; a custom integration gives total control for complex needs. For the detailed comparison in a real pairing, see our [HubSpot NetSuite connector comparison](/posts/hubspot-netsuite-connector-comparison/).
 
 ---
 
@@ -132,7 +132,7 @@ Whichever pattern you choose, plan for security and compliance, since the integr
 
 The hard part of CRM-ERP integration is rarely the connector; it is the data. Common challenges:
 
-- **Object and data-model mismatches.** The CRM and ERP model customers and orders differently, which breaks naive field mapping. We catalog these in our [data mapping guide](/posts/hubspot-netsuite-data-mapping).
+- **Object and data-model mismatches.** The CRM and ERP model customers and orders differently, which breaks naive field mapping. We catalog these in our [data mapping guide](/posts/hubspot-netsuite-data-mapping/).
 - **Duplicate records.** Without strong match keys and deduplication, a live sync creates duplicate customers fast.
 - **Source-of-truth conflicts.** If both systems can edit the same field, you get data drift unless ownership is defined.
 - **API limits and timeouts.** ERPs govern API access tightly, so high-volume syncs need careful architecture.

@@ -72,7 +72,7 @@ The renewal rate measures the percentage of customers (or revenue) that renew th
 - **Count-based renewal rate** = (number of customers who renew ÷ number of customers up for renewal) × 100.
 - **Revenue renewal rate** = (renewed ARR ÷ ARR up for renewal) × 100.
 
-The critical detail: only measure the specific cohort of customers whose contracts are actually expiring in the period. This "at-bat" approach prevents healthy long-term contracts from masking poor performance. See [measuring at-bat renewal rate](/posts/at-bat-renewal-rate) for the full method, and how to [track renewal rate in HubSpot dashboards](/posts/hubspot-renewal-nrr-grr-dashboard-reporting).
+The critical detail: only measure the specific cohort of customers whose contracts are actually expiring in the period. This "at-bat" approach prevents healthy long-term contracts from masking poor performance. See [measuring at-bat renewal rate](/posts/at-bat-renewal-rate/) for the full method, and how to [track renewal rate in HubSpot dashboards](/posts/hubspot-renewal-nrr-grr-dashboard-reporting/).
 
 When you calculate renewal across your customer count, be precise about the denominator. The count-based renewal rate uses the total number of customers up for renewal in the window, not your entire customer base. A renewal rate calculation that quietly includes customers who are not even up for renewal will overstate your customer renewal rate every time. Done correctly, the same renewal rate measures performance consistently, so tracking it across periods is meaningful.
 
@@ -89,7 +89,7 @@ Two metrics, two very different stories:
 - **Gross revenue retention (GRR)** = how much recurring revenue you keep before any expansion, after churn and downgrades. It caps at 100% and measures how well you patch leaks.
 - **Net revenue retention (NRR)** = GRR plus expansion (upsell and cross-sell). It can exceed 100%, and investors prize NRR over 115% because it shows existing customers fund growth on their own.
 
-The gap between the two is your expansion engine. For the valuation lens and how to measure each, see [gross vs net revenue retention](/posts/gross-vs-net-revenue-retention).
+The gap between the two is your expansion engine. For the valuation lens and how to measure each, see [gross vs net revenue retention](/posts/gross-vs-net-revenue-retention/).
 
 ---
 
@@ -114,7 +114,7 @@ Increasing customer retention here is what raises both your customer retention r
 
 ## Forecasting Renewal Revenue
 
-A renewal forecast is only as good as the revenue base it uses. The biggest forecasting error is blending Total Contract Value (TCV) with Annual Recurring Revenue (ARR), which distorts multi-year deals. Keep them separate. See [TCV vs ARR forecasting](/posts/tcv-vs-arr-forecasting), and why [your renewal forecast is wrong and how to fix it](/posts/hubspot-renewal-forecasting-accuracy). For consumption pricing, [forecasting usage-based revenue](/posts/usage-based-revenue-forecasting) needs a different model entirely.
+A renewal forecast is only as good as the revenue base it uses. The biggest forecasting error is blending Total Contract Value (TCV) with Annual Recurring Revenue (ARR), which distorts multi-year deals. Keep them separate. See [TCV vs ARR forecasting](/posts/tcv-vs-arr-forecasting/), and why [your renewal forecast is wrong and how to fix it](/posts/hubspot-renewal-forecasting-accuracy/). For consumption pricing, [forecasting usage-based revenue](/posts/usage-based-revenue-forecasting/) needs a different model entirely.
 
 ---
 
@@ -122,9 +122,9 @@ A renewal forecast is only as good as the revenue base it uses. The biggest fore
 
 Churn rate (churned revenue ÷ starting revenue) is a lagging metric. The leading signals matter more:
 
-- **Cohort analysis** reveals churn that a blended rate hides. See [why blended churn hides your true retention](/posts/cohort-retention-analysis-churn).
-- **Silent churn** is the real risk: customers who go quiet, skip check-ins, and stop replying renew far less often than the ones who complain. See [detecting silent churn](/posts/silent-churn-detection).
-- **A predictive health score** turns these signals into one number. See [renewal risk scoring](/posts/hubspot-renewal-risk-scoring).
+- **Cohort analysis** reveals churn that a blended rate hides. See [why blended churn hides your true retention](/posts/cohort-retention-analysis-churn/).
+- **Silent churn** is the real risk: customers who go quiet, skip check-ins, and stop replying renew far less often than the ones who complain. See [detecting silent churn](/posts/silent-churn-detection/).
+- **A predictive health score** turns these signals into one number. See [renewal risk scoring](/posts/hubspot-renewal-risk-scoring/).
 
 ---
 
@@ -132,10 +132,10 @@ Churn rate (churned revenue ÷ starting revenue) is a lagging metric. The leadin
 
 Renewals are also where growth compounds:
 
-- **SaaS quick ratio** measures whether new and expansion revenue outpace churn and contraction. See [calculating the SaaS quick ratio](/posts/saas-quick-ratio).
-- **Cross-sell vs upsell** must be tracked separately to understand your expansion strategy. See [cross-sell vs upsell](/posts/cross-sell-vs-upsell).
-- **Product-qualified signals** flag expansion (and renewal risk) before the conversation. See [product-qualified signals for expansion](/posts/product-qualified-signals-expansion).
-- **CAC, LTV, and payback** decide whether a renewal is even profitable. See [the cost of high CAC on LTV and renewals](/posts/cac-ltv-ratio-renewals).
+- **SaaS quick ratio** measures whether new and expansion revenue outpace churn and contraction. See [calculating the SaaS quick ratio](/posts/saas-quick-ratio/).
+- **Cross-sell vs upsell** must be tracked separately to understand your expansion strategy. See [cross-sell vs upsell](/posts/cross-sell-vs-upsell/).
+- **Product-qualified signals** flag expansion (and renewal risk) before the conversation. See [product-qualified signals for expansion](/posts/product-qualified-signals-expansion/).
+- **CAC, LTV, and payback** decide whether a renewal is even profitable. See [the cost of high CAC on LTV and renewals](/posts/cac-ltv-ratio-renewals/).
 
 ---
 
@@ -172,7 +172,7 @@ They are inverses on the revenue you keep: a higher churn rate pulls your renewa
 
 ---
 
-These metrics tell you whether renewals are healthy; the [complete guide to building a renewal pipeline in HubSpot](/posts/hubspot-renewal-pipeline-complete-guide) shows you how to operationalize them, and the [365-day renewal strategy](/posts/renewal-strategy-365) shows you how to win and expand them.
+These metrics tell you whether renewals are healthy; the [complete guide to building a renewal pipeline in HubSpot](/posts/hubspot-renewal-pipeline-complete-guide/) shows you how to operationalize them, and the [365-day renewal strategy](/posts/renewal-strategy-365/) shows you how to win and expand them.
 
 **Measuring renewals is where most teams fool themselves:** blended averages, mixed revenue bases, and lagging signals. SWOTBee builds renewal forecasting, dashboards, and churn-risk scoring for mid-market companies across Energy, Manufacturing, and SaaS.
 

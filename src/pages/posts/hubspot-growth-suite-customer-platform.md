@@ -38,7 +38,7 @@ faqs:
     a: "Yes. The free Smart CRM supports up to 2 users and is the foundation you build on as you scale."
 ---
 
-> This article is part of our [honest guide to whether HubSpot scales with business growth](/posts/does-hubspot-crm-scale).
+> This article is part of our [honest guide to whether HubSpot scales with business growth](/posts/does-hubspot-crm-scale/).
 
 **The HubSpot Growth Suite no longer exists as a product. It was a bundle launched in 2018, and HubSpot has since renamed and repackaged its offering as the Customer Platform: a Smart CRM plus six Hubs plus Breeze AI.** If you are searching for "HubSpot Growth Suite pricing," you are using a dead term, and most of the pages that still rank describe a discontinued bundle and a 25% discount that no longer applies. This guide corrects the record: what the Growth Suite was, what replaced it, which hubs are included, and what it actually costs in 2026.
 
@@ -95,7 +95,7 @@ The current pricing for the Customer Platform (the modern equivalent of Growth S
 - **Professional:** about $1,300 per month billed annually (includes 6 seats), plus $45 per additional core seat.
 - **Enterprise:** about $4,700 per month (includes 8 seats), plus $75 per additional core seat.
 
-Two things the old "25% discount" content never mentions: marketing-contact tiers add cost as your database grows, and Professional and Enterprise carry mandatory onboarding fees. We map the full bill, including the parts people forget, in our [HubSpot pricing at scale](/posts/hubspot-pricing-at-scale) guide.
+Two things the old "25% discount" content never mentions: marketing-contact tiers add cost as your database grows, and Professional and Enterprise carry mandatory onboarding fees. We map the full bill, including the parts people forget, in our [HubSpot pricing at scale](/posts/hubspot-pricing-at-scale/) guide.
 
 ---
 

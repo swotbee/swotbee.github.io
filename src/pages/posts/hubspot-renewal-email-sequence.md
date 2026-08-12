@@ -39,7 +39,7 @@ faqs:
     a: "Yes. Use workflow enrollment to enroll contacts in a sequence when a renewal deal reaches a defined stage, so the cadence starts without manual effort."
 ---
 
-> This article is part of our [Complete Guide to Building a Renewal Pipeline in HubSpot](/posts/hubspot-renewal-pipeline-complete-guide).
+> This article is part of our [Complete Guide to Building a Renewal Pipeline in HubSpot](/posts/hubspot-renewal-pipeline-complete-guide/).
 
 **You can automate renewal emails in HubSpot two ways: with the Sequences tool (one-to-one sales emails sent from a rep's inbox) or with Workflows and marketing email (one-to-many, sent from the CRM).** For most renewals, a HubSpot sequence is the better fit because it feels personal, stops on reply, and creates task reminders for the sales team. This guide shows you when to use each, how to create a sequence step by step, and a renewal sequence example you can copy.
 
@@ -89,7 +89,7 @@ A renewal sequence does not need many emails. Four well-timed, targeted emails b
 | Email 3 | 30 days out | Send the renewal proposal, book a meeting to walk through it | Direct |
 | Email 4 | 7 days out | Gentle nudge: "anything blocking the renewal?" | Personal, short |
 
-Add a meeting link in every email so a contact can book time in one click. Because a sequence stops on reply, anyone who responds drops out automatically and the rep takes over the conversation. Pair this customer-facing series with the [internal renewal reminders](/posts/hubspot-renewal-reminders) that alert your team, and the [90-60-30 task cadence](/posts/hubspot-renewal-deal-workflow-automation) that keeps reps accountable.
+Add a meeting link in every email so a contact can book time in one click. Because a sequence stops on reply, anyone who responds drops out automatically and the rep takes over the conversation. Pair this customer-facing series with the [internal renewal reminders](/posts/hubspot-renewal-reminders/) that alert your team, and the [90-60-30 task cadence](/posts/hubspot-renewal-deal-workflow-automation/) that keeps reps accountable.
 
 ---
 
@@ -115,7 +115,7 @@ A few HubSpot constraints to plan around:
 
 ## Tracking Sequence Performance
 
-Use the sequences dashboard and HubSpot analytics to monitor each sequence: enrollments, open rates, reply rate, and meetings booked. Compare sequence performance across segments so you can retire the emails that get ignored and double down on the ones that book meetings. Feed at-risk signals into your [renewal risk scoring](/posts/hubspot-churn-prevention-health-scores-workflows) so low engagement triggers a human save play, not just another email.
+Use the sequences dashboard and HubSpot analytics to monitor each sequence: enrollments, open rates, reply rate, and meetings booked. Compare sequence performance across segments so you can retire the emails that get ignored and double down on the ones that book meetings. Feed at-risk signals into your [renewal risk scoring](/posts/hubspot-churn-prevention-health-scores-workflows/) so low engagement triggers a human save play, not just another email.
 
 ---
 

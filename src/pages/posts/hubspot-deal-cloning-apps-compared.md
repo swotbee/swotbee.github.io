@@ -32,7 +32,7 @@ pillarUrl: "/posts/hubspot-clone-deal-complete-guide"
 
 Every existing article about HubSpot deal cloning apps is written by the vendor selling the app. This one isn't. We've implemented CloneNer, Deal Duplicator, Clone a Deal, and Clone Attack for clients, and we'll tell you which one actually fits your team.
 
-> This article is part of our [Complete Guide to Cloning Deals in HubSpot](/posts/hubspot-clone-deal-complete-guide).
+> This article is part of our [Complete Guide to Cloning Deals in HubSpot](/posts/hubspot-clone-deal-complete-guide/).
 
 
 ## If Your Use Case Is Renewals, Compare More Than Clone Buttons
@@ -47,7 +47,7 @@ Use this comparison alongside the [HubSpot renewal apps page](/compare/hubspot-r
 
 HubSpot's built-in deal cloning (Actions → Clone) copies deal properties and associations, but nothing else. No line items. No workflow automation. No templates. No cross-pipeline cloning. The native cloning feature is fine for a one-off duplicate deal; it's not built for teams that need consistency and accuracy across dozens of duplicate deals a month, which is where a dedicated app or a workflow-based approach earns its cost.
 
-For a team managing [renewal pipelines](/posts/hubspot-renewal-pipeline-complete-guide), upsells, or multi-location deals, native cloning means manually recreating line items every single time. According to [Instrumental Group](https://www.instrumental.net/blog/beyond-the-basics-why-native-deal-cloning-falls-short-for-high-efficiency-sales-teams), reps spend 5-15 minutes per deal on post-clone cleanup: rebuilding line items, fixing dates, and correcting associations. At 50+ renewals per quarter, that's 4-12 hours of pure admin.
+For a team managing [renewal pipelines](/posts/hubspot-renewal-pipeline-complete-guide/), upsells, or multi-location deals, native cloning means manually recreating line items every single time. According to [Instrumental Group](https://www.instrumental.net/blog/beyond-the-basics-why-native-deal-cloning-falls-short-for-high-efficiency-sales-teams), reps spend 5-15 minutes per deal on post-clone cleanup: rebuilding line items, fixing dates, and correcting associations. At 50+ renewals per quarter, that's 4-12 hours of pure admin.
 
 That's why [1,300+ companies](https://www.instrumental.net/apps/deal-duplicator-for-hubspot) use Deal Duplicator, [1,500+ use CloneNer](https://ecosystem.hubspot.com/marketplace/apps/clonener-2156213), roughly 1,000 use Clone Attack, and several hundred more use Clone a Deal.
 

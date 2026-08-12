@@ -39,7 +39,7 @@ faqs:
     a: "Ideally 60 to 90 days before renewal, so the upsell folds into the renewal conversation."
 ---
 
-> This article is part of our [guide to SaaS renewal metrics](/posts/renewal-metrics-explained).
+> This article is part of our [guide to SaaS renewal metrics](/posts/renewal-metrics-explained/).
 
 **Product-qualified signals are usage-based triggers that show an existing customer is ready to expand: hitting a usage quota, adopting an advanced feature, or adding users.** A customer showing these signals is a product-qualified lead (PQL) for expansion, and tracking them lets you time an upsell right before renewal, when buying intent is highest. Instead of guessing, you let product usage data tell you which accounts are ready to buy more.
 
@@ -89,7 +89,7 @@ To operationalize product-qualified signals:
 
 1. **Define your PQL criteria.** Decide which usage triggers indicate expansion readiness for your ideal customer profile (ICP). One clear quota signal beats a dozen vague ones.
 2. **Bring usage data into the CRM.** Integrate product usage data so sales and customer success see the signals on the account record. Without this integration, PQLs stay invisible.
-3. **Score the signals.** Combine product usage, engagement data, and account fit into a score that ranks accounts by expansion readiness, the mirror image of [renewal risk scoring](/posts/hubspot-renewal-risk-scoring). Some teams layer an AI predictive model over the data points to rank buying signals across accounts.
+3. **Score the signals.** Combine product usage, engagement data, and account fit into a score that ranks accounts by expansion readiness, the mirror image of [renewal risk scoring](/posts/hubspot-renewal-risk-scoring/). Some teams layer an AI predictive model over the data points to rank buying signals across accounts.
 4. **Route high-intent accounts.** When an account becomes a qualified PQL, create a task for the owner to start the expansion conversation, ideally before the renewal so it folds into one deal.
 5. **Time it to the renewal.** A PQL flagged 60 to 90 days before renewal lets you combine the renewal and the upsell into a single, value-led conversation.
 
@@ -114,7 +114,7 @@ Done well, this turns product usage into a predictable stream of expansion oppor
 
 ## Why PQLs Beat Guesswork for Expansion
 
-Expansion revenue is what pushes [net revenue retention](/posts/gross-vs-net-revenue-retention) above 100%. Most teams chase expansion by gut feel or blanket outreach, which annoys customers and wastes rep time. PQLs replace that with evidence: you prioritize outreach to accounts whose usage proves they are ready, lifting conversion rates and protecting the customer relationship. The same usage signals that flag expansion also flag risk when they fall, so the model serves both growth and retention. Track which expansions come from upsell versus [cross-sell](/posts/cross-sell-vs-upsell) to refine the motion.
+Expansion revenue is what pushes [net revenue retention](/posts/gross-vs-net-revenue-retention/) above 100%. Most teams chase expansion by gut feel or blanket outreach, which annoys customers and wastes rep time. PQLs replace that with evidence: you prioritize outreach to accounts whose usage proves they are ready, lifting conversion rates and protecting the customer relationship. The same usage signals that flag expansion also flag risk when they fall, so the model serves both growth and retention. Track which expansions come from upsell versus [cross-sell](/posts/cross-sell-vs-upsell/) to refine the motion.
 
 ---
 
@@ -137,7 +137,7 @@ Ideally 60 to 90 days before renewal, so the upsell folds into the renewal conve
 
 ---
 
-Product-qualified signals are one of the expansion metrics in our [SaaS renewal metrics guide](/posts/renewal-metrics-explained). For what the evidence actually says about using usage data to predict renewal risk itself, rather than expansion timing, see our [research on which usage metric actually predicts renewal](/posts/product-usage-metrics-renewal-research).
+Product-qualified signals are one of the expansion metrics in our [SaaS renewal metrics guide](/posts/renewal-metrics-explained/). For what the evidence actually says about using usage data to predict renewal risk itself, rather than expansion timing, see our [research on which usage metric actually predicts renewal](/posts/product-usage-metrics-renewal-research/).
 
 **Expansion is won by evidence, not guesswork:** usage signals beat gut feel every time. SWOTBee connects product usage data to the renewal pipeline for mid-market companies across Energy, Manufacturing, and SaaS.
 

@@ -39,7 +39,7 @@ faqs:
     a: "Add minimum commitments, watch usage trends early, blend subscription with usage, and keep usage data accurate and real-time."
 ---
 
-> This article is part of our [guide to SaaS renewal metrics](/posts/renewal-metrics-explained).
+> This article is part of our [guide to SaaS renewal metrics](/posts/renewal-metrics-explained/).
 
 **Usage-based revenue forecasting predicts revenue when customers pay for what they consume rather than a fixed monthly seat price.** Because consumption varies, you cannot just multiply seats by price: you forecast from usage patterns, trends, and customer-level consumption data. The trade-off is that usage-based pricing aligns revenue with value delivered but makes revenue less predictable than a standard subscription model. This guide explains how consumption-based forecasting works and how to make variable usage revenue more predictable.
 
@@ -61,7 +61,7 @@ With fixed subscriptions, forecasting is straightforward: ARR is seats times pri
 
 - **Revenue predictability drops.** Variable usage means variable revenue, which is harder to project than fixed MRR.
 - **Renewals look different.** Instead of a yes/no renewal, you forecast whether consumption (and therefore revenue) continues, grows, or shrinks.
-- **Expansion is automatic.** When customers use more, revenue grows without a sales motion, which lifts [net revenue retention](/posts/gross-vs-net-revenue-retention) but makes the number harder to predict.
+- **Expansion is automatic.** When customers use more, revenue grows without a sales motion, which lifts [net revenue retention](/posts/gross-vs-net-revenue-retention/) but makes the number harder to predict.
 
 ---
 
@@ -93,14 +93,14 @@ Forecasting and revenue recognition are linked. With a subscription, you recogni
 
 ## Tools for Usage-Based Forecasting
 
-You do not need exotic software, but you do need the right inputs. Good forecasting tools for usage models share three traits: they ingest granular product usage data, they let you segment customers by usage pattern, and they output a range rather than a single number. Whether you build this in a spreadsheet, your data warehouse, or a billing platform, the goal is the same: predict future revenue from how customers actually use the product. Pair the forecast with usage alerts so a drop in a key usage metric flags churn risk early, the same discipline as [renewal risk scoring](/posts/hubspot-renewal-risk-scoring).
+You do not need exotic software, but you do need the right inputs. Good forecasting tools for usage models share three traits: they ingest granular product usage data, they let you segment customers by usage pattern, and they output a range rather than a single number. Whether you build this in a spreadsheet, your data warehouse, or a billing platform, the goal is the same: predict future revenue from how customers actually use the product. Pair the forecast with usage alerts so a drop in a key usage metric flags churn risk early, the same discipline as [renewal risk scoring](/posts/hubspot-renewal-risk-scoring/).
 
 ## The Challenges of Forecasting Usage-Based Revenue
 
 Usage-based revenue is harder to forecast for several reasons:
 
 - **Variability.** Consumption fluctuates with the customer's own business, so revenue is inherently less predictable.
-- **Low-usage risk.** A customer with declining usage is a churn signal even if they have not cancelled. Low usage is the consumption-model equivalent of [silent churn](/posts/silent-churn-detection).
+- **Low-usage risk.** A customer with declining usage is a churn signal even if they have not cancelled. Low usage is the consumption-model equivalent of [silent churn](/posts/silent-churn-detection/).
 - **Revenue recognition complexity.** Usage revenue is often recognized as consumed, which complicates deferred revenue and reporting.
 - **Lumpy expansion.** A single large customer ramping usage can swing the forecast, so concentration matters.
 
@@ -122,7 +122,7 @@ For a usage-based SaaS business, a bottom-up forecast cross-checked against a to
 You cannot make consumption perfectly predictable, but you can tighten the forecast:
 
 - **Add commitments.** Minimum commitments or prepaid usage tiers create a predictable floor under variable revenue.
-- **Watch usage as a leading signal.** Track usage trends per account so you see growth or decline early, the same discipline as [renewal risk scoring](/posts/hubspot-renewal-risk-scoring).
+- **Watch usage as a leading signal.** Track usage trends per account so you see growth or decline early, the same discipline as [renewal risk scoring](/posts/hubspot-renewal-risk-scoring/).
 - **Blend models.** A base subscription plus usage gives you a predictable core and variable upside, which forecasts better than pure usage.
 - **Tighten the data.** Accurate, real-time usage data makes every forecast better; stale data makes consumption forecasting guesswork.
 
@@ -149,7 +149,7 @@ Add minimum commitments, watch usage trends early, blend subscription with usage
 
 ---
 
-Usage-based forecasting is one of the forecasting methods in our [SaaS renewal metrics guide](/posts/renewal-metrics-explained); see also [TCV vs ARR](/posts/tcv-vs-arr-forecasting) for contract-based forecasting.
+Usage-based forecasting is one of the forecasting methods in our [SaaS renewal metrics guide](/posts/renewal-metrics-explained/); see also [TCV vs ARR](/posts/tcv-vs-arr-forecasting/) for contract-based forecasting.
 
 **Variable revenue is not unpredictable revenue if you forecast from usage.** SWOTBee builds usage-based forecasting and revenue reporting for mid-market companies across Energy, Manufacturing, and SaaS.
 

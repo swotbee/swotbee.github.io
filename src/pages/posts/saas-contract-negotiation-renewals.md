@@ -39,7 +39,7 @@ faqs:
     a: "Engaging months ahead through QBRs and multi-threading preserves leverage, so the renewal is not held hostage in the final week."
 ---
 
-> This article is part of our [365-day renewal strategy guide](/posts/renewal-strategy-365).
+> This article is part of our [365-day renewal strategy guide](/posts/renewal-strategy-365/).
 
 **SaaS contract negotiation at renewal is won by leading with proven value and holding firm on terms, not by reflexively discounting when procurement applies pressure.** When the C-suite and procurement enter at renewal time, you face budget-freeze bluffs, competitor comparisons, and feature demands. A disciplined negotiation strategy defends both the renewal and your margin. (This is the vendor's side of the table: how to negotiate and protect your renewals.)
 
@@ -55,7 +55,7 @@ A renewal negotiation is not a fresh sale. The customer is already using your pr
 
 - **You have leverage you may not use:** switching costs are real, and the customer knows it.
 - **Procurement has a playbook:** budget freezes, last-minute discount demands, and competitor price quotes are standard tactics, not always genuine.
-- **Value is your strongest card:** if you have proven [realized value](/posts/customer-value-realization), price becomes a smaller part of the conversation.
+- **Value is your strongest card:** if you have proven [realized value](/posts/customer-value-realization/), price becomes a smaller part of the conversation.
 
 The teams that negotiate well prepare months ahead through QBRs and multi-threading, so the renewal date is not the first time they meet the economic buyer.
 
@@ -80,7 +80,7 @@ Flex on terms that cost you little and the customer values; hold on price and an
 Common pressure tactics and the proper response:
 
 - **The budget-freeze bluff:** "We have no budget." Response: reframe around the cost of switching and the value at risk, and offer payment-term flexibility, not a price cut.
-- **The competitor quote:** "Vendor X is cheaper." Response: do not panic-discount. Reinforce your unique [value proposition](/posts/defending-renewals-competitor-pricing) and the cost of migration.
+- **The competitor quote:** "Vendor X is cheaper." Response: do not panic-discount. Reinforce your unique [value proposition](/posts/defending-renewals-competitor-pricing/) and the cost of migration.
 - **Feature blackmail:** "We'll only renew if you build X." Response: tie commitments to the roadmap and the renewal, never free custom work without reciprocal commitment.
 - **The last-minute squeeze:** a discount demanded days before renewal. Response: this is why you start early; a renewal worked over 12 months is not held hostage in the final week.
 
@@ -102,8 +102,8 @@ You do not have to concede on every clause. Knowing which terms and conditions m
 ## Negotiation Strategies That Work
 
 1. **Lead with value, then price.** Open with the outcomes delivered (ROI, business impact), so price is anchored against value.
-2. **Multi-thread.** Negotiate with the economic buyer, not just procurement, using your [stakeholder map](/posts/single-threaded-renewals-multithreading).
-3. **Anchor with tiers.** Use [good-better-best pricing](/posts/good-better-best-pricing) to make the target package the easy middle choice.
+2. **Multi-thread.** Negotiate with the economic buyer, not just procurement, using your [stakeholder map](/posts/single-threaded-renewals-multithreading/).
+3. **Anchor with tiers.** Use [good-better-best pricing](/posts/good-better-best-pricing/) to make the target package the easy middle choice.
 4. **Trade, never give.** Every concession earns something: a longer term, an expansion, a reference.
 5. **Quantify switching cost.** Make the true cost of leaving (migration, retraining, risk) explicit and concrete.
 
@@ -137,7 +137,7 @@ Engaging months ahead through QBRs and multi-threading preserves leverage, so th
 
 ---
 
-Negotiation is the final act of the [365-day renewal strategy](/posts/renewal-strategy-365); see also how to [build renewal quotes and price increases](/posts/hubspot-renewal-quote-price-increase).
+Negotiation is the final act of the [365-day renewal strategy](/posts/renewal-strategy-365/); see also how to [build renewal quotes and price increases](/posts/hubspot-renewal-quote-price-increase/).
 
 **Discounting is a tactic of last resort, not a renewal strategy.** SWOTBee builds renewal negotiation playbooks for mid-market companies across Energy, Manufacturing, and SaaS.
 

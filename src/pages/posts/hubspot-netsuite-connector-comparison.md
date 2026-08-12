@@ -39,11 +39,11 @@ faqs:
     a: "The native app is the cheapest, iPaaS platforms run a monthly subscription that scales with flows or tasks, and custom builds start in the five figures plus maintenance. Fighting a live sync problem right now? We catalogued the six most-reported HubSpot NetSuite sync failures and their fixes, including which ones a config change can solve and which need an integration layer."
 ---
 
-> This article is part of our [complete guide to HubSpot and NetSuite integration](/posts/hubspot-netsuite-integration).
+> This article is part of our [complete guide to HubSpot and NetSuite integration](/posts/hubspot-netsuite-integration/).
 
 **The best HubSpot NetSuite connector depends on your data volume, number of subsidiaries, and how custom your records are: the native marketplace app for simple standard syncs, Celigo or Workato for most mid-market RevOps, Boomi for complex hybrid landscapes, and a custom API build for bespoke schemas.** There is no single winner, only the right tool for your tech stack. This comparison breaks down each option so you can match the connector to the job.
 
-For the foundational concepts, start with our [HubSpot NetSuite integration pillar](/posts/hubspot-netsuite-integration). For the deepest builds, see the [custom NetSuite CRM integration guide](/posts/custom-netsuite-crm-integration).
+For the foundational concepts, start with our [HubSpot NetSuite integration pillar](/posts/hubspot-netsuite-integration/). For the deepest builds, see the [custom NetSuite CRM integration guide](/posts/custom-netsuite-crm-integration/).
 
 ---
 
@@ -61,7 +61,7 @@ Whatever you choose, the job is the same: keep a clean data flow between HubSpot
 
 The native NetSuite connector installs from the marketplace in a day or two and gives a genuine two-way sync for standard objects: contacts, companies, deals to opportunities, products, and invoices read back into HubSpot. It can also create NetSuite sales orders from a HubSpot deal workflow. It is the fastest way to start and the right choice for small teams with standard data and moderate volume that want HubSpot CRM and NetSuite ERP loosely connected without a project.
 
-Its limits arrive fast. It cannot run IF or THEN logic, cannot map NetSuite internal IDs or custom records, hits a ceiling on line items and multi-currency, requires a paid HubSpot Data Hub subscription for custom field mappings, and frequently fails on complex sales-order creation because of SOAP timeouts. Most scaling B2B teams outgrow it within about six months. We catalog exactly where mapping breaks in our [HubSpot NetSuite data mapping guide](/posts/hubspot-netsuite-data-mapping).
+Its limits arrive fast. It cannot run IF or THEN logic, cannot map NetSuite internal IDs or custom records, hits a ceiling on line items and multi-currency, requires a paid HubSpot Data Hub subscription for custom field mappings, and frequently fails on complex sales-order creation because of SOAP timeouts. Most scaling B2B teams outgrow it within about six months. We catalog exactly where mapping breaks in our [HubSpot NetSuite data mapping guide](/posts/hubspot-netsuite-data-mapping/).
 
 ### Single Subsidiary Restrictions
 
@@ -75,7 +75,7 @@ Celigo is the practitioner default for NetSuite-centric mid-market companies, bu
 
 ### Built In Error Dashboards and Pagination Control
 
-Celigo ships turnkey HubSpot to NetSuite Quickstart flows that branch by deal status (routing a deal to an opportunity or a sales-order flow), plus a strong error dashboard that tracks errors, auto-resolves many of them using trace keys, and auto-retries intermittent failures with a doubling wait. It also handles pagination on its dedicated connectors, which matters because flows pulling more than around 500 records without paging time out intermittently and are painful to diagnose. For multi-system orchestration beyond NetSuite, compare it with the [Workato HubSpot integration playbook](/posts/workato-hubspot-integration).
+Celigo ships turnkey HubSpot to NetSuite Quickstart flows that branch by deal status (routing a deal to an opportunity or a sales-order flow), plus a strong error dashboard that tracks errors, auto-resolves many of them using trace keys, and auto-retries intermittent failures with a doubling wait. It also handles pagination on its dedicated connectors, which matters because flows pulling more than around 500 records without paging time out intermittently and are painful to diagnose. For multi-system orchestration beyond NetSuite, compare it with the [Workato HubSpot integration playbook](/posts/workato-hubspot-integration/).
 
 ---
 
@@ -97,7 +97,7 @@ Boomi suits complex landscapes: multiple ERPs, legacy systems, EDI, and a mix of
 
 ## Custom API Development: Total Control for Complex Schemas
 
-A custom build against NetSuite's SOAP and REST APIs gives total control for complex schemas: bespoke records, intricate CPQ, project-based revenue, and high volume that no connector handles. The trade-off is build time and permanent maintenance, because you own every NetSuite API change. Reserve it for genuinely custom requirements, and see our [custom NetSuite CRM integration guide](/posts/custom-netsuite-crm-integration) for the engineering detail.
+A custom build against NetSuite's SOAP and REST APIs gives total control for complex schemas: bespoke records, intricate CPQ, project-based revenue, and high volume that no connector handles. The trade-off is build time and permanent maintenance, because you own every NetSuite API change. Reserve it for genuinely custom requirements, and see our [custom NetSuite CRM integration guide](/posts/custom-netsuite-crm-integration/) for the engineering detail.
 
 ---
 

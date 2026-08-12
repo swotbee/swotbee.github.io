@@ -38,11 +38,11 @@ faqs:
     a: "By syncing orders from the CRM to the ERP, automating invoicing, using AI to prioritize collections, and giving teams real-time visibility, automation shortens the cycle and reduces errors."
 ---
 
-> This article is part of our [complete guide to CRM and ERP integration](/posts/crm-erp-integration).
+> This article is part of our [complete guide to CRM and ERP integration](/posts/crm-erp-integration/).
 
 **The order-to-cash process (O2C) is the set of steps a business runs from the moment a customer places an order to the moment the cash is collected and applied: order entry, fulfillment, invoicing, payment collection, and reconciliation.** It is the back-office engine of revenue, and its efficiency directly affects cash flow and customer satisfaction. This guide covers the order-to-cash steps, why the process matters, the common challenges, how automation optimizes it, and best practices.
 
-The order-to-cash cycle is the downstream half of [quote-to-cash](/posts/quote-to-cash) and a core process that a [CRM and ERP integration](/posts/crm-erp-integration) automates.
+The order-to-cash cycle is the downstream half of [quote-to-cash](/posts/quote-to-cash/) and a core process that a [CRM and ERP integration](/posts/crm-erp-integration/) automates.
 
 ---
 
@@ -74,7 +74,7 @@ Each step depends on accurate data from the one before, so a connected order man
 
 ## Order-to-Cash vs Quote-to-Cash
 
-The two are often confused. Quote-to-cash starts earlier, at the quote, and includes configuring, pricing, and contracting. Order-to-cash starts at the order and runs through fulfillment, invoicing, and payment. Put simply, order-to-cash is the back portion of the broader quote-to-cash process. If you are automating the front (quoting and order creation), see our [quote-to-cash guide](/posts/quote-to-cash); this article focuses on what happens once the order exists.
+The two are often confused. Quote-to-cash starts earlier, at the quote, and includes configuring, pricing, and contracting. Order-to-cash starts at the order and runs through fulfillment, invoicing, and payment. Put simply, order-to-cash is the back portion of the broader quote-to-cash process. If you are automating the front (quoting and order creation), see our [quote-to-cash guide](/posts/quote-to-cash/); this article focuses on what happens once the order exists.
 
 ---
 
@@ -100,13 +100,13 @@ Technology transforms the order-to-cash cycle:
 - **AI-assisted collections.** AI can predict late payers and prioritize collections, shortening days-sales-outstanding.
 - **Real-time dashboards.** Live visibility into the O2C cycle surfaces bottlenecks before they hurt cash flow.
 
-For a HubSpot and NetSuite stack, the closed deal flows into NetSuite as a sales order and invoice automatically, the mechanics of which are in our [HubSpot to NetSuite setup guide](/posts/hubspot-to-netsuite-integration-setup).
+For a HubSpot and NetSuite stack, the closed deal flows into NetSuite as a sales order and invoice automatically, the mechanics of which are in our [HubSpot to NetSuite setup guide](/posts/hubspot-to-netsuite-integration-setup/).
 
 ---
 
 ## How Order-to-Cash Affects Cash Flow and Financial Health
 
-The order-to-cash cycle is, ultimately, a cash-flow process. Every day between receiving an order and applying the payment is a day your cash is tied up, so a long O2C cycle creates cash-flow problems even for a profitable business. The end-to-end business process from order placement to cash inflows determines days-sales-outstanding, the health of your accounts receivable, and how much working capital you have free. Reducing outstanding invoices and speeding lead-to-cash directly improves financial health, which is why finance teams watch the order-to-cash cycle so closely. Comparing the order-to-cash process against the broader [quote-to-cash](/posts/quote-to-cash) (the entire process from quote onward) shows where in the lifecycle cash gets stuck.
+The order-to-cash cycle is, ultimately, a cash-flow process. Every day between receiving an order and applying the payment is a day your cash is tied up, so a long O2C cycle creates cash-flow problems even for a profitable business. The end-to-end business process from order placement to cash inflows determines days-sales-outstanding, the health of your accounts receivable, and how much working capital you have free. Reducing outstanding invoices and speeding lead-to-cash directly improves financial health, which is why finance teams watch the order-to-cash cycle so closely. Comparing the order-to-cash process against the broader [quote-to-cash](/posts/quote-to-cash/) (the entire process from quote onward) shows where in the lifecycle cash gets stuck.
 
 ## Order-to-Cash Software and Tools
 

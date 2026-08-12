@@ -39,7 +39,7 @@ faqs:
     a: "Usually less. Complaining customers are engaged; the bigger flight risk is the quiet customer who has already disengaged."
 ---
 
-> This article is part of our [guide to SaaS renewal metrics](/posts/renewal-metrics-explained).
+> This article is part of our [guide to SaaS renewal metrics](/posts/renewal-metrics-explained/).
 
 **Silent churn is when customers leave without a word: no complaint, no support ticket, no warning, just a non-renewal.** Counterintuitively, the customers who file ten support tickets usually renew, because they are engaged; the real flight risks are the ones who stop using your product, skip check-ins, and stop replying to emails. Detecting silent churn means watching behavior, not waiting for complaints.
 
@@ -96,8 +96,8 @@ Any one of these is a yellow flag; several together, especially near a renewal, 
 You cannot wait for customers to tell you. Detect silent churn with data and automation:
 
 1. **Track engagement and usage data.** Bring product usage, login recency, and support activity into one view per account.
-2. **Build a health score.** Combine usage, engagement, and support signals into a single score so disengagement surfaces automatically. See [renewal risk scoring](/posts/hubspot-renewal-risk-scoring).
-3. **Automate alerts.** Use automation to flag accounts whose usage or engagement drops below a threshold, so customer success acts in days, not at renewal. This is where [churn-prevention workflows](/posts/hubspot-churn-prevention-health-scores-workflows) earn their keep.
+2. **Build a health score.** Combine usage, engagement, and support signals into a single score so disengagement surfaces automatically. See [renewal risk scoring](/posts/hubspot-renewal-risk-scoring/).
+3. **Automate alerts.** Use automation to flag accounts whose usage or engagement drops below a threshold, so customer success acts in days, not at renewal. This is where [churn-prevention workflows](/posts/hubspot-churn-prevention-health-scores-workflows/) earn their keep.
 4. **Watch the right KPIs.** Track usage trend, engagement recency, and CSAT as leading KPIs on a dashboard, not just churn rate, which is a lagging metric.
 5. **Reach out proactively.** A simple check-in to a quiet account often re-engages it (or surfaces the real issue) before the renewal.
 
@@ -133,7 +133,7 @@ Usually less. Complaining customers are engaged; the bigger flight risk is the q
 
 ---
 
-Silent churn is one of the churn-risk signals in our [SaaS renewal metrics guide](/posts/renewal-metrics-explained).
+Silent churn is one of the churn-risk signals in our [SaaS renewal metrics guide](/posts/renewal-metrics-explained/).
 
 **The most dangerous churn is the kind you never hear:** quiet disengagement that surfaces only at renewal. SWOTBee builds churn-risk detection and customer health scoring for mid-market companies across Energy, Manufacturing, and SaaS.
 

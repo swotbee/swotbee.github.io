@@ -48,7 +48,7 @@ Get stages wrong and everything downstream breaks: workflows fire at the wrong t
 
 This article covers three proven stage models for your renewal pipeline setup, with exact definitions, probability weightings, and clear guidance on when to use each, so you're not guessing at best practices from scratch.
 
-> This article is part of our [Complete Guide to Building a Renewal Pipeline in HubSpot](/posts/hubspot-renewal-pipeline-complete-guide).
+> This article is part of our [Complete Guide to Building a Renewal Pipeline in HubSpot](/posts/hubspot-renewal-pipeline-complete-guide/).
 
 ---
 
@@ -85,7 +85,7 @@ The most common model. Stages are defined by how many days remain until the cont
 ### Pros
 - Easiest to automate, date-based workflows handle all stage transitions
 - Visual pipeline shows upcoming renewal workload at a glance
-- Works well with the [90-60-30 engagement cadence](/posts/hubspot-renewal-deal-workflow-automation)
+- Works well with the [90-60-30 engagement cadence](/posts/hubspot-renewal-deal-workflow-automation/)
 
 ### Cons
 - Doesn't reflect whether the CSM has actually engaged the customer
@@ -185,7 +185,7 @@ Renewal probabilities should be much higher than new business probabilities. If 
 
 **If you don't have historical data,** start with the weights in the tables above and adjust quarterly based on actuals.
 
-These probability weights power your [forecast accuracy](/posts/hubspot-renewal-forecasting-accuracy). Get them wrong and your forecast is wrong, it's that direct.
+These probability weights power your [forecast accuracy](/posts/hubspot-renewal-forecasting-accuracy/). Get them wrong and your forecast is wrong, it's that direct.
 
 ---
 
@@ -200,7 +200,7 @@ These probability weights power your [forecast accuracy](/posts/hubspot-renewal-
 
 **Key setting:** Under pipeline rules, enable "Require properties when moving to certain stages." This forces data quality at the moments that matter.
 
-These stages power [your automation workflows](/posts/hubspot-renewal-deal-workflow-automation) that automate renewal deal creation from the prior period's Closed Won deal. Make sure your stage names match exactly what your workflows reference.
+These stages power [your automation workflows](/posts/hubspot-renewal-deal-workflow-automation/) that automate renewal deal creation from the prior period's Closed Won deal. Make sure your stage names match exactly what your workflows reference.
 
 ---
 
@@ -212,7 +212,7 @@ For most mid-market SaaS and services teams building their first renewal pipelin
 
 As your Customer Success operation matures, layer in activity-based elements (Renewal Sent, Negotiating) for the final stages. This gives you the best of both worlds: automated stage progression early, with manual checkpoints at the critical moments.
 
-Assign probability weights to [improve your forecast accuracy](/posts/hubspot-renewal-forecasting-accuracy) from day one.
+Assign probability weights to [improve your forecast accuracy](/posts/hubspot-renewal-forecasting-accuracy/) from day one.
 
 ---
 
@@ -222,7 +222,7 @@ Assign probability weights to [improve your forecast accuracy](/posts/hubspot-re
 Six to eight for most mid-market teams. Fewer than that and stages stop mapping to a specific action; more than that and CSMs stop updating them accurately. The hybrid model above (10 to 12 stages) only makes sense once your team has the automation maturity to keep every stage current.
 
 **Should renewal pipeline probabilities match my sales pipeline probabilities?**
-No. Renewals close at 85 to 95 percent industry-wide; new business closes at 20 to 30 percent. Reusing sales-pipeline probability weights on a renewal pipeline understates your real forecast, sometimes by tens of thousands of dollars a month. See [why your renewal forecast is wrong](/posts/hubspot-renewal-forecasting-accuracy) for the full breakdown.
+No. Renewals close at 85 to 95 percent industry-wide; new business closes at 20 to 30 percent. Reusing sales-pipeline probability weights on a renewal pipeline understates your real forecast, sometimes by tens of thousands of dollars a month. See [why your renewal forecast is wrong](/posts/hubspot-renewal-forecasting-accuracy/) for the full breakdown.
 
 **Can I combine time-based and activity-based renewal stages?**
 Yes, this is the hybrid model covered above, and it is the most common setup once a team outgrows a single model. Customer-journey stages before the renewal window, time-based stages during the 90-day countdown, activity-based stages for the final negotiation.

@@ -38,7 +38,7 @@ faqs:
     a: "Starter for small teams with simple needs, Professional for growing mid-market teams that need automation and reporting, and Enterprise for advanced controls, custom objects, and large databases."
 ---
 
-> This article is part of our [honest guide to whether HubSpot scales with business growth](/posts/does-hubspot-crm-scale).
+> This article is part of our [honest guide to whether HubSpot scales with business growth](/posts/does-hubspot-crm-scale/).
 
 **HubSpot pricing at scale is far higher than the headline plan price, because the real cost combines per-seat fees, a marketing-contact tier multiplier, mandatory onboarding, and add-ons that compound as you grow.** A 10-person team's true 3-year total cost of ownership runs about 62% over the naive estimate. HubSpot can be deceptively affordable at first and then shoots up as your business grows, so this guide gives you the full pricing model, a TCO you can plan against, and how to keep the bill under control.
 
@@ -90,7 +90,7 @@ The gap between expectation and reality is the whole story:
 - A 10-person team on Marketing Pro plus Sales Pro: about **$110,000 over 3 years** versus a naive expectation near $68,000, a **62% overrun**.
 - A real 5-person team on Professional with 10,000 contacts: **$1,200 to $1,800 per month** versus the $890 headline.
 
-Model your own TCO by adding four things, not one: core seats, the marketing-contact tier your database will reach, year-one onboarding, and the add-ons your stack actually needs. That total, projected across your growth curve, is your real cost at scale, and it is what determines whether you should [scale on HubSpot or migrate](/posts/does-hubspot-crm-scale).
+Model your own TCO by adding four things, not one: core seats, the marketing-contact tier your database will reach, year-one onboarding, and the add-ons your stack actually needs. That total, projected across your growth curve, is your real cost at scale, and it is what determines whether you should [scale on HubSpot or migrate](/posts/does-hubspot-crm-scale/).
 
 ---
 
@@ -111,7 +111,7 @@ A newer wrinkle in HubSpot pricing is HubSpot Credits, a usage-based currency th
 
 ## Is HubSpot Worth the Cost at Scale?
 
-For most companies under 500 employees, yes. A 25-person team runs about $20,400 per year on HubSpot Professional versus roughly $49,500 on Salesforce Enterprise, so the value holds well into mid-market. The danger is not the price, it is the surprise. Teams that model the full bill and manage contacts and seats get strong ROI; teams that trust the headline get burned. For the naming context behind these plans, see [HubSpot Growth Suite is now the Customer Platform](/posts/hubspot-growth-suite-customer-platform).
+For most companies under 500 employees, yes. A 25-person team runs about $20,400 per year on HubSpot Professional versus roughly $49,500 on Salesforce Enterprise, so the value holds well into mid-market. The danger is not the price, it is the surprise. Teams that model the full bill and manage contacts and seats get strong ROI; teams that trust the headline get burned. For the naming context behind these plans, see [HubSpot Growth Suite is now the Customer Platform](/posts/hubspot-growth-suite-customer-platform/).
 
 ---
 

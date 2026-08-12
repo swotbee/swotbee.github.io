@@ -61,7 +61,7 @@ howtoSteps:
     text: "If product usage lives outside HubSpot, send it in via custom events, a reverse ETL sync, or a marketplace integration, so health scores reflect real adoption, not just email opens."
 ---
 
-> This article is part of our [guide to running customer success in HubSpot](/posts/customer-success-in-hubspot).
+> This article is part of our [guide to running customer success in HubSpot](/posts/customer-success-in-hubspot/).
 
 **The HubSpot Customer Success Workspace is a dedicated home screen for CSMs inside HubSpot, included with Service Hub Professional and Enterprise seats.** It gives each CSM a book of business, customer health scores, usage and activity signals, and a task queue, all without leaving the CRM, so customer success teams stay organized in a single dashboard instead of scattered tabs. It is genuinely useful for daily account management, but it has two hard limits you should know before you build on it: health score configurability is constrained (especially below Enterprise), and it surfaces renewals without ever creating a renewal deal. This guide covers setup, what it does well, where it stops, and how to wire it into a real renewal motion, so it can help your team get more value out of the seats you already pay for.
 
@@ -84,7 +84,7 @@ Because every panel reads from the same CRM records, the workspace doubles as a 
 
 **Tier requirement:** the workspace comes with **Service Hub Professional or Enterprise seats**. Starter does not include it, and users on Sales Hub seats alone do not get the CS workspace (they get the sales workspace instead). As of mid-2026, HubSpot has been steadily adding capabilities to the workspace, so check the current feature list for your tier before you commit to a design; the boundaries below reflect what is documented at the time of writing.
 
-If you are comparing this route against buying a CS platform, the pricing context matters: dedicated platforms commonly run from the low five figures to well past 50k USD per year (see our breakdowns of [what ChurnZero really costs](/posts/churnzero-pricing-alternatives) and [Gainsight pricing for HubSpot teams](/posts/gainsight-pricing-alternatives-hubspot)). The workspace is included in a Service Hub subscription many teams already pay for, which is why it deserves a serious look before you pay for an additional service on top of a seat you already own.
+If you are comparing this route against buying a CS platform, the pricing context matters: dedicated platforms commonly run from the low five figures to well past 50k USD per year (see our breakdowns of [what ChurnZero really costs](/posts/churnzero-pricing-alternatives/) and [Gainsight pricing for HubSpot teams](/posts/gainsight-pricing-alternatives-hubspot/)). The workspace is included in a Service Hub subscription many teams already pay for, which is why it deserves a serious look before you pay for an additional service on top of a seat you already own.
 
 ---
 
@@ -104,11 +104,11 @@ The workspace builds each CSM's book of business from company ownership. Before 
 
 ### Step 3: Configure customer health scores
 
-Setting up health scores is the highest-leverage step. HubSpot's customer health score weighs signals like product usage, support ticket volume, survey scores, and engagement to label accounts healthy, neutral, or at risk. Set it up in the health score settings, choose the inputs that actually predict churn for your business, and validate the output against the accounts your team already knows are shaky. If the score calls your five riskiest accounts healthy, adjust the inputs before anyone starts trusting it. [Research on what customer health actually measures](/posts/customer-success-management-roi-research) points to three dimensions worth covering: relationship quality, product usage, and value realization, not usage data alone.
+Setting up health scores is the highest-leverage step. HubSpot's customer health score weighs signals like product usage, support ticket volume, survey scores, and engagement to label accounts healthy, neutral, or at risk. Set it up in the health score settings, choose the inputs that actually predict churn for your business, and validate the output against the accounts your team already knows are shaky. If the score calls your five riskiest accounts healthy, adjust the inputs before anyone starts trusting it. [Research on what customer health actually measures](/posts/customer-success-management-roi-research/) points to three dimensions worth covering: relationship quality, product usage, and value realization, not usage data alone.
 
 Configurability is tier-dependent: deeper customization (multiple scores, custom-weighted attributes) has been an Enterprise-leaning capability, so Professional teams should test what they can actually tune in their portal rather than assuming full control (threads in the HubSpot Community are a useful reality check on current limits).
 
-For the automation side (what to do when a score drops: alert workflows, risk-tiered plays, escalations), see our dedicated guide to [churn prevention with health scores and workflows in HubSpot](/posts/hubspot-churn-prevention-health-scores-workflows). This post stays focused on the workspace itself; that one owns the workflow builds.
+For the automation side (what to do when a score drops: alert workflows, risk-tiered plays, escalations), see our dedicated guide to [churn prevention with health scores and workflows in HubSpot](/posts/hubspot-churn-prevention-health-scores-workflows/). This post stays focused on the workspace itself; that one owns the workflow builds.
 
 ### Step 4: Build segments and create custom views
 
@@ -161,8 +161,8 @@ The workspace is an operating screen, not a reporting suite. Portfolio-level que
 
 The workspace becomes far more valuable when it sits on top of a real renewal motion. The architecture we recommend:
 
-1. **Stand up a dedicated renewal pipeline.** Renewal deals and new-business deals have different stages, cycle lengths, and forecasts, so keep the renewal pipeline separate from your sales pipeline. Our [complete guide to building a renewal pipeline in HubSpot](/posts/hubspot-renewal-pipeline-complete-guide) covers stages, properties, and reporting end to end.
-2. **Auto-create renewal deals when a contract starts.** When a new-business deal closes won, automation should create the renewal deal with the renewal date, carried-over line items, and the planned uplift. Enterprise portals sometimes pair this with a contract custom object, but the deal is what drives the forecast. The workflow approach (and its limits, like line items not copying and multi-year loop protection) is covered in [renewal deal creation workflows](/posts/hubspot-renewal-deal-workflow-automation).
+1. **Stand up a dedicated renewal pipeline.** Renewal deals and new-business deals have different stages, cycle lengths, and forecasts, so keep the renewal pipeline separate from your sales pipeline. Our [complete guide to building a renewal pipeline in HubSpot](/posts/hubspot-renewal-pipeline-complete-guide/) covers stages, properties, and reporting end to end.
+2. **Auto-create renewal deals when a contract starts.** When a new-business deal closes won, automation should create the renewal deal with the renewal date, carried-over line items, and the planned uplift. Enterprise portals sometimes pair this with a contract custom object, but the deal is what drives the forecast. The workflow approach (and its limits, like line items not copying and multi-year loop protection) is covered in [renewal deal creation workflows](/posts/hubspot-renewal-deal-workflow-automation/).
 3. **Point workspace segments at the pipeline.** The "Renewals next 90 days" segment should correspond to real deals a CSM can open, advance, and forecast, not just a date column.
 4. **Let health drive the play, and the deal record the outcome.** Health score drops trigger the save motion; the renewal deal captures whether it worked. That pairing is what turns customer success activities into revenue reporting and lets you track retention and growth from the pipeline itself.
 
@@ -174,7 +174,7 @@ With that wiring, a CSM's day using the workspace looks like: open it, scan heal
 
 For most mid-market teams (roughly 50 to 500 employees, one CS team, one product line), our honest answer is no, provided you close the renewal gap. HubSpot's Customer Success Workspace plus a proper renewal pipeline covers health visibility, daily prioritization, and renewal ownership at a fraction of the cost of a dedicated platform, with every metric that matters (renewal rate, NRR, health trend) reported from your own CRM.
 
-A dedicated CS platform starts earning its price when you have large CSM teams needing sophisticated multi-model scoring, complex in-app engagement programs, or CS operations mature enough to exploit platform-grade playbooks. Even then, remember what the platform will not do: it can signal a renewal into HubSpot, but the deal still has to be built there. We compare how well the major platforms actually sync with HubSpot in our [CS platform HubSpot integrations comparison](/posts/cs-platform-hubspot-integrations-compared).
+A dedicated CS platform starts earning its price when you have large CSM teams needing sophisticated multi-model scoring, complex in-app engagement programs, or CS operations mature enough to exploit platform-grade playbooks. Even then, remember what the platform will not do: it can signal a renewal into HubSpot, but the deal still has to be built there. We compare how well the major platforms actually sync with HubSpot in our [CS platform HubSpot integrations comparison](/posts/cs-platform-hubspot-integrations-compared/).
 
 ---
 

@@ -38,11 +38,11 @@ faqs:
     a: "Set match keys and deduplication, sequence dependent records, use a hybrid real-time and batch cadence, monitor with alerts, and test changes in a sandbox first. Fighting a live sync problem right now? We catalogued the six most-reported HubSpot NetSuite sync failures and their fixes, including which ones a config change can solve and which need an integration layer."
 ---
 
-> This article is part of our [complete guide to HubSpot and NetSuite integration](/posts/hubspot-netsuite-integration).
+> This article is part of our [complete guide to HubSpot and NetSuite integration](/posts/hubspot-netsuite-integration/).
 
 **A HubSpot NetSuite sync keeps records consistent between HubSpot (your CRM) and NetSuite (your ERP), so contacts, companies, deals, orders, and invoices stay aligned across both systems without manual re-entry.** The sync can run one way or two way, in real time or in batches, and the data that syncs is what determines how much manual work it removes. This guide explains what data syncs between HubSpot and NetSuite, the methods, the common sync issues, and how to keep the sync reliable.
 
-For the full strategy and setup, start with our [HubSpot NetSuite integration pillar](/posts/hubspot-netsuite-integration).
+For the full strategy and setup, start with our [HubSpot NetSuite integration pillar](/posts/hubspot-netsuite-integration/).
 
 ---
 
@@ -83,11 +83,11 @@ The rule that keeps a two-way sync clean: assign one owning system per object an
 
 ## Methods to Sync HubSpot and NetSuite
 
-There are three ways to run the sync, covered in depth in our [connector comparison](/posts/hubspot-netsuite-connector-comparison):
+There are three ways to run the sync, covered in depth in our [connector comparison](/posts/hubspot-netsuite-connector-comparison/):
 
 - **Native connector.** The HubSpot marketplace NetSuite app handles standard objects and is fastest to start.
-- **iPaaS (Celigo, Workato).** Middleware for more control, conditional logic, and reliability at scale, like the [Workato approach](/posts/workato-hubspot-integration).
-- **Custom integration.** A build for complex records and high volume, covered in our [custom integration guide](/posts/custom-netsuite-crm-integration).
+- **iPaaS (Celigo, Workato).** Middleware for more control, conditional logic, and reliability at scale, like the [Workato approach](/posts/workato-hubspot-integration/).
+- **Custom integration.** A build for complex records and high volume, covered in our [custom integration guide](/posts/custom-netsuite-crm-integration/).
 
 Most "real-time" needs are met by an iPaaS, since the native connector polls on a schedule rather than syncing instantly.
 
@@ -102,7 +102,7 @@ Sync problems are predictable, and most trace back to data mapping:
 - **Date shifts.** HubSpot stores dates at midnight UTC, so they can roll back a day in NetSuite.
 - **Sales-order failures.** Complex orders can hit NetSuite API timeouts.
 
-We catalog these and their fixes in our [HubSpot NetSuite data mapping guide](/posts/hubspot-netsuite-data-mapping).
+We catalog these and their fixes in our [HubSpot NetSuite data mapping guide](/posts/hubspot-netsuite-data-mapping/).
 
 ---
 
@@ -116,7 +116,7 @@ To keep a HubSpot NetSuite sync reliable:
 4. **Monitor the sync** with a dashboard and alerts so failures surface early.
 5. **Test in a sandbox** before changing the live sync.
 
-Done this way, the sync runs quietly in the background and your two systems simply agree. For the step-by-step build, see our [HubSpot to NetSuite setup guide](/posts/hubspot-to-netsuite-integration-setup).
+Done this way, the sync runs quietly in the background and your two systems simply agree. For the step-by-step build, see our [HubSpot to NetSuite setup guide](/posts/hubspot-to-netsuite-integration-setup/).
 
 ---
 

@@ -39,7 +39,7 @@ faqs:
     a: "Lead with the value and outcomes delivered, then present the new price at the line-item level so the change is transparent and defensible. Running an MSP? Agreement renewals with seat true-ups, uplifts, and co-term visibility are their own discipline. See how we automate agreement renewals for MSPs in HubSpot."
 ---
 
-> This article is part of our [Complete Guide to Building a Renewal Pipeline in HubSpot](/posts/hubspot-renewal-pipeline-complete-guide).
+> This article is part of our [Complete Guide to Building a Renewal Pipeline in HubSpot](/posts/hubspot-renewal-pipeline-complete-guide/).
 
 **HubSpot lets you create a renewal quote directly on a renewal deal, carry over the line items from the original contract, and apply a renewal uplift, a discount, or a multi-year term before you send it.** This guide covers how to build renewal quotes for your customers, how to structure a price increase at renewal, and how to automate the quote so it is ready when the renewal date approaches. (This is about quoting your own customers, not about HubSpot's own subscription cost.)
 
@@ -53,13 +53,13 @@ A renewal quote is where revenue is won or lost. Get the renewal pricing, contra
 
 You build a renewal quote on the renewal deal in your renewal pipeline, so the quote, the deal, and the contract term all stay linked.
 
-1. **Open the renewal deal** in your [dedicated renewal pipeline](/posts/hubspot-renewal-pipeline-vs-sales-pipeline).
-2. **Create a quote** from the deal and pull in the existing line items so the new contract mirrors the current term. Carrying line items over (rather than rebuilding them) is the same discipline used when you [clone a deal with its line items](/posts/hubspot-clone-deal-line-items).
+1. **Open the renewal deal** in your [dedicated renewal pipeline](/posts/hubspot-renewal-pipeline-vs-sales-pipeline/).
+2. **Create a quote** from the deal and pull in the existing line items so the new contract mirrors the current term. Carrying line items over (rather than rebuilding them) is the same discipline used when you [clone a deal with its line items](/posts/hubspot-clone-deal-line-items/).
 3. **Set the new contract term and renewal date** so billing and the renewal deal agree.
 4. **Apply the renewal uplift or discount** at the line-item level (covered below).
 5. **Send for e-signature** and, on acceptance, move the deal to Renewal Confirmed.
 
-Keeping the quote on the deal means your renewal amount, line items, and term length are always consistent with the [renewal pipeline template](/posts/hubspot-renewal-pipeline-template).
+Keeping the quote on the deal means your renewal amount, line items, and term length are always consistent with the [renewal pipeline template](/posts/hubspot-renewal-pipeline-template/).
 
 ---
 
@@ -111,8 +111,8 @@ If your contracts auto-renew, the quote and the deal should record the auto-rene
 You do not have to build every quote by hand. With a workflow you can:
 
 - **Pre-create a draft renewal quote** when a renewal deal enters the window, with last year's line items and a default uplift already applied.
-- **Notify the deal owner** to review and send, tying into your [renewal reminders](/posts/hubspot-renewal-reminders).
-- **Attach the quote to the renewal email** so the [renewal email sequence](/posts/hubspot-renewal-email-sequence) delivers it at the right moment.
+- **Notify the deal owner** to review and send, tying into your [renewal reminders](/posts/hubspot-renewal-reminders/).
+- **Attach the quote to the renewal email** so the [renewal email sequence](/posts/hubspot-renewal-email-sequence/) delivers it at the right moment.
 
 Automation removes the blank-page problem: the rep edits a near-complete quote instead of starting from scratch.
 

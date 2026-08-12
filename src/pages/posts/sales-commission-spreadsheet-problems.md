@@ -39,7 +39,7 @@ You're not alone. This scene plays out in sales ops teams and finance department
 
 This article is the one that says out loud what everyone on your team already knows but nobody wants to be the first to admit: the spreadsheet has to go. Not because spreadsheets are bad. Because this particular spreadsheet has outgrown the job it was hired to do.
 
-> This article is part of our [Complete Guide to Sales Commission Tracking in HubSpot](/posts/hubspot-sales-commission-tracking-complete-guide).
+> This article is part of our [Complete Guide to Sales Commission Tracking in HubSpot](/posts/hubspot-sales-commission-tracking-complete-guide/).
 
 ---
 
@@ -169,8 +169,8 @@ But holding onto it past its expiration date is costing you money, burning your 
 
 The good news is that the path forward doesn't have to mean buying expensive enterprise software or ripping everything out and starting over. Depending on your team size and commission complexity, you might be able to build a solid system right inside the CRM you're already using.
 
-Ready to set up commission tracking in HubSpot without buying new software? Read our [step-by-step guide to building commission tracking in HubSpot](/posts/hubspot-commission-tracking-setup-guide).
+Ready to set up commission tracking in HubSpot without buying new software? Read our [step-by-step guide to building commission tracking in HubSpot](/posts/hubspot-commission-tracking-setup-guide/).
 
-If your plans are complex enough that you need a dedicated tool, we've done the research for you. Check our [2026 buyer's guide to commission tracking tools for HubSpot](/posts/hubspot-commission-tracking-tools-compared) for a side-by-side comparison of the options that actually integrate well.
+If your plans are complex enough that you need a dedicated tool, we've done the research for you. Check our [2026 buyer's guide to commission tracking tools for HubSpot](/posts/hubspot-commission-tracking-tools-compared/) for a side-by-side comparison of the options that actually integrate well.
 
 **Not sure if you've outgrown your spreadsheet?** [Talk to us](/contactus/), we'll audit your current commission setup and tell you honestly whether you need to change anything at all. No pitch, no pressure. If the spreadsheet is still working for you, we'll say so.

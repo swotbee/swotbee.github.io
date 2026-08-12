@@ -39,7 +39,7 @@ faqs:
     a: "No. The accounting (acid test) quick ratio measures a company's ability to meet current liabilities; the SaaS quick ratio measures growth efficiency."
 ---
 
-> This article is part of our [guide to SaaS renewal metrics](/posts/renewal-metrics-explained).
+> This article is part of our [guide to SaaS renewal metrics](/posts/renewal-metrics-explained/).
 
 **The SaaS quick ratio measures growth efficiency: how much new and expansion MRR a company adds for every dollar of churned and contraction MRR it loses.** The formula is (new MRR + expansion MRR) ÷ (churned MRR + contraction MRR). A SaaS quick ratio of 4 means you add four dollars of recurring revenue for every dollar you lose, which is the widely cited benchmark for a healthy, efficiently growing SaaS business.
 
@@ -103,8 +103,8 @@ Early-stage companies often post very high quick ratios simply because their chu
 
 Because the SaaS quick ratio measures inflows against outflows, you improve it from both sides:
 
-- **Grow the numerator:** increase new MRR and, especially, expansion MRR. Expansion is high-margin and lifts both the quick ratio and [net revenue retention](/posts/gross-vs-net-revenue-retention).
-- **Shrink the denominator:** reduce churned MRR and contraction MRR by catching [silent churn](/posts/silent-churn-detection) and at-risk accounts early with [renewal risk scoring](/posts/hubspot-renewal-risk-scoring).
+- **Grow the numerator:** increase new MRR and, especially, expansion MRR. Expansion is high-margin and lifts both the quick ratio and [net revenue retention](/posts/gross-vs-net-revenue-retention/).
+- **Shrink the denominator:** reduce churned MRR and contraction MRR by catching [silent churn](/posts/silent-churn-detection/) and at-risk accounts early with [renewal risk scoring](/posts/hubspot-renewal-risk-scoring/).
 
 Reducing churn usually moves the ratio more than chasing new logos, because the denominator is smaller and every dollar of revenue lost counts fully against you.
 
@@ -141,7 +141,7 @@ No. The accounting (acid test) quick ratio measures a company's ability to meet 
 
 ---
 
-The quick ratio is one of the efficiency metrics in our [SaaS renewal metrics guide](/posts/renewal-metrics-explained).
+The quick ratio is one of the efficiency metrics in our [SaaS renewal metrics guide](/posts/renewal-metrics-explained/).
 
 **Growth that outruns churn looks healthy until the churn catches up:** the quick ratio is how you tell the difference. SWOTBee builds growth-efficiency and retention reporting for mid-market companies across Energy, Manufacturing, and SaaS.
 

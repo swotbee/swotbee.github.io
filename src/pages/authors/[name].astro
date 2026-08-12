@@ -40,7 +40,7 @@ const authorPosts = allPosts.filter(
     type="breadcrumb"
     data={{ breadcrumbs: [
       { name: "Home", url: "https://swotbee.com" },
-      { name: "Blog", url: "https://swotbee.com/blog" },
+      { name: "Blog", url: "https://swotbee.com/blog/" },
       { name: author.name, url: `https://swotbee.com/authors/${author.slug}` },
     ]}}
   />
@@ -96,7 +96,7 @@ const authorPosts = allPosts.filter(
     <div class="max-w-6xl mx-auto">
       <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {authorPosts.map(post => (
-          <a href={`/posts/${post.slug}`} class="group block bg-v6-bg rounded-xl border border-v6-border overflow-hidden hover:shadow-md transition-shadow">
+          <a href={`/posts/${post.slug}/`} class="group block bg-v6-bg rounded-xl border border-v6-border overflow-hidden hover:shadow-md transition-shadow">
             {post.image && (
               <div class="aspect-video overflow-hidden">
                 <img

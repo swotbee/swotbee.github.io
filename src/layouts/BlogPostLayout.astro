@@ -3,7 +3,6 @@ import Layout from './Layout.astro';
 import Navbar from '../components/astro/Navbar.astro';
 import Footer from '../components/astro/Footer.astro';
 import StructuredData from '../components/astro/StructuredData.astro';
-import ReviewedBy from '../components/astro/ReviewedBy.astro';
 import { generateArticleStructuredData, generateCanonicalUrl } from '../utils/seo';
 import { getRecentPosts } from '../utils/posts';
 
@@ -123,7 +122,7 @@ const displayPosts = relatedPosts.length >= 2
     data={{
       breadcrumbs: [
         { name: "Home", url: "https://swotbee.com" },
-        { name: "Blog", url: "https://swotbee.com/blog" },
+        { name: "Blog", url: "https://swotbee.com/blog/" },
         { name: frontmatter.title, url: canonicalURL },
       ],
     }}
@@ -152,18 +151,18 @@ const displayPosts = relatedPosts.length >= 2
 
   <main class="bg-white">
     <!-- Breadcrumb -->
-    <div class="max-w-[680px] mx-auto px-4 sm:px-6 pt-8 pb-2">
+    <div class="max-w-[760px] mx-auto px-4 sm:px-6 pt-8 pb-2">
       <nav class="text-xs text-v6-text-muted">
         <a href="/" class="hover:text-v6-dark transition-colors">Home</a>
         <span class="mx-1.5">›</span>
-        <a href="/blog" class="hover:text-v6-dark transition-colors">Blog</a>
+        <a href="/blog/" class="hover:text-v6-dark transition-colors">Blog</a>
         <span class="mx-1.5">›</span>
         <span class="text-v6-dark">{frontmatter.title.length > 50 ? frontmatter.title.slice(0, 50) + '...' : frontmatter.title}</span>
       </nav>
     </div>
 
     <!-- Article Header -->
-    <header class="max-w-[680px] mx-auto px-4 sm:px-6 pt-4 pb-6">
+    <header class="max-w-[760px] mx-auto px-4 sm:px-6 pt-4 pb-6">
       <!-- Tags -->
       {frontmatter.tags && frontmatter.tags.length > 0 && (
         <div class="flex flex-wrap gap-2 mb-4">
@@ -189,8 +188,10 @@ const displayPosts = relatedPosts.length >= 2
 
       <!-- Meta line -->
       <div class="flex flex-wrap items-center gap-3 text-sm text-v6-text-muted pb-6 border-b border-v6-border">
-        {frontmatter.author?.name && (
-          <span class="font-medium text-v6-dark">{frontmatter.author.name}</span>
+        {(frontmatter.reviewedBy?.name || frontmatter.author?.name) && (
+          <span class="font-medium text-v6-dark">
+            {frontmatter.reviewedBy?.linkedin ? <a href={frontmatter.reviewedBy.linkedin} target="_blank" rel="noopener noreferrer" class="hover:text-v6-teal-700 transition-colors">{frontmatter.reviewedBy.name}</a> : frontmatter.reviewedBy?.name || frontmatter.author?.name}{frontmatter.reviewedBy?.name && <span class="font-normal text-v6-text-muted">, Co-founder, Swotbee</span>}
+          </span>
         )}
         <span>·</span>
         <time datetime={frontmatter.pubDate}>{pubDate}</time>
@@ -206,18 +207,6 @@ const displayPosts = relatedPosts.length >= 2
         <span>{readingTime} min read</span>
       </div>
     </header>
-
-    <!-- Reviewed By -->
-    {frontmatter.reviewedBy && (
-      <div class="max-w-[680px] mx-auto px-4 sm:px-6 mb-4">
-        <ReviewedBy
-          reviewerName={frontmatter.reviewedBy.name}
-          reviewerTitle={frontmatter.reviewedBy.title}
-          reviewerLinkedin={frontmatter.reviewedBy.linkedin}
-          reviewDate={frontmatter.reviewedBy.date}
-        />
-      </div>
-    )}
 
     <!-- Featured Image -->
     {frontmatter.image && (
@@ -235,7 +224,7 @@ const displayPosts = relatedPosts.length >= 2
     )}
 
     <!-- Table of Contents -->
-    <div class="max-w-[680px] mx-auto px-4 sm:px-6 mb-10">
+    <div class="max-w-[760px] mx-auto px-4 sm:px-6 mb-10">
       <details class="bg-v6-bg rounded-xl border border-v6-border group" id="toc-container" open>
         <summary class="flex items-center justify-between cursor-pointer px-6 py-4 text-base font-bold text-v6-dark tracking-wide uppercase">
           Table of Contents
@@ -248,14 +237,14 @@ const displayPosts = relatedPosts.length >= 2
     </div>
 
     <!-- Article Body -->
-    <article class="max-w-[680px] mx-auto px-4 sm:px-6 pb-16">
+    <article class="max-w-[760px] mx-auto px-4 sm:px-6 pb-16">
       <div class="blog-content">
         <slot />
       </div>
     </article>
 
     <!-- Post Footer Section -->
-    <div class="max-w-[680px] mx-auto px-4 sm:px-6 pb-16">
+    <div class="max-w-[760px] mx-auto px-4 sm:px-6 pb-16">
 
       {frontmatter.funnelCta === 'renewal-audit' && (
         <section class="mb-10 rounded-xl border border-v6-teal-200 bg-v6-teal-50 p-6" aria-label="Renewal operations next step">
@@ -374,7 +363,7 @@ const displayPosts = relatedPosts.length >= 2
           <h2 class="text-xl font-bold text-v6-dark mb-6">You Might Also Like</h2>
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
             {displayPosts.map((post) => (
-              <a href={`/posts/${post.slug}`} class="group block bg-v6-bg rounded-xl border border-v6-border overflow-hidden hover:shadow-md transition-shadow">
+              <a href={`/posts/${post.slug}/`} class="group block bg-v6-bg rounded-xl border border-v6-border overflow-hidden hover:shadow-md transition-shadow">
                 {post.image && (
                   <div class="aspect-video overflow-hidden">
                     <img src={post.image} alt={post.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />

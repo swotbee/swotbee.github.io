@@ -49,7 +49,7 @@ faqs:
     a: "Through the system, not a meeting. A CRM with a shared lead-scoring model routes leads automatically once they meet the agreed definition, tracks sales follow-up time against the SLA, and reports marketing-sourced pipeline the same way it reports sales-sourced pipeline, so both functions see the same number without relying on someone manually checking compliance."
 ---
 
-> This is a research-evidence companion to our [HubSpot growth strategy guide](/posts/hubspot-growth-strategy). Start there for the operating playbook; this piece traces one of the most repeated statistics in B2B marketing back to its source and checks it against the peer-reviewed literature.
+> This is a research-evidence companion to our [HubSpot growth strategy guide](/posts/hubspot-growth-strategy/). Start there for the operating playbook; this piece traces one of the most repeated statistics in B2B marketing back to its source and checks it against the peer-reviewed literature.
 
 **The "208% more revenue" sales and marketing alignment statistic appears on dozens of B2B marketing sites, almost always attributed to "MarketingProfs/HubSpot via LinkedIn Business Solutions (2024)." We went and checked LinkedIn's own guide directly. The number is not in it.** Real peer-reviewed research on sales and marketing alignment does exist, and it says something more specific and more useful than a single revenue multiplier.
 
@@ -107,10 +107,10 @@ For a mid-market company without a dedicated RevOps function, alignment in b2b u
 
 Treat alignment as an operating model decision, not a relationship one:
 
-- **Share a single lead definition and a single system of record.** If sales and marketing are working from different definitions of a qualified lead, no amount of goodwill fixes the resulting friction. Our [HubSpot growth strategy guide](/posts/hubspot-growth-strategy) covers building that shared foundation.
+- **Share a single lead definition and a single system of record.** If sales and marketing are working from different definitions of a qualified lead, no amount of goodwill fixes the resulting friction. Our [HubSpot growth strategy guide](/posts/hubspot-growth-strategy/) covers building that shared foundation.
 - **Unify the metrics both functions are measured on**, not just the metrics they report on. Structural alignment research points here first, ahead of communication fixes. A marketing team measured purely on lead volume and a sales team measured purely on closed revenue will optimize against each other by design, regardless of how the two teams get along.
 - **Formalize it as a sales-marketing SLA**, not an informal understanding. A service-level agreement stating what the marketing team commits to deliver and what the sales team commits to do with it turns structural alignment into an operating mechanic, not an aspiration.
-- **Build the handoff into the system, not into a meeting.** A CRM connected to marketing automation that automatically routes qualified leads with full context removes the manual step where most breakdowns happen, and gives sales enablement something real to work from; see how this shows up as HubSpot scales in our [does HubSpot CRM scale guide](/posts/does-hubspot-crm-scale).
+- **Build the handoff into the system, not into a meeting.** A CRM connected to marketing automation that automatically routes qualified leads with full context removes the manual step where most breakdowns happen, and gives sales enablement something real to work from; see how this shows up as HubSpot scales in our [does HubSpot CRM scale guide](/posts/does-hubspot-crm-scale/).
 - **Give both functions visibility into the same pipeline, not just their own funnel.** A sales rep who can't see which marketing efforts sourced a given account, and a marketer who can't see how a lead performed once it entered the sales process, are both working blind, which is what makes structural fixes stick where a single meeting doesn't.
 - **Verify any stat before it goes in a strategy deck.** If a number can't be traced past a blog post that cites another blog post, treat it as a claim, not evidence, the same standard this article applied to "208%."
 
@@ -142,7 +142,7 @@ Through the system, not a meeting. A CRM with a shared lead-scoring model routes
 
 ---
 
-This piece pairs with our [HubSpot growth strategy guide](/posts/hubspot-growth-strategy) for the operating playbook and our [research on switching costs and B2B renewal](/posts/switching-costs-b2b-renewal-research) for another widely-repeated B2B statistic checked against the evidence.
+This piece pairs with our [HubSpot growth strategy guide](/posts/hubspot-growth-strategy/) for the operating playbook and our [research on switching costs and B2B renewal](/posts/switching-costs-b2b-renewal-research/) for another widely-repeated B2B statistic checked against the evidence.
 
 **Most sales and marketing alignment content repeats the same unverified number. SWOTBee builds the RevOps systems, shared CRM, and unified reporting that make alignment structural instead of aspirational.**
 

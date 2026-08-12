@@ -42,7 +42,7 @@ Churn prevention isn't a renewal-stage activity. It's a continuous process that 
 
 This article shows you how to build that system in HubSpot.
 
-> This article is part of our [Complete Guide to Building a Renewal Pipeline in HubSpot](/posts/hubspot-renewal-pipeline-complete-guide).
+> This article is part of our [Complete Guide to Building a Renewal Pipeline in HubSpot](/posts/hubspot-renewal-pipeline-complete-guide/).
 
 ---
 
@@ -58,7 +58,7 @@ Typical inputs and where they live:
 - **Relationship signals** (executive engagement, champion changes) tracked on company properties.
 - **Customer outcomes** (are they hitting their goals).
 
-Combine these into a weighted health score using a workflow, then map the number to a health status (for example, Healthy, Neutral, At Risk). As the underlying data changes, the workflow updates the score, so score changes surface automatically. Report the health status across customer segments so you can see which segments are at risk, and copy the score onto the renewal deal. Before you finalize the weighting, [check what the research actually shows about which signals predict churn](/posts/health-score-churn-prediction-research); usage and support-ticket data alone may be underweighting the relational signals that predict best. For the renewal-pipeline application of this score, see [renewal risk scoring](/posts/hubspot-renewal-risk-scoring); for the behavioral angle, see [detecting silent churn](/posts/silent-churn-detection); and for how it fits the wider metrics picture, our [SaaS renewal metrics guide](/posts/renewal-metrics-explained).
+Combine these into a weighted health score using a workflow, then map the number to a health status (for example, Healthy, Neutral, At Risk). As the underlying data changes, the workflow updates the score, so score changes surface automatically. Report the health status across customer segments so you can see which segments are at risk, and copy the score onto the renewal deal. Before you finalize the weighting, [check what the research actually shows about which signals predict churn](/posts/health-score-churn-prediction-research/); usage and support-ticket data alone may be underweighting the relational signals that predict best. For the renewal-pipeline application of this score, see [renewal risk scoring](/posts/hubspot-renewal-risk-scoring/); for the behavioral angle, see [detecting silent churn](/posts/silent-churn-detection/); and for how it fits the wider metrics picture, our [SaaS renewal metrics guide](/posts/renewal-metrics-explained/).
 
 ---
 
@@ -79,7 +79,7 @@ The research suggests 10-20% churn reduction is achievable with proactive automa
 
 ## Health Score Option 1: HubSpot's Native CS Workspace
 
-If you have **[Service Hub Professional or Enterprise](https://www.hubspot.com/pricing/service)**, HubSpot offers built-in health scoring through the [Customer Success Workspace](https://knowledge.hubspot.com/customer-success/set-up-and-manage-the-customer-success-workspace); our [Customer Success Workspace guide](/posts/hubspot-customer-success-workspace) covers the full setup beyond health scores. [HubSpot Academy's lesson on account health checks](https://academy.hubspot.com/lessons/customer-success-and-account-health-checks) covers the fundamentals. For a deeper framework on building health scores, [ChurnZero's Customer Health Score Handbook](https://churnzero.com/guides/the-customer-health-score-handbook/) is an excellent resource.
+If you have **[Service Hub Professional or Enterprise](https://www.hubspot.com/pricing/service)**, HubSpot offers built-in health scoring through the [Customer Success Workspace](https://knowledge.hubspot.com/customer-success/set-up-and-manage-the-customer-success-workspace); our [Customer Success Workspace guide](/posts/hubspot-customer-success-workspace/) covers the full setup beyond health scores. [HubSpot Academy's lesson on account health checks](https://academy.hubspot.com/lessons/customer-success-and-account-health-checks) covers the fundamentals. For a deeper framework on building health scores, [ChurnZero's Customer Health Score Handbook](https://churnzero.com/guides/the-customer-health-score-handbook/) is an excellent resource.
 
 ### What You Get
 
@@ -111,7 +111,7 @@ Each signal gets a point value. The weighted total produces a color-coded health
 - Limited to signals HubSpot can access natively (product usage data often requires integration with tools like [Totango](https://www.totango.com/integrations/hubspot-customer-success))
 - Configuration options are less flexible than custom approaches
 
-Set up the [health score properties](/posts/hubspot-renewal-pipeline-properties) before building workflows.
+Set up the [health score properties](/posts/hubspot-renewal-pipeline-properties/) before building workflows.
 
 ---
 
@@ -150,7 +150,7 @@ Build workflows that update Account Health based on available data:
 
 For teams with under 200 accounts and limited product usage data, a 3-tier health dropdown driven by CRM signals (email, meetings, tickets) is surprisingly effective. [Gainsight's Customer Success Maturity Model](https://www.gainsight.com/maturity-model/) outlines four stages of CS maturity; most teams start at "Reactive" and evolve from there. You don't need a fancy scoring algorithm. You need visibility into which accounts need attention.
 
-Health signals determine [which pipeline stage](/posts/hubspot-renewal-pipeline-stages) a deal belongs in, especially for activity-based and journey-based models.
+Health signals determine [which pipeline stage](/posts/hubspot-renewal-pipeline-stages/) a deal belongs in, especially for activity-based and journey-based models.
 
 ---
 
@@ -191,7 +191,7 @@ This workflow fires when an account's health deteriorates.
 - Every Monday, send CS leadership a summary of all companies currently at "At Risk"
 - Include: company name, account value, days to renewal, days at "At Risk"
 
-This connects to the [90-60-30 cadence](/posts/hubspot-renewal-deal-workflow-automation) in your renewal automation.
+This connects to the [90-60-30 cadence](/posts/hubspot-renewal-deal-workflow-automation/) in your renewal automation.
 
 ---
 
@@ -224,7 +224,7 @@ When a customer churns despite your best efforts, you need to capture *why* in a
 - Add a companion text field: "Churn Details" for freeform context
 - **Quarterly analysis:** Pull a report of all churned deals, grouped by Churn Reason. If "Champion Left" accounts for 30% of your churn, your retention strategy needs to address multi-threading (building relationships with multiple contacts at each account).
 
-Build [churn analysis dashboards](/posts/hubspot-renewal-nrr-grr-dashboard-reporting) that slice this data by reason, segment, and time period.
+Build [churn analysis dashboards](/posts/hubspot-renewal-nrr-grr-dashboard-reporting/) that slice this data by reason, segment, and time period.
 
 ---
 
@@ -295,7 +295,7 @@ Health scores aren't useful if they exist in isolation. They need to influence w
 
 **Healthy + 60 days to renewal:** Standard process. Send renewal proposal with confidence.
 
-Set up the [health score properties](/posts/hubspot-renewal-pipeline-properties) before building these workflows.
+Set up the [health score properties](/posts/hubspot-renewal-pipeline-properties/) before building these workflows.
 
 ---
 

@@ -27,7 +27,7 @@ This question appears in every HubSpot community thread, Reddit discussion, and 
 
 This article replaces "it depends" with a concrete decision framework. By the end, you'll know exactly which approach fits your team, and why.
 
-> This article is part of our [Complete Guide to Building a Renewal Pipeline in HubSpot](/posts/hubspot-renewal-pipeline-complete-guide).
+> This article is part of our [Complete Guide to Building a Renewal Pipeline in HubSpot](/posts/hubspot-renewal-pipeline-complete-guide/).
 
 ---
 
@@ -113,7 +113,7 @@ Three common approaches:
 2. **Separate expansion pipeline.** Clean reporting, but more pipeline overhead.
 3. **Expansion in the sales pipeline.** Treats upsells like new sales. Works if AEs handle expansion.
 
-The right answer depends on who owns expansion revenue and how complex your upsell motion is. We cover this in depth in [How to Structure Multiple Pipelines](/posts/hubspot-renewal-expansion-pipeline-structure).
+The right answer depends on who owns expansion revenue and how complex your upsell motion is. We cover this in depth in [How to Structure Multiple Pipelines](/posts/hubspot-renewal-expansion-pipeline-structure/).
 
 ---
 
@@ -140,7 +140,7 @@ The upfront effort is a few hours of setup. The long-term payoff is:
 - Clear ownership with no "whose deal is this?" confusion
 - Reporting that tracks NRR, GRR, and [churn rate](https://en.wikipedia.org/wiki/Churn_rate) properly
 
-Once you decide to separate, [choose your stage model](/posts/hubspot-renewal-pipeline-stages). If your organization also handles significant expansion revenue, your [pipeline architecture](/posts/hubspot-renewal-expansion-pipeline-structure) needs to account for that too.
+Once you decide to separate, [choose your stage model](/posts/hubspot-renewal-pipeline-stages/). If your organization also handles significant expansion revenue, your [pipeline architecture](/posts/hubspot-renewal-expansion-pipeline-structure/) needs to account for that too.
 
 ---
 

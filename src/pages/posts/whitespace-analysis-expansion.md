@@ -39,7 +39,7 @@ faqs:
     a: "The renewal is when the customer is deciding their next 12 months, so expansion opportunities fold naturally into one conversation."
 ---
 
-> This article is part of our [365-day renewal strategy guide](/posts/renewal-strategy-365).
+> This article is part of our [365-day renewal strategy guide](/posts/renewal-strategy-365/).
 
 **Whitespace analysis maps your product portfolio against a customer's departments and use cases to uncover untapped cross-sell and upsell opportunities, the "white space" where they could buy more but haven't.** It turns vague expansion goals into a concrete, account-by-account pipeline, and the renewal is the perfect moment to act on it. For key accounts, whitespace analysis is how you find hidden revenue inside your existing customer base.
 
@@ -74,7 +74,7 @@ The empty cells are your map of growth opportunities. White space mapping turns 
 - **Uncovers hidden sales.** It surfaces revenue opportunities that account teams miss when focused only on the renewal number.
 - **Focuses effort.** It shows which white space accounts have the most untapped potential, so you prioritize.
 - **Strengthens account plans.** It makes the strategic account plan concrete: specific products for specific teams.
-- **Fuels the expansion pipeline.** Each gap becomes a tracked [land-and-expand](/posts/land-and-expand-strategy) opportunity.
+- **Fuels the expansion pipeline.** Each gap becomes a tracked [land-and-expand](/posts/land-and-expand-strategy/) opportunity.
 
 ---
 
@@ -83,16 +83,16 @@ The empty cells are your map of growth opportunities. White space mapping turns 
 To identify white space in your accounts:
 
 1. **Inventory what they own.** Pull current products, modules, and seats per account from your CRM.
-2. **Map the buying center.** Identify the departments and stakeholders not yet using you, supported by [multi-threading](/posts/single-threaded-renewals-multithreading).
+2. **Map the buying center.** Identify the departments and stakeholders not yet using you, supported by [multi-threading](/posts/single-threaded-renewals-multithreading/).
 3. **Match products to needs.** Overlay your portfolio against each department's pain points and use cases.
-4. **Score the gaps.** Prioritize by deal size, fit, and buying signals, using [product-qualified signals](/posts/product-qualified-signals-expansion) where available.
+4. **Score the gaps.** Prioritize by deal size, fit, and buying signals, using [product-qualified signals](/posts/product-qualified-signals-expansion/) where available.
 5. **Tie it to the renewal.** Bring the top opportunities into the renewal conversation so expansion is one decision.
 
 ---
 
 ## Turning Whitespace Into an Expansion Pipeline
 
-Whitespace analysis only pays off when the gaps become pipeline. Convert white space opportunities into tracked expansion deals, assign owners, and review them at every QBR and renewal. Distinguish [cross-sell from upsell](/posts/cross-sell-vs-upsell) as you go, and let customer success surface [qualified expansion leads](/posts/customer-success-qualified-leads). Over time, this disciplined approach to existing accounts unlocks hidden revenue that new-business prospecting alone would never reach, and it lifts [net revenue retention](/posts/gross-vs-net-revenue-retention).
+Whitespace analysis only pays off when the gaps become pipeline. Convert white space opportunities into tracked expansion deals, assign owners, and review them at every QBR and renewal. Distinguish [cross-sell from upsell](/posts/cross-sell-vs-upsell/) as you go, and let customer success surface [qualified expansion leads](/posts/customer-success-qualified-leads/). Over time, this disciplined approach to existing accounts unlocks hidden revenue that new-business prospecting alone would never reach, and it lifts [net revenue retention](/posts/gross-vs-net-revenue-retention/).
 
 ---
 
@@ -129,7 +129,7 @@ The renewal is when the customer is deciding their next 12 months, so expansion 
 
 ---
 
-Whitespace analysis is the expansion-mapping discipline of the [365-day renewal strategy](/posts/renewal-strategy-365).
+Whitespace analysis is the expansion-mapping discipline of the [365-day renewal strategy](/posts/renewal-strategy-365/).
 
 **Your next big deal is probably hiding inside an account you already have.** SWOTBee builds whitespace and expansion programs for mid-market companies across Energy, Manufacturing, and SaaS.
 

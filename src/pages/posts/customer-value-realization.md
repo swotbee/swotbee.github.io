@@ -39,7 +39,7 @@ faqs:
     a: "Baseline the customer's metric, track the outcome (not just usage), quantify ROI, and roll it into a health score."
 ---
 
-> This article is part of our [365-day renewal strategy guide](/posts/renewal-strategy-365).
+> This article is part of our [365-day renewal strategy guide](/posts/renewal-strategy-365/).
 
 **Customer value realization is the point at which a customer actually achieves the business outcomes they bought your product for, and recognizes it. It is the only true driver of renewals.** High product adoption is not enough: a customer can use your product daily and still churn if it is not solving their core business problem, or if you never prove that it is. Renewals are won by delivering measurable value and making that value visible.
 
@@ -68,7 +68,7 @@ Adoption metrics (logins, feature usage) are leading indicators, not proof of va
 - At renewal, finance asks "what did this deliver?" and nobody has the answer.
 - A cheaper competitor looks like a reasonable swap, because the unique value was never quantified.
 
-This is why value realization, not adoption, is the metric that predicts renewal. Pair it with [renewal risk scoring](/posts/hubspot-renewal-risk-scoring) so low realization flags a renewal at risk early.
+This is why value realization, not adoption, is the metric that predicts renewal. Pair it with [renewal risk scoring](/posts/hubspot-renewal-risk-scoring/) so low realization flags a renewal at risk early.
 
 ---
 
@@ -79,8 +79,8 @@ A value realization framework maps value across the customer journey:
 1. **Define value.** At onboarding, agree the customer's goals and the metrics that define success. No value definition, no way to prove it later.
 2. **Deliver value.** Drive adoption toward those specific outcomes, not generic usage.
 3. **Measure value.** Quantify the outcome against the baseline (the hard part most teams skip).
-4. **Communicate value.** Surface the proof in QBRs and [executive business reviews](/posts/strategic-qbr-renewals) so decision-makers recognize it.
-5. **Expand value.** Use realized value as the foundation for [expansion](/posts/land-and-expand-strategy) and the next 12 months.
+4. **Communicate value.** Surface the proof in QBRs and [executive business reviews](/posts/strategic-qbr-renewals/) so decision-makers recognize it.
+5. **Expand value.** Use realized value as the foundation for [expansion](/posts/land-and-expand-strategy/) and the next 12 months.
 
 This continuous value loop, run across the customer lifecycle, is what a strong customer success team operationalizes.
 
@@ -112,10 +112,10 @@ The teams that win renewals make value visible by default. Every QBR opens with 
 Customers do not renew because they used your product; they renew because it helped their business and they know it. Proving value realization:
 
 - **Protects against churn** by answering the "what did we get?" question before it is asked.
-- **Defends margin** against [competitor price-dropping](/posts/defending-renewals-competitor-pricing), because value, not price, anchors the conversation.
+- **Defends margin** against [competitor price-dropping](/posts/defending-renewals-competitor-pricing/), because value, not price, anchors the conversation.
 - **Exceeds customer expectations** when you show outcomes they had not even tracked.
 
-Value realization is the foundation everything else in the [renewal strategy](/posts/renewal-strategy-365) is built on.
+Value realization is the foundation everything else in the [renewal strategy](/posts/renewal-strategy-365/) is built on.
 
 ---
 
@@ -138,7 +138,7 @@ Baseline the customer's metric, track the outcome (not just usage), quantify ROI
 
 ---
 
-Value realization is the foundation of the [365-day renewal strategy](/posts/renewal-strategy-365). This claim, that adoption alone doesn't guarantee renewal, has real quantitative backing too: see our [research on which product usage metric actually predicts renewal](/posts/product-usage-metrics-renewal-research).
+Value realization is the foundation of the [365-day renewal strategy](/posts/renewal-strategy-365/). This claim, that adoption alone doesn't guarantee renewal, has real quantitative backing too: see our [research on which product usage metric actually predicts renewal](/posts/product-usage-metrics-renewal-research/).
 
 **Customers renew outcomes, not features.** SWOTBee builds value-realization and customer health programs for mid-market companies across Energy, Manufacturing, and SaaS.
 

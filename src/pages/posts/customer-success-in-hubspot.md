@@ -64,7 +64,7 @@ Customer success platforms exist for a reason. When Gainsight and ChurnZero emer
 
 That is no longer the world HubSpot customers live in. HubSpot has spent years building customer success management capability into Service Hub, and for a team of two to ten customer success managers (CSMs) covering a few hundred accounts, the honest answer is that the CRM usually covers 80 to 90 percent of what a platform demo shows you.
 
-The question to ask is not "is Gainsight more powerful than HubSpot?" (it is, in specific areas). The question is: **which specific jobs does my CS team need done, and which of those jobs can the system I already own do?** Buying a platform to get one missing feature means paying five figures a year for a second system of record, a sync to maintain, and another admin burden. That trade is sometimes worth it. It is worth it far less often than platform vendors suggest, and it's worth going in with [a clear-eyed read on how much peer-reviewed evidence actually backs CSM's returns](/posts/customer-success-management-roi-research) before sizing that spend.
+The question to ask is not "is Gainsight more powerful than HubSpot?" (it is, in specific areas). The question is: **which specific jobs does my CS team need done, and which of those jobs can the system I already own do?** Buying a platform to get one missing feature means paying five figures a year for a second system of record, a sync to maintain, and another admin burden. That trade is sometimes worth it. It is worth it far less often than platform vendors suggest, and it's worth going in with [a clear-eyed read on how much peer-reviewed evidence actually backs CSM's returns](/posts/customer-success-management-roi-research/) before sizing that spend.
 
 ---
 
@@ -90,13 +90,13 @@ Here is what HubSpot's customer success tools give you out of the box, tier by t
 
 ### The Customer Success Workspace: A Book of Business per CSM
 
-The [Customer Success Workspace](/posts/hubspot-customer-success-workspace) is HubSpot's purpose-built CSM cockpit: a book-of-business view per CSM, account health at a glance, upcoming renewals, open tickets, and activity feeds in one screen. CSMs can create custom views to slice their book by renewal date, health, or segment, and book meetings, log calls, and work daily success activities without leaving the workspace. HubSpot has also been layering AI-powered summaries and suggestions into it. It is the closest thing HubSpot has to the daily-driver view that Gainsight and ChurnZero CSMs work from, and for most mid-market teams it is genuinely good enough as the working day view.
+The [Customer Success Workspace](/posts/hubspot-customer-success-workspace/) is HubSpot's purpose-built CSM cockpit: a book-of-business view per CSM, account health at a glance, upcoming renewals, open tickets, and activity feeds in one screen. CSMs can create custom views to slice their book by renewal date, health, or segment, and book meetings, log calls, and work daily success activities without leaving the workspace. HubSpot has also been layering AI-powered summaries and suggestions into it. It is the closest thing HubSpot has to the daily-driver view that Gainsight and ChurnZero CSMs work from, and for most mid-market teams it is genuinely good enough as the working day view.
 
 It requires Service Hub Professional or Enterprise, so budget for that tier if CS is going to live in HubSpot.
 
 ### Health Scores: Track Customer Health Proactively
 
-HubSpot's customer health scores let you weight inputs like product usage events, ticket volume, survey scores, and engagement recency into a red/yellow/green account score, so the success team can identify potential issues proactively instead of finding out at the renewal call. Configurability is narrower than a dedicated platform (fewer scorecard layers, less flexibility on time-decay logic), but a well-chosen simple score beats an elaborate one nobody trusts. For the full build, including workflows that fire save plays when a score drops, see our guide to [churn prevention with health scores and workflows in HubSpot](/posts/hubspot-churn-prevention-health-scores-workflows).
+HubSpot's customer health scores let you weight inputs like product usage events, ticket volume, survey scores, and engagement recency into a red/yellow/green account score, so the success team can identify potential issues proactively instead of finding out at the renewal call. Configurability is narrower than a dedicated platform (fewer scorecard layers, less flexibility on time-decay logic), but a well-chosen simple score beats an elaborate one nobody trusts. For the full build, including workflows that fire save plays when a score drops, see our guide to [churn prevention with health scores and workflows in HubSpot](/posts/hubspot-churn-prevention-health-scores-workflows/).
 
 ### Surveys and feedback
 
@@ -108,7 +108,7 @@ Support volume is one of the strongest churn predictors you own. Because tickets
 
 ### Deal pipelines and workflows: the renewal engine
 
-This is the part CS platforms cannot replicate: HubSpot can hold the renewal motion itself. A dedicated renewal pipeline with stage-by-stage automation, date-based reminders, and owner routing turns renewals from a shared anxiety into a managed process, and because deals carry amounts, you can track revenue and customer retention from the same pipeline your CSMs work. Our [complete guide to building a renewal pipeline in HubSpot](/posts/hubspot-renewal-pipeline-complete-guide) covers that build end to end.
+This is the part CS platforms cannot replicate: HubSpot can hold the renewal motion itself. A dedicated renewal pipeline with stage-by-stage automation, date-based reminders, and owner routing turns renewals from a shared anxiety into a managed process, and because deals carry amounts, you can track revenue and customer retention from the same pipeline your CSMs work. Our [complete guide to building a renewal pipeline in HubSpot](/posts/hubspot-renewal-pipeline-complete-guide/) covers that build end to end.
 
 ---
 
@@ -131,9 +131,9 @@ CS platform vendors are almost universally quote-based, so treat every number he
 
 | Path | Typical annual cost (buyer-reported, as of mid-2026) | What you get |
 |---|---|---|
-| Gainsight | High five figures to six figures at enterprise scale; see our [Gainsight pricing breakdown](/posts/gainsight-pricing-alternatives-hubspot) | The deepest customer success management feature set on the market, built for large CS orgs |
-| ChurnZero | Commonly mid five figures for mid-market; see our [ChurnZero pricing analysis](/posts/churnzero-pricing-alternatives) | Strong usage-based automation and CSM command center |
-| Vitally, Planhat, Totango, Catalyst, ClientSuccess | Roughly low-to-mid five figures depending on seats and accounts | Lighter platforms; integration quality with HubSpot varies widely, [compared here](/posts/cs-platform-hubspot-integrations-compared) |
+| Gainsight | High five figures to six figures at enterprise scale; see our [Gainsight pricing breakdown](/posts/gainsight-pricing-alternatives-hubspot/) | The deepest customer success management feature set on the market, built for large CS orgs |
+| ChurnZero | Commonly mid five figures for mid-market; see our [ChurnZero pricing analysis](/posts/churnzero-pricing-alternatives/) | Strong usage-based automation and CSM command center |
+| Vitally, Planhat, Totango, Catalyst, ClientSuccess | Roughly low-to-mid five figures depending on seats and accounts | Lighter platforms; integration quality with HubSpot varies widely, [compared here](/posts/cs-platform-hubspot-integrations-compared/) |
 | Service Hub Professional (CS in HubSpot) | HubSpot's listed per-seat pricing, typically a fraction of a platform contract for a small CS team | Workspace, health scores, surveys, tickets, native to your CRM |
 | HubSpot + custom renewal automation | Service Hub seats plus a one-time build | Everything above plus automated renewal deals, uplifts, and NRR reporting |
 
@@ -171,10 +171,10 @@ Closing that gap means automation inside HubSpot itself: scheduled renewal deal 
 If you go the HubSpot-native route, these best practices sequence the build:
 
 1. **Get the data model right.** Renewal date, contract value, term, auto-renew flag, and CSM owner populated reliably on every customer, as custom properties on companies and deals (or a custom object on Enterprise).
-2. **Stand up the renewal pipeline.** Separate from new business, with stages that reflect the renewal motion. The [renewal pipeline guide](/posts/hubspot-renewal-pipeline-complete-guide) is the blueprint.
+2. **Stand up the renewal pipeline.** Separate from new business, with stages that reflect the renewal motion. The [renewal pipeline guide](/posts/hubspot-renewal-pipeline-complete-guide/) is the blueprint.
 3. **Automate renewal deal creation.** Deals should appear 90 to 120 days out with value and owner set, with internal notifications to the CSM; nobody should create renewals by hand.
-4. **Configure the Customer Success Workspace.** Books of business, upcoming-renewal views, and the daily queue of success activities, per the [workspace setup guide](/posts/hubspot-customer-success-workspace).
-5. **Build a simple health score and wire it to plays.** Three to five inputs, red/yellow/green, and [workflows that trigger save plays on decline](/posts/hubspot-churn-prevention-health-scores-workflows); pair the save plays with plays that identify growth opportunities, so the motion drives retention and growth together (our [renewal playbook template](/posts/renewal-playbook-template) covers the plays).
+4. **Configure the Customer Success Workspace.** Books of business, upcoming-renewal views, and the daily queue of success activities, per the [workspace setup guide](/posts/hubspot-customer-success-workspace/).
+5. **Build a simple health score and wire it to plays.** Three to five inputs, red/yellow/green, and [workflows that trigger save plays on decline](/posts/hubspot-churn-prevention-health-scores-workflows/); pair the save plays with plays that identify growth opportunities, so the motion drives retention and growth together (our [renewal playbook template](/posts/renewal-playbook-template/) covers the plays).
 6. **Report on retention.** Renewal rate, GRR, and NRR dashboards built from the renewal pipeline, so leadership reads retention analytics from the same system CSMs work in.
 
 Teams that follow this order see customer success with HubSpot working in weeks, on software they already pay for.

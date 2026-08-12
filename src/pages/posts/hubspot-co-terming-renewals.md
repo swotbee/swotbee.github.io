@@ -39,7 +39,7 @@ faqs:
     a: "On the renewal deal in your renewal pipeline, as the single Renewal Date property that all reminders and automations read from. Running an MSP? Agreement renewals with seat true-ups, uplifts, and co-term visibility are their own discipline. See how we automate agreement renewals for MSPs in HubSpot."
 ---
 
-> This article is part of our [Complete Guide to Building a Renewal Pipeline in HubSpot](/posts/hubspot-renewal-pipeline-complete-guide).
+> This article is part of our [Complete Guide to Building a Renewal Pipeline in HubSpot](/posts/hubspot-renewal-pipeline-complete-guide/).
 
 **Co-terming means aligning multiple contracts or subscriptions for the same customer onto a single renewal date, so they all renew together instead of on scattered end dates.** In HubSpot, you co-term by issuing a change quote that shortens or extends line items to a common contract end date, with the partial term prorated, then managing the consolidated renewal in your renewal pipeline. This guide explains what co-terming is, its benefits, and how to set it up.
 
@@ -80,12 +80,12 @@ If a deal is enrolled in the connected CPQ (or the payments beta process where e
 
 To manage co-termed renewals cleanly:
 
-1. **Make the renewal deal the source of truth.** One renewal deal per customer in your [dedicated renewal pipeline](/posts/hubspot-renewal-pipeline-vs-sales-pipeline) holds the consolidated contract value and renewal date.
-2. **Align all line items** to the single contract end date when you issue the [renewal quote](/posts/hubspot-renewal-quote-price-increase).
+1. **Make the renewal deal the source of truth.** One renewal deal per customer in your [dedicated renewal pipeline](/posts/hubspot-renewal-pipeline-vs-sales-pipeline/) holds the consolidated contract value and renewal date.
+2. **Align all line items** to the single contract end date when you issue the [renewal quote](/posts/hubspot-renewal-quote-price-increase/).
 3. **Record the co-termed renewal date** as the deal's Renewal Date so every downstream automation reads one date.
 4. **Use one renewal date property** across the account so tracking renewals does not splinter again.
 
-This is the same single-date discipline built into the [renewal pipeline template](/posts/hubspot-renewal-pipeline-template).
+This is the same single-date discipline built into the [renewal pipeline template](/posts/hubspot-renewal-pipeline-template/).
 
 ---
 
@@ -93,8 +93,8 @@ This is the same single-date discipline built into the [renewal pipeline templat
 
 Co-terming only stays clean if new purchases keep aligning to the shared date. Use workflows to handle it:
 
-- **Default new deals to the existing renewal date.** When a mid-term deal is created for an account that already has a renewal, set its end date to the account's co-termed date rather than a fresh 12-month term. Tie this into [renewal deal creation](/posts/hubspot-renewal-deal-workflow-automation) so co-termed deals are created automatically at the right deal stage in your deal pipeline, not in your new business pipeline.
-- **Fire reminders off the single date.** Start outreach 60 to 120 days before the renewal date using your [renewal reminders](/posts/hubspot-renewal-reminders), so one alert covers the whole account.
+- **Default new deals to the existing renewal date.** When a mid-term deal is created for an account that already has a renewal, set its end date to the account's co-termed date rather than a fresh 12-month term. Tie this into [renewal deal creation](/posts/hubspot-renewal-deal-workflow-automation/) so co-termed deals are created automatically at the right deal stage in your deal pipeline, not in your new business pipeline.
+- **Fire reminders off the single date.** Start outreach 60 to 120 days before the renewal date using your [renewal reminders](/posts/hubspot-renewal-reminders/), so one alert covers the whole account.
 - **Flag drift.** Alert RevOps when a new contract is created with an end date that does not match the account's co-termed renewal date, so it can be corrected before the next renewal.
 
 Letting workflows handle alignment prevents the slow return to scattered, last-minute renewals.

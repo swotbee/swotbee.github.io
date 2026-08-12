@@ -45,7 +45,7 @@ faqs:
     a: "For Stripe and Chargebee, usually not; native apps cover common cases. For Zuora almost always, for Recurly usually, and for Maxio's HubSpot-inbound direction often. If you already run an iPaaS for ERP integration, reusing it for billing sync is frequently cheaper than adding point connectors."
 ---
 
-> This article is part of our [complete guide to HubSpot ERP integration](/posts/hubspot-erp-integration).
+> This article is part of our [complete guide to HubSpot ERP integration](/posts/hubspot-erp-integration/).
 
 **Every HubSpot billing integration has to do two jobs: push billing data into the HubSpot CRM so your team can see subscriptions, invoices and payments, and renewal health on the record, and push closed deals out to the billing platform so invoicing starts without rekeying.** Stripe, Chargebee, Maxio, Zuora, and Recurly all offer a HubSpot path as of mid-2026, but they differ sharply in sync depth, direction, and how much middleware you need. Collectively, this group of vendors supports various billing models, from flat monthly plans to complex usage-based contracts, so which one fits depends on your billing model rather than marketplace star ratings. This guide compares all five, plus HubSpot’s own commerce tools, so you can pick based on your billing model rather than marketplace star ratings.
 
@@ -61,7 +61,7 @@ Before comparing vendors, be clear about which direction matters more for you, b
 
 **Job 1: billing data into HubSpot (visibility).** Customers, subscriptions, plans, MRR, invoices, and billing details such as payment status flow from the billing platform onto HubSpot contact, company, and deal records. This is what lets a CSM see "on the Growth plan, 84,000 USD ARR, renews October 14, last invoice paid" without leaving the CRM.
 
-**Job 2: HubSpot deals into billing (invoicing).** When a deal closes in HubSpot as Closed Won, the line items, terms, and customer details create a subscription or invoice in the billing platform automatically. This closes the [quote-to-cash loop](/posts/quote-to-cash) and eliminates the rekeying step where finance retypes HubSpot data that sales already entered.
+**Job 2: HubSpot deals into billing (invoicing).** When a deal closes in HubSpot as Closed Won, the line items, terms, and customer details create a subscription or invoice in the billing platform automatically. This closes the [quote-to-cash loop](/posts/quote-to-cash/) and eliminates the rekeying step where finance retypes HubSpot data that sales already entered.
 
 Most teams start wanting Job 1 and discover within a quarter that Job 2 is where the manual work hides. Evaluate every option against both. The benefits of integrating a billing platform with HubSpot compound in that order: visibility first, then automation, then reporting you can actually trust.
 
@@ -106,7 +106,7 @@ Chargebee provides a native integration with HubSpot that maps Chargebee custome
 
 ### How the Integration Connects Chargebee Data to HubSpot Records
 
-We cover setup, field mapping, and the workflow patterns in detail in our dedicated [Chargebee HubSpot integration guide](/posts/chargebee-hubspot-integration), so this section stays short. The headline: strong inbound sync, hedged Job 2 (deal-to-subscription creation typically needs configuration or middleware), and the same renewal gap every platform here shares.
+We cover setup, field mapping, and the workflow patterns in detail in our dedicated [Chargebee HubSpot integration guide](/posts/chargebee-hubspot-integration/), so this section stays short. The headline: strong inbound sync, hedged Job 2 (deal-to-subscription creation typically needs configuration or middleware), and the same renewal gap every platform here shares.
 
 **Best fit:** mid-market SaaS with sales-assisted and self-serve mix, plan catalogs complex enough to outgrow Stripe alone, teams that want subscription management events visible in HubSpot without middleware.
 
@@ -166,9 +166,9 @@ Syncing "Next billing date: October 14" onto a company record is visibility, not
 The flow that works:
 
 1. **Billing platform to HubSpot:** subscription value, term, and renewal or next-billing date sync onto the company or deal record (custom fields like Renewal Date and Subscription Value work well). Every integration above can get you this far.
-2. **HubSpot builds the renewal deal:** a scheduled workflow reads the renewal date and creates a renewal deal in a dedicated renewal pipeline, with line items carried over and the uplift applied. This is the step no billing integration does; see our guide to [automated renewal deal creation](/posts/hubspot-renewal-deal-workflow-automation) for the build.
+2. **HubSpot builds the renewal deal:** a scheduled workflow reads the renewal date and creates a renewal deal in a dedicated renewal pipeline, with line items carried over and the uplift applied. This is the step no billing integration does; see our guide to [automated renewal deal creation](/posts/hubspot-renewal-deal-workflow-automation/) for the build.
 3. **HubSpot back to billing:** when the renewal deal closes won at the new price, the updated amount flows back to the billing platform seamlessly so the next invoice is correct.
-4. **Reporting closes the loop:** with renewals living as deals, you can build real [NRR and GRR dashboards in HubSpot](/posts/hubspot-renewal-nrr-grr-dashboard-reporting) instead of exporting billing data to a spreadsheet every quarter.
+4. **Reporting closes the loop:** with renewals living as deals, you can build real [NRR and GRR dashboards in HubSpot](/posts/hubspot-renewal-nrr-grr-dashboard-reporting/) instead of exporting billing data to a spreadsheet every quarter.
 
 If you evaluate integrations only on sync scope, you will pick a good pipe and still miss renewals. Evaluate on whether the integrated billing and CRM system produces a worked renewal deal.
 
@@ -186,7 +186,7 @@ Choose the billing platform for billing reasons first, then solve the HubSpot co
 | Usage-based or consumption billing at scale | Zuora, budget for an iPaaS integration project |
 | High involuntary churn, dunning is the priority | Recurly, plan a middleware layer for CRM visibility |
 
-If your billing runs through accounting software like QuickBooks Online or Xero rather than a subscription platform, a QuickBooks Online integration with HubSpot follows a different comparison and is usually about invoicing and improved cash flow management rather than subscription logic; see the smaller-company path in our [HubSpot Sage Intacct integration guide](/posts/hubspot-sage-intacct-integration).
+If your billing runs through accounting software like QuickBooks Online or Xero rather than a subscription platform, a QuickBooks Online integration with HubSpot follows a different comparison and is usually about invoicing and improved cash flow management rather than subscription logic; see the smaller-company path in our [HubSpot Sage Intacct integration guide](/posts/hubspot-sage-intacct-integration/).
 
 Two cross-cutting rules regardless of platform:
 
@@ -219,7 +219,7 @@ No. These integrations sync renewal or next-billing dates as data, but none of t
 Both, but for different fields. Closed-won deals and line items should flow from HubSpot to billing so invoicing starts without rekeying. Subscription status, MRR, invoices, and payment health should flow from billing to HubSpot so the CRM record reflects reality. Never let both systems write the same field.
 
 **Do I need an iPaaS like Workato or Celigo for these integrations?**
-For Stripe and Chargebee, usually not; native apps cover common cases. For Zuora almost always, for Recurly usually, and for Maxio's HubSpot-inbound direction often. If you already run an iPaaS for [ERP integration](/posts/hubspot-erp-integration), reusing it for billing sync is frequently cheaper than adding point connectors.
+For Stripe and Chargebee, usually not; native apps cover common cases. For Zuora almost always, for Recurly usually, and for Maxio's HubSpot-inbound direction often. If you already run an iPaaS for [ERP integration](/posts/hubspot-erp-integration/), reusing it for billing sync is frequently cheaper than adding point connectors.
 
 ---
 

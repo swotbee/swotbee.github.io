@@ -39,7 +39,7 @@ faqs:
     a: "Three. More than that causes decision paralysis and dilutes the anchoring effect."
 ---
 
-> This article is part of our [365-day renewal strategy guide](/posts/renewal-strategy-365).
+> This article is part of our [365-day renewal strategy guide](/posts/renewal-strategy-365/).
 
 **Good-better-best pricing is a tiered pricing strategy that offers three packages at different price points, structured so the middle (or target) tier looks like the obvious choice.** At renewal and expansion, presenting good-better-best tiers naturally anchors the customer toward your target package and makes the upgrade feel like their decision, not your push. It is one of the most effective approaches to pricing for driving expansion without hard selling.
 
@@ -96,7 +96,7 @@ At renewal, show the customer their current tier alongside the next one up, fram
 
 ## Good-Better-Best at Renewal and Expansion
 
-The renewal is the ideal moment to use good-better-best. A customer who has realized value on the "good" tier is primed to move to "better," and the tier structure makes that natural. Pair it with [whitespace analysis](/posts/whitespace-analysis-expansion) to know which capabilities the account needs next, and use it as the anchor in [contract negotiation](/posts/saas-contract-negotiation-renewals) so the conversation is about which tier, not whether to discount. This is how tiered pricing quietly drives [upsell](/posts/cross-sell-vs-upsell) without pressure.
+The renewal is the ideal moment to use good-better-best. A customer who has realized value on the "good" tier is primed to move to "better," and the tier structure makes that natural. Pair it with [whitespace analysis](/posts/whitespace-analysis-expansion/) to know which capabilities the account needs next, and use it as the anchor in [contract negotiation](/posts/saas-contract-negotiation-renewals/) so the conversation is about which tier, not whether to discount. This is how tiered pricing quietly drives [upsell](/posts/cross-sell-vs-upsell/) without pressure.
 
 ---
 
@@ -104,7 +104,7 @@ The renewal is the ideal moment to use good-better-best. A customer who has real
 
 The good-better-best pricing strategy works on the revenue line for three reasons. First, it captures customers at different price points: budget-conscious buyers take the good tier instead of walking away, while high-need customers self-select into best and spend more money than a single price would have captured. Second, it simplifies the decision: customers can easily compare three clear pricing options and make informed decisions, which lifts conversion versus a confusing menu. Third, it raises average sales by anchoring; the best version makes the better tier feel like the sensible choice, nudging customers up from the lower-priced option.
 
-For a service business or SaaS company setting prices, this means you do not have to guess a single perfect price. You offer a structured set of multiple pricing options and let the market sort itself, then watch which tier most new customers choose and refine from there. Used at renewal, the same good-better-best approach turns a flat re-sign into an upgrade opportunity, which is why it appears throughout a strong [renewal strategy](/posts/renewal-strategy-365).
+For a service business or SaaS company setting prices, this means you do not have to guess a single perfect price. You offer a structured set of multiple pricing options and let the market sort itself, then watch which tier most new customers choose and refine from there. Used at renewal, the same good-better-best approach turns a flat re-sign into an upgrade opportunity, which is why it appears throughout a strong [renewal strategy](/posts/renewal-strategy-365/).
 
 ## Frequently Asked Questions
 
@@ -125,7 +125,7 @@ Three. More than that causes decision paralysis and dilutes the anchoring effect
 
 ---
 
-Tiered pricing is the upgrade lever in the [365-day renewal strategy](/posts/renewal-strategy-365).
+Tiered pricing is the upgrade lever in the [365-day renewal strategy](/posts/renewal-strategy-365/).
 
 **Give customers a choice between tiers, not a choice between you and leaving.** SWOTBee builds pricing and expansion strategies for mid-market companies across Energy, Manufacturing, and SaaS.
 

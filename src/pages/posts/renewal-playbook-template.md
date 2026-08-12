@@ -45,7 +45,7 @@ faqs:
     a: "The template in this article is a complete free customer success renewal playbook: copy Sections 1 through 5 into your own document, set the bracketed thresholds, and wire the triggers into your CRM. It is deliberately short; a playbook your CSMs actually open under pressure beats a 40-page one they never do."
 ---
 
-> This article is part of our [Complete B2B Guide to Contract Renewal Management](/posts/contract-renewal-management-complete-guide).
+> This article is part of our [Complete B2B Guide to Contract Renewal Management](/posts/contract-renewal-management-complete-guide/).
 
 **A renewal playbook is a written spec that defines, for every customer renewal, who owns it, when each play fires, and what "good" looks like at each checkpoint.** It has four load-bearing parts: the sales-to-CS handoff, the timeline of triggers and owners, risk-tiered plays (green, yellow, red), and an expansion motion built into the renewal itself. This article gives you the full template, section by section, ready to copy into your own doc and wire into your CRM.
 
@@ -142,7 +142,7 @@ Uplift policy: default [X]% annual increase. Exceptions below [Y]% need
 | T-30 | Anything unsigned escalates to leadership; weekly standing check | CS Lead + RevOps |
 | T-0 | Signed, or a documented churn reason logged | CSM |
 
-Treat every row as a milestone with a named owner and a hard date; renewal reminders and tasks should fire from the CRM automatically at each one. For the granular task-level version of the T-120 to T-0 window, use our [contract renewal process checklist](/posts/contract-renewal-process-checklist); the playbook references it rather than duplicating it.
+Treat every row as a milestone with a named owner and a hard date; renewal reminders and tasks should fire from the CRM automatically at each one. For the granular task-level version of the T-120 to T-0 window, use our [contract renewal process checklist](/posts/contract-renewal-process-checklist/); the playbook references it rather than duplicating it.
 
 ### Section 3: Customer health scores and risk-tiered plays
 
@@ -154,7 +154,7 @@ Define tiers with criteria your customer data can actually evaluate today. Custo
 | Yellow | Usage declining; champion gone quiet or changed roles; NPS/CSAT dip; success criteria unclear | Start at T-120 instead of T-90. Re-discovery call to restate customer value in their own numbers and rebuild a mutual success plan for the next term. Consider trading uplift for a longer term or added scope. Manager reviews before terms go out |
 | Red | Usage collapse; open escalation; champion departed; budget or vendor-consolidation signals; stated dissatisfaction | Save plan owned by CS lead, not the CSM alone. Executive-to-executive contact by T-90. Fix the top issue before discussing price; uplift is off the table. Weekly internal review until resolved. Define the walk-away point |
 
-Tier assignment is not a feeling; it is a field, reviewed quarterly and locked at T-120. If you want to formalize the scoring behind these tiers, our guide to [renewal risk scoring in HubSpot](/posts/hubspot-renewal-risk-scoring) covers building the signal model.
+Tier assignment is not a feeling; it is a field, reviewed quarterly and locked at T-120. If you want to formalize the scoring behind these tiers, our guide to [renewal risk scoring in HubSpot](/posts/hubspot-renewal-risk-scoring/) covers building the signal model.
 
 ### Section 4: The expansion audit
 
@@ -169,7 +169,7 @@ Expansion belongs inside the renewal motion, not bolted on afterward. At T-90, f
    have a story for them?
 ```
 
-Two or more "yes" answers means the renewal conversation is framed as a growth conversation: next year's plan first, continuation second. Structuring that conversation is exactly what a [strategic QBR ahead of the renewal](/posts/strategic-qbr-renewals) is for.
+Two or more "yes" answers means the renewal conversation is framed as a growth conversation: next year's plan first, continuation second. Structuring that conversation is exactly what a [strategic QBR ahead of the renewal](/posts/strategic-qbr-renewals/) is for.
 
 ### Section 5: Escalation and exceptions
 
@@ -197,7 +197,7 @@ Most churn is not a surprise; it follows a handful of common renewal risks that 
 | Uplift surprise | Customer first hears about the increase on the order form | Signal the uplift at the QBR two quarters out and anchor it to delivered customer value |
 | Procurement stall | Verbal yes at T-45, no signature by T-30 | Escalate per Section 5; get the notice-period reality on the table and a signature date agreed in writing |
 
-Silent usage decay deserves special attention because it produces no ticket, no complaint, and no signal in a CRM that only tracks emails; our guide to [detecting silent churn](/posts/silent-churn-detection) covers the instrumentation. The pattern across all five risks is the same: the earlier the indicator is caught, the cheaper the play.
+Silent usage decay deserves special attention because it produces no ticket, no complaint, and no signal in a CRM that only tracks emails; our guide to [detecting silent churn](/posts/silent-churn-detection/) covers the instrumentation. The pattern across all five risks is the same: the earlier the indicator is caught, the cheaper the play.
 
 ---
 
@@ -211,7 +211,7 @@ A playbook in a doc is a suggestion; a playbook in the CRM is an operating syste
 - **The renewal deal itself** is created automatically at close with line items and the default uplift applied, so every play attaches to a forecastable record from day one.
 - **Reason codes** become a required property on Closed Lost and on any exception, feeding the quarterly review.
 
-Whether this is one afternoon of setup or a quarter-long project depends mostly on whether your renewal pipeline and properties already exist. If your CS team runs inside HubSpot rather than a separate platform, our guide to [running customer success in HubSpot](/posts/customer-success-in-hubspot) covers the surrounding toolkit; the playbook above drops into it directly.
+Whether this is one afternoon of setup or a quarter-long project depends mostly on whether your renewal pipeline and properties already exist. If your CS team runs inside HubSpot rather than a separate platform, our guide to [running customer success in HubSpot](/posts/customer-success-in-hubspot/) covers the surrounding toolkit; the playbook above drops into it directly.
 
 One honest caveat: customer success platforms (Gainsight, ChurnZero, and similar) and CRMs alike will happily send the alerts, but the deal-building step (line items, uplift math, multi-year chains) is where HubSpot's native tooling needs help. Make sure your instrumentation covers deal creation, not just notification, or the playbook's timeline starts every cycle with manual work.
 

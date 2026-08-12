@@ -39,11 +39,11 @@ faqs:
     a: "SuiteCloud Plus adds 10 concurrent API slots per license. You need it when your integration volume exceeds your account's base concurrency, which is common for high-volume or multi-integration environments. Fighting a live sync problem right now? We catalogued the six most-reported HubSpot NetSuite sync failures and their fixes, including which ones a config change can solve and which need an integration layer."
 ---
 
-> This article is part of our [complete guide to HubSpot and NetSuite integration](/posts/hubspot-netsuite-integration).
+> This article is part of our [complete guide to HubSpot and NetSuite integration](/posts/hubspot-netsuite-integration/).
 
 **A custom NetSuite CRM integration is a purpose-built connection between NetSuite and your CRM, written against NetSuite's APIs to handle the custom records, line-item logic, and data volume that off-the-shelf connectors cannot.** It gives you total control over the data model and the entire customer lifecycle, but you own NetSuite's API governance, authentication, and technical bottlenecks forever. This guide is the engineering view: how NetSuite CRM integration works under the hood, the limits that break naive builds, and the architecture that holds up at scale.
 
-If you have not yet decided between native, iPaaS, and custom, read our [HubSpot NetSuite connector comparison](/posts/hubspot-netsuite-connector-comparison) first. For the strategy, see the [HubSpot NetSuite integration pillar](/posts/hubspot-netsuite-integration).
+If you have not yet decided between native, iPaaS, and custom, read our [HubSpot NetSuite connector comparison](/posts/hubspot-netsuite-connector-comparison/) first. For the strategy, see the [HubSpot NetSuite integration pillar](/posts/hubspot-netsuite-integration/).
 
 ---
 

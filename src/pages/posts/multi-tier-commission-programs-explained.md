@@ -37,7 +37,7 @@ That is not a pyramid. That is a growth engine with a built-in quality filter.
 
 This article explains how multi-tier commission programs actually work in B2B contexts -- what is legitimate, what is not, and when it makes sense for your team. No hype, no recruitment pitches, just the mechanics and the math.
 
-> This article is part of our [Multi-Tiered Affiliate Incentive Structure Guide](/posts/multi-tiered-affiliate-incentive-structure-guide).
+> This article is part of our [Multi-Tiered Affiliate Incentive Structure Guide](/posts/multi-tiered-affiliate-incentive-structure-guide/).
 
 ---
 
@@ -84,7 +84,7 @@ If the answer is no -- if the only way to make real money is to recruit other se
 
 In a properly designed B2B multi-tier program, the vast majority of total commission dollars flow to Tier 1 direct sellers. Tier 2 and Tier 3 overrides are a smaller incentive layer on top, not the main event. If your Tier 2 and Tier 3 payouts ever start exceeding your Tier 1 payouts in aggregate, something has gone structurally wrong with your program design.
 
-For a deeper dive into the legal boundaries and how to stay on the right side of them, see our [multi-tier affiliate vs. pyramid scheme legal guide](/posts/multi-tier-affiliate-vs-pyramid-scheme-legal).
+For a deeper dive into the legal boundaries and how to stay on the right side of them, see our [multi-tier affiliate vs. pyramid scheme legal guide](/posts/multi-tier-affiliate-vs-pyramid-scheme-legal/).
 
 ---
 
@@ -220,6 +220,6 @@ The companies that succeed with multi-tier programs are the ones that treat them
 
 If you are evaluating whether multi-tier commissions fit your business, start with the math. Calculate your gross margins, model the maximum total payout per deal, and ask yourself whether the incremental cost of referral layers is less than what you currently spend acquiring the same talent and revenue through traditional channels. For most mid-market companies with healthy margins and recurring revenue, the answer is yes -- often by a significant margin.
 
-For more on how to structure the attribution logic behind these programs, see our [guide to affiliate attribution models](/posts/affiliate-attribution-models-explained). If you are ready to implement, our [guide to building tiered commissions in HubSpot](/posts/hubspot-tiered-commission-model-setup) walks through the CRM configuration step by step.
+For more on how to structure the attribution logic behind these programs, see our [guide to affiliate attribution models](/posts/affiliate-attribution-models-explained/). If you are ready to implement, our [guide to building tiered commissions in HubSpot](/posts/hubspot-tiered-commission-model-setup/) walks through the CRM configuration step by step.
 
 **Thinking about a multi-tier program for your team?** [Let's design it together](/contactus/). We help mid-market companies build commission structures that scale -- from program design through CRM implementation and ongoing optimization.

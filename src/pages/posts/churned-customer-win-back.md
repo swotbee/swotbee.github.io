@@ -39,7 +39,7 @@ faqs:
     a: "Track reactivation rate, recovered revenue, and cost per win-back, and compare it to new customer acquisition cost."
 ---
 
-> This article is part of our [365-day renewal strategy guide](/posts/renewal-strategy-365).
+> This article is part of our [365-day renewal strategy guide](/posts/renewal-strategy-365/).
 
 **A customer win-back campaign is a structured effort to re-engage churned or lapsed customers and bring them back, treating them as a specialized pipeline rather than lost revenue.** Because former customers already know your product, winning them back costs far less than acquiring a new customer, often recovering revenue at near-zero customer acquisition cost. A deliberate win-back strategy turns churn from a dead end into a recoverable pipeline.
 
@@ -65,7 +65,7 @@ Segment your churned base by churn reason and former value. Customer segmentatio
 
 ## Why Win-Back Beats New Acquisition
 
-- **Lower cost.** Re-engaging a former customer is far cheaper than acquiring a new customer, improving your [LTV:CAC ratio](/posts/cac-ltv-ratio-renewals).
+- **Lower cost.** Re-engaging a former customer is far cheaper than acquiring a new customer, improving your [LTV:CAC ratio](/posts/cac-ltv-ratio-renewals/).
 - **Higher intent.** Lapsed customers already saw value once; the barrier to return is lower than a first purchase.
 - **Better data.** You know their use case, history, and churn reason, so you can personalize the win-back.
 - **Compounding loyalty.** A recovered customer who returns often becomes more loyal, having compared the alternatives.
@@ -111,7 +111,7 @@ Map these into a short win-back email series rather than a one-off send.
 
 A win-back is not just recovered revenue; it is a chance to rebuild customer loyalty. A reactivated customer who returns because you addressed why they left often becomes more committed than before, raising their customer lifetime value over the second relationship. This is why customer reactivation deserves a place alongside acquisition and retention as a distinct growth motion.
 
-Treat winback as an extension of your customer retention strategies, not a separate marketing strategy bolted on. The same understanding of customer experience and customer satisfaction that prevents churn also powers the win-back: you use email marketing and a clean email list to re-open the conversation, but the substance is a genuine reason to return. The strongest programs make winback efforts continuous, regularly revisiting inactive and former customers rather than writing them off, because today's lapsed customer can be tomorrow's reactivated, loyal account. Catching disengagement before it becomes churn (see [silent churn](/posts/silent-churn-detection)) keeps more customers active in the first place, but a disciplined win-back recovers those you still lose.
+Treat winback as an extension of your customer retention strategies, not a separate marketing strategy bolted on. The same understanding of customer experience and customer satisfaction that prevents churn also powers the win-back: you use email marketing and a clean email list to re-open the conversation, but the substance is a genuine reason to return. The strongest programs make winback efforts continuous, regularly revisiting inactive and former customers rather than writing them off, because today's lapsed customer can be tomorrow's reactivated, loyal account. Catching disengagement before it becomes churn (see [silent churn](/posts/silent-churn-detection/)) keeps more customers active in the first place, but a disciplined win-back recovers those you still lose.
 
 ## Measuring Win-Back Success
 
@@ -144,7 +144,7 @@ Track reactivation rate, recovered revenue, and cost per win-back, and compare i
 
 ---
 
-Win-back is the recovery motion in the [365-day renewal strategy](/posts/renewal-strategy-365); catching [silent churn](/posts/silent-churn-detection) early prevents many cancellations in the first place.
+Win-back is the recovery motion in the [365-day renewal strategy](/posts/renewal-strategy-365/); catching [silent churn](/posts/silent-churn-detection/) early prevents many cancellations in the first place.
 
 **A churned customer is not a lost customer; they're an untapped pipeline.** SWOTBee builds win-back and retention programs for mid-market companies across Energy, Manufacturing, and SaaS.
 

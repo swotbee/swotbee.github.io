@@ -375,8 +375,8 @@ The system you just built handles a specific and common scenario: per-deal tiere
 
 When you hit these walls, you have two paths forward. If you have developer resources, **Operations Hub** with custom-coded workflow actions can solve the cross-deal calculations like quota attainment and cumulative tiers. This requires JavaScript and API knowledge but keeps everything inside HubSpot.
 
-If you need a dedicated solution, third-party commission software integrates with HubSpot and handles the complexity that native tools cannot. See our [comparison of HubSpot commission tracking tools](/posts/hubspot-commission-tracking-tools-compared) for a detailed breakdown of your options.
+If you need a dedicated solution, third-party commission software integrates with HubSpot and handles the complexity that native tools cannot. See our [comparison of HubSpot commission tracking tools](/posts/hubspot-commission-tracking-tools-compared/) for a detailed breakdown of your options.
 
-For guidance on more advanced commission scenarios within HubSpot, including multi-rep splits and clawback handling, read our [commission splits, clawbacks, and accelerators guide](/posts/commission-splits-clawbacks-accelerators-guide).
+For guidance on more advanced commission scenarios within HubSpot, including multi-rep splits and clawback handling, read our [commission splits, clawbacks, and accelerators guide](/posts/commission-splits-clawbacks-accelerators-guide/).
 
 **Need help setting this up, or need something more advanced?** [We build commission systems in HubSpot](/contactus/) for mid-market teams. Free consultation, no lock-in, and we can usually get a tiered commission model live in your portal within a week.

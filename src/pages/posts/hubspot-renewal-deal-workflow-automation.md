@@ -44,7 +44,7 @@ The moment a new business deal closes as Won, the renewal clock starts ticking. 
 
 This article walks through the foundational HubSpot workflows for renewal automation: auto-creating deals, copying the right properties, setting the correct dates, and building the 90-60-30 day engagement cadence that keeps renewals on track. ([HubSpot Academy covers the basics](https://academy.hubspot.com/lessons/maximizing-customer-retention-automate-your-renewal-process); here we go much deeper.)
 
-> This article is part of our [Complete Guide to Building a Renewal Pipeline in HubSpot](/posts/hubspot-renewal-pipeline-complete-guide).
+> This article is part of our [Complete Guide to Building a Renewal Pipeline in HubSpot](/posts/hubspot-renewal-pipeline-complete-guide/).
 
 
 ## The Revenue Leakage Test
@@ -68,8 +68,8 @@ Automating renewal deal creation is what lets both sides work off the same HubSp
 Before building these workflows, you need:
 
 - **[Sales Hub Professional or Enterprise](https://www.hubspot.com/pricing/sales)** (workflows aren't available on Starter)
-- A [dedicated renewal pipeline](/posts/hubspot-renewal-pipeline-vs-sales-pipeline) with [defined stages](/posts/hubspot-renewal-pipeline-stages)
-- [Custom properties](/posts/hubspot-renewal-pipeline-properties) set up: Deal Type, Renewal Date, Contract Term, Renewal Year
+- A [dedicated renewal pipeline](/posts/hubspot-renewal-pipeline-vs-sales-pipeline/) with [defined stages](/posts/hubspot-renewal-pipeline-stages/)
+- [Custom properties](/posts/hubspot-renewal-pipeline-properties/) set up: Deal Type, Renewal Date, Contract Term, Renewal Year
 - [Operations Hub Professional](https://www.hubspot.com/pricing/operations) recommended (for calculated properties like Days to Renewal)
 
 ---
@@ -83,7 +83,7 @@ This is the foundation. Everything else builds on it.
 **Object:** Deal-based workflow
 **Enrollment trigger:** Deal Stage is "Closed Won" AND Deal Pipeline is "Sales Pipeline" (your new business pipeline)
 
-Add a filter: **Deal Type is "New Business"**. This prevents renewal deals from triggering the same workflow (critical for avoiding the [infinite loop](/posts/hubspot-renewal-workflow-infinite-loop-fix)).
+Add a filter: **Deal Type is "New Business"**. This prevents renewal deals from triggering the same workflow (critical for avoiding the [infinite loop](/posts/hubspot-renewal-workflow-infinite-loop-fix/)).
 
 ### Actions (in order)
 
@@ -202,7 +202,7 @@ HubSpot's workflow enrollment rules prevent a deal from triggering the same work
 
 This is the infamous "infinite loop" problem, and it's the #1 reported issue in the [HubSpot Community](https://community.hubspot.com/) for renewal automation.
 
-When Year 1 works but Year 2 breaks, see [Fixing the Infinite Loop: Multi-Year Renewal Automation That Actually Works](/posts/hubspot-renewal-workflow-infinite-loop-fix).
+When Year 1 works but Year 2 breaks, see [Fixing the Infinite Loop: Multi-Year Renewal Automation That Actually Works](/posts/hubspot-renewal-workflow-infinite-loop-fix/).
 
 ---
 
@@ -220,7 +220,7 @@ One common problem: if a deal owner manually creates a renewal deal AND the work
 
 ## Property Mapping Reference
 
-These workflows require [specific custom properties](/posts/hubspot-renewal-pipeline-properties). Set them up first.
+These workflows require [specific custom properties](/posts/hubspot-renewal-pipeline-properties/). Set them up first.
 
 | Source Deal Property | Renewal Deal Property | Notes |
 |---------------------|----------------------|-------|
@@ -247,9 +247,9 @@ Before enabling these workflows on live data:
 5. Manually move the renewal deal through stages and verify tasks and notifications fire correctly
 6. Close the renewal deal as Won and verify the next year's deal is created
 
-If the chain breaks at Year 2, that's the [infinite loop problem](/posts/hubspot-renewal-workflow-infinite-loop-fix).
+If the chain breaks at Year 2, that's the [infinite loop problem](/posts/hubspot-renewal-workflow-infinite-loop-fix/).
 
-Add [health-triggered alerts](/posts/hubspot-churn-prevention-health-scores-workflows) to your renewal cadence for accounts showing risk signals.
+Add [health-triggered alerts](/posts/hubspot-churn-prevention-health-scores-workflows/) to your renewal cadence for accounts showing risk signals.
 
 **Pro tip:** If you use subscription billing platforms like [Chargebee](https://www.chargebee.com/integrations/hubspot/) or [Stripe](https://docs.stripe.com/billing/subscriptions/overview), you can trigger HubSpot workflows from billing events, creating renewal deals automatically when subscriptions approach their renewal date.
 

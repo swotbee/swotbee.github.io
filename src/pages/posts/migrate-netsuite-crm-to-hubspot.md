@@ -38,11 +38,11 @@ faqs:
     a: "Usually yes, for finance. Most teams migrate CRM to HubSpot and keep NetSuite for billing and operations, connected by an ongoing integration."
 ---
 
-> This article is part of our [complete guide to HubSpot and NetSuite integration](/posts/hubspot-netsuite-integration).
+> This article is part of our [complete guide to HubSpot and NetSuite integration](/posts/hubspot-netsuite-integration/).
 
 **To migrate NetSuite CRM to HubSpot, you run a pre-migration audit, map the data model, extract and clean the data, resolve duplicates, rebuild your automations, then validate after go-live.** Migration means moving your front-office CRM work off NetSuite and into HubSpot, usually while keeping NetSuite for finance, connected by an ongoing sync. Done in this order, you move without losing data or pipeline. This playbook walks through each stage.
 
-Many teams reach this point after weighing the platforms in our [NetSuite CRM vs HubSpot comparison](/posts/netsuite-crm-vs-hubspot) and deciding HubSpot should own the go-to-market motion.
+Many teams reach this point after weighing the platforms in our [NetSuite CRM vs HubSpot comparison](/posts/netsuite-crm-vs-hubspot/) and deciding HubSpot should own the go-to-market motion.
 
 ---
 
@@ -60,7 +60,7 @@ Decide what the sales operation actually needs on day one in HubSpot: which cont
 
 ## Mapping the Data Model: Entities, Contacts, and Opportunities
 
-The core challenge is a structural mismatch. NetSuite revolves around one Customer record that represents a lead, prospect, or customer at different stages. HubSpot splits that into separate Contact, Company, and Deal objects. Map NetSuite entities to HubSpot companies, individuals to contacts, and opportunities to deals, deciding deliberately how one NetSuite record becomes several HubSpot records. The same object-mapping discipline from our [HubSpot NetSuite data mapping guide](/posts/hubspot-netsuite-data-mapping) applies here.
+The core challenge is a structural mismatch. NetSuite revolves around one Customer record that represents a lead, prospect, or customer at different stages. HubSpot splits that into separate Contact, Company, and Deal objects. Map NetSuite entities to HubSpot companies, individuals to contacts, and opportunities to deals, deciding deliberately how one NetSuite record becomes several HubSpot records. The same object-mapping discipline from our [HubSpot NetSuite data mapping guide](/posts/hubspot-netsuite-data-mapping/) applies here.
 
 ### Reconciling Custom Field Differences
 
@@ -84,7 +84,7 @@ Deduplicate before, not after, the import. Match on email for contacts and a nor
 
 ## Rebuilding Automations and Workflows in HubSpot
 
-Workflows do not migrate, they get rebuilt. NetSuite SuiteFlow and SuiteScript logic has no export path into HubSpot's automation engine, so use the audit to document every trigger, condition, and action, then reconstruct them as HubSpot workflows. Rebuild your quote-to-cash stages in HubSpot deal pipelines, and if NetSuite keeps billing, connect the two with the [HubSpot to NetSuite integration setup](/posts/hubspot-to-netsuite-integration-setup). Be aware that HubSpot stamps imported activity with the import date, so preserve original dates in custom properties such as "Original Created Date" to keep historical context.
+Workflows do not migrate, they get rebuilt. NetSuite SuiteFlow and SuiteScript logic has no export path into HubSpot's automation engine, so use the audit to document every trigger, condition, and action, then reconstruct them as HubSpot workflows. Rebuild your quote-to-cash stages in HubSpot deal pipelines, and if NetSuite keeps billing, connect the two with the [HubSpot to NetSuite integration setup](/posts/hubspot-to-netsuite-integration-setup/). Be aware that HubSpot stamps imported activity with the import date, so preserve original dates in custom properties such as "Original Created Date" to keep historical context.
 
 ---
 

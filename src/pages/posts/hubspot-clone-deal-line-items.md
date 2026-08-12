@@ -43,7 +43,7 @@ HubSpot workflows cannot copy line items from one deal to another. This means ev
 
 This is the [#2 most-requested feature in HubSpot's Ideas forum](https://community.hubspot.com/t5/HubSpot-Ideas/Copy-line-items-from-one-deal-to-another-in-order-to-manage/idi-p/722785), and as of 2026, there's still no native fix.
 
-> This article is part of our [Complete Guide to Cloning Deals in HubSpot](/posts/hubspot-clone-deal-complete-guide).
+> This article is part of our [Complete Guide to Cloning Deals in HubSpot](/posts/hubspot-clone-deal-complete-guide/).
 
 
 ## Why Line Items Matter Most On Renewal Deals
@@ -64,7 +64,7 @@ This is a fundamental platform architecture choice, not a bug. But the impact is
 - **Pricing errors compound.** According to [Plauti's 2025 research](https://www.plauti.com/blog/hidden-costs-poor-data-quality-crm-fixes), 44% of businesses lose more than 10% of annual revenue from bad CRM data. Manual line item re-entry is one of the biggest error sources.
 - **Quotes can't be generated.** HubSpot quotes pull from line items. A deal without line items = no quote = the renewal proposal has to be built manually.
 
-For context on how this fits into renewal automation, see our [renewal deal workflow automation guide](/posts/hubspot-renewal-deal-workflow-automation).
+For context on how this fits into renewal automation, see our [renewal deal workflow automation guide](/posts/hubspot-renewal-deal-workflow-automation/).
 
 **This isn't unique to renewals.** Any HubSpot use case that needs to copy line items between deals, whether that's duplicating a deal in another pipeline, splitting one deal into multiple deals for different customers, or building a renewal from an associated deal, hits the same platform limitation. The question is never "is it possible to clone a deal", cloning the deal itself is a solved problem, it's specifically whether the line items across those deals carry over automatically or need to be manually re-added from the product library each time.
 
@@ -94,7 +94,7 @@ A workflow-native action with a checkbox to include line items. Best value at a 
 
 **Limitation:** Workflow-only, with no manual CRM card cloning. If your team also needs ad-hoc cloning outside workflows, you'll need a second tool.
 
-For the full comparison, see [Best HubSpot Deal Cloning Apps Compared](/posts/hubspot-deal-cloning-apps-compared).
+For the full comparison, see [Best HubSpot Deal Cloning Apps Compared](/posts/hubspot-deal-cloning-apps-compared/).
 
 ---
 
@@ -210,7 +210,7 @@ Before going live with any solution:
 4. **Check edge cases:** What happens with a $0 line item? A line item with a deleted product? A line item with custom properties?
 5. **Verify associations:** Are the line items properly associated with the new deal (not the old one)?
 
-If line items aren't copying correctly, check our [infinite loop troubleshooting guide](/posts/hubspot-renewal-workflow-infinite-loop-fix), since the same re-enrollment rules that break renewal automation can also affect line item copying workflows.
+If line items aren't copying correctly, check our [infinite loop troubleshooting guide](/posts/hubspot-renewal-workflow-infinite-loop-fix/), since the same re-enrollment rules that break renewal automation can also affect line item copying workflows.
 
 **Evaluating apps for renewals specifically?** Cloning is only step one of a renewal system. See our [honest comparison of HubSpot renewal apps](/compare/hubspot-renewal-apps), including the capabilities a copy button cannot reach.
 

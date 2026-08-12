@@ -39,7 +39,7 @@ faqs:
     a: "Not for most teams. A dedicated renewal pipeline with a Renewal Date property is enough to track renewals in HubSpot. Custom objects help only when you track multiple licenses or subscriptions per customer and need to manage license renewals individually."
 ---
 
-> This article is part of our [Complete Guide to Building a Renewal Pipeline in HubSpot](/posts/hubspot-renewal-pipeline-complete-guide).
+> This article is part of our [Complete Guide to Building a Renewal Pipeline in HubSpot](/posts/hubspot-renewal-pipeline-complete-guide/).
 
 **Yes, HubSpot can automate renewal reminders and the tasks around them.** Using a renewal date property and a HubSpot workflow, you can notify the account owner, assign a task, and send email reminders a set number of days before a contract ends. This guide shows you the step-by-step workflow setup so no renewal is missed again.
 
@@ -61,12 +61,12 @@ The fix is to make HubSpot watch the renewal date for you and trigger an alert a
 
 Before you build a renewal reminder workflow, you need a few things in place:
 
-- **A [dedicated renewal pipeline](/posts/hubspot-renewal-pipeline-vs-sales-pipeline)** with [defined stages](/posts/hubspot-renewal-pipeline-stages) such as Upcoming Renewal, so renewal deals sit in a separate pipeline from new business.
-- **The right [custom properties](/posts/hubspot-renewal-pipeline-properties):** add the properties Renewal Date (or Contract End Date), Deal Owner, Contract Term, and Deal Type. These date properties are what every reminder workflow reads from.
+- **A [dedicated renewal pipeline](/posts/hubspot-renewal-pipeline-vs-sales-pipeline/)** with [defined stages](/posts/hubspot-renewal-pipeline-stages/) such as Upcoming Renewal, so renewal deals sit in a separate pipeline from new business.
+- **The right [custom properties](/posts/hubspot-renewal-pipeline-properties/):** add the properties Renewal Date (or Contract End Date), Deal Owner, Contract Term, and Deal Type. These date properties are what every reminder workflow reads from.
 - **[Sales Hub Professional or Enterprise](https://www.hubspot.com/pricing/sales)** for workflows (they are not available on Starter).
 - **[Operations Hub Professional](https://www.hubspot.com/pricing/operations)** recommended, so you can create a calculated property like "Days to Renewal."
 
-If your renewal deals are not being created automatically yet, set up [renewal deal creation](/posts/hubspot-renewal-deal-workflow-automation) first, so that when an original deal closes, HubSpot automatically creates a renewal deal in the renewal pipeline. Reminders work best when every renewal already lands in the renewal pipeline as a new deal, with the renewal value and owner already set.
+If your renewal deals are not being created automatically yet, set up [renewal deal creation](/posts/hubspot-renewal-deal-workflow-automation/) first, so that when an original deal closes, HubSpot automatically creates a renewal deal in the renewal pipeline. Reminders work best when every renewal already lands in the renewal pipeline as a new deal, with the renewal value and owner already set.
 
 ---
 
@@ -126,9 +126,9 @@ HubSpot workflows can power both internal and external reminders, but there are 
 - **Internal alerts** tell your team a renewal is approaching (tasks, notifications, escalations). This is what the workflow above handles.
 - **Customer-facing emails** remind the buyer their contract is ending. These belong in a separate, carefully timed sequence so you control tone and frequency.
 
-Getting the contact into that customer-facing sequence automatically, at the same checkpoints as your internal alerts, needs one more piece: a workflow action that enrolls the contact the moment the renewal deal crosses a date threshold. HubSpot's own Sequences tool can do this natively on Professional tier through its Automation tab for simple cases. If you need pacing control on top of it, so a batch of renewals clustering around a fiscal year end does not enroll two hundred contacts into a sequence in the same hour, a dedicated enrollment app is worth it. See our comparison of [FlowNer vs Enrollem](/posts/flowner-vs-enrollem-comparison) for how the two leading options handle this.
+Getting the contact into that customer-facing sequence automatically, at the same checkpoints as your internal alerts, needs one more piece: a workflow action that enrolls the contact the moment the renewal deal crosses a date threshold. HubSpot's own Sequences tool can do this natively on Professional tier through its Automation tab for simple cases. If you need pacing control on top of it, so a batch of renewals clustering around a fiscal year end does not enroll two hundred contacts into a sequence in the same hour, a dedicated enrollment app is worth it. See our comparison of [FlowNer vs Enrollem](/posts/flowner-vs-enrollem-comparison/) for how the two leading options handle this.
 
-Keep the two separate. Internal alerts are a shared responsibility across sales and customer success, so route them to whoever owns the account. For health-based escalations on accounts showing risk signals, layer in [health-triggered alerts](/posts/hubspot-churn-prevention-health-scores-workflows) on top of the date-based reminders.
+Keep the two separate. Internal alerts are a shared responsibility across sales and customer success, so route them to whoever owns the account. For health-based escalations on accounts showing risk signals, layer in [health-triggered alerts](/posts/hubspot-churn-prevention-health-scores-workflows/) on top of the date-based reminders.
 
 ---
 
@@ -178,7 +178,7 @@ If you searched for "renewal reminder software," you will find three broad categ
 
 The CRM-native approach wins whenever the reminder has to do more than notify. A renewal is not just a date; it is a deal that needs an owner, a value, a stage, and a forecast. When the alert fires inside HubSpot, the same automation that notifies the CSM can also create the renewal deal, assign the task, and feed your retention reporting, with no copy-paste between a reminder tool and the CRM. Standalone tools can tell you a contract is expiring; they cannot open the renewal opportunity for you.
 
-If you are still weighing the options, our [contract renewal reminder software comparison](/posts/contract-renewal-reminder-software) walks through the leading tools in each category, when a spreadsheet is genuinely enough, and includes customer-facing renewal email templates you can reuse.
+If you are still weighing the options, our [contract renewal reminder software comparison](/posts/contract-renewal-reminder-software/) walks through the leading tools in each category, when a spreadsheet is genuinely enough, and includes customer-facing renewal email templates you can reuse.
 
 ---
 

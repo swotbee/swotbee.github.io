@@ -115,7 +115,7 @@ If you are already using HubSpot Sales Hub, you have more commission tracking po
 
 **Where it falls short:** Quota-based accelerators, complex multi-party splits, clawback calculations, and anything that requires historical lookback across multiple pay periods.
 
-For a step-by-step walkthrough, check out our [full setup guide](/posts/hubspot-commission-tracking-setup-guide) -- it covers calculated properties, workflow configuration, and dashboard creation in detail.
+For a step-by-step walkthrough, check out our [full setup guide](/posts/hubspot-commission-tracking-setup-guide/) -- it covers calculated properties, workflow configuration, and dashboard creation in detail.
 
 ### Path 2: Lightweight Commission Tool ($15-30/user/month -- Best for Stage 3-4 Teams)
 
@@ -137,7 +137,7 @@ When your commission plans involve accelerators that change based on quota attai
 
 **Effort to set up:** 4-8 weeks for a proper implementation, including plan modeling, data migration, parallel testing, and change management. Most vendors provide implementation support, and it is worth using it.
 
-For a detailed comparison of these tools, including pricing breakdowns and integration depth, see our [buyer's guide](/posts/hubspot-commission-tracking-tools-compared).
+For a detailed comparison of these tools, including pricing breakdowns and integration depth, see our [buyer's guide](/posts/hubspot-commission-tracking-tools-compared/).
 
 ## The 5-Question Self-Assessment
 
@@ -182,4 +182,4 @@ The best time to upgrade is before the spreadsheet breaks in a way that affects 
 
 Start with the self-assessment above. If it tells you it is time, pick the path that matches your stage and your complexity. And if you are not sure which path fits your team -- or you want someone to sanity-check your commission setup before you invest in a new tool -- [we will help you figure it out](/contactus/). No strings attached, no sales pitch. Just a conversation about where you are and what makes sense for where you are headed.
 
-*This article is part of our [Sales Commission Tracking](/posts/hubspot-sales-commission-tracking-complete-guide) series, where we cover everything from basic HubSpot setup to enterprise platform comparisons.*
+*This article is part of our [Sales Commission Tracking](/posts/hubspot-sales-commission-tracking-complete-guide/) series, where we cover everything from basic HubSpot setup to enterprise platform comparisons.*

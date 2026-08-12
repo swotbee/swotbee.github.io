@@ -39,7 +39,7 @@ faqs:
     a: "The retention curve from older cohorts shows how long customers stay, which is the core input for modeling customer lifetime value for newer cohorts."
 ---
 
-> This article is part of our [guide to SaaS renewal metrics](/posts/renewal-metrics-explained).
+> This article is part of our [guide to SaaS renewal metrics](/posts/renewal-metrics-explained/).
 
 **A blended churn rate averages every customer together, which lets healthy old cohorts mask toxic new ones. SaaS cohort analysis fixes this by grouping customers (usually by signup period) and tracking how each cohort retains over time.** A company can post a comfortable 2% blended churn while its most recent cohorts churn at 8%, a problem that only cohort retention analysis reveals. For any subscription business, cohort-based retention is not optional.
 
@@ -110,7 +110,7 @@ The retention curve is the payoff of running a cohort analysis. Three shapes to 
 
 - **Falling and not flattening:** customers never find lasting value. The cohort retains poorly and LTV is low.
 - **Falling then flattening (the "smile" plateau):** a sticky core remains. This is what a healthy cohort retains toward.
-- **Flattening then rising (revenue):** when measured on dollars, a revenue cohort can rise above its starting value as expansion outpaces churn, the same dynamic as [net revenue retention](/posts/gross-vs-net-revenue-retention).
+- **Flattening then rising (revenue):** when measured on dollars, a revenue cohort can rise above its starting value as expansion outpaces churn, the same dynamic as [net revenue retention](/posts/gross-vs-net-revenue-retention/).
 
 Where the curve flattens tells you your long-term retention rate and feeds your LTV estimate.
 
@@ -118,7 +118,7 @@ Where the curve flattens tells you your long-term retention rate and feeds your 
 
 ## Using Cohorts to Predict Behavior and LTV
 
-Because each cohort shows how customers in a cohort behave over time, cohort data is the cleanest input for predicting customer behavior and estimating customer lifetime value. If your oldest acquisition cohorts retain 70% at 24 months, you can model LTV for newer cohorts with far more confidence than a blended average allows. Cohort analysis also flags early-warning behavior: a new cohort whose retention curve drops faster than prior cohorts predicts higher churn before it fully lands. Pair this with [renewal risk scoring](/posts/hubspot-renewal-risk-scoring) to act on individual accounts.
+Because each cohort shows how customers in a cohort behave over time, cohort data is the cleanest input for predicting customer behavior and estimating customer lifetime value. If your oldest acquisition cohorts retain 70% at 24 months, you can model LTV for newer cohorts with far more confidence than a blended average allows. Cohort analysis also flags early-warning behavior: a new cohort whose retention curve drops faster than prior cohorts predicts higher churn before it fully lands. Pair this with [renewal risk scoring](/posts/hubspot-renewal-risk-scoring/) to act on individual accounts.
 
 ---
 
@@ -152,7 +152,7 @@ The retention curve from older cohorts shows how long customers stay, which is t
 
 ---
 
-Cohort analysis is one of the metrics in our [SaaS renewal metrics guide](/posts/renewal-metrics-explained); pair it with the [at-bat renewal rate](/posts/at-bat-renewal-rate) for a complete retention picture.
+Cohort analysis is one of the metrics in our [SaaS renewal metrics guide](/posts/renewal-metrics-explained/); pair it with the [at-bat renewal rate](/posts/at-bat-renewal-rate/) for a complete retention picture.
 
 **Blended averages are where retention problems hide:** healthy cohorts masking toxic ones. SWOTBee builds cohort retention reporting and churn-risk analytics for mid-market companies across Energy, Manufacturing, and SaaS.
 
