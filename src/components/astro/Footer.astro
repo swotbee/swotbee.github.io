@@ -1,12 +1,13 @@
 ---
 import LogoHoneycomb from "./LogoHoneycomb.astro";
 import NewsletterForm from "./NewsletterForm.astro";
+import { EnvelopeIcon } from "@heroicons/react/24/outline";
 ---
 
 <footer class="bg-v6-dark text-white py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
-  <div class="max-w-5xl mx-auto">
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
-      <!-- Brand + newsletter -->
+  <div class="max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1fr_1fr_1fr_1fr_1.75fr] gap-8 mb-10">
+      <!-- Brand -->
       <div class="sm:col-span-2 lg:col-span-1">
         <div class="flex items-center gap-2 mb-4">
           <LogoHoneycomb width={24} height={22} />
@@ -24,7 +25,6 @@ import NewsletterForm from "./NewsletterForm.astro";
         <a href="/blog/" class="block text-sm text-v6-blue-300 hover:text-white py-1 transition-colors">Blog</a>
         <a href="/contactus/" class="block text-sm text-v6-blue-300 hover:text-white py-1 transition-colors">Contact Us</a>
         <a href="/faq" class="block text-sm text-v6-blue-300 hover:text-white py-1 transition-colors">FAQs</a>
-        <a href="/subscribe" class="block text-sm text-v6-blue-300 hover:text-white py-1 transition-colors">Subscribe</a>
       </div>
 
       <!-- Services links -->
@@ -52,23 +52,31 @@ import NewsletterForm from "./NewsletterForm.astro";
             data-consent-reopen is the hook ConsentBanner.astro listens for. */}
         <button type="button" data-consent-reopen class="block text-left text-sm text-v6-blue-300 hover:text-white py-1 transition-colors">Cookie settings</button>
       </div>
+
+      <!-- Subscribe -->
+      <div class="lg:min-w-0">
+        <p class="text-sm font-semibold mb-3">Stay Updated</p>
+        <NewsletterForm variant="footer" />
+      </div>
     </div>
 
     <!-- Bottom bar -->
-    <div class="border-t border-v6-blue-800 pt-8 flex flex-col gap-6">
-      <!-- Newsletter -->
-      <div class="flex flex-col gap-2">
-        <p class="text-sm font-semibold">Stay Updated</p>
-        <NewsletterForm variant="footer" />
-      </div>
-      <!-- Copyright + social -->
-      <div class="flex flex-col sm:flex-row justify-between items-center gap-4 border-t border-v6-blue-800/60 pt-6">
+    <div class="border-t border-v6-blue-800 pt-6">
+      <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
         <p class="text-xs text-v6-blue-300">© 2026 SWOTbee. All rights reserved.</p>
-        <div class="flex gap-4">
-          <a href="mailto:info@swotbee.com" class="text-xs text-v6-blue-300 hover:text-white transition-colors">Email</a>
-          <a href="https://www.linkedin.com/company/swotbee" class="text-xs text-v6-blue-300 hover:text-white transition-colors">LinkedIn</a>
-          <a href="https://x.com/SWOTBee" class="text-xs text-v6-blue-300 hover:text-white transition-colors">Twitter</a>
-          <a href="https://www.youtube.com/@swotbee" class="text-xs text-v6-blue-300 hover:text-white transition-colors">YouTube</a>
+        <div class="flex items-center gap-4">
+          <a href="mailto:info@swotbee.com" aria-label="Email SWOTbee" title="Email SWOTbee" class="text-v6-blue-300 hover:text-white transition-colors">
+            <EnvelopeIcon aria-hidden="true" className="h-5 w-5" />
+          </a>
+          <a href="https://www.linkedin.com/company/swotbee" aria-label="SWOTbee on LinkedIn" title="SWOTbee on LinkedIn" class="text-v6-blue-300 hover:text-white transition-colors">
+            <svg aria-hidden="true" class="h-5 w-5" fill="currentColor" viewBox="0 0 448 512"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z" /></svg>
+          </a>
+          <a href="https://x.com/SWOTBee" aria-label="SWOTbee on X" title="SWOTbee on X" class="text-v6-blue-300 hover:text-white transition-colors">
+            <svg aria-hidden="true" class="h-5 w-5" fill="currentColor" viewBox="0 0 512 512"><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z" /></svg>
+          </a>
+          <a href="https://www.youtube.com/@swotbee" aria-label="SWOTbee on YouTube" title="SWOTbee on YouTube" class="text-v6-blue-300 hover:text-white transition-colors">
+            <svg aria-hidden="true" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="6.5" width="19" height="11" rx="3" /><path d="m10 9.5 5 2.5-5 2.5z" fill="currentColor" stroke="none" /></svg>
+          </a>
         </div>
       </div>
     </div>

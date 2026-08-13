@@ -27,6 +27,22 @@ import Footer from "../components/astro/Footer.astro";
 import StructuredData from "../components/astro/StructuredData.astro";
 import RenewalRoiCalculator from "../components/astro/RenewalRoiCalculator.astro";
 import RenewalDemoYoutube from "../components/react/RenewalDemoYoutube.jsx";
+import {
+  AdjustmentsHorizontalIcon,
+  ArrowDownIcon,
+  ArrowPathIcon,
+  ArrowRightIcon,
+  ArrowTrendingUpIcon,
+  BellAlertIcon,
+  CalculatorIcon,
+  ChartBarIcon,
+  CheckIcon,
+  ClipboardDocumentListIcon,
+  Cog6ToothIcon,
+  CommandLineIcon,
+  DocumentTextIcon,
+  UserMinusIcon,
+} from "@heroicons/react/24/outline";
 
 // SERP budget: BaseLayout appends " | SWOTBee" to every title, so the string below
 // must stay under ~50 chars to keep the rendered title inside Google's ~60-char cut.
@@ -37,7 +53,8 @@ const description =
 
 // Schema URLs are derived from the page's own URL rather than hardcoded, so they stay
 // correct if this page is ever moved or promoted to a different path (e.g. the homepage).
-const pageUrl = new URL(Astro.url.pathname, Astro.site ?? "https://swotbee.com").href;
+const pageUrl = new URL(Astro.url.pathname, Astro.site ?? "https://swotbee.com")
+  .href;
 const isHomepage = Astro.url.pathname === "/";
 
 // Real client logos (greyscale). Files live in public/assets/customerLogos/.
@@ -93,69 +110,63 @@ const cockpit = [
   },
 ];
 
-// AGITATION: approved "Is This You?" RevOps pains.
+// AGITATION: renewal leakage modes and the operational pains they create.
 const pains = [
   {
-    desc: "Your forecast is wrong every quarter because deal data is incomplete.",
-    icon: "📉",
-    color: "text-v6-blue",
-    bg: "bg-v6-blue-50",
-  },
-  {
-    desc: "Deals go dark for weeks and nobody notices until the QBR.",
-    icon: "🕳",
+    title: "Re-keyed line items",
+    desc: "Rebuilding one renewal deal by hand means re-keying every line item, recalculating uplifts, and resetting dates.",
+    icon: CommandLineIcon,
     color: "text-v6-copper",
     bg: "bg-v6-copper-50",
   },
   {
-    desc: "Renewals live in a spreadsheet, and 3 expired last quarter without anyone following up.",
-    icon: "📄",
-    color: "text-v6-teal",
-    bg: "bg-v6-teal-50",
-  },
-  {
-    desc: "Sales reps spend more time on data entry than selling.",
-    icon: "⌛",
+    title: "Missed escalation clauses",
+    desc: "Escalation clauses that never make it into the renewal are pure margin left unbilled, quarter after quarter.",
+    icon: DocumentTextIcon,
     color: "text-v6-amber",
     bg: "bg-v6-amber-50",
   },
   {
-    desc: "Every rep runs renewals their own way, because the rules that matter live in people's heads instead of the system.",
-    icon: "🎲",
+    title: "Ownerless accounts",
+    desc: "Accounts nobody owns don't get renewed in time. That is revenue lost to churn, quietly.",
+    icon: UserMinusIcon,
     color: "text-v6-teal",
     bg: "bg-v6-teal-50",
   },
   {
-    desc: "No one has a complete picture of upcoming renewals, expansion opportunities, and contract changes until something slips.",
-    icon: "🌫️",
-    color: "text-v6-blue",
-    bg: "bg-v6-blue-50",
-  },
-];
-
-// ROOT CAUSE comparison.
-const decisions = [
-  {
-    simple: "Renew the customer",
-    decision: "Which products should renew and which shouldn't?",
+    title: "Sales Reps Stuck In Admin",
+    desc: "Sales reps spend precious selling time on data entry, rebuilding deals, and chasing down renewal details.",
+    icon: ClipboardDocumentListIcon,
+    color: "text-v6-copper",
+    bg: "bg-v6-copper-50",
   },
   {
-    simple: "Create the next deal",
-    decision: "Is this a renewal, an expansion, or both?",
+    title: "Last-Minute Fire Drills",
+    desc: "Renewal risks surface too late, turning preventable work into urgent escalation.",
+    icon: BellAlertIcon,
+    color: "text-v6-amber",
+    bg: "bg-v6-amber-50",
   },
   {
-    simple: "Carry forward the pricing",
-    decision: "Which escalations, discounts, and contract terms apply?",
+    title: "Workflows That Quietly Break",
+    desc: "DIY automation looks fine—until renewal loops, exceptions, or contract changes cause it to fail without warning.",
+    icon: ArrowPathIcon,
+    color: "text-v6-teal",
+    bg: "bg-v6-teal-50",
   },
   {
-    simple: "Follow the renewal process",
-    decision:
-      "Which customers require different rules, approvals, or notice periods?",
+    title: "Frantic Forecasts",
+    desc: "Forecasts that go out of sync even as you present them because deal data is outdated and no one has a clear picture of upcoming renewals, expansion opportunities, and contract changes.",
+    icon: ChartBarIcon,
+    color: "text-v6-copper",
+    bg: "bg-v6-copper-50",
   },
   {
-    simple: "Forecast future revenue",
-    decision:
-      "Which renewals are at risk and which accounts are ready to grow?",
+    title: "Rules Trapped In People's Heads",
+    desc: "Every rep follows different rules for discounts, escalations, approvals, or notice periods because the rules that matter never made it into the system.",
+    icon: AdjustmentsHorizontalIcon,
+    color: "text-v6-amber",
+    bg: "bg-v6-amber-50",
   },
 ];
 
@@ -181,72 +192,54 @@ const steps = [
   },
 ];
 
-// CAPABILITIES.
-const capabilities = [
+// RENEWAL OPERATING FLOW.
+const renewalFlow = [
   {
-    icon: "🚨",
-    title: "Spot Revenue At Risk Before It Disappears",
-    color: "border-t-v6-copper",
+    icon: CheckIcon,
+    title: "Closed Won",
+    color: "bg-v6-copper-50 text-v6-copper",
     points: [
-      "Alert teams before renewal deadlines",
-      "Surface contracts that need attention",
-      "Flag at-risk renewals",
-      "Identify ownerless accounts before revenue is missed",
+      "A customer deal closes in HubSpot",
+      "The right contract context is captured from day one",
     ],
   },
   {
-    icon: "⚡",
-    title: "Turn Customer History Into Clear Decisions, Fast.",
-    color: "border-t-v6-blue",
+    icon: ArrowPathIcon,
+    title: "Renewal Created",
+    color: "bg-v6-copper-50 text-v6-copper",
     points: [
-      "Quick summary of customer history so your sales team can hit the ground running",
-      "Surface issues, risks, and opportunities before they become renewal objections",
-      "Highlight key contract changes, renewal history, and customer milestones",
-      "Give teams the context they need in seconds, not after digging through records",
+      "The next renewal deal creates itself",
+      "The right line items and timing carry forward",
     ],
   },
   {
-    icon: "⚙️",
-    title: "Let Business Rules Make Routine Decisions Automatic.",
-    color: "border-t-v6-teal",
+    icon: Cog6ToothIcon,
+    title: "Rules Applied",
+    color: "bg-v6-copper-50 text-v6-copper",
     points: [
-      "Determine which products should renew",
-      "Apply pricing escalations automatically",
-      "Handle renewal notice periods",
-      "Follow customer-specific renewal rules consistently",
+      "Escalations, approvals, and notice periods run consistently",
+      "Customer-specific renewal rules are applied automatically",
     ],
   },
   {
-    icon: "📈",
-    title: "Surface Growth Opportunities Hidden In Your Customer Base",
-    color: "border-t-v6-amber",
+    icon: ArrowTrendingUpIcon,
+    title: "Risks & Growth Surfaced",
+    color: "bg-v6-copper-50 text-v6-copper",
     points: [
-      "Identify customers that deserve an expansion conversation before renewal",
-      "Surface growth signals: new locations, business units, contract changes",
-      "Prioritize high-touch renewals and expansion candidates",
-      "Give sales teams time to act before the renewal window closes",
+      "At-risk and ownerless accounts are visible before the window closes",
+      "Expansion candidates surface while there is time to act",
     ],
   },
   {
-    icon: "🧮",
-    title: "ARR You Can Trust. NRR/GRR Analytics Native In HubSpot.",
-    color: "border-t-v6-blue",
+    icon: CalculatorIcon,
+    title: "Confident Forecast",
+    color: "bg-v6-copper-50 text-v6-copper",
+    completesFlow: true,
     points: [
-      "Attribute renewal revenue correctly",
-      "Separate renewal and expansion revenue",
-      "Handle commission allocation accurately",
-      "Build NRR/GRR dashboards so leadership forecasts with confidence instead of guessing",
+      "Renewal and expansion revenue are separated",
+      "ARR, NRR, and GRR dashboards support a forecast you can trust",
     ],
   },
-];
-
-const signals = [
-  "At Risk",
-  "High Touch",
-  "Expansion Candidate",
-  "Ownerless",
-  "Notice Period",
-  "Pricing Escalation",
 ];
 
 // Hard metrics from approved case studies / testimonials.
@@ -255,7 +248,11 @@ const stats = [
   { value: "90%", label: "less quote-creation effort", tone: "text-v6-copper" },
   // blue-300, not blue: the band sits on bg-v6-dark, where the base blue lands at
   // 2.9:1 and fails WCAG AA. blue-300 is 5.0:1 on the same background.
-  { value: "65%", label: "faster quote response time", tone: "text-v6-blue-300" },
+  {
+    value: "65%",
+    label: "faster quote response time",
+    tone: "text-v6-blue-300",
+  },
   { value: "2 wks", label: "to first results", tone: "text-v6-amber" },
 ];
 
@@ -263,7 +260,7 @@ const stats = [
 const testimonials = [
   {
     quote:
-      "Working with Siva has been transformative for our team. He quickly grasped our complex workflows and immediately began identifying optimization opportunities. What sets him apart is how he functions as a true extension of our team, handling both technical implementation and strategic guidance. This partnership has freed our internal team to focus on high-level initiatives while maintaining confidence that execution will be exceptional.",
+      "Siva quickly grasped our complex workflows and immediately began identifying optimization opportunities. What sets him apart is how he functions as a true extension of our team, handling both technical implementation and strategic guidance.",
     name: "Samantha Ross",
     initials: "RO",
     context: "Postgrad",
@@ -271,7 +268,7 @@ const testimonials = [
   },
   {
     quote:
-      "Sharmi helped our team do the foundational work that launched our ABM strategy. She took unstructured goals and, by applying her customer-focused insight and technical know-how, turned them into specific solutions that optimized our entire enrichment project in HubSpot. She's fast, dependable, and brings a curiosity mindset that makes her work exceed expectations.",
+      "Sharmi helped our team do the foundational work that launched our ABM strategy. She took unstructured goals and, by applying her customer-focused insight and technical know-how, turned them into specific solutions that optimized our entire enrichment project in HubSpot.",
     name: "Shreyas Mecheri",
     initials: "MO",
     context: "Jirav",
@@ -300,16 +297,6 @@ const caseStudy = {
     "Team shifted from admin to growth",
   ],
 };
-
-// FINAL CTA audit reveals.
-const auditOutcomes = [
-  "How renewals are managed today",
-  "Where manual work exists and hours get wasted",
-  "Which business rules are driving complexity",
-  "What visibility leadership is missing",
-  "Where expansion opportunities may be hiding",
-  "Which data issues prevent reliable automation",
-];
 
 // FAQ (approved answers).
 const faqs = [
@@ -355,10 +342,12 @@ const toneMap: Record<string, string> = {
 };
 ---
 
-{/* No robots override: this is the homepage and must be indexable. It carried
+{
+  /* No robots override: this is the homepage and must be indexable. It carried
     robots="noindex, follow" for its whole life as /renewal-operations-animated-v3/, which
     is what kept it out of the index and made it a clean measurement surface. Removing that
-    line IS the swap. */}
+    line IS the swap. */
+}
 <Layout title={title} description={description}>
   <StructuredData
     type="service"
@@ -474,9 +463,9 @@ const toneMap: Record<string, string> = {
             <!-- CTA points at the on-page YouTube demo section. -->
             <a
               href="#demo"
-              class="bg-v6-copper text-white px-8 py-3.5 rounded-xl text-base font-semibold hover:bg-v6-copper-600 transition-colors text-center block"
+              class="bg-v6-copper text-white px-8 py-3.5 rounded-xl text-base font-semibold hover:bg-v6-copper-600 transition-colors text-center inline-flex items-center gap-2"
             >
-              Watch The 2-Minute Demo →
+              Watch The 2-Minute Demo
             </a>
             <div
               class="cta-pop absolute bottom-full left-1/2 mb-3 w-60 -translate-x-1/2 rounded-xl bg-v6-dark px-4 py-3 text-left shadow-xl"
@@ -496,9 +485,9 @@ const toneMap: Record<string, string> = {
           <div class="relative inline-block">
             <a
               href="#roi"
-              class="border border-gray-300 text-v6-dark px-8 py-3.5 rounded-xl text-base font-medium hover:bg-gray-50 transition-colors text-center block"
+              class="border border-gray-300 text-v6-dark px-8 py-3.5 rounded-xl text-base font-medium hover:bg-gray-50 transition-colors text-center inline-flex items-center gap-2"
             >
-              Estimate Your Renewal Leakage ↓
+              Estimate Your Renewal Leakage <ArrowDownIcon aria-hidden="true" className="h-4 w-4" />
             </a>
           </div>
         </div>
@@ -585,7 +574,7 @@ const toneMap: Record<string, string> = {
       <p
         class="reveal text-base text-v6-text-muted mx-auto lg:mx-0 mb-3 leading-relaxed"
       >
-        Built for Energy, Manufacturing, Construction, and SaaS teams managing
+        Built for Energy, MSP, Manufacturing, Construction, and SaaS teams managing
         hundreds to thousands of renewals a year.
       </p>
       <!-- <p class="reveal text-base text-gray-500 leading-relaxed">
@@ -652,13 +641,12 @@ const toneMap: Record<string, string> = {
         class="reveal text-base sm:text-lg text-v6-text-muted mb-8 max-w-2xl mx-auto leading-relaxed"
       >
         Watch Swotbee turn a closed-won deal into a renewal process that runs
-        itself: the right line items, uplift, timing, ownership, and
-        follow-up, without spreadsheet chasing or renewal gaps.
+        itself: the right line items, uplift, timing, ownership, and follow-up.
       </p>
       <div
         class="reveal rounded-2xl border border-v6-border bg-v6-bg shadow-xl overflow-hidden max-w-3xl mx-auto"
       >
-        <RenewalDemoYoutube client:visible />
+        <RenewalDemoYoutube client:visible showEndCta />
       </div>
       <div
         class="reveal flex flex-col sm:flex-row gap-3 justify-center items-center mt-8"
@@ -666,21 +654,21 @@ const toneMap: Record<string, string> = {
         <a
           href="/renewal-audit-call/"
           data-ga-cta="renewal_demo_book_audit"
-          class="bg-v6-copper text-white px-8 py-3.5 rounded-xl text-base font-semibold hover:bg-v6-copper-600 transition-colors text-center"
+          class="bg-v6-copper text-white px-8 py-3.5 rounded-xl text-base font-semibold hover:bg-v6-copper-600 transition-colors text-center inline-flex items-center gap-2"
         >
-          Book Your Renewal Audit →
+          Book Your Renewal Audit <ArrowRightIcon aria-hidden="true" className="h-4 w-4" />
         </a>
         <a
           href="#roi"
-          class="border border-gray-300 text-v6-dark px-8 py-3.5 rounded-xl text-base font-medium hover:bg-gray-50 transition-colors text-center"
+          class="border border-gray-300 text-v6-dark px-8 py-3.5 rounded-xl text-base font-medium hover:bg-gray-50 transition-colors text-center inline-flex items-center gap-2"
         >
-          Estimate Your Renewal Leakage ↓
+          Estimate Your Renewal Leakage <ArrowDownIcon aria-hidden="true" className="h-4 w-4" />
         </a>
       </div>
-      <p class="reveal text-xs text-gray-500 mt-4">
+      <!-- <p class="reveal text-xs text-gray-500 mt-4">
         Built on the real product. Northwind is an illustrative account; your
         walkthrough runs on your own HubSpot.
-      </p>
+      </p> -->
     </div>
   </section>
 
@@ -698,91 +686,43 @@ const toneMap: Record<string, string> = {
         The Process That Works At 200 Renewals Rarely Works At 2,000.
       </h2>
       <p
-        class="reveal text-base sm:text-lg text-v6-text-muted text-center mb-10 max-w-lg mx-auto leading-relaxed"
+        class="reveal text-base sm:text-lg text-v6-text-muted mb-3 leading-relaxed text-center max-w-lg mx-auto"
       >
-        Sound familiar? If even two of these are true, revenue is already
-        slipping.
+        One renewal is easy. Thousands of renewals expose every exception in
+        your business.
+      </p>
+      <p class="reveal text-base text-v6-text-muted leading-relaxed mb-10 text-center max-w-lg mx-auto">
+        Multi-year contracts. Product bundles. Pricing escalations. Notice
+        periods. <span class="font-semibold text-v6-dark"
+          >Every company has its own renewal rules.</span
+        >
       </p>
       <div class="stagger grid grid-cols-1 sm:grid-cols-2 gap-5">
         {
-          pains.map((p) => (
-            <div class="anim-card bg-white rounded-xl p-6 border border-v6-border flex gap-4">
-              <div
-                class={`anim-emoji w-11 h-11 rounded-lg ${p.bg} flex items-center justify-center ${p.color} text-xl flex-shrink-0`}
-              >
-                {p.icon}
+          pains.map((p) => {
+            const Icon = p.icon;
+            return (
+              <div class="anim-card bg-white rounded-xl p-6 border border-v6-border">
+                <div class="flex items-center gap-4 mb-4">
+                  <div
+                    class={`anim-emoji w-11 h-11 rounded-lg ${p.bg} flex items-center justify-center ${p.color} flex-shrink-0`}
+                  >
+                    <Icon aria-hidden="true" className="h-6 w-6" />
+                  </div>
+                  <h3 class="text-lg font-semibold text-v6-dark">
+                    {p.title}
+                  </h3>
+                </div>
+                <p class="text-base text-v6-text-muted leading-relaxed">
+                  {p.desc}
+                </p>
               </div>
-              <p class="text-base text-v6-dark leading-relaxed self-center">
-                {p.desc}
-              </p>
-            </div>
-          ))
+            );
+          })
         }
       </div>
-      <blockquote class="reveal mt-10 max-w-2xl mx-auto text-center">
-        <p class="text-xl sm:text-2xl text-v6-dark italic leading-relaxed">
-          "What started as a few manual workarounds quietly becomes the
-          operating system for your renewal business."
-        </p>
-      </blockquote>
-    </div>
-  </section>
-
-  <!-- ============ ROOT CAUSE ============ -->
-  <section class="bg-white py-14 sm:py-18 px-4 sm:px-6 lg:px-8">
-    <div class="max-w-6xl mx-auto">
       <div
-        class="grid grid-cols-1 gap-x-10 gap-y-12 lg:grid-cols-5 lg:items-start"
-      >
-        <div class="lg:col-span-2">
-          <p
-            class="reveal text-sm font-semibold uppercase tracking-[0.2em] text-v6-copper mb-3"
-          >
-            The Real Problem
-          </p>
-          <h2
-            class="reveal text-2xl sm:text-3xl lg:text-4xl font-bold text-v6-dark mb-4 text-balance"
-          >
-            Every Renewal Looks Simple. Until You Have To Do It At Scale.
-          </h2>
-          <p
-            class="reveal text-base sm:text-lg text-v6-text-muted mb-3 leading-relaxed"
-          >
-            One renewal is easy. Thousands of renewals expose every exception in
-            your business.
-          </p>
-          <p class="reveal text-base text-v6-text-muted leading-relaxed">
-            Multi-year contracts. Product bundles. Pricing escalations. Notice
-            periods. <span class="font-semibold text-v6-dark"
-              >Every company has its own renewal rules.</span
-            >
-          </p>
-        </div>
-
-        <dl
-          class="stagger lg:col-span-3 grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-9 text-base text-v6-text-muted"
-        >
-          {
-            decisions.map((d) => (
-              <div class="relative pl-9">
-                <dt class="font-semibold text-v6-dark">
-                  <span
-                    class="absolute top-0.5 left-0 flex size-5 items-center justify-center rounded-full bg-v6-copper-50 text-sm font-bold text-v6-copper"
-                    aria-hidden="true"
-                  >
-                    ?
-                  </span>
-                  {d.simple}
-                </dt>
-                <dd class="mt-2 leading-relaxed">{d.decision}</dd>
-              </div>
-            ))
-          }
-        </dl>
-      </div>
-
-      <div
-        class="reveal mt-16 sm:mt-20 max-w-2xl mx-auto bg-v6-dark rounded-2xl p-8 text-center"
+        class="reveal mt-10 max-w-2xl mx-auto bg-v6-dark rounded-2xl p-8 text-center"
       >
         <p
           class="text-xs font-semibold uppercase tracking-wider text-v6-copper-300 mb-3"
@@ -801,7 +741,7 @@ const toneMap: Record<string, string> = {
   </section>
 
   <!-- ============ THE MATH (what manual renewals cost) ============ -->
-  <section id="the-math" class="bg-v6-bg py-14 sm:py-18 px-4 sm:px-6 lg:px-8">
+  <section id="the-math" class="bg-white py-14 sm:py-18 px-4 sm:px-6 lg:px-8">
     <div class="max-w-4xl mx-auto">
       <p
         class="reveal text-sm font-semibold uppercase tracking-[0.2em] text-v6-copper mb-3 text-center"
@@ -814,70 +754,39 @@ const toneMap: Record<string, string> = {
         What Manual Renewals Actually Cost
       </h2>
 
-      <div
-        class="reveal max-w-3xl mx-auto rounded-2xl border border-v6-border bg-v6-bg p-6 sm:p-8 mb-8 sm:flex items-center gap-7 text-center sm:text-left"
+      <blockquote
+        class="reveal relative max-w-3xl mx-auto rounded-2xl border border-v6-border border-l-4 border-l-v6-copper bg-v6-bg p-6 sm:p-8 mb-8 sm:flex items-center gap-7 text-center sm:text-left shadow-sm"
       >
+        <span
+          class="absolute -top-5 left-6 text-6xl leading-none text-v6-copper-200"
+          aria-hidden="true"
+          >“</span
+        >
         <p
           class="text-4xl sm:text-5xl font-bold text-v6-copper flex-shrink-0 mb-3 sm:mb-0 whitespace-nowrap"
         >
-          12 to 25%
+          ~ 14%
         </p>
-        <p class="text-base text-v6-dark leading-relaxed">
-          of revenue is what poor CRM data quality costs companies (MIT Sloan).
-          Renewals are where much of it hides. When deals live in a spreadsheet
-          or require manual re-keying, errors compound.
-        </p>
-      </div>
+        <div>
+          <p class="text-base text-v6-dark leading-relaxed">
+            Companies that automate their renewals capture roughly 14% more of
+            their renewal revenue than those using spreadsheets.
+          </p>
+          <p class="text-base text-v6-text-muted leading-relaxed mt-3">
+            When maintenance, hardware, and service agreements are managed
+            manually, missed dates and quote errors directly drain your
+            recurring revenue.
+          </p>
+          <cite class="block text-sm font-medium text-v6-text-muted mt-4 not-italic">
+            Source: TSIA Industry Benchmark
+          </cite>
+        </div>
+      </blockquote>
 
       {
         /* The renewals-per-year and ops-hours figures from the revision doc stay off
           the page until the WellStat case study lands; copy stays qualitative here. */
       }
-      <div class="stagger grid grid-cols-1 sm:grid-cols-3 gap-5 mb-8">
-        <div class="anim-card bg-white rounded-xl p-6 border border-v6-border">
-          <div
-            class="anim-emoji w-11 h-11 rounded-lg bg-v6-copper-50 flex items-center justify-center text-v6-copper text-xl mb-4"
-          >
-            ⌨️
-          </div>
-          <h3 class="text-base font-semibold text-v6-dark mb-2">
-            Re-keyed line items
-          </h3>
-          <p class="text-base text-v6-text-muted leading-relaxed">
-            Rebuilding one renewal deal by hand means re-keying every line item,
-            recalculating uplifts, and resetting dates.
-          </p>
-        </div>
-        <div class="anim-card bg-white rounded-xl p-6 border border-v6-border">
-          <div
-            class="anim-emoji w-11 h-11 rounded-lg bg-v6-amber-50 flex items-center justify-center text-v6-amber text-xl mb-4"
-          >
-            🧾
-          </div>
-          <h3 class="text-base font-semibold text-v6-dark mb-2">
-            Missed escalation clauses
-          </h3>
-          <p class="text-base text-v6-text-muted leading-relaxed">
-            Escalation clauses that never make it into the renewal are pure
-            margin left unbilled, quarter after quarter.
-          </p>
-        </div>
-        <div class="anim-card bg-white rounded-xl p-6 border border-v6-border">
-          <div
-            class="anim-emoji w-11 h-11 rounded-lg bg-v6-blue-50 flex items-center justify-center text-v6-blue text-xl mb-4"
-          >
-            👻
-          </div>
-          <h3 class="text-base font-semibold text-v6-dark mb-2">
-            Ownerless accounts
-          </h3>
-          <p class="text-base text-v6-text-muted leading-relaxed">
-            Accounts nobody owns don't get renewed in time. That is revenue lost
-            to churn, quietly.
-          </p>
-        </div>
-      </div>
-
       <p
         class="reveal text-base text-v6-text-muted text-center max-w-xl mx-auto mb-6 leading-relaxed"
       >
@@ -888,9 +797,8 @@ const toneMap: Record<string, string> = {
       <div class="reveal text-center">
         <a
           href="/resources/renewal-leakage-estimate/"
-          class="inline-block border border-v6-copper text-v6-copper px-7 py-3 rounded-xl text-base font-semibold hover:bg-v6-copper-50 transition-colors"
         >
-          Get Your 1-Page Renewal Leakage Estimate (no call needed) →
+          Get Your 1-Page Renewal Leakage Estimate (no call needed) <ArrowRightIcon aria-hidden="true" className="h-4 w-4 inline-block align-text-bottom" />
         </a>
       </div>
     </div>
@@ -899,16 +807,13 @@ const toneMap: Record<string, string> = {
   <!-- ============ ROI CALCULATOR ============ -->
   <RenewalRoiCalculator />
 
-  <!-- ============ SOLUTION ============ -->
-  <section
-    id="how-it-works"
-    class="scroll-mt-24 bg-v6-bg py-14 sm:py-18 px-4 sm:px-6 lg:px-8"
-  >
-    <div class="max-w-4xl mx-auto">
+  <!-- ============ CAPABILITIES ============ -->
+  <section class="bg-white py-14 sm:py-18 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto">
       <p
         class="reveal text-sm font-semibold uppercase tracking-[0.2em] text-v6-copper mb-3 text-center"
       >
-        How It Works
+        Your Revenue Intelligence Layer
       </p>
       <h2
         class="reveal text-2xl sm:text-3xl lg:text-4xl font-bold text-v6-dark mb-3 text-center text-balance"
@@ -921,152 +826,64 @@ const toneMap: Record<string, string> = {
         every time.
       </p>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div class="reveal bg-white rounded-xl p-6 border border-v6-border">
-          <p
-            class="text-xs font-semibold uppercase tracking-wider text-v6-text-muted mb-5"
-          >
-            Manual or DIY today
-          </p>
-          <div class="flex flex-col gap-3">
-            <div
-              class="rounded-lg bg-v6-teal-50 text-v6-teal text-sm sm:text-base font-semibold px-4 py-3 text-center"
-            >
-              Closed Won
-            </div>
-            <div
-              class="text-center text-v6-text-muted opacity-40 text-lg leading-none"
-            >
-              ↓
-            </div>
-            <div
-              class="rounded-lg border border-dashed border-gray-300 bg-gray-50 text-gray-500 text-sm font-semibold px-4 py-3 text-center"
-            >
-              Manual tracking or DIY workflows
-            </div>
-            <div
-              class="text-center text-v6-text-muted opacity-40 text-lg leading-none"
-            >
-              ↓
-            </div>
-            <div
-              class="rounded-lg bg-gray-100 text-v6-text-muted text-sm font-semibold px-4 py-3 text-center"
-            >
-              Forecast Meeting
-            </div>
-          </div>
-          <p class="text-xs text-v6-text-muted mt-5 text-center">
-            Manual tracking or brittle DIY workflows, the kind that quietly
-            break at year 3.
-          </p>
-        </div>
-        <div
-          class="reveal bg-white rounded-xl p-6 border-2 border-v6-teal-200 shadow-sm"
-        >
-          <p
-            class="text-xs font-semibold uppercase tracking-wider text-v6-teal mb-5"
-          >
-            With Swotbee Renewal Operations <span class="inline-block">⚡</span>
-          </p>
-          <div class="stagger flow-build flex flex-col gap-2.5">
-            <div
-              class="rounded-lg bg-v6-teal-50 text-v6-teal text-sm sm:text-base font-semibold px-4 py-3 text-center"
-            >
-              Closed Won
-            </div>
-            <div
-              class="text-center text-v6-teal opacity-50 text-lg leading-none"
-            >
-              ↓
-            </div>
-            <div
-              class="rounded-lg bg-v6-blue-50 text-v6-blue text-sm font-semibold px-4 py-3 text-center"
-            >
-              Renewal Pipeline
-            </div>
-            <div
-              class="text-center text-v6-teal opacity-50 text-lg leading-none"
-            >
-              ↓
-            </div>
-            <div
-              class="rounded-lg bg-v6-copper-50 text-v6-copper text-sm font-semibold px-4 py-3 text-center"
-            >
-              Expansion Pipeline
-            </div>
-            <div
-              class="text-center text-v6-teal opacity-50 text-lg leading-none"
-            >
-              ↓
-            </div>
-            <div
-              class="rounded-lg bg-v6-dark text-white text-sm font-semibold px-4 py-3 text-center"
-            >
-              Confident Forecast
-            </div>
-          </div>
-          <p class="text-xs text-v6-text-muted mt-5 text-center">
-            Every deal flows into renewal, expansion, and forecast,
-            automatically.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ CAPABILITIES ============ -->
-  <section class="bg-white py-14 sm:py-18 px-4 sm:px-6 lg:px-8">
-    <div class="max-w-5xl mx-auto">
-      <p
-        class="reveal text-sm font-semibold uppercase tracking-[0.2em] text-v6-copper mb-3 text-center"
-      >
-        Your Revenue Intelligence Layer
-      </p>
-      <h2
-        class="reveal text-2xl sm:text-3xl lg:text-4xl font-bold text-v6-dark mb-3 text-center text-balance"
-      >
-        With Swotbee, Every Renewal Makes Your Revenue Engine Smarter.
-      </h2>
-      <p class="reveal text-v6-text-muted text-center mb-8 max-w-lg mx-auto">
-        A revenue intelligence layer that surfaces the right signal at the right
-        moment.
-      </p>
-
-      <div class="stagger flex flex-wrap justify-center gap-2.5 mb-12">
+      <div class="stagger relative max-w-5xl mx-auto">
         {
-          signals.map((s) => (
-            <span class="bg-v6-bg border border-v6-border text-v6-dark text-xs sm:text-sm font-medium px-3.5 py-1.5 rounded-full">
-              <span class="text-v6-copper mr-1.5">●</span>
-              {s}
-            </span>
-          ))
-        }
-      </div>
-
-      <div class="stagger grid grid-cols-1 md:grid-cols-2 gap-6">
-        {
-          capabilities.map((c) => (
-            <div
-              class={`anim-card bg-v6-bg rounded-xl p-6 border border-v6-border border-t-4 ${c.color} hover:shadow-lg transition-shadow`}
-            >
-              <div class="cap-icon inline-block text-2xl leading-none mb-3">
-                {c.icon}
+          renewalFlow.map((stage, index) => {
+            const Icon = stage.icon;
+            return (
+              <div class="relative grid grid-cols-[2.5rem_1fr] sm:grid-cols-[1fr_3.5rem_1fr] gap-x-5 sm:gap-x-8 pb-8 last:pb-0">
+              {index < renewalFlow.length && (
+                <div
+                  class="absolute left-5 sm:left-1/2 top-5 -bottom-5 w-px -translate-x-1/2 bg-v6-copper-200"
+                  aria-hidden="true"
+                ></div>
+              )}
+              <div class="relative z-10 col-start-1 row-start-1 sm:col-start-2 flex justify-center">
+                <div
+                  class={`w-10 h-10 rounded-lg ${stage.color} flex items-center justify-center font-bold`}
+                >
+                  <Icon aria-hidden="true" className="h-5 w-5" />
+                </div>
               </div>
-              <h3 class="text-base font-semibold text-v6-dark mb-4 leading-snug">
-                {c.title}
-              </h3>
-              <ul class="space-y-2.5">
-                {c.points.map((p) => (
-                  <li class="flex gap-2.5 text-base text-v6-text-muted leading-relaxed">
-                    <span class="text-v6-teal flex-shrink-0 mt-0.5">✓</span>
-                    <span>{p}</span>
+              <div class="relative col-start-2 row-start-1 sm:col-start-1 sm:text-right">
+                <p class="absolute -top-4 left-0 sm:left-auto sm:right-0 text-[10px] font-semibold uppercase tracking-wider text-v6-text-muted whitespace-nowrap">
+                  Step {index + 1}
+                </p>
+                <h3 class="text-lg sm:text-xl font-semibold text-v6-dark leading-snug">
+                  {stage.title}
+                </h3>
+              </div>
+              <ul class="col-start-2 row-start-2 sm:col-start-3 sm:row-start-1 space-y-2.5 rounded-xl border border-v6-border bg-v6-bg p-5">
+                {stage.points.map((point) => (
+                  <li class="flex gap-2 text-sm text-v6-text-muted leading-relaxed">
+                    <span class="mt-2 h-1.5 w-1.5 rounded-full bg-v6-copper flex-shrink-0" aria-hidden="true"></span>
+                    <span>{point}</span>
                   </li>
                 ))}
               </ul>
-            </div>
-          ))
+              </div>
+            );
+          })
         }
+        <div class="relative grid grid-cols-[2.5rem_1fr] sm:grid-cols-[1fr_3.5rem_1fr] gap-x-5 sm:gap-x-8">
+          <div class="relative z-10 col-start-1 row-start-1 sm:col-start-2 flex justify-center">
+            <span class="inline-flex w-10 h-10 rounded-lg bg-v6-copper-50 text-v6-copper items-center justify-center font-semibold">
+              <ArrowPathIcon aria-hidden="true" className="h-5 w-5" />
+            </span>
+          </div>
+          <div class="relative col-start-2 row-start-1 sm:col-start-1 sm:text-right">
+            <p class="absolute -top-4 left-0 sm:left-auto sm:right-0 text-[10px] font-semibold uppercase tracking-wider text-v6-text-muted whitespace-nowrap">
+              Step 6
+            </p>
+            <p class="text-lg sm:text-xl font-semibold text-v6-dark leading-snug">
+              Renews Flawlessly<br />Year After Year
+            </p>
+          </div>
+        </div>
       </div>
+      <p class="reveal text-sm text-v6-text-muted text-center mt-8">
+        Every deal flows into renewal, expansion, and forecast—automatically.
+      </p>
     </div>
   </section>
 
@@ -1087,34 +904,34 @@ const toneMap: Record<string, string> = {
         Already Built Your Own Renewal Workflows?
       </h2>
       <p
-        class="reveal text-base sm:text-lg text-v6-text-muted  text-center text-balance mb-10 max-w-2xl mx-auto leading-relaxed"
+        class="reveal text-base sm:text-lg text-v6-text-muted text-center text-balance mb-10 max-w-2xl mx-auto leading-relaxed"
       >
-        Most ops teams we meet have built something: workflows that clone deals,
-        spreadsheets that track dates. <br />  <br />It works, until year 3, when HubSpot's
-        loop protection silently stops creating renewal deals, or a price uplift
-        ships without the escalation applied. <br/> <br />Then it becomes a firefighting
-        sprint instead of a predictable process.
+        Most ops teams we meet have built something. It works, until year 3,
+        when HubSpot's loop protection silently stops creating renewal deals, or
+        a price uplift ships without the escalation applied.
       </p>
       <div
         class="reveal bg-white rounded-2xl border border-v6-border p-6 sm:p-8 max-w-3xl mx-auto"
       >
-        <p class="text-lg font-semibold text-v6-copper-700 leading-relaxed mb-5">
+        <p
+          class="text-lg font-semibold text-v6-copper-700 leading-relaxed mb-5"
+        >
           We do not replace what you built. We add the parts DIY cannot reach:
         </p>
         <ul class="space-y-3 mb-6">
           <li class="flex gap-3 text-base text-v6-dark leading-relaxed">
-            <span class="text-v6-teal flex-shrink-0 mt-0.5">✓</span><span
-              >Multi-year chains that survive HubSpot's renewal loops</span
+            <CheckIcon aria-hidden="true" className="text-v6-teal flex-shrink-0 mt-0.5 h-5 w-5" /><span
+              >Multi-year renewal chains beyond HubSpot's loop limit</span
             >
           </li>
           <li class="flex gap-3 text-base text-v6-dark leading-relaxed">
-            <span class="text-v6-teal flex-shrink-0 mt-0.5">✓</span><span
-              >Escalation math applied automatically, so increases stop slipping
-              through</span
+            <CheckIcon aria-hidden="true" className="text-v6-teal flex-shrink-0 mt-0.5 h-5 w-5" /><span
+              >Escalation applied automatically, so your earned
+              increases are not missed</span
             >
           </li>
           <li class="flex gap-3 text-base text-v6-dark leading-relaxed">
-            <span class="text-v6-teal flex-shrink-0 mt-0.5">✓</span><span
+            <CheckIcon aria-hidden="true" className="text-v6-teal flex-shrink-0 mt-0.5 h-5 w-5" /><span
               >NRR/GRR analytics native in your dashboards</span
             >
           </li>
@@ -1288,7 +1105,7 @@ const toneMap: Record<string, string> = {
                 caseStudy.before.map((b) => (
                   <li class="flex gap-2 text-base text-v6-text-muted leading-relaxed">
                     <>
-                      <span class="text-gray-400 flex-shrink-0">•</span>
+                      <span class="mt-2 h-1.5 w-1.5 rounded-full bg-gray-400 flex-shrink-0" aria-hidden="true"></span>
                       <span>{b}</span>
                     </>
                   </li>
@@ -1307,7 +1124,7 @@ const toneMap: Record<string, string> = {
                 caseStudy.after.map((a) => (
                   <li class="flex gap-2 text-base text-v6-text-muted leading-relaxed">
                     <>
-                      <span class="text-v6-teal flex-shrink-0">✓</span>
+                      <CheckIcon aria-hidden="true" className="text-v6-teal h-5 w-5 flex-shrink-0" />
                       <span>{a}</span>
                     </>
                   </li>
@@ -1326,7 +1143,7 @@ const toneMap: Record<string, string> = {
                 caseStudy.results.map((r) => (
                   <li class="flex gap-2 text-base font-medium text-v6-dark leading-relaxed">
                     <>
-                      <span class="text-v6-copper flex-shrink-0">→</span>
+                      <ArrowRightIcon aria-hidden="true" className="text-v6-copper h-5 w-5 flex-shrink-0" />
                       <span>{r}</span>
                     </>
                   </li>
@@ -1339,56 +1156,38 @@ const toneMap: Record<string, string> = {
     </div>
   </section>
 
-  <!-- ============ AUDIT CHECKLIST ============ -->
+  <!-- ============ RENEWAL AUDIT ============ -->
   <section class="bg-white py-14 sm:py-18 px-4 sm:px-6 lg:px-8">
-    <div class="max-w-3xl mx-auto">
+    <div class="max-w-3xl mx-auto text-center">
       <p
-        class="reveal text-sm font-semibold uppercase tracking-[0.2em] text-v6-copper mb-3 text-center"
+        class="text-sm font-semibold uppercase tracking-[0.2em] text-v6-copper mb-3"
       >
         Your Renewal Audit
       </p>
       <h2
-        class="reveal text-2xl sm:text-3xl lg:text-4xl font-bold text-v6-dark mb-3 text-center text-balance"
+        class="text-2xl sm:text-3xl lg:text-4xl font-bold text-v6-dark mb-3"
       >
         See Your Renewal Revenue Leakage In 30 Minutes
       </h2>
-      <p class="reveal text-v6-text-muted text-center mb-10 max-w-lg mx-auto">
-        It starts with a free 30-minute call. Your renewal audit covers these
-        six areas:
+      <p class="text-v6-text-muted mb-8 max-w-lg mx-auto">
+        It starts with a free 30-minute call: an honest look at how renewals are
+        managed, where manual work exists, which rules drive complexity, and
+        what leadership cannot yet see.
       </p>
-      <div class="stagger grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
-        {
-          auditOutcomes.map((item) => (
-            <div class="anim-card flex gap-3 items-start bg-v6-bg rounded-lg p-4 border border-v6-border">
-              <span class="text-v6-teal text-lg flex-shrink-0 mt-0.5">✓</span>
-              <p class="text-base text-v6-dark leading-relaxed">{item}</p>
-            </div>
-          ))
-        }
-      </div>
-      <p
-        class="reveal text-base text-v6-text-muted text-center max-w-2xl mx-auto leading-relaxed"
+      <a
+        href="/renewal-audit-call/"
+        class="inline-block bg-v6-copper text-white px-8 py-3.5 rounded-xl text-base font-semibold hover:bg-v6-copper-600"
       >
-        We start by understanding your process, data, and business rules. Most
-        companies don't have perfect CRM data, that's part of the reason we
-        begin with an audit. You leave with a clear picture of what is leaking
-        and what to fix first.
-      </p>
-      <div class="reveal flex flex-col sm:flex-row gap-3 justify-center mt-8">
-        <a
-          href="/renewal-audit-call/"
-          data-ga-cta="renewal_checklist_book_audit"
-          class="bg-v6-copper text-white px-7 py-3 rounded-xl text-base font-semibold hover:bg-v6-copper-600 transition-colors text-center"
-        >
-          Book Your Renewal Audit (starts with a free 30-min call) →
-        </a>
+        Book Your Renewal Audit <ArrowRightIcon aria-hidden="true" className="h-4 w-4 inline-block align-text-bottom" />
+      </a>
+      <p class="mt-5">
         <a
           href="#demo"
-          class="border border-gray-300 text-v6-dark px-7 py-3 rounded-xl text-base font-medium hover:bg-gray-50 transition-colors text-center"
+          class="text-v6-copper font-medium underline underline-offset-4"
         >
-          Watch The 2-Minute Demo →
+          Prefer to see it working first? Watch the 2-minute demo <ArrowRightIcon aria-hidden="true" className="h-4 w-4 inline-block align-text-bottom" />
         </a>
-      </div>
+      </p>
     </div>
   </section>
 
@@ -1433,50 +1232,27 @@ const toneMap: Record<string, string> = {
       <p
         class="text-xs font-semibold uppercase tracking-[0.2em] text-white/70 mb-3"
       >
-        Zero Risk To Start
+        Your Renewal Audit
       </p>
       <h2 class="text-2xl sm:text-3xl font-bold text-white mb-4">
-        Let's Find Out.
+        See Your Renewal Revenue Leakage In 30 Minutes
       </h2>
       <p class="text-v6-copper-50 text-base sm:text-lg mb-4">
-        Book your renewal audit. It starts with a free 30-minute call, no
-        commitment, no sales pitch, just an honest look at the revenue hiding in
-        your renewal process.
+        A free, no-pressure call to see where renewal revenue may be slipping.
       </p>
-      <p class="text-white/80 text-base leading-relaxed mb-8 max-w-xl mx-auto">
-        If you decide to work with us: no long-term contracts. We earn your
-        trust month by month, and at the 30-day mark we check in and adjust the
-        plan at no extra cost if the direction doesn't feel right.
-      </p>
-      <div class="cta-group cta-group-light relative inline-block">
-        <a
-          href="/renewal-audit-call/"
-          data-ga-cta="renewal_final_book_audit"
-          class="bg-white text-v6-copper px-8 py-3.5 rounded-xl text-base font-semibold hover:bg-gray-50 transition-colors inline-block"
-        >
-          Book Your Renewal Audit →
-        </a>
-        <div
-          class="cta-pop absolute bottom-full left-1/2 mb-3 w-60 -translate-x-1/2 rounded-xl bg-v6-dark px-4 py-3 text-left shadow-xl"
-        >
-          <p class="text-sm font-semibold text-white mb-1">
-            Here's what to expect
-          </p>
-          <p class="text-sm leading-relaxed text-gray-300">
-            30 minutes, no prep needed. You leave with the specific revenue gaps
-            we spot in your renewal process.
-          </p>
-          <span
-            class="absolute top-full left-1/2 -translate-x-1/2 -mt-px border-x-8 border-t-8 border-x-transparent border-t-v6-dark"
-          ></span>
-        </div>
-      </div>
+      <a
+        href="/renewal-audit-call/"
+        data-ga-cta="renewal_final_book_audit"
+        class="bg-white text-v6-copper px-8 py-3.5 rounded-xl text-base font-semibold hover:bg-gray-50 transition-colors inline-block"
+      >
+        Book Your Renewal Audit <ArrowRightIcon aria-hidden="true" className="h-4 w-4 inline-block align-text-bottom" />
+      </a>
       <p class="mt-5">
         <a
           href="#demo"
           class="text-white/90 text-sm font-medium underline underline-offset-4 hover:text-white transition-colors"
         >
-          Prefer to see it working first? Watch the 2-minute demo →
+          Prefer to see it working first? Watch the 2-minute demo <ArrowRightIcon aria-hidden="true" className="h-4 w-4 inline-block align-text-bottom" />
         </a>
       </p>
     </div>
@@ -1488,301 +1264,305 @@ const toneMap: Record<string, string> = {
        layout has already closed </body></html>, which emits stray markup past the
        document end. Keep them here. -->
   <style>
-  /* ===== Motion is reserved for reading order and the renewal-system flow. ===== */
-  .anim .reveal {
-    opacity: 0;
-    transform: translateY(12px);
-    transition:
-      opacity 0.35s ease-out,
-      transform 0.35s ease-out;
-  }
-  .anim .reveal.in {
-    opacity: 1;
-    transform: none;
-  }
+    /* ===== Motion is reserved for reading order and the renewal-system flow. ===== */
+    .anim .reveal {
+      opacity: 0;
+      transform: translateY(12px);
+      transition:
+        opacity 0.35s ease-out,
+        transform 0.35s ease-out;
+    }
+    .anim .reveal.in {
+      opacity: 1;
+      transform: none;
+    }
 
-  .anim .stagger > * {
-    opacity: 0;
-    transform: translateY(10px);
-    transition:
-      opacity 0.35s ease-out,
-      transform 0.35s ease-out;
-  }
-  .anim .stagger.in > * {
-    opacity: 1;
-    transform: none;
-  }
+    .anim .stagger > * {
+      opacity: 0;
+      transform: translateY(10px);
+      transition:
+        opacity 0.35s ease-out,
+        transform 0.35s ease-out;
+    }
+    .anim .stagger.in > * {
+      opacity: 1;
+      transform: none;
+    }
 
-  /* ===== LCP guard =====
+    /* ===== LCP guard =====
      The hero is above the fold and its H1 is the LCP element. Fading it in from
      opacity 0 means the browser cannot record LCP until the reveal script has
      parsed, run, and added .in, which pushes LCP out by the whole script-execution
      window for no design benefit. Hero content therefore animates on transform
      only: it is painted at first paint and still slides into place. Everything
      below the fold keeps the opacity fade, where it costs nothing. */
-  .anim #hero .reveal,
-  .anim #hero .stagger > * {
-    opacity: 1;
-  }
-  h1.stagger.in > *:nth-child(2) {
-    transition-delay: 0.06s;
-  }
-  h1.stagger.in > *:nth-child(3) {
-    transition-delay: 0.12s;
-  }
-  h1.stagger.in > *:nth-child(4) {
-    transition-delay: 0.18s;
-  }
-  .anim .flow-build > * {
-    transform: translateY(8px);
-  }
-  .anim .flow-build.in > * {
-    transform: none;
-  }
-  .anim .flow-build.in > *:nth-child(2) {
-    transition-delay: 0.08s;
-  }
-  .anim .flow-build.in > *:nth-child(3) {
-    transition-delay: 0.16s;
-  }
-  .anim .flow-build.in > *:nth-child(4) {
-    transition-delay: 0.24s;
-  }
-  .anim .flow-build.in > *:nth-child(5) {
-    transition-delay: 0.32s;
-  }
-  .anim .flow-build.in > *:nth-child(6) {
-    transition-delay: 0.4s;
-  }
-  .anim .flow-build.in > *:nth-child(7) {
-    transition-delay: 0.48s;
-  }
-
-  .anim-card {
-    transition:
-      transform 0.25s ease-out,
-      box-shadow 0.25s ease-out;
-  }
-  .anim-card:hover {
-    transform: translateY(-4px);
-  }
-  .anim-emoji {
-    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-  }
-  .anim-card:hover .anim-emoji {
-    transform: translateY(-2px) scale(1.12) rotate(-4deg);
-  }
-
-  /* Capability card icons: a plain inline-block (not a fixed-size flex box like
-     .anim-emoji elsewhere), so it must transform-scale from its own glyph
-     center, not translate/rotate, or the hover motion visibly shifts it. */
-  .cap-icon {
-    display: inline-block;
-    transform-origin: center;
-    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-  }
-  .anim-card:hover .cap-icon {
-    transform: scale(1.22);
-  }
-
-  .bolt-pulse {
-    animation: boltPulse 2.2s ease-in-out infinite;
-  }
-  @keyframes boltPulse {
-    0%,
-    100% {
-      transform: scale(1);
+    .anim #hero .reveal,
+    .anim #hero .stagger > * {
       opacity: 1;
     }
-    50% {
-      transform: scale(1.25);
-      opacity: 0.65;
+    h1.stagger.in > *:nth-child(2) {
+      transition-delay: 0.06s;
     }
-  }
-
-  /* ===== CTA hover/focus micro-reveal ===== */
-  .cta-pop {
-    opacity: 0;
-    transform: translate(-50%, 6px);
-    transition:
-      opacity 0.25s ease-out,
-      transform 0.25s ease-out;
-    pointer-events: none;
-  }
-  .cta-group:hover .cta-pop,
-  .cta-group:focus-within .cta-pop {
-    opacity: 1;
-    transform: translate(-50%, 0);
-  }
-
-  /* ===== Scroll progress bar ===== */
-  #scroll-progress {
-    transform: scaleX(0);
-    transition: transform 0.1s linear;
-  }
-
-  /* ===== FAQ ===== */
-  details summary::-webkit-details-marker {
-    display: none;
-  }
-
-  /* ===== Reduced motion ===== */
-  @media (prefers-reduced-motion: reduce) {
-    .anim .reveal,
-    .anim .stagger > * {
-      opacity: 1 !important;
-      transform: none !important;
-      transition: none !important;
+    h1.stagger.in > *:nth-child(3) {
+      transition-delay: 0.12s;
     }
-    .bee-bob,
-    .bee-wings,
-    .bee-point,
+    h1.stagger.in > *:nth-child(4) {
+      transition-delay: 0.18s;
+    }
+    .anim .flow-build > * {
+      transform: translateY(8px);
+    }
+    .anim .flow-build.in > * {
+      transform: none;
+    }
+    .anim .flow-build.in > *:nth-child(2) {
+      transition-delay: 0.08s;
+    }
+    .anim .flow-build.in > *:nth-child(3) {
+      transition-delay: 0.16s;
+    }
+    .anim .flow-build.in > *:nth-child(4) {
+      transition-delay: 0.24s;
+    }
+    .anim .flow-build.in > *:nth-child(5) {
+      transition-delay: 0.32s;
+    }
+    .anim .flow-build.in > *:nth-child(6) {
+      transition-delay: 0.4s;
+    }
+    .anim .flow-build.in > *:nth-child(7) {
+      transition-delay: 0.48s;
+    }
+
+    .anim-card {
+      transition:
+        transform 0.25s ease-out,
+        box-shadow 0.25s ease-out;
+    }
+    .anim-card:hover {
+      transform: translateY(-4px);
+    }
+    .anim-emoji {
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .anim-card:hover .anim-emoji {
+      transform: translateY(-2px) scale(1.12) rotate(-4deg);
+    }
+
+    /* Capability card icons: a plain inline-block (not a fixed-size flex box like
+     .anim-emoji elsewhere), so it must transform-scale from its own glyph
+     center, not translate/rotate, or the hover motion visibly shifts it. */
+    .cap-icon {
+      display: inline-block;
+      transform-origin: center;
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .anim-card:hover .cap-icon {
+      transform: scale(1.22);
+    }
+
     .bolt-pulse {
-      animation: none !important;
+      animation: boltPulse 2.2s ease-in-out infinite;
     }
-    #bee {
-      transform: none !important;
+    @keyframes boltPulse {
+      0%,
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+      50% {
+        transform: scale(1.25);
+        opacity: 0.65;
+      }
     }
-    .anim-card,
-    .anim-emoji,
-    .cta-pop,
+
+    /* ===== CTA hover/focus micro-reveal ===== */
+    .cta-pop {
+      opacity: 0;
+      transform: translate(-50%, 6px);
+      transition:
+        opacity 0.25s ease-out,
+        transform 0.25s ease-out;
+      pointer-events: none;
+    }
+    .cta-group:hover .cta-pop,
+    .cta-group:focus-within .cta-pop {
+      opacity: 1;
+      transform: translate(-50%, 0);
+    }
+
+    /* ===== Scroll progress bar ===== */
     #scroll-progress {
-      transition: none !important;
+      transform: scaleX(0);
+      transition: transform 0.1s linear;
     }
-  }
-</style>
 
-<script>
-  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  // .anim is added synchronously by the inline head script (FOUC fix), gated on
-  // reduced-motion. Here we only wire the observers.
+    /* ===== FAQ ===== */
+    details summary::-webkit-details-marker {
+      display: none;
+    }
 
-  // --- Scroll reveals ---
-  const revealEls = Array.from(document.querySelectorAll(".reveal, .stagger"));
-  if (reduce) {
-    revealEls.forEach((el) => el.classList.add("in"));
-  } else {
-    const inView = (el: Element) => {
-      const r = el.getBoundingClientRect();
-      return r.top < window.innerHeight * 0.9 && r.bottom > 0;
-    };
-    revealEls.forEach((el) => {
-      if (inView(el)) el.classList.add("in");
-    });
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("in");
-            io.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.15, rootMargin: "0px 0px -8% 0px" },
+    /* ===== Reduced motion ===== */
+    @media (prefers-reduced-motion: reduce) {
+      .anim .reveal,
+      .anim .stagger > * {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+      .bee-bob,
+      .bee-wings,
+      .bee-point,
+      .bolt-pulse {
+        animation: none !important;
+      }
+      #bee {
+        transform: none !important;
+      }
+      .anim-card,
+      .anim-emoji,
+      .cta-pop,
+      #scroll-progress {
+        transition: none !important;
+      }
+    }
+  </style>
+
+  <script>
+    const reduce = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+    // .anim is added synchronously by the inline head script (FOUC fix), gated on
+    // reduced-motion. Here we only wire the observers.
+
+    // --- Scroll reveals ---
+    const revealEls = Array.from(
+      document.querySelectorAll(".reveal, .stagger"),
     );
-    revealEls.forEach((el) => {
-      if (!el.classList.contains("in")) io.observe(el);
-    });
-  }
-
-  // --- Smooth in-page anchor scrolling (reduced-motion aware) ---
-  // Makes the "Watch the 2-minute demo" / "Estimate your leakage" CTAs glide to
-  // their section instead of hard-jumping, reinforcing the guided path to the CTA.
-  document.querySelectorAll('a[href^="#"]').forEach((a) => {
-    a.addEventListener("click", (e) => {
-      const id = (a as HTMLAnchorElement).getAttribute("href");
-      if (!id || id === "#") return;
-      const target = document.querySelector(id);
-      if (!target) return;
-      e.preventDefault();
-      target.scrollIntoView({
-        behavior: reduce ? "auto" : "smooth",
-        block: "start",
+    if (reduce) {
+      revealEls.forEach((el) => el.classList.add("in"));
+    } else {
+      const inView = (el: Element) => {
+        const r = el.getBoundingClientRect();
+        return r.top < window.innerHeight * 0.9 && r.bottom > 0;
+      };
+      revealEls.forEach((el) => {
+        if (inView(el)) el.classList.add("in");
       });
-      history.replaceState(null, "", id);
-    });
-  });
-
-  // --- Scroll progress bar ---
-  const bar = document.getElementById("scroll-progress");
-  if (bar && !reduce) {
-    const onScroll = () => {
-      const h = document.documentElement;
-      const max = h.scrollHeight - h.clientHeight;
-      const p = max > 0 ? h.scrollTop / max : 0;
-      bar.style.transform = `scaleX(${p})`;
-    };
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-  } else if (bar) {
-    bar.style.opacity = "0";
-  }
-
-  // --- Stat band count-up ---
-  // Each .stat-value renders its real value server-side and repeats it in
-  // data-stat-value, so crawlers, screen readers and no-JS visitors always read the
-  // true figure. We only parse the leading number and re-attach whatever suffix it
-  // had, which lets a non-numeric value ("2 wks") animate the digits and keep its
-  // unit. Anything that does not parse is simply left alone.
-  const parseStat = (el: HTMLElement) => {
-    const raw = (el.dataset.statValue ?? el.textContent ?? "").trim();
-    const match = raw.match(/^(\D*?)(\d+(?:\.\d+)?)(.*)$/);
-    if (!match) return null;
-    const [, prefix, numText, suffix] = match;
-    return {
-      raw,
-      prefix,
-      suffix,
-      target: parseFloat(numText),
-      decimals: (numText.split(".")[1] || "").length,
-    };
-  };
-
-  const statEls = Array.from(
-    document.querySelectorAll<HTMLElement>(".stat-value"),
-  );
-
-  // Reduced motion keeps the server-rendered numbers exactly as they are.
-  if (statEls.length && !reduce) {
-    const statsRoot = statEls[0].closest("section") ?? statEls[0];
-    const parsed = statEls
-      .map((el) => {
-        const p = parseStat(el);
-        return p ? { el, ...p } : null;
-      })
-      .filter((s): s is NonNullable<typeof s> => s !== null);
-
-    const DURATION = 900;
-    const start = performance.now();
-    const tick = (now: number) => {
-      const p = Math.min((now - start) / DURATION, 1);
-      // easeOutCubic: quick climb, gentle settle, so the final figure is readable
-      const eased = 1 - Math.pow(1 - p, 3);
-      parsed.forEach((s) => {
-        s.el.textContent =
-          p < 1
-            ? s.prefix + (s.target * eased).toFixed(s.decimals) + s.suffix
-            : s.raw; // restore the exact source string, never a rounded rebuild
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("in");
+              io.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.15, rootMargin: "0px 0px -8% 0px" },
+      );
+      revealEls.forEach((el) => {
+        if (!el.classList.contains("in")) io.observe(el);
       });
-      if (p < 1) requestAnimationFrame(tick);
-    };
+    }
 
-    // rootMargin starts the run a screen early, while the band is still behind the
-    // stagger fade. That matters for more than smoothness: the real figures stay in
-    // the DOM until the instant the animation begins and are written back the frame
-    // it ends, so a crawler, screenshot or reader that never scrolls here can never
-    // capture a zeroed "0%" in place of the actual claim.
-    const statsObserver = new IntersectionObserver(
-      (entries, observer) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          observer.disconnect();
-          requestAnimationFrame(tick);
+    // --- Smooth in-page anchor scrolling (reduced-motion aware) ---
+    // Makes the "Watch the 2-minute demo" / "Estimate your leakage" CTAs glide to
+    // their section instead of hard-jumping, reinforcing the guided path to the CTA.
+    document.querySelectorAll('a[href^="#"]').forEach((a) => {
+      a.addEventListener("click", (e) => {
+        const id = (a as HTMLAnchorElement).getAttribute("href");
+        if (!id || id === "#") return;
+        const target = document.querySelector(id);
+        if (!target) return;
+        e.preventDefault();
+        target.scrollIntoView({
+          behavior: reduce ? "auto" : "smooth",
+          block: "start",
         });
-      },
-      { rootMargin: "100% 0px 0px 0px" },
+        history.replaceState(null, "", id);
+      });
+    });
+
+    // --- Scroll progress bar ---
+    const bar = document.getElementById("scroll-progress");
+    if (bar && !reduce) {
+      const onScroll = () => {
+        const h = document.documentElement;
+        const max = h.scrollHeight - h.clientHeight;
+        const p = max > 0 ? h.scrollTop / max : 0;
+        bar.style.transform = `scaleX(${p})`;
+      };
+      onScroll();
+      window.addEventListener("scroll", onScroll, { passive: true });
+    } else if (bar) {
+      bar.style.opacity = "0";
+    }
+
+    // --- Stat band count-up ---
+    // Each .stat-value renders its real value server-side and repeats it in
+    // data-stat-value, so crawlers, screen readers and no-JS visitors always read the
+    // true figure. We only parse the leading number and re-attach whatever suffix it
+    // had, which lets a non-numeric value ("2 wks") animate the digits and keep its
+    // unit. Anything that does not parse is simply left alone.
+    const parseStat = (el: HTMLElement) => {
+      const raw = (el.dataset.statValue ?? el.textContent ?? "").trim();
+      const match = raw.match(/^(\D*?)(\d+(?:\.\d+)?)(.*)$/);
+      if (!match) return null;
+      const [, prefix, numText, suffix] = match;
+      return {
+        raw,
+        prefix,
+        suffix,
+        target: parseFloat(numText),
+        decimals: (numText.split(".")[1] || "").length,
+      };
+    };
+
+    const statEls = Array.from(
+      document.querySelectorAll<HTMLElement>(".stat-value"),
     );
-    statsObserver.observe(statsRoot);
-  }
+
+    // Reduced motion keeps the server-rendered numbers exactly as they are.
+    if (statEls.length && !reduce) {
+      const statsRoot = statEls[0].closest("section") ?? statEls[0];
+      const parsed = statEls
+        .map((el) => {
+          const p = parseStat(el);
+          return p ? { el, ...p } : null;
+        })
+        .filter((s): s is NonNullable<typeof s> => s !== null);
+
+      const DURATION = 900;
+      const start = performance.now();
+      const tick = (now: number) => {
+        const p = Math.min((now - start) / DURATION, 1);
+        // easeOutCubic: quick climb, gentle settle, so the final figure is readable
+        const eased = 1 - Math.pow(1 - p, 3);
+        parsed.forEach((s) => {
+          s.el.textContent =
+            p < 1
+              ? s.prefix + (s.target * eased).toFixed(s.decimals) + s.suffix
+              : s.raw; // restore the exact source string, never a rounded rebuild
+        });
+        if (p < 1) requestAnimationFrame(tick);
+      };
+
+      // rootMargin starts the run a screen early, while the band is still behind the
+      // stagger fade. That matters for more than smoothness: the real figures stay in
+      // the DOM until the instant the animation begins and are written back the frame
+      // it ends, so a crawler, screenshot or reader that never scrolls here can never
+      // capture a zeroed "0%" in place of the actual claim.
+      const statsObserver = new IntersectionObserver(
+        (entries, observer) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            observer.disconnect();
+            requestAnimationFrame(tick);
+          });
+        },
+        { rootMargin: "100% 0px 0px 0px" },
+      );
+      statsObserver.observe(statsRoot);
+    }
   </script>
 </Layout>
