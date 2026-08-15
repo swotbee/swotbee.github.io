@@ -26,6 +26,7 @@ import Navbar from "../components/astro/Navbar.astro";
 import Footer from "../components/astro/Footer.astro";
 import StructuredData from "../components/astro/StructuredData.astro";
 import RenewalRoiCalculator from "../components/astro/RenewalRoiCalculator.astro";
+import RenewalServicePaths from "../components/astro/RenewalServicePaths.astro";
 import RenewalDemoYoutube from "../components/react/RenewalDemoYoutube.jsx";
 import {
   AdjustmentsHorizontalIcon,
@@ -656,7 +657,7 @@ const toneMap: Record<string, string> = {
           data-ga-cta="renewal_demo_book_audit"
           class="bg-v6-copper text-white px-8 py-3.5 rounded-xl text-base font-semibold hover:bg-v6-copper-600 transition-colors text-center inline-flex items-center gap-2"
         >
-          Book Your Renewal Audit <ArrowRightIcon aria-hidden="true" className="h-4 w-4" />
+          Book a Renewal Alignment Call <ArrowRightIcon aria-hidden="true" className="h-4 w-4" />
         </a>
         <a
           href="#roi"
@@ -1156,30 +1157,32 @@ const toneMap: Record<string, string> = {
     </div>
   </section>
 
-  <!-- ============ RENEWAL AUDIT ============ -->
+  <RenewalServicePaths />
+
+  <!-- ============ RENEWAL ALIGNMENT CALL ============ -->
   <section class="bg-white py-14 sm:py-18 px-4 sm:px-6 lg:px-8">
     <div class="max-w-3xl mx-auto text-center">
       <p
         class="text-sm font-semibold uppercase tracking-[0.2em] text-v6-copper mb-3"
       >
-        Your Renewal Audit
+        Start with a Renewal Alignment Call
       </p>
       <h2
         class="text-2xl sm:text-3xl lg:text-4xl font-bold text-v6-dark mb-3"
       >
-        See Your Renewal Revenue Leakage In 30 Minutes
+        Validate Your Renewal Process Before You Invest In a Fix
       </h2>
       <p class="text-v6-text-muted mb-8 max-w-lg mx-auto">
-        It starts with a no-commitment 30-minute call: an honest look at how renewals are
-        managed, where manual work exists, which rules drive complexity, and
-        what leadership cannot yet see.
+        In 30 minutes, we validate the renewal process you have today, surface the rules
+        and handoffs creating risk, and identify whether a deeper HubSpot audit is worth doing.
       </p>
       <a
         href="/renewal-audit-call/"
         class="inline-block bg-v6-copper text-white px-8 py-3.5 rounded-xl text-base font-semibold hover:bg-v6-copper-600"
       >
-        Book Your Renewal Audit <ArrowRightIcon aria-hidden="true" className="h-4 w-4 inline-block align-text-bottom" />
+        Book a Renewal Alignment Call <ArrowRightIcon aria-hidden="true" className="h-4 w-4 inline-block align-text-bottom" />
       </a>
+      <p class="mt-3 text-xs text-gray-500">No fee. No HubSpot access required. The paid audit begins only after scope and terms are agreed.</p>
       <p class="mt-5">
         <a
           href="#demo"
@@ -1232,21 +1235,22 @@ const toneMap: Record<string, string> = {
       <p
         class="text-xs font-semibold uppercase tracking-[0.2em] text-white/70 mb-3"
       >
-        Your Renewal Audit
+        Start with a Renewal Alignment Call
       </p>
       <h2 class="text-2xl sm:text-3xl font-bold text-white mb-4">
-        See Your Renewal Revenue Leakage In 30 Minutes
+        Get Clear on Your Renewal Operation in 30 Minutes
       </h2>
       <p class="text-v6-copper-50 text-base sm:text-lg mb-4">
-        A no-commitment, no-pressure call to see where renewal revenue may be slipping.
+        Validate your renewal process, surface the rules and handoffs creating risk, and decide whether a deeper HubSpot audit is worthwhile.
       </p>
       <a
         href="/renewal-audit-call/"
         data-ga-cta="renewal_final_book_audit"
         class="bg-white text-v6-copper px-8 py-3.5 rounded-xl text-base font-semibold hover:bg-gray-50 transition-colors inline-block"
       >
-        Book Your Renewal Audit <ArrowRightIcon aria-hidden="true" className="h-4 w-4 inline-block align-text-bottom" />
+        Book a Renewal Alignment Call <ArrowRightIcon aria-hidden="true" className="h-4 w-4 inline-block align-text-bottom" />
       </a>
+      <p class="mt-4 text-xs text-v6-copper-50">No fee. No HubSpot access required. The paid audit begins only after scope and terms are agreed.</p>
       <p class="mt-5">
         <a
           href="#demo"

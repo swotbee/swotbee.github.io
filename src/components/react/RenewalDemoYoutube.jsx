@@ -38,7 +38,7 @@ export default function RenewalDemoYoutube({ showEndCta = false }) {
           className="mt-6 rounded-xl bg-v6-copper px-6 py-3 text-base font-semibold text-white transition-colors hover:bg-v6-copper-600 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-v6-dark"
           onClick={() => track("renewal_video_end_cta_click")}
         >
-          Book Your Renewal Audit →
+          Book a Renewal Alignment Call →
         </a>
         <button
           type="button"
