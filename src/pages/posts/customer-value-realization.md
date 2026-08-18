@@ -142,4 +142,6 @@ Value realization is the foundation of the [365-day renewal strategy](/posts/ren
 
 **Customers renew outcomes, not features.** SWOTBee builds value-realization and customer health programs for mid-market companies across Energy, Manufacturing, and SaaS.
 
-[Book a free 30-minute discovery call →](/contactus/)
+[Get your 1-page renewal leakage estimate →](/resources/renewal-leakage-estimate/)
+
+No call needed. Prefer to talk it through first? [Book a free 30-minute discovery call →](/renewal-audit-call/)

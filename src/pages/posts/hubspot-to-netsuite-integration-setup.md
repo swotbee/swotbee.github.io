@@ -132,4 +132,6 @@ The native connector and iPaaS tools are largely no-code, but complex workflows,
 
 **SWOTBee configures HubSpot to NetSuite integrations that survive real orders, not just the demo.** We align your teams, map your objects, and build the workflows so your front office and back office finally share one clean data flow.
 
-[Book a free 30-minute discovery call →](/contactus/)
+[Get your 1-page renewal leakage estimate →](/resources/renewal-leakage-estimate/)
+
+No call needed. Prefer to talk it through first? [Book a free 30-minute discovery call →](/renewal-audit-call/)

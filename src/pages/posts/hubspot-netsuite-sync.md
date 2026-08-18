@@ -143,4 +143,6 @@ Set match keys and deduplication, sequence dependent records, use a hybrid real-
 
 **SWOTBee builds and maintains reliable HubSpot NetSuite syncs, the mappings, match keys, and monitoring that keep your CRM and ERP in agreement.** No duplicates, no silent failures.
 
-[Book a free 30-minute discovery call →](/contactus/)
+[Get your 1-page renewal leakage estimate →](/resources/renewal-leakage-estimate/)
+
+No call needed. Prefer to talk it through first? [Book a free 30-minute discovery call →](/renewal-audit-call/)

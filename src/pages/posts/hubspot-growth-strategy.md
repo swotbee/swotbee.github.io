@@ -114,4 +114,6 @@ Yes. SMBs benefit most from running a complete growth strategy on a single platf
 
 **SWOTBee turns HubSpot growth frameworks into an operating system for your revenue, with the data and process that make them work.** Strategy first, tools second.
 
-[Book a free 30-minute discovery call →](/contactus/)
+[Get your 1-page renewal leakage estimate →](/resources/renewal-leakage-estimate/)
+
+No call needed. Prefer to talk it through first? [Book a free 30-minute discovery call →](/renewal-audit-call/)

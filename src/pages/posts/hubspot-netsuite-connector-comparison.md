@@ -145,4 +145,6 @@ The native app is the cheapest, iPaaS platforms run a monthly subscription that 
 
 **SWOTBee picks and implements the right HubSpot NetSuite connector for your volume and subsidiaries, not the one with the biggest logo.** We have built on native, Celigo, Workato, and custom, so we match the tool to your data.
 
-[Book a free 30-minute discovery call →](/contactus/)
+[Get your 1-page renewal leakage estimate →](/resources/renewal-leakage-estimate/)
+
+No call needed. Prefer to talk it through first? [Book a free 30-minute discovery call →](/renewal-audit-call/)

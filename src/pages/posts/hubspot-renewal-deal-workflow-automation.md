@@ -270,4 +270,6 @@ Two things: line items not carrying over to the new deal (native cloning can't c
 
 **This is where most teams get stuck.** Workflow automation looks simple in theory but breaks in subtle ways: wrong dates, missing associations, duplicate deals, infinite loops. SWOTBee has built renewal automation for dozens of mid-market companies across Energy, Manufacturing, and SaaS.
 
-[Book a free 30-minute discovery call →](/contactus/)
+[Get your 1-page renewal leakage estimate →](/resources/renewal-leakage-estimate/)
+
+No call needed. Prefer to talk it through first? [Book a free 30-minute discovery call →](/renewal-audit-call/)

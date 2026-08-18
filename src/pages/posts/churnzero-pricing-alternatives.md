@@ -238,4 +238,6 @@ It can surface renewal dates, score risk, and prompt CSMs, which is valuable sig
 
 **SWOTBee builds HubSpot-native renewal operations for mid-market teams: automated renewal deals, pipeline alerts, and NRR reporting inside your own portal, and you own everything we build.**
 
-[Book a free 30-minute discovery call →](/contactus/)
+[Get your 1-page renewal leakage estimate →](/resources/renewal-leakage-estimate/)
+
+No call needed. Prefer to talk it through first? [Book a free 30-minute discovery call →](/renewal-audit-call/)

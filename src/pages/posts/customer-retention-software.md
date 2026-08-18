@@ -146,4 +146,6 @@ It ranges from free CRM tiers to enterprise customer success platforms costing t
 
 **SWOTBee configures customer retention software on HubSpot, health scores, usage tracking, automation, and renewal pipelines, so you reduce churn without a sprawling tool stack.** One system, built for retention.
 
-[Book a free 30-minute discovery call →](/contactus/)
+[Get your 1-page renewal leakage estimate →](/resources/renewal-leakage-estimate/)
+
+No call needed. Prefer to talk it through first? [Book a free 30-minute discovery call →](/renewal-audit-call/)

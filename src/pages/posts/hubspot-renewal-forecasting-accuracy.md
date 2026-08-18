@@ -260,4 +260,6 @@ One to two quarters accurately. Beyond that, customer situations change too much
 
 **Accurate renewal forecasting is the difference between hitting your number and being surprised.** SWOTBee builds renewal forecasting models for mid-market teams in Energy, Manufacturing, and SaaS, from pipeline setup to board-ready reports.
 
-[Book a free 30-minute discovery call →](/contactus/)
+[Get your 1-page renewal leakage estimate →](/resources/renewal-leakage-estimate/)
+
+No call needed. Prefer to talk it through first? [Book a free 30-minute discovery call →](/renewal-audit-call/)

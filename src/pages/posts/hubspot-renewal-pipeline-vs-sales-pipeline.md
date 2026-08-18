@@ -146,4 +146,6 @@ Once you decide to separate, [choose your stage model](/posts/hubspot-renewal-pi
 
 **Need help deciding?** SWOTBee builds renewal pipeline architectures for mid-market teams. We've seen dozens of configurations across Energy, Manufacturing, and SaaS, and we'll help you pick the right one for your team.
 
-[Book a free 30-minute discovery call →](/contactus/)
+[Get your 1-page renewal leakage estimate →](/resources/renewal-leakage-estimate/)
+
+No call needed. Prefer to talk it through first? [Book a free 30-minute discovery call →](/renewal-audit-call/)

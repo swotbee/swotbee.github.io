@@ -247,4 +247,6 @@ The template in this article is a complete free customer success renewal playboo
 
 **SWOTBee turns renewal playbooks into working HubSpot systems for mid-market teams: automated renewal deals with line items and uplifts, risk-tiered alerting, and NRR reporting, built in your portal, owned by you.**
 
-[Book a free 30-minute discovery call →](/contactus/)
+[Get your 1-page renewal leakage estimate →](/resources/renewal-leakage-estimate/)
+
+No call needed. Prefer to talk it through first? [Book a free 30-minute discovery call →](/renewal-audit-call/)

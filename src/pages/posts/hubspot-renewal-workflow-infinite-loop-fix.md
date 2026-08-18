@@ -225,4 +225,6 @@ Infinite loops are just one of [12 common mistakes](/posts/hubspot-renewal-pipel
 
 **Multi-year renewal automation is one of the trickiest HubSpot builds.** SWOTBee has automated renewal pipelines for energy, manufacturing, and SaaS companies with contracts from 1 to 5+ years. We've solved the infinite loop problem dozens of times.
 
-[Book a free 30-minute discovery call →](/contactus/)
+[Get your 1-page renewal leakage estimate →](/resources/renewal-leakage-estimate/)
+
+No call needed. Prefer to talk it through first? [Book a free 30-minute discovery call →](/renewal-audit-call/)

@@ -155,4 +155,6 @@ Use CPQ for quoting, sync the order to the ERP automatically on close, automate 
 
 **SWOTBee automates quote-to-cash for mid-market companies by connecting CRM and ERP, so quotes become orders, invoices, and cash without the manual handoffs that leak revenue.** One connected revenue engine.
 
-[Book a free 30-minute discovery call →](/contactus/)
+[Get your 1-page renewal leakage estimate →](/resources/renewal-leakage-estimate/)
+
+No call needed. Prefer to talk it through first? [Book a free 30-minute discovery call →](/renewal-audit-call/)

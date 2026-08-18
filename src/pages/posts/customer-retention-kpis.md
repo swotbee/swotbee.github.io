@@ -162,4 +162,6 @@ Lagging metrics (retention rate, churn rate) report what already happened; leadi
 
 **SWOTBee builds live customer retention dashboards on HubSpot, the KPIs that matter, leading and lagging, wired to the plays that move them.** Measure retention, then improve it.
 
-[Book a free 30-minute discovery call →](/contactus/)
+[Get your 1-page renewal leakage estimate →](/resources/renewal-leakage-estimate/)
+
+No call needed. Prefer to talk it through first? [Book a free 30-minute discovery call →](/renewal-audit-call/)

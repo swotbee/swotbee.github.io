@@ -131,4 +131,6 @@ This piece pairs with our guides to [product-qualified signals and expansion](/p
 
 **Most product analytics tools sell certainty about which usage metric matters. SWOTBee builds renewal and health-score systems on what the evidence and your own account history actually show, not a vendor's unverified benchmark.**
 
-[Book a free 30-minute discovery call →](/contactus/)
+[Get your 1-page renewal leakage estimate →](/resources/renewal-leakage-estimate/)
+
+No call needed. Prefer to talk it through first? [Book a free 30-minute discovery call →](/renewal-audit-call/)

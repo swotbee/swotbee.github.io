@@ -158,4 +158,6 @@ Yes. Its higher floor means fast time-to-value, and the modular model lets a sma
 
 **SWOTBee helps growing companies decide whether to scale on HubSpot or move, and builds the RevOps foundation that makes HubSpot actually scale.** We give you the honest math, not a sales pitch.
 
-[Book a free 30-minute discovery call →](/contactus/)
+[Get your 1-page renewal leakage estimate →](/resources/renewal-leakage-estimate/)
+
+No call needed. Prefer to talk it through first? [Book a free 30-minute discovery call →](/renewal-audit-call/)

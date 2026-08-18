@@ -156,4 +156,6 @@ A CRM centralizes the customer view and automation makes proactive plays (onboar
 
 **SWOTBee builds B2B customer retention programs on HubSpot: the health scores, automation, and renewal pipelines that keep customers and grow them.** Retention is a system, and we build it.
 
-[Book a free 30-minute discovery call →](/contactus/)
+[Get your 1-page renewal leakage estimate →](/resources/renewal-leakage-estimate/)
+
+No call needed. Prefer to talk it through first? [Book a free 30-minute discovery call →](/renewal-audit-call/)

@@ -261,4 +261,6 @@ Because a reminder only announces the work. If nobody builds the renewal deal wi
 
 **SWOTBee builds HubSpot-native renewal operations for mid-market teams: scheduled renewal deals with line items and uplifts, alert cadences, and NRR reporting, all inside your portal, and you own everything we build.**
 
-[Book a free 30-minute discovery call →](/contactus/)
+[Get your 1-page renewal leakage estimate →](/resources/renewal-leakage-estimate/)
+
+No call needed. Prefer to talk it through first? [Book a free 30-minute discovery call →](/renewal-audit-call/)

@@ -118,4 +118,6 @@ Yes, if your website is a revenue channel and you will commit to ongoing iterati
 
 **SWOTBee runs Growth-Driven Design on HubSpot as a revenue program, not a one-off project, with the closed-loop data to prove what works.** We only recommend it when the continuous loop will actually run.
 
-[Book a free 30-minute discovery call →](/contactus/)
+[Get your 1-page renewal leakage estimate →](/resources/renewal-leakage-estimate/)
+
+No call needed. Prefer to talk it through first? [Book a free 30-minute discovery call →](/renewal-audit-call/)

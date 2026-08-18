@@ -156,4 +156,6 @@ Cohort analysis is one of the metrics in our [SaaS renewal metrics guide](/posts
 
 **Blended averages are where retention problems hide:** healthy cohorts masking toxic ones. SWOTBee builds cohort retention reporting and churn-risk analytics for mid-market companies across Energy, Manufacturing, and SaaS.
 
-[Book a free 30-minute discovery call →](/contactus/)
+[Get your 1-page renewal leakage estimate →](/resources/renewal-leakage-estimate/)
+
+No call needed. Prefer to talk it through first? [Book a free 30-minute discovery call →](/renewal-audit-call/)

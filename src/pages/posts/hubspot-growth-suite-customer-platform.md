@@ -126,4 +126,6 @@ Yes. The free Smart CRM supports up to 2 users and is the foundation you build o
 
 **SWOTBee cuts through HubSpot's renaming and tells you what the current Customer Platform actually costs and includes for your stage.** No dead bundles, no phantom discounts.
 
-[Book a free 30-minute discovery call →](/contactus/)
+[Get your 1-page renewal leakage estimate →](/resources/renewal-leakage-estimate/)
+
+No call needed. Prefer to talk it through first? [Book a free 30-minute discovery call →](/renewal-audit-call/)

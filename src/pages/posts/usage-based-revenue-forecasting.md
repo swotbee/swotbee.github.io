@@ -153,4 +153,6 @@ Usage-based forecasting is one of the forecasting methods in our [SaaS renewal m
 
 **Variable revenue is not unpredictable revenue if you forecast from usage.** SWOTBee builds usage-based forecasting and revenue reporting for mid-market companies across Energy, Manufacturing, and SaaS.
 
-[Book a free 30-minute discovery call →](/contactus/)
+[Get your 1-page renewal leakage estimate →](/resources/renewal-leakage-estimate/)
+
+No call needed. Prefer to talk it through first? [Book a free 30-minute discovery call →](/renewal-audit-call/)

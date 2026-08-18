@@ -133,4 +133,6 @@ Yes. By tracking customer behavior and triggering interventions before disengage
 
 **SWOTBee turns your CRM into a customer retention engine: health scores, automation, and renewal pipelines that keep customers and grow them.** We build it on HubSpot, end to end.
 
-[Book a free 30-minute discovery call →](/contactus/)
+[Get your 1-page renewal leakage estimate →](/resources/renewal-leakage-estimate/)
+
+No call needed. Prefer to talk it through first? [Book a free 30-minute discovery call →](/renewal-audit-call/)

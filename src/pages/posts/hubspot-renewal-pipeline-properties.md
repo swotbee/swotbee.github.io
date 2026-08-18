@@ -289,4 +289,6 @@ Company, when a customer can have multiple concurrent deals, since health reflec
 
 **Need help setting up your renewal properties?** SWOTBee configures renewal pipelines end-to-end for mid-market teams, including all 15 properties, workflow automation, and reporting dashboards.
 
-[Book a free 30-minute discovery call →](/contactus/)
+[Get your 1-page renewal leakage estimate →](/resources/renewal-leakage-estimate/)
+
+No call needed. Prefer to talk it through first? [Book a free 30-minute discovery call →](/renewal-audit-call/)

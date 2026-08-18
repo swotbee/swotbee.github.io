@@ -137,4 +137,6 @@ Silent churn is one of the churn-risk signals in our [SaaS renewal metrics guide
 
 **The most dangerous churn is the kind you never hear:** quiet disengagement that surfaces only at renewal. SWOTBee builds churn-risk detection and customer health scoring for mid-market companies across Energy, Manufacturing, and SaaS.
 
-[Book a free 30-minute discovery call →](/contactus/)
+[Get your 1-page renewal leakage estimate →](/resources/renewal-leakage-estimate/)
+
+No call needed. Prefer to talk it through first? [Book a free 30-minute discovery call →](/renewal-audit-call/)

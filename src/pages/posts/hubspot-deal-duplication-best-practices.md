@@ -227,4 +227,6 @@ For the full list of renewal pipeline mistakes, see [12 Mistakes That Are Costin
 
 **SWOTBee audits and optimizes HubSpot pipeline governance for mid-market teams.** We set up cloning workflows with proper naming, property mapping, permissions, and audit trails, so your data stays clean as you scale.
 
-[Book a free 30-minute discovery call →](/contactus/)
+[Get your 1-page renewal leakage estimate →](/resources/renewal-leakage-estimate/)
+
+No call needed. Prefer to talk it through first? [Book a free 30-minute discovery call →](/renewal-audit-call/)

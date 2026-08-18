@@ -170,4 +170,6 @@ CloneNer Enterprise ($149/mo) for high-volume cloning with templates and custom 
 
 **Not sure which tool fits?** SWOTBee has implemented every major deal cloning app for mid-market teams across Energy, Manufacturing, and SaaS. We'll help you choose, install, configure, and train your team, so you stop rebuilding deals and start closing them.
 
-[Book a free 30-minute discovery call →](/contactus/)
+[Get your 1-page renewal leakage estimate →](/resources/renewal-leakage-estimate/)
+
+No call needed. Prefer to talk it through first? [Book a free 30-minute discovery call →](/renewal-audit-call/)

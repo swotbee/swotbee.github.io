@@ -175,4 +175,6 @@ Improve onboarding, track usage and health to intervene early, fix involuntary c
 
 **SWOTBee builds the churn-reduction system on HubSpot: usage tracking, health scores, dunning, and renewal pipelines that move your SaaS churn rate down and net retention up.** Lower churn is built, not hoped for.
 
-[Book a free 30-minute discovery call →](/contactus/)
+[Get your 1-page renewal leakage estimate →](/resources/renewal-leakage-estimate/)
+
+No call needed. Prefer to talk it through first? [Book a free 30-minute discovery call →](/renewal-audit-call/)

@@ -141,4 +141,6 @@ Product-qualified signals are one of the expansion metrics in our [SaaS renewal 
 
 **Expansion is won by evidence, not guesswork:** usage signals beat gut feel every time. SWOTBee connects product usage data to the renewal pipeline for mid-market companies across Energy, Manufacturing, and SaaS.
 
-[Book a free 30-minute discovery call →](/contactus/)
+[Get your 1-page renewal leakage estimate →](/resources/renewal-leakage-estimate/)
+
+No call needed. Prefer to talk it through first? [Book a free 30-minute discovery call →](/renewal-audit-call/)

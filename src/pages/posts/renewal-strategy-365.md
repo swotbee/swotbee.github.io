@@ -202,4 +202,6 @@ The strategy here pairs with the [renewal pipeline to run it](/posts/hubspot-ren
 
 **Renewals are won in the 360 days before the contract ends, not the last 5.** SWOTBee builds renewal strategy, automation, and expansion systems for mid-market companies across Energy, Manufacturing, and SaaS.
 
-[Book a free 30-minute discovery call →](/contactus/)
+[Get your 1-page renewal leakage estimate →](/resources/renewal-leakage-estimate/)
+
+No call needed. Prefer to talk it through first? [Book a free 30-minute discovery call →](/renewal-audit-call/)

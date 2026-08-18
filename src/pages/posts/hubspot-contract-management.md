@@ -224,4 +224,6 @@ As a number property (Renewal Uplift %) on the renewal deal, set when the deal i
 
 **SWOTBee builds HubSpot-native renewal operations for mid-market teams: contract schemas, scheduled renewal deal creation with line items and uplifts, and NRR/GRR reporting inside your portal, where you own everything we build.**
 
-[Book a free 30-minute discovery call →](/contactus/)
+[Get your 1-page renewal leakage estimate →](/resources/renewal-leakage-estimate/)
+
+No call needed. Prefer to talk it through first? [Book a free 30-minute discovery call →](/renewal-audit-call/)

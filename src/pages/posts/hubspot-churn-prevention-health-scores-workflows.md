@@ -308,4 +308,6 @@ A customer health score in HubSpot is a single number or status (for example, He
 
 **SWOTBee builds churn prevention systems for mid-market teams in Energy, Utilities, Manufacturing, and SaaS, including health scoring, alert workflows, churn analysis dashboards, and renewal automation.**
 
-[Book a free 30-minute discovery call →](/contactus/)
+[Get your 1-page renewal leakage estimate →](/resources/renewal-leakage-estimate/)
+
+No call needed. Prefer to talk it through first? [Book a free 30-minute discovery call →](/renewal-audit-call/)

@@ -133,4 +133,6 @@ HubSpot is per-seat and published; NetSuite is quote-based per-user plus a platf
 
 **SWOTBee helps mid-market RevOps teams choose between NetSuite CRM and HubSpot, and connect them when the answer is both.** We map your go-to-market motion to the right system so you stop paying for tools your team will not adopt.
 
-[Book a free 30-minute discovery call →](/contactus/)
+[Get your 1-page renewal leakage estimate →](/resources/renewal-leakage-estimate/)
+
+No call needed. Prefer to talk it through first? [Book a free 30-minute discovery call →](/renewal-audit-call/)

@@ -214,4 +214,6 @@ That question is about careers at HubSpot the company, not the workspace feature
 
 **SWOTBee builds HubSpot-native renewal operations for mid-market teams: scheduled renewal deal creation with line items and uplifts, renewal pipelines with alerts, and NRR reporting, all inside your portal, and you own everything we build.**
 
-[Book a free 30-minute discovery call →](/contactus/)
+[Get your 1-page renewal leakage estimate →](/resources/renewal-leakage-estimate/)
+
+No call needed. Prefer to talk it through first? [Book a free 30-minute discovery call →](/renewal-audit-call/)

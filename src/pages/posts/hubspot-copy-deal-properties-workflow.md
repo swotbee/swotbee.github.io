@@ -262,4 +262,6 @@ These workflows also power [the 90-60-30 engagement cadence](/posts/hubspot-rene
 
 **Property copying between deals is deceptively simple in theory and surprisingly hard in practice.** SWOTBee has built deal property workflows for dozens of mid-market companies, handling the edge cases, timing issues, and data integrity challenges that trip up most teams.
 
-[Book a free 30-minute discovery call →](/contactus/)
+[Get your 1-page renewal leakage estimate →](/resources/renewal-leakage-estimate/)
+
+No call needed. Prefer to talk it through first? [Book a free 30-minute discovery call →](/renewal-audit-call/)

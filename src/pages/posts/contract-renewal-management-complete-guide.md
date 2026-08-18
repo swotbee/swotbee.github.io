@@ -239,4 +239,6 @@ There is no universal answer, only a rule you enforce. Common splits: CS owns he
 
 **SWOTBee builds HubSpot-native renewal operations for mid-market teams: scheduled renewal deal creation with line items and uplifts, a renewal pipeline with alerts, and NRR/GRR reporting, all inside your portal where you own everything we build.**
 
-[Book a free 30-minute discovery call →](/contactus/)
+[Get your 1-page renewal leakage estimate →](/resources/renewal-leakage-estimate/)
+
+No call needed. Prefer to talk it through first? [Book a free 30-minute discovery call →](/renewal-audit-call/)

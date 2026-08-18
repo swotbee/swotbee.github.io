@@ -176,4 +176,6 @@ These metrics tell you whether renewals are healthy; the [complete guide to buil
 
 **Measuring renewals is where most teams fool themselves:** blended averages, mixed revenue bases, and lagging signals. SWOTBee builds renewal forecasting, dashboards, and churn-risk scoring for mid-market companies across Energy, Manufacturing, and SaaS.
 
-[Book a free 30-minute discovery call →](/contactus/)
+[Get your 1-page renewal leakage estimate →](/resources/renewal-leakage-estimate/)
+
+No call needed. Prefer to talk it through first? [Book a free 30-minute discovery call →](/renewal-audit-call/)

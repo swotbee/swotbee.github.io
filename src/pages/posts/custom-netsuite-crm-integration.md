@@ -166,4 +166,6 @@ SuiteCloud Plus adds 10 concurrent API slots per license. You need it when your 
 
 **SWOTBee architects custom NetSuite integrations that respect NetSuite's limits instead of fighting them.** We design the queues, match keys, and sync rules so your CRM and ERP stay consistent through complex orders and real volume.
 
-[Book a free 30-minute discovery call →](/contactus/)
+[Get your 1-page renewal leakage estimate →](/resources/renewal-leakage-estimate/)
+
+No call needed. Prefer to talk it through first? [Book a free 30-minute discovery call →](/renewal-audit-call/)

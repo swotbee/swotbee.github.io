@@ -133,4 +133,6 @@ Whitespace analysis is the expansion-mapping discipline of the [365-day renewal 
 
 **Your next big deal is probably hiding inside an account you already have.** SWOTBee builds whitespace and expansion programs for mid-market companies across Energy, Manufacturing, and SaaS.
 
-[Book a free 30-minute discovery call →](/contactus/)
+[Get your 1-page renewal leakage estimate →](/resources/renewal-leakage-estimate/)
+
+No call needed. Prefer to talk it through first? [Book a free 30-minute discovery call →](/renewal-audit-call/)

@@ -216,4 +216,6 @@ Not necessarily. The native connector and iPaaS tools work without it, but Opera
 
 **SWOTBee builds HubSpot and NetSuite integrations that hold up at scale, not demos that break on the first complex order.** We map your objects, pick the right method, and own the technical bottlenecks so your front office and back office finally agree.
 
-[Book a free 30-minute discovery call →](/contactus/)
+[Get your 1-page renewal leakage estimate →](/resources/renewal-leakage-estimate/)
+
+No call needed. Prefer to talk it through first? [Book a free 30-minute discovery call →](/renewal-audit-call/)
