@@ -125,6 +125,8 @@ Most failed syncs trace back to one of three things: a **permission** gap (the c
 
 Done well, the integration doesn't just automate data movement, it gives sales, marketing, and CS a shared, accurate picture of customer experience to optimize and integrate into how each team already works, without anyone needing a second login to get product insights.
 
+Pendo isn't the only path to this outcome. If you're already on Mixpanel or Amplitude, see our [guide to connecting product usage data to HubSpot renewals](/posts/product-usage-data-renewals-hubspot/) for how the same signal gets built with either tool, or our [comparison of Pendo, Mixpanel, and Amplitude for renewal health](/posts/best-product-analytics-tools-hubspot-renewals/) if you're still choosing.
+
 ## Frequently Asked Questions
 
 **Does Pendo have a native HubSpot integration?**
