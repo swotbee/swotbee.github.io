@@ -87,7 +87,7 @@ These terms overlap, which causes confusion:
 - **Quote to cash** is the whole lifecycle from quote through cash collection, including CPQ.
 - **Order to cash (O2C)** starts later, at the order, and runs through fulfillment, invoicing, and payment. It is the back half of quote to cash.
 
-In short, CPQ is a part of Q2C, and order to cash is the downstream portion. We cover the back half in detail in our [order-to-cash process guide](/posts/order-to-cash-process/).
+In short, CPQ is a part of Q2C, and order to cash is the downstream portion. We cover the back half in detail in our [order-to-cash process guide](/posts/order-to-cash-process/), and the CPQ distinction specifically in [quote to cash vs. CPQ](/posts/quote-to-cash-vs-cpq/).
 
 ### Quote to Cash and Order to Cash: The Full Picture
 
@@ -138,6 +138,8 @@ A modern quote to cash process runs on connected software rather than manual ste
 Cost, tax handling, and analytics reporting all sit downstream of these systems: get the handoffs right and a performance indicator like days sales outstanding becomes a number finance can trust, not a guess assembled from five spreadsheets by five different stakeholders across sales, finance, and marketing.
 
 Q2C software does not replace the CRM. It extends it: the CRM stays the system of record for the customer and the deal, while dedicated Q2C tooling (CPQ, CLM, billing) handles the steps the CRM alone was never built to run. Which combination is the best quote to cash software depends on company size and existing stack: Salesforce CPQ and Revenue Cloud suit Salesforce-native enterprises, HubSpot's native quoting plus a CRM/ERP integration suits a HubSpot-first mid-market company, and dedicated platforms such as DealHub or Conga fit teams that need CLM depth a native quoting tool does not offer.
+
+See our [full guide to quote-to-cash software](/posts/quote-to-cash-software/) for how these categories compare and how to choose between a full suite and best-of-breed tools.
 
 When these are integrated, quote generation, the approval process, order creation, and the billing process flow as one connected quote to cash cycle. When they are not, each stage of the quote to cash process becomes a manual handoff where errors and delays creep in, and a slow Q2C process becomes a cash-flow problem. Improving the quote to cash process is largely about connecting these tools so the entire sales process, from an accepted quote to cash collected, runs without re-entry.
 
