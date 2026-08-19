@@ -160,7 +160,7 @@ A native connector is the cheapest, an iPaaS runs a monthly subscription, and a 
 **What is SuiteCloud Plus and do I need it?**
 SuiteCloud Plus adds 10 concurrent API slots per license. You need it when your integration volume exceeds your account's base concurrency, which is common for high-volume or multi-integration environments.
 
-**Fighting a live sync problem right now?** We catalogued the [six most-reported HubSpot NetSuite sync failures and their fixes](/integrations/hubspot-netsuite-renewals), including which ones a config change can solve and which need an integration layer.
+**Fighting a live sync problem right now?** We catalogued the [six most-reported HubSpot NetSuite sync failures and their fixes](/integrations/hubspot-netsuite-renewals/), including which ones a config change can solve and which need an integration layer.
 
 ---
 

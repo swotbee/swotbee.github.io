@@ -137,7 +137,7 @@ Most failures are data-mapping issues: the "company should be present" block, du
 **How do I keep the sync reliable?**
 Set match keys and deduplication, sequence dependent records, use a hybrid real-time and batch cadence, monitor with alerts, and test changes in a sandbox first.
 
-**Fighting a live sync problem right now?** We catalogued the [six most-reported HubSpot NetSuite sync failures and their fixes](/integrations/hubspot-netsuite-renewals), including which ones a config change can solve and which need an integration layer.
+**Fighting a live sync problem right now?** We catalogued the [six most-reported HubSpot NetSuite sync failures and their fixes](/integrations/hubspot-netsuite-renewals/), including which ones a config change can solve and which need an integration layer.
 
 ---
 

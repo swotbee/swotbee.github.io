@@ -126,7 +126,7 @@ Yes, with a two-way sync. Set sync direction by ownership so NetSuite writes the
 **Do I need developers to maintain the integration?**
 The native connector and iPaaS tools are largely no-code, but complex workflows, custom records, and API-limit tuning often need developer or RevOps support to maintain.
 
-**Fighting a live sync problem right now?** We catalogued the [six most-reported HubSpot NetSuite sync failures and their fixes](/integrations/hubspot-netsuite-renewals), including which ones a config change can solve and which need an integration layer.
+**Fighting a live sync problem right now?** We catalogued the [six most-reported HubSpot NetSuite sync failures and their fixes](/integrations/hubspot-netsuite-renewals/), including which ones a config change can solve and which need an integration layer.
 
 ---
 

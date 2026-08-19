@@ -125,7 +125,7 @@ This section walks through ERP integration with HubSpot for each major system, s
 
 ### NetSuite
 
-Can you integrate HubSpot with NetSuite? Yes, and it is the most common pairing we see. The NetSuite ERP has the deepest connector ecosystem: HubSpot's own data sync, Celigo's integration app, Boomi and Workato recipes, and custom SuiteScript builds. We keep this section short because the deep content already exists: start with the [complete HubSpot NetSuite integration guide](/posts/hubspot-netsuite-integration/), compare tools in the [NetSuite connector comparison](/posts/hubspot-netsuite-connector-comparison/), and if renewals are your driver, see our [HubSpot NetSuite renewals integration](/integrations/hubspot-netsuite-renewals) page for how contract data in NetSuite becomes renewal deals in HubSpot.
+Can you integrate HubSpot with NetSuite? Yes, and it is the most common pairing we see. The NetSuite ERP has the deepest connector ecosystem: HubSpot's own data sync, Celigo's integration app, Boomi and Workato recipes, and custom SuiteScript builds. We keep this section short because the deep content already exists: start with the [complete HubSpot NetSuite integration guide](/posts/hubspot-netsuite-integration/), compare tools in the [NetSuite connector comparison](/posts/hubspot-netsuite-connector-comparison/), and if renewals are your driver, see our [HubSpot NetSuite renewals integration](/integrations/hubspot-netsuite-renewals/) page for how contract data in NetSuite becomes renewal deals in HubSpot.
 
 ### Sage Intacct
 

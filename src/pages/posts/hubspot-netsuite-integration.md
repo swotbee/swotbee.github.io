@@ -210,7 +210,7 @@ Yes, through a planned initial data load run in batches and reconciled before th
 **Do I need HubSpot Operations Hub for a NetSuite integration?**
 Not necessarily. The native connector and iPaaS tools work without it, but Operations Hub helps if you want custom-coded workflow actions on the HubSpot side.
 
-**Fighting a live sync problem right now?** We catalogued the [six most-reported HubSpot NetSuite sync failures and their fixes](/integrations/hubspot-netsuite-renewals), including which ones a config change can solve and which need an integration layer.
+**Fighting a live sync problem right now?** We catalogued the [six most-reported HubSpot NetSuite sync failures and their fixes](/integrations/hubspot-netsuite-renewals/), including which ones a config change can solve and which need an integration layer.
 
 ---
 

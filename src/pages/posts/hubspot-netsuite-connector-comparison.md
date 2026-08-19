@@ -139,7 +139,7 @@ No. The native connector is subsidiary-blind and syncs to a single subsidiary. M
 **How much does a HubSpot NetSuite connector cost?**
 The native app is the cheapest, iPaaS platforms run a monthly subscription that scales with flows or tasks, and custom builds start in the five figures plus maintenance.
 
-**Fighting a live sync problem right now?** We catalogued the [six most-reported HubSpot NetSuite sync failures and their fixes](/integrations/hubspot-netsuite-renewals), including which ones a config change can solve and which need an integration layer.
+**Fighting a live sync problem right now?** We catalogued the [six most-reported HubSpot NetSuite sync failures and their fixes](/integrations/hubspot-netsuite-renewals/), including which ones a config change can solve and which need an integration layer.
 
 ---
 
