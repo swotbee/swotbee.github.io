@@ -5,7 +5,7 @@ pubDate: "2026-07-06"
 description: "How customer success platforms Vitally, Planhat, Totango, Catalyst, and ClientSuccess sync with HubSpot: direction, objects, friction, and the renewal gap."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 modifiedDate: "2026-07-07"
 author:
   name: "SWOTBee Team"
@@ -25,7 +25,7 @@ tags:
   - "Renewal Pipeline"
   - "Revenue Operations"
 seriesName: "Customer Success in HubSpot"
-pillarUrl: "/posts/customer-success-in-hubspot"
+pillarUrl: "/posts/customer-success-in-hubspot/"
 faqs:
   - q: "Which CS platform has the best HubSpot integration?"
     a: "There is no universal answer, but Vitally is most often cited by users for HubSpot-first depth, while Planhat offers the richest data model at the cost of heavier mapping. Totango and Catalyst have historically been Salesforce-first, and ClientSuccess covers the basics for smaller teams. Verify current object coverage in a trial; all five iterate regularly."

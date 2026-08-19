@@ -5,7 +5,7 @@ pubDate: "2026-06-13"
 description: "Why high product adoption doesn't guarantee a renewal. What customer value realization is, the value realization framework and stages, how to measure it, and why proving value drives retention."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 modifiedDate: "2026-06-23"
 author:
   name: "SWOTBee Team"
@@ -25,7 +25,7 @@ tags:
   - "Value Realization"
   - "Customer Retention"
 seriesName: "Renewal Strategy"
-pillarUrl: "/posts/renewal-strategy-365"
+pillarUrl: "/posts/renewal-strategy-365/"
 faqs:
   - q: "What is customer value realization?"
     a: "The point at which a customer achieves and recognizes the business outcomes they bought your product for. It combines delivering value and proving it."

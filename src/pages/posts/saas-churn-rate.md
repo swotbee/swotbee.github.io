@@ -5,7 +5,7 @@ pubDate: "2026-06-20"
 description: "A complete guide to SaaS churn rate: what churn is, how to calculate churn rate, what a good SaaS churn rate is, benchmarks, the types of churn, negative churn, and proven strategies to reduce churn."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 modifiedDate: "2026-06-27"
 author:
   name: "SWOTBee Team"
@@ -25,7 +25,7 @@ tags:
   - "Revenue Operations"
   - "Metrics"
 seriesName: "B2B SaaS Customer Retention"
-pillarUrl: "/posts/b2b-saas-customer-retention"
+pillarUrl: "/posts/b2b-saas-customer-retention/"
 faqs:
   - q: "What is churn rate in SaaS?"
     a: "It is the percentage of customers or recurring revenue a SaaS business loses over a period. It is the core measure of how well a SaaS company retains its customers and revenue."

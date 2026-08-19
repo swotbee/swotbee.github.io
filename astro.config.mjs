@@ -11,27 +11,46 @@ import { readdirSync, readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 
-// Derive the sitemap exclusion patterns for noindexed blog posts directly from each
-// post's own `noindex: true` frontmatter, instead of a hand-maintained duplicate list.
-// This was previously a second source of truth: a post could be marked noindex in its
-// frontmatter and still ship in the sitemap if someone forgot to also add it here.
-// Falls back to an empty array (never breaks the build) if the posts directory can't be
-// read for any reason.
-function noindexedPostSitemapPatterns() {
+// Read every post's frontmatter once and derive the two things the sitemap needs from
+// it: which posts are noindexed (so they can be excluded) and when each post was really
+// last changed (so `lastmod` tells the truth). Both were previously second sources of
+// truth: a post could be marked noindex in its frontmatter and still ship in the sitemap
+// if someone forgot to add it to a hand-maintained list, and `lastmod` was a single
+// build-time `new Date()` shared by every URL.
+// Falls back to empty (never breaks the build) if the posts directory can't be read.
+function readPostFrontmatter() {
   try {
     const __dirname = dirname(fileURLToPath(import.meta.url));
     const postsDir = join(__dirname, "src/pages/posts");
     return readdirSync(postsDir)
       .filter((f) => f.endsWith(".md"))
-      .filter((f) => {
+      .map((f) => {
         const frontmatter = readFileSync(join(postsDir, f), "utf-8").split("---", 3)[1] || "";
-        return /^noindex:\s*true\s*$/m.test(frontmatter);
-      })
-      .map((f) => `/posts/${f.replace(/\.md$/, "")}`);
+        const dateOf = (field) =>
+          (frontmatter.match(new RegExp(`^${field}:\\s*"?([0-9]{4}-[0-9]{2}-[0-9]{2})`, "m")) || [])[1];
+        return {
+          slug: f.replace(/\.md$/, ""),
+          noindex: /^noindex:\s*true\s*$/m.test(frontmatter),
+          // modifiedDate is the real "last changed" signal; pubDate is the fallback for
+          // the 37 posts that have never been revised since publication.
+          lastmod: dateOf("modifiedDate") || dateOf("pubDate"),
+        };
+      });
   } catch {
     return [];
   }
 }
+
+const POSTS = readPostFrontmatter();
+
+function noindexedPostSitemapPatterns() {
+  return POSTS.filter((p) => p.noindex).map((p) => `/posts/${p.slug}`);
+}
+
+// URL path -> real last-modified date, for the sitemap's `serialize` hook.
+const POST_LASTMOD = new Map(
+  POSTS.filter((p) => p.lastmod).map((p) => [`/posts/${p.slug}/`, p.lastmod])
+);
 
 export default defineConfig({
   site: "https://swotbee.com",
@@ -62,7 +81,20 @@ export default defineConfig({
     sitemap({
       changefreq: 'weekly',
       priority: 0.7,
-      lastmod: new Date(),
+      // No global `lastmod`. It used to be `new Date()`, which stamped all ~150 URLs
+      // with the same instant on every build, so the sitemap claimed the entire site
+      // changed each deploy. Google discounts sitemaps that do that, and it buried the
+      // freshness signal on the handful of pages actually being refreshed.
+      // Posts now carry their own date from frontmatter (see serialize below). Pages
+      // that have no trustworthy date carry no `lastmod` at all: omitting the field is
+      // valid per the sitemap protocol, and an absent date is better than a false one.
+      serialize: (item) => {
+        const path = new URL(item.url).pathname;
+        const lastmod = POST_LASTMOD.get(decodeURIComponent(path));
+        if (lastmod) return { ...item, lastmod };
+        const { lastmod: _drop, ...rest } = item;
+        return rest;
+      },
       // Include only production-facing pages in the sitemap. The noindexed-post patterns
       // are derived from frontmatter (see noindexedPostSitemapPatterns above); everything
       // else here is dev/legacy pages that were never routed through post frontmatter at
@@ -85,6 +117,10 @@ export default defineConfig({
           '/security/',
           '/hero-preview/',
           '/index-old/',
+          // src/pages/old_index.astro: a previous homepage, already noindex. Listing a
+          // noindex page for crawling is a contradiction, same as index-consulting-old
+          // below.
+          '/old_index/',
           // The consulting-positioned homepage that served / until 2026-08-11. Kept
           // routed and noindex so it can be eyeballed before any decision to restore it,
           // but it must never appear in the sitemap: a noindex page listed for crawling

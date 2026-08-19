@@ -5,7 +5,7 @@ pubDate: "2026-04-02"
 description: "How to clone HubSpot deals for renewals without losing line items, ARR fields, owners, dates, or audit history. Covers native cloning, workflows, apps, and API options."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 modifiedDate: "2026-07-14"
 author:
   name: "SWOTBee Team"
@@ -54,7 +54,7 @@ faqs:
   - q: "What's the best deal cloning app for HubSpot?"
     a: "It depends on your use case: CloneNer for the most features, Clone a Deal for value at $9.99/mo flat, and Deal Duplicator for engagement cloning."
 funnelCta: "renewal-audit"
-pillarUrl: "/posts/hubspot-clone-deal-complete-guide"
+pillarUrl: "/posts/hubspot-clone-deal-complete-guide/"
 howto: true
 howtoSteps:
   - name: "Navigate to the deal record"
@@ -342,7 +342,7 @@ It depends on your use case. See our [full comparison](/posts/hubspot-deal-cloni
 
 Deal cloning is the operational foundation of any recurring revenue process. Whether you're building a renewal pipeline, scaling upsells, or standardizing deal templates, getting cloning right saves hours per week and keeps your data clean.
 
-**Evaluating apps for renewals specifically?** Cloning is only step one of a renewal system. See our [honest comparison of HubSpot renewal apps](/compare/hubspot-renewal-apps), including the capabilities a copy button cannot reach.
+**Evaluating apps for renewals specifically?** Cloning is only step one of a renewal system. See our [honest comparison of HubSpot renewal apps](/compare/hubspot-renewal-apps/), including the capabilities a copy button cannot reach.
 
 **Need help setting this up?** SWOTBee builds deal cloning automation for mid-market teams in Energy, Manufacturing, SaaS, and Construction. We handle the workflow architecture, app selection, line item setup, and team training.
 

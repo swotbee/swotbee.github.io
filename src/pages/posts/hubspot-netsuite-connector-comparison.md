@@ -5,7 +5,7 @@ pubDate: "2026-05-22"
 description: "A RevOps comparison of HubSpot NetSuite connectors: the native marketplace app, Celigo, Workato, Boomi, and custom API development. How to match the connector to your data volume, subsidiaries, and complexity."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 modifiedDate: "2026-07-06"
 author:
   name: "SWOTBee Team"
@@ -25,7 +25,7 @@ tags:
   - "iPaaS"
   - "Revenue Operations"
 seriesName: "HubSpot NetSuite Integration"
-pillarUrl: "/posts/hubspot-netsuite-integration"
+pillarUrl: "/posts/hubspot-netsuite-integration/"
 faqs:
   - q: "Can HubSpot connect to NetSuite?"
     a: "Yes. HubSpot connects to NetSuite through a native marketplace connector, iPaaS platforms such as Celigo, Workato, and Boomi, or a custom API integration."

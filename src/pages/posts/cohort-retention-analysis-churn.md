@@ -5,7 +5,7 @@ pubDate: "2026-05-24"
 description: "How SaaS cohort analysis reveals the retention your blended churn rate hides: types of cohort analysis, how to perform one, the retention curve, common pitfalls, and how cohorts predict LTV."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 modifiedDate: "2026-06-23"
 author:
   name: "SWOTBee Team"
@@ -25,7 +25,7 @@ tags:
   - "Revenue Operations"
   - "Renewal Pipeline"
 seriesName: "Renewal Metrics"
-pillarUrl: "/posts/renewal-metrics-explained"
+pillarUrl: "/posts/renewal-metrics-explained/"
 faqs:
   - q: "What is SaaS cohort analysis?"
     a: "It groups customers (usually by signup period) and tracks how each group retains, churns, or expands over time, instead of averaging everyone into one blended number."

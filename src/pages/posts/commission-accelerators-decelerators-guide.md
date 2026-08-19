@@ -5,7 +5,7 @@ pubDate: "2026-04-28"
 description: "Accelerators turn Q4 coasters into Q4 crushers. Decelerators are the most misunderstood tool in sales comp. Here's how to use both: and what happens when you get them wrong."
 category:
   title: "Sales Compensation"
-  href: "/categories/sales-compensation"
+  href: "/categories/sales-compensation/"
 author:
   name: "SWOTBee Team"
   url: "https://swotbee.com"
@@ -24,7 +24,7 @@ tags:
   - "Sales Compensation"
   - "Sales Motivation"
 seriesName: "Multi-Tiered Affiliate Incentives"
-pillarUrl: "/posts/multi-tiered-affiliate-incentive-structure-guide"
+pillarUrl: "/posts/multi-tiered-affiliate-incentive-structure-guide/"
 ---
 
 # Commission Accelerators & Decelerators: The Two Levers That Drive (or Kill) Sales Overperformance

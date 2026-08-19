@@ -5,7 +5,7 @@ pubDate: "2026-06-25"
 description: "An honest 2026 guide to Growth-Driven Design on HubSpot: what GDD is, its three stages, how it compares to traditional web design, the retired certification, and when it is genuinely worth it."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 modifiedDate: "2026-06-27"
 author:
   name: "SWOTBee Team"
@@ -24,7 +24,7 @@ tags:
   - "Web Design"
   - "Business Growth"
 seriesName: "HubSpot for Business Growth"
-pillarUrl: "/posts/does-hubspot-crm-scale"
+pillarUrl: "/posts/does-hubspot-crm-scale/"
 faqs:
   - q: "What is Growth-Driven Design?"
     a: "A website methodology that replaces the big one-time redesign with a fast launch-pad site plus continuous, data-driven improvement, reducing the cost and risk of traditional web design."

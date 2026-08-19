@@ -5,7 +5,7 @@ pubDate: "2026-04-07"
 description: "42% of sellers quit after a compensation dispute. Most never tell you why. Here's how commission errors silently erode your team's trust: and what to do about it."
 category:
   title: "Sales Leadership"
-  href: "/categories/sales-leadership"
+  href: "/categories/sales-leadership/"
 author:
   name: "SWOTBee Team"
   url: "https://swotbee.com"
@@ -24,7 +24,7 @@ tags:
   - "Sales Leadership"
   - "Revenue Operations"
 seriesName: "Sales Commission Tracking"
-pillarUrl: "/posts/hubspot-sales-commission-tracking-complete-guide"
+pillarUrl: "/posts/hubspot-sales-commission-tracking-complete-guide/"
 ---
 
 Priya closed three major deals last month. One was an enterprise account she'd been nurturing for almost a year. Another was an upsell she pulled together in the last four days of the quarter by working nights and weekends. Together, it was going to be her best commission check in two years.

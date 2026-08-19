@@ -5,7 +5,7 @@ pubDate: "2026-07-06"
 description: "Renewal tracking software vs spreadsheets: when a spreadsheet works, the exact columns to use, five signals you have outgrown it, and how to move to a CRM."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 modifiedDate: "2026-07-06"
 author:
   name: "SWOTBee Team"
@@ -25,7 +25,7 @@ tags:
   - "Revenue Operations"
   - "CRM Migration"
 seriesName: "Contract Renewal Management"
-pillarUrl: "/posts/contract-renewal-management-complete-guide"
+pillarUrl: "/posts/contract-renewal-management-complete-guide/"
 faqs:
   - q: "What is renewal tracking software and why does it matter?"
     a: "It is any system that centralizes contract dates and terms, sends automated renewal reminders, creates the renewal deal or task, and reports on upcoming renewals. It matters because manual tracking fails silently: nothing looks wrong until a missed renewal or an unwanted auto-renewal shows up in revenue or spend."
@@ -144,7 +144,7 @@ If some renewals get a price increase and others silently renew flat because nob
 
 ### 4. Leadership asks for renewal reporting you cannot produce
 
-"What is our renewal rate this quarter? What is NRR trending toward?" If answering takes an afternoon of pivot tables, and the answer changes depending on who builds the pivot, you have outgrown the tool. Renewal software gives leadership real-time renewal insight, a live dashboard of upcoming renewal dates, and visibility instead of a monthly archaeology project. You can estimate what this opacity costs you with our [renewal leakage estimate](/resources/renewal-leakage-estimate).
+"What is our renewal rate this quarter? What is NRR trending toward?" If answering takes an afternoon of pivot tables, and the answer changes depending on who builds the pivot, you have outgrown the tool. Renewal software gives leadership real-time renewal insight, a live dashboard of upcoming renewal dates, and visibility instead of a monthly archaeology project. You can estimate what this opacity costs you with our [renewal leakage estimate](/resources/renewal-leakage-estimate/).
 
 ### 5. Renewal data lives in the sheet, but the work happens elsewhere
 

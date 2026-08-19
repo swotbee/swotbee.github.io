@@ -5,7 +5,7 @@ pubDate: "2026-07-06"
 description: "ChurnZero pricing is quote-based, with buyers reporting mid five figures annually. What drives the cost, ChurnZero alternatives, and when HubSpot is enough."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 modifiedDate: "2026-07-06"
 author:
   name: "SWOTBee Team"
@@ -25,7 +25,7 @@ tags:
   - "CS Platforms"
   - "Pricing"
 seriesName: "Customer Success in HubSpot"
-pillarUrl: "/posts/customer-success-in-hubspot"
+pillarUrl: "/posts/customer-success-in-hubspot/"
 faqs:
   - q: "How much does ChurnZero cost in 2026?"
     a: "ChurnZero does not publish pricing; all deals are quoted. As of mid-2026, buyers most commonly report mid-five-figure annual contracts for mid-market deployments, with smaller and larger reports on either side. Account volume, usage data, and modules drive the spread, so treat reported figures as directional only."

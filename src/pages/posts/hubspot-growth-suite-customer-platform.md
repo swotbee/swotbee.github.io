@@ -5,7 +5,7 @@ pubDate: "2026-06-13"
 description: "The HubSpot Growth Suite is a discontinued product name. Here is what it became (the Customer Platform), which hubs are included, what it costs in 2026, and how the Starter, Professional, and Enterprise plans differ."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 modifiedDate: "2026-06-27"
 author:
   name: "SWOTBee Team"
@@ -24,7 +24,7 @@ tags:
   - "Business Growth"
   - "Pricing"
 seriesName: "HubSpot for Business Growth"
-pillarUrl: "/posts/does-hubspot-crm-scale"
+pillarUrl: "/posts/does-hubspot-crm-scale/"
 faqs:
   - q: "What is the HubSpot Growth Suite?"
     a: "It was HubSpot's all-in-one bundle from 2018 combining CRM, Marketing, Sales, and Service Hubs at a discount. It has been renamed and repackaged as the Customer Platform."

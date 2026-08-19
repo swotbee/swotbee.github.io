@@ -7,7 +7,7 @@ pubDate: "2025-04-03"
 description: "Discover the differences between RecurPost and HubSpot in this comprehensive comparison. Evaluate features, pricing, and benefits of these social media and marketing tools to choose the best fit for your business. Explore RecurPost vs HubSpot now!"
 category:
   title: "CRM Comparisons & Alternatives"
-  href: "/categories/crm-comparisons"
+  href: "/categories/crm-comparisons/"
 author:
   name: "SWOTBee Team"
   url: "https://swotbee.com"

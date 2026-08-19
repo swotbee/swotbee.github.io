@@ -5,7 +5,7 @@ pubDate: "2026-05-08"
 description: "A ready-to-use HubSpot renewal pipeline template: copy-paste deal stages, custom properties, a deal naming convention, and the workflow checklist to set up a separate renewal pipeline fast."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 modifiedDate: "2026-06-23"
 author:
   name: "SWOTBee Team"
@@ -25,7 +25,7 @@ tags:
   - "Revenue Operations"
   - "SaaS"
 seriesName: "HubSpot Renewal Pipeline"
-pillarUrl: "/posts/hubspot-renewal-pipeline-complete-guide"
+pillarUrl: "/posts/hubspot-renewal-pipeline-complete-guide/"
 faqs:
   - q: "How do I set up a renewal pipeline in HubSpot?"
     a: "Create a separate \"Renewals\" deal pipeline, add the deal stages and custom properties from the template above, then build the automation checklist to create renewal deals and reminders automatically."

@@ -7,7 +7,7 @@ description: "Harness the power of Amplitude HubSpot Integration to boost market
 slut: optimize-marketing-with-amplitude-hubspot-integration
 category:
   title: "Implementation & Integration Tutorials"
-  href: "/categories/implementation-tutorials"
+  href: "/categories/implementation-tutorials/"
 author:
   name: "SWOTBee Team"
   url: "https://swotbee.com"

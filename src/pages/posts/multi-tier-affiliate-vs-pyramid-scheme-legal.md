@@ -7,7 +7,7 @@ pubDate: "2026-04-24"
 description: "Every time someone proposes a multi-tier commission structure, someone asks 'isn't that a pyramid scheme?' Here's the actual legal distinction: in language a sales leader can understand."
 category:
   title: "Sales Compensation"
-  href: "/categories/sales-compensation"
+  href: "/categories/sales-compensation/"
 author:
   name: "SWOTBee Team"
   url: "https://swotbee.com"
@@ -26,7 +26,7 @@ tags:
   - "FTC"
   - "Sales Compensation"
 seriesName: "Multi-Tiered Affiliate Incentives"
-pillarUrl: "/posts/multi-tiered-affiliate-incentive-structure-guide"
+pillarUrl: "/posts/multi-tiered-affiliate-incentive-structure-guide/"
 ---
 
 "Isn't that just a pyramid scheme?"

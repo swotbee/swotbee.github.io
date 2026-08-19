@@ -5,7 +5,7 @@ pubDate: "2026-06-21"
 description: "A practical guide to the HubSpot NetSuite sync: what data syncs between the two systems, one-way vs two-way sync, the methods, common sync issues, and how to keep the sync reliable in real time."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 modifiedDate: "2026-06-27"
 author:
   name: "SWOTBee Team"
@@ -24,7 +24,7 @@ tags:
   - "Integration"
   - "Sync"
 seriesName: "HubSpot NetSuite Integration"
-pillarUrl: "/posts/hubspot-netsuite-integration"
+pillarUrl: "/posts/hubspot-netsuite-integration/"
 faqs:
   - q: "What data syncs between HubSpot and NetSuite?"
     a: "Contacts, companies, deals (as opportunities or sales orders), products, and invoices or payments. A closed deal can create a NetSuite sales order, and invoice status can flow back into HubSpot."

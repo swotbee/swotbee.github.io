@@ -5,7 +5,7 @@ pubDate: "2026-07-31"
 description: "A feature by feature, price by price look at FlowNer and Enrollem, two HubSpot apps that automate sequence enrollment without a Sales Hub Enterprise subscription."
 category:
   title: "CRM Comparisons & Alternatives"
-  href: "/categories/crm-comparisons"
+  href: "/categories/crm-comparisons/"
 modifiedDate: "2026-08-04"
 author:
   name: "SWOTBee Team"

@@ -7,7 +7,7 @@ pubDate: "2025-05-21"
 description: "Explore ActiveCampaign vs HubSpot: Which is better for your business? Compare pricing, email automation tools, and marketing capabilities to decide wisely."
 category:
   title: "CRM Comparisons & Alternatives"
-  href: "/categories/crm-comparisons"
+  href: "/categories/crm-comparisons/"
 author:
   name: "SWOTBee Team"
   url: "https://swotbee.com"

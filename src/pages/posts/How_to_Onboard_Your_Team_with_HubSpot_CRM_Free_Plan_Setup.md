@@ -7,7 +7,7 @@ pubDate: "2025-07-09"
 description: "Follow our practical step-by-step HubSpot CRM onboarding walkthrough to set up your free plan and ensure smooth adoption across your sales and marketing teams. This guide covers everything from initial setup to advanced automation, helping you maximize the HubSpot platform's potential."
 category:
   title: "CRM Fundamentals & Beginners Guides"
-  href: "/categories/crm-fundamentals"
+  href: "/categories/crm-fundamentals/"
 author:
   name: "SWOTBee Team"
   url: "https://swotbee.com"

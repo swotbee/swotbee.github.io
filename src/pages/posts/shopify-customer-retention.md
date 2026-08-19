@@ -5,7 +5,7 @@ pubDate: "2026-06-26"
 description: "Proven Shopify customer retention strategies: how to measure retention on Shopify, what a good repeat customer rate is, loyalty programs, subscriptions, email and SMS, and the apps that drive repeat purchases."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 modifiedDate: "2026-06-27"
 author:
   name: "SWOTBee Team"
@@ -24,7 +24,7 @@ tags:
   - "Ecommerce"
   - "Loyalty"
 seriesName: "B2B SaaS Customer Retention"
-pillarUrl: "/posts/b2b-saas-customer-retention"
+pillarUrl: "/posts/b2b-saas-customer-retention/"
 faqs:
   - q: "What are effective Shopify customer retention strategies?"
     a: "Loyalty programs, subscriptions for replenishable products, a strong post-purchase experience, email and SMS lifecycle marketing, personalization, and acting on customer reviews and feedback."

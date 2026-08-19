@@ -5,7 +5,7 @@ pubDate: "2026-04-02"
 description: "Three proven HubSpot renewal pipeline stage models: time-based, activity-based, and customer-journey: with exact stage definitions, probability weights, and when to use each."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 author:
   name: "SWOTBee Team"
   url: "https://swotbee.com"
@@ -18,7 +18,7 @@ tags:
   - "Revenue Operations"
   - "Pipeline Management"
 seriesName: "HubSpot Renewal Pipeline"
-pillarUrl: "/posts/hubspot-renewal-pipeline-complete-guide"
+pillarUrl: "/posts/hubspot-renewal-pipeline-complete-guide/"
 modifiedDate: "2026-07-24"
 funnelCta: "renewal-audit"
 faqs:

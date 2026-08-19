@@ -7,7 +7,7 @@ pubDate: "2026-05-05"
 description: "The complete guide to multi-tiered affiliate incentive structures: how they work, how to design them, how to implement them in HubSpot, and how to avoid the pitfalls that sink most programs."
 category:
   title: "Sales Compensation"
-  href: "/categories/sales-compensation"
+  href: "/categories/sales-compensation/"
 modifiedDate: "2026-05-05"
 author:
   name: "SWOTBee Team"

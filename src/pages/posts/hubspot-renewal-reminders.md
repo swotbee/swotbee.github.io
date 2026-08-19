@@ -5,7 +5,7 @@ pubDate: "2026-05-05"
 description: "A step-by-step guide to building renewal reminders in HubSpot: track renewal dates, automate alerts and tasks 90/60/30 days before expiration, and stop renewals from slipping through the cracks."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 modifiedDate: "2026-07-06"
 author:
   name: "SWOTBee Team"
@@ -25,7 +25,7 @@ tags:
   - "Customer Success"
   - "Revenue Operations"
 seriesName: "HubSpot Renewal Pipeline"
-pillarUrl: "/posts/hubspot-renewal-pipeline-complete-guide"
+pillarUrl: "/posts/hubspot-renewal-pipeline-complete-guide/"
 faqs:
   - q: "Can HubSpot send renewal reminders automatically?"
     a: "Yes. A date-based workflow triggered on the renewal date can create tasks, send internal notifications, and email reminders without manual effort. This automated renewal reminder setup is the heart of renewal management in HubSpot."

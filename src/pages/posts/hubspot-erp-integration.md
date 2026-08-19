@@ -5,7 +5,7 @@ pubDate: "2026-07-06"
 description: "HubSpot ERP integration explained: native connectors, iPaaS, and custom API methods for NetSuite, Sage Intacct, Dynamics, and QuickBooks, plus renewals."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 modifiedDate: "2026-07-07"
 author:
   name: "SWOTBee Team"

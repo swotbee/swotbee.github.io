@@ -5,7 +5,7 @@ pubDate: "2026-07-29"
 description: "The '208% more revenue' sales and marketing alignment statistic is repeated across dozens of B2B marketing sites as proof of revenue growth. We traced the citation chain and checked what peer-reviewed research actually found instead."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 modifiedDate: "2026-07-29"
 author:
   name: "SWOTBee Team"

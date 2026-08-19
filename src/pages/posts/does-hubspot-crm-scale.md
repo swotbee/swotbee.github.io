@@ -5,7 +5,7 @@ pubDate: "2026-06-10"
 description: "Does HubSpot CRM scale with business growth? An honest, current guide: what scales natively, the real user ceiling, the cost at scale, and a decision framework for when to scale on HubSpot versus migrate."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 modifiedDate: "2026-06-27"
 author:
   name: "SWOTBee Team"

@@ -5,7 +5,7 @@ pubDate: "2026-04-17"
 description: "Every commission tool says they're the best. We compared 10 based on actual user reviews, HubSpot integration depth, pricing transparency, and how well each handles renewal and expansion revenue commission: so you don't have to."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 author:
   name: "SWOTBee Team"
   url: "https://swotbee.com"
@@ -18,7 +18,7 @@ author:
     - "Revenue Operations"
 image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop"
 seriesName: "Sales Commission Tracking"
-pillarUrl: "/posts/hubspot-sales-commission-tracking-complete-guide"
+pillarUrl: "/posts/hubspot-sales-commission-tracking-complete-guide/"
 modifiedDate: "2026-07-24"
 funnelCta: "renewal-audit"
 tags:

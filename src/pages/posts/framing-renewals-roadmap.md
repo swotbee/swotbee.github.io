@@ -5,7 +5,7 @@ pubDate: "2026-06-23"
 description: "How to use the renewal conversation to pitch the future roadmap instead of just reviewing past performance. What a renewal conversation is, why forward-framing works, and how to run one."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 modifiedDate: "2026-06-23"
 author:
   name: "SWOTBee Team"
@@ -25,7 +25,7 @@ tags:
   - "Account Management"
   - "Revenue Operations"
 seriesName: "Renewal Strategy"
-pillarUrl: "/posts/renewal-strategy-365"
+pillarUrl: "/posts/renewal-strategy-365/"
 faqs:
   - q: "What is a renewal conversation?"
     a: "The discussion where a customer decides whether to renew, best started 60 to 90 days ahead and framed around future goals rather than just past usage."

@@ -5,7 +5,7 @@ pubDate: "2026-06-01"
 description: "A step-by-step playbook to migrate NetSuite CRM to HubSpot: the pre-migration audit, mapping the data model, extracting clean data, resolving duplicates, rebuilding workflows, and validating after go-live."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 modifiedDate: "2026-06-26"
 author:
   name: "SWOTBee Team"
@@ -24,7 +24,7 @@ tags:
   - "CRM Migration"
   - "Revenue Operations"
 seriesName: "HubSpot NetSuite Integration"
-pillarUrl: "/posts/hubspot-netsuite-integration"
+pillarUrl: "/posts/hubspot-netsuite-integration/"
 faqs:
   - q: "What does it mean to migrate NetSuite CRM to HubSpot?"
     a: "It means moving your front-office CRM data and processes (contacts, companies, deals, and activity) out of NetSuite into HubSpot, usually while keeping NetSuite for finance and connecting the two with a sync."

@@ -5,7 +5,7 @@ pubDate: "2026-04-24"
 description: "Multi-tier commissions aren't pyramid schemes: they're how smart companies turn top performers into talent magnets. Here's how they work, why they're trending, and when they make sense."
 category:
   title: "Sales Compensation"
-  href: "/categories/sales-compensation"
+  href: "/categories/sales-compensation/"
 author:
   name: "SWOTBee Team"
   url: "https://swotbee.com"
@@ -24,7 +24,7 @@ tags:
   - "Partner Programs"
   - "Revenue Operations"
 seriesName: "Multi-Tiered Affiliate Incentives"
-pillarUrl: "/posts/multi-tiered-affiliate-incentive-structure-guide"
+pillarUrl: "/posts/multi-tiered-affiliate-incentive-structure-guide/"
 ---
 
 Mention the word "tiers" in a sales comp meeting and someone will inevitably make the joke. "Isn't that just like those essential oils companies?" Everyone laughs, the conversation moves on, and a genuinely useful compensation model gets dismissed because of guilt by association.

@@ -5,7 +5,7 @@ pubDate: "2026-07-06"
 description: "A practical guide to HubSpot contract management: how to manage contracts with deal properties, track contract end dates, renewal workflows, and reporting."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 modifiedDate: "2026-07-07"
 author:
   name: "SWOTBee Team"
@@ -25,7 +25,7 @@ tags:
   - "Renewal Pipeline"
   - "Revenue Operations"
 seriesName: "Contract Renewal Management"
-pillarUrl: "/posts/contract-renewal-management-complete-guide"
+pillarUrl: "/posts/contract-renewal-management-complete-guide/"
 faqs:
   - q: "Does HubSpot have a contract object?"
     a: "No. HubSpot has no native contract object at any tier. Contracts are modeled on deals with custom date properties, or on a custom object in Enterprise portals. The signed document itself is stored as an attachment, a quote, or in an integrated CLM."

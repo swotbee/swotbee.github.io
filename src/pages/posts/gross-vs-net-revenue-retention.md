@@ -1,12 +1,12 @@
 ---
 layout: ../../layouts/BlogPostLayout.astro
-title: "Gross vs Net Revenue Retention: The Valuation Multipliers"
+title: "Net Dollar Retention (NDR): Formula, GRR vs NRR, and the Valuation Multiplier"
 pubDate: "2026-05-19"
-description: "GRR vs NRR explained: how to calculate gross and net revenue retention, what good benchmarks look like, why investors demand NRR over 115%, and how net dollar retention drives SaaS valuation."
+description: "Net dollar retention (NDR) explained: the formula, a worked calculation, how NDR compares to NRR and GRR, what good benchmarks look like, and why investors reward NDR over 115%."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
-modifiedDate: "2026-06-23"
+  href: "/categories/revenue-operations/"
+modifiedDate: "2026-08-18"
 author:
   name: "SWOTBee Team"
   url: "https://swotbee.com"
@@ -25,15 +25,21 @@ tags:
   - "Churn"
   - "Renewal Pipeline"
 seriesName: "Renewal Metrics"
-pillarUrl: "/posts/renewal-metrics-explained"
+pillarUrl: "/posts/renewal-metrics-explained/"
 faqs:
+  - q: "What is net dollar retention (NDR)?"
+    a: "Net dollar retention is the percentage of recurring revenue you keep and grow from your existing customer base over a period, including expansion from upgrades and cross-sell. It is the same metric as net revenue retention (NRR); NDR and NRR are two names for one number."
+  - q: "What is the net dollar retention formula?"
+    a: "NDR = (Starting MRR − churn − downgrades + expansion revenue) ÷ Starting MRR × 100, measured on existing customers only, excluding any revenue from new logos."
+  - q: "How do you calculate net dollar retention?"
+    a: "Take your recurring revenue from existing customers at the start of the period, subtract churn and downgrades, add expansion revenue from upgrades and cross-sell, then divide by the starting figure and multiply by 100."
+  - q: "What is the difference between net dollar retention and net revenue retention?"
+    a: "None. Net dollar retention (NDR) and net revenue retention (NRR) are the same calculation. Some companies say NDR, others say NRR; SaaS earnings calls use both interchangeably."
   - q: "What is the difference between GRR and NRR?"
-    a: "GRR measures recurring revenue retained after churn and downgrades (capped at 100%); NRR adds expansion revenue on top, so it can exceed 100%. The difference is expansion."
-  - q: "How do you calculate net revenue retention?"
-    a: "NRR = (starting MRR − churn − downgrades + expansion) ÷ starting MRR × 100, measured on existing customers only."
-  - q: "What is a good NRR benchmark?"
-    a: "110% is healthy and 120%+ is best-in-class for B2B SaaS; investors particularly reward NRR over 115%."
-  - q: "What does 120% NRR mean?"
+    a: "GRR measures recurring revenue retained after churn and downgrades (capped at 100%); NRR (also called NDR) adds expansion revenue on top, so it can exceed 100%. The difference is expansion."
+  - q: "What is a good net dollar retention rate?"
+    a: "110% is healthy and 120%+ is best-in-class for B2B SaaS; investors particularly reward net dollar retention over 115%."
+  - q: "What does 120% NDR mean?"
     a: "Your existing customer base grew its recurring revenue 20% over the period, with expansion outpacing all churn and downgrades."
   - q: "Is net revenue retention the same as net dollar retention?"
     a: "Yes. NRR and NDR are two names for the same metric."
@@ -41,13 +47,31 @@ faqs:
 
 > This article is part of our [guide to SaaS renewal metrics](/posts/renewal-metrics-explained/).
 
-**Gross revenue retention (GRR) measures how much recurring revenue you keep from existing customers after churn and downgrades; net revenue retention (NRR) adds expansion revenue on top, so it can exceed 100%.** GRR shows how well you patch leaks; NRR shows whether your existing customers fund growth on their own. The gap between the two is your expansion engine, and NRR is the metric investors use as a valuation multiplier.
+**Net dollar retention (NDR), also called net revenue retention (NRR), is the percentage of recurring revenue you keep and grow from your existing customer base over a period: it starts from churn and downgrades, then adds back expansion revenue, so it can climb well above 100%.** Gross revenue retention (GRR) is the stricter sibling metric: it measures the same base after churn and downgrades but without adding expansion back, so it caps at 100%. The gap between GRR and NDR is your expansion engine, and NDR is the metric investors use as a valuation multiplier.
 
-If you track only one revenue retention rate, you are missing half the story. GRR and NRR together tell you whether your recurring revenue base is leaking, holding, or compounding.
+If you track only one revenue retention rate, you are missing half the story. GRR and net dollar retention together tell you whether your recurring revenue base is leaking, holding, or compounding.
+
+Net dollar retention indicates, in one number, whether a company's NDR is increasing revenue from current customers faster than it loses it. An NDR above 100% means revenue from its existing customer base is growing without needing to acquire new customers; an NDR below 100% means the opposite, and it is often called by its performance indicator alongside net income and pricing as one of the metrics a software as a service board reviews every quarter. A higher NDR is unambiguously better than a lower NDR, and Corporate Finance Institute (CFI) and Wall Street Prep both treat it as a core valuation input.
 
 ---
 
-## GRR vs NRR: The Core Difference
+## The Net Dollar Retention Formula
+
+```
+NDR = (Starting MRR − churn − downgrades + expansion revenue) ÷ Starting MRR × 100
+```
+
+Net dollar retention takes the total recurring revenue from your existing customers at the start of a period, subtracts what you lost to churn (the customer churn rate applied to revenue) and downgrades, adds back what you gained from expansion (upselling, cross-selling, seat growth), and divides by the starting figure. It is calculated only on existing customers; revenue from newly acquired customers never enters the formula to calculate NDR, which is what makes it a pure measure of how well a SaaS business grows the base it already has, independent of customer acquisition cost or new-logo growth.
+
+Net dollar retention, net revenue retention, and NDR vs NRR are all names for this same number, and "net dollar retention" is also referred to as net revenue retention interchangeably in most SaaS reporting. There is no calculation difference between them: a company reporting "a company's NDR of 118%" and one reporting "NRR of 118%" are describing an identical result. A close cousin, gross dollar retention, is the same calculation as GRR below: recurring revenue retained without adding expansion back.
+
+### Why Net Dollar Retention Matters for SaaS Companies
+
+For a subscription business model, revenue does not reset to zero each period the way it does for a one-time-purchase company: existing customers carry forward, so change in revenue from that base compounds. A high NDR means a SaaS company can grow its total recurring revenue even in a quarter where it fails to acquire new customers at all, because additional revenue from existing accounts, delivered by customer success driving adoption and expansion, more than replaces churn. An NDR greater than 100% is the clearest proof that a customer success motion is working, independent of how many new logos sales brings in. That is why net dollar retention is treated as a measure of customer retention and of financial stability at once: it captures customer satisfaction and retention (do customers stay and grow) in a single, auditable number, and it correlates with customer lifetime value, since a high-NDR account is worth more over its lifetime than the same account with flat or negative retention. Investors reading a valuation multiple look at NDR before customer acquisition cost, because NDR tells them whether growth compounds or has to be bought again every quarter.
+
+---
+
+## GRR vs NRR (Net Dollar Retention): The Core Difference
 
 <img src="/assets/posts/diagrams/grr-vs-nrr.svg" alt="GRR caps at 100% while NRR adds expansion and can exceed 100%" width="640" height="250" loading="lazy" decoding="async" />
 
@@ -80,9 +104,9 @@ The only difference between the two formulas is the `+ expansion revenue` term. 
 
 ### Is NRR the Same as Net Dollar Retention?
 
-Yes. Net revenue retention and net dollar retention (NDR) are the same metric with two names. You will see both in board decks; they measure the same percentage of recurring revenue retained including expansion.
+Yes. Net revenue retention and net dollar retention (NDR) are the same metric with two names, and the net dollar retention formula and the NRR formula are identical. You will see both in board decks; they measure the same percentage of recurring revenue retained including expansion.
 
-### A Worked Example
+### A Worked Example: Calculating Net Dollar Retention
 
 Take a cohort with $100,000 in recurring revenue at the start of the period (you can use monthly recurring revenue or annual recurring revenue, as long as you are consistent). Over the year:
 
@@ -94,32 +118,47 @@ The math:
 
 ```
 GRR = (100,000 − 8,000 − 4,000) ÷ 100,000 = 88%
-NRR = (100,000 − 8,000 − 4,000 + 22,000) ÷ 100,000 = 110%
+NDR = (100,000 − 8,000 − 4,000 + 22,000) ÷ 100,000 = 110%
 ```
 
-Here the gross retention rate is 88% and the net retention rate is 110%. The 22-point gap is pure expansion. This is the difference between net revenue retention and gross retention in one example: gross revenue retention focuses on what you kept, while net revenue retention considers expansion on top. Note the number of customers is irrelevant to the math; both are revenue retention rates measured on the recurring revenue at the start, not on logos.
+Here the gross retention rate is 88% and the net dollar retention rate is 110%. The 22-point gap is pure expansion. This is the difference between net dollar retention and gross retention in one example: gross revenue retention focuses on what you kept, while net dollar retention considers expansion on top. Note the number of customers is irrelevant to the math; both are revenue retention rates measured on the recurring revenue at the start, not on logos.
+
+### NDR vs NRR vs GRR at a Glance
+
+| | Gross revenue retention (GRR) | Net dollar retention (NDR / NRR) |
+|---|---|---|
+| Formula | (Starting MRR − churn − downgrades) ÷ Starting MRR | (Starting MRR − churn − downgrades + expansion) ÷ Starting MRR |
+| Includes expansion revenue | No | Yes |
+| Can exceed 100% | Never | Yes, routinely for healthy SaaS |
+| What it answers | How much did we not lose? | Did the base we kept also grow? |
+| Who asks for it | Product and CS leadership, tracking retention in isolation | Investors and the board, as a growth-durability signal |
+| How to get it in HubSpot | Filter closed-won renewal deals by prior-period amount | Same filter, plus expansion deals tagged to the same account |
+
+Same underlying data, two different questions. GRR alone can look fine while NDR (also written NRR) tells the growth story; report both, not one.
 
 ---
 
-## What a 120% Net Revenue Retention Rate Means
+## What a 120% Net Dollar Retention Rate Means
 
-A 120% NRR means that, ignoring all new customers, your existing customer base grew its recurring revenue by 20% over the period. Expansion revenue more than replaced everything lost to churn and downgrades. That is the holy grail: a business that grows even if it stops acquiring new customers.
+A 120% NDR (or NRR, same number) means that, ignoring all new customers, your existing customer base grew its recurring revenue by 20% over the period. Expansion revenue more than replaced everything lost to churn and downgrades. That is the holy grail: a business that grows even if it stops acquiring new customers.
 
-By contrast, a 95% GRR with 120% NRR tells a precise story: you are losing 5% of core revenue to churn and downgrades, but expansion adds 25 points on top.
+By contrast, a 95% GRR with 120% net dollar retention tells a precise story: you are losing 5% of core revenue to churn and downgrades, but expansion adds 25 points on top.
 
 ---
 
-## Good Benchmarks for GRR and NRR
+## Net Dollar Retention Benchmarks: What Counts as Good NDR
 
 Benchmarks vary by segment, but as a guide for B2B SaaS:
 
 | Metric | Weak | Good | Best-in-class |
 |--------|------|------|---------------|
 | Gross revenue retention | <85% | 90% | 95%+ |
-| Net revenue retention | <100% | 110% | 120%+ |
+| Net dollar retention (NDR/NRR) | <100% | 110% | 120%+ |
 | Logo retention rate | <80% | 90% | 95%+ |
 
-Enterprise SaaS retains higher than self-serve. Investors treat NRR as a valuation multiplier: companies with NRR over 115% command materially higher revenue multiples, because high net retention signals durable, compounding revenue growth. This is why NRR is often the single most scrutinized retention metric in a funding round.
+Enterprise SaaS retains higher than self-serve. Investors treat net dollar retention as a valuation multiplier: companies with NDR over 115% command materially higher revenue multiples, because high net retention signals durable, compounding revenue growth. This is why NDR is often the single most scrutinized retention metric in a funding round, and why "net dollar retention" is the phrase you will hear on a SaaS earnings call more often than "NRR."
+
+A strong NDR means your existing customers, as a group, are worth more each period; a low or shrinking NDR means the base is contracting even before you count logo churn. NDR sits alongside net promoter score and customer acquisition cost as one of the three numbers a SaaS board reviews every quarter, and it is the one hardest to fake: unlike NPS, it comes straight out of the revenue ledger and measures the percentage of revenue actually retained, not a survey response.
 
 ---
 
@@ -158,11 +197,12 @@ In practice, track both. GRR is your floor; NRR is your ceiling.
 
 ---
 
-## How to Improve Gross and Net Revenue Retention
+## How to Improve NDR and GRR
 
-- **Lift GRR** by reducing revenue churn: better onboarding, proactive [renewal risk scoring](/posts/hubspot-renewal-risk-scoring/), and catching [silent churn](/posts/silent-churn-detection/) early.
-- **Lift NRR** by engineering expansion: track [cross-sell vs upsell](/posts/cross-sell-vs-upsell/) separately and use [product-qualified signals](/posts/product-qualified-signals-expansion/) to time the offer.
-- **Measure it cleanly** by separating new, expansion, and churned revenue streams in your pipeline so the math is trustworthy.
+- **Lift GRR** by reducing revenue churn: better onboarding, proactive [renewal risk scoring](/posts/hubspot-renewal-risk-scoring/), and catching [silent churn](/posts/silent-churn-detection/) early. This is also how you improve gross dollar retention, since it is the same calculation.
+- **Lift NDR** by engineering expansion: track [cross-sell vs upsell](/posts/cross-sell-vs-upsell/) separately and use [product-qualified signals](/posts/product-qualified-signals-expansion/) to time the offer, and use retention strategies that target accounts below their usage ceiling before they think to ask for a downgrade.
+- **Improve customer lifetime value alongside NDR.** The two move together: an account with strong net dollar retention is, by definition, growing its lifetime value; user retention strategies aimed at satisfaction and adoption move both numbers at once.
+- **Measure it cleanly** by separating new, expansion, and churned revenue streams in your pipeline so the calculation to calculate retention is trustworthy and audit-proof.
 
 ---
 
@@ -178,16 +218,25 @@ Avoiding these keeps your retention reporting trustworthy and your board decks h
 
 ## Frequently Asked Questions
 
+**What is net dollar retention (NDR)?**
+Net dollar retention is the percentage of recurring revenue you keep and grow from your existing customer base over a period, including expansion from upgrades and cross-sell. It is the same metric as net revenue retention (NRR); NDR and NRR are two names for one number.
+
+**What is the net dollar retention formula?**
+NDR = (Starting MRR − churn − downgrades + expansion revenue) ÷ Starting MRR × 100, measured on existing customers only, excluding any revenue from new logos.
+
+**How do you calculate net dollar retention?**
+Take your recurring revenue from existing customers at the start of the period, subtract churn and downgrades, add expansion revenue from upgrades and cross-sell, then divide by the starting figure and multiply by 100.
+
+**What is the difference between net dollar retention and net revenue retention?**
+None. Net dollar retention (NDR) and net revenue retention (NRR) are the same calculation. Some companies say NDR, others say NRR; SaaS earnings calls use both interchangeably.
+
 **What is the difference between GRR and NRR?**
-GRR measures recurring revenue retained after churn and downgrades (capped at 100%); NRR adds expansion revenue on top, so it can exceed 100%. The difference is expansion.
+GRR measures recurring revenue retained after churn and downgrades (capped at 100%); NRR (also called NDR) adds expansion revenue on top, so it can exceed 100%. The difference is expansion.
 
-**How do you calculate net revenue retention?**
-NRR = (starting MRR − churn − downgrades + expansion) ÷ starting MRR × 100, measured on existing customers only.
+**What is a good net dollar retention rate?**
+110% is healthy and 120%+ is best-in-class for B2B SaaS; investors particularly reward net dollar retention over 115%.
 
-**What is a good NRR benchmark?**
-110% is healthy and 120%+ is best-in-class for B2B SaaS; investors particularly reward NRR over 115%.
-
-**What does 120% NRR mean?**
+**What does 120% NDR mean?**
 Your existing customer base grew its recurring revenue 20% over the period, with expansion outpacing all churn and downgrades.
 
 **Is net revenue retention the same as net dollar retention?**
@@ -195,7 +244,7 @@ Yes. NRR and NDR are two names for the same metric.
 
 ---
 
-GRR and NRR are two of the core numbers in our [SaaS renewal metrics guide](/posts/renewal-metrics-explained/); the [HubSpot NRR/GRR dashboard guide](/posts/hubspot-renewal-nrr-grr-dashboard-reporting/) shows how to report them.
+Net dollar retention and GRR are two of the core numbers in our [SaaS renewal metrics guide](/posts/renewal-metrics-explained/); the [HubSpot NRR/GRR dashboard guide](/posts/hubspot-renewal-nrr-grr-dashboard-reporting/) shows how to report them.
 
 **Retention metrics are easy to misread and easy to game:** one big expansion can flatter a leaky base. SWOTBee builds clean retention reporting and churn-risk scoring for mid-market companies across Energy, Manufacturing, and SaaS.
 

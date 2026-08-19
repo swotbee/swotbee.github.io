@@ -5,7 +5,7 @@ pubDate: "2026-05-04"
 description: "A complete guide to HubSpot NetSuite integration: how to align front office and back office, map Deals to Sales Orders, choose between native, iPaaS, and custom API methods, and migrate from NetSuite CRM to HubSpot."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 modifiedDate: "2026-06-26"
 author:
   name: "SWOTBee Team"

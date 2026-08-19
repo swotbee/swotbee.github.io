@@ -7,7 +7,7 @@ pubDate: "2025-03-09"
 description: "Discover how HubSpot Zapier integration revolutionizes business processes through automation, optimizing workflows, and enhancing CRM efficiency."
 category:
   title: "Implementation & Integration Tutorials"
-  href: "/categories/implementation-tutorials"
+  href: "/categories/implementation-tutorials/"
 author:
   name: "SWOTBee Team"
   url: "https://swotbee.com"

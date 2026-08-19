@@ -5,7 +5,7 @@ pubDate: "2026-06-08"
 description: "A complete guide to the Workato HubSpot integration: recipes and connectors explained, when Workato beats native connectors, essential RevOps recipes, in-Slack approvals, and how to manage task-based costs."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 modifiedDate: "2026-06-26"
 author:
   name: "SWOTBee Team"
@@ -25,7 +25,7 @@ tags:
   - "Automation"
   - "Revenue Operations"
 seriesName: "HubSpot NetSuite Integration"
-pillarUrl: "/posts/hubspot-netsuite-integration"
+pillarUrl: "/posts/hubspot-netsuite-integration/"
 faqs:
   - q: "Is Workato an integration platform?"
     a: "Yes. Workato is an enterprise integration and automation platform (an iPaaS) that connects apps such as HubSpot, NetSuite, and Slack through recipes built from triggers and actions."

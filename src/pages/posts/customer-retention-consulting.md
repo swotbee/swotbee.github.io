@@ -5,7 +5,7 @@ pubDate: "2026-06-27"
 description: "What customer retention consulting is, what a retention consultant actually does, the signs you need one, what an engagement looks like, and how to choose the right partner to reduce churn and grow revenue."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 modifiedDate: "2026-06-27"
 author:
   name: "SWOTBee Team"
@@ -24,7 +24,7 @@ tags:
   - "Revenue Operations"
   - "Customer Success"
 seriesName: "B2B SaaS Customer Retention"
-pillarUrl: "/posts/b2b-saas-customer-retention"
+pillarUrl: "/posts/b2b-saas-customer-retention/"
 faqs:
   - q: "What is customer retention consulting?"
     a: "Expert help to reduce churn and grow your existing customers: diagnosing why customers leave, designing the retention strategy, and building the systems (health scores, automation, renewal pipelines) that make retention repeatable."

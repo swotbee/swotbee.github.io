@@ -5,7 +5,7 @@ pubDate: "2026-06-14"
 description: "How CRM improves customer retention: the CRM strategies, features, and automation that reduce churn and increase retention rates, plus how to implement a customer retention strategy using your CRM."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 modifiedDate: "2026-06-27"
 author:
   name: "SWOTBee Team"
@@ -24,7 +24,7 @@ tags:
   - "HubSpot"
   - "Customer Success"
 seriesName: "B2B SaaS Customer Retention"
-pillarUrl: "/posts/b2b-saas-customer-retention"
+pillarUrl: "/posts/b2b-saas-customer-retention/"
 faqs:
   - q: "How does a CRM help with customer retention?"
     a: "It gives you one complete view of each customer and the automation to act on it, surfacing churn risk early and making proactive retention plays (onboarding, renewals, health alerts) repeatable at scale."

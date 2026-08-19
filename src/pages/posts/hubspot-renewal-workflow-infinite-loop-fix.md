@@ -5,7 +5,7 @@ pubDate: "2026-04-02"
 description: "HubSpot's re-enrollment blocking breaks multi-year renewal automation after Year 1. Here are four proven solutions: from the dual-workflow pattern to boolean toggles: that keep the chain going."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 author:
   name: "SWOTBee Team"
   url: "https://swotbee.com"
@@ -18,7 +18,7 @@ tags:
   - "Multi-Year Contracts"
   - "Revenue Operations"
 seriesName: "HubSpot Renewal Pipeline"
-pillarUrl: "/posts/hubspot-renewal-pipeline-complete-guide"
+pillarUrl: "/posts/hubspot-renewal-pipeline-complete-guide/"
 howto: true
 howtoSteps:
   - name: "Create the Renewal Created property"

@@ -5,7 +5,7 @@ pubDate: "2026-06-09"
 description: "How the land and expand strategy works: start with a small deal, prove value, then spread from one department into an enterprise-wide deployment. Phases, benefits, and how to implement it."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 modifiedDate: "2026-06-23"
 author:
   name: "SWOTBee Team"
@@ -25,7 +25,7 @@ tags:
   - "Account Management"
   - "Customer Success"
 seriesName: "Renewal Strategy"
-pillarUrl: "/posts/renewal-strategy-365"
+pillarUrl: "/posts/renewal-strategy-365/"
 faqs:
   - q: "What is the land and expand strategy?"
     a: "A sales strategy that starts with a small deal in one team, proves value, then expands into more seats, departments, and products, often at renewal."

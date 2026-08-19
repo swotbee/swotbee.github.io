@@ -5,7 +5,7 @@ pubDate: "2026-05-13"
 description: "Should customer success or sales own renewal deals in HubSpot? A decision framework, how to set ownership in a dedicated renewal pipeline, and how to automate the CS-to-sales handoff."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 modifiedDate: "2026-06-23"
 author:
   name: "SWOTBee Team"
@@ -25,7 +25,7 @@ tags:
   - "Sales Operations"
   - "Revenue Operations"
 seriesName: "HubSpot Renewal Pipeline"
-pillarUrl: "/posts/hubspot-renewal-pipeline-complete-guide"
+pillarUrl: "/posts/hubspot-renewal-pipeline-complete-guide/"
 faqs:
   - q: "Who should own renewals, customer success or sales?"
     a: "Customer success should own most renewals because they hold the relationship and see risk early; sales should own or support negotiation-heavy and expansion deals."

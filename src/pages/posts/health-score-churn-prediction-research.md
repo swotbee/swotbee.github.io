@@ -5,7 +5,7 @@ pubDate: "2026-07-29"
 description: "Customer health scores are the standard tool for predicting churn, but the research on what actually predicts it is more specific than most health score models assume. What peer-reviewed studies and practitioner data both show about which signals work."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 modifiedDate: "2026-07-29"
 author:
   name: "SWOTBee Team"

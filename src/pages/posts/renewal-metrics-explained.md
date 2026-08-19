@@ -5,7 +5,7 @@ pubDate: "2026-05-17"
 description: "The complete RevOps guide to SaaS renewal metrics: how to calculate renewal rate, NRR vs GRR, forecast ARR, and catch churn risk early. Cut through vanity metrics to a single source of truth."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 modifiedDate: "2026-06-23"
 author:
   name: "SWOTBee Team"

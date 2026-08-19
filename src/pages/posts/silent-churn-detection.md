@@ -5,7 +5,7 @@ pubDate: "2026-05-25"
 description: "Silent churn is the customers who leave without a word. Learn what causes it, the warning signs, and how to detect silent churn early using engagement, usage, and support signals."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 modifiedDate: "2026-06-23"
 author:
   name: "SWOTBee Team"
@@ -25,7 +25,7 @@ tags:
   - "Revenue Operations"
   - "Renewal Pipeline"
 seriesName: "Renewal Metrics"
-pillarUrl: "/posts/renewal-metrics-explained"
+pillarUrl: "/posts/renewal-metrics-explained/"
 faqs:
   - q: "What is silent churn?"
     a: "Customer churn that happens without any complaint or warning: the customer disengages, stops using the product, and does not renew, without saying a word."

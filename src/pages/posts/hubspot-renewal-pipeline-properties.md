@@ -5,7 +5,7 @@ pubDate: "2026-04-02"
 description: "Complete property setup guide for HubSpot renewal pipelines: deal type, renewal date, contract term, churn reason, health score, and 10 more. Exact field types, dropdown values, and where each lives."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 author:
   name: "SWOTBee Team"
   url: "https://swotbee.com"
@@ -18,7 +18,7 @@ tags:
   - "Deal Properties"
   - "Revenue Operations"
 seriesName: "HubSpot Renewal Pipeline"
-pillarUrl: "/posts/hubspot-renewal-pipeline-complete-guide"
+pillarUrl: "/posts/hubspot-renewal-pipeline-complete-guide/"
 modifiedDate: "2026-07-24"
 funnelCta: "renewal-audit"
 faqs:

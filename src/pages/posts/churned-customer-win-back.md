@@ -5,7 +5,7 @@ pubDate: "2026-06-15"
 description: "Treat churned customers as a specialized pipeline to recover revenue at near-zero acquisition cost. How a customer win-back strategy works: segmentation, win-back messaging, examples, and measurement."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 modifiedDate: "2026-06-23"
 author:
   name: "SWOTBee Team"
@@ -25,7 +25,7 @@ tags:
   - "Churn"
   - "Win-Back"
 seriesName: "Renewal Strategy"
-pillarUrl: "/posts/renewal-strategy-365"
+pillarUrl: "/posts/renewal-strategy-365/"
 faqs:
   - q: "What is a customer win-back campaign?"
     a: "A structured effort to re-engage churned or lapsed customers and bring them back, run as a specialized pipeline with its own messaging and offers."

@@ -5,7 +5,7 @@ pubDate: "2026-05-12"
 description: "A practical, step-by-step guide to HubSpot to NetSuite integration setup: prerequisites, configuring the native connector, field mappings and sync directions, core RevOps workflows, and testing the data flow."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 modifiedDate: "2026-06-26"
 author:
   name: "SWOTBee Team"
@@ -25,7 +25,7 @@ tags:
   - "Revenue Operations"
   - "Workflows"
 seriesName: "HubSpot NetSuite Integration"
-pillarUrl: "/posts/hubspot-netsuite-integration"
+pillarUrl: "/posts/hubspot-netsuite-integration/"
 faqs:
   - q: "Does HubSpot have a native NetSuite integration?"
     a: "Yes. HubSpot offers a native NetSuite connector in its app marketplace that syncs standard objects for single-subsidiary setups. Complex needs usually move to an iPaaS or custom integration."

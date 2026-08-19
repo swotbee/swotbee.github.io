@@ -5,7 +5,7 @@ pubDate: "2026-05-29"
 description: "What the SaaS quick ratio is, how to calculate it from new, expansion, churned and contraction MRR, what a good benchmark is (4+), and how it compares to the Rule of 40 and SaaS magic number."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 modifiedDate: "2026-06-23"
 author:
   name: "SWOTBee Team"
@@ -25,7 +25,7 @@ tags:
   - "MRR"
   - "Renewal Pipeline"
 seriesName: "Renewal Metrics"
-pillarUrl: "/posts/renewal-metrics-explained"
+pillarUrl: "/posts/renewal-metrics-explained/"
 faqs:
   - q: "What is the SaaS quick ratio?"
     a: "A growth-efficiency metric comparing recurring revenue gained (new + expansion MRR) to recurring revenue lost (churned + contraction MRR)."

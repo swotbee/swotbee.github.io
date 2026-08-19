@@ -6,7 +6,7 @@ modifiedDate: "2026-07-14"
 description: "HubSpot's Copy Property action updates the enrolled deal, not the new renewal deal. Use these workflow patterns to copy ARR, contract term, renewal date, and owner fields safely."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 author:
   name: "SWOTBee Team"
   url: "https://swotbee.com"
@@ -26,7 +26,7 @@ tags:
   - "Revenue Operations"
 seriesName: "HubSpot Deal Cloning"
 funnelCta: "renewal-audit"
-pillarUrl: "/posts/hubspot-clone-deal-complete-guide"
+pillarUrl: "/posts/hubspot-clone-deal-complete-guide/"
 howto: true
 howtoSteps:
   - name: "Understand the Copy Property limitation"
@@ -256,7 +256,7 @@ Before enabling your workflow on live data:
 
 These workflows also power [the 90-60-30 engagement cadence](/posts/hubspot-renewal-deal-workflow-automation/). If properties aren't copying correctly, the entire downstream automation breaks.
 
-**Evaluating apps for renewals specifically?** Cloning is only step one of a renewal system. See our [honest comparison of HubSpot renewal apps](/compare/hubspot-renewal-apps), including the capabilities a copy button cannot reach.
+**Evaluating apps for renewals specifically?** Cloning is only step one of a renewal system. See our [honest comparison of HubSpot renewal apps](/compare/hubspot-renewal-apps/), including the capabilities a copy button cannot reach.
 
 ---
 

@@ -5,7 +5,7 @@ pubDate: "2026-07-06"
 description: "Can you run customer success in HubSpot without buying Gainsight or ChurnZero? What HubSpot covers natively, where it falls short, and how to close the renewal gap."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 modifiedDate: "2026-07-06"
 author:
   name: "SWOTBee Team"

@@ -5,7 +5,7 @@ pubDate: "2026-06-11"
 description: "A complete guide to B2B customer retention: why it matters, how to measure the retention rate, the strategies that keep customers, what causes churn, and how CRM and automation improve retention for B2B SaaS."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 modifiedDate: "2026-06-27"
 author:
   name: "SWOTBee Team"

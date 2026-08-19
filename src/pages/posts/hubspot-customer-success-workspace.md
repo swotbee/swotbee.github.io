@@ -5,7 +5,7 @@ pubDate: "2026-07-06"
 description: "What the HubSpot Customer Success Workspace includes, which Service Hub tier you need, how to set it up, its real limits, and how to wire it to renewals."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 modifiedDate: "2026-07-07"
 author:
   name: "SWOTBee Team"
@@ -25,7 +25,7 @@ tags:
   - "Renewal Pipeline"
   - "Revenue Operations"
 seriesName: "Customer Success in HubSpot"
-pillarUrl: "/posts/customer-success-in-hubspot"
+pillarUrl: "/posts/customer-success-in-hubspot/"
 faqs:
   - q: "What HubSpot tier includes the Customer Success Workspace?"
     a: "Service Hub Professional and Enterprise seats include it. It is not available on Starter, and users holding only Sales Hub seats see the sales workspace instead. Feature depth (especially health score customization) increases at Enterprise."

@@ -7,7 +7,7 @@ pubDate: "2026-05-05"
 description: "From free tools to enterprise platforms, here are 10 multi-tier affiliate software options compared by features, pricing, and HubSpot integration: organized by your budget and team size."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 author:
   name: "SWOTBee Team"
   url: "https://swotbee.com"
@@ -26,7 +26,7 @@ tags:
   - "Software Comparison"
   - "Revenue Operations"
 seriesName: "Multi-Tiered Affiliate Incentives"
-pillarUrl: "/posts/multi-tiered-affiliate-incentive-structure-guide"
+pillarUrl: "/posts/multi-tiered-affiliate-incentive-structure-guide/"
 ---
 
 # Multi-Tier Affiliate Software Platforms Compared: What to Look for in 2026

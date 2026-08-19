@@ -5,7 +5,7 @@ pubDate: "2026-07-06"
 description: "Gainsight pricing is quote-based; buyers report high five to six figures a year. Cost drivers, the HubSpot integration, and Gainsight alternatives by size."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 modifiedDate: "2026-07-06"
 author:
   name: "SWOTBee Team"
@@ -25,7 +25,7 @@ tags:
   - "CS Platforms"
   - "Pricing"
 seriesName: "Customer Success in HubSpot"
-pillarUrl: "/posts/customer-success-in-hubspot"
+pillarUrl: "/posts/customer-success-in-hubspot/"
 faqs:
   - q: "What is Gainsight and how does it work?"
     a: "Gainsight is an enterprise customer success platform. It pulls customer data from your CRM, support desk, and product telemetry, scores customer health on multi-layer scorecards, and drives CSM work through calls-to-action, success plans, and playbooks, with PX adding product analytics and in-app engagement. It works alongside a CRM, not instead of one."

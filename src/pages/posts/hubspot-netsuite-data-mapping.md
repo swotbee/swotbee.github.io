@@ -5,7 +5,7 @@ pubDate: "2026-05-27"
 description: "The seven most common HubSpot NetSuite data mapping pitfalls: line item mismatches, the company should exist block, the midnight UTC date bug, dropdown conflicts, ownership rules, SOAP timeouts, and multi-subsidiary isolation."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 modifiedDate: "2026-06-26"
 author:
   name: "SWOTBee Team"
@@ -25,7 +25,7 @@ tags:
   - "Data Quality"
   - "Revenue Operations"
 seriesName: "HubSpot NetSuite Integration"
-pillarUrl: "/posts/hubspot-netsuite-integration"
+pillarUrl: "/posts/hubspot-netsuite-integration/"
 faqs:
   - q: "Why is HubSpot NetSuite data mapping so hard?"
     a: "Because the two systems use different data models. HubSpot is flexible relationship management; NetSuite is a strict financial database. Mapping objects without planning causes silent errors, duplicates, and broken syncs."

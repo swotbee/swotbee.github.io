@@ -5,7 +5,7 @@ pubDate: "2026-04-14"
 description: "Your Google Sheet worked at 5 reps. It's breaking at 15. Here's how to know when you've outgrown spreadsheets: and three paths to upgrade without losing a month of commission data."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 author:
   name: "SWOTBee Team"
   url: "https://swotbee.com"
@@ -24,7 +24,7 @@ tags:
   - "Commission Software"
   - "Revenue Operations"
 seriesName: "Sales Commission Tracking"
-pillarUrl: "/posts/hubspot-sales-commission-tracking-complete-guide"
+pillarUrl: "/posts/hubspot-sales-commission-tracking-complete-guide/"
 ---
 
 You started with a Google Sheet. Three tabs: one for deals, one for rates, one for payouts. It took 20 minutes at the end of the month, maybe less if it was a quiet quarter. You built it yourself, or maybe your first sales manager did, and it just worked. That was two years ago.

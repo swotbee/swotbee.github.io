@@ -5,7 +5,7 @@ pubDate: "2026-06-03"
 description: "How to forecast revenue when pricing is usage-based instead of fixed seats. What a usage-based model is, how consumption-based forecasting works, the challenges, and how to improve predictability."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 modifiedDate: "2026-06-23"
 author:
   name: "SWOTBee Team"
@@ -25,7 +25,7 @@ tags:
   - "Revenue Operations"
   - "Renewal Pipeline"
 seriesName: "Renewal Metrics"
-pillarUrl: "/posts/renewal-metrics-explained"
+pillarUrl: "/posts/renewal-metrics-explained/"
 faqs:
   - q: "What is a usage-based revenue model?"
     a: "A pricing model where customers pay for actual consumption (API calls, data, compute) rather than a fixed subscription fee, so revenue scales with usage."

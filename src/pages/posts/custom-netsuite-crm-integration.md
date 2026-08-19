@@ -5,7 +5,7 @@ pubDate: "2026-05-18"
 description: "A technical guide to architecting a custom NetSuite CRM integration: API governance and concurrency limits, SuiteCloud Plus, SOAP and REST rate limits, authentication, line-item conflicts, and async data sync architectures."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 modifiedDate: "2026-06-26"
 author:
   name: "SWOTBee Team"
@@ -25,7 +25,7 @@ tags:
   - "API"
   - "Revenue Operations"
 seriesName: "HubSpot NetSuite Integration"
-pillarUrl: "/posts/hubspot-netsuite-integration"
+pillarUrl: "/posts/hubspot-netsuite-integration/"
 faqs:
   - q: "What CRMs integrate with NetSuite?"
     a: "HubSpot, Salesforce, Zoho, and most major CRMs integrate with NetSuite through native connectors, iPaaS platforms, or custom API builds against NetSuite's SOAP and REST APIs."

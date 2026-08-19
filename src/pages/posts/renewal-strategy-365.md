@@ -5,7 +5,7 @@ pubDate: "2026-06-04"
 description: "A complete SaaS renewal strategy for vendors: why the renewal is won long before the contract expires, and how continuous value realization, multi-threading, and expansion tactics secure and grow enterprise contracts."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 modifiedDate: "2026-07-24"
 author:
   name: "SWOTBee Team"

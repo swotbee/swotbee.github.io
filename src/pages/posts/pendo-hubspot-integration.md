@@ -5,7 +5,7 @@ pubDate: "2025-04-09"
 description: "How the native two-way Pendo-HubSpot integration actually works: the real setup steps, what data syncs in each direction, what it costs, and when it isn't enough on its own."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 modifiedDate: "2026-07-29"
 author:
   name: "SWOTBee Team"

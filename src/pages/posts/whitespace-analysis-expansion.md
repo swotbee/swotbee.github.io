@@ -5,7 +5,7 @@ pubDate: "2026-06-16"
 description: "How whitespace analysis uncovers hidden cross-sell and upsell opportunities in existing accounts. What it is, how it works, how to identify white space, and how to turn it into an expansion pipeline."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 modifiedDate: "2026-06-23"
 author:
   name: "SWOTBee Team"
@@ -25,7 +25,7 @@ tags:
   - "Account Management"
   - "Revenue Operations"
 seriesName: "Renewal Strategy"
-pillarUrl: "/posts/renewal-strategy-365"
+pillarUrl: "/posts/renewal-strategy-365/"
 faqs:
   - q: "What is whitespace analysis in sales?"
     a: "Mapping what a customer owns against what they could own to find untapped cross-sell and upsell opportunities (the \"white space\") in existing accounts."

@@ -6,7 +6,7 @@ modifiedDate: "2026-07-14"
 description: "HubSpot workflows cannot copy deal line items into renewal deals. Compare marketplace apps, Zapier, custom code, and API options for preserving products, pricing, and quantities."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 author:
   name: "SWOTBee Team"
   url: "https://swotbee.com"
@@ -26,7 +26,7 @@ tags:
   - "Revenue Operations"
 seriesName: "HubSpot Deal Cloning"
 funnelCta: "renewal-audit"
-pillarUrl: "/posts/hubspot-clone-deal-complete-guide"
+pillarUrl: "/posts/hubspot-clone-deal-complete-guide/"
 howto: true
 howtoSteps:
   - name: "Choose your line item cloning method"
@@ -212,7 +212,7 @@ Before going live with any solution:
 
 If line items aren't copying correctly, check our [infinite loop troubleshooting guide](/posts/hubspot-renewal-workflow-infinite-loop-fix/), since the same re-enrollment rules that break renewal automation can also affect line item copying workflows.
 
-**Evaluating apps for renewals specifically?** Cloning is only step one of a renewal system. See our [honest comparison of HubSpot renewal apps](/compare/hubspot-renewal-apps), including the capabilities a copy button cannot reach.
+**Evaluating apps for renewals specifically?** Cloning is only step one of a renewal system. See our [honest comparison of HubSpot renewal apps](/compare/hubspot-renewal-apps/), including the capabilities a copy button cannot reach.
 
 ---
 

@@ -5,7 +5,7 @@ pubDate: "2026-05-01"
 description: "The HubSpot Community threads on tiered commissions are Q&A fragments. This is the complete, structured walkthrough: from creating properties to building dashboards."
 category:
   title: "HubSpot Tips"
-  href: "/categories/hubspot-tips"
+  href: "/categories/hubspot-tips/"
 author:
   name: "SWOTBee Team"
   url: "https://swotbee.com"
@@ -25,7 +25,7 @@ tags:
   - "Commission Setup"
   - "Revenue Operations"
 seriesName: "Multi-Tiered Affiliate Incentives"
-pillarUrl: "/posts/multi-tiered-affiliate-incentive-structure-guide"
+pillarUrl: "/posts/multi-tiered-affiliate-incentive-structure-guide/"
 ---
 
 # Building a Tiered Commission Model Inside HubSpot: A Step-by-Step Guide

@@ -5,7 +5,7 @@ pubDate: "2026-07-29"
 description: "The landmark meta-analyses on switching costs found the effect is weaker in B2B than in consumer markets, and doesn't reliably reduce churn or build brand loyalty on its own. What peer-reviewed research actually shows about contract lock-in, relational switching costs, competitive advantage, and B2B customer retention, and what it means for your renewal strategy."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 modifiedDate: "2026-07-29"
 author:
   name: "SWOTBee Team"

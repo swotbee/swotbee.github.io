@@ -6,7 +6,7 @@ pubDate: "2025-10-02"
 description: "Explore how strategic account management builds strong, long-term partnerships with key clients through clear planning, stakeholder collaboration, and tailored strategies. Learn best practices, tools, and steps to align client needs with business goals for sustainable growth."
 category:
   title: "CRM Fundamentals & Beginners Guides"
-  href: "/categories/crm-fundamentals"
+  href: "/categories/crm-fundamentals/"
 author:
   name: "SWOTBee Team"
   url: "https://swotbee.com"

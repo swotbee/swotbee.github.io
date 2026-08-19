@@ -5,7 +5,7 @@ pubDate: "2026-06-12"
 description: "A complete guide to CRM and ERP integration: what it is, how it works, the benefits, the integration methods, common challenges, and best practices for connecting your front office and back office."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 modifiedDate: "2026-07-06"
 author:
   name: "SWOTBee Team"

@@ -5,7 +5,7 @@ pubDate: "2026-04-10"
 description: "Flat-rate commissions leave money on the table. Here's how to design tiered commission structures with real rate examples that drive overperformance: without overcomplicating your comp plan."
 category:
   title: "Sales Compensation"
-  href: "/categories/sales-compensation"
+  href: "/categories/sales-compensation/"
 author:
   name: "SWOTBee Team"
   url: "https://swotbee.com"
@@ -24,7 +24,7 @@ tags:
   - "Sales Compensation"
   - "Revenue Operations"
 seriesName: "Sales Commission Tracking"
-pillarUrl: "/posts/hubspot-sales-commission-tracking-complete-guide"
+pillarUrl: "/posts/hubspot-sales-commission-tracking-complete-guide/"
 ---
 
 Your best rep hit quota in February. It is only March. For the next ten months, every deal she closes earns her the exact same commission rate as the rep sitting two desks over who is barely scraping along at 40% attainment. Same percentage, same payout formula, no distinction whatsoever between exceptional performance and showing up.

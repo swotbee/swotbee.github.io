@@ -5,7 +5,7 @@ pubDate: "2026-07-29"
 description: "Customer success management ROI claims like '107% ROI in 3 years' circulate widely, but the function's own founding academic call for research admitted zero rigorous studies had tested whether CSM improves retention. What the ROI numbers actually rest on, and what the evidence shows now."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 modifiedDate: "2026-07-29"
 author:
   name: "SWOTBee Team"

@@ -5,7 +5,7 @@ pubDate: "2026-05-22"
 description: "How to calculate renewal rate correctly: the count-based, revenue, gross and net renewal rate formulas, and why the at-bat method (only the cohort up for renewal) gives you the true number."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 modifiedDate: "2026-06-23"
 author:
   name: "SWOTBee Team"
@@ -25,7 +25,7 @@ tags:
   - "Customer Success"
   - "Churn"
 seriesName: "Renewal Metrics"
-pillarUrl: "/posts/renewal-metrics-explained"
+pillarUrl: "/posts/renewal-metrics-explained/"
 faqs:
   - q: "How do you calculate renewal rate?"
     a: "Divide the customers (or ARR) that renewed by the customers (or ARR) up for renewal in the period, then multiply by 100. Use only the cohort actually up for renewal (at-bat)."
