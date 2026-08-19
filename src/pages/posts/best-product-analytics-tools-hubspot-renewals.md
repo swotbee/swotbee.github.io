@@ -83,6 +83,27 @@ Work through these in order:
 
 ---
 
+## Copy This: A 5-Minute Scorecard
+
+If you want an answer faster than reading the full comparison, score your situation against these four questions, 0-2 points each:
+
+```
+1. Do you already use one of these three tools? (0 = no, 1 = one lightly, 2 = one heavily)
+2. Engineering hours available this quarter for this project? (0 = none, 1 = a few, 2 = dedicated)
+3. Does product/growth need deep behavioral analytics beyond renewals? (0 = yes, 1 = somewhat, 2 = no, renewals only)
+4. Do you need this running in under a month? (0 = no rush, 1 = a quarter, 2 = yes, urgent)
+```
+
+**Score 6-8, and question 1 points to Pendo (or no existing tool):** build the native Pendo-HubSpot integration. It's the fastest path from zero to a usage signal on the deal.
+
+**Score 6-8, and question 1 points to Mixpanel or Amplitude:** don't switch tools. Build the reverse-ETL sync to the tool you already have; the engineering cost of migrating outweighs the integration convenience you'd gain.
+
+**Score 0-5:** you likely have engineering capacity and a broader analytics need. Mixpanel or Amplitude's deeper capability is worth the extra integration work, and the renewal use case becomes one of several things that data serves, not the only reason to run the tool.
+
+This isn't a substitute for the reasoning above, it's a way to get to a working answer in five minutes instead of an afternoon, and to sanity-check whatever your gut is already telling you.
+
+---
+
 ## Pricing, in Structure Rather Than Numbers
 
 All three publish free tiers aimed at small teams or low event volume, and all three price paid plans on usage (monthly tracked users for Pendo, event volume for Mixpanel and Amplitude), so the number that matters is your actual scale, not a headline price. A few structural points worth knowing before you evaluate:
