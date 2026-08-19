@@ -58,6 +58,8 @@ This guide covers the full picture: what contract renewal management actually in
 
 ## What Is Contract Renewal Management?
 
+Deciding *who* should run renewals, rather than how the process works, is a separate question: see [outsourced renewal management vs an in-house team](/posts/outsourced-renewal-management/).
+
 Contract renewal management is everything that happens between "this contract has an end date" and "the customer signed the next term." Concretely, it means:
 
 - **A single source of truth for contract data:** start date, end date, term length, contract value, auto-renew status, and notice period, stored somewhere the whole revenue team can see. The contract terms and the signed contract documents live in one known place instead of five.

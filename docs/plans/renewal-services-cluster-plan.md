@@ -393,11 +393,50 @@ Worth noting: the LinkedIn result "The RevOps Health Check: 12 Signals Your Reve
 Is Leaking" is almost exactly the planned S7 title. That content works as a LinkedIn post,
 which is probably where it belongs.
 
+### P0-S pillar: written 2026-08-19
+
+`src/pages/posts/outsourced-renewal-management.md`, 1,904 words, **content score 67**.
+
+Title changed from the plan's working title. "Who Should Run Your Renewals: In-House,
+Outsourced, or Software" covered only 2 of the 7 title-zone terms, which was a large part
+of why the first draft scored **31**. It is now "Outsourced Renewal Management vs
+In-House: Who Should Run Your SaaS Renewals?" (5 of 7).
+
+**The 31 to 67 jump is worth recording as a learning.** The first draft was 1,350 words
+against a 1,166 target, so length was never the problem: term coverage was. It carried
+13 of 47 `content_basic` terms against S4's 33 of 41. The article argued the decision
+tightly but skipped the vocabulary the SERP expects (`saas renewals`, `renewal management
+process`, `recurring revenue`, `on-time renewals`, `renewal performance metrics`,
+`poor renewal management`, `benefits of outsourcing`). Two new sections carrying that
+vocabulary honestly (what poor renewal management costs, and the metrics that identify
+which option you need) did most of the work.
+
+This refines playbook learning #3, which attributes low scores mainly to word count.
+Here the draft was already **over** target and still scored 31. **Check zone-by-zone term
+coverage before assuming length is the problem**, and check the title zone first, since it
+is small, heavily weighted, and cheap to fix.
+
+Terms deliberately left uncovered: `ai`, `renewal intelligence` (a vendor product term
+from RenewalSense, not general vocabulary).
+
+Linking done:
+- Pillar links to Pillar 1, `hubspot-renewal-reminders`, `hubspot-renewal-risk-scoring`,
+  `customer-retention-consulting` (S4) and `contract-renewal-management-complete-guide`.
+- **Reverse link added** as the plan required: `contract-renewal-management-complete-guide`
+  now hands the "who should run this" intent to the pillar, which is the fix for that page
+  absorbing `outsourcing renewal management` at position 45.8.
+- Conversion terminals: leakage estimate and `/renewal-audit-call/`.
+
+Unique inline SVG created (`renewal-ownership-three-options.svg`). The first hero chosen
+was already used by 11 other posts, which breaks playbook learning #6; swapped for one
+used nowhere else. **That reuse is widespread across the existing site and worth a
+separate audit.**
+
 ### Final keyword status
 
 | Seed | Keyword | Target words | Status |
 |---|---|---|---|
-| P0-S | `outsourced renewal management` | 1,166 | Confirmed |
+| P0-S | `outsourced renewal management` | 1,166 | **Written, score 67** |
 | S2 | `hubspot renewal setup help` | 1,129 | Confirmed, scope caution |
 | S3 | `revenue operations audit` | 1,350 | Confirmed, scope caution |
 | S4 | `customer retention consultants` | 1,707 | **Written, score 63** |
@@ -406,7 +445,8 @@ which is probably where it belongs.
 | S7 | none found | - | **Dropped as an SEO target** |
 | S8 | `fractional revops vs full time hire` | 2,232 | Confirmed |
 
-Pillar plus 6 writable clusters. 15 `new-query` and 2 `evaluate-content` credits spent.
+Pillar plus 6 clusters. **Pillar and S4 are written.** 15 `new-query` and 5
+`evaluate-content` credits spent. Remaining to write: S2, S3, S5, S6, S8.
 
 ### Consequence for the cluster map
 

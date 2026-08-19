@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" role="img" aria-label="Three ways to own renewals: an in-house team, an outsourced renewals provider, or a renewal system built into your CRM">
+  <rect width="800" height="300" fill="#fdfbf5"/>
+  <text x="400" y="34" text-anchor="middle" font-family="system-ui,sans-serif" font-size="17" font-weight="700" fill="#1f2933">Three ways to own renewals</text>
+  <g font-family="system-ui,sans-serif">
+    <rect x="30" y="62" width="230" height="196" rx="10" fill="#fff" stroke="#d8cfb8" stroke-width="2"/>
+    <rect x="30" y="62" width="230" height="7" rx="3" fill="#c9a227"/>
+    <text x="145" y="98" text-anchor="middle" font-size="15" font-weight="700" fill="#1f2933">Hire in-house</text>
+    <text x="50" y="128" font-size="12" fill="#52606d">Adds headcount and salary</text>
+    <text x="50" y="150" font-size="12" fill="#52606d">Owns the customer relationship</text>
+    <text x="50" y="172" font-size="12" fill="#52606d">Slowest to stand up</text>
+    <text x="50" y="206" font-size="12" font-weight="700" fill="#1f2933">Best when</text>
+    <text x="50" y="228" font-size="12" fill="#52606d">renewals are strategic and</text>
+    <text x="50" y="246" font-size="12" fill="#52606d">the volume justifies a role</text>
+
+    <rect x="285" y="62" width="230" height="196" rx="10" fill="#fff" stroke="#d8cfb8" stroke-width="2"/>
+    <rect x="285" y="62" width="230" height="7" rx="3" fill="#c9a227"/>
+    <text x="400" y="98" text-anchor="middle" font-size="15" font-weight="700" fill="#1f2933">Outsource the team</text>
+    <text x="305" y="128" font-size="12" fill="#52606d">Rents execution capacity</text>
+    <text x="305" y="150" font-size="12" fill="#52606d">Fastest to add coverage</text>
+    <text x="305" y="172" font-size="12" fill="#52606d">Ongoing monthly cost</text>
+    <text x="305" y="206" font-size="12" font-weight="700" fill="#1f2933">Best when</text>
+    <text x="305" y="228" font-size="12" fill="#52606d">high volume, low complexity,</text>
+    <text x="305" y="246" font-size="12" fill="#52606d">and a working process exists</text>
+
+    <rect x="540" y="62" width="230" height="196" rx="10" fill="#fff" stroke="#c9a227" stroke-width="3"/>
+    <rect x="540" y="62" width="230" height="7" rx="3" fill="#1f2933"/>
+    <text x="655" y="98" text-anchor="middle" font-size="15" font-weight="700" fill="#1f2933">Fix the system</text>
+    <text x="560" y="128" font-size="12" fill="#52606d">One-off build, no headcount</text>
+    <text x="560" y="150" font-size="12" fill="#52606d">Your team keeps the accounts</text>
+    <text x="560" y="172" font-size="12" fill="#52606d">Needs someone to run it</text>
+    <text x="560" y="206" font-size="12" font-weight="700" fill="#1f2933">Best when</text>
+    <text x="560" y="228" font-size="12" fill="#52606d">the people exist but the</text>
+    <text x="560" y="246" font-size="12" fill="#52606d">process is manual and leaks</text>
+  </g>
+</svg>
