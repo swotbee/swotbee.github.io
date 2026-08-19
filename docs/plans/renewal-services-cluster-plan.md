@@ -432,21 +432,47 @@ was already used by 11 other posts, which breaks playbook learning #6; swapped f
 used nowhere else. **That reuse is widespread across the existing site and worth a
 separate audit.**
 
+### S3 written 2026-08-19
+
+`src/pages/posts/revenue-operations-audit.md`, 1,840 words, **content score 69**, the
+highest in the cluster so far. First true cluster of the Renewal Services series, carrying
+`seriesName: "Renewal Services"` and `pillarUrl: /posts/outsourced-renewal-management/`.
+
+The pillar's lesson was applied up front: the title zone was written to first and scored
+5/5 on the opening draft, which started the article at 62 rather than 31. The lift to 69
+came from two added sections carrying the weak zones (common challenges a RevOps audit
+surfaces, and the revops metrics an audit should baseline).
+
+**Scope discipline, per the pre-check warning.** The article ranks for the broad term but
+splits full RevOps audits from renewal-scoped ones explicitly, with a diagram, so a reader
+wanting a multi-week whole-funnel audit self-selects out before enquiring. That was the
+identified risk on this keyword and it is handled in the content rather than left to
+chance.
+
+**Terms deliberately left uncovered**, beyond the usual off-brand ones: `leverage`,
+`revenue potential`, `path to sustainable growth`, `drive revenue`, `marketing and sales
+strategy`. These are vendor-speak rather than vocabulary, and the house rule is plain
+English. Covering them would have cost more in readability than the few points gained.
+
+Linking: pillar links to S3 from the metrics section; S3 links back to the pillar,
+`hubspot-renewal-pipeline-complete-guide` and `hubspot-renewal-risk-scoring`. Unique hero
+and unique inline SVG (`revops-audit-scope.svg`) both verified.
+
 ### Final keyword status
 
 | Seed | Keyword | Target words | Status |
 |---|---|---|---|
 | P0-S | `outsourced renewal management` | 1,166 | **Written, score 67** |
 | S2 | `hubspot renewal setup help` | 1,129 | Confirmed, scope caution |
-| S3 | `revenue operations audit` | 1,350 | Confirmed, scope caution |
+| S3 | `revenue operations audit` | 1,350 | **Written, score 69** |
 | S4 | `customer retention consultants` | 1,707 | **Written, score 63** |
 | S5 | `renewal revenue leakage` | 1,858 | Confirmed, heavy competition |
 | S6 | `hubspot implementation timeline` | 1,106 | Confirmed |
 | S7 | none found | - | **Dropped as an SEO target** |
 | S8 | `fractional revops vs full time hire` | 2,232 | Confirmed |
 
-Pillar plus 6 clusters. **Pillar and S4 are written.** 15 `new-query` and 5
-`evaluate-content` credits spent. Remaining to write: S2, S3, S5, S6, S8.
+Pillar plus 6 clusters. **Pillar, S3 and S4 are written.** 15 `new-query` and 7
+`evaluate-content` credits spent. Remaining to write: S2, S5, S6, S8.
 
 ### Consequence for the cluster map
 

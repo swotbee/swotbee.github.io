@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 320" role="img" aria-label="Scope comparison: a full revenue operations audit covers marketing, sales, CS and finance operations, while a renewal-scoped audit examines only the renewal path">
+  <rect width="800" height="320" fill="#fdfbf5"/>
+  <text x="400" y="32" text-anchor="middle" font-family="system-ui,sans-serif" font-size="17" font-weight="700" fill="#1f2933">Two different audits, often sold under one name</text>
+  <g font-family="system-ui,sans-serif">
+    <rect x="34" y="56" width="360" height="238" rx="10" fill="#fff" stroke="#d8cfb8" stroke-width="2"/>
+    <text x="214" y="84" text-anchor="middle" font-size="14" font-weight="700" fill="#1f2933">Full revenue operations audit</text>
+    <text x="214" y="104" text-anchor="middle" font-size="11" fill="#7b8794">Whole revenue engine, weeks of work</text>
+    <g font-size="11.5" fill="#52606d">
+      <rect x="56" y="120" width="150" height="30" rx="5" fill="#f6f1e3"/><text x="68" y="140">Marketing operations</text>
+      <rect x="222" y="120" width="150" height="30" rx="5" fill="#f6f1e3"/><text x="234" y="140">Sales operations</text>
+      <rect x="56" y="158" width="150" height="30" rx="5" fill="#f6f1e3"/><text x="68" y="178">Customer success</text>
+      <rect x="222" y="158" width="150" height="30" rx="5" fill="#f6f1e3"/><text x="234" y="178">Finance and billing</text>
+      <rect x="56" y="196" width="150" height="30" rx="5" fill="#f6f1e3"/><text x="68" y="216">Tech stack and data</text>
+      <rect x="222" y="196" width="150" height="30" rx="5" fill="#c9a227" fill-opacity="0.35"/><text x="234" y="216">Renewals</text>
+      <rect x="56" y="234" width="316" height="30" rx="5" fill="#f6f1e3"/><text x="68" y="254">Forecasting, reporting, handoffs, attribution</text>
+    </g>
+    <rect x="424" y="56" width="342" height="238" rx="10" fill="#fff" stroke="#c9a227" stroke-width="3"/>
+    <text x="595" y="84" text-anchor="middle" font-size="14" font-weight="700" fill="#1f2933">Renewal-scoped audit</text>
+    <text x="595" y="104" text-anchor="middle" font-size="11" fill="#7b8794">One revenue path, fixed price, days not weeks</text>
+    <g font-size="11.5" fill="#52606d">
+      <rect x="446" y="120" width="298" height="30" rx="5" fill="#c9a227" fill-opacity="0.35"/><text x="458" y="140">Are renewal deals created, and when?</text>
+      <rect x="446" y="158" width="298" height="30" rx="5" fill="#c9a227" fill-opacity="0.35"/><text x="458" y="178">Who sees a renewal coming, and how early?</text>
+      <rect x="446" y="196" width="298" height="30" rx="5" fill="#c9a227" fill-opacity="0.35"/><text x="458" y="216">Where does renewal revenue leak?</text>
+      <rect x="446" y="234" width="298" height="30" rx="5" fill="#c9a227" fill-opacity="0.35"/><text x="458" y="254">Can you forecast the renewal number?</text>
+    </g>
+  </g>
+</svg>

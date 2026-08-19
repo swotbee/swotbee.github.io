@@ -134,6 +134,8 @@ Measure before you buy anything. Three renewal management metrics separate a cap
 
 If on-time renewals are low but your team is not at capacity, the constraint is visibility, not hours. If renewal work only starts thirty days out, no amount of outsourcing fixes that, because the provider inherits the same late start.
 
+If you cannot pull these numbers today, that is itself the finding. A [revenue operations audit](/posts/revenue-operations-audit/) scoped to renewals establishes the baseline before you commit to any of the three options.
+
 Then work through these in order.
 
 1. **Name the constraint.** Is it hours, skill, or process? Outsourcing solves hours. Hiring an internal team solves skill and hours. Only a build solves process.
