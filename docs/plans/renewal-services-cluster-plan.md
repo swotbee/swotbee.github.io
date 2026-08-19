@@ -6,9 +6,9 @@ the source brief is not a prompt doc: it is first-party Search Console evidence 
 `marketing/ads/research/gsc/` (365-day window) plus the ad-side keyword work in
 `marketing/ads/23-keyword-conversion-review.md`.
 
-Status 2026-08-19: 11 `new-query` + 2 `evaluate-content` credits spent.
-CONFIRMED keywords: P0-S, S2, S3, S4, S6, S8. BLOCKED on retargets: S5, S7.
-S4 is written and scored (63). Nothing else drafted.
+Status 2026-08-19: 15 `new-query` + 2 `evaluate-content` credits spent. Keyword research
+is COMPLETE. Confirmed: P0-S, S2, S3, S4, S5, S6, S8. Dropped: S1 (merged), S7 (no clean
+keyword exists). S4 is written and scored (63). Nothing else drafted.
 
 ---
 
@@ -112,12 +112,12 @@ intent. `outsourced renewal management` is clean and is the confirmed pillar key
 | S2 | HubSpot Renewals: Do It Yourself, Hire Help, or Buy an App? | `hubspot renewal setup help` **(clean, 1,129w)** | 8 @ 15.2; 8 @ 6.4 | NET-NEW |
 | S3 | What a Renewal Operations Audit Actually Finds (and What It Costs) | `revenue operations audit` **(clean; scope to renewals)** | maps to the paid audit; no page exists | NET-NEW |
 | S4 | How to Choose a HubSpot Renewal Consultant: 9 Questions to Ask | `customer retention consultants` | 35 @ 6.1 + 33 @ 9.7 | REHOME + EXPAND existing orphan |
-| S5 | The Real Cost of Broken Renewal Operations: a CFO-Ready Model | ~~`cost of missed renewals`~~ **RETARGET needed** | pairs with the leakage estimate offer | **blocked** |
+| S5 | The Real Cost of Broken Renewal Operations: a CFO-Ready Model | `renewal revenue leakage` **(clean, 1,858w)** | pairs with the leakage estimate offer | NET-NEW, heavy competition |
 | S6 | How Long Does a HubSpot Renewal Build Take? A Realistic Timeline | `hubspot implementation timeline` **(clean, 1,106w)** | 51 impr combined, 9.5 to 16.3 | NET-NEW |
-| S7 | Renewal Operations Health Check: 12 Signs Your HubSpot Setup Is Leaking | ~~`renewal process audit checklist`~~ **RETARGET needed** | pairs with `/renewal-scorecard/` | **blocked** |
+| ~~S7~~ | Renewal Operations Health Check: 12 Signs Your HubSpot Setup Is Leaking | - | - | **DROPPED as an SEO target** after 3 failed keywords. Keep as support content for `/renewal-scorecard/` |
 | S8 | Fractional RevOps vs a Full-Time Hire vs an Agency | `fractional revops vs full time hire` **(clean, 2,232w)** | 5 @ 9.0 | NET-NEW |
 
-Final: Pillar P0-S + 7 clusters (6 net-new, 1 rehomed). S1 merged into the pillar after the intent pre-check, see results below.
+Final: **Pillar P0-S + 6 writable clusters.** S1 merged into the pillar; S7 dropped as an SEO target; S4 stays in its existing pillar and is already written.
 
 ## Internal linking graph
 
@@ -344,6 +344,69 @@ design`, `funnel`, `innovative strategies`.
 
 Not yet done for S4: `import-content` to the editor, a unique inline image check, and
 `pnpm build`.
+
+### Third batch: S5 and S7 retargets, 2026-08-19 (4 credits)
+
+| Seed | Keyword | Target | Verdict |
+|---|---|---|---|
+| S5r1 | `renewal revenue leakage` | 1,858 | **ACCEPTED** |
+| S5r2 | `lost renewal revenue saas` | 1,562 | Rejected, diffuse SERP |
+| S7r1 | `renewal pipeline health check` | 467 | Rejected, incoherent SERP |
+| S7r2 | `revops health check` | 1,253 | Rejected, brand collision |
+
+**S5 solved. Use `renewal revenue leakage`.** The SERP is vendor-side throughout, which
+is the side we are on: Salesforce, Sirion, BillingPlatform, Pramata, Turnstile, Recurly
+("How to Stop Subscription Revenue Leakage"), Zuora ("How to detect and prevent revenue
+leakage in your SaaS business"), Maxio, Oracle. It also maps cleanly onto the existing
+`/resources/renewal-leakage-estimate/` offer.
+
+Two warnings. This is **by far the most competitive keyword in the plan**: Salesforce,
+Oracle, Zuora, Recurly and Maxio all rank, and none of them are beatable on domain
+authority. Expect to win only the long tail of it. And "revenue leakage" is broader than
+renewals, covering billing, pricing and contract leakage too, so the article carries the
+same scope-discipline requirement as S3.
+
+The alternative `lost renewal revenue saas` was rejected as unfocused: the SERP mixes
+leakage, ARR metrics, revenue *recognition* (LogiSense, GoodSign, r/FPandA) and churn,
+which means Google has no settled intent for it.
+
+**S7 should be dropped as an SEO target.** Three keywords have now failed for three
+different reasons, which is enough evidence that the "health check" framing has no clean
+commercial SERP:
+
+- `renewal process audit checklist` returns accreditation and compliance auditing.
+- `renewal pipeline health check` returns a **three-way ambiguous** SERP: a healthcare
+  company (pipelinehealth.us), **data-engineering** pipeline monitoring (Palantir,
+  "Maintaining pipelines, Recommended health checks"), and sales pipelines. Instagram also
+  ranks. The 467-word target is the tell: Google has no idea what this query means.
+- `revops health check` collides with an exact-match brand. **revops.health is a
+  healthcare revenue-cycle-management company** and owns 5 of the top 11 results, joined
+  by micromd and elion.health. Entering this SERP means competing with a company whose
+  domain is the keyword.
+
+**Recommendation: do not write S7 as a keyword-targeted post.** The underlying asset
+already exists as `/renewal-scorecard/` and `/resources/renewal-health-scorecard.astro`.
+Keep the 12-signal checklist as supporting content for that tool, reachable from P0-S and
+S3, and stop spending credits looking for a keyword that does not exist.
+
+Worth noting: the LinkedIn result "The RevOps Health Check: 12 Signals Your Revenue System
+Is Leaking" is almost exactly the planned S7 title. That content works as a LinkedIn post,
+which is probably where it belongs.
+
+### Final keyword status
+
+| Seed | Keyword | Target words | Status |
+|---|---|---|---|
+| P0-S | `outsourced renewal management` | 1,166 | Confirmed |
+| S2 | `hubspot renewal setup help` | 1,129 | Confirmed, scope caution |
+| S3 | `revenue operations audit` | 1,350 | Confirmed, scope caution |
+| S4 | `customer retention consultants` | 1,707 | **Written, score 63** |
+| S5 | `renewal revenue leakage` | 1,858 | Confirmed, heavy competition |
+| S6 | `hubspot implementation timeline` | 1,106 | Confirmed |
+| S7 | none found | - | **Dropped as an SEO target** |
+| S8 | `fractional revops vs full time hire` | 2,232 | Confirmed |
+
+Pillar plus 6 writable clusters. 15 `new-query` and 2 `evaluate-content` credits spent.
 
 ### Consequence for the cluster map
 
