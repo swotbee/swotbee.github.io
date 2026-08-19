@@ -79,6 +79,32 @@ Be specific about this before you build anything, because "sync Mixpanel to HubS
 
 ---
 
+## Copy This: A JQL Query for Account-Level Seat Utilization
+
+Mixpanel's Insights UI can't easily roll individual user events up to an account-level percentage, that needs JQL (Mixpanel's JavaScript query language, available under Data Management → JQL Console). Here's a starting template for computing active seats per account in the last 30 days, the single most useful field for a reverse-ETL sync to pull from. Treat it as a structural example to adapt against your own schema, not a drop-in query, since your event and property names will differ:
+
+```javascript
+function main() {
+  return Events({
+    from_date: "30daysAgo",
+    to_date: "today",
+    event_selectors: [{ event: "$any_event" }]
+  })
+  .groupBy(["properties.account_id", "distinct_id"], mixpanel.reducer.count())
+  .groupBy(["key.0"], mixpanel.reducer.numeric_summary("value"))
+  .map(function(row) {
+    return {
+      account_id: row.key,
+      active_seats_30d: row.value.count
+    };
+  });
+}
+```
+
+Adjust `properties.account_id` to whatever property you use to group users into a company (a common gap: if you haven't set a consistent account-level identifier on every tracked event, this is the first thing to fix, before any sync). Divide `active_seats_30d` by your known total seat count for that account (pulled from HubSpot, not Mixpanel) to get the percentage. Save this as a scheduled report, then point your reverse-ETL tool's source query at it rather than trying to reinvent the aggregation logic on the HubSpot side.
+
+---
+
 ## Turning Mixpanel Events Into a Renewal Signal
 
 The practical build, once data is flowing:

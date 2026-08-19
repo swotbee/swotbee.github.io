@@ -70,6 +70,30 @@ The practical build:
 
 ---
 
+## Copy This: The Exact Cohort Definition for "At-Risk Account"
+
+Rather than a vague "define your cohorts" instruction, here's a specific one to build first, in Amplitude's Cohort Builder (Data → Cohorts → New Cohort):
+
+**Cohort name:** `Renewal Risk - Low Engagement 30d`
+
+**Definition (behavioral cohort, "did" logic):**
+```
+Users who
+  have NOT performed [Core Action Event]
+  in the last 30 days
+  AND
+  have performed [Login Event]
+  at least 1 time in the last 90 days
+```
+
+The second condition matters as much as the first: it excludes brand-new trial users or accounts that never onboarded (a different problem, not a renewal risk signal) and isolates accounts that were active and have since gone quiet, the pattern that actually correlates with a nervous renewal conversation. Replace `[Core Action Event]` with whichever event in your Amplitude taxonomy represents real product value delivered, not a login or page view.
+
+**Then, for the account-level rollup:** create a second saved computation, "% of account users in this cohort," grouped by your account/company ID property. That percentage, not the raw cohort membership, is what should sync to the `usage_seat_utilization_pct`-style property on the HubSpot deal, see the scoring model in our [pillar guide](/posts/product-usage-data-renewals-hubspot/) for how to turn this into a full health score.
+
+This one cohort, built correctly, is more useful than a dozen loosely defined ones. Start here before building out a larger cohort library.
+
+---
+
 ## What to Put on the Deal Record
 
 Keep it to what a renewal owner would glance at before a call, the same short list regardless of which analytics tool feeds it:

@@ -147,6 +147,27 @@ Then work through these in order.
 4. **Measure before you buy.** Track gross renewal rate, the share of renewals closed on time, and how far ahead renewal work begins. On-time renewal rate is the most diagnostic of the three, because late renewals are where discounting and churn concentrate.
 5. **Price the ongoing cost against the one-off cost.** A retainer runs forever and scales with your customer base. A build does not, which changes the profitability arithmetic once renewal volume grows.
 
+### Score it in five minutes
+
+Answer each with 0, 1 or 2 and total the result. This is the conversation we end up having on most first calls, compressed into something you can run without us.
+
+| Question | 0 points | 1 point | 2 points |
+|---|---|---|---|
+| Can you list every renewal due in the next 90 days right now, from the CRM? | No | Partly, with effort | Yes, in under a minute |
+| Is your renewal process written down anywhere? | No | Informally | Yes, and people follow it |
+| What proportion of renewals close before the contract end date? | Under 50% | 50 to 80% | Over 80% |
+| Does someone have renewals in their job description? | No | Shared informally | Yes, explicitly |
+| Are renewal conversations mostly transactional? | No, each is bespoke | Mixed | Yes, largely standard |
+| Is your team at capacity on renewals they can see? | No, they have time | Roughly at capacity | Yes, overloaded |
+
+**0 to 4: fix the system first.** You cannot outsource or hire your way out of this, because there is no process for anyone to run. Whoever you bring in will spend their first month building what the scoring above says is missing, and you will pay a premium for it.
+
+**5 to 8: it depends on the last two rows.** High scores there with low scores above mean the process is the gap. Low scores there mean you have a real capacity constraint worth solving with people.
+
+**9 to 12: outsourcing or hiring is a genuine option.** You have a documented, working motion and the constraint is hours. This is the only band where the provider comparison is the right conversation to be having.
+
+Most teams who contact us expecting to score 9 or above score 3. That is not a criticism of them; it is what a manual renewal process looks like from the inside, where the effort feels like a system.
+
 If steps one and two point at process rather than capacity, fix that first. It is cheaper, and it makes the outsourcing decision clearer if you still want to make it later.
 
 If what you actually need is help diagnosing the problem rather than staff to work around it, that is a different purchase again: see [customer retention consulting](/posts/customer-retention-consulting/) for what a consulting engagement covers and what it costs. For the mechanics of the renewal process itself, independent of who runs it, start with the [contract renewal management guide](/posts/contract-renewal-management-complete-guide/).

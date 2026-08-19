@@ -530,6 +530,40 @@ All three carry `seriesName: "Renewal Services"` and `pillarUrl`. The pillar lin
 every cluster and was re-synced to the editor after the links were added. Unique hero and
 unique inline SVG verified for each.
 
+### Tactical-takeaway pass, 2026-08-19
+
+An honest re-read found the same weakness in all seven: strong on framing, decision
+criteria and honest non-fit advice, **thin on anything a reader could execute**. Every
+article told the reader how to think about the problem. None handed them something to run
+on Monday. That is the difference between content that reads well and content someone
+forwards to a colleague.
+
+One concrete artifact was added per article:
+
+| Article | The takeaway |
+|---|---|
+| Pillar | A 6-question scored worksheet (0 to 12) that outputs in-house, outsource, or fix the system, with what each band means |
+| S3 audit | **The first hour of the audit, given away**: 5 named checks with the threshold that makes each a problem, and how to read them together |
+| S5 leakage | The reconciliation as 5 executable steps, with the formula and a worked example (£48k account, 5% uplift, £6k unbilled expansion, £8,400 variance) |
+| S4 consulting | 5 questions with a good-answer and a walk-away column, plus the preparation test |
+| S2 setup help | A 10-minute self-assessment of your own HubSpot, 6 checks, with the pattern that points at each route |
+| S6 timeline | A base-plus-adders estimator so readers compute their own number instead of picking a row |
+| S8 fractional | The breakeven calculation with a worked example, answering "at how many days a month does fractional stop being cheaper" |
+
+**Design rule applied throughout: give away the thing consultancies gate.** The audit
+checks, the reconciliation and the breakeven maths are all things a competitor would put
+behind a call. Publishing them is the differentiator on SERPs where everyone else is
+withholding, it is what makes a page worth citing, and anyone who runs the checks and
+finds nothing wrong was never a customer.
+
+**SEO impact: none.** All seven re-scored after the additions. Six held exactly (pillar 67,
+S3 69, S5 65, S4 63, S2 64, S6 63) and S8 moved 60 to 59, which is noise. The sections were
+written in the vocabulary the SERPs already wanted, so term coverage did not dilute.
+
+Word counts are now well above the NeuronWriter targets (1,462 to 2,408 against targets of
+1,106 to 2,232). Deliberate: the scores confirm no penalty, and the tactical sections are
+the reason a reader stays.
+
 ### Final keyword status
 
 | Seed | Keyword | Target words | Status |
@@ -541,11 +575,12 @@ unique inline SVG verified for each.
 | S5 | `renewal revenue leakage` | 1,858 | **Written, score 65** |
 | S6 | `hubspot implementation timeline` | 1,106 | **Written, score 63** |
 | S7 | none found | - | **Dropped as an SEO target** |
-| S8 | `fractional revops vs full time hire` | 2,232 | **Written, score 60** |
+| S8 | `fractional revops vs full time hire` | 2,232 | **Written, score 59** |
 
 **CLUSTER COMPLETE.** Pillar plus 6 clusters, all written. 15 `new-query` and 15
 `evaluate-content` credits spent. Scores: pillar 67, S3 69, S4 63, S5 65, S2 64, S6 63,
-S8 60. Nothing published: all commits are local pending a deliberate push.
+S8 59. Every article carries one executable takeaway (see the tactical pass below).
+Nothing published: all commits are local pending a deliberate push.
 
 ### Consequence for the cluster map
 

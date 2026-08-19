@@ -90,6 +90,31 @@ Most mid-market companies asking for a RevOps audit already know the answer to "
 
 ---
 
+## Run the First Hour of the Audit Yourself
+
+You do not need to buy anything to find out whether you have a problem. Five checks, roughly an hour, all doable in a HubSpot or Salesforce instance by anyone with reporting access. Write down each number before you look at the next one.
+
+**Check 1: Deals with no next step.** Filter open deals where the next activity date is empty or in the past. Record the percentage.
+*Under 10% is healthy. Over 30% means your pipeline is a list, not a forecast.*
+
+**Check 2: Stage age outliers.** Sort open deals by days in current stage, descending. Look at the top 20.
+*If deals are sitting three or more times longer than your average sales cycle, your stage definitions do not match reality, and every conversion rate you report is wrong.*
+
+**Check 3: The ownership gap.** Filter closed-won deals from the last 6 months where no customer success or account owner is assigned.
+*Anything above zero is a handoff that did not happen. These accounts are your churn risk for next year.*
+
+**Check 4: Required-field completeness.** Pick the three properties your reporting depends on most, usually renewal date, contract value and account owner. Count records where any one is empty.
+*Above 20% and no dashboard built on those fields can be trusted, which usually explains why people keep asking for spreadsheets.*
+
+**Check 5: The forecast backtest.** Find the forecast you submitted for the quarter that closed two quarters ago. Compare it against actuals.
+*The size of the gap matters less than whether it is consistent. Consistently 15% over is a calibration problem you can correct. Randomly wrong is a data problem, and no amount of sales discipline fixes it.*
+
+**How to read the results together.** Checks 1 and 2 failing point at process discipline. Checks 3 and 4 failing point at systems and automation. Check 5 failing while the others pass usually means your stage definitions are fine but nobody agrees what they mean, which is a definition problem rather than a tooling one.
+
+If all five come back clean, you probably do not need an audit. That is a genuinely useful outcome for an hour's work, and it is the reason we publish the checks rather than gate them.
+
+---
+
 ## Common Challenges a RevOps Audit Surfaces
 
 Across mid-market revenue teams the same findings recur, and recognising them early tells you whether you need an audit or already have your answer.

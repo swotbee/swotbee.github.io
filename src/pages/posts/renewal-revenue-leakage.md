@@ -117,7 +117,38 @@ Detecting revenue leakage does not require revenue management software. It requi
 
 **Take a sample of accounts that renewed in the last twelve months. For each, compare the contracted value against the amount actually billed.**
 
-Every difference is one of two things: a decision somebody made deliberately, or leakage. Sort them into those two piles. The ratio tells you what you have.
+Here is the exact version, which takes about two hours for a 30-account sample.
+
+**Step 1. Pull the list.** Export closed-won deals in your renewal pipeline with a close date in the last 12 months. You need four columns: account name, deal amount, original contract value, and the contracted uplift percentage. If the last two are not properties in your CRM, that finding alone is the answer to why leakage is invisible, and it is worth stopping to fix that first.
+
+**Step 2. Calculate what each renewal should have been.**
+
+```
+expected = prior term value x (1 + contracted uplift)
+         + value of any expansion delivered during the term
+```
+
+**Step 3. Compare against what was actually billed**, not what the deal record says. Deal amounts are frequently aspirational; the invoice is the truth. Pull actual billed amounts from your billing system or accounting export.
+
+**Step 4. Put every variance in one of three columns.**
+
+| Column | What it means | Example |
+|---|---|---|
+| Deliberate | Someone chose this and can say why | "We waived the uplift to secure a 3-year term" |
+| Leakage | Nobody decided, it just happened | "The 5% uplift was never applied" |
+| Unknown | Nobody can say either way | The most alarming column, and usually the largest |
+
+A worked example. An account on £48,000 with a contracted 5% uplift, which added 10 seats worth £6,000 mid-term:
+
+- Expected: £48,000 x 1.05 + £6,000 = **£56,400**
+- Actually billed: **£48,000**
+- Variance: **£8,400**, of which £2,400 is the missed uplift and £6,000 is unbilled expansion
+
+Neither number is dramatic on its own. Across 30 accounts, if a third show a similar pattern, you are looking at roughly £84,000 a year, recurring, from customers who never complained and never left.
+
+**Step 5. Annualise it.** Divide the total leakage by your sample size, multiply by your total renewing accounts. That number is your budget for fixing the problem, and it is the number to take to whoever approves the spend.
+
+The ratio between those columns tells you what you have.
 
 - **Mostly deliberate decisions.** Your process works and your team is making commercial judgements. Fine.
 - **Mostly nobody knew.** You have a process problem, and the sample size tells you roughly what it costs annually.

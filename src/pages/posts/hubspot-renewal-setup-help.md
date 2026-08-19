@@ -130,6 +130,23 @@ If your customer success team cannot answer "which renewals are at risk next qua
 
 ---
 
+## Check Your Own HubSpot in 10 Minutes
+
+Before choosing a route, find out how much of this you already have. Six checks, all doable now, and the pattern of answers points at the route.
+
+1. **Filter deals by pipeline.** Is there a pipeline named for renewals, separate from new business? *No: you are starting from scratch.*
+2. **Search your deal properties for "renewal".** Is there a renewal date property, and is it populated on more than 80% of customer records? *Empty or missing: this is the first thing to fix, because nothing can be automated off a field that does not exist.*
+3. **Open Workflows and search "renewal".** Does anything create renewal deals automatically? *No: every renewal in your pipeline got there because a person remembered.*
+4. **Sort your renewal deals by create date against close date.** How many days before the renewal are deals typically created? *Under 45: you are structurally late, and discounting is the symptom.*
+5. **Look for an uplift or price-increase property.** Does one exist? *No: contracted uplifts are being applied from memory, if at all.*
+6. **Try to build a report showing renewal revenue next quarter.** Can you, without exporting to a spreadsheet? *No: your renewal forecast is somebody's manual work product.*
+
+**Reading the pattern.** Mostly yes with one or two gaps points at buying an app or a short piece of help for the specific gap. Roughly half yes means you have the bones and need configuration rather than design. Mostly no means the decision is not really which route, it is who is going to own this, because all three routes need that answer first.
+
+Check 3 is the one to weight heaviest. It separates a renewal system from a renewal habit, and it is the difference that shows up in every other number.
+
+---
+
 ## How to Decide
 
 Answer these three in order.

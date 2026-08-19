@@ -117,6 +117,24 @@ Choose a partner who:
 
 ---
 
+## Five Questions, and the Answers That Should Worry You
+
+Knowing what to ask is only half of it. What separates a useful first call from a pleasant one is knowing which answers are evasions. Ask these five, and listen for the pattern in the third column.
+
+| Ask | A good answer sounds like | Walk away if you hear |
+|---|---|---|
+| "What will you build, specifically, in our CRM?" | Named objects, properties and workflows, with a rough sequence | "We'll define that during discovery" as the whole answer |
+| "Which retention metric will you commit to moving, and by when?" | One metric, a number, a timeframe, with caveats | "All of them", or a refusal to name any |
+| "What does month four look like after you leave?" | A handover plan, documentation, a named internal owner | Vagueness, or an assumption you will retain them |
+| "Tell me about an engagement that did not work" | A specific example and what they learned | "They've all gone well" |
+| "What would make you tell us not to hire you?" | Real disqualifiers, readily offered | Nothing comes to mind |
+
+The last question is the most diagnostic and the one people forget to ask. Anyone who has done this work has turned business away, and can tell you why in one sentence. A consultant who cannot name a single situation where they are the wrong choice is either inexperienced or is selling to you rather than assessing you.
+
+One more test that costs nothing: ask them to explain your own churn problem back to you before you have explained it. A partner who has looked at your public pricing, your product and your segment will have a hypothesis. One who has not will ask you to describe your business, which tells you exactly how much preparation the engagement will get.
+
+---
+
 ## What Customer Retention Consulting Costs
 
 Most firms will not publish a number, which makes budgeting for this genuinely hard. Here

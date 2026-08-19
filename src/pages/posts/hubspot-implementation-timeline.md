@@ -82,6 +82,35 @@ Phases overlap in practice, which is why elapsed time is usually less than the s
 
 ---
 
+## Estimate Your Own Timeline
+
+Rather than guessing which row above applies, build the number. Start with a base and add for each condition that is true of you.
+
+| | Weeks |
+|---|---|
+| **Base: one hub, clean data, no integrations** | **3** |
+| Each additional hub | +2 |
+| Migrating from another CRM | +4 |
+| More than 10,000 contact records | +1 |
+| Nobody can name the current data owner | +2 |
+| Each integration beyond a native connector | +2 |
+| Custom objects required | +2 |
+| More than 3 people must approve decisions | +2 |
+| No internal project owner with 5+ hours a week | +4 |
+| Go-live during your busiest quarter | +3 |
+
+Add them up. That total is closer to reality than any vendor estimate, because vendors quote configuration time and this counts decision time.
+
+Two rows deserve attention because they are the ones people leave off their own estimate.
+
+**"No internal project owner with 5+ hours a week" is the largest single adder**, and it is the one most often assumed away. An implementation without a named internal owner does not run slowly, it stalls, and the +4 is optimistic.
+
+**"More than 3 approvers" costs more than it looks.** Every configuration decision that needs consensus adds a round trip, and there are dozens of them. This is why an implementation at a 40-person company frequently finishes faster than the same scope at a 400-person one.
+
+If your total comes out above 12 weeks, consider phasing rather than compressing. Getting one hub live and used beats getting three configured and ignored.
+
+---
+
 ## What Makes a CRM Implementation Run Long
 
 Four things account for nearly every overrun, and only one is technical.

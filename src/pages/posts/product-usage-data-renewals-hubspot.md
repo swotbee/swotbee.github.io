@@ -91,6 +91,36 @@ Keep the raw event stream in the analytics tool, where it's built to live. Sync 
 
 ---
 
+## Copy This: A Minimal Usage Health Score You Can Build in HubSpot This Week
+
+You don't need a data team or a scoring engine to start. Here's a scoring model built entirely from the four properties above, that you can create as a single HubSpot property with a workflow calculation, no external tooling required.
+
+**Step 1. Create four custom properties on the Company or Deal object:**
+
+| Property name | Field type | Source |
+|---|---|---|
+| `usage_last_active_days` | Number | Days since last account activity |
+| `usage_seat_utilization_pct` | Number | % of seats active in last 30 days |
+| `usage_core_features_adopted` | Number | Count of core features used, out of your defined set |
+| `usage_trend_direction` | Dropdown (Up / Flat / Down) | 30-day usage vs. prior 30-day period |
+
+**Step 2. Score each on a 0-25 point scale, for a 100-point total:**
+
+```
+usage_last_active_days:        0-7 days = 25 pts   |  8-30 = 15 pts  |  31+ = 0 pts
+usage_seat_utilization_pct:    70%+ = 25 pts        |  40-69% = 15 pts |  <40% = 0 pts
+usage_core_features_adopted:   3+ features = 25 pts |  1-2 = 15 pts   |  0 = 0 pts
+usage_trend_direction:         Up = 25 pts          |  Flat = 15 pts  |  Down = 0 pts
+```
+
+**Step 3. Build a HubSpot workflow** that sums the four into a single `usage_health_score` property (0-100) and re-runs it on a schedule (daily is enough). Add a branch: score under 40 sets `renewal_risk_flag` to "At Risk" and creates a task for the deal owner titled "Usage health dropped, review before renewal call."
+
+**Step 4. Put the score on the deal record's sidebar**, not buried in a report. A renewal owner should see it the moment they open the deal, without running a dashboard.
+
+This is deliberately simple: four inputs, even point weighting, no machine learning. That's the point. A crude score a renewal owner actually looks at beats a sophisticated one buried in a BI tool. Once this is running and you have a few renewal cycles of data, revisit the weighting: if seat utilization turns out to matter more than feature count for your product, adjust the points, don't just add more properties.
+
+---
+
 ## Turning the Signal Into an Action, Not Just a Property
 
 A usage property sitting unused on a deal record is no better than a dashboard nobody checks. Once the data is syncing, it needs to trigger something:

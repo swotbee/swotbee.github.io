@@ -78,6 +78,33 @@ The headline retainer against the headline salary is a misleading comparison. In
 
 The honest summary: fractional is cheaper for seniority and more expensive per hour. If you need forty hours a week of hands-on work, fractional is the wrong instrument and will feel expensive very quickly. If you need eight hours a month of genuinely senior thinking, hiring full-time to get it means either overpaying for idle capacity or hiring someone too junior for the decisions.
 
+### Work out your own breakeven
+
+The comparison people actually need is not "which is cheaper" but "at how many days a month does fractional stop making sense". You can calculate that in about ten minutes.
+
+```
+Full-time true cost = salary x 1.25          (benefits, payroll taxes, equipment)
+                    + recruitment cost        (agency fee, or your time)
+                    ÷ 12                      = monthly cost
+
+Fractional cost     = day rate x days per month
+```
+
+Set them equal and solve for days. A worked example, using round numbers you should replace with your own:
+
+- Full-time RevOps salary £75,000, so true annual cost is roughly **£93,750**, or **£7,810 a month**
+- Fractional day rate £1,200
+- Breakeven: 7,810 ÷ 1,200 = **6.5 days a month**
+
+So above roughly six or seven days a month, the fractional arrangement costs more than an employee. Below it, you are paying less and getting a more senior person than £75,000 would hire.
+
+Two adjustments that matter more than the arithmetic:
+
+- **Add the ramp.** A full-time hire is not productive for the first one to three months, and you are typically two to four months from starting the search. Amortised over a two-year tenure, that is meaningful, and it all lands in year one.
+- **Subtract the idle capacity.** If the actual RevOps workload is 10 days a month, a full-time hire is 12 days of salary for 10 days of work. Compare against real workload, not against a full month.
+
+The number most teams land on is between five and eight days. If your honest estimate of the work is below that, fractional wins on cost as well as seniority. Above it, hire.
+
 ---
 
 ## When Fractional RevOps Is Right for a SaaS Business
