@@ -485,21 +485,67 @@ Linking: pillar links to S5 from the cost section; S5 links back to the pillar,
 `hubspot-renewal-pipeline-complete-guide`. Unique hero and unique inline SVG
 (`renewal-revenue-leak-points.svg`).
 
+### S2, S6, S8 written 2026-08-19: cluster complete
+
+| Seed | Slug | Words | Target | Score |
+|---|---|---|---|---|
+| S2 | `hubspot-renewal-setup-help` | 1,674 | 1,129 | 64 (opened 50) |
+| S6 | `hubspot-implementation-timeline` | 1,182 | 1,106 | 63 (first pass) |
+| S8 | `fractional-revops-vs-full-time-hire` | 2,062 | 2,232 | 60 (opened 51) |
+
+**S2 and the cannibalization guard.** Pillar 1 already owns all 17 how-to posts on building
+renewals in HubSpot: stages, properties, template, reminders, deal automation, quotes,
+forecasting, risk scoring, ownership, co-terming. The S2 SERP wants a how-to. Writing one
+would have split rankings with Pillar 1, which is playbook learning #9 exactly.
+
+**S2 was therefore written as a decision and routing page, not a tutorial.** Its scope
+table has one row per piece of the setup, each linking to the Pillar 1 post that owns it,
+so the article defers rather than competes. It links to 11 existing posts.
+
+The score records the cost of that choice. It opened at **50**, the lowest of the cluster,
+and `content_extended` sat at 15/86. Reading the missing terms confirms the guard was
+working rather than failing: `automatically creates a renewal deal`, `set a workflow`,
+`30 days before expiration`, `deal stage`, `create renewal deals`. **Those terms are the
+how-to. Covering them is the cannibalization.** They were left uncovered on purpose.
+
+The lift from 50 to 64 came from a section written in outcomes rather than instructions
+("What Good Renewal Setup Should Produce"), which carried the missing vocabulary (churn,
+downgrade, subscription renewals, customer health signals, ARR, expansion revenue, billing)
+without teaching a single build step. **That technique is worth reusing anywhere a cluster
+sits next to an existing pillar.**
+
+**S6** scored 63 on the first pass, the only post in the cluster to need no second round.
+Scope handled as with S3 and S5: it ranks for the broad implementation-timeline term but
+separates HubSpot onboarding from an implementation, and gives adding renewals to an
+existing instance its own row and section (1 to 3 weeks, not months).
+
+**S8** is the weakest at 60, and it is the least on-brand keyword in the plan: RevOps
+hiring is adjacent to renewals rather than central. It opened at 51 with a genuine length
+shortfall (1,420 against a 2,232 target), so here the playbook's usual word-count
+diagnosis was correct. Two added sections closed most of it. 60 sits at the top of the
+playbook's 45 to 60 band for broad conceptual keywords, and pushing further would mean
+padding.
+
+All three carry `seriesName: "Renewal Services"` and `pillarUrl`. The pillar links out to
+every cluster and was re-synced to the editor after the links were added. Unique hero and
+unique inline SVG verified for each.
+
 ### Final keyword status
 
 | Seed | Keyword | Target words | Status |
 |---|---|---|---|
 | P0-S | `outsourced renewal management` | 1,166 | **Written, score 67** |
-| S2 | `hubspot renewal setup help` | 1,129 | Confirmed, scope caution |
+| S2 | `hubspot renewal setup help` | 1,129 | **Written, score 64** |
 | S3 | `revenue operations audit` | 1,350 | **Written, score 69** |
 | S4 | `customer retention consultants` | 1,707 | **Written, score 63** |
 | S5 | `renewal revenue leakage` | 1,858 | **Written, score 65** |
-| S6 | `hubspot implementation timeline` | 1,106 | Confirmed |
+| S6 | `hubspot implementation timeline` | 1,106 | **Written, score 63** |
 | S7 | none found | - | **Dropped as an SEO target** |
-| S8 | `fractional revops vs full time hire` | 2,232 | Confirmed |
+| S8 | `fractional revops vs full time hire` | 2,232 | **Written, score 60** |
 
-Pillar plus 6 clusters. **Pillar, S3, S4 and S5 are written.** 15 `new-query` and 9
-`evaluate-content` credits spent. Remaining to write: S2, S6, S8.
+**CLUSTER COMPLETE.** Pillar plus 6 clusters, all written. 15 `new-query` and 15
+`evaluate-content` credits spent. Scores: pillar 67, S3 69, S4 63, S5 65, S2 64, S6 63,
+S8 60. Nothing published: all commits are local pending a deliberate push.
 
 ### Consequence for the cluster map
 

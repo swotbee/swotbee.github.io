@@ -105,7 +105,7 @@ The pattern is recognisable. Renewal dates live in a spreadsheet somebody mainta
 
 None of that is a headcount problem. It is a missing renewal workflow, and adding people to it produces more people doing manual work. Effective renewal management is mostly a question of whether the system surfaces the right account at the right time, not how many people are available to chase it. What actually fixes it is renewal infrastructure inside the CRM you already run: a [renewal pipeline](/posts/hubspot-renewal-pipeline-complete-guide/) with real stages, renewal deals created automatically ahead of the contract end date, [renewal reminders](/posts/hubspot-renewal-reminders/) that fire ninety days out rather than thirty, [renewal risk scoring](/posts/hubspot-renewal-risk-scoring/) so at-risk accounts surface early, and reporting your team trusts.
 
-This is a one-off build. Afterwards you own it, your team keeps their customer relationships, and the renewal process runs the same way whether you have fifty renewals a quarter or five hundred. It also streamlines the handoff between sales and renewals, which is where a surprising share of renewal opportunities go missing in software companies.
+This is a one-off build, and a smaller one than people expect: adding renewals to a working HubSpot is [one to three weeks, not months](/posts/hubspot-implementation-timeline/), and [three routes are available](/posts/hubspot-renewal-setup-help/) depending on who does it. Afterwards you own it, your team keeps their customer relationships, and the renewal process runs the same way whether you have fifty renewals a quarter or five hundred. It also streamlines the handoff between sales and renewals, which is where a surprising share of renewal opportunities go missing in software companies.
 
 ---
 
@@ -141,6 +141,7 @@ If you cannot pull these numbers today, that is itself the finding. A [revenue o
 Then work through these in order.
 
 1. **Name the constraint.** Is it hours, skill, or process? Outsourcing solves hours. Hiring an internal team solves skill and hours. Only a build solves process.
+   If the role you are weighing is a RevOps leader rather than a renewals team, [fractional RevOps vs a full-time hire](/posts/fractional-revops-vs-full-time-hire/) covers that comparison.
 2. **Check whether the renewal management process exists.** If you cannot write down your renewal strategies in a page, you do not have a process to outsource yet. Industry best practices are worth reading at this point, but they are not a substitute for documenting your own contract renewal process.
 3. **Look at complexity and value.** High-value, multi-stakeholder renewals belong with people who own the account.
 4. **Measure before you buy.** Track gross renewal rate, the share of renewals closed on time, and how far ahead renewal work begins. On-time renewal rate is the most diagnostic of the three, because late renewals are where discounting and churn concentrate.
