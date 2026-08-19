@@ -116,6 +116,8 @@ Before choosing an option, price the problem. Weak renewal management shows up i
 - **Renewal rate.** Accounts that would have renewed churn because nobody started the renewal conversation early enough.
 - **Discounting.** Late renewals get closed with price concessions, so revenue leaks even on the renewals you win.
 - **Expansion you never had.** Renewal opportunities that should have surfaced upsell and cross-sell opportunities pass as flat renewals instead.
+
+Those four are all forms of [renewal revenue leakage](/posts/renewal-revenue-leakage/), and unlike churn they involve customers who stayed.
 - **Forecast credibility.** If renewal deals are created inconsistently, your annual recurring revenue forecast is an estimate, and everyone downstream knows it.
 
 The comparison worth running is not "what does a provider charge" but "what is the gap between our current renewal performance and a realistic one, and which option closes it for less than that gap". Customer acquisition cost is the useful yardstick here: replacing a churned account almost always costs more than retaining it, which is why even a small improvement in gross renewal rate compounds against customer lifetime value.

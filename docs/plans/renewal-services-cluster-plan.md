@@ -458,6 +458,33 @@ Linking: pillar links to S3 from the metrics section; S3 links back to the pilla
 `hubspot-renewal-pipeline-complete-guide` and `hubspot-renewal-risk-scoring`. Unique hero
 and unique inline SVG (`revops-audit-scope.svg`) both verified.
 
+### S5 written 2026-08-19
+
+`src/pages/posts/renewal-revenue-leakage.md`, 1,896 words, **content score 65**.
+First draft 56, the lowest opening of the cluster, which fits the pre-check warning that
+this is the most competitive keyword in the plan.
+
+The weak zone was `content_extended` at 17/55. Roughly half those terms are synonym
+variants the vendor listicles on this SERP stuff in (`plug revenue leaks`, `stop revenue
+leaks`, `prevents revenue leaks`, `eliminate revenue leakage`, `boost revenue`). Those
+were left alone. The lift to 65 came from two sections that were genuinely missing rather
+than from covering synonyms: the compounding impact of leakage on annual recurring revenue,
+and whether already-leaked revenue can be recovered.
+
+**This is the one cluster where ranking is not a realistic goal.** Salesforce, Oracle,
+Zuora, Recurly and Maxio hold this SERP. The article earns its place by answering the
+renewal-specific question none of them address, and by being the organic counterpart to
+`/resources/renewal-leakage-estimate/`, which is the primary CTA on every post on the site.
+
+Scope handled the same way as S3: a dedicated section splits a billing and revenue
+recognition problem from a renewal process problem, since "revenue leakage" is broader
+than renewals and the two have different fixes and different vendors.
+
+Linking: pillar links to S5 from the cost section; S5 links back to the pillar,
+`gross-vs-net-revenue-retention`, `hubspot-renewal-reminders` and
+`hubspot-renewal-pipeline-complete-guide`. Unique hero and unique inline SVG
+(`renewal-revenue-leak-points.svg`).
+
 ### Final keyword status
 
 | Seed | Keyword | Target words | Status |
@@ -466,13 +493,13 @@ and unique inline SVG (`revops-audit-scope.svg`) both verified.
 | S2 | `hubspot renewal setup help` | 1,129 | Confirmed, scope caution |
 | S3 | `revenue operations audit` | 1,350 | **Written, score 69** |
 | S4 | `customer retention consultants` | 1,707 | **Written, score 63** |
-| S5 | `renewal revenue leakage` | 1,858 | Confirmed, heavy competition |
+| S5 | `renewal revenue leakage` | 1,858 | **Written, score 65** |
 | S6 | `hubspot implementation timeline` | 1,106 | Confirmed |
 | S7 | none found | - | **Dropped as an SEO target** |
 | S8 | `fractional revops vs full time hire` | 2,232 | Confirmed |
 
-Pillar plus 6 clusters. **Pillar, S3 and S4 are written.** 15 `new-query` and 7
-`evaluate-content` credits spent. Remaining to write: S2, S5, S6, S8.
+Pillar plus 6 clusters. **Pillar, S3, S4 and S5 are written.** 15 `new-query` and 9
+`evaluate-content` credits spent. Remaining to write: S2, S6, S8.
 
 ### Consequence for the cluster map
 
