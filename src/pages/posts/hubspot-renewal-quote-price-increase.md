@@ -145,7 +145,7 @@ Reflect the reduced seats or tier on the renewal quote and update the renewal am
 **How should I present a price increase to a customer?**
 Lead with the value and outcomes delivered, then present the new price at the line-item level so the change is transparent and defensible.
 
-**Running an MSP?** Agreement renewals with seat true-ups, uplifts, and co-term visibility are their own discipline. See how we [automate agreement renewals for MSPs in HubSpot](/renewals-for-msps).
+**Running an MSP?** Agreement renewals with seat true-ups, uplifts, and co-term visibility are their own discipline. See how we [automate agreement renewals for MSPs in HubSpot](/renewals-for-msps/).
 
 ---
 

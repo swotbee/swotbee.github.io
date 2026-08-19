@@ -127,7 +127,7 @@ It reduces multiple renewal cycles to one per customer, simplifies forecasting, 
 **Where should the co-termed renewal date live?**
 On the renewal deal in your renewal pipeline, as the single Renewal Date property that all reminders and automations read from.
 
-**Running an MSP?** Agreement renewals with seat true-ups, uplifts, and co-term visibility are their own discipline. See how we [automate agreement renewals for MSPs in HubSpot](/renewals-for-msps).
+**Running an MSP?** Agreement renewals with seat true-ups, uplifts, and co-term visibility are their own discipline. See how we [automate agreement renewals for MSPs in HubSpot](/renewals-for-msps/).
 
 ---
 
