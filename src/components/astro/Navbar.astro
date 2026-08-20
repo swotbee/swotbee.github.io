@@ -26,7 +26,7 @@ const servicesLinks = [
     </a>
 
     <!-- Desktop nav -->
-    <div class="hidden md:flex items-center gap-1">
+    <div class="hidden lg:flex items-center gap-1">
       {navLinks.map(link => (
         <a href={link.href} class="text-v6-text-muted text-sm font-medium px-3 py-2 rounded-md hover:text-v6-dark hover:bg-gray-50 transition-colors">
           {link.label}
@@ -48,6 +48,10 @@ const servicesLinks = [
         </div>
       </div>
 
+      <div class="w-[260px] xl:w-[300px] ml-auto relative nav-pagefind">
+        <div id="nav-search-desktop" class="w-full" data-nav-pagefind></div>
+      </div>
+
       <!-- Routes to the renewal funnel, NOT /contactus/. This is the most prominent
            button on every page including the paid-ad landing page, so pointing it at a
            generic contact form competed with "Book Your Renewal Audit" and sent paid
@@ -64,7 +68,7 @@ const servicesLinks = [
     </div>
 
     <!-- Mobile hamburger -->
-    <button type="button" class="md:hidden p-2.5 rounded-md text-v6-text-muted hover:bg-gray-100" id="v6-mobile-menu-btn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="v6-mobile-menu">
+    <button type="button" class="lg:hidden p-2.5 rounded-md text-v6-text-muted hover:bg-gray-100" id="v6-mobile-menu-btn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="v6-mobile-menu">
       <svg class="w-6 h-6 block" id="v6-menu-icon-open" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
       </svg>
@@ -74,8 +78,12 @@ const servicesLinks = [
     </button>
   </div>
 
+  <div class="lg:hidden border-t border-gray-100 px-4 py-3">
+    <div id="nav-search-mobile" class="relative nav-pagefind nav-pagefind-mobile" data-nav-pagefind></div>
+  </div>
+
   <!-- Mobile menu -->
-  <div class="hidden md:hidden border-t border-gray-200" id="v6-mobile-menu">
+  <div class="hidden lg:hidden border-t border-gray-200" id="v6-mobile-menu">
     <div class="px-4 py-3 space-y-1">
       {navLinks.map(link => (
         <a href={link.href} class="block text-v6-text-muted text-sm font-medium py-3 px-3 rounded-md hover:text-v6-dark hover:bg-gray-50">
@@ -122,3 +130,68 @@ const servicesLinks = [
     }
   });
 </script>
+
+  <link href="/pagefind/pagefind-ui.css" rel="stylesheet" />
+  <script src="/pagefind/pagefind-ui.js" is:inline></script>
+  <script is:inline>
+    window.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('[data-nav-pagefind]').forEach(function(element) {
+        if (!element.id) {
+          return;
+        }
+
+        new PagefindUI({
+          element: "#" + element.id,
+          showSubResults: true,
+          showImages: false,
+        });
+      });
+    });
+  </script>
+<style is:global>
+  .nav-pagefind {
+    --pagefind-ui-scale: 0.72;
+    --pagefind-ui-primary: #C47A2A;
+    --pagefind-ui-text: #1F2937;
+    --pagefind-ui-background: #fff;
+    --pagefind-ui-border: #e5e7eb;
+    --pagefind-ui-border-radius: 8px;
+    --pagefind-ui-font: 'Hanken Grotesk Variable', 'DM Sans Variable', sans-serif;
+  }
+
+  .nav-pagefind .pagefind-ui__form {
+    margin: 0;
+  }
+
+  .nav-pagefind .pagefind-ui__search-input {
+    height: 40px;
+    font-size: 14px;
+  }
+
+  .nav-pagefind .pagefind-ui__drawer {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    transform: translateY(12px);
+    width: 90vw;
+    max-width: 672px;
+    max-height: 72dvh;
+    overflow-y: auto;
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    box-shadow: 0 20px 45px rgba(15, 23, 42, 0.16);
+    padding: 16px;
+  }
+
+  .nav-pagefind-mobile .pagefind-ui__drawer {
+    left: 0;
+    right: auto;
+    width: 100%;
+    max-height: 72dvh;
+  }
+
+  .nav-pagefind .pagefind-ui__results-area {
+    margin-top: 0;
+  }
+</style>
