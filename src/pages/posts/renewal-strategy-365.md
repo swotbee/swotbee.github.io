@@ -5,7 +5,7 @@ pubDate: "2026-06-04"
 description: "A complete SaaS renewal strategy for vendors: why the renewal is won long before the contract expires, and how continuous value realization, multi-threading, and expansion tactics secure and grow enterprise contracts."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 modifiedDate: "2026-07-24"
 author:
   name: "SWOTBee Team"
@@ -202,4 +202,6 @@ The strategy here pairs with the [renewal pipeline to run it](/posts/hubspot-ren
 
 **Renewals are won in the 360 days before the contract ends, not the last 5.** SWOTBee builds renewal strategy, automation, and expansion systems for mid-market companies across Energy, Manufacturing, and SaaS.
 
-[Book a free 30-minute discovery call →](/contactus/)
+[Get your 1-page renewal leakage estimate →](/resources/renewal-leakage-estimate/)
+
+No call needed. Prefer to talk it through first? [Book a free 30-minute discovery call →](/renewal-audit-call/)

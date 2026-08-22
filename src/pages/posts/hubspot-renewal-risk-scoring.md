@@ -5,7 +5,7 @@ pubDate: "2026-05-10"
 description: "How to build renewal risk scoring in HubSpot using a customer health score: the signals that predict churn, a scoring model, early detection of at-risk renewals, and save plays."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 modifiedDate: "2026-06-23"
 author:
   name: "SWOTBee Team"
@@ -25,7 +25,7 @@ tags:
   - "Churn Prevention"
   - "Revenue Operations"
 seriesName: "HubSpot Renewal Pipeline"
-pillarUrl: "/posts/hubspot-renewal-pipeline-complete-guide"
+pillarUrl: "/posts/hubspot-renewal-pipeline-complete-guide/"
 faqs:
   - q: "What is a customer health score and why does it matter for renewals?"
     a: "It is a single score summarizing the health of a customer relationship. For renewals it predicts renewal likelihood, so you can identify at-risk renewals early and intervene before the contract end date."
@@ -161,4 +161,6 @@ Lead scoring ranks prospects by buying intent; renewal risk scoring ranks existi
 
 **Renewal risk scoring is simple to start and easy to overbuild:** the win is a score the team trusts and acts on. SWOTBee builds customer health scoring and renewal automation for mid-market companies across Energy, Manufacturing, and SaaS.
 
-[Book a free 30-minute discovery call →](/contactus/)
+[Get your 1-page renewal leakage estimate →](/resources/renewal-leakage-estimate/)
+
+No call needed. Prefer to talk it through first? [Book a free 30-minute discovery call →](/renewal-audit-call/)

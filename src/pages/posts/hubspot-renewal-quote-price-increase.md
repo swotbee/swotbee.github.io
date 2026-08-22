@@ -5,7 +5,7 @@ pubDate: "2026-05-12"
 description: "A practical guide to renewal quotes in HubSpot: create a renewal quote on a contract, carry over line items, apply a renewal uplift or price increase, handle discounts and multi-year terms, and automate it all."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 modifiedDate: "2026-06-23"
 author:
   name: "SWOTBee Team"
@@ -25,7 +25,7 @@ tags:
   - "Pricing"
   - "Revenue Operations"
 seriesName: "HubSpot Renewal Pipeline"
-pillarUrl: "/posts/hubspot-renewal-pipeline-complete-guide"
+pillarUrl: "/posts/hubspot-renewal-pipeline-complete-guide/"
 faqs:
   - q: "How do I create a renewal quote in HubSpot?"
     a: "Open the renewal deal, create a quote, pull in the existing line items, set the new contract term, apply any uplift or discount, and send it for signature."
@@ -145,10 +145,12 @@ Reflect the reduced seats or tier on the renewal quote and update the renewal am
 **How should I present a price increase to a customer?**
 Lead with the value and outcomes delivered, then present the new price at the line-item level so the change is transparent and defensible.
 
-**Running an MSP?** Agreement renewals with seat true-ups, uplifts, and co-term visibility are their own discipline. See how we [automate agreement renewals for MSPs in HubSpot](/renewals-for-msps).
+**Running an MSP?** Agreement renewals with seat true-ups, uplifts, and co-term visibility are their own discipline. See how we [automate agreement renewals for MSPs in HubSpot](/renewals-for-msps/).
 
 ---
 
 **Renewal quoting is where margin quietly leaks:** inconsistent uplifts, ungoverned discounts, and quotes that drift from the deal. SWOTBee builds renewal quoting and pricing automation for mid-market companies across Energy, Manufacturing, and SaaS.
 
-[Book a free 30-minute discovery call →](/contactus/)
+[Get your 1-page renewal leakage estimate →](/resources/renewal-leakage-estimate/)
+
+No call needed. Prefer to talk it through first? [Book a free 30-minute discovery call →](/renewal-audit-call/)

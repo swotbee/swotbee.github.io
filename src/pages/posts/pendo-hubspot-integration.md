@@ -5,7 +5,7 @@ pubDate: "2025-04-09"
 description: "How the native two-way Pendo-HubSpot integration actually works: the real setup steps, what data syncs in each direction, what it costs, and when it isn't enough on its own."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 modifiedDate: "2026-07-29"
 author:
   name: "SWOTBee Team"
@@ -125,6 +125,8 @@ Most failed syncs trace back to one of three things: a **permission** gap (the c
 
 Done well, the integration doesn't just automate data movement, it gives sales, marketing, and CS a shared, accurate picture of customer experience to optimize and integrate into how each team already works, without anyone needing a second login to get product insights.
 
+Pendo isn't the only path to this outcome. If you're already on Mixpanel or Amplitude, see our [guide to connecting product usage data to HubSpot renewals](/posts/product-usage-data-renewals-hubspot/) for how the same signal gets built with either tool, or our [comparison of Pendo, Mixpanel, and Amplitude for renewal health](/posts/best-product-analytics-tools-hubspot-renewals/) if you're still choosing.
+
 ## Frequently Asked Questions
 
 **Does Pendo have a native HubSpot integration?**
@@ -148,4 +150,6 @@ This guide pairs with our guides to [product-qualified signals and expansion](/p
 
 **Most integration guides stop at "click connect." SWOTBee builds the mapping, event tagging, and downstream workflows that turn customer data into customer insights your team actually acts on, not data sitting unused in a property field.**
 
-[Book a free 30-minute discovery call →](/contactus/)
+[Get your 1-page renewal leakage estimate →](/resources/renewal-leakage-estimate/)
+
+No call needed. Prefer to talk it through first? [Book a free 30-minute discovery call →](/renewal-audit-call/)

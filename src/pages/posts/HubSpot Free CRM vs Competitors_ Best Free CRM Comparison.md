@@ -7,7 +7,7 @@ pubDate: "2025-05-28"
 description: "Explore how HubSpot Free CRM stacks up against competitors in this detailed comparison. Discover the best free CRM options, features, and user experiences."
 category:
   title: "CRM Comparisons & Alternatives"
-  href: "/categories/crm-comparisons"
+  href: "/categories/crm-comparisons/"
 author:
   name: "SWOTBee Team"
   url: "https://swotbee.com"

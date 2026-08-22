@@ -2,10 +2,11 @@
 layout: ../../layouts/BlogPostLayout.astro
 title: "How to Set Up Commission Tracking in HubSpot Without Buying New Software"
 pubDate: "2026-04-14"
+noindex: true
 description: "You don't need expensive commission software to start tracking commissions in HubSpot. Here are three progressively powerful approaches: from a 10-minute setup to a full commission system."
 category:
   title: "HubSpot Tips"
-  href: "/categories/hubspot-tips"
+  href: "/categories/hubspot-tips/"
 author:
   name: "SWOTBee Team"
   url: "https://swotbee.com"
@@ -25,7 +26,7 @@ tags:
   - "Sales Operations"
   - "CRM"
 seriesName: "Sales Commission Tracking"
-pillarUrl: "/posts/hubspot-sales-commission-tracking-complete-guide"
+pillarUrl: "/posts/hubspot-sales-commission-tracking-complete-guide/"
 howto: true
 howtoSteps:
   - name: "Navigate to Deal Properties"

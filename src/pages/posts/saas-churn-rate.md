@@ -5,7 +5,7 @@ pubDate: "2026-06-20"
 description: "A complete guide to SaaS churn rate: what churn is, how to calculate churn rate, what a good SaaS churn rate is, benchmarks, the types of churn, negative churn, and proven strategies to reduce churn."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 modifiedDate: "2026-06-27"
 author:
   name: "SWOTBee Team"
@@ -25,7 +25,7 @@ tags:
   - "Revenue Operations"
   - "Metrics"
 seriesName: "B2B SaaS Customer Retention"
-pillarUrl: "/posts/b2b-saas-customer-retention"
+pillarUrl: "/posts/b2b-saas-customer-retention/"
 faqs:
   - q: "What is churn rate in SaaS?"
     a: "It is the percentage of customers or recurring revenue a SaaS business loses over a period. It is the core measure of how well a SaaS company retains its customers and revenue."
@@ -175,4 +175,6 @@ Improve onboarding, track usage and health to intervene early, fix involuntary c
 
 **SWOTBee builds the churn-reduction system on HubSpot: usage tracking, health scores, dunning, and renewal pipelines that move your SaaS churn rate down and net retention up.** Lower churn is built, not hoped for.
 
-[Book a free 30-minute discovery call →](/contactus/)
+[Get your 1-page renewal leakage estimate →](/resources/renewal-leakage-estimate/)
+
+No call needed. Prefer to talk it through first? [Book a free 30-minute discovery call →](/renewal-audit-call/)

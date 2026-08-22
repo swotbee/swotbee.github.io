@@ -5,7 +5,7 @@ pubDate: "2026-05-30"
 description: "Cross-selling vs upselling explained: the key differences, examples of each, why tracking them separately matters for expansion, proven techniques, and the risks to avoid."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 modifiedDate: "2026-06-23"
 author:
   name: "SWOTBee Team"
@@ -25,7 +25,7 @@ tags:
   - "Customer Success"
   - "Renewal Pipeline"
 seriesName: "Renewal Metrics"
-pillarUrl: "/posts/renewal-metrics-explained"
+pillarUrl: "/posts/renewal-metrics-explained/"
 faqs:
   - q: "What is the difference between cross-selling and upselling?"
     a: "Upselling sells more or a higher tier of the same product; cross-selling sells a complementary product or service. Upsell deepens an existing purchase; cross-sell broadens it."
@@ -174,4 +174,6 @@ Cross-sell and upsell are the expansion levers in our [SaaS renewal metrics guid
 
 **Expansion done wrong feels like pressure; done right it feels like help.** SWOTBee builds expansion tracking and renewal pipelines for mid-market companies across Energy, Manufacturing, and SaaS.
 
-[Book a free 30-minute discovery call →](/contactus/)
+[Get your 1-page renewal leakage estimate →](/resources/renewal-leakage-estimate/)
+
+No call needed. Prefer to talk it through first? [Book a free 30-minute discovery call →](/renewal-audit-call/)

@@ -5,7 +5,7 @@ pubDate: "2026-07-06"
 description: "ChurnZero pricing is quote-based, with buyers reporting mid five figures annually. What drives the cost, ChurnZero alternatives, and when HubSpot is enough."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 modifiedDate: "2026-07-06"
 author:
   name: "SWOTBee Team"
@@ -25,7 +25,7 @@ tags:
   - "CS Platforms"
   - "Pricing"
 seriesName: "Customer Success in HubSpot"
-pillarUrl: "/posts/customer-success-in-hubspot"
+pillarUrl: "/posts/customer-success-in-hubspot/"
 faqs:
   - q: "How much does ChurnZero cost in 2026?"
     a: "ChurnZero does not publish pricing; all deals are quoted. As of mid-2026, buyers most commonly report mid-five-figure annual contracts for mid-market deployments, with smaller and larger reports on either side. Account volume, usage data, and modules drive the spread, so treat reported figures as directional only."
@@ -238,4 +238,6 @@ It can surface renewal dates, score risk, and prompt CSMs, which is valuable sig
 
 **SWOTBee builds HubSpot-native renewal operations for mid-market teams: automated renewal deals, pipeline alerts, and NRR reporting inside your own portal, and you own everything we build.**
 
-[Book a free 30-minute discovery call →](/contactus/)
+[Get your 1-page renewal leakage estimate →](/resources/renewal-leakage-estimate/)
+
+No call needed. Prefer to talk it through first? [Book a free 30-minute discovery call →](/renewal-audit-call/)

@@ -5,7 +5,7 @@ pubDate: "2026-07-06"
 description: "HubSpot ERP integration explained: native connectors, iPaaS, and custom API methods for NetSuite, Sage Intacct, Dynamics, and QuickBooks, plus renewals."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 modifiedDate: "2026-07-07"
 author:
   name: "SWOTBee Team"
@@ -125,7 +125,7 @@ This section walks through ERP integration with HubSpot for each major system, s
 
 ### NetSuite
 
-Can you integrate HubSpot with NetSuite? Yes, and it is the most common pairing we see. The NetSuite ERP has the deepest connector ecosystem: HubSpot's own data sync, Celigo's integration app, Boomi and Workato recipes, and custom SuiteScript builds. We keep this section short because the deep content already exists: start with the [complete HubSpot NetSuite integration guide](/posts/hubspot-netsuite-integration/), compare tools in the [NetSuite connector comparison](/posts/hubspot-netsuite-connector-comparison/), and if renewals are your driver, see our [HubSpot NetSuite renewals integration](/integrations/hubspot-netsuite-renewals) page for how contract data in NetSuite becomes renewal deals in HubSpot.
+Can you integrate HubSpot with NetSuite? Yes, and it is the most common pairing we see. The NetSuite ERP has the deepest connector ecosystem: HubSpot's own data sync, Celigo's integration app, Boomi and Workato recipes, and custom SuiteScript builds. We keep this section short because the deep content already exists: start with the [complete HubSpot NetSuite integration guide](/posts/hubspot-netsuite-integration/), compare tools in the [NetSuite connector comparison](/posts/hubspot-netsuite-connector-comparison/), and if renewals are your driver, see our [HubSpot NetSuite renewals integration](/integrations/hubspot-netsuite-renewals/) page for how contract data in NetSuite becomes renewal deals in HubSpot.
 
 ### Sage Intacct
 
@@ -228,4 +228,6 @@ Not always. If your process fits the connector's default mappings, use it. Move 
 
 **SWOTBee builds HubSpot-native renewal operations for mid-market teams: ERP contract data in, automated renewal deals with line items and uplifts out, and you own everything we build in your portal.**
 
-[Book a free 30-minute discovery call →](/contactus/)
+[Get your 1-page renewal leakage estimate →](/resources/renewal-leakage-estimate/)
+
+No call needed. Prefer to talk it through first? [Book a free 30-minute discovery call →](/renewal-audit-call/)

@@ -5,7 +5,7 @@ pubDate: "2026-07-06"
 description: "How the Chargebee HubSpot integration works: what syncs, setup steps, field mapping, subscription-event workflows, MRR reporting, and the renewal deal gap."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 modifiedDate: "2026-07-06"
 author:
   name: "SWOTBee Team"
@@ -25,7 +25,7 @@ tags:
   - "Subscriptions"
   - "Revenue Operations"
 seriesName: "HubSpot ERP & Billing Integrations"
-pillarUrl: "/posts/hubspot-erp-integration"
+pillarUrl: "/posts/hubspot-erp-integration/"
 faqs:
   - q: "Is the Chargebee HubSpot integration free?"
     a: "The integration itself is included with qualifying Chargebee plans as of mid-2026, but plan requirements have shifted over time; check Chargebee's current pricing page and the HubSpot marketplace listing before assuming it is available on your tier."
@@ -178,4 +178,6 @@ Pros: turnkey setup with no middleware, subscription and invoice data as ordinar
 
 **SWOTBee wires billing data like Chargebee's into a HubSpot-native renewal engine: term end dates in, automated renewal deals with line items and uplifts out, and you own everything we build in your portal.**
 
-[Book a free 30-minute discovery call →](/contactus/)
+[Get your 1-page renewal leakage estimate →](/resources/renewal-leakage-estimate/)
+
+No call needed. Prefer to talk it through first? [Book a free 30-minute discovery call →](/renewal-audit-call/)

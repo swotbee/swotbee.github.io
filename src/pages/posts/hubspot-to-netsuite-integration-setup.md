@@ -5,7 +5,7 @@ pubDate: "2026-05-12"
 description: "A practical, step-by-step guide to HubSpot to NetSuite integration setup: prerequisites, configuring the native connector, field mappings and sync directions, core RevOps workflows, and testing the data flow."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 modifiedDate: "2026-06-26"
 author:
   name: "SWOTBee Team"
@@ -25,7 +25,7 @@ tags:
   - "Revenue Operations"
   - "Workflows"
 seriesName: "HubSpot NetSuite Integration"
-pillarUrl: "/posts/hubspot-netsuite-integration"
+pillarUrl: "/posts/hubspot-netsuite-integration/"
 faqs:
   - q: "Does HubSpot have a native NetSuite integration?"
     a: "Yes. HubSpot offers a native NetSuite connector in its app marketplace that syncs standard objects for single-subsidiary setups. Complex needs usually move to an iPaaS or custom integration."
@@ -126,10 +126,12 @@ Yes, with a two-way sync. Set sync direction by ownership so NetSuite writes the
 **Do I need developers to maintain the integration?**
 The native connector and iPaaS tools are largely no-code, but complex workflows, custom records, and API-limit tuning often need developer or RevOps support to maintain.
 
-**Fighting a live sync problem right now?** We catalogued the [six most-reported HubSpot NetSuite sync failures and their fixes](/integrations/hubspot-netsuite-renewals), including which ones a config change can solve and which need an integration layer.
+**Fighting a live sync problem right now?** We catalogued the [six most-reported HubSpot NetSuite sync failures and their fixes](/integrations/hubspot-netsuite-renewals/), including which ones a config change can solve and which need an integration layer.
 
 ---
 
 **SWOTBee configures HubSpot to NetSuite integrations that survive real orders, not just the demo.** We align your teams, map your objects, and build the workflows so your front office and back office finally share one clean data flow.
 
-[Book a free 30-minute discovery call →](/contactus/)
+[Get your 1-page renewal leakage estimate →](/resources/renewal-leakage-estimate/)
+
+No call needed. Prefer to talk it through first? [Book a free 30-minute discovery call →](/renewal-audit-call/)

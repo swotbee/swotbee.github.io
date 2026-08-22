@@ -5,7 +5,7 @@ pubDate: "2026-04-02"
 description: "Where should expansion revenue live in HubSpot? How do you prevent double-counting? This guide covers multi-pipeline architecture for renewals, expansions, and downgrades."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 author:
   name: "SWOTBee Team"
   url: "https://swotbee.com"
@@ -18,7 +18,7 @@ tags:
   - "Pipeline Architecture"
   - "Revenue Operations"
 seriesName: "HubSpot Renewal Pipeline"
-pillarUrl: "/posts/hubspot-renewal-pipeline-complete-guide"
+pillarUrl: "/posts/hubspot-renewal-pipeline-complete-guide/"
 ---
 
 You've built a renewal pipeline. Renewals flow through it. Then a customer wants to add a product during their renewal. Or downgrade one service but upgrade another. Or expand mid-contract, outside the renewal window.

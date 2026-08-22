@@ -5,7 +5,7 @@ pubDate: "2026-06-16"
 description: "How whitespace analysis uncovers hidden cross-sell and upsell opportunities in existing accounts. What it is, how it works, how to identify white space, and how to turn it into an expansion pipeline."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 modifiedDate: "2026-06-23"
 author:
   name: "SWOTBee Team"
@@ -25,7 +25,7 @@ tags:
   - "Account Management"
   - "Revenue Operations"
 seriesName: "Renewal Strategy"
-pillarUrl: "/posts/renewal-strategy-365"
+pillarUrl: "/posts/renewal-strategy-365/"
 faqs:
   - q: "What is whitespace analysis in sales?"
     a: "Mapping what a customer owns against what they could own to find untapped cross-sell and upsell opportunities (the \"white space\") in existing accounts."
@@ -133,4 +133,6 @@ Whitespace analysis is the expansion-mapping discipline of the [365-day renewal 
 
 **Your next big deal is probably hiding inside an account you already have.** SWOTBee builds whitespace and expansion programs for mid-market companies across Energy, Manufacturing, and SaaS.
 
-[Book a free 30-minute discovery call →](/contactus/)
+[Get your 1-page renewal leakage estimate →](/resources/renewal-leakage-estimate/)
+
+No call needed. Prefer to talk it through first? [Book a free 30-minute discovery call →](/renewal-audit-call/)

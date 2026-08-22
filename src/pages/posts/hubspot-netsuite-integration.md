@@ -5,7 +5,7 @@ pubDate: "2026-05-04"
 description: "A complete guide to HubSpot NetSuite integration: how to align front office and back office, map Deals to Sales Orders, choose between native, iPaaS, and custom API methods, and migrate from NetSuite CRM to HubSpot."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 modifiedDate: "2026-06-26"
 author:
   name: "SWOTBee Team"
@@ -210,10 +210,12 @@ Yes, through a planned initial data load run in batches and reconciled before th
 **Do I need HubSpot Operations Hub for a NetSuite integration?**
 Not necessarily. The native connector and iPaaS tools work without it, but Operations Hub helps if you want custom-coded workflow actions on the HubSpot side.
 
-**Fighting a live sync problem right now?** We catalogued the [six most-reported HubSpot NetSuite sync failures and their fixes](/integrations/hubspot-netsuite-renewals), including which ones a config change can solve and which need an integration layer.
+**Fighting a live sync problem right now?** We catalogued the [six most-reported HubSpot NetSuite sync failures and their fixes](/integrations/hubspot-netsuite-renewals/), including which ones a config change can solve and which need an integration layer.
 
 ---
 
 **SWOTBee builds HubSpot and NetSuite integrations that hold up at scale, not demos that break on the first complex order.** We map your objects, pick the right method, and own the technical bottlenecks so your front office and back office finally agree.
 
-[Book a free 30-minute discovery call →](/contactus/)
+[Get your 1-page renewal leakage estimate →](/resources/renewal-leakage-estimate/)
+
+No call needed. Prefer to talk it through first? [Book a free 30-minute discovery call →](/renewal-audit-call/)

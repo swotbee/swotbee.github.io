@@ -7,8 +7,12 @@ import Footer from "./Footer.astro";
 // light FAQ + CTA format, and emits HowTo + FAQPage schema.org JSON-LD so the pages are
 // LLM/answer-engine readable (decision 2026-08-05). Content is passed in per page; body
 // strings may contain inline HTML (we author them, no user input).
+// `relatedPost` ({ href, label }) links the guide to the blog post covering the same
+// ground. Added 2026-08-18: these guides and their matching posts target the same
+// queries, and with no link between them nothing tells Google (or a reader) which is the
+// fuller treatment. The guide is the short funnel version, the post is the deep one.
 const { title, description, ogImage, eyebrow = "Renewal Fix Guide", h1, intro, steps = [],
-  burden, bridge, faq = [], ctaHeading, ctaBody, template } = Astro.props;
+  burden, bridge, faq = [], ctaHeading, ctaBody, template, relatedPost } = Astro.props;
 const howToLd = { "@context": "https://schema.org", "@type": "HowTo", name: h1,
   description, step: steps.map((s, i) => ({ "@type": "HowToStep", position: i + 1, name: s.t, text: s.body.replace(/<[^>]*>/g, "") })) };
 const faqLd = faq.length ? { "@context": "https://schema.org", "@type": "FAQPage",
@@ -47,6 +51,12 @@ const faqLd = faq.length ? { "@context": "https://schema.org", "@type": "FAQPage
     <div class="mt-6 border-l-4 border-v6-teal pl-5">
       <p class="text-sm text-v6-dark leading-relaxed"><span class="font-semibold">The faster way. </span><span set:html={bridge}></span></p>
     </div>
+
+    {relatedPost && (
+      <p class="mt-6 text-sm text-v6-text-muted">
+        Want the long version? Read <a href={relatedPost.href} class="text-v6-copper font-semibold hover:underline">{relatedPost.label}</a>.
+      </p>
+    )}
 
     {faq.length > 0 && (
       <div class="mt-10">

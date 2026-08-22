@@ -5,7 +5,7 @@ pubDate: "2026-05-27"
 description: "How product-qualified leads (PQLs) and expansion signals forecast upsell. What a PQL is, how PQLs differ from MQLs and SQLs, the triggers to track, and how to score and act on usage data."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 modifiedDate: "2026-06-23"
 author:
   name: "SWOTBee Team"
@@ -25,7 +25,7 @@ tags:
   - "Customer Success"
   - "Renewal Pipeline"
 seriesName: "Renewal Metrics"
-pillarUrl: "/posts/renewal-metrics-explained"
+pillarUrl: "/posts/renewal-metrics-explained/"
 faqs:
   - q: "What is a product-qualified lead (PQL)?"
     a: "An account or user that has shown buying intent through product usage. For expansion, it is an existing customer whose usage signals readiness for a higher tier, more seats, or an add-on."
@@ -141,4 +141,6 @@ Product-qualified signals are one of the expansion metrics in our [SaaS renewal 
 
 **Expansion is won by evidence, not guesswork:** usage signals beat gut feel every time. SWOTBee connects product usage data to the renewal pipeline for mid-market companies across Energy, Manufacturing, and SaaS.
 
-[Book a free 30-minute discovery call →](/contactus/)
+[Get your 1-page renewal leakage estimate →](/resources/renewal-leakage-estimate/)
+
+No call needed. Prefer to talk it through first? [Book a free 30-minute discovery call →](/renewal-audit-call/)

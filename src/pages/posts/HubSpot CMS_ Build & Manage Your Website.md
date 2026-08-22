@@ -6,7 +6,7 @@ pubDate: "2025-03-12"
 description: "Discover the robust features and seamless integration of HubSpot CMS for building, managing, and optimizing your website effortlessly. Enhance your online presence today!"
 category:
   title: "CRM Fundamentals & Beginners Guides"
-  href: "/categories/crm-fundamentals"
+  href: "/categories/crm-fundamentals/"
 author:
   name: "SWOTBee Team"
   url: "https://swotbee.com"

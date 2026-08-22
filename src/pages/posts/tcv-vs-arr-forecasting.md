@@ -5,7 +5,7 @@ pubDate: "2026-05-20"
 description: "TCV vs ARR vs ACV explained: how to calculate each, how to derive ARR from TCV, and why blending Total Contract Value with Annual Recurring Revenue ruins your renewal forecasting accuracy."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 modifiedDate: "2026-06-23"
 author:
   name: "SWOTBee Team"
@@ -25,7 +25,7 @@ tags:
   - "ARR"
   - "Renewal Pipeline"
 seriesName: "Renewal Metrics"
-pillarUrl: "/posts/renewal-metrics-explained"
+pillarUrl: "/posts/renewal-metrics-explained/"
 faqs:
   - q: "What is the difference between TCV and ARR?"
     a: "TCV is the total value of a contract over its full term including one-time fees; ARR is the recurring revenue normalized to one year. TCV is a total; ARR is an annual run-rate."

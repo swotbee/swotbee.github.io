@@ -5,7 +5,7 @@ pubDate: "2026-06-01"
 description: "How CAC and LTV interact: what a good LTV to CAC ratio is (3:1), why a high customer acquisition cost forces you to guarantee longer renewals for payback, and how to improve the ratio."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 modifiedDate: "2026-06-23"
 author:
   name: "SWOTBee Team"
@@ -25,7 +25,7 @@ tags:
   - "Customer Retention"
   - "Renewal Pipeline"
 seriesName: "Renewal Metrics"
-pillarUrl: "/posts/renewal-metrics-explained"
+pillarUrl: "/posts/renewal-metrics-explained/"
 faqs:
   - q: "What is a good LTV to CAC ratio?"
     a: "Around 3:1. It means each customer returns three times their acquisition cost over their lifetime, leaving healthy margin to fund the business."
@@ -164,4 +164,6 @@ LTV:CAC is the unit-economics metric in our [SaaS renewal metrics guide](/posts/
 
 **Acquisition gets the headlines; renewals pay the bills.** SWOTBee builds retention, renewal forecasting, and unit-economics reporting for mid-market companies across Energy, Manufacturing, and SaaS.
 
-[Book a free 30-minute discovery call →](/contactus/)
+[Get your 1-page renewal leakage estimate →](/resources/renewal-leakage-estimate/)
+
+No call needed. Prefer to talk it through first? [Book a free 30-minute discovery call →](/renewal-audit-call/)

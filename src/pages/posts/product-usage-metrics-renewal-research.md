@@ -5,7 +5,7 @@ pubDate: "2026-07-31"
 description: "SaaS companies track logins, feature depth, seat utilization, and time-to-value to predict renewal, but real evidence on which one actually works is thin. What one detailed real-company study found when it tested usage data against relationship and pricing signals, and why usage data quality itself is often the first problem."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 modifiedDate: "2026-07-31"
 author:
   name: "SWOTBee Team"
@@ -131,4 +131,6 @@ This piece pairs with our guides to [product-qualified signals and expansion](/p
 
 **Most product analytics tools sell certainty about which usage metric matters. SWOTBee builds renewal and health-score systems on what the evidence and your own account history actually show, not a vendor's unverified benchmark.**
 
-[Book a free 30-minute discovery call →](/contactus/)
+[Get your 1-page renewal leakage estimate →](/resources/renewal-leakage-estimate/)
+
+No call needed. Prefer to talk it through first? [Book a free 30-minute discovery call →](/renewal-audit-call/)

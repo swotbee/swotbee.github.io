@@ -5,7 +5,7 @@ pubDate: "2026-07-06"
 description: "A customer success renewal playbook template you can copy today: sales-to-CS handoff fields, risk-tiered plays, expansion triggers, and CRM automation."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 modifiedDate: "2026-07-06"
 author:
   name: "SWOTBee Team"
@@ -25,7 +25,7 @@ tags:
   - "Sales Handoff"
   - "Revenue Operations"
 seriesName: "Contract Renewal Management"
-pillarUrl: "/posts/contract-renewal-management-complete-guide"
+pillarUrl: "/posts/contract-renewal-management-complete-guide/"
 faqs:
   - q: "What is a renewal playbook?"
     a: "A short written spec defining owners, triggers, and plays for every contract renewal: who takes the account after sales, what happens at each date checkpoint from Closed Won to T-0, and how the motion changes for healthy versus at-risk accounts. Its job is consistency, so outcomes stop depending on which CSM caught the account."
@@ -243,8 +243,12 @@ Customer success platforms are strong at the signal layer: health scores, usage 
 **Where can I get a free customer success renewal playbook template?**
 The template in this article is a complete free customer success renewal playbook: copy Sections 1 through 5 into your own document, set the bracketed thresholds, and wire the triggers into your CRM. It is deliberately short; a playbook your CSMs actually open under pressure beats a 40-page one they never do.
 
+The playbook tells the team what to do; [the renewal reminder cadence and email templates](/posts/contract-renewal-reminder-software/) make sure it actually happens on the day it is supposed to.
+
 ---
 
 **SWOTBee turns renewal playbooks into working HubSpot systems for mid-market teams: automated renewal deals with line items and uplifts, risk-tiered alerting, and NRR reporting, built in your portal, owned by you.**
 
-[Book a free 30-minute discovery call →](/contactus/)
+[Get your 1-page renewal leakage estimate →](/resources/renewal-leakage-estimate/)
+
+No call needed. Prefer to talk it through first? [Book a free 30-minute discovery call →](/renewal-audit-call/)

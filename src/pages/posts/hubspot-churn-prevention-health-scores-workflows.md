@@ -6,7 +6,7 @@ modifiedDate: "2026-07-06"
 description: "From health score setup to at-risk alert workflows, churn reason taxonomies, and win-back sequences. A practical guide to preventing churn before the renewal conversation starts."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 author:
   name: "SWOTBee Team"
   url: "https://swotbee.com"
@@ -20,7 +20,7 @@ tags:
   - "Renewal Pipeline"
   - "Revenue Operations"
 seriesName: "HubSpot Renewal Pipeline"
-pillarUrl: "/posts/hubspot-renewal-pipeline-complete-guide"
+pillarUrl: "/posts/hubspot-renewal-pipeline-complete-guide/"
 faqs:
   - q: "What is a customer health score in HubSpot?"
     a: "A customer health score in HubSpot is a single number or status (for example, Healthy, Passive, At Risk) that summarizes how likely an account is to renew, based on signals like product usage, email engagement, support tickets, and meeting activity. It lives on the company record, either through the native Customer Success Workspace scoring (Service Hub Professional and Enterprise) or a custom property updated by workflows. Its job is to surface at-risk accounts months before the renewal conversation, so your team can intervene while there is still time."
@@ -308,4 +308,6 @@ A customer health score in HubSpot is a single number or status (for example, He
 
 **SWOTBee builds churn prevention systems for mid-market teams in Energy, Utilities, Manufacturing, and SaaS, including health scoring, alert workflows, churn analysis dashboards, and renewal automation.**
 
-[Book a free 30-minute discovery call →](/contactus/)
+[Get your 1-page renewal leakage estimate →](/resources/renewal-leakage-estimate/)
+
+No call needed. Prefer to talk it through first? [Book a free 30-minute discovery call →](/renewal-audit-call/)

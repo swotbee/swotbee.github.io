@@ -5,7 +5,7 @@ pubDate: "2026-06-16"
 description: "A real HubSpot pricing-at-scale breakdown: the tiers, the marketing-contact multiplier, onboarding fees, hidden add-ons, a 3-year total cost of ownership model, and how to negotiate, so the bill never surprises you."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 modifiedDate: "2026-06-27"
 author:
   name: "SWOTBee Team"
@@ -24,7 +24,7 @@ tags:
   - "Business Growth"
   - "Revenue Operations"
 seriesName: "HubSpot for Business Growth"
-pillarUrl: "/posts/does-hubspot-crm-scale"
+pillarUrl: "/posts/does-hubspot-crm-scale/"
 faqs:
   - q: "How much does HubSpot cost at scale?"
     a: "Far more than the headline. A 10-person team's 3-year TCO is about $110,000, roughly 62% over the naive estimate, once seats, contact tiers, onboarding, and add-ons are included."
@@ -136,4 +136,6 @@ Starter for small teams with simple needs, Professional for growing mid-market t
 
 **SWOTBee builds your HubSpot total cost of ownership model before you sign or renew, and tunes seats and contact tiers so you stop overpaying.** The bill should never surprise you.
 
-[Book a free 30-minute discovery call →](/contactus/)
+[Get your 1-page renewal leakage estimate →](/resources/renewal-leakage-estimate/)
+
+No call needed. Prefer to talk it through first? [Book a free 30-minute discovery call →](/renewal-audit-call/)

@@ -5,7 +5,7 @@ pubDate: "2026-04-02"
 description: "Renewal deals close at 85-95% while new business closes at 20-30%. If you're using the same forecast model for both, your numbers are fiction. Here's how to fix HubSpot renewal forecasting."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 author:
   name: "SWOTBee Team"
   url: "https://swotbee.com"
@@ -18,7 +18,7 @@ tags:
   - "Pipeline Analytics"
   - "Revenue Operations"
 seriesName: "HubSpot Renewal Pipeline"
-pillarUrl: "/posts/hubspot-renewal-pipeline-complete-guide"
+pillarUrl: "/posts/hubspot-renewal-pipeline-complete-guide/"
 modifiedDate: "2026-07-24"
 funnelCta: "renewal-audit"
 faqs:
@@ -260,4 +260,6 @@ One to two quarters accurately. Beyond that, customer situations change too much
 
 **Accurate renewal forecasting is the difference between hitting your number and being surprised.** SWOTBee builds renewal forecasting models for mid-market teams in Energy, Manufacturing, and SaaS, from pipeline setup to board-ready reports.
 
-[Book a free 30-minute discovery call →](/contactus/)
+[Get your 1-page renewal leakage estimate →](/resources/renewal-leakage-estimate/)
+
+No call needed. Prefer to talk it through first? [Book a free 30-minute discovery call →](/renewal-audit-call/)

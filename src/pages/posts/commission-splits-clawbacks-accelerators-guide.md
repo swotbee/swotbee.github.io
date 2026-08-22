@@ -5,7 +5,7 @@ pubDate: "2026-04-10"
 description: "Splits, clawbacks, accelerators, and decelerators are where commission plans get complicated: and where most spreadsheets break. Here's how to handle each without losing your mind."
 category:
   title: "Sales Compensation"
-  href: "/categories/sales-compensation"
+  href: "/categories/sales-compensation/"
 author:
   name: "SWOTBee Team"
   url: "https://swotbee.com"
@@ -25,7 +25,7 @@ tags:
   - "Revenue Operations"
   - "HubSpot"
 seriesName: "Sales Commission Tracking"
-pillarUrl: "/posts/hubspot-sales-commission-tracking-complete-guide"
+pillarUrl: "/posts/hubspot-sales-commission-tracking-complete-guide/"
 ---
 
 You finally got your commission plan nailed down. Flat rate, clean, simple. Everyone on the team understands it. You even got Finance to sign off without a month-long negotiation. Life is good.

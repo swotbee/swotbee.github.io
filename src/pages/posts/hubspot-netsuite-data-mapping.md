@@ -5,7 +5,7 @@ pubDate: "2026-05-27"
 description: "The seven most common HubSpot NetSuite data mapping pitfalls: line item mismatches, the company should exist block, the midnight UTC date bug, dropdown conflicts, ownership rules, SOAP timeouts, and multi-subsidiary isolation."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 modifiedDate: "2026-06-26"
 author:
   name: "SWOTBee Team"
@@ -25,7 +25,7 @@ tags:
   - "Data Quality"
   - "Revenue Operations"
 seriesName: "HubSpot NetSuite Integration"
-pillarUrl: "/posts/hubspot-netsuite-integration"
+pillarUrl: "/posts/hubspot-netsuite-integration/"
 faqs:
   - q: "Why is HubSpot NetSuite data mapping so hard?"
     a: "Because the two systems use different data models. HubSpot is flexible relationship management; NetSuite is a strict financial database. Mapping objects without planning causes silent errors, duplicates, and broken syncs."
@@ -138,10 +138,12 @@ The deal tried to sync before its parent company reached NetSuite. Sequence the 
 **Can the native connector handle multiple NetSuite subsidiaries?**
 No. The native connector is subsidiary-blind and uses a single subsidiary. Multiple subsidiaries need custom middleware or a database-driven sync engine.
 
-**Fighting a live sync problem right now?** We catalogued the [six most-reported HubSpot NetSuite sync failures and their fixes](/integrations/hubspot-netsuite-renewals), including which ones a config change can solve and which need an integration layer.
+**Fighting a live sync problem right now?** We catalogued the [six most-reported HubSpot NetSuite sync failures and their fixes](/integrations/hubspot-netsuite-renewals/), including which ones a config change can solve and which need an integration layer.
 
 ---
 
 **SWOTBee maps HubSpot and NetSuite at the data-model layer first, so the integration holds up instead of silently corrupting records.** We define ownership, match keys, and structure before a single field syncs.
 
-[Book a free 30-minute discovery call →](/contactus/)
+[Get your 1-page renewal leakage estimate →](/resources/renewal-leakage-estimate/)
+
+No call needed. Prefer to talk it through first? [Book a free 30-minute discovery call →](/renewal-audit-call/)

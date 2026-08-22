@@ -5,7 +5,7 @@ pubDate: "2026-05-15"
 description: "What co-terming is, why it makes renewals easier, and how to consolidate multiple contract end dates onto a single renewal date in HubSpot using change quotes, contracts, and proration."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 modifiedDate: "2026-06-23"
 author:
   name: "SWOTBee Team"
@@ -25,7 +25,7 @@ tags:
   - "Revenue Operations"
   - "SaaS"
 seriesName: "HubSpot Renewal Pipeline"
-pillarUrl: "/posts/hubspot-renewal-pipeline-complete-guide"
+pillarUrl: "/posts/hubspot-renewal-pipeline-complete-guide/"
 faqs:
   - q: "What is co-terming in the context of renewals?"
     a: "Co-terming aligns multiple contracts or line items for one customer to a single, shared renewal date, so they renew together rather than on separate end dates."
@@ -127,10 +127,12 @@ It reduces multiple renewal cycles to one per customer, simplifies forecasting, 
 **Where should the co-termed renewal date live?**
 On the renewal deal in your renewal pipeline, as the single Renewal Date property that all reminders and automations read from.
 
-**Running an MSP?** Agreement renewals with seat true-ups, uplifts, and co-term visibility are their own discipline. See how we [automate agreement renewals for MSPs in HubSpot](/renewals-for-msps).
+**Running an MSP?** Agreement renewals with seat true-ups, uplifts, and co-term visibility are their own discipline. See how we [automate agreement renewals for MSPs in HubSpot](/renewals-for-msps/).
 
 ---
 
 **Co-terming is simple in principle and fiddly in practice:** proration, mid-term changes, and keeping one source of truth. SWOTBee sets up co-termed renewals and contract automation for mid-market companies across Energy, Manufacturing, and SaaS.
 
-[Book a free 30-minute discovery call →](/contactus/)
+[Get your 1-page renewal leakage estimate →](/resources/renewal-leakage-estimate/)
+
+No call needed. Prefer to talk it through first? [Book a free 30-minute discovery call →](/renewal-audit-call/)

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 250" role="img" aria-label="Six phases of a HubSpot implementation with typical duration: discovery, data migration, configuration, integration, testing and training, then go-live and iteration">
+  <rect width="800" height="250" fill="#fdfbf5"/>
+  <text x="400" y="30" text-anchor="middle" font-family="system-ui,sans-serif" font-size="17" font-weight="700" fill="#1f2933">Where the weeks actually go</text>
+  <g font-family="system-ui,sans-serif">
+    <rect x="30" y="58" width="90" height="46" rx="7" fill="#1f2933"/><text x="75" y="79" text-anchor="middle" font-size="11.5" font-weight="700" fill="#fdfbf5">Discovery</text><text x="75" y="95" text-anchor="middle" font-size="10.5" fill="#c9a227">1 to 2 wk</text>
+    <rect x="150" y="58" width="110" height="46" rx="7" fill="#c9a227"/><text x="205" y="79" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1f2933">Data migration</text><text x="205" y="95" text-anchor="middle" font-size="10.5" fill="#1f2933">1 to 4 wk</text>
+    <rect x="290" y="58" width="110" height="46" rx="7" fill="#1f2933"/><text x="345" y="79" text-anchor="middle" font-size="11.5" font-weight="700" fill="#fdfbf5">Configuration</text><text x="345" y="95" text-anchor="middle" font-size="10.5" fill="#c9a227">2 to 4 wk</text>
+    <rect x="430" y="58" width="100" height="46" rx="7" fill="#1f2933"/><text x="480" y="79" text-anchor="middle" font-size="11.5" font-weight="700" fill="#fdfbf5">Integration</text><text x="480" y="95" text-anchor="middle" font-size="10.5" fill="#c9a227">1 to 3 wk</text>
+    <rect x="560" y="58" width="100" height="46" rx="7" fill="#1f2933"/><text x="610" y="79" text-anchor="middle" font-size="11.5" font-weight="700" fill="#fdfbf5">Test + train</text><text x="610" y="95" text-anchor="middle" font-size="10.5" fill="#c9a227">1 to 2 wk</text>
+    <rect x="690" y="58" width="80" height="46" rx="7" fill="#c9a227"/><text x="730" y="79" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1f2933">Go live</text><text x="730" y="95" text-anchor="middle" font-size="10.5" fill="#1f2933">ongoing</text>
+    <text x="400" y="146" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1f2933">The two gold phases are where projects actually slip</text>
+    <text x="400" y="172" text-anchor="middle" font-size="12" fill="#52606d">Data migration runs long because cleanup is discovered, not planned.</text>
+    <text x="400" y="192" text-anchor="middle" font-size="12" fill="#52606d">Go-live runs long because adoption is a habit change, not a launch date.</text>
+    <text x="400" y="220" text-anchor="middle" font-size="12" font-style="italic" fill="#7b8794">Phases overlap in practice. Elapsed time is usually 6 to 12 weeks, not the sum above.</text>
+  </g>
+</svg>

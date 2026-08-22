@@ -5,7 +5,7 @@ pubDate: "2026-04-17"
 description: "The definitive guide to tracking sales commissions in HubSpot: from DIY calculated properties to enterprise software. Everything mid-market teams need to stop losing money, time, and trust to broken commission processes."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 modifiedDate: "2026-04-17"
 author:
   name: "SWOTBee Team"
@@ -397,7 +397,7 @@ For a full side-by-side comparison of 10 tools with pricing, HubSpot integration
 
 ## Building a Tiered Commission System in HubSpot
 
-For teams choosing the DIY path, a tiered commission structure is the most popular setup, and the most requested walkthrough we get. Here is the quick-start overview.
+For teams choosing the DIY path, a tiered commission structure is the most popular setup, and the most requested walkthrough we get. Here is the quick-start overview; for the full formula-by-formula walkthrough, including the flat-rate, tiered, and setter/closer split variants with exact property settings, see our [step-by-step guide to setting up commission tracking in HubSpot](/posts/hubspot-commission-tracking-setup-guide/).
 
 ### Step 1: Create the Commission Properties
 

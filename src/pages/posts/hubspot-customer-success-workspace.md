@@ -5,7 +5,7 @@ pubDate: "2026-07-06"
 description: "What the HubSpot Customer Success Workspace includes, which Service Hub tier you need, how to set it up, its real limits, and how to wire it to renewals."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 modifiedDate: "2026-07-07"
 author:
   name: "SWOTBee Team"
@@ -25,7 +25,7 @@ tags:
   - "Renewal Pipeline"
   - "Revenue Operations"
 seriesName: "Customer Success in HubSpot"
-pillarUrl: "/posts/customer-success-in-hubspot"
+pillarUrl: "/posts/customer-success-in-hubspot/"
 faqs:
   - q: "What HubSpot tier includes the Customer Success Workspace?"
     a: "Service Hub Professional and Enterprise seats include it. It is not available on Starter, and users holding only Sales Hub seats see the sales workspace instead. Feature depth (especially health score customization) increases at Enterprise."
@@ -214,4 +214,6 @@ That question is about careers at HubSpot the company, not the workspace feature
 
 **SWOTBee builds HubSpot-native renewal operations for mid-market teams: scheduled renewal deal creation with line items and uplifts, renewal pipelines with alerts, and NRR reporting, all inside your portal, and you own everything we build.**
 
-[Book a free 30-minute discovery call →](/contactus/)
+[Get your 1-page renewal leakage estimate →](/resources/renewal-leakage-estimate/)
+
+No call needed. Prefer to talk it through first? [Book a free 30-minute discovery call →](/renewal-audit-call/)

@@ -7,7 +7,7 @@ pubDate: "2025-05-14"
 description: "Discover the top CRM solutions tailored for accountants, enhancing client management, workflow efficiency, and competitiveness. Find the best CRM for your practice today!"
 category:
   title: "Industry-Specific Applications"
-  href: "/categories/industry-specific"
+  href: "/categories/industry-specific/"
 author:
   name: "SWOTBee Team"
   url: "https://swotbee.com"

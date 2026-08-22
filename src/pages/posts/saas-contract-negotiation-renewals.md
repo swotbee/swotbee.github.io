@@ -5,7 +5,7 @@ pubDate: "2026-06-11"
 description: "How to handle procurement blockers, budget-freeze bluffs, and feature demands during SaaS renewal negotiation. Key contract terms to hold, negotiation strategies, and how to defend value over price."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 modifiedDate: "2026-06-23"
 author:
   name: "SWOTBee Team"
@@ -25,7 +25,7 @@ tags:
   - "Account Management"
   - "Revenue Operations"
 seriesName: "Renewal Strategy"
-pillarUrl: "/posts/renewal-strategy-365"
+pillarUrl: "/posts/renewal-strategy-365/"
 faqs:
   - q: "How do you negotiate a SaaS renewal?"
     a: "Lead with proven value, hold firm on price while flexing on terms like contract length, multi-thread to the economic buyer, and trade every concession for something in return."
@@ -141,4 +141,6 @@ Negotiation is the final act of the [365-day renewal strategy](/posts/renewal-st
 
 **Discounting is a tactic of last resort, not a renewal strategy.** SWOTBee builds renewal negotiation playbooks for mid-market companies across Energy, Manufacturing, and SaaS.
 
-[Book a free 30-minute discovery call →](/contactus/)
+[Get your 1-page renewal leakage estimate →](/resources/renewal-leakage-estimate/)
+
+No call needed. Prefer to talk it through first? [Book a free 30-minute discovery call →](/renewal-audit-call/)

@@ -5,7 +5,7 @@ pubDate: "2026-06-12"
 description: "A complete guide to CRM and ERP integration: what it is, how it works, the benefits, the integration methods, common challenges, and best practices for connecting your front office and back office."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 modifiedDate: "2026-07-06"
 author:
   name: "SWOTBee Team"
@@ -177,4 +177,6 @@ Data-model mismatches, duplicate records, source-of-truth conflicts, and ERP API
 
 **SWOTBee integrates CRM and ERP systems for mid-market companies, most often HubSpot and NetSuite, so your front office and back office finally share one source of truth.** We handle the data model, not just the connection.
 
-[Book a free 30-minute discovery call →](/contactus/)
+[Get your 1-page renewal leakage estimate →](/resources/renewal-leakage-estimate/)
+
+No call needed. Prefer to talk it through first? [Book a free 30-minute discovery call →](/renewal-audit-call/)

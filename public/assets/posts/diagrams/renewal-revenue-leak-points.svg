@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 330" role="img" aria-label="Contracted revenue passes through five leak points before it becomes recognised renewal revenue: missed uplifts, unbilled expansion, silent lapses, late-renewal discounting, and downgrades recorded as renewals">
+  <rect width="800" height="330" fill="#fdfbf5"/>
+  <text x="400" y="30" text-anchor="middle" font-family="system-ui,sans-serif" font-size="17" font-weight="700" fill="#1f2933">Where renewal revenue leaks between contract and cash</text>
+  <g font-family="system-ui,sans-serif">
+    <rect x="24" y="120" width="118" height="66" rx="8" fill="#1f2933"/>
+    <text x="83" y="147" text-anchor="middle" font-size="12.5" font-weight="700" fill="#fdfbf5">Contracted</text>
+    <text x="83" y="166" text-anchor="middle" font-size="12.5" font-weight="700" fill="#fdfbf5">revenue</text>
+    <rect x="658" y="120" width="118" height="66" rx="8" fill="#c9a227"/>
+    <text x="717" y="147" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1f2933">Recognised</text>
+    <text x="717" y="166" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1f2933">revenue</text>
+    <rect x="150" y="140" width="500" height="26" fill="#e6dcc3"/>
+    <polygon points="650,133 650,173 664,153" fill="#e6dcc3"/>
+    <g font-size="10.5" fill="#8a6d1f">
+      <text x="190" y="196" text-anchor="middle">▼</text><text x="228" y="196" text-anchor="middle">▼</text>
+      <text x="266" y="196" text-anchor="middle">▼</text><text x="304" y="196" text-anchor="middle">▼</text>
+      <text x="342" y="196" text-anchor="middle">▼</text>
+    </g>
+    <g font-size="11.5" fill="#52606d">
+      <text x="168" y="224" font-weight="700" fill="#1f2933">Five leak points</text>
+      <text x="168" y="248">1. Contracted uplift never applied at renewal</text>
+      <text x="168" y="268">2. Expansion delivered but never billed</text>
+      <text x="168" y="288">3. Renewal lapses quietly, nobody noticed the date</text>
+      <text x="168" y="308">4. Late renewal closed with a discount to save it</text>
+      <text x="480" y="248">5. Downgrade recorded as a clean renewal</text>
+      <text x="480" y="276" font-style="italic" fill="#7b8794">Each is invisible in a</text>
+      <text x="480" y="294" font-style="italic" fill="#7b8794">renewal-rate number that</text>
+      <text x="480" y="312" font-style="italic" fill="#7b8794">counts logos, not revenue.</text>
+    </g>
+  </g>
+</svg>

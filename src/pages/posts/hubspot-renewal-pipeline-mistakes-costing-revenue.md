@@ -5,7 +5,7 @@ pubDate: "2026-04-02"
 description: "The most common renewal pipeline mistakes we see in HubSpot: from mixing deal types to ignoring silence, timing collisions, and unstandardized churn logging. Each mistake includes the fix."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 author:
   name: "SWOTBee Team"
   url: "https://swotbee.com"
@@ -18,7 +18,7 @@ tags:
   - "Pipeline Management"
   - "Best Practices"
 seriesName: "HubSpot Renewal Pipeline"
-pillarUrl: "/posts/hubspot-renewal-pipeline-complete-guide"
+pillarUrl: "/posts/hubspot-renewal-pipeline-complete-guide/"
 ---
 
 After building renewal pipelines for dozens of mid-market companies, we see the same mistakes over and over. Some cost thousands in missed renewals. Others slowly poison your data until nobody trusts the CRM. Given that [retaining customers costs 5, 25x less than acquiring new ones](https://hbr.org/2014/10/the-value-of-keeping-the-right-customers), these mistakes directly erode your bottom line.
@@ -200,4 +200,6 @@ Then they build. In that order.
 
 **SWOTBee has seen all 12 of these mistakes (and fixed them) across mid-market companies in Energy, Manufacturing, SaaS, and more. If your renewal pipeline isn't performing, we can audit it and build you one that works.**
 
-[Book a free 30-minute discovery call →](/contactus/)
+[Get your 1-page renewal leakage estimate →](/resources/renewal-leakage-estimate/)
+
+No call needed. Prefer to talk it through first? [Book a free 30-minute discovery call →](/renewal-audit-call/)

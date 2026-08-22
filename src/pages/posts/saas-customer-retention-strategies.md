@@ -5,7 +5,7 @@ pubDate: "2026-06-23"
 description: "Proven SaaS customer retention strategies: how to retain SaaS customers, what a good retention rate is, how to measure it, the key metrics and benchmarks, and the customer success plays that reduce churn."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 modifiedDate: "2026-06-27"
 author:
   name: "SWOTBee Team"
@@ -24,7 +24,7 @@ tags:
   - "Customer Success"
   - "Revenue Operations"
 seriesName: "B2B SaaS Customer Retention"
-pillarUrl: "/posts/b2b-saas-customer-retention"
+pillarUrl: "/posts/b2b-saas-customer-retention/"
 faqs:
   - q: "How do you retain SaaS customers?"
     a: "Through the lifecycle: strong onboarding to first value, continuous value realization, proactive customer success with health scores, usage tracking, multi-threading, acting on feedback, and driving expansion."
@@ -157,4 +157,6 @@ Large. Responsive support and acting on customer feedback build the trust and re
 
 **SWOTBee builds SaaS customer retention programs on HubSpot: onboarding, health scores, automation, and expansion plays that lift your retention rate and net revenue retention.** Retention is a system we build with you.
 
-[Book a free 30-minute discovery call →](/contactus/)
+[Get your 1-page renewal leakage estimate →](/resources/renewal-leakage-estimate/)
+
+No call needed. Prefer to talk it through first? [Book a free 30-minute discovery call →](/renewal-audit-call/)

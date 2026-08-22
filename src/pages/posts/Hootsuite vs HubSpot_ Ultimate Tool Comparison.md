@@ -7,7 +7,7 @@ pubDate: "2025-04-09"
 description: "Discover the ultimate comparison of Hootsuite vs HubSpot to determine which marketing platform best suits your business needs for social media management and CRM."
 category:
   title: "CRM Comparisons & Alternatives"
-  href: "/categories/crm-comparisons"
+  href: "/categories/crm-comparisons/"
 author:
   name: "SWOTBee Team"
   url: "https://swotbee.com"

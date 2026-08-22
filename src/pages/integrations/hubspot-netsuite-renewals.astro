@@ -11,23 +11,23 @@ import Footer from '../../components/astro/Footer.astro';
 // Ad launch waits for the demo asset per option B (pagetest-summary.md).
 
 const failureModes = [
-  { n: 1, title: 'Line items do not sync from Deals to Sales Orders', quote: "HubSpot's native integration with NetSuite does not support syncing line items from Deals to Opportunities directly", cause: 'The native connector syncs deal-level fields; line-level data needs custom mapping or middleware.', fix: 'config', href: '/posts/hubspot-netsuite-data-mapping', action: 'See the line-item mapping fix →' },
-  { n: 2, title: 'Edits break what the initial sync built', quote: 'it usually works just enough on create, then breaks down as soon as edits happen on either side', cause: 'Create events are easy; bi-directional update events collide when both systems change the same record.', fix: 'layer', href: '/posts/hubspot-netsuite-sync', action: 'See how to keep the sync reliable →' },
-  { n: 3, title: 'Line-level changes silently stop flowing', quote: "when changes are made on the line level in HubSpot, those changes aren't syncing over properly, and vice versa", cause: 'HubSpot line items lack a reliable external ID that persists across updates, so middleware loses track of which line is which.', fix: 'layer', href: '/posts/hubspot-netsuite-data-mapping', action: 'See the data-ownership fix →' },
-  { n: 4, title: 'Delete-and-recreate vs update-in-place', quote: 'NetSuite SuiteScript often treats line item updates as delete-and-recreate operations, while HubSpot updates in place', cause: 'The two systems disagree about what an "update" is, so naive sync duplicates or orphans lines.', fix: 'layer', href: '/posts/custom-netsuite-crm-integration', action: 'See the sync architecture that prevents this →' },
-  { n: 5, title: 'Invoice fields that cannot be mapped', quote: 'certain NetSuite fields, especially on invoices, cannot be mapped directly into HubSpot custom properties', cause: 'Field-type mismatches between NetSuite invoices and HubSpot properties need transformation logic, not just mapping.', fix: 'config', href: '/posts/hubspot-netsuite-data-mapping', action: 'See which fields need transformation →' },
+  { n: 1, title: 'Line items do not sync from Deals to Sales Orders', quote: "HubSpot's native integration with NetSuite does not support syncing line items from Deals to Opportunities directly", cause: 'The native connector syncs deal-level fields; line-level data needs custom mapping or middleware.', fix: 'config', href: '/posts/hubspot-netsuite-data-mapping/', action: 'See the line-item mapping fix →' },
+  { n: 2, title: 'Edits break what the initial sync built', quote: 'it usually works just enough on create, then breaks down as soon as edits happen on either side', cause: 'Create events are easy; bi-directional update events collide when both systems change the same record.', fix: 'layer', href: '/posts/hubspot-netsuite-sync/', action: 'See how to keep the sync reliable →' },
+  { n: 3, title: 'Line-level changes silently stop flowing', quote: "when changes are made on the line level in HubSpot, those changes aren't syncing over properly, and vice versa", cause: 'HubSpot line items lack a reliable external ID that persists across updates, so middleware loses track of which line is which.', fix: 'layer', href: '/posts/hubspot-netsuite-data-mapping/', action: 'See the data-ownership fix →' },
+  { n: 4, title: 'Delete-and-recreate vs update-in-place', quote: 'NetSuite SuiteScript often treats line item updates as delete-and-recreate operations, while HubSpot updates in place', cause: 'The two systems disagree about what an "update" is, so naive sync duplicates or orphans lines.', fix: 'layer', href: '/posts/custom-netsuite-crm-integration/', action: 'See the sync architecture that prevents this →' },
+  { n: 5, title: 'Invoice fields that cannot be mapped', quote: 'certain NetSuite fields, especially on invoices, cannot be mapped directly into HubSpot custom properties', cause: 'Field-type mismatches between NetSuite invoices and HubSpot properties need transformation logic, not just mapping.', fix: 'config', href: '/posts/hubspot-netsuite-data-mapping/', action: 'See which fields need transformation →' },
   { n: 6, title: 'Renewals never make it back to the CRM', quote: 'renewal deals recreated by hand every year because the sync only covers new business', cause: 'Most connector setups sync the first sale and stop; renewal deals, uplifted pricing, and multi-year chains are out of scope by default.', fix: 'layer', href: '#renewal-layer', action: 'See the renewal layer (below) →' },
 ];
 
 const guides = [
-  { href: '/posts/hubspot-netsuite-integration', label: 'HubSpot NetSuite integration: the complete guide' },
-  { href: '/posts/hubspot-netsuite-sync', label: 'What syncs, what breaks, and how to keep it reliable' },
-  { href: '/posts/hubspot-netsuite-data-mapping', label: 'Data mapping: the 7 mismatches that cause most sync bugs' },
-  { href: '/posts/hubspot-netsuite-connector-comparison', label: 'Native vs Celigo vs Workato vs custom: connector comparison' },
-  { href: '/posts/hubspot-to-netsuite-integration-setup', label: 'Step-by-step setup and field mappings' },
-  { href: '/posts/custom-netsuite-crm-integration', label: 'Custom integration: API limits, architecture, cost' },
-  { href: '/posts/netsuite-crm-vs-hubspot', label: 'NetSuite CRM vs HubSpot: a complete RevOps comparison' },
-  { href: '/posts/hubspot-erp-integration', label: 'HubSpot ERP integration: the complete guide (all ERPs)' },
+  { href: '/posts/hubspot-netsuite-integration/', label: 'HubSpot NetSuite integration: the complete guide' },
+  { href: '/posts/hubspot-netsuite-sync/', label: 'What syncs, what breaks, and how to keep it reliable' },
+  { href: '/posts/hubspot-netsuite-data-mapping/', label: 'Data mapping: the 7 mismatches that cause most sync bugs' },
+  { href: '/posts/hubspot-netsuite-connector-comparison/', label: 'Native vs Celigo vs Workato vs custom: connector comparison' },
+  { href: '/posts/hubspot-to-netsuite-integration-setup/', label: 'Step-by-step setup and field mappings' },
+  { href: '/posts/custom-netsuite-crm-integration/', label: 'Custom integration: API limits, architecture, cost' },
+  { href: '/posts/netsuite-crm-vs-hubspot/', label: 'NetSuite CRM vs HubSpot: a complete RevOps comparison' },
+  { href: '/posts/hubspot-erp-integration/', label: 'HubSpot ERP integration: the complete guide (all ERPs)' },
 ];
 
 const faqs = [

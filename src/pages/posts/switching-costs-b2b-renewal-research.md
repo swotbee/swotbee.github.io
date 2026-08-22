@@ -5,7 +5,7 @@ pubDate: "2026-07-29"
 description: "The landmark meta-analyses on switching costs found the effect is weaker in B2B than in consumer markets, and doesn't reliably reduce churn or build brand loyalty on its own. What peer-reviewed research actually shows about contract lock-in, relational switching costs, competitive advantage, and B2B customer retention, and what it means for your renewal strategy."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 modifiedDate: "2026-07-29"
 author:
   name: "SWOTBee Team"
@@ -124,4 +124,6 @@ This piece pairs with the operating playbook in our [365-day renewal strategy gu
 
 **Most renewal strategies are built on an assumption the research doesn't fully support. SWOTBee builds renewal strategy, health scoring, and retention systems for mid-market companies grounded in what actually predicts renewal, not just what's easiest to put in a contract.**
 
-[Book a free 30-minute discovery call →](/contactus/)
+[Get your 1-page renewal leakage estimate →](/resources/renewal-leakage-estimate/)
+
+No call needed. Prefer to talk it through first? [Book a free 30-minute discovery call →](/renewal-audit-call/)

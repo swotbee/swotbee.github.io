@@ -5,7 +5,7 @@ pubDate: "2026-06-21"
 description: "A practical guide to the HubSpot NetSuite sync: what data syncs between the two systems, one-way vs two-way sync, the methods, common sync issues, and how to keep the sync reliable in real time."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 modifiedDate: "2026-06-27"
 author:
   name: "SWOTBee Team"
@@ -24,7 +24,7 @@ tags:
   - "Integration"
   - "Sync"
 seriesName: "HubSpot NetSuite Integration"
-pillarUrl: "/posts/hubspot-netsuite-integration"
+pillarUrl: "/posts/hubspot-netsuite-integration/"
 faqs:
   - q: "What data syncs between HubSpot and NetSuite?"
     a: "Contacts, companies, deals (as opportunities or sales orders), products, and invoices or payments. A closed deal can create a NetSuite sales order, and invoice status can flow back into HubSpot."
@@ -137,10 +137,12 @@ Most failures are data-mapping issues: the "company should be present" block, du
 **How do I keep the sync reliable?**
 Set match keys and deduplication, sequence dependent records, use a hybrid real-time and batch cadence, monitor with alerts, and test changes in a sandbox first.
 
-**Fighting a live sync problem right now?** We catalogued the [six most-reported HubSpot NetSuite sync failures and their fixes](/integrations/hubspot-netsuite-renewals), including which ones a config change can solve and which need an integration layer.
+**Fighting a live sync problem right now?** We catalogued the [six most-reported HubSpot NetSuite sync failures and their fixes](/integrations/hubspot-netsuite-renewals/), including which ones a config change can solve and which need an integration layer.
 
 ---
 
 **SWOTBee builds and maintains reliable HubSpot NetSuite syncs, the mappings, match keys, and monitoring that keep your CRM and ERP in agreement.** No duplicates, no silent failures.
 
-[Book a free 30-minute discovery call →](/contactus/)
+[Get your 1-page renewal leakage estimate →](/resources/renewal-leakage-estimate/)
+
+No call needed. Prefer to talk it through first? [Book a free 30-minute discovery call →](/renewal-audit-call/)

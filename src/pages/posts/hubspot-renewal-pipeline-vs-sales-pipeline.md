@@ -5,7 +5,7 @@ pubDate: "2026-04-02"
 description: "The #1 HubSpot community debate: should renewals live in your sales pipeline or get their own? A decision framework based on team size, contract complexity, and reporting needs."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 author:
   name: "SWOTBee Team"
   url: "https://swotbee.com"
@@ -18,7 +18,7 @@ tags:
   - "Revenue Operations"
   - "CRM Strategy"
 seriesName: "HubSpot Renewal Pipeline"
-pillarUrl: "/posts/hubspot-renewal-pipeline-complete-guide"
+pillarUrl: "/posts/hubspot-renewal-pipeline-complete-guide/"
 ---
 
 "Should we have a separate pipeline for renewals, or just use a Deal Type property?"
@@ -146,4 +146,6 @@ Once you decide to separate, [choose your stage model](/posts/hubspot-renewal-pi
 
 **Need help deciding?** SWOTBee builds renewal pipeline architectures for mid-market teams. We've seen dozens of configurations across Energy, Manufacturing, and SaaS, and we'll help you pick the right one for your team.
 
-[Book a free 30-minute discovery call →](/contactus/)
+[Get your 1-page renewal leakage estimate →](/resources/renewal-leakage-estimate/)
+
+No call needed. Prefer to talk it through first? [Book a free 30-minute discovery call →](/renewal-audit-call/)

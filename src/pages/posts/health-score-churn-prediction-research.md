@@ -5,7 +5,7 @@ pubDate: "2026-07-29"
 description: "Customer health scores are the standard tool for predicting churn, but the research on what actually predicts it is more specific than most health score models assume. What peer-reviewed studies and practitioner data both show about which signals work."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 modifiedDate: "2026-07-29"
 author:
   name: "SWOTBee Team"
@@ -111,4 +111,6 @@ This piece pairs with our guides to [renewal risk scoring](/posts/hubspot-renewa
 
 **Most health scores are built on assumptions, not validation. SWOTBee builds HubSpot health-score and risk-scoring workflows grounded in what the evidence and your own churned-account history actually show, not just the default inputs a template ships with.**
 
-[Book a free 30-minute discovery call →](/contactus/)
+[Get your 1-page renewal leakage estimate →](/resources/renewal-leakage-estimate/)
+
+No call needed. Prefer to talk it through first? [Book a free 30-minute discovery call →](/renewal-audit-call/)

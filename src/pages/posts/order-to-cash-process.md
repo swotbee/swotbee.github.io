@@ -5,7 +5,7 @@ pubDate: "2026-06-18"
 description: "A complete guide to the order-to-cash (O2C) process: the steps, why it matters, common challenges, how automation and AI optimize it, how it differs from quote-to-cash, and best practices."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 modifiedDate: "2026-06-27"
 author:
   name: "SWOTBee Team"
@@ -24,7 +24,7 @@ tags:
   - "Finance"
   - "Integration"
 seriesName: "CRM and ERP Integration"
-pillarUrl: "/posts/crm-erp-integration"
+pillarUrl: "/posts/crm-erp-integration/"
 faqs:
   - q: "What is the order-to-cash process?"
     a: "The set of steps from when a customer places an order to when the cash is collected and recorded: order entry, credit, fulfillment, invoicing, payment collection, and reconciliation."
@@ -147,4 +147,6 @@ By syncing orders from the CRM to the ERP, automating invoicing, using AI to pri
 
 **SWOTBee streamlines the order-to-cash process by integrating CRM and ERP, so orders, invoices, and payments flow automatically and cash arrives faster.** Less manual work, healthier cash flow.
 
-[Book a free 30-minute discovery call →](/contactus/)
+[Get your 1-page renewal leakage estimate →](/resources/renewal-leakage-estimate/)
+
+No call needed. Prefer to talk it through first? [Book a free 30-minute discovery call →](/renewal-audit-call/)

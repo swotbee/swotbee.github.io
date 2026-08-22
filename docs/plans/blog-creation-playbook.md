@@ -183,6 +183,42 @@ curl -s -X POST '.../import-content'   -H "X-API-KEY: $KEY" -H 'Content-Type: ap
     via GitHub Pages. Verify Astro builds (clean `npm ci --legacy-peer-deps` + `astro build`)
     before pushing dependency or workflow changes.
 
+11. **Give every article one genuinely tactical, copy-paste takeaway, not just conceptual
+    guidance.** A first draft that is well-scoped and honest can still read as generic
+    consultant advice ("build a workflow," "define your metrics") without giving the
+    reader something to implement in the next hour. Concrete examples that worked: an
+    exact property schema with field types and point-weighted scoring formula (not "build
+    a health score"), a real starting query/cohort-definition template for a named tool
+    (flagged as a structural example to adapt, not a guaranteed drop-in, when the exact
+    syntax can't be live-verified), and a short decision scorecard that maps a score
+    straight to a recommendation. Add this as a pass after the first draft is scored and
+    passing, then re-score against the same query to confirm nothing regressed, additions
+    that add real term coverage do not cost score.
+
+12. **Generate 7 title candidates per article, informed by real SERP data, and pick one
+    with a stated reason.** Run the keyword through NeuronWriter first and read the actual
+    competitor titles, this often reveals the real gap (e.g. a whole SERP of vendor docs
+    and unanswered community threads, meaning "the complete guide nobody's written yet" is
+    a true claim, not a cliché). A title that names the specific mechanism or entities
+    covered (which tools, what the reader walks away with) has outperformed vague
+    curiosity hooks for this ICP. Keep cluster-post titles in the same family/pattern as
+    each other and as the pillar, a reader scanning several in a row should recognize the
+    series.
+
+13. **A crude markdown-to-HTML conversion silently understates NeuronWriter scores.**
+    Joining paragraphs with `<br>` instead of real markdown rendering produces no `<h2>`/
+    `<table>` tags, so heading-weighted term matching finds nothing to match. One page
+    scored 35 with the crude method and 65 with `python-markdown` + the `tables` extension
+    against identical content. Any score reported using the wrong method should be treated
+    as unreliable, not as a real regression, before acting on it.
+
+14. **A broad-looking keyword export can still be off-ICP even at real volume.** A ~2,000-row
+    "energy" vertical export scored high on volume but was generic CLM/contract-management
+    software demand (legal/procurement buyers), zero mentions of "hubspot" or the actual
+    product category. Grep a new keyword list for the brand/product terms you'd expect
+    before trusting its relevance, the same discipline as the single-keyword contamination
+    check in Learning 1, just applied to a whole list at once.
+
 ---
 
 ## 4. How to improve next time
@@ -229,12 +265,19 @@ curl -s -X POST '.../import-content'   -H "X-API-KEY: $KEY" -H 'Content-Type: ap
 ## 5. Quick checklist (per cluster)
 
 - [ ] Brief read; gap analysis done; cluster plan doc written and approved
-- [ ] Keyword intent pre-checked (on-brand, not contaminated)
+- [ ] Keyword intent pre-checked (on-brand, not contaminated); a list-level keyword export
+      is grepped for expected brand/product terms before being trusted
+- [ ] 7 title candidates generated per article, informed by real SERP/competitor titles;
+      one picked with a stated reason
 - [ ] All `new-query` fired; analyses polled to ready
 - [ ] Each article written to target length, covering terms + topic_matrix questions
-- [ ] `evaluate-content` >= target / competitor; missing terms woven in
+- [ ] At least one genuinely tactical, copy-paste takeaway per article (not just
+      conceptual guidance); unverifiable syntax flagged as a template to adapt
+- [ ] `evaluate-content` >= target / competitor; missing terms woven in (using the correct
+      markdown+tables HTML conversion, not a crude `<br>` join)
 - [ ] `import-content` done
-- [ ] One unique inline image per post; no duplicates; links resolve
+- [ ] One unique inline image per post; no duplicates; links resolve and carry the
+      trailing slash (`trailingSlash: "always"`)
 - [ ] Pillar back-links + cross-pillar links added
 - [ ] `npm run build` passes
 - [ ] Dates spread (if batch); committed; pushed via swotbee; account restored

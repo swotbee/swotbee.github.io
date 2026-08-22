@@ -5,7 +5,7 @@ pubDate: "2026-04-02"
 description: "The definitive guide to building a HubSpot renewal pipeline: from architecture and automation to dashboards and churn prevention. Everything mid-market teams need to stop losing renewals."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 modifiedDate: "2026-07-24"
 funnelCta: "renewal-audit"
 author:
@@ -334,7 +334,7 @@ Building a renewal pipeline isn't a weekend project. It requires alignment betwe
 
 But the payoff is real: predictable revenue, fewer missed renewals, and a team that knows exactly which accounts need attention and when.
 
-The pipeline architecture above is the mechanics. For the surrounding strategy, how to make the renewal conversation itself go well, when to negotiate versus escalate, and what a healthy renewal rate actually looks like, see our [year-round SaaS renewal strategy guide](/posts/renewal-strategy-365/).
+The pipeline architecture above is the mechanics. For the surrounding strategy, how to make the renewal conversation itself go well, when to negotiate versus escalate, and what a healthy renewal rate actually looks like, see our [year-round SaaS renewal strategy guide](/posts/renewal-strategy-365/). For the wider contract renewal management process this pipeline sits inside, see our [complete guide to contract renewal management](/posts/contract-renewal-management-complete-guide/), and pair it with [the contract renewal process checklist](/posts/contract-renewal-process-checklist/) and [a renewal playbook template your team will actually follow](/posts/renewal-playbook-template/). If billing sits outside HubSpot, see [HubSpot billing integrations compared](/posts/hubspot-billing-integrations-compared/) for how renewal amounts sync back.
 
 **Need help building this?** SWOTBee sets up renewal pipelines for mid-market teams in Energy, Manufacturing, SaaS, and more. We handle the pipeline architecture, workflow automation, dashboard setup, and team training, so your team can focus on actually renewing customers.
 

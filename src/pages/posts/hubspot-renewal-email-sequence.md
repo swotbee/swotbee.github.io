@@ -5,7 +5,7 @@ pubDate: "2026-05-07"
 description: "How to build renewal email sequences in HubSpot: when to use Sequences vs Workflows, a step-by-step setup, a 4-email renewal sequence example, send limits, and best practices."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 modifiedDate: "2026-06-23"
 author:
   name: "SWOTBee Team"
@@ -25,7 +25,7 @@ tags:
   - "Customer Success"
   - "Sales Automation"
 seriesName: "HubSpot Renewal Pipeline"
-pillarUrl: "/posts/hubspot-renewal-pipeline-complete-guide"
+pillarUrl: "/posts/hubspot-renewal-pipeline-complete-guide/"
 faqs:
   - q: "What is the difference between HubSpot workflows and sequences?"
     a: "Sequences send one-to-one sales emails from a connected inbox and stop when the contact replies. Workflows send one-to-many automated emails on a schedule and keep going regardless of replies. Use sequences for personal renewal outreach, workflows for high-volume automation."
@@ -136,8 +136,12 @@ Sequence emails count against your connected inbox daily send limit (a few hundr
 **Can HubSpot enroll contacts in a sequence automatically?**
 Yes. Use workflow enrollment to enroll contacts in a sequence when a renewal deal reaches a defined stage, so the cadence starts without manual effort.
 
+A sequence handles the customer-facing emails; the internal team still needs its own alerts. See our comparison of [contract renewal reminder software](/posts/contract-renewal-reminder-software/) for the internal 90/60/30 cadence that should run alongside this sequence, not instead of it.
+
 ---
 
 **A renewal sequence is easy to start and easy to get wrong:** the wrong tool, missed send limits, or emails that keep firing after a customer replies. SWOTBee builds renewal email automation and full renewal pipelines for mid-market companies across Energy, Manufacturing, and SaaS.
 
-[Book a free 30-minute discovery call →](/contactus/)
+[Get your 1-page renewal leakage estimate →](/resources/renewal-leakage-estimate/)
+
+No call needed. Prefer to talk it through first? [Book a free 30-minute discovery call →](/renewal-audit-call/)

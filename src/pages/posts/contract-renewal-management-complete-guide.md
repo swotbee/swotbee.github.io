@@ -5,7 +5,7 @@ pubDate: "2026-07-06"
 description: "The complete B2B guide to contract renewal management: the end-to-end process, contract renewal management software compared, HubSpot setup, and metrics."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 modifiedDate: "2026-07-06"
 author:
   name: "SWOTBee Team"
@@ -58,6 +58,8 @@ This guide covers the full picture: what contract renewal management actually in
 
 ## What Is Contract Renewal Management?
 
+Deciding *who* should run renewals, rather than how the process works, is a separate question: see [outsourced renewal management vs an in-house team](/posts/outsourced-renewal-management/).
+
 Contract renewal management is everything that happens between "this contract has an end date" and "the customer signed the next term." Concretely, it means:
 
 - **A single source of truth for contract data:** start date, end date, term length, contract value, auto-renew status, and notice period, stored somewhere the whole revenue team can see. The contract terms and the signed contract documents live in one known place instead of five.
@@ -87,7 +89,7 @@ The contract end date exists in the signed PDF, in the billing system, maybe in 
 
 ### 3. No uplift discipline
 
-Even renewals that close on time leak money when there is no standard for price increases. If the default is "renew flat because it is easier," a 5 to 7 percent annual uplift you never proposed compounds into a large gap over three or four years. Uplift needs to be a field on the renewal record and a step in the process, not a judgment call each rep makes under pressure in the contract negotiation. If you want to see what this leakage costs at your contract volume, run the numbers with our [renewal leakage estimate](/resources/renewal-leakage-estimate).
+Even renewals that close on time leak money when there is no standard for price increases. If the default is "renew flat because it is easier," a 5 to 7 percent annual uplift you never proposed compounds into a large gap over three or four years. Uplift needs to be a field on the renewal record and a step in the process, not a judgment call each rep makes under pressure in the contract negotiation. If you want to see what this leakage costs at your contract volume, run the numbers with our [renewal leakage estimate](/resources/renewal-leakage-estimate/).
 
 There is a fourth, quieter cause: **reminders without a deal**. Teams set calendar alerts, get the ping at 60 days, and still fumble because an alert is not an opportunity with a value, a stage, and a forecast. A missed renewal is rarely a missed alert; it is a missed handoff from alert to owned deal. Reminders are necessary and insufficient, a distinction we unpack in our guide to [contract renewal reminder software](/posts/contract-renewal-reminder-software/).
 
@@ -161,7 +163,7 @@ HubSpot has no contract object and no renewals feature, but it has all the raw m
 
 Tier reality check: workflows require Sales Hub or Service Hub Professional. Custom objects (an alternative contract model for high contract-per-customer counts) require Enterprise. Calculated properties like Days to Renewal are smoothest with Operations Hub Professional.
 
-If you would rather see the options than build from scratch, we maintain a comparison of [HubSpot renewal apps](/compare/hubspot-renewal-apps), and our [renewal operations service](/renewal-operations) builds the whole system inside your portal.
+If you would rather see the options than build from scratch, we maintain a comparison of [HubSpot renewal apps](/compare/hubspot-renewal-apps/), and our [renewal operations service](/renewal-operations) builds the whole system inside your portal.
 
 ---
 
@@ -235,8 +237,12 @@ Gross revenue retention in the high 80s to low 90s is typical for mid-market B2B
 **Who should own renewals: sales or customer success?**
 There is no universal answer, only a rule you enforce. Common splits: CS owns healthy renewals and sales takes expansion-eligible or at-risk ones, or a dedicated renewals manager owns everything past a value threshold. The failure mode is not choosing the wrong owner; it is leaving ownership ambiguous.
 
+If HubSpot is the CRM you are building this on, see [how the renewal deal workflow is automated in HubSpot](/posts/hubspot-renewal-deal-workflow-automation/) and [how to track NRR and GRR on a renewal dashboard](/posts/hubspot-renewal-nrr-grr-dashboard-reporting/) for the two pieces most teams build first.
+
 ---
 
 **SWOTBee builds HubSpot-native renewal operations for mid-market teams: scheduled renewal deal creation with line items and uplifts, a renewal pipeline with alerts, and NRR/GRR reporting, all inside your portal where you own everything we build.**
 
-[Book a free 30-minute discovery call →](/contactus/)
+[Get your 1-page renewal leakage estimate →](/resources/renewal-leakage-estimate/)
+
+No call needed. Prefer to talk it through first? [Book a free 30-minute discovery call →](/renewal-audit-call/)

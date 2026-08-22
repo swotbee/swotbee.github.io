@@ -5,7 +5,7 @@ pubDate: "2026-06-22"
 description: "A clear HubSpot growth strategy guide: the funnel, flywheel, Loop Marketing, and Four Fits frameworks mapped together with use-this-when guidance, plus how to build your own growth strategy on HubSpot."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 modifiedDate: "2026-06-27"
 author:
   name: "SWOTBee Team"
@@ -24,7 +24,7 @@ tags:
   - "Marketing"
   - "Business Growth"
 seriesName: "HubSpot for Business Growth"
-pillarUrl: "/posts/does-hubspot-crm-scale"
+pillarUrl: "/posts/does-hubspot-crm-scale/"
 faqs:
   - q: "What are the key components of a HubSpot growth strategy?"
     a: "A chosen growth framework (Four Fits, flywheel, or Loop Marketing), HubSpot's tools to execute it (inbound, automation, CRM, service), clean data for attribution, and the right growth metrics."
@@ -114,4 +114,6 @@ Yes. SMBs benefit most from running a complete growth strategy on a single platf
 
 **SWOTBee turns HubSpot growth frameworks into an operating system for your revenue, with the data and process that make them work.** Strategy first, tools second.
 
-[Book a free 30-minute discovery call →](/contactus/)
+[Get your 1-page renewal leakage estimate →](/resources/renewal-leakage-estimate/)
+
+No call needed. Prefer to talk it through first? [Book a free 30-minute discovery call →](/renewal-audit-call/)

@@ -5,7 +5,7 @@ pubDate: "2026-06-19"
 description: "How to use HubSpot for product-led growth: what PLG means, how HubSpot supports a PLG motion with product data, custom objects, and automation, how it differs from sales-led growth, and where Loop Marketing fits."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 modifiedDate: "2026-06-27"
 author:
   name: "SWOTBee Team"
@@ -24,7 +24,7 @@ tags:
   - "SaaS"
   - "Business Growth"
 seriesName: "HubSpot for Business Growth"
-pillarUrl: "/posts/does-hubspot-crm-scale"
+pillarUrl: "/posts/does-hubspot-crm-scale/"
 faqs:
   - q: "What does product-led growth mean?"
     a: "It is a go-to-market strategy where the product drives acquisition, conversion, and expansion, typically through freemium or free trials, rather than relying on a sales team to close every deal."
@@ -114,4 +114,6 @@ Activation rate, signup-to-paid conversion, product-qualified lead volume, and n
 
 **SWOTBee builds product-led growth motions on HubSpot: product data synced, PQLs scored, and the signup-to-revenue path automated.** We connect the product to the pipeline.
 
-[Book a free 30-minute discovery call →](/contactus/)
+[Get your 1-page renewal leakage estimate →](/resources/renewal-leakage-estimate/)
+
+No call needed. Prefer to talk it through first? [Book a free 30-minute discovery call →](/renewal-audit-call/)

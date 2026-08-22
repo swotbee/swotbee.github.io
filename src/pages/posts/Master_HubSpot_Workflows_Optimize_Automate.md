@@ -8,7 +8,7 @@ pubDate: "2025-03-05"
 description: "Effortlessly integrate HubSpot with your WordPress site using our step-by-step guide. Enhance marketing strategies with seamless site integration, live chat, forms, and analytics."
 category:
   title: "CRM Fundamentals & Beginners Guides"
-  href: "/categories/crm-fundamentals"
+  href: "/categories/crm-fundamentals/"
 author:
   name: "SWOTBee Team"
   url: "https://swotbee.com"

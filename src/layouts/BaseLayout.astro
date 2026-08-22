@@ -292,7 +292,12 @@ const gtmId = import.meta.env.PUBLIC_GTM_ID || "GTM-WV9TQ6FH";
         // global script doesn't have).
         (function () {
           function fire(name, params) {
-            if (window.gtag) window.gtag('event', name, params || {});
+            if (!window.gtag) return;
+            var payload = params || {};
+            // sendBeacon survives the page unload that a click-then-navigate causes.
+            // Without it the request is cancelled mid-flight and the event is lost.
+            payload.transport_type = 'beacon';
+            window.gtag('event', name, payload);
           }
 
           // scroll_depth: 25/50/75/90, each fires once per page load.
@@ -315,14 +320,27 @@ const gtmId = import.meta.env.PUBLIC_GTM_ID || "GTM-WV9TQ6FH";
           // outbound_click: any link to a different hostname.
           // cta_click: any element carrying data-ga-cta="<label>" (used for the funnel's
           // primary CTAs so clicks are labeled, not just "a link was clicked somewhere").
+          // cta_click is bound to pointerdown, NOT click, and this is deliberate.
+          // Every data-ga-cta element is an internal link, so a click starts a navigation
+          // in the same tick the event fires and the page unloads before the request
+          // leaves. GA4 recorded 0 cta_click across 90 days while scroll_depth (77, no
+          // navigation) and outbound_click (6, opens a new tab) both recorded fine, and a
+          // live browser test caught cta_click on a gtag spy but never on the wire.
+          // pointerdown fires a moment earlier, while the page is still alive.
+          // Trade-off accepted: a press that drags away without completing still counts.
+          document.addEventListener('pointerdown', function (e) {
+            var el = e.target.closest ? e.target.closest('a[href]') : null;
+            if (!el) return;
+            var ctaLabel = el.getAttribute('data-ga-cta');
+            if (ctaLabel) {
+              fire('cta_click', { cta: ctaLabel, href: el.getAttribute('href') || '' });
+            }
+          });
+
           document.addEventListener('click', function (e) {
             var el = e.target.closest ? e.target.closest('a[href]') : null;
             if (!el) return;
             var href = el.getAttribute('href') || '';
-            var ctaLabel = el.getAttribute('data-ga-cta');
-            if (ctaLabel) {
-              fire('cta_click', { cta: ctaLabel, href: href });
-            }
             try {
               var url = new URL(href, window.location.href);
               if (url.hostname && url.hostname !== window.location.hostname) {

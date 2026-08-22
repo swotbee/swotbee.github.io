@@ -5,7 +5,7 @@ pubDate: "2026-07-31"
 description: "A feature by feature, price by price look at FlowNer and Enrollem, two HubSpot apps that automate sequence enrollment without a Sales Hub Enterprise subscription."
 category:
   title: "CRM Comparisons & Alternatives"
-  href: "/categories/crm-comparisons"
+  href: "/categories/crm-comparisons/"
 modifiedDate: "2026-08-04"
 author:
   name: "SWOTBee Team"
@@ -138,4 +138,6 @@ FlowNer, on a per enrollment basis. FlowNer's Starter plan is $19 to $29 a month
 
 **Picking the right sequence automation app is a small part of a bigger question: whether your renewal deals are actually triggering the outreach cadence they should.** SWOTBee builds HubSpot renewal automation for mid-market RevOps and Sales Ops teams, from auto creating the renewal deal itself to the workflows that enroll the right contact into the right cadence at the right stage.
 
-[Book a free 30-minute discovery call →](/contactus/)
+[Get your 1-page renewal leakage estimate →](/resources/renewal-leakage-estimate/)
+
+No call needed. Prefer to talk it through first? [Book a free 30-minute discovery call →](/renewal-audit-call/)

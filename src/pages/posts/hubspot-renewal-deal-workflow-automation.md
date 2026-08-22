@@ -16,7 +16,7 @@ howtoSteps:
     text: "Create a task for the new deal owner to review the renewal deal, due in 7 days."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 author:
   name: "SWOTBee Team"
   url: "https://swotbee.com"
@@ -30,7 +30,7 @@ tags:
   - "Revenue Operations"
 seriesName: "HubSpot Renewal Pipeline"
 funnelCta: "renewal-audit"
-pillarUrl: "/posts/hubspot-renewal-pipeline-complete-guide"
+pillarUrl: "/posts/hubspot-renewal-pipeline-complete-guide/"
 faqs:
   - q: "Can HubSpot automate contract renewals for recurring services?"
     a: "Yes, with custom workflows, not a native recurring-services feature. Set a workflow to fire on Deal Won that clones the deal (or creates a new one) into a renewal pipeline, copies the properties that matter (previous contract value, renewal date, owner, line items), and sets a stage-based reminder cadence. HubSpot has no built-in recurring renewal object, everything described here is workflow logic on top of standard deals."
@@ -266,8 +266,12 @@ No. There is no dedicated renewal object or automatic recurring-deal creation in
 **What breaks most often in HubSpot renewal deal automation?**
 Two things: line items not carrying over to the new deal (native cloning can't copy them, workflows need explicit property-copy actions), and loop protection silently stopping a workflow from re-enrolling the deal it just created, which breaks the chain at year two or three without an obvious error.
 
+Once the deal-creation workflow is in place, pair it with [contract renewal reminder software and a 90/60/30 alert cadence](/posts/contract-renewal-reminder-software/) so the deal it creates does not sit untouched until the last minute.
+
 ---
 
 **This is where most teams get stuck.** Workflow automation looks simple in theory but breaks in subtle ways: wrong dates, missing associations, duplicate deals, infinite loops. SWOTBee has built renewal automation for dozens of mid-market companies across Energy, Manufacturing, and SaaS.
 
-[Book a free 30-minute discovery call →](/contactus/)
+[Get your 1-page renewal leakage estimate →](/resources/renewal-leakage-estimate/)
+
+No call needed. Prefer to talk it through first? [Book a free 30-minute discovery call →](/renewal-audit-call/)

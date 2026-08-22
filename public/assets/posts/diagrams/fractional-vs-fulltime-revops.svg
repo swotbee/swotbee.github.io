@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 280" role="img" aria-label="Fractional RevOps suits companies needing senior judgement a few days a month, a full-time hire suits companies needing daily execution, and a project engagement suits a defined one-off build">
+  <rect width="800" height="280" fill="#fdfbf5"/>
+  <text x="400" y="30" text-anchor="middle" font-family="system-ui,sans-serif" font-size="17" font-weight="700" fill="#1f2933">What you are actually buying</text>
+  <g font-family="system-ui,sans-serif">
+    <line x1="60" y1="238" x2="750" y2="238" stroke="#d8cfb8" stroke-width="2"/>
+    <text x="60" y="262" font-size="11.5" fill="#7b8794">Occasional senior judgement</text>
+    <text x="748" y="262" text-anchor="end" font-size="11.5" fill="#7b8794">Daily hands-on execution</text>
+    <rect x="60" y="66" width="200" height="150" rx="9" fill="#fff" stroke="#c9a227" stroke-width="3"/>
+    <text x="160" y="92" text-anchor="middle" font-size="14" font-weight="700" fill="#1f2933">Fractional RevOps</text>
+    <text x="160" y="112" text-anchor="middle" font-size="11" fill="#7b8794">A few days a month, retainer</text>
+    <text x="76" y="138" font-size="11.5" fill="#52606d">Buys: senior decisions</text>
+    <text x="76" y="158" font-size="11.5" fill="#52606d">Sets direction and standards</text>
+    <text x="76" y="178" font-size="11.5" fill="#52606d">Needs someone to execute</text>
+    <text x="76" y="202" font-size="11.5" font-weight="700" fill="#1f2933">Fits: pre-scale, unclear GTM</text>
+    <rect x="295" y="66" width="200" height="150" rx="9" fill="#fff" stroke="#d8cfb8" stroke-width="2"/>
+    <text x="395" y="92" text-anchor="middle" font-size="14" font-weight="700" fill="#1f2933">Project engagement</text>
+    <text x="395" y="112" text-anchor="middle" font-size="11" fill="#7b8794">Fixed scope, fixed end</text>
+    <text x="311" y="138" font-size="11.5" fill="#52606d">Buys: a specific build</text>
+    <text x="311" y="158" font-size="11.5" fill="#52606d">Ends with a working system</text>
+    <text x="311" y="178" font-size="11.5" fill="#52606d">No ongoing cost</text>
+    <text x="311" y="202" font-size="11.5" font-weight="700" fill="#1f2933">Fits: one known problem</text>
+    <rect x="530" y="66" width="200" height="150" rx="9" fill="#fff" stroke="#d8cfb8" stroke-width="2"/>
+    <text x="630" y="92" text-anchor="middle" font-size="14" font-weight="700" fill="#1f2933">Full-time hire</text>
+    <text x="630" y="112" text-anchor="middle" font-size="11" fill="#7b8794">Salary, benefits, equity</text>
+    <text x="546" y="138" font-size="11.5" fill="#52606d">Buys: continuous capacity</text>
+    <text x="546" y="158" font-size="11.5" fill="#52606d">Owns the system long term</text>
+    <text x="546" y="178" font-size="11.5" fill="#52606d">Slow to hire and ramp</text>
+    <text x="546" y="202" font-size="11.5" font-weight="700" fill="#1f2933">Fits: scaled, steady volume</text>
+  </g>
+</svg>

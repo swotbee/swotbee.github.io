@@ -5,7 +5,7 @@ pubDate: "2026-06-08"
 description: "Stop running feature-dump tutorials. How to run an Executive Business Review (EBR) that proves ROI and secures renewals: the difference between EBRs and QBRs, key components, and a template."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 modifiedDate: "2026-06-23"
 author:
   name: "SWOTBee Team"
@@ -25,7 +25,7 @@ tags:
   - "QBR"
   - "Account Management"
 seriesName: "Renewal Strategy"
-pillarUrl: "/posts/renewal-strategy-365"
+pillarUrl: "/posts/renewal-strategy-365/"
 faqs:
   - q: "What is an executive business review (EBR)?"
     a: "A strategic meeting with a customer's executives that proves business outcomes and ROI and aligns on what's next, rather than demonstrating features."
@@ -121,4 +121,6 @@ The EBR is where the [365-day renewal strategy](/posts/renewal-strategy-365/) is
 
 **A check-in informs; an EBR persuades.** SWOTBee builds QBR and EBR programs that tie product value to business outcomes for mid-market companies across Energy, Manufacturing, and SaaS.
 
-[Book a free 30-minute discovery call →](/contactus/)
+[Get your 1-page renewal leakage estimate →](/resources/renewal-leakage-estimate/)
+
+No call needed. Prefer to talk it through first? [Book a free 30-minute discovery call →](/renewal-audit-call/)

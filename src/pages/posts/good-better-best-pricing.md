@@ -5,7 +5,7 @@ pubDate: "2026-06-20"
 description: "How the good-better-best pricing strategy uses tiered pricing to anchor customers to your target package at renewal. What it is, why it works, and how to implement the three tiers."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 modifiedDate: "2026-06-23"
 author:
   name: "SWOTBee Team"
@@ -25,7 +25,7 @@ tags:
   - "Expansion Revenue"
   - "Revenue Operations"
 seriesName: "Renewal Strategy"
-pillarUrl: "/posts/renewal-strategy-365"
+pillarUrl: "/posts/renewal-strategy-365/"
 faqs:
   - q: "What is a good-better-best pricing strategy?"
     a: "A tiered pricing approach offering three packages at different price points, designed so the target (usually middle) tier is the obvious choice."
@@ -129,4 +129,6 @@ Tiered pricing is the upgrade lever in the [365-day renewal strategy](/posts/ren
 
 **Give customers a choice between tiers, not a choice between you and leaving.** SWOTBee builds pricing and expansion strategies for mid-market companies across Energy, Manufacturing, and SaaS.
 
-[Book a free 30-minute discovery call →](/contactus/)
+[Get your 1-page renewal leakage estimate →](/resources/renewal-leakage-estimate/)
+
+No call needed. Prefer to talk it through first? [Book a free 30-minute discovery call →](/renewal-audit-call/)

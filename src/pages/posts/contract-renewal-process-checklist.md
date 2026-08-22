@@ -5,7 +5,7 @@ pubDate: "2026-07-06"
 description: "The contract renewal process step by step: a T-120 to T-0 timeline, clear ownership across sales, CS, and finance, and a copy-paste renewal checklist."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 modifiedDate: "2026-07-07"
 author:
   name: "SWOTBee Team"
@@ -25,7 +25,7 @@ tags:
   - "Customer Success"
   - "Revenue Operations"
 seriesName: "Contract Renewal Management"
-pillarUrl: "/posts/contract-renewal-management-complete-guide"
+pillarUrl: "/posts/contract-renewal-management-complete-guide/"
 faqs:
   - q: "What are the steps in the contract renewal process?"
     a: "Five phases: assess the account's health and stakeholders, set the renewal strategy (uplift, term, risks), engage the customer with a value-led conversation, propose and negotiate the new term, then close and hand off to billing while scheduling the next cycle. Each phase has a named owner and a deadline counted back from the contract end date, which is what separates well-run contract renewals from ad hoc ones."
@@ -242,8 +242,12 @@ Verification that the renewal record exists with correct dates and an owner, an 
 **Can the renewal process be automated?**
 Most of it. CRM workflows can create the renewal record, assign owners, generate phase tasks, fire escalating reminders, and handle the billing handoff. The judgment steps (health verdict, negotiation) stay human; automation's job is making sure they happen on time, every time.
 
+Every checkpoint on this checklist depends on someone actually being alerted at the right moment; see our guide to [automated contract renewal reminders](/posts/contract-renewal-reminder-software/) for the tools and cadence that make that reliable.
+
 ---
 
 **SWOTBee turns this checklist into a running system inside your HubSpot portal: scheduled renewal deal creation with line items and uplifts, pipeline alerts, and NRR/GRR reporting, and you own everything we build.**
 
-[Book a free 30-minute discovery call →](/contactus/)
+[Get your 1-page renewal leakage estimate →](/resources/renewal-leakage-estimate/)
+
+No call needed. Prefer to talk it through first? [Book a free 30-minute discovery call →](/renewal-audit-call/)

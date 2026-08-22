@@ -5,7 +5,7 @@ pubDate: "2026-07-06"
 description: "How to build a HubSpot Sage Intacct integration: ERP connector options, what data to sync each way, QuickBooks and Xero paths, and renewal data flow."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 modifiedDate: "2026-07-06"
 author:
   name: "SWOTBee Team"
@@ -25,7 +25,7 @@ tags:
   - "QuickBooks"
   - "Revenue Operations"
 seriesName: "HubSpot ERP & Billing Integrations"
-pillarUrl: "/posts/hubspot-erp-integration"
+pillarUrl: "/posts/hubspot-erp-integration/"
 faqs:
   - q: "Can HubSpot integrate with Sage?"
     a: "Yes. For Sage Intacct, the paths are the ones in this guide: iPaaS, a specialist connector, or a custom API build. Other Sage products (Sage 50, Sage 100, Sage 200, Sage X3) each have their own third-party connector ecosystems of varying depth; search the HubSpot App Marketplace for your specific Sage product before assuming coverage."
@@ -193,4 +193,6 @@ A specialist connector with standard requirements can be live in days to weeks. 
 
 **SWOTBee builds renewal operations natively inside your HubSpot portal: synced contract dates become scheduled renewal deals with line items, uplifts, and NRR reporting, and you own everything we build.**
 
-[Book a free 30-minute discovery call →](/contactus/)
+[Get your 1-page renewal leakage estimate →](/resources/renewal-leakage-estimate/)
+
+No call needed. Prefer to talk it through first? [Book a free 30-minute discovery call →](/renewal-audit-call/)

@@ -5,7 +5,7 @@ pubDate: "2026-06-24"
 description: "The customer retention KPIs and metrics that matter: retention rate, churn rate, net and gross revenue retention, customer lifetime value, repeat purchase rate, and NPS, with how to calculate and use each."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 modifiedDate: "2026-06-27"
 author:
   name: "SWOTBee Team"
@@ -24,7 +24,7 @@ tags:
   - "KPIs"
   - "Revenue Operations"
 seriesName: "B2B SaaS Customer Retention"
-pillarUrl: "/posts/b2b-saas-customer-retention"
+pillarUrl: "/posts/b2b-saas-customer-retention/"
 faqs:
   - q: "What are the most important customer retention KPIs?"
     a: "Customer retention rate, churn rate, net and gross revenue retention, customer lifetime value, and a leading indicator like NPS or product usage. Track them together, not in isolation."
@@ -162,4 +162,6 @@ Lagging metrics (retention rate, churn rate) report what already happened; leadi
 
 **SWOTBee builds live customer retention dashboards on HubSpot, the KPIs that matter, leading and lagging, wired to the plays that move them.** Measure retention, then improve it.
 
-[Book a free 30-minute discovery call →](/contactus/)
+[Get your 1-page renewal leakage estimate →](/resources/renewal-leakage-estimate/)
+
+No call needed. Prefer to talk it through first? [Book a free 30-minute discovery call →](/renewal-audit-call/)

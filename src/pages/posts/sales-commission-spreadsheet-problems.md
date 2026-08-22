@@ -5,7 +5,7 @@ pubDate: "2026-04-07"
 description: "88% of spreadsheets contain errors. If your sales commission lives in Excel or Google Sheets, you're one broken formula away from a trust crisis. Here's when it's time to move on."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 author:
   name: "SWOTBee Team"
   url: "https://swotbee.com"
@@ -24,7 +24,7 @@ tags:
   - "Sales Operations"
   - "Revenue Operations"
 seriesName: "Sales Commission Tracking"
-pillarUrl: "/posts/hubspot-sales-commission-tracking-complete-guide"
+pillarUrl: "/posts/hubspot-sales-commission-tracking-complete-guide/"
 ---
 
 It's 11pm on the last day of the month. You've got the commission spreadsheet open, all 47 tabs of it. Your coffee went cold two hours ago. You're staring at a VLOOKUP that references a column someone renamed in March, and you're not entirely sure which version of the file is the right one because "Commission_Tracker_Q1_FINAL_v3_USE_THIS_ONE.xlsx" exists in three different folders.

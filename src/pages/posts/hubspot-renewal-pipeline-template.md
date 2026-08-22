@@ -5,7 +5,7 @@ pubDate: "2026-05-08"
 description: "A ready-to-use HubSpot renewal pipeline template: copy-paste deal stages, custom properties, a deal naming convention, and the workflow checklist to set up a separate renewal pipeline fast."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 modifiedDate: "2026-06-23"
 author:
   name: "SWOTBee Team"
@@ -25,7 +25,7 @@ tags:
   - "Revenue Operations"
   - "SaaS"
 seriesName: "HubSpot Renewal Pipeline"
-pillarUrl: "/posts/hubspot-renewal-pipeline-complete-guide"
+pillarUrl: "/posts/hubspot-renewal-pipeline-complete-guide/"
 faqs:
   - q: "How do I set up a renewal pipeline in HubSpot?"
     a: "Create a separate \"Renewals\" deal pipeline, add the deal stages and custom properties from the template above, then build the automation checklist to create renewal deals and reminders automatically."
@@ -151,4 +151,6 @@ Create the renewal deal as soon as the original deal is closed won, and start ou
 
 **A template gets you 80% of the way; the last 20% is the automation that makes it run without babysitting.** SWOTBee installs full renewal pipelines, properties, and workflows for mid-market companies across Energy, Manufacturing, and SaaS.
 
-[Book a free 30-minute discovery call →](/contactus/)
+[Get your 1-page renewal leakage estimate →](/resources/renewal-leakage-estimate/)
+
+No call needed. Prefer to talk it through first? [Book a free 30-minute discovery call →](/renewal-audit-call/)

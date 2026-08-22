@@ -5,7 +5,7 @@ pubDate: "2026-04-02"
 description: "When to clone vs. create fresh, naming conventions, which properties to copy, how cloning affects forecasting: the governance framework nobody else covers."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 author:
   name: "SWOTBee Team"
   url: "https://swotbee.com"
@@ -24,7 +24,7 @@ tags:
   - "Best Practices"
   - "Data Quality"
 seriesName: "HubSpot Deal Cloning"
-pillarUrl: "/posts/hubspot-clone-deal-complete-guide"
+pillarUrl: "/posts/hubspot-clone-deal-complete-guide/"
 modifiedDate: "2026-07-24"
 funnelCta: "renewal-audit"
 howto: true
@@ -221,10 +221,12 @@ Even apps that copy line items can miss edge cases: deleted products, changed pr
 
 For the full list of renewal pipeline mistakes, see [12 Mistakes That Are Costing You Revenue](/posts/hubspot-renewal-pipeline-mistakes-costing-revenue/).
 
-**Evaluating apps for renewals specifically?** Cloning is only step one of a renewal system. See our [honest comparison of HubSpot renewal apps](/compare/hubspot-renewal-apps), including the capabilities a copy button cannot reach.
+**Evaluating apps for renewals specifically?** Cloning is only step one of a renewal system. See our [honest comparison of HubSpot renewal apps](/compare/hubspot-renewal-apps/), including the capabilities a copy button cannot reach.
 
 ---
 
 **SWOTBee audits and optimizes HubSpot pipeline governance for mid-market teams.** We set up cloning workflows with proper naming, property mapping, permissions, and audit trails, so your data stays clean as you scale.
 
-[Book a free 30-minute discovery call →](/contactus/)
+[Get your 1-page renewal leakage estimate →](/resources/renewal-leakage-estimate/)
+
+No call needed. Prefer to talk it through first? [Book a free 30-minute discovery call →](/renewal-audit-call/)

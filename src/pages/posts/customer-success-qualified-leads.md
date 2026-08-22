@@ -5,7 +5,7 @@ pubDate: "2026-06-21"
 description: "How to train your post-sale team to spot buying intent and pass qualified expansion opportunities to sales. What a CSQL is, how it differs from MQLs and PQLs, and how to identify and generate them."
 category:
   title: "Revenue Operations"
-  href: "/categories/revenue-operations"
+  href: "/categories/revenue-operations/"
 modifiedDate: "2026-06-23"
 author:
   name: "SWOTBee Team"
@@ -25,7 +25,7 @@ tags:
   - "Expansion Revenue"
   - "Revenue Operations"
 seriesName: "Renewal Strategy"
-pillarUrl: "/posts/renewal-strategy-365"
+pillarUrl: "/posts/renewal-strategy-365/"
 faqs:
   - q: "What is a customer success qualified lead (CSQL)?"
     a: "An expansion opportunity identified by the customer success team based on a customer's success and intent, then passed to sales to close."
@@ -127,4 +127,6 @@ CSQLs are how customer success fuels expansion in the [365-day renewal strategy]
 
 **Your CSMs hear buying intent every day; CSQLs are how you act on it.** SWOTBee builds CSQL and expansion programs for mid-market companies across Energy, Manufacturing, and SaaS.
 
-[Book a free 30-minute discovery call →](/contactus/)
+[Get your 1-page renewal leakage estimate →](/resources/renewal-leakage-estimate/)
+
+No call needed. Prefer to talk it through first? [Book a free 30-minute discovery call →](/renewal-audit-call/)
