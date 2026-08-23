@@ -17,7 +17,7 @@ author:
     - "Revenue Operations"
     - "Quote-to-Cash"
     - "Systems Integration"
-image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=450&fit=crop"
+image: "/assets/posts/quote-to-cash-software/hero.webp"
 tags:
   - "Quote-to-Cash"
   - "Revenue Operations"

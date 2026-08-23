@@ -17,7 +17,7 @@ author:
     - "Revenue Operations"
     - "Renewal Management"
     - "Customer Success"
-image: "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?w=800&h=450&fit=crop"
+image: "/assets/posts/outsourced-renewal-management/hero.webp"
 tags:
   - "Renewal Management"
   - "Revenue Operations"

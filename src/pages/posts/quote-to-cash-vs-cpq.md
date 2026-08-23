@@ -17,7 +17,7 @@ author:
     - "Revenue Operations"
     - "Quote-to-Cash"
     - "Systems Integration"
-image: "https://images.unsplash.com/photo-1553729459-efe14ef6055d?w=800&h=450&fit=crop"
+image: "/assets/posts/quote-to-cash-vs-cpq/hero.webp"
 tags:
   - "Quote-to-Cash"
   - "CPQ"

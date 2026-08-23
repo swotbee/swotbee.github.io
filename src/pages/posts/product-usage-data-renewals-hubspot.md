@@ -17,7 +17,7 @@ author:
     - "Revenue Operations"
     - "Customer Success"
     - "Renewal Strategy"
-image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop"
+image: "/assets/posts/product-usage-data-renewals-hubspot/hero.webp"
 tags:
   - "Product Analytics"
   - "Customer Success"

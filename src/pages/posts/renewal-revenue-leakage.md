@@ -17,7 +17,7 @@ author:
     - "Revenue Operations"
     - "Renewal Management"
     - "HubSpot"
-image: "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=800&h=450&fit=crop"
+image: "/assets/posts/renewal-revenue-leakage/hero.webp"
 tags:
   - "Revenue Operations"
   - "Renewal Management"

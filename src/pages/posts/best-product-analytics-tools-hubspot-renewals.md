@@ -17,7 +17,7 @@ author:
     - "HubSpot CRM"
     - "Revenue Operations"
     - "Customer Success"
-image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=450&fit=crop"
+image: "/assets/posts/best-product-analytics-tools-hubspot-renewals/hero.webp"
 tags:
   - "Product Analytics"
   - "Pendo"

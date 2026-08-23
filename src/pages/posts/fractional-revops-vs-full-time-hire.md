@@ -17,7 +17,7 @@ author:
     - "Revenue Operations"
     - "GTM Strategy"
     - "HubSpot"
-image: "https://images.unsplash.com/photo-1633158829585-23ba8f7c8caf?w=800&h=450&fit=crop"
+image: "/assets/posts/fractional-revops-vs-full-time-hire/hero.webp"
 tags:
   - "Revenue Operations"
   - "RevOps"

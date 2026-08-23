@@ -17,7 +17,7 @@ author:
     - "HubSpot"
     - "Renewal Management"
     - "Revenue Operations"
-image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&h=450&fit=crop"
+image: "/assets/posts/hubspot-renewal-setup-help/hero.webp"
 tags:
   - "HubSpot"
   - "Renewal Management"

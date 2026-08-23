@@ -17,7 +17,7 @@ author:
     - "HubSpot CRM"
     - "Revenue Operations"
     - "Customer Success"
-image: "https://images.unsplash.com/photo-1553729459-efe14ef6055d?w=800&h=450&fit=crop"
+image: "/assets/posts/amplitude-hubspot-renewal-signals/hero.webp"
 tags:
   - "Amplitude"
   - "Product Analytics"

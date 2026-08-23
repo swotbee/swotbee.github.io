@@ -17,7 +17,7 @@ author:
     - "Revenue Operations"
     - "Renewal Management"
     - "HubSpot"
-image: "https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?w=800&h=450&fit=crop"
+image: "/assets/posts/revenue-operations-audit/hero.webp"
 tags:
   - "Revenue Operations"
   - "RevOps"

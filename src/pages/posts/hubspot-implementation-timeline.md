@@ -17,7 +17,7 @@ author:
     - "HubSpot"
     - "CRM Implementation"
     - "Revenue Operations"
-image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800&h=450&fit=crop"
+image: "/assets/posts/hubspot-implementation-timeline/hero.webp"
 tags:
   - "HubSpot"
   - "CRM Implementation"
