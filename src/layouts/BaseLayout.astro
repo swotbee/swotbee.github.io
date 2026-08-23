@@ -37,7 +37,11 @@ const {
 const isNoindex = robots.includes("noindex");
 
 // Use utility functions for consistent URL generation
-const finalOgImage = ogImage || generateOgImage();
+// generateOgImage() absolutises a site-relative path and passes an http(s) URL through
+// untouched, so it must wrap ogImage rather than only supply the fallback. Passing
+// ogImage straight through emitted a relative og:image ("/assets/...") whenever a page
+// set one, which social scrapers reject.
+const finalOgImage = generateOgImage(ogImage);
 const finalCanonicalURL =
   canonicalURL || generateCanonicalUrl(Astro.url.pathname);
 
