@@ -163,7 +163,7 @@ A renewal-ready integration adds three things:
 2. **Something builds the renewal deal.** A date property alone does nothing. You need automation that creates a renewal deal in a renewal pipeline, with the correct line items and any uplift applied, at T-120 or T-90 (deal-based workflow automation requires HubSpot Sales Hub Professional or Operations Hub Professional). Our guide to [automated renewal deal creation](/posts/hubspot-renewal-deal-workflow-automation/) covers the HubSpot side; note that native workflows cannot copy line items, which is exactly where most teams get stuck.
 3. **The renewal outcome flows back.** When the renewal closes won, the ERP gets the new order or subscription amendment, and the cycle repeats.
 
-If contract dates currently live only in your ERP and renewals keep surprising you, this is the highest-ROI part of the whole integration. As a HubSpot partner, this is also the core of what we build at SWOTBee; see [renewal operations](/renewal-operations) for the full picture.
+If contract dates currently live only in your ERP and renewals keep surprising you, this is the highest-ROI part of the whole integration. As a HubSpot partner, this is also the core of what we build at SWOTBee; see [renewal operations](/renewal-operations/) for the full picture.
 
 ---
 

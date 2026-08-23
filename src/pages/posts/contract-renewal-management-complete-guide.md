@@ -163,7 +163,7 @@ HubSpot has no contract object and no renewals feature, but it has all the raw m
 
 Tier reality check: workflows require Sales Hub or Service Hub Professional. Custom objects (an alternative contract model for high contract-per-customer counts) require Enterprise. Calculated properties like Days to Renewal are smoothest with Operations Hub Professional.
 
-If you would rather see the options than build from scratch, we maintain a comparison of [HubSpot renewal apps](/compare/hubspot-renewal-apps/), and our [renewal operations service](/renewal-operations) builds the whole system inside your portal.
+If you would rather see the options than build from scratch, we maintain a comparison of [HubSpot renewal apps](/compare/hubspot-renewal-apps/), and our [renewal operations service](/renewal-operations/) builds the whole system inside your portal.
 
 ---
 

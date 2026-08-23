@@ -149,7 +149,7 @@ Compared with dedicated CS platforms, HubSpot's health scoring is simpler: fewer
 
 This is the limit that costs real money. The workspace can show a renewal date and even flag an approaching renewal. What it does not do, and no setting changes this, is **create the renewal deal**: a deal in a renewal pipeline with the right amount, line items carried over, the uplift applied, and an owner accountable for closing it.
 
-Without that deal object, there is no renewal forecast, no stage-based process, and no NRR reporting worth trusting. A date on a company record is a reminder; a deal in a pipeline is a managed revenue motion. HubSpot's native tooling does not bridge that gap on its own, which is exactly why we build [scheduled renewal deal creation](/renewal-operations) for clients.
+Without that deal object, there is no renewal forecast, no stage-based process, and no NRR reporting worth trusting. A date on a company record is a reminder; a deal in a pipeline is a managed revenue motion. HubSpot's native tooling does not bridge that gap on its own, which is exactly why we build [scheduled renewal deal creation](/renewal-operations/) for clients.
 
 ### Reporting depth stops at the workspace edge
 

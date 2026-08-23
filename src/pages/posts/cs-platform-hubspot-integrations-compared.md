@@ -203,7 +203,7 @@ For mid-market teams whose sellers, CSMs, and executives already live in HubSpot
 3. **Use HubSpot's native CS tooling for health visibility.** The [Customer Success Workspace](/posts/hubspot-customer-success-workspace/) gives CSMs a book of business and health scores inside the CRM, surfaced on a dashboard on a tier many teams already pay for.
 4. **Report NRR and GRR from the renewal pipeline**, where the deals actually are, on native dashboards; a BI or analytics stack can read the same deal data if you need more.
 
-That is the model we build for clients as a [HubSpot-native renewal operations service](/renewal-operations): no second platform, no sync to babysit, and the renewal deal exists on schedule instead of depending on someone reacting to an alert.
+That is the model we build for clients as a [HubSpot-native renewal operations service](/renewal-operations/): no second platform, no sync to babysit, and the renewal deal exists on schedule instead of depending on someone reacting to an alert.
 
 A dedicated CS platform still earns its place for large CS organizations with heavy in-app engagement programs and mature CS ops. If that is you, pick the platform whose sync depth matches your use cases and HubSpot usage, clean your data first, and plan the renewal-deal automation as a separate workstream, because the platform will not do it for you.
 

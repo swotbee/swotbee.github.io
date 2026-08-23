@@ -162,7 +162,7 @@ Every CS platform is a **signaling system**. It tells you a renewal is coming, s
 
 So teams that buy a platform still face the same operational chore: someone has to build the renewal deal in HubSpot by hand, re-add the line items, apply the uplift, and set the dates. The platform cost 40k a year and the renewal deal is still manual. Meanwhile the platform's HubSpot sync is pushing health fields one way while a human types deal data the other way, which is how renewal amounts end up disagreeing between systems.
 
-Closing that gap means automation inside HubSpot itself: scheduled renewal deal creation with line items carried forward, uplift math applied, multi-year chains that do not trip workflow loop protection, and NRR/GRR reporting straight off the renewal pipeline. That is precisely the layer SWOTBee builds as [renewal operations inside your HubSpot portal](/renewal-operations), and it is complementary to whichever answer you reach on the platform question: with a platform, it makes the signals actionable; without one, it completes the HubSpot-native motion.
+Closing that gap means automation inside HubSpot itself: scheduled renewal deal creation with line items carried forward, uplift math applied, multi-year chains that do not trip workflow loop protection, and NRR/GRR reporting straight off the renewal pipeline. That is precisely the layer SWOTBee builds as [renewal operations inside your HubSpot portal](/renewal-operations/), and it is complementary to whichever answer you reach on the platform question: with a platform, it makes the signals actionable; without one, it completes the HubSpot-native motion.
 
 ---
 

@@ -190,7 +190,7 @@ Native properties plus workflows genuinely cover contract tracking, reminders, a
 2. **Multi-year chains.** Renewal 2027 should spawn renewal 2028. Workflow chains that create deals which re-enroll in the same workflow hit loop protection, and the workarounds are fragile.
 3. **Complex uplift and co-term math.** Proration, co-terming multiple contracts to one date, and tiered uplifts are beyond workflow arithmetic.
 
-If you are hitting these, the escalation path is not "buy a 40k CS platform"; those tools signal renewals but still do not build the deal in HubSpot. The fix is purpose-built automation inside your portal. That layer, plus the reminder and template side covered in our guide to [contract renewal reminder software](/posts/contract-renewal-reminder-software/), completes the stack. It is exactly what our [renewal operations service](/renewal-operations) builds, and you own everything at the end.
+If you are hitting these, the escalation path is not "buy a 40k CS platform"; those tools signal renewals but still do not build the deal in HubSpot. The fix is purpose-built automation inside your portal. That layer, plus the reminder and template side covered in our guide to [contract renewal reminder software](/posts/contract-renewal-reminder-software/), completes the stack. It is exactly what our [renewal operations service](/renewal-operations/) builds, and you own everything at the end.
 
 ---
 
