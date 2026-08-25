@@ -304,6 +304,45 @@ const gtmId = import.meta.env.PUBLIC_GTM_ID || "GTM-WV9TQ6FH";
             window.gtag('event', name, payload);
           }
 
+          // Send an event, then navigate once it has actually gone out.
+          //
+          // Exposed globally because four magnet forms and the Cal.com booking callback
+          // all need it and they live in separate page scripts. Added 2026-08-25 after
+          // GA4 showed every call_booked event over 90 days arriving with pagePath,
+          // hostName, browser and sessionSource all "(not set)" and zero sessions
+          // attached: the pages fired the event and started a navigation on the next
+          // line, so the hit left stripped of its page context or never left at all.
+          //
+          // This matters beyond tidy reporting. call_booked and form_submit are the
+          // conversion actions imported into Google Ads (marketing/ads/22-google-ads-
+          // account-operating-framework.md section 4). Google Ads can only credit a
+          // conversion it can tie back to an ad click, and an event with no session and
+          // no source has nothing for the gclid to attach to.
+          //
+          // page_location and page_path are sent explicitly rather than left to gtag's
+          // ambient context, because some call sites run from inside an iframe message
+          // handler (Cal.com's embed) where that context is not reliable.
+          window.__sbTrackThenGo = function (name, params, url) {
+            var done = false;
+            function go() {
+              if (done) return;   // event_callback and the timeout race; first wins
+              done = true;
+              window.location.assign(url);
+            }
+            if (!window.gtag) { go(); return; }
+            var payload = params || {};
+            payload.transport_type = 'beacon';
+            payload.page_location = window.location.href;
+            payload.page_path = window.location.pathname;
+            payload.event_callback = go;
+            window.gtag('event', name, payload);
+            // Fallback. If GA4 is blocked, consent was declined, or the callback never
+            // fires, the visitor must still reach the thank-you page. 1200ms is long
+            // enough for a beacon on a slow connection and short enough not to read as
+            // a hang after a successful submission.
+            window.setTimeout(go, 1200);
+          };
+
           // scroll_depth: 25/50/75/90, each fires once per page load.
           var scrollThresholds = [25, 50, 75, 90];
           var scrollFired = {};

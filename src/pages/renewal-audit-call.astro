@@ -175,12 +175,6 @@ import ClientLogoStrip from "../components/astro/ClientLogoStrip.astro";
     Cal("on", {
       action: "bookingSuccessfulV2",
       callback: (e) => {
-        if (window.gtag) {
-          window.gtag("event", "call_booked", {
-            booking_uid: e.detail?.data?.uid,
-            event_type_id: e.detail?.data?.eventTypeId,
-          });
-        }
         // Cal.com's free plan does not provide event-type redirect URLs, but its embed
         // reports a successful booking to this parent page. Redirect embedded bookings
         // ourselves, carrying only the non-sensitive details needed by the thank-you page.
@@ -188,7 +182,29 @@ import ClientLogoStrip from "../components/astro/ClientLogoStrip.astro";
         const query = new URLSearchParams();
         if (booking?.uid) query.set("uid", booking.uid);
         if (booking?.startTime) query.set("startTime", booking.startTime);
-        window.location.assign(`/renewal-audit-call/thank-you/${query.size ? `?${query}` : ""}`);
+        const next = `/renewal-audit-call/thank-you/${query.size ? `?${query}` : ""}`;
+
+        // The redirect MUST wait for gtag to flush. Until 2026-08-25 the event was sent
+        // and the navigation started on the very next line, and every call_booked event
+        // GA4 recorded over the following 90 days arrived with pagePath, hostName,
+        // browser and sessionSource all "(not set)" and zero sessions attached. Only 3
+        // of 7 were counted as key events. call_booked is the PRIMARY conversion action
+        // imported into Google Ads, so unattributable events mean the Ads account keeps
+        // reporting zero conversions no matter how many calls paid traffic books.
+        // Full reasoning at the helper's definition in BaseLayout.astro.
+        // Do not "simplify" this back into fire-then-navigate.
+        const w = window as typeof window & {
+          __sbTrackThenGo?: (n: string, p: Record<string, unknown>, u: string) => void;
+        };
+        if (w.__sbTrackThenGo) {
+          w.__sbTrackThenGo("call_booked", {
+            booking_uid: booking?.uid,
+            event_type_id: booking?.eventTypeId,
+          }, next);
+        } else {
+          // Helper only exists when PUBLIC_GA4_ID is set; still send the booker onward.
+          window.location.assign(next);
+        }
       },
     });
   </script>

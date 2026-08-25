@@ -118,6 +118,17 @@ import RecaptchaLazy from '../../components/astro/RecaptchaLazy.astro';
       const w = window as typeof window & { gtag?: (...args: unknown[]) => void };
       if (w.gtag) w.gtag("event", name, params || {});
     }
+    // Fire-and-forget is fine for form_start (no navigation follows it). Anything that
+    // navigates must use trackThenGo instead, or the event dies with the page.
+    function trackThenGo(name: string, params: Record<string, unknown>, url: string) {
+      const w = window as typeof window & {
+        __sbTrackThenGo?: (n: string, p: Record<string, unknown>, u: string) => void;
+      };
+      // The helper is only defined when PUBLIC_GA4_ID is set, so a build without
+      // analytics still has to navigate.
+      if (w.__sbTrackThenGo) w.__sbTrackThenGo(name, params, url);
+      else window.location.assign(url);
+    }
     let formStartFired = false;
     form?.addEventListener(
       "focusin",
@@ -186,8 +197,11 @@ import RecaptchaLazy from '../../components/astro/RecaptchaLazy.astro';
         if (!res.ok) throw new Error(`proxy responded ${res.status}`);
         form.classList.add("hidden");
         success?.classList.remove("hidden");
-        gaEvent("form_submit", { form_name: "renewal_health_scorecard" });
-        window.location.assign("/thank-you/scorecard/");
+        // Navigate only once the event has flushed. Firing gtag and calling
+        // location.assign on the next line loses the hit or strips its page
+        // context, which is what made form_submit unattributable in Google Ads.
+        // Helper lives in BaseLayout.astro; see the comment there for the evidence.
+        trackThenGo("form_submit", { form_name: "renewal_health_scorecard" }, "/thank-you/scorecard/");
       } catch (err) {
         // Restored only on failure; the success path navigates away.
         submitting = false;
