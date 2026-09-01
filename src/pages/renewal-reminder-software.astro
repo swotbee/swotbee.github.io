@@ -3,6 +3,64 @@ import Layout from "../layouts/Layout.astro";
 import Navbar from "../components/astro/Navbar.astro";
 import Footer from "../components/astro/Footer.astro";
 import ClientLogoStrip from "../components/astro/ClientLogoStrip.astro";
+import RenewalRoiCalculator from "../components/astro/RenewalRoiCalculator.astro";
+import {
+  AdjustmentsHorizontalIcon,
+  ArrowPathIcon,
+  BellAlertIcon,
+  ChartBarIcon,
+  ClipboardDocumentListIcon,
+  CommandLineIcon,
+  DocumentTextIcon,
+  UserMinusIcon,
+  CalculatorIcon,
+  Cog6ToothIcon,
+  ArrowTrendingUpIcon,
+} from "@heroicons/react/24/outline";
+
+// AGITATION grid, same copy and icon set as the homepage so the two pages agree.
+const pains = [
+  { title: "Re-keyed line items", desc: "Rebuilding one renewal deal by hand means re-keying every line item, recalculating uplifts, and resetting dates.", icon: CommandLineIcon, color: "text-v6-copper", bg: "bg-v6-copper-50" },
+  { title: "Missed escalation clauses", desc: "Escalation clauses that never make it into the renewal are pure margin left unbilled, quarter after quarter.", icon: DocumentTextIcon, color: "text-v6-amber", bg: "bg-v6-amber-50" },
+  { title: "Ownerless accounts", desc: "Accounts nobody owns don't get renewed in time. That is revenue lost to churn, quietly.", icon: UserMinusIcon, color: "text-v6-teal", bg: "bg-v6-teal-50" },
+  { title: "Sales Reps Stuck In Admin", desc: "Sales reps spend precious selling time on data entry, rebuilding deals, and chasing down renewal details.", icon: ClipboardDocumentListIcon, color: "text-v6-copper", bg: "bg-v6-copper-50" },
+  { title: "Last-Minute Fire Drills", desc: "Renewal risks surface too late, turning preventable work into urgent escalation.", icon: BellAlertIcon, color: "text-v6-amber", bg: "bg-v6-amber-50" },
+  { title: "Workflows That Quietly Break", desc: "DIY automation looks fine, until renewal loops, exceptions, or contract changes cause it to fail without warning.", icon: ArrowPathIcon, color: "text-v6-teal", bg: "bg-v6-teal-50" },
+  { title: "Frantic Forecasts", desc: "Forecasts that go out of sync even as you present them, because deal data is outdated and nobody has a clear picture of upcoming renewals and contract changes.", icon: ChartBarIcon, color: "text-v6-copper", bg: "bg-v6-copper-50" },
+  { title: "Rules Trapped In People's Heads", desc: "Every rep follows different rules for discounts, escalations, approvals, or notice periods, because the rules that matter never made it into the system.", icon: AdjustmentsHorizontalIcon, color: "text-v6-amber", bg: "bg-v6-amber-50" },
+];
+
+// The three ways teams solve the renewal problem, replacing the old comparison table
+// with a scannable card layout.
+const options = [
+  {
+    name: "A spreadsheet",
+    icon: CalculatorIcon,
+    tone: "border-v6-border",
+    badge: "Free",
+    badgeCls: "bg-v6-bg-warm text-v6-text-muted",
+    covers: ["Track renewal dates by hand", "Monthly review meeting", "No alerts, no owners"],
+    when: "Under about 40 agreements with one owner. It genuinely works and costs nothing.",
+  },
+  {
+    name: "A contract lifecycle platform",
+    icon: DocumentTextIcon,
+    tone: "border-v6-border",
+    badge: "$5k to $80k a year",
+    badgeCls: "bg-v6-bg-warm text-v6-text-muted",
+    covers: ["Contract drafting and approval", "Signature and storage", "Search inside signed agreements"],
+    when: "You draft regularly, or you cannot find signed agreements. Full contract lifecycle management software earns its price here.",
+  },
+  {
+    name: "Renewal management in HubSpot",
+    icon: Cog6ToothIcon,
+    tone: "border-v6-copper ring-2 ring-v6-copper/20",
+    badge: "Simple, tailored to you",
+    badgeCls: "bg-v6-copper text-white",
+    covers: ["Renewal tracking on the notice date", "Alerts with named owners", "The renewal deal, already built"],
+    when: "Your renewals live in HubSpot and still arrive late. The alert lands where the work already happens.",
+  },
+];
 // Paid landing page for Google Ads Campaign #1 > ad group 7 (Renewal Reminders).
 // Replaces the interim of pointing that ad group at `/`, which was always temporary:
 // see marketing/ads/23-keyword-conversion-review.md section 4a.
@@ -29,11 +87,14 @@ const description = "Renewal reminder software built into HubSpot. We set up con
 
 const faqs = [
   { q: "What is contract renewal management software?", a: "Any system that holds your contract data as structured fields, tracks renewal dates and notice windows, and alerts an owner before a renewal decision is made by default. Some products are a full contract lifecycle management suite with a document repository. Ours is narrower: renewal tracking and renewal workflow inside the HubSpot you already use." },
-  { q: "How is this different from a contract management platform like ContractSafe?", a: "They are a document platform first. They store contract documents, search inside them, and alert on dates. We do not store documents at all. We configure renewal management inside HubSpot so the alert lands on the deal your team already works, and so the renewal deal is created with line items and uplift applied. If your problem is finding signed agreements, buy a contract repository. If your renewals live in HubSpot and still slip, this is the closer fit." },
+  { q: "How is this different from a contract management platform like ContractSafe?", a: "They are a document platform first. They store the agreements themselves, search inside them, and alert on dates. We do not store documents at all. We configure renewal management inside HubSpot so the alert lands on the deal your team already works, and so the renewal deal is created with line items and uplift applied. If your problem is finding signed agreements, buy a contract repository. If your renewals live in HubSpot and still slip, this is the closer fit." },
   { q: "Why do contracts auto-renew without anyone noticing?", a: "Because the alert is set against the wrong date. On a contract with an automatic renewal clause, the deadline is not the contract end date, it is the notice date, which is the end date minus the notice period. Set a reminder 90 days before the end date on a 90-day notice period and it fires on the day the decision was already made for you." },
   { q: "Do I need to replace my contract management system?", a: "No. If you already run a contract management tool for documents, keep it. This adds the renewal layer inside HubSpot, where the commercial work happens. Most mid-market teams find the two do different jobs." },
-  { q: "How long does setup take?", a: "Typically two to three weeks. Most of that is contract data, not configuration: getting accurate end dates, notice periods and owners onto your records. The workflow build itself is usually a day." },
+  { q: "How quickly can this be live?", a: "Fast. The configuration itself is straightforward, and most of the work is simply getting accurate end dates, notice periods and owners onto your records. We shape it around your renewal rules rather than making you fit ours." },
   { q: "What HubSpot tier do I need?", a: "Sales Hub or Service Hub Professional and above, because date-based workflows are what drive the renewal alerts. On Starter we can still set up the property schema and reporting, but the automation will not be available." },
+  { q: "What does the contract management process look like end to end?", a: "Five stages: contract creation and drafting, negotiation, signing a contract, then storage, then the contract renewal process. Most end-to-end contract tools concentrate on the first three. Our work sits on the last two, where the money actually leaks, and we wire the contract workflows so the whole management process runs to the same rules whoever is handling it." },
+  { q: "What are the best practices for managing renewals?", a: "Store the notice period as a number, calculate the renewal date from it, put one owner on every contract, make each alert a task that escalates, and build the renewal deal before the first alert fires. Run that renewal cycle consistently and poor contract management stops costing you margin. Where a complex contract has unusual contract terms, those sit on the record rather than inside a document nobody reopens." },
+  { q: "Do I still need a separate contract management solution?", a: "Only if you need the document side. A full contract automation platform gives you storage, search across contract documents and an intuitive contract management interface, and those management capabilities are worth paying for at volume. Ours is a narrower software solution: it does the renewal layer properly and leaves the rest alone." },
   { q: "What does it cost?", a: "It depends on contract volume and how much of your contract information already exists in HubSpot. The 30-minute call is free and ends with a fixed scope and a number, not a proposal you have to chase." },
 ];
 ---
@@ -54,7 +115,7 @@ const faqs = [
         We fix that inside the HubSpot you already run. Notice dates calculated on every contract, alerts counted back from them, and the task already assigned to a named owner before anyone has to remember.
       </p>
       <a href="/contactus/" class="inline-block bg-v6-copper text-white font-semibold px-7 py-3.5 rounded-lg hover:opacity-90 transition text-lg">Book a free 30-minute call →</a>
-      <p class="text-sm text-v6-text-muted mt-3">No demo script. We look at your real contract records, show you what is exposed, and most portals are live inside three weeks.</p>
+      <p class="text-sm text-v6-text-muted mt-3">No demo script. We look at your real contract records and show you what is exposed.</p>
     </div>
   </section>
 
@@ -99,6 +160,70 @@ const faqs = [
     </div>
   </section>
 
+
+  <!-- 2b. AGITATION: the exceptions that break renewals at volume (from the homepage) -->
+  <section class="px-4 sm:px-6 lg:px-8 py-16 bg-v6-bg">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-v6-dark mb-4 text-balance">
+          One renewal is easy. Thousands of renewals expose every exception in your business.
+        </h2>
+        <p class="text-lg text-v6-text-muted leading-relaxed">
+          Multi-year contracts. Product bundles. Pricing escalations. Notice periods. Every company has its own renewal rules.
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        {pains.map((x) => (
+          <div class="bg-white border border-v6-border rounded-xl p-5">
+            <div class={"w-10 h-10 rounded-lg flex items-center justify-center mb-3 " + x.bg}>
+              <x.icon class={"w-5 h-5 " + x.color} aria-hidden="true" />
+            </div>
+            <h3 class="font-bold text-v6-dark mb-2 text-sm">{x.title}</h3>
+            <p class="text-sm text-v6-text-muted leading-relaxed">{x.desc}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-10 max-w-2xl mx-auto bg-v6-dark rounded-2xl p-8 text-center">
+        <p class="text-xs font-semibold uppercase tracking-wider text-v6-copper mb-3">Key Insight</p>
+        <p class="text-xl sm:text-2xl font-bold text-white mb-3 leading-snug text-balance">
+          The challenge isn't creating a renewal. It's making thousands of revenue decisions consistently.
+        </p>
+        <p class="text-white/70">Every product. Every contract. Every customer. Every time.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2c. THE MATH: what manual renewals cost (from the homepage) -->
+  <section class="px-4 sm:px-6 lg:px-8 py-16">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-sm font-semibold uppercase tracking-[0.2em] text-v6-copper mb-3 text-center">The Math</p>
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-v6-dark mb-8 text-center text-balance">What Manual Renewals Actually Cost</h2>
+
+      <blockquote class="relative max-w-3xl mx-auto rounded-2xl border border-v6-border border-l-4 border-l-v6-copper bg-v6-bg p-6 sm:p-8 mb-7 sm:flex items-center gap-7 text-center sm:text-left shadow-sm">
+        <span class="absolute -top-5 left-6 text-6xl leading-none text-v6-copper/30" aria-hidden="true">&ldquo;</span>
+        <p class="text-4xl sm:text-5xl font-bold text-v6-copper flex-shrink-0 mb-3 sm:mb-0 whitespace-nowrap">~ 14%</p>
+        <div>
+          <p class="text-v6-dark leading-relaxed mb-2">
+            Companies that automate their renewals capture roughly <strong>14% more of their renewal revenue</strong> than those using spreadsheets.
+          </p>
+          <p class="text-sm text-v6-text-muted leading-relaxed">
+            When maintenance, hardware, and service agreements are managed manually, missed dates and quote errors directly drain your recurring revenue.
+          </p>
+          <p class="text-xs text-v6-text-muted mt-2">Source: TSIA Industry Benchmark</p>
+        </div>
+      </blockquote>
+
+      <p class="text-center text-v6-text-muted max-w-2xl mx-auto leading-relaxed">
+        Multiply by every renewal, every year, and it adds up to months of ops time and real lost revenue: revenue that is already yours, quietly slipping.
+      </p>
+    </div>
+  </section>
+
+  <!-- 2d. The live leakage estimate. The component renders its own eyebrow and H2. -->
+  <RenewalRoiCalculator />
+
   <!-- 3. What we set up -->
   <section class="px-4 sm:px-6 lg:px-8 py-14 bg-v6-bg">
     <div class="max-w-4xl mx-auto">
@@ -107,7 +232,7 @@ const faqs = [
       <div class="grid sm:grid-cols-2 gap-5">
         <div class="bg-white border border-v6-border rounded-xl p-6">
           <h3 class="font-bold text-v6-dark mb-2">Structured contract records</h3>
-          <p class="text-sm text-v6-text-muted leading-relaxed">Contract start and end dates, notice period as a number, contract value, contract type and owner, all as real properties. Structured records, so renewal reminders have something reliable to fire against. Contract details stop living inside PDFs and start being reportable.</p>
+          <p class="text-sm text-v6-text-muted leading-relaxed">Contract start and end dates, notice period as a number, value, contract type and owner, all as real properties. Structured records, so renewal reminders have something reliable to fire against. Contract details stop living inside PDFs and start being reportable.</p>
         </div>
         <div class="bg-white border border-v6-border rounded-xl p-6">
           <h3 class="font-bold text-v6-dark mb-2">Notice date on every contract</h3>
@@ -127,100 +252,92 @@ const faqs = [
         </div>
         <div class="bg-white border border-v6-border rounded-xl p-6">
           <h3 class="font-bold text-v6-dark mb-2">Your existing tools, untouched</h3>
-          <p class="text-sm text-v6-text-muted leading-relaxed">If you already run a contract management platform for documents, keep it. This is the renewal layer, not a replacement for document storage.</p>
+          <p class="text-sm text-v6-text-muted leading-relaxed">If you already run a document platform for contracts, keep it. This is the renewal layer, not a replacement for document storage.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 4. Honest limits. Deliberately kept. -->
-  <section class="px-4 sm:px-6 lg:px-8 py-14">
-    <div class="max-w-3xl mx-auto">
-      <h2 class="text-2xl sm:text-3xl font-bold text-v6-dark mb-4">What this is not</h2>
-      <p class="text-v6-text-muted mb-6 leading-relaxed">Worth being direct, because the wrong fit wastes your time and ours.</p>
-      <div class="grid sm:grid-cols-2 gap-5 mb-7">
-        <div class="border-l-4 border-v6-border pl-4">
-          <p class="font-semibold text-v6-dark mb-1">Not a contract repository</p>
-          <p class="text-sm text-v6-text-muted">No document storage, no OCR, no searching inside signed agreements. If you cannot find your signed agreements, you need that first.</p>
-        </div>
-        <div class="border-l-4 border-v6-border pl-4">
-          <p class="font-semibold text-v6-dark mb-1">Not contract drafting</p>
-          <p class="text-sm text-v6-text-muted">No templates, no clause library, no redlining, no e-signature. Contract creation and contract execution are a different product category.</p>
-        </div>
-        <div class="border-l-4 border-v6-border pl-4">
-          <p class="font-semibold text-v6-dark mb-1">Not an AI contract intelligence platform</p>
-          <p class="text-sm text-v6-text-muted">We do not read your contracts and extract terms. Somebody enters the dates once. For a large back catalogue on third-party paper, an AI-powered contract tool will save you more time than we will.</p>
-        </div>
-        <div class="border-l-4 border-v6-border pl-4">
-          <p class="font-semibold text-v6-dark mb-1">Not for teams outside HubSpot</p>
-          <p class="text-sm text-v6-text-muted">If your renewals do not live in HubSpot, a standalone contract management solution is genuinely the better answer. We will say so on the call.</p>
-        </div>
-      </div>
-      <div class="rounded-lg bg-v6-bg-warm border border-v6-border p-5">
-        <p class="text-v6-dark"><strong>The short version:</strong> if your problem is finding signed agreements, buy a contract lifecycle platform. If your renewals already live in HubSpot and still arrive late and underpriced, that is the problem we fix.</p>
-      </div>
-    </div>
-  </section>
 
 
   <!-- 4b. Comparison and best practices: closes the "which tool" question -->
   <section class="px-4 sm:px-6 lg:px-8 py-14">
     <div class="max-w-4xl mx-auto">
-      <h2 class="text-2xl sm:text-3xl font-bold text-v6-dark mb-4">Which contract management software is right for the renewal problem</h2>
-      <p class="text-v6-text-muted mb-6 max-w-2xl leading-relaxed">
+      <p class="text-sm font-semibold uppercase tracking-[0.2em] text-v6-copper mb-3">Choosing</p>
+      <h2 class="text-2xl sm:text-3xl font-bold text-v6-dark mb-3">Which contract management software is right for the renewal problem</h2>
+      <p class="text-v6-text-muted mb-8 max-w-2xl leading-relaxed">
         The best contract management software for you depends on where the contract process actually breaks. Three honest options, and the right contract management choice is usually the narrowest one that solves it.
       </p>
-      <div class="overflow-x-auto mb-8">
-        <table class="w-full text-sm bg-white border border-v6-border rounded-lg">
-          <thead class="bg-v6-bg-warm">
-            <tr>
-              <th class="text-left px-3 py-2.5 font-semibold text-v6-dark">Option</th>
-              <th class="text-left px-3 py-2.5 font-semibold text-v6-dark">Covers</th>
-              <th class="text-left px-3 py-2.5 font-semibold text-v6-dark">Choose it when</th>
-            </tr>
-          </thead>
-          <tbody class="text-v6-text-muted">
-            <tr class="border-t border-v6-border">
-              <td class="px-3 py-3 font-semibold text-v6-dark">A spreadsheet</td>
-              <td class="px-3 py-3">Track renewal dates by hand, reviewed monthly</td>
-              <td class="px-3 py-3">Under about 40 agreements with one owner. It genuinely works and costs nothing.</td>
-            </tr>
-            <tr class="border-t border-v6-border">
-              <td class="px-3 py-3 font-semibold text-v6-dark">A contract lifecycle platform</td>
-              <td class="px-3 py-3">End-to-end contract work: contract drafting, approval, signature, storage, search</td>
-              <td class="px-3 py-3">You draft regularly, or you cannot find signed agreements. Full contract lifecycle management software earns its price here.</td>
-            </tr>
-            <tr class="border-t border-v6-border bg-v6-bg">
-              <td class="px-3 py-3 font-semibold text-v6-dark">Renewal management in HubSpot</td>
-              <td class="px-3 py-3">Renewal tracking, alerts with owners, renewal decisions, contract workflows, the renewal deal itself</td>
-              <td class="px-3 py-3">Your renewals live in HubSpot and still arrive late. The alert lands where the work happens.</td>
-            </tr>
-          </tbody>
-        </table>
+      <p class="text-v6-text-muted mb-8 max-w-2xl leading-relaxed text-sm">
+        We build the third. We are not a centralized contract repository and not an AI contract intelligence platform: no document storage, no contract drafting, no clause library, no contract execution or e-signature. If finding signed agreements is the problem, one of the first two will serve you better and we will say so on the call.
+      </p>
+
+      <div class="grid md:grid-cols-3 gap-5 mb-10">
+        {options.map((o) => (
+          <div class={"relative bg-white rounded-2xl border p-6 flex flex-col " + o.tone}>
+            <span class={"absolute -top-3 left-6 text-xs font-semibold px-3 py-1 rounded-full " + o.badgeCls}>{o.badge}</span>
+            <o.icon class="w-8 h-8 text-v6-copper mb-4 mt-2" aria-hidden="true" />
+            <h3 class="text-lg font-bold text-v6-dark mb-3">{o.name}</h3>
+            <ul class="space-y-2 mb-5">
+              {o.covers.map((c) => (
+                <li class="flex gap-2 text-sm text-v6-text-muted">
+                  <span class="text-v6-teal mt-0.5 flex-shrink-0" aria-hidden="true">&#10003;</span>
+                  <span>{c}</span>
+                </li>
+              ))}
+            </ul>
+            <p class="text-sm text-v6-text-muted leading-relaxed mt-auto pt-4 border-t border-v6-border">
+              <strong class="text-v6-dark">Choose it when:</strong> {o.when}
+            </p>
+          </div>
+        ))}
       </div>
 
-      <h3 class="text-xl font-bold text-v6-dark mb-3">Contract renewal management best practices we build in</h3>
-      <p class="text-v6-text-muted mb-4 leading-relaxed">
-        The contract management process only holds if these five are true. They are configuration, not advice, and each one is something we set up rather than something we ask you to remember.
-      </p>
-      <ol class="space-y-3 text-v6-text-muted mb-2">
-        <li><strong class="text-v6-dark">1. Store the notice period as a number.</strong> "Sixty days written notice" in a notes field cannot drive a calculation. It becomes a real field, so the renewal deadline is computed rather than guessed.</li>
-        <li><strong class="text-v6-dark">2. Count every alert back from the notice date.</strong> Not the contract end date. This is the whole fix, and it is why most contract renewal software still lets renewals slip.</li>
-        <li><strong class="text-v6-dark">3. Give every contract one named owner.</strong> Ambiguous ownership loses more renewals than any missing feature. Procurement signs it, finance pays it, nobody owns the renewal decision.</li>
-        <li><strong class="text-v6-dark">4. Make each alert create a task, and escalate.</strong> Notifications get dismissed. A task sits in a queue and a manager can see it has not moved.</li>
-        <li><strong class="text-v6-dark">5. Build the renewal deal before the first alert.</strong> Contract automation that stops at the reminder leaves fifteen to thirty minutes of manual rebuilding per renewal, which is exactly what gets skipped in a busy quarter.</li>
-      </ol>
-      <p class="text-v6-text-muted leading-relaxed">
-        Run it this way and the renewal process stops depending on who happened to notice. That is the difference between contract tools that remind you and a system that finishes the job.
-      </p>
+      <h3 class="text-xl font-bold text-v6-dark mb-2">Five things we set up, every time</h3>
+      <p class="text-v6-text-muted mb-6">Configuration, not advice. Each one removes a way renewals slip.</p>
 
-      <div class="mt-9 rounded-xl border border-v6-border bg-white p-6">
-        <h3 class="text-lg font-bold text-v6-dark mb-3">What changes in the first renewal cycle</h3>
-        <p class="text-v6-text-muted leading-relaxed mb-3">
-          Contract renewals stop arriving as a surprise. Each renewal date is computed rather than remembered, and the contract renewal process runs the same way whoever is handling it. Where a complex contract has unusual renewal terms, those contract terms sit on the record instead of inside a document nobody reopens after signing a contract.
-        </p>
-        <p class="text-v6-text-muted leading-relaxed">
-          You do not get an intuitive contract management suite out of this, and it is not a contract automation platform. It is a narrower software solution with the management capabilities the renewal motion actually needs. That is deliberate: poor contract management is rarely fixed by buying more product, and the right tool in 2026 for your team may well be the one you already pay for.
+      <div class="grid sm:grid-cols-2 gap-4 mb-8">
+        <div class="flex gap-3 bg-white border border-v6-border rounded-xl p-4">
+          <span class="flex-shrink-0 w-7 h-7 rounded-full bg-v6-copper text-white text-sm font-bold flex items-center justify-center">1</span>
+          <div>
+            <p class="font-semibold text-v6-dark text-sm mb-1">Notice period as a real field</p>
+            <p class="text-sm text-v6-text-muted">A number, not a note. So the renewal deadline is calculated, never guessed.</p>
+          </div>
+        </div>
+        <div class="flex gap-3 bg-white border border-v6-border rounded-xl p-4">
+          <span class="flex-shrink-0 w-7 h-7 rounded-full bg-v6-copper text-white text-sm font-bold flex items-center justify-center">2</span>
+          <div>
+            <p class="font-semibold text-v6-dark text-sm mb-1">Alerts on the notice date</p>
+            <p class="text-sm text-v6-text-muted">Not the end date. This is the whole fix.</p>
+          </div>
+        </div>
+        <div class="flex gap-3 bg-white border border-v6-border rounded-xl p-4">
+          <span class="flex-shrink-0 w-7 h-7 rounded-full bg-v6-copper text-white text-sm font-bold flex items-center justify-center">3</span>
+          <div>
+            <p class="font-semibold text-v6-dark text-sm mb-1">One named owner per contract</p>
+            <p class="text-sm text-v6-text-muted">Ambiguous ownership loses more renewals than any missing feature.</p>
+          </div>
+        </div>
+        <div class="flex gap-3 bg-white border border-v6-border rounded-xl p-4">
+          <span class="flex-shrink-0 w-7 h-7 rounded-full bg-v6-copper text-white text-sm font-bold flex items-center justify-center">4</span>
+          <div>
+            <p class="font-semibold text-v6-dark text-sm mb-1">Tasks, not notifications</p>
+            <p class="text-sm text-v6-text-muted">Pings get dismissed. A task sits in a queue until someone acts, and escalates if nobody does.</p>
+          </div>
+        </div>
+        <div class="flex gap-3 bg-white border border-v6-border rounded-xl p-4 sm:col-span-2">
+          <span class="flex-shrink-0 w-7 h-7 rounded-full bg-v6-copper text-white text-sm font-bold flex items-center justify-center">5</span>
+          <div>
+            <p class="font-semibold text-v6-dark text-sm mb-1">The renewal deal, built before the first alert</p>
+            <p class="text-sm text-v6-text-muted">Most contract automation stops at the reminder and leaves the rebuild to your team. Ours does not.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="rounded-xl bg-v6-bg-warm border border-v6-border p-5">
+        <p class="text-v6-dark font-semibold mb-1">The result</p>
+        <p class="text-v6-text-muted text-sm leading-relaxed">
+          Contract renewals stop arriving as a surprise. Renewal decisions run to the same rules whoever is handling them, and unusual renewal terms sit on the record instead of inside a document nobody reopens. No AI-powered contract reader required: structured contract data, entered once, drives every alert.
         </p>
       </div>
 
@@ -240,7 +357,7 @@ const faqs = [
         <div>
           <div class="w-10 h-10 rounded-full bg-v6-copper text-white font-bold flex items-center justify-center mb-3">2</div>
           <h3 class="font-bold text-v6-dark mb-2">Build it in your portal</h3>
-          <p class="text-sm text-v6-text-muted leading-relaxed">Properties, the notice date calculation, the workflow with escalation, and the reporting. Two to three weeks, most of it spent on the data rather than configuration.</p>
+          <p class="text-sm text-v6-text-muted leading-relaxed">Properties, the notice date calculation, alerts with escalation, and the reporting. Built around your renewal rules, in your own portal.</p>
         </div>
         <div>
           <div class="w-10 h-10 rounded-full bg-v6-copper text-white font-bold flex items-center justify-center mb-3">3</div>
