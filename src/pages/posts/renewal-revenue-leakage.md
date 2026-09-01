@@ -6,7 +6,7 @@ description: "Revenue leakage is the gap between contracted and recognised reven
 category:
   title: "Revenue Operations"
   href: "/categories/revenue-operations/"
-modifiedDate: "2026-08-19"
+modifiedDate: "2026-09-01"
 author:
   name: "SWOTBee Team"
   url: "https://swotbee.com"
@@ -71,6 +71,10 @@ Five sources of revenue leakage account for most of what we see in mid-market re
 5. **Downgrades recorded as renewals.** The customer renewed at a lower tier or fewer seats. Logo retention is unaffected, so the reporting shows a successful renewal while actual revenue fell.
 
 Note what these have in common. None of them involve an unhappy customer, and none of them appear in a renewal rate that counts logos.
+
+---
+
+One cause deserves separating out, because it is invisible in most reporting: contracts that renew themselves at the old price because the notice window closed before anyone reviewed the account. Our guide to [evergreen contracts and auto-renewal clauses](/posts/evergreen-contract-auto-renewal-clause/) covers how the clause works and why the notice date, not the contract end date, is the deadline.
 
 ---
 

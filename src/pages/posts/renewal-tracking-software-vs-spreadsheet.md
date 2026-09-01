@@ -6,7 +6,7 @@ description: "Renewal tracking software vs spreadsheets: when a spreadsheet work
 category:
   title: "Revenue Operations"
   href: "/categories/revenue-operations/"
-modifiedDate: "2026-07-06"
+modifiedDate: "2026-09-01"
 author:
   name: "SWOTBee Team"
   url: "https://swotbee.com"
@@ -172,6 +172,10 @@ Software renewal tracking only earns its keep if it surfaces software renewal de
 The third job is the one most buyers underestimate. Automated reminders tell you a renewal is coming; the renewal process still needs someone to build the renewal deal, carry over the line items, apply the uplift, and put it in a pipeline. Tools that stop at alerting leave the most error-prone manual step in place. This is exactly the gap [automated renewal deal creation](/posts/hubspot-renewal-deal-workflow-automation/) closes in HubSpot: when a deal closes won, the renewal deal is created on schedule with line items and uplift already applied.
 
 A note on category choices: you rarely need a separate renewal product if you already run a CRM, though good contract management still depends on clean data. For teams on HubSpot, the deal object, custom date properties, and renewal workflows already form the skeleton of a renewal tracker; our guide to [managing contracts in HubSpot](/posts/hubspot-contract-management/) covers the property schema and contract management in detail.
+
+---
+
+A ready-made version of this sheet, with the notice date calculated per row and conditional formatting already applied, is our free [contract tracker template](/resources/contract-tracker-template/).
 
 ---
 

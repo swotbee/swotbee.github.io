@@ -6,7 +6,7 @@ description: "The complete B2B guide to contract renewal management: the end-to-
 category:
   title: "Revenue Operations"
   href: "/categories/revenue-operations/"
-modifiedDate: "2026-07-06"
+modifiedDate: "2026-08-31"
 author:
   name: "SWOTBee Team"
   url: "https://swotbee.com"
@@ -90,6 +90,8 @@ The contract end date exists in the signed PDF, in the billing system, maybe in 
 ### 3. No uplift discipline
 
 Even renewals that close on time leak money when there is no standard for price increases. If the default is "renew flat because it is easier," a 5 to 7 percent annual uplift you never proposed compounds into a large gap over three or four years. Uplift needs to be a field on the renewal record and a step in the process, not a judgment call each rep makes under pressure in the contract negotiation. If you want to see what this leakage costs at your contract volume, run the numbers with our [renewal leakage estimate](/resources/renewal-leakage-estimate/).
+
+There is a third cause that hides in plain sight: **alerting against the wrong date**. On a contract with an auto-renewal clause, the deadline is not the end date, it is the notice date, which is the end date minus the notice period. Around 69% of software contracts carry such a clause with a notice period of 30 to 90 days, so a reminder set 90 days before the end date can arrive on or after the day the decision was effectively made. Our guide to [evergreen contracts and auto-renewal clauses](/posts/evergreen-contract-auto-renewal-clause/) covers the mechanics and the fix.
 
 There is a fourth, quieter cause: **reminders without a deal**. Teams set calendar alerts, get the ping at 60 days, and still fumble because an alert is not an opportunity with a value, a stage, and a forecast. A missed renewal is rarely a missed alert; it is a missed handoff from alert to owned deal. Reminders are necessary and insufficient, a distinction we unpack in our guide to [contract renewal reminder software](/posts/contract-renewal-reminder-software/).
 

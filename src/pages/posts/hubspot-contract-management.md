@@ -6,7 +6,7 @@ description: "A practical guide to HubSpot contract management: how to manage co
 category:
   title: "Revenue Operations"
   href: "/categories/revenue-operations/"
-modifiedDate: "2026-07-07"
+modifiedDate: "2026-08-31"
 author:
   name: "SWOTBee Team"
   url: "https://swotbee.com"
@@ -92,8 +92,9 @@ Three practical rules:
 1. **One canonical end date.** If billing, a spreadsheet, and HubSpot all hold end dates, declare the HubSpot property canonical and sync everything else to it. Two disagreeing dates are worse than one missing date, because everyone trusts their own copy.
 2. **Use date pickers, not text fields.** Workflows and reports can only do date math on real date properties. A text field saying "March 2027" is decoration.
 3. **Put contract fields on the deal, not the company.** A company can hold multiple contracts; a deal maps one-to-one to a contract term. Company-level rollups (Next Renewal Date) can be set by workflow if you need an account view.
+4. **Add a calculated Notice Date and trigger from it, not from Contract End Date.** This is the rule most portals are missing. On an auto-renewing contract the decision deadline is Contract End Date minus Notice Period (days), and once it passes the contract has renewed whether anyone chose to or not. Create Notice Date as a calculation property and point your workflows at it. With a 90-day notice period, a workflow triggering 90 days before the end date fires on the deadline itself, which is the same as not firing at all. The clause mechanics are covered in [evergreen contracts and auto-renewal clauses](/posts/evergreen-contract-auto-renewal-clause/).
 
-This schema is a subset of the broader field architecture we recommend for renewal work; the full list, including stage-tracking and forecast properties, is in our guide to [renewal pipeline properties](/posts/hubspot-renewal-pipeline-properties/).
+This schema is a subset of the broader field architecture we recommend for renewal work; the full list, including stage-tracking and forecast properties, is in our guide to [renewal pipeline properties](/posts/hubspot-renewal-pipeline-properties/). For the wider discipline this sits inside, including the stages, best practices and KPIs, see our [contract management guide for B2B revenue teams](/posts/contract-management-guide/), and for what to automate and what to leave to people, [contract management automation](/posts/contract-management-automation-workflow/).
 
 ---
 

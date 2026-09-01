@@ -1,12 +1,12 @@
 ---
 layout: ../../layouts/BlogPostLayout.astro
-title: "The Contract Renewal Process: Steps, Timeline, and a Copy-Paste Checklist"
+title: "Contract Renewal: The Process, Timeline, and a Copy-Paste Checklist"
 pubDate: "2026-07-06"
-description: "The contract renewal process step by step: a T-120 to T-0 timeline, clear ownership across sales, CS, and finance, and a copy-paste renewal checklist."
+description: "Contract renewal step by step: a T-120 timeline anchored to the notice date, ownership across sales, CS and finance, and a copy-paste renewal checklist."
 category:
   title: "Revenue Operations"
   href: "/categories/revenue-operations/"
-modifiedDate: "2026-07-07"
+modifiedDate: "2026-08-31"
 author:
   name: "SWOTBee Team"
   url: "https://swotbee.com"
@@ -76,9 +76,30 @@ First, the definition worth agreeing on: a contract renewal occurs when parties 
 Two timing rules worth engraving somewhere visible:
 
 1. **The first customer conversation happens by T-75 at the latest.** Every week later than that converts negotiating leverage into discount pressure, because a customer who knows you are out of runway will wait you out. Starting the renewal process this early also opens a wide enough renewal window to initiate renewal discussions before the customer's own budget cycle locks in.
-2. **Auto-renew contracts run the same timeline.** The deadline just shifts from T-0 to the notice date (often T-30 or T-60 per the contract). Auto-renewal without a check-in is how silent churn and stale pricing accumulate, so the goal is to turn every renewal into a deliberate decision instead of a default one.
+2. **On auto-renewing contracts, T is not the end date.** This is the rule teams get wrong most often, and it quietly invalidates the whole timeline.
 
-Both rules exist to reduce risk: an early start protects the uplift, and a notice-date deadline protects you from auto-renewing into stale contract terms. Start the renewal at T-120 for full-cycle contracts with procurement review, and take time to review the contract in full: updating contract terms deliberately, rather than letting them roll over untouched, is what keeps a renewal calendar honest across renewal periods.
+### Anchor the timeline to the notice date
+
+If the contract has an auto-renewal clause, the decision deadline is not the end date. It is the **notice date**: the last day either side can say they do not want to renew. That date is the end date minus the notice period, and once it passes, the renewal has happened whether anybody decided it or not.
+
+So T is the notice date, not T-0 on the contract. Here is what that does to a contract ending 31 December:
+
+| Notice period | T (notice date) | Kickoff at T-120 | Contract end date |
+|---|---|---|---|
+| None | 31 December | 2 September | 31 December |
+| 30 days | 1 December | 3 August | 31 December |
+| 60 days | 1 November | 4 July | 31 December |
+| 90 days | 2 October | 4 June | 31 December |
+
+A 90-day notice period pulls kickoff back by a full quarter. Teams that anchor to the end date instead are starting the renewal motion in September for a decision that was made in October, then wondering why the customer had already moved on.
+
+Our [notice date calculator](/notice-date-calculator/) will work out T for a given contract, and the [contract management checklists](/posts/contract-management-checklist/) include a renewal readiness list to run at T-90.
+
+Around 69% of software contracts carry an auto-renewal clause with a notice period of 30 to 90 days, so for most B2B books this is the normal case rather than the exception. Store the notice period as a number, calculate the notice date, and drive the timeline from it. The clause mechanics, including how a rolling evergreen agreement differs from a fixed auto-renewal and why the distinction changes your exposure, are covered in our guide to [evergreen contracts and auto-renewal clauses](/posts/evergreen-contract-auto-renewal-clause/).
+
+Auto-renewal without a check-in is also how silent churn and stale pricing accumulate, so the goal is to turn every renewal into a deliberate decision instead of a default one.
+
+Both rules exist to reduce risk: an early start protects the uplift, and a notice-date anchor protects you from auto-renewing into stale contract terms. Start the renewal at T-120 for full-cycle contracts with procurement review, and take time to review the contract in full: updating contract terms deliberately, rather than letting them roll over untouched, is what keeps a renewal calendar honest across renewal periods.
 
 What should be done before renewing a contract? The Assess phase answers it. Review contract performance against the outcomes the current contract promised, and check the renewal provisions written into it: is usage trending up or down throughout the contract term, and did the relationship earn an uplift, a flat renewal, or a save plan? A robust review process answers that with evidence instead of gut feel; a renewal decision made without that review is a coin flip with revenue on it.
 
@@ -165,6 +186,10 @@ Copy this into your task tool, CRM playbook, or run sheet. Dates assume a T-120 
 - [ ] Billing/finance notified with final pricing and terms
 - [ ] Next renewal record scheduled (the next T-120 is already on the calendar)
 - [ ] Loss review completed within one week for any churned contract
+
+---
+
+Eight ready-to-send messages covering the internal brief, the customer reminder, the uplift proposal, the escalation and the extension request are in our [renewal and non-renewal notice templates](/resources/renewal-notice-templates/).
 
 ---
 
