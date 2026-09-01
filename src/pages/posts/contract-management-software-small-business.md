@@ -6,7 +6,7 @@ description: "The best contract management software for small business in 2026, 
 category:
   title: "Revenue Operations"
   href: "/categories/revenue-operations/"
-modifiedDate: "2026-08-31"
+modifiedDate: "2026-09-01"
 author:
   name: "SWOTBee Team"
   url: "https://swotbee.com"
@@ -225,7 +225,7 @@ A CRM stores structured fields on records, calculates from them, triggers on dat
 
 A reminder inside a contract system tells someone to go and do something somewhere else. A reminder on the deal record is attached to the thing they were going to open anyway. That difference shows up in completion rates.
 
-**Where the CRM approach works well:** customer contracts, renewals, anything already represented as a deal, anywhere the commercial team is the audience.
+**Where the CRM approach works well:** customer contracts, renewals, anything already represented as a deal, anywhere the commercial team is the audience. If you are on HubSpot, we are building an app for this and [early access is open](/hubspot-contract-management-app/).
 
 **Where it does not:** contracts with no deal behind them (office leases, insurance, vendor agreements, NDAs), any requirement to search inside the document text, and heavy drafting workflows. For the vendor side specifically, see [vendor and supplier contract management](/posts/vendor-contract-management/).
 

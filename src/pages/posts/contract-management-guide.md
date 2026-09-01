@@ -6,7 +6,7 @@ description: "A complete contract management guide for revenue teams: the seven 
 category:
   title: "Revenue Operations"
   href: "/categories/revenue-operations/"
-modifiedDate: "2026-08-31"
+modifiedDate: "2026-09-01"
 author:
   name: "SWOTBee Team"
   url: "https://swotbee.com"
@@ -81,7 +81,7 @@ The distinction that actually matters when you are buying:
 - **A CLM platform sells you the pre-signature half.** That is where most of the product, and most of the price, sits.
 - **Most mid-market teams have a post-signature problem.** They know how to produce a contract. They do not know what they have signed.
 
-Buying a platform for the half you are already fine at is the most common expensive mistake in this category. We cover the buying decision, with real prices, in [contract management software for small business](/posts/contract-management-software-small-business/), and compare 14 named tools across four price tiers in [contract management software compared](/posts/contract-management-software-compared/).
+Buying a platform for the half you are already fine at is the most common expensive mistake in this category. If your contracts already live in HubSpot, we are building an app for the post-signature half and [early access is open](/hubspot-contract-management-app/). We cover the buying decision, with real prices, in [contract management software for small business](/posts/contract-management-software-small-business/), and compare 14 named tools across four price tiers in [contract management software compared](/posts/contract-management-software-compared/).
 
 ---
 

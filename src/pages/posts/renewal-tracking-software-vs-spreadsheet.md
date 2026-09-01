@@ -175,7 +175,7 @@ A note on category choices: you rarely need a separate renewal product if you al
 
 ---
 
-A ready-made version of this sheet, with the notice date calculated per row and conditional formatting already applied, is our free [contract tracker template](/resources/contract-tracker-template/).
+A ready-made version of this sheet, with the notice date calculated per row and conditional formatting already applied, is our free [contract tracker template](/resources/contract-tracker-template/). If you would rather it lived in HubSpot, we are building an app for that and [early access is open](/hubspot-contract-management-app/).
 
 ---
 

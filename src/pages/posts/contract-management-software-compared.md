@@ -6,7 +6,7 @@ description: "Contract management software compared with published prices and ho
 category:
   title: "Revenue Operations"
   href: "/categories/revenue-operations/"
-modifiedDate: "2026-08-31"
+modifiedDate: "2026-09-01"
 author:
   name: "SWOTBee Team"
   url: "https://swotbee.com"
@@ -267,7 +267,12 @@ A CRM stores structured fields, calculates from them, triggers on dates, creates
 **Where it works:** customer contracts, renewals, anything with a deal behind it.
 **Where it does not:** leases, insurance, vendor agreements and NDAs with no deal record, and any requirement to search document text.
 
-Most companies have both kinds. Serving the revenue side from the CRM and the rest from a cheap tier 1 tool is usually far cheaper than one platform doing both jobs adequately. The build is covered in [HubSpot contract management](/posts/hubspot-contract-management/) and [contract management automation](/posts/contract-management-automation-workflow/).
+Most companies have both kinds. Serving the revenue side from the CRM and the rest from a cheap tier 1 tool is usually far cheaper than one platform doing both jobs adequately.
+
+**A note on our own position.** We build renewal operations inside HubSpot, and we are
+building a HubSpot contract management app to productise it. It is not finished and it is
+not in the comparison above, which lists tools you can buy today. If you want to shape what
+it does, [early access is open](/hubspot-contract-management-app/). The build is covered in [HubSpot contract management](/posts/hubspot-contract-management/) and [contract management automation](/posts/contract-management-automation-workflow/).
 
 ---
 

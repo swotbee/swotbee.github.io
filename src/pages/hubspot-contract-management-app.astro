@@ -1,0 +1,178 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/astro/Navbar.astro";
+import Footer from "../components/astro/Footer.astro";
+import ClientLogoStrip from "../components/astro/ClientLogoStrip.astro";
+import {
+  BellAlertIcon,
+  CalendarDaysIcon,
+  ChartBarIcon,
+  DocumentTextIcon,
+  UserGroupIcon,
+  Cog6ToothIcon,
+} from "@heroicons/react/24/outline";
+
+// DEMAND VALIDATION page for a HubSpot contract management app that is NOT BUILT YET.
+// Target keyword: "hubspot contract management" (210/mo, KD 12, $38.66 CPC) plus the
+// uncovered CRM cluster ("crm contract management", "contract crm", "crm contracts",
+// ~190/mo at KD 9 to 21). See HUBSPOT-CRM-KEYWORD-GAP.md.
+//
+// HOW THIS PAGE STAYS HONEST, do not weaken:
+// The app does not exist. The page therefore says "early access" everywhere and never
+// says install, download, get started free, or start your trial. Nothing here implies a
+// visitor can use it today. That is not only an ethics point: Google Ads disapproves
+// destinations that advertise a product the visitor cannot obtain, so a fake install
+// button would put the campaign at risk as well.
+// The signup is a waitlist. If someone joins and asks for it next week, SwotBee builds
+// against the four existing HubSpot apps in product/hubspot-dev/apps/, which is why the
+// "built on what already ships" section is real rather than decoration.
+//
+// The signup routes to /contactus/?subject=contract-mgmt-early-access, which prefills the
+// message so the enquiry arrives labelled. The whitelist lives in ContactUs.astro.
+const title = "HubSpot Contract Management App | Early Access";
+const description = "A HubSpot contract management app: contract dates, renewal alerts and owners on the records you already use. Free during early access. Help us decide what ships first.";
+
+const features = [
+  { icon: DocumentTextIcon, title: "Contracts as real records", desc: "Start date, end date, notice period, value and owner as structured contract data on the deal or company you already work in." },
+  { icon: CalendarDaysIcon, title: "The notice date, calculated", desc: "End date minus notice period, kept current automatically. The date that actually decides the renewal, not the one printed on the contract." },
+  { icon: BellAlertIcon, title: "Alerts that become tasks", desc: "Assigned to a named owner and escalated if nothing moves. They stop the moment the renewal closes." },
+  { icon: ChartBarIcon, title: "A contract dashboard", desc: "Your contract portfolio by renewal window and value, plus every agreement with no owner or no end date." },
+  { icon: UserGroupIcon, title: "Renewal deals, already built", desc: "Line items carried over, escalation applied, in the pipeline before the first alert fires." },
+  { icon: Cog6ToothIcon, title: "Your rules, not ours", desc: "Multi-year terms, bundles, co-terming and notice periods differ by company. The rules are configuration." },
+];
+
+const questions = [
+  "How many contracts are you tracking, and where do they live today?",
+  "Which matters more first: the renewal alerts, or the contract repository?",
+  "Do you need the signed documents in HubSpot, or just the dates and terms?",
+  "What would make this worth paying for once early access ends?",
+];
+---
+<Layout title={title} description={description}>
+  <Navbar />
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-b from-v6-bg to-white px-4 sm:px-6 lg:px-8 pt-14 pb-10">
+    <div class="max-w-3xl mx-auto text-center">
+      <span class="inline-block text-xs font-semibold uppercase tracking-[0.2em] text-white bg-v6-copper px-3 py-1 rounded-full mb-5">Early access, free to join</span>
+      <h1 class="text-3xl sm:text-5xl font-bold text-v6-dark mb-5 leading-tight text-balance">
+        Contract management, inside the HubSpot you already pay for
+      </h1>
+      <p class="text-lg text-v6-text-muted max-w-2xl mx-auto leading-relaxed mb-4">
+        HubSpot contract management has one awkward gap: there is no contract object. So contract dates end up in deal names, in notes, or in a spreadsheet beside the CRM, and renewals slip because nothing is watching them.
+      </p>
+      <p class="text-base text-v6-text-muted max-w-2xl mx-auto leading-relaxed mb-7">
+        We are building a HubSpot app that fixes exactly that. <strong class="text-v6-dark">It is not finished, and we would rather build it with you than at you.</strong> Early access is free, and the people who join now decide what ships first.
+      </p>
+      <a href="#join" class="inline-block bg-v6-copper text-white font-semibold px-7 py-3.5 rounded-lg hover:opacity-90 transition text-lg">Get early access →</a>
+      <p class="text-sm text-v6-text-muted mt-3">Free while in early access. No card, no commitment, and we will tell you honestly if HubSpot is the wrong home for your contracts.</p>
+    </div>
+  </section>
+
+  <ClientLogoStrip caption="HubSpot Solutions Partner. Renewal operations built for teams at" />
+
+  <!-- The problem -->
+  <section class="px-4 sm:px-6 lg:px-8 py-14">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-2xl sm:text-3xl font-bold text-v6-dark mb-4">Can a CRM do contract management?</h2>
+      <p class="text-v6-text-muted mb-4 leading-relaxed">
+        Mostly, yes, and most teams never find out. CRM contract management gets dismissed because HubSpot ships no contract object, so people assume they need a separate contract management system and go shopping for one at $5,000 to $80,000 a year.
+      </p>
+      <p class="text-v6-text-muted mb-6 leading-relaxed">
+        For the part that actually loses money, the CRM is the better home. Your contract crm data sits next to the customer, the renewal is already a deal, and the alert lands where the work happens rather than in a second system nobody opens.
+      </p>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <div class="rounded-xl border border-v6-border bg-white p-5">
+          <p class="font-semibold text-v6-dark mb-2">What a separate platform is genuinely better at</p>
+          <p class="text-sm text-v6-text-muted leading-relaxed">Storing and searching signed documents, drafting from clause libraries, redlining, and e-signature. If that is your bottleneck, buy one.</p>
+        </div>
+        <div class="rounded-xl border-2 border-v6-copper bg-white p-5">
+          <p class="font-semibold text-v6-dark mb-2">What belongs in the CRM</p>
+          <p class="text-sm text-v6-text-muted leading-relaxed">Renewal dates, notice windows, owners, escalation terms and the renewal deal itself. This is where CRM contracts earn their keep. Everything that decides whether the revenue arrives.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What we are building -->
+  <section class="px-4 sm:px-6 lg:px-8 py-14 bg-v6-bg">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <p class="text-sm font-semibold uppercase tracking-[0.2em] text-v6-copper mb-3">The plan</p>
+        <h2 class="text-2xl sm:text-3xl font-bold text-v6-dark mb-3">What we are building</h2>
+        <p class="text-v6-text-muted leading-relaxed">An app that lets you manage contracts where your team already works. Early access shapes the order these ship in.</p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        {features.map((f) => (
+          <div class="bg-white border border-v6-border rounded-xl p-6">
+            <f.icon class="w-8 h-8 text-v6-copper mb-4" aria-hidden="true" />
+            <h3 class="font-bold text-v6-dark mb-2">{f.title}</h3>
+            <p class="text-sm text-v6-text-muted leading-relaxed">{f.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Credibility: this is not vapourware -->
+  <section class="px-4 sm:px-6 lg:px-8 py-14">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-2xl sm:text-3xl font-bold text-v6-dark mb-4">Why we can build this quickly</h2>
+      <p class="text-v6-text-muted mb-5 leading-relaxed">
+        We are not starting from nothing. SWOTBee already builds and ships HubSpot apps, and already runs renewal operations inside client portals by hand: contract properties, calculated notice dates, alert workflows with escalation, and renewal deals created with line items and uplift applied.
+      </p>
+      <p class="text-v6-text-muted mb-6 leading-relaxed">
+        The app is that same work, productised, so you can manage contracts in HubSpot without a consulting engagement. Which is also why we can move fast on whatever early access users ask for first.
+      </p>
+      <div class="rounded-xl bg-v6-bg-warm border border-v6-border p-6">
+        <p class="text-v6-dark font-semibold mb-2">Do not want to wait?</p>
+        <p class="text-v6-text-muted text-sm leading-relaxed mb-4">
+          We can set the whole thing up in your portal now, as configuration rather than an app. Same outcome, available today, and you own everything we build.
+        </p>
+        <a href="/renewal-reminder-software/" class="text-v6-copper font-semibold text-sm hover:underline">See how the done-for-you setup works →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Signup -->
+  <section id="join" class="px-4 sm:px-6 lg:px-8 py-16 bg-v6-dark scroll-mt-20">
+    <div class="max-w-xl mx-auto">
+      <div class="text-center mb-8">
+        <h2 class="text-2xl sm:text-3xl font-bold text-white mb-3">Get early access</h2>
+        <p class="text-white/80 leading-relaxed">
+          Free while in early access. We will ask you four questions, build against the answers, and tell you honestly if a different tool suits you better.
+        </p>
+      </div>
+
+      <div class="bg-white/5 border border-white/10 rounded-xl p-5 mb-7">
+        <p class="text-xs font-semibold uppercase tracking-wider text-v6-copper mb-3">What we will ask</p>
+        <ul class="space-y-2">
+          {questions.map((q) => (
+            <li class="flex gap-2 text-sm text-white/80">
+              <span class="text-v6-copper flex-shrink-0" aria-hidden="true">&#8250;</span><span>{q}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="text-center">
+        <a href="/contactus/?subject=contract-mgmt-early-access" class="inline-block bg-v6-copper text-white font-semibold px-8 py-4 rounded-lg hover:opacity-90 transition text-lg">Get early access →</a>
+        <p class="text-sm text-white/50 mt-4">Free while in early access. No card, no commitment.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reading -->
+  <section class="px-4 sm:px-6 lg:px-8 py-12">
+    <div class="max-w-3xl mx-auto text-center">
+      <p class="text-v6-text-muted mb-4">Not ready to talk? Start here instead.</p>
+      <div class="flex flex-wrap justify-center gap-3">
+        <a href="/posts/hubspot-contract-management/" class="text-sm border border-v6-border rounded-lg px-4 py-2 hover:border-v6-copper transition text-v6-dark">Managing contracts in HubSpot today</a>
+        <a href="/notice-date-calculator/" class="text-sm border border-v6-border rounded-lg px-4 py-2 hover:border-v6-copper transition text-v6-dark">Notice date calculator</a>
+        <a href="/posts/contract-management-guide/" class="text-sm border border-v6-border rounded-lg px-4 py-2 hover:border-v6-copper transition text-v6-dark">The contract management guide</a>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

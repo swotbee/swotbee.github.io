@@ -132,6 +132,25 @@ import RecaptchaLazy from "./RecaptchaLazy.astro";
       status.style.color = kind === "error" ? "#b3462f" : (kind === "ok" ? "#3f7d6f" : "");
     }
 
+    // Landing pages route here with ?subject=<key> so the enquiry arrives already
+    // labelled and the visitor does not have to explain why they clicked. Unknown or
+    // absent keys leave the textarea empty, which is the normal contact-page behaviour.
+    // Keys are whitelisted rather than echoed, so a crafted URL cannot inject text into
+    // the message field.
+    var SUBJECTS = {
+      "contract-mgmt-early-access": "I would like early access to the HubSpot contract management app.",
+      "renewal-reminders": "I want renewal reminders set up in our HubSpot.",
+    };
+    try {
+      var subj = new URLSearchParams(window.location.search).get("subject");
+      var preset = subj && SUBJECTS[subj];
+      if (preset && form.message && !form.message.value) {
+        form.message.value = preset;
+        var heading = document.querySelector('label[for="cf-msg"]');
+        if (heading) heading.textContent = "Your message (edit if you like)";
+      }
+    } catch (e) { /* querystring unavailable, fall through to the empty form */ }
+
     function showSuccess(firstName) {
       var panel = document.getElementById("cf-success");
       var title = document.getElementById("cf-success-title");
