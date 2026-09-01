@@ -1,0 +1,195 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Navbar from "../../components/astro/Navbar.astro";
+import Footer from "../../components/astro/Footer.astro";
+// UNGATED and indexable, deliberately unlike the other pages in /resources/ (which are all
+// robots="noindex, follow" + HubSpot form gates). Decision recorded in
+// marketing/seo/semrush/aug31-contract-management/DELIVERABLES-RESEARCH.md: targets
+// "contract tracker" (210/mo, KD 20) and "contract renewal tracking spreadsheet" (20/mo,
+// KD 0), and every competitor in this space (PactAlert, Lumipact, XappEx, Capital Build)
+// ungates theirs. No form, no token, no lead capture.
+//
+// The CSV is generated client-side from the column spec below so there is no binary asset
+// to maintain and the page and the download can never drift apart.
+const columns = [
+  { name: "Counterparty", type: "Text", note: "The other party's legal entity name" },
+  { name: "Contract Type", type: "Text", note: "MSA, order form, lease, NDA, SOW" },
+  { name: "Direction", type: "Customer / Supplier", note: "Which side of the table you are on" },
+  { name: "Annual Value", type: "Number", note: "Used to rank what deserves attention" },
+  { name: "Currency", type: "Text", note: "Skip if you only ever use one" },
+  { name: "Start Date", type: "Date", note: "" },
+  { name: "End Date", type: "Date", note: "The date printed on the contract" },
+  { name: "Notice Period Days", type: "Number", note: "A NUMBER. Not '60 days written notice'" },
+  { name: "Notice Date", type: "Formula", note: "= End Date - Notice Period Days", key: true },
+  { name: "Days To Notice", type: "Formula", note: "= Notice Date - TODAY()", key: true },
+  { name: "Auto Renews", type: "Yes / No", note: "" },
+  { name: "Renewal Type", type: "Fixed term / Rolling", note: "Rolling evergreen exits any time; fixed locks another full term" },
+  { name: "Uplift Terms", type: "Text", note: "The escalation clause, or 'none'" },
+  { name: "Owner", type: "Text", note: "One named person, never a team" },
+  { name: "Decision Status", type: "Dropdown", note: "Not reviewed / Continuing / Renegotiating / Exiting", key: true },
+  { name: "Service Levels", type: "Text", note: "What you are owed, so you can check it was delivered" },
+  { name: "Document Link", type: "URL", note: "Where the signed PDF lives" },
+  { name: "Notes", type: "Text", note: "" },
+];
+---
+<Layout
+  title="Free Contract Tracker Template (Excel and Google Sheets)"
+  description="A free contract tracking spreadsheet that calculates the notice date, not just the end date. Copy the columns, paste the formulas, sort by what actually needs attention."
+>
+  <Navbar />
+
+  <section class="bg-gradient-to-b from-v6-bg to-white px-4 sm:px-6 lg:px-8 pt-14 pb-8">
+    <div class="max-w-3xl mx-auto text-center">
+      <span class="text-xs font-semibold uppercase tracking-[0.2em] text-v6-copper">Free, no sign-up, no email</span>
+      <h1 class="text-3xl sm:text-4xl font-bold text-v6-dark mt-3 mb-4 text-balance">Contract Tracker Template</h1>
+      <p class="text-lg text-v6-text-muted max-w-2xl mx-auto leading-relaxed mb-6">
+        Most contract trackers store the end date and miss the deadline. This one calculates the <strong>notice date</strong>, which on an auto-renewing contract is the day the decision is actually made.
+      </p>
+      <button id="dl" type="button"
+        class="inline-block bg-v6-copper text-white font-semibold px-6 py-3 rounded-lg hover:opacity-90 transition">
+        Download the CSV
+      </button>
+      <p class="text-xs text-v6-text-muted mt-3">Opens in Excel, Google Sheets, or Numbers. Includes three example rows and the formulas below.</p>
+    </div>
+  </section>
+
+  <section class="px-4 sm:px-6 lg:px-8 pb-10">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl font-bold text-v6-dark mb-3">The columns</h2>
+      <p class="text-v6-text-muted mb-5">Eighteen columns. The three marked matter most and are the ones missing from every tracker we have seen in the wild.</p>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm bg-white border border-v6-border rounded-lg">
+          <thead class="bg-v6-bg-warm">
+            <tr>
+              <th class="text-left px-3 py-2 font-semibold text-v6-dark">Column</th>
+              <th class="text-left px-3 py-2 font-semibold text-v6-dark">Type</th>
+              <th class="text-left px-3 py-2 font-semibold text-v6-dark">Why</th>
+            </tr>
+          </thead>
+          <tbody class="text-v6-text-muted">
+            {columns.map((c) => (
+              <tr class={"border-t border-v6-border" + (c.key ? " bg-highlight-50" : "")}>
+                <td class={"px-3 py-2" + (c.key ? " font-semibold text-v6-dark" : "")}>{c.name}</td>
+                <td class="px-3 py-2 whitespace-nowrap">{c.type}</td>
+                <td class="px-3 py-2">{c.note}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="px-4 sm:px-6 lg:px-8 py-12 bg-v6-bg">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-2xl font-bold text-v6-dark mb-4">The formulas</h2>
+      <p class="text-v6-text-muted mb-4">Assuming End Date in column G and Notice Period Days in column H, with data starting on row 2. Identical syntax in Excel and Google Sheets.</p>
+      <pre class="bg-v6-dark text-white text-sm rounded-lg p-4 overflow-x-auto mb-6"><code>Notice Date      =IF(OR(G2="",H2=""), "", G2-H2)
+
+Days To Notice   =IF(I2="", "", I2-TODAY())
+
+Status flag      =IF(I2="", "",
+                   IF(I2&lt;TODAY(), "CLOSED",
+                   IF(I2-TODAY()&lt;=30, "URGENT",
+                   IF(I2-TODAY()&lt;=90, "ACT NOW", "OK"))))</code></pre>
+
+      <h3 class="text-lg font-bold text-v6-dark mb-2">Conditional formatting</h3>
+      <p class="text-v6-text-muted mb-3">Apply to the Days To Notice column. This is what makes the sheet usable at a glance.</p>
+      <div class="overflow-x-auto mb-6">
+        <table class="w-full text-sm bg-white border border-v6-border rounded-lg">
+          <thead class="bg-v6-bg-warm">
+            <tr>
+              <th class="text-left px-3 py-2 font-semibold text-v6-dark">Rule</th>
+              <th class="text-left px-3 py-2 font-semibold text-v6-dark">Colour</th>
+              <th class="text-left px-3 py-2 font-semibold text-v6-dark">Means</th>
+            </tr>
+          </thead>
+          <tbody class="text-v6-text-muted">
+            <tr class="border-t border-v6-border"><td class="px-3 py-2">Less than 0</td><td class="px-3 py-2">Grey</td><td class="px-3 py-2">Window closed. Already renewed, decided or not</td></tr>
+            <tr class="border-t border-v6-border"><td class="px-3 py-2">0 to 30</td><td class="px-3 py-2">Red</td><td class="px-3 py-2">Decide this week</td></tr>
+            <tr class="border-t border-v6-border"><td class="px-3 py-2">31 to 90</td><td class="px-3 py-2">Amber</td><td class="px-3 py-2">Start the review now</td></tr>
+            <tr class="border-t border-v6-border"><td class="px-3 py-2">Over 90</td><td class="px-3 py-2">None</td><td class="px-3 py-2">Leave it alone</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="rounded-lg border-l-4 border-v6-copper bg-white p-4">
+        <p class="font-semibold text-v6-dark mb-1">Sort by Notice Date, not End Date.</p>
+        <p class="text-sm text-v6-text-muted">This is the single change that makes a tracker useful. Sorted by end date, the sheet shows you the wrong quarter and hides the contracts whose decision window has already closed.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="px-4 sm:px-6 lg:px-8 py-12">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-2xl font-bold text-v6-dark mb-4">When a spreadsheet stops being enough</h2>
+      <p class="text-v6-text-muted mb-4">Honestly: under about 40 active contracts with one person maintaining it, this sheet is genuinely the right answer. It costs nothing and it fails in ways you can see. Five signals it is time to move on:</p>
+      <ol class="list-decimal list-inside text-v6-text-muted space-y-2 mb-6">
+        <li>More than about 40 active contracts, so the monthly review no longer fits in one sitting.</li>
+        <li>More than one person needs to update it, so you get version conflicts and overwritten cells.</li>
+        <li>You missed a date in the last twelve months. The system already failed once.</li>
+        <li>Nobody can say who owns a given renewal.</li>
+        <li>Somebody asked who changed a value and when, and there is no answer.</li>
+      </ol>
+      <p class="text-v6-text-muted mb-8">Any two of those and it is worth looking at tooling. What to buy, and what to ignore, is in <a href="/posts/contract-management-software-small-business/" class="text-v6-copper font-medium hover:underline">contract management software for small business</a>.</p>
+
+      <div class="grid sm:grid-cols-2 gap-4 mb-8">
+        <a href="/notice-date-calculator/" class="block border border-v6-border rounded-lg p-4 hover:border-v6-copper transition">
+          <div class="font-semibold text-v6-dark mb-1">Notice date calculator</div>
+          <div class="text-sm text-v6-text-muted">Check a single contract without opening a spreadsheet.</div>
+        </a>
+        <a href="/posts/contract-management-checklist/" class="block border border-v6-border rounded-lg p-4 hover:border-v6-copper transition">
+          <div class="font-semibold text-v6-dark mb-1">Contract management checklists</div>
+          <div class="text-sm text-v6-text-muted">Five copy-paste lists, including what to populate on every new contract.</div>
+        </a>
+        <a href="/posts/evergreen-contract-auto-renewal-clause/" class="block border border-v6-border rounded-lg p-4 hover:border-v6-copper transition">
+          <div class="font-semibold text-v6-dark mb-1">Evergreen and auto-renewal clauses</div>
+          <div class="text-sm text-v6-text-muted">Why rolling and fixed auto-renewals need different handling.</div>
+        </a>
+        <a href="/posts/vendor-contract-management/" class="block border border-v6-border rounded-lg p-4 hover:border-v6-copper transition">
+          <div class="font-semibold text-v6-dark mb-1">Vendor contract management</div>
+          <div class="text-sm text-v6-text-muted">Using this tracker on the buy side, where most avoidable spend sits.</div>
+        </a>
+      </div>
+
+      <div class="rounded-xl bg-v6-bg-warm border border-v6-border p-6">
+        <p class="text-v6-dark font-semibold mb-2">A spreadsheet remembers. It does not chase anybody.</p>
+        <p class="text-v6-text-muted text-sm mb-4">SWOTBee builds this into HubSpot directly: notice period as a real property, notice date as a calculation, and alerts that create tasks with owners and escalate when nothing happens.</p>
+        <a href="/contactus/" class="inline-block bg-v6-copper text-white font-semibold px-5 py-2.5 rounded-lg hover:opacity-90 transition">Book a free 30-minute discovery call →</a>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+
+<script is:inline>
+(function () {
+  var HEAD = ["Counterparty","Contract Type","Direction","Annual Value","Currency","Start Date","End Date","Notice Period Days","Notice Date","Days To Notice","Auto Renews","Renewal Type","Uplift Terms","Owner","Decision Status","Service Levels","Document Link","Notes"];
+  // Notice Date is col I, Days To Notice col J, End Date col G, Notice Period col H.
+  var F_NOTICE = '=IF(OR(G{r}="",H{r}=""),"",G{r}-H{r})';
+  var F_DAYS = '=IF(I{r}="","",I{r}-TODAY())';
+  var rows = [
+    ["Acme Corp","Order form","Customer","48000","USD","2026-01-01","2026-12-31","60","","","Yes","Fixed term","3% annual","A. Owner","Not reviewed","99.5% uptime","","Renews at old price unless repriced"],
+    ["Northwind Ltd","MSA","Customer","120000","USD","2025-07-01","2027-06-30","90","","","Yes","Rolling","CPI","B. Owner","Continuing","4h response","",""],
+    ["Contoso Hosting","Supplier agreement","Supplier","36000","USD","2026-03-01","2027-02-28","30","","","Yes","Fixed term","none","C. Owner","Renegotiating","99.9% uptime","",""]
+  ];
+  function esc(v){ v = String(v); return /[",\n]/.test(v) ? '"' + v.replace(/"/g,'""') + '"' : v; }
+  document.getElementById("dl").addEventListener("click", function () {
+    var lines = [HEAD.map(esc).join(",")];
+    for (var i = 0; i < rows.length; i++) {
+      var r = i + 2;
+      var row = rows[i].slice();
+      row[8] = F_NOTICE.replace(/\{r\}/g, r);
+      row[9] = F_DAYS.replace(/\{r\}/g, r);
+      lines.push(row.map(esc).join(","));
+    }
+    var blob = new Blob(["﻿" + lines.join("\r\n")], { type: "text/csv;charset=utf-8;" });
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement("a");
+    a.href = url; a.download = "contract-tracker-template.csv";
+    document.body.appendChild(a); a.click(); document.body.removeChild(a);
+    setTimeout(function(){ URL.revokeObjectURL(url); }, 1000);
+  });
+})();
+</script>
+</Layout>

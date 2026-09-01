@@ -1,0 +1,297 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Navbar from "../../components/astro/Navbar.astro";
+import Footer from "../../components/astro/Footer.astro";
+// UNGATED, indexable. Deliberately does NOT target "contract template" / "termination
+// letter template" style keywords: that SERP is legal-document seekers (1.8M/mo, KD 62)
+// and chasing it would pull the site away from renewals. See
+// marketing/seo/semrush/aug31-contract-management/DELIVERABLES-RESEARCH.md.
+// This page exists to be USEFUL to people already in the contract cluster, not to rank.
+// Every template is renewal-motion specific, which is the one thing the legal-template
+// sites do not cover.
+const templates = [
+  { id: "t1", n: 1, title: "Notice of non-renewal, to a supplier", when: "Send before the notice date. This is the one with a deadline attached." },
+  { id: "t2", n: 2, title: "Courtesy renewal reminder, to a customer", when: "90 days before the notice date, from the account owner." },
+  { id: "t3", n: 3, title: "Renewal proposal with a price increase", when: "After the renewal conversation, never as the first contact." },
+  { id: "t4", n: 4, title: "Vendor renewal review request", when: "120 days before the notice date, to the supplier's account manager." },
+  { id: "t5", n: 5, title: "Contract extension request", when: "When a negotiation will not finish before the term ends." },
+  { id: "t6", n: 6, title: "Internal renewal brief", when: "At kickoff, to whoever owns the renewal." },
+  { id: "t7", n: 7, title: "Renewal escalation, internal", when: "When a checkpoint passes with the task still open." },
+  { id: "t8", n: 8, title: "Responding to a customer's non-renewal notice", when: "Within 24 hours of receiving one." },
+];
+const B1 = `Subject: Notice of non-renewal, {Agreement name} dated {Signature date}
+
+Dear {Name},
+
+This letter constitutes formal notice that {Your company} will not renew
+the {Agreement name} dated {Signature date} between {Your company} and
+{Supplier} (the "Agreement").
+
+In accordance with clause {Clause number} of the Agreement, this notice is
+given not less than {Notice period} days prior to the current term end
+date of {Contract end date}. The Agreement will therefore terminate on
+{Contract end date} and will not renew for a further term.
+
+We would like to agree an orderly handover before that date, including
+{data export / final invoicing / return of materials}. Please confirm
+receipt of this notice and let me know who will coordinate that on your side.
+
+Regards,
+{Name}
+{Title}, {Your company}`;
+const B2 = `Subject: Your {Product} agreement, renewing {Month}
+
+Hi {First name},
+
+Your agreement with us runs to {Contract end date} and renews automatically
+for a further {Term} unless either of us gives notice by {Notice date}.
+I would rather flag that now than have it arrive as a surprise.
+
+Over the past year your team {one concrete, verifiable outcome}.
+
+Before the renewal date I would like 30 minutes to go through what worked,
+what did not, and what you need from us next year. If anything should change
+in the next term, that is the conversation to have it in.
+
+Would {option 1} or {option 2} suit?
+
+Best,
+{Account owner}`;
+const B3 = `Subject: {Customer} renewal terms for {Renewal date}
+
+Hi {First name},
+
+Thanks for the conversation last week. Here are the terms for the period
+starting {Renewal start date}:
+
+  Term:   {Term length}
+  Price:  {New ACV} ({Uplift %} adjustment from {Current ACV})
+  Scope:  {unchanged / list changes}
+
+The adjustment reflects {the escalation clause in section X / expanded usage /
+added capabilities}. Everything else in the agreement stays as it is.
+
+I will send the order form by {date}. If any of this needs discussion
+first, call me on {phone}.
+
+Best,
+{Account owner}`;
+const B4 = `Subject: {Agreement name} renewal review, term ends {Contract end date}
+
+Hi {Name},
+
+We are starting our review of the {Agreement name} ahead of the
+{Contract end date} term end. To make that a quick decision rather than a
+long one, could you send the following by {date}:
+
+  1. Usage or consumption over the current term
+  2. Performance against the service levels in section {X}, including any
+     missed targets and what was done about them
+  3. Proposed pricing for the next term, including any indexation you intend
+     to apply
+  4. Anything changing in the product or service that we should know about
+
+For context, our notice date under the agreement is {Notice date}, so we
+will make a decision before then.
+
+Thanks,
+{Name}`;
+const B5 = `Subject: Short extension to {Agreement name}, currently ending {Contract end date}
+
+Hi {Name},
+
+We are close on the terms for the next period but will not have it signed
+before {Contract end date}.
+
+Rather than let the agreement lapse or auto-renew on the current terms, could
+we agree a {30 / 60} day extension of the existing agreement, on unchanged
+terms, to {New end date}? That gives both sides room to finish properly.
+
+If that works I will send a short extension letter for signature this week.
+
+Thanks,
+{Name}`;
+const B6 = `Subject: [Renewal] {Customer} | notice date {Notice date} | {Current ACV}
+
+Owner:          {Renewal owner}
+Contract ends:  {Contract end date}
+NOTICE DATE:    {Notice date}   <- the actual deadline
+Renews:         {Auto, fixed term / Auto, rolling / Negotiated}
+Current ACV:    {Current ACV}
+Target ACV:     {Target} ({Uplift %}, per clause {X})
+Health:         {Risk rating}   Usage trend: {up / flat / down}
+SLA record:     {met / missed, with detail}
+Stakeholders:   {names, and whether the original signer is still there}
+
+This week:
+  [ ] Review usage and open tickets
+  [ ] Confirm the uplift with {manager}
+  [ ] Book the conversation with {contact}
+
+Deal: {Renewal deal URL}`;
+const B7 = `Subject: [Escalation] {Customer} renewal, {N} days to notice date
+
+{Manager},
+
+The {Customer} renewal ({Current ACV}) passed its {checkpoint} checkpoint
+on {date} with no activity logged.
+
+  Notice date:    {Notice date} ({N} days)
+  Owner:          {Owner}
+  Last activity:  {date, or none}
+  Open task:      {task name}
+
+After {Notice date} this contract renews on current terms regardless of
+what we decide, so the window for any price or scope change closes then.
+
+Deal: {Renewal deal URL}`;
+const B8 = `Subject: Re: Notice of non-renewal, {Agreement name}
+
+Hi {First name},
+
+Acknowledging your notice dated {date}. Understood, and the agreement will
+end on {Contract end date} as you have set out. Nothing here is an attempt
+to reopen that.
+
+Two things I would ask for.
+
+First, 20 minutes before {date} to understand what led to the decision.
+Whatever the outcome, I would rather learn it from you directly than guess.
+
+Second, so the wind-down is clean: {data export / final invoicing / access
+end date}. I will send a short handover plan by {date} unless you would
+prefer a different approach.
+
+If something specific and fixable is behind this, tell me and I will be
+straight with you about whether we can address it in the time available.
+
+{Account owner}`;
+---
+<Layout
+  title="Renewal and Non-Renewal Notice Templates"
+  description="Eight copy-paste email and letter templates for the renewal motion: non-renewal notice, courtesy reminder, price increase, vendor review request, extension, and escalation."
+>
+  <Navbar />
+
+  <section class="bg-gradient-to-b from-v6-bg to-white px-4 sm:px-6 lg:px-8 pt-14 pb-8">
+    <div class="max-w-3xl mx-auto text-center">
+      <span class="text-xs font-semibold uppercase tracking-[0.2em] text-v6-copper">Free, no sign-up, no email</span>
+      <h1 class="text-3xl sm:text-4xl font-bold text-v6-dark mt-3 mb-4 text-balance">Renewal and Non-Renewal Notice Templates</h1>
+      <p class="text-lg text-v6-text-muted max-w-2xl mx-auto leading-relaxed">
+        Eight templates for the messages a renewal actually needs. Copy, replace the fields in braces, send. Each one says when to use it and what it is trying to achieve.
+      </p>
+    </div>
+  </section>
+
+  <section class="px-4 sm:px-6 lg:px-8 pb-8">
+    <div class="max-w-3xl mx-auto">
+      <div class="rounded-lg border-l-4 border-v6-copper bg-v6-bg-warm p-4 mb-8">
+        <p class="font-semibold text-v6-dark mb-1">Read this first: check how notice must be delivered.</p>
+        <p class="text-sm text-v6-text-muted">Many contracts specify the method as well as the deadline. Email alone is not always sufficient; some agreements require registered post, a named notice address, or a copy to legal counsel. Sending valid content by an invalid method is the most common way a non-renewal notice fails. These are drafting aids, not legal advice, and your own contract wins over anything here.</p>
+      </div>
+
+      <h2 class="text-xl font-bold text-v6-dark mb-3">The eight</h2>
+      <ol class="space-y-2 mb-2">
+        {templates.map((t) => (
+          <li class="text-sm">
+            <a href={"#" + t.id} class="text-v6-copper font-medium hover:underline">{t.n}. {t.title}</a>
+            <span class="text-v6-text-muted"> &middot; {t.when}</span>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section class="px-4 sm:px-6 lg:px-8 pb-12">
+    <div class="max-w-3xl mx-auto space-y-10">
+
+      <div id="t1">
+        <h2 class="text-2xl font-bold text-v6-dark mb-2">1. Notice of non-renewal, to a supplier</h2>
+        <p class="text-v6-text-muted mb-3">The only template here with a hard deadline. It must arrive before the notice date, which is the contract end date minus the notice period. Keep it short and unambiguous: this is a legal notice, not a conversation. Say plainly that you are not renewing, name the agreement and the date, and do not soften it into something that could be read as an invitation to negotiate.</p>
+        <pre class="bg-v6-dark text-white text-sm rounded-lg p-4 overflow-x-auto"><code>{B1}</code></pre>
+        <p class="text-sm text-v6-text-muted mt-3"><strong>Watch for:</strong> the clause number and the notice period. Getting either wrong gives the supplier grounds to treat the notice as invalid, and by the time that surfaces the window has usually closed.</p>
+      </div>
+
+      <div id="t2">
+        <h2 class="text-2xl font-bold text-v6-dark mb-2">2. Courtesy renewal reminder, to a customer</h2>
+        <p class="text-v6-text-muted mb-3">Sent from the account owner's own address, roughly 90 days before the notice date. This costs you a small number of renewals that would otherwise have happened by inattention, and buys you early warning on every account that was going to leave anyway. It also removes the entire class of dispute where a customer says they did not know the contract renewed.</p>
+        <pre class="bg-v6-dark text-white text-sm rounded-lg p-4 overflow-x-auto"><code>{B2}</code></pre>
+        <p class="text-sm text-v6-text-muted mt-3"><strong>Watch for:</strong> never let this reach a customer who has already renewed. The unenrolment rule is not optional.</p>
+      </div>
+
+      <div id="t3">
+        <h2 class="text-2xl font-bold text-v6-dark mb-2">3. Renewal proposal with a price increase</h2>
+        <p class="text-v6-text-muted mb-3">Use after the renewal conversation, never as the opening message. State the increase plainly and anchor it to the clause or to delivered value. Burying it is what turns a routine uplift into a negotiation.</p>
+        <pre class="bg-v6-dark text-white text-sm rounded-lg p-4 overflow-x-auto"><code>{B3}</code></pre>
+      </div>
+
+      <div id="t4">
+        <h2 class="text-2xl font-bold text-v6-dark mb-2">4. Vendor renewal review request</h2>
+        <p class="text-v6-text-muted mb-3">Sent to a supplier around 120 days before the notice date. The purpose is to gather evidence before you decide, and to signal early that the renewal is not automatic. Asking for performance data against the SLA is the part that changes the conversation, because most suppliers do not expect to be asked.</p>
+        <pre class="bg-v6-dark text-white text-sm rounded-lg p-4 overflow-x-auto"><code>{B4}</code></pre>
+        <p class="text-sm text-v6-text-muted mt-3"><strong>Why the last line matters:</strong> naming your own notice date tells the supplier you know the deadline. It is the single most useful sentence in the message.</p>
+      </div>
+
+      <div id="t5">
+        <h2 class="text-2xl font-bold text-v6-dark mb-2">5. Contract extension request</h2>
+        <p class="text-v6-text-muted mb-3">For when a negotiation will not finish before the term ends. An extension prolongs the current term unchanged; it does not start a new one. Useful as a bridge, bad as a habit, and worth recording separately from renewals so your reporting stays honest.</p>
+        <pre class="bg-v6-dark text-white text-sm rounded-lg p-4 overflow-x-auto"><code>{B5}</code></pre>
+      </div>
+
+      <div id="t6">
+        <h2 class="text-2xl font-bold text-v6-dark mb-2">6. Internal renewal brief</h2>
+        <p class="text-v6-text-muted mb-3">Generated at kickoff and sent to whoever owns the renewal. Terse on purpose: it is a work order, not prose. If your CRM can populate this automatically from contract properties, it should.</p>
+        <pre class="bg-v6-dark text-white text-sm rounded-lg p-4 overflow-x-auto"><code>{B6}</code></pre>
+      </div>
+
+      <div id="t7">
+        <h2 class="text-2xl font-bold text-v6-dark mb-2">7. Renewal escalation, internal</h2>
+        <p class="text-v6-text-muted mb-3">Fires when a checkpoint passes with the task still open. The point is that it goes to the owner's manager, not back to the owner. A reminder that repeats to the person already ignoring it is not an escalation.</p>
+        <pre class="bg-v6-dark text-white text-sm rounded-lg p-4 overflow-x-auto"><code>{B7}</code></pre>
+      </div>
+
+      <div id="t8">
+        <h2 class="text-2xl font-bold text-v6-dark mb-2">8. Responding to a customer's non-renewal notice</h2>
+        <p class="text-v6-text-muted mb-3">Send within 24 hours. Two goals only: acknowledge properly so there is no dispute about receipt, and get a conversation. Do not lead with a discount. A save that starts with price teaches the customer that your pricing was never real.</p>
+        <pre class="bg-v6-dark text-white text-sm rounded-lg p-4 overflow-x-auto"><code>{B8}</code></pre>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="px-4 sm:px-6 lg:px-8 py-12 bg-v6-bg">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-2xl font-bold text-v6-dark mb-4">Three rules that apply to all eight</h2>
+      <p class="text-v6-text-muted mb-3"><strong class="text-v6-dark">Anchor every date to the notice date.</strong> The contract end date is not the deadline on an auto-renewing agreement. Work yours out with the <a href="/notice-date-calculator/" class="text-v6-copper hover:underline">notice date calculator</a>.</p>
+      <p class="text-v6-text-muted mb-3"><strong class="text-v6-dark">Send from a person.</strong> Customer-facing messages go from the account owner's address, never a noreply. The timing can be automated; the sending should not look like it was.</p>
+      <p class="text-v6-text-muted mb-6"><strong class="text-v6-dark">Check the delivery method.</strong> For anything that constitutes formal notice, the contract usually says how it must be sent and to whom. Follow it exactly.</p>
+
+      <div class="grid sm:grid-cols-2 gap-4">
+        <a href="/posts/evergreen-contract-auto-renewal-clause/" class="block border border-v6-border rounded-lg p-4 bg-white hover:border-v6-copper transition">
+          <div class="font-semibold text-v6-dark mb-1">Evergreen and auto-renewal clauses</div>
+          <div class="text-sm text-v6-text-muted">What the clause actually does, and how rolling and fixed renewals differ.</div>
+        </a>
+        <a href="/resources/contract-tracker-template/" class="block border border-v6-border rounded-lg p-4 bg-white hover:border-v6-copper transition">
+          <div class="font-semibold text-v6-dark mb-1">Contract tracker template</div>
+          <div class="text-sm text-v6-text-muted">A free spreadsheet that calculates the notice date for every contract.</div>
+        </a>
+        <a href="/posts/contract-management-checklist/" class="block border border-v6-border rounded-lg p-4 bg-white hover:border-v6-copper transition">
+          <div class="font-semibold text-v6-dark mb-1">Contract management checklists</div>
+          <div class="text-sm text-v6-text-muted">Five copy-paste lists covering review, record, monitoring, renewal and risk.</div>
+        </a>
+        <a href="/posts/vendor-contract-management/" class="block border border-v6-border rounded-lg p-4 bg-white hover:border-v6-copper transition">
+          <div class="font-semibold text-v6-dark mb-1">Vendor contract management</div>
+          <div class="text-sm text-v6-text-muted">Where templates 1, 4 and 5 fit in the supplier review process.</div>
+        </a>
+      </div>
+
+      <div class="mt-8 rounded-xl bg-white border border-v6-border p-6">
+        <p class="text-v6-dark font-semibold mb-2">These templates work when the dates behind them are right.</p>
+        <p class="text-v6-text-muted text-sm mb-4">SWOTBee builds that into HubSpot: notice period as a real property, notice date as a calculation, and alerts that fire against the date that actually decides the renewal.</p>
+        <a href="/contactus/" class="inline-block bg-v6-copper text-white font-semibold px-5 py-2.5 rounded-lg hover:opacity-90 transition">Book a free 30-minute discovery call →</a>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

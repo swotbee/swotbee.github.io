@@ -1,0 +1,289 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/astro/Navbar.astro";
+import Footer from "../components/astro/Footer.astro";
+// Ungated, indexable interactive tool supporting the contract-management cluster
+// (see marketing/seo/semrush/aug31-contract-management/DELIVERABLES-RESEARCH.md).
+// Deliberately NOT a lead magnet: no form, no noindex, no token. Search volume for
+// "calculator" terms in this space is ~50/mo, so this exists to make the cluster's
+// central argument tangible in ten seconds and to give all nine articles something
+// concrete to link to, not to rank.
+//
+// The whole point: alerts anchored to contract_end_date fire too late on auto-renewing
+// contracts. notice_date = end_date - notice_period_days is the real deadline.
+// All arithmetic is client-side; nothing is sent anywhere.
+const presets = [
+  { label: "30 days", days: 30, note: "Common on smaller SaaS and month-to-month rollovers" },
+  { label: "60 days", days: 60, note: "The most common single value in mid-market B2B software" },
+  { label: "90 days", days: 90, note: "Typical on enterprise agreements and multi-year deals" },
+  { label: "120 days", days: 120, note: "Seen on large enterprise and public-sector contracts" },
+];
+---
+<Layout
+  title="Notice Date Calculator: Find Your Real Contract Deadline"
+  description="Work out the last day you can act on an auto-renewing contract. Enter the end date and notice period to get your notice date and an alert schedule that fires in time."
+>
+  <Navbar />
+
+  <section class="bg-gradient-to-b from-v6-bg to-white px-4 sm:px-6 lg:px-8 pt-14 pb-6">
+    <div class="max-w-3xl mx-auto text-center">
+      <span class="text-xs font-semibold uppercase tracking-[0.2em] text-v6-copper">Free tool, no sign-up</span>
+      <h1 class="text-3xl sm:text-4xl font-bold text-v6-dark mt-3 mb-3 text-balance">Notice Date Calculator</h1>
+      <p class="text-base text-v6-text-muted max-w-xl mx-auto leading-relaxed">
+        On a contract that renews itself, the end date is not your deadline. The <strong>notice date</strong> is, and it is the end date minus the notice period. Work out yours below.
+      </p>
+    </div>
+  </section>
+
+  <section class="px-4 sm:px-6 lg:px-8 pb-4">
+    <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-6">
+
+      <!-- Inputs -->
+      <div class="bg-white border border-v6-border rounded-xl p-6 shadow-sm">
+        <h2 class="text-lg font-bold text-v6-dark mb-4">Your contract</h2>
+
+        <label class="block text-sm font-semibold text-v6-dark mb-1" for="endDate">Contract end date</label>
+        <input id="endDate" type="date"
+          class="w-full border border-v6-border rounded-lg px-3 py-2 mb-4 text-v6-dark focus:outline-none focus:ring-2 focus:ring-v6-copper"
+          aria-describedby="endDateHelp" />
+        <p id="endDateHelp" class="text-xs text-v6-text-muted -mt-3 mb-4">The date printed on the contract.</p>
+
+        <label class="block text-sm font-semibold text-v6-dark mb-1" for="noticeDays">Notice period (days)</label>
+        <input id="noticeDays" type="number" min="0" max="730" step="1" value="60"
+          class="w-full border border-v6-border rounded-lg px-3 py-2 mb-2 text-v6-dark focus:outline-none focus:ring-2 focus:ring-v6-copper"
+          aria-describedby="noticeHelp" />
+        <div class="flex flex-wrap gap-2 mb-2">
+          {presets.map((p) => (
+            <button type="button" data-preset={p.days} title={p.note}
+              class="preset text-xs px-2.5 py-1 rounded-full border border-v6-border text-v6-text-muted hover:border-v6-copper hover:text-v6-copper transition">
+              {p.label}
+            </button>
+          ))}
+        </div>
+        <p id="noticeHelp" class="text-xs text-v6-text-muted mb-4">How much warning the contract requires before it renews. Look for "not less than X days' written notice".</p>
+
+        <label class="block text-sm font-semibold text-v6-dark mb-1" for="leadDays">How long your team needs to work a renewal (days)</label>
+        <input id="leadDays" type="number" min="0" max="365" step="1" value="90"
+          class="w-full border border-v6-border rounded-lg px-3 py-2 mb-2 text-v6-dark focus:outline-none focus:ring-2 focus:ring-v6-copper" />
+        <p class="text-xs text-v6-text-muted">Account review, pricing, and the customer conversation. 90 days is a normal default.</p>
+      </div>
+
+      <!-- Results -->
+      <div class="bg-v6-dark text-white rounded-xl p-6 shadow-sm" aria-live="polite">
+        <h2 class="text-lg font-bold mb-4">Your dates</h2>
+
+        <div id="empty" class="text-white/70 text-sm py-8 text-center">Enter a contract end date to see your deadlines.</div>
+
+        <div id="results" class="hidden">
+          <div class="mb-5">
+            <div class="text-xs uppercase tracking-wider text-v6-copper font-semibold mb-1">Your real deadline</div>
+            <div id="noticeDate" class="text-2xl font-bold"></div>
+            <div id="noticeRel" class="text-sm text-white/70 mt-1"></div>
+          </div>
+
+          <div class="border-t border-white/15 pt-4 mb-5">
+            <div class="text-xs uppercase tracking-wider text-white/60 font-semibold mb-1">Start the renewal by</div>
+            <div id="startDate" class="text-xl font-semibold"></div>
+            <div id="startRel" class="text-sm text-white/70 mt-1"></div>
+          </div>
+
+          <div id="warning" class="hidden rounded-lg bg-highlight/20 border border-highlight/40 p-3 mb-4">
+            <div class="text-sm font-semibold text-white mb-1" id="warnTitle"></div>
+            <div class="text-sm text-white/80" id="warnBody"></div>
+          </div>
+
+          <div class="border-t border-white/15 pt-4">
+            <div class="text-xs uppercase tracking-wider text-white/60 font-semibold mb-2">Alert schedule</div>
+            <table class="w-full text-sm">
+              <thead>
+                <tr class="text-white/60 text-xs">
+                  <th class="text-left font-medium pb-1">Alert</th>
+                  <th class="text-left font-medium pb-1">Fires on</th>
+                </tr>
+              </thead>
+              <tbody id="schedule"></tbody>
+            </table>
+            <p class="text-xs text-white/50 mt-3">Every one of these counts back from the notice date, not the end date. That is the whole difference.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="max-w-4xl mx-auto text-xs text-v6-text-muted mt-4 px-1">
+      Everything is calculated in your browser. Nothing is sent anywhere, stored, or seen by us. This is a scheduling aid, not legal advice: always read the notice clause in your own contract, including how notice must be delivered.
+    </p>
+  </section>
+
+  <!-- Explainer -->
+  <section class="px-4 sm:px-6 lg:px-8 py-12 bg-v6-bg">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-2xl font-bold text-v6-dark mb-4">Why the end date is the wrong date</h2>
+      <p class="text-v6-text-muted mb-4 leading-relaxed">
+        Around 69% of software contracts carry an auto-renewal clause, with notice periods usually between 30 and 90 days. On those contracts, once the notice window closes, the contract has renewed. Nobody has to sign anything and nobody has to decide anything.
+      </p>
+      <p class="text-v6-text-muted mb-6 leading-relaxed">
+        So the standard setup, alerting 90 days before the contract end date, does this:
+      </p>
+
+      <div class="overflow-x-auto mb-6">
+        <table class="w-full text-sm bg-white border border-v6-border rounded-lg">
+          <thead class="bg-v6-bg-warm">
+            <tr>
+              <th class="text-left px-3 py-2 font-semibold text-v6-dark">Notice period</th>
+              <th class="text-left px-3 py-2 font-semibold text-v6-dark">Notice date on a 31 Dec contract</th>
+              <th class="text-left px-3 py-2 font-semibold text-v6-dark">Alert fires</th>
+              <th class="text-left px-3 py-2 font-semibold text-v6-dark">Days you actually have</th>
+            </tr>
+          </thead>
+          <tbody class="text-v6-text-muted">
+            <tr class="border-t border-v6-border"><td class="px-3 py-2">30 days</td><td class="px-3 py-2">1 December</td><td class="px-3 py-2">2 October</td><td class="px-3 py-2">60</td></tr>
+            <tr class="border-t border-v6-border"><td class="px-3 py-2">60 days</td><td class="px-3 py-2">1 November</td><td class="px-3 py-2">2 October</td><td class="px-3 py-2">30</td></tr>
+            <tr class="border-t border-v6-border bg-highlight-50"><td class="px-3 py-2 font-semibold text-v6-dark">90 days</td><td class="px-3 py-2">2 October</td><td class="px-3 py-2">2 October</td><td class="px-3 py-2 font-semibold text-highlight">0</td></tr>
+            <tr class="border-t border-v6-border bg-highlight-50"><td class="px-3 py-2 font-semibold text-v6-dark">120 days</td><td class="px-3 py-2">2 September</td><td class="px-3 py-2">2 October</td><td class="px-3 py-2 font-semibold text-highlight">Already gone</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="text-v6-text-muted mb-6 leading-relaxed">
+        The fix is arithmetic, not software. Store the notice period as a <strong>number</strong> rather than as text, calculate the notice date, and anchor every alert, task and report to it.
+      </p>
+
+      <pre class="bg-v6-dark text-white text-sm rounded-lg p-4 overflow-x-auto mb-6"><code>notice_date = contract_end_date - notice_period_days
+alert_date  = notice_date - lead_time_days</code></pre>
+
+      <p class="text-v6-text-muted leading-relaxed">
+        The most common implementation mistake is storing "sixty (60) days' prior written notice" in a notes field. It reads correctly to a person and is invisible to a calculation.
+      </p>
+    </div>
+  </section>
+
+  <!-- Next steps -->
+  <section class="px-4 sm:px-6 lg:px-8 py-12">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-2xl font-bold text-v6-dark mb-5">Where to go next</h2>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <a href="/posts/evergreen-contract-auto-renewal-clause/" class="block border border-v6-border rounded-lg p-4 hover:border-v6-copper transition">
+          <div class="font-semibold text-v6-dark mb-1">Evergreen and auto-renewal clauses</div>
+          <div class="text-sm text-v6-text-muted">How rolling and fixed auto-renewals differ, and why it changes your exposure.</div>
+        </a>
+        <a href="/resources/contract-tracker-template/" class="block border border-v6-border rounded-lg p-4 hover:border-v6-copper transition">
+          <div class="font-semibold text-v6-dark mb-1">Contract tracker template</div>
+          <div class="text-sm text-v6-text-muted">A free spreadsheet that calculates notice dates across your whole book.</div>
+        </a>
+        <a href="/posts/contract-management-checklist/" class="block border border-v6-border rounded-lg p-4 hover:border-v6-copper transition">
+          <div class="font-semibold text-v6-dark mb-1">Contract management checklists</div>
+          <div class="text-sm text-v6-text-muted">Five copy-paste lists covering review, record, monitoring, renewal and risk.</div>
+        </a>
+        <a href="/posts/contract-renewal-process-checklist/" class="block border border-v6-border rounded-lg p-4 hover:border-v6-copper transition">
+          <div class="font-semibold text-v6-dark mb-1">The contract renewal process</div>
+          <div class="text-sm text-v6-text-muted">The full timeline, anchored to the notice date, with owners at each step.</div>
+        </a>
+      </div>
+
+      <div class="mt-8 rounded-xl bg-v6-bg-warm border border-v6-border p-6">
+        <p class="text-v6-dark font-semibold mb-2">Doing this for one contract is arithmetic. Doing it for two hundred is a system.</p>
+        <p class="text-v6-text-muted text-sm mb-4">SWOTBee builds this into HubSpot directly: notice period as a real property, notice date as a calculation, and alerts that fire against the date that actually decides the renewal.</p>
+        <a href="/contactus/" class="inline-block bg-v6-copper text-white font-semibold px-5 py-2.5 rounded-lg hover:opacity-90 transition">Book a free 30-minute discovery call →</a>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+
+<script is:inline>
+(function () {
+  var endEl = document.getElementById("endDate");
+  var noticeEl = document.getElementById("noticeDays");
+  var leadEl = document.getElementById("leadDays");
+  var results = document.getElementById("results");
+  var empty = document.getElementById("empty");
+
+  var MS = 86400000;
+  function fmt(d) {
+    return d.toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
+  }
+  function addDays(d, n) { return new Date(d.getTime() + n * MS); }
+  function daysBetween(a, b) { return Math.round((b - a) / MS); }
+  function relative(d, today) {
+    var n = daysBetween(today, d);
+    if (n === 0) return "That is today.";
+    if (n > 0) return n + " day" + (n === 1 ? "" : "s") + " from now.";
+    return Math.abs(n) + " day" + (Math.abs(n) === 1 ? "" : "s") + " ago. This date has passed.";
+  }
+
+  function render() {
+    var raw = endEl.value;
+    if (!raw) { results.classList.add("hidden"); empty.classList.remove("hidden"); return; }
+    var end = new Date(raw + "T00:00:00");
+    if (isNaN(end.getTime())) { results.classList.add("hidden"); empty.classList.remove("hidden"); return; }
+
+    var notice = Math.max(0, parseInt(noticeEl.value, 10) || 0);
+    var lead = Math.max(0, parseInt(leadEl.value, 10) || 0);
+    var today = new Date(); today.setHours(0, 0, 0, 0);
+
+    var noticeDate = addDays(end, -notice);
+    var startDate = addDays(noticeDate, -lead);
+
+    empty.classList.add("hidden");
+    results.classList.remove("hidden");
+
+    document.getElementById("noticeDate").textContent = notice === 0 ? fmt(end) : fmt(noticeDate);
+    document.getElementById("noticeRel").textContent =
+      (notice === 0 ? "No notice period, so the end date is the deadline. " : "Last day to give notice. ") + relative(noticeDate, today);
+
+    document.getElementById("startDate").textContent = fmt(startDate);
+    document.getElementById("startRel").textContent = relative(startDate, today);
+
+    // Warnings
+    var warn = document.getElementById("warning");
+    var wt = document.getElementById("warnTitle");
+    var wb = document.getElementById("warnBody");
+    var daysToNotice = daysBetween(today, noticeDate);
+    if (daysToNotice < 0) {
+      warn.classList.remove("hidden");
+      wt.textContent = "The notice window has closed.";
+      wb.textContent = "This contract has already renewed, or will renew, regardless of what anyone decides now. The next real opportunity is " + fmt(addDays(noticeDate, 365)) + " if it renews annually.";
+    } else if (daysToNotice < lead) {
+      warn.classList.remove("hidden");
+      wt.textContent = "Less time than your team needs.";
+      wb.textContent = "You have " + daysToNotice + " days until the notice date but said you need " + lead + ". Start now and expect to compress the process.";
+    } else if (notice >= 90) {
+      warn.classList.remove("hidden");
+      wt.textContent = "Long notice period.";
+      wb.textContent = "At " + notice + " days, an alert set 90 days before the contract end date would fire on or after the deadline. Anchor alerts to the notice date instead.";
+    } else {
+      warn.classList.add("hidden");
+    }
+
+    // Schedule
+    var rows = [
+      { label: "Start the renewal", d: startDate },
+      { label: "Mid-point check", d: addDays(noticeDate, -Math.round(lead / 2)) },
+      { label: "Escalate if still open", d: addDays(noticeDate, -Math.max(7, Math.round(lead / 6))) },
+      { label: "Notice deadline", d: noticeDate },
+      { label: "Contract ends", d: end }
+    ];
+    var html = "";
+    for (var i = 0; i < rows.length; i++) {
+      var passed = daysBetween(today, rows[i].d) < 0;
+      html += '<tr class="border-t border-white/10">' +
+        '<td class="py-1.5 pr-2' + (passed ? " text-white/40 line-through" : "") + '">' + rows[i].label + "</td>" +
+        '<td class="py-1.5' + (passed ? " text-white/40" : " font-medium") + '">' + fmt(rows[i].d) + "</td></tr>";
+    }
+    document.getElementById("schedule").innerHTML = html;
+  }
+
+  [endEl, noticeEl, leadEl].forEach(function (el) {
+    el.addEventListener("input", render);
+    el.addEventListener("change", render);
+  });
+  Array.prototype.forEach.call(document.querySelectorAll(".preset"), function (b) {
+    b.addEventListener("click", function () {
+      noticeEl.value = b.getAttribute("data-preset");
+      render();
+    });
+  });
+  render();
+})();
+</script>
+</Layout>
