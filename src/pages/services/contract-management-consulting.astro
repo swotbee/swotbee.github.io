@@ -1,0 +1,287 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Navbar from "../../components/astro/Navbar.astro";
+import Footer from "../../components/astro/Footer.astro";
+import StructuredData from "../../components/astro/StructuredData.astro";
+import ClientLogoStrip from "../../components/astro/ClientLogoStrip.astro";
+
+const title = "Contract Management Consultant for HubSpot: Setup, Notice Dates, Renewals";
+const description = "A contract management consultant for teams running on HubSpot. We set up contract records, notice dates, owners and renewal alerts in the CRM you already pay for, then our app runs it.";
+
+const painPoints = [
+  "Your contracts are PDFs in a shared drive and nobody can tell you what renews next quarter",
+  "A contract auto-renewed last year because the alert was set against the end date, not the notice date",
+  "Renewal dates live in one person's spreadsheet, and that person is on leave",
+  "You are being quoted for a contract lifecycle management platform that costs more than the problem",
+  "Nobody is named on a contract, so the renewal decision gets made by the calendar",
+  "You can report on what you have paid, but not on what you are committed to pay next year",
+];
+
+const processSteps = [
+  {
+    num: "1",
+    title: "Audit what you actually have",
+    desc: "We go through your existing agreements and your HubSpot portal and produce one list: every contract, its end date, its notice period, whether it auto-renews, and who owns it. Most of the value shows up here, because this is usually the first time the portfolio has been in one place.",
+  },
+  {
+    num: "2",
+    title: "Build it into HubSpot",
+    desc: "Contract fields on the records your team already uses, Notice Date as a calculation property, alerts that count back from the notice date, a named owner on every agreement, and renewal deals that get created with their line items intact.",
+  },
+  {
+    num: "3",
+    title: "Hand it over and let the app run it",
+    desc: "We train the team on the review that has to happen before each notice window closes, then step back. Our HubSpot app handles the recurring work: watching the dates, creating the renewal deals, and escalating the ones nobody has touched.",
+  },
+];
+
+const setup = [
+  {
+    title: "Contract records in HubSpot",
+    desc: "Counterparty, value, start and end dates, notice period in days, auto-renewal yes or no, uplift terms, and a link to the signed document. On the objects your team already opens every day.",
+    icon: "📇",
+  },
+  {
+    title: "The notice date, calculated",
+    desc: "Contract end date minus notice period, as a property rather than as a sentence in clause 14.2. Every alert points at it. This is the single change that stops contracts renewing by default.",
+    icon: "📅",
+  },
+  {
+    title: "Alerts and named owners",
+    desc: "Every contract gets one person who has to record a decision before the notice window closes. Alerts create a task for that person, not a notification everybody ignores.",
+    icon: "🔔",
+  },
+  {
+    title: "Renewal deals, built automatically",
+    desc: "Line items carried over, uplift applied, in the pipeline before the first alert lands, so the renewal is a deal your team works rather than an email they forward.",
+    icon: "🔄",
+  },
+  {
+    title: "Portfolio reporting",
+    desc: "What renews in the next two quarters, by value. Which agreements have no owner or no end date. What you are committed to next year, which is a different number from what you spent last year.",
+    icon: "📊",
+  },
+  {
+    title: "The rules, as configuration",
+    desc: "Multi-year terms, co-terming, bundles and notice periods that differ by customer. These get set up as rules rather than as exceptions somebody has to remember.",
+    icon: "⚙️",
+  },
+];
+
+const faqs = [
+  {
+    q: "What does a contract management consultant actually do?",
+    a: "Three things, in order. Works out what agreements you have and what is in them, because that list usually does not exist. Builds the fields, dates, alerts and ownership into a system your team already uses, so the information is where people look. Then trains the team on the decision that has to happen before each notice window closes. The first step is the one most often skipped and the one that surfaces the surprises.",
+  },
+  {
+    q: "How much does contract management consulting cost?",
+    a: "It depends on the portfolio. Fifty agreements in one HubSpot portal is a different piece of work from six hundred across three entities with different notice terms. We scope it on a call once we know how many contracts there are, where they live now, and how much of the data has to be extracted from documents rather than read from a system. The ongoing work is handled by the app rather than by retained hours, which is the part that keeps it affordable.",
+  },
+  {
+    q: "Do we need to buy a contract lifecycle management platform?",
+    a: "Usually not, and this is where a lot of money gets spent unnecessarily. If you are under a few hundred agreements and the problem is that renewals surprise you, the fix is fields and alerts on the right date in the CRM you already pay for. A dedicated platform earns its cost when you have heavy legal review, complex approval routing, or contracts being drafted and negotiated at volume. Those are real problems. They are just not the problem most mid-market revenue teams have.",
+  },
+  {
+    q: "Is this a document management system?",
+    a: "No, and it is worth being direct about that. We do not store your signed documents, extract text from them automatically, or replace a document repository. We put the terms that drive decisions into structured fields and link to wherever the document lives. If your requirement is a searchable archive of signed PDFs with version control, you want a different category of product and we will tell you so on the call.",
+  },
+  {
+    q: "Do you handle e-signature?",
+    a: "No. If you need signing built into the workflow, that is a separate tool and we can point you at the options. Our work starts once an agreement is signed, which is where renewals get lost.",
+  },
+  {
+    q: "Do you work with CRMs other than HubSpot?",
+    a: "No. Everything we build is HubSpot-native, and our app is a HubSpot app. If your contracts and customers live somewhere else, we are not the right fit and a call will establish that in five minutes rather than five weeks.",
+  },
+  {
+    q: "How long does the setup take?",
+    a: "The audit is usually one to two weeks depending on how much has to be read out of documents. The build is typically two to four weeks after that. You should expect to see the first thing that matters, which is a list of what renews next and who owns it, before the build starts.",
+  },
+  {
+    q: "What happens after the setup is finished?",
+    a: "The app does the recurring work: watching notice dates, creating renewal deals with their line items, escalating the ones nobody has actioned. That is deliberate. Contract management fails when it depends on someone remembering, so the goal of the engagement is to make your team not need us.",
+  },
+  {
+    q: "We already have contracts scattered across email and a shared drive. Is that a problem?",
+    a: "It is the normal starting point and it is exactly what step one is for. The work is getting the terms out of those documents and into fields once. It is tedious and it is the highest-value part of the whole engagement, because everything downstream depends on the notice period being a number rather than a sentence.",
+  },
+];
+---
+
+<Layout title={title} description={description}>
+  <StructuredData
+    type="service"
+    data={{
+      name: "Contract Management Consulting for HubSpot",
+      description: description,
+      serviceType: "Contract Management Consulting",
+      url: "https://swotbee.com/services/contract-management-consulting",
+    }}
+  />
+  <StructuredData type="faq" data={{ faqs }} />
+  <StructuredData
+    type="breadcrumb"
+    data={{ breadcrumbs: [
+      { name: "Home", url: "https://swotbee.com" },
+      { name: "Services", url: "https://swotbee.com/services" },
+      { name: "Contract Management Consulting", url: "https://swotbee.com/services/contract-management-consulting" },
+    ]}}
+  />
+
+  <Navbar />
+
+  <!-- ============ HERO ============ -->
+  <section class="bg-gradient-to-b from-v6-bg to-white px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20 pb-10 sm:pb-14">
+    <div class="max-w-3xl mx-auto text-center">
+      <div class="flex justify-center gap-3 mb-6">
+        <span class="bg-v6-teal-50 text-v6-teal text-xs font-semibold px-3 py-1 rounded-full">HubSpot Solutions Partner</span>
+        <span class="bg-v6-copper-50 text-v6-copper text-xs font-semibold px-3 py-1 rounded-full">HubSpot Only</span>
+      </div>
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-v6-dark leading-tight mb-5 text-balance">
+        A Contract Management Consultant <span class="text-v6-copper">for Teams Running on HubSpot</span>
+      </h1>
+      <p class="text-base sm:text-lg text-v6-text-muted max-w-xl mx-auto mb-4 leading-relaxed">
+        Your contracts already decide themselves. We put the dates, the terms and the owners into HubSpot, set the alerts against the notice date, and hand it to an app that keeps doing it.
+      </p>
+      <p class="text-sm text-v6-text-muted max-w-xl mx-auto mb-8 leading-relaxed">
+        No new platform to buy. No documents to migrate. The CRM you already pay for.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center mb-4">
+        <a href="/contactus/" class="bg-v6-copper text-white px-8 py-3.5 rounded-xl text-base font-semibold hover:bg-v6-copper-600 transition-colors text-center">
+          Book a 30-Minute Call
+        </a>
+        <a href="#how-we-work" class="border border-gray-300 text-v6-dark px-8 py-3.5 rounded-xl text-base font-medium hover:bg-gray-50 transition-colors text-center">
+          See How We Work ↓
+        </a>
+      </div>
+      <p class="text-xs text-gray-500">Scoped per portfolio. We will tell you on the call if this is not your problem.</p>
+    </div>
+  </section>
+
+  <ClientLogoStrip caption="Trusted by teams at" />
+
+  <!-- ============ "IS THIS YOU?" ============ -->
+  <section class="bg-v6-bg py-14 sm:py-18 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-2xl sm:text-3xl font-bold text-v6-dark mb-3 text-center">Sound Familiar?</h2>
+      <p class="text-v6-text-muted text-center mb-8 max-w-lg mx-auto">If two or more of these are true, the problem is not effort. It is that nothing is triggering a decision in time.</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        {painPoints.map(point => (
+          <div class="flex gap-3 items-start bg-white rounded-lg p-4 border border-v6-border">
+            <span class="text-v6-copper text-lg flex-shrink-0 mt-0.5">→</span>
+            <p class="text-sm text-v6-text-muted leading-relaxed">{point}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ THE ARGUMENT ============ -->
+  <section class="bg-white py-14 sm:py-18 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-2xl sm:text-3xl font-bold text-v6-dark mb-6 text-center">The Deadline Is Not the End Date</h2>
+      <p class="text-base text-v6-text-muted leading-relaxed mb-4">
+        Almost every contract that renews when nobody wanted it to fails the same way. The alert was set against the contract end date, and the actual deadline was the notice date: the end date minus the notice period.
+      </p>
+      <p class="text-base text-v6-text-muted leading-relaxed mb-4">
+        On an agreement with a 90-day notice period, an alert set 90 days before the end date arrives on the deadline itself. There is no time left to decide, negotiate or exit. The contract has already renewed and the reminder is a record of what happened rather than a warning.
+      </p>
+      <p class="text-base text-v6-dark leading-relaxed font-medium">
+        Fixing that means one thing: the notice period has to be a number on a record, not a sentence in clause 14.2 of a PDF. Everything else follows from it, and most of an engagement is getting that number out of your documents once.
+      </p>
+      <p class="text-sm text-v6-text-muted leading-relaxed mt-6">
+        The longer version, with the mechanics: <a href="/posts/hubspot-contract-management/" class="text-v6-copper underline">contract management in HubSpot</a> and <a href="/posts/evergreen-contract-auto-renewal-clause/" class="text-v6-copper underline">evergreen contracts and auto-renewal clauses</a>.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ HOW WE WORK ============ -->
+  <section id="how-we-work" class="bg-v6-bg py-14 sm:py-18 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl sm:text-3xl font-bold text-v6-dark mb-3 text-center">How We Work</h2>
+      <p class="text-v6-text-muted text-center mb-10 max-w-xl mx-auto">A setup engagement, then the app takes over. We are not trying to sell you retained hours for work that should run itself.</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {processSteps.map(step => (
+          <div class="bg-white rounded-xl p-6 border border-v6-border text-center">
+            <div class="w-12 h-12 rounded-full bg-v6-copper text-white text-xl font-bold flex items-center justify-center mx-auto mb-4">{step.num}</div>
+            <h3 class="text-lg font-semibold text-v6-dark mb-2">{step.title}</h3>
+            <p class="text-sm text-v6-text-muted leading-relaxed">{step.desc}</p>
+          </div>
+        ))}
+      </div>
+      <p class="text-center text-sm text-v6-text-muted mt-6">Scope depends on how many contracts you have and how much has to be read out of documents. We size it on the call.</p>
+    </div>
+  </section>
+
+  <!-- ============ WHAT WE SET UP ============ -->
+  <section class="bg-white py-14 sm:py-18 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-2xl sm:text-3xl font-bold text-v6-dark mb-3 text-center">What We Set Up</h2>
+      <p class="text-v6-text-muted text-center mb-10 max-w-lg mx-auto">All of it inside HubSpot, on the records your team already opens.</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {setup.map(s => (
+          <div class="bg-v6-bg rounded-xl p-6 border border-v6-border hover:shadow-lg transition-shadow">
+            <div class="text-2xl mb-3">{s.icon}</div>
+            <h3 class="text-base font-semibold text-v6-dark mb-2">{s.title}</h3>
+            <p class="text-sm text-v6-text-muted leading-relaxed">{s.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHAT THIS IS NOT ============ -->
+  <section class="bg-v6-bg py-14 sm:py-18 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-2xl sm:text-3xl font-bold text-v6-dark mb-3 text-center">What This Is Not</h2>
+      <p class="text-v6-text-muted text-center mb-8 max-w-lg mx-auto">So you can rule us out quickly if it is the wrong fit.</p>
+      <div class="bg-white rounded-xl p-6 sm:p-8 border border-v6-border">
+        <ul class="space-y-4">
+          <li class="flex gap-3 text-sm text-v6-text-muted"><span class="text-red-400 flex-shrink-0">✗</span> <span><strong class="text-v6-dark">Not a document repository.</strong> We do not store or version your signed PDFs. We link to wherever they already live.</span></li>
+          <li class="flex gap-3 text-sm text-v6-text-muted"><span class="text-red-400 flex-shrink-0">✗</span> <span><strong class="text-v6-dark">Not e-signature.</strong> Our work starts once an agreement is signed.</span></li>
+          <li class="flex gap-3 text-sm text-v6-text-muted"><span class="text-red-400 flex-shrink-0">✗</span> <span><strong class="text-v6-dark">Not contract drafting or legal review.</strong> No clause libraries, no redlining, no playbooks. Talk to a lawyer.</span></li>
+          <li class="flex gap-3 text-sm text-v6-text-muted"><span class="text-red-400 flex-shrink-0">✗</span> <span><strong class="text-v6-dark">Not for teams outside HubSpot.</strong> Everything we build is HubSpot-native.</span></li>
+          <li class="flex gap-3 text-sm text-v6-text-muted"><span class="text-red-400 flex-shrink-0">✗</span> <span><strong class="text-v6-dark">Not outsourced contract administration.</strong> We set your team up to run it. We do not run it for you, and <a href="/posts/outsource-contract-management/" class="text-v6-copper underline">here is why that matters</a>.</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="bg-white py-14 sm:py-18 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-2xl sm:text-3xl font-bold text-v6-dark mb-8 text-center">Frequently Asked Questions</h2>
+      <div class="space-y-4">
+        {faqs.map(faq => (
+          <details class="bg-v6-bg rounded-xl border border-v6-border group">
+            <summary class="flex items-center justify-between cursor-pointer px-6 py-4 text-base font-semibold text-v6-dark">
+              {faq.q}
+              <svg class="w-5 h-5 text-v6-text-muted flex-shrink-0 ml-4 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+            </summary>
+            <div class="px-6 pb-5 text-sm text-v6-text-muted leading-relaxed">
+              {faq.a}
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA ============ -->
+  <section class="bg-gradient-to-br from-v6-copper to-v6-copper-600 py-16 sm:py-20 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-2xl mx-auto text-center">
+      <h2 class="text-2xl sm:text-3xl font-bold text-white mb-4">Find Out What Renews Next</h2>
+      <p class="text-v6-copper-50 text-base sm:text-lg mb-3">
+        Book a 30-minute call. Bring what you have, even if it is a folder of PDFs and a spreadsheet.
+      </p>
+      <p class="text-v6-copper-100 text-sm mb-8 opacity-80">
+        If a platform is genuinely the right answer for you, we will say so and tell you which ones to look at.
+      </p>
+      <a href="/contactus/" class="bg-white text-v6-copper px-8 py-3.5 rounded-xl text-base font-semibold hover:bg-gray-50 transition-colors inline-block">
+        Book a 30-Minute Call
+      </a>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
