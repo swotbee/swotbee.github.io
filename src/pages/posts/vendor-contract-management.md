@@ -6,7 +6,7 @@ description: "Vendor contract management explained: the process, what to track o
 category:
   title: "Revenue Operations"
   href: "/categories/revenue-operations/"
-modifiedDate: "2026-08-31"
+modifiedDate: "2026-09-02"
 author:
   name: "SWOTBee Team"
   url: "https://swotbee.com"
@@ -193,6 +193,42 @@ It does not need to be elaborate. Five questions, fifteen minutes, documented:
 5. Continue, renegotiate, or exit?
 
 Question three is the one that saves the money and question four is the one that determines whether you have any negotiating position at all.
+
+---
+
+## Contract management in procurement: where it sits in source-to-contract
+
+Most people who go looking for this arrive from a procurement job rather than a finance or revenue one, so it is worth naming where contract management sits in the wider process.
+
+Procurement teams describe their work as source-to-contract and then procure-to-pay. Source-to-contract covers everything up to signature: identifying the need, running the sourcing event, evaluating suppliers, negotiating and signing. Procure-to-pay covers ordering, receiving and paying. Contract management is the part almost every diagram draws as a single box at the join, and it is the part that lasts the longest.
+
+That framing is the problem. Sourcing is a project with an end date. Contract management is a standing obligation that runs for the whole term. Treating it as the last step of sourcing is why stages four to six above are so often unstaffed.
+
+### What procurement owns, and what it does not
+
+| Stage | Procurement owns | Legal owns | The business owns |
+|---|---|---|---|
+| Define the need | Shared | No | Yes |
+| Sourcing and evaluation | Yes | No | Input |
+| Negotiation, commercial terms | Yes | Input | Input |
+| Negotiation, legal terms | Input | Yes | No |
+| Signature and recording | Yes | Shared | No |
+| Performance against the SLA | Shared | No | Yes |
+| The renewal decision | Input | No | **Yes** |
+
+The last row is where this goes wrong. Procurement usually holds the contract record and the calendar, so everyone assumes procurement makes the renewal call. It cannot. Deciding whether a service is still worth paying for needs usage, satisfaction and a view on the alternative, and that lives with the department using it. Procurement should force the decision and time it. It should not be the one making it.
+
+### The three challenges that come up every time
+
+**The contract is signed but never recorded.** The sourcing event closes, the team moves to the next one, and the ten fields above never get populated. Everything downstream depends on this step and it is the easiest one to skip, because skipping it has no consequence for another eleven months.
+
+**Spend is visible and commitments are not.** Procurement reporting is usually built on purchase orders and invoices, which tell you what you have paid. They do not tell you what you are contractually committed to pay next year, or which of those commitments can still be exited. Those are different numbers and the second one is the one that matters in a budget conversation.
+
+**The category is managed, the contract is not.** Category management groups suppliers by what they provide, which is right for sourcing strategy. It is wrong for renewals, because notice dates do not arrive by category. A contract portfolio needs to be sortable by notice date across every category at once, and most procurement systems will not do that without exporting to a spreadsheet.
+
+### If you are being asked to outsource this
+
+Procurement functions under headcount pressure are often pointed at source-to-contract outsourcing, where a provider runs sourcing events and contract administration on your behalf. It genuinely works for the first three stages, which are project-shaped and can be specified. It does not solve stages four to six, because deciding whether to renew needs context a provider does not have. See [outsourcing contract management](/posts/outsource-contract-management/) for the longer version of that argument.
 
 ---
 

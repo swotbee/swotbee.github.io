@@ -6,7 +6,7 @@ description: "A complete contract management guide for revenue teams: the seven 
 category:
   title: "Revenue Operations"
   href: "/categories/revenue-operations/"
-modifiedDate: "2026-09-01"
+modifiedDate: "2026-09-02"
 author:
   name: "SWOTBee Team"
   url: "https://swotbee.com"
@@ -273,6 +273,8 @@ If none of this exists yet, do it in this order. Each step is useful on its own.
 4. **Build one alert against the notice date**, creating a task rather than a notification.
 5. **Extend to the rest of the book**, largest first.
 6. **Then, and only then, evaluate software.** By this point you will know exactly what you need it to do, which is the only position from which this category can be bought sensibly.
+
+If someone has suggested handing this to a provider instead, read [outsourcing contract management](/posts/outsource-contract-management/) first. It covers what that genuinely solves and the one job it cannot do for you.
 
 ---
 
