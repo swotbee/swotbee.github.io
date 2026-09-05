@@ -17,6 +17,10 @@ dev:
 build:
     pnpm build
 
+# Run the standard repository validation.
+verify:
+    pnpm verify
+
 # Serve the production build locally.
 preview:
     pnpm preview
