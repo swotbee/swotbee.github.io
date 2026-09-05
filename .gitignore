@@ -2,6 +2,7 @@
 .*
 !.git*
 !.editorconfig
+!.node-version
 !.nojekyll
 !.travis.yml
 !.husky

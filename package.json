@@ -9,6 +9,7 @@
     "postbuild": "pagefind --site dist --output-path dist/pagefind",
     "preview": "astro preview",
     "astro": "astro",
+    "verify": "pnpm build",
     "check:consent": "node scripts/verify-consent-gating.mjs",
     "serve:dist": "node scripts/serve-dist.mjs"
   },

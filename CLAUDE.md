@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+This is the Claude Code adapter for this repository. Read `docs/development.md` first; it is the canonical source for shared setup, commands, architecture, validation, and deployment. The detailed material below is retained temporarily for Claude-specific continuity while links are migrated.
 
 ## Project Overview
 
@@ -267,7 +267,7 @@ When iterating on page designs, old versions are kept as `*-old.astro` files (e.
 
 ## Deployment
 
-Pushes to `main` auto-deploy via `.github/workflows/pages-deploy.yml`: `pnpm/action-setup@v4`
+Pushes to `main` auto-deploy via `.github/workflows/pages-deploy.yml`: `pnpm/action-setup@v6`
 (pnpm 9.12.3), Node 22, `pnpm install --frozen-lockfile`, then `pnpm build`. Output goes to
 `./dist/` (gitignored, built in CI, never committed) and is deployed to GitHub Pages.
 
@@ -281,5 +281,5 @@ Two consequences worth knowing:
   are therefore optimistic: production loads ~195 KB of third-party analytics that local
   builds do not. Measure the live URL before trusting a performance number.
 
-There is no `.nvmrc`/`.node-version`, so local Node is not pinned to CI's Node 22. Adding one
-is worth doing; until then, check `node -v` if local behaviour diverges from CI.
+Local Node is pinned to CI's Node 22 by `.node-version`. Check `node -v` if local behaviour
+diverges from CI.
