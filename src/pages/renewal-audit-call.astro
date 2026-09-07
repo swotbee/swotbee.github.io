@@ -193,9 +193,7 @@ import ClientLogoStrip from "../components/astro/ClientLogoStrip.astro";
         // reporting zero conversions no matter how many calls paid traffic books.
         // Full reasoning at the helper's definition in BaseLayout.astro.
         // Do not "simplify" this back into fire-then-navigate.
-        const w = window as typeof window & {
-          __sbTrackThenGo?: (n: string, p: Record<string, unknown>, u: string) => void;
-        };
+        const w = window;
         if (w.__sbTrackThenGo) {
           w.__sbTrackThenGo("call_booked", {
             booking_uid: booking?.uid,
