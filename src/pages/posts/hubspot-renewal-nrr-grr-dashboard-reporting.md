@@ -2,7 +2,7 @@
 layout: ../../layouts/BlogPostLayout.astro
 title: "HubSpot NRR And GRR Dashboards For Renewal Revenue Reporting"
 pubDate: "2026-04-02"
-modifiedDate: "2026-08-18"
+modifiedDate: "2026-09-08"
 description: "Build 3 HubSpot revenue dashboards and 10 ready-to-use reports for NRR, GRR, renewal rate, and churn, metrics HubSpot does not report natively."
 howto: true
 howtoSteps:
@@ -34,7 +34,6 @@ tags:
   - "Revenue Reporting"
   - "Dashboards"
 seriesName: "HubSpot Renewal Pipeline"
-funnelCta: "renewal-audit"
 pillarUrl: "/posts/hubspot-renewal-pipeline-complete-guide/"
 faqs:
   - q: "Does HubSpot have a native NRR report?"
@@ -69,6 +68,8 @@ These are the revenue metrics every RevOps team reports on: monthly recurring re
 
 
 ## Reporting Depends On Renewal Deal Hygiene
+
+**Cannot reconcile the dashboard with the contracts due for renewal?** Start with a sample of those contracts and compare their renewal dates, owners, previous values, and line items with the deals in your report. If records are missing or the rules are unclear, [discuss the reporting gaps on a Renewal Alignment Call](/renewal-audit-call/). The no-fee, 30-minute call helps decide whether a paid audit is worthwhile; no HubSpot access is needed for the call.
 
 NRR and GRR dashboards only work if renewal deals are created consistently. If some renewals are cloned manually, some are spreadsheet-tracked, and some are missing line items or previous contract value, the dashboard becomes a debate instead of a decision tool.
 
@@ -355,8 +356,10 @@ A dashboard only reports what already happened; it does not stop a renewal from 
 
 ---
 
-**Building renewal dashboards that your board can actually use is harder than it looks.** SWOTBee builds NRR/GRR reporting for mid-market teams in Energy, Manufacturing, and SaaS, from property setup to executive-ready dashboards.
+## Validate the renewal data behind your dashboard
 
-[Get your 1-page renewal leakage estimate →](/resources/renewal-leakage-estimate/)
+If finance and HubSpot disagree about which contracts are due or what they are worth, validate the renewal process before adding more reports. SWOTBee's paid Renewal Operations Audit provides a process map, automation plan, HubSpot field blueprint, and upcoming-renewal validation set. If you choose implementation afterward, we configure the agreed reports and controls and test the output against real upcoming renewals.
 
-No call needed. Prefer to talk it through first? [Book a free 30-minute discovery call →](/renewal-audit-call/)
+[Book a Renewal Alignment Call](/renewal-audit-call/) to discuss the reporting gaps you need to resolve. The call is 30 minutes, has no fee, and requires no HubSpot access. The paid audit begins only after scope and terms are agreed.
+
+Prefer to estimate the impact first? [Get your 1-page renewal leakage estimate](/resources/renewal-leakage-estimate/), with no call needed.
