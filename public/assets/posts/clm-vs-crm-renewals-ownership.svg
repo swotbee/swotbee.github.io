@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">CLM, CRM and ERP ownership during contract renewals</title>
+  <desc id="desc">A flow from CRM opportunity data to CLM contract control, back to a CRM renewal opportunity, and then to ERP billing and payment.</desc>
+  <rect width="1200" height="630" fill="#f7f5f1"/>
+  <text x="600" y="72" text-anchor="middle" font-family="Arial, sans-serif" font-size="38" font-weight="700" fill="#213343">Who owns each renewal step?</text>
+  <text x="600" y="110" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#4b5d6b">One process, three authoritative data domains</text>
+  <rect x="65" y="180" width="300" height="270" rx="20" fill="#e9f4fb" stroke="#1a7ab5" stroke-width="3"/>
+  <text x="215" y="230" text-anchor="middle" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#155f8d">CRM</text>
+  <text x="95" y="280" font-family="Arial, sans-serif" font-size="21" fill="#213343">Customer and contacts</text>
+  <text x="95" y="320" font-family="Arial, sans-serif" font-size="21" fill="#213343">Opportunity and pricing</text>
+  <text x="95" y="360" font-family="Arial, sans-serif" font-size="21" fill="#213343">Renewal pipeline</text>
+  <text x="95" y="400" font-family="Arial, sans-serif" font-size="21" fill="#213343">Forecast and health</text>
+  <rect x="450" y="180" width="300" height="270" rx="20" fill="#e8f5f2" stroke="#5aab9d" stroke-width="3"/>
+  <text x="600" y="230" text-anchor="middle" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#367f73">CLM</text>
+  <text x="480" y="280" font-family="Arial, sans-serif" font-size="21" fill="#213343">Templates and clauses</text>
+  <text x="480" y="320" font-family="Arial, sans-serif" font-size="21" fill="#213343">Review and approval</text>
+  <text x="480" y="360" font-family="Arial, sans-serif" font-size="21" fill="#213343">Signed document</text>
+  <text x="480" y="400" font-family="Arial, sans-serif" font-size="21" fill="#213343">Terms and obligations</text>
+  <rect x="835" y="180" width="300" height="270" rx="20" fill="#fff3df" stroke="#c47a2a" stroke-width="3"/>
+  <text x="985" y="230" text-anchor="middle" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#95581d">ERP or billing</text>
+  <text x="865" y="280" font-family="Arial, sans-serif" font-size="21" fill="#213343">Invoice schedule</text>
+  <text x="865" y="320" font-family="Arial, sans-serif" font-size="21" fill="#213343">Credits and collections</text>
+  <text x="865" y="360" font-family="Arial, sans-serif" font-size="21" fill="#213343">Payment status</text>
+  <text x="865" y="400" font-family="Arial, sans-serif" font-size="21" fill="#213343">Recognized revenue</text>
+  <path d="M365 300 H438" stroke="#213343" stroke-width="5" fill="none"/>
+  <polygon points="438,300 420,290 420,310" fill="#213343"/>
+  <path d="M750 300 H823" stroke="#213343" stroke-width="5" fill="none"/>
+  <polygon points="823,300 805,290 805,310" fill="#213343"/>
+  <path d="M450 365 H377" stroke="#213343" stroke-width="5" fill="none"/>
+  <polygon points="377,365 395,355 395,375" fill="#213343"/>
+  <text x="600" y="520" text-anchor="middle" font-family="Arial, sans-serif" font-size="23" font-weight="700" fill="#213343">Sync identifiers, dates, status and decision fields</text>
+  <text x="600" y="558" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#4b5d6b">Do not turn three systems into three competing copies of the truth.</text>
+</svg>
