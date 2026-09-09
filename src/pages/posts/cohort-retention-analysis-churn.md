@@ -63,6 +63,8 @@ Imagine a SaaS company with 1,000 customers and 2% monthly churn. Healthy, right
 
 If you only watch the blended churn rate, you scale the bad channel because the average looks safe. Cohort analysis helps you catch this early, before the toxic cohort grows large enough to drag down the whole business. This is why cohort-based retention is one of the most important SaaS metrics.
 
+The reverse can also happen: low-retention customers leave first, so the remaining base looks healthier even though nobody became more likely to stay. That [survivor mix shift in retention reporting](/posts/retention-reporting-survivorship-bias/) is why executives should compare like-for-like cohorts instead of accepting an improving aggregate rate at face value.
+
 ---
 
 ## Types of Cohort Analysis in SaaS

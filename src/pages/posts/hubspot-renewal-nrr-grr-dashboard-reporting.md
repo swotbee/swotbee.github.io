@@ -83,6 +83,8 @@ Net revenue retention rate and gross retention rate are the two numbers that ans
 
 The key drivers worth breaking out separately, rather than reporting one blended number, are: new logo growth, expansion within the existing customer base, contraction (downgrades that don't fully churn), and churn itself. A cohort analysis by renewal year, month, or contract-start date usually reveals which driver is actually moving the number, better retention in year one accounts often masks weaker retention in year three, for example, and that pattern only shows up once you segment.
 
+A second check is whether the apparent improvement is only a changing customer mix. See how to [test NRR for survivorship bias](/posts/retention-reporting-survivorship-bias/) before the blended rate reaches a QBR or board deck.
+
 ---
 
 ## The Four Metrics You Need

@@ -27,16 +27,17 @@ const modDate = frontmatter.modifiedDate
   : null;
 
 // Find related posts (share at least 1 tag)
+const currentSlug = Astro.url.pathname.split("/").filter(Boolean).pop();
 const currentTags = frontmatter.tags || [];
 const relatedPosts = recentPosts
-  .filter(p => p.slug !== Astro.url.pathname.split('/').pop())
+  .filter(p => p.slug !== currentSlug)
   .filter(p => p.tags?.some(t => currentTags.includes(t)))
   .slice(0, 3);
 
 // If not enough tag-matched posts, fill with recent
 const displayPosts = relatedPosts.length >= 2
   ? relatedPosts
-  : recentPosts.filter(p => p.slug !== Astro.url.pathname.split('/').pop()).slice(0, 3);
+  : recentPosts.filter(p => p.slug !== currentSlug).slice(0, 3);
 ---
 
 <Layout

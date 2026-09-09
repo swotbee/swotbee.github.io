@@ -123,6 +123,7 @@ A renewal forecast is only as good as the revenue base it uses. The biggest fore
 Churn rate (churned revenue ÷ starting revenue) is a lagging metric. The leading signals matter more:
 
 - **Cohort analysis** reveals churn that a blended rate hides. See [why blended churn hides your true retention](/posts/cohort-retention-analysis-churn/).
+- **Survivorship bias** can make aggregate retention rise after weak customers leave, even when no comparable segment improves. See [why rising NRR can hide a shrinking customer base](/posts/retention-reporting-survivorship-bias/).
 - **Silent churn** is the real risk: customers who go quiet, skip check-ins, and stop replying renew far less often than the ones who complain. See [detecting silent churn](/posts/silent-churn-detection/).
 - **A predictive health score** turns these signals into one number. See [renewal risk scoring](/posts/hubspot-renewal-risk-scoring/).
 
