@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="320" viewBox="0 0 640 320" role="img" aria-labelledby="title desc">
+  <title id="title">Retention rate rises as the customer base shrinks</title>
+  <desc id="desc">The customer base falls from 1,000 to 84 while aggregate retention rises from 45 percent to 70 percent.</desc>
+  <rect width="640" height="320" rx="18" fill="#f7f5f1"/>
+  <text x="32" y="38" fill="#213343" font-family="Arial, sans-serif" font-size="18" font-weight="700">Same behavior, healthier-looking aggregate</text>
+  <line x1="62" y1="258" x2="594" y2="258" stroke="#b9c5cb" stroke-width="2"/>
+  <line x1="62" y1="70" x2="62" y2="258" stroke="#b9c5cb" stroke-width="2"/>
+  <path d="M75 205 L198 158 L321 123 L444 101 L567 93" fill="none" stroke="#1A7AB5" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <g fill="#1A7AB5">
+    <circle cx="75" cy="205" r="6"/><circle cx="198" cy="158" r="6"/><circle cx="321" cy="123" r="6"/><circle cx="444" cy="101" r="6"/><circle cx="567" cy="93" r="6"/>
+  </g>
+  <g fill="#C47A2A">
+    <rect x="63" y="229" width="24" height="29" rx="3"/>
+    <rect x="186" y="242" width="24" height="16" rx="3"/>
+    <rect x="309" y="248" width="24" height="10" rx="3"/>
+    <rect x="432" y="251" width="24" height="7" rx="3"/>
+    <rect x="555" y="253" width="24" height="5" rx="3"/>
+  </g>
+  <g fill="#60717d" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">
+    <text x="75" y="282">1,000</text><text x="198" y="282">450</text><text x="321" y="282">265</text><text x="444" y="282">176</text><text x="567" y="282">121</text>
+  </g>
+  <g fill="#1A7AB5" font-family="Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle">
+    <text x="75" y="191">45%</text><text x="198" y="144">59%</text><text x="321" y="109">66%</text><text x="444" y="87">69%</text><text x="567" y="79">70%</text>
+  </g>
+  <circle cx="74" cy="300" r="5" fill="#1A7AB5"/><text x="87" y="304" fill="#60717d" font-family="Arial, sans-serif" font-size="12">aggregate retention</text>
+  <rect x="244" y="295" width="10" height="10" rx="2" fill="#C47A2A"/><text x="263" y="304" fill="#60717d" font-family="Arial, sans-serif" font-size="12">customers remaining</text>
+</svg>

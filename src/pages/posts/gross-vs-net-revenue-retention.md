@@ -213,6 +213,7 @@ In practice, track both. GRR is your floor; NRR is your ceiling.
 - **Inconsistent periods.** Compare annual recurring revenue at the start of the period against the same cohort at the end. Switching windows mid-analysis corrupts the trend.
 - **Reporting NRR without GRR.** A strong net revenue retention rate can mask a poor gross retention rate when a few large accounts expand. Always show both so leadership sees the leakage behind the growth.
 - **Ignoring logo retention.** Revenue retention metrics weight large accounts heavily. Pair them with logo retention rate to see whether you are losing many small customers while big ones expand.
+- **Ignoring survivor mix.** Even a correctly calculated aggregate rate can rise after weak customers leave and a smaller, stickier base remains. Use our guide to [survivorship bias in retention reporting](/posts/retention-reporting-survivorship-bias/) to test whether the improvement is behavioral or compositional.
 
 Avoiding these keeps your retention reporting trustworthy and your board decks honest.
 
