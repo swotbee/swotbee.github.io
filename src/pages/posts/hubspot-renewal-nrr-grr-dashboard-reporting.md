@@ -69,7 +69,7 @@ These are the revenue metrics every RevOps team reports on: monthly recurring re
 
 ## Reporting Depends On Renewal Deal Hygiene
 
-**Cannot reconcile the dashboard with the contracts due for renewal?** Start with a sample of those contracts and compare their renewal dates, owners, previous values, and line items with the deals in your report. If records are missing or the rules are unclear, [discuss the reporting gaps on a Renewal Alignment Call](/renewal-audit-call/). The no-fee, 30-minute call helps decide whether a paid audit is worthwhile; no HubSpot access is needed for the call.
+**Cannot reconcile the dashboard with the contracts due for renewal?** Start with a sample of those contracts and compare their renewal dates, owners, previous values, and line items with the deals in your report. If records are missing or the rules are unclear, <a href="/renewal-audit-call/" data-ga-cta="renewal_dashboard_reconciliation_mid_call">discuss the reporting gaps on a Renewal Alignment Call</a>. The no-fee, 30-minute call helps decide whether a paid audit is worthwhile; no HubSpot access is needed for the call.
 
 NRR and GRR dashboards only work if renewal deals are created consistently. If some renewals are cloned manually, some are spreadsheet-tracked, and some are missing line items or previous contract value, the dashboard becomes a debate instead of a decision tool.
 
@@ -362,6 +362,6 @@ A dashboard only reports what already happened; it does not stop a renewal from 
 
 If finance and HubSpot disagree about which contracts are due or what they are worth, validate the renewal process before adding more reports. SWOTBee's paid Renewal Operations Audit provides a process map, automation plan, HubSpot field blueprint, and upcoming-renewal validation set. If you choose implementation afterward, we configure the agreed reports and controls and test the output against real upcoming renewals.
 
-[Book a Renewal Alignment Call](/renewal-audit-call/) to discuss the reporting gaps you need to resolve. The call is 30 minutes, has no fee, and requires no HubSpot access. The paid audit begins only after scope and terms are agreed.
+<a href="/renewal-audit-call/" data-ga-cta="renewal_dashboard_reconciliation_footer_call">Book a Renewal Alignment Call</a> to discuss the reporting gaps you need to resolve. The call is 30 minutes, has no fee, and requires no HubSpot access. The paid audit begins only after scope and terms are agreed.
 
-Prefer to estimate the impact first? [Get your 1-page renewal leakage estimate](/resources/renewal-leakage-estimate/), with no call needed.
+Prefer to estimate the impact first? <a href="/resources/renewal-leakage-estimate/" data-ga-cta="renewal_dashboard_reconciliation_footer_estimate">Get your 1-page renewal leakage estimate</a>, with no call needed.

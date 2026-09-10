@@ -203,7 +203,7 @@ Silent usage decay deserves special attention because it produces no ticket, no 
 
 ## Instrumenting the Playbook: CRM Workflows and Automation
 
-**Before automating, walk one healthy renewal and one at-risk renewal through your completed template.** Check the owner, notice deadline, pricing approval, and next action at each handoff. If the team cannot agree how a rule should work in HubSpot, [discuss the gap on a Renewal Alignment Call](/renewal-audit-call/). This no-fee, 30-minute call helps decide whether a paid audit is useful; it requires no HubSpot access.
+**Before automating, walk one healthy renewal and one at-risk renewal through your completed template.** Check the owner, notice deadline, pricing approval, and next action at each handoff. If the team cannot agree how a rule should work in HubSpot, <a href="/renewal-audit-call/" data-ga-cta="renewal_playbook_validation_mid_call">discuss the gap on a Renewal Alignment Call</a>. This no-fee, 30-minute call helps decide whether a paid audit is useful; it requires no HubSpot access.
 
 A playbook in a doc is a suggestion; a playbook in the CRM is an operating system. Automate every trigger you can: the playbook should run itself instead of depending on CSMs remembering it under quarter-end pressure. The translation is direct:
 
@@ -253,6 +253,6 @@ The playbook tells the team what to do; [the renewal reminder cadence and email 
 
 Use your filled-in template to identify which ownership rules, triggers, and exceptions still need a decision. SWOTBee's paid Renewal Operations Audit turns that process into a validated process map, automation plan, HubSpot field blueprint, and upcoming-renewal validation set. You keep the blueprint and can implement it with your own team or choose our audit plus implementation service.
 
-[Book a Renewal Alignment Call](/renewal-audit-call/) to discuss the handoffs you want to validate. The call is 30 minutes, has no fee, and requires no HubSpot access. The paid audit begins only after scope and terms are agreed.
+<a href="/renewal-audit-call/" data-ga-cta="renewal_playbook_validation_footer_call">Book a Renewal Alignment Call</a> to discuss the handoffs you want to validate. The call is 30 minutes, has no fee, and requires no HubSpot access. The paid audit begins only after scope and terms are agreed.
 
-Still assessing the cost of manual renewals? [Get your 1-page renewal leakage estimate](/resources/renewal-leakage-estimate/), with no call needed.
+Still assessing the cost of manual renewals? <a href="/resources/renewal-leakage-estimate/" data-ga-cta="renewal_playbook_validation_footer_estimate">Get your 1-page renewal leakage estimate</a>, with no call needed.
