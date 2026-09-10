@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="620" viewBox="0 0 1120 620" role="img" aria-labelledby="title desc">
+  <title id="title">Native and deal-based HubSpot renewal paths</title>
+  <desc id="desc">Decision tree comparing Revenue Hub Contracts with a custom deal workflow.</desc>
+  <rect width="1120" height="620" rx="28" fill="#f7f5f1"/>
+  <text x="560" y="70" text-anchor="middle" fill="#213343" font-family="Arial, sans-serif" font-size="38" font-weight="700">Choose the renewal source of truth</text>
+  <rect x="370" y="112" width="380" height="90" rx="18" fill="#213343"/>
+  <text x="560" y="150" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="24" font-weight="700">Do contracts originate from</text>
+  <text x="560" y="180" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="24" font-weight="700">Revenue Hub quotes?</text>
+  <path d="M470 202 V270 H270 V316" fill="none" stroke="#1A7AB5" stroke-width="7"/>
+  <path d="M650 202 V270 H850 V316" fill="none" stroke="#C47A2A" stroke-width="7"/>
+  <text x="360" y="258" fill="#1A7AB5" font-family="Arial, sans-serif" font-size="20" font-weight="700">YES</text>
+  <text x="737" y="258" fill="#C47A2A" font-family="Arial, sans-serif" font-size="20" font-weight="700">NO OR MIXED</text>
+  <rect x="90" y="316" width="360" height="210" rx="22" fill="#ffffff" stroke="#1A7AB5" stroke-width="5"/>
+  <text x="270" y="365" text-anchor="middle" fill="#213343" font-family="Arial, sans-serif" font-size="28" font-weight="700">Native Contracts path</text>
+  <text x="130" y="412" fill="#536675" font-family="Arial, sans-serif" font-size="21">• Contract renewal date trigger</text>
+  <text x="130" y="450" fill="#536675" font-family="Arial, sans-serif" font-size="21">• Renewal deal and quote</text>
+  <text x="130" y="488" fill="#536675" font-family="Arial, sans-serif" font-size="21">• New associated contract</text>
+  <rect x="670" y="316" width="360" height="210" rx="22" fill="#ffffff" stroke="#C47A2A" stroke-width="5"/>
+  <text x="850" y="365" text-anchor="middle" fill="#213343" font-family="Arial, sans-serif" font-size="28" font-weight="700">Deal workflow path</text>
+  <text x="710" y="412" fill="#536675" font-family="Arial, sans-serif" font-size="21">• Custom renewal date fields</text>
+  <text x="710" y="450" fill="#536675" font-family="Arial, sans-serif" font-size="21">• Custom deal creation</text>
+  <text x="710" y="488" fill="#536675" font-family="Arial, sans-serif" font-size="21">• App or API for line items</text>
+  <text x="560" y="579" text-anchor="middle" fill="#213343" font-family="Arial, sans-serif" font-size="22" font-weight="700">Keep both paths in one renewal pipeline and reporting model</text>
+</svg>

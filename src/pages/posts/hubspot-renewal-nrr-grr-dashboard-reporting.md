@@ -1,9 +1,9 @@
 ---
 layout: ../../layouts/BlogPostLayout.astro
-title: "HubSpot NRR And GRR Dashboards For Renewal Revenue Reporting"
+title: "HubSpot ARR Reporting: NRR, GRR And Recurring Revenue Dashboards"
 pubDate: "2026-04-02"
-modifiedDate: "2026-09-08"
-description: "Build 3 HubSpot revenue dashboards and 10 ready-to-use reports for NRR, GRR, renewal rate, and churn, metrics HubSpot does not report natively."
+modifiedDate: "2026-09-10"
+description: "Set up HubSpot ARR reporting, recurring revenue tracking, and practical dashboards for NRR, GRR, renewal rate, churn, and forecasts."
 howto: true
 howtoSteps:
   - name: "Create the report"
@@ -56,11 +56,11 @@ faqs:
     a: "Professional is enough for the custom report builder approach this guide walks through. Enterprise's Revenue Analytics tool automates more of the rollup, but only once your recurring revenue data already sits in HubSpot's native properties in the shape it expects, so most mid-market teams start on Professional and evaluate Enterprise once the manual process is proven."
 ---
 
-Your board wants to see NRR. Your CFO wants GRR. Your CS leader wants renewal rate by segment. And HubSpot doesn't have a native report for any of them.
+Your board wants to see NRR. Your CFO wants GRR. Your CS leader wants renewal rate by segment. HubSpot can track recurring revenue, ARR, MRR, renewals, upgrades, downgrades, and churn, but those inputs do not automatically become a trustworthy NRR or GRR dashboard.
 
-This isn't a gap in your HubSpot setup, it's a gap in HubSpot itself. The platform tracks deal revenue beautifully, but it doesn't natively calculate the retention metrics that recurring-revenue businesses need.
+The reporting model matters. HubSpot has default ARR and MRR deal properties derived from recurring line items. Its Enterprise Revenue Analytics tool uses a separate set of recurring revenue properties that teams populate for new business, renewal, upgrade, downgrade, and churn events. Neither route removes the need to define cohorts and validate retention calculations.
 
-The good news: you can build these dashboards with custom properties, calculated fields, and HubSpot's custom report builder. This article shows you how.
+The good news is that you can build a dependable HubSpot ARR reporting layer with native deal properties, disciplined renewal data, custom reports, and a spreadsheet or BI calculation where necessary. This article shows you how.
 
 These are the revenue metrics every RevOps team reports on: monthly recurring revenue (MRR), annual recurring revenue (ARR), and the retention metrics built on top of them. HubSpot tracks deal revenue, but calculating NRR, GRR, and renewal rate from it takes deliberate setup. We will cover the revenue reporting you can do inside HubSpot, and where you still need Google Sheets to finish the math. For the metric definitions themselves, see our [guide to SaaS renewal metrics](/posts/renewal-metrics-explained/) and the deep dive on [gross vs net revenue retention](/posts/gross-vs-net-revenue-retention/).
 
@@ -285,17 +285,17 @@ Segment your dashboard by [revenue type: renewal vs. expansion](/posts/hubspot-r
 
 ---
 
-## HubSpot's Built-In Revenue Analytics
+## How To Set Up Recurring Revenue And ARR Reporting In HubSpot
 
-If you have **[Sales Hub Enterprise](https://www.hubspot.com/pricing/sales)**, HubSpot offers a "[Revenue Analytics](https://knowledge.hubspot.com/reports/track-recurring-revenue-with-revenue-analytics)" tool under Reports. It provides:
+If you have **[Sales Hub Enterprise](https://www.hubspot.com/pricing/sales)** or **Service Hub Enterprise**, HubSpot offers a [Revenue Analytics](https://knowledge.hubspot.com/reports/track-recurring-revenue-with-revenue-analytics) report. It tracks:
 
 - Recurring revenue tracking (if you use HubSpot's native recurring revenue properties)
 - Renewal forecasting
 - Churn tracking
 
-**The catch:** It requires you to use HubSpot's specific recurring revenue properties and line item setup. If you've been tracking renewals with custom properties (which most teams do), you may need to migrate your data model to use it.
+**The catch:** Revenue Analytics does not calculate its chart from products, quotes, or the default ARR and MRR properties. It uses four separate deal properties: Recurring revenue amount, Recurring revenue deal type, Recurring revenue inactive date, and Recurring revenue inactive reason. HubSpot's current documentation says these values must be populated for the report to work.
 
-It's worth evaluating, but most mid-market teams find custom dashboards more flexible.
+Only Closed Won deals appear in the Revenue Analytics report, and the Deal close date becomes the start date for reporting. Test those rules against a known cohort before using the chart for a forecast or board metric. Custom dashboards remain useful when your existing data model uses Contracts, custom renewal properties, or billing-system values.
 
 ---
 

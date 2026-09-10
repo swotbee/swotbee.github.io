@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">HubSpot contracts and renewal quotes workflow</title>
+  <desc id="desc">A contract flows to a renewal deal, renewal quote, and renewed contract.</desc>
+  <rect width="1200" height="675" fill="#f7f5f1"/>
+  <circle cx="1020" cy="108" r="190" fill="#dff2ee"/>
+  <circle cx="190" cy="610" r="220" fill="#e9eef8"/>
+  <text x="92" y="112" fill="#213343" font-family="Arial, sans-serif" font-size="52" font-weight="700">HubSpot contract renewals</text>
+  <text x="94" y="164" fill="#536675" font-family="Arial, sans-serif" font-size="26">Contracts, deals and renewal quotes in one revenue workflow</text>
+  <g font-family="Arial, sans-serif" text-anchor="middle">
+    <rect x="86" y="270" width="250" height="150" rx="22" fill="#ffffff" stroke="#1A7AB5" stroke-width="5"/>
+    <text x="211" y="337" fill="#213343" font-size="29" font-weight="700">Contract</text>
+    <text x="211" y="378" fill="#536675" font-size="20">Dates + line items</text>
+    <path d="M356 345 H448" stroke="#C47A2A" stroke-width="10" stroke-linecap="round"/>
+    <path d="M438 326 L465 345 L438 364" fill="none" stroke="#C47A2A" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="475" y="270" width="250" height="150" rx="22" fill="#ffffff" stroke="#5AAB9D" stroke-width="5"/>
+    <text x="600" y="337" fill="#213343" font-size="29" font-weight="700">Renewal deal</text>
+    <text x="600" y="378" fill="#536675" font-size="20">Owner + forecast</text>
+    <path d="M745 345 H837" stroke="#C47A2A" stroke-width="10" stroke-linecap="round"/>
+    <path d="M827 326 L854 345 L827 364" fill="none" stroke="#C47A2A" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="864" y="270" width="250" height="150" rx="22" fill="#ffffff" stroke="#D4960A" stroke-width="5"/>
+    <text x="989" y="337" fill="#213343" font-size="29" font-weight="700">Renewal quote</text>
+    <text x="989" y="378" fill="#536675" font-size="20">Terms + acceptance</text>
+  </g>
+  <path d="M989 448 C989 550 865 568 730 568 H354 C238 568 211 514 211 452" fill="none" stroke="#1A7AB5" stroke-width="8" stroke-dasharray="14 14"/>
+  <text x="600" y="620" text-anchor="middle" fill="#213343" font-family="Arial, sans-serif" font-size="24" font-weight="700">Accepted quote creates the next associated contract</text>
+</svg>
