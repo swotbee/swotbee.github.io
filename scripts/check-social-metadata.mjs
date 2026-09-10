@@ -13,7 +13,6 @@ const ROOT = process.cwd();
 const DIST_DIR = path.join(ROOT, 'dist');
 const POSTS_DIR = path.join(DIST_DIR, 'posts');
 const SITE_ORIGIN = 'https://swotbee.com';
-const KNOWN_NON_DOCUMENT = 'posts/Pendo HubSpot Integration_ Boost Customer Insights/index.html';
 
 async function walk(directory) {
   const entries = await fs.readdir(directory, { withFileTypes: true });
@@ -77,7 +76,7 @@ async function validateArticle(filePath, errors) {
   const html = await fs.readFile(filePath, 'utf8');
 
   if (!/<html(?:\s|>)/i.test(html)) {
-    if (relativePath === KNOWN_NON_DOCUMENT) return false;
+    if (/http-equiv="refresh"/i.test(html)) return false;
     errors.push(`${relativePath}: rendered output has no html element`);
     return false;
   }
