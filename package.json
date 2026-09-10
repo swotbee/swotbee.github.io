@@ -5,7 +5,7 @@
   "packageManager": "pnpm@9.12.3",
   "scripts": {
     "dev": "astro dev --host --verbose",
-    "build": "astro build",
+    "build": "node scripts/prepare-social-images.mjs && astro build && node scripts/check-social-metadata.mjs",
     "postbuild": "pagefind --site dist --output-path dist/pagefind",
     "preview": "astro preview",
     "astro": "astro",

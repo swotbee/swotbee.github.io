@@ -22,6 +22,7 @@ interface Props {
   keywords?: string;
   author?: string;
   robots?: string;
+  ogType?: "website" | "article" | "profile";
 }
 
 const {
@@ -32,6 +33,7 @@ const {
   keywords = "HubSpot consulting, Shopify integration, CRM optimization, marketing automation, sales funnel, business growth, HubSpot experts",
   author = "SWOTBee",
   robots = "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+  ogType = "website",
 } = Astro.props;
 
 const isNoindex = robots.includes("noindex");
@@ -85,7 +87,6 @@ const gtmId = import.meta.env.PUBLIC_GTM_ID || "GTM-WV9TQ6FH";
     <!-- Additional SEO meta tags -->
     <meta property="og:locale" content="en_US" />
     <meta property="og:site_name" content="SWOTBee" />
-    <meta property="og:type" content="website" />
     <meta name="twitter:site" content="@swotbee" />
     <meta name="twitter:creator" content="@swotbee" />
 
@@ -96,7 +97,7 @@ const gtmId = import.meta.env.PUBLIC_GTM_ID || "GTM-WV9TQ6FH";
         title: title,
         description: description,
         image: finalOgImage,
-        type: "website",
+        type: ogType,
         url: finalCanonicalURL,
         siteName: "SWOTBee",
         locale: "en_US",

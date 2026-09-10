@@ -22,6 +22,9 @@ package-lock.json
 # build output
 dist/
 
+# Build-generated raster derivatives for SVG social cards
+public/assets/posts/**/*.social.png
+
 # generated types
 .astro/
 

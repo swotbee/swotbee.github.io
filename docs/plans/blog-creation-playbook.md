@@ -219,6 +219,8 @@ curl -s -X POST '.../import-content'   -H "X-API-KEY: $KEY" -H 'Content-Type: ap
     before trusting its relevance, the same discipline as the single-keyword contamination
     check in Learning 1, just applied to a whole list at once.
 
+15. **Treat social previews as build output, not a manual publishing check.** Article heroes may use SVG in frontmatter for crisp on-page rendering, but social crawlers must receive a raster image. `pnpm build` generates a 1200 x 630 `.social.png` derivative for each local SVG hero, then validates the rendered article HTML. The build must fail if Open Graph or Twitter metadata is missing, duplicated, malformed, non-HTTPS, points to a missing local file, or exposes a local non-raster image. Keep metadata ownership in `BaseLayout.astro`; child layouts pass values rather than emitting a second tag set. After publishing, verify the live URL because social platforms may cache an older unfurl.
+
 ---
 
 ## 4. How to improve next time
@@ -278,6 +280,10 @@ curl -s -X POST '.../import-content'   -H "X-API-KEY: $KEY" -H 'Content-Type: ap
 - [ ] `import-content` done
 - [ ] One unique inline image per post; no duplicates; links resolve and carry the
       trailing slash (`trailingSlash: "always"`)
+- [ ] Hero/frontmatter image exists; local SVG heroes are allowed because the build
+      generates a 1200 x 630 raster social derivative
 - [ ] Pillar back-links + cross-pillar links added
-- [ ] `npm run build` passes
+- [ ] `pnpm verify` passes, including the generated Open Graph and Twitter metadata gate
+- [ ] Rendered articles have exactly one canonical, description, Open Graph set and
+      Twitter Card set; social image URLs are absolute HTTPS and local cards are raster
 - [ ] Dates spread (if batch); committed; pushed via swotbee; account restored
