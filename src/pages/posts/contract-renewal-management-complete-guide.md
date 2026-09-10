@@ -229,7 +229,7 @@ For example, if a renewal needs a discount outside the agreed limit, the provide
 
 SWOTBee's [renewal operations service](/renewal-operations/) focuses on the process and HubSpot implementation. The paid Renewal Operations Audit produces a validated process map, renewal gaps and automation plan, HubSpot field blueprint, and upcoming-renewal validation set. Your team can take the blueprint forward or have us implement and validate the agreed setup. Customer negotiations and day-to-day account ownership need named owners in either model.
 
-[Book a Renewal Alignment Call](/renewal-audit-call/) to discuss whether your bottleneck is capacity or the renewal system. The initial call is 30 minutes, has no fee, and requires no HubSpot access. A paid audit starts only after scope and terms are agreed.
+<a href="/renewal-audit-call/" data-ga-cta="contract_guide_outsourcing_call">Book a Renewal Alignment Call</a> to discuss whether your bottleneck is capacity or the renewal system. The initial call is 30 minutes, has no fee, and requires no HubSpot access. A paid audit starts only after scope and terms are agreed.
 
 ---
 

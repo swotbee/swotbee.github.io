@@ -96,7 +96,7 @@ FlowNer has fewer total reviews than Enrollem, 6 against roughly 20 to 23, but a
 
 ## A natural fit for renewal outreach cadences
 
-**Buying a sequence app for renewal outreach?** First trace one upcoming renewal from its contract date to an owned deal, then to the contact and outreach trigger. If the handoff is unclear, [discuss your renewal workflow on a Renewal Alignment Call](/renewal-audit-call/). The no-fee, 30-minute call helps decide whether a paid Renewal Operations Audit is worthwhile; no HubSpot access is needed for the call.
+**Buying a sequence app for renewal outreach?** First trace one upcoming renewal from its contract date to an owned deal, then to the contact and outreach trigger. If the handoff is unclear, <a href="/renewal-audit-call/" data-ga-cta="flowner_renewal_handoff_mid_call">discuss your renewal workflow on a Renewal Alignment Call</a>. The no-fee, 30-minute call helps decide whether a paid Renewal Operations Audit is worthwhile; no HubSpot access is needed for the call.
 
 Sequence automation like this shows up constantly in one specific context: renewal reminders. If your team runs a 90-60-30 day cadence ahead of a contract renewal date (check in at 90 days out, escalate at 60, final push at 30), either app can trigger that enrollment automatically from a workflow the moment a renewal deal crosses one of those thresholds, instead of relying on a rep to remember to add the contact manually.
 
@@ -142,6 +142,6 @@ FlowNer, on a per enrollment basis. FlowNer's Starter plan is $19 to $29 a month
 
 A sequence needs a reliable renewal date, an owner, and the right customer contact. If those inputs are inconsistent, SWOTBee's paid Renewal Operations Audit maps the process, identifies automation gaps, and gives you a HubSpot field blueprint and an upcoming-renewal validation set. You can use that blueprint internally or have us implement and validate it in your portal.
 
-[Book a Renewal Alignment Call](/renewal-audit-call/) to discuss where the handoff breaks. The call is 30 minutes, has no fee, and requires no HubSpot access. The paid audit begins only after scope and terms are agreed.
+<a href="/renewal-audit-call/" data-ga-cta="flowner_renewal_handoff_footer_call">Book a Renewal Alignment Call</a> to discuss where the handoff breaks. The call is 30 minutes, has no fee, and requires no HubSpot access. The paid audit begins only after scope and terms are agreed.
 
-Prefer to size the issue first? [Get your 1-page renewal leakage estimate](/resources/renewal-leakage-estimate/), with no call needed.
+Prefer to size the issue first? <a href="/resources/renewal-leakage-estimate/" data-ga-cta="flowner_renewal_handoff_footer_estimate">Get your 1-page renewal leakage estimate</a>, with no call needed.
