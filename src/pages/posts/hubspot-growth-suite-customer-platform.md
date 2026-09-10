@@ -1,12 +1,12 @@
 ---
 layout: ../../layouts/BlogPostLayout.astro
-title: "HubSpot Growth Suite Is Now the Customer Platform: What Changed in 2026"
+title: "HubSpot Growth Suite: What Replaced It, Pricing and Plans"
 pubDate: "2026-06-13"
-description: "The HubSpot Growth Suite is a discontinued product name. Here is what it became (the Customer Platform), which hubs are included, what it costs in 2026, and how the Starter, Professional, and Enterprise plans differ."
+description: "The HubSpot Growth Suite is no longer sold. See what replaced it, current Customer Platform pricing, included Hubs, onboarding costs and plan differences."
 category:
   title: "Revenue Operations"
   href: "/categories/revenue-operations/"
-modifiedDate: "2026-06-27"
+modifiedDate: "2026-09-10"
 author:
   name: "SWOTBee Team"
   url: "https://swotbee.com"
