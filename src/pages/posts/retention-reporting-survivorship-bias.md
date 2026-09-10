@@ -1,8 +1,8 @@
 ---
 layout: ../../layouts/BlogPostLayout.astro
 title: "Survivorship Bias in NRR: The CFO Reporting Trap"
-pubDate: "2026-09-09"
-modifiedDate: "2026-09-09"
+pubDate: "2026-09-02"
+modifiedDate: "2026-09-02"
 description: "Rising NRR can hide a shrinking customer base. Learn how CFOs expose survivorship bias with cohort, GRR, logo, and concentration reporting for board decks."
 category:
   title: "Revenue Operations"
