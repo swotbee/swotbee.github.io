@@ -1,8 +1,8 @@
 ---
 layout: ../../layouts/BlogPostLayout.astro
 title: "CLM vs CRM: Contract Dates Are Not Renewal Deals"
-pubDate: "2026-09-09"
-modifiedDate: "2026-09-09"
+pubDate: "2026-09-06"
+modifiedDate: "2026-09-10"
 description: "CLM vs CRM for contract renewals: learn why stored dates do not create pipeline, then use ownership, sync and workflow rules to prevent missed revenue."
 category:
   title: "Revenue Operations"
@@ -250,6 +250,8 @@ Start with event-driven handoffs rather than a full two-way mirror:
 - An obligation becomes at risk: alert the responsible team and expose the status beside the account.
 
 Define failure handling before launch. Every critical sync needs an idempotent external ID, a visible error queue, a retry rule and a named owner. Otherwise the integration hides manual contract processes behind a green automation icon.
+
+For the field-level design, event payload, retry rules and replay process, use our implementation guide to [integrating CLM and CRM](/posts/how-to-integrate-clm-and-crm/).
 
 ---
 

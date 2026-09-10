@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Reliable CLM and CRM event flow</title>
+  <desc id="desc">A contract event moves from CLM through validation and an idempotent event processor into CRM. Temporary failures retry, permanent failures enter a quarantine queue, and reconciliation checks the result.</desc>
+  <rect width="1200" height="675" fill="#f7fafc"/>
+  <text x="600" y="66" text-anchor="middle" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#172033">Reliable CLM and CRM event flow</text>
+  <g font-family="Arial, sans-serif">
+    <rect x="60" y="170" width="200" height="120" rx="18" fill="#e7f0ff" stroke="#2f6fed" stroke-width="3"/>
+    <text x="160" y="220" text-anchor="middle" font-size="28" font-weight="700" fill="#172033">CLM</text>
+    <text x="160" y="254" text-anchor="middle" font-size="18" fill="#45536c">contract.executed</text>
+
+    <rect x="345" y="170" width="210" height="120" rx="18" fill="#fff5db" stroke="#e5a000" stroke-width="3"/>
+    <text x="450" y="215" text-anchor="middle" font-size="25" font-weight="700" fill="#172033">Validate</text>
+    <text x="450" y="248" text-anchor="middle" font-size="17" fill="#45536c">schema + references</text>
+
+    <rect x="640" y="170" width="220" height="120" rx="18" fill="#e9f8ef" stroke="#159455" stroke-width="3"/>
+    <text x="750" y="214" text-anchor="middle" font-size="24" font-weight="700" fill="#172033">Process once</text>
+    <text x="750" y="248" text-anchor="middle" font-size="17" fill="#45536c">event ID + version</text>
+
+    <rect x="945" y="170" width="195" height="120" rx="18" fill="#efeaff" stroke="#7357d9" stroke-width="3"/>
+    <text x="1042" y="220" text-anchor="middle" font-size="28" font-weight="700" fill="#172033">CRM</text>
+    <text x="1042" y="254" text-anchor="middle" font-size="18" fill="#45536c">renewal updated</text>
+
+    <path d="M260 230 H345" stroke="#65728a" stroke-width="5" marker-end="url(#arrow)"/>
+    <path d="M555 230 H640" stroke="#65728a" stroke-width="5" marker-end="url(#arrow)"/>
+    <path d="M860 230 H945" stroke="#65728a" stroke-width="5" marker-end="url(#arrow)"/>
+
+    <rect x="345" y="410" width="210" height="105" rx="18" fill="#fff0f0" stroke="#c93d46" stroke-width="3"/>
+    <text x="450" y="450" text-anchor="middle" font-size="23" font-weight="700" fill="#172033">Quarantine</text>
+    <text x="450" y="480" text-anchor="middle" font-size="17" fill="#45536c">fix, approve, replay</text>
+
+    <rect x="640" y="410" width="220" height="105" rx="18" fill="#eef3f8" stroke="#65728a" stroke-width="3"/>
+    <text x="750" y="450" text-anchor="middle" font-size="23" font-weight="700" fill="#172033">Retry</text>
+    <text x="750" y="480" text-anchor="middle" font-size="17" fill="#45536c">backoff + attempt limit</text>
+
+    <rect x="945" y="410" width="195" height="105" rx="18" fill="#e9f8ef" stroke="#159455" stroke-width="3"/>
+    <text x="1042" y="450" text-anchor="middle" font-size="22" font-weight="700" fill="#172033">Reconcile</text>
+    <text x="1042" y="480" text-anchor="middle" font-size="17" fill="#45536c">source vs target</text>
+
+    <path d="M450 290 V410" stroke="#c93d46" stroke-width="4" marker-end="url(#arrowRed)"/>
+    <text x="466" y="355" font-size="16" fill="#8b2730">invalid data</text>
+    <path d="M750 290 V410" stroke="#65728a" stroke-width="4" marker-end="url(#arrow)"/>
+    <text x="766" y="355" font-size="16" fill="#45536c">temporary failure</text>
+    <path d="M1042 290 V410" stroke="#159455" stroke-width="4" marker-end="url(#arrowGreen)"/>
+
+    <path d="M640 462 H555" stroke="#65728a" stroke-width="4" marker-end="url(#arrow)"/>
+    <path d="M555 462 C600 590 930 590 945 462" fill="none" stroke="#65728a" stroke-width="4" stroke-dasharray="10 9" marker-end="url(#arrow)"/>
+    <text x="750" y="590" text-anchor="middle" font-size="18" fill="#45536c">alerts expose failures before renewals are affected</text>
+  </g>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#65728a"/></marker>
+    <marker id="arrowRed" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#c93d46"/></marker>
+    <marker id="arrowGreen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#159455"/></marker>
+  </defs>
+</svg>
