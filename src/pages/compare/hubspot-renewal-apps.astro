@@ -8,28 +8,30 @@ import Footer from '../../components/astro/Footer.astro';
 // comparing a deal-cloning app. The page CONCEDES cloning (the corpus shows
 // those apps are genuinely liked for it) and widens the frame to the renewal
 // system. Reviewer quotes below are verbatim from the harvested review corpus.
-// PENDING before publish: NeuronWriter term/score pass (needs NEURON_API_KEY).
+// NeuronWriter research completed 2026-09-10. The SERP is mixed with
+// searches about renewing HubSpot's own subscription, so this page targets
+// product-evaluation intent and excludes account-renewal terms.
 
 const rows = [
-  { cap: 'Self-serve install in minutes, low cost', clone: 'yes', us: 'no', note: 'cloning apps win here: we are a scoped service, not a plugin' },
-  { cap: 'Duplicate a deal in one click', clone: 'yes', us: 'yes' },
-  { cap: 'Copy line items to the new deal', clone: 'partial', us: 'yes', note: 'reviewers report out-of-order line items and no way to exclude properties' },
-  { cap: 'Create the renewal deal automatically on schedule', clone: 'no', us: 'yes' },
-  { cap: 'Survive year-3 multi-year chains', clone: 'no', us: 'yes', note: 'HubSpot auto-stops workflows that look self-triggering ("loop protection"), which silently breaks workflow-cloned renewal chains after 2 to 3 cycles' },
-  { cap: 'Apply price escalations and uplifts automatically', clone: 'no', us: 'yes' },
-  { cap: 'Renewal pipeline with dates, owners, and alerts', clone: 'no', us: 'yes' },
-  { cap: 'NRR/GRR (net and gross revenue retention) and renewal-accuracy reporting', clone: 'no', us: 'yes' },
+  { cap: 'Low incremental software cost', native: 'yes', clone: 'partial', us: 'no', note: 'native Contracts require Revenue Hub Professional or Enterprise; cloning apps are usually lower-cost add-ons; SWOTBee is a scoped service' },
+  { cap: 'Create a renewal deal and quote', native: 'yes', clone: 'partial', us: 'yes', note: 'native renewal quotes can use a new or existing deal; cloning apps copy a deal but do not always create it on schedule' },
+  { cap: 'Carry current contract line items into the renewal quote', native: 'yes', clone: 'partial', us: 'yes', note: 'native inheritance works when the renewal quote starts from a Contract; marketplace app behavior varies' },
+  { cap: 'Create the renewal motion automatically on schedule', native: 'yes', clone: 'no', us: 'yes' },
+  { cap: 'Maintain the next contract after acceptance', native: 'yes', clone: 'no', us: 'yes', note: 'an accepted native renewal quote creates the next associated Contract' },
+  { cap: 'Apply custom price escalations and uplift rules', native: 'partial', clone: 'no', us: 'yes', note: 'native templates and approvals help, but custom commercial rules still need design and testing' },
+  { cap: 'Renewal pipeline with dates, owners, and alerts', native: 'yes', clone: 'no', us: 'yes' },
+  { cap: 'NRR/GRR and renewal-accuracy reporting', native: 'partial', clone: 'no', us: 'yes', note: 'HubSpot provides recurring-revenue inputs, but NRR and GRR still require a defined reporting model' },
 ];
 const mark = (v: string) => v === 'yes' ? '✓' : v === 'partial' ? '~' : '✗';
 const markClass = (v: string) => v === 'yes' ? 'text-v6-teal font-bold' : v === 'partial' ? 'text-v6-amber font-bold' : 'text-gray-400 font-bold';
 
 const faqs = [
-  { q: 'Is a cloning app enough for my renewals?', a: 'If your renewals are low-volume, single-year, flat-priced, and someone reliably remembers to run them, yes, a cloning app plus discipline can be enough. The gaps appear at scale: renewal dates nobody tracks, escalation clauses that never make it into the copy, and multi-year chains that silently stop in year 3.' },
-  { q: 'Why is a dedicated renewal pipeline important in HubSpot?', a: 'Renewals mixed into your new-business pipeline hide from reporting: win rates blend, renewal dates disappear, and nobody sees which contracts are at risk. A dedicated renewal pipeline in your HubSpot CRM gives every renewal a stage, an owner, and a date, and it is what makes renewal-rate and NRR reporting possible at all.' },
-  { q: 'Can HubSpot workflows automate renewal reminders?', a: 'Yes, workflows can create tasks and reminder emails from a close date, and that is a fine start. What workflows alone cannot do reliably is create the renewal deal with correct line items and escalated pricing year after year: HubSpot\'s loop protection interferes with workflow-cloned deals in multi-year chains, which is where most self-built renewal automation eventually breaks.' },
-  { q: 'What about subscription and recurring revenue renewals?', a: 'The same system applies whether you sell annual service contracts, subscriptions, or multi-year agreements: the renewal deal is created on schedule in the pipeline, line items and pricing carry over with uplifts applied, and recurring revenue reporting stays accurate in HubSpot.' },
-  { q: 'Do I have to replace my cloning app?', a: 'No. Keep whatever your team already uses and likes. We add the renewal layer around it: scheduled deal creation, escalation math, dates and alerts, and revenue-retention (NRR/GRR) reporting. You own everything we build, in your portal.' },
-  { q: 'Why not just build this with HubSpot workflows?', a: 'Many teams do, and it works, until HubSpot\'s loop protection silently stops a workflow-cloned renewal chain, usually around year 3. Community threads document the infinite-loop problem with cloning deals through workflows. We build chains that survive it.' },
+  { q: 'Does HubSpot now support native contract renewals?', a: 'Yes. Revenue Hub Professional and Enterprise include a Contracts object. An accepted Revenue Hub quote can create a Contract, a workflow can create a renewal quote from that Contract, and acceptance creates the next associated Contract.' },
+  { q: 'When are HubSpot native Contracts enough?', a: 'Native Contracts are a strong fit when agreements originate from Revenue Hub quotes and follow a standard line-item, term, and approval path. Test legacy imports, evergreen agreements, co-terming, custom uplifts, and external billing handoffs before choosing a native-only design.' },
+  { q: 'Is a cloning app enough for my renewals?', a: 'A cloning app can be enough for low-volume, flat-priced renewals when someone reliably starts each copy. It does not by itself create a governed renewal calendar, approval process, forecast, or retention reporting model.' },
+  { q: 'Why is a dedicated renewal pipeline important in HubSpot?', a: 'Renewals mixed into a new-business pipeline distort win rates and hide the contracts at risk. A dedicated renewal pipeline gives every commercial renewal an owner, stage, amount, and close date, whether the source is a native Contract or a legacy deal.' },
+  { q: 'Can HubSpot workflows automate renewal reminders?', a: 'Yes. Contract and deal workflows can create tasks, alerts, renewal deals, and, for eligible Revenue Hub portals, renewal quotes. Generic deal-cloning workflows need extra care because line-item copying and self-triggering renewal chains have different constraints from the native Contract path.' },
+  { q: 'Do I have to replace my cloning app?', a: 'No. Keep it if it solves a real legacy-deal use case. The decision is whether native Contracts, the app, or a hybrid process covers your sources of truth, pricing rules, dates, approvals, and reporting.' },
   { q: 'What does this cost?', a: 'Every business is different, so we scope after a free 30-minute call about how your renewals run today. No long-term contracts; we earn your trust month by month.' },
   { q: 'What happens on the free call?', a: '30 minutes, no prep. We map how renewals run today, where manual work and leakage hide, and what to fix first. You leave with the picture whether or not you work with us.' },
 ];
@@ -40,6 +42,7 @@ const guides = [
   { href: '/posts/hubspot-clone-deal-line-items/', label: 'Cloning deals with line items: the complete fix' },
   { href: '/posts/hubspot-renewal-workflow-infinite-loop-fix/', label: 'The workflow infinite-loop problem that breaks renewal chains' },
   { href: '/posts/hubspot-renewal-pipeline-complete-guide/', label: 'Building a renewal pipeline in HubSpot: the complete guide' },
+  { href: '/posts/hubspot-contracts-renewal-quotes/', label: 'HubSpot Contracts and renewal quotes: complete setup guide' },
   { href: '/posts/hubspot-renewal-quote-price-increase/', label: 'Renewal quotes and price increases in HubSpot' },
   // Added 2026-09-03. This page was crawled on 2026-08-10 and linked to none of the
   // contract cluster published on 2026-09-01, nine pages of which Search Console still
@@ -57,22 +60,22 @@ const faqSchema = JSON.stringify({
 });
 ---
 <BaseLayout
-  title="HubSpot Renewal Apps Compared: Cloning Is Just Step One"
-  description="Deal cloning apps copy deals well. Renewals need dates, uplifts, multi-year chains, and NRR reporting. An honest comparison of HubSpot renewal apps."
+  title="HubSpot Native Renewals vs Renewal Apps: 2026 Comparison"
+  description="Compare HubSpot native Contracts, deal-cloning apps, and a managed renewal system across line items, automation, pricing, pipelines, and reporting."
 >
   <Navbar />
 
   <!-- HERO: continuity with the pinned ad headline "Cloning Is Just Step One" -->
   <section class="bg-gradient-to-b from-v6-bg to-white px-4 sm:px-6 lg:px-8 pt-16 pb-12">
     <div class="max-w-3xl mx-auto text-center">
-      <p class="text-sm font-semibold uppercase tracking-[0.2em] text-v6-copper mb-3">For Teams Comparing HubSpot Renewal Apps</p>
+      <p class="text-sm font-semibold uppercase tracking-[0.2em] text-v6-copper mb-3">HubSpot Native Renewals And Apps</p>
       <h1 class="text-3xl sm:text-5xl font-bold text-v6-dark leading-tight mb-5 text-balance">
-        Cloning Is Just <span class="text-v6-copper">Step One</span>
+        HubSpot Native Renewals vs <span class="text-v6-copper">Renewal Apps</span>
       </h1>
       <p class="text-lg sm:text-xl text-v6-text-muted mb-4 leading-relaxed">
-        Deal cloning apps are good at what they do. But a renewal is not a copy of last year's deal: it has a date someone must not miss, an escalation clause someone must apply, and a chain that must still work in year 3.
+        HubSpot renewal apps are no longer the only alternative to manual deal cloning. HubSpot now has a native Contracts and renewal-quotes path in Revenue Hub Professional and Enterprise, while apps still help with legacy records and custom requirements.
       </p>
-      <p class="text-base text-v6-text-muted mb-6">Here is the honest comparison, including the row where cloning apps beat us. And if a cloning app really is all you need, the review will say exactly that: it is a diagnosis you keep, not a pitch.</p>
+      <p class="text-base text-v6-text-muted mb-6">Here is the honest comparison, including where native HubSpot is enough, where an app remains useful, and where commercial rules or mixed data sources need a designed renewal process.</p>
       <div class="flex flex-col sm:flex-row gap-3 justify-center">
         <a href="#comparison" class="bg-v6-copper text-white px-8 py-3.5 rounded-xl text-base font-semibold hover:bg-v6-copper-600 transition-colors">See The Comparison ↓</a>
         <a href="/renewal-audit-call/" data-ga-cta="compare_hero_book_review" class="border border-gray-300 text-v6-dark px-8 py-3.5 rounded-xl text-base font-medium hover:bg-gray-50 transition-colors">Book a Renewal Alignment Call →</a>
@@ -100,13 +103,14 @@ const faqSchema = JSON.stringify({
   <!-- COMPARISON TABLE -->
   <section id="comparison" class="bg-v6-bg px-4 sm:px-6 lg:px-8 py-14 border-y border-v6-border">
     <div class="max-w-4xl mx-auto">
-      <h2 class="text-2xl sm:text-3xl font-bold text-v6-dark mb-3 text-center">Cloning Apps vs Renewal Operations</h2>
+      <h2 class="text-2xl sm:text-3xl font-bold text-v6-dark mb-3 text-center">HubSpot Native Contracts vs Renewal Apps vs A Managed System</h2>
       <p class="text-base text-v6-text-muted text-center mb-8 max-w-2xl mx-auto">What each covers, capability by capability. "~" means it works with caveats reviewers themselves report.</p>
       <div class="overflow-x-auto rounded-2xl border border-v6-border bg-white">
         <table class="w-full text-sm text-left">
           <thead>
             <tr class="border-b border-v6-border bg-v6-bg">
               <th class="px-5 py-4 font-semibold text-v6-dark">Capability</th>
+              <th class="px-5 py-4 font-semibold text-v6-dark text-center">HubSpot native Contracts</th>
               <th class="px-5 py-4 font-semibold text-v6-dark text-center">Deal cloning apps</th>
               <th class="px-5 py-4 font-semibold text-v6-dark text-center">SWOTBee Renewal Operations</th>
             </tr>
@@ -115,6 +119,7 @@ const faqSchema = JSON.stringify({
             {rows.map(r => (
               <tr class="border-b border-v6-border last:border-0">
                 <td class="px-5 py-4 text-v6-dark">{r.cap}{r.note && <span class="block text-xs text-gray-500 mt-1">{r.note}</span>}</td>
+                <td class={`px-5 py-4 text-center text-lg ${markClass(r.native)}`}>{mark(r.native)}</td>
                 <td class={`px-5 py-4 text-center text-lg ${markClass(r.clone)}`}>{mark(r.clone)}</td>
                 <td class={`px-5 py-4 text-center text-lg ${markClass(r.us)}`}>{mark(r.us)}</td>
               </tr>
@@ -122,7 +127,7 @@ const faqSchema = JSON.stringify({
           </tbody>
         </table>
       </div>
-      <p class="text-xs text-gray-500 text-center mt-4">"Deal cloning apps" refers to the HubSpot Marketplace duplication category generally; individual apps vary. Caveats quoted from public marketplace reviews.</p>
+      <p class="text-xs text-gray-500 text-center mt-4">Native Contracts refers to the documented Revenue Hub Professional and Enterprise path. Deal-cloning app capabilities vary. Validate all three options against a pilot contract before rollout.</p>
       <div class="text-center mt-8">
         <a href="/resources/renewal-leakage-estimate/" data-ga-cta="compare_midpage_leakage_estimate" class="inline-block border border-v6-copper text-v6-copper px-7 py-3 rounded-xl text-base font-semibold hover:bg-v6-copper-50 transition-colors">Curious what the right column is worth? Get a 1-page leakage estimate (no call) →</a>
       </div>
@@ -153,7 +158,7 @@ const faqSchema = JSON.stringify({
         <div class="bg-v6-bg rounded-xl p-6 border border-v6-border">
           <div class="text-2xl mb-3">📊</div>
           <h3 class="text-base font-semibold text-v6-dark mb-2">ARR you can trust</h3>
-          <p class="text-sm text-v6-text-muted leading-relaxed">Renewal and expansion revenue separated, NRR/GRR dashboards native in HubSpot, so leadership forecasts instead of guessing.</p>
+          <p class="text-sm text-v6-text-muted leading-relaxed">Renewal and expansion revenue are separated, with NRR and GRR dashboards built from your HubSpot data so leadership can forecast with a documented model.</p>
         </div>
       </div>
     </div>
@@ -163,7 +168,7 @@ const faqSchema = JSON.stringify({
   <section class="bg-v6-bg px-4 sm:px-6 lg:px-8 py-14 border-y border-v6-border">
     <div class="max-w-3xl mx-auto">
       <h2 class="text-2xl sm:text-3xl font-bold text-v6-dark mb-4 text-center">How To Choose A HubSpot Renewal App</h2>
-      <p class="text-base text-v6-text-muted mb-6 leading-relaxed">Whether you pick a marketplace app or a built service, the HubSpot app marketplace search for "renewals" returns mostly duplication tools. Use these four questions to evaluate any of them against how renewals actually run in your CRM:</p>
+      <p class="text-base text-v6-text-muted mb-6 leading-relaxed">Whether you use native Contracts, a marketplace app, or a managed build, evaluate the option against how renewals actually run in your CRM. Use these four questions:</p>
       <ol class="list-decimal list-inside flex flex-col gap-4 text-base text-v6-dark">
         <li><strong>Does it create the renewal, or just copy a deal?</strong><span class="block text-sm text-v6-text-muted mt-1 ml-5">Automation means the renewal deal appears in the renewal pipeline on schedule, without a human remembering to click. A copy button is a convenience; a workflow that triggers from the contract date is a system.</span></li>
         <li><strong>What happens to line items and pricing?</strong><span class="block text-sm text-v6-text-muted mt-1 ml-5">Line items should carry over in order, with escalation clauses and uplifts applied to the new pricing, not pasted flat from last year.</span></li>

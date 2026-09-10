@@ -6,7 +6,7 @@ description: "The complete B2B guide to contract renewal management: the end-to-
 category:
   title: "Revenue Operations"
   href: "/categories/revenue-operations/"
-modifiedDate: "2026-09-09"
+modifiedDate: "2026-09-10"
 author:
   name: "SWOTBee Team"
   url: "https://swotbee.com"
@@ -41,7 +41,7 @@ faqs:
   - q: "Do we need a CLM tool for renewal management?"
     a: "Only if contract drafting and legal approval are your bottleneck. CLM manages documents; renewal management manages the revenue event. Many teams run renewals entirely in their CRM and store the signed contract as an attachment or in a lightweight repository. Full contract management systems earn their cost when clause complexity and approval chains are the daily reality."
   - q: "Can HubSpot handle contract renewal management natively?"
-    a: "Mostly. Properties, pipelines, date-based workflows, and reports cover tracking, reminders, and dashboards on Professional tier and above. The weak spot is renewal deal creation itself: workflow-created deals do not carry line items and multi-year chains hit loop protection, which is why teams add an app or custom automation for that step."
+    a: "Yes. Revenue Hub Professional and Enterprise now provide native Contracts, renewal alerts, renewal quotes and automatic renewal-deal creation. Deal-based workflows remain useful for legacy or external contracts, but generic workflow-created deals do not copy source-deal line items by themselves."
   - q: "What is a good renewal rate for B2B SaaS?"
     a: "Gross revenue retention in the high 80s to low 90s is typical for mid-market B2B, with best-in-class teams above 95 percent. More useful than the benchmark is your trend: a working renewal process shows up within two quarters as fewer late-stage surprises and a measurable lift in on-time engagement."
   - q: "Who should own renewals: sales or customer success?"
@@ -157,11 +157,11 @@ This guide covers the selling side: renewing the contracts your customers hold w
 
 ## How to Run Contract Renewal Management in HubSpot
 
-HubSpot has no contract object and no renewals feature, but it has all the raw materials to streamline the renewal motion with contract automation: deals, custom properties, date-based workflows, line items, and reporting. The working pattern looks like this:
+HubSpot now offers native Contracts, renewal alerts and renewal quotes in Revenue Hub Professional and Enterprise. When agreements originate from Revenue Hub quotes, use the [HubSpot Contracts and renewal quotes setup](/posts/hubspot-contracts-renewal-quotes/) as the primary path. For legacy, externally managed or lower-tier agreements, the deal-based pattern remains useful:
 
 1. **Model contracts on deals with a property schema.** Add Contract Start Date, Contract End Date (or Renewal Date), Contract Term, Auto-Renew flag, and Uplift % as deal properties. This schema, including type choices and which objects to put fields on, is covered in our guide to [managing contracts in HubSpot](/posts/hubspot-contract-management/).
 2. **Create a dedicated renewal pipeline.** Renewal deals get their own pipeline with stages like Upcoming, Engaged, Proposal Sent, Negotiation, Closed Won/Lost. Mixing renewals into the sales pipeline wrecks both forecasts. The full architecture is in our [complete guide to building a renewal pipeline in HubSpot](/posts/hubspot-renewal-pipeline-complete-guide/).
-3. **Automate renewal deal creation.** A renewal workflow (Sales Hub Professional or above) watches Contract End Date and creates the renewal deal 120 days out, carrying over the amount, owner, and dates. This is the step native HubSpot handles worst: workflow-cloned deals skip line items, and multi-year workflow chains can trip HubSpot's loop protection, so most teams end up with an app or custom code for this step.
+3. **Automate renewal deal creation.** A renewal workflow (Sales Hub Professional or above) watches Contract End Date and creates the renewal deal 120 days out, carrying over the amount, owner, and dates. A generic workflow-created deal does not copy source-deal line items, and multi-year workflow chains can trip loop protection. Contract-based renewal quotes can inherit Contract line items; other architectures need an app, API or controlled manual step.
 4. **Layer on renewal alerts and tasks.** Date-based workflows fire owner tasks and escalations at 90, 60, and 30 days before the renewal date.
 5. **Report on it.** Deal-based reports on the renewal pipeline give you renewals due by quarter, renewal rate, and (with the right properties) NRR and GRR dashboards. Shared renewal calendars built from these reports give sales, CS, and finance the same forward view.
 
@@ -227,7 +227,7 @@ For example, if a renewal needs a discount outside the agreed limit, the provide
 
 ### How does SWOTBee help if the renewal system needs fixing?
 
-SWOTBee's [renewal operations service](/renewal-operations/) focuses on the process and HubSpot implementation. The paid Renewal Operations Audit produces a validated process map, renewal gaps and automation plan, HubSpot field blueprint, and upcoming-renewal validation set. Your team can take the blueprint forward or have us implement and validate the agreed setup. Customer negotiations and day-to-day account ownership need named owners in either model.
+SWOTBee's [contract management consulting service](/services/contract-management-consulting/) focuses on the process and HubSpot implementation. The paid Renewal Operations Audit produces a validated process map, renewal gaps and automation plan, HubSpot field blueprint, and upcoming-renewal validation set. Your team can take the blueprint forward or have us implement and validate the agreed setup. Customer negotiations and day-to-day account ownership need named owners in either model.
 
 <a href="/renewal-audit-call/" data-ga-cta="contract_guide_outsourcing_call">Book a Renewal Alignment Call</a> to discuss whether your bottleneck is capacity or the renewal system. The initial call is 30 minutes, has no fee, and requires no HubSpot access. A paid audit starts only after scope and terms are agreed.
 

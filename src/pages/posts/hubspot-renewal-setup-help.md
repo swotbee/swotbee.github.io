@@ -6,7 +6,7 @@ description: "Three ways to set up subscription renewals in HubSpot: build the r
 category:
   title: "Revenue Operations"
   href: "/categories/revenue-operations/"
-modifiedDate: "2026-08-19"
+modifiedDate: "2026-09-10"
 author:
   name: "SWOTBee Team"
   url: "https://swotbee.com"
@@ -26,7 +26,7 @@ seriesName: "Renewal Services"
 pillarUrl: "/posts/outsourced-renewal-management/"
 faqs:
   - q: "Does HubSpot handle renewals out of the box?"
-    a: "Not as a distinct object. HubSpot has deals, pipelines, workflows and quotes, and renewals are built out of those. There is no native renewal record, so a dedicated renewal pipeline and the automation around it have to be configured."
+    a: "Yes, in Revenue Hub Professional and Enterprise. Native Contracts can trigger renewal alerts, deals and renewal quotes. Teams with legacy or external agreements still use deal-based renewal records and custom workflows."
   - q: "How long does it take to set up renewals in HubSpot?"
     a: "A working renewal pipeline with properties, stages, automated renewal deal creation and reminders is usually one to three weeks of focused work, depending on how clean your existing data is. Data cleanup is normally the long pole, not the build."
   - q: "Should we buy a renewal app or build it in HubSpot?"
@@ -69,13 +69,13 @@ This is the gap most teams hit, and it is worth being precise about because the 
 
 **HubSpot gives you the raw materials.** Deals, pipelines, custom properties, workflows, quotes and reporting are all there, and on Professional they are sufficient. You do not need Sales Hub Enterprise to manage renewals properly.
 
-**HubSpot does not give you a renewal object.** There is no native "renewal" record with a renewal date that automatically does anything. A renewal in HubSpot is a deal you have decided to treat as a renewal, which means every behaviour you want, renewal deal creation, reminders, uplift handling, downgrade tracking, has to be configured.
+**HubSpot now gives Revenue Hub Professional and Enterprise teams a Contracts object with renewal dates, alerts and renewal quotes.** A renewal quote still works through an associated deal, and legacy or external agreements still need a deal-based model. Start by choosing between the [native Contracts path and the custom deal-workflow path](/posts/hubspot-contracts-renewal-quotes/).
 
 That is not a criticism of the platform. It is the reason renewal setup is a project rather than a setting, and the reason two companies on identical HubSpot tiers can have completely different renewal capability.
 
 Three things are genuinely awkward in native HubSpot and are worth knowing about before you start:
 
-- **Cloning deals with line items.** Copying a renewal deal including its products is not a native workflow action.
+- **Creating legacy renewal deals with line items.** A generic workflow-created deal does not copy source-deal products. Contract-based renewal quotes can inherit Contract line items; legacy deal workflows still need an app or API.
 - **Multi-year renewal chains.** Automating a renewal that generates the next renewal tends to produce loops. See [fixing the infinite loop](/posts/hubspot-renewal-workflow-infinite-loop-fix/).
 - **Co-terming several contracts onto one date.** Possible, but fiddly. See [co-terming renewals](/posts/hubspot-co-terming-renewals/).
 
@@ -162,7 +162,7 @@ If renewals are already leaking and you do not know where, measure before you bu
 ## Frequently Asked Questions
 
 **Does HubSpot handle renewals out of the box?**
-Not as a distinct object. HubSpot has deals, pipelines, workflows and quotes, and renewals are built out of those. There is no native renewal record, so a dedicated renewal pipeline and the automation around it have to be configured.
+Yes, in Revenue Hub Professional and Enterprise. Native Contracts can trigger renewal alerts, deals and renewal quotes. Teams with legacy or external agreements still use deal-based renewal records and custom workflows.
 
 **How long does it take to set up renewals in HubSpot?**
 A working renewal pipeline with properties, stages, automated renewal deal creation and reminders is usually one to three weeks of focused work, depending on how clean your existing data is. Data cleanup is normally the long pole, not the build.
