@@ -233,6 +233,8 @@ Blog posts are produced with a repeatable, research-driven pipeline that merges 
 7. **Optimize.** Score the draft with `/evaluate-content` and revise (add missing terms, hit the word-count target) until it beats the top competitor score. NeuronWriter scoring rewards both term coverage and reaching the word-count target.
 8. **Publish.** Push the final draft to the NeuronWriter editor with `/import-content`, write the `.md` to `src/pages/posts/`, apply the internal linking graph (and add back-links from the pillar), verify every internal link carries the trailing slash the site's `trailingSlash: "always"` config requires, then run `pnpm build` to validate.
 
+   The post-build SEO metadata check must pass. It rejects relative or concatenated `og:image` and `twitter:image` URLs, including the `https://swotbee.comhttps://...` failure caused by prefixing an already absolute hero URL.
+
 ### NeuronWriter API
 - Base URL: `https://app.neuronwriter.com/neuron-api/0.5/writer`; auth header `X-API-KEY` (pass as an env var at call time, never commit the key); `Content-Type: application/json`.
 - Endpoints: `POST /list-projects`, `POST /new-query` (params `project`, `keyword`, `engine`, `language`), `POST /get-query` (poll `status` until `ready`, ~90s+), `POST /evaluate-content` (score a draft, params `query`, `html`, `title`, `description`), `POST /import-content` (push to editor).

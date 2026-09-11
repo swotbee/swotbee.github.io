@@ -6,7 +6,7 @@ description: "The HubSpot Growth Suite is no longer sold. See what replaced it, 
 category:
   title: "Revenue Operations"
   href: "/categories/revenue-operations/"
-modifiedDate: "2026-09-10"
+modifiedDate: "2026-09-11"
 author:
   name: "SWOTBee Team"
   url: "https://swotbee.com"
@@ -65,9 +65,20 @@ The product lineage explains why so much stale content survives:
 
 ---
 
-## What the Growth Suite Became: the Customer Platform
+## Is the HubSpot Growth Suite Now the Customer Platform?
 
-Today, HubSpot's all-in-one offering is the Customer Platform, built on a Smart CRM with six Hubs around it: Marketing Hub, Sales Hub, Service Hub, Content Hub, Operations Hub (the data hub), and Commerce Hub (the revenue hub), with Breeze AI woven across them. Using HubSpot this way, the benefit is the same idea the Growth Suite promised, only current: one connected platform with powerful tools so your customer data, marketing, sales and service are not scattered across disconnected tools. Getting started is easy: you begin with the free HubSpot CRM and add hubs at every stage as your business grows, with workflow automation and integrations that improve the customer experience and help you close deals and accelerate.
+**Yes, the Customer Platform is the current buying equivalent of the HubSpot Growth Suite, but it is not simply a new label on the old bundle.** HubSpot expanded the product set, changed the packaging and introduced new pricing tiers. Old bundle comparisons therefore cannot tell you what a new customer would buy today.
+
+| 2018 bundle | Current Customer Platform |
+|---|---|
+| CRM with Marketing, Sales and Service Hubs | Smart CRM with Marketing, Sales, Service, Content, Operations and Commerce Hubs |
+| Bundle discount compared with separate Hubs | Tiered Customer Platform bundle with current seat, contact and onboarding rules |
+| Pre-Breeze automation and reporting | Breeze AI, broader automation and connected customer data |
+| Designed around the original sales and service stack | Designed to support marketing, sales, service, content, data management and revenue work on one platform |
+
+The practical decision is no longer whether to buy the old bundle. It is which Customer Platform tier fits your business needs and stage of growth. A Starter customer may need shared CRM software, email, forms, live chat and simple automation. Professional and Enterprise customers are more likely to need advanced workflow automation, reporting, permissions and integrations that connect otherwise disconnected tools.
+
+Getting started can be simple: start free with HubSpot CRM, then add powerful tools as your business needs expand. Marketing, sales and service teams can share customer data, close deals and manage customer conversations without rebuilding the tech stack. This is the current way HubSpot helps companies grow better at every stage.
 
 ---
 
@@ -79,8 +90,8 @@ Buying the Customer Platform bundle gets you all the core hubs in one subscripti
 - **Sales Hub** for the pipeline and deal management
 - **Service Hub** for tickets and customer service software
 - **Content Hub** for your website and content
-- **Operations Hub** for data sync and programmable automation
-- **Commerce Hub** for quotes, invoices, and payments
+- **Operations Hub** as the data hub for sync and programmable automation
+- **Commerce Hub** as the revenue hub for quotes, invoices, and payments
 
 Each is available individually in the HubSpot marketplace, but the bundle is what most growing teams buy to get sales, marketing, and customer service on one platform.
 
