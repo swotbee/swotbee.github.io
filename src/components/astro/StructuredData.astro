@@ -1,6 +1,6 @@
 ---
 interface Props {
-  type: 'article' | 'organization' | 'website' | 'breadcrumb' | 'service' | 'faq' | 'howto' | 'person';
+  type: 'article' | 'organization' | 'website' | 'breadcrumb' | 'service' | 'softwareApplication' | 'faq' | 'howto' | 'person';
   data: any;
 }
 
@@ -68,6 +68,25 @@ const getStructuredData = () => {
           "@type": "Offer",
           "priceCurrency": "USD",
           "description": "Contact for pricing information"
+        }
+      };
+
+    case 'softwareApplication':
+      return {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": data.name,
+        "description": data.description,
+        "url": data.url,
+        "applicationCategory": data.applicationCategory || "BusinessApplication",
+        "applicationSubCategory": data.applicationSubCategory,
+        "operatingSystem": data.operatingSystem || "Web",
+        "browserRequirements": data.browserRequirements,
+        "featureList": data.featureList,
+        "publisher": {
+          "@type": "Organization",
+          "name": "SWOTBee",
+          "url": "https://swotbee.com"
         }
       };
 
