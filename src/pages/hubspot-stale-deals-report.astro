@@ -1,0 +1,254 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/astro/Footer.astro";
+import LogoHoneycomb from "../components/astro/LogoHoneycomb.astro";
+import ClientLogoStrip from "../components/astro/ClientLogoStrip.astro";
+import ReportSignup from "../components/astro/ReportSignup.astro";
+
+// FREE BETA SIGNUP page for a B1 report app that is not built yet.
+// Keep the sample label visible until Sharmi validates the report definition and a
+// prototype proves it against permitted HubSpot test data.
+const title = "HubSpot Stale Deals Report | Free Beta Signup";
+const description = "Find newly stalled, still stalled, and recovered HubSpot deals with the owner, value, reason flagged, and next action.";
+
+const staleDealRows = [
+  { deal: "Acme Platform renewal", owner: "Maya Chen", stage: "Contract sent", value: "$120k", age: "18 days", status: "Newly stalled", reason: "No buyer activity for 14 days", action: "Confirm procurement next step", tone: "copper" },
+  { deal: "Northstar expansion", owner: "Liam Ross", stage: "Decision", value: "$75k", age: "31 days", status: "Still stalled", reason: "Close date overdue by 9 days", action: "Reset close date or close lost", tone: "copper" },
+  { deal: "Quarry Systems rollout", owner: "Elena Park", stage: "Solution review", value: "$90k", age: "12 days", status: "Recovered", reason: "Meeting logged and next step set", action: "Verify action owner", tone: "teal" },
+];
+
+const faqs = [
+  {
+    q: "How do I find stale deals in HubSpot?",
+    a: "HubSpot offers a native Stalled Deals view on eligible Sales Hub plans, plus filters for activity, scheduled tasks, close dates, and time in stage. The planned SWOTBee report tests whether one weekly intervention list with visible reasons and next actions is easier to use across owners.",
+  },
+  {
+    q: "What counts as a stale deal?",
+    a: "There is no honest universal threshold. The planned report makes the selected rule visible and can combine stage duration, meaningful activity, missing next activity, overdue close date, and missing next step. Sharmi still needs to validate the recommended defaults.",
+  },
+  {
+    q: "Is the stale-deals report available today?",
+    a: "Not yet. This is an illustrative beta signup page based on panel research. We will validate the definition and data requirements before building the app.",
+  },
+  {
+    q: "Will the report close or edit deals?",
+    a: "No automatic CRM changes are proposed for the first version. The report should identify records for human review. Exact permissions will be published before anyone connects a portal.",
+  },
+  {
+    q: "Can it focus only on renewal deals?",
+    a: "Renewal-only scope is a proposed option because customer-success panel evidence asked for it. Availability depends on how renewal deals are identified in the connected portal.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: { "@type": "Answer", text: item.a },
+  })),
+};
+---
+
+<Layout
+  title={title}
+  description={description}
+  keywords="hubspot stale deals report, hubspot stalled deals, stale deals hubspot, hubspot pipeline hygiene, hubspot deals no activity"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
+
+  <header class="border-b border-v6-border bg-white">
+    <div class="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
+      <a href="/" class="flex min-h-11 items-center gap-2 rounded-md focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2" aria-label="SWOTbee home">
+        <LogoHoneycomb width={32} height={30} />
+        <span class="text-lg font-bold text-v6-dark">SWOT<span class="text-v6-teal-700">bee</span></span>
+      </a>
+      <a href="#report-signup" data-ga-cta="b1_header_signup" class="inline-flex min-h-11 items-center justify-center rounded-lg border border-v6-copper px-4 py-2 text-sm font-semibold text-v6-copper transition-colors hover:bg-v6-copper-50 focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2">
+        Sign up free
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <section class="overflow-hidden bg-gradient-to-b from-v6-bg to-white px-4 pb-16 pt-14 sm:px-6 sm:pb-20 sm:pt-20 lg:px-8">
+      <div class="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-[0.92fr_1.08fr]">
+        <div>
+          <span class="mb-5 inline-flex rounded-full bg-v6-copper-50 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-v6-copper-700">Free beta, report preview</span>
+          <h1 class="max-w-3xl text-balance text-4xl font-bold leading-[1.08] text-v6-dark sm:text-5xl lg:text-[3.45rem]">HubSpot Stale Deals Report: Know Which Deal Needs Action Next</h1>
+          <p class="mt-6 max-w-2xl text-lg leading-relaxed text-v6-text-muted">See newly stalled, still stalled, and recovered deals with owner, value, stage age, last meaningful activity, reason flagged, and next action before your weekly review.</p>
+          <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+            <a href="#sample-report" data-ga-cta="b1_hero_view_sample" class="inline-flex min-h-12 items-center justify-center rounded-xl bg-v6-copper px-7 py-3.5 text-base font-semibold text-white transition-colors hover:bg-v6-copper-600 focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2">View the sample report</a>
+            <a href="#report-signup" data-ga-cta="b1_hero_signup" class="inline-flex min-h-12 items-center justify-center rounded-xl border border-v6-border bg-white px-7 py-3.5 text-base font-semibold text-v6-dark transition-colors hover:border-v6-copper hover:bg-v6-copper-50 focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2">Sign up free to generate this report</a>
+          </div>
+          <p class="mt-4 max-w-xl text-sm leading-relaxed text-v6-text-muted">Signup is free and requires no card. We will save your email before attempting report setup. No HubSpot account is connected from this page.</p>
+        </div>
+
+        <div class="relative" aria-label="Illustrative HubSpot stale deals report summary">
+          <div class="absolute -inset-6 -z-10 rounded-full bg-v6-teal-100/70 blur-3xl"></div>
+          <div class="overflow-hidden rounded-2xl border border-v6-border bg-white shadow-xl shadow-v6-dark/10">
+            <div class="flex items-center justify-between border-b border-v6-border px-5 py-4">
+              <div><p class="text-xs font-semibold uppercase tracking-[0.14em] text-v6-copper">Illustrative sample</p><p class="mt-1 font-semibold text-v6-dark">Weekly stale-deal review</p></div>
+              <span class="rounded-full bg-v6-teal-50 px-3 py-1 text-xs font-semibold text-v6-teal-800">11 stalled</span>
+            </div>
+            <div class="grid grid-cols-3 border-b border-v6-border">
+              <div class="p-4 sm:p-5"><p class="text-xs text-v6-text-muted">Newly stalled</p><p class="mt-1 text-base font-bold text-v6-dark sm:text-lg">4</p></div>
+              <div class="border-x border-v6-border bg-v6-copper-50 p-4 sm:p-5"><p class="text-xs text-v6-copper-800">Still stalled</p><p class="mt-1 text-lg font-bold text-v6-copper-800 sm:text-xl">7</p></div>
+              <div class="p-4 sm:p-5"><p class="text-xs text-v6-text-muted">Recovered</p><p class="mt-1 text-lg font-bold text-v6-dark sm:text-xl">3</p></div>
+            </div>
+            <div class="space-y-3 p-5 text-sm"><div class="flex items-center justify-between gap-4"><span class="text-v6-text-muted">Value needing review</span><span class="font-semibold text-v6-copper-800">$415k</span></div><div class="flex items-center justify-between gap-4"><span class="text-v6-text-muted">Oldest stage age</span><span class="font-semibold text-v6-dark">31 days</span></div><div class="flex items-center justify-between gap-4"><span class="text-v6-text-muted">Next review</span><span class="font-semibold text-v6-teal-800">Friday, 9 AM</span></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <ClientLogoStrip caption="HubSpot and revenue operations work trusted by teams at" />
+
+    <section class="px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+      <div class="mx-auto max-w-6xl">
+        <div class="mx-auto max-w-3xl text-center">
+          <p class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper">From detection to intervention</p>
+          <h2 class="mt-3 text-balance text-3xl font-bold text-v6-dark sm:text-4xl">What is a HubSpot stale deals report?</h2>
+          <p class="mt-4 text-lg leading-relaxed text-v6-text-muted">A stale deals report is a recurring review of deals that may have stopped progressing. It shows which deals became stalled, which remain stalled, which recovered, why each was flagged, and what the owner should do next.</p>
+          <p class="mt-4 leading-relaxed text-v6-text-muted">The useful version is an owner-specific intervention list, not another generic aging dashboard. The stall policy and meaningful-activity rule must remain visible.</p>
+        </div>
+
+        <div class="mx-auto mt-16 max-w-3xl border-t border-v6-border pt-16 text-center sm:mt-20 sm:pt-20">
+          <p class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper">From detection to action</p>
+          <h2 class="mt-3 text-balance text-3xl font-bold text-v6-dark sm:text-4xl">A stale-deal view still needs a clear next action.</h2>
+          <p class="mt-4 text-lg leading-relaxed text-v6-text-muted">Teams need to know why each deal was flagged, whether it is newly or still stalled, and what the owner should do before the next review.</p>
+        </div>
+        <div class="mt-10 grid gap-5 md:grid-cols-3">
+          <article class="rounded-2xl border border-v6-border bg-white p-6"><span class="flex h-10 w-10 items-center justify-center rounded-full bg-v6-copper-50 text-sm font-bold text-v6-copper-800">1</span><h3 class="mt-4 text-xl font-bold text-v6-dark">A view is not yet an action list</h3><p class="mt-2 leading-relaxed text-v6-text-muted">Finding records is useful. A weekly review also needs the reason each deal was flagged and the next decision for its owner.</p></article>
+          <article class="rounded-2xl border border-v6-border bg-white p-6"><span class="flex h-10 w-10 items-center justify-center rounded-full bg-v6-copper-50 text-sm font-bold text-v6-copper-800">2</span><h3 class="mt-4 text-xl font-bold text-v6-dark">Activity can be misleading</h3><p class="mt-2 leading-relaxed text-v6-text-muted">An internal note is not always meaningful buyer activity. The definition must be visible so teams can trust the flag.</p></article>
+          <article class="rounded-2xl border border-v6-border bg-white p-6"><span class="flex h-10 w-10 items-center justify-center rounded-full bg-v6-copper-50 text-sm font-bold text-v6-copper-800">3</span><h3 class="mt-4 text-xl font-bold text-v6-dark">One threshold does not fit every stage</h3><p class="mt-2 leading-relaxed text-v6-text-muted">Discovery, procurement, and renewal stages move at different speeds. The proposed policy keeps the scope explicit.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="sample-report" class="scroll-mt-8 bg-v6-bg px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+      <div class="mx-auto max-w-6xl">
+        <div class="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
+          <div class="max-w-3xl">
+            <div class="flex flex-wrap items-center gap-3"><p class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper">Planned first screen</p><span class="rounded-full border border-v6-copper-200 bg-v6-copper-50 px-2.5 py-1 text-xs font-semibold text-v6-copper-800">Illustrative sample, not live data</span></div>
+            <h2 class="mt-3 text-balance text-3xl font-bold text-v6-dark sm:text-4xl">Start with the deals that need an intervention</h2>
+            <p class="mt-4 text-lg leading-relaxed text-v6-text-muted">The panel expected a short, owner-specific list. Every row shows why the deal was flagged and points to the next human action. Sharmi still needs to validate the calculations.</p>
+          </div>
+          <a href="#report-signup" data-ga-cta="b1_sample_signup" class="inline-flex min-h-11 items-center justify-center self-start rounded-xl border border-v6-copper px-5 py-3 text-sm font-semibold text-v6-copper transition-colors hover:bg-v6-copper-50 focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2 lg:self-auto">Sign up for this report</a>
+        </div>
+
+        <div class="mt-10 overflow-hidden rounded-2xl border border-v6-border bg-white shadow-sm">
+          <div class="flex flex-col gap-4 border-b border-v6-border px-5 py-5 sm:flex-row sm:items-center sm:justify-between sm:px-7">
+            <div><p class="text-xs font-semibold uppercase tracking-[0.14em] text-v6-text-muted">Weekly stale-deal review</p><h3 class="mt-1 text-xl font-bold text-v6-dark">Weekly stale-deal intervention list</h3><p class="mt-1 text-sm text-v6-text-muted">Prepared Friday, 8:45 AM, before the weekly review</p></div>
+            <div class="flex items-center gap-2"><span class="rounded-full bg-v6-teal-50 px-3 py-1.5 text-xs font-semibold text-v6-teal-800">11 stalled</span><span class="rounded-full bg-v6-blue-50 px-3 py-1.5 text-xs font-semibold text-v6-blue-800">Sample</span></div>
+          </div>
+
+          <div class="grid gap-px bg-v6-border sm:grid-cols-2 lg:grid-cols-4"><div class="bg-white p-5 sm:p-6"><p class="text-sm text-v6-text-muted">Newly stalled</p><p class="mt-2 text-2xl font-bold text-v6-copper-800">4</p></div><div class="bg-white p-5 sm:p-6"><p class="text-sm text-v6-text-muted">Still stalled</p><p class="mt-2 text-2xl font-bold text-v6-copper-800">7</p></div><div class="bg-v6-teal-50 p-5 sm:p-6"><p class="text-sm text-v6-teal-800">Recovered</p><p class="mt-2 text-2xl font-bold text-v6-teal-800">3</p></div><div class="bg-v6-copper-50 p-5 sm:p-6"><p class="text-sm text-v6-copper-800">Value needing review</p><p class="mt-2 text-2xl font-bold text-v6-copper-800">$415k</p></div></div>
+
+          <div class="grid gap-8 p-5 sm:p-7 lg:grid-cols-[0.62fr_1.38fr]">
+            <div>
+              <h4 class="text-base font-bold text-v6-dark">Why deals were flagged</h4>
+              <div class="mt-5 space-y-4"><p class="rounded-xl bg-v6-copper-50 p-4 text-sm text-v6-text-muted"><strong class="text-v6-dark">No meaningful activity:</strong> buyer-facing activity is older than the selected limit.</p><p class="rounded-xl bg-v6-copper-50 p-4 text-sm text-v6-text-muted"><strong class="text-v6-dark">Stage age:</strong> the deal has exceeded the threshold for its current stage.</p><p class="rounded-xl bg-v6-copper-50 p-4 text-sm text-v6-text-muted"><strong class="text-v6-dark">No next step:</strong> the owner has no scheduled activity or clear action.</p></div>
+              <p class="mt-5 rounded-xl bg-v6-bg-warm p-4 text-sm leading-relaxed text-v6-text-muted">The selected stall policy stays visible so owners can challenge a flag and improve the rule.</p>
+            </div>
+
+            <div>
+              <div class="flex items-center justify-between gap-4"><h4 class="text-base font-bold text-v6-dark">Deals needing review</h4><span class="text-xs text-v6-text-muted">Illustrative rows</span></div>
+              <div class="mt-4 hidden overflow-x-auto rounded-xl border border-v6-border md:block">
+                <table class="w-full min-w-[620px] border-collapse text-left text-sm">
+                  <thead class="bg-v6-bg text-xs uppercase tracking-wide text-v6-text-muted"><tr><th class="px-4 py-3 font-semibold">Deal and owner</th><th class="px-4 py-3 font-semibold">Stage</th><th class="px-4 py-3 font-semibold">Status and reason</th><th class="px-4 py-3 font-semibold">Next action</th><th class="px-4 py-3 text-right font-semibold">Value</th></tr></thead>
+                  <tbody class="divide-y divide-v6-border">
+                    {staleDealRows.map((row) => (
+                      <tr><td class="px-4 py-3"><p class="font-semibold text-v6-dark">{row.deal}</p><p class="mt-0.5 text-xs text-v6-text-muted">{row.owner}</p></td><td class="px-4 py-3 text-v6-text-muted">{row.stage}</td><td class="px-4 py-3 text-v6-text-muted"><strong class="text-v6-dark">{row.status}</strong><br /><span class="text-xs">{row.reason}</span></td><td class="px-4 py-3 text-v6-dark">{row.action}</td><td class="px-4 py-3 text-right font-semibold text-v6-dark">{row.value}</td></tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <div class="mt-4 space-y-3 md:hidden">
+                {staleDealRows.map((row) => (
+                  <article class="rounded-xl border border-v6-border p-4"><div class="flex items-start justify-between gap-4"><div><h5 class="font-semibold text-v6-dark">{row.deal}</h5><p class="mt-0.5 text-xs text-v6-text-muted">Owner: {row.owner}</p></div><span class="text-sm font-bold text-v6-dark">{row.value}</span></div><p class="mt-3 text-sm text-v6-text-muted">{row.stage} · {row.age}</p><p class="mt-2 text-sm text-v6-text-muted"><strong class="text-v6-dark">{row.status}:</strong> {row.reason}</p><p class="mt-2 text-sm text-v6-text-muted"><strong class="text-v6-dark">Next:</strong> {row.action}</p></article>
+                ))}
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+      <div class="mx-auto max-w-5xl">
+        <div class="mx-auto max-w-3xl text-center"><p class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper">Planned setup</p><h2 class="mt-3 text-balance text-3xl font-bold text-v6-dark sm:text-4xl">Three choices when report setup is available</h2><p class="mt-4 text-lg leading-relaxed text-v6-text-muted">The planned app will let you choose what belongs in the review, what counts as stalled, and when the prepared list should arrive. This website signup does not connect your HubSpot account.</p></div>
+        <ol class="mt-10 grid gap-6 md:grid-cols-3">
+          <li class="rounded-2xl border border-v6-border bg-white p-6"><span class="text-sm font-bold text-v6-copper">01</span><h3 class="mt-3 text-xl font-bold text-v6-dark">Choose the deal universe</h3><p class="mt-2 leading-relaxed text-v6-text-muted">Use one sales pipeline, a renewal-only view, or another explicit scope that owners recognize.</p></li>
+          <li class="rounded-2xl border border-v6-border bg-white p-6"><span class="text-sm font-bold text-v6-copper">02</span><h3 class="mt-3 text-xl font-bold text-v6-dark">Choose the stall policy</h3><p class="mt-2 leading-relaxed text-v6-text-muted">Define meaningful activity, stage-aware age, missing next steps, and overdue close dates.</p></li>
+          <li class="rounded-2xl border border-v6-border bg-white p-6"><span class="text-sm font-bold text-v6-copper">03</span><h3 class="mt-3 text-xl font-bold text-v6-dark">Choose weekly delivery</h3><p class="mt-2 leading-relaxed text-v6-text-muted">Receive the intervention list before the meeting, then reopen the same weekly result later.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="bg-v6-bg px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+      <div class="mx-auto max-w-5xl">
+        <div class="mx-auto max-w-3xl text-center">
+          <p class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper">Native reporting and the proposed report</p>
+          <h2 class="mt-3 text-balance text-3xl font-bold text-v6-dark sm:text-4xl">HubSpot already helps identify stalled deals</h2>
+          <p class="mt-4 text-lg leading-relaxed text-v6-text-muted">HubSpot offers a native Stalled Deals view on eligible Sales Hub plans, plus No Activity Scheduled, Stale Close Date, recent activity, and time-in-stage reporting. This test must add a clearer recurring intervention workflow.</p>
+        </div>
+        <div class="mt-10 grid gap-6 md:grid-cols-2">
+          <article class="rounded-2xl border border-v6-border bg-white p-6 sm:p-8">
+            <h3 class="text-xl font-bold text-v6-dark">What HubSpot can already report</h3>
+            <ul class="mt-4 space-y-3 text-v6-text-muted">
+              <li>A Stalled Deals view based on longer-than-average stage duration for the same owner.</li>
+              <li>Views for recent activity, no scheduled activity, and stale close dates.</li>
+              <li>Sales analytics including time spent in deal stages on eligible plans.</li>
+            </ul>
+          </article>
+          <article class="rounded-2xl border border-v6-border bg-white p-6 sm:p-8">
+            <h3 class="text-xl font-bold text-v6-dark">What this B1 test adds</h3>
+            <ul class="mt-4 space-y-3 text-v6-text-muted">
+              <li>Newly stalled, still stalled, and recovered states in one weekly result.</li>
+              <li>A visible reason, next action, owner, stage age, and value on every priority row.</li>
+              <li>An optional renewal-only scope and a rule for meaningful activity that the team can inspect.</li>
+            </ul>
+          </article>
+        </div>
+        <p class="mx-auto mt-8 max-w-3xl text-center leading-relaxed text-v6-text-muted">This is not a claim that HubSpot lacks stalled-deal detection. It tests whether a prepared, explainable weekly list makes the next intervention easier.</p>
+      </div>
+    </section>
+
+    <section class="bg-v6-dark px-4 py-16 text-white sm:px-6 sm:py-20 lg:px-8">
+      <div class="mx-auto grid max-w-5xl gap-10 lg:grid-cols-2 lg:items-center">
+        <div><p class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper-300">The intended wow moment</p><h2 class="mt-3 text-balance text-3xl font-bold sm:text-4xl">Open the report and know the next deal to act on.</h2></div>
+        <div class="space-y-4 text-white/75"><p class="leading-relaxed">The value is not another count of old deals. It is a trusted shortlist showing what became stalled, what stayed stalled, what recovered, and why.</p><p class="leading-relaxed">Sharmi still needs to validate the default thresholds, meaningful-activity rules, recovery logic, and action guidance before product work begins.</p></div>
+      </div>
+    </section>
+
+    <section class="px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+      <div class="mx-auto max-w-3xl">
+        <div class="text-center"><p class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper">Questions before you sign up</p><h2 class="mt-3 text-3xl font-bold text-v6-dark sm:text-4xl">What is decided, and what is still being validated</h2></div>
+        <div class="mt-10 divide-y divide-v6-border border-y border-v6-border">
+          {faqs.map((item) => (
+            <details class="group py-5"><summary class="flex min-h-11 cursor-pointer list-none items-center justify-between gap-5 rounded-md font-semibold text-v6-dark focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2"><span>{item.q}</span><span class="text-xl font-normal text-v6-copper transition-transform group-open:rotate-45" aria-hidden="true">+</span></summary><p class="max-w-2xl pb-1 pr-8 pt-3 leading-relaxed text-v6-text-muted">{item.a}</p></details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section id="report-signup" class="scroll-mt-8 bg-v6-bg px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+      <div class="mx-auto max-w-3xl rounded-3xl bg-v6-copper px-6 py-10 text-center text-white shadow-lg shadow-v6-copper/20 sm:px-10 sm:py-12">
+        <p class="text-sm font-semibold uppercase tracking-[0.16em] text-white/75">Free beta signup</p>
+        <h2 class="mt-3 text-balance text-3xl font-bold sm:text-4xl">Create your free stale deals report</h2>
+        <p class="mx-auto mt-4 max-w-2xl text-lg leading-relaxed text-white/85">Enter your work email to start report setup. We will save the request before checking whether setup is available.</p>
+        <ReportSignup
+          offerCode="b1_stale_deals"
+          reportName="HubSpot stale deals report"
+          sourcePage="hubspot-stale-deals-report"
+          ctaLabel="b1_report_signup"
+        />
+        <p class="mt-5 text-sm text-white/70">No card. This page does not connect to or access your HubSpot account.</p>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
