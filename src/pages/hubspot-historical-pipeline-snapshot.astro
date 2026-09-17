@@ -1,0 +1,265 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/astro/Footer.astro";
+import LogoHoneycomb from "../components/astro/LogoHoneycomb.astro";
+import ClientLogoStrip from "../components/astro/ClientLogoStrip.astro";
+import ReportSignup from "../components/astro/ReportSignup.astro";
+
+// EARLY ACCESS page for an A3 report app that is not built yet.
+// Keep the sample label visible until Sharmi validates the report definition and a
+// prototype proves it against permitted HubSpot test data.
+const title = "HubSpot Historical Pipeline Snapshot Report | Free Beta Signup";
+const description = "Save a dated HubSpot pipeline snapshot that later edits do not rewrite, then reopen it as a trustworthy baseline for comparison.";
+
+const snapshotRows = [
+  { deal: "Briar Health expansion", owner: "Priya Shah", stage: "Discovery", amount: "$145k", closeDate: "Oct 18" },
+  { deal: "Acme Platform renewal", owner: "Maya Chen", stage: "Contract sent", amount: "$120k", closeDate: "Sep 30" },
+  { deal: "Northstar expansion", owner: "Liam Ross", stage: "Decision", amount: "$75k", closeDate: "Oct 7" },
+  { deal: "Quarry Systems rollout", owner: "Elena Park", stage: "Solution review", amount: "$90k", closeDate: "Nov 4" },
+];
+
+const faqs = [
+  {
+    q: "How do I create a historical pipeline snapshot in HubSpot?",
+    a: "HubSpot provides Historical snapshots, Deal change history, Deal pipeline waterfall, and scheduled report emails on eligible plans. The planned SWOTBee report tests whether one explicitly dated, reopenable artifact with visible deal scope is easier to trust and use later.",
+  },
+  {
+    q: "Is the historical pipeline snapshot available today?",
+    a: "Not yet. This page shows an illustrative sample based on customer-panel research. We are validating the exact report with Sharmi before building the app.",
+  },
+  {
+    q: "Will it edit our HubSpot records?",
+    a: "The planned report is read-only and should not edit deal data. The exact permissions will be published before anyone connects a portal.",
+  },
+  {
+    q: "Does a scheduled HubSpot email preserve the pipeline at send time?",
+    a: "A scheduled email can deliver a report, but an emailed live report may show updated data when opened. HubSpot also offers native historical reporting. We are validating a narrower result: a saved artifact with an exact cutoff, visible scope, and deal rows that later edits do not rewrite.",
+  },
+  {
+    q: "What does the beta signup cost?",
+    a: "The beta signup is free and does not require a card. This website flow collects your work email but does not connect to your HubSpot account. Pricing for any later product has not been decided.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: { "@type": "Answer", text: item.a },
+  })),
+};
+---
+
+<Layout
+  title={title}
+  description={description}
+  keywords="hubspot weekly pipeline snapshot, hubspot snapshot report, hubspot historical pipeline report, hubspot pipeline snapshot, hubspot historical reporting"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
+
+  <header class="border-b border-v6-border bg-white">
+    <div class="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
+      <a href="/" class="flex min-h-11 items-center gap-2 rounded-md focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2" aria-label="SWOTbee home">
+        <LogoHoneycomb width={32} height={30} />
+        <span class="text-lg font-bold text-v6-dark">SWOT<span class="text-v6-teal-700">bee</span></span>
+      </a>
+      <a href="#report-signup" data-ga-cta="a3_header_signup" class="inline-flex min-h-11 items-center justify-center rounded-lg border border-v6-copper px-4 py-2 text-sm font-semibold text-v6-copper transition-colors hover:bg-v6-copper-50 focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2">
+        Sign up free
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <section class="overflow-hidden bg-gradient-to-b from-v6-bg to-white px-4 pb-16 pt-14 sm:px-6 sm:pb-20 sm:pt-20 lg:px-8">
+      <div class="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-[0.92fr_1.08fr]">
+        <div>
+          <span class="mb-5 inline-flex rounded-full bg-v6-copper-50 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-v6-copper-700">Free beta, report preview</span>
+          <h1 class="max-w-3xl text-balance text-4xl font-bold leading-[1.08] text-v6-dark sm:text-5xl lg:text-[3.45rem]">HubSpot Historical Pipeline Snapshot: Keep a Trustworthy Dated Record</h1>
+          <p class="mt-6 max-w-2xl text-lg leading-relaxed text-v6-text-muted">Save the pipeline exactly as it stood at a named cutoff. Reopen the same deal, stage, owner, amount, and close-date state later, even after HubSpot records change.</p>
+          <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+            <a href="#sample-report" data-ga-cta="a3_hero_view_sample" class="inline-flex min-h-12 items-center justify-center rounded-xl bg-v6-copper px-7 py-3.5 text-base font-semibold text-white transition-colors hover:bg-v6-copper-600 focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2">View the sample report</a>
+            <a href="#report-signup" data-ga-cta="a3_hero_signup" class="inline-flex min-h-12 items-center justify-center rounded-xl border border-v6-border bg-white px-7 py-3.5 text-base font-semibold text-v6-dark transition-colors hover:border-v6-copper hover:bg-v6-copper-50 focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2">Sign up free to generate this report</a>
+          </div>
+          <p class="mt-4 max-w-xl text-sm leading-relaxed text-v6-text-muted">Free beta signup. No card required. We will ask for your work email before report setup. This website flow does not connect to HubSpot.</p>
+        </div>
+
+        <div class="relative" aria-label="Illustrative historical HubSpot pipeline snapshot summary">
+          <div class="absolute -inset-6 -z-10 rounded-full bg-v6-teal-100/70 blur-3xl"></div>
+          <div class="overflow-hidden rounded-2xl border border-v6-border bg-white shadow-xl shadow-v6-dark/10">
+            <div class="flex items-center justify-between border-b border-v6-border px-5 py-4">
+              <div><p class="text-xs font-semibold uppercase tracking-[0.14em] text-v6-copper">Illustrative sample</p><p class="mt-1 font-semibold text-v6-dark">New Business Pipeline</p></div>
+              <span class="rounded-full bg-v6-teal-50 px-3 py-1 text-xs font-semibold text-v6-teal-800">Frozen</span>
+            </div>
+            <div class="grid grid-cols-3 border-b border-v6-border">
+              <div class="p-4 sm:p-5"><p class="text-xs text-v6-text-muted">Cutoff</p><p class="mt-1 text-base font-bold text-v6-dark sm:text-lg">Sep 4, 5 PM</p></div>
+              <div class="border-x border-v6-border bg-v6-copper-50 p-4 sm:p-5"><p class="text-xs text-v6-copper-800">Open pipeline</p><p class="mt-1 text-lg font-bold text-v6-copper-800 sm:text-xl">$1.24m</p></div>
+              <div class="p-4 sm:p-5"><p class="text-xs text-v6-text-muted">Deals</p><p class="mt-1 text-lg font-bold text-v6-dark sm:text-xl">34</p></div>
+            </div>
+            <div class="space-y-3 p-5 text-sm">
+              <div class="flex items-center justify-between gap-4"><span class="text-v6-text-muted">Discovery</span><span class="font-semibold text-v6-teal-800">12 deals · $420k</span></div>
+              <div class="flex items-center justify-between gap-4"><span class="text-v6-text-muted">Solution review</span><span class="font-semibold text-v6-teal-800">9 deals · $365k</span></div>
+              <div class="flex items-center justify-between gap-4"><span class="text-v6-text-muted">Contract sent and negotiation</span><span class="font-semibold text-v6-copper-800">13 deals · $455k</span></div>
+              <div class="flex items-center justify-between gap-4 border-t border-v6-border pt-3"><span class="font-semibold text-v6-dark">Coverage</span><span class="font-bold text-v6-teal-800">Complete</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <ClientLogoStrip caption="HubSpot and revenue operations work trusted by teams at" />
+
+    <section class="px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+      <div class="mx-auto max-w-6xl">
+        <div class="mx-auto max-w-3xl text-center">
+          <p class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper">A dated state you can reopen</p>
+          <h2 class="mt-3 text-balance text-3xl font-bold text-v6-dark sm:text-4xl">What is a HubSpot historical pipeline snapshot?</h2>
+          <p class="mt-4 text-lg leading-relaxed text-v6-text-muted">A HubSpot pipeline snapshot is a fixed record of one pipeline at an exact cutoff. It preserves the deal count, value, stages, owners, amounts, and close dates that were available at that time.</p>
+          <p class="mt-4 leading-relaxed text-v6-text-muted">A weekly pipeline snapshot repeats that record on your review cadence. Each saved state can later become the baseline for a period comparison without pretending that storage alone explains what changed.</p>
+        </div>
+
+        <div class="mx-auto mt-16 max-w-3xl border-t border-v6-border pt-16 text-center sm:mt-20 sm:pt-20">
+          <p class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper">The review problem</p>
+          <h2 class="mt-3 text-balance text-3xl font-bold text-v6-dark sm:text-4xl">A live report can change after the moment you meant to preserve.</h2>
+          <p class="mt-4 text-lg leading-relaxed text-v6-text-muted">The record needs an exact cutoff, clear scope, and deal-level detail. Later comparison depends on trusting that the first state has not moved.</p>
+        </div>
+        <div class="mt-10 grid gap-5 md:grid-cols-3">
+          <article class="rounded-2xl border border-v6-border bg-white p-6"><span class="flex h-10 w-10 items-center justify-center rounded-full bg-v6-copper-50 text-sm font-bold text-v6-copper-800">1</span><h3 class="mt-4 text-xl font-bold text-v6-dark">The cutoff is easy to lose</h3><p class="mt-2 leading-relaxed text-v6-text-muted">A dashboard answers what is true now. It may not preserve exactly what the team saw at last Friday&apos;s review.</p></article>
+          <article class="rounded-2xl border border-v6-border bg-white p-6"><span class="flex h-10 w-10 items-center justify-center rounded-full bg-v6-copper-50 text-sm font-bold text-v6-copper-800">2</span><h3 class="mt-4 text-xl font-bold text-v6-dark">Later edits rewrite the context</h3><p class="mt-2 leading-relaxed text-v6-text-muted">Amounts, stages, close dates, and owners keep changing. A past report can become ambiguous unless its state is preserved.</p></article>
+          <article class="rounded-2xl border border-v6-border bg-white p-6"><span class="flex h-10 w-10 items-center justify-center rounded-full bg-v6-copper-50 text-sm font-bold text-v6-copper-800">3</span><h3 class="mt-4 text-xl font-bold text-v6-dark">An archive can still be too vague</h3><p class="mt-2 leading-relaxed text-v6-text-muted">A screenshot or total without timezone, scope, coverage, and named deals is difficult to trust or compare later.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="sample-report" class="scroll-mt-8 bg-v6-bg px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+      <div class="mx-auto max-w-6xl">
+        <div class="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
+          <div class="max-w-3xl">
+            <div class="flex flex-wrap items-center gap-3"><p class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper">Planned first screen</p><span class="rounded-full border border-v6-copper-200 bg-v6-copper-50 px-2.5 py-1 text-xs font-semibold text-v6-copper-800">Illustrative sample, not live data</span></div>
+            <h2 class="mt-3 text-balance text-3xl font-bold text-v6-dark sm:text-4xl">One dated artifact, from the total to the deal rows</h2>
+            <p class="mt-4 text-lg leading-relaxed text-v6-text-muted">The final fields and calculations will be validated with Sharmi before the app is built. This sample shows the preserved state the panel expected from the word snapshot. It does not claim to explain movement by itself.</p>
+          </div>
+          <a href="#report-signup" data-ga-cta="a3_sample_signup" class="inline-flex min-h-11 items-center justify-center self-start rounded-xl border border-v6-copper px-5 py-3 text-sm font-semibold text-v6-copper transition-colors hover:bg-v6-copper-50 focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2 lg:self-auto">Sign up for this report</a>
+        </div>
+
+        <div class="mt-10 overflow-hidden rounded-2xl border border-v6-border bg-white shadow-sm">
+          <div class="flex flex-col gap-4 border-b border-v6-border px-5 py-5 sm:flex-row sm:items-center sm:justify-between sm:px-7">
+            <div><p class="text-xs font-semibold uppercase tracking-[0.14em] text-v6-text-muted">New Business Pipeline</p><h3 class="mt-1 text-xl font-bold text-v6-dark">Historical pipeline snapshot</h3><p class="mt-1 text-sm text-v6-text-muted">Cutoff: Friday Sep 4, 5:00 PM, portal timezone · Calculated 5:07 PM</p></div>
+            <div class="flex items-center gap-2"><span class="rounded-full bg-v6-teal-50 px-3 py-1.5 text-xs font-semibold text-v6-teal-800">Snapshot frozen</span><span class="rounded-full bg-v6-blue-50 px-3 py-1.5 text-xs font-semibold text-v6-blue-800">Sample</span></div>
+          </div>
+
+          <div class="grid gap-px bg-v6-border sm:grid-cols-2 lg:grid-cols-4">
+            <div class="bg-white p-5 sm:p-6"><p class="text-sm text-v6-text-muted">Open pipeline</p><p class="mt-2 text-2xl font-bold text-v6-dark">$1,240,000</p></div>
+            <div class="bg-white p-5 sm:p-6"><p class="text-sm text-v6-text-muted">Open deals</p><p class="mt-2 text-2xl font-bold text-v6-dark">34</p></div>
+            <div class="bg-v6-copper-50 p-5 sm:p-6"><p class="text-sm text-v6-copper-800">Exact cutoff</p><p class="mt-2 text-xl font-bold text-v6-copper-800">Sep 4, 5 PM</p></div>
+            <div class="bg-v6-teal-50 p-5 sm:p-6"><p class="text-sm text-v6-teal-800">Coverage</p><p class="mt-2 text-2xl font-bold text-v6-teal-800">Complete</p></div>
+          </div>
+
+          <div class="grid gap-8 p-5 sm:p-7 lg:grid-cols-[0.62fr_1.38fr]">
+            <div>
+              <h4 class="text-base font-bold text-v6-dark">Pipeline by stage</h4>
+              <div class="mt-5 space-y-4">
+                <div><div class="flex justify-between gap-3 text-sm"><span class="text-v6-text-muted">Discovery</span><span class="font-semibold text-v6-dark">12 deals · $420k</span></div><div class="mt-2 h-2 rounded-full bg-v6-bg"><div class="h-full w-[70%] rounded-full bg-v6-teal"></div></div></div>
+                <div><div class="flex justify-between gap-3 text-sm"><span class="text-v6-text-muted">Solution review</span><span class="font-semibold text-v6-dark">9 deals · $365k</span></div><div class="mt-2 h-2 rounded-full bg-v6-bg"><div class="h-full w-[61%] rounded-full bg-v6-blue-400"></div></div></div>
+                <div><div class="flex justify-between gap-3 text-sm"><span class="text-v6-text-muted">Contract sent</span><span class="font-semibold text-v6-dark">7 deals · $310k</span></div><div class="mt-2 h-2 rounded-full bg-v6-bg"><div class="h-full w-[52%] rounded-full bg-v6-copper"></div></div></div>
+                <div><div class="flex justify-between gap-3 text-sm"><span class="text-v6-text-muted">Negotiation</span><span class="font-semibold text-v6-dark">6 deals · $145k</span></div><div class="mt-2 h-2 rounded-full bg-v6-bg"><div class="h-full w-[25%] rounded-full bg-v6-copper-300"></div></div></div>
+              </div>
+              <p class="mt-5 rounded-xl bg-v6-bg-warm p-4 text-sm leading-relaxed text-v6-text-muted">Snapshot ID HS-2026-09-04-1700. Later HubSpot edits do not rewrite this planned artifact.</p>
+            </div>
+
+            <div>
+              <div class="flex items-center justify-between gap-4"><h4 class="text-base font-bold text-v6-dark">Deals in this saved state</h4><span class="text-xs text-v6-text-muted">Illustrative rows</span></div>
+              <div class="mt-4 hidden overflow-x-auto rounded-xl border border-v6-border md:block">
+                <table class="w-full min-w-[620px] border-collapse text-left text-sm">
+                  <thead class="bg-v6-bg text-xs uppercase tracking-wide text-v6-text-muted"><tr><th class="px-4 py-3 font-semibold">Deal and owner</th><th class="px-4 py-3 font-semibold">Stage</th><th class="px-4 py-3 font-semibold">Close date</th><th class="px-4 py-3 text-right font-semibold">Amount</th></tr></thead>
+                  <tbody class="divide-y divide-v6-border">
+                    {snapshotRows.map((row) => (
+                      <tr><td class="px-4 py-3"><p class="font-semibold text-v6-dark">{row.deal}</p><p class="mt-0.5 text-xs text-v6-text-muted">{row.owner}</p></td><td class="px-4 py-3 text-v6-text-muted">{row.stage}</td><td class="px-4 py-3 text-v6-text-muted">{row.closeDate}</td><td class="px-4 py-3 text-right font-semibold text-v6-dark">{row.amount}</td></tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <div class="mt-4 space-y-3 md:hidden">
+                {snapshotRows.map((row) => (
+                  <article class="rounded-xl border border-v6-border p-4"><div class="flex items-start justify-between gap-4"><div><h5 class="font-semibold text-v6-dark">{row.deal}</h5><p class="mt-0.5 text-xs text-v6-text-muted">Owner: {row.owner}</p></div><span class="text-sm font-bold text-v6-dark">{row.amount}</span></div><p class="mt-3 text-sm text-v6-text-muted">{row.stage} · closes {row.closeDate}</p></article>
+                ))}
+              </div>
+              <div class="mt-5 rounded-xl border border-dashed border-v6-copper-300 bg-v6-copper-50 p-4"><p class="font-semibold text-v6-dark">Later: compare this snapshot with another date</p><p class="mt-1 text-sm text-v6-text-muted">Comparison is the next value layer. This snapshot remains the fixed baseline.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+      <div class="mx-auto max-w-5xl">
+        <div class="mx-auto max-w-3xl text-center"><p class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper">Planned app setup</p><h2 class="mt-3 text-balance text-3xl font-bold text-v6-dark sm:text-4xl">Three choices when report setup becomes available</h2><p class="mt-4 text-lg leading-relaxed text-v6-text-muted">The website signup below does not connect to HubSpot. In the planned app, choose the pipeline, exact cutoff, and weekly delivery timing.</p></div>
+        <ol class="mt-10 grid gap-6 md:grid-cols-3">
+          <li class="rounded-2xl border border-v6-border bg-white p-6"><span class="text-sm font-bold text-v6-copper">01</span><h3 class="mt-3 text-xl font-bold text-v6-dark">Choose a pipeline</h3><p class="mt-2 leading-relaxed text-v6-text-muted">Select the sales pipeline you review. The report should not mix unrelated pipelines without saying so.</p></li>
+          <li class="rounded-2xl border border-v6-border bg-white p-6"><span class="text-sm font-bold text-v6-copper">02</span><h3 class="mt-3 text-xl font-bold text-v6-dark">Choose the snapshot cutoff</h3><p class="mt-2 leading-relaxed text-v6-text-muted">Set the day and time in the portal timezone. The exact cutoff remains visible on the saved artifact.</p></li>
+          <li class="rounded-2xl border border-v6-border bg-white p-6"><span class="text-sm font-bold text-v6-copper">03</span><h3 class="mt-3 text-xl font-bold text-v6-dark">Choose the delivery time</h3><p class="mt-2 leading-relaxed text-v6-text-muted">Receive the dated snapshot before the review and reopen the same preserved state later.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="bg-v6-bg px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+      <div class="mx-auto max-w-5xl">
+        <div class="mx-auto max-w-3xl text-center">
+          <p class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper">Native reporting and the proposed report</p>
+          <h2 class="mt-3 text-balance text-3xl font-bold text-v6-dark sm:text-4xl">How HubSpot historical pipeline reporting compares with this snapshot test</h2>
+          <p class="mt-4 text-lg leading-relaxed text-v6-text-muted">HubSpot Sales Hub already includes native historical and change reporting on eligible plans. This test must earn its place through a clearer saved artifact, not by claiming those capabilities do not exist.</p>
+        </div>
+        <div class="mt-10 grid gap-6 md:grid-cols-2">
+          <article class="rounded-2xl border border-v6-border bg-white p-6 sm:p-8">
+            <h3 class="text-xl font-bold text-v6-dark">What HubSpot can already report</h3>
+            <ul class="mt-4 space-y-3 text-v6-text-muted">
+              <li>Deal change history for stage, amount, close-date, and new-deal updates.</li>
+              <li>Deal pipeline waterfall categories across a selected time period.</li>
+              <li>Historical snapshots and recurring sales report or dashboard emails on eligible plans.</li>
+            </ul>
+          </article>
+          <article class="rounded-2xl border border-v6-border bg-white p-6 sm:p-8">
+            <h3 class="text-xl font-bold text-v6-dark">What this A3 test adds</h3>
+            <ul class="mt-4 space-y-3 text-v6-text-muted">
+              <li>One exact cutoff with timezone, calculation time, scope, and coverage.</li>
+              <li>Deal count and value by stage and owner, plus the named deal rows in that state.</li>
+              <li>A reopenable baseline that later HubSpot edits do not rewrite and that can support later comparison.</li>
+            </ul>
+          </article>
+        </div>
+        <p class="mx-auto mt-8 max-w-3xl text-center leading-relaxed text-v6-text-muted">This is not a claim that HubSpot lacks historical reports. It tests whether a clearly dated, deal-level snapshot is easier to retrieve, trust, and reuse than the native workflow.</p>
+      </div>
+    </section>
+
+    <section class="bg-v6-dark px-4 py-16 text-white sm:px-6 sm:py-20 lg:px-8">
+      <div class="mx-auto grid max-w-5xl gap-10 lg:grid-cols-2 lg:items-center">
+        <div><p class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper-300">A complement to native reporting</p><h2 class="mt-3 text-balance text-3xl font-bold sm:text-4xl">HubSpot has historical reports. The planned difference is an explicit preserved artifact.</h2></div>
+        <div class="space-y-4 text-white/75"><p class="leading-relaxed">HubSpot already offers deal change history, pipeline waterfall reports, historical snapshots, and recurring report emails on eligible plans.</p><p class="leading-relaxed">The question is narrower: will users value one clearly dated record with visible scope and named deals enough to save it, reopen it, and compare it later?</p></div>
+      </div>
+    </section>
+
+    <section class="px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+      <div class="mx-auto max-w-3xl">
+        <div class="text-center"><p class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper">Questions before you sign up</p><h2 class="mt-3 text-3xl font-bold text-v6-dark sm:text-4xl">What is decided, and what is still being validated</h2></div>
+        <div class="mt-10 divide-y divide-v6-border border-y border-v6-border">
+          {faqs.map((item) => (
+            <details class="group py-5"><summary class="flex min-h-11 cursor-pointer list-none items-center justify-between gap-5 rounded-md font-semibold text-v6-dark focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2"><span>{item.q}</span><span class="text-xl font-normal text-v6-copper transition-transform group-open:rotate-45" aria-hidden="true">+</span></summary><p class="max-w-2xl pb-1 pr-8 pt-3 leading-relaxed text-v6-text-muted">{item.a}</p></details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section id="report-signup" class="scroll-mt-8 bg-v6-bg px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+      <div class="mx-auto max-w-3xl rounded-3xl bg-v6-copper px-6 py-10 text-center text-white shadow-lg shadow-v6-copper/20 sm:px-10 sm:py-12">
+        <p class="text-sm font-semibold uppercase tracking-[0.16em] text-white/75">Free beta signup</p>
+        <h2 class="mt-3 text-balance text-3xl font-bold sm:text-4xl">Create your free historical pipeline snapshot</h2>
+        <p class="mx-auto mt-4 max-w-2xl text-lg leading-relaxed text-white/85">Enter your work email to begin report setup. No card is required, and this website step does not connect to HubSpot.</p>
+        <ReportSignup offerCode="a3_historical_snapshot" reportName="HubSpot historical pipeline snapshot" sourcePage="hubspot-historical-pipeline-snapshot" ctaLabel="a3_report_signup" />
+        <p class="mt-5 text-sm text-white/75">Your email is used for this report request and related service communication.</p>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
