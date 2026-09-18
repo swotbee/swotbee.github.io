@@ -6,9 +6,22 @@ interface Props {
   reportName: string;
   sourcePage: string;
   ctaLabel: string;
+  emailHelp?: string;
+  buttonLabel?: string;
+  loadingLabel?: string;
+  loadingMessage?: string;
 }
 
-const { offerCode, reportName, sourcePage, ctaLabel } = Astro.props;
+const {
+  offerCode,
+  reportName,
+  sourcePage,
+  ctaLabel,
+  emailHelp = "Use the work email you want associated with your SWOTBee app account.",
+  buttonLabel = "Continue",
+  loadingLabel = "Creating your app account...",
+  loadingMessage = "Saving your email and preparing your app account.",
+} = Astro.props;
 
 // This first website-only experiment deliberately reuses the proven contact-form
 // delivery path. The message field keeps the report identity durable even before a
@@ -44,6 +57,8 @@ const message = `Website report signup: ${reportName} (${offerCode}). Experiment
     data-source-page={sourcePage}
     data-cta-label={ctaLabel}
     data-experiment={EXPERIMENT}
+    data-loading-label={loadingLabel}
+    data-loading-message={loadingMessage}
     novalidate
   >
     <div class="absolute -left-[9999px] h-px w-px overflow-hidden" aria-hidden="true">
@@ -84,21 +99,21 @@ const message = `Website report signup: ${reportName} (${offerCode}). Experiment
         placeholder="you@company.com"
       />
       <p id={`${formId}-email-help`} class="mt-2 text-sm leading-relaxed text-v6-text-muted">
-        Use the address where you want to receive an update about this report.
+        {emailHelp}
       </p>
     </div>
 
     <p class="mt-5 text-xs leading-relaxed text-v6-text-muted">
       By continuing, you agree to the <a href="/terms/" class="font-semibold text-v6-copper-800 underline decoration-v6-copper-300 underline-offset-2 hover:text-v6-copper-900 focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2">Terms</a>
       and acknowledge the <a href="/privacy/" class="font-semibold text-v6-copper-800 underline decoration-v6-copper-300 underline-offset-2 hover:text-v6-copper-900 focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2">Privacy Policy</a>.
-      We will use this email to handle this report request and related service communication.
+      We will use this email to handle your app signup and related service communication.
     </p>
 
     <button
       type="submit"
       class="mt-6 inline-flex min-h-12 w-full items-center justify-center rounded-xl bg-v6-copper px-7 py-3.5 text-base font-semibold text-white transition-colors hover:bg-v6-copper-600 focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2 disabled:cursor-wait disabled:opacity-70"
     >
-      Continue
+      {buttonLabel}
     </button>
 
     <p id={statusId} role="status" aria-live="polite" class="mt-4 min-h-5 text-sm leading-relaxed"></p>
@@ -106,25 +121,21 @@ const message = `Website report signup: ${reportName} (${offerCode}). Experiment
 
   <div
     id={terminalId}
-    class="hidden rounded-2xl border border-v6-amber-300 bg-white p-6 text-v6-dark shadow-xl shadow-v6-dark/15 sm:p-8"
-    role="alert"
+    class="hidden rounded-2xl border border-v6-teal-300 bg-white p-6 text-v6-dark shadow-xl shadow-v6-dark/15 sm:p-8"
+    role="status"
+    aria-live="polite"
     aria-labelledby={terminalTitleId}
   >
-    <div class="flex h-12 w-12 items-center justify-center rounded-full bg-v6-amber-50 text-v6-amber-800" aria-hidden="true">
+    <div class="flex h-12 w-12 items-center justify-center rounded-full bg-v6-teal-50 text-v6-teal-800" aria-hidden="true">
       <svg viewBox="0 0 24 24" class="h-7 w-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M12 9v4"></path>
-        <path d="M12 17h.01"></path>
-        <path d="M10.3 3.6 2.4 17.3A2 2 0 0 0 4.1 20h15.8a2 2 0 0 0 1.7-2.7L13.7 3.6a2 2 0 0 0-3.4 0Z"></path>
+        <path d="m5 12 4 4L19 6"></path>
       </svg>
     </div>
     <h3 id={terminalTitleId} tabindex="-1" class="mt-5 text-2xl font-bold text-v6-dark">
-      We could not finish setting up your report
+      Your app signup is saved
     </h3>
     <p class="mt-3 leading-relaxed text-v6-text-muted">
-      Your email was saved, but report setup is not available right now. No HubSpot account was connected and no HubSpot data was accessed. We will email you when we can complete the setup.
-    </p>
-    <p class="mt-4 rounded-lg bg-v6-bg px-3 py-2 font-mono text-xs text-v6-text-muted">
-      Error code: REPORT_SETUP_UNAVAILABLE
+      Your work email was saved for the SWOTBee app. No HubSpot account was connected and no HubSpot data was accessed during signup.
     </p>
     <div class="mt-6 flex flex-col gap-3 sm:flex-row">
       <a href="#sample-report" class="inline-flex min-h-11 items-center justify-center rounded-xl border border-v6-border px-5 py-3 text-sm font-semibold text-v6-dark transition-colors hover:border-v6-copper hover:bg-v6-copper-50 focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2">
@@ -151,6 +162,8 @@ const message = `Website report signup: ${reportName} (${offerCode}). Experiment
       var sourcePage = form.getAttribute("data-source-page") || window.location.pathname;
       var ctaLabel = form.getAttribute("data-cta-label") || "report_signup";
       var experiment = form.getAttribute("data-experiment") || "website_report_signup_v1";
+      var loadingLabel = form.getAttribute("data-loading-label") || "Creating your app account...";
+      var loadingMessage = form.getAttribute("data-loading-message") || "Saving your email and preparing your app account.";
       var started = false;
 
       function track(name, extra) {
@@ -206,7 +219,7 @@ const message = `Website report signup: ${reportName} (${offerCode}). Experiment
         if (heading) heading.focus({ preventScroll: true });
         var reducedMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
         terminal.scrollIntoView({ behavior: reducedMotion ? "auto" : "smooth", block: "center" });
-        track("report_setup_error_shown", { error_code: "REPORT_SETUP_UNAVAILABLE" });
+        track("report_signup_saved");
       }
 
       form.addEventListener("focusin", function () {
@@ -236,8 +249,8 @@ const message = `Website report signup: ${reportName} (${offerCode}). Experiment
 
         var originalLabel = button.textContent;
         button.disabled = true;
-        button.textContent = "Creating your report workspace...";
-        setStatus("Saving your email and preparing report setup.", "loading");
+        button.textContent = loadingLabel;
+        setStatus(loadingMessage, "loading");
         track("report_signup_submit");
 
         var action = form.getAttribute("data-recaptcha-action") || "report_signup";

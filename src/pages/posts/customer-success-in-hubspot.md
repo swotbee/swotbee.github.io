@@ -104,7 +104,7 @@ Service Hub includes NPS, CSAT, and customer effort surveys that capture custome
 
 ### Tickets, knowledge base, and support signals
 
-Support volume is one of the strongest churn predictors you own. Because tickets live in the same system as deals and companies, "3 escalated tickets in 30 days" can directly feed a health score or trigger an alert with no integration required.
+Support volume is one of the strongest churn predictors you own. Because tickets live in the same system as deals and companies, "3 escalated tickets in 30 days" can directly feed a health score or trigger an alert with no integration required. A recurring [HubSpot Service Hub performance report](/hubspot-service-hub-performance-report/) brings ticket workload, SLA results, historical snapshots, and named exceptions into the same weekly or monthly management review.
 
 ### Deal pipelines and workflows: the renewal engine
 

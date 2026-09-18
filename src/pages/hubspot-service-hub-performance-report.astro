@@ -1,0 +1,305 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/astro/Footer.astro";
+import LogoHoneycomb from "../components/astro/LogoHoneycomb.astro";
+import ClientLogoStrip from "../components/astro/ClientLogoStrip.astro";
+import ReportSignup from "../components/astro/ReportSignup.astro";
+import ReportBenefitCards from "../components/astro/ReportBenefitCards.astro";
+import ReportRelatedLinks from "../components/astro/ReportRelatedLinks.astro";
+
+const title = "Recurring HubSpot Service Hub Analytics Report";
+const description = "Turn HubSpot Service Hub analytics into a weekly or monthly performance report with ticket snapshots, editable Excel output, and PowerPoint preparation.";
+
+const exceptionRows = [
+  { ticket: "Billing access blocked", company: "Acme Platform", owner: "Maya Chen", channel: "Email", waiting: "6h 42m", status: "Breached", reason: "First response SLA overdue by 1h 42m", action: "Reassign and reply now" },
+  { ticket: "API export timing out", company: "Northstar Labs", owner: "Liam Ross", channel: "Chat", waiting: "2h 18m", status: "Due soon", reason: "42 minutes remain before the next-response SLA", action: "Confirm engineering update" },
+  { ticket: "Renewal user provisioning", company: "Quarry Systems", owner: "Elena Park", channel: "Form", waiting: "18h 05m", status: "Waiting on us", reason: "Customer supplied the requested details yesterday", action: "Complete provisioning review" },
+];
+
+const benefits = [
+  { title: "See workload before it becomes a backlog", description: "Review open tickets, tickets created and closed, and the queues or owners where work is accumulating.", icon: "owners", tone: "copper" },
+  { title: "Measure response and resolution speed", description: "Keep first response, customer wait time, and time to close visible with the calculation basis clearly labelled.", icon: "clock", tone: "blue" },
+  { title: "Find SLA exceptions requiring action", description: "Separate on-track, due-soon, breached, and SLA-not-configured tickets instead of hiding missing data inside an average.", icon: "warning", tone: "amber" },
+  { title: "Prepare the weekly service review", description: "Bring ticket volume, response time, satisfaction, owners, and exceptions into one repeatable operating view.", icon: "present", tone: "teal" },
+  { title: "Review service before a customer renewal", description: "Inspect cases resolved, response and close time, open issues, and satisfaction for a selected company when associations are complete.", icon: "conversation", tone: "copper" },
+  { title: "Act from the named evidence", description: "Move from aggregate metrics to the tickets, companies, channels, and owners behind the result, with a practical next action.", icon: "inspect", tone: "blue" },
+] as const;
+
+const faqs = [
+  { q: "What does the Service Hub performance report include?", a: "The report combines ticket backlog and flow, first response and close time, SLA performance, customer satisfaction, and a named exception list. Missing SLA, satisfaction, history, or association data remains visibly unavailable rather than becoming a zero." },
+  { q: "Can HubSpot already schedule and export service reports?", a: "Yes. HubSpot supports recurring report and dashboard emails plus CSV, XLS, and XLSX attachments for eligible report types. The SWOTBee value is a reusable management pack with governed definitions, editable workbook and presentation outputs, selected highlights, and stored snapshots from the point collection begins." },
+  { q: "Which HubSpot portals are eligible?", a: "Ticket workload and timing depend on the ticket properties available in the portal. SLA sections require eligible Service Hub and Help Desk configuration with populated SLA properties. Customer satisfaction and account sections require eligible survey responses and ticket associations." },
+  { q: "Does the report use calendar hours or business hours?", a: "The time basis must remain explicit. When stored HubSpot SLA-hour properties are available, the report can use them. Otherwise, it must label calendar-time calculations and must not present them as SLA-hour results." },
+  { q: "How do weekly or monthly ticket snapshots work?", a: "After setup, the workflow stores a dated weekly or monthly snapshot so later reports can compare the backlog and service position at each cutoff. It cannot recreate a past snapshot that HubSpot data does not support and SWOTBee did not previously capture." },
+  { q: "What do the Excel and PowerPoint outputs contain?", a: "The Excel workbook includes a summary, trends, exceptions, calculation notes, and supporting ticket rows. The PowerPoint output uses selected highlights and editable, evidence-linked talking points. Workbook edits do not change HubSpot records." },
+  { q: "Does AI write the management summary automatically?", a: "AI drafts highlights and talking points grounded in the selected metrics, period, and ticket evidence. Each statement links to its supporting evidence and remains a draft until a named report owner reviews, edits, and approves it." },
+  { q: "Will signing up connect my HubSpot account?", a: "No. Signing up uses your work email for the SWOTBee app. It does not connect to or access your HubSpot portal. HubSpot connection and read-only permissions are handled separately." },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: { "@type": "Answer", text: item.a },
+  })),
+};
+---
+
+<Layout
+  title={title}
+  description={description}
+  ogImage="/assets/home-images/service-hub-performance-report-og.png"
+  keywords="hubspot service hub performance report, hubspot customer service analytics report, hubspot ticket performance report, hubspot sla compliance report, hubspot ticket response time report, hubspot weekly ticket backlog report"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
+
+  <header class="border-b border-v6-border bg-white">
+    <div class="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
+      <a href="/" class="flex min-h-11 items-center gap-2 rounded-md focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2" aria-label="SWOTbee home">
+        <LogoHoneycomb width={32} height={30} />
+        <span class="text-lg font-bold text-v6-dark">SWOT<span class="text-v6-teal-700">bee</span></span>
+      </a>
+      <a href="#report-signup" data-ga-cta="service_report_header_signup" class="inline-flex min-h-11 items-center justify-center rounded-lg border border-v6-copper px-4 py-2 text-sm font-semibold text-v6-copper transition-colors hover:bg-v6-copper-50 focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2">
+        Sign up to the app
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <section class="overflow-hidden bg-gradient-to-b from-v6-bg to-white px-4 pb-16 pt-14 sm:px-6 sm:pb-20 sm:pt-20 lg:px-8">
+      <div class="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+        <div>
+          <span class="mb-5 inline-flex rounded-full bg-v6-copper-50 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-v6-copper-700">HubSpot Service Hub reporting</span>
+          <h1 class="max-w-3xl text-balance text-4xl font-bold leading-[1.08] text-v6-dark sm:text-5xl lg:text-[3.45rem]">A Repeatable HubSpot Service Hub Performance Report for Every Week or Month</h1>
+          <p class="mt-6 max-w-2xl text-lg leading-relaxed text-v6-text-muted">Turn HubSpot ticket data into the same weekly or monthly service review, with historical comparisons, the tickets behind every result, an editable Excel workbook, and management-ready PowerPoint slides.</p>
+          <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+            <a href="#sample-report" data-ga-cta="service_report_hero_sample" class="inline-flex min-h-12 items-center justify-center rounded-xl bg-v6-copper px-7 py-3.5 text-base font-semibold text-white transition-colors hover:bg-v6-copper-600 focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2">View the sample report</a>
+            <a href="#report-signup" data-ga-cta="service_report_hero_signup" class="inline-flex min-h-12 items-center justify-center rounded-xl border border-v6-border bg-white px-7 py-3.5 text-base font-semibold text-v6-dark transition-colors hover:border-v6-copper hover:bg-v6-copper-50 focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2">Sign up to the app</a>
+          </div>
+          <p class="mt-4 max-w-xl text-sm leading-relaxed text-v6-text-muted">Sign up to the SWOTBee app with your work email. No card is required.</p>
+        </div>
+
+        <div class="relative lg:pt-5" aria-label="Example weekly HubSpot Service Hub report with historical comparison and shareable outputs">
+          <div class="absolute -inset-6 -z-10 rounded-full bg-v6-teal-100/70 blur-3xl"></div>
+          <div class="overflow-hidden rounded-2xl border border-v6-border bg-white shadow-xl shadow-v6-dark/10">
+            <div class="flex items-center justify-between gap-4 border-b border-v6-border px-5 py-4">
+              <div><p class="text-xs font-semibold uppercase tracking-[0.14em] text-v6-copper">Weekly service review</p><p class="mt-1 font-semibold text-v6-dark">Week ending 31 August</p></div>
+              <span class="rounded-full bg-v6-blue-50 px-3 py-1 text-xs font-semibold text-v6-blue-800">Example data</span>
+            </div>
+            <div class="grid grid-cols-2 border-b border-v6-border sm:grid-cols-4">
+              <div class="border-b border-r border-v6-border p-4 sm:border-b-0 sm:p-5"><p class="text-xs text-v6-text-muted">Open backlog</p><p class="mt-1 text-xl font-bold text-v6-dark">42</p><p class="mt-1 text-xs font-semibold text-v6-teal-800">Down 8</p></div>
+              <div class="border-b border-v6-border p-4 sm:border-b-0 sm:border-r sm:p-5"><p class="text-xs text-v6-text-muted">Tickets closed</p><p class="mt-1 text-xl font-bold text-v6-dark">21</p><p class="mt-1 text-xs font-semibold text-v6-teal-800">Up 4</p></div>
+              <div class="border-r border-v6-border bg-v6-copper-50 p-4 sm:p-5"><p class="text-xs text-v6-copper-800">SLA compliance</p><p class="mt-1 text-xl font-bold text-v6-copper-800">87%</p><p class="mt-1 text-xs font-semibold text-v6-teal-800">Up 6 points</p></div>
+              <div class="p-4 sm:p-5"><p class="text-xs text-v6-text-muted">CSAT coverage</p><p class="mt-1 text-xl font-bold text-v6-dark">20 / 22</p><p class="mt-1 text-xs font-semibold text-v6-text-muted">91% positive</p></div>
+            </div>
+            <div class="grid gap-5 p-5 sm:grid-cols-[0.9fr_1.1fr]">
+              <div>
+                <p class="text-xs font-semibold uppercase tracking-[0.12em] text-v6-text-muted">Four-week backlog</p>
+                <div class="mt-4 flex h-24 items-end gap-3" aria-label="Backlog fell from 55 to 42 over four weekly snapshots">
+                  <div class="flex flex-1 flex-col items-center gap-1"><span class="text-[10px] font-semibold text-v6-text-muted">55</span><div class="h-16 w-full rounded-t bg-v6-blue-200"></div><span class="text-[10px] text-v6-text-muted">10 Aug</span></div>
+                  <div class="flex flex-1 flex-col items-center gap-1"><span class="text-[10px] font-semibold text-v6-text-muted">51</span><div class="h-14 w-full rounded-t bg-v6-blue-300"></div><span class="text-[10px] text-v6-text-muted">17 Aug</span></div>
+                  <div class="flex flex-1 flex-col items-center gap-1"><span class="text-[10px] font-semibold text-v6-text-muted">50</span><div class="h-12 w-full rounded-t bg-v6-blue-400"></div><span class="text-[10px] text-v6-text-muted">24 Aug</span></div>
+                  <div class="flex flex-1 flex-col items-center gap-1"><span class="text-[10px] font-semibold text-v6-dark">42</span><div class="h-9 w-full rounded-t bg-v6-teal"></div><span class="text-[10px] text-v6-text-muted">31 Aug</span></div>
+                </div>
+              </div>
+              <div class="rounded-xl bg-v6-bg-warm p-4">
+                <p class="text-xs font-semibold uppercase tracking-[0.12em] text-v6-copper-800">Management highlight</p>
+                <p class="mt-2 text-sm font-semibold leading-relaxed text-v6-dark">Backlog fell by 8 tickets and SLA improved by 6 points. Email Support still owns 3 of 4 breaches.</p>
+                <a href="#sample-report" class="mt-3 inline-flex min-h-11 items-center text-sm font-semibold text-v6-copper-800 underline decoration-v6-copper-300 underline-offset-4 focus:outline-none focus:ring-2 focus:ring-v6-copper">View the tickets requiring action</a>
+              </div>
+            </div>
+            <div class="grid grid-cols-3 border-t border-v6-border bg-v6-bg px-5 py-3 text-center text-xs font-semibold text-v6-text-muted"><span>Excel ready</span><span>PowerPoint ready</span><span>Summary reviewed</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <ClientLogoStrip caption="HubSpot and revenue operations work trusted by teams at" />
+
+    <section class="px-4 py-16 sm:px-6 sm:py-20 lg:px-8" aria-labelledby="repeatable-output-heading">
+      <div class="mx-auto max-w-6xl">
+        <div class="mx-auto max-w-3xl text-center">
+          <p class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper">Recurring management-report workflow</p>
+          <h2 id="repeatable-output-heading" class="mt-3 text-balance text-3xl font-bold text-v6-dark sm:text-4xl">Turn Service Hub analytics into the same customer service report every week or month.</h2>
+          <p class="mt-4 text-lg leading-relaxed text-v6-text-muted">Build a reusable customer service reporting workflow with versioned definitions and three connected deliverables: dated snapshots, an editable workbook, and an editable presentation.</p>
+        </div>
+        <div class="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+          <article class="rounded-2xl border border-v6-border bg-white p-6"><p class="text-xs font-semibold uppercase tracking-[0.14em] text-v6-copper">Prepared review</p><h3 class="mt-3 text-xl font-bold text-v6-dark">The same service measures</h3><p class="mt-3 leading-relaxed text-v6-text-muted">Version the source fields, filters, time basis, coverage rules, and definitions behind backlog, response and close time, resolution rate, SLA, satisfaction, and team performance.</p></article>
+          <article class="rounded-2xl border border-v6-border bg-white p-6"><p class="text-xs font-semibold uppercase tracking-[0.14em] text-v6-copper">Output</p><h3 class="mt-3 text-xl font-bold text-v6-dark">Editable Excel workbook</h3><p class="mt-3 leading-relaxed text-v6-text-muted">Inspect prepared summaries, trends, exceptions, formulas, and supporting ticket rows without changing HubSpot records.</p></article>
+          <article class="rounded-2xl border border-v6-border bg-white p-6"><p class="text-xs font-semibold uppercase tracking-[0.14em] text-v6-copper">Output</p><h3 class="mt-3 text-xl font-bold text-v6-dark">Presentation-ready PowerPoint</h3><p class="mt-3 leading-relaxed text-v6-text-muted">Prepare editable charts and slides in a reusable PowerPoint structure, then choose the results your audience needs.</p></article>
+          <article class="rounded-2xl border border-v6-border bg-white p-6"><p class="text-xs font-semibold uppercase tracking-[0.14em] text-v6-copper">History</p><h3 class="mt-3 text-xl font-bold text-v6-dark">Weekly or monthly snapshots</h3><p class="mt-3 leading-relaxed text-v6-text-muted">Preserve each future cutoff after collection is configured, with cutoff time, extraction time, snapshot-recorded time, timezone, and definition version kept separate.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-v6-bg px-4 py-16 sm:px-6 sm:py-20 lg:px-8" aria-labelledby="service-report-audience-heading">
+      <div class="mx-auto max-w-6xl">
+        <div class="mx-auto max-w-3xl text-center">
+          <p class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper">The same service report every week or month</p>
+          <h2 id="service-report-audience-heading" class="mt-3 text-balance text-3xl font-bold text-v6-dark sm:text-4xl">For the people responsible for support performance and customer follow-through</h2>
+          <p class="mt-4 text-lg leading-relaxed text-v6-text-muted">Use the same report for the weekly queue review, the monthly service review, and account-level preparation before an important customer conversation.</p>
+        </div>
+        <div class="mt-10 grid gap-5 md:grid-cols-3">
+          <article class="rounded-2xl border border-v6-border bg-white p-6"><h3 class="text-xl font-bold text-v6-dark">Support leadership</h3><p class="mt-3 leading-relaxed text-v6-text-muted">See workload, response and close time, SLA exceptions, satisfaction, and the teams needing attention.</p></article>
+          <article class="rounded-2xl border border-v6-border bg-white p-6"><h3 class="text-xl font-bold text-v6-dark">Service Operations</h3><p class="mt-3 leading-relaxed text-v6-text-muted">Keep definitions stable, expose missing fields, and trace each metric to the tickets behind it.</p></article>
+          <article class="rounded-2xl border border-v6-border bg-white p-6"><h3 class="text-xl font-bold text-v6-dark">Customer Success</h3><p class="mt-3 leading-relaxed text-v6-text-muted">Review open issues and service history by company before a renewal or account review when associations are complete.</p></article>
+        </div>
+
+        <div class="mx-auto mt-16 max-w-3xl border-t border-v6-border pt-16 text-center sm:mt-20 sm:pt-20">
+          <p class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper">What the report helps you do</p>
+          <h2 class="mt-3 text-balance text-3xl font-bold text-v6-dark sm:text-4xl">Understand service performance, then act on the exceptions behind it.</h2>
+          <p class="mt-4 text-lg leading-relaxed text-v6-text-muted">Start with the operating picture, then inspect the queues, tickets, companies, and owners that explain it.</p>
+        </div>
+        <ReportBenefitCards benefits={benefits} />
+      </div>
+    </section>
+
+    <section id="sample-report" class="scroll-mt-8 bg-v6-bg px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+      <div class="mx-auto max-w-6xl">
+        <div class="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
+          <div class="max-w-3xl">
+            <div class="flex flex-wrap items-center gap-3"><p class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper">Report preview</p><span class="rounded-full border border-v6-copper-200 bg-v6-copper-50 px-2.5 py-1 text-xs font-semibold text-v6-copper-800">Example data</span></div>
+            <h2 class="mt-3 text-balance text-3xl font-bold text-v6-dark sm:text-4xl">See the service picture and the named exceptions together</h2>
+            <p class="mt-4 text-lg leading-relaxed text-v6-text-muted">This example shows how the recurring management pack connects current results, historical change, tickets requiring action, Excel detail, and presentation-ready highlights.</p>
+          </div>
+          <a href="#report-signup" data-ga-cta="service_report_sample_signup" class="inline-flex min-h-11 items-center justify-center self-start rounded-xl border border-v6-copper px-5 py-3 text-sm font-semibold text-v6-copper transition-colors hover:bg-v6-copper-50 focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2 lg:self-auto">Sign up to the app</a>
+        </div>
+
+        <div class="mt-10 overflow-hidden rounded-2xl border border-v6-border bg-white shadow-sm">
+          <div class="flex flex-col gap-4 border-b border-v6-border px-5 py-5 sm:flex-row sm:items-center sm:justify-between sm:px-7">
+            <div><p class="text-xs font-semibold uppercase tracking-[0.14em] text-v6-text-muted">Service Hub performance report</p><h3 class="mt-1 text-xl font-bold text-v6-dark">Weekly service review</h3><p class="mt-1 text-sm text-v6-text-muted">Week ending 31 August 2026, compared with the 24 August snapshot</p></div>
+            <div class="flex flex-wrap items-center gap-2"><span class="rounded-full bg-v6-copper-50 px-3 py-1.5 text-xs font-semibold text-v6-copper-800">4 breaches</span><span class="rounded-full bg-v6-teal-50 px-3 py-1.5 text-xs font-semibold text-v6-teal-800">Backlog down 8</span><span class="rounded-full bg-v6-blue-50 px-3 py-1.5 text-xs font-semibold text-v6-blue-800">Example data</span></div>
+          </div>
+
+          <div class="grid gap-px bg-v6-border sm:grid-cols-2 lg:grid-cols-4">
+            <div class="bg-white p-5 sm:p-6"><p class="text-sm text-v6-text-muted">Open backlog</p><div class="mt-2 flex items-end justify-between gap-3"><p class="text-2xl font-bold text-v6-dark">42</p><span class="text-sm font-semibold text-v6-teal-800">Down 8</span></div></div>
+            <div class="bg-white p-5 sm:p-6"><p class="text-sm text-v6-text-muted">Tickets closed</p><div class="mt-2 flex items-end justify-between gap-3"><p class="text-2xl font-bold text-v6-dark">21</p><span class="text-sm font-semibold text-v6-teal-800">Up 4</span></div></div>
+            <div class="bg-v6-copper-50 p-5 sm:p-6"><p class="text-sm text-v6-copper-800">First-response SLA</p><div class="mt-2 flex items-end justify-between gap-3"><p class="text-2xl font-bold text-v6-copper-800">87%</p><span class="text-sm font-semibold text-v6-teal-800">Up 6 pts</span></div></div>
+            <div class="bg-v6-bg-warm p-5 sm:p-6"><p class="text-sm text-v6-text-muted">CSAT</p><div class="mt-2 flex items-end justify-between gap-3"><p class="text-2xl font-bold text-v6-dark">91%</p><span class="text-sm font-semibold text-v6-text-muted">20 of 22</span></div></div>
+          </div>
+
+          <div class="grid gap-6 border-t border-v6-border p-5 sm:p-7 lg:grid-cols-[1.05fr_0.95fr]">
+            <article class="rounded-xl border border-v6-border p-5">
+              <div class="flex items-center justify-between gap-4"><div><p class="text-xs font-semibold uppercase tracking-[0.14em] text-v6-copper">Historical snapshots</p><h4 class="mt-1 font-bold text-v6-dark">Backlog and SLA over four weeks</h4></div><span class="text-xs text-v6-text-muted">Weekly cutoff</span></div>
+              <div class="mt-6 flex h-36 items-end gap-4 border-b border-v6-border px-2" aria-label="Backlog declined from 55 to 42 and SLA improved from 76 to 87 percent">
+                <div class="flex flex-1 flex-col items-center gap-2"><span class="text-xs font-semibold text-v6-dark">55</span><div class="h-24 w-full max-w-16 rounded-t bg-v6-blue-200"></div><span class="pb-2 text-[11px] text-v6-text-muted">76% SLA</span></div>
+                <div class="flex flex-1 flex-col items-center gap-2"><span class="text-xs font-semibold text-v6-dark">51</span><div class="h-20 w-full max-w-16 rounded-t bg-v6-blue-300"></div><span class="pb-2 text-[11px] text-v6-text-muted">80% SLA</span></div>
+                <div class="flex flex-1 flex-col items-center gap-2"><span class="text-xs font-semibold text-v6-dark">50</span><div class="h-[4.5rem] w-full max-w-16 rounded-t bg-v6-blue-400"></div><span class="pb-2 text-[11px] text-v6-text-muted">81% SLA</span></div>
+                <div class="flex flex-1 flex-col items-center gap-2"><span class="text-xs font-semibold text-v6-dark">42</span><div class="h-14 w-full max-w-16 rounded-t bg-v6-teal"></div><span class="pb-2 text-[11px] font-semibold text-v6-teal-800">87% SLA</span></div>
+              </div>
+              <div class="mt-3 grid grid-cols-4 text-center text-[11px] text-v6-text-muted"><span>10 Aug</span><span>17 Aug</span><span>24 Aug</span><span>31 Aug</span></div>
+            </article>
+            <article class="rounded-xl border border-v6-copper-200 bg-v6-copper-50 p-5">
+              <div class="flex items-center justify-between gap-4"><p class="text-xs font-semibold uppercase tracking-[0.14em] text-v6-copper-800">Reviewed management summary</p><span class="rounded-full bg-white px-2.5 py-1 text-xs font-semibold text-v6-teal-800">Approved</span></div>
+              <p class="mt-4 text-lg font-bold leading-relaxed text-v6-dark">Backlog fell by 16% and first-response SLA improved by 6 points.</p>
+              <p class="mt-3 text-sm leading-relaxed text-v6-text-muted">Email Support remains the priority because it owns 19 open tickets and 3 of the 4 current breaches.</p>
+              <div class="mt-5 space-y-2 text-sm"><p class="rounded-lg bg-white px-3 py-2 text-v6-text-muted"><strong class="text-v6-dark">Evidence:</strong> 24 and 31 August snapshots</p><p class="rounded-lg bg-white px-3 py-2 text-v6-text-muted"><strong class="text-v6-dark">Next action:</strong> Reassign two breached tickets today</p></div>
+            </article>
+          </div>
+
+          <div class="border-t border-v6-border p-5 sm:p-7">
+            <div class="flex items-center justify-between gap-4"><h4 class="text-base font-bold text-v6-dark">Tickets requiring action</h4><span class="text-xs text-v6-text-muted">Named evidence behind the summary</span></div>
+            <div class="mt-4 hidden overflow-x-auto rounded-xl border border-v6-border md:block">
+              <table class="w-full min-w-[880px] border-collapse text-left text-sm">
+                <thead class="bg-v6-bg text-xs uppercase tracking-wide text-v6-text-muted"><tr><th class="px-4 py-3 font-semibold">Ticket and company</th><th class="px-4 py-3 font-semibold">Owner and channel</th><th class="px-4 py-3 font-semibold">Waiting</th><th class="px-4 py-3 font-semibold">Status and reason</th><th class="px-4 py-3 font-semibold">Next action</th></tr></thead>
+                <tbody class="divide-y divide-v6-border">
+                  {exceptionRows.map((row) => (
+                    <tr><td class="px-4 py-3"><p class="font-semibold text-v6-dark">{row.ticket}</p><p class="mt-0.5 text-xs text-v6-text-muted">{row.company}</p></td><td class="px-4 py-3"><p class="text-v6-dark">{row.owner}</p><p class="mt-0.5 text-xs text-v6-text-muted">{row.channel}</p></td><td class="px-4 py-3 font-semibold text-v6-dark">{row.waiting}</td><td class="px-4 py-3 text-v6-text-muted"><strong class="text-v6-dark">{row.status}</strong><br /><span class="text-xs">{row.reason}</span></td><td class="px-4 py-3 text-v6-dark">{row.action}</td></tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <div class="mt-4 space-y-3 md:hidden">
+              {exceptionRows.map((row) => (
+                <article class="rounded-xl border border-v6-border p-4"><div class="flex items-start justify-between gap-4"><div><h5 class="font-semibold text-v6-dark">{row.ticket}</h5><p class="mt-0.5 text-xs text-v6-text-muted">{row.company}</p></div><span class="text-sm font-bold text-v6-dark">{row.waiting}</span></div><p class="mt-3 text-sm text-v6-text-muted">{row.owner} · {row.channel}</p><p class="mt-2 text-sm text-v6-text-muted"><strong class="text-v6-dark">{row.status}:</strong> {row.reason}</p><p class="mt-2 text-sm text-v6-text-muted"><strong class="text-v6-dark">Next:</strong> {row.action}</p></article>
+              ))}
+            </div>
+          </div>
+
+          <div class="grid gap-px border-t border-v6-border bg-v6-border lg:grid-cols-3">
+            <article class="bg-white p-5 sm:p-6">
+              <div class="flex items-center justify-between gap-3"><div><p class="text-xs font-semibold uppercase tracking-[0.14em] text-v6-copper">Excel workbook</p><h4 class="mt-1 font-bold text-v6-dark">Editable detail and source rows</h4></div><span class="rounded-md bg-v6-teal-50 px-2 py-1 text-xs font-semibold text-v6-teal-800">Ready</span></div>
+              <div class="mt-4 overflow-hidden rounded-lg border border-v6-border text-xs"><div class="flex gap-1 border-b border-v6-border bg-v6-bg p-2"><span class="rounded bg-white px-2 py-1 font-semibold text-v6-dark">Summary</span><span class="px-2 py-1 text-v6-text-muted">Trends</span><span class="px-2 py-1 text-v6-text-muted">Tickets</span></div><div class="grid grid-cols-3 gap-px bg-v6-border text-v6-text-muted"><span class="bg-white p-2">Ticket</span><span class="bg-white p-2">Owner</span><span class="bg-white p-2">SLA state</span><span class="bg-white p-2">Billing access</span><span class="bg-white p-2">Maya</span><span class="bg-white p-2 font-semibold text-v6-copper-800">Breached</span></div></div>
+            </article>
+            <article class="bg-white p-5 sm:p-6">
+              <div class="flex items-center justify-between gap-3"><div><p class="text-xs font-semibold uppercase tracking-[0.14em] text-v6-copper">PowerPoint</p><h4 class="mt-1 font-bold text-v6-dark">Selected management highlights</h4></div><span class="rounded-md bg-v6-teal-50 px-2 py-1 text-xs font-semibold text-v6-teal-800">4 slides</span></div>
+              <div class="mt-4 rounded-lg border border-v6-border bg-v6-bg p-3"><div class="rounded bg-white p-3 shadow-sm"><p class="text-[10px] font-semibold uppercase tracking-wide text-v6-copper">Weekly service review</p><p class="mt-1 text-sm font-bold text-v6-dark">Backlog down. SLA improving.</p><div class="mt-3 flex h-10 items-end gap-2"><span class="h-10 flex-1 rounded-t bg-v6-blue-200"></span><span class="h-8 flex-1 rounded-t bg-v6-blue-300"></span><span class="h-7 flex-1 rounded-t bg-v6-blue-400"></span><span class="h-5 flex-1 rounded-t bg-v6-teal"></span></div></div></div>
+            </article>
+            <article class="bg-white p-5 sm:p-6">
+              <div class="flex items-center justify-between gap-3"><div><p class="text-xs font-semibold uppercase tracking-[0.14em] text-v6-copper">Account view</p><h4 class="mt-1 font-bold text-v6-dark">Renewal-ready service context</h4></div><span class="rounded-md bg-v6-blue-50 px-2 py-1 text-xs font-semibold text-v6-blue-800">Acme Platform</span></div>
+              <div class="mt-4 grid grid-cols-3 gap-2 text-center"><div class="rounded-lg bg-v6-bg p-3"><p class="text-lg font-bold text-v6-dark">7</p><p class="text-[11px] text-v6-text-muted">Tickets</p></div><div class="rounded-lg bg-v6-bg p-3"><p class="text-lg font-bold text-v6-dark">6</p><p class="text-[11px] text-v6-text-muted">Resolved</p></div><div class="rounded-lg bg-v6-copper-50 p-3"><p class="text-lg font-bold text-v6-copper-800">1</p><p class="text-[11px] text-v6-text-muted">Open risk</p></div></div><p class="mt-3 text-xs leading-relaxed text-v6-text-muted">Available when ticket-to-company associations are complete.</p>
+            </article>
+          </div>
+
+          <div class="border-t border-v6-border bg-v6-bg px-5 py-3 text-xs text-v6-text-muted sm:px-7">Cutoff: 31 August 2026, 17:00 UTC · Extracted: 17:05 UTC · Snapshot: 17:07 UTC · Definition v1.0 · 42 of 42 tickets included</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+      <div class="mx-auto max-w-5xl">
+        <div class="mx-auto max-w-3xl text-center"><p class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper">Guided setup</p><h2 class="mt-3 text-balance text-3xl font-bold text-v6-dark sm:text-4xl">Three reporting choices after connection and a data check</h2><p class="mt-4 text-lg leading-relaxed text-v6-text-muted">The setup verifies read-only permissions, available fields, SLA configuration, associations, time basis, and reporting history before presenting these three reporting choices.</p></div>
+        <ol class="mt-10 grid gap-6 md:grid-cols-3">
+          <li class="rounded-2xl border border-v6-border bg-white p-6"><span class="text-sm font-bold text-v6-copper">01</span><h3 class="mt-3 text-xl font-bold text-v6-dark">Choose one Help Desk</h3><p class="mt-2 leading-relaxed text-v6-text-muted">Select the ticket pipeline or Help Desk whose work belongs in this operating review.</p></li>
+          <li class="rounded-2xl border border-v6-border bg-white p-6"><span class="text-sm font-bold text-v6-copper">02</span><h3 class="mt-3 text-xl font-bold text-v6-dark">Choose weekly or monthly</h3><p class="mt-2 leading-relaxed text-v6-text-muted">Set the review period and snapshot rhythm. The report keeps the cutoff, refresh time, time basis, and definition version visible.</p></li>
+          <li class="rounded-2xl border border-v6-border bg-white p-6"><span class="text-sm font-bold text-v6-copper">03</span><h3 class="mt-3 text-xl font-bold text-v6-dark">Choose Excel, PowerPoint, or both</h3><p class="mt-2 leading-relaxed text-v6-text-muted">Select the editable outputs and the measures or exceptions your audience needs to review.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="bg-v6-bg px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+      <div class="mx-auto max-w-5xl">
+        <div class="mx-auto max-w-3xl text-center"><p class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper">Native reporting and the management pack</p><h2 class="mt-3 text-balance text-3xl font-bold text-v6-dark sm:text-4xl">HubSpot can schedule eligible reports. SWOTBee turns them into a repeatable management review.</h2><p class="mt-4 text-lg leading-relaxed text-v6-text-muted">HubSpot provides service analytics, recurring emails, and spreadsheet attachments for supported report types. The difference is a governed review with editable outputs, selected highlights, ticket evidence, and snapshot history from the point collection begins.</p></div>
+        <div class="mt-10 grid gap-6 md:grid-cols-2">
+          <article class="rounded-2xl border border-v6-border bg-white p-6 sm:p-8"><h3 class="text-xl font-bold text-v6-dark">What HubSpot can already provide</h3><ul class="mt-4 space-y-3 text-v6-text-muted"><li>Service Analytics for ticket volume, response time, close time, satisfaction, and team performance.</li><li>Help Desk summary, SLA status, customer feedback, and ticket activity on eligible plans.</li><li>Recurring report or dashboard emails and CSV, XLS, or XLSX attachments for supported report types.</li></ul></article>
+          <article class="rounded-2xl border border-v6-border bg-white p-6 sm:p-8"><h3 class="text-xl font-bold text-v6-dark">What this workflow adds</h3><ul class="mt-4 space-y-3 text-v6-text-muted"><li>The same weekly or monthly management report with visible definitions and data gaps.</li><li>Stored cutoff snapshots plus an editable workbook and reusable presentation structure.</li><li>Selected highlights, named ticket evidence, and optional talking points that a report owner approves.</li></ul></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-v6-dark px-4 py-16 text-white sm:px-6 sm:py-20 lg:px-8">
+      <div class="mx-auto grid max-w-5xl gap-10 lg:grid-cols-2 lg:items-center">
+        <div><p class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper-300">The recurring value</p><h2 class="mt-3 text-balance text-3xl font-bold sm:text-4xl">Open the same review, understand what changed, and prepare an evidence-linked management summary.</h2></div>
+        <div class="space-y-4 text-white/75"><p class="leading-relaxed">A useful result explains whether workload and service speed changed, identifies the tickets, customers, queues, and owners behind exceptions, and prepares editable material for the next team or management review.</p><p class="leading-relaxed">HubSpot remains the source of record. Every report keeps its calculation basis, data coverage, snapshot cutoff, and reviewed commentary visible.</p></div>
+      </div>
+    </section>
+
+    <section class="px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+      <div class="mx-auto max-w-3xl">
+        <div class="text-center"><p class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper">Questions about the report</p><h2 class="mt-3 text-3xl font-bold text-v6-dark sm:text-4xl">What to know before you sign up</h2></div>
+        <div class="mt-10 divide-y divide-v6-border border-y border-v6-border">
+          {faqs.map((item) => (
+            <details class="group py-5"><summary class="flex min-h-11 cursor-pointer list-none items-center justify-between gap-5 rounded-md font-semibold text-v6-dark focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2"><span>{item.q}</span><span class="text-xl font-normal text-v6-copper transition-transform group-open:rotate-45" aria-hidden="true">+</span></summary><p class="max-w-2xl pb-1 pr-8 pt-3 leading-relaxed text-v6-text-muted">{item.a}</p></details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <ReportRelatedLinks
+      links={[
+        { href: "/posts/customer-success-in-hubspot/", title: "Run customer success in HubSpot", description: "See how Service Hub, health scores, surveys, tickets, and renewal workflows fit together." },
+        { href: "/posts/hubspot-customer-success-workspace/", title: "Set up the Customer Success Workspace", description: "Understand the workspace, eligible tiers, practical limits, and renewal workflow connections." },
+        { href: "/posts/customer-retention-kpis/", title: "Choose customer retention KPIs", description: "Review the retention, churn, revenue, lifetime-value, and customer-feedback measures leadership needs." },
+      ]}
+    />
+
+    <section id="report-signup" class="scroll-mt-8 bg-v6-bg px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+      <div class="mx-auto max-w-3xl rounded-3xl bg-v6-copper px-6 py-10 text-center text-white shadow-lg shadow-v6-copper/20 sm:px-10 sm:py-12">
+        <p class="text-sm font-semibold uppercase tracking-[0.16em] text-white/75">App signup</p>
+        <h2 class="mt-3 text-balance text-3xl font-bold sm:text-4xl">Sign up to the SWOTBee app</h2>
+        <p class="mx-auto mt-4 max-w-2xl text-lg leading-relaxed text-white/85">Create your SWOTBee app account with your work email. No card is required.</p>
+        <ReportSignup
+          offerCode="service_hub_performance_report"
+          reportName="HubSpot Service Hub performance report"
+          sourcePage="hubspot-service-hub-performance-report"
+          ctaLabel="service_report_signup"
+        />
+        <p class="mt-5 text-sm text-white/70">Your email is used for this report signup and related service communication. HubSpot is connected separately.</p>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

@@ -135,6 +135,9 @@ export default defineConfig({
           // Now a redirect stub to /, not a page. Kept blocked so that if the redirect
           // is ever replaced by a real page again it does not silently rejoin the sitemap.
           '/renewal-operations-animated-v3/',
+          // Consolidated reporting keyword routes redirect to stronger dashboard offers.
+          '/hubspot-week-over-week-pipeline-report/',
+          '/hubspot-weekly-deal-aging-report/',
           '/resources/arr-correction-kit/',
           '/resources/renewal-health-scorecard/',
           '/resources/renewal-leakage-estimate/',
