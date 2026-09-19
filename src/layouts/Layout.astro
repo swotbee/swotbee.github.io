@@ -9,6 +9,7 @@ interface Props {
   keywords?: string;
   author?: string;
   robots?: string;
+  ogType?: "website" | "article" | "profile";
 }
 
 const {
@@ -18,7 +19,8 @@ const {
   canonicalURL,
   keywords = "HubSpot consulting, Shopify integration, CRM optimization, marketing automation, sales funnel, business growth, HubSpot experts, CRM migration, lead qualification, email marketing",
   author = "SWOTBee",
-  robots = "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+  robots = "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+  ogType = "website"
 } = Astro.props;
 ---
 
@@ -30,6 +32,7 @@ const {
   keywords={keywords}
   author={author}
   robots={robots}
+  ogType={ogType}
 >
   <slot />
 </BaseLayout>

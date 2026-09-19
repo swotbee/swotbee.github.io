@@ -3,7 +3,7 @@ import Layout from './Layout.astro';
 import Navbar from '../components/astro/Navbar.astro';
 import Footer from '../components/astro/Footer.astro';
 import StructuredData from '../components/astro/StructuredData.astro';
-import { generateArticleStructuredData, generateCanonicalUrl, generateOgImage } from '../utils/seo';
+import { generateArticleStructuredData, generateCanonicalUrl, generateSocialImagePath } from '../utils/seo';
 import { getRecentPosts } from '../utils/posts';
 
 const { frontmatter } = Astro.props;
@@ -12,7 +12,7 @@ const { recentPosts } = await getRecentPosts();
 const pageTitle = frontmatter.title;
 const pageDescription = frontmatter.description || 'Read our latest blog post on SWOTBee';
 const canonicalURL = generateCanonicalUrl(Astro.url.pathname);
-const socialImage = generateOgImage(frontmatter.image);
+const socialImage = generateSocialImagePath(frontmatter.image);
 
 // Calculate reading time (average 230 words per minute)
 const content = await Astro.slots.render('default');
@@ -39,12 +39,12 @@ const relatedPosts = recentPosts
 const displayPosts = relatedPosts.length >= 2
   ? relatedPosts
   : recentPosts.filter(p => p.slug !== currentSlug).slice(0, 3);
----
 
 <Layout
   title={pageTitle}
   description={pageDescription}
-  ogImage={frontmatter.image}
+  ogImage={socialImage}
+  ogType="article"
   canonicalURL={canonicalURL}
   keywords={frontmatter.tags?.join(', ')}
   author={frontmatter.author?.name}
@@ -74,7 +74,7 @@ const displayPosts = relatedPosts.length >= 2
   <script type="application/ld+json" set:html={JSON.stringify(generateArticleStructuredData({
     title: frontmatter.title,
     description: frontmatter.description,
-    image: frontmatter.image,
+    image: socialImage,
     url: canonicalURL,
     publishedTime: frontmatter.pubDate,
     modifiedTime: frontmatter.modifiedDate || frontmatter.pubDate,

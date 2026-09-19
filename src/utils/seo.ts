@@ -80,6 +80,19 @@ export function generateOgImage(imagePath?: string): string {
 }
 
 /**
+ * Return the raster derivative used by social crawlers for a local SVG hero.
+ * The build creates this file before Astro renders the page. The original SVG
+ * remains available for the article body, where it stays sharp at any size.
+ */
+export function generateSocialImagePath(imagePath?: string): string | undefined {
+  if (!imagePath || imagePath.startsWith("http")) {
+    return imagePath;
+  }
+
+  return imagePath.replace(/\.svg$/i, ".social.png");
+}
+
+/**
  * Generate structured data for articles
  */
 export function generateArticleStructuredData(seoData: SEOData) {
