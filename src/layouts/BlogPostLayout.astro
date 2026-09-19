@@ -192,7 +192,20 @@ const displayPosts = relatedPosts.length >= 2
       <div class="flex flex-wrap items-center gap-3 text-sm text-v6-text-muted pb-6 border-b border-v6-border">
         {(frontmatter.reviewedBy?.name || frontmatter.author?.name) && (
           <span class="font-medium text-v6-dark">
-            {frontmatter.reviewedBy?.linkedin ? <a href={frontmatter.reviewedBy.linkedin} target="_blank" rel="noopener noreferrer" class="hover:text-v6-teal-700 transition-colors">{frontmatter.reviewedBy.name}</a> : frontmatter.reviewedBy?.name || frontmatter.author?.name}{frontmatter.reviewedBy?.name && <span class="font-normal text-v6-text-muted">, Co-founder, Swotbee</span>}
+            {frontmatter.reviewedBy?.linkedin ? (
+              <a href={frontmatter.reviewedBy.linkedin} target="_blank" rel="noopener noreferrer" class="hover:text-v6-teal-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-v6-copper transition-colors">
+                {frontmatter.reviewedBy.name}
+              </a>
+            ) : frontmatter.reviewedBy?.name ? (
+              frontmatter.reviewedBy.name
+            ) : frontmatter.author?.name === "SWOTBee Team" ? (
+              <a href="/authors/swotbee-team/" class="hover:text-v6-teal-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-v6-copper transition-colors">
+                {frontmatter.author.name}
+              </a>
+            ) : (
+              frontmatter.author?.name
+            )}
+            {frontmatter.reviewedBy?.name && <span class="font-normal text-v6-text-muted">, Co-founder, Swotbee</span>}
           </span>
         )}
         <span>·</span>

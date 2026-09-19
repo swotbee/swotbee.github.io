@@ -135,6 +135,15 @@ export default defineConfig({
           // Now a redirect stub to /, not a page. Kept blocked so that if the redirect
           // is ever replaced by a real page again it does not silently rejoin the sitemap.
           '/renewal-operations-animated-v3/',
+          // Consolidated reporting keyword routes redirect to stronger dashboard offers.
+          '/hubspot-week-over-week-pipeline-report/',
+          '/hubspot-weekly-deal-aging-report/',
+          // Confirmation and funnel-result pages are deliberately noindex. Keep them
+          // crawlable so Google can see that directive, but do not advertise them in
+          // the sitemap as pages we want indexed.
+          '/renewal-audit-call/thank-you/',
+          '/renewal-leakage-tool/',
+          '/thank-you/',
           '/resources/arr-correction-kit/',
           '/resources/renewal-health-scorecard/',
           '/resources/renewal-leakage-estimate/',
