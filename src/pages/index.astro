@@ -25,9 +25,8 @@ import Layout from "../layouts/Layout.astro";
 import Navbar from "../components/astro/Navbar.astro";
 import Footer from "../components/astro/Footer.astro";
 import StructuredData from "../components/astro/StructuredData.astro";
-import RenewalRoiCalculator from "../components/astro/RenewalRoiCalculator.astro";
 import RenewalServicePaths from "../components/astro/RenewalServicePaths.astro";
-import RenewalDemoYoutube from "../components/react/RenewalDemoYoutube.jsx";
+import RenewalDemoModal from "../components/react/RenewalDemoModal.jsx";
 import {
   AdjustmentsHorizontalIcon,
   ArrowDownIcon,
@@ -48,9 +47,11 @@ import {
 // SERP budget: BaseLayout appends " | SWOTBee" to every title, so the string below
 // must stay under ~50 chars to keep the rendered title inside Google's ~60-char cut.
 // Description stays under ~155 for the same reason.
-const title = "HubSpot Renewal Operations | Stop Revenue Leakage";
+const title = "HubSpot Renewal Management & Automation App";
 const description =
-  "Renewal deals that create themselves, line items carried over exactly, escalations applied automatically, and ARR you can finally trust.";
+  "Manage HubSpot renewals with Renewal Builder. Auto-create renewal deals from closed-won deals with the right dates, line items, owners, and associations.";
+const keywords =
+  "HubSpot renewal management, HubSpot renewal automation, renewal deal builder, automate renewal deals in HubSpot";
 
 // Schema URLs are derived from the page's own URL rather than hardcoded, so they stay
 // correct if this page is ever moved or promoted to a different path (e.g. the homepage).
@@ -193,6 +194,48 @@ const steps = [
   },
 ];
 
+const builderSteps = [
+  {
+    n: "1",
+    title: "Connect Renewal Builder",
+    desc: "We help an authorized HubSpot admin connect the app and confirm the pipelines and deal fields it may use.",
+  },
+  {
+    n: "2",
+    title: "Define one renewal recipe",
+    desc: "Choose the destination pipeline, renewal timing, naming rules, and the deal data that should carry forward.",
+  },
+  {
+    n: "3",
+    title: "Preview before creating",
+    desc: "Review a sample renewal first, including dates, line items, companies, contacts, and ownership. Nothing is activated silently.",
+  },
+  {
+    n: "4",
+    title: "Create in HubSpot",
+    desc: "Start with manual creation from a deal record, then add scheduled or event-based automation when your recipe is ready.",
+  },
+];
+
+const builderAnswers = [
+  {
+    q: "What does it connect to?",
+    a: "Your HubSpot portal, using the access approved during installation.",
+  },
+  {
+    q: "What does it use?",
+    a: "A source deal plus your chosen pipeline, timing, field, and naming rules.",
+  },
+  {
+    q: "What does it produce?",
+    a: "A renewal deal in HubSpot, ready for your team to review and manage.",
+  },
+  {
+    q: "Who stays in control?",
+    a: "Your team. Preview first, begin manually, and automate only when ready.",
+  },
+];
+
 // RENEWAL OPERATING FLOW.
 const renewalFlow = [
   {
@@ -266,6 +309,7 @@ const testimonials = [
     initials: "RO",
     context: "Postgrad",
     image: "/assets/testimonials/profile1.webp",
+    companyLogo: "/logos/clients/postgrad.png",
   },
   {
     quote:
@@ -274,6 +318,7 @@ const testimonials = [
     initials: "MO",
     context: "Jirav",
     image: "/assets/testimonials/profile2.jpg",
+    companyLogo: "/logos/clients/jirav.png",
   },
 ];
 
@@ -302,37 +347,34 @@ const caseStudy = {
 // FAQ (approved answers).
 const faqs = [
   {
-    q: "How much does this cost?",
-    a: "Every business is different, so we tailor our approach to your needs and goals. We offer project-based, retainer, and hourly consulting models. Book a no-commitment 30-minute discovery call and we'll give you an honest recommendation.",
+    q: "What is Renewal Builder?",
+    a: "Renewal Builder is a HubSpot app for creating consistent renewal deals from the customer deals your team already trusts. It carries forward the configured deal context and puts the new renewal into your chosen pipeline.",
   },
   {
-    q: "How long does a typical project take?",
-    a: "Most engagements span 3 to 6 months depending on complexity. We start delivering results in the first 2 weeks with quick wins, then build toward the bigger goals.",
+    q: "Does Renewal Builder replace HubSpot Revenue Hub?",
+    a: "No. HubSpot Revenue Hub supports contracts, billing, and renewal quotes. Renewal Builder is for teams that need a repeatable renewal-deal workflow built around their existing HubSpot pipelines, deal records, line items, and associations.",
   },
   {
-    q: "What does the first month look like?",
-    a: "Week 1 to 2: discovery and audit, where we map your workflows, data, and pain points. Week 3 to 4: quick wins go live, the high-impact fixes that show immediate results. From there we build toward the strategic roadmap.",
+    q: "Will the app change my source deal?",
+    a: "The renewal flow creates a separate deal. During setup, your team previews what will carry forward before enabling a recipe, so the intended changes are visible first.",
   },
   {
-    q: "Do you work alongside our existing team?",
-    a: "Absolutely. We work as an extension of your team, building the automations, dashboards, and processes your people need. We provide hands-on training and documentation so your team owns everything we build, long after our engagement ends.",
+    q: "Can we start without automation?",
+    a: "Yes. You can begin by creating renewals manually from HubSpot deal records. Scheduling and event-based automation can be added after the renewal recipe has been reviewed.",
   },
   {
-    q: "What HubSpot tiers do you work with?",
-    a: "All of them: Starter, Professional, and Enterprise across Sales, Marketing, and Service Hubs. Most of our clients are on Professional or Enterprise.",
+    q: "How is Renewal Builder installed today?",
+    a: "Installation is currently assisted. Book a free 30-minute renewal review and we will confirm fit, required HubSpot access, and the safest first renewal recipe before connecting the app.",
   },
   {
-    q: "Can you integrate HubSpot with our other tools?",
-    a: "Yes. We've integrated HubSpot with NetSuite, Xero, DocuSign, Zoom, Monday.com, Shopify, Salesforce, Zapier, custom APIs, and more.",
+    q: "Can SWOTBee help with the wider renewal process?",
+    a: "Yes. Implementation and advisory support are available when your pipelines, data, reporting, or cross-system handoffs need work beyond the app. The app remains the product; services support the rollout.",
   },
   {
     q: "What if we already built our own renewal workflows?",
-    a: "Great! We build on top of what you've created. Our job is to add the parts DIY cannot reach: multi-year chains that survive HubSpot's renewal loops, automatic escalation math, and NRR/GRR analytics. You keep using your workflows; we layer on reliability and analytics. You own everything we build.",
+    a: "Keep them. Renewal Builder can start with one reviewed recipe and support the parts that still require repetitive deal creation or data carryover. We will identify overlap before recommending any change.",
   },
 ];
-
-// Hero headline split into words for staggered reveal.
-const headlineWords = ["Stop", "Losing", "Revenue", "To"];
 
 const toneMap: Record<string, string> = {
   copper: "bg-v6-copper-50 text-v6-copper",
@@ -349,14 +391,23 @@ const toneMap: Record<string, string> = {
     is what kept it out of the index and made it a clean measurement surface. Removing that
     line IS the swap. */
 }
-<Layout title={title} description={description}>
+<Layout title={title} description={description} keywords={keywords}>
   <StructuredData
-    type="service"
+    type="softwareApplication"
     data={{
-      name: "Renewal Operations for HubSpot",
+      name: "Renewal Builder",
       description: description,
-      serviceType: "Renewal Operations & Revenue Automation Consulting",
       url: pageUrl,
+      applicationCategory: "BusinessApplication",
+      applicationSubCategory: "Customer renewal management",
+      operatingSystem: "Web",
+      browserRequirements: "Requires a supported web browser and a HubSpot account",
+      featureList: [
+        "Create renewal deals from HubSpot deal records",
+        "Carry configured deal properties, line items, and associations forward",
+        "Preview renewal recipes before activation",
+        "Support manual and automated renewal creation",
+      ],
     }}
   />
   <!-- The page's own FAQ block, exposed for FAQ rich results. Same source array as
@@ -424,74 +475,60 @@ const toneMap: Record<string, string> = {
           >
           <span
             class="bg-v6-copper-50 text-v6-copper text-xs font-semibold px-3 py-1 rounded-full"
-            >Renewal Operations</span
+            >Renewal Builder for HubSpot</span
           >
         </div>
         <p
           class="reveal text-sm font-semibold tracking-[0.1em] text-v6-copper mb-3"
         >
-          For RevOps Teams Drowning In Renewal Admin
+          HubSpot renewal management, built around your deals
         </p>
         <h1
           class="stagger text-3xl sm:text-5xl lg:text-[3.75rem] font-bold text-v6-dark leading-tight mb-5 text-balance"
         >
-          {
-            headlineWords.map((w) => (
-              <>
-                <span class="inline-block">{w}</span>{" "}
-              </>
-            ))
-          }
-          <span class="inline-block text-v6-copper">Missed Renewals</span>
+          Manage HubSpot renewals without rebuilding every deal.
         </h1>
         <p
           class="reveal text-base sm:text-lg text-v6-text-muted max-w-xl mx-auto lg:mx-0 mb-5 leading-relaxed"
         >
-          Your next growth bottleneck is not pipeline generation. It is
-          everything that happens after Closed Won.
+          Renewal Builder auto-creates review-ready renewal deals in your chosen
+          pipeline from the closed-won deals your team already trusts.
         </p>
         <p
           class="reveal text-base sm:text-lg text-v6-text-muted max-w-xl mx-auto lg:mx-0 mb-4 leading-relaxed"
         >
-          Renewal deals that create themselves, line items carried over exactly,
-          escalations applied, and ARR you can finally trust.
+          Carry forward renewal dates, recurring line items, companies,
+          contacts, custom properties, and account ownership. Preview the new
+          deal first, then automate renewal workflows only when ready.
         </p>
 
         <div
           class="reveal flex flex-col sm:flex-row gap-3 justify-center lg:justify-start mt-8 mb-4 items-center"
         >
-          <div class="cta-group relative inline-block">
-            <!-- CTA points at the on-page YouTube demo section. -->
+          <div class="relative inline-block">
             <a
-              href="#demo"
+              href="/renewal-audit-call/"
+              data-ga-cta="renewal_hero_book_alignment"
               class="bg-v6-copper text-white px-8 py-3.5 rounded-xl text-base font-semibold hover:bg-v6-copper-600 transition-colors text-center inline-flex items-center gap-2"
             >
-              Watch The 2-Minute Demo
+              Book a free 30-minute renewal review <ArrowRightIcon aria-hidden="true" className="h-4 w-4" />
             </a>
-            <div
-              class="cta-pop absolute bottom-full left-1/2 mb-3 w-60 -translate-x-1/2 rounded-xl bg-v6-dark px-4 py-3 text-left shadow-xl"
-            >
-              <p class="text-sm font-semibold text-white mb-1">
-                See it working, first
-              </p>
-              <p class="text-sm leading-relaxed text-gray-300">
-                A short walkthrough of renewal deals creating themselves inside
-                HubSpot, line items intact.
-              </p>
-              <span
-                class="absolute top-full left-1/2 -translate-x-1/2 -mt-px border-x-8 border-t-8 border-x-transparent border-t-v6-dark"
-              ></span>
-            </div>
           </div>
           <div class="relative inline-block">
             <a
-              href="#roi"
+              href="#demo"
+              data-renewal-demo-trigger
+              aria-haspopup="dialog"
+              aria-controls="renewal-demo-modal"
               class="border border-gray-300 text-v6-dark px-8 py-3.5 rounded-xl text-base font-medium hover:bg-gray-50 transition-colors text-center inline-flex items-center gap-2"
             >
-              Estimate Your Renewal Leakage <ArrowDownIcon aria-hidden="true" className="h-4 w-4" />
+              Watch the 2-minute demo
             </a>
           </div>
         </div>
+        <p class="reveal text-sm text-v6-text-muted">
+          Assisted installation today. No automation is activated without your review.
+        </p>
       </div>
 
       <!-- Right: Renewal Command Center dashboard mock (show, don't tell) -->
@@ -621,6 +658,70 @@ const toneMap: Record<string, string> = {
     </div>
   </section>
 
+  <!-- ============ HOW RENEWAL BUILDER WORKS ============ -->
+  <section
+    id="how-renewal-builder-works"
+    class="scroll-mt-24 bg-white py-14 sm:py-18 px-4 sm:px-6 lg:px-8"
+  >
+    <div class="max-w-6xl mx-auto">
+      <p class="reveal text-sm font-semibold uppercase tracking-[0.2em] text-v6-copper mb-3 text-center">
+        How Renewal Builder works
+      </p>
+      <h2 class="reveal text-2xl sm:text-3xl lg:text-4xl font-bold text-v6-dark mb-4 text-center text-balance">
+        How to manage renewal deals in HubSpot without re-keying data.
+      </h2>
+      <p class="reveal max-w-3xl mx-auto text-center text-base sm:text-lg text-v6-text-muted leading-relaxed">
+        Renewal Builder works inside your existing HubSpot CRM and the renewal
+        pipeline you choose. Your team decides what carries forward, previews
+        the new deal, and moves from manual creation to automation when ready.
+      </p>
+
+      <ol class="stagger grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-10">
+        {
+          builderSteps.map((step) => (
+            <li class="anim-card rounded-2xl border border-v6-border bg-v6-bg p-6">
+              <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-v6-copper text-white font-bold">
+                {step.n}
+              </span>
+              <h3 class="mt-5 text-lg font-semibold text-v6-dark">{step.title}</h3>
+              <p class="mt-2 text-sm leading-relaxed text-v6-text-muted">{step.desc}</p>
+            </li>
+          ))
+        }
+      </ol>
+
+      <div class="stagger grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
+        {
+          builderAnswers.map((item) => (
+            <article class="rounded-xl border border-v6-border bg-white p-5">
+              <h3 class="text-base font-semibold text-v6-dark">{item.q}</h3>
+              <p class="mt-1.5 text-sm leading-relaxed text-v6-text-muted">{item.a}</p>
+            </article>
+          ))
+        }
+      </div>
+
+      <div class="reveal mt-9 flex flex-col items-center gap-3 text-center">
+        <a
+          href="/renewal-audit-call/"
+          data-ga-cta="renewal_how_it_works_book_alignment"
+          class="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-v6-copper px-7 py-3 text-base font-semibold text-white transition-colors hover:bg-v6-copper-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-v6-copper focus-visible:ring-offset-2"
+        >
+          Book a free 30-minute renewal review <ArrowRightIcon aria-hidden="true" className="h-4 w-4" />
+        </a>
+        <p class="text-sm text-v6-text-muted">
+          We will confirm fit and map the safest first recipe before requesting HubSpot access.
+        </p>
+        <p class="text-sm text-v6-text-muted">
+          Need more detail first?
+          <a class="font-medium text-v6-copper underline underline-offset-4" href="/posts/hubspot-renewal-deal-workflow-automation/">See the HubSpot renewal automation workflow</a>
+          or
+          <a class="font-medium text-v6-copper underline underline-offset-4" href="/compare/hubspot-renewal-apps/">compare HubSpot renewal apps</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+
   <!-- ============ DEMO VIDEO ============ -->
   <section
     id="demo"
@@ -635,19 +736,17 @@ const toneMap: Record<string, string> = {
       <h2
         class="reveal text-2xl sm:text-3xl lg:text-4xl font-bold text-v6-dark mb-3 text-balance"
       >
-        From Missed Renewals to a Command Center: Watch every renewal fall into
-        place.
+        See Renewal Builder create a review-ready HubSpot renewal.
       </h2>
       <p
         class="reveal text-base sm:text-lg text-v6-text-muted mb-8 max-w-2xl mx-auto leading-relaxed"
       >
-        Watch Swotbee turn a closed-won deal into a renewal process that runs
-        itself: the right line items, uplift, timing, ownership, and follow-up.
+        See how Renewal Builder turns a closed-won deal into a review-ready
+        renewal in HubSpot, with the configured line items, timing, ownership,
+        and associations carried forward.
       </p>
-      <div
-        class="reveal rounded-2xl border border-v6-border bg-v6-bg shadow-xl overflow-hidden max-w-3xl mx-auto"
-      >
-        <RenewalDemoYoutube client:visible showEndCta />
+      <div class="reveal max-w-3xl mx-auto">
+        <RenewalDemoModal client:load />
       </div>
       <div
         class="reveal flex flex-col sm:flex-row gap-3 justify-center items-center mt-8"
@@ -657,10 +756,10 @@ const toneMap: Record<string, string> = {
           data-ga-cta="renewal_demo_book_audit"
           class="bg-v6-copper text-white px-8 py-3.5 rounded-xl text-base font-semibold hover:bg-v6-copper-600 transition-colors text-center inline-flex items-center gap-2"
         >
-          Book a Renewal Alignment Call <ArrowRightIcon aria-hidden="true" className="h-4 w-4" />
+          Book a free 30-minute renewal review <ArrowRightIcon aria-hidden="true" className="h-4 w-4" />
         </a>
         <a
-          href="#roi"
+          href="/resources/renewal-leakage-estimate/"
           class="border border-gray-300 text-v6-dark px-8 py-3.5 rounded-xl text-base font-medium hover:bg-gray-50 transition-colors text-center inline-flex items-center gap-2"
         >
           Estimate Your Renewal Leakage <ArrowDownIcon aria-hidden="true" className="h-4 w-4" />
@@ -684,7 +783,7 @@ const toneMap: Record<string, string> = {
       <h2
         class="reveal text-2xl sm:text-3xl lg:text-4xl font-bold text-v6-dark mb-3 text-center text-balance"
       >
-        The Process That Works At 200 Renewals Rarely Works At 2,000.
+        Manual renewal management breaks as deal volume grows.
       </h2>
       <p
         class="reveal text-base sm:text-lg text-v6-text-muted mb-3 leading-relaxed text-center max-w-lg mx-auto"
@@ -752,7 +851,7 @@ const toneMap: Record<string, string> = {
       <h2
         class="reveal text-2xl sm:text-3xl lg:text-4xl font-bold text-v6-dark mb-8 text-center text-balance"
       >
-        What Manual Renewals Actually Cost
+        What manual renewal deal creation actually costs
       </h2>
 
       <blockquote
@@ -805,9 +904,6 @@ const toneMap: Record<string, string> = {
     </div>
   </section>
 
-  <!-- ============ ROI CALCULATOR ============ -->
-  <RenewalRoiCalculator />
-
   <!-- ============ CAPABILITIES ============ -->
   <section class="bg-white py-14 sm:py-18 px-4 sm:px-6 lg:px-8">
     <div class="max-w-7xl mx-auto">
@@ -819,12 +915,11 @@ const toneMap: Record<string, string> = {
       <h2
         class="reveal text-2xl sm:text-3xl lg:text-4xl font-bold text-v6-dark mb-3 text-center text-balance"
       >
-        Swotbee Turns Your Renewal Rules Into a System That Runs Itself.
+        Automate renewal deal creation using your HubSpot rules.
       </h2>
       <p class="reveal text-v6-text-muted text-center mb-10 max-w-2xl mx-auto">
-        We map the rules behind your renewals, expansion revenue, and
-        forecasting, then build them into HubSpot so they run consistently,
-        every time.
+        Choose the rules that matter, preview what carries forward, and create
+        consistent renewal deals without rebuilding the same record by hand.
       </p>
 
       <div class="stagger relative max-w-5xl mx-auto">
@@ -897,19 +992,19 @@ const toneMap: Record<string, string> = {
       <p
         class="reveal text-sm font-semibold uppercase tracking-[0.2em] text-v6-copper mb-3 text-center"
       >
-        Keep What Works. Swotbee Handles What Breaks.
+        Keep your HubSpot workflows. Add what is missing.
       </p>
       <h2
         class="reveal text-2xl sm:text-3xl lg:text-4xl font-bold text-v6-dark mb-3 text-center text-balance"
       >
-        Already Built Your Own Renewal Workflows?
+        Fix the renewal deal gaps without replacing what works.
       </h2>
       <p
         class="reveal text-base sm:text-lg text-v6-text-muted text-center text-balance mb-10 max-w-2xl mx-auto leading-relaxed"
       >
-        Most ops teams we meet have built something. It works, until year 3,
-        when HubSpot's loop protection silently stops creating renewal deals, or
-        a price uplift ships without the escalation applied.
+        HubSpot already provides workflows and, in Revenue Hub, contract and renewal
+        quote capabilities. Renewal Builder is for the deal-creation and data-carryover
+        steps that still do not match your team's operating model.
       </p>
       <div
         class="reveal bg-white rounded-2xl border border-v6-border p-6 sm:p-8 max-w-3xl mx-auto"
@@ -917,23 +1012,22 @@ const toneMap: Record<string, string> = {
         <p
           class="text-lg font-semibold text-v6-copper-700 leading-relaxed mb-5"
         >
-          We do not replace what you built. We add the parts DIY cannot reach:
+          Renewal Builder complements what already works. Use it where you need:
         </p>
         <ul class="space-y-3 mb-6">
           <li class="flex gap-3 text-base text-v6-dark leading-relaxed">
             <CheckIcon aria-hidden="true" className="text-v6-teal flex-shrink-0 mt-0.5 h-5 w-5" /><span
-              >Multi-year renewal chains beyond HubSpot's loop limit</span
+              >Repeatable renewal-deal creation using your chosen pipeline and timing rules</span
             >
           </li>
           <li class="flex gap-3 text-base text-v6-dark leading-relaxed">
             <CheckIcon aria-hidden="true" className="text-v6-teal flex-shrink-0 mt-0.5 h-5 w-5" /><span
-              >Escalation applied automatically, so your earned
-              increases are not missed</span
+              >Configured line items, associations, and ownership carried into the new deal</span
             >
           </li>
           <li class="flex gap-3 text-base text-v6-dark leading-relaxed">
             <CheckIcon aria-hidden="true" className="text-v6-teal flex-shrink-0 mt-0.5 h-5 w-5" /><span
-              >NRR/GRR analytics native in your dashboards</span
+              >A reviewed recipe that can start manually before automation is enabled</span
             >
           </li>
         </ul>
@@ -959,12 +1053,12 @@ const toneMap: Record<string, string> = {
       <p
         class="reveal text-sm font-semibold uppercase tracking-[0.2em] text-v6-copper mb-3 text-center"
       >
-        How Swotbee Delivers Results
+        Implementation support when the app is not the whole solution
       </p>
       <h2
         class="reveal text-2xl sm:text-3xl lg:text-4xl font-bold text-v6-dark mb-3 text-center text-balance"
       >
-        Results In The First Month, Not The Next Fiscal Year.
+        Start with Renewal Builder and add expert help only where needed.
       </h2>
       <p class="reveal text-v6-text-muted text-center mb-10 max-w-lg mx-auto">
       </p>
@@ -1031,48 +1125,144 @@ const toneMap: Record<string, string> = {
       <h2
         class="reveal text-2xl sm:text-3xl lg:text-4xl font-bold text-v6-dark mb-3 text-center text-balance"
       >
-        Every Renewal Process Is Different. That's Why We Don't Start With
-        Software.
+        A renewal process built around your HubSpot rules.
       </h2>
       <p class="reveal text-v6-text-muted text-center mb-10 max-w-lg mx-auto">
         We start with your process, data, and business rules, then automate
         what's ready. Here is what that produced.
       </p>
 
-      <div class="stagger grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-        {
-          testimonials.map((t) => (
-            <div class="anim-card bg-white rounded-xl p-7 border border-v6-border flex flex-col">
-              <div class="text-v6-copper text-3xl leading-none mb-3">“</div>
-              <blockquote class="text-base text-v6-dark leading-relaxed mb-6 flex-grow">
-                {t.quote}
-              </blockquote>
-              <div class="flex items-center gap-3 pt-4 border-t border-v6-border">
-                {t.image ? (
-                  <img
-                    src={t.image}
-                    alt={t.name}
-                    width="40"
-                    height="40"
-                    class="w-10 h-10 rounded-full object-cover flex-shrink-0"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                ) : (
-                  <div class="w-10 h-10 rounded-full bg-v6-teal-100 flex items-center justify-center text-v6-teal font-bold text-sm flex-shrink-0">
-                    {t.initials}
+      <div
+        class="testimonial-carousel reveal mb-8"
+        data-testimonial-carousel
+        role="region"
+        aria-roledescription="carousel"
+        aria-label="Customer testimonials"
+        tabindex="0"
+      >
+        <p class="sr-only">
+          Use the previous and next buttons, or the left and right arrow keys,
+          to read each testimonial.
+        </p>
+        <div data-testimonial-viewport>
+          <div class="testimonial-track grid gap-6" data-testimonial-track>
+            {
+              testimonials.map((t, index) => (
+                <article
+                  class="testimonial-slide bg-white rounded-2xl border border-v6-border overflow-hidden"
+                  role="group"
+                  aria-roledescription="slide"
+                  aria-label={`${index + 1} of ${testimonials.length}`}
+                  data-testimonial-name={t.name}
+                  data-testimonial-company={t.context}
+                >
+                  <div class="grid h-full grid-cols-1 md:grid-cols-[1fr_15rem]">
+                    <div class="p-7 sm:p-9 lg:p-10">
+                      <div
+                        class="text-v6-copper text-4xl leading-none mb-3"
+                        aria-hidden="true"
+                      >
+                        “
+                      </div>
+                      <blockquote class="text-lg sm:text-xl text-v6-dark leading-relaxed">
+                        {t.quote}
+                      </blockquote>
+                    </div>
+
+                    <div class="bg-v6-bg-warm border-t md:border-t-0 md:border-l border-v6-border p-7 sm:p-8 flex flex-col justify-center">
+                      <img
+                        src={t.companyLogo}
+                        alt={`${t.context} logo`}
+                        width={t.context === "Postgrad" ? "146" : "80"}
+                        height={t.context === "Postgrad" ? "30" : "74"}
+                        class:list={[
+                          "object-contain object-left mb-5",
+                          t.context === "Postgrad"
+                            ? "w-36 h-auto"
+                            : "w-16 h-16",
+                        ]}
+                        loading="lazy"
+                        decoding="async"
+                      />
+                      <div class="flex items-center gap-3 pt-5 border-t border-v6-border">
+                        {t.image ? (
+                          <img
+                            src={t.image}
+                            alt=""
+                            width="48"
+                            height="48"
+                            class="w-12 h-12 rounded-full object-cover flex-shrink-0"
+                            loading="lazy"
+                            decoding="async"
+                          />
+                        ) : (
+                          <div
+                            class="w-12 h-12 rounded-full bg-v6-teal-100 flex items-center justify-center text-v6-teal font-bold text-sm flex-shrink-0"
+                            aria-hidden="true"
+                          >
+                            {t.initials}
+                          </div>
+                        )}
+                        <div>
+                          <p class="text-base font-semibold text-v6-dark">
+                            {t.name}
+                          </p>
+                          <p class="text-sm text-v6-text-muted">{t.context}</p>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                )}
-                <div>
-                  <p class="text-sm font-semibold text-v6-dark">
-                    {t.name ?? t.role}
-                  </p>
-                  <p class="text-xs text-v6-text-muted">{t.context}</p>
-                </div>
-              </div>
-            </div>
-          ))
-        }
+                </article>
+              ))
+            }
+          </div>
+        </div>
+
+        <div
+          class="testimonial-controls hidden items-center justify-center gap-3 mt-5"
+          data-testimonial-controls
+        >
+          <button
+            type="button"
+            class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-v6-border bg-white text-v6-dark shadow-sm transition-colors hover:border-v6-copper hover:text-v6-copper focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-v6-copper focus-visible:ring-offset-2"
+            aria-label="Show previous testimonial"
+            data-testimonial-prev
+          >
+            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="m15 18-6-6 6-6"></path>
+            </svg>
+          </button>
+
+          <div class="flex items-center gap-2" data-testimonial-dots>
+            {
+              testimonials.map((t, index) => (
+                <button
+                  type="button"
+                  class="testimonial-dot h-11 w-11 rounded-full flex items-center justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-v6-copper focus-visible:ring-offset-2"
+                  aria-label={`Show testimonial from ${t.name} at ${t.context}`}
+                  data-testimonial-dot={index}
+                >
+                  <span class="h-2.5 w-2.5 rounded-full bg-v6-border transition-colors" />
+                </button>
+              ))
+            }
+          </div>
+
+          <button
+            type="button"
+            class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-v6-border bg-white text-v6-dark shadow-sm transition-colors hover:border-v6-copper hover:text-v6-copper focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-v6-copper focus-visible:ring-offset-2"
+            aria-label="Show next testimonial"
+            data-testimonial-next
+          >
+            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="m9 18 6-6-6-6"></path>
+            </svg>
+          </button>
+        </div>
+
+        <p class="sr-only" aria-live="polite" data-testimonial-status>
+          Showing testimonial 1 of {testimonials.length}: {testimonials[0].name}, {testimonials[0].context}
+        </p>
       </div>
 
       <!-- Case study -->
@@ -1165,28 +1355,32 @@ const toneMap: Record<string, string> = {
       <p
         class="text-sm font-semibold uppercase tracking-[0.2em] text-v6-copper mb-3"
       >
-        Start with a Renewal Alignment Call
+        Start with a product alignment call
       </p>
       <h2
         class="text-2xl sm:text-3xl lg:text-4xl font-bold text-v6-dark mb-3"
       >
-        Validate Your Renewal Process Before You Invest In a Fix
+        Confirm whether Renewal Builder fits your HubSpot process
       </h2>
       <p class="text-v6-text-muted mb-8 max-w-lg mx-auto">
-        In 30 minutes, we validate the renewal process you have today, surface the rules
-        and handoffs creating risk, and identify whether a deeper HubSpot audit is worth doing.
+        In 30 minutes, we map your current renewal-deal flow, confirm what should
+        carry forward, and identify a safe first recipe. No HubSpot access is
+        needed for the call.
       </p>
       <a
         href="/renewal-audit-call/"
         class="inline-block bg-v6-copper text-white px-8 py-3.5 rounded-xl text-base font-semibold hover:bg-v6-copper-600"
       >
-        Book a Renewal Alignment Call <ArrowRightIcon aria-hidden="true" className="h-4 w-4 inline-block align-text-bottom" />
+        Book a free 30-minute renewal review <ArrowRightIcon aria-hidden="true" className="h-4 w-4 inline-block align-text-bottom" />
       </a>
       <p class="mt-3 text-xs text-gray-500">No fee. No HubSpot access required. The paid audit begins only after scope and terms are agreed.</p>
       <p class="mt-5">
         <a
           href="#demo"
-          class="text-v6-copper font-medium underline underline-offset-4"
+          data-renewal-demo-trigger
+          aria-haspopup="dialog"
+          aria-controls="renewal-demo-modal"
+              class="text-v6-copper font-medium underline underline-offset-4"
         >
           Prefer to see it working first? Watch the 2-minute demo <ArrowRightIcon aria-hidden="true" className="h-4 w-4 inline-block align-text-bottom" />
         </a>
@@ -1205,7 +1399,7 @@ const toneMap: Record<string, string> = {
       <h2
         class="reveal text-2xl sm:text-3xl lg:text-4xl font-bold text-v6-dark mb-10 text-center text-balance"
       >
-        The Things Revenue Leaders Ask Us First.
+        HubSpot renewal management questions, answered.
       </h2>
       <div class="stagger space-y-3">
         {
@@ -1235,26 +1429,29 @@ const toneMap: Record<string, string> = {
       <p
         class="text-xs font-semibold uppercase tracking-[0.2em] text-white/70 mb-3"
       >
-        Start with a Renewal Alignment Call
+        Start with a product alignment call
       </p>
       <h2 class="text-2xl sm:text-3xl font-bold text-white mb-4">
-        Get Clear on Your Renewal Operation in 30 Minutes
+        Map your first Renewal Builder recipe in 30 minutes
       </h2>
       <p class="text-v6-copper-50 text-base sm:text-lg mb-4">
-        Validate your renewal process, surface the rules and handoffs creating risk, and decide whether a deeper HubSpot audit is worthwhile.
+        Confirm fit, choose the source deal and destination pipeline, and leave with a clear assisted-installation next step.
       </p>
       <a
         href="/renewal-audit-call/"
         data-ga-cta="renewal_final_book_audit"
         class="bg-white text-v6-copper px-8 py-3.5 rounded-xl text-base font-semibold hover:bg-gray-50 transition-colors inline-block"
       >
-        Book a Renewal Alignment Call <ArrowRightIcon aria-hidden="true" className="h-4 w-4 inline-block align-text-bottom" />
+        Book a free 30-minute renewal review <ArrowRightIcon aria-hidden="true" className="h-4 w-4 inline-block align-text-bottom" />
       </a>
       <p class="mt-4 text-xs text-v6-copper-50">No fee. No HubSpot access required. The paid audit begins only after scope and terms are agreed.</p>
       <p class="mt-5">
         <a
           href="#demo"
-          class="text-white/90 text-sm font-medium underline underline-offset-4 hover:text-white transition-colors"
+          data-renewal-demo-trigger
+          aria-haspopup="dialog"
+          aria-controls="renewal-demo-modal"
+              class="text-white/90 text-sm font-medium underline underline-offset-4 hover:text-white transition-colors"
         >
           Prefer to see it working first? Watch the 2-minute demo <ArrowRightIcon aria-hidden="true" className="h-4 w-4 inline-block align-text-bottom" />
         </a>
@@ -1433,6 +1630,8 @@ const toneMap: Record<string, string> = {
   </style>
 
   <script>
+    import EmblaCarousel from "embla-carousel";
+
     const reduce = window.matchMedia(
       "(prefers-reduced-motion: reduce)",
     ).matches;
@@ -1473,6 +1672,7 @@ const toneMap: Record<string, string> = {
     // Makes the "Watch the 2-minute demo" / "Estimate your leakage" CTAs glide to
     // their section instead of hard-jumping, reinforcing the guided path to the CTA.
     document.querySelectorAll('a[href^="#"]').forEach((a) => {
+      if ((a as HTMLElement).hasAttribute("data-renewal-demo-trigger")) return;
       a.addEventListener("click", (e) => {
         const id = (a as HTMLAnchorElement).getAttribute("href");
         if (!id || id === "#") return;
@@ -1568,5 +1768,88 @@ const toneMap: Record<string, string> = {
       );
       statsObserver.observe(statsRoot);
     }
+
+    // --- Testimonials carousel ---
+    document
+      .querySelectorAll<HTMLElement>("[data-testimonial-carousel]")
+      .forEach((carousel) => {
+        const viewport = carousel.querySelector<HTMLElement>(
+          "[data-testimonial-viewport]",
+        );
+        const track = carousel.querySelector<HTMLElement>(
+          "[data-testimonial-track]",
+        );
+        const controls = carousel.querySelector<HTMLElement>(
+          "[data-testimonial-controls]",
+        );
+        const prev = carousel.querySelector<HTMLButtonElement>(
+          "[data-testimonial-prev]",
+        );
+        const next = carousel.querySelector<HTMLButtonElement>(
+          "[data-testimonial-next]",
+        );
+        const dots = Array.from(
+          carousel.querySelectorAll<HTMLButtonElement>("[data-testimonial-dot]"),
+        );
+        const status = carousel.querySelector<HTMLElement>(
+          "[data-testimonial-status]",
+        );
+        const slides = Array.from(
+          carousel.querySelectorAll<HTMLElement>(".testimonial-slide"),
+        );
+
+        if (!viewport || !track || !controls || !prev || !next) return;
+
+        viewport.classList.add("overflow-hidden");
+        track.classList.remove("grid", "gap-6");
+        track.classList.add("flex");
+        slides.forEach((slide) =>
+          slide.classList.add("flex-[0_0_100%]", "min-w-0"),
+        );
+        controls.classList.remove("hidden");
+        controls.classList.add("flex");
+
+        const embla = EmblaCarousel(viewport, {
+          align: "start",
+          loop: true,
+          duration: 25,
+        });
+
+        const updateSelection = () => {
+          const selected = embla.selectedScrollSnap();
+          dots.forEach((dot, index) => {
+            const marker = dot.firstElementChild;
+            const active = index === selected;
+            dot.setAttribute("aria-current", active ? "true" : "false");
+            marker?.classList.toggle("bg-v6-copper", active);
+            marker?.classList.toggle("bg-v6-border", !active);
+          });
+
+          const slide = slides[selected];
+          if (status && slide) {
+            status.textContent = `Showing testimonial ${selected + 1} of ${slides.length}: ${slide.dataset.testimonialName}, ${slide.dataset.testimonialCompany}`;
+          }
+        };
+
+        prev.addEventListener("click", () => embla.scrollPrev(reduce));
+        next.addEventListener("click", () => embla.scrollNext(reduce));
+        dots.forEach((dot, index) => {
+          dot.addEventListener("click", () => embla.scrollTo(index, reduce));
+        });
+        carousel.addEventListener("keydown", (event) => {
+          if (event.key === "ArrowLeft") {
+            event.preventDefault();
+            embla.scrollPrev(reduce);
+          }
+          if (event.key === "ArrowRight") {
+            event.preventDefault();
+            embla.scrollNext(reduce);
+          }
+        });
+
+        embla.on("select", updateSelection);
+        embla.on("reInit", updateSelection);
+        updateSelection();
+      });
   </script>
 </Layout>

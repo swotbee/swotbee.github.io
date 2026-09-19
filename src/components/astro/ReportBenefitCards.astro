@@ -1,0 +1,84 @@
+---
+import {
+  AdjustmentsHorizontalIcon,
+  ArchiveBoxIcon,
+  ArrowPathIcon,
+  ArrowTrendingUpIcon,
+  ArrowsRightLeftIcon,
+  BoltIcon,
+  CalendarDaysIcon,
+  ChatBubbleLeftRightIcon,
+  CheckCircleIcon,
+  ClipboardDocumentCheckIcon,
+  ClockIcon,
+  DocumentMagnifyingGlassIcon,
+  ExclamationTriangleIcon,
+  FlagIcon,
+  FunnelIcon,
+  MagnifyingGlassIcon,
+  PresentationChartLineIcon,
+  UserGroupIcon,
+} from "@heroicons/react/24/outline";
+
+const iconMap = {
+  adjust: AdjustmentsHorizontalIcon,
+  archive: ArchiveBoxIcon,
+  refresh: ArrowPathIcon,
+  trend: ArrowTrendingUpIcon,
+  compare: ArrowsRightLeftIcon,
+  velocity: BoltIcon,
+  calendar: CalendarDaysIcon,
+  conversation: ChatBubbleLeftRightIcon,
+  confirm: CheckCircleIcon,
+  checklist: ClipboardDocumentCheckIcon,
+  clock: ClockIcon,
+  inspect: DocumentMagnifyingGlassIcon,
+  warning: ExclamationTriangleIcon,
+  flag: FlagIcon,
+  filter: FunnelIcon,
+  search: MagnifyingGlassIcon,
+  present: PresentationChartLineIcon,
+  owners: UserGroupIcon,
+} as const;
+
+const toneMap = {
+  copper: "bg-v6-copper-50 text-v6-copper",
+  teal: "bg-v6-teal-50 text-v6-teal-800",
+  blue: "bg-v6-blue-50 text-v6-blue-800",
+  amber: "bg-v6-amber-50 text-v6-amber-800",
+} as const;
+
+export type ReportBenefit = {
+  title: string;
+  description: string;
+  icon: keyof typeof iconMap;
+  tone?: keyof typeof toneMap;
+};
+
+interface Props {
+  benefits: ReadonlyArray<ReportBenefit>;
+}
+
+const { benefits } = Astro.props;
+---
+
+<div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+  {
+    benefits.map((benefit) => {
+      const Icon = iconMap[benefit.icon];
+      const tone = toneMap[benefit.tone ?? "copper"];
+
+      return (
+        <article class="rounded-xl border border-v6-border bg-white p-6">
+          <div class="mb-4 flex items-center gap-4">
+            <div class:list={["flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-lg", tone]}>
+              <Icon aria-hidden="true" className="h-6 w-6" />
+            </div>
+            <h3 class="text-lg font-semibold text-v6-dark">{benefit.title}</h3>
+          </div>
+          <p class="leading-relaxed text-v6-text-muted">{benefit.description}</p>
+        </article>
+      );
+    })
+  }
+</div>

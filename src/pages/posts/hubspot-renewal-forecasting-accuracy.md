@@ -123,6 +123,8 @@ A few practices make renewal tracking reliable:
 - **Assign an account owner** to every renewal deal so the forecast rolls up by CSM and each owner can submit a forecast.
 - **Surface it in HubSpot dashboards** so leadership sees forecast versus actual in one view.
 
+For repeatable management views, use the [pipeline change dashboard](/hubspot-pipeline-change-report/) to explain movement, the [historical pipeline dashboard](/hubspot-historical-pipeline-snapshot/) to preserve each cutoff, and the [sales velocity dashboard](/hubspot-deal-velocity-report/) to connect revenue pace to opportunity count, value, win rate, and cycle time.
+
 The renewal process is predictable enough that, with clean deal data, your HubSpot renewal forecast can be far more accurate than a new-business forecast. For the underlying metrics (renewal rate, NRR, GRR), see our [guide to SaaS renewal metrics](/posts/renewal-metrics-explained/).
 
 ---

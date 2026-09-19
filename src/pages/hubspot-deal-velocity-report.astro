@@ -1,0 +1,325 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/astro/Footer.astro";
+import LogoHoneycomb from "../components/astro/LogoHoneycomb.astro";
+import ClientLogoStrip from "../components/astro/ClientLogoStrip.astro";
+import ReportSignup from "../components/astro/ReportSignup.astro";
+import ReportBenefitCards from "../components/astro/ReportBenefitCards.astro";
+import ReportRelatedLinks from "../components/astro/ReportRelatedLinks.astro";
+import ReportingDashboardValue from "../components/astro/ReportingDashboardValue.astro";
+
+const title = "HubSpot Sales Velocity Dashboard";
+const description = "Build a HubSpot sales velocity dashboard in 3 clicks, measure revenue pace, explain the four drivers, and prepare Excel and PowerPoint outputs.";
+
+const velocityRows = [
+  { deal: "Acme Platform renewal", owner: "Maya Chen", stage: "Contract sent", value: "$120k", dealVelocity: "74 days", stageVelocity: "18 days", activityVelocity: "14 days", status: "Bottleneck", reason: "Stage limit 10 days; no buyer activity for 14 days", action: "Confirm procurement next step" },
+  { deal: "Northstar expansion", owner: "Liam Ross", stage: "Decision", value: "$75k", dealVelocity: "46 days", stageVelocity: "9 days", activityVelocity: "5 days", status: "Near benchmark", reason: "2 days from the 11-day stage threshold", action: "Confirm decision date" },
+  { deal: "Quarry Systems rollout", owner: "Elena Park", stage: "Solution review", value: "$90k", dealVelocity: "32 days", stageVelocity: "6 days", activityVelocity: "1 day", status: "Within benchmark", reason: "Within the 12-day stage threshold", action: "Keep current next step" },
+];
+
+const benefits = [
+  { title: "Measure revenue pace", description: "Calculate how much qualified pipeline is expected to convert into revenue per day using a visible conventional formula.", icon: "velocity", tone: "copper" },
+  { title: "See all four velocity drivers", description: "Keep qualified opportunities, average deal value, win rate, and sales-cycle length together in one dashboard.", icon: "trend", tone: "teal" },
+  { title: "Compare recurring periods", description: "Track whether weekly or monthly sales velocity improved and identify which input caused the change.", icon: "compare", tone: "blue" },
+  { title: "Connect bottlenecks to revenue", description: "See how slow stages lengthen the sales cycle and reduce the revenue pace even when other inputs remain stable.", icon: "clock", tone: "amber" },
+  { title: "Inspect the Excel-ready evidence", description: "Drill from the aggregate velocity number into stages, open deals, owners, values, and meaningful activity.", icon: "inspect", tone: "copper" },
+  { title: "Choose the management story", description: "Select the driver changes and bottlenecks that belong in an editable PowerPoint update with AI-assisted talking points.", icon: "present", tone: "teal" },
+] as const;
+
+const faqs = [
+  { q: "What is sales velocity in HubSpot?", a: "Sales velocity estimates expected revenue generated per day. The conventional formula multiplies qualified opportunities, average deal value, and win rate, then divides by average sales-cycle length." },
+  { q: "How does time in stage affect sales velocity?", a: "A stage bottleneck can increase average sales-cycle length and reduce sales velocity. The dashboard uses stage duration and deal-level context to show where the cycle is slowing." },
+  { q: "Can HubSpot already report deal velocity?", a: "HubSpot provides stage-entry and time-in-stage data on eligible plans. SWOTBee adds the conventional velocity formula, recurring period comparison, and an explanation of which driver changed." },
+  { q: "Is there one correct sales-velocity definition for every team?", a: "No. Choose which opportunities qualify, how win rate is measured, and where the sales cycle starts. The dashboard keeps those definitions visible." },
+  { q: "Will the dashboard edit or close deals?", a: "No. It connects velocity changes to the supporting opportunities and owners without automatically changing CRM records." },
+  { q: "Can I use the dashboard in Excel and PowerPoint?", a: "Yes. Use the Excel-ready calculation detail to inspect the inputs, then choose the velocity trend, driver changes, and bottleneck story for PowerPoint." },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: { "@type": "Answer", text: item.a },
+  })),
+};
+---
+
+<Layout
+  title={title}
+  description={description}
+  keywords="hubspot deal velocity report, hubspot sales velocity dashboard, hubspot sales velocity report, hubspot sales velocity formula, hubspot pipeline velocity, hubspot sales cycle bottlenecks"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
+
+  <header class="border-b border-v6-border bg-white">
+    <div class="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
+      <a href="/" class="flex min-h-11 items-center gap-2 rounded-md focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2" aria-label="SWOTbee home">
+        <LogoHoneycomb width={32} height={30} />
+        <span class="text-lg font-bold text-v6-dark">SWOT<span class="text-v6-teal-700">bee</span></span>
+      </a>
+      <a href="#report-signup" data-ga-cta="b3_header_signup" class="inline-flex min-h-11 items-center justify-center rounded-lg border border-v6-copper px-4 py-2 text-sm font-semibold text-v6-copper transition-colors hover:bg-v6-copper-50 focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2">
+        Sign up to the app
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <section class="overflow-hidden bg-gradient-to-b from-v6-bg to-white px-4 pb-16 pt-14 sm:px-6 sm:pb-20 sm:pt-20 lg:px-8">
+      <div class="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-[0.92fr_1.08fr]">
+        <div class="min-w-0">
+          <span class="mb-5 inline-flex rounded-full bg-v6-copper-50 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-v6-copper-700">Create it in 3 clicks</span>
+          <h1 class="max-w-3xl text-balance text-4xl font-bold leading-[1.08] text-v6-dark sm:text-5xl lg:text-[3.45rem]">Build Your HubSpot Sales Velocity Dashboard in 3 Clicks</h1>
+          <p class="mt-6 max-w-2xl text-lg leading-relaxed text-v6-text-muted">For CROs, sales leaders, and RevOps teams that need to explain revenue pace. Measure the four sales-velocity drivers, find the bottleneck, and choose what goes into Excel and PowerPoint.</p>
+          <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+            <a href="#sample-report" data-ga-cta="b3_hero_view_sample" class="inline-flex min-h-12 items-center justify-center rounded-xl bg-v6-copper px-7 py-3.5 text-base font-semibold text-white transition-colors hover:bg-v6-copper-600 focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2">View the sample dashboard</a>
+            <a href="#report-signup" data-ga-cta="b3_hero_signup" class="inline-flex min-h-12 items-center justify-center rounded-xl border border-v6-border bg-white px-7 py-3.5 text-base font-semibold text-v6-dark transition-colors hover:border-v6-copper hover:bg-v6-copper-50 focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2">Sign up to the app</a>
+          </div>
+          <p class="mt-4 max-w-xl text-sm leading-relaxed text-v6-text-muted">Sign up to the SWOTBee app with your work email. No card is required.</p>
+        </div>
+
+        <div class="relative min-w-0" aria-label="Example sales velocity dashboard with formula inputs, trend, and bottleneck">
+          <div class="absolute -inset-6 -z-10 rounded-full bg-v6-blue-100/60 blur-3xl"></div>
+          <div class="min-w-0 overflow-hidden rounded-2xl border border-v6-border bg-white shadow-xl shadow-v6-dark/10">
+            <div class="flex items-center justify-between border-b border-v6-border px-5 py-4">
+              <div><p class="text-xs font-semibold uppercase tracking-[0.14em] text-v6-blue-800">Sales velocity dashboard</p><p class="mt-1 font-semibold text-v6-dark">Revenue pace and drivers</p></div>
+              <span class="rounded-full bg-v6-copper-50 px-3 py-1 text-xs font-semibold text-v6-copper-800">Down 23%</span>
+            </div>
+            <div class="grid grid-cols-[1fr_auto_1fr] items-center border-b border-v6-border">
+              <div class="p-4 sm:p-5"><p class="text-xs text-v6-text-muted">Previous period</p><p class="mt-1 text-lg font-bold text-v6-dark sm:text-xl">USD 5,000/day</p></div>
+              <span class="text-xl text-v6-copper" aria-hidden="true">→</span>
+              <div class="p-4 sm:p-5"><p class="text-xs text-v6-copper-800">Current period</p><p class="mt-1 text-lg font-bold text-v6-copper-800 sm:text-xl">USD 3,846/day</p></div>
+            </div>
+            <div class="p-5">
+              <p class="text-[11px] font-semibold uppercase tracking-wide text-v6-text-muted">Conventional velocity formula</p>
+              <div class="mt-3 grid min-w-0 grid-cols-2 gap-2 text-center sm:grid-cols-4">
+                <div class="min-w-0 rounded-lg bg-v6-blue-50 p-2"><p class="text-[10px] text-v6-text-muted">Qualified</p><p class="mt-1 font-bold text-v6-dark">40</p></div>
+                <div class="min-w-0 rounded-lg bg-v6-blue-50 p-2"><p class="text-[10px] text-v6-text-muted">Avg value</p><p class="mt-1 font-bold text-v6-dark">USD 25k</p></div>
+                <div class="min-w-0 rounded-lg bg-v6-blue-50 p-2"><p class="text-[10px] text-v6-text-muted">Win rate</p><p class="mt-1 font-bold text-v6-dark">25%</p></div>
+                <div class="min-w-0 rounded-lg bg-v6-copper-50 p-2"><p class="text-[10px] text-v6-copper-800">Cycle</p><p class="mt-1 font-bold text-v6-copper-800">65 days</p></div>
+              </div>
+              <p class="mt-3 text-center text-xs font-semibold text-v6-dark">(40 × USD 25k × 25%) ÷ 65 days</p>
+              <div class="mt-4 flex items-center justify-between rounded-lg border border-v6-copper-200 bg-v6-copper-50 px-3 py-2"><div><p class="text-xs font-semibold text-v6-dark">Driver of decline</p><p class="text-[11px] text-v6-text-muted">Sales cycle increased from 50 to 65 days</p></div><span class="text-xs font-semibold text-v6-copper-800">Contract sent</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <ClientLogoStrip caption="HubSpot and revenue operations work trusted by teams at" />
+
+    <ReportingDashboardValue
+      dashboardName="sales velocity dashboard"
+      audienceIntro="This dashboard is for leaders who need to explain how quickly qualified pipeline becomes revenue and which commercial lever should improve next."
+      audiences={[
+        { role: "CRO and VP Sales", need: "See revenue pace, compare periods, and decide whether opportunity volume, value, win rate, or cycle length needs attention." },
+        { role: "Revenue Operations", need: "Keep the formula, scope, calculation inputs, and stage evidence consistent across weekly and monthly reviews." },
+        { role: "Sales leadership", need: "Connect aggregate velocity changes to bottleneck stages, affected opportunities, owners, and practical follow-up." },
+      ]}
+      workflowSteps={[
+        { title: "Connect HubSpot", description: "Use a read-only connection to calculate from the opportunity and outcome data already maintained by the team." },
+        { title: "Choose the velocity scope", description: "Select the pipeline, qualification point, comparison period, and sales-cycle definition used in the formula." },
+        { title: "Create and explain", description: "Generate the dashboard, inspect the Excel-ready calculation, and select driver changes for PowerPoint." },
+      ]}
+      dashboardUse="Track revenue per day, qualified opportunities, average deal value, win rate, sales-cycle length, and the stages slowing the cycle."
+      spreadsheetUse="Review the calculation inputs and supporting opportunity rows so the team can challenge definitions and identify source records to correct in HubSpot."
+      presentationUse="Choose the driver changes, velocity trend, and bottleneck explanation that belong in the management update."
+      storyExample="Sales velocity fell 23 percent because average cycle length increased from 50 to 65 days, while opportunity volume, deal value, and win rate remained stable."
+    />
+
+    <section class="px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+      <div class="mx-auto max-w-6xl">
+        <div class="mx-auto max-w-3xl text-center">
+          <p class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper">Revenue pace with diagnostic context</p>
+          <h2 class="mt-3 text-balance text-3xl font-bold text-v6-dark sm:text-4xl">What is a HubSpot sales velocity dashboard?</h2>
+          <p class="mt-4 text-lg leading-relaxed text-v6-text-muted">A sales velocity dashboard measures the expected revenue generated per day from qualified opportunities, average deal value, win rate, and average sales-cycle length. It tracks those drivers across recurring periods.</p>
+          <p class="mt-4 leading-relaxed text-v6-text-muted">Time in stage is a diagnostic, not the velocity metric. It helps explain which stage is lengthening the sales cycle and which open deals are contributing to the slowdown.</p>
+        </div>
+
+        <div class="mx-auto mt-16 max-w-3xl border-t border-v6-border pt-16 text-center sm:mt-20 sm:pt-20">
+          <p class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper">What this dashboard helps you do</p>
+          <h2 class="mt-3 text-balance text-3xl font-bold text-v6-dark sm:text-4xl">Measure revenue pace, then explain which driver is changing it.</h2>
+          <p class="mt-4 text-lg leading-relaxed text-v6-text-muted">Start with revenue per day and its four inputs, then use stage and deal detail to explain a slower sales cycle.</p>
+        </div>
+        <ReportBenefitCards benefits={benefits} />
+      </div>
+    </section>
+
+    <section class="bg-v6-bg px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+      <div class="mx-auto max-w-5xl">
+        <div class="mx-auto max-w-3xl text-center">
+          <p class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper">Sales velocity formula</p>
+          <h2 class="mt-3 text-balance text-3xl font-bold text-v6-dark sm:text-4xl">Measure revenue pace, then use stage data to explain what is slowing it.</h2>
+          <p class="mt-4 text-lg leading-relaxed text-v6-text-muted">Sales velocity estimates how much pipeline revenue moves through your sales process per day. Time-in-stage reporting does not replace that metric. It shows where the sales-cycle input is getting longer and which deals are causing the delay.</p>
+        </div>
+
+        <div class="mt-10 overflow-hidden rounded-2xl border border-v6-border bg-white shadow-sm">
+          <div class="border-b border-v6-border bg-v6-dark px-5 py-6 text-center text-white sm:px-8">
+            <p class="text-sm font-semibold uppercase tracking-[0.14em] text-v6-copper-300">Conventional calculation</p>
+            <p class="mt-3 text-balance text-xl font-bold sm:text-2xl">(Qualified opportunities × average deal value × win rate) ÷ average sales-cycle length</p>
+          </div>
+          <div class="grid gap-px bg-v6-border sm:grid-cols-2 lg:grid-cols-4">
+            <div class="bg-white p-5"><p class="font-semibold text-v6-dark">Qualified opportunities</p><p class="mt-2 text-sm leading-relaxed text-v6-text-muted">The number of active opportunities included in the measured pipeline.</p></div>
+            <div class="bg-white p-5"><p class="font-semibold text-v6-dark">Average deal value</p><p class="mt-2 text-sm leading-relaxed text-v6-text-muted">The average value of those opportunities. Together with volume, this establishes pipeline value.</p></div>
+            <div class="bg-white p-5"><p class="font-semibold text-v6-dark">Win rate</p><p class="mt-2 text-sm leading-relaxed text-v6-text-muted">The percentage of comparable opportunities that become closed-won revenue.</p></div>
+            <div class="bg-white p-5"><p class="font-semibold text-v6-dark">Sales-cycle length</p><p class="mt-2 text-sm leading-relaxed text-v6-text-muted">The average number of days from the chosen starting point to closed won.</p></div>
+          </div>
+        </div>
+
+        <div class="mt-6 grid gap-6 rounded-2xl border border-v6-border bg-white p-6 sm:p-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
+          <div>
+            <p class="text-sm font-semibold uppercase tracking-[0.14em] text-v6-copper">Dashboard example</p>
+            <p class="mt-3 text-3xl font-bold text-v6-dark">$5,000 per day</p>
+            <p class="mt-2 text-sm leading-relaxed text-v6-text-muted">40 opportunities × $25,000 average value × 25% win rate ÷ 50 days.</p>
+          </div>
+          <div class="border-t border-v6-border pt-6 lg:border-l lg:border-t-0 lg:pl-8 lg:pt-0">
+            <h3 class="text-xl font-bold text-v6-dark">How a stage bottleneck changes the result</h3>
+            <p class="mt-3 leading-relaxed text-v6-text-muted">If deals accumulate in Contract sent and the average sales cycle grows from 50 to 65 days, the same pipeline falls to about $3,846 per day. That is a 23% reduction in sales velocity even though opportunity volume, average value, and win rate did not change.</p>
+            <p class="mt-3 leading-relaxed text-v6-text-muted">The dashboard connects that slower denominator to the stage, open deals, owners, customer activity, and next actions behind it.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="sample-report" class="scroll-mt-8 bg-v6-bg px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+      <div class="mx-auto max-w-6xl">
+        <div class="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
+          <div class="max-w-3xl">
+            <div class="flex flex-wrap items-center gap-3"><p class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper">Dashboard preview</p><span class="rounded-full border border-v6-copper-200 bg-v6-copper-50 px-2.5 py-1 text-xs font-semibold text-v6-copper-800">Example data</span></div>
+            <h2 class="mt-3 text-balance text-3xl font-bold text-v6-dark sm:text-4xl">See revenue pace, driver changes, and bottleneck evidence together</h2>
+            <p class="mt-4 text-lg leading-relaxed text-v6-text-muted">The dashboard leads with revenue per day and its four inputs, then connects the changed driver to bottleneck stages, affected deals, owners, and next actions.</p>
+          </div>
+          <a href="#report-signup" data-ga-cta="b3_sample_signup" class="inline-flex min-h-11 items-center justify-center self-start rounded-xl border border-v6-copper px-5 py-3 text-sm font-semibold text-v6-copper transition-colors hover:bg-v6-copper-50 focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2 lg:self-auto">Sign up to the app</a>
+        </div>
+
+        <div class="mt-10 overflow-hidden rounded-2xl border border-v6-border bg-white shadow-sm">
+          <div class="flex flex-col gap-4 border-b border-v6-border px-5 py-5 sm:flex-row sm:items-center sm:justify-between sm:px-7">
+            <div><p class="text-xs font-semibold uppercase tracking-[0.14em] text-v6-text-muted">Sales velocity and bottlenecks</p><h3 class="mt-1 text-xl font-bold text-v6-dark">Stages slowing the pipeline</h3><p class="mt-1 text-sm text-v6-text-muted">Prepared Friday, 8:45 AM, before the weekly review</p></div>
+            <div class="flex items-center gap-2"><span class="rounded-full bg-v6-teal-50 px-3 py-1.5 text-xs font-semibold text-v6-teal-800">Contract sent is slowest</span><span class="rounded-full bg-v6-blue-50 px-3 py-1.5 text-xs font-semibold text-v6-blue-800">Sample</span></div>
+          </div>
+
+          <nav class="flex gap-1 overflow-x-auto border-b border-v6-border bg-v6-bg px-5 py-3 text-sm" aria-label="Sales velocity dashboard views"><span class="rounded-lg bg-white px-3 py-2 font-semibold text-v6-dark shadow-sm">Velocity trend</span><span class="px-3 py-2 text-v6-text-muted">Driver breakdown</span><span class="px-3 py-2 text-v6-text-muted">Bottlenecks</span><span class="px-3 py-2 text-v6-text-muted">Deals</span></nav>
+
+          <div class="grid gap-px bg-v6-border sm:grid-cols-2 lg:grid-cols-4"><div class="bg-v6-copper-50 p-5 sm:p-6"><p class="text-sm text-v6-copper-800">Sales velocity</p><p class="mt-2 text-2xl font-bold text-v6-copper-800">USD 3,846/day</p><p class="mt-1 text-xs text-v6-copper-800">Down 23%</p></div><div class="bg-white p-5 sm:p-6"><p class="text-sm text-v6-text-muted">Qualified opportunities</p><p class="mt-2 text-2xl font-bold text-v6-dark">40</p></div><div class="bg-white p-5 sm:p-6"><p class="text-sm text-v6-text-muted">Win rate</p><p class="mt-2 text-2xl font-bold text-v6-blue-800">25%</p></div><div class="bg-white p-5 sm:p-6"><p class="text-sm text-v6-text-muted">Sales cycle</p><p class="mt-2 text-2xl font-bold text-v6-dark">65 days</p><p class="mt-1 text-xs text-v6-copper-800">Was 50 days</p></div></div>
+
+          <div class="grid gap-8 p-5 sm:p-7 lg:grid-cols-[0.62fr_1.38fr]">
+            <div>
+              <div class="flex items-center justify-between"><h4 class="text-base font-bold text-v6-dark">What changed velocity</h4><span class="text-xs font-semibold text-v6-copper-800">Previous: USD 5,000/day</span></div>
+              <div class="mt-5 space-y-4">
+                <div><div class="flex justify-between gap-3 text-sm"><span class="text-v6-text-muted">Qualified opportunities</span><span class="font-semibold text-v6-dark">40, unchanged</span></div><div class="mt-2 h-2 rounded-full bg-v6-bg"><div class="h-full w-[62%] rounded-full bg-v6-blue-400"></div></div></div>
+                <div><div class="flex justify-between gap-3 text-sm"><span class="text-v6-text-muted">Average deal value</span><span class="font-semibold text-v6-dark">USD 25k, unchanged</span></div><div class="mt-2 h-2 rounded-full bg-v6-bg"><div class="h-full w-[62%] rounded-full bg-v6-blue-400"></div></div></div>
+                <div><div class="flex justify-between gap-3 text-sm"><span class="text-v6-text-muted">Win rate</span><span class="font-semibold text-v6-dark">25%, unchanged</span></div><div class="mt-2 h-2 rounded-full bg-v6-bg"><div class="h-full w-[62%] rounded-full bg-v6-blue-400"></div></div></div>
+                <div><div class="flex justify-between gap-3 text-sm"><span class="text-v6-text-muted">Sales-cycle length</span><span class="font-semibold text-v6-copper-800">50 → 65 days</span></div><div class="mt-2 h-2 rounded-full bg-v6-bg"><div class="h-full w-[82%] rounded-full bg-v6-copper"></div></div></div>
+              </div>
+              <p class="mt-5 rounded-xl bg-v6-copper-50 p-4 text-sm leading-relaxed text-v6-text-muted"><strong class="text-v6-dark">Driver:</strong> Contract sent added 15 days to the average cycle. The deal table shows the opportunities and owners behind that bottleneck.</p>
+            </div>
+
+            <div>
+              <div class="flex items-center justify-between gap-4"><h4 class="text-base font-bold text-v6-dark">Deals behind the bottleneck</h4><span class="text-xs text-v6-text-muted">Example rows</span></div>
+              <div class="mt-4 hidden overflow-x-auto rounded-xl border border-v6-border md:block">
+                <table class="w-full min-w-[900px] border-collapse text-left text-sm">
+                  <thead class="bg-v6-bg text-xs uppercase tracking-wide text-v6-text-muted"><tr><th class="px-4 py-3 font-semibold">Deal and owner</th><th class="px-4 py-3 font-semibold">Stage</th><th class="px-4 py-3 font-semibold">Timing</th><th class="px-4 py-3 font-semibold">Status and reason</th><th class="px-4 py-3 font-semibold">Next action</th><th class="px-4 py-3 text-right font-semibold">Value</th></tr></thead>
+                  <tbody class="divide-y divide-v6-border">
+                    {velocityRows.map((row) => (
+                      <tr><td class="px-4 py-3"><p class="font-semibold text-v6-dark">{row.deal}</p><p class="mt-0.5 text-xs text-v6-text-muted">{row.owner}</p></td><td class="px-4 py-3 text-v6-text-muted">{row.stage}</td><td class="px-4 py-3 text-xs text-v6-text-muted"><strong class="text-v6-dark">Deal:</strong> {row.dealVelocity}<br /><strong class="text-v6-dark">Stage:</strong> {row.stageVelocity}<br /><strong class="text-v6-dark">Activity:</strong> {row.activityVelocity}</td><td class="px-4 py-3 text-v6-text-muted"><strong class="text-v6-dark">{row.status}</strong><br /><span class="text-xs">{row.reason}</span></td><td class="px-4 py-3 text-v6-dark">{row.action}</td><td class="px-4 py-3 text-right font-semibold text-v6-dark">{row.value}</td></tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <div class="mt-4 space-y-3 md:hidden">
+                {velocityRows.map((row) => (
+                  <article class="rounded-xl border border-v6-border p-4"><div class="flex items-start justify-between gap-4"><div><h5 class="font-semibold text-v6-dark">{row.deal}</h5><p class="mt-0.5 text-xs text-v6-text-muted">Owner: {row.owner}</p></div><span class="text-sm font-bold text-v6-dark">{row.value}</span></div><p class="mt-3 text-sm text-v6-text-muted">{row.stage}</p><p class="mt-2 text-xs text-v6-text-muted">Cycle {row.dealVelocity} · Stage {row.stageVelocity} · Activity {row.activityVelocity}</p><p class="mt-2 text-sm text-v6-text-muted"><strong class="text-v6-dark">{row.status}:</strong> {row.reason}</p><p class="mt-2 text-sm text-v6-text-muted"><strong class="text-v6-dark">Next:</strong> {row.action}</p></article>
+                ))}
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+      <div class="mx-auto max-w-5xl">
+        <div class="mx-auto max-w-3xl text-center"><p class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper">Three-click setup</p><h2 class="mt-3 text-balance text-3xl font-bold text-v6-dark sm:text-4xl">The 3-click dashboard setup</h2><p class="mt-4 text-lg leading-relaxed text-v6-text-muted">Sign up, choose the opportunity scope and formula definitions, and create the recurring velocity dashboard.</p></div>
+        <ol class="mt-10 grid gap-6 md:grid-cols-3">
+          <li class="rounded-2xl border border-v6-border bg-white p-6"><span class="text-sm font-bold text-v6-copper">01</span><h3 class="mt-3 text-xl font-bold text-v6-dark">Choose which deals are included</h3><p class="mt-2 leading-relaxed text-v6-text-muted">Use one sales pipeline, a renewal-only view, or another explicit scope that owners recognize.</p></li>
+          <li class="rounded-2xl border border-v6-border bg-white p-6"><span class="text-sm font-bold text-v6-copper">02</span><h3 class="mt-3 text-xl font-bold text-v6-dark">Choose the stage benchmarks</h3><p class="mt-2 leading-relaxed text-v6-text-muted">Set expected time in stage and define which customer activity supplies useful context.</p></li>
+          <li class="rounded-2xl border border-v6-border bg-white p-6"><span class="text-sm font-bold text-v6-copper">03</span><h3 class="mt-3 text-xl font-bold text-v6-dark">Choose weekly delivery</h3><p class="mt-2 leading-relaxed text-v6-text-muted">Receive the prepared result before the meeting, then reopen the same weekly result later.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="bg-v6-bg px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+      <div class="mx-auto max-w-5xl">
+        <div class="mx-auto max-w-3xl text-center">
+          <p class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper">Native reporting and the SWOTBee dashboard</p>
+          <h2 class="mt-3 text-balance text-3xl font-bold text-v6-dark sm:text-4xl">HubSpot provides the source data. The dashboard prepares the velocity story.</h2>
+          <p class="mt-4 text-lg leading-relaxed text-v6-text-muted">HubSpot provides Date entered current stage and Time in current stage properties. SWOTBee turns that source data into a recurring velocity calculation, driver comparison, and bottleneck explanation.</p>
+        </div>
+        <div class="mt-10 grid gap-6 md:grid-cols-2">
+          <article class="rounded-2xl border border-v6-border bg-white p-6 sm:p-8">
+            <h3 class="text-xl font-bold text-v6-dark">What HubSpot can already report</h3>
+            <ul class="mt-4 space-y-3 text-v6-text-muted">
+              <li>Date entered current stage and Time in current stage on deal records.</li>
+              <li>Stage-property filters in views, reports, and workflows.</li>
+              <li>Sales analytics for average time spent in deal stages on eligible plans.</li>
+            </ul>
+          </article>
+          <article class="rounded-2xl border border-v6-border bg-white p-6 sm:p-8">
+            <h3 class="text-xl font-bold text-v6-dark">What this dashboard adds</h3>
+            <ul class="mt-4 space-y-3 text-v6-text-muted">
+              <li>Deal, current-stage, and meaningful-activity context in one prepared weekly table.</li>
+              <li>Within benchmark, Near benchmark, Bottleneck, and History missing states with an explicit reason.</li>
+              <li>A cross-owner priority list with value and a practical next action.</li>
+            </ul>
+          </article>
+        </div>
+        <p class="mx-auto mt-8 max-w-3xl text-center leading-relaxed text-v6-text-muted">This is not a claim that HubSpot lacks time-in-stage data. It tests whether a repeatable, explainable velocity dashboard helps teams find slow stages and the open deals behind them.</p>
+      </div>
+    </section>
+
+    <section class="bg-v6-dark px-4 py-16 text-white sm:px-6 sm:py-20 lg:px-8">
+      <div class="mx-auto grid max-w-5xl gap-10 lg:grid-cols-2 lg:items-center">
+        <div><p class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper-300">The intended wow moment</p><h2 class="mt-3 text-balance text-3xl font-bold sm:text-4xl">Open the dashboard and know which driver is slowing revenue pace.</h2></div>
+        <div class="space-y-4 text-white/75"><p class="leading-relaxed">The value is a trusted recurring view of revenue per day and its four drivers, with stage and deal evidence explaining a slower sales cycle.</p><p class="leading-relaxed">Visible formula definitions and stage benchmarks let RevOps verify the calculation while sales leaders focus on the commercial lever that changed.</p></div>
+      </div>
+    </section>
+
+    <section class="px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+      <div class="mx-auto max-w-3xl">
+        <div class="text-center"><p class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper">Questions about the dashboard</p><h2 class="mt-3 text-3xl font-bold text-v6-dark sm:text-4xl">What to know before you create the dashboard</h2></div>
+        <div class="mt-10 divide-y divide-v6-border border-y border-v6-border">
+          {faqs.map((item) => (
+            <details class="group py-5"><summary class="flex min-h-11 cursor-pointer list-none items-center justify-between gap-5 rounded-md font-semibold text-v6-dark focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2"><span>{item.q}</span><span class="text-xl font-normal text-v6-copper transition-transform group-open:rotate-45" aria-hidden="true">+</span></summary><p class="max-w-2xl pb-1 pr-8 pt-3 leading-relaxed text-v6-text-muted">{item.a}</p></details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <ReportRelatedLinks
+      links={[
+        { href: "/hubspot-pipeline-change-report/", title: "Explain pipeline movement", description: "Connect changes in revenue pace with the deals entering, advancing, slipping, winning, or leaving the pipeline." },
+        { href: "/hubspot-stale-deals-report/", title: "Inspect pipeline bottlenecks", description: "Find the stale deals and stage-age exceptions slowing the revenue cycle." },
+        { href: "/posts/tcv-vs-arr-forecasting/", title: "Use the right revenue value", description: "Understand when sales and renewal reporting should use TCV, ACV, or ARR." },
+      ]}
+    />
+
+    <section id="report-signup" class="scroll-mt-8 bg-v6-bg px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+      <div class="mx-auto max-w-3xl rounded-3xl bg-v6-copper px-6 py-10 text-center text-white shadow-lg shadow-v6-copper/20 sm:px-10 sm:py-12">
+        <p class="text-sm font-semibold uppercase tracking-[0.16em] text-white/75">App signup</p>
+        <h2 class="mt-3 text-balance text-3xl font-bold sm:text-4xl">Sign up to the app</h2>
+        <p class="mx-auto mt-4 max-w-2xl text-lg leading-relaxed text-white/85">Create your SWOTBee account with your work email. No card is required.</p>
+        <ReportSignup
+          offerCode="b3_weekly_deal_velocity"
+          reportName="HubSpot sales velocity dashboard"
+          sourcePage="hubspot-deal-velocity-report"
+          ctaLabel="b3_report_signup"
+        />
+        <p class="mt-5 text-sm text-white/70">No card. This page does not connect to or access your HubSpot account.</p>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

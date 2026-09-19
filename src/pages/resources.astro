@@ -43,6 +43,34 @@ const guides = [
   },
 ];
 
+const renewalSetupGuides = [
+  {
+    title: "Auto-create renewal deals",
+    description: "Build renewal deals automatically without creating workflow loops.",
+    url: "/guides/auto-create-renewal-deals-hubspot/",
+  },
+  {
+    title: "Copy renewal line items",
+    description: "Carry products, quantities, and pricing into the next renewal deal.",
+    url: "/guides/copy-line-items-renewal-hubspot/",
+  },
+  {
+    title: "Build multi-year renewal chains",
+    description: "Keep year two and year three renewals connected and visible.",
+    url: "/guides/multi-year-renewal-chains-hubspot/",
+  },
+  {
+    title: "Make renewals visible in HubSpot",
+    description: "Turn scattered dates into a renewal pipeline your team can manage.",
+    url: "/guides/renewal-pipeline-visibility-hubspot/",
+  },
+  {
+    title: "Score renewal health",
+    description: "Assess process coverage across ownership, timing, data, and reporting.",
+    url: "/renewal-scorecard/",
+  },
+];
+
 const topics = [
   { name: "Renewal Pipelines", count: 11, slug: "revenue-operations", icon: "🔄" },
   { name: "Workflow Automation", count: 5, slug: "revenue-operations", icon: "⚡" },
@@ -104,13 +132,36 @@ const quickLinks = [
     </div>
   </section>
 
-  <!-- By Topic -->
+  <!-- Renewal Setup Guides -->
   <section class="bg-v6-bg px-4 sm:px-6 lg:px-8 py-14">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-2xl font-bold text-v6-dark mb-3">Renewal Setup Guides</h2>
+      <p class="text-v6-text-muted mb-8 max-w-2xl">
+        Follow the practical steps for creating renewal deals, copying line items, and keeping every contract visible.
+      </p>
+      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {renewalSetupGuides.map(guide => (
+          <a
+            href={guide.url}
+            class="group block min-h-44 bg-white rounded-xl border border-v6-border p-5 hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-v6-copper transition-shadow"
+          >
+            <h3 class="text-base font-bold text-v6-dark group-hover:text-v6-copper transition-colors mb-2">
+              {guide.title}
+            </h3>
+            <p class="text-sm text-v6-text-muted leading-relaxed">{guide.description}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- By Topic -->
+  <section class="bg-white px-4 sm:px-6 lg:px-8 py-14">
     <div class="max-w-6xl mx-auto">
       <h2 class="text-2xl font-bold text-v6-dark mb-8">Browse by Topic</h2>
       <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {topics.map(topic => (
-          <a href="/blog/" class="group block bg-white rounded-xl border border-v6-border p-5 hover:shadow-md transition-shadow text-center">
+          <a href="/blog/" class="group block bg-v6-bg rounded-xl border border-v6-border p-5 hover:shadow-md transition-shadow text-center">
             <span class="text-3xl mb-3 block">{topic.icon}</span>
             <h3 class="text-sm font-bold text-v6-dark group-hover:text-v6-copper transition-colors">{topic.name}</h3>
             <p class="text-xs text-v6-text-muted mt-1">{topic.count} articles</p>
@@ -121,12 +172,12 @@ const quickLinks = [
   </section>
 
   <!-- Quick Links -->
-  <section class="bg-white px-4 sm:px-6 lg:px-8 py-14">
+  <section class="bg-v6-bg px-4 sm:px-6 lg:px-8 py-14">
     <div class="max-w-6xl mx-auto">
       <h2 class="text-2xl font-bold text-v6-dark mb-8">Quick Links</h2>
       <div class="grid gap-4 sm:grid-cols-3">
         {quickLinks.map(link => (
-          <a href={link.url} class="group flex items-center gap-4 bg-v6-bg rounded-xl border border-v6-border p-5 hover:shadow-md transition-shadow">
+          <a href={link.url} class="group flex items-center gap-4 bg-white rounded-xl border border-v6-border p-5 hover:shadow-md transition-shadow">
             <div>
               <h3 class="text-sm font-bold text-v6-dark group-hover:text-v6-copper transition-colors">{link.label}</h3>
               <p class="text-xs text-v6-text-muted mt-0.5">{link.desc}</p>

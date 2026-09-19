@@ -26,7 +26,7 @@ import Navbar from "../components/astro/Navbar.astro";
 import Footer from "../components/astro/Footer.astro";
 import StructuredData from "../components/astro/StructuredData.astro";
 import RenewalRoiCalculator from "../components/astro/RenewalRoiCalculator.astro";
-import RenewalDemoYoutube from "../components/react/RenewalDemoYoutube.jsx";
+import RenewalDemoModal from "../components/react/RenewalDemoModal.jsx";
 
 // SERP budget: BaseLayout appends " | SWOTBee" to every title, so the string below
 // must stay under ~50 chars to keep the rendered title inside Google's ~60-char cut.
@@ -471,6 +471,9 @@ const toneMap: Record<string, string> = {
             <!-- CTA points at the on-page YouTube demo section. -->
             <a
               href="#demo"
+              data-renewal-demo-trigger
+              aria-haspopup="dialog"
+              aria-controls="renewal-demo-modal"
               class="bg-v6-copper text-white px-8 py-3.5 rounded-xl text-base font-semibold hover:bg-v6-copper-600 transition-colors text-center block"
             >
               Watch The 2-Minute Demo →
@@ -655,7 +658,7 @@ const toneMap: Record<string, string> = {
       <div
         class="reveal rounded-2xl border border-v6-border bg-v6-bg shadow-xl overflow-hidden max-w-3xl mx-auto"
       >
-        <RenewalDemoYoutube client:visible />
+        <RenewalDemoModal client:load />
       </div>
       <div
         class="reveal flex flex-col sm:flex-row gap-3 justify-center items-center mt-8"
@@ -1381,7 +1384,10 @@ const toneMap: Record<string, string> = {
         </a>
         <a
           href="#demo"
-          class="border border-gray-300 text-v6-dark px-7 py-3 rounded-xl text-base font-medium hover:bg-gray-50 transition-colors text-center"
+          data-renewal-demo-trigger
+          aria-haspopup="dialog"
+          aria-controls="renewal-demo-modal"
+              class="border border-gray-300 text-v6-dark px-7 py-3 rounded-xl text-base font-medium hover:bg-gray-50 transition-colors text-center"
         >
           Watch The 2-Minute Demo →
         </a>
@@ -1471,7 +1477,10 @@ const toneMap: Record<string, string> = {
       <p class="mt-5">
         <a
           href="#demo"
-          class="text-white/90 text-sm font-medium underline underline-offset-4 hover:text-white transition-colors"
+          data-renewal-demo-trigger
+          aria-haspopup="dialog"
+          aria-controls="renewal-demo-modal"
+              class="text-white/90 text-sm font-medium underline underline-offset-4 hover:text-white transition-colors"
         >
           Prefer to see it working first? Watch the 2-minute demo →
         </a>
@@ -1686,6 +1695,7 @@ const toneMap: Record<string, string> = {
   // Makes the "Watch the 2-minute demo" / "Estimate your leakage" CTAs glide to
   // their section instead of hard-jumping, reinforcing the guided path to the CTA.
   document.querySelectorAll('a[href^="#"]').forEach((a) => {
+    if ((a as HTMLElement).hasAttribute("data-renewal-demo-trigger")) return;
     a.addEventListener("click", (e) => {
       const id = (a as HTMLAnchorElement).getAttribute("href");
       if (!id || id === "#") return;

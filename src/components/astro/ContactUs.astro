@@ -16,11 +16,24 @@ const RECAPTCHA_ACTION = "contact_form";
 const N8N_WEBHOOK_URL = "https://auto.zippylens.com/webhook/swotbee-form-submit";
 // Show the self-reported role dropdown only where wanted (e.g. /contactus), not on the
 // shared newsletter page. Optional field, so a missing value never blocks submission.
-const { role = false } = Astro.props;
+const { role = false, variant = "contact" } = Astro.props;
+const isWeekOverWeekEarlyAccess = variant === "week-over-week-pipeline-early-access";
+const isHistoricalSnapshotEarlyAccess = variant === "historical-pipeline-snapshot-early-access";
+const isStaleDealsEarlyAccess = variant === "stale-deals-report-early-access";
+const isPipelineEarlyAccess = variant === "pipeline-change-early-access" || isWeekOverWeekEarlyAccess || isHistoricalSnapshotEarlyAccess || isStaleDealsEarlyAccess;
+const initialMessage = isStaleDealsEarlyAccess
+  ? "I would like early access to the HubSpot stale-deals report. I can share how we define stalled deals and what action the weekly list should support."
+  : isHistoricalSnapshotEarlyAccess
+  ? "I would like early access to the HubSpot historical pipeline snapshot. I can share which dated pipeline state we need to preserve and revisit."
+  : isWeekOverWeekEarlyAccess
+  ? "I would like early access to the HubSpot week-over-week pipeline report. I can share when our review happens and what we need to explain."
+  : isPipelineEarlyAccess
+    ? "I would like early access to the HubSpot pipeline change report. I can share how we currently prepare for pipeline reviews."
+    : "";
 import RecaptchaLazy from "./RecaptchaLazy.astro";
 ---
 <RecaptchaLazy siteKey={RECAPTCHA_SITE_KEY} />
-<section id="contact" class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<section id={isPipelineEarlyAccess ? "early-access" : "contact"} class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-12 text-left">
   <form
     id="contact-form"
     class="bg-white border border-v6-border rounded-2xl shadow-sm p-6 sm:p-8 space-y-5"
@@ -29,6 +42,7 @@ import RecaptchaLazy from "./RecaptchaLazy.astro";
     data-recaptcha-site-key={RECAPTCHA_SITE_KEY}
     data-recaptcha-action={RECAPTCHA_ACTION}
     data-webhook={N8N_WEBHOOK_URL}
+    data-static-success={isPipelineEarlyAccess ? "true" : undefined}
     novalidate
   >
     <!-- Honeypot: off-screen, hidden from people; bots fill it and get dropped client-side. -->
@@ -67,11 +81,13 @@ import RecaptchaLazy from "./RecaptchaLazy.astro";
         class="w-full rounded-lg border border-v6-border px-3.5 py-3 text-v6-dark focus:outline-none focus:ring-2 focus:ring-v6-copper focus:border-v6-copper" />
     </div>
 
-    <div class="space-y-1.5">
-      <label for="cf-phone" class="block text-sm font-semibold text-v6-dark">Phone <span class="text-v6-text-muted font-normal">(optional)</span></label>
-      <input id="cf-phone" name="phone" type="tel" autocomplete="tel"
-        class="w-full rounded-lg border border-v6-border px-3.5 py-3 text-v6-dark focus:outline-none focus:ring-2 focus:ring-v6-copper focus:border-v6-copper" />
-    </div>
+    {!isPipelineEarlyAccess && (
+      <div class="space-y-1.5">
+        <label for="cf-phone" class="block text-sm font-semibold text-v6-dark">Phone <span class="text-v6-text-muted font-normal">(optional)</span></label>
+        <input id="cf-phone" name="phone" type="tel" autocomplete="tel"
+          class="w-full rounded-lg border border-v6-border px-3.5 py-3 text-v6-dark focus:outline-none focus:ring-2 focus:ring-v6-copper focus:border-v6-copper" />
+      </div>
+    )}
 
     {role && (
       <div class="space-y-1.5">
@@ -88,14 +104,14 @@ import RecaptchaLazy from "./RecaptchaLazy.astro";
     )}
 
     <div class="space-y-1.5">
-      <label for="cf-msg" class="block text-sm font-semibold text-v6-dark">How can we help?</label>
+      <label for="cf-msg" class="block text-sm font-semibold text-v6-dark">{isStaleDealsEarlyAccess ? "What should make a deal count as stalled? (optional)" : isHistoricalSnapshotEarlyAccess ? "Which dated pipeline state do you need to preserve? (optional)" : isWeekOverWeekEarlyAccess ? "What should the weekly comparison help you explain? (optional)" : isPipelineEarlyAccess ? "What should this report help you explain? (optional)" : "How can we help?"}</label>
       <textarea id="cf-msg" name="message" rows="4"
-        class="w-full rounded-lg border border-v6-border px-3.5 py-3 text-v6-dark focus:outline-none focus:ring-2 focus:ring-v6-copper focus:border-v6-copper resize-y"></textarea>
+        class="w-full rounded-lg border border-v6-border px-3.5 py-3 text-v6-dark focus:outline-none focus:ring-2 focus:ring-v6-copper focus:border-v6-copper resize-y">{initialMessage}</textarea>
     </div>
 
     <button type="submit" id="cf-submit"
       class="w-full sm:w-auto bg-v6-copper text-white px-8 py-3 rounded-xl text-base font-semibold hover:bg-v6-copper-600 transition-colors disabled:opacity-60 disabled:cursor-not-allowed">
-      Send message
+      {isPipelineEarlyAccess ? "Join early access" : "Send message"}
     </button>
 
     <p id="cf-status" role="status" aria-live="polite" class="text-sm leading-relaxed m-0"></p>
@@ -106,12 +122,22 @@ import RecaptchaLazy from "./RecaptchaLazy.astro";
     <div class="flex h-14 w-14 items-center justify-center rounded-full bg-v6-teal/15 mb-4">
       <svg viewBox="0 0 24 24" class="h-8 w-8 text-v6-teal" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>
     </div>
-    <h3 id="cf-success-title" class="text-xl font-bold text-v6-dark mb-2">Thanks. Your message is in.</h3>
-    <p class="text-v6-text-muted mb-5">We reply within one business day. If your renewal is moving right now, you do not have to wait, grab a time straight away or see the numbers for yourself.</p>
-    <div class="flex flex-col sm:flex-row gap-3">
-      <a href="/renewal-audit-call/" class="inline-flex items-center justify-center bg-v6-copper text-white px-6 py-3 rounded-xl text-base font-semibold hover:bg-v6-copper-600 transition-colors">Book a Renewal Alignment Call</a>
-      <a href="/renewal-leakage-tool/" class="inline-flex items-center justify-center border border-v6-border text-v6-dark px-6 py-3 rounded-xl text-base font-semibold hover:border-v6-copper hover:bg-v6-copper-50 transition-colors">See what you are leaking</a>
-    </div>
+    {isPipelineEarlyAccess ? (
+      <>
+        <h3 id="cf-success-title" class="text-xl font-bold text-v6-dark mb-2">You are on the early-access list.</h3>
+        <p class="text-v6-text-muted mb-5">Thanks for helping us validate the report before we build it. We will contact you when the first test is ready, and we will not book a sales call unless you ask for one.</p>
+        <a href="#sample-report" class="inline-flex min-h-11 items-center justify-center border border-v6-border text-v6-dark px-6 py-3 rounded-xl text-base font-semibold hover:border-v6-copper hover:bg-v6-copper-50 transition-colors">Return to the sample report</a>
+      </>
+    ) : (
+      <>
+        <h3 id="cf-success-title" class="text-xl font-bold text-v6-dark mb-2">Thanks. Your message is in.</h3>
+        <p class="text-v6-text-muted mb-5">We reply within one business day. If your renewal is moving right now, you do not have to wait, grab a time straight away or see the numbers for yourself.</p>
+        <div class="flex flex-col sm:flex-row gap-3">
+          <a href="/renewal-audit-call/" class="inline-flex items-center justify-center bg-v6-copper text-white px-6 py-3 rounded-xl text-base font-semibold hover:bg-v6-copper-600 transition-colors">Book a Renewal Alignment Call</a>
+          <a href="/renewal-leakage-tool/" class="inline-flex items-center justify-center border border-v6-border text-v6-dark px-6 py-3 rounded-xl text-base font-semibold hover:border-v6-copper hover:bg-v6-copper-50 transition-colors">See what you are leaking</a>
+        </div>
+      </>
+    )}
   </div>
 </section>
 
@@ -139,6 +165,7 @@ import RecaptchaLazy from "./RecaptchaLazy.astro";
     // the message field.
     var SUBJECTS = {
       "contract-mgmt-early-access": "I would like early access to the HubSpot contract management app.",
+      "pipeline-change-report-early-access": "I would like early access to the HubSpot pipeline change report. I can share how we currently prepare for pipeline reviews.",
       "renewal-reminders": "I want renewal reminders set up in our HubSpot.",
     };
     try {
@@ -154,7 +181,7 @@ import RecaptchaLazy from "./RecaptchaLazy.astro";
     function showSuccess(firstName) {
       var panel = document.getElementById("cf-success");
       var title = document.getElementById("cf-success-title");
-      if (title && firstName) title.textContent = "Thanks, " + firstName + ". Your message is in.";
+      if (title && firstName && !form.hasAttribute("data-static-success")) title.textContent = "Thanks, " + firstName + ". Your message is in.";
       form.classList.add("hidden");
       if (panel) {
         panel.classList.remove("hidden");
@@ -190,7 +217,7 @@ import RecaptchaLazy from "./RecaptchaLazy.astro";
         { name: "firstname", value: (form.firstname.value || "").trim() },
         { name: "lastname", value: (form.lastname.value || "").trim() },
         { name: "email", value: email },
-        { name: "phone", value: (form.phone.value || "").trim() },
+        { name: "phone", value: ((form.phone && form.phone.value) || "").trim() },
         { name: "message", value: (form.message.value || "").trim() },
         { name: "self_reported_role", value: roleEl ? roleEl.value : "" }
       ].filter(function (f) { return f.value; });

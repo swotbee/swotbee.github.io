@@ -1,0 +1,261 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/astro/Footer.astro";
+import LogoHoneycomb from "../components/astro/LogoHoneycomb.astro";
+import ClientLogoStrip from "../components/astro/ClientLogoStrip.astro";
+import ReportSignup from "../components/astro/ReportSignup.astro";
+import ReportBenefitCards from "../components/astro/ReportBenefitCards.astro";
+import ReportRelatedLinks from "../components/astro/ReportRelatedLinks.astro";
+import ReportingDashboardValue from "../components/astro/ReportingDashboardValue.astro";
+
+const title = "HubSpot Pipeline Change Dashboard";
+const description = "Build a repeatable weekly or monthly HubSpot pipeline change dashboard in 3 clicks, with Excel-ready detail and a management-ready PowerPoint story.";
+
+const movementRows = [
+  { deal: "Briar Health expansion", owner: "Priya Shah", change: "Entered pipeline", before: "Not in pipeline", after: "Discovery", contribution: "+$145k", tone: "positive" },
+  { deal: "Acme Platform renewal", owner: "Maya Chen", change: "Closed won", before: "Contract sent", after: "Closed won", contribution: "-$120k", tone: "neutral" },
+  { deal: "Northstar expansion", owner: "Liam Ross", change: "Closed lost", before: "Decision", after: "Closed lost", contribution: "-$75k", tone: "negative" },
+  { deal: "Quarry Systems rollout", owner: "Elena Park", change: "Amount reduced", before: "$90k", after: "$70k", contribution: "-$20k", tone: "negative" },
+];
+
+const benefits = [
+  { title: "Repeat the same review", description: "Set the pipeline, cutoff, and cadence once, then rebuild the same weekly or monthly dashboard without recreating filters.", icon: "refresh", tone: "copper" },
+  { title: "Explain every movement", description: "Separate new, won, lost, moved, and revalued deals so the starting and ending values reconcile.", icon: "compare", tone: "teal" },
+  { title: "Inspect the Excel-ready detail", description: "Give reviewers the named deals, owners, stages, amounts, and close dates behind every dashboard number.", icon: "inspect", tone: "blue" },
+  { title: "Prepare the meeting faster", description: "Open one dated dashboard before the weekly or monthly review instead of rebuilding last period from a live CRM view.", icon: "calendar", tone: "amber" },
+  { title: "Choose the management story", description: "Select the movements that matter and turn them into editable PowerPoint charts and AI-assisted talking points.", icon: "present", tone: "copper" },
+  { title: "Use HubSpot without learning its internals", description: "Work with familiar sales concepts without mapping objects, joins, APIs, or internal HubSpot tables for every cycle.", icon: "confirm", tone: "teal" },
+] as const;
+
+const faqs = [
+  { q: "How do I report on pipeline changes over time in HubSpot?", a: "Choose two dated cutoffs and reconcile the difference to deals that entered, left, closed, changed amount, changed stage, or moved close date. SWOTBee keeps the summary and supporting deals in one dashboard." },
+  { q: "What appears in the pipeline change dashboard?", a: "The dashboard shows opening and closing pipeline value, additions, wins, losses, value changes, stage movement, close-date movement, and the named deals and owners behind the difference." },
+  { q: "Will it edit our HubSpot records?", a: "No. The reporting connection reads the pipeline data required for the dashboard without editing deal records." },
+  { q: "Can I compare dates other than Monday to Monday?", a: "Yes. Choose any two valid cutoffs for a weekly review, month-end comparison, QBR, or another management cadence." },
+  { q: "How do I get started?", a: "Sign up to the SWOTBee app, connect the appropriate HubSpot portal, choose the pipeline and comparison dates, and create the dashboard." },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: { "@type": "Answer", text: item.a },
+  })),
+};
+---
+
+<Layout
+  title={title}
+  description={description}
+  keywords="hubspot pipeline change report, hubspot pipeline change dashboard, hubspot week over week pipeline report, hubspot weekly pipeline comparison, hubspot monthly pipeline report, hubspot pipeline over time, hubspot deal change history"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
+
+  <header class="border-b border-v6-border bg-white">
+    <div class="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
+      <a href="/" class="flex min-h-11 items-center gap-2 rounded-md focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2" aria-label="SWOTbee home">
+        <LogoHoneycomb width={32} height={30} />
+        <span class="text-lg font-bold text-v6-dark">SWOT<span class="text-v6-teal-700">bee</span></span>
+      </a>
+      <a href="#report-signup" data-ga-cta="a1_header_signup" class="inline-flex min-h-11 items-center justify-center rounded-lg border border-v6-copper px-4 py-2 text-sm font-semibold text-v6-copper transition-colors hover:bg-v6-copper-50 focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2">
+        Sign up to the app
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <section class="overflow-hidden bg-gradient-to-b from-v6-bg to-white px-4 pb-16 pt-14 sm:px-6 sm:pb-20 sm:pt-20 lg:px-8">
+      <div class="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-[0.92fr_1.08fr]">
+        <div>
+          <span class="mb-5 inline-flex rounded-full bg-v6-copper-50 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-v6-copper-700">Create it in 3 clicks</span>
+          <h1 class="max-w-3xl text-balance text-4xl font-bold leading-[1.08] text-v6-dark sm:text-5xl lg:text-[3.45rem]">Build Your HubSpot Pipeline Change Dashboard in 3 Clicks</h1>
+          <p class="mt-6 max-w-2xl text-lg leading-relaxed text-v6-text-muted">For RevOps, Sales Ops, and sales leaders who prepare weekly or monthly pipeline updates. Compare two cutoffs, explain the deals behind the movement, and choose what goes into Excel and PowerPoint.</p>
+          <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+            <a href="#sample-report" data-ga-cta="a1_hero_view_sample" class="inline-flex min-h-12 items-center justify-center rounded-xl bg-v6-copper px-7 py-3.5 text-base font-semibold text-white transition-colors hover:bg-v6-copper-600 focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2">View the sample dashboard</a>
+            <a href="#report-signup" data-ga-cta="a1_hero_signup" class="inline-flex min-h-12 items-center justify-center rounded-xl border border-v6-border bg-white px-7 py-3.5 text-base font-semibold text-v6-dark transition-colors hover:border-v6-copper hover:bg-v6-copper-50 focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2">Sign up to the app</a>
+          </div>
+          <p class="mt-4 max-w-xl text-sm leading-relaxed text-v6-text-muted">Sign up to the SWOTBee app with your work email. No card is required.</p>
+        </div>
+
+        <div class="relative" aria-label="Example pipeline change dashboard with a reconciled value bridge">
+          <div class="absolute -inset-6 -z-10 rounded-full bg-v6-teal-100/70 blur-3xl"></div>
+          <div class="overflow-hidden rounded-2xl border border-v6-border bg-white shadow-xl shadow-v6-dark/10">
+            <div class="flex items-center justify-between border-b border-v6-border px-5 py-4">
+              <div><p class="text-xs font-semibold uppercase tracking-[0.14em] text-v6-copper">Pipeline change dashboard</p><p class="mt-1 font-semibold text-v6-dark">New Business Pipeline</p></div>
+              <span class="rounded-full bg-v6-teal-50 px-3 py-1 text-xs font-semibold text-v6-teal-800">Residual: USD 0</span>
+            </div>
+            <div class="grid grid-cols-3 border-b border-v6-border">
+              <div class="p-4 sm:p-5"><p class="text-xs text-v6-text-muted">Opening pipeline</p><p class="mt-1 text-lg font-bold text-v6-dark sm:text-xl">USD 1.24m</p></div>
+              <div class="border-x border-v6-border bg-v6-copper-50 p-4 sm:p-5"><p class="text-xs text-v6-copper-800">Net movement</p><p class="mt-1 text-lg font-bold text-v6-copper-800 sm:text-xl">-USD 68k</p></div>
+              <div class="p-4 sm:p-5"><p class="text-xs text-v6-text-muted">Closing pipeline</p><p class="mt-1 text-lg font-bold text-v6-dark sm:text-xl">USD 1.17m</p></div>
+            </div>
+            <div class="p-5">
+              <div class="flex items-end gap-2" aria-label="Value bridge from opening to closing pipeline">
+                <div class="flex flex-1 flex-col justify-end"><span class="mb-2 text-center text-[10px] font-semibold text-v6-text-muted">Start</span><div class="h-20 rounded-t-md bg-v6-dark"></div></div>
+                <div class="flex flex-1 flex-col justify-end"><span class="mb-2 text-center text-[10px] font-semibold text-v6-teal-800">+145k</span><div class="h-12 rounded-md bg-v6-teal"></div></div>
+                <div class="flex flex-1 flex-col justify-end"><span class="mb-2 text-center text-[10px] font-semibold text-v6-teal-800">+40k</span><div class="h-7 rounded-md bg-v6-teal-300"></div></div>
+                <div class="flex flex-1 flex-col justify-end"><span class="mb-2 text-center text-[10px] font-semibold text-v6-blue-800">-120k</span><div class="h-10 rounded-md bg-v6-blue-400"></div></div>
+                <div class="flex flex-1 flex-col justify-end"><span class="mb-2 text-center text-[10px] font-semibold text-v6-copper-800">-133k</span><div class="h-14 rounded-md bg-v6-copper"></div></div>
+                <div class="flex flex-1 flex-col justify-end"><span class="mb-2 text-center text-[10px] font-semibold text-v6-text-muted">End</span><div class="h-[4.6rem] rounded-t-md bg-v6-dark"></div></div>
+              </div>
+              <div class="mt-3 grid grid-cols-4 gap-2 border-t border-v6-border pt-3 text-center text-[10px] text-v6-text-muted"><span>New</span><span>Revalued</span><span>Won</span><span>Lost or left</span></div>
+              <p class="mt-4 rounded-lg bg-v6-bg-warm px-3 py-2 text-xs font-semibold text-v6-dark">Pipeline fell by USD 68k. Every dollar is tied to a movement category and named deal.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <ClientLogoStrip caption="HubSpot and revenue operations work trusted by teams at" />
+
+    <ReportingDashboardValue
+      dashboardName="pipeline change dashboard"
+      audienceIntro="This dashboard is for teams that have to explain pipeline movement repeatedly, not analysts building a one-off report."
+      audiences={[
+        { role: "Revenue Operations", need: "Reconcile pipeline movement, preserve definitions, and give leaders a repeatable view every reporting cycle." },
+        { role: "Sales leaders", need: "Understand why the forecast moved and focus the review on the deals and owners that need a decision." },
+        { role: "Sales Operations", need: "Prepare weekly and monthly updates without rebuilding HubSpot filters, spreadsheets, and slides by hand." },
+      ]}
+      workflowSteps={[
+        { title: "Connect HubSpot", description: "Use a read-only connection so the dashboard can use the pipeline data already maintained by the team." },
+        { title: "Choose the comparison", description: "Select the pipeline, weekly or monthly cadence, and the two cutoffs that should be compared." },
+        { title: "Create and share", description: "Generate the dashboard, inspect the Excel-ready rows, and choose the charts and talking points for PowerPoint." },
+      ]}
+      dashboardUse="Track the starting value, ending value, net movement, movement categories, and the deals responsible across recurring reviews."
+      spreadsheetUse="Filter and sort the underlying deal rows, check owners and close dates, and identify source records that need correction in HubSpot."
+      presentationUse="Select the additions, losses, pushed dates, and value changes that explain the period, then place them into the management update."
+      storyExample="Pipeline fell by 68,000 dollars this week. New opportunities added 145,000 dollars, but closed-lost deals, reductions, and exits removed 253,000 dollars."
+    />
+
+    <section class="px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+      <div class="mx-auto max-w-6xl">
+        <div class="mx-auto max-w-3xl text-center">
+          <p class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper">Pipeline changes over time</p>
+          <h2 class="mt-3 text-balance text-3xl font-bold text-v6-dark sm:text-4xl">What is a HubSpot pipeline change dashboard?</h2>
+          <p class="mt-4 text-lg leading-relaxed text-v6-text-muted">A HubSpot pipeline change dashboard compares your sales pipeline at two dated cutoffs. It shows how total pipeline value and the number of deals changed, then identifies which deals entered, left, changed stage, changed amount, or moved their close date.</p>
+          <p class="mt-4 leading-relaxed text-v6-text-muted">Use the same dashboard for a weekly review, a month-to-month pipeline check, or any two dates your team needs. It combines the summary, movement categories, underlying deal rows, and presentation story in one repeatable workflow.</p>
+        </div>
+
+        <div class="mx-auto mt-16 max-w-3xl border-t border-v6-border pt-16 text-center sm:mt-20 sm:pt-20">
+          <p class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper">What this dashboard helps you do</p>
+          <h2 class="mt-3 text-balance text-3xl font-bold text-v6-dark sm:text-4xl">Go from a changed total to the deals that need attention.</h2>
+          <p class="mt-4 text-lg leading-relaxed text-v6-text-muted">Choose any two dates, check that the numbers tie out, and focus the conversation on owners and next actions.</p>
+        </div>
+        <ReportBenefitCards benefits={benefits} />
+      </div>
+    </section>
+
+    <section id="sample-report" class="scroll-mt-8 bg-v6-bg px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+      <div class="mx-auto max-w-6xl">
+        <div class="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
+          <div class="max-w-3xl">
+            <div class="flex flex-wrap items-center gap-3"><p class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper">Dashboard preview</p><span class="rounded-full border border-v6-copper-200 bg-v6-copper-50 px-2.5 py-1 text-xs font-semibold text-v6-copper-800">Example data</span></div>
+            <h2 class="mt-3 text-balance text-3xl font-bold text-v6-dark sm:text-4xl">One dashboard, from the movement to the deals</h2>
+            <p class="mt-4 text-lg leading-relaxed text-v6-text-muted">This dashboard moves from a reconciled change summary to the exact deals and owners behind every movement.</p>
+          </div>
+          <a href="#report-signup" data-ga-cta="a1_sample_signup" class="inline-flex min-h-11 items-center justify-center self-start rounded-xl border border-v6-copper px-5 py-3 text-sm font-semibold text-v6-copper transition-colors hover:bg-v6-copper-50 focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2 lg:self-auto">Sign up to the app</a>
+        </div>
+
+        <div class="mt-10 overflow-hidden rounded-2xl border border-v6-border bg-white shadow-sm">
+          <div class="flex flex-col gap-4 border-b border-v6-border px-5 py-5 sm:flex-row sm:items-center sm:justify-between sm:px-7">
+            <div><p class="text-xs font-semibold uppercase tracking-[0.14em] text-v6-text-muted">New Business Pipeline</p><h3 class="mt-1 text-xl font-bold text-v6-dark">Pipeline change between two dates</h3><p class="mt-1 text-sm text-v6-text-muted">Sep 1, 5:00 PM to Sep 8, 5:00 PM, portal timezone</p></div>
+            <div class="flex items-center gap-2"><span class="rounded-full bg-v6-teal-50 px-3 py-1.5 text-xs font-semibold text-v6-teal-800">Value reconciled</span><span class="rounded-full bg-v6-blue-50 px-3 py-1.5 text-xs font-semibold text-v6-blue-800">Sample</span></div>
+          </div>
+
+          <nav class="flex gap-1 overflow-x-auto border-b border-v6-border bg-v6-bg px-5 py-3 text-sm" aria-label="Pipeline change dashboard views"><span class="rounded-lg bg-white px-3 py-2 font-semibold text-v6-dark shadow-sm">Overview</span><span class="px-3 py-2 text-v6-text-muted">Movement bridge</span><span class="px-3 py-2 text-v6-text-muted">Deals</span><span class="px-3 py-2 text-v6-text-muted">Excel and PowerPoint</span></nav>
+
+          <div class="grid gap-px bg-v6-border sm:grid-cols-2 lg:grid-cols-4">
+            <div class="bg-white p-5 sm:p-6"><p class="text-sm text-v6-text-muted">Open pipeline at start</p><p class="mt-2 text-2xl font-bold text-v6-dark">$1,240,000</p></div>
+            <div class="bg-white p-5 sm:p-6"><p class="text-sm text-v6-text-muted">Open pipeline at end</p><p class="mt-2 text-2xl font-bold text-v6-dark">$1,172,000</p></div>
+            <div class="bg-v6-copper-50 p-5 sm:p-6"><p class="text-sm text-v6-copper-800">Net movement</p><p class="mt-2 text-2xl font-bold text-v6-copper-800">-$68,000</p></div>
+            <div class="bg-v6-teal-50 p-5 sm:p-6"><p class="text-sm text-v6-teal-800">Unexplained residual</p><p class="mt-2 text-2xl font-bold text-v6-teal-800">$0</p></div>
+          </div>
+
+          <div class="grid gap-8 p-5 sm:p-7 lg:grid-cols-[0.7fr_1.3fr]">
+            <div>
+              <div class="flex items-center justify-between"><h4 class="text-base font-bold text-v6-dark">Reconciled value bridge</h4><span class="text-xs font-semibold text-v6-teal-800">Residual USD 0</span></div>
+              <div class="mt-5 space-y-3" aria-label="Pipeline value reconciliation">
+                <div class="rounded-xl bg-v6-dark p-4 text-white"><div class="flex justify-between text-sm"><span>Opening pipeline</span><strong>USD 1.24m</strong></div></div>
+                <div class="ml-5 rounded-xl border-l-4 border-v6-teal bg-v6-teal-50 p-3"><div class="flex justify-between text-sm"><span>New and increased</span><strong class="text-v6-teal-800">+USD 185k</strong></div></div>
+                <div class="ml-10 rounded-xl border-l-4 border-v6-blue-400 bg-v6-blue-50 p-3"><div class="flex justify-between text-sm"><span>Closed won</span><strong class="text-v6-blue-800">-USD 120k</strong></div></div>
+                <div class="ml-5 rounded-xl border-l-4 border-v6-copper bg-v6-copper-50 p-3"><div class="flex justify-between text-sm"><span>Lost, left, reduced</span><strong class="text-v6-copper-800">-USD 133k</strong></div></div>
+                <div class="rounded-xl bg-v6-dark p-4 text-white"><div class="flex justify-between text-sm"><span>Closing pipeline</span><strong>USD 1.17m</strong></div></div>
+              </div>
+              <p class="mt-5 rounded-xl bg-v6-bg-warm p-4 text-sm leading-relaxed text-v6-text-muted">Close-date and stage moves remain visible as review flags, while the value bridge accounts for every dollar between the two cutoffs.</p>
+            </div>
+
+            <div>
+              <div class="flex items-center justify-between gap-4"><h4 class="text-base font-bold text-v6-dark">Deals behind the movement</h4><span class="text-xs text-v6-text-muted">Sorted by review priority</span></div>
+              <div class="mt-4 hidden overflow-x-auto rounded-xl border border-v6-border md:block">
+                <table class="w-full min-w-[680px] border-collapse text-left text-sm">
+                  <thead class="bg-v6-bg text-xs uppercase tracking-wide text-v6-text-muted"><tr><th class="px-4 py-3 font-semibold">Deal and owner</th><th class="px-4 py-3 font-semibold">Change</th><th class="px-4 py-3 font-semibold">Before</th><th class="px-4 py-3 font-semibold">After</th><th class="px-4 py-3 text-right font-semibold">Value effect</th></tr></thead>
+                  <tbody class="divide-y divide-v6-border">
+                    {movementRows.map((row) => (
+                      <tr><td class="px-4 py-3"><p class="font-semibold text-v6-dark">{row.deal}</p><p class="mt-0.5 text-xs text-v6-text-muted">{row.owner}</p></td><td class="px-4 py-3 text-v6-text-muted">{row.change}</td><td class="px-4 py-3 text-v6-text-muted">{row.before}</td><td class="px-4 py-3 text-v6-dark">{row.after}</td><td class:list={["px-4 py-3 text-right font-semibold", row.tone === "positive" && "text-v6-teal-800", row.tone === "negative" && "text-v6-copper-800", row.tone === "neutral" && "text-v6-text"]}>{row.contribution}</td></tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <div class="mt-4 space-y-3 md:hidden">
+                {movementRows.map((row) => (
+                  <article class="rounded-xl border border-v6-border p-4"><div class="flex items-start justify-between gap-4"><div><h5 class="font-semibold text-v6-dark">{row.deal}</h5><p class="mt-0.5 text-xs text-v6-text-muted">Owner: {row.owner}</p></div><span class:list={["text-sm font-bold", row.tone === "positive" && "text-v6-teal-800", row.tone === "negative" && "text-v6-copper-800", row.tone === "neutral" && "text-v6-text"]}>{row.contribution}</span></div><p class="mt-3 text-sm font-semibold text-v6-text">{row.change}</p><p class="mt-1 text-sm text-v6-text-muted">{row.before} to {row.after}</p></article>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+      <div class="mx-auto max-w-5xl">
+        <div class="mx-auto max-w-3xl text-center"><p class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper">Three-click setup</p><h2 class="mt-3 text-balance text-3xl font-bold text-v6-dark sm:text-4xl">The 3-click dashboard setup</h2><p class="mt-4 text-lg leading-relaxed text-v6-text-muted">Sign up, choose the pipeline and comparison dates, and create the recurring dashboard in three clicks.</p></div>
+        <ol class="mt-10 grid gap-6 md:grid-cols-3">
+          <li class="rounded-2xl border border-v6-border bg-white p-6"><span class="text-sm font-bold text-v6-copper">01</span><h3 class="mt-3 text-xl font-bold text-v6-dark">Choose a pipeline</h3><p class="mt-2 leading-relaxed text-v6-text-muted">Select the sales pipeline you review. The report should not mix unrelated pipelines without saying so.</p></li>
+          <li class="rounded-2xl border border-v6-border bg-white p-6"><span class="text-sm font-bold text-v6-copper">02</span><h3 class="mt-3 text-xl font-bold text-v6-dark">Choose the earlier cutoff</h3><p class="mt-2 leading-relaxed text-v6-text-muted">Pick the state you want to compare from, with its date, time, and portal timezone visible.</p></li>
+          <li class="rounded-2xl border border-v6-border bg-white p-6"><span class="text-sm font-bold text-v6-copper">03</span><h3 class="mt-3 text-xl font-bold text-v6-dark">Choose the later cutoff</h3><p class="mt-2 leading-relaxed text-v6-text-muted">Create the dashboard for the next review, then inspect the named deals behind the net movement.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="bg-v6-dark px-4 py-16 text-white sm:px-6 sm:py-20 lg:px-8">
+      <div class="mx-auto grid max-w-5xl gap-10 lg:grid-cols-2 lg:items-center">
+        <div><p class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper-300">A complement to native reporting</p><h2 class="mt-3 text-balance text-3xl font-bold sm:text-4xl">HubSpot has the data. The value is a repeatable dashboard that ties the numbers to deals.</h2></div>
+        <div class="space-y-4 text-white/75"><p class="leading-relaxed">HubSpot already offers deal change history, pipeline waterfall reports, historical snapshots, and recurring report emails on eligible plans.</p><p class="leading-relaxed">SWOTBee prepares one dated dashboard with the before and after values, a complete reconciliation, and the named deals and owners behind the movement.</p></div>
+      </div>
+    </section>
+
+    <section class="px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+      <div class="mx-auto max-w-3xl">
+        <div class="text-center"><p class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper">Questions about the dashboard</p><h2 class="mt-3 text-3xl font-bold text-v6-dark sm:text-4xl">What to know before you create the dashboard</h2></div>
+        <div class="mt-10 divide-y divide-v6-border border-y border-v6-border">
+          {faqs.map((item) => (
+            <details class="group py-5"><summary class="flex min-h-11 cursor-pointer list-none items-center justify-between gap-5 rounded-md font-semibold text-v6-dark focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2"><span>{item.q}</span><span class="text-xl font-normal text-v6-copper transition-transform group-open:rotate-45" aria-hidden="true">+</span></summary><p class="max-w-2xl pb-1 pr-8 pt-3 leading-relaxed text-v6-text-muted">{item.a}</p></details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <ReportRelatedLinks
+      links={[
+        { href: "/hubspot-historical-pipeline-snapshot/", title: "Preserve historical pipeline snapshots", description: "Keep exact weekly or monthly cutoffs and reopen the deal rows behind an earlier management review." },
+        { href: "/hubspot-stale-deals-report/", title: "Find stale and aging deals", description: "Move from pipeline movement to the opportunities that now need an owner decision." },
+        { href: "/posts/hubspot-renewal-forecasting-accuracy/", title: "Improve HubSpot forecast accuracy", description: "See how pipeline structure, deal data, and probability choices affect the forecast leadership receives." },
+      ]}
+    />
+
+    <section id="report-signup" class="scroll-mt-8 bg-v6-bg px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+      <div class="mx-auto max-w-3xl rounded-3xl bg-v6-copper px-6 py-10 text-center text-white shadow-lg shadow-v6-copper/20 sm:px-10 sm:py-12">
+        <p class="text-sm font-semibold uppercase tracking-[0.16em] text-white/75">App signup</p>
+        <h2 class="mt-3 text-balance text-3xl font-bold sm:text-4xl">Sign up to the app</h2>
+        <p class="mx-auto mt-4 max-w-2xl text-lg leading-relaxed text-white/85">Create your SWOTBee account with your work email. No card is required.</p>
+        <ReportSignup offerCode="a1_pipeline_change" reportName="HubSpot pipeline change dashboard" sourcePage="hubspot-pipeline-change-report" ctaLabel="a1_report_signup" />
+        <p class="mt-5 text-sm text-white/75">Your email is used for this dashboard request and related service communication.</p>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

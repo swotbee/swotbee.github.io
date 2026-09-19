@@ -1,0 +1,31 @@
+---
+interface RelatedLink {
+  href: string;
+  title: string;
+  description: string;
+}
+
+interface Props {
+  links: RelatedLink[];
+}
+
+const { links } = Astro.props;
+---
+
+<section class="border-t border-v6-border bg-white px-4 py-16 sm:px-6 sm:py-20 lg:px-8" aria-labelledby="related-reporting-heading">
+  <div class="mx-auto max-w-5xl">
+    <div class="mx-auto max-w-3xl text-center">
+      <p class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper">Related HubSpot reporting resources</p>
+      <h2 id="related-reporting-heading" class="mt-3 text-balance text-3xl font-bold text-v6-dark sm:text-4xl">Continue with the reporting problem closest to yours</h2>
+    </div>
+    <div class="mt-10 grid gap-5 md:grid-cols-3">
+      {links.map((link) => (
+        <a href={link.href} class="group flex min-h-44 flex-col rounded-2xl border border-v6-border bg-v6-bg p-6 transition-colors hover:border-v6-copper hover:bg-v6-copper-50 focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2">
+          <h3 class="text-xl font-bold text-v6-dark group-hover:text-v6-copper-800">{link.title}</h3>
+          <p class="mt-3 flex-1 leading-relaxed text-v6-text-muted">{link.description}</p>
+          <span class="mt-5 inline-flex min-h-11 items-center text-sm font-semibold text-v6-copper-800">Read next <span class="ml-1" aria-hidden="true">→</span></span>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

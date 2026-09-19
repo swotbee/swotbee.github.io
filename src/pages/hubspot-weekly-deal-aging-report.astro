@@ -1,0 +1,24 @@
+---
+const targetPath = "/hubspot-stale-deals-report/";
+const canonicalURL = "https://swotbee.com/hubspot-stale-deals-report/";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="robots" content="noindex, follow" />
+    <meta http-equiv="refresh" content={`0; url=${targetPath}`} />
+    <link rel="canonical" href={canonicalURL} />
+    <title>HubSpot Deal Aging Dashboard</title>
+  </head>
+  <body>
+    <main>
+      <p>The deal-aging dashboard is now part of the <a href={targetPath}>HubSpot Pipeline Health Dashboard</a>.</p>
+    </main>
+    <script is:inline>
+      window.location.replace("/hubspot-stale-deals-report/" + window.location.search + window.location.hash);
+    </script>
+  </body>
+</html>

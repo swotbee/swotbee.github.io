@@ -1,0 +1,287 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/astro/Footer.astro";
+import LogoHoneycomb from "../components/astro/LogoHoneycomb.astro";
+import ClientLogoStrip from "../components/astro/ClientLogoStrip.astro";
+import ReportSignup from "../components/astro/ReportSignup.astro";
+import ReportBenefitCards from "../components/astro/ReportBenefitCards.astro";
+import ReportRelatedLinks from "../components/astro/ReportRelatedLinks.astro";
+import ReportingDashboardValue from "../components/astro/ReportingDashboardValue.astro";
+
+const title = "HubSpot Pipeline Health Dashboard";
+const description = "Build a HubSpot pipeline health dashboard in 3 clicks to find stale and aging deals, inspect Excel-ready detail, and prepare the management story.";
+
+const staleDealRows = [
+  { deal: "Acme Platform renewal", owner: "Maya Chen", stage: "Contract sent", value: "$120k", age: "18 days", status: "Newly stuck", reason: "No buyer activity for 14 days", action: "Confirm procurement next step", tone: "copper" },
+  { deal: "Northstar expansion", owner: "Liam Ross", stage: "Decision", value: "$75k", age: "31 days", status: "Still stuck", reason: "Close date overdue by 9 days", action: "Reset close date or close lost", tone: "copper" },
+  { deal: "Quarry Systems rollout", owner: "Elena Park", stage: "Solution review", value: "$90k", age: "12 days", status: "Back on track", reason: "Meeting logged and next step set", action: "Verify action owner", tone: "teal" },
+];
+
+const benefits = [
+  { title: "See stale and aging deals together", description: "Use activity, next-step, close-date, deal-age, and stage-age signals without maintaining separate weekly reports.", icon: "search", tone: "copper" },
+  { title: "Know why each deal was flagged", description: "Keep the rule, threshold, owner, value, and supporting signal visible so the team can understand every status.", icon: "flag", tone: "teal" },
+  { title: "Use stage-aware thresholds", description: "Apply different expectations to discovery, legal, procurement, and renewals instead of treating every old deal alike.", icon: "adjust", tone: "blue" },
+  { title: "Give every owner a next action", description: "Turn the dashboard into a focused list of deals to revive, update, requalify, nurture, or close.", icon: "owners", tone: "amber" },
+  { title: "Clean up the Excel-ready detail", description: "Filter the underlying rows, identify records that need correction, and make the source update in HubSpot.", icon: "checklist", tone: "copper" },
+  { title: "Explain pipeline risk to management", description: "Choose the health trends and high-value exceptions that belong in an editable PowerPoint update.", icon: "present", tone: "teal" },
+] as const;
+
+const faqs = [
+  { q: "What is a HubSpot pipeline health dashboard?", a: "A pipeline health dashboard combines activity freshness and stage-aware aging in one recurring view. It explains why each deal was flagged, who owns it, and what should happen next." },
+  { q: "What is the difference between a stale deal and an aging deal?", a: "A stale deal lacks meaningful activity or a next step. An aging deal has exceeded its deal-age or stage-age threshold. The dashboard keeps both signals visible because either one can require a different action." },
+  { q: "What appears in the pipeline health dashboard?", a: "The dashboard separates healthy, activity-stale, stage-aging, and high-risk deals with both signals. It also shows affected value, owners, rule reasons, and recommended next actions." },
+  { q: "Will the dashboard close or edit deals?", a: "No. It identifies deals for human review and keeps the reason and recommended action visible without automatically changing CRM records." },
+  { q: "Can it focus only on renewal deals?", a: "Yes. Choose a renewal pipeline or another explicit deal scope, then apply activity and stage-age rules that fit that sales motion." },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: { "@type": "Answer", text: item.a },
+  })),
+};
+---
+
+<Layout
+  title={title}
+  description={description}
+  keywords="hubspot pipeline health dashboard, hubspot stale deals report, hubspot stalled deals, stale deals hubspot, hubspot deal aging report, hubspot weekly deal aging report, hubspot deal age, hubspot time in current stage, hubspot pipeline hygiene, hubspot deals no activity"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
+
+  <header class="border-b border-v6-border bg-white">
+    <div class="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
+      <a href="/" class="flex min-h-11 items-center gap-2 rounded-md focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2" aria-label="SWOTbee home">
+        <LogoHoneycomb width={32} height={30} />
+        <span class="text-lg font-bold text-v6-dark">SWOT<span class="text-v6-teal-700">bee</span></span>
+      </a>
+      <a href="#report-signup" data-ga-cta="b1_header_signup" class="inline-flex min-h-11 items-center justify-center rounded-lg border border-v6-copper px-4 py-2 text-sm font-semibold text-v6-copper transition-colors hover:bg-v6-copper-50 focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2">
+        Sign up to the app
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <section class="overflow-hidden bg-gradient-to-b from-v6-bg to-white px-4 pb-16 pt-14 sm:px-6 sm:pb-20 sm:pt-20 lg:px-8">
+      <div class="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-[0.92fr_1.08fr]">
+        <div>
+          <span class="mb-5 inline-flex rounded-full bg-v6-copper-50 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-v6-copper-700">Create it in 3 clicks</span>
+          <h1 class="max-w-3xl text-balance text-4xl font-bold leading-[1.08] text-v6-dark sm:text-5xl lg:text-[3.45rem]">Build Your HubSpot Pipeline Health Dashboard in 3 Clicks</h1>
+          <p class="mt-6 max-w-2xl text-lg leading-relaxed text-v6-text-muted">For RevOps and sales managers who need one repeatable view of stale and aging deals. See why each deal was flagged, inspect the Excel-ready detail, and choose the risks to present to management.</p>
+          <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+            <a href="#sample-report" data-ga-cta="b1_hero_view_sample" class="inline-flex min-h-12 items-center justify-center rounded-xl bg-v6-copper px-7 py-3.5 text-base font-semibold text-white transition-colors hover:bg-v6-copper-600 focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2">View the sample dashboard</a>
+            <a href="#report-signup" data-ga-cta="b1_hero_signup" class="inline-flex min-h-12 items-center justify-center rounded-xl border border-v6-border bg-white px-7 py-3.5 text-base font-semibold text-v6-dark transition-colors hover:border-v6-copper hover:bg-v6-copper-50 focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2">Sign up to the app</a>
+          </div>
+          <p class="mt-4 max-w-xl text-sm leading-relaxed text-v6-text-muted">Sign up to the SWOTBee app with your work email. No card is required.</p>
+        </div>
+
+        <div class="relative" aria-label="Example pipeline health dashboard with activity freshness and stage age matrix">
+          <div class="absolute -inset-6 -z-10 rounded-full bg-v6-copper-100/60 blur-3xl"></div>
+          <div class="overflow-hidden rounded-2xl border border-v6-border bg-white shadow-xl shadow-v6-dark/10">
+            <div class="flex items-center justify-between border-b border-v6-border px-5 py-4">
+              <div><p class="text-xs font-semibold uppercase tracking-[0.14em] text-v6-copper">Pipeline health dashboard</p><p class="mt-1 font-semibold text-v6-dark">Stale and aging deal review</p></div>
+              <span class="rounded-full bg-v6-copper-50 px-3 py-1 text-xs font-semibold text-v6-copper-800">USD 415k needs review</span>
+            </div>
+            <div class="grid grid-cols-3 border-b border-v6-border">
+              <div class="p-4 sm:p-5"><p class="text-xs text-v6-text-muted">Action required</p><p class="mt-1 text-lg font-bold text-v6-copper-800 sm:text-xl">11 deals</p></div>
+              <div class="border-x border-v6-border bg-v6-teal-50 p-4 sm:p-5"><p class="text-xs text-v6-teal-800">Back on track</p><p class="mt-1 text-lg font-bold text-v6-teal-800 sm:text-xl">3 deals</p></div>
+              <div class="p-4 sm:p-5"><p class="text-xs text-v6-text-muted">Owners affected</p><p class="mt-1 text-lg font-bold text-v6-dark sm:text-xl">6</p></div>
+            </div>
+            <div class="p-5">
+              <div class="mb-2 flex justify-between text-[10px] font-semibold uppercase tracking-wide text-v6-text-muted"><span>Recent activity</span><span>No recent activity</span></div>
+              <div class="grid grid-cols-2 gap-2">
+                <div class="rounded-xl border border-v6-teal-200 bg-v6-teal-50 p-3"><p class="text-xs font-semibold text-v6-teal-800">Healthy</p><p class="mt-1 text-xl font-bold text-v6-dark">26</p><p class="text-[11px] text-v6-text-muted">Within stage limit</p></div>
+                <div class="rounded-xl border border-v6-amber-300 bg-v6-amber-50 p-3"><p class="text-xs font-semibold text-v6-amber-800">Activity stale</p><p class="mt-1 text-xl font-bold text-v6-dark">4</p><p class="text-[11px] text-v6-text-muted">Follow up now</p></div>
+                <div class="rounded-xl border border-v6-blue-200 bg-v6-blue-50 p-3"><p class="text-xs font-semibold text-v6-blue-800">Stage aging</p><p class="mt-1 text-xl font-bold text-v6-dark">3</p><p class="text-[11px] text-v6-text-muted">Progress or reset</p></div>
+                <div class="rounded-xl border border-v6-copper-200 bg-v6-copper-50 p-3"><p class="text-xs font-semibold text-v6-copper-800">Both signals</p><p class="mt-1 text-xl font-bold text-v6-dark">4</p><p class="text-[11px] text-v6-text-muted">Manager decision</p></div>
+              </div>
+              <p class="mt-3 text-center text-[10px] font-semibold uppercase tracking-wide text-v6-text-muted">Within stage limit  ←  Stage age  →  Over stage limit</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <ClientLogoStrip caption="HubSpot and revenue operations work trusted by teams at" />
+
+    <ReportingDashboardValue
+      dashboardName="pipeline health dashboard"
+      audienceIntro="This dashboard is for the people who have to turn a large open pipeline into a short, explainable list of records that need attention."
+      audiences={[
+        { role: "Sales managers", need: "Start the weekly review with the stale and aging deals that need a decision instead of inspecting every open opportunity." },
+        { role: "Revenue and Sales Operations", need: "Apply consistent activity and age rules, preserve the definitions, and track whether pipeline hygiene improves." },
+        { role: "Account and renewal owners", need: "See why a deal was flagged and the next action needed to revive, update, nurture, or close it." },
+      ]}
+      workflowSteps={[
+        { title: "Connect HubSpot", description: "Use a read-only connection to analyze the open deals already maintained by the team." },
+        { title: "Choose the health rules", description: "Select the pipeline, activity definition, stage-aware age thresholds, and weekly or monthly cadence." },
+        { title: "Create and share", description: "Generate the dashboard, inspect the Excel-ready action list, and select the risks for PowerPoint." },
+      ]}
+      dashboardUse="Track newly stale, still stale, recovered, within-threshold, watch, and action-required deals in one recurring management view."
+      spreadsheetUse="Filter the owner-level rows, inspect activity and age signals, and identify source records that should be corrected in HubSpot."
+      presentationUse="Choose the highest-value risks, improving trends, and ownership gaps that should appear in the pipeline review."
+      storyExample="Eleven deals worth 415,000 dollars need review. Four are newly stale, while three previously flagged deals are back on track."
+    />
+
+    <section class="px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+      <div class="mx-auto max-w-6xl">
+        <div class="mx-auto max-w-3xl text-center">
+          <p class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper">From detection to follow-up</p>
+          <h2 class="mt-3 text-balance text-3xl font-bold text-v6-dark sm:text-4xl">What is a HubSpot pipeline health dashboard?</h2>
+          <p class="mt-4 text-lg leading-relaxed text-v6-text-muted">A HubSpot pipeline health dashboard is a recurring review of deals that may have stopped progressing or exceeded an acceptable age. It keeps activity, next-step, close-date, total-age, and stage-age signals together.</p>
+          <p class="mt-4 leading-relaxed text-v6-text-muted">The useful version separates an inactive deal from an old but actively progressing deal. The rules, stage thresholds, and meaningful-activity definition remain visible so every flag can be checked.</p>
+        </div>
+
+        <div class="mx-auto mt-16 max-w-3xl border-t border-v6-border pt-16 text-center sm:mt-20 sm:pt-20">
+          <p class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper">What this dashboard helps you do</p>
+          <h2 class="mt-3 text-balance text-3xl font-bold text-v6-dark sm:text-4xl">Turn stale and aging deals into clear owner decisions.</h2>
+          <p class="mt-4 text-lg leading-relaxed text-v6-text-muted">See what counts as stuck, why each deal was flagged, and what should happen before the next review.</p>
+        </div>
+        <ReportBenefitCards benefits={benefits} />
+      </div>
+    </section>
+
+    <section id="sample-report" class="scroll-mt-8 bg-v6-bg px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+      <div class="mx-auto max-w-6xl">
+        <div class="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
+          <div class="max-w-3xl">
+            <div class="flex flex-wrap items-center gap-3"><p class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper">Dashboard preview</p><span class="rounded-full border border-v6-copper-200 bg-v6-copper-50 px-2.5 py-1 text-xs font-semibold text-v6-copper-800">Example data</span></div>
+            <h2 class="mt-3 text-balance text-3xl font-bold text-v6-dark sm:text-4xl">Start with the pipeline-health issues that need action</h2>
+            <p class="mt-4 text-lg leading-relaxed text-v6-text-muted">The dashboard combines activity freshness and stage-age thresholds. Every row shows why it was flagged and the next action for the owner or manager.</p>
+          </div>
+          <a href="#report-signup" data-ga-cta="b1_sample_signup" class="inline-flex min-h-11 items-center justify-center self-start rounded-xl border border-v6-copper px-5 py-3 text-sm font-semibold text-v6-copper transition-colors hover:bg-v6-copper-50 focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2 lg:self-auto">Sign up to the app</a>
+        </div>
+
+        <div class="mt-10 overflow-hidden rounded-2xl border border-v6-border bg-white shadow-sm">
+          <div class="flex flex-col gap-4 border-b border-v6-border px-5 py-5 sm:flex-row sm:items-center sm:justify-between sm:px-7">
+            <div><p class="text-xs font-semibold uppercase tracking-[0.14em] text-v6-text-muted">Weekly stuck-deal review</p><h3 class="mt-1 text-xl font-bold text-v6-dark">Weekly stuck-deal follow-up list</h3><p class="mt-1 text-sm text-v6-text-muted">Prepared Friday, 8:45 AM, before the weekly review</p></div>
+            <div class="flex items-center gap-2"><span class="rounded-full bg-v6-teal-50 px-3 py-1.5 text-xs font-semibold text-v6-teal-800">11 stuck</span><span class="rounded-full bg-v6-blue-50 px-3 py-1.5 text-xs font-semibold text-v6-blue-800">Sample</span></div>
+          </div>
+
+          <nav class="flex gap-1 overflow-x-auto border-b border-v6-border bg-v6-bg px-5 py-3 text-sm" aria-label="Pipeline health dashboard views"><span class="rounded-lg bg-white px-3 py-2 font-semibold text-v6-dark shadow-sm">Health matrix</span><span class="px-3 py-2 text-v6-text-muted">Action queue</span><span class="px-3 py-2 text-v6-text-muted">Owners</span><span class="px-3 py-2 text-v6-text-muted">Recovery trend</span></nav>
+
+          <div class="grid gap-px bg-v6-border sm:grid-cols-2 lg:grid-cols-4"><div class="bg-white p-5 sm:p-6"><p class="text-sm text-v6-text-muted">Newly stuck</p><p class="mt-2 text-2xl font-bold text-v6-copper-800">4</p></div><div class="bg-white p-5 sm:p-6"><p class="text-sm text-v6-text-muted">Still stuck</p><p class="mt-2 text-2xl font-bold text-v6-copper-800">7</p></div><div class="bg-v6-teal-50 p-5 sm:p-6"><p class="text-sm text-v6-teal-800">Back on track</p><p class="mt-2 text-2xl font-bold text-v6-teal-800">3</p></div><div class="bg-v6-copper-50 p-5 sm:p-6"><p class="text-sm text-v6-copper-800">Value needing review</p><p class="mt-2 text-2xl font-bold text-v6-copper-800">$415k</p></div></div>
+
+          <div class="grid gap-8 p-5 sm:p-7 lg:grid-cols-[0.62fr_1.38fr]">
+            <div>
+              <div class="flex items-center justify-between"><h4 class="text-base font-bold text-v6-dark">Health matrix</h4><span class="text-xs text-v6-text-muted">Activity × stage age</span></div>
+              <div class="mt-5 grid grid-cols-2 gap-3">
+                <div class="rounded-xl border border-v6-teal-200 bg-v6-teal-50 p-4"><p class="text-sm font-semibold text-v6-teal-800">Healthy</p><p class="mt-2 text-2xl font-bold text-v6-dark">26</p><p class="mt-1 text-xs text-v6-text-muted">Recent activity, within stage limit</p></div>
+                <div class="rounded-xl border border-v6-amber-300 bg-v6-amber-50 p-4"><p class="text-sm font-semibold text-v6-amber-800">Activity stale</p><p class="mt-2 text-2xl font-bold text-v6-dark">4</p><p class="mt-1 text-xs text-v6-text-muted">No meaningful buyer activity</p></div>
+                <div class="rounded-xl border border-v6-blue-200 bg-v6-blue-50 p-4"><p class="text-sm font-semibold text-v6-blue-800">Stage aging</p><p class="mt-2 text-2xl font-bold text-v6-dark">3</p><p class="mt-1 text-xs text-v6-text-muted">Active, but over the stage limit</p></div>
+                <div class="rounded-xl border border-v6-copper-200 bg-v6-copper-50 p-4"><p class="text-sm font-semibold text-v6-copper-800">Both signals</p><p class="mt-2 text-2xl font-bold text-v6-dark">4</p><p class="mt-1 text-xs text-v6-text-muted">Manager decision required</p></div>
+              </div>
+              <p class="mt-5 rounded-xl bg-v6-bg-warm p-4 text-sm leading-relaxed text-v6-text-muted">Every classification shows the activity rule and stage threshold, so owners can understand the flag and take the next action.</p>
+            </div>
+
+            <div>
+              <div class="flex items-center justify-between gap-4"><h4 class="text-base font-bold text-v6-dark">Deals needing review</h4><span class="text-xs text-v6-text-muted">Example rows</span></div>
+              <div class="mt-4 hidden overflow-x-auto rounded-xl border border-v6-border md:block">
+                <table class="w-full min-w-[620px] border-collapse text-left text-sm">
+                  <thead class="bg-v6-bg text-xs uppercase tracking-wide text-v6-text-muted"><tr><th class="px-4 py-3 font-semibold">Deal and owner</th><th class="px-4 py-3 font-semibold">Stage</th><th class="px-4 py-3 font-semibold">Status and reason</th><th class="px-4 py-3 font-semibold">Next action</th><th class="px-4 py-3 text-right font-semibold">Value</th></tr></thead>
+                  <tbody class="divide-y divide-v6-border">
+                    {staleDealRows.map((row) => (
+                      <tr><td class="px-4 py-3"><p class="font-semibold text-v6-dark">{row.deal}</p><p class="mt-0.5 text-xs text-v6-text-muted">{row.owner}</p></td><td class="px-4 py-3 text-v6-text-muted">{row.stage}</td><td class="px-4 py-3 text-v6-text-muted"><strong class="text-v6-dark">{row.status}</strong><br /><span class="text-xs">{row.reason}</span></td><td class="px-4 py-3 text-v6-dark">{row.action}</td><td class="px-4 py-3 text-right font-semibold text-v6-dark">{row.value}</td></tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <div class="mt-4 space-y-3 md:hidden">
+                {staleDealRows.map((row) => (
+                  <article class="rounded-xl border border-v6-border p-4"><div class="flex items-start justify-between gap-4"><div><h5 class="font-semibold text-v6-dark">{row.deal}</h5><p class="mt-0.5 text-xs text-v6-text-muted">Owner: {row.owner}</p></div><span class="text-sm font-bold text-v6-dark">{row.value}</span></div><p class="mt-3 text-sm text-v6-text-muted">{row.stage} · {row.age}</p><p class="mt-2 text-sm text-v6-text-muted"><strong class="text-v6-dark">{row.status}:</strong> {row.reason}</p><p class="mt-2 text-sm text-v6-text-muted"><strong class="text-v6-dark">Next:</strong> {row.action}</p></article>
+                ))}
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+      <div class="mx-auto max-w-5xl">
+        <div class="mx-auto max-w-3xl text-center"><p class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper">Three-click setup</p><h2 class="mt-3 text-balance text-3xl font-bold text-v6-dark sm:text-4xl">The 3-click dashboard setup</h2><p class="mt-4 text-lg leading-relaxed text-v6-text-muted">Sign up, choose the deal scope, set the activity and stage-age rules, and create the recurring health dashboard.</p></div>
+        <ol class="mt-10 grid gap-6 md:grid-cols-3">
+          <li class="rounded-2xl border border-v6-border bg-white p-6"><span class="text-sm font-bold text-v6-copper">01</span><h3 class="mt-3 text-xl font-bold text-v6-dark">Choose which deals are included</h3><p class="mt-2 leading-relaxed text-v6-text-muted">Use one sales pipeline, a renewal-only view, or another explicit scope that owners recognize.</p></li>
+          <li class="rounded-2xl border border-v6-border bg-white p-6"><span class="text-sm font-bold text-v6-copper">02</span><h3 class="mt-3 text-xl font-bold text-v6-dark">Choose what counts as stuck</h3><p class="mt-2 leading-relaxed text-v6-text-muted">Define meaningful customer activity, limits by stage, missing next steps, and overdue close dates.</p></li>
+          <li class="rounded-2xl border border-v6-border bg-white p-6"><span class="text-sm font-bold text-v6-copper">03</span><h3 class="mt-3 text-xl font-bold text-v6-dark">Choose weekly delivery</h3><p class="mt-2 leading-relaxed text-v6-text-muted">Receive the follow-up list before the meeting, then reopen the same weekly result later.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="bg-v6-bg px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+      <div class="mx-auto max-w-5xl">
+        <div class="mx-auto max-w-3xl text-center">
+          <p class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper">Native reporting and the SWOTBee dashboard</p>
+          <h2 class="mt-3 text-balance text-3xl font-bold text-v6-dark sm:text-4xl">HubSpot already helps identify stalled deals</h2>
+          <p class="mt-4 text-lg leading-relaxed text-v6-text-muted">HubSpot offers a native Stalled Deals view on eligible Sales Hub plans, plus activity and time-in-stage reporting. SWOTBee combines those signals into a recurring intervention workflow with named owners and next actions.</p>
+        </div>
+        <div class="mt-10 grid gap-6 md:grid-cols-2">
+          <article class="rounded-2xl border border-v6-border bg-white p-6 sm:p-8">
+            <h3 class="text-xl font-bold text-v6-dark">What HubSpot can already report</h3>
+            <ul class="mt-4 space-y-3 text-v6-text-muted">
+              <li>A Stalled Deals view based on longer-than-average stage duration for the same owner.</li>
+              <li>Views for recent activity, no scheduled activity, and stale close dates.</li>
+              <li>Sales analytics including time spent in deal stages on eligible plans.</li>
+            </ul>
+          </article>
+          <article class="rounded-2xl border border-v6-border bg-white p-6 sm:p-8">
+            <h3 class="text-xl font-bold text-v6-dark">What this dashboard adds</h3>
+            <ul class="mt-4 space-y-3 text-v6-text-muted">
+              <li>Newly stuck, still stuck, and back-on-track states in one weekly result.</li>
+              <li>A visible reason, next action, owner, stage age, and value on every priority row.</li>
+              <li>An optional renewal-only scope and a rule for meaningful activity that the team can inspect.</li>
+            </ul>
+          </article>
+        </div>
+        <p class="mx-auto mt-8 max-w-3xl text-center leading-relaxed text-v6-text-muted">This is not a claim that HubSpot lacks stalled-deal detection. It tests whether a prepared, explainable weekly list makes the next intervention easier.</p>
+      </div>
+    </section>
+
+    <section class="bg-v6-dark px-4 py-16 text-white sm:px-6 sm:py-20 lg:px-8">
+      <div class="mx-auto grid max-w-5xl gap-10 lg:grid-cols-2 lg:items-center">
+        <div><p class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper-300">The intended wow moment</p><h2 class="mt-3 text-balance text-3xl font-bold sm:text-4xl">Open the dashboard and see which deals need a manager attention.</h2></div>
+        <div class="space-y-4 text-white/75"><p class="leading-relaxed">The value is not another count of old deals. It is a shortlist showing what became stuck, what stayed stuck, what is back on track, and why.</p><p class="leading-relaxed">Visible activity rules and stage thresholds make every flag explainable, while the owner action queue turns the diagnosis into a repeatable weekly workflow.</p></div>
+      </div>
+    </section>
+
+    <section class="px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+      <div class="mx-auto max-w-3xl">
+        <div class="text-center"><p class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper">Questions about the dashboard</p><h2 class="mt-3 text-3xl font-bold text-v6-dark sm:text-4xl">What to know before you create the dashboard</h2></div>
+        <div class="mt-10 divide-y divide-v6-border border-y border-v6-border">
+          {faqs.map((item) => (
+            <details class="group py-5"><summary class="flex min-h-11 cursor-pointer list-none items-center justify-between gap-5 rounded-md font-semibold text-v6-dark focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2"><span>{item.q}</span><span class="text-xl font-normal text-v6-copper transition-transform group-open:rotate-45" aria-hidden="true">+</span></summary><p class="max-w-2xl pb-1 pr-8 pt-3 leading-relaxed text-v6-text-muted">{item.a}</p></details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <ReportRelatedLinks
+      links={[
+        { href: "/hubspot-pipeline-change-report/", title: "Explain week-over-week pipeline change", description: "Trace movement in pipeline value back to the deals, stages, and owners that caused it." },
+        { href: "/hubspot-historical-pipeline-snapshot/", title: "Preserve historical pipeline snapshots", description: "Save the pipeline state used for each review so later edits do not rewrite the earlier record." },
+        { href: "/guides/renewal-pipeline-visibility-hubspot/", title: "Build renewal pipeline visibility", description: "Set up the fields, stages, and views that make upcoming and at-risk renewals visible in HubSpot." },
+      ]}
+    />
+
+    <section id="report-signup" class="scroll-mt-8 bg-v6-bg px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+      <div class="mx-auto max-w-3xl rounded-3xl bg-v6-copper px-6 py-10 text-center text-white shadow-lg shadow-v6-copper/20 sm:px-10 sm:py-12">
+        <p class="text-sm font-semibold uppercase tracking-[0.16em] text-white/75">App signup</p>
+        <h2 class="mt-3 text-balance text-3xl font-bold sm:text-4xl">Sign up to the app</h2>
+        <p class="mx-auto mt-4 max-w-2xl text-lg leading-relaxed text-white/85">Create your SWOTBee account with your work email. No card is required.</p>
+        <ReportSignup
+          offerCode="b1_stale_deals"
+          reportName="HubSpot pipeline health dashboard"
+          sourcePage="hubspot-stale-deals-report"
+          ctaLabel="b1_report_signup"
+        />
+        <p class="mt-5 text-sm text-white/70">No card. This page does not connect to or access your HubSpot account.</p>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

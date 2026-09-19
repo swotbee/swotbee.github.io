@@ -56,8 +56,18 @@ const services = [
 ];
 
 const platforms = [
-  "DocuSign", "NetSuite", "Xero", "Zoom", "Monday.com", "Shopify",
-  "Salesforce", "Zapier", "Slack", "QuickBooks", "Stripe", "Custom APIs",
+  { name: "DocuSign" },
+  { name: "NetSuite", url: "/services/integrations-netsuite/" },
+  { name: "Xero", url: "/services/integrations-xero/" },
+  { name: "Zoom" },
+  { name: "Monday.com" },
+  { name: "Shopify" },
+  { name: "Salesforce" },
+  { name: "Zapier" },
+  { name: "Slack" },
+  { name: "QuickBooks", url: "/services/integrations-quickbooks/" },
+  { name: "Stripe" },
+  { name: "Custom APIs" },
 ];
 
 const faqs = [
@@ -245,9 +255,18 @@ const clientLogos = ["Wesco", "Big Lots", "Insteon", "La Vie", "Mytheresa"];
       <h2 class="text-xl sm:text-2xl font-bold text-v6-dark mb-6 text-center">Platforms We Connect</h2>
       <div class="flex flex-wrap justify-center gap-3">
         {platforms.map(platform => (
-          <span class="bg-white border border-v6-border text-v6-dark text-sm font-medium px-4 py-2 rounded-lg">
-            {platform}
-          </span>
+          platform.url ? (
+            <a
+              href={platform.url}
+              class="inline-flex min-h-11 items-center bg-white border border-v6-border text-v6-dark text-sm font-medium px-4 py-2 rounded-lg hover:border-v6-copper hover:text-v6-copper focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-v6-copper transition-colors"
+            >
+              {platform.name}
+            </a>
+          ) : (
+            <span class="inline-flex min-h-11 items-center bg-white border border-v6-border text-v6-dark text-sm font-medium px-4 py-2 rounded-lg">
+              {platform.name}
+            </span>
+          )
         ))}
       </div>
     </div>

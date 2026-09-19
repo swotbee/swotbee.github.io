@@ -1,0 +1,24 @@
+---
+const targetPath = "/hubspot-pipeline-change-report/";
+const canonicalURL = "https://swotbee.com/hubspot-pipeline-change-report/";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="robots" content="noindex, follow" />
+    <meta http-equiv="refresh" content={`0; url=${targetPath}`} />
+    <link rel="canonical" href={canonicalURL} />
+    <title>Weekly HubSpot Pipeline Dashboard</title>
+  </head>
+  <body>
+    <main>
+      <p>The week-over-week dashboard is now part of the <a href={targetPath}>HubSpot Pipeline Change Dashboard</a>.</p>
+    </main>
+    <script is:inline>
+      window.location.replace("/hubspot-pipeline-change-report/" + window.location.search + window.location.hash);
+    </script>
+  </body>
+</html>

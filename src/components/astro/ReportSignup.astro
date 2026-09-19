@@ -1,0 +1,303 @@
+---
+import RecaptchaLazy from "./RecaptchaLazy.astro";
+
+interface Props {
+  offerCode: string;
+  reportName: string;
+  sourcePage: string;
+  ctaLabel: string;
+  emailHelp?: string;
+  buttonLabel?: string;
+  loadingLabel?: string;
+  loadingMessage?: string;
+}
+
+const {
+  offerCode,
+  reportName,
+  sourcePage,
+  ctaLabel,
+  emailHelp = "Use the work email you want associated with your SWOTBee app account.",
+  buttonLabel = "Continue",
+  loadingLabel = "Creating your app account...",
+  loadingMessage = "Saving your email and preparing your app account.",
+} = Astro.props;
+
+// This first website-only experiment deliberately reuses the proven contact-form
+// delivery path. The message field keeps the report identity durable even before a
+// dedicated HubSpot form and report_offer property are configured.
+const PORTAL_ID = "243398671";
+const FORM_ID = "33b1abe2-20bd-4dc7-985a-5b4793af0312";
+const RECAPTCHA_SITE_KEY = "6Ld3OHYtAAAAADJ8LKDmjsk4qrg2Ih9-FxxV2PSR";
+const RECAPTCHA_ACTION = "report_signup";
+const N8N_WEBHOOK_URL = "https://auto.zippylens.com/webhook/swotbee-form-submit";
+const EXPERIMENT = "website_report_signup_v1";
+const CONSENT_VERSION = "report-signup-2026-09-17";
+const formId = `report-signup-form-${offerCode}`;
+const statusId = `report-signup-status-${offerCode}`;
+const terminalId = `report-signup-terminal-${offerCode}`;
+const terminalTitleId = `report-signup-terminal-title-${offerCode}`;
+const message = `Website report signup: ${reportName} (${offerCode}). Experiment: ${EXPERIMENT}.`;
+---
+
+<RecaptchaLazy siteKey={RECAPTCHA_SITE_KEY} />
+
+<div class="mx-auto mt-8 max-w-xl text-left">
+  <form
+    id={formId}
+    class="rounded-2xl border border-white/25 bg-white p-6 text-v6-dark shadow-xl shadow-v6-dark/15 sm:p-8"
+    data-report-signup
+    data-portal={PORTAL_ID}
+    data-form={FORM_ID}
+    data-recaptcha-site-key={RECAPTCHA_SITE_KEY}
+    data-recaptcha-action={RECAPTCHA_ACTION}
+    data-webhook={N8N_WEBHOOK_URL}
+    data-offer-code={offerCode}
+    data-report-name={reportName}
+    data-source-page={sourcePage}
+    data-cta-label={ctaLabel}
+    data-experiment={EXPERIMENT}
+    data-loading-label={loadingLabel}
+    data-loading-message={loadingMessage}
+    novalidate
+  >
+    <div class="absolute -left-[9999px] h-px w-px overflow-hidden" aria-hidden="true">
+      <label>
+        Company website
+        <input type="text" name="company_website" tabindex="-1" autocomplete="off" />
+      </label>
+    </div>
+
+    <input type="hidden" name="message" value={message} />
+    <input type="hidden" name="report_offer" value={offerCode} />
+    <input type="hidden" name="source_page" value={sourcePage} />
+    <input type="hidden" name="signup_experiment" value={EXPERIMENT} />
+    <input type="hidden" name="signup_stage" value="email_accepted" />
+    <input type="hidden" name="consent_version" value={CONSENT_VERSION} />
+    <input type="hidden" name="utm_source" />
+    <input type="hidden" name="utm_medium" />
+    <input type="hidden" name="utm_campaign" />
+    <input type="hidden" name="utm_content" />
+    <input type="hidden" name="utm_term" />
+    <input type="hidden" name="gclid" />
+    <input type="hidden" name="sb_landing_page" />
+    <input type="hidden" name="sb_referrer" />
+
+    <div>
+      <label for={`${formId}-email`} class="block text-sm font-semibold text-v6-dark">
+        Work email <span class="text-v6-copper" aria-hidden="true">*</span>
+      </label>
+      <input
+        id={`${formId}-email`}
+        name="email"
+        type="email"
+        required
+        autocomplete="email"
+        inputmode="email"
+        aria-describedby={`${formId}-email-help ${statusId}`}
+        class="mt-2 min-h-12 w-full rounded-xl border border-v6-border bg-white px-4 py-3 text-base text-v6-dark shadow-sm outline-none transition-colors placeholder:text-v6-text-muted/70 focus:border-v6-copper focus:ring-2 focus:ring-v6-copper"
+        placeholder="you@company.com"
+      />
+      <p id={`${formId}-email-help`} class="mt-2 text-sm leading-relaxed text-v6-text-muted">
+        {emailHelp}
+      </p>
+    </div>
+
+    <p class="mt-5 text-xs leading-relaxed text-v6-text-muted">
+      By continuing, you agree to the <a href="/terms/" class="font-semibold text-v6-copper-800 underline decoration-v6-copper-300 underline-offset-2 hover:text-v6-copper-900 focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2">Terms</a>
+      and acknowledge the <a href="/privacy/" class="font-semibold text-v6-copper-800 underline decoration-v6-copper-300 underline-offset-2 hover:text-v6-copper-900 focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2">Privacy Policy</a>.
+      We will use this email to handle your app signup and related service communication.
+    </p>
+
+    <button
+      type="submit"
+      class="mt-6 inline-flex min-h-12 w-full items-center justify-center rounded-xl bg-v6-copper px-7 py-3.5 text-base font-semibold text-white transition-colors hover:bg-v6-copper-600 focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2 disabled:cursor-wait disabled:opacity-70"
+    >
+      {buttonLabel}
+    </button>
+
+    <p id={statusId} role="status" aria-live="polite" class="mt-4 min-h-5 text-sm leading-relaxed"></p>
+  </form>
+
+  <div
+    id={terminalId}
+    class="hidden rounded-2xl border border-v6-teal-300 bg-white p-6 text-v6-dark shadow-xl shadow-v6-dark/15 sm:p-8"
+    role="status"
+    aria-live="polite"
+    aria-labelledby={terminalTitleId}
+  >
+    <div class="flex h-12 w-12 items-center justify-center rounded-full bg-v6-teal-50 text-v6-teal-800" aria-hidden="true">
+      <svg viewBox="0 0 24 24" class="h-7 w-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="m5 12 4 4L19 6"></path>
+      </svg>
+    </div>
+    <h3 id={terminalTitleId} tabindex="-1" class="mt-5 text-2xl font-bold text-v6-dark">
+      Your app signup is saved
+    </h3>
+    <p class="mt-3 leading-relaxed text-v6-text-muted">
+      Your work email was saved for the SWOTBee app. No HubSpot account was connected and no HubSpot data was accessed during signup.
+    </p>
+    <div class="mt-6 flex flex-col gap-3 sm:flex-row">
+      <a href="#sample-report" class="inline-flex min-h-11 items-center justify-center rounded-xl border border-v6-border px-5 py-3 text-sm font-semibold text-v6-dark transition-colors hover:border-v6-copper hover:bg-v6-copper-50 focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2">
+        Return to the sample report
+      </a>
+      <a href="mailto:info@swotbee.com?subject=Report%20signup%20support" class="inline-flex min-h-11 items-center justify-center rounded-xl px-5 py-3 text-sm font-semibold text-v6-copper-800 underline decoration-v6-copper-300 underline-offset-4 hover:text-v6-copper-900 focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2">
+        Contact support
+      </a>
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+  (function () {
+    var forms = document.querySelectorAll("form[data-report-signup]");
+    forms.forEach(function (form) {
+      if (form.getAttribute("data-report-signup-ready") === "true") return;
+      form.setAttribute("data-report-signup-ready", "true");
+
+      var button = form.querySelector('button[type="submit"]');
+      var status = form.querySelector('[role="status"]');
+      var emailInput = form.querySelector('input[name="email"]');
+      var offerCode = form.getAttribute("data-offer-code") || "unknown";
+      var sourcePage = form.getAttribute("data-source-page") || window.location.pathname;
+      var ctaLabel = form.getAttribute("data-cta-label") || "report_signup";
+      var experiment = form.getAttribute("data-experiment") || "website_report_signup_v1";
+      var loadingLabel = form.getAttribute("data-loading-label") || "Creating your app account...";
+      var loadingMessage = form.getAttribute("data-loading-message") || "Saving your email and preparing your app account.";
+      var started = false;
+
+      function track(name, extra) {
+        if (typeof window.gtag !== "function") return;
+        var payload = Object.assign({
+          report_offer: offerCode,
+          source_page: sourcePage,
+          cta_label: ctaLabel,
+          experiment: experiment,
+          transport_type: "beacon"
+        }, extra || {});
+        window.gtag("event", name, payload);
+      }
+
+      function setStatus(message, kind) {
+        if (!status) return;
+        status.textContent = message;
+        status.className = "mt-4 min-h-5 text-sm leading-relaxed " +
+          (kind === "error" ? "text-red-700" : "text-v6-text-muted");
+        status.setAttribute("role", kind === "error" ? "alert" : "status");
+      }
+
+      function getRecaptchaToken(action) {
+        if (typeof window.__sbRecaptchaToken !== "function") {
+          return Promise.reject(new Error("recaptcha_unavailable"));
+        }
+        return window.__sbRecaptchaToken(action);
+      }
+
+      function collectFields() {
+        if (typeof window.__sbFillAttribution === "function") {
+          window.__sbFillAttribution(form);
+        }
+        var allowed = [
+          "email", "message", "report_offer", "source_page", "signup_experiment",
+          "signup_stage", "consent_version", "utm_source", "utm_medium",
+          "utm_campaign", "utm_content", "utm_term", "gclid",
+          "sb_landing_page", "sb_referrer"
+        ];
+        return allowed.map(function (name) {
+          var input = form.querySelector('[name="' + name + '"]');
+          return { name: name, value: input ? String(input.value || "").trim() : "" };
+        }).filter(function (field) { return field.value; });
+      }
+
+      function showTerminalState() {
+        var terminalId = form.id.replace("form-", "terminal-");
+        var terminal = document.getElementById(terminalId);
+        form.classList.add("hidden");
+        if (!terminal) return;
+        terminal.classList.remove("hidden");
+        var heading = terminal.querySelector("h3");
+        if (heading) heading.focus({ preventScroll: true });
+        var reducedMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        terminal.scrollIntoView({ behavior: reducedMotion ? "auto" : "smooth", block: "center" });
+        track("report_signup_saved");
+      }
+
+      form.addEventListener("focusin", function () {
+        if (started) return;
+        started = true;
+        track("form_start", { form_name: "report_signup" });
+        track("report_signup_start");
+      });
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        if (!button || !emailInput) return;
+
+        var honeypot = form.querySelector('input[name="company_website"]');
+        if (honeypot && honeypot.value) {
+          form.reset();
+          setStatus("We could not continue with this request.", "error");
+          return;
+        }
+
+        var email = String(emailInput.value || "").trim();
+        if (!emailInput.checkValidity() || email.indexOf("@") < 1) {
+          setStatus("Enter a valid work email to continue.", "error");
+          emailInput.focus();
+          return;
+        }
+
+        var originalLabel = button.textContent;
+        button.disabled = true;
+        button.textContent = loadingLabel;
+        setStatus(loadingMessage, "loading");
+        track("report_signup_submit");
+
+        var action = form.getAttribute("data-recaptcha-action") || "report_signup";
+        getRecaptchaToken(action).then(function (token) {
+          return fetch(form.getAttribute("data-webhook"), {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              recaptchaToken: token,
+              expectedAction: action,
+              portalId: form.getAttribute("data-portal"),
+              formGuid: form.getAttribute("data-form"),
+              fields: collectFields(),
+              context: { pageUri: window.location.href, pageName: document.title }
+            })
+          });
+        }).then(function (response) {
+          if (!response.ok) throw new Error("upstream_" + response.status);
+          return response.text().then(function (body) {
+            if (!body) return;
+            try {
+              var parsed = JSON.parse(body);
+              if (parsed && parsed.accepted === false) throw new Error("not_accepted");
+            } catch (error) {
+              if (error && error.message === "not_accepted") throw error;
+              // The existing proxy may return plain text. A 2xx response remains the
+              // established confirmation that HubSpot accepted the form submission.
+            }
+          });
+        }).then(function () {
+          emailInput.value = "";
+          track("form_submit", { form_name: "report_signup" });
+          track("report_signup_accepted");
+          showTerminalState();
+        }).catch(function (error) {
+          var recaptchaFailed = error && error.message === "recaptcha_unavailable";
+          if (recaptchaFailed) {
+            setStatus("We could not verify this signup because the security check did not load. Disable strict blocking for this site and try again, or email info@swotbee.com.", "error");
+          } else {
+            setStatus("We could not save your email because the signup service did not respond. Your email may not have been saved. Try again, or email info@swotbee.com.", "error");
+          }
+          track("form_error", { form_name: "report_signup", error_type: recaptchaFailed ? "recaptcha_unavailable" : "submission_failed" });
+          track("report_signup_error", { error_type: recaptchaFailed ? "recaptcha_unavailable" : "submission_failed" });
+          button.disabled = false;
+          button.textContent = originalLabel;
+        });
+      });
+    });
+  })();
+</script>
