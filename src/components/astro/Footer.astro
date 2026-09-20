@@ -4,58 +4,58 @@ import NewsletterForm from "./NewsletterForm.astro";
 import { EnvelopeIcon } from "@heroicons/react/24/outline";
 ---
 
-<footer class="bg-v6-dark text-white py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
+<footer class="bg-v6-dark text-v6-blue-100 py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
   <div class="max-w-7xl mx-auto">
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1fr_1fr_1fr_1fr_1.75fr] gap-8 mb-10">
       <!-- Brand -->
       <div class="sm:col-span-2 lg:col-span-1">
         <div class="flex items-center gap-2 mb-4">
           <LogoHoneycomb width={24} height={22} />
-          <span class="font-bold text-base">SWOTbee</span>
+          <span class="font-bold text-base text-white">SWOTbee</span>
         </div>
-        <p class="text-sm text-v6-blue-300 leading-relaxed max-w-xs">
+        <p class="text-sm text-v6-blue-100 leading-relaxed max-w-xs">
           Expert HubSpot consulting to streamline your experience and boost conversions.
         </p>
       </div>
 
       <!-- Company links -->
       <div>
-        <p class="text-sm font-semibold mb-3">Company</p>
-        <a href="/about/" class="block text-sm text-v6-blue-300 hover:text-white py-1 transition-colors">About</a>
-        <a href="/blog/" class="block text-sm text-v6-blue-300 hover:text-white py-1 transition-colors">Blog</a>
-        <a href="/contactus/" class="block text-sm text-v6-blue-300 hover:text-white py-1 transition-colors">Contact Us</a>
-        <a href="/faq/" class="block text-sm text-v6-blue-300 hover:text-white py-1 transition-colors">FAQs</a>
+        <p class="text-sm font-semibold mb-3 text-white">Company</p>
+        <a href="/about/" class="block text-sm text-v6-blue-100 hover:text-white py-1 transition-colors">About</a>
+        <a href="/blog/" class="block text-sm text-v6-blue-100 hover:text-white py-1 transition-colors">Blog</a>
+        <a href="/contactus/" class="block text-sm text-v6-blue-100 hover:text-white py-1 transition-colors">Contact Us</a>
+        <a href="/faq/" class="block text-sm text-v6-blue-100 hover:text-white py-1 transition-colors">FAQs</a>
       </div>
 
       <!-- Services links -->
       <div>
-        <p class="text-sm font-semibold mb-3">Services</p>
-        <a href="/services/hubspot-onboarding/" class="block text-sm text-v6-blue-300 hover:text-white py-1 transition-colors">HubSpot Onboarding</a>
-        <a href="/services/marketing/" class="block text-sm text-v6-blue-300 hover:text-white py-1 transition-colors">Marketing</a>
-        <a href="/services/sales-revops/" class="block text-sm text-v6-blue-300 hover:text-white py-1 transition-colors">Sales & RevOps</a>
-        <a href="/services/integrations/" class="block text-sm text-v6-blue-300 hover:text-white py-1 transition-colors">Integrations</a>
+        <p class="text-sm font-semibold mb-3 text-white">Services</p>
+        <a href="/services/hubspot-onboarding/" class="block text-sm text-v6-blue-100 hover:text-white py-1 transition-colors">HubSpot Onboarding</a>
+        <a href="/services/marketing/" class="block text-sm text-v6-blue-100 hover:text-white py-1 transition-colors">Marketing</a>
+        <a href="/services/sales-revops/" class="block text-sm text-v6-blue-100 hover:text-white py-1 transition-colors">Sales & RevOps</a>
+        <a href="/services/integrations/" class="block text-sm text-v6-blue-100 hover:text-white py-1 transition-colors">Integrations</a>
       </div>
 
       <!-- Legal links -->
       <div>
-        <p class="text-sm font-semibold mb-3">Legal</p>
+        <p class="text-sm font-semibold mb-3 text-white">Legal</p>
         {/* Security link intentionally omitted while the page is in draft. Restore it as
             step 5 of the checklist at the top of src/pages/_security.astro.
             Deliberately a JSX-style comment, not an HTML one: `<!-- -->` is emitted into
             the shipped page, so the previous version announced an unpublished /security/
             page to anyone reading the homepage source. This form stays in the source only. */}
-        <a href="/privacy/" class="block text-sm text-v6-blue-300 hover:text-white py-1 transition-colors">Privacy Policy</a>
-        <a href="/terms/" class="block text-sm text-v6-blue-300 hover:text-white py-1 transition-colors">Terms of Use</a>
-        <a href="/cookie/" class="block text-sm text-v6-blue-300 hover:text-white py-1 transition-colors">Cookie Policy</a>
+        <a href="/privacy/" class="block text-sm text-v6-blue-100 hover:text-white py-1 transition-colors">Privacy Policy</a>
+        <a href="/terms/" class="block text-sm text-v6-blue-100 hover:text-white py-1 transition-colors">Terms of Use</a>
+        <a href="/cookie/" class="block text-sm text-v6-blue-100 hover:text-white py-1 transition-colors">Cookie Policy</a>
         {/* Reopens the consent banner. GDPR requires withdrawing consent to be as easy as
             giving it, which a banner that only ever appears once does not satisfy.
             data-consent-reopen is the hook ConsentBanner.astro listens for. */}
-        <button type="button" data-consent-reopen class="block text-left text-sm text-v6-blue-300 hover:text-white py-1 transition-colors">Cookie settings</button>
+        <button type="button" data-consent-reopen class="block text-left text-sm text-v6-blue-100 hover:text-white py-1 transition-colors">Cookie settings</button>
       </div>
 
       <!-- Subscribe -->
       <div class="lg:min-w-0">
-        <p class="text-sm font-semibold mb-3">Stay Updated</p>
+        <p class="text-sm font-semibold mb-3 text-white">Stay Updated</p>
         <NewsletterForm variant="footer" />
       </div>
     </div>
@@ -63,18 +63,18 @@ import { EnvelopeIcon } from "@heroicons/react/24/outline";
     <!-- Bottom bar -->
     <div class="border-t border-v6-blue-800 pt-6">
       <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
-        <p class="text-xs text-v6-blue-300">© 2026 SWOTbee. All rights reserved.</p>
+        <p class="text-xs text-v6-blue-100">© 2026 SWOTbee. All rights reserved.</p>
         <div class="flex items-center gap-4">
-          <a href="mailto:info@swotbee.com" aria-label="Email SWOTbee" title="Email SWOTbee" class="text-v6-blue-300 hover:text-white transition-colors">
+          <a href="mailto:info@swotbee.com" aria-label="Email SWOTbee" title="Email SWOTbee" class="text-v6-blue-100 hover:text-white transition-colors">
             <EnvelopeIcon aria-hidden="true" className="h-5 w-5" />
           </a>
-          <a href="https://www.linkedin.com/company/swotbee" aria-label="SWOTbee on LinkedIn" title="SWOTbee on LinkedIn" class="text-v6-blue-300 hover:text-white transition-colors">
+          <a href="https://www.linkedin.com/company/swotbee" aria-label="SWOTbee on LinkedIn" title="SWOTbee on LinkedIn" class="text-v6-blue-100 hover:text-white transition-colors">
             <svg aria-hidden="true" class="h-5 w-5" fill="currentColor" viewBox="0 0 448 512"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z" /></svg>
           </a>
-          <a href="https://x.com/SWOTBee" aria-label="SWOTbee on X" title="SWOTbee on X" class="text-v6-blue-300 hover:text-white transition-colors">
+          <a href="https://x.com/SWOTBee" aria-label="SWOTbee on X" title="SWOTbee on X" class="text-v6-blue-100 hover:text-white transition-colors">
             <svg aria-hidden="true" class="h-5 w-5" fill="currentColor" viewBox="0 0 512 512"><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z" /></svg>
           </a>
-          <a href="https://www.youtube.com/@swotbee" aria-label="SWOTbee on YouTube" title="SWOTbee on YouTube" class="text-v6-blue-300 hover:text-white transition-colors">
+          <a href="https://www.youtube.com/@swotbee" aria-label="SWOTbee on YouTube" title="SWOTbee on YouTube" class="text-v6-blue-100 hover:text-white transition-colors">
             <svg aria-hidden="true" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="6.5" width="19" height="11" rx="3" /><path d="m10 9.5 5 2.5-5 2.5z" fill="currentColor" stroke="none" /></svg>
           </a>
         </div>
