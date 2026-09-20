@@ -57,6 +57,7 @@ const message = `Website report signup: ${reportName} (${offerCode}). Experiment
     data-source-page={sourcePage}
     data-cta-label={ctaLabel}
     data-experiment={EXPERIMENT}
+    data-consent-version={CONSENT_VERSION}
     data-loading-label={loadingLabel}
     data-loading-message={loadingMessage}
     novalidate
@@ -69,11 +70,6 @@ const message = `Website report signup: ${reportName} (${offerCode}). Experiment
     </div>
 
     <input type="hidden" name="message" value={message} />
-    <input type="hidden" name="report_offer" value={offerCode} />
-    <input type="hidden" name="source_page" value={sourcePage} />
-    <input type="hidden" name="signup_experiment" value={EXPERIMENT} />
-    <input type="hidden" name="signup_stage" value="email_accepted" />
-    <input type="hidden" name="consent_version" value={CONSENT_VERSION} />
     <input type="hidden" name="utm_source" />
     <input type="hidden" name="utm_medium" />
     <input type="hidden" name="utm_campaign" />
@@ -162,9 +158,11 @@ const message = `Website report signup: ${reportName} (${offerCode}). Experiment
       var sourcePage = form.getAttribute("data-source-page") || window.location.pathname;
       var ctaLabel = form.getAttribute("data-cta-label") || "report_signup";
       var experiment = form.getAttribute("data-experiment") || "website_report_signup_v1";
+      var consentVersion = form.getAttribute("data-consent-version") || "unknown";
       var loadingLabel = form.getAttribute("data-loading-label") || "Creating your app account...";
       var loadingMessage = form.getAttribute("data-loading-message") || "Saving your email and preparing your app account.";
       var started = false;
+      var submissionId = null;
 
       function track(name, extra) {
         if (typeof window.gtag !== "function") return;
@@ -198,9 +196,8 @@ const message = `Website report signup: ${reportName} (${offerCode}). Experiment
           window.__sbFillAttribution(form);
         }
         var allowed = [
-          "email", "message", "report_offer", "source_page", "signup_experiment",
-          "signup_stage", "consent_version", "utm_source", "utm_medium",
-          "utm_campaign", "utm_content", "utm_term", "gclid",
+          "email", "message", "utm_source", "utm_medium", "utm_campaign",
+          "utm_content", "utm_term", "gclid",
           "sb_landing_page", "sb_referrer"
         ];
         return allowed.map(function (name) {
@@ -254,6 +251,11 @@ const message = `Website report signup: ${reportName} (${offerCode}). Experiment
         track("report_signup_submit");
 
         var action = form.getAttribute("data-recaptcha-action") || "report_signup";
+        if (!submissionId) {
+          submissionId = typeof crypto !== "undefined" && typeof crypto.randomUUID === "function"
+            ? crypto.randomUUID()
+            : "report-signup-" + Date.now() + "-" + Math.random().toString(16).slice(2);
+        }
         getRecaptchaToken(action).then(function (token) {
           return fetch(form.getAttribute("data-webhook"), {
             method: "POST",
@@ -263,6 +265,16 @@ const message = `Website report signup: ${reportName} (${offerCode}). Experiment
               expectedAction: action,
               portalId: form.getAttribute("data-portal"),
               formGuid: form.getAttribute("data-form"),
+              submissionType: "report_signup",
+              reportSignup: {
+                submissionId: submissionId,
+                offerCode: offerCode,
+                reportName: form.getAttribute("data-report-name") || offerCode,
+                sourcePage: sourcePage,
+                ctaLabel: ctaLabel,
+                experiment: experiment,
+                consentVersion: consentVersion
+              },
               fields: collectFields(),
               context: { pageUri: window.location.href, pageName: document.title }
             })
