@@ -3,18 +3,10 @@ import Layout from "../layouts/Layout.astro";
 import Footer from "../components/astro/Footer.astro";
 import LogoHoneycomb from "../components/astro/LogoHoneycomb.astro";
 import ClientLogoStrip from "../components/astro/ClientLogoStrip.astro";
-import ReportSignup from "../components/astro/ReportSignup.astro";
-import ReportBenefitCards from "../components/astro/ReportBenefitCards.astro";
-import ReportRelatedLinks from "../components/astro/ReportRelatedLinks.astro";
+import ReportSignupDialog from "../components/astro/ReportSignupDialog.astro";
 
 const title = "Turn HubSpot AEO Data Into Excel and PowerPoint";
-const description = "Turn HubSpot AEO prompts, AI responses, citations, competitor mentions, and recommendations into an editable workbook and presentation.";
-
-const reportingBenefits = [
-  { title: "Say what changed", description: "Open with the few numbers that matter, then show which AI platforms and questions caused the change.", icon: "trend", tone: "copper" },
-  { title: "Show your evidence", description: "Keep the original prompt, AI answer, citations, and search queries close enough to answer the next question without hunting through HubSpot.", icon: "inspect", tone: "teal" },
-  { title: "Leave with a decision", description: "Turn what is missing into a short list of content and outreach work, with the reason, owner, and next review date attached.", icon: "checklist", tone: "blue" },
-] as const;
+const description = "Turn HubSpot AEO prompts, AI responses, citations, competitor mentions, and recommendations into Excel, PowerPoint, or a live dashboard.";
 
 const promptRows = [
   {
@@ -43,10 +35,20 @@ const promptRows = [
   },
 ];
 
+const reportAreas = [
+  { title: "Questions and AI answers", description: "The prompts selected for the report, every AI platform checked, the dated answers, and anything HubSpot could not return." },
+  { title: "Brand visibility", description: "Questions that mention your brand, where it appears in the answer, and the gains or losses that matter for the review." },
+  { title: "Competitor visibility", description: "Questions where competitors appear, where your brand is missing, and the pages or claims helping them earn that place." },
+  { title: "Citations and source pages", description: "The websites and individual pages cited in AI answers, including your own citations and sources worth investigating." },
+  { title: "Results by platform and question", description: "Clear breakdowns by AI platform, buying question, topic, business unit, or another grouping selected for the report." },
+  { title: "Recommended work and owners", description: "The content or outreach work supported by the evidence, why it matters, who owns it, and when it will be reviewed." },
+];
+
 const faqs = [
   { q: "What will I get in the finished AEO report?", a: "You will get an editable workbook for the detailed work and a PowerPoint for the meeting. Depending on the data available, they can show the questions tracked, AI answers checked, results by AI platform, mentions of your brand and competitors, cited sources, recommended work, and agreed actions." },
   { q: "Can I export HubSpot AEO prompts to Excel?", a: "Yes. The workbook can include the questions you track, dated AI answers, cited sources, search queries, brand and competitor mentions, recommendations, and notes about what was included." },
   { q: "Can I use it for a client or executive meeting?", a: "Yes. The presentation is editable, and you decide which changes, missing brand mentions, useful sources, and next actions the audience needs to see. The workbook stays available when someone wants the detail behind a slide." },
+  { q: "Can I share a live AEO dashboard?", a: "Yes. A live dashboard can show the latest approved AEO measures and let colleagues or clients inspect the prompts and evidence behind them. It uses the same report setup as the Excel workbook and PowerPoint." },
   { q: "Will the original AI answers and citations be included?", a: "They can be when HubSpot returns them for the period you selected. The report can include the question, AI platform, full answer, cited URLs and titles, and the search queries used." },
   { q: "What happens when a metric is not available through the API?", a: "The report says it is unavailable. It does not turn missing data into zero or present an independently calculated value as a native HubSpot metric. HubSpot currently documents the AEO API as a public beta, so fields and availability may change." },
   { q: "How far back can the report compare?", a: "It can use prompt runs that HubSpot has already collected and preserve future reporting cutoffs. It cannot recreate an AI response that was never captured, so comparisons become more useful as consistent runs accumulate." },
@@ -72,13 +74,19 @@ const faqSchema = {
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
 
   <header class="border-b border-v6-border bg-white">
-    <div class="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
-      <a href="/" class="flex min-h-11 items-center gap-2 rounded-md focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2" aria-label="SWOTbee home">
+    <div class="mx-auto flex min-h-16 max-w-6xl items-center justify-between gap-6 px-4 py-2 sm:px-6 lg:px-8">
+      <a href="/" class="flex min-h-11 shrink-0 items-center gap-2 rounded-md focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2" aria-label="SWOTbee home">
         <LogoHoneycomb width={32} height={30} />
         <span class="text-lg font-bold text-v6-dark">SWOT<span class="text-v6-teal-700">bee</span></span>
       </a>
-      <a href="#report-signup" data-ga-cta="aeo_report_header_signup" class="inline-flex min-h-11 items-center justify-center rounded-lg border border-v6-copper px-4 py-2 text-sm font-semibold text-v6-copper transition-colors hover:bg-v6-copper-50 focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2">
-        Sign up to the app
+      <nav class="hidden items-center gap-6 text-sm font-semibold text-v6-text-muted lg:flex" aria-label="Page navigation">
+        <a href="#how-it-works" class="rounded-md py-2 hover:text-v6-dark focus:outline-none focus:ring-2 focus:ring-v6-copper">How it works</a>
+        <a href="#sample-report" class="rounded-md py-2 hover:text-v6-dark focus:outline-none focus:ring-2 focus:ring-v6-copper">Sample report</a>
+        <a href="#report-contents" class="rounded-md py-2 hover:text-v6-dark focus:outline-none focus:ring-2 focus:ring-v6-copper">What's included</a>
+        <a href="#questions" class="rounded-md py-2 hover:text-v6-dark focus:outline-none focus:ring-2 focus:ring-v6-copper">FAQs</a>
+      </nav>
+      <a href="#report-signup" data-ga-cta="aeo_report_header_signup" class="inline-flex min-h-11 shrink-0 items-center justify-center rounded-lg border border-v6-copper px-4 py-2 text-sm font-semibold text-v6-copper transition-colors hover:bg-v6-copper-50 focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2">
+        Build your AEO Report
       </a>
     </div>
   </header>
@@ -87,12 +95,13 @@ const faqSchema = {
     <section class="overflow-hidden bg-gradient-to-b from-v6-bg to-white px-4 pb-16 pt-14 sm:px-6 sm:pb-20 sm:pt-20 lg:px-8">
       <div class="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
         <div>
-          <span class="mb-5 inline-flex rounded-full bg-v6-copper-50 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-v6-copper-700">AEO reports from HubSpot</span>
-          <h1 class="max-w-3xl text-balance text-4xl font-bold leading-[1.08] text-v6-dark sm:text-5xl lg:text-[3.45rem]">Turn HubSpot AEO Data Into a Report People Can Use</h1>
-          <p class="mt-6 max-w-2xl text-lg leading-relaxed text-v6-text-muted">Choose the prompts and period. Get a clear Excel report and an editable presentation, with the answers and citations behind every finding.</p>
+          <span class="mb-5 inline-flex rounded-full bg-v6-copper-50 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-v6-copper-700">HubSpot AEO executive reporting</span>
+          <h1 class="max-w-3xl text-balance text-4xl font-bold leading-[1.08] text-v6-dark sm:text-5xl lg:text-[3.45rem]">Turn HubSpot AEO Data Into a Report ready for Review</h1>
+          <p class="mt-6 max-w-2xl text-lg leading-relaxed text-v6-text-muted">Build a complete HubSpot AEO report in 3 clicks. Choose the prompts and period, then get the result in Excel, PowerPoint, or a live dashboard—with every finding tied to the original answer and citation.</p>
+          <p class="mt-5 font-semibold text-v6-dark">Run it weekly or monthly. No prompt copying. No screenshot decks.</p>
           <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-            <a href="#sample-report" data-ga-cta="aeo_report_hero_sample" class="inline-flex min-h-12 items-center justify-center rounded-xl bg-v6-copper px-7 py-3.5 text-base font-semibold text-white transition-colors hover:bg-v6-copper-600 focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2">View the sample AEO report</a>
-            <a href="#report-signup" data-ga-cta="aeo_report_hero_signup" class="inline-flex min-h-12 items-center justify-center rounded-xl border border-v6-border bg-white px-7 py-3.5 text-base font-semibold text-v6-dark transition-colors hover:border-v6-copper hover:bg-v6-copper-50 focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2">Sign up to the app</a>
+            <a href="#report-signup" data-ga-cta="aeo_report_hero_signup" class="inline-flex min-h-12 items-center justify-center rounded-xl bg-v6-copper px-7 py-3.5 text-base font-semibold text-white transition-colors hover:bg-v6-copper-600 focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2">Build your AEO Report</a>
+            <a href="#sample-report" data-ga-cta="aeo_report_hero_sample" class="inline-flex min-h-12 items-center justify-center rounded-xl border border-v6-border bg-white px-7 py-3.5 text-base font-semibold text-v6-dark transition-colors hover:border-v6-copper hover:bg-v6-copper-50 focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2">View the sample AEO report</a>
           </div>
           <p class="mx-auto mt-4 max-w-xl text-center text-sm font-semibold leading-relaxed text-v6-dark">No credit card required. Your first month is on us.</p>
         </div>
@@ -116,7 +125,7 @@ const faqSchema = {
                 <p class="mt-2 text-sm font-semibold leading-relaxed text-v6-dark">Your brand appeared more often in research questions. Seven buying-decision answers mentioned competitors but not you.</p>
               </div>
             </div>
-            <div class="grid grid-cols-1 gap-px border-t border-v6-border bg-v6-border text-center text-xs font-semibold text-v6-text-muted sm:grid-cols-3"><span class="bg-v6-bg px-4 py-3">Excel working file</span><span class="bg-v6-bg px-4 py-3">Editable PowerPoint</span><span class="bg-v6-bg px-4 py-3">Response evidence included</span></div>
+            <div class="grid grid-cols-1 gap-px border-t border-v6-border bg-v6-border text-center text-xs font-semibold text-v6-text-muted sm:grid-cols-3"><span class="bg-v6-bg px-4 py-3">Excel workbook</span><span class="bg-v6-bg px-4 py-3">PowerPoint deck</span><span class="bg-v6-bg px-4 py-3">Live dashboard</span></div>
           </div>
         </div>
       </div>
@@ -124,81 +133,49 @@ const faqSchema = {
 
     <ClientLogoStrip caption="HubSpot and revenue operations work trusted by teams at" />
 
-    <section class="px-4 py-16 sm:px-6 sm:py-20 lg:px-8" aria-labelledby="aeo-audience-heading">
-      <div class="mx-auto max-w-6xl">
-        <div class="mx-auto max-w-3xl text-center">
-          <p class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper">For the work before the meeting</p>
-          <h2 id="aeo-audience-heading" class="mt-3 text-balance text-3xl font-bold text-v6-dark sm:text-4xl">The working file and the meeting deck, built together</h2>
-          <p class="mt-4 text-lg leading-relaxed text-v6-text-muted">Investigate the prompts and citations in Excel, then carry the decisions into a shorter deck. The numbers do not change between the two.</p>
+    <section class="px-4 py-16 sm:px-6 sm:py-20 lg:px-8" aria-labelledby="aeo-problem-heading">
+      <div class="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+        <div>
+          <p class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper">The recurring rebuild</p>
+          <h2 id="aeo-problem-heading" class="mt-3 text-balance text-3xl font-bold text-v6-dark sm:text-4xl">The AEO data is in HubSpot. The executive report is still built by hand.</h2>
         </div>
-        <div class="mt-10 grid gap-5 md:grid-cols-3">
-          <article class="rounded-2xl border border-v6-border bg-white p-6"><h3 class="text-xl font-bold text-v6-dark">AEO and SEO leads</h3><p class="mt-3 leading-relaxed text-v6-text-muted">Find the prompts and citations worth acting on before you choose the next page to create or improve.</p></article>
-          <article class="rounded-2xl border border-v6-border bg-white p-6"><h3 class="text-xl font-bold text-v6-dark">Agencies and consultants</h3><p class="mt-3 leading-relaxed text-v6-text-muted">Give the client a clear result, the AI answers behind it, and a practical list of work for the next month.</p></article>
-          <article class="rounded-2xl border border-v6-border bg-white p-6"><h3 class="text-xl font-bold text-v6-dark">Marketing leadership</h3><p class="mt-3 leading-relaxed text-v6-text-muted">See where the brand is turning up, where competitors have the advantage, and what the team plans to do about it.</p></article>
+        <div class="space-y-5 text-lg leading-relaxed text-v6-text-muted">
+          <p>The prompts, AI answers, citations, competitor mentions, and recommendations may already be in HubSpot. The report still has to be assembled for the people who need to understand what changed and decide what happens next.</p>
+          <p>Someone exports the rows, groups the questions, checks the answers, copies examples into slides, and tries to keep the client deck tied to the source material. Then the same work starts again for the next period.</p>
+          <p class="font-semibold text-v6-dark">SWOTBee keeps the working file, meeting deck, and live view together, so the next report starts with fresh AEO data—not another blank presentation.</p>
         </div>
       </div>
     </section>
 
-    <section class="bg-v6-bg px-4 py-16 sm:px-6 sm:py-20 lg:px-8" aria-labelledby="three-click-heading">
+    <section id="how-it-works" class="scroll-mt-8 bg-v6-bg px-4 py-16 sm:px-6 sm:py-20 lg:px-8" aria-labelledby="three-click-heading">
       <div class="mx-auto max-w-5xl">
         <div class="mx-auto max-w-3xl text-center">
-          <p class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper">A shorter route to the meeting</p>
-          <h2 id="three-click-heading" class="mt-3 text-balance text-3xl font-bold text-v6-dark sm:text-4xl">Pick the data. Decide what matters. Take the finished report.</h2>
-          <p class="mt-4 text-lg leading-relaxed text-v6-text-muted">Set up the report once and use it again for the next review. No digging through fields. No rebuilding filters. No hours copying and pasting.</p>
+          <p class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper">A reusable AEO review</p>
+          <h2 id="three-click-heading" class="mt-3 text-balance text-3xl font-bold text-v6-dark sm:text-4xl">Set up the report once. Run it again next week or next month.</h2>
+          <p class="mt-4 text-lg leading-relaxed text-v6-text-muted">Build the first report in 3 steps. Choose the scope. Choose your KPIs. Get your report.</p>
         </div>
         <ol class="mt-10 grid gap-6 md:grid-cols-3">
-          <li class="rounded-2xl border border-v6-border bg-white p-6"><span class="text-sm font-bold text-v6-copper">01</span><h3 class="mt-3 text-xl font-bold text-v6-dark">Choose what to include</h3><p class="mt-2 leading-relaxed text-v6-text-muted">Choose the business unit, dates, AI platforms, types of buying question, and prompts for the report.</p></li>
-          <li class="rounded-2xl border border-v6-border bg-white p-6"><span class="text-sm font-bold text-v6-copper">02</span><h3 class="mt-3 text-xl font-bold text-v6-dark">Pick the questions to answer</h3><p class="mt-2 leading-relaxed text-v6-text-muted">Decide whether this audience needs coverage, mentions, citations, engine results, recommendations, or a smaller mix.</p></li>
-          <li class="rounded-2xl border border-v6-border bg-white p-6"><span class="text-sm font-bold text-v6-copper">03</span><h3 class="mt-3 text-xl font-bold text-v6-dark">Download Excel and PowerPoint</h3><p class="mt-2 leading-relaxed text-v6-text-muted">Get the detailed Excel workbook and editable PowerPoint, both using the same numbers and source material.</p></li>
+          <li class="rounded-2xl border border-v6-border bg-white p-6"><span class="text-sm font-bold text-v6-copper">01</span><h3 class="mt-3 text-xl font-bold text-v6-dark">Choose the scope</h3><p class="mt-2 leading-relaxed text-v6-text-muted">Select the business unit, reporting period, comparison, AI engines, buying stages, and prompts that belong in the review.</p></li>
+          <li class="rounded-2xl border border-v6-border bg-white p-6"><span class="text-sm font-bold text-v6-copper">02</span><h3 class="mt-3 text-xl font-bold text-v6-dark">Pick the questions to answer</h3><p class="mt-2 leading-relaxed text-v6-text-muted">Pick the KPIs for the review: coverage, brand and competitor mentions, citations, engine results, and recommendations.</p></li>
+          <li class="rounded-2xl border border-v6-border bg-white p-6"><span class="text-sm font-bold text-v6-copper">03</span><h3 class="mt-3 text-xl font-bold text-v6-dark">Get your reporting pack</h3><p class="mt-2 leading-relaxed text-v6-text-muted">Get the Excel workbook, editable PowerPoint, and live dashboard from the current AEO data.</p></li>
         </ol>
-        <p class="mx-auto mt-8 max-w-3xl text-center text-lg font-semibold leading-relaxed text-v6-dark">For people who would rather get the report done than lose another afternoon rebuilding it.</p>
+        <p class="mx-auto mt-8 max-w-3xl text-center text-lg font-semibold leading-relaxed text-v6-dark">No digging through fields. No rebuilding filters. No hours copying and pasting.</p>
+        <div class="mt-8 text-center"><a href="#report-signup" data-ga-cta="aeo_report_steps_signup" class="inline-flex min-h-12 items-center justify-center rounded-xl bg-v6-copper px-7 py-3.5 text-base font-semibold text-white transition-colors hover:bg-v6-copper-600 focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2">Build your AEO Report</a></div>
       </div>
     </section>
 
-    <section class="px-4 py-16 sm:px-6 sm:py-20 lg:px-8" aria-labelledby="reporting-job-heading">
+    <section id="report-outputs" class="scroll-mt-8 px-4 py-16 sm:px-6 sm:py-20 lg:px-8" aria-labelledby="outputs-heading">
       <div class="mx-auto max-w-6xl">
-        <div class="mx-auto max-w-3xl text-center">
-          <p class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper">What the meeting needs</p>
-          <h2 id="reporting-job-heading" class="mt-3 text-balance text-3xl font-bold text-v6-dark sm:text-4xl">Show the prompts, AI answers, and sources behind every number</h2>
-          <p class="mt-4 text-lg leading-relaxed text-v6-text-muted">A prompt export gives you rows. A useful review tells people what changed, lets them inspect the answer that caused it, and ends with a decision.</p>
+        <div class="max-w-4xl">
+          <p class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper">One reporting setup</p>
+          <h2 id="outputs-heading" class="mt-3 text-balance text-3xl font-bold text-v6-dark sm:text-4xl">One AEO report—ready in Excel, PowerPoint, or a live dashboard.</h2>
+          <p class="mt-4 text-lg leading-relaxed text-v6-text-muted">Inspect the prompts and citations in Excel. Present the decisions in PowerPoint. Share the live dashboard when people want to explore the evidence.</p>
         </div>
-        <ReportBenefitCards benefits={reportingBenefits} />
-      </div>
-    </section>
-
-    <section class="bg-v6-dark px-4 py-16 text-white sm:px-6 sm:py-20 lg:px-8" aria-labelledby="outputs-heading">
-      <div class="mx-auto max-w-6xl">
-        <div class="mx-auto max-w-3xl text-center">
-          <p class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper-300">Two files, one set of numbers</p>
-          <h2 id="outputs-heading" class="mt-3 text-balance text-3xl font-bold sm:text-4xl">Do the work in Excel. Tell the story in PowerPoint.</h2>
-          <p class="mt-4 text-lg leading-relaxed text-white/75">The slide and the supporting rows come from the same selection, so you are not reconciling two versions before the meeting.</p>
+        <div class="mt-10 grid gap-6 lg:grid-cols-3">
+          <article class="overflow-hidden rounded-2xl border border-v6-border bg-white"><div class="border-b border-v6-border p-6 sm:p-8"><p class="text-sm font-semibold uppercase tracking-[0.14em] text-v6-teal-700">Excel workbook</p><h3 class="mt-3 text-2xl font-bold text-v6-dark">Every prompt, answer, and citation—already organised</h3><p class="mt-4 leading-relaxed text-v6-text-muted">Open a clean workbook with the scorecard, prompt-level evidence, citation sources, recommendations, owners, and data notes already in place.</p></div><div class="bg-v6-bg p-5 sm:p-7"><div class="overflow-hidden rounded-xl border border-v6-border bg-white text-sm"><div class="flex gap-1 border-b border-v6-border bg-v6-bg p-2"><span class="rounded bg-white px-3 py-2 font-semibold text-v6-dark shadow-sm">Summary</span><span class="px-3 py-2 text-v6-text-muted">Prompts</span><span class="px-3 py-2 text-v6-text-muted">Sources</span></div><div class="grid grid-cols-3 gap-px bg-v6-border text-v6-text-muted"><span class="bg-white p-3 font-semibold">Platform</span><span class="bg-white p-3 font-semibold">Answers</span><span class="bg-white p-3 font-semibold">Brand</span><span class="bg-white p-3">ChatGPT</span><span class="bg-white p-3">24</span><span class="bg-white p-3 font-semibold text-v6-dark">46%</span></div></div></div></article>
+          <article class="overflow-hidden rounded-2xl border border-v6-border bg-white"><div class="border-b border-v6-border p-6 sm:p-8"><p class="text-sm font-semibold uppercase tracking-[0.14em] text-v6-blue">PowerPoint deck</p><h3 class="mt-3 text-2xl font-bold text-v6-dark">The executive story, ready to present and edit</h3><p class="mt-4 leading-relaxed text-v6-text-muted">Edit the language, remove detail, or add client context while keeping each slide connected to the underlying answers.</p></div><div class="bg-v6-bg p-5 sm:p-7"><div class="mx-auto max-w-md rounded-xl border border-v6-border bg-white p-5 shadow-sm"><p class="text-xs font-semibold uppercase tracking-wide text-v6-copper">August AEO review</p><p class="mt-2 text-xl font-bold text-v6-dark">Brand mentions rose by 6 points.</p><p class="mt-2 text-sm text-v6-text-muted">Seven buying-decision answers still named competitors but not you.</p><div class="mt-5 flex h-16 items-end gap-3"><span class="h-8 flex-1 rounded-t bg-v6-blue-200"></span><span class="h-11 flex-1 rounded-t bg-v6-blue-300"></span><span class="h-14 flex-1 rounded-t bg-v6-teal"></span></div></div></div></article>
+          <article class="overflow-hidden rounded-2xl border border-v6-border bg-white"><div class="border-b border-v6-border p-6 sm:p-8"><p class="text-sm font-semibold uppercase tracking-[0.14em] text-v6-copper">Live dashboard</p><h3 class="mt-3 text-2xl font-bold text-v6-dark">The latest approved view, ready to share</h3><p class="mt-4 leading-relaxed text-v6-text-muted">Give clients or leadership a current view of the approved measures, with the ability to drill down if required.</p></div><div class="bg-v6-bg p-5 sm:p-7"><div class="mx-auto max-w-md overflow-hidden rounded-xl border border-v6-border bg-white shadow-sm"><div class="flex items-center justify-between border-b border-v6-border px-4 py-3"><div><p class="text-xs font-semibold uppercase tracking-wide text-v6-copper">Shared AEO view</p><p class="mt-1 text-sm font-bold text-v6-dark">Current results</p></div><span class="rounded-full bg-v6-teal-50 px-2.5 py-1 text-xs font-semibold text-v6-teal-800">Live</span></div><div class="grid grid-cols-2 gap-px bg-v6-border"><div class="bg-white p-4"><p class="text-xs text-v6-text-muted">Brand mentioned</p><p class="mt-1 text-xl font-bold text-v6-dark">42%</p></div><div class="bg-white p-4"><p class="text-xs text-v6-text-muted">Citations</p><p class="mt-1 text-xl font-bold text-v6-dark">86</p></div></div><p class="px-4 py-3 text-xs text-v6-text-muted">Open any result to see the supporting answer</p></div></div></article>
         </div>
-        <div class="mt-10 grid gap-6 lg:grid-cols-2">
-          <article class="rounded-2xl border border-white/15 bg-white/5 p-6 sm:p-8">
-            <h3 class="text-2xl font-bold">Excel working file</h3>
-            <ul class="mt-5 list-disc space-y-3 pl-5 text-white/75 marker:text-v6-copper-300">
-              <li>Summary of what changed and what was included</li>
-              <li>Questions tracked and AI answers checked</li>
-              <li>Results by AI platform and type of buying question</li>
-              <li>Questions where your brand gained, lost, or was missing</li>
-              <li>Websites and pages cited in AI answers</li>
-              <li>Recommended work, owners, and status</li>
-              <li>Notes explaining missing or unavailable data</li>
-            </ul>
-          </article>
-          <article class="rounded-2xl border border-white/15 bg-white/5 p-6 sm:p-8">
-            <h3 class="text-2xl font-bold">Editable PowerPoint</h3>
-            <ul class="mt-5 list-disc space-y-3 pl-5 text-white/75 marker:text-v6-copper-300">
-              <li>Results for the selected period</li>
-              <li>The most important change since the last report</li>
-              <li>Results by AI platform and type of question</li>
-              <li>Where competitors appeared but your brand did not</li>
-              <li>Websites and pages worth targeting</li>
-              <li>Next actions, owners, and review date</li>
-            </ul>
-          </article>
-        </div>
-        <p class="mx-auto mt-8 max-w-3xl rounded-xl border border-v6-copper-300/40 bg-v6-copper/15 px-5 py-4 text-center font-semibold">If someone questions a slide, open the workbook and go straight to the prompt, answer, and citation behind it.</p>
       </div>
     </section>
 
@@ -210,7 +187,7 @@ const faqSchema = {
             <h2 id="sample-report-heading" class="mt-3 text-balance text-3xl font-bold text-v6-dark sm:text-4xl">Start with the headline. Open the prompt when someone asks why.</h2>
             <p class="mt-4 text-lg leading-relaxed text-v6-text-muted">The summary, original AI answers, citations, and recommended work stay connected. The figures below are sample data.</p>
           </div>
-          <a href="#report-signup" data-ga-cta="aeo_report_sample_signup" class="inline-flex min-h-11 items-center justify-center self-start rounded-xl border border-v6-copper px-5 py-3 text-sm font-semibold text-v6-copper transition-colors hover:bg-v6-copper-50 focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2 lg:self-auto">Sign up to the app</a>
+          <a href="#report-signup" data-ga-cta="aeo_report_sample_signup" class="inline-flex min-h-11 items-center justify-center self-start rounded-xl border border-v6-copper px-5 py-3 text-sm font-semibold text-v6-copper transition-colors hover:bg-v6-copper-50 focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2 lg:self-auto">Build your AEO Report</a>
         </div>
 
         <div class="mt-10 overflow-hidden rounded-2xl border border-v6-border bg-white shadow-sm">
@@ -275,23 +252,68 @@ const faqSchema = {
       </div>
     </section>
 
-    <section class="px-4 py-16 sm:px-6 sm:py-20 lg:px-8" aria-labelledby="api-transparency-heading">
+    <section id="report-contents" class="scroll-mt-8 px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
       <div class="mx-auto max-w-6xl">
-        <div class="mx-auto max-w-3xl text-center">
-          <p class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper">What the connection can provide</p>
-          <h2 id="api-transparency-heading" class="mt-3 text-balance text-3xl font-bold text-v6-dark sm:text-4xl">Here is what the first version can actually pull from HubSpot</h2>
-          <p class="mt-4 text-lg leading-relaxed text-v6-text-muted">HubSpot's AEO API is in public beta. We use what it returns, add the reporting choices you set, and say plainly when something is not available.</p>
+        <div class="max-w-3xl">
+          <p class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper">Built around the AEO review</p>
+          <h2 class="mt-3 text-balance text-3xl font-bold text-v6-dark sm:text-4xl">Bring the result, the evidence, and the next steps into one report</h2>
+          <p class="mt-4 text-lg leading-relaxed text-v6-text-muted">See where the brand appears, where competitors have the advantage, which sources are being cited, and what the team should do next.</p>
         </div>
-        <div class="mt-10 grid gap-5 lg:grid-cols-3">
-          <article class="rounded-2xl border border-v6-border bg-white p-6"><h3 class="text-xl font-bold text-v6-dark">Pulled from HubSpot</h3><ul class="mt-4 list-disc space-y-3 pl-5 text-v6-text-muted marker:text-v6-copper"><li>Tracked prompt text and creation time</li><li>Language and buying-journey phase</li><li>AI engine, run status, and dates</li><li>AI response text</li><li>Citation URLs, titles, and search queries</li><li>Owned and competitor mention counts</li><li>Recommendations and their rationale</li></ul></article>
-          <article class="rounded-2xl border border-v6-border bg-white p-6"><h3 class="text-xl font-bold text-v6-dark">Added by you</h3><ul class="mt-4 list-disc space-y-3 pl-5 text-v6-text-muted marker:text-v6-copper"><li>The period and comparison that matter</li><li>Your owned domains and named competitors</li><li>The client-facing topics and prompt groups</li><li>Owners, due dates, and review status</li><li>The findings worth putting in the deck</li></ul></article>
-          <article class="rounded-2xl border border-v6-border bg-white p-6"><h3 class="text-xl font-bold text-v6-dark">Built up over time</h3><ul class="mt-4 list-disc space-y-3 pl-5 text-v6-text-muted marker:text-v6-copper"><li>Consistent weekly or monthly cutoffs</li><li>Like-for-like comparisons</li><li>Changes after prompt or competitor updates</li><li>Progress on earlier recommendations</li></ul></article>
+        <div class="mt-10 grid gap-px overflow-hidden rounded-2xl border border-v6-border bg-v6-border md:grid-cols-2 lg:grid-cols-3">
+          {reportAreas.map((area, index) => (
+            <article class="bg-white p-6 sm:p-7"><span class="text-sm font-bold text-v6-copper">{String(index + 1).padStart(2, "0")}</span><h3 class="mt-3 text-xl font-bold text-v6-dark">{area.title}</h3><p class="mt-3 leading-relaxed text-v6-text-muted">{area.description}</p></article>
+          ))}
         </div>
-        <p class="mt-8 rounded-xl border border-v6-copper-200 bg-v6-copper-50 px-5 py-4 text-center font-semibold leading-relaxed text-v6-copper-800">If the data is not there, the report says so. It will not turn a missing value into zero or dress up a calculation as a native HubSpot metric.</p>
       </div>
     </section>
 
-    <section class="px-4 py-16 sm:px-6 sm:py-20 lg:px-8" aria-labelledby="aeo-faq-heading">
+    <section class="px-4 py-16 sm:px-6 sm:py-20 lg:px-8" aria-label="AEO comparisons and history">
+      <div class="mx-auto grid max-w-6xl overflow-hidden rounded-2xl border border-v6-border bg-v6-border lg:grid-cols-2">
+        <article class="bg-white p-7 sm:p-9">
+          <p class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper">Consistent comparisons</p>
+          <h2 class="mt-3 text-balance text-3xl font-bold text-v6-dark">Compare this month's AEO performance with:</h2>
+          <ul class="mt-6 space-y-2 rounded-xl bg-v6-bg-warm px-5 py-4 text-lg font-semibold text-v6-dark" aria-label="Available comparison periods">
+            <li><span class="mr-2 text-v6-copper-800">1.</span>Last month</li>
+            <li><span class="mr-2 text-v6-copper-800">2.</span>The same month last year</li>
+            <li><span class="mr-2 text-v6-copper-800">3.</span>Any period you choose</li>
+          </ul>
+        </article>
+        <article class="border-t border-v6-border bg-white p-7 sm:p-9 lg:border-l lg:border-t-0">
+          <p class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper">Point-in-time history</p>
+          <h2 class="mt-3 text-balance text-3xl font-bold text-v6-dark">Keep the AEO history you will need next quarter.</h2>
+          <p class="mt-6 rounded-xl bg-v6-bg-warm px-5 py-4 text-lg font-semibold leading-relaxed text-v6-dark">SWOTBee saves each reporting cutoff, so you can compare AEO performance over time.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="bg-v6-dark px-4 py-16 text-white sm:px-6 sm:py-20 lg:px-8" aria-labelledby="reporting-benefits-heading">
+      <div class="mx-auto max-w-6xl">
+        <div class="mx-auto max-w-3xl text-center">
+          <p class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper-200">Built for the people who get things done</p>
+          <h2 id="reporting-benefits-heading" class="mt-3 text-balance text-3xl font-bold sm:text-4xl">Spend less time building the report. Make more of the review.</h2>
+        </div>
+        <div class="mt-10 grid overflow-hidden rounded-2xl border border-white/10 sm:grid-cols-2">
+          <article class="p-7 sm:p-8">
+            <p class="text-sm font-bold uppercase tracking-[0.14em] text-v6-copper-200">01 · Time back</p>
+            <h3 class="mt-4 text-balance text-2xl font-bold leading-snug">Get hours of copy-and-paste time back. Every week.</h3>
+          </article>
+          <article class="border-t border-white/10 p-7 sm:border-l sm:border-t-0 sm:p-8">
+            <p class="text-sm font-bold uppercase tracking-[0.14em] text-v6-copper-200">02 · A reliable rhythm</p>
+            <h3 class="mt-4 text-balance text-2xl font-bold leading-snug">Stop rebuilding the report. We run it for you every week.</h3>
+          </article>
+          <article class="border-t border-white/10 p-7 sm:p-8">
+            <p class="text-sm font-bold uppercase tracking-[0.14em] text-v6-copper-200">03 · Less HubSpot admin</p>
+            <h3 class="mt-4 text-balance text-2xl font-bold leading-snug">Get the report without wrestling with HubSpot fields, filters, and settings.</h3>
+          </article>
+          <article class="border-t border-white/10 p-7 sm:border-l sm:p-8">
+            <p class="text-sm font-bold uppercase tracking-[0.14em] text-v6-copper-200">04 · Clearer decisions</p>
+            <h3 class="mt-4 text-balance text-2xl font-bold leading-snug">Turn findings into clear decisions and next steps.</h3>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="questions" class="scroll-mt-8 px-4 py-16 sm:px-6 sm:py-20 lg:px-8" aria-labelledby="aeo-faq-heading">
       <div class="mx-auto max-w-3xl">
         <div class="text-center"><p class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper">Questions about the report</p><h2 id="aeo-faq-heading" class="mt-3 text-3xl font-bold text-v6-dark sm:text-4xl">HubSpot AEO reporting questions</h2></div>
         <div class="mt-10 divide-y divide-v6-border border-y border-v6-border">
@@ -302,26 +324,19 @@ const faqSchema = {
       </div>
     </section>
 
-    <ReportRelatedLinks
-      links={[
-        { href: "/hubspot-service-hub-performance-report/", title: "Build a Service Hub performance report", description: "Prepare recurring ticket, SLA, satisfaction, Excel, and PowerPoint reporting." },
-        { href: "/hubspot-pipeline-change-report/", title: "Explain pipeline movement", description: "Turn week-over-week deal movement into an evidence-backed management update." },
-        { href: "/hubspot-historical-pipeline-snapshot/", title: "Preserve future reporting cutoffs", description: "Understand how stored snapshots support later period comparisons without claiming unavailable history." },
-      ]}
-    />
-
-    <section id="report-signup" class="scroll-mt-8 bg-v6-bg px-4 py-16 sm:px-6 sm:py-20 lg:px-8" aria-labelledby="aeo-signup-heading">
-      <div class="mx-auto max-w-3xl rounded-3xl bg-v6-copper px-6 py-10 text-center text-white shadow-lg shadow-v6-copper/20 sm:px-10 sm:py-12">
-        <p class="text-sm font-semibold uppercase tracking-[0.16em] text-white/75">App signup</p>
-        <h2 id="aeo-signup-heading" class="mt-3 text-balance text-3xl font-bold sm:text-4xl">Have the AEO report ready before the meeting starts</h2>
-        <p class="mx-auto mt-4 max-w-2xl text-lg leading-relaxed text-white/85">Use your work email to create your SWOTBee account and start building the report.</p>
-        <ReportSignup
+    <section id="report-signup" class="scroll-mt-8 bg-gradient-to-br from-v6-copper to-v6-copper-600 px-4 py-16 sm:px-6 sm:py-20 lg:px-8" aria-labelledby="aeo-signup-heading">
+      <div class="mx-auto max-w-2xl text-center text-white">
+        <p class="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-white/70">App signup</p>
+        <h2 id="aeo-signup-heading" class="text-balance text-2xl font-bold sm:text-3xl">Have the AEO report ready before the meeting starts</h2>
+        <p class="mx-auto mb-4 mt-4 max-w-2xl text-balance text-base leading-relaxed text-v6-copper-50 sm:text-lg">Use your work email to create your SWOTBee account and start building the report.</p>
+        <ReportSignupDialog
           offerCode="hubspot_aeo_reporting_export"
           reportName="HubSpot AEO reporting export"
           sourcePage="hubspot-aeo-reporting-export"
           ctaLabel="aeo_report_signup"
-          buttonLabel="Sign up to the app"
+          buttonLabel="Build your AEO Report"
         />
+        <p class="mt-4 text-xs text-v6-copper-50">No card required. Signing up does not connect to or access your HubSpot portal.</p>
       </div>
     </section>
   </main>

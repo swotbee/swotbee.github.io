@@ -3,8 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import Footer from "../components/astro/Footer.astro";
 import LogoHoneycomb from "../components/astro/LogoHoneycomb.astro";
 import ClientLogoStrip from "../components/astro/ClientLogoStrip.astro";
-import ReportSignup from "../components/astro/ReportSignup.astro";
-import ReportRelatedLinks from "../components/astro/ReportRelatedLinks.astro";
+import ReportSignupDialog from "../components/astro/ReportSignupDialog.astro";
 
 const title = "HubSpot Service Hub Reporting | Service Performance Reports";
 const description = "Turn HubSpot Service Hub data into a repeatable management report with ticket, backlog, SLA, response-time and satisfaction KPIs in editable Excel and PowerPoint.";
@@ -69,7 +68,7 @@ const faqSchema = {
         <a href="#questions" class="rounded-md py-2 hover:text-v6-dark focus:outline-none focus:ring-2 focus:ring-v6-copper">FAQs</a>
       </nav>
       <a href="#report-signup" data-ga-cta="service_report_header_signup" class="inline-flex min-h-11 shrink-0 items-center justify-center rounded-lg border border-v6-copper px-4 py-2 text-sm font-semibold text-v6-copper transition-colors hover:bg-v6-copper-50 focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2">
-        Sign up to the app
+        Get your first Service Report
       </a>
     </div>
   </header>
@@ -78,16 +77,15 @@ const faqSchema = {
     <section class="overflow-hidden bg-gradient-to-b from-v6-bg to-white px-4 pb-16 pt-14 sm:px-6 sm:pb-20 sm:pt-20 lg:px-8">
       <div class="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[0.88fr_1.12fr] lg:items-center">
         <div>
-          <span class="mb-5 inline-flex rounded-full bg-v6-copper-50 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-v6-copper-700">HubSpot Service Hub reporting</span>
-          <h1 class="max-w-3xl text-balance text-4xl font-bold leading-[1.08] text-v6-dark sm:text-5xl lg:text-[3.45rem]">Your Service report, ready before the meeting</h1>
-          <p class="mt-6 max-w-2xl text-lg leading-relaxed text-v6-text-muted">Build a complete HubSpot Service report in 3 clicks. Bring ticket volume, backlog, SLA, response time, resolution, and customer satisfaction into one clear report—without rebuilding it in spreadsheets and slides every month.</p>
-          <p class="mt-5 font-semibold text-v6-dark">Choose the scope. Choose your KPIs. Get your report.</p>
+          <span class="mb-5 inline-flex rounded-full bg-v6-copper-50 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-v6-copper-700">HubSpot executive Service reporting</span>
+          <h1 class="max-w-3xl text-balance text-4xl font-bold leading-[1.08] text-v6-dark sm:text-5xl lg:text-[3.45rem]">Your HubSpot Service report, ready in 3 clicks</h1>
+          <p class="mt-6 max-w-2xl text-lg leading-relaxed text-v6-text-muted">Bring ticket volume, backlog, SLA, response time, resolution, and customer satisfaction into one clear report—without rebuilding it in spreadsheets and slides every month.</p>
+          <p class="mt-5 font-semibold text-v6-dark">No report-by-report recap. No rebuilt spreadsheet. No screenshot deck.</p>
           <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-            <a href="#report-signup" data-ga-cta="service_report_hero_signup" class="inline-flex min-h-12 items-center justify-center rounded-xl bg-v6-copper px-7 py-3.5 text-base font-semibold text-white transition-colors hover:bg-v6-copper-600 focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2">Sign up to build your report</a>
+            <a href="#report-signup" data-ga-cta="service_report_hero_signup" class="inline-flex min-h-12 items-center justify-center rounded-xl bg-v6-copper px-7 py-3.5 text-base font-semibold text-white transition-colors hover:bg-v6-copper-600 focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2">Get your first Service Report</a>
             <a href="#sample-report" data-ga-cta="service_report_hero_sample" class="inline-flex min-h-12 items-center justify-center rounded-xl border border-v6-border bg-white px-7 py-3.5 text-base font-semibold text-v6-dark transition-colors hover:border-v6-copper hover:bg-v6-copper-50 focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2">See a sample report</a>
           </div>
-          <p class="mt-4 max-w-xl text-sm leading-relaxed text-v6-text-muted">Editable Excel and PowerPoint outputs, plus a shareable live dashboard when needed.</p>
-          <p class="mx-auto mt-3 max-w-xl text-center text-sm font-semibold leading-relaxed text-v6-dark">No credit card required. Your first month is on us.</p>
+          <p class="mx-auto mt-4 max-w-xl text-center text-sm font-semibold leading-relaxed text-v6-dark">No credit card required.</p>
         </div>
 
         <div class="relative" aria-label="Example HubSpot Service Hub report with weekly metrics and management summary">
@@ -95,7 +93,7 @@ const faqSchema = {
           <div class="overflow-hidden rounded-2xl border border-v6-border bg-white shadow-xl shadow-v6-dark/10">
             <div class="flex items-center justify-between gap-4 border-b border-v6-border px-5 py-4">
               <div><p class="text-xs font-semibold uppercase tracking-[0.14em] text-v6-copper">Weekly service review</p><p class="mt-1 font-semibold text-v6-dark">Week ending 31 August</p></div>
-              <span class="rounded-full bg-v6-blue-50 px-3 py-1 text-xs font-semibold text-v6-blue-800">Example data</span>
+              <span class="rounded-full bg-v6-blue-50 px-3 py-1 text-xs font-semibold text-v6-blue-800">Weekly or monthly</span>
             </div>
             <div class="grid grid-cols-2 border-b border-v6-border sm:grid-cols-4">
               <div class="border-b border-r border-v6-border p-4 sm:border-b-0 sm:p-5"><p class="text-xs text-v6-text-muted">Open backlog</p><p class="mt-1 text-xl font-bold text-v6-dark">42</p><p class="mt-1 text-xs font-semibold text-v6-teal-800">Down 8</p></div>
@@ -119,7 +117,7 @@ const faqSchema = {
                 <a href="#sample-report" class="mt-3 inline-flex min-h-11 items-center text-sm font-semibold text-v6-copper-800 underline decoration-v6-copper-300 underline-offset-4 focus:outline-none focus:ring-2 focus:ring-v6-copper">See the tickets behind it</a>
               </div>
             </div>
-            <div class="grid grid-cols-3 border-t border-v6-border bg-v6-bg px-5 py-3 text-center text-xs font-semibold text-v6-text-muted"><span>Excel ready</span><span>PowerPoint ready</span><span>Dashboard ready</span></div>
+            <div class="grid grid-cols-3 divide-x divide-v6-border border-t border-v6-border bg-v6-bg text-center text-xs font-semibold text-v6-text-muted"><span class="px-2 py-3">Excel report</span><span class="px-2 py-3">PowerPoint deck</span><span class="px-2 py-3">Live dashboard</span></div>
           </div>
         </div>
       </div>
@@ -136,7 +134,7 @@ const faqSchema = {
         <div class="space-y-5 text-lg leading-relaxed text-v6-text-muted">
           <p>The data may already be in HubSpot, but getting it into the meeting is another job entirely.</p>
           <p>There is an export for one number, a different report for another, last month's spreadsheet to update, and a slide deck waiting at the end. Filters need checking again. Calculations and charts drift out of sync. A simple monthly report turns into hours of copying, pasting, cleaning, and reformatting.</p>
-          <p class="font-semibold text-v6-dark">SWOTBee keeps the setup together, so the next report starts with the work you have already approved—not a blank spreadsheet.</p>
+          <p class="font-semibold text-v6-dark">SWOTBee keeps the scope, definitions, evidence, and presentation together, so the next review starts with current Service performance—not a blank spreadsheet.</p>
         </div>
       </div>
     </section>
@@ -145,15 +143,39 @@ const faqSchema = {
       <div class="mx-auto max-w-6xl">
         <div class="max-w-3xl">
           <p class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper">A reusable reporting setup</p>
-          <h2 class="mt-3 text-balance text-3xl font-bold text-v6-dark sm:text-4xl">Set the rules once. Bring in fresh data whenever you need it.</h2>
-          <p class="mt-4 text-lg leading-relaxed text-v6-text-muted">Start with a ready-made Service report and make it fit the way your team works.</p>
+          <h2 class="mt-3 text-balance text-3xl font-bold text-v6-dark sm:text-4xl">Set the report once. Run it again next week or next month.</h2>
+          <p class="mt-4 text-lg leading-relaxed text-v6-text-muted">Agree the scope, measures, targets, and comparisons once, then bring in the latest Service data for the next review.</p>
         </div>
         <ol class="mt-10 grid gap-6 md:grid-cols-3">
           <li class="rounded-2xl border border-v6-border bg-white p-6 sm:p-7"><span class="flex h-9 w-9 items-center justify-center rounded-full bg-v6-copper-50 text-sm font-bold text-v6-copper-800">1</span><h3 class="mt-5 text-xl font-bold text-v6-dark">Choose the scope</h3><p class="mt-3 leading-relaxed text-v6-text-muted">Pick the period and the ticket pipelines, teams, channels, categories, regions, or customers that belong in the report.</p></li>
           <li class="rounded-2xl border border-v6-border bg-white p-6 sm:p-7"><span class="flex h-9 w-9 items-center justify-center rounded-full bg-v6-copper-50 text-sm font-bold text-v6-copper-800">2</span><h3 class="mt-5 text-xl font-bold text-v6-dark">Choose your KPIs</h3><p class="mt-3 leading-relaxed text-v6-text-muted">Select the measures you already use, along with their targets and comparison periods.</p><p class="mt-4 text-sm font-semibold text-v6-dark">Backlog by region · SLA against target · Tickets open over 48 hours</p></li>
-          <li class="rounded-2xl border border-v6-border bg-white p-6 sm:p-7"><span class="flex h-9 w-9 items-center justify-center rounded-full bg-v6-copper-50 text-sm font-bold text-v6-copper-800">3</span><h3 class="mt-5 text-xl font-bold text-v6-dark">Get the report</h3><p class="mt-3 leading-relaxed text-v6-text-muted">Review the figures, add the context only your team knows, and export the finished report to Excel or PowerPoint.</p></li>
+          <li class="rounded-2xl border border-v6-border bg-white p-6 sm:p-7"><span class="flex h-9 w-9 items-center justify-center rounded-full bg-v6-copper-50 text-sm font-bold text-v6-copper-800">3</span><h3 class="mt-5 text-xl font-bold text-v6-dark">Get the report</h3><p class="mt-3 leading-relaxed text-v6-text-muted">Review the figures, add the context only your team knows, and use the finished report in Excel, PowerPoint, or a live dashboard.</p></li>
         </ol>
-        <div class="mt-8"><a href="#report-signup" data-ga-cta="service_report_steps_signup" class="inline-flex min-h-12 items-center justify-center rounded-xl bg-v6-copper px-7 py-3.5 text-base font-semibold text-white transition-colors hover:bg-v6-copper-600 focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2">Sign up to build your report</a></div>
+        <div class="mt-8"><a href="#report-signup" data-ga-cta="service_report_steps_signup" class="inline-flex min-h-12 items-center justify-center rounded-xl bg-v6-copper px-7 py-3.5 text-base font-semibold text-white transition-colors hover:bg-v6-copper-600 focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2">Get your first Service Report</a></div>
+      </div>
+    </section>
+
+    <section id="report-outputs" class="scroll-mt-8 px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+      <div class="mx-auto max-w-6xl">
+        <div class="max-w-4xl">
+          <p class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper">One reporting setup</p>
+          <h2 class="mt-3 text-balance text-3xl font-bold text-v6-dark sm:text-4xl">One Service report—ready in Excel, PowerPoint, or a live dashboard.</h2>
+          <p class="mt-4 text-lg leading-relaxed text-v6-text-muted">Present the story in PowerPoint. Check the detail in Excel. Share a live view when people need to explore it themselves. Update the report, and all three versions stay aligned.</p>
+        </div>
+        <div class="mt-10 grid gap-6 lg:grid-cols-3">
+          <article class="overflow-hidden rounded-2xl border border-v6-border bg-white">
+            <div class="border-b border-v6-border p-6 sm:p-8"><p class="text-sm font-semibold uppercase tracking-[0.14em] text-v6-teal-700">Excel workbook</p><h3 class="mt-3 text-2xl font-bold text-v6-dark">Every KPI, definition, target, and ticket—already organised</h3><p class="mt-4 leading-relaxed text-v6-text-muted">The workbook arrives with the KPI summary, charts, calculations, definitions, and ticket-level records already in place. You can still check a total, add a Finance figure, or answer an unexpected question when needed.</p></div>
+            <div class="bg-v6-bg p-5 sm:p-7"><div class="overflow-hidden rounded-xl border border-v6-border bg-white text-sm"><div class="flex gap-1 border-b border-v6-border bg-v6-bg p-2"><span class="rounded bg-white px-3 py-2 font-semibold text-v6-dark shadow-sm">Summary</span><span class="px-3 py-2 text-v6-text-muted">Trends</span><span class="px-3 py-2 text-v6-text-muted">Tickets</span><span class="px-3 py-2 text-v6-text-muted">Definitions</span></div><div class="grid grid-cols-3 gap-px bg-v6-border text-v6-text-muted"><span class="bg-white p-3 font-semibold">Ticket</span><span class="bg-white p-3 font-semibold">Owner</span><span class="bg-white p-3 font-semibold">SLA state</span><span class="bg-white p-3">Billing access</span><span class="bg-white p-3">Maya</span><span class="bg-white p-3 font-semibold text-v6-copper-800">Breached</span></div></div></div>
+          </article>
+          <article class="overflow-hidden rounded-2xl border border-v6-border bg-white">
+            <div class="border-b border-v6-border p-6 sm:p-8"><p class="text-sm font-semibold uppercase tracking-[0.14em] text-v6-blue">PowerPoint deck</p><h3 class="mt-3 text-2xl font-bold text-v6-dark">The executive Service story, ready to present and edit</h3><p class="mt-4 leading-relaxed text-v6-text-muted">Remove a slide, change the emphasis, or add context that should never live in HubSpot. The charts, tables, and wording remain editable.</p></div>
+            <div class="bg-v6-bg p-5 sm:p-7"><div class="mx-auto max-w-md rounded-xl border border-v6-border bg-white p-5 shadow-sm"><p class="text-xs font-semibold uppercase tracking-wide text-v6-copper">Weekly service review</p><p class="mt-2 text-xl font-bold text-v6-dark">Backlog down. SLA improving.</p><p class="mt-2 text-sm text-v6-text-muted">Email Support remains the priority this week.</p><div class="mt-5 flex h-20 items-end gap-3"><span class="h-20 flex-1 rounded-t bg-v6-blue-200"></span><span class="h-16 flex-1 rounded-t bg-v6-blue-300"></span><span class="h-14 flex-1 rounded-t bg-v6-blue-400"></span><span class="h-10 flex-1 rounded-t bg-v6-teal"></span></div></div></div>
+          </article>
+          <article class="overflow-hidden rounded-2xl border border-v6-border bg-white">
+            <div class="border-b border-v6-border p-6 sm:p-8"><p class="text-sm font-semibold uppercase tracking-[0.14em] text-v6-copper">Live dashboard</p><h3 class="mt-3 text-2xl font-bold text-v6-dark">The live Service dashboard, ready to share</h3><p class="mt-4 leading-relaxed text-v6-text-muted">Give a team, executive, or client access to the approved metrics and drill-downs without sending a new file each time.</p></div>
+            <div class="bg-v6-bg p-5 sm:p-7"><div class="mx-auto max-w-md overflow-hidden rounded-xl border border-v6-border bg-white shadow-sm"><div class="flex items-center justify-between border-b border-v6-border px-4 py-3"><div><p class="text-xs font-semibold uppercase tracking-wide text-v6-copper">Shared Service view</p><p class="mt-1 text-sm font-bold text-v6-dark">Current performance</p></div><span class="rounded-full bg-v6-teal-50 px-2.5 py-1 text-xs font-semibold text-v6-teal-800">Live</span></div><div class="grid grid-cols-2 gap-px bg-v6-border"><div class="bg-white p-4"><p class="text-xs text-v6-text-muted">Open backlog</p><p class="mt-1 text-xl font-bold text-v6-dark">42</p></div><div class="bg-white p-4"><p class="text-xs text-v6-text-muted">SLA</p><p class="mt-1 text-xl font-bold text-v6-dark">87%</p></div></div><p class="px-4 py-3 text-xs text-v6-text-muted">Updated from the same reporting setup</p></div></div>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -236,50 +258,49 @@ const faqSchema = {
       </div>
     </section>
 
-    <section id="report-outputs" class="scroll-mt-8 px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
-      <div class="mx-auto max-w-6xl">
-        <div class="max-w-4xl">
-          <p class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper">One reporting setup</p>
-          <h2 class="mt-3 text-balance text-3xl font-bold text-v6-dark sm:text-4xl">One report—ready in Excel, PowerPoint, or a live dashboard.</h2>
-          <p class="mt-4 text-lg leading-relaxed text-v6-text-muted">Present the story in PowerPoint. Check the detail in Excel. Share a live view when people need to explore it themselves. Update the report, and all three versions stay aligned.</p>
-        </div>
-        <div class="mt-10 grid gap-6 lg:grid-cols-3">
-          <article class="overflow-hidden rounded-2xl border border-v6-border bg-white">
-            <div class="border-b border-v6-border p-6 sm:p-8"><p class="text-sm font-semibold uppercase tracking-[0.14em] text-v6-teal-700">Excel workbook</p><h3 class="mt-3 text-2xl font-bold text-v6-dark">The summary and supporting detail, ready to use</h3><p class="mt-4 leading-relaxed text-v6-text-muted">The workbook arrives with the KPI summary, charts, calculations, definitions, and ticket-level records already in place. You can still check a total, add a Finance figure, or answer an unexpected question when needed.</p></div>
-            <div class="bg-v6-bg p-5 sm:p-7"><div class="overflow-hidden rounded-xl border border-v6-border bg-white text-sm"><div class="flex gap-1 border-b border-v6-border bg-v6-bg p-2"><span class="rounded bg-white px-3 py-2 font-semibold text-v6-dark shadow-sm">Summary</span><span class="px-3 py-2 text-v6-text-muted">Trends</span><span class="px-3 py-2 text-v6-text-muted">Tickets</span><span class="px-3 py-2 text-v6-text-muted">Definitions</span></div><div class="grid grid-cols-3 gap-px bg-v6-border text-v6-text-muted"><span class="bg-white p-3 font-semibold">Ticket</span><span class="bg-white p-3 font-semibold">Owner</span><span class="bg-white p-3 font-semibold">SLA state</span><span class="bg-white p-3">Billing access</span><span class="bg-white p-3">Maya</span><span class="bg-white p-3 font-semibold text-v6-copper-800">Breached</span></div></div></div>
-          </article>
-          <article class="overflow-hidden rounded-2xl border border-v6-border bg-white">
-            <div class="border-b border-v6-border p-6 sm:p-8"><p class="text-sm font-semibold uppercase tracking-[0.14em] text-v6-blue">PowerPoint deck</p><h3 class="mt-3 text-2xl font-bold text-v6-dark">A meeting-ready version you can still edit</h3><p class="mt-4 leading-relaxed text-v6-text-muted">Remove a slide, change the emphasis, or add context that should never live in HubSpot. The charts, tables, and wording remain editable.</p></div>
-            <div class="bg-v6-bg p-5 sm:p-7"><div class="mx-auto max-w-md rounded-xl border border-v6-border bg-white p-5 shadow-sm"><p class="text-xs font-semibold uppercase tracking-wide text-v6-copper">Weekly service review</p><p class="mt-2 text-xl font-bold text-v6-dark">Backlog down. SLA improving.</p><p class="mt-2 text-sm text-v6-text-muted">Email Support remains the priority this week.</p><div class="mt-5 flex h-20 items-end gap-3"><span class="h-20 flex-1 rounded-t bg-v6-blue-200"></span><span class="h-16 flex-1 rounded-t bg-v6-blue-300"></span><span class="h-14 flex-1 rounded-t bg-v6-blue-400"></span><span class="h-10 flex-1 rounded-t bg-v6-teal"></span></div></div></div>
-          </article>
-          <article class="overflow-hidden rounded-2xl border border-v6-border bg-white">
-            <div class="border-b border-v6-border p-6 sm:p-8"><p class="text-sm font-semibold uppercase tracking-[0.14em] text-v6-copper">Live dashboard</p><h3 class="mt-3 text-2xl font-bold text-v6-dark">A current view you can share when needed</h3><p class="mt-4 leading-relaxed text-v6-text-muted">Give a team, executive, or client access to the approved metrics and drill-downs without sending a new file each time.</p></div>
-            <div class="bg-v6-bg p-5 sm:p-7"><div class="mx-auto max-w-md overflow-hidden rounded-xl border border-v6-border bg-white shadow-sm"><div class="flex items-center justify-between border-b border-v6-border px-4 py-3"><div><p class="text-xs font-semibold uppercase tracking-wide text-v6-copper">Shared Service view</p><p class="mt-1 text-sm font-bold text-v6-dark">Current performance</p></div><span class="rounded-full bg-v6-teal-50 px-2.5 py-1 text-xs font-semibold text-v6-teal-800">Live</span></div><div class="grid grid-cols-2 gap-px bg-v6-border"><div class="bg-white p-4"><p class="text-xs text-v6-text-muted">Open backlog</p><p class="mt-1 text-xl font-bold text-v6-dark">42</p></div><div class="bg-white p-4"><p class="text-xs text-v6-text-muted">SLA</p><p class="mt-1 text-xl font-bold text-v6-dark">87%</p></div></div><p class="px-4 py-3 text-xs text-v6-text-muted">Updated from the same reporting setup</p></div></div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="bg-v6-bg px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
-      <div class="mx-auto grid max-w-6xl gap-6 lg:grid-cols-2">
-        <article class="rounded-2xl border border-v6-border bg-white p-6 sm:p-8">
+    <section class="px-4 py-16 sm:px-6 sm:py-20 lg:px-8" aria-label="Service comparisons and history">
+      <div class="mx-auto grid max-w-6xl overflow-hidden rounded-2xl border border-v6-border bg-v6-border lg:grid-cols-2">
+        <article class="bg-white p-7 sm:p-9">
           <p class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper">Consistent comparisons</p>
-          <h2 class="mt-3 text-balance text-3xl font-bold text-v6-dark">Keep this month's report comparable with the last one</h2>
-          <p class="mt-4 leading-relaxed text-v6-text-muted">A useful comparison needs more than a new date range. The KPI must mean the same thing, include the same records, and use the same filters on both sides.</p>
-          <p class="mt-4 leading-relaxed text-v6-text-muted">SWOTBee remembers the definitions, properties, filters, targets, comparisons, and report structure that took time to get right. The logic stays consistent even if someone else prepares the report next month.</p>
+          <h2 class="mt-3 text-balance text-3xl font-bold text-v6-dark">Compare this month's Service performance with:</h2>
+          <ul class="mt-6 space-y-2 rounded-xl bg-v6-bg-warm px-5 py-4 text-lg font-semibold text-v6-dark" aria-label="Available comparison periods">
+            <li><span class="mr-2 text-v6-copper-800">1.</span>Last month</li>
+            <li><span class="mr-2 text-v6-copper-800">2.</span>The same month last year</li>
+            <li><span class="mr-2 text-v6-copper-800">3.</span>Any period you choose</li>
+          </ul>
         </article>
-        <article class="rounded-2xl border border-v6-border bg-white p-6 sm:p-8">
-          <p class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper">Future comparisons</p>
-          <h2 class="mt-3 text-balance text-3xl font-bold text-v6-dark">Start collecting the numbers future reports will need</h2>
-          <p class="mt-4 leading-relaxed text-v6-text-muted">When HubSpot cannot show what the backlog looked like at an earlier month-end, SWOTBee can start saving that number for future reports. It cannot recreate figures that were never recorded.</p>
+        <article class="border-t border-v6-border bg-white p-7 sm:p-9 lg:border-l lg:border-t-0">
+          <p class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper">Point-in-time history</p>
+          <h2 class="mt-3 text-balance text-3xl font-bold text-v6-dark">Keep the Service history you will need next quarter.</h2>
+          <p class="mt-6 rounded-xl bg-v6-bg-warm px-5 py-4 text-lg font-semibold leading-relaxed text-v6-dark">SWOTBee saves each reporting cutoff, so you can compare Service performance over time.</p>
         </article>
       </div>
     </section>
 
-    <section class="bg-v6-dark px-4 py-16 text-white sm:px-6 sm:py-20 lg:px-8">
-      <div class="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-        <div><p class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper-300">Check the numbers</p><h2 class="mt-3 text-balance text-3xl font-bold sm:text-4xl">Know where every number came from</h2></div>
-        <div class="space-y-4 text-lg leading-relaxed text-white/75"><p>Open any figure to see which HubSpot records were included and when the data was pulled. Review, change, or remove suggested commentary before sharing the report.</p><p>SWOTBee can point out an important change. It does not guess why it happened. Your team adds the business context.</p></div>
+    <section class="bg-v6-dark px-4 py-16 text-white sm:px-6 sm:py-20 lg:px-8" aria-labelledby="reporting-benefits-heading">
+      <div class="mx-auto max-w-6xl">
+        <div class="mx-auto max-w-3xl text-center">
+          <p class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper-200">Built for the people who get things done</p>
+          <h2 id="reporting-benefits-heading" class="mt-3 text-balance text-3xl font-bold sm:text-4xl">Spend less time building the report. Make more of the review.</h2>
+        </div>
+        <div class="mt-10 grid overflow-hidden rounded-2xl border border-white/10 sm:grid-cols-2">
+          <article class="p-7 sm:p-8">
+            <p class="text-sm font-bold uppercase tracking-[0.14em] text-v6-copper-200">01 · Time back</p>
+            <h3 class="mt-4 text-balance text-2xl font-bold leading-snug">Get hours of copy-and-paste time back. Every week.</h3>
+          </article>
+          <article class="border-t border-white/10 p-7 sm:border-l sm:border-t-0 sm:p-8">
+            <p class="text-sm font-bold uppercase tracking-[0.14em] text-v6-copper-200">02 · A reliable rhythm</p>
+            <h3 class="mt-4 text-balance text-2xl font-bold leading-snug">Stop rebuilding the report. We run it for you every week.</h3>
+          </article>
+          <article class="border-t border-white/10 p-7 sm:p-8">
+            <p class="text-sm font-bold uppercase tracking-[0.14em] text-v6-copper-200">03 · Less HubSpot admin</p>
+            <h3 class="mt-4 text-balance text-2xl font-bold leading-snug">Get the report without wrestling with HubSpot fields, filters, and settings.</h3>
+          </article>
+          <article class="border-t border-white/10 p-7 sm:border-l sm:p-8">
+            <p class="text-sm font-bold uppercase tracking-[0.14em] text-v6-copper-200">04 · Clearer decisions</p>
+            <h3 class="mt-4 text-balance text-2xl font-bold leading-snug">Turn findings into clear decisions and next steps.</h3>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -294,26 +315,19 @@ const faqSchema = {
       </div>
     </section>
 
-    <ReportRelatedLinks
-      links={[
-        { href: "/posts/customer-success-in-hubspot/", title: "Run customer success in HubSpot", description: "See how Service Hub, health scores, surveys, tickets, and renewal workflows fit together." },
-        { href: "/posts/hubspot-customer-success-workspace/", title: "Set up the Customer Success Workspace", description: "Understand the workspace, eligible tiers, practical limits, and renewal workflow connections." },
-        { href: "/posts/customer-retention-kpis/", title: "Choose customer retention KPIs", description: "Review the retention, churn, revenue, lifetime-value, and customer-feedback measures leadership needs." },
-      ]}
-    />
-
-    <section id="report-signup" class="scroll-mt-8 bg-v6-bg px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
-      <div class="mx-auto max-w-3xl rounded-3xl bg-v6-copper px-6 py-10 text-center text-white shadow-lg shadow-v6-copper/20 sm:px-10 sm:py-12">
-        <p class="text-sm font-semibold uppercase tracking-[0.16em] text-white/75">Make next month's report the easy one</p>
-        <h2 class="mt-3 text-balance text-3xl font-bold sm:text-4xl">Sign up to build your Service report</h2>
-        <p class="mx-auto mt-4 max-w-2xl text-lg leading-relaxed text-white/85">Keep the definitions you trust, bring the important changes into focus, and walk into the next review with an editable report ready to use.</p>
-        <ReportSignup
+    <section id="report-signup" class="scroll-mt-8 bg-gradient-to-br from-v6-copper to-v6-copper-600 px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+      <div class="mx-auto max-w-2xl text-center text-white">
+        <p class="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-white/70">Make next month's report the easy one</p>
+        <h2 class="text-balance text-2xl font-bold sm:text-3xl">Sign up to build your Service report</h2>
+        <p class="mx-auto mb-4 mt-4 max-w-2xl text-base leading-relaxed text-v6-copper-50 sm:text-lg">Keep the definitions you trust, bring the important changes into focus, and walk into the next review with an editable report ready to use.</p>
+        <ReportSignupDialog
           offerCode="service_hub_performance_report"
           reportName="HubSpot Service Hub performance report"
           sourcePage="hubspot-service-hub-performance-report"
           ctaLabel="service_report_signup"
-          buttonLabel="Sign up to build my report"
+          buttonLabel="Get your first Service Report"
         />
+        <p class="mt-4 text-xs text-v6-copper-50">No card required. Signing up does not connect to or access your HubSpot portal.</p>
       </div>
     </section>
   </main>
