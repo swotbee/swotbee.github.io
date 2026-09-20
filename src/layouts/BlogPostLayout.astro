@@ -51,6 +51,7 @@ const displayPosts = relatedPosts.length >= 2
   author={frontmatter.author?.name}
   robots={frontmatter.noindex ? "noindex, follow" : undefined}
 >
+  <!-- Article metadata supplements the social metadata supplied by Layout. -->
   <meta property="article:published_time" content={frontmatter.pubDate} />
   <meta property="article:author" content={frontmatter.author?.name || 'SWOTBee'} />
   {frontmatter.tags && frontmatter.tags.map((tag: string) => (
