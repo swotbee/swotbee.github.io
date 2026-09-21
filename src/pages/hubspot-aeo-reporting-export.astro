@@ -3,7 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import Footer from "../components/astro/Footer.astro";
 import LogoHoneycomb from "../components/astro/LogoHoneycomb.astro";
 import ClientLogoStrip from "../components/astro/ClientLogoStrip.astro";
-import ReportSignupDialog from "../components/astro/ReportSignupDialog.astro";
+import ReportSignup from "../components/astro/ReportSignup.astro";
 
 const title = "Turn HubSpot AEO Data Into Excel and PowerPoint";
 const description = "Turn HubSpot AEO prompts, AI responses, citations, competitor mentions, and recommendations into Excel, PowerPoint, or a live dashboard.";
@@ -329,7 +329,7 @@ const faqSchema = {
         <p class="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-white/70">App signup</p>
         <h2 id="aeo-signup-heading" class="text-balance text-2xl font-bold sm:text-3xl">Have the AEO report ready before the meeting starts</h2>
         <p class="mx-auto mb-4 mt-4 max-w-2xl text-balance text-base leading-relaxed text-v6-copper-50 sm:text-lg">Use your work email to create your SWOTBee account and start building the report.</p>
-        <ReportSignupDialog
+        <ReportSignup
           offerCode="hubspot_aeo_reporting_export"
           reportName="HubSpot AEO reporting export"
           sourcePage="hubspot-aeo-reporting-export"
