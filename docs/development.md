@@ -48,6 +48,7 @@ pnpm build               # production build and Pagefind index in dist/
 pnpm preview             # preview Astro's production build
 pnpm verify              # standard repository validation
 pnpm serve:dist          # gzip-enabled production-like server on port 4395
+pnpm check:report-signups # read-only smoke checks against deployed report pages
 ```
 
 A `Justfile` wraps the same commands when `just` is installed. The pnpm commands are
@@ -65,6 +66,30 @@ pnpm check:consent
 
 `check:consent` uses a real headless browser and requires a build containing the test
 analytics identifiers. Code inspection is not a substitute for this check.
+
+After a deployment, verify that every report-signup page renders and rejects invalid
+email without calling the webhook:
+
+```bash
+pnpm check:report-signups -- --url https://www.swotbee.com
+```
+
+A real submission creates or updates a HubSpot contact and posts a Slack notification,
+so it is deliberately opt-in and requires an explicit test email. One representative
+submission covers the shared `ReportSignup.astro` behavior used by all four pages:
+
+```bash
+pnpm check:report-signups -- --url https://www.swotbee.com \
+  --submit --headed --email info+report-signup-smoke@swotbee.com
+```
+
+Install the browser once with `pnpm exec playwright install chromium` if Playwright
+reports that its Chromium executable is missing.
+
+Production reCAPTCHA v3 can reject headless automation with `verification_failed` even
+when the page and webhook are healthy. Run the live mode with `--headed` on a workstation.
+A reliable unattended positive-path test would require a separate, authenticated test
+route; do not weaken or bypass the production reCAPTCHA threshold for CI.
 
 ## Local performance checks
 
