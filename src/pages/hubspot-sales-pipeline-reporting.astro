@@ -32,7 +32,7 @@ const faqs = [
   { q: "Can I use Excel, PowerPoint, or a live dashboard?", a: "Yes. Excel carries the management summary and supporting deal data, PowerPoint provides an editable meeting-ready story, and a live dashboard can be shared when the audience needs a current view. All three use the same reporting setup." },
   { q: "Does SWOTBee replace HubSpot reporting?", a: "No. HubSpot remains the operational data source. SWOTBee turns selected sales data into a repeatable management pack with consistent definitions, comparisons, evidence, and reusable outputs." },
   { q: "Can SWOTBee recover an old pipeline or forecast snapshot?", a: "Only when the historical state is available from HubSpot or was previously captured. If it is unavailable, snapshot collection can begin now so future reports have the point-in-time history they need." },
-  { q: "Will signing up connect my HubSpot account?", a: "No. Signing up uses your work email for the SWOTBee app. It does not connect to or access your HubSpot portal. HubSpot connection and read-only permissions are handled separately." },
+  { q: "Will signing up connect my HubSpot account?", a: "No. This signup records your work email and requested report so we can contact you about access. It does not create an app account or connect to your HubSpot portal." },
 ];
 
 const faqSchema = {
@@ -284,10 +284,10 @@ const faqSchema = {
     <section id="report-signup" class="scroll-mt-8 bg-gradient-to-br from-v6-copper to-v6-copper-600 px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
       <div class="mx-auto max-w-2xl text-center text-white">
         <p class="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-white/70">Make the next sales report the easy one</p>
-        <h2 class="text-balance text-2xl font-bold sm:text-3xl">Sign up to build your sales report</h2>
-        <p class="mx-auto mb-4 mt-4 max-w-2xl text-base leading-relaxed text-v6-copper-50 sm:text-lg">Keep the definitions you trust, bring the important pipeline changes into focus, and walk into the next review with an editable report ready to use.</p>
-        <ReportSignup offerCode="sales_pipeline_reporting" reportName="HubSpot sales and pipeline report" sourcePage="hubspot-sales-pipeline-reporting" ctaLabel="sales_report_signup" buttonLabel="Get your First Sales Report" />
-        <p class="mt-4 text-xs text-v6-copper-50">No card required. Signing up does not connect to or access your HubSpot portal.</p>
+        <h2 class="text-balance text-2xl font-bold sm:text-3xl">Request access to your sales report</h2>
+        <p class="mx-auto mb-4 mt-4 max-w-2xl text-base leading-relaxed text-v6-copper-50 sm:text-lg">Register your interest in a repeatable report that keeps trusted definitions and important pipeline changes in focus.</p>
+        <ReportSignup offerCode="sales_pipeline_reporting" reportName="HubSpot sales and pipeline report" sourcePage="hubspot-sales-pipeline-reporting" ctaLabel="sales_report_signup" buttonLabel="Request sales report access" />
+        <p class="mt-4 text-xs text-v6-copper-50">No card required. This does not create an app account or connect to your HubSpot portal.</p>
       </div>
     </section>
   </main>

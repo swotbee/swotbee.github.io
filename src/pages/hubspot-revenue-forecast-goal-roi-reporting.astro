@@ -31,7 +31,7 @@ const faqs = [
   { q: "Can the report use manual forecast submissions?", a: "For eligible HubSpot accounts, the current Forecasts API provides read-only access to submitted forecasts and their change history. Availability depends on the account's HubSpot subscription, permissions, and forecast setup." },
   { q: "How is marketing ROI calculated?", a: "You first choose the spend, revenue value, attribution approach, currency, and period that should count. SWOTBee calculates return only when those inputs are available and labels the calculation used. It does not substitute a missing value or silently change the revenue definition." },
   { q: "Can SWOTBee create MRR, ARR, NRR, or GRR reports?", a: "Yes, when the required recurring-revenue values and dates are available in HubSpot or the agreed billing source. NRR and GRR belong in a separate retention-revenue report because they need starting revenue, expansion, contraction, and churn—not the forecast and target view shown on this page. SWOTBee cannot reconstruct an earlier revenue state that was never recorded." },
-  { q: "Will signing up connect my HubSpot account?", a: "No. Signing up creates your SWOTBee app account with your work email. Connecting HubSpot and granting read-only access happen separately." },
+  { q: "Will signing up connect my HubSpot account?", a: "No. This signup records your work email and requested report so we can contact you about access. It does not create an app account or connect to your HubSpot portal." },
 ];
 
 const faqSchema = {
@@ -296,16 +296,16 @@ const faqSchema = {
     <section id="report-signup" class="scroll-mt-8 bg-gradient-to-br from-v6-copper to-v6-copper-600 px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
       <div class="mx-auto max-w-2xl text-center text-white">
         <p class="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-white/70">Make the next revenue review the easy one</p>
-        <h2 class="text-balance text-2xl font-bold sm:text-3xl">Sign up to build your HubSpot revenue report</h2>
-        <p class="mx-auto mb-4 mt-4 max-w-2xl text-base leading-relaxed text-v6-copper-50 sm:text-lg">Bring actual revenue, forecast, target, and the gap into one report your team can check, edit, and present.</p>
+        <h2 class="text-balance text-2xl font-bold sm:text-3xl">Request access to your HubSpot revenue report</h2>
+        <p class="mx-auto mb-4 mt-4 max-w-2xl text-base leading-relaxed text-v6-copper-50 sm:text-lg">Register your interest in bringing actual revenue, forecast, target, and the gap into one report your team can check, edit, and present.</p>
         <ReportSignup
           offerCode="hubspot_revenue_forecast_goal_roi_reporting"
           reportName="HubSpot revenue, forecast, goal, and ROI report"
           sourcePage="hubspot-revenue-forecast-goal-roi-reporting"
           ctaLabel="revenue_report_signup"
-          buttonLabel="Build your Revenue Report"
+          buttonLabel="Request revenue report access"
         />
-        <p class="mt-4 text-xs text-v6-copper-50">No card required. Signing up does not connect to or access your HubSpot portal.</p>
+        <p class="mt-4 text-xs text-v6-copper-50">No card required. This does not create an app account or connect to your HubSpot portal.</p>
       </div>
     </section>
   </main>

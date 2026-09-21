@@ -33,7 +33,7 @@ const faqs = [
   { q: "Do people viewing the report need a HubSpot login?", a: "People can review an exported Excel or PowerPoint file without using the HubSpot reporting interface. Access and sharing still follow your organisation's own security requirements." },
   { q: "Does SWOTBee replace HubSpot reporting?", a: "No. HubSpot remains the operational data source. SWOTBee turns selected data into a repeatable management report with consistent definitions, comparisons, evidence, and editable outputs." },
   { q: "Can SWOTBee recover earlier backlog or SLA figures?", a: "Only when those earlier values are available from HubSpot or were previously saved. If they are unavailable, SWOTBee can start recording them now for future reports." },
-  { q: "Will signing up connect my HubSpot account?", a: "No. Signing up uses your work email for the SWOTBee app. It does not connect to or access your HubSpot portal. HubSpot connection and read-only permissions are handled separately." },
+  { q: "Will signing up connect my HubSpot account?", a: "No. This signup records your work email and requested report so we can contact you about access. It does not create an app account or connect to your HubSpot portal." },
 ];
 
 const faqSchema = {
@@ -318,16 +318,16 @@ const faqSchema = {
     <section id="report-signup" class="scroll-mt-8 bg-gradient-to-br from-v6-copper to-v6-copper-600 px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
       <div class="mx-auto max-w-2xl text-center text-white">
         <p class="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-white/70">Make next month's report the easy one</p>
-        <h2 class="text-balance text-2xl font-bold sm:text-3xl">Sign up to build your Service report</h2>
-        <p class="mx-auto mb-4 mt-4 max-w-2xl text-base leading-relaxed text-v6-copper-50 sm:text-lg">Keep the definitions you trust, bring the important changes into focus, and walk into the next review with an editable report ready to use.</p>
+        <h2 class="text-balance text-2xl font-bold sm:text-3xl">Request access to your Service report</h2>
+        <p class="mx-auto mb-4 mt-4 max-w-2xl text-base leading-relaxed text-v6-copper-50 sm:text-lg">Register your interest in a repeatable report that keeps trusted definitions and important Service changes in focus.</p>
         <ReportSignup
           offerCode="service_hub_performance_report"
           reportName="HubSpot Service Hub performance report"
           sourcePage="hubspot-service-hub-performance-report"
           ctaLabel="service_report_signup"
-          buttonLabel="Get your first Service Report"
+          buttonLabel="Request Service report access"
         />
-        <p class="mt-4 text-xs text-v6-copper-50">No card required. Signing up does not connect to or access your HubSpot portal.</p>
+        <p class="mt-4 text-xs text-v6-copper-50">No card required. This does not create an app account or connect to your HubSpot portal.</p>
       </div>
     </section>
   </main>

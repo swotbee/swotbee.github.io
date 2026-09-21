@@ -52,7 +52,7 @@ const faqs = [
   { q: "Will the original AI answers and citations be included?", a: "They can be when HubSpot returns them for the period you selected. The report can include the question, AI platform, full answer, cited URLs and titles, and the search queries used." },
   { q: "What happens when a metric is not available through the API?", a: "The report says it is unavailable. It does not turn missing data into zero or present an independently calculated value as a native HubSpot metric. HubSpot currently documents the AEO API as a public beta, so fields and availability may change." },
   { q: "How far back can the report compare?", a: "It can use prompt runs that HubSpot has already collected and preserve future reporting cutoffs. It cannot recreate an AI response that was never captured, so comparisons become more useful as consistent runs accumulate." },
-  { q: "Will signing up connect my HubSpot account?", a: "No. Signing up uses your work email for the SWOTBee app. HubSpot connection and read-only permissions are handled separately." },
+  { q: "Will signing up connect my HubSpot account?", a: "No. This signup records your work email and requested report so we can contact you about access. It does not create an app account or connect to your HubSpot portal." },
 ];
 
 const faqSchema = {
@@ -326,17 +326,17 @@ const faqSchema = {
 
     <section id="report-signup" class="scroll-mt-8 bg-gradient-to-br from-v6-copper to-v6-copper-600 px-4 py-16 sm:px-6 sm:py-20 lg:px-8" aria-labelledby="aeo-signup-heading">
       <div class="mx-auto max-w-2xl text-center text-white">
-        <p class="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-white/70">App signup</p>
-        <h2 id="aeo-signup-heading" class="text-balance text-2xl font-bold sm:text-3xl">Have the AEO report ready before the meeting starts</h2>
-        <p class="mx-auto mb-4 mt-4 max-w-2xl text-balance text-base leading-relaxed text-v6-copper-50 sm:text-lg">Use your work email to create your SWOTBee account and start building the report.</p>
+        <p class="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-white/70">Report signup</p>
+        <h2 id="aeo-signup-heading" class="text-balance text-2xl font-bold sm:text-3xl">Request access to the AEO report</h2>
+        <p class="mx-auto mb-4 mt-4 max-w-2xl text-balance text-base leading-relaxed text-v6-copper-50 sm:text-lg">Use your work email to register your interest. We will contact you about access to the report.</p>
         <ReportSignup
           offerCode="hubspot_aeo_reporting_export"
           reportName="HubSpot AEO reporting export"
           sourcePage="hubspot-aeo-reporting-export"
           ctaLabel="aeo_report_signup"
-          buttonLabel="Build your AEO Report"
+          buttonLabel="Request AEO report access"
         />
-        <p class="mt-4 text-xs text-v6-copper-50">No card required. Signing up does not connect to or access your HubSpot portal.</p>
+        <p class="mt-4 text-xs text-v6-copper-50">No card required. This does not create an app account or connect to your HubSpot portal.</p>
       </div>
     </section>
   </main>

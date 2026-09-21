@@ -137,7 +137,8 @@ async function submitLive(browser, options) {
 
     const terminal = page.locator(`#report-signup-terminal-${knownPage[1]}`);
     await terminal.waitFor({ state: "visible", timeout: 15_000 });
-    assert((await terminal.textContent())?.includes("Your app signup is saved"), "Signup success state was not shown");
+    assert((await terminal.textContent())?.includes("Your report signup is saved"), "Signup success state was not shown");
+    assert((await terminal.textContent())?.includes("No app account or report was created yet"), "Signup success state did not explain the actual outcome");
     console.log(`[report-signup] LIVE PASS ${options.submitPage} (${options.email})`);
   } finally {
     await page.close();
