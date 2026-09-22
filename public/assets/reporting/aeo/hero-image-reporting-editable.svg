@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="1672"
+  height="941"
+  viewBox="0 0 1672 941"
+  role="img"
+  aria-labelledby="title description"
+  style="--hero-blue: #1A7AB5; --hero-blue-opacity: 1;"
+>
+  <title id="title">HubSpot reporting workspace with PowerPoint and Excel outputs</title>
+  <desc id="description">Pixel-identical SVG copy with an optional masked V6 blue tint layer.</desc>
+
+  <!--
+    The source image is preserved beneath a V6 blue tint layer.
+    Change the hero blue variable to preview another V6 palette shade.
+
+    V6 blue palette:
+      300  #3D9AD0
+      400  #1A7AB5
+      500  #1A7AB5
+      600  #0F5A8A
+      700  #0A3D6B
+  -->
+  <defs>
+    <mask id="blue-regions" maskUnits="userSpaceOnUse" x="0" y="0" width="1672" height="941" style="mask-type: luminance;">
+      <image
+        href="hero-image-reporting-blue-mask.png"
+        xlink:href="hero-image-reporting-blue-mask.png"
+        width="1672"
+        height="941"
+        preserveAspectRatio="none"
+      />
+    </mask>
+  </defs>
+
+  <image
+    href="hero-image-reporting-source.png"
+    xlink:href="hero-image-reporting-source.png"
+    width="1672"
+    height="941"
+    preserveAspectRatio="none"
+  />
+
+  <rect
+    width="1672"
+    height="941"
+    fill="var(--hero-blue)"
+    opacity="var(--hero-blue-opacity)"
+    mask="url(#blue-regions)"
+    style="mix-blend-mode: color;"
+  />
+</svg>
