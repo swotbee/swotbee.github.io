@@ -1,0 +1,90 @@
+---
+import ReportSignup from "./ReportSignup.astro";
+
+interface Props {
+  offerCode: string;
+  reportName: string;
+  sourcePage: string;
+  ctaLabel: string;
+  buttonLabel: string;
+  successTitle?: string;
+  successMessages?: string[];
+}
+
+const { offerCode, reportName, sourcePage, ctaLabel, buttonLabel, successTitle, successMessages } = Astro.props;
+const dialogId = `report-signup-dialog-${offerCode}`;
+---
+
+<button
+  type="button"
+  class="inline-flex min-h-12 items-center justify-center rounded-xl bg-white px-8 py-3.5 text-base font-semibold text-v6-copper transition-colors hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-v6-copper"
+  data-report-signup-dialog-open={dialogId}
+  data-ga-cta={ctaLabel}
+>
+  {buttonLabel}
+</button>
+
+<dialog
+  id={dialogId}
+  class="w-[calc(100%-2rem)] max-w-xl overflow-visible rounded-2xl bg-transparent p-0 shadow-2xl backdrop:bg-v6-dark/70"
+  aria-label={`Sign up for the ${reportName}`}
+  data-report-signup-dialog
+>
+  <div class="relative max-h-[calc(100vh-2rem)] overflow-y-auto rounded-2xl">
+    <button
+      type="button"
+      class="absolute right-3 top-3 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-v6-bg text-2xl leading-none text-v6-text-muted transition-colors hover:bg-v6-copper-50 hover:text-v6-copper focus:outline-none focus:ring-2 focus:ring-v6-copper"
+      aria-label="Close signup form"
+      data-report-signup-dialog-close
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+    <div class="report-signup-dialog-form">
+      <ReportSignup
+        offerCode={offerCode}
+        reportName={reportName}
+        sourcePage={sourcePage}
+        ctaLabel={ctaLabel}
+        buttonLabel={buttonLabel}
+        successTitle={successTitle}
+        successMessages={successMessages}
+      />
+    </div>
+  </div>
+</dialog>
+
+<style>
+  :global(.report-signup-dialog-form > div) {
+    margin-top: 0;
+  }
+</style>
+
+<script>
+  function prepareReportSignupDialogs() {
+    document.querySelectorAll<HTMLButtonElement>("[data-report-signup-dialog-open]").forEach((trigger) => {
+      if (trigger.dataset.dialogReady === "true") return;
+      trigger.dataset.dialogReady = "true";
+
+      trigger.addEventListener("click", () => {
+        const dialogId = trigger.dataset.reportSignupDialogOpen;
+        const dialog = dialogId ? document.getElementById(dialogId) : null;
+        if (!(dialog instanceof HTMLDialogElement)) return;
+        dialog.showModal();
+        dialog.querySelector<HTMLInputElement>('input[name="email"]')?.focus();
+      });
+    });
+
+    document.querySelectorAll<HTMLDialogElement>("[data-report-signup-dialog]").forEach((dialog) => {
+      if (dialog.dataset.dialogReady === "true") return;
+      dialog.dataset.dialogReady = "true";
+
+      dialog.querySelector<HTMLButtonElement>("[data-report-signup-dialog-close]")?.addEventListener("click", () => dialog.close());
+      dialog.addEventListener("click", (event) => {
+        if (event.target === dialog) dialog.close();
+      });
+    });
+  }
+
+  prepareReportSignupDialogs();
+  document.addEventListener("astro:page-load", prepareReportSignupDialogs);
+</script>

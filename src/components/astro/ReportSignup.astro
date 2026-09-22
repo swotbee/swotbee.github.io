@@ -6,10 +6,11 @@ interface Props {
   reportName: string;
   sourcePage: string;
   ctaLabel: string;
-  emailHelp?: string;
   buttonLabel?: string;
   loadingLabel?: string;
   loadingMessage?: string;
+  successTitle?: string;
+  successMessages?: string[];
 }
 
 const {
@@ -17,10 +18,13 @@ const {
   reportName,
   sourcePage,
   ctaLabel,
-  emailHelp = "Use the work email where you want us to follow up about this report.",
   buttonLabel = "Continue",
   loadingLabel = "Saving your report signup...",
   loadingMessage = "Saving your work email and report choice.",
+  successTitle = "Your report signup is saved",
+  successMessages = [
+    `We saved your work email for the ${reportName}. We will contact you about access. No app account or report was created yet, and no HubSpot account was connected or accessed.`,
+  ],
 } = Astro.props;
 
 // This first website-only experiment deliberately reuses the proven contact-form
@@ -90,19 +94,15 @@ const message = `Website report signup: ${reportName} (${offerCode}). Experiment
         required
         autocomplete="email"
         inputmode="email"
-        aria-describedby={`${formId}-email-help ${statusId}`}
+        aria-describedby={statusId}
         class="mt-2 min-h-12 w-full rounded-xl border border-v6-border bg-white px-4 py-3 text-base text-v6-dark shadow-sm outline-none transition-colors placeholder:text-v6-text-muted/70 focus:border-v6-copper focus:ring-2 focus:ring-v6-copper"
         placeholder="you@company.com"
       />
-      <p id={`${formId}-email-help`} class="mt-2 text-sm leading-relaxed text-v6-text-muted">
-        {emailHelp}
-      </p>
     </div>
 
     <p class="mt-5 text-xs leading-relaxed text-v6-text-muted">
       By continuing, you agree to the <a href="/terms/" class="font-semibold text-v6-copper-800 underline decoration-v6-copper-300 underline-offset-2 hover:text-v6-copper-900 focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2">Terms</a>
       and acknowledge the <a href="/privacy/" class="font-semibold text-v6-copper-800 underline decoration-v6-copper-300 underline-offset-2 hover:text-v6-copper-900 focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2">Privacy Policy</a>.
-      We will use this email to handle your report signup and related service communication.
     </p>
 
     <button
@@ -128,11 +128,11 @@ const message = `Website report signup: ${reportName} (${offerCode}). Experiment
       </svg>
     </div>
     <h3 id={terminalTitleId} tabindex="-1" class="mt-5 text-2xl font-bold text-v6-dark">
-      Your report signup is saved
+      {successTitle}
     </h3>
-    <p class="mt-3 leading-relaxed text-v6-text-muted">
-      We saved your work email for the {reportName}. We will contact you about access. No app account or report was created yet, and no HubSpot account was connected or accessed.
-    </p>
+    {successMessages.map((message) => (
+      <p class="mt-3 leading-relaxed text-v6-text-muted">{message}</p>
+    ))}
     <div class="mt-6 flex flex-col gap-3 sm:flex-row">
       <a href="#sample-report" class="inline-flex min-h-11 items-center justify-center rounded-xl border border-v6-border px-5 py-3 text-sm font-semibold text-v6-dark transition-colors hover:border-v6-copper hover:bg-v6-copper-50 focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2">
         Return to the sample report

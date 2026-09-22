@@ -4,35 +4,116 @@ import Footer from "../components/astro/Footer.astro";
 import LogoHoneycomb from "../components/astro/LogoHoneycomb.astro";
 import ClientLogoStrip from "../components/astro/ClientLogoStrip.astro";
 import ReportSignup from "../components/astro/ReportSignup.astro";
+import ReportOutputBento from "../components/astro/ReportOutputBento.astro";
+import ReportLandingHero from "../components/astro/ReportLandingHero.astro";
 
 const title = "HubSpot Sales & Pipeline Reporting | SWOTBee";
-const description = "Turn HubSpot sales data into a repeatable management report with pipeline, conversion, win-rate, velocity, forecast, revenue and target KPIs in Excel, PowerPoint, or a live dashboard.";
+const description =
+  "Turn HubSpot sales data into a repeatable management report with pipeline, conversion, win-rate, velocity, forecast, revenue and target KPIs in Excel, PowerPoint, or a live dashboard.";
 
 const attentionRows = [
-  { deal: "Northstar expansion", owner: "Liam Ross", region: "EMEA", stage: "Decision", amount: "$180k", age: "38 days", reason: "Close date moved twice", action: "Confirm executive sponsor call" },
-  { deal: "Quarry Systems rollout", owner: "Elena Park", region: "EMEA", stage: "Proposal", amount: "$145k", age: "29 days", reason: "No activity for 12 days", action: "Agree next step with buyer" },
-  { deal: "Acme Platform upgrade", owner: "Maya Chen", region: "North America", stage: "Discovery", amount: "$90k", age: "21 days", reason: "Next step is overdue", action: "Update mutual action plan" },
+  {
+    deal: "Northstar expansion",
+    owner: "Liam Ross",
+    region: "EMEA",
+    stage: "Decision",
+    amount: "$180k",
+    age: "38 days",
+    reason: "Close date moved twice",
+    action: "Confirm executive sponsor call",
+  },
+  {
+    deal: "Quarry Systems rollout",
+    owner: "Elena Park",
+    region: "EMEA",
+    stage: "Proposal",
+    amount: "$145k",
+    age: "29 days",
+    reason: "No activity for 12 days",
+    action: "Agree next step with buyer",
+  },
+  {
+    deal: "Acme Platform upgrade",
+    owner: "Maya Chen",
+    region: "North America",
+    stage: "Discovery",
+    amount: "$90k",
+    age: "21 days",
+    reason: "Next step is overdue",
+    action: "Update mutual action plan",
+  },
 ];
 
 const reportAreas = [
-  { title: "Pipeline creation and coverage", description: "New pipeline, open pipeline, coverage against target, and the teams, regions, products, or sources contributing to the position." },
-  { title: "Stage conversion", description: "Conversion between pipeline stages, drop-off points, and the movement that explains where opportunities are progressing or stalling." },
-  { title: "Win rate and closed won", description: "Wins, losses, closed-won revenue, average deal size, and performance against the agreed comparison period." },
-  { title: "Deal velocity and aging", description: "Sales-cycle length, time in stage, aging bands, stale opportunities, and the deals taking longer than expected." },
-  { title: "Forecast and target attainment", description: "Forecast position, committed and likely revenue, target attainment, and the remaining gap for the period." },
-  { title: "Team and market performance", description: "Results by owner, team, pipeline, region, product, segment, or another supported dimension used in your sales review." },
+  {
+    title: "Pipeline creation and coverage",
+    description:
+      "New pipeline, open pipeline, coverage against target, and the teams, regions, products, or sources contributing to the position.",
+  },
+  {
+    title: "Stage conversion",
+    description:
+      "Conversion between pipeline stages, drop-off points, and the movement that explains where opportunities are progressing or stalling.",
+  },
+  {
+    title: "Win rate and closed won",
+    description:
+      "Wins, losses, closed-won revenue, average deal size, and performance against the agreed comparison period.",
+  },
+  {
+    title: "Deal velocity and aging",
+    description:
+      "Sales-cycle length, time in stage, aging bands, stale opportunities, and the deals taking longer than expected.",
+  },
+  {
+    title: "Forecast and target attainment",
+    description:
+      "Forecast position, committed and likely revenue, target attainment, and the remaining gap for the period.",
+  },
+  {
+    title: "Team and market performance",
+    description:
+      "Results by owner, team, pipeline, region, product, segment, or another supported dimension used in your sales review.",
+  },
 ];
 
 const faqs = [
-  { q: "What is a HubSpot sales and pipeline report?", a: "It is a recurring management report built from selected HubSpot Sales Hub data. It brings pipeline, conversion, win rate, velocity, forecast, closed-won revenue, targets, supporting deals, and commentary into one report for a sales, executive, board, or investor review." },
-  { q: "Which sales KPIs can I include?", a: "Depending on the data available in your HubSpot account, the report can include pipeline created, pipeline coverage, stage conversion, win rate, deal velocity and aging, forecast, closed-won revenue, and target attainment. Results can be broken down by supported fields such as owner, team, pipeline, region, product, source, or segment." },
-  { q: "Can the report cover more than one sales pipeline?", a: "Yes. Pipelines can be reported separately or combined when the underlying stages and definitions are genuinely comparable. The report keeps the included scope visible so unrelated pipelines are not silently mixed." },
-  { q: "Can I compare this month or quarter with the previous one?", a: "Yes, when HubSpot provides comparable period data or SWOTBee has stored the required point-in-time snapshot. The same agreed definition and scope are used on both sides of the comparison." },
-  { q: "Can I use the report for forecasting?", a: "Yes. The report can include the forecast measures, categories, probabilities, targets, and deal evidence supported by your HubSpot setup. The calculation basis and reporting date remain visible." },
-  { q: "Can I use Excel, PowerPoint, or a live dashboard?", a: "Yes. Excel carries the management summary and supporting deal data, PowerPoint provides an editable meeting-ready story, and a live dashboard can be shared when the audience needs a current view. All three use the same reporting setup." },
-  { q: "Does SWOTBee replace HubSpot reporting?", a: "No. HubSpot remains the operational data source. SWOTBee turns selected sales data into a repeatable management pack with consistent definitions, comparisons, evidence, and reusable outputs." },
-  { q: "Can SWOTBee recover an old pipeline or forecast snapshot?", a: "Only when the historical state is available from HubSpot or was previously captured. If it is unavailable, snapshot collection can begin now so future reports have the point-in-time history they need." },
-  { q: "Will signing up connect my HubSpot account?", a: "No. This signup records your work email and requested report so we can contact you about access. It does not create an app account or connect to your HubSpot portal." },
+  {
+    q: "What is a HubSpot sales and pipeline report?",
+    a: "It is a recurring management report built from selected HubSpot Sales Hub data. It brings pipeline, conversion, win rate, velocity, forecast, closed-won revenue, targets, supporting deals, and commentary into one report for a sales, executive, board, or investor review.",
+  },
+  {
+    q: "Which sales KPIs can I include?",
+    a: "Depending on the data available in your HubSpot account, the report can include pipeline created, pipeline coverage, stage conversion, win rate, deal velocity and aging, forecast, closed-won revenue, and target attainment. Results can be broken down by supported fields such as owner, team, pipeline, region, product, source, or segment.",
+  },
+  {
+    q: "Can the report cover more than one sales pipeline?",
+    a: "Yes. Pipelines can be reported separately or combined when the underlying stages and definitions are genuinely comparable. The report keeps the included scope visible so unrelated pipelines are not silently mixed.",
+  },
+  {
+    q: "Can I compare this month or quarter with the previous one?",
+    a: "Yes, when HubSpot provides comparable period data or SWOTBee has stored the required point-in-time snapshot. The same agreed definition and scope are used on both sides of the comparison.",
+  },
+  {
+    q: "Can I use the report for forecasting?",
+    a: "Yes. The report can include the forecast measures, categories, probabilities, targets, and deal evidence supported by your HubSpot setup. The calculation basis and reporting date remain visible.",
+  },
+  {
+    q: "Can I use Excel, PowerPoint, or a live dashboard?",
+    a: "Yes. Excel carries the management summary and supporting deal data, PowerPoint provides an editable meeting-ready story, and a live dashboard can be shared when the audience needs a current view. All three use the same reporting setup.",
+  },
+  {
+    q: "Does SWOTBee replace HubSpot reporting?",
+    a: "No. HubSpot remains the operational data source. SWOTBee turns selected sales data into a repeatable management pack with consistent definitions, comparisons, evidence, and reusable outputs.",
+  },
+  {
+    q: "Can SWOTBee recover an old pipeline or forecast snapshot?",
+    a: "Only when the historical state is available from HubSpot or was previously captured. If it is unavailable, snapshot collection can begin now so future reports have the point-in-time history they need.",
+  },
+  {
+    q: "Will signing up connect my HubSpot account?",
+    a: "No. This signup records your work email and requested report so we can contact you about access. It does not create an app account or connect to your HubSpot portal.",
+  },
 ];
 
 const faqSchema = {
@@ -51,243 +132,739 @@ const faqSchema = {
   description={description}
   keywords="hubspot sales reporting, hubspot sales reports, hubspot pipeline reporting, hubspot pipeline report, hubspot sales performance reports, hubspot sales forecasting reports, hubspot sales report templates, hubspot win rate report"
 >
-  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
   <header class="border-b border-v6-border bg-white">
-    <div class="mx-auto flex min-h-16 max-w-6xl items-center justify-between gap-6 px-4 py-2 sm:px-6 lg:px-8">
-      <a href="/" class="flex min-h-11 shrink-0 items-center gap-2 rounded-md focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2" aria-label="SWOTbee home">
+    <div
+      class="mx-auto flex min-h-16 max-w-6xl items-center justify-between gap-6 px-4 py-2 sm:px-6 lg:px-8"
+    >
+      <a
+        href="/"
+        class="flex min-h-11 shrink-0 items-center gap-2 rounded-md focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2"
+        aria-label="SWOTbee home"
+      >
         <LogoHoneycomb width={32} height={30} />
-        <span class="text-lg font-bold text-v6-dark">SWOT<span class="text-v6-teal-700">bee</span></span>
+        <span class="text-lg font-bold text-v6-dark"
+          >SWOT<span class="text-v6-teal-700">bee</span></span
+        >
       </a>
-      <nav class="hidden items-center gap-6 text-sm font-semibold text-v6-text-muted lg:flex" aria-label="Page navigation">
-        <a href="#how-it-works" class="rounded-md py-2 hover:text-v6-dark focus:outline-none focus:ring-2 focus:ring-v6-copper">How it works</a>
-        <a href="#sample-report" class="rounded-md py-2 hover:text-v6-dark focus:outline-none focus:ring-2 focus:ring-v6-copper">Sample report</a>
-        <a href="#report-contents" class="rounded-md py-2 hover:text-v6-dark focus:outline-none focus:ring-2 focus:ring-v6-copper">What's included</a>
-        <a href="#questions" class="rounded-md py-2 hover:text-v6-dark focus:outline-none focus:ring-2 focus:ring-v6-copper">FAQs</a>
+      <nav
+        class="hidden items-center gap-6 text-sm font-semibold text-v6-text-muted lg:flex"
+        aria-label="Page navigation"
+      >
+        <a
+          href="#how-it-works"
+          class="rounded-md py-2 hover:text-v6-dark focus:outline-none focus:ring-2 focus:ring-v6-copper"
+          >How it works</a
+        >
+        <a
+          href="#sample-report"
+          class="rounded-md py-2 hover:text-v6-dark focus:outline-none focus:ring-2 focus:ring-v6-copper"
+          >Sample report</a
+        >
+        <a
+          href="#report-contents"
+          class="rounded-md py-2 hover:text-v6-dark focus:outline-none focus:ring-2 focus:ring-v6-copper"
+          >What's included</a
+        >
+        <a
+          href="#questions"
+          class="rounded-md py-2 hover:text-v6-dark focus:outline-none focus:ring-2 focus:ring-v6-copper"
+          >FAQs</a
+        >
       </nav>
-      <a href="#report-signup" data-ga-cta="sales_report_header_signup" class="inline-flex min-h-11 shrink-0 items-center justify-center rounded-lg border border-v6-copper px-4 py-2 text-sm font-semibold text-v6-copper transition-colors hover:bg-v6-copper-50 focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2">Get your First Sales Report</a>
+      <a
+        href="#report-signup"
+        data-ga-cta="sales_report_header_signup"
+        class="inline-flex min-h-11 shrink-0 items-center justify-center rounded-lg border border-v6-copper px-4 py-2 text-sm font-semibold text-v6-copper transition-colors hover:bg-v6-copper-50 focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2"
+        >Get your first Sales Report</a
+      >
     </div>
   </header>
 
   <main>
-    <section class="overflow-hidden bg-gradient-to-b from-v6-bg to-white px-4 pb-16 pt-14 sm:px-6 sm:pb-20 sm:pt-20 lg:px-8">
-      <div class="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[0.88fr_1.12fr] lg:items-center">
-        <div>
-          <span class="mb-5 inline-flex rounded-full bg-v6-copper-50 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-v6-copper-700">HubSpot sales and pipeline reporting</span>
-          <h1 class="max-w-3xl text-balance text-4xl font-bold leading-[1.08] text-v6-dark sm:text-5xl lg:text-[3.45rem]">Your HubSpot sales and pipeline report, in 3 clicks</h1>
-          <p class="mt-6 max-w-2xl text-lg leading-relaxed text-v6-text-muted">Bring pipeline, coverage, conversion, win rate, velocity, forecast, closed-won revenue, and targets into one clear report. Run it every week or month.</p>
-          <p class="mt-5 font-semibold text-v6-dark">Break down the numbers by pipeline, region, team, or any field you use—without rebuilding the spreadsheet or slide deck.</p>
-          <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-            <a href="#report-signup" data-ga-cta="sales_report_hero_signup" class="inline-flex min-h-12 items-center justify-center rounded-xl bg-v6-copper px-7 py-3.5 text-base font-semibold text-white transition-colors hover:bg-v6-copper-600 focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2">Get your First Sales Report</a>
-            <a href="#sample-report" data-ga-cta="sales_report_hero_sample" class="inline-flex min-h-12 items-center justify-center rounded-xl border border-v6-border bg-white px-7 py-3.5 text-base font-semibold text-v6-dark transition-colors hover:border-v6-copper hover:bg-v6-copper-50 focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2">See a sample report</a>
-          </div>
-          <p class="mx-auto mt-4 max-w-xl text-center text-sm font-semibold leading-relaxed text-v6-dark">No credit card required.</p>
-        </div>
+    <ReportLandingHero
+      eyebrow="HubSpot sales and pipeline reporting"
+      titleLead="Turn HubSpot Sales & Pipeline Data"
+      titleAccent="into your Report in 3 Clicks"
+      description="Bring pipeline, coverage, conversion, win rate, velocity, forecast, closed-won revenue, and targets into one clear report. Run it weekly, monthly, or quarterly."
+      ctaLabel="Get your first Sales Report"
+      ctaEvent="sales_report_hero_signup"
+      reassurance={[
+        "Break down by pipeline, region, or team.",
+        "No spreadsheet rebuilds.",
+        "No slide deck rebuilds.",
+      ]}
+    />
 
-        <div class="relative" aria-label="Example HubSpot sales report with pipeline, forecast, win rate, and management summary">
-          <div class="absolute -inset-6 -z-10 rounded-full bg-v6-teal-100/70 blur-3xl"></div>
-          <div class="overflow-hidden rounded-2xl border border-v6-border bg-white shadow-xl shadow-v6-dark/10">
-            <div class="flex items-center justify-between gap-4 border-b border-v6-border px-5 py-4">
-              <div><p class="text-xs font-semibold uppercase tracking-[0.14em] text-v6-copper">Monthly sales review</p><p class="mt-1 font-semibold text-v6-dark">September 2026</p></div>
-              <span class="rounded-full bg-v6-blue-50 px-3 py-1 text-xs font-semibold text-v6-blue-800">Weekly or monthly</span>
-            </div>
-            <div class="grid grid-cols-2 border-b border-v6-border sm:grid-cols-4">
-              <div class="border-b border-r border-v6-border p-4 sm:border-b-0 sm:p-5"><p class="text-xs text-v6-text-muted">Pipeline created</p><p class="mt-1 text-xl font-bold text-v6-dark">$1.84m</p><p class="mt-1 text-xs font-semibold text-v6-teal-800">Up 18%</p></div>
-              <div class="border-b border-v6-border bg-v6-copper-50 p-4 sm:border-b-0 sm:border-r sm:p-5"><p class="text-xs text-v6-copper-800">Forward coverage</p><p class="mt-1 text-xl font-bold text-v6-copper-800">3.1×</p><p class="mt-1 text-xs font-semibold text-v6-copper-800">Target 3.5×</p></div>
-              <div class="border-r border-v6-border p-4 sm:p-5"><p class="text-xs text-v6-text-muted">Win rate</p><p class="mt-1 text-xl font-bold text-v6-dark">24.6%</p><p class="mt-1 text-xs font-semibold text-v6-copper-800">Down 2.3 pts</p></div>
-              <div class="p-4 sm:p-5"><p class="text-xs text-v6-text-muted">Forecast</p><p class="mt-1 text-xl font-bold text-v6-dark">$1.18m</p><p class="mt-1 text-xs font-semibold text-v6-text-muted">92% of target</p></div>
-            </div>
-            <div class="grid gap-5 p-5 sm:grid-cols-[0.9fr_1.1fr]">
-              <div>
-                <p class="text-xs font-semibold uppercase tracking-[0.12em] text-v6-text-muted">Pipeline created</p>
-                <div class="mt-4 flex h-24 items-end gap-3" aria-label="Pipeline creation increased from 1.2 million to 1.84 million over four months">
-                  <div class="flex flex-1 flex-col items-center gap-1"><span class="text-[10px] font-semibold text-v6-text-muted">1.2m</span><div class="h-10 w-full rounded-t bg-v6-blue-200"></div><span class="text-[10px] text-v6-text-muted">Jun</span></div>
-                  <div class="flex flex-1 flex-col items-center gap-1"><span class="text-[10px] font-semibold text-v6-text-muted">1.4m</span><div class="h-12 w-full rounded-t bg-v6-blue-300"></div><span class="text-[10px] text-v6-text-muted">Jul</span></div>
-                  <div class="flex flex-1 flex-col items-center gap-1"><span class="text-[10px] font-semibold text-v6-text-muted">1.56m</span><div class="h-14 w-full rounded-t bg-v6-blue-400"></div><span class="text-[10px] text-v6-text-muted">Aug</span></div>
-                  <div class="flex flex-1 flex-col items-center gap-1"><span class="text-[10px] font-semibold text-v6-dark">1.84m</span><div class="h-18 w-full rounded-t bg-v6-teal"></div><span class="text-[10px] text-v6-text-muted">Sep</span></div>
-                </div>
-              </div>
-              <div class="rounded-xl bg-v6-bg-warm p-4">
-                <p class="text-xs font-semibold uppercase tracking-[0.12em] text-v6-copper-800">Management summary</p>
-                <p class="mt-2 text-sm font-semibold leading-relaxed text-v6-dark">Pipeline creation rose 18%, but win rate fell and next-quarter coverage remains below target. EMEA accounts for most of the gap.</p>
-                <a href="#sample-report" class="mt-3 inline-flex min-h-11 items-center text-sm font-semibold text-v6-copper-800 underline decoration-v6-copper-300 underline-offset-4 focus:outline-none focus:ring-2 focus:ring-v6-copper">See the deals behind it</a>
-              </div>
-            </div>
-            <div class="grid grid-cols-3 divide-x divide-v6-border border-t border-v6-border bg-v6-bg text-center text-xs font-semibold text-v6-text-muted"><span class="px-2 py-3">Excel report</span><span class="px-2 py-3">PowerPoint deck</span><span class="px-2 py-3">Live dashboard</span></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <ClientLogoStrip caption="HubSpot and revenue operations work trusted by teams at" />
+    <ClientLogoStrip
+      caption="HubSpot and revenue operations work trusted by teams at"
+    />
 
     <section class="px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
-      <div class="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-        <div><p class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper">The recurring rebuild</p><h2 class="mt-3 text-balance text-3xl font-bold text-v6-dark sm:text-4xl">Stop piecing together the same sales report every month</h2></div>
+      <div
+        class="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center"
+      >
+        <div>
+          <p
+            class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper"
+          >
+            The recurring rebuild
+          </p><h2
+            class="mt-3 text-balance text-3xl font-bold text-v6-dark sm:text-4xl"
+          >
+            Stop piecing together the same sales report every month
+          </h2>
+        </div>
         <div class="space-y-5 text-lg leading-relaxed text-v6-text-muted">
-          <p>The deals may already be in HubSpot, but the management report is usually spread across several dashboards, exports, spreadsheets, and last month's slide deck.</p>
-          <p>Near-identical reports get rebuilt for different pipelines and teams. Filters and definitions drift out of sync. Pipeline totals need reconciling, forecast figures need checking, and charts need updating before anyone can explain what changed.</p>
-          <p class="font-semibold text-v6-dark">SWOTBee keeps the scope, definitions, evidence, and presentation together, so the next review starts with the current pipeline story—not another blank workbook.</p>
+          <p>
+            The deals may already be in HubSpot, but the management report is
+            usually spread across several dashboards, exports, spreadsheets, and
+            last month's slide deck.
+          </p>
+          <p>
+            Near-identical reports get rebuilt for different pipelines and
+            teams. Filters and definitions drift out of sync. Pipeline totals
+            need reconciling, forecast figures need checking, and charts need
+            updating before anyone can explain what changed.
+          </p>
+          <p class="font-semibold text-v6-dark">
+            SWOTBee keeps the scope, definitions, evidence, and presentation
+            together, so the next review starts with the current pipeline
+            story—not another blank workbook.
+          </p>
         </div>
       </div>
     </section>
 
-    <section id="how-it-works" class="scroll-mt-8 bg-v6-bg px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
-      <div class="mx-auto max-w-6xl">
-        <div class="max-w-3xl"><p class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper">A reusable sales-reporting setup</p><h2 class="mt-3 text-balance text-3xl font-bold text-v6-dark sm:text-4xl">Set the report up once. Bring in fresh sales data whenever you need it.</h2><p class="mt-4 text-lg leading-relaxed text-v6-text-muted">Start with a complete sales-management report and make it fit the way your business measures the pipeline.</p></div>
-        <ol class="mt-10 grid gap-6 md:grid-cols-3">
-          <li class="rounded-2xl border border-v6-border bg-white p-6 sm:p-7"><span class="flex h-9 w-9 items-center justify-center rounded-full bg-v6-copper-50 text-sm font-bold text-v6-copper-800">1</span><h3 class="mt-5 text-xl font-bold text-v6-dark">Choose the scope</h3><p class="mt-3 leading-relaxed text-v6-text-muted">Pick the period and the pipelines, teams, regions, products, segments, or owners that belong in the report.</p></li>
-          <li class="rounded-2xl border border-v6-border bg-white p-6 sm:p-7"><span class="flex h-9 w-9 items-center justify-center rounded-full bg-v6-copper-50 text-sm font-bold text-v6-copper-800">2</span><h3 class="mt-5 text-xl font-bold text-v6-dark">Choose your KPIs</h3><p class="mt-3 leading-relaxed text-v6-text-muted">Select the measures your leadership team uses, along with their targets, definitions, and comparison periods.</p><p class="mt-4 text-sm font-semibold text-v6-dark">Coverage against target · Stage conversion · Forecast by region</p></li>
-          <li class="rounded-2xl border border-v6-border bg-white p-6 sm:p-7"><span class="flex h-9 w-9 items-center justify-center rounded-full bg-v6-copper-50 text-sm font-bold text-v6-copper-800">3</span><h3 class="mt-5 text-xl font-bold text-v6-dark">Get the report</h3><p class="mt-3 leading-relaxed text-v6-text-muted">Review the figures, add the context only your team knows, and use the report in Excel, PowerPoint, or a live dashboard.</p></li>
-        </ol>
-        <div class="mt-8"><a href="#report-signup" data-ga-cta="sales_report_steps_signup" class="inline-flex min-h-12 items-center justify-center rounded-xl bg-v6-copper px-7 py-3.5 text-base font-semibold text-white transition-colors hover:bg-v6-copper-600 focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2">Get your First Sales Report</a></div>
-      </div>
-    </section>
-
-    <section id="report-outputs" class="scroll-mt-8 px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
-      <div class="mx-auto max-w-6xl">
-        <div class="max-w-4xl"><p class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper">One reporting setup</p><h2 class="mt-3 text-balance text-3xl font-bold text-v6-dark sm:text-4xl">One report—ready in Excel, PowerPoint, or a live dashboard.</h2><p class="mt-4 text-lg leading-relaxed text-v6-text-muted">Present the sales story in PowerPoint. Check the deal detail in Excel. Share a live view when people need to explore it themselves. Update the report, and all three versions stay aligned.</p></div>
-        <div class="mt-10 grid gap-6 lg:grid-cols-3">
-          <article class="overflow-hidden rounded-2xl border border-v6-border bg-white"><div class="border-b border-v6-border p-6 sm:p-8"><p class="text-sm font-semibold uppercase tracking-[0.14em] text-v6-teal-700">Excel workbook</p><h3 class="mt-3 text-2xl font-bold text-v6-dark">Every KPI, definition, target, and deal—already organised</h3><p class="mt-4 leading-relaxed text-v6-text-muted">The workbook arrives with the KPI summary, charts, calculations, definitions, targets, and deal-level records already in place.</p></div><div class="bg-v6-bg p-5 sm:p-7"><div class="overflow-hidden rounded-xl border border-v6-border bg-white text-sm"><div class="flex gap-1 border-b border-v6-border bg-v6-bg p-2"><span class="rounded bg-white px-3 py-2 font-semibold text-v6-dark shadow-sm">Summary</span><span class="px-3 py-2 text-v6-text-muted">Pipeline</span><span class="px-3 py-2 text-v6-text-muted">Deals</span></div><div class="grid grid-cols-3 gap-px bg-v6-border text-v6-text-muted"><span class="bg-white p-3 font-semibold">Deal</span><span class="bg-white p-3 font-semibold">Stage</span><span class="bg-white p-3 font-semibold">Amount</span><span class="bg-white p-3">Northstar</span><span class="bg-white p-3">Decision</span><span class="bg-white p-3 font-semibold text-v6-dark">$180k</span></div></div></div></article>
-          <article class="overflow-hidden rounded-2xl border border-v6-border bg-white"><div class="border-b border-v6-border p-6 sm:p-8"><p class="text-sm font-semibold uppercase tracking-[0.14em] text-v6-blue">PowerPoint deck</p><h3 class="mt-3 text-2xl font-bold text-v6-dark">The executive sales story, ready to present and edit</h3><p class="mt-4 leading-relaxed text-v6-text-muted">Change the emphasis, remove a slide, or add context. The charts, tables, assumptions, and wording remain editable.</p></div><div class="bg-v6-bg p-5 sm:p-7"><div class="mx-auto max-w-md rounded-xl border border-v6-border bg-white p-5 shadow-sm"><p class="text-xs font-semibold uppercase tracking-wide text-v6-copper">Monthly sales review</p><p class="mt-2 text-xl font-bold text-v6-dark">Pipeline up. Coverage still short.</p><p class="mt-2 text-sm text-v6-text-muted">EMEA remains the priority for next quarter.</p><div class="mt-5 flex h-20 items-end gap-3"><span class="h-12 flex-1 rounded-t bg-v6-blue-200"></span><span class="h-14 flex-1 rounded-t bg-v6-blue-300"></span><span class="h-16 flex-1 rounded-t bg-v6-blue-400"></span><span class="h-20 flex-1 rounded-t bg-v6-teal"></span></div></div></div></article>
-          <article class="overflow-hidden rounded-2xl border border-v6-border bg-white"><div class="border-b border-v6-border p-6 sm:p-8"><p class="text-sm font-semibold uppercase tracking-[0.14em] text-v6-copper">Live dashboard</p><h3 class="mt-3 text-2xl font-bold text-v6-dark">The live sales dashboard, ready to share</h3><p class="mt-4 leading-relaxed text-v6-text-muted">Give a leader, team, or investor access to the approved metrics and drill-downs without sending a new file each time.</p></div><div class="bg-v6-bg p-5 sm:p-7"><div class="mx-auto max-w-md overflow-hidden rounded-xl border border-v6-border bg-white shadow-sm"><div class="flex items-center justify-between border-b border-v6-border px-4 py-3"><div><p class="text-xs font-semibold uppercase tracking-wide text-v6-copper">Shared sales view</p><p class="mt-1 text-sm font-bold text-v6-dark">Current performance</p></div><span class="rounded-full bg-v6-teal-50 px-2.5 py-1 text-xs font-semibold text-v6-teal-800">Live</span></div><div class="grid grid-cols-2 gap-px bg-v6-border"><div class="bg-white p-4"><p class="text-xs text-v6-text-muted">Coverage</p><p class="mt-1 text-xl font-bold text-v6-dark">3.1×</p></div><div class="bg-white p-4"><p class="text-xs text-v6-text-muted">Forecast</p><p class="mt-1 text-xl font-bold text-v6-dark">$1.18m</p></div></div><p class="px-4 py-3 text-xs text-v6-text-muted">Updated from the same reporting setup</p></div></div></article>
-        </div>
-      </div>
-    </section>
-
-    <section id="sample-report" class="scroll-mt-8 px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+    <section
+      id="how-it-works"
+      class="scroll-mt-8 bg-v6-bg px-4 py-16 sm:px-6 sm:py-20 lg:px-8"
+    >
       <div class="mx-auto max-w-6xl">
         <div class="max-w-3xl">
-          <div class="flex flex-wrap items-center gap-3"><p class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper">Inside your sales report</p><span class="rounded-full border border-v6-copper-200 bg-v6-copper-50 px-2.5 py-1 text-xs font-semibold text-v6-copper-800">Sample data</span></div>
-          <h2 class="mt-3 text-balance text-3xl font-bold text-v6-dark sm:text-4xl">Show the headline first. Then let your executives drill down if needed.</h2>
-          <p class="mt-4 text-lg leading-relaxed text-v6-text-muted">The first view shows the current position, the change from the previous period, and the gaps that need attention. Below it, executives can see the teams, regions, and individual deals driving those results.</p>
+          <p
+            class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper"
+          >
+            A reusable sales-reporting setup
+          </p><h2
+            class="mt-3 text-balance text-3xl font-bold text-v6-dark sm:text-4xl"
+          >
+            Set the report up once. Bring in fresh sales data whenever you need
+            it.
+          </h2><p class="mt-4 text-lg leading-relaxed text-v6-text-muted">
+            Start with a complete sales-management report and make it fit the
+            way your business measures the pipeline.
+          </p>
+        </div>
+        <ol class="mt-10 grid gap-6 md:grid-cols-3">
+          <li class="rounded-2xl border border-v6-border bg-white p-6 sm:p-7">
+            <span
+              class="flex h-9 w-9 items-center justify-center rounded-full bg-v6-copper-50 text-sm font-bold text-v6-copper-800"
+              >1</span
+            ><h3 class="mt-5 text-xl font-bold text-v6-dark">
+              Choose the scope
+            </h3><p class="mt-3 leading-relaxed text-v6-text-muted">
+              Pick the period and the pipelines, teams, regions, products,
+              segments, or owners that belong in the report.
+            </p>
+          </li>
+          <li class="rounded-2xl border border-v6-border bg-white p-6 sm:p-7">
+            <span
+              class="flex h-9 w-9 items-center justify-center rounded-full bg-v6-copper-50 text-sm font-bold text-v6-copper-800"
+              >2</span
+            ><h3 class="mt-5 text-xl font-bold text-v6-dark">
+              Choose your KPIs
+            </h3><p class="mt-3 leading-relaxed text-v6-text-muted">
+              Select the measures your leadership team uses, along with their
+              targets, definitions, and comparison periods.
+            </p><p class="mt-4 text-sm font-semibold text-v6-dark">
+              Coverage against target · Stage conversion · Forecast by region
+            </p>
+          </li>
+          <li class="rounded-2xl border border-v6-border bg-white p-6 sm:p-7">
+            <span
+              class="flex h-9 w-9 items-center justify-center rounded-full bg-v6-copper-50 text-sm font-bold text-v6-copper-800"
+              >3</span
+            ><h3 class="mt-5 text-xl font-bold text-v6-dark">
+              Get the report
+            </h3><p class="mt-3 leading-relaxed text-v6-text-muted">
+              Review the figures, add the context only your team knows, and use
+              the report in Excel, PowerPoint, or a live dashboard.
+            </p>
+          </li>
+        </ol>
+        <div class="mt-8">
+          <a
+            href="#report-signup"
+            data-ga-cta="sales_report_steps_signup"
+            class="inline-flex min-h-12 items-center justify-center rounded-xl bg-v6-copper px-7 py-3.5 text-base font-semibold text-white transition-colors hover:bg-v6-copper-600 focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2"
+            >Get your first Sales Report</a>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="report-outputs"
+      class="scroll-mt-8 px-4 py-16 sm:px-6 sm:py-20 lg:px-8"
+    >
+      <div class="mx-auto max-w-6xl">
+        <div class="max-w-4xl">
+          <p
+            class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper"
+          >
+            One reporting setup
+          </p><h2
+            class="mt-3 text-balance text-3xl font-bold text-v6-dark sm:text-4xl"
+          >
+            One report—ready in Excel, PowerPoint, or a live dashboard.
+          </h2><p class="mt-4 text-lg leading-relaxed text-v6-text-muted">
+            Present the sales story in PowerPoint. Check the deal detail in
+            Excel. Share a live view when people need to explore it themselves.
+            Update the report, and all three versions stay aligned.
+          </p>
+        </div>
+        <ReportOutputBento
+          datasetName="sales and pipeline"
+          workbookDescription="Verify every KPI, definition, target, and deal-level record in a familiar spreadsheet."
+          presentationDescription="Present the same approved measures and chart patterns as an executive sales story."
+          dashboardDescription="Share a current sales view without rebuilding the report or sending another file."
+        />
+      </div>
+    </section>
+
+    <section
+      id="sample-report"
+      class="scroll-mt-8 px-4 py-16 sm:px-6 sm:py-20 lg:px-8"
+    >
+      <div class="mx-auto max-w-6xl">
+        <div class="max-w-3xl">
+          <div class="flex flex-wrap items-center gap-3">
+            <p
+              class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper"
+            >
+              Inside your sales report
+            </p><span
+              class="rounded-full border border-v6-copper-200 bg-v6-copper-50 px-2.5 py-1 text-xs font-semibold text-v6-copper-800"
+              >Sample data</span>
+          </div>
+          <h2
+            class="mt-3 text-balance text-3xl font-bold text-v6-dark sm:text-4xl"
+          >
+            Show the headline first. Then let your executives drill down if
+            needed.
+          </h2>
+          <p class="mt-4 text-lg leading-relaxed text-v6-text-muted">
+            The first view shows the current position, the change from the
+            previous period, and the gaps that need attention. Below it,
+            executives can see the teams, regions, and individual deals driving
+            those results.
+          </p>
         </div>
 
-        <div class="mt-10 overflow-hidden rounded-2xl border border-v6-border bg-white shadow-lg shadow-v6-dark/5">
-          <div class="flex flex-col gap-4 border-b border-v6-border px-5 py-5 sm:flex-row sm:items-center sm:justify-between sm:px-7">
-            <div><p class="text-xs font-semibold uppercase tracking-[0.14em] text-v6-text-muted">Sales and pipeline report</p><h3 class="mt-1 text-xl font-bold text-v6-dark">Monthly sales review</h3><p class="mt-1 text-sm text-v6-text-muted">September 2026, compared with August 2026</p></div>
-            <div class="flex flex-wrap items-center gap-2"><span class="rounded-full bg-v6-copper-50 px-3 py-1.5 text-xs font-semibold text-v6-copper-800">Coverage below target</span><span class="rounded-full bg-v6-teal-50 px-3 py-1.5 text-xs font-semibold text-v6-teal-800">Pipeline up 18%</span><span class="rounded-full bg-v6-blue-50 px-3 py-1.5 text-xs font-semibold text-v6-blue-800">Sample data</span></div>
+        <div
+          class="mt-10 overflow-hidden rounded-2xl border border-v6-border bg-white shadow-lg shadow-v6-dark/5"
+        >
+          <div
+            class="flex flex-col gap-4 border-b border-v6-border px-5 py-5 sm:flex-row sm:items-center sm:justify-between sm:px-7"
+          >
+            <div>
+              <p
+                class="text-xs font-semibold uppercase tracking-[0.14em] text-v6-text-muted"
+              >
+                Sales and pipeline report
+              </p><h3 class="mt-1 text-xl font-bold text-v6-dark">
+                Monthly sales review
+              </h3><p class="mt-1 text-sm text-v6-text-muted">
+                September 2026, compared with August 2026
+              </p>
+            </div>
+            <div class="flex flex-wrap items-center gap-2">
+              <span
+                class="rounded-full bg-v6-copper-50 px-3 py-1.5 text-xs font-semibold text-v6-copper-800"
+                >Coverage below target</span
+              ><span
+                class="rounded-full bg-v6-teal-50 px-3 py-1.5 text-xs font-semibold text-v6-teal-800"
+                >Pipeline up 18%</span
+              ><span
+                class="rounded-full bg-v6-blue-50 px-3 py-1.5 text-xs font-semibold text-v6-blue-800"
+                >Sample data</span>
+            </div>
           </div>
           <div class="grid gap-px bg-v6-border sm:grid-cols-2 lg:grid-cols-4">
-            <div class="bg-white p-5 sm:p-6"><p class="text-sm text-v6-text-muted">Pipeline created</p><div class="mt-2 flex items-end justify-between gap-3"><p class="text-2xl font-bold text-v6-dark">$1.84m</p><span class="text-sm font-semibold text-v6-teal-800">Up 18%</span></div></div>
-            <div class="bg-v6-copper-50 p-5 sm:p-6"><p class="text-sm text-v6-copper-800">Forward coverage</p><div class="mt-2 flex items-end justify-between gap-3"><p class="text-2xl font-bold text-v6-copper-800">3.1×</p><span class="text-sm font-semibold text-v6-copper-800">Target 3.5×</span></div></div>
-            <div class="bg-white p-5 sm:p-6"><p class="text-sm text-v6-text-muted">Win rate</p><div class="mt-2 flex items-end justify-between gap-3"><p class="text-2xl font-bold text-v6-dark">24.6%</p><span class="text-sm font-semibold text-v6-copper-800">Down 2.3 pts</span></div></div>
-            <div class="bg-v6-bg-warm p-5 sm:p-6"><p class="text-sm text-v6-text-muted">Forecast</p><div class="mt-2 flex items-end justify-between gap-3"><p class="text-2xl font-bold text-v6-dark">$1.18m</p><span class="text-sm font-semibold text-v6-text-muted">92% target</span></div></div>
+            <div class="bg-white p-5 sm:p-6">
+              <p class="text-sm text-v6-text-muted">Pipeline created</p><div
+                class="mt-2 flex items-end justify-between gap-3"
+              >
+                <p class="text-2xl font-bold text-v6-dark">$1.84m</p><span
+                  class="text-sm font-semibold text-v6-teal-800">Up 18%</span>
+              </div>
+            </div>
+            <div class="bg-v6-copper-50 p-5 sm:p-6">
+              <p class="text-sm text-v6-copper-800">Forward coverage</p><div
+                class="mt-2 flex items-end justify-between gap-3"
+              >
+                <p class="text-2xl font-bold text-v6-copper-800">3.1×</p><span
+                  class="text-sm font-semibold text-v6-copper-800"
+                  >Target 3.5×</span>
+              </div>
+            </div>
+            <div class="bg-white p-5 sm:p-6">
+              <p class="text-sm text-v6-text-muted">Win rate</p><div
+                class="mt-2 flex items-end justify-between gap-3"
+              >
+                <p class="text-2xl font-bold text-v6-dark">24.6%</p><span
+                  class="text-sm font-semibold text-v6-copper-800"
+                  >Down 2.3 pts</span>
+              </div>
+            </div>
+            <div class="bg-v6-bg-warm p-5 sm:p-6">
+              <p class="text-sm text-v6-text-muted">Forecast</p><div
+                class="mt-2 flex items-end justify-between gap-3"
+              >
+                <p class="text-2xl font-bold text-v6-dark">$1.18m</p><span
+                  class="text-sm font-semibold text-v6-text-muted"
+                  >92% target</span>
+              </div>
+            </div>
           </div>
-          <div class="grid gap-6 border-t border-v6-border p-5 sm:p-7 lg:grid-cols-[1.05fr_0.95fr]">
+          <div
+            class="grid gap-6 border-t border-v6-border p-5 sm:p-7 lg:grid-cols-[1.05fr_0.95fr]"
+          >
             <article class="rounded-xl border border-v6-border p-5">
-              <div class="flex items-center justify-between gap-4"><div><p class="text-xs font-semibold uppercase tracking-[0.14em] text-v6-copper">Coverage by region</p><h4 class="mt-1 font-bold text-v6-dark">Forward pipeline against the 3.5× target</h4></div><span class="text-xs text-v6-text-muted">Next quarter</span></div>
-              <div class="mt-6 space-y-4" aria-label="Pipeline coverage by region">
-                <div><div class="flex justify-between text-sm"><span class="font-semibold text-v6-dark">North America</span><span class="text-v6-teal-800">3.8×</span></div><div class="mt-2 h-3 overflow-hidden rounded-full bg-v6-bg"><div class="h-full w-[95%] rounded-full bg-v6-teal"></div></div></div>
-                <div><div class="flex justify-between text-sm"><span class="font-semibold text-v6-dark">APAC</span><span class="text-v6-text-muted">3.4×</span></div><div class="mt-2 h-3 overflow-hidden rounded-full bg-v6-bg"><div class="h-full w-[85%] rounded-full bg-v6-blue-300"></div></div></div>
-                <div><div class="flex justify-between text-sm"><span class="font-semibold text-v6-dark">EMEA</span><span class="text-v6-copper-800">2.3×</span></div><div class="mt-2 h-3 overflow-hidden rounded-full bg-v6-bg"><div class="h-full w-[58%] rounded-full bg-v6-copper"></div></div></div>
+              <div class="flex items-center justify-between gap-4">
+                <div>
+                  <p
+                    class="text-xs font-semibold uppercase tracking-[0.14em] text-v6-copper"
+                  >
+                    Coverage by region
+                  </p><h4 class="mt-1 font-bold text-v6-dark">
+                    Forward pipeline against the 3.5× target
+                  </h4>
+                </div><span class="text-xs text-v6-text-muted"
+                  >Next quarter</span>
+              </div>
+              <div
+                class="mt-6 space-y-4"
+                aria-label="Pipeline coverage by region"
+              >
+                <div>
+                  <div class="flex justify-between text-sm">
+                    <span class="font-semibold text-v6-dark">North America</span
+                    ><span class="text-v6-teal-800">3.8×</span>
+                  </div><div
+                    class="mt-2 h-3 overflow-hidden rounded-full bg-v6-bg"
+                  >
+                    <div class="h-full w-[95%] rounded-full bg-v6-teal"></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between text-sm">
+                    <span class="font-semibold text-v6-dark">APAC</span><span
+                      class="text-v6-text-muted">3.4×</span>
+                  </div><div
+                    class="mt-2 h-3 overflow-hidden rounded-full bg-v6-bg"
+                  >
+                    <div class="h-full w-[85%] rounded-full bg-v6-blue-300">
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between text-sm">
+                    <span class="font-semibold text-v6-dark">EMEA</span><span
+                      class="text-v6-copper-800">2.3×</span>
+                  </div><div
+                    class="mt-2 h-3 overflow-hidden rounded-full bg-v6-bg"
+                  >
+                    <div class="h-full w-[58%] rounded-full bg-v6-copper"></div>
+                  </div>
+                </div>
               </div>
             </article>
-            <article class="rounded-xl border border-v6-copper-200 bg-v6-copper-50 p-5">
-              <div class="flex items-center justify-between gap-4"><p class="text-xs font-semibold uppercase tracking-[0.14em] text-v6-copper-800">Reviewed summary</p><span class="rounded-full bg-white px-2.5 py-1 text-xs font-semibold text-v6-teal-800">Approved</span></div>
-              <p class="mt-4 text-lg font-bold leading-relaxed text-v6-dark">Pipeline creation rose 18%, but win rate fell and forward coverage remains below target.</p>
-              <p class="mt-3 text-sm leading-relaxed text-v6-text-muted">EMEA is the priority because its 2.3× coverage accounts for most of the company-wide gap.</p>
-              <div class="mt-5 space-y-2 text-sm"><p class="rounded-lg bg-white px-3 py-2 text-v6-text-muted"><strong class="text-v6-dark">Evidence:</strong> September pipeline and next-quarter target</p><p class="rounded-lg bg-white px-3 py-2 text-v6-text-muted"><strong class="text-v6-dark">Next action:</strong> Review EMEA creation plan and late-stage deals</p></div>
+            <article
+              class="rounded-xl border border-v6-copper-200 bg-v6-copper-50 p-5"
+            >
+              <div class="flex items-center justify-between gap-4">
+                <p
+                  class="text-xs font-semibold uppercase tracking-[0.14em] text-v6-copper-800"
+                >
+                  Reviewed summary
+                </p><span
+                  class="rounded-full bg-white px-2.5 py-1 text-xs font-semibold text-v6-teal-800"
+                  >Approved</span>
+              </div>
+              <p class="mt-4 text-lg font-bold leading-relaxed text-v6-dark">
+                Pipeline creation rose 18%, but win rate fell and forward
+                coverage remains below target.
+              </p>
+              <p class="mt-3 text-sm leading-relaxed text-v6-text-muted">
+                EMEA is the priority because its 2.3× coverage accounts for most
+                of the company-wide gap.
+              </p>
+              <div class="mt-5 space-y-2 text-sm">
+                <p class="rounded-lg bg-white px-3 py-2 text-v6-text-muted">
+                  <strong class="text-v6-dark">Evidence:</strong> September pipeline
+                  and next-quarter target
+                </p><p class="rounded-lg bg-white px-3 py-2 text-v6-text-muted">
+                  <strong class="text-v6-dark">Next action:</strong> Review EMEA creation
+                  plan and late-stage deals
+                </p>
+              </div>
             </article>
           </div>
           <div class="border-t border-v6-border p-5 sm:p-7">
-            <div class="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between sm:gap-4"><h4 class="text-base font-bold text-v6-dark">Deals requiring attention</h4><span class="text-xs text-v6-text-muted">The records behind the summary</span></div>
-            <div class="mt-4 hidden overflow-x-auto rounded-xl border border-v6-border md:block">
-              <table class="w-full min-w-[940px] border-collapse text-left text-sm">
-                <thead class="bg-v6-bg text-xs uppercase tracking-wide text-v6-text-muted"><tr><th class="px-4 py-3 font-semibold">Deal and owner</th><th class="px-4 py-3 font-semibold">Region and stage</th><th class="px-4 py-3 font-semibold">Amount</th><th class="px-4 py-3 font-semibold">Age and reason</th><th class="px-4 py-3 font-semibold">Next action</th></tr></thead>
+            <div
+              class="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between sm:gap-4"
+            >
+              <h4 class="text-base font-bold text-v6-dark">
+                Deals requiring attention
+              </h4><span class="text-xs text-v6-text-muted"
+                >The records behind the summary</span>
+            </div>
+            <div
+              class="mt-4 hidden overflow-x-auto rounded-xl border border-v6-border md:block"
+            >
+              <table
+                class="w-full min-w-[940px] border-collapse text-left text-sm"
+              >
+                <thead
+                  class="bg-v6-bg text-xs uppercase tracking-wide text-v6-text-muted"
+                  ><tr
+                    ><th class="px-4 py-3 font-semibold">Deal and owner</th><th
+                      class="px-4 py-3 font-semibold">Region and stage</th
+                    ><th class="px-4 py-3 font-semibold">Amount</th><th
+                      class="px-4 py-3 font-semibold">Age and reason</th
+                    ><th class="px-4 py-3 font-semibold">Next action</th></tr
+                  ></thead
+                >
                 <tbody class="divide-y divide-v6-border">
-                  {attentionRows.map((row) => (
-                    <tr><td class="px-4 py-3"><p class="font-semibold text-v6-dark">{row.deal}</p><p class="mt-0.5 text-xs text-v6-text-muted">{row.owner}</p></td><td class="px-4 py-3"><p class="text-v6-dark">{row.region}</p><p class="mt-0.5 text-xs text-v6-text-muted">{row.stage}</p></td><td class="px-4 py-3 font-semibold text-v6-dark">{row.amount}</td><td class="px-4 py-3 text-v6-text-muted"><strong class="text-v6-dark">{row.age}</strong><br /><span class="text-xs">{row.reason}</span></td><td class="px-4 py-3 text-v6-dark">{row.action}</td></tr>
-                  ))}
+                  {
+                    attentionRows.map((row) => (
+                      <tr>
+                        <>
+                          <td class="px-4 py-3">
+                            <>
+                              <p class="font-semibold text-v6-dark">
+                                {row.deal}
+                              </p>
+                              <p class="mt-0.5 text-xs text-v6-text-muted">
+                                {row.owner}
+                              </p>
+                            </>
+                          </td>
+                          <td class="px-4 py-3">
+                            <>
+                              <p class="text-v6-dark">{row.region}</p>
+                              <p class="mt-0.5 text-xs text-v6-text-muted">
+                                {row.stage}
+                              </p>
+                            </>
+                          </td>
+                          <td class="px-4 py-3 font-semibold text-v6-dark">
+                            {row.amount}
+                          </td>
+                          <td class="px-4 py-3 text-v6-text-muted">
+                            <>
+                              <strong class="text-v6-dark">{row.age}</strong>
+                              <br />
+                              <span class="text-xs">{row.reason}</span>
+                            </>
+                          </td>
+                          <td class="px-4 py-3 text-v6-dark">{row.action}</td>
+                        </>
+                      </tr>
+                    ))
+                  }
                 </tbody>
               </table>
             </div>
             <div class="mt-4 space-y-3 md:hidden">
-              {attentionRows.map((row) => (
-                <article class="rounded-xl border border-v6-border p-4"><div class="flex items-start justify-between gap-4"><div><h5 class="font-semibold text-v6-dark">{row.deal}</h5><p class="mt-0.5 text-xs text-v6-text-muted">{row.owner} · {row.region}</p></div><span class="text-sm font-bold text-v6-dark">{row.amount}</span></div><p class="mt-3 text-sm text-v6-text-muted">{row.stage} · {row.age}</p><p class="mt-2 text-sm text-v6-text-muted"><strong class="text-v6-dark">Why:</strong> {row.reason}</p><p class="mt-2 text-sm text-v6-text-muted"><strong class="text-v6-dark">Next:</strong> {row.action}</p></article>
-              ))}
+              {
+                attentionRows.map((row) => (
+                  <article class="rounded-xl border border-v6-border p-4">
+                    <>
+                      <div class="flex items-start justify-between gap-4">
+                        <>
+                          <div>
+                            <>
+                              <h5 class="font-semibold text-v6-dark">
+                                {row.deal}
+                              </h5>
+                              <p class="mt-0.5 text-xs text-v6-text-muted">
+                                {row.owner} · {row.region}
+                              </p>
+                            </>
+                          </div>
+                          <span class="text-sm font-bold text-v6-dark">
+                            {row.amount}
+                          </span>
+                        </>
+                      </div>
+                      <p class="mt-3 text-sm text-v6-text-muted">
+                        {row.stage} · {row.age}
+                      </p>
+                      <p class="mt-2 text-sm text-v6-text-muted">
+                        <strong class="text-v6-dark">Why:</strong> {row.reason}
+                      </p>
+                      <p class="mt-2 text-sm text-v6-text-muted">
+                        <strong class="text-v6-dark">Next:</strong> {row.action}
+                      </p>
+                    </>
+                  </article>
+                ))
+              }
             </div>
           </div>
-          <div class="border-t border-v6-border bg-v6-bg px-5 py-3 text-xs text-v6-text-muted sm:px-7">Period: September 2026 · Compared with August 2026 · Forecast cutoff: 30 September, 17:00 UTC · Definition v1.0 · 86 of 86 open deals included</div>
+          <div
+            class="border-t border-v6-border bg-v6-bg px-5 py-3 text-xs text-v6-text-muted sm:px-7"
+          >
+            Period: September 2026 · Compared with August 2026 · Forecast
+            cutoff: 30 September, 17:00 UTC · Definition v1.0 · 86 of 86 open
+            deals included
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="report-contents" class="scroll-mt-8 bg-v6-bg px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+    <section
+      id="report-contents"
+      class="scroll-mt-8 bg-v6-bg px-4 py-16 sm:px-6 sm:py-20 lg:px-8"
+    >
       <div class="mx-auto max-w-6xl">
-        <div class="max-w-3xl"><p class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper">Built around your sales review</p><h2 class="mt-3 text-balance text-3xl font-bold text-v6-dark sm:text-4xl">Bring the whole pipeline story into one report</h2><p class="mt-4 text-lg leading-relaxed text-v6-text-muted">Use the measures your leadership team already trusts, with the targets, comparisons, and deal evidence needed to interpret them.</p></div>
-        <div class="mt-10 grid gap-px overflow-hidden rounded-2xl border border-v6-border bg-v6-border md:grid-cols-2 lg:grid-cols-3">
-          {reportAreas.map((area, index) => (
-            <article class="bg-white p-6 sm:p-7"><span class="text-sm font-bold text-v6-copper">{String(index + 1).padStart(2, "0")}</span><h3 class="mt-3 text-xl font-bold text-v6-dark">{area.title}</h3><p class="mt-3 leading-relaxed text-v6-text-muted">{area.description}</p></article>
-          ))}
+        <div class="max-w-3xl">
+          <p
+            class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper"
+          >
+            Built around your sales review
+          </p><h2
+            class="mt-3 text-balance text-3xl font-bold text-v6-dark sm:text-4xl"
+          >
+            Bring the whole pipeline story into one report
+          </h2><p class="mt-4 text-lg leading-relaxed text-v6-text-muted">
+            Use the measures your leadership team already trusts, with the
+            targets, comparisons, and deal evidence needed to interpret them.
+          </p>
+        </div>
+        <div
+          class="mt-10 grid gap-px overflow-hidden rounded-2xl border border-v6-border bg-v6-border md:grid-cols-2 lg:grid-cols-3"
+        >
+          {
+            reportAreas.map((area, index) => (
+              <article class="bg-white p-6 sm:p-7">
+                <>
+                  <span class="text-sm font-bold text-v6-copper">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <h3 class="mt-3 text-xl font-bold text-v6-dark">
+                    {area.title}
+                  </h3>
+                  <p class="mt-3 leading-relaxed text-v6-text-muted">
+                    {area.description}
+                  </p>
+                </>
+              </article>
+            ))
+          }
         </div>
       </div>
     </section>
 
-    <section class="px-4 py-16 sm:px-6 sm:py-20 lg:px-8" aria-label="Pipeline comparisons and history">
-      <div class="mx-auto grid max-w-6xl overflow-hidden rounded-2xl border border-v6-border bg-v6-border lg:grid-cols-2">
+    <section
+      class="px-4 py-16 sm:px-6 sm:py-20 lg:px-8"
+      aria-label="Pipeline comparisons and history"
+    >
+      <div
+        class="mx-auto grid max-w-6xl overflow-hidden rounded-2xl border border-v6-border bg-v6-border lg:grid-cols-2"
+      >
         <article class="bg-white p-7 sm:p-9">
-          <p class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper">Consistent comparisons</p>
-          <h2 class="mt-3 text-balance text-3xl font-bold text-v6-dark">Compare this month's pipeline with:</h2>
-          <ul class="mt-6 space-y-2 rounded-xl bg-v6-bg-warm px-5 py-4 text-lg font-semibold text-v6-dark" aria-label="Available comparison periods">
+          <p
+            class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper"
+          >
+            Consistent comparisons
+          </p>
+          <h2 class="mt-3 text-balance text-3xl font-bold text-v6-dark">
+            Compare this month's pipeline with:
+          </h2>
+          <ul
+            class="mt-6 space-y-2 rounded-xl bg-v6-bg-warm px-5 py-4 text-lg font-semibold text-v6-dark"
+            aria-label="Available comparison periods"
+          >
             <li><span class="mr-2 text-v6-copper-800">1.</span>Last month</li>
-            <li><span class="mr-2 text-v6-copper-800">2.</span>The same month last year</li>
-            <li><span class="mr-2 text-v6-copper-800">3.</span>Any period you choose</li>
+            <li>
+              <span class="mr-2 text-v6-copper-800">2.</span>The same month last
+              year
+            </li>
+            <li>
+              <span class="mr-2 text-v6-copper-800">3.</span>Any period you
+              choose
+            </li>
           </ul>
         </article>
-        <article class="border-t border-v6-border bg-white p-7 sm:p-9 lg:border-l lg:border-t-0">
-          <p class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper">Point-in-time history</p>
-          <h2 class="mt-3 text-balance text-3xl font-bold text-v6-dark">Keep the pipeline history you will need next quarter.</h2>
-          <p class="mt-6 rounded-xl bg-v6-bg-warm px-5 py-4 text-lg font-semibold leading-relaxed text-v6-dark">SWOTBee saves each reporting cutoff, so you can compare the pipeline over time.</p>
+        <article
+          class="border-t border-v6-border bg-white p-7 sm:p-9 lg:border-l lg:border-t-0"
+        >
+          <p
+            class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper"
+          >
+            Point-in-time history
+          </p>
+          <h2 class="mt-3 text-balance text-3xl font-bold text-v6-dark">
+            Keep the pipeline history you will need next quarter.
+          </h2>
+          <p
+            class="mt-6 rounded-xl bg-v6-bg-warm px-5 py-4 text-lg font-semibold leading-relaxed text-v6-dark"
+          >
+            SWOTBee saves each reporting cutoff, so you can compare the pipeline
+            over time.
+          </p>
         </article>
       </div>
     </section>
 
-    <section class="bg-v6-dark px-4 py-16 text-white sm:px-6 sm:py-20 lg:px-8" aria-labelledby="reporting-benefits-heading">
+    <section
+      class="bg-v6-dark px-4 py-16 text-white sm:px-6 sm:py-20 lg:px-8"
+      aria-labelledby="reporting-benefits-heading"
+    >
       <div class="mx-auto max-w-6xl">
         <div class="mx-auto max-w-3xl text-center">
-          <p class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper-200">Built for the people who get things done</p>
-          <h2 id="reporting-benefits-heading" class="mt-3 text-balance text-3xl font-bold sm:text-4xl">Spend less time building the report. Make more of the review.</h2>
+          <p
+            class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper-200"
+          >
+            Built for the people who get things done
+          </p>
+          <h2
+            id="reporting-benefits-heading"
+            class="mt-3 text-balance text-3xl font-bold sm:text-4xl"
+          >
+            Spend less time building the report. Make more of the review.
+          </h2>
         </div>
-        <div class="mt-10 grid overflow-hidden rounded-2xl border border-white/10 sm:grid-cols-2">
+        <div
+          class="mt-10 grid overflow-hidden rounded-2xl border border-white/10 sm:grid-cols-2"
+        >
           <article class="p-7 sm:p-8">
-            <p class="text-sm font-bold uppercase tracking-[0.14em] text-v6-copper-200">01 · Time back</p>
-            <h3 class="mt-4 text-balance text-2xl font-bold leading-snug">Get hours of copy-and-paste time back. Every week.</h3>
+            <p
+              class="text-sm font-bold uppercase tracking-[0.14em] text-v6-copper-200"
+            >
+              01 · Time back
+            </p>
+            <h3 class="mt-4 text-balance text-2xl font-bold leading-snug">
+              Get hours of copy-and-paste time back. Every week.
+            </h3>
           </article>
-          <article class="border-t border-white/10 p-7 sm:border-l sm:border-t-0 sm:p-8">
-            <p class="text-sm font-bold uppercase tracking-[0.14em] text-v6-copper-200">02 · A reliable rhythm</p>
-            <h3 class="mt-4 text-balance text-2xl font-bold leading-snug">Stop rebuilding the report. We run it for you every week.</h3>
+          <article
+            class="border-t border-white/10 p-7 sm:border-l sm:border-t-0 sm:p-8"
+          >
+            <p
+              class="text-sm font-bold uppercase tracking-[0.14em] text-v6-copper-200"
+            >
+              02 · A reliable rhythm
+            </p>
+            <h3 class="mt-4 text-balance text-2xl font-bold leading-snug">
+              Stop rebuilding the report. We run it for you every week.
+            </h3>
           </article>
           <article class="border-t border-white/10 p-7 sm:p-8">
-            <p class="text-sm font-bold uppercase tracking-[0.14em] text-v6-copper-200">03 · Less HubSpot admin</p>
-            <h3 class="mt-4 text-balance text-2xl font-bold leading-snug">Get the report without wrestling with HubSpot fields, filters, and settings.</h3>
+            <p
+              class="text-sm font-bold uppercase tracking-[0.14em] text-v6-copper-200"
+            >
+              03 · Less HubSpot admin
+            </p>
+            <h3 class="mt-4 text-balance text-2xl font-bold leading-snug">
+              Get the report without wrestling with HubSpot fields, filters, and
+              settings.
+            </h3>
           </article>
           <article class="border-t border-white/10 p-7 sm:border-l sm:p-8">
-            <p class="text-sm font-bold uppercase tracking-[0.14em] text-v6-copper-200">04 · Clearer decisions</p>
-            <h3 class="mt-4 text-balance text-2xl font-bold leading-snug">Turn findings into clear decisions and next steps.</h3>
+            <p
+              class="text-sm font-bold uppercase tracking-[0.14em] text-v6-copper-200"
+            >
+              04 · Clearer decisions
+            </p>
+            <h3 class="mt-4 text-balance text-2xl font-bold leading-snug">
+              Turn findings into clear decisions and next steps.
+            </h3>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="questions" class="scroll-mt-8 px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+    <section
+      id="questions"
+      class="scroll-mt-8 px-4 py-16 sm:px-6 sm:py-20 lg:px-8"
+    >
       <div class="mx-auto max-w-3xl">
-        <div><p class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper">Before you sign up</p><h2 class="mt-3 text-3xl font-bold text-v6-dark sm:text-4xl">Questions about the sales report</h2></div>
+        <div>
+          <p
+            class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper"
+          >
+            Before you sign up
+          </p><h2 class="mt-3 text-3xl font-bold text-v6-dark sm:text-4xl">
+            Questions about the sales report
+          </h2>
+        </div>
         <div class="mt-10 divide-y divide-v6-border border-y border-v6-border">
-          {faqs.map((item) => (
-            <details class="group py-5"><summary class="flex min-h-11 cursor-pointer list-none items-center justify-between gap-5 rounded-md font-semibold text-v6-dark focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2"><span>{item.q}</span><span class="text-xl font-normal text-v6-copper transition-transform group-open:rotate-45" aria-hidden="true">+</span></summary><p class="max-w-2xl pb-1 pr-8 pt-3 leading-relaxed text-v6-text-muted">{item.a}</p></details>
-          ))}
+          {
+            faqs.map((item) => (
+              <details class="group py-5">
+                <>
+                  <summary class="flex min-h-11 cursor-pointer list-none items-center justify-between gap-5 rounded-md font-semibold text-v6-dark focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2">
+                    <>
+                      <span>{item.q}</span>
+                      <span
+                        class="text-xl font-normal text-v6-copper transition-transform group-open:rotate-45"
+                        aria-hidden="true"
+                      >
+                        +
+                      </span>
+                    </>
+                  </summary>
+                  <p class="max-w-2xl pb-1 pr-8 pt-3 leading-relaxed text-v6-text-muted">
+                    {item.a}
+                  </p>
+                </>
+              </details>
+            ))
+          }
         </div>
       </div>
     </section>
 
-    <section id="report-signup" class="scroll-mt-8 bg-gradient-to-br from-v6-copper to-v6-copper-600 px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
-      <div class="mx-auto max-w-2xl text-center text-white">
-        <p class="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-white/70">Make the next sales report the easy one</p>
-        <h2 class="text-balance text-2xl font-bold sm:text-3xl">Request access to your sales report</h2>
-        <p class="mx-auto mb-4 mt-4 max-w-2xl text-base leading-relaxed text-v6-copper-50 sm:text-lg">Register your interest in a repeatable report that keeps trusted definitions and important pipeline changes in focus.</p>
-        <ReportSignup offerCode="sales_pipeline_reporting" reportName="HubSpot sales and pipeline report" sourcePage="hubspot-sales-pipeline-reporting" ctaLabel="sales_report_signup" buttonLabel="Request sales report access" />
-        <p class="mt-4 text-xs text-v6-copper-50">No card required. This does not create an app account or connect to your HubSpot portal.</p>
+    <section
+      id="report-signup"
+      class="scroll-mt-8 bg-gradient-to-br from-v6-copper to-v6-copper-600 px-4 py-16 sm:px-6 sm:py-20 lg:px-8"
+    >
+      <div class="mx-auto max-w-3xl text-center text-white">
+        <p
+          class="mb-3 text-balance text-xs font-semibold uppercase tracking-[0.2em] text-white/70"
+        >
+          One report solves today. A repeatable one solves every month.
+        </p>
+        <h2 class="text-balance text-2xl font-bold sm:text-3xl">
+          Give your executive team a clear, decision-ready Sales report.
+        </h2>
+        <p
+          class="mx-auto mb-4 mt-4 max-w-3xl text-balance text-base leading-relaxed text-v6-copper-50 sm:text-lg"
+        >
+          We’ll help you organise your HubSpot pipeline, coverage, conversion,
+          velocity, and forecast into an Excel workbook, presentation, and
+          dashboard—so you can spend less time rebuilding reports and more time
+          acting on what changed.
+        </p>
+        <ReportSignup
+          offerCode="sales_pipeline_reporting"
+          reportName="HubSpot sales and pipeline report"
+          sourcePage="hubspot-sales-pipeline-reporting"
+          ctaLabel="sales_report_signup"
+          buttonLabel="Get your first Sales Report"
+          successTitle="Your request has been saved"
+          successMessages={[
+            "This part of our website is currently undergoing maintenance. We’ll email you with instructions for accessing the app.",
+            "As a courtesy, a member of our team will be available to personally help you get set up.",
+            "We apologize for the inconvenience and appreciate your patience.",
+          ]}
+        />
+        <p class="mt-4 text-xs text-v6-copper-50">No credit card required.</p>
       </div>
     </section>
   </main>

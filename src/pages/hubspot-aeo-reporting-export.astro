@@ -4,6 +4,8 @@ import Footer from "../components/astro/Footer.astro";
 import LogoHoneycomb from "../components/astro/LogoHoneycomb.astro";
 import ClientLogoStrip from "../components/astro/ClientLogoStrip.astro";
 import ReportSignup from "../components/astro/ReportSignup.astro";
+import ReportOutputIcon from "../components/astro/ReportOutputIcon.astro";
+import EditableReportHero from "../components/astro/EditableReportHero.astro";
 
 const title = "Turn HubSpot AEO Data Into Excel and PowerPoint";
 const description = "Turn HubSpot AEO prompts, AI responses, citations, competitor mentions, and recommendations into Excel, PowerPoint, or a live dashboard.";
@@ -86,47 +88,68 @@ const faqSchema = {
         <a href="#questions" class="rounded-md py-2 hover:text-v6-dark focus:outline-none focus:ring-2 focus:ring-v6-copper">FAQs</a>
       </nav>
       <a href="#report-signup" data-ga-cta="aeo_report_header_signup" class="inline-flex min-h-11 shrink-0 items-center justify-center rounded-lg border border-v6-copper px-4 py-2 text-sm font-semibold text-v6-copper transition-colors hover:bg-v6-copper-50 focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2">
-        Build your AEO Report
+        Get your first AEO Report
       </a>
     </div>
   </header>
 
   <main>
-    <section class="overflow-hidden bg-gradient-to-b from-v6-bg to-white px-4 pb-16 pt-14 sm:px-6 sm:pb-20 sm:pt-20 lg:px-8">
-      <div class="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-        <div>
+    <section class="relative isolate overflow-hidden bg-white pb-8 pt-14 sm:pb-12 sm:pt-20">
+      <div class="relative z-10 mx-auto w-full max-w-7xl px-4 text-center sm:px-6 lg:px-8">
+        <div class="mx-auto flex w-full max-w-5xl flex-col items-center">
           <span class="mb-5 inline-flex rounded-full bg-v6-copper-50 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-v6-copper-700">HubSpot AEO executive reporting</span>
-          <h1 class="max-w-3xl text-balance text-4xl font-bold leading-[1.08] text-v6-dark sm:text-5xl lg:text-[3.45rem]">Turn HubSpot AEO Data Into a Report ready for Review</h1>
-          <p class="mt-6 max-w-2xl text-lg leading-relaxed text-v6-text-muted">Build a complete HubSpot AEO report in 3 clicks. Choose the prompts and period, then get the result in Excel, PowerPoint, or a live dashboard—with every finding tied to the original answer and citation.</p>
-          <p class="mt-5 font-semibold text-v6-dark">Run it weekly or monthly. No prompt copying. No screenshot decks.</p>
-          <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-            <a href="#report-signup" data-ga-cta="aeo_report_hero_signup" class="inline-flex min-h-12 items-center justify-center rounded-xl bg-v6-copper px-7 py-3.5 text-base font-semibold text-white transition-colors hover:bg-v6-copper-600 focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2">Build your AEO Report</a>
-            <a href="#sample-report" data-ga-cta="aeo_report_hero_sample" class="inline-flex min-h-12 items-center justify-center rounded-xl border border-v6-border bg-white px-7 py-3.5 text-base font-semibold text-v6-dark transition-colors hover:border-v6-copper hover:bg-v6-copper-50 focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2">View the sample AEO report</a>
+          <h1 class="relative isolate max-w-5xl text-balance text-4xl leading-[1.12] tracking-tight text-v6-dark sm:text-6xl" style="font-family: 'Rokkitt Variable', 'Vollkorn', serif; font-weight: 800;">
+            <span aria-hidden="true" class="pointer-events-none absolute -inset-x-12 -inset-y-8 -z-10 rounded-[50%] bg-[radial-gradient(ellipse_at_center,rgba(226,177,148,0.34),rgba(244,221,207,0.18)_48%,transparent_72%)] blur-xl sm:-inset-x-24"></span>
+            Turn HubSpot AEO Data Into <br class="hidden sm:inline" />
+            <span class="relative mt-1 inline-block">
+              <span class="bg-gradient-to-r from-v6-copper-700 via-[#b47a1b] to-[#c8644a] bg-clip-text text-transparent drop-shadow-[0_2px_10px_rgba(200,100,74,0.14)]">your Report in 3 Clicks</span>
+              <svg class="absolute -bottom-2 left-0 h-3 w-full text-[#c8644a]/45" viewBox="0 0 300 12" fill="none" preserveAspectRatio="none" aria-hidden="true">
+                <path d="M 5,9 C 80,2 220,2 295,9" stroke="currentColor" stroke-width="4" stroke-linecap="round"></path>
+              </svg>
+            </span>
+          </h1>
+          <p class="mt-6 max-w-4xl text-balance text-lg leading-relaxed text-v6-text-muted">Build a complete HubSpot AEO report ready for that executive review. Choose the prompts and period, then get the result in Excel, PowerPoint, or a live dashboard—with every finding tied to the original answer and citation.</p>
+          <div class="mt-6 flex w-full flex-col items-center justify-center gap-3 sm:w-auto sm:flex-row">
+            <a href="#report-signup" data-ga-cta="aeo_report_hero_signup" class="group inline-flex min-h-12 w-full items-center justify-center gap-2.5 rounded-2xl bg-gradient-to-r from-[#a94f1d] via-[#994418] to-[#873914] px-7 py-3.5 text-base font-extrabold text-white shadow-[0_12px_28px_-10px_rgba(169,79,29,0.58)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_0_32px_rgba(169,79,29,0.32)] focus:outline-none focus:ring-2 focus:ring-[#a94f1d] focus:ring-offset-2 active:translate-y-0 active:scale-[0.98] motion-reduce:transition-colors motion-reduce:hover:translate-y-0 sm:w-auto">
+              <span>Get your first AEO Report</span>
+              <svg class="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 motion-reduce:transition-none motion-reduce:group-hover:translate-x-0" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path d="M4.167 10h11.666m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </a>
+            {/* <a href="#sample-report" data-ga-cta="aeo_report_hero_sample" class="inline-flex min-h-12 items-center justify-center rounded-xl border border-v6-border bg-white px-7 py-3.5 text-base font-semibold text-v6-dark transition-colors hover:border-v6-copper hover:bg-v6-copper-50 focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2">View the sample AEO report</a> */}
           </div>
-          <p class="mx-auto mt-4 max-w-xl text-center text-sm font-semibold leading-relaxed text-v6-dark">No credit card required. Your first month is on us.</p>
+          <p class="mt-5 flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-xs font-semibold text-v6-text-muted">
+            <span class="inline-flex items-center gap-2">Run it weekly or monthly.<span class="h-1 w-1 rounded-full bg-v6-border" aria-hidden="true"></span></span>
+            <span class="inline-flex items-center gap-2">No prompt copying.<span class="h-1 w-1 rounded-full bg-v6-border" aria-hidden="true"></span></span>
+            <span>No screenshot decks.</span>
+          </p>
         </div>
+      </div>
 
-        <div class="relative lg:pt-5" aria-label="Example AEO performance report for an August client review">
-          <div class="absolute -inset-6 -z-10 rounded-full bg-v6-teal-100/70 blur-3xl"></div>
-          <div class="overflow-hidden rounded-2xl border border-v6-border bg-white shadow-xl shadow-v6-dark/10">
-            <div class="flex items-center justify-between gap-4 border-b border-v6-border px-5 py-4">
-              <div><p class="text-xs font-semibold uppercase tracking-[0.14em] text-v6-copper">AEO performance report</p><p class="mt-1 font-semibold text-v6-dark">August client review</p></div>
-              <span class="rounded-full bg-v6-blue-50 px-3 py-1 text-xs font-semibold text-v6-blue-800">Example data</span>
-            </div>
-            <div class="grid grid-cols-2 border-b border-v6-border sm:grid-cols-4">
-              <div class="border-b border-r border-v6-border p-4 sm:border-b-0 sm:p-5"><p class="text-xs text-v6-text-muted">Tracked prompts</p><p class="mt-1 text-xl font-bold text-v6-dark">24</p></div>
-              <div class="border-b border-v6-border p-4 sm:border-b-0 sm:border-r sm:p-5"><p class="text-xs text-v6-text-muted">AI answers checked</p><p class="mt-1 text-xl font-bold text-v6-dark">72</p></div>
-              <div class="border-r border-v6-border bg-v6-copper-50 p-4 sm:p-5"><p class="text-xs text-v6-copper-800">Answers that mention your brand</p><p class="mt-1 text-xl font-bold text-v6-copper-800">42%</p></div>
-              <div class="p-4 sm:p-5"><p class="text-xs text-v6-text-muted">Total citations</p><p class="mt-1 text-xl font-bold text-v6-dark">86</p></div>
-            </div>
-            <div class="p-5">
-              <div class="rounded-xl bg-v6-bg-warm p-4">
-                <p class="text-xs font-semibold uppercase tracking-[0.12em] text-v6-copper-800">Important finding</p>
-                <p class="mt-2 text-sm font-semibold leading-relaxed text-v6-dark">Your brand appeared more often in research questions. Seven buying-decision answers mentioned competitors but not you.</p>
-              </div>
-            </div>
-            <div class="grid grid-cols-1 gap-px border-t border-v6-border bg-v6-border text-center text-xs font-semibold text-v6-text-muted sm:grid-cols-3"><span class="bg-v6-bg px-4 py-3">Excel workbook</span><span class="bg-v6-bg px-4 py-3">PowerPoint deck</span><span class="bg-v6-bg px-4 py-3">Live dashboard</span></div>
-          </div>
+      <div class="relative mx-auto mt-0 w-3/4 max-w-[78rem] sm:-mt-2 lg:-mt-6" aria-label="HubSpot reporting workspace connected to PowerPoint and Excel outputs">
+        <EditableReportHero
+          class="relative z-10 mx-auto h-auto w-4/5 drop-shadow-[0_24px_28px_rgba(169,79,29,0.14)]"
+        />
+      </div>
+
+      <div class="relative z-10 mx-auto mt-2 grid w-[calc(100%-2rem)] max-w-xl grid-cols-3 divide-x divide-v6-border/70 rounded-2xl border border-white/80 bg-white/60 p-2 shadow-sm shadow-v6-dark/5 backdrop-blur-md" aria-label="Report outputs">
+        <div class="flex min-w-0 flex-col items-center gap-2 px-2 py-2 text-center sm:flex-row sm:gap-3 sm:px-4 sm:text-left">
+          <span class="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-v6-blue-50/80 text-v6-blue">
+            <ReportOutputIcon type="dashboard" class="h-8 w-8" />
+          </span>
+          <span class="text-xs font-medium leading-tight text-v6-text-muted sm:text-sm">Live dashboard</span>
+        </div>
+        <div class="flex min-w-0 flex-col items-center gap-2 px-2 py-2 text-center sm:flex-row sm:gap-3 sm:px-4 sm:text-left">
+          <span class="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-[#edf6f1]">
+            <ReportOutputIcon type="excel" class="h-8 w-8" />
+          </span>
+          <span class="text-xs font-medium leading-tight text-v6-text-muted sm:text-sm">Excel workbook</span>
+        </div>
+        <div class="flex min-w-0 flex-col items-center gap-2 px-2 py-2 text-center sm:flex-row sm:gap-3 sm:px-4 sm:text-left">
+          <span class="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-[#fff3ef]">
+            <ReportOutputIcon type="powerpoint" class="h-8 w-8" />
+          </span>
+          <span class="text-xs font-medium leading-tight text-v6-text-muted sm:text-sm">PowerPoint deck</span>
         </div>
       </div>
     </section>
@@ -160,21 +183,129 @@ const faqSchema = {
           <li class="rounded-2xl border border-v6-border bg-white p-6"><span class="text-sm font-bold text-v6-copper">03</span><h3 class="mt-3 text-xl font-bold text-v6-dark">Get your reporting pack</h3><p class="mt-2 leading-relaxed text-v6-text-muted">Get the Excel workbook, editable PowerPoint, and live dashboard from the current AEO data.</p></li>
         </ol>
         <p class="mx-auto mt-8 max-w-3xl text-center text-lg font-semibold leading-relaxed text-v6-dark">No digging through fields. No rebuilding filters. No hours copying and pasting.</p>
-        <div class="mt-8 text-center"><a href="#report-signup" data-ga-cta="aeo_report_steps_signup" class="inline-flex min-h-12 items-center justify-center rounded-xl bg-v6-copper px-7 py-3.5 text-base font-semibold text-white transition-colors hover:bg-v6-copper-600 focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2">Build your AEO Report</a></div>
+        <div class="mt-8 text-center"><a href="#report-signup" data-ga-cta="aeo_report_steps_signup" class="inline-flex min-h-12 items-center justify-center rounded-xl bg-v6-copper px-7 py-3.5 text-base font-semibold text-white transition-colors hover:bg-v6-copper-600 focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2">Get your first AEO Report</a></div>
       </div>
     </section>
 
     <section id="report-outputs" class="scroll-mt-8 px-4 py-16 sm:px-6 sm:py-20 lg:px-8" aria-labelledby="outputs-heading">
       <div class="mx-auto max-w-6xl">
-        <div class="max-w-4xl">
-          <p class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper">One reporting setup</p>
-          <h2 id="outputs-heading" class="mt-3 text-balance text-3xl font-bold text-v6-dark sm:text-4xl">One AEO report—ready in Excel, PowerPoint, or a live dashboard.</h2>
-          <p class="mt-4 text-lg leading-relaxed text-v6-text-muted">Inspect the prompts and citations in Excel. Present the decisions in PowerPoint. Share the live dashboard when people want to explore the evidence.</p>
+        <div class="mx-auto max-w-4xl text-center">
+          <p class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper">One connected reporting system</p>
+          <h2 id="outputs-heading" class="mt-3 text-balance text-3xl font-bold text-v6-dark sm:text-4xl">One report. Three connected ways to use it.</h2>
+          <p class="mt-4 text-lg leading-relaxed text-v6-text-muted">Inspect the evidence in Excel, present the story in PowerPoint, and share the live dashboard. Every view stays tied to the same approved AEO data.</p>
         </div>
-        <div class="mt-10 grid gap-6 lg:grid-cols-3">
-          <article class="overflow-hidden rounded-2xl border border-v6-border bg-white"><div class="border-b border-v6-border p-6 sm:p-8"><p class="text-sm font-semibold uppercase tracking-[0.14em] text-v6-teal-700">Excel workbook</p><h3 class="mt-3 text-2xl font-bold text-v6-dark">Every prompt, answer, and citation—already organised</h3><p class="mt-4 leading-relaxed text-v6-text-muted">Open a clean workbook with the scorecard, prompt-level evidence, citation sources, recommendations, owners, and data notes already in place.</p></div><div class="bg-v6-bg p-5 sm:p-7"><div class="overflow-hidden rounded-xl border border-v6-border bg-white text-sm"><div class="flex gap-1 border-b border-v6-border bg-v6-bg p-2"><span class="rounded bg-white px-3 py-2 font-semibold text-v6-dark shadow-sm">Summary</span><span class="px-3 py-2 text-v6-text-muted">Prompts</span><span class="px-3 py-2 text-v6-text-muted">Sources</span></div><div class="grid grid-cols-3 gap-px bg-v6-border text-v6-text-muted"><span class="bg-white p-3 font-semibold">Platform</span><span class="bg-white p-3 font-semibold">Answers</span><span class="bg-white p-3 font-semibold">Brand</span><span class="bg-white p-3">ChatGPT</span><span class="bg-white p-3">24</span><span class="bg-white p-3 font-semibold text-v6-dark">46%</span></div></div></div></article>
-          <article class="overflow-hidden rounded-2xl border border-v6-border bg-white"><div class="border-b border-v6-border p-6 sm:p-8"><p class="text-sm font-semibold uppercase tracking-[0.14em] text-v6-blue">PowerPoint deck</p><h3 class="mt-3 text-2xl font-bold text-v6-dark">The executive story, ready to present and edit</h3><p class="mt-4 leading-relaxed text-v6-text-muted">Edit the language, remove detail, or add client context while keeping each slide connected to the underlying answers.</p></div><div class="bg-v6-bg p-5 sm:p-7"><div class="mx-auto max-w-md rounded-xl border border-v6-border bg-white p-5 shadow-sm"><p class="text-xs font-semibold uppercase tracking-wide text-v6-copper">August AEO review</p><p class="mt-2 text-xl font-bold text-v6-dark">Brand mentions rose by 6 points.</p><p class="mt-2 text-sm text-v6-text-muted">Seven buying-decision answers still named competitors but not you.</p><div class="mt-5 flex h-16 items-end gap-3"><span class="h-8 flex-1 rounded-t bg-v6-blue-200"></span><span class="h-11 flex-1 rounded-t bg-v6-blue-300"></span><span class="h-14 flex-1 rounded-t bg-v6-teal"></span></div></div></div></article>
-          <article class="overflow-hidden rounded-2xl border border-v6-border bg-white"><div class="border-b border-v6-border p-6 sm:p-8"><p class="text-sm font-semibold uppercase tracking-[0.14em] text-v6-copper">Live dashboard</p><h3 class="mt-3 text-2xl font-bold text-v6-dark">The latest approved view, ready to share</h3><p class="mt-4 leading-relaxed text-v6-text-muted">Give clients or leadership a current view of the approved measures, with the ability to drill down if required.</p></div><div class="bg-v6-bg p-5 sm:p-7"><div class="mx-auto max-w-md overflow-hidden rounded-xl border border-v6-border bg-white shadow-sm"><div class="flex items-center justify-between border-b border-v6-border px-4 py-3"><div><p class="text-xs font-semibold uppercase tracking-wide text-v6-copper">Shared AEO view</p><p class="mt-1 text-sm font-bold text-v6-dark">Current results</p></div><span class="rounded-full bg-v6-teal-50 px-2.5 py-1 text-xs font-semibold text-v6-teal-800">Live</span></div><div class="grid grid-cols-2 gap-px bg-v6-border"><div class="bg-white p-4"><p class="text-xs text-v6-text-muted">Brand mentioned</p><p class="mt-1 text-xl font-bold text-v6-dark">42%</p></div><div class="bg-white p-4"><p class="text-xs text-v6-text-muted">Citations</p><p class="mt-1 text-xl font-bold text-v6-dark">86</p></div></div><p class="px-4 py-3 text-xs text-v6-text-muted">Open any result to see the supporting answer</p></div></div></article>
+
+        <div class="mx-auto mt-10 flex max-w-3xl flex-col gap-4 rounded-2xl bg-v6-dark px-5 py-5 text-white shadow-lg shadow-v6-dark/10 sm:flex-row sm:items-center sm:justify-between sm:px-6">
+          <div class="flex items-center gap-4">
+            <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white/10" aria-hidden="true">
+              <svg viewBox="0 0 48 48" class="h-8 w-8" fill="none">
+                <circle cx="12" cy="24" r="5" fill="#5AAB9D"></circle>
+                <circle cx="36" cy="12" r="5" fill="#6DB8D5"></circle>
+                <circle cx="36" cy="36" r="5" fill="#E8A850"></circle>
+                <path d="M17 22.5 31 14M17 25.5 31 34" stroke="white" stroke-width="2.5" stroke-linecap="round"></path>
+              </svg>
+            </span>
+            <div>
+              <p class="text-xs font-semibold uppercase tracking-[0.16em] text-v6-copper-200">Shared reporting layer</p>
+              <h3 class="mt-1 text-xl font-bold">One approved AEO dataset</h3>
+            </div>
+          </div>
+          <p class="max-w-sm text-sm leading-relaxed text-white/75 sm:text-right">The same measures and charts flow into every output.</p>
+        </div>
+
+        <div class="relative mt-10">
+          <div class="pointer-events-none absolute -top-10 left-1/2 hidden h-10 border-l border-dashed border-v6-copper-300 lg:block" aria-hidden="true">
+            <span class="absolute -left-1 bottom-0 h-2 w-2 rounded-full bg-v6-copper-300"></span>
+          </div>
+
+          <div class="relative grid gap-6 lg:grid-cols-2">
+            <article class="overflow-hidden rounded-2xl border border-t-4 border-v6-border border-t-v6-teal bg-[#fbf9f5] shadow-lg shadow-v6-dark/5 lg:col-span-2 lg:grid lg:grid-cols-[0.72fr_1.28fr]">
+              <div class="flex items-center px-5 py-6 sm:px-7 lg:py-8">
+                <div class="flex items-start gap-4">
+                  <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-v6-teal-50 text-sm font-bold text-v6-teal-800">1</span>
+                  <div>
+                    <p class="text-xs font-semibold uppercase tracking-[0.14em] text-v6-teal-700">Verify and Customize</p>
+                    <h3 class="mt-2 flex items-center gap-3 text-2xl font-bold text-v6-dark sm:text-[1.75rem]">
+                      <svg viewBox="0 0 18 18" class="h-9 w-9 shrink-0" aria-hidden="true">
+                        <path d="M15.336 1C15.5119 1.00053 15.6805 1.07065 15.8049 1.19506C15.9293 1.31947 15.9995 1.48806 16 1.664V14.336C15.9995 14.5119 15.9293 14.6805 15.8049 14.8049C15.6805 14.9293 15.5119 14.9995 15.336 15H4.664C4.48806 14.9995 4.31947 14.9293 4.19506 14.8049C4.07065 14.6805 4.00052 14.5119 4 14.336V12H0.663997C0.576281 12.0006 0.489373 11.9832 0.408686 11.9488C0.327998 11.9144 0.255258 11.8637 0.194997 11.8C0.132822 11.7399 0.0834866 11.6677 0.0499707 11.588C0.0164548 11.5082 -0.000545359 11.4225 -2.66361e-06 11.336V4.664C0.000100276 4.57713 0.0178854 4.4912 0.0522695 4.41143C0.0866535 4.33166 0.136917 4.25972 0.199997 4.2C0.259681 4.13687 0.331611 4.08658 0.41139 4.05219C0.491169 4.0178 0.577122 4.00004 0.663997 4H4V1.664C4.00052 1.48806 4.07065 1.31947 4.19506 1.19506C4.31947 1.07065 4.48806 1.00053 4.664 1H15.336ZM4 8.852L4.945 10.625H6.375L4.789 8.047L6.344 5.516H4.977L4.1 7.117C4.08836 7.13263 4.07894 7.14979 4.072 7.168L4.045 7.227C3.90433 6.93967 3.761 6.65433 3.615 6.371C3.469 6.08767 3.324 5.80267 3.18 5.516H1.727L3.242 8.063L1.586 10.625H3.023L4 8.852ZM9.5 4V2H5V4H9.5ZM9.5 14V12H5V14H9.5ZM9.5 7.5V5H8V7.5H9.5ZM9.5 11V8.5H8V11H9.5ZM15 4V2H10.5V4H15ZM15 7.5V5H10.5V7.5H15ZM15 11V8.5H10.5V11H15ZM15 14V12H10.5V14H15Z" fill="#217346"></path>
+                      </svg>
+                      <span>Excel workbook</span>
+                    </h3>
+                    <p class="mt-2 text-sm leading-relaxed text-v6-text-muted">Work through every prompt, answer, citation, and recommendation in a familiar spreadsheet.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="overflow-hidden bg-white lg:border-l lg:border-v6-border">
+                <img
+                  src="/assets/reporting/aeo/workbook-preview.webp"
+                  width="1200"
+                  height="800"
+                  loading="lazy"
+                  decoding="async"
+                  alt="Spreadsheet workbook with ribbon controls, formula bar, cell grid, sheet tabs, and report charts"
+                  class="h-full min-h-72 w-full object-cover"
+                />
+              </div>
+            </article>
+
+            <article class="flex flex-col overflow-hidden rounded-2xl border border-l-4 border-v6-border border-l-v6-blue bg-[#fbf9f5] shadow-lg shadow-v6-dark/5">
+              <div class="px-5 py-5 sm:px-6">
+                <div class="flex items-start gap-4">
+                  <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-v6-blue-50 text-sm font-bold text-v6-blue-700">2</span>
+                  <div>
+                    <p class="text-xs font-semibold uppercase tracking-[0.14em] text-v6-blue">Present</p>
+                    <h3 class="mt-2 flex items-center gap-3 text-2xl font-bold text-v6-dark sm:text-[1.75rem]">
+                      <svg viewBox="0 0 18 18" class="h-9 w-9 shrink-0" aria-hidden="true">
+                        <path d="M9 1.12499C9.62984 1.12267 10.257 1.20678 10.864 1.37499C12.0311 1.69723 13.0942 2.31755 13.949 3.17499C15.0457 4.26823 15.7481 5.69482 15.946 7.23064C16.1438 8.76647 15.8258 10.3245 15.042 11.66C14.2781 12.9631 13.1137 13.9846 11.7223 14.5724C10.3309 15.1602 8.78677 15.2828 7.32 14.922C6.7788 14.7882 6.25545 14.5905 5.761 14.333C5.26702 14.0725 4.80549 13.7546 4.386 13.386C3.9604 13.0128 3.58163 12.5894 3.258 12.125H0.663999C0.576309 12.1254 0.489455 12.1079 0.408793 12.0735C0.328131 12.0391 0.25537 11.9886 0.194999 11.925C0.132917 11.8648 0.0836421 11.7926 0.050133 11.7129C0.016624 11.6332 -0.000428679 11.5475 -1.28654e-06 11.461V4.78899C-0.000580819 4.70128 0.0168736 4.61439 0.0512784 4.53371C0.0856832 4.45303 0.136304 4.38028 0.199999 4.31999C0.26037 4.25639 0.333131 4.20583 0.413793 4.17143C0.494455 4.13703 0.581309 4.11952 0.668999 4.11999H3.258C3.90179 3.19388 4.76048 2.43763 5.76051 1.91602C6.76054 1.39441 7.87211 1.12298 9 1.12499V1.12499ZM5.992 7.19999C5.99958 6.93282 5.94731 6.66733 5.839 6.42299C5.74551 6.21566 5.60227 6.03464 5.422 5.89599C5.23613 5.7547 5.0235 5.65263 4.797 5.59599C4.54187 5.5306 4.27937 5.49833 4.016 5.49999H1.9V10.742H3.125V8.91399H3.953C4.20634 8.91405 4.45821 8.87562 4.7 8.79999C4.93451 8.72801 5.15525 8.61714 5.353 8.47199C5.54465 8.32914 5.70325 8.14666 5.818 7.93699C5.93672 7.70973 5.99654 7.45634 5.992 7.19999ZM3.875 6.52299C4.08874 6.51181 4.30092 6.56511 4.484 6.67599C4.56586 6.74228 4.6296 6.82821 4.66929 6.92578C4.70899 7.02335 4.72333 7.12938 4.711 7.23399C4.71538 7.33787 4.68667 7.44047 4.629 7.52699C4.57445 7.60287 4.50375 7.66571 4.422 7.71099C4.33448 7.75956 4.23953 7.79335 4.141 7.81099C4.04196 7.82858 3.94159 7.83761 3.841 7.83799H3.125V6.52299H3.875ZM9 14.125C10.0068 14.1267 10.9975 13.8724 11.879 13.386C12.737 12.9149 13.4677 12.2422 14.008 11.426C14.5633 10.5866 14.8967 9.62018 14.977 8.61699H8.508V2.14799C7.74906 2.20757 7.00881 2.41335 6.328 2.75399C5.64681 3.09323 5.03605 3.55843 4.528 4.12499H7.336C7.51194 4.12551 7.68052 4.19564 7.80493 4.32005C7.92934 4.44446 7.99947 4.61304 8 4.78899V11.461C7.99947 11.6369 7.92934 11.8055 7.80493 11.9299C7.68052 12.0543 7.51194 12.1245 7.336 12.125H4.531C4.81465 12.4396 5.13036 12.7238 5.473 12.973C5.81139 13.2188 6.17392 13.4296 6.555 13.602C6.93567 13.7738 7.33359 13.9046 7.742 13.992C8.15547 14.0805 8.57715 14.1251 9 14.125V14.125ZM9.5 2.14799V7.62499H14.977C14.9186 6.91366 14.732 6.21879 14.426 5.57399C13.8298 4.31031 12.8117 3.29399 11.547 2.69999C10.9033 2.39468 10.2099 2.2077 9.5 2.14799V2.14799Z" fill="#D24726"></path>
+                      </svg>
+                      <span>PowerPoint deck</span>
+                    </h3>
+                    <p class="mt-2 text-sm leading-relaxed text-v6-text-muted">Present the same measures and chart patterns as an executive story.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-auto overflow-hidden bg-white">
+                <img
+                  src="/assets/reporting/aeo/presentation-preview.webp"
+                  width="1200"
+                  height="800"
+                  loading="lazy"
+                  decoding="async"
+                  alt="Presentation editor showing the same rising bars, trend line, and donut chart as the workbook"
+                  class="aspect-[3/2] w-full object-cover"
+                />
+              </div>
+            </article>
+
+            <article class="flex flex-col overflow-hidden rounded-2xl border border-l-4 border-v6-border border-l-v6-copper-300 bg-[#fbf9f5] shadow-lg shadow-v6-dark/5">
+              <div class="px-5 py-5 sm:px-6">
+                <div class="flex items-start gap-4">
+                  <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-v6-copper-50 text-sm font-bold text-v6-copper-800">3</span>
+                  <div>
+                    <p class="text-xs font-semibold uppercase tracking-[0.14em] text-v6-copper">Share</p>
+                    <h3 class="mt-2 flex items-center gap-3 text-2xl font-bold text-v6-dark sm:text-[1.75rem]">
+                      <svg viewBox="0 0 24 24" class="h-9 w-9 shrink-0 text-v6-blue" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M3 6a3 3 0 0 1 3-3h12a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V6Zm4.5 7.5a.75.75 0 0 1 .75.75v2.25a.75.75 0 0 1-1.5 0v-2.25a.75.75 0 0 1 .75-.75Zm3.75-1.5a.75.75 0 0 0-1.5 0v4.5a.75.75 0 0 0 1.5 0V12Zm2.25-3a.75.75 0 0 1 .75.75v6.75a.75.75 0 0 1-1.5 0V9.75A.75.75 0 0 1 13.5 9Zm3.75-1.5a.75.75 0 0 0-1.5 0v9a.75.75 0 0 0 1.5 0v-9Z" clip-rule="evenodd"></path>
+                      </svg>
+                      <span>Live dashboard</span>
+                    </h3>
+                    <p class="mt-2 text-sm leading-relaxed text-v6-text-muted">Share a current view of those same measures without rebuilding it.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-auto overflow-hidden bg-white">
+                <img
+                  src="/assets/reporting/aeo/dashboard-preview.webp"
+                  width="1200"
+                  height="800"
+                  loading="lazy"
+                  decoding="async"
+                  alt="Live dashboard showing the same rising bars, trend line, and donut chart as the workbook"
+                  class="aspect-[3/2] w-full object-cover"
+                />
+              </div>
+            </article>
+          </div>
         </div>
       </div>
     </section>
@@ -187,7 +318,7 @@ const faqSchema = {
             <h2 id="sample-report-heading" class="mt-3 text-balance text-3xl font-bold text-v6-dark sm:text-4xl">Start with the headline. Open the prompt when someone asks why.</h2>
             <p class="mt-4 text-lg leading-relaxed text-v6-text-muted">The summary, original AI answers, citations, and recommended work stay connected. The figures below are sample data.</p>
           </div>
-          <a href="#report-signup" data-ga-cta="aeo_report_sample_signup" class="inline-flex min-h-11 items-center justify-center self-start rounded-xl border border-v6-copper px-5 py-3 text-sm font-semibold text-v6-copper transition-colors hover:bg-v6-copper-50 focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2 lg:self-auto">Build your AEO Report</a>
+          <a href="#report-signup" data-ga-cta="aeo_report_sample_signup" class="inline-flex min-h-11 items-center justify-center self-start rounded-xl border border-v6-copper px-5 py-3 text-sm font-semibold text-v6-copper transition-colors hover:bg-v6-copper-50 focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2 lg:self-auto">Get your first AEO Report</a>
         </div>
 
         <div class="mt-10 overflow-hidden rounded-2xl border border-v6-border bg-white shadow-sm">
@@ -325,18 +456,24 @@ const faqSchema = {
     </section>
 
     <section id="report-signup" class="scroll-mt-8 bg-gradient-to-br from-v6-copper to-v6-copper-600 px-4 py-16 sm:px-6 sm:py-20 lg:px-8" aria-labelledby="aeo-signup-heading">
-      <div class="mx-auto max-w-2xl text-center text-white">
-        <p class="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-white/70">Report signup</p>
-        <h2 id="aeo-signup-heading" class="text-balance text-2xl font-bold sm:text-3xl">Request access to the AEO report</h2>
-        <p class="mx-auto mb-4 mt-4 max-w-2xl text-balance text-base leading-relaxed text-v6-copper-50 sm:text-lg">Use your work email to register your interest. We will contact you about access to the report.</p>
+      <div class="mx-auto max-w-3xl text-center text-white">
+        <p class="mb-3 text-balance text-xs font-semibold uppercase tracking-[0.2em] text-white/70">One report solves today. A repeatable one solves every month.</p>
+        <h2 id="aeo-signup-heading" class="text-balance text-2xl font-bold sm:text-3xl">Give your executive team a clear, decision-ready AEO report.</h2>
+        <p class="mx-auto mb-4 mt-4 max-w-3xl text-balance text-base leading-relaxed text-v6-copper-50 sm:text-lg">We’ll turn your HubSpot AEO data into an Excel workbook, presentation, and dashboard—so you spend less time gathering evidence and more time improving AI visibility.</p>
         <ReportSignup
           offerCode="hubspot_aeo_reporting_export"
           reportName="HubSpot AEO reporting export"
           sourcePage="hubspot-aeo-reporting-export"
           ctaLabel="aeo_report_signup"
-          buttonLabel="Request AEO report access"
+          buttonLabel="Get your first AEO Report"
+          successTitle="Your request has been saved"
+          successMessages={[
+            "This part of our website is currently undergoing maintenance. We’ll email you with instructions for accessing the app.",
+            "As a courtesy, a member of our team will be available to personally help you get set up.",
+            "We apologize for the inconvenience and appreciate your patience.",
+          ]}
         />
-        <p class="mt-4 text-xs text-v6-copper-50">No card required. This does not create an app account or connect to your HubSpot portal.</p>
+        <p class="mt-4 text-xs text-v6-copper-50">No credit card required.</p>
       </div>
     </section>
   </main>

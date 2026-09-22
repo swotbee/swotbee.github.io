@@ -1,0 +1,48 @@
+---
+interface Props {
+  class?: string;
+  title?: string;
+}
+
+const {
+  class: className = "",
+  title = "HubSpot reporting workspace connected to PowerPoint and Excel outputs",
+} = Astro.props;
+---
+
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="1672"
+  height="941"
+  viewBox="0 0 1672 941"
+  role="img"
+  aria-labelledby="editable-report-hero-title"
+  class={className}
+  style="--hero-blue: #1A7AB5; --hero-blue-opacity: 1;"
+>
+  <title id="editable-report-hero-title">{title}</title>
+  <defs>
+    <mask id="editable-report-hero-blue-regions" maskUnits="userSpaceOnUse" x="0" y="0" width="1672" height="941" style="mask-type: luminance;">
+      <image
+        href="/assets/reporting/aeo/hero-image-reporting-blue-mask.png"
+        width="1672"
+        height="941"
+        preserveAspectRatio="none"
+      />
+    </mask>
+  </defs>
+  <image
+    href="/assets/reporting/aeo/hero-image-reporting-source.png"
+    width="1672"
+    height="941"
+    preserveAspectRatio="none"
+  />
+  <rect
+    width="1672"
+    height="941"
+    fill="var(--hero-blue)"
+    opacity="var(--hero-blue-opacity)"
+    mask="url(#editable-report-hero-blue-regions)"
+    style="mix-blend-mode: color;"
+  />
+</svg>
