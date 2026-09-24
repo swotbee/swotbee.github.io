@@ -1,0 +1,84 @@
+---
+import EditableReportHero from "./EditableReportHero.astro";
+import ReportOutputIcon from "./ReportOutputIcon.astro";
+
+interface Props {
+  eyebrow: string;
+  titleLead: string;
+  titleAccent: string;
+  description: string;
+  ctaLabel: string;
+  ctaEvent: string;
+  reassurance: string[];
+}
+
+const {
+  eyebrow,
+  titleLead,
+  titleAccent,
+  description,
+  ctaLabel,
+  ctaEvent,
+  reassurance,
+} = Astro.props;
+---
+
+<section class="relative isolate overflow-hidden bg-white pb-8 pt-14 sm:pb-12 sm:pt-20">
+  <div class="relative z-10 mx-auto w-full max-w-7xl px-4 text-center sm:px-6 lg:px-8">
+    <div class="mx-auto flex w-full max-w-5xl flex-col items-center">
+      <span class="mb-5 inline-flex rounded-full bg-v6-copper-50 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-v6-copper-700">{eyebrow}</span>
+      <h1 class="relative isolate max-w-5xl text-balance text-4xl leading-[1.12] tracking-tight text-v6-dark sm:text-6xl" style="font-family: 'Rokkitt Variable', 'Vollkorn', serif; font-weight: 800;">
+        <span aria-hidden="true" class="pointer-events-none absolute -inset-x-12 -inset-y-8 -z-10 rounded-[50%] bg-[radial-gradient(ellipse_at_center,rgba(226,177,148,0.34),rgba(244,221,207,0.18)_48%,transparent_72%)] blur-xl sm:-inset-x-24"></span>
+        {titleLead} <br class="hidden sm:inline" />
+        <span class="relative mt-1 inline-block">
+          <span class="bg-gradient-to-r from-v6-copper-700 via-[#b47a1b] to-[#c8644a] bg-clip-text text-transparent drop-shadow-[0_2px_10px_rgba(200,100,74,0.14)]">{titleAccent}</span>
+          <svg class="absolute -bottom-2 left-0 h-3 w-full text-[#c8644a]/45" viewBox="0 0 300 12" fill="none" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M 5,9 C 80,2 220,2 295,9" stroke="currentColor" stroke-width="4" stroke-linecap="round"></path>
+          </svg>
+        </span>
+      </h1>
+      <p class="mt-6 max-w-4xl text-balance text-lg leading-relaxed text-v6-text-muted">{description}</p>
+      <div class="mt-6 flex w-full flex-col items-center justify-center gap-3 sm:w-auto sm:flex-row">
+        <a href="#report-signup" data-ga-cta={ctaEvent} class="group inline-flex min-h-12 w-full items-center justify-center gap-2.5 rounded-2xl bg-gradient-to-r from-[#a94f1d] via-[#994418] to-[#873914] px-7 py-3.5 text-base font-extrabold text-white shadow-[0_12px_28px_-10px_rgba(169,79,29,0.58)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_0_32px_rgba(169,79,29,0.32)] focus:outline-none focus:ring-2 focus:ring-[#a94f1d] focus:ring-offset-2 active:translate-y-0 active:scale-[0.98] motion-reduce:transition-colors motion-reduce:hover:translate-y-0 sm:w-auto">
+          <span>{ctaLabel}</span>
+          <svg class="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 motion-reduce:transition-none motion-reduce:group-hover:translate-x-0" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+            <path d="M4.167 10h11.666m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </a>
+      </div>
+      <p class="mt-5 flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-xs font-semibold text-v6-text-muted">
+        {reassurance.map((item, index) => (
+          <span class="inline-flex items-center gap-2">
+            {item}
+            {index < reassurance.length - 1 && <span class="h-1 w-1 rounded-full bg-v6-border" aria-hidden="true"></span>}
+          </span>
+        ))}
+      </p>
+    </div>
+  </div>
+
+  <div class="relative mx-auto mt-0 w-3/4 max-w-[78rem] sm:-mt-2 lg:-mt-6" aria-label="HubSpot reporting workspace connected to PowerPoint and Excel outputs">
+    <EditableReportHero class="relative z-10 mx-auto h-auto w-4/5 drop-shadow-[0_24px_28px_rgba(169,79,29,0.14)]" />
+  </div>
+
+  <div class="relative z-10 mx-auto mt-2 grid w-[calc(100%-2rem)] max-w-xl grid-cols-3 divide-x divide-v6-border/70 rounded-2xl border border-white/80 bg-white/60 p-2 shadow-sm shadow-v6-dark/5 backdrop-blur-md" aria-label="Report outputs">
+    <div class="flex min-w-0 flex-col items-center gap-2 px-2 py-2 text-center sm:flex-row sm:gap-3 sm:px-4 sm:text-left">
+      <span class="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-v6-blue-50/80 text-v6-blue">
+        <ReportOutputIcon type="dashboard" class="h-8 w-8" />
+      </span>
+      <span class="text-xs font-medium leading-tight text-v6-text-muted sm:text-sm">Live dashboard</span>
+    </div>
+    <div class="flex min-w-0 flex-col items-center gap-2 px-2 py-2 text-center sm:flex-row sm:gap-3 sm:px-4 sm:text-left">
+      <span class="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-[#edf6f1]">
+        <ReportOutputIcon type="excel" class="h-8 w-8" />
+      </span>
+      <span class="text-xs font-medium leading-tight text-v6-text-muted sm:text-sm">Excel workbook</span>
+    </div>
+    <div class="flex min-w-0 flex-col items-center gap-2 px-2 py-2 text-center sm:flex-row sm:gap-3 sm:px-4 sm:text-left">
+      <span class="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-[#fff3ef]">
+        <ReportOutputIcon type="powerpoint" class="h-8 w-8" />
+      </span>
+      <span class="text-xs font-medium leading-tight text-v6-text-muted sm:text-sm">PowerPoint deck</span>
+    </div>
+  </div>
+</section>
