@@ -1,0 +1,273 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/astro/Navbar.astro';
+import Footer from '../../components/astro/Footer.astro';
+
+const resourceId = 'management_reporting_starter_pack';
+const sourcePage = '/resources/hubspot-management-reporting-starter-pack/';
+
+const files = [
+  {
+    type: 'workbook',
+    title: 'Management reporting workbook',
+    format: 'XLSX',
+    size: '47 KB',
+    file: 'hubspot-management-reporting-starter-pack.xlsx',
+    href: '/downloads/hubspot-management-reporting-starter-pack.xlsx',
+    description: 'Thirteen editable sheets for fixed snapshots, revenue versus target, pipeline movement, health checks, KPI definitions, QA, and the weekly review.',
+  },
+  {
+    type: 'board_deck',
+    title: 'Editable board reporting deck',
+    format: 'PPTX',
+    size: '47 KB',
+    file: 'hubspot-management-reporting-board-deck.pptx',
+    href: '/downloads/hubspot-management-reporting-board-deck.pptx',
+    description: 'Eight editable slides with native charts and tables, decision questions, and management commentary prompts in the speaker notes.',
+  },
+];
+
+const relatedLinks = [
+  {
+    title: 'HubSpot management reporting guide',
+    description: 'Build the full reporting cadence from source data to decisions.',
+    href: '/posts/hubspot-management-reporting/',
+    type: 'pillar',
+  },
+  {
+    title: 'Sales pipeline reporting',
+    description: 'Choose the sales reports that expose coverage, movement, and execution risk.',
+    href: '/hubspot-sales-pipeline-reporting/',
+    type: 'reporting_page',
+  },
+  {
+    title: 'Revenue, forecast, and goal reporting',
+    description: 'Connect target, forecast, and realized performance without mixing definitions.',
+    href: '/hubspot-revenue-forecast-goal-roi-reporting/',
+    type: 'reporting_page',
+  },
+  {
+    title: 'Pipeline change report',
+    description: 'Explain exactly why open pipeline rose or fell between two fixed cutoffs.',
+    href: '/hubspot-pipeline-change-report/',
+    type: 'reporting_page',
+  },
+  {
+    title: 'Stale deals report',
+    description: 'Find deals with missing activity, overdue dates, and weak next steps.',
+    href: '/hubspot-stale-deals-report/',
+    type: 'reporting_page',
+  },
+];
+---
+
+<Layout
+  title="Free HubSpot Management Reporting Starter Pack"
+  description="Download an editable HubSpot reporting workbook and board deck for weekly sales reviews, pipeline health, revenue versus target, and management decisions."
+  keywords="HubSpot management reporting, HubSpot reporting template, HubSpot weekly sales report, HubSpot board report, pipeline reporting workbook"
+>
+  <Navbar />
+
+  <main>
+    <section class="bg-gradient-to-b from-v6-bg to-white px-4 pb-14 pt-10 sm:px-6 sm:pt-14 lg:px-8">
+      <div class="mx-auto max-w-5xl">
+        <nav aria-label="Breadcrumb" class="mb-8 text-sm text-v6-text-muted">
+          <a href="/" class="rounded-sm underline-offset-4 hover:text-v6-copper hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-v6-blue">Home</a>
+          <span aria-hidden="true" class="px-2">/</span>
+          <span>Resources</span>
+          <span aria-hidden="true" class="px-2">/</span>
+          <span aria-current="page">Management reporting starter pack</span>
+        </nav>
+
+        <div class="grid items-center gap-10 lg:grid-cols-[1.2fr_0.8fr]">
+          <div>
+            <p class="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-v6-copper">Free, editable, no email required</p>
+            <h1 class="text-balance text-4xl font-bold leading-tight text-v6-dark sm:text-5xl">Turn a HubSpot export into a management-ready report</h1>
+            <p class="mt-5 max-w-3xl text-lg leading-relaxed text-v6-text-muted">
+              Use one workbook and one board deck to reconcile weekly pipeline movement, compare revenue with target, surface reporting risks, and finish every review with named decisions.
+            </p>
+            <div class="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">
+              <a
+                href="/downloads/hubspot-management-reporting-starter-pack.zip"
+                download
+                class="inline-flex min-h-11 items-center justify-center rounded-lg bg-v6-copper px-6 py-3 font-semibold text-white transition-colors hover:bg-v6-copper-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-v6-blue"
+                data-resource-download="complete_pack"
+                data-file-name="hubspot-management-reporting-starter-pack.zip"
+                data-ga-cta="management_reporting_starter_pack_download"
+              >
+                Download the complete starter pack
+              </a>
+              <a
+                href="#setup"
+                class="inline-flex min-h-11 items-center justify-center rounded-lg border border-v6-border bg-white px-5 py-3 font-semibold text-v6-dark transition-colors hover:border-v6-copper hover:text-v6-copper focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-v6-blue"
+              >
+                Review the 3-step setup
+              </a>
+            </div>
+            <p class="mt-3 text-sm text-v6-text-muted">Version 1.0, revised 24 September 2026. XLSX and PPTX files plus a setup README.</p>
+          </div>
+
+          <aside class="rounded-2xl border border-v6-border bg-white p-6 shadow-sm" aria-label="Starter pack summary">
+            <p class="text-sm font-semibold text-v6-copper">What you can answer</p>
+            <ul class="mt-4 space-y-4 text-v6-dark">
+              <li class="flex gap-3"><span aria-hidden="true" class="font-bold text-v6-teal">01</span><span>Are actual revenue and forecast on plan?</span></li>
+              <li class="flex gap-3"><span aria-hidden="true" class="font-bold text-v6-teal">02</span><span>Why did pipeline change since the prior cutoff?</span></li>
+              <li class="flex gap-3"><span aria-hidden="true" class="font-bold text-v6-teal">03</span><span>Which deals and data issues need intervention?</span></li>
+              <li class="flex gap-3"><span aria-hidden="true" class="font-bold text-v6-teal">04</span><span>What decision, owner, and due date follow the review?</span></li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white px-4 py-14 sm:px-6 lg:px-8" aria-labelledby="files-heading">
+      <div class="mx-auto max-w-5xl">
+        <div class="max-w-3xl">
+          <p class="text-sm font-semibold uppercase tracking-[0.18em] text-v6-teal">Editable files</p>
+          <h2 id="files-heading" class="mt-2 text-3xl font-bold text-v6-dark">Use the complete pack or download each file separately</h2>
+          <p class="mt-3 text-v6-text-muted">The workbook is the source of truth. The deck turns the verified totals into an eight-slide management narrative.</p>
+        </div>
+
+        <div class="mt-8 grid gap-5 md:grid-cols-2">
+          {files.map((file) => (
+            <article class="flex h-full flex-col rounded-2xl border border-v6-border bg-v6-bg p-6">
+              <div class="flex items-start justify-between gap-4">
+                <h3 class="text-xl font-bold text-v6-dark">{file.title}</h3>
+                <span class="rounded-full bg-white px-3 py-1 text-xs font-semibold text-v6-copper">{file.format}</span>
+              </div>
+              <p class="mt-3 flex-1 leading-relaxed text-v6-text-muted">{file.description}</p>
+              <p class="mt-4 text-sm text-v6-text-muted">{file.size} · Opens in current Microsoft Office. Designed for Google import.</p>
+              <a
+                href={file.href}
+                download
+                class="mt-5 inline-flex min-h-11 items-center justify-center rounded-lg border border-v6-copper bg-white px-5 py-3 font-semibold text-v6-copper transition-colors hover:bg-v6-copper hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-v6-blue"
+                data-resource-download={file.type}
+                data-file-name={file.file}
+              >
+                Download {file.format}
+              </a>
+            </article>
+          ))}
+        </div>
+
+        <div class="mt-6 rounded-xl border border-v6-border bg-white p-5 text-sm leading-relaxed text-v6-text-muted">
+          <p><strong class="text-v6-dark">Compatibility note:</strong> the workbook uses conventional formulas without macros, Power Query, or external links. It was recalculated successfully in LibreOffice and is designed for current Excel and Google Sheets imports. The deck uses editable PowerPoint charts and tables and is designed for PowerPoint and Google Slides imports. Always review formulas, formatting, and charts after an import.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="setup" class="bg-v6-bg px-4 py-14 sm:px-6 lg:px-8" aria-labelledby="setup-heading">
+      <div class="mx-auto max-w-5xl">
+        <div class="max-w-3xl">
+          <p class="text-sm font-semibold uppercase tracking-[0.18em] text-v6-teal">30-minute setup path</p>
+          <h2 id="setup-heading" class="mt-2 text-3xl font-bold text-v6-dark">Export, map, then review</h2>
+          <p class="mt-3 text-v6-text-muted">Keep the first run simple. Fix the cutoff and definitions before adding commentary or presentation polish.</p>
+        </div>
+
+        <ol class="mt-8 grid gap-5 md:grid-cols-3">
+          <li class="rounded-2xl border border-v6-border bg-white p-6">
+            <p class="text-sm font-semibold text-v6-copper">Step 1</p>
+            <h3 class="mt-2 text-xl font-bold text-v6-dark">Export a fixed snapshot</h3>
+            <p class="mt-3 text-v6-text-muted">Export one row per HubSpot deal with owner, amount, stage, close date, activity dates, forecast category, and closed outcome fields. Save the cutoff date.</p>
+          </li>
+          <li class="rounded-2xl border border-v6-border bg-white p-6">
+            <p class="text-sm font-semibold text-v6-copper">Step 2</p>
+            <h3 class="mt-2 text-xl font-bold text-v6-dark">Map local definitions</h3>
+            <p class="mt-3 text-v6-text-muted">Set target, currency, thresholds, and stage order on START HERE and STAGE MAP. Confirm what deal amount represents in your business.</p>
+          </li>
+          <li class="rounded-2xl border border-v6-border bg-white p-6">
+            <p class="text-sm font-semibold text-v6-copper">Step 3</p>
+            <h3 class="mt-2 text-xl font-bold text-v6-dark">Run QA before review</h3>
+            <p class="mt-3 text-v6-text-muted">Resolve the QA checklist and reconciliation balance. Then use WEEKLY SALES, PIPELINE HEALTH, and BOARD EXPORT to agree decisions and owners.</p>
+          </li>
+        </ol>
+
+        <div class="mt-8 rounded-2xl border-l-4 border-v6-amber bg-white p-6">
+          <h3 class="text-lg font-bold text-v6-dark">The sample data is fictional</h3>
+          <p class="mt-2 leading-relaxed text-v6-text-muted">Northstar Cloud Ltd, every deal, every owner, and every value in the pack are synthetic. No client data is included. The sample uses deal amount as a bookings proxy, so do not label it recognized revenue, ARR, or TCV until your own KPI definition says that is correct.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white px-4 py-14 sm:px-6 lg:px-8" aria-labelledby="related-heading">
+      <div class="mx-auto max-w-5xl">
+        <div class="max-w-3xl">
+          <p class="text-sm font-semibold uppercase tracking-[0.18em] text-v6-teal">Build the reporting system</p>
+          <h2 id="related-heading" class="mt-2 text-3xl font-bold text-v6-dark">Connect the template to the right HubSpot reports</h2>
+          <p class="mt-3 text-v6-text-muted">Use the guide for the operating method, then choose the reporting page that matches the decision your team needs to make.</p>
+        </div>
+
+        <div class="mt-8 grid gap-4 md:grid-cols-2">
+          {relatedLinks.map((link, index) => (
+            <a
+              href={link.href}
+              class:list={[
+                'block min-h-11 rounded-xl border border-v6-border p-5 transition-colors hover:border-v6-copper focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-v6-blue',
+                index === 0 ? 'bg-v6-bg-warm md:col-span-2' : 'bg-white',
+              ]}
+              data-reporting-link
+              data-destination-type={link.type}
+              data-destination-slug={link.href}
+            >
+              <span class="font-semibold text-v6-dark">{link.title}</span>
+              <span class="mt-1 block text-sm text-v6-text-muted">{link.description}</span>
+            </a>
+          ))}
+        </div>
+
+        <div class="mt-10 rounded-2xl bg-v6-dark p-7 text-white sm:p-9">
+          <p class="text-sm font-semibold uppercase tracking-[0.18em] text-v6-amber">When the template becomes a recurring burden</p>
+          <h2 class="mt-3 text-3xl font-bold text-white">Make the reporting workflow repeatable in HubSpot</h2>
+          <p class="mt-3 max-w-3xl leading-relaxed text-gray-200">SWOTBee can help define the KPI layer, repair the underlying properties and lifecycle rules, and build the reporting workflow so each review begins with trusted inputs instead of spreadsheet archaeology.</p>
+          <a
+            href="/contactus/"
+            class="mt-6 inline-flex min-h-11 items-center justify-center rounded-lg bg-v6-copper px-6 py-3 font-semibold text-white transition-colors hover:bg-v6-copper-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+            data-ga-cta="management_reporting_starter_pack_product"
+          >
+            Book a free 30-minute discovery call
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+
+  <script define:vars={{ resourceId, sourcePage }}>
+    function sendReportingEvent(name, params) {
+      if (!window.gtag) return;
+      window.gtag('event', name, {
+        ...params,
+        transport_type: 'beacon',
+      });
+    }
+
+    sendReportingEvent('resource_view', {
+      resource_id: resourceId,
+      source_page: sourcePage,
+    });
+
+    document.querySelectorAll('[data-resource-download]').forEach((link) => {
+      link.addEventListener('click', () => {
+        sendReportingEvent('resource_download', {
+          resource_id: resourceId,
+          asset_type: link.getAttribute('data-resource-download'),
+          file_name: link.getAttribute('data-file-name'),
+          source_page: sourcePage,
+          cta_placement: link.hasAttribute('data-ga-cta') ? 'resource_hero' : 'resource_file_card',
+        });
+      });
+    });
+
+    document.querySelectorAll('[data-reporting-link]').forEach((link) => {
+      link.addEventListener('click', () => {
+        sendReportingEvent('reporting_link_click', {
+          destination_type: link.getAttribute('data-destination-type'),
+          destination_slug: link.getAttribute('data-destination-slug'),
+          source_page: sourcePage,
+          link_placement: 'related',
+        });
+      });
+    });
+  </script>
+</Layout>

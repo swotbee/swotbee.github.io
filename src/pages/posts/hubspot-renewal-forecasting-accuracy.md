@@ -218,6 +218,8 @@ This gives you a human-calibrated forecast alongside the weighted calculation. T
 
 Visualize your forecast in [custom dashboards](/posts/hubspot-renewal-nrr-grr-dashboard-reporting/) for executive reporting.
 
+For a governed comparison of closed actual, forecast, target, required run rate, and pipeline coverage, use the [HubSpot revenue versus target report template](/posts/hubspot-revenue-vs-target-report/).
+
 ---
 
 ## The RevOps Forecast Cadence

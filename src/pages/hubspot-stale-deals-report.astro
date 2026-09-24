@@ -26,10 +26,27 @@ const benefits = [
   { title: "Explain pipeline risk to management", description: "Choose the health trends and high-value exceptions that belong in an editable PowerPoint update.", icon: "present", tone: "teal" },
 ] as const;
 
+const healthChecks = [
+  { number: "01", title: "Accountable owner", signal: "Deal owner is missing or no longer accountable", action: "Assign an owner before the review ends" },
+  { number: "02", title: "Dated next step", signal: "Qualified open deal has no future activity or next-step date", action: "Schedule the buyer step or requalify the deal" },
+  { number: "03", title: "Meaningful activity", signal: "Last meaningful buyer or seller activity exceeds the stage tolerance", action: "Contact, nurture, or close with evidence" },
+  { number: "04", title: "Time in current stage", signal: "Stage age exceeds the locally approved tolerance", action: "Progress, regress, reset, or close" },
+  { number: "05", title: "Close-date integrity", signal: "Close date is overdue or repeatedly pushed without explanation", action: "Correct timing and record the reason" },
+  { number: "06", title: "Amount and currency", signal: "Amount is blank, implausible, unsupported, or uses an unapproved currency rule", action: "Validate commercial value and conversion" },
+  { number: "07", title: "Stage and forecast fit", signal: "Deal evidence, stage, probability, and forecast category disagree", action: "Correct the record or qualification rule" },
+  { number: "08", title: "Buying-process evidence", signal: "Required stage evidence such as need, authority, process, or milestone is missing", action: "Capture evidence or move the deal back" },
+  { number: "09", title: "Duplicate or replacement", signal: "Two open records represent the same commercial opportunity", action: "Identify the primary record and resolve overlap" },
+  { number: "10", title: "Probability governance", signal: "Manual or stage probability is unsupported or inconsistent", action: "Apply the approved weighting method" },
+  { number: "11", title: "Conversion and loss pattern", signal: "Stage, owner, or segment shows an unusual conversion or loss pattern", action: "Review the cohort and change the process or coaching" },
+  { number: "12", title: "Coverage against gap", signal: "Eligible pipeline does not support the remaining target gap", action: "Create pipeline, improve conversion, or reset outlook" },
+] as const;
+
 const faqs = [
   { q: "What is a HubSpot pipeline health dashboard?", a: "A pipeline health dashboard combines activity freshness and stage-aware aging in one recurring view. It explains why each deal was flagged, who owns it, and what should happen next." },
   { q: "What is the difference between a stale deal and an aging deal?", a: "A stale deal lacks meaningful activity or a next step. An aging deal has exceeded its deal-age or stage-age threshold. The dashboard keeps both signals visible because either one can require a different action." },
   { q: "What appears in the pipeline health dashboard?", a: "The dashboard separates healthy, activity-stale, stage-aging, and high-risk deals with both signals. It also shows affected value, owners, rule reasons, and recommended next actions." },
+  { q: "What checks belong in a HubSpot pipeline health review?", a: "Check owner, next step, meaningful activity, time in stage, close-date integrity, amount and currency, stage and forecast alignment, buying-process evidence, duplicates, probability governance, conversion or loss patterns, and coverage against the target gap." },
+  { q: "How many days make a HubSpot deal stale?", a: "There is no universal number. Set tolerances by stage, sales motion, segment, and historical outcomes. A legal or procurement stage may reasonably use a different threshold from discovery." },
   { q: "Will the dashboard close or edit deals?", a: "No. It identifies deals for human review and keeps the reason and recommended action visible without automatically changing CRM records." },
   { q: "Can it focus only on renewal deals?", a: "Yes. Choose a renewal pipeline or another explicit deal scope, then apply activity and stage-age rules that fit that sales motion." },
 ];
@@ -201,6 +218,71 @@ const faqSchema = {
       </div>
     </section>
 
+    <section class="border-y border-v6-border bg-white px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+      <div class="mx-auto max-w-6xl">
+        <div class="mx-auto max-w-3xl text-center">
+          <p class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper">12-check pipeline health worksheet</p>
+          <h2 class="mt-3 text-balance text-3xl font-bold text-v6-dark sm:text-4xl">Check whether open pipeline is current, credible, and actionable</h2>
+          <p class="mt-4 text-lg leading-relaxed text-v6-text-muted">These checks are a starting framework, not universal thresholds. Define tolerances by stage, motion, segment, and historical results, then keep the rule and evidence visible beside every flag.</p>
+        </div>
+
+        <div class="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          {healthChecks.map((check) => (
+            <article class="rounded-2xl border border-v6-border bg-v6-bg p-5 sm:p-6">
+              <div class="flex items-center gap-3"><span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-v6-copper text-sm font-bold text-white">{check.number}</span><h3 class="text-lg font-bold text-v6-dark">{check.title}</h3></div>
+              <p class="mt-4 text-sm leading-relaxed text-v6-text-muted"><strong class="text-v6-dark">Flag:</strong> {check.signal}.</p>
+              <p class="mt-2 text-sm leading-relaxed text-v6-text-muted"><strong class="text-v6-dark">Action:</strong> {check.action}.</p>
+            </article>
+          ))}
+        </div>
+
+        <div class="mt-10 grid gap-6 lg:grid-cols-2">
+          <article class="rounded-2xl border border-v6-border bg-white p-6 sm:p-8">
+            <p class="text-sm font-semibold uppercase tracking-[0.14em] text-v6-copper">Interpret the result</p>
+            <h3 class="mt-2 text-2xl font-bold text-v6-dark">Do not treat every failed check equally</h3>
+            <p class="mt-4 leading-relaxed text-v6-text-muted">A missing owner is a clear data and accountability failure. An old stage is contextual: it can reflect a legitimate buying process or a stalled deal. Combine signals, value, stage, close-date horizon, forecast category, and buyer evidence before prioritizing intervention.</p>
+            <ul class="mt-4 space-y-3 text-v6-text-muted">
+              <li><strong class="text-v6-dark">Critical:</strong> headline value is unsupported, unowned, duplicated, or forecasted without evidence.</li>
+              <li><strong class="text-v6-dark">Action required:</strong> stale, overdue, slipped, or missing the next buyer step.</li>
+              <li><strong class="text-v6-dark">Watch:</strong> approaching a local tolerance but supported by current evidence.</li>
+              <li><strong class="text-v6-dark">Healthy:</strong> within policy and backed by a dated next step.</li>
+            </ul>
+          </article>
+
+          <article class="rounded-2xl border border-v6-border bg-v6-bg-warm p-6 sm:p-8">
+            <p class="text-sm font-semibold uppercase tracking-[0.14em] text-v6-copper">Remediate the record</p>
+            <h3 class="mt-2 text-2xl font-bold text-v6-dark">End each flag with one owner decision</h3>
+            <p class="mt-4 leading-relaxed text-v6-text-muted">The dashboard should not automatically rewrite or close deals. Give the accountable owner a clear choice and record the evidence.</p>
+            <ol class="mt-4 space-y-3 text-v6-text-muted">
+              <li><strong class="text-v6-dark">1. Advance:</strong> evidence supports the next stage and a dated buyer action exists.</li>
+              <li><strong class="text-v6-dark">2. Remediate:</strong> fix owner, date, amount, category, evidence, or next step.</li>
+              <li><strong class="text-v6-dark">3. Requalify:</strong> move back when current evidence does not support the stage.</li>
+              <li><strong class="text-v6-dark">4. Nurture:</strong> remove from active forecast while preserving future potential.</li>
+              <li><strong class="text-v6-dark">5. Close:</strong> mark won or lost using the approved reason and date.</li>
+            </ol>
+          </article>
+        </div>
+
+        <div class="mt-10 rounded-3xl bg-v6-dark px-6 py-8 text-white sm:px-10 sm:py-10">
+          <div class="grid gap-6 lg:grid-cols-[1fr_auto] lg:items-center">
+            <div>
+              <p class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper-300">Free health worksheet</p>
+              <h2 class="mt-2 text-2xl font-bold sm:text-3xl">Run all 12 checks in the starter pack</h2>
+              <p class="mt-3 max-w-3xl leading-relaxed text-white/75">The editable workbook includes local thresholds, deal-level flags, severity, evidence, owner, remediation, QA, a weekly meeting agenda, and fictional data.</p>
+            </div>
+            <a href="/resources/hubspot-management-reporting-starter-pack/" data-ga-cta="pipeline_health_checklist_resource" class="inline-flex min-h-12 items-center justify-center rounded-xl bg-v6-copper px-6 py-3.5 font-semibold text-white transition-colors hover:bg-v6-copper-600 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-v6-dark">Download the free starter pack</a>
+          </div>
+        </div>
+
+        <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <a href="/posts/hubspot-management-reporting/" class="rounded-2xl border border-v6-border bg-white p-5 transition-colors hover:border-v6-copper"><h3 class="font-bold text-v6-dark">Management reporting system</h3><p class="mt-2 text-sm leading-relaxed text-v6-text-muted">Connect pipeline health to governed definitions, evidence, and decisions.</p></a>
+          <a href="/posts/hubspot-weekly-sales-report-template/" class="rounded-2xl border border-v6-border bg-white p-5 transition-colors hover:border-v6-copper"><h3 class="font-bold text-v6-dark">Weekly sales report</h3><p class="mt-2 text-sm leading-relaxed text-v6-text-muted">Place the prioritized health queue inside the weekly review.</p></a>
+          <a href="/hubspot-pipeline-change-report/" class="rounded-2xl border border-v6-border bg-white p-5 transition-colors hover:border-v6-copper"><h3 class="font-bold text-v6-dark">Pipeline change dashboard</h3><p class="mt-2 text-sm leading-relaxed text-v6-text-muted">Explain new, won, lost, slipped, and revalued pipeline.</p></a>
+          <a href="/hubspot-sales-pipeline-reporting/" class="rounded-2xl border border-v6-border bg-white p-5 transition-colors hover:border-v6-copper"><h3 class="font-bold text-v6-dark">Sales reporting paths</h3><p class="mt-2 text-sm leading-relaxed text-v6-text-muted">Choose the broader recurring sales and pipeline report.</p></a>
+        </div>
+      </div>
+    </section>
+
     <section class="px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
       <div class="mx-auto max-w-5xl">
         <div class="mx-auto max-w-3xl text-center"><p class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper">Three-click setup</p><h2 class="mt-3 text-balance text-3xl font-bold text-v6-dark sm:text-4xl">The 3-click dashboard setup</h2><p class="mt-4 text-lg leading-relaxed text-v6-text-muted">Sign up, choose the deal scope, set the activity and stage-age rules, and create the recurring health dashboard.</p></div>
@@ -261,9 +343,9 @@ const faqSchema = {
 
     <ReportRelatedLinks
       links={[
+        { href: "/posts/hubspot-weekly-sales-report-template/", title: "Run the weekly sales report", description: "Prioritize health exceptions within the scorecard, named-deal review, and 30-minute agenda." },
         { href: "/hubspot-pipeline-change-report/", title: "Explain week-over-week pipeline change", description: "Trace movement in pipeline value back to the deals, stages, and owners that caused it." },
-        { href: "/hubspot-historical-pipeline-snapshot/", title: "Preserve historical pipeline snapshots", description: "Save the pipeline state used for each review so later edits do not rewrite the earlier record." },
-        { href: "/guides/renewal-pipeline-visibility-hubspot/", title: "Build renewal pipeline visibility", description: "Set up the fields, stages, and views that make upcoming and at-risk renewals visible in HubSpot." },
+        { href: "/hubspot-sales-pipeline-reporting/", title: "Choose the recurring sales report", description: "Connect health and movement checks to core, KPI, forecast, executive, and board reporting jobs." },
       ]}
     />
 

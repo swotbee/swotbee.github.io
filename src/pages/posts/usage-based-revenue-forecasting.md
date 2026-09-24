@@ -151,6 +151,8 @@ Add minimum commitments, watch usage trends early, blend subscription with usage
 
 Usage-based forecasting is one of the forecasting methods in our [SaaS renewal metrics guide](/posts/renewal-metrics-explained/); see also [TCV vs ARR](/posts/tcv-vs-arr-forecasting/) for contract-based forecasting.
 
+You can still use the [HubSpot revenue versus target report structure](/posts/hubspot-revenue-vs-target-report/), but the usage forecast must come from an approved consumption model. Do not substitute open deal amount for usage-derived revenue or present the variable outlook as closed actual.
+
 **Variable revenue is not unpredictable revenue if you forecast from usage.** SWOTBee builds usage-based forecasting and revenue reporting for mid-market companies across Energy, Manufacturing, and SaaS.
 
 [Get your 1-page renewal leakage estimate →](/resources/renewal-leakage-estimate/)

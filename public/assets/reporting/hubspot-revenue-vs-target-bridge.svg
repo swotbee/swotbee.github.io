@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">HubSpot revenue versus target bridge</title>
+  <desc id="desc">A fictional example showing closed revenue, the remaining target gap, forecast revenue above target, and pipeline coverage.</desc>
+  <rect width="1200" height="675" fill="#f7f5f1"/>
+  <text x="90" y="105" fill="#213343" font-family="Arial, sans-serif" font-size="42" font-weight="700">Revenue vs target needs four numbers</text>
+  <text x="90" y="150" fill="#5b6670" font-family="Arial, sans-serif" font-size="22">Fictional sample, USD</text>
+  <line x1="120" y1="520" x2="1080" y2="520" stroke="#d8d4cc" stroke-width="3"/>
+  <g font-family="Arial, sans-serif">
+    <rect x="150" y="304" width="150" height="216" rx="12" fill="#1a7ab5"/>
+    <text x="225" y="278" text-anchor="middle" fill="#213343" font-size="27" font-weight="700">$720K</text>
+    <text x="225" y="565" text-anchor="middle" fill="#5b6670" font-size="20">Closed</text>
+    <rect x="370" y="376" width="150" height="144" rx="12" fill="#d4960a"/>
+    <text x="445" y="350" text-anchor="middle" fill="#213343" font-size="27" font-weight="700">$480K</text>
+    <text x="445" y="565" text-anchor="middle" fill="#5b6670" font-size="20">Target gap</text>
+    <rect x="590" y="160" width="150" height="360" rx="12" fill="#5aab9d"/>
+    <text x="665" y="134" text-anchor="middle" fill="#213343" font-size="27" font-weight="700">$1.365M</text>
+    <text x="665" y="565" text-anchor="middle" fill="#5b6670" font-size="20">Forecast</text>
+    <line x1="115" y1="204" x2="780" y2="204" stroke="#c47a2a" stroke-width="5" stroke-dasharray="14 10"/>
+    <text x="790" y="212" fill="#c47a2a" font-size="22" font-weight="700">$1.2M target</text>
+    <rect x="850" y="230" width="260" height="210" rx="20" fill="#213343"/>
+    <text x="980" y="290" text-anchor="middle" fill="#ffffff" font-size="24">Open pipeline</text>
+    <text x="980" y="348" text-anchor="middle" fill="#ffffff" font-size="44" font-weight="700">$1.355M</text>
+    <text x="980" y="400" text-anchor="middle" fill="#70c1b3" font-size="28" font-weight="700">2.82x coverage</text>
+  </g>
+</svg>

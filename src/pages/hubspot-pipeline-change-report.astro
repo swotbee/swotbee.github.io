@@ -30,6 +30,8 @@ const benefits = [
 const faqs = [
   { q: "How do I report on pipeline changes over time in HubSpot?", a: "Choose two dated cutoffs and reconcile the difference to deals that entered, left, closed, changed amount, changed stage, or moved close date. SWOTBee keeps the summary and supporting deals in one dashboard." },
   { q: "What appears in the pipeline change dashboard?", a: "The dashboard shows opening and closing pipeline value, additions, wins, losses, value changes, stage movement, close-date movement, and the named deals and owners behind the difference." },
+  { q: "How do I reconcile opening and closing pipeline?", a: "Start with opening open pipeline, add new or reopened deals and amount increases, then subtract won, lost, removed, and reduced value. The result should equal closing open pipeline for the same scope, currency, and cutoff method." },
+  { q: "Does stage movement change pipeline value?", a: "A stage move explains pipeline quality and progression, but it does not change the value bridge unless the deal enters or leaves the included scope or its amount changes. Track stage and close-date movement as separate review flags." },
   { q: "Will it edit our HubSpot records?", a: "No. The reporting connection reads the pipeline data required for the dashboard without editing deal records." },
   { q: "Can I compare dates other than Monday to Monday?", a: "Yes. Choose any two valid cutoffs for a weekly review, month-end comparison, QBR, or another management cadence." },
   { q: "How do I get started?", a: "Sign up to the SWOTBee app, connect the appropriate HubSpot portal, choose the pipeline and comparison dates, and create the dashboard." },
@@ -209,6 +211,68 @@ const faqSchema = {
       </div>
     </section>
 
+    <section class="border-y border-v6-border bg-white px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+      <div class="mx-auto max-w-6xl">
+        <div class="mx-auto max-w-3xl text-center">
+          <p class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper">Worked pipeline bridge</p>
+          <h2 class="mt-3 text-balance text-3xl font-bold text-v6-dark sm:text-4xl">Reconcile the total before explaining the story</h2>
+          <p class="mt-4 text-lg leading-relaxed text-v6-text-muted">This fictional example compares the same pipeline, currency, scope, and Friday cutoff method. It separates changes that affect open-pipeline value from review flags such as stage progression and close-date slippage.</p>
+        </div>
+
+        <div class="mt-10 grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
+          <div class="overflow-hidden rounded-2xl border border-v6-border bg-v6-bg shadow-sm">
+            <div class="border-b border-v6-border bg-white px-5 py-4 sm:px-6">
+              <p class="text-xs font-semibold uppercase tracking-[0.14em] text-v6-text-muted">Fictional week-over-week value bridge</p>
+              <p class="mt-1 text-sm text-v6-text-muted">USD company currency, open deals only</p>
+            </div>
+            <div class="space-y-3 p-5 sm:p-6">
+              <div class="flex items-center justify-between gap-4 rounded-xl bg-v6-dark px-4 py-3 text-white"><span class="font-semibold">Opening pipeline</span><strong>$2,400,000</strong></div>
+              <div class="ml-3 flex items-center justify-between gap-4 rounded-xl border-l-4 border-v6-teal bg-v6-teal-50 px-4 py-3 sm:ml-6"><span>New or reopened</span><strong class="text-v6-teal-800">+$450,000</strong></div>
+              <div class="ml-3 flex items-center justify-between gap-4 rounded-xl border-l-4 border-v6-teal-300 bg-v6-teal-50 px-4 py-3 sm:ml-10"><span>Amount increases</span><strong class="text-v6-teal-800">+$75,000</strong></div>
+              <div class="ml-3 flex items-center justify-between gap-4 rounded-xl border-l-4 border-v6-blue-400 bg-v6-blue-50 px-4 py-3 sm:ml-10"><span>Closed won</span><strong class="text-v6-blue-800">-$180,000</strong></div>
+              <div class="ml-3 flex items-center justify-between gap-4 rounded-xl border-l-4 border-v6-copper bg-v6-copper-50 px-4 py-3 sm:ml-6"><span>Closed lost</span><strong class="text-v6-copper-800">-$95,000</strong></div>
+              <div class="ml-3 flex items-center justify-between gap-4 rounded-xl border-l-4 border-v6-copper-300 bg-v6-copper-50 px-4 py-3 sm:ml-6"><span>Amount reductions</span><strong class="text-v6-copper-800">-$40,000</strong></div>
+              <div class="flex items-center justify-between gap-4 rounded-xl bg-v6-dark px-4 py-3 text-white"><span class="font-semibold">Closing pipeline</span><strong>$2,610,000</strong></div>
+            </div>
+            <div class="border-t border-v6-border bg-white px-5 py-4 font-mono text-xs leading-relaxed text-v6-text-muted sm:px-6 sm:text-sm">$2.40m + $450k + $75k - $180k - $95k - $40k = $2.61m</div>
+          </div>
+
+          <div class="space-y-5">
+            <article class="rounded-2xl border border-v6-border bg-white p-6">
+              <h3 class="text-xl font-bold text-v6-dark">Interpret the $210,000 net increase</h3>
+              <p class="mt-3 leading-relaxed text-v6-text-muted">Do not report only that pipeline grew. New and reopened deals added $450,000 and amount increases added $75,000. Won, lost, and reduced deals removed $315,000 from open pipeline. The team should validate the quality of the new value and review the largest losses and reductions.</p>
+            </article>
+            <article class="rounded-2xl border border-v6-border bg-v6-bg-warm p-6">
+              <h3 class="text-xl font-bold text-v6-dark">Keep timing and quality flags separate</h3>
+              <p class="mt-3 leading-relaxed text-v6-text-muted">A deal moving from Discovery to Decision does not add value when its amount and inclusion remain unchanged. A close-date push-out may not change total open pipeline either, but it can weaken the current-period forecast. Show progressed, regressed, pulled-in, pushed-out, and stale deals beside the value bridge.</p>
+            </article>
+            <article class="rounded-2xl border border-v6-teal-200 bg-v6-teal-50 p-6">
+              <h3 class="text-xl font-bold text-v6-dark">Trace every movement to named deals</h3>
+              <p class="mt-3 leading-relaxed text-v6-text-muted">Keep deal ID, name, owner, pipeline, prior and current stage, prior and current amount, close dates, movement class, and source timestamps. A zero residual proves the arithmetic, while the named rows explain the decision.</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="mt-10 rounded-3xl bg-v6-dark px-6 py-8 text-white sm:px-10 sm:py-10">
+          <div class="grid gap-6 lg:grid-cols-[1fr_auto] lg:items-center">
+            <div>
+              <p class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper-300">Free worksheet</p>
+              <h2 class="mt-2 text-2xl font-bold sm:text-3xl">Copy the reconciled pipeline bridge</h2>
+              <p class="mt-3 max-w-3xl leading-relaxed text-white/75">The management reporting starter pack includes prior and current snapshots, movement classifications, formula checks, named-deal evidence, a weekly agenda, and an editable board deck.</p>
+            </div>
+            <a href="/resources/hubspot-management-reporting-starter-pack/" data-ga-cta="pipeline_change_bridge_resource" class="inline-flex min-h-12 items-center justify-center rounded-xl bg-v6-copper px-6 py-3.5 font-semibold text-white transition-colors hover:bg-v6-copper-600 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-v6-dark">Download the free starter pack</a>
+          </div>
+        </div>
+
+        <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <a href="/posts/hubspot-management-reporting/" class="rounded-2xl border border-v6-border bg-white p-5 transition-colors hover:border-v6-copper"><h3 class="font-bold text-v6-dark">Management reporting system</h3><p class="mt-2 text-sm leading-relaxed text-v6-text-muted">Govern cutoffs, definitions, evidence, commentary, and decisions.</p></a>
+          <a href="/posts/hubspot-weekly-sales-report-template/" class="rounded-2xl border border-v6-border bg-white p-5 transition-colors hover:border-v6-copper"><h3 class="font-bold text-v6-dark">Weekly sales report</h3><p class="mt-2 text-sm leading-relaxed text-v6-text-muted">Place the pipeline bridge inside a focused 30-minute review.</p></a>
+          <a href="/hubspot-stale-deals-report/" class="rounded-2xl border border-v6-border bg-white p-5 transition-colors hover:border-v6-copper"><h3 class="font-bold text-v6-dark">Pipeline health dashboard</h3><p class="mt-2 text-sm leading-relaxed text-v6-text-muted">Find stale, overdue, and unsupported deals behind the movement.</p></a>
+          <a href="/hubspot-historical-pipeline-snapshot/" class="rounded-2xl border border-v6-border bg-white p-5 transition-colors hover:border-v6-copper"><h3 class="font-bold text-v6-dark">Historical snapshots</h3><p class="mt-2 text-sm leading-relaxed text-v6-text-muted">Preserve comparable cutoffs for future change reports.</p></a>
+        </div>
+      </div>
+    </section>
+
     <section class="px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
       <div class="mx-auto max-w-5xl">
         <div class="mx-auto max-w-3xl text-center"><p class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper">Three-click setup</p><h2 class="mt-3 text-balance text-3xl font-bold text-v6-dark sm:text-4xl">The 3-click dashboard setup</h2><p class="mt-4 text-lg leading-relaxed text-v6-text-muted">Sign up, choose the pipeline and comparison dates, and create the recurring dashboard in three clicks.</p></div>
@@ -240,9 +304,9 @@ const faqSchema = {
 
     <ReportRelatedLinks
       links={[
+        { href: "/posts/hubspot-weekly-sales-report-template/", title: "Run the weekly sales report", description: "Use the pipeline bridge in a focused scorecard, exception review, and 30-minute management agenda." },
         { href: "/hubspot-historical-pipeline-snapshot/", title: "Preserve historical pipeline snapshots", description: "Keep exact weekly or monthly cutoffs and reopen the deal rows behind an earlier management review." },
         { href: "/hubspot-stale-deals-report/", title: "Find stale and aging deals", description: "Move from pipeline movement to the opportunities that now need an owner decision." },
-        { href: "/posts/hubspot-renewal-forecasting-accuracy/", title: "Improve HubSpot forecast accuracy", description: "See how pipeline structure, deal data, and probability choices affect the forecast leadership receives." },
       ]}
     />
 

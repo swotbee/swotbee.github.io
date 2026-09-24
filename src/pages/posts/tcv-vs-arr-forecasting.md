@@ -155,6 +155,8 @@ Use ARR for forecasting, run-rate, and valuation; use TCV for total deal size, b
 
 TCV vs ARR is one piece of clean renewal forecasting; see the full picture in our [SaaS renewal metrics guide](/posts/renewal-metrics-explained/) and how to [measure at-bat renewal rate](/posts/at-bat-renewal-rate/).
 
+When the metric definitions are settled, use the [HubSpot revenue versus target report](/posts/hubspot-revenue-vs-target-report/) to keep actual, forecast, target, and coverage separate. The broader [revenue reporting path](/hubspot-revenue-forecast-goal-roi-reporting/) maps the recurring HubSpot outputs that support that review.
+
 **Multi-year deals quietly break most forecasts:** TCV masquerading as ARR, one-time fees inflating run-rate. SWOTBee builds clean renewal forecasting and pipeline reporting for mid-market companies across Energy, Manufacturing, and SaaS.
 
 [Book a free 30-minute discovery call →](/contactus/)

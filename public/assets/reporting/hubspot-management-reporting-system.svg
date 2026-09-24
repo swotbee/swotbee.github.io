@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">HubSpot management reporting system</title>
+  <desc id="desc">A four-step flow from fixed HubSpot data through definitions and quality checks to a management review and decisions.</desc>
+  <rect width="1200" height="675" fill="#f7f5f1"/>
+  <rect x="72" y="72" width="1056" height="531" rx="28" fill="#ffffff" stroke="#d8d4cc" stroke-width="3"/>
+  <text x="120" y="145" fill="#213343" font-family="Arial, sans-serif" font-size="38" font-weight="700">A management report is a decision system</text>
+  <text x="120" y="190" fill="#5b6670" font-family="Arial, sans-serif" font-size="22">Keep the cutoff, definitions, evidence, and ownership visible.</text>
+  <g font-family="Arial, sans-serif">
+    <g transform="translate(120 260)">
+      <rect width="205" height="190" rx="18" fill="#eef7f5" stroke="#5aab9d" stroke-width="3"/>
+      <circle cx="42" cy="42" r="22" fill="#5aab9d"/>
+      <text x="42" y="50" text-anchor="middle" fill="#ffffff" font-size="22" font-weight="700">1</text>
+      <text x="24" y="92" fill="#213343" font-size="24" font-weight="700">Fix the cutoff</text>
+      <text x="24" y="126" fill="#5b6670" font-size="18">Snapshot date</text>
+      <text x="24" y="154" fill="#5b6670" font-size="18">Scope and grain</text>
+    </g>
+    <path d="M337 355h48" stroke="#c47a2a" stroke-width="6" stroke-linecap="round"/>
+    <path d="m372 340 18 15-18 15" fill="none" stroke="#c47a2a" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    <g transform="translate(400 260)">
+      <rect width="205" height="190" rx="18" fill="#fff7e6" stroke="#d4960a" stroke-width="3"/>
+      <circle cx="42" cy="42" r="22" fill="#d4960a"/>
+      <text x="42" y="50" text-anchor="middle" fill="#ffffff" font-size="22" font-weight="700">2</text>
+      <text x="24" y="92" fill="#213343" font-size="24" font-weight="700">Define KPIs</text>
+      <text x="24" y="126" fill="#5b6670" font-size="18">Formula and owner</text>
+      <text x="24" y="154" fill="#5b6670" font-size="18">Currency and cohort</text>
+    </g>
+    <path d="M617 355h48" stroke="#c47a2a" stroke-width="6" stroke-linecap="round"/>
+    <path d="m652 340 18 15-18 15" fill="none" stroke="#c47a2a" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    <g transform="translate(680 260)">
+      <rect width="205" height="190" rx="18" fill="#eef3f8" stroke="#1a7ab5" stroke-width="3"/>
+      <circle cx="42" cy="42" r="22" fill="#1a7ab5"/>
+      <text x="42" y="50" text-anchor="middle" fill="#ffffff" font-size="22" font-weight="700">3</text>
+      <text x="24" y="92" fill="#213343" font-size="24" font-weight="700">Run QA</text>
+      <text x="24" y="126" fill="#5b6670" font-size="18">Reconcile changes</text>
+      <text x="24" y="154" fill="#5b6670" font-size="18">Name exceptions</text>
+    </g>
+    <path d="M897 355h48" stroke="#c47a2a" stroke-width="6" stroke-linecap="round"/>
+    <path d="m932 340 18 15-18 15" fill="none" stroke="#c47a2a" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    <g transform="translate(960 260)">
+      <rect width="120" height="190" rx="18" fill="#213343"/>
+      <circle cx="42" cy="42" r="22" fill="#c47a2a"/>
+      <text x="42" y="50" text-anchor="middle" fill="#ffffff" font-size="22" font-weight="700">4</text>
+      <text x="24" y="92" fill="#ffffff" font-size="21" font-weight="700">Decide</text>
+      <text x="24" y="126" fill="#dbe6ef" font-size="17">Owner</text>
+      <text x="24" y="154" fill="#dbe6ef" font-size="17">Due date</text>
+    </g>
+  </g>
+  <text x="120" y="535" fill="#c47a2a" font-family="Arial, sans-serif" font-size="24" font-weight="700">Dashboard shows the state. Management reporting explains the change and commits the action.</text>
+</svg>

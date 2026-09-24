@@ -356,6 +356,8 @@ Professional is enough for the custom report builder approach this guide walks t
 
 A dashboard only reports what already happened; it does not stop a renewal from slipping. Pair it with [renewal reminders that fire before the date slips](/posts/contract-renewal-reminder-software/) so the deals behind these numbers get worked on time.
 
+For the wider operating context, use the [HubSpot management reporting system](/posts/hubspot-management-reporting/). The [revenue, forecast, goal, and ROI reporting path](/hubspot-revenue-forecast-goal-roi-reporting/) connects recurring-revenue measures with the broader revenue review, while the [seven-slide board report template](/posts/hubspot-board-report-template/) shows how to present governed retention measures without hiding the cohort and denominator.
+
 ---
 
 ## Validate the renewal data behind your dashboard

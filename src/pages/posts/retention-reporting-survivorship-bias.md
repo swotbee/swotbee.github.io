@@ -230,6 +230,8 @@ They compare customers with the same acquisition period, segment, or tenure at e
 
 Survivorship bias is one reason our [SaaS renewal metrics guide](/posts/renewal-metrics-explained/) treats retention as a system of measures rather than one score.
 
+Apply the same cohort controls across the [HubSpot management reporting system](/posts/hubspot-management-reporting/). When results reach directors, use the [seven-slide board report template](/posts/hubspot-board-report-template/) and keep the starting cohort, losses, expansion concentration, and caveats visible beside the headline.
+
 **If your NRR cannot be reconciled to the same starting customer cohort, contract values, and renewal dates, it is not ready for the board.** SWOTBee can help identify the reporting gaps before they become forecast surprises.
 
 [Get your 1-page renewal leakage estimate ->](/resources/renewal-leakage-estimate/)

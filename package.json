@@ -11,6 +11,7 @@
     "astro": "astro",
     "verify": "pnpm build",
     "check:consent": "node scripts/verify-consent-gating.mjs",
+    "check:reporting-resource": "node scripts/verify-reporting-resource.mjs",
     "check:report-signups": "node scripts/verify-report-signups.mjs",
     "serve:dist": "node scripts/serve-dist.mjs"
   },

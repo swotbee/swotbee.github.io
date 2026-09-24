@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">HubSpot report export workflow for Excel and PowerPoint</title>
+  <desc id="desc">A four-step workflow moving governed HubSpot exports through a raw data sheet and reporting model into an editable management presentation.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f6f1e8"/>
+      <stop offset="1" stop-color="#eef6f4"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#18302d" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="630" rx="36" fill="url(#background)"/>
+  <text x="72" y="82" fill="#153b36" font-family="Arial, sans-serif" font-size="38" font-weight="700">From HubSpot export to management decision</text>
+  <text x="72" y="120" fill="#526763" font-family="Arial, sans-serif" font-size="20">Keep source data, formulas, charts, and commentary in separate controlled layers.</text>
+  <g filter="url(#shadow)" font-family="Arial, sans-serif">
+    <g transform="translate(70 185)">
+      <rect width="235" height="270" rx="24" fill="#fff"/>
+      <circle cx="42" cy="42" r="20" fill="#df6c3f"/>
+      <text x="42" y="49" text-anchor="middle" fill="#fff" font-size="20" font-weight="700">1</text>
+      <text x="28" y="100" fill="#153b36" font-size="25" font-weight="700">HubSpot</text>
+      <text x="28" y="139" fill="#526763" font-size="17">Fixed cutoff</text>
+      <text x="28" y="169" fill="#526763" font-size="17">Approved filters</text>
+      <text x="28" y="199" fill="#526763" font-size="17">Named fields</text>
+      <rect x="28" y="224" width="158" height="28" rx="14" fill="#f8e8df"/>
+      <text x="107" y="244" text-anchor="middle" fill="#a74625" font-size="14" font-weight="700">CSV or XLSX</text>
+    </g>
+    <g transform="translate(345 185)">
+      <rect width="235" height="270" rx="24" fill="#fff"/>
+      <circle cx="42" cy="42" r="20" fill="#347f76"/>
+      <text x="42" y="49" text-anchor="middle" fill="#fff" font-size="20" font-weight="700">2</text>
+      <text x="28" y="100" fill="#153b36" font-size="25" font-weight="700">Raw data</text>
+      <text x="28" y="139" fill="#526763" font-size="17">Paste values only</text>
+      <text x="28" y="169" fill="#526763" font-size="17">Preserve record IDs</text>
+      <text x="28" y="199" fill="#526763" font-size="17">Do not edit rows</text>
+      <rect x="28" y="224" width="158" height="28" rx="14" fill="#e2f1ee"/>
+      <text x="107" y="244" text-anchor="middle" fill="#23665e" font-size="14" font-weight="700">SOURCE LAYER</text>
+    </g>
+    <g transform="translate(620 185)">
+      <rect width="235" height="270" rx="24" fill="#fff"/>
+      <circle cx="42" cy="42" r="20" fill="#d3a42a"/>
+      <text x="42" y="49" text-anchor="middle" fill="#fff" font-size="20" font-weight="700">3</text>
+      <text x="28" y="100" fill="#153b36" font-size="25" font-weight="700">Workbook</text>
+      <text x="28" y="139" fill="#526763" font-size="17">Stable formulas</text>
+      <text x="28" y="169" fill="#526763" font-size="17">QA and variance</text>
+      <text x="28" y="199" fill="#526763" font-size="17">Named chart ranges</text>
+      <rect x="28" y="224" width="158" height="28" rx="14" fill="#f7efd7"/>
+      <text x="107" y="244" text-anchor="middle" fill="#84650f" font-size="14" font-weight="700">MODEL LAYER</text>
+    </g>
+    <g transform="translate(895 185)">
+      <rect width="235" height="270" rx="24" fill="#173f3a"/>
+      <circle cx="42" cy="42" r="20" fill="#fff"/>
+      <text x="42" y="49" text-anchor="middle" fill="#173f3a" font-size="20" font-weight="700">4</text>
+      <text x="28" y="100" fill="#fff" font-size="25" font-weight="700">PowerPoint</text>
+      <text x="28" y="139" fill="#d3e4e1" font-size="17">Editable charts</text>
+      <text x="28" y="169" fill="#d3e4e1" font-size="17">Decision narrative</text>
+      <text x="28" y="199" fill="#d3e4e1" font-size="17">Owners and dates</text>
+      <rect x="28" y="224" width="158" height="28" rx="14" fill="#2d5f58"/>
+      <text x="107" y="244" text-anchor="middle" fill="#fff" font-size="14" font-weight="700">OUTPUT LAYER</text>
+    </g>
+  </g>
+  <g fill="none" stroke="#83a8a2" stroke-width="5" stroke-linecap="round">
+    <path d="M310 320h28"/><path d="M585 320h28"/><path d="M860 320h28"/>
+  </g>
+  <g fill="#83a8a2"><path d="M338 320l-12-9v18z"/><path d="M613 320l-12-9v18z"/><path d="M888 320l-12-9v18z"/></g>
+  <rect x="70" y="500" width="1060" height="74" rx="18" fill="#fff" opacity="0.9"/>
+  <text x="94" y="532" fill="#153b36" font-family="Arial, sans-serif" font-size="17" font-weight="700">CONTROL CHECK</text>
+  <text x="94" y="557" fill="#526763" font-family="Arial, sans-serif" font-size="16">Export total = raw total = workbook total = slide headline, all for the same cutoff and definition.</text>
+</svg>

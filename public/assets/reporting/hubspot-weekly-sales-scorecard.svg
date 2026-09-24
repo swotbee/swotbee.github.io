@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">HubSpot weekly sales report scorecard</title>
+  <desc id="desc">A fictional weekly sales scorecard showing pipeline movement, target coverage, risks, and a named decision.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f7f2e9"/>
+      <stop offset="1" stop-color="#eaf4f1"/>
+    </linearGradient>
+    <filter id="shadow"><feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#18302d" flood-opacity="0.12"/></filter>
+  </defs>
+  <rect width="1200" height="630" rx="36" fill="url(#bg)"/>
+  <text x="70" y="74" fill="#173f3a" font-family="Arial, sans-serif" font-size="38" font-weight="700">Weekly sales report: from numbers to decisions</text>
+  <text x="70" y="112" fill="#5a6e69" font-family="Arial, sans-serif" font-size="19">Fictional example, Friday 17:00 fixed cutoff</text>
+  <g transform="translate(70 160)" font-family="Arial, sans-serif" filter="url(#shadow)">
+    <g>
+      <rect width="245" height="150" rx="20" fill="#fff"/>
+      <text x="24" y="40" fill="#60726e" font-size="16">OPEN PIPELINE</text>
+      <text x="24" y="89" fill="#173f3a" font-size="38" font-weight="700">$2.61M</text>
+      <text x="24" y="124" fill="#28766c" font-size="18" font-weight="700">+$210K this week</text>
+    </g>
+    <g transform="translate(275)">
+      <rect width="245" height="150" rx="20" fill="#fff"/>
+      <text x="24" y="40" fill="#60726e" font-size="16">NEW + REOPENED</text>
+      <text x="24" y="89" fill="#173f3a" font-size="38" font-weight="700">$450K</text>
+      <text x="24" y="124" fill="#60726e" font-size="17">Primary growth driver</text>
+    </g>
+    <g transform="translate(550)">
+      <rect width="245" height="150" rx="20" fill="#fff"/>
+      <text x="24" y="40" fill="#60726e" font-size="16">REMOVED VALUE</text>
+      <text x="24" y="89" fill="#173f3a" font-size="38" font-weight="700">$315K</text>
+      <text x="24" y="124" fill="#b3522e" font-size="17" font-weight="700">Won, lost, reductions</text>
+    </g>
+    <g transform="translate(825)">
+      <rect width="235" height="150" rx="20" fill="#173f3a"/>
+      <text x="24" y="40" fill="#cce0dc" font-size="16">ACTION STATUS</text>
+      <text x="24" y="88" fill="#fff" font-size="30" font-weight="700">2 reviews</text>
+      <text x="24" y="122" fill="#f4c95d" font-size="17">Due before Friday</text>
+    </g>
+  </g>
+  <g transform="translate(70 350)" font-family="Arial, sans-serif">
+    <rect width="1060" height="190" rx="24" fill="#fff" filter="url(#shadow)"/>
+    <text x="28" y="44" fill="#173f3a" font-size="19" font-weight="700">DECISION BLOCK</text>
+    <text x="28" y="80" fill="#5a6e69" font-size="17">Observation</text>
+    <text x="190" y="80" fill="#173f3a" font-size="17" font-weight="700">Pipeline increased by $210K to $2.61M.</text>
+    <text x="28" y="115" fill="#5a6e69" font-size="17">Evidence</text>
+    <text x="190" y="115" fill="#173f3a" font-size="17">$450K entered; $315K left through wins, losses, and reductions.</text>
+    <text x="28" y="150" fill="#5a6e69" font-size="17">Decision</text>
+    <text x="190" y="150" fill="#173f3a" font-size="17">Review the two largest reductions before the next cutoff.</text>
+    <text x="860" y="150" fill="#28766c" font-size="17" font-weight="700">Owner: Sales Ops</text>
+  </g>
+</svg>

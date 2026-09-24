@@ -175,6 +175,8 @@ They are inverses on the revenue you keep: a higher churn rate pulls your renewa
 
 These metrics tell you whether renewals are healthy; the [complete guide to building a renewal pipeline in HubSpot](/posts/hubspot-renewal-pipeline-complete-guide/) shows you how to operationalize them, and the [365-day renewal strategy](/posts/renewal-strategy-365/) shows you how to win and expand them.
 
+Use the [HubSpot management reporting guide](/posts/hubspot-management-reporting/) to carry approved renewal definitions into a recurring decision pack. The [revenue, forecast, goal, and ROI reporting path](/hubspot-revenue-forecast-goal-roi-reporting/) connects those retention measures with target, forecast, and broader revenue reporting.
+
 **Measuring renewals is where most teams fool themselves:** blended averages, mixed revenue bases, and lagging signals. SWOTBee builds renewal forecasting, dashboards, and churn-risk scoring for mid-market companies across Energy, Manufacturing, and SaaS.
 
 [Get your 1-page renewal leakage estimate →](/resources/renewal-leakage-estimate/)
