@@ -1,12 +1,12 @@
 ---
 layout: ../../layouts/BlogPostLayout.astro
-title: "Outsourced Renewal Management vs In-House: Who Should Run Your SaaS Renewals?"
+title: "Outsourced Renewal Management: Costs, Scope and Alternatives"
 pubDate: "2026-08-19"
-description: "Outsourced renewal management, an in-house renewals team, or fixing your renewal process: what each costs, when each works, and the renewal management metrics that tell you which one you need. A practical guide for SaaS and B2B teams losing renewal rate to a manual renewal management process."
+description: "Compare outsourced renewal teams, in-house ownership and a HubSpot renewal process. See costs, fit, risks and the metrics that reveal what you need."
 category:
   title: "Revenue Operations"
   href: "/categories/revenue-operations/"
-modifiedDate: "2026-08-19"
+modifiedDate: "2026-10-02"
 author:
   name: "SWOTBee Team"
   url: "https://swotbee.com"
