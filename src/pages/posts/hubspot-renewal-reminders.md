@@ -188,4 +188,4 @@ A well-built reminder system streamlines renewal management: it keeps renewal da
 
 [Get your 1-page renewal leakage estimate →](/resources/renewal-leakage-estimate/)
 
-No call needed. Prefer to talk it through first? [Book a free 30-minute discovery call →](/renewal-audit-call/)
+No call needed. Prefer to talk it through first? <a href="/renewal-audit-call/" data-ga-cta="hubspot_renewal_reminders_footer_call">Book a free 30-minute discovery call →</a>

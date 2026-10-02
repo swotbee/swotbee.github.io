@@ -148,6 +148,36 @@ import ClientLogoStrip from "../components/astro/ClientLogoStrip.astro";
   <script is:inline>
     (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
     Cal("init", { origin: "https://cal.com" });
+
+    // Cal.com's supported embed events do not expose slot selection or booking-form
+    // start. bookerReady is the closest reliable, privacy-safe funnel stage: it fires
+    // only after the booking view and its slots are ready for interaction. linkReady
+    // and availabilityLoaded cover hosted embed releases that have not adopted the
+    // newer event yet. All three share one guard so a visit is never counted twice.
+    let schedulerReadyTracked = false;
+    const trackSchedulerReady = (e) => {
+      if (schedulerReadyTracked) return;
+      schedulerReadyTracked = true;
+      const booker = e.detail?.data;
+      window.__sbTrack?.("booking_scheduler_ready", {
+        scheduler: "renewal_audit",
+        event_type_id: booker?.eventId,
+        event_slug: booker?.eventSlug,
+      });
+    };
+    Cal("on", { action: "bookerReady", callback: trackSchedulerReady });
+    Cal("on", { action: "linkReady", callback: trackSchedulerReady });
+    Cal("on", { action: "availabilityLoaded", callback: trackSchedulerReady });
+    Cal("on", {
+      action: "linkFailed",
+      callback: (e) => {
+        window.__sbTrack?.("booking_scheduler_error", {
+          scheduler: "renewal_audit",
+          error_code: e.detail?.data?.code,
+        });
+      },
+    });
+
     Cal("inline", {
       elementOrSelector: "#renewal-audit-cal-inline",
       calLink: "swotbee/your-renewal-audit",

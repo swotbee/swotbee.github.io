@@ -305,6 +305,13 @@ const gtmId = import.meta.env.PUBLIC_GTM_ID || "GTM-WV9TQ6FH";
             window.gtag('event', name, payload);
           }
 
+          // Page-specific integrations can report non-navigation events through the
+          // same transport without reaching into gtag directly. Keep payloads
+          // privacy-safe at the call site: this helper adds only the beacon transport.
+          window.__sbTrack = function (name, params) {
+            fire(name, params);
+          };
+
           // Send an event, then navigate once it has actually gone out.
           //
           // Exposed globally because four magnet forms and the Cal.com booking callback
