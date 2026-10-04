@@ -71,18 +71,8 @@
   },
   "pnpm": {
     "overrides": {
-      "baseline-browser-mapping": "2.11.27",
-      "brace-expansion": "1.1.21",
-      "browserslist": "4.29.3",
-      "devalue": "5.9.4",
-      "fast-uri": "3.1.8",
-      "js-cookie": "3.0.8",
-      "js-yaml": "4.3.2",
-      "nanoid": "3.3.19",
-      "fast-xml-parser": "5.10.1",
-      "sharp": "0.35.5",
-      "smol-toml": "1.9.0",
-      "svgo": "4.1.0"
+      "esbuild": "0.28.2",
+      "http-cache-semantics": "4.3.0"
     }
   }
 }

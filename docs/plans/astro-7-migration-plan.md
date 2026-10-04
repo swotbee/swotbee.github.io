@@ -134,6 +134,13 @@ Depends on task 6.
 
 Run `pnpm audit`, inspect the resolved dependency graph, and test each temporary override. Remove only overrides made unnecessary by Astro 7. Require a frozen install, build, Sharp smoke test, and zero critical or high findings.
 
+Reconciliation decision: remove the twelve legacy overrides because an isolated
+no-override resolution selected the same safe versions naturally. Retain only active
+security pins for `esbuild@0.28.2` (Windows development-server path traversal fix) and
+`http-cache-semantics@4.3.0` (shared-cache `max-stale` disclosure fix). Astro 7.3.5's
+declared ranges accept both versions, and `pnpm audit` reports zero findings after the
+override update.
+
 ### 8. `TASK-416704001c57`: Run the Astro 7 release-candidate regression and performance gate
 
 Depends on task 7.
