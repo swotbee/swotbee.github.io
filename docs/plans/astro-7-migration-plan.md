@@ -106,6 +106,15 @@ Depends on task 4.
 
 Run the normalized full-site comparison. Inspect every semantic difference in Markdown and discoverability output. Fix unexpected changes and document only differences that are intentionally equivalent.
 
+Validation decision: retain the supported unified Markdown processor because the
+Astro 7 Satteri default changed published text and reduced indexed content. Unified
+preserves the Astro 6 words, headings, anchors, links, metadata, structured data,
+sitemap, redirects, and RSS output. It intentionally corrects only malformed curly
+quote direction on six posts. The semantic comparator treats left and right curly
+quotes as typographically equivalent, while the visual comparison still exposes any
+rendering change. Six representative Pagefind queries must return the same result
+counts and top-ten URL order on the Astro 6 and Astro 7 builds.
+
 ### 6. `TASK-1c7a851ac014`: Validate interactive UI, forms, booking, analytics, consent, and attribution
 
 Depends on task 5.

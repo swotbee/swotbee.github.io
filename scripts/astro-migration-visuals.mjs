@@ -105,6 +105,9 @@ async function main() {
       });
       await context.addInitScript(() => {
         localStorage.setItem("sb_consent", "denied");
+        // Freeze autoplay carousels and rotating proof panels. Their interval can
+        // race the screenshot after network-idle and create false visual diffs.
+        window.setInterval = () => 0;
       });
       await context.route("**/*", async (route) => {
         const url = new URL(route.request().url());
@@ -121,6 +124,21 @@ async function main() {
         });
         page.on("pageerror", (error) => pageErrors.push(error.message));
         const response = await page.goto(`${ORIGIN}${pageDefinition.route}`, { waitUntil: "networkidle" });
+        await page.evaluate(async () => {
+          const images = [...document.images];
+          for (const image of images) image.loading = "eager";
+          window.scrollTo(0, document.documentElement.scrollHeight);
+          await new Promise((resolve) => setTimeout(resolve, 100));
+          await Promise.all(images.map(async (image) => {
+            if (!image.complete) {
+              await new Promise((resolve) => {
+                image.addEventListener("load", resolve, { once: true });
+                image.addEventListener("error", resolve, { once: true });
+              });
+            }
+            await image.decode?.().catch(() => {});
+          }));
+        });
         await page.addStyleTag({ content: "*,*::before,*::after{animation:none!important;transition:none!important;caret-color:transparent!important}" });
         await page.evaluate(() => window.scrollTo(0, 0));
         const fileName = `${pageDefinition.slug}-${viewport.name}.png`;

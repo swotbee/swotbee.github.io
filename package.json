@@ -20,11 +20,12 @@
     "baseline:astro:compare": "node scripts/astro-migration-baseline.mjs compare",
     "baseline:astro:self-test": "node scripts/astro-migration-baseline.mjs self-test",
     "baseline:astro:visuals": "node scripts/astro-migration-visuals.mjs",
+    "baseline:astro:search": "node scripts/astro-migration-pagefind-compare.mjs",
     "serve:dist": "node scripts/serve-dist.mjs"
   },
   "dependencies": {
     "@astrojs/alpinejs": "^1.0.0",
-    "@astrojs/markdown-satteri": "^0.4.2",
+    "@astrojs/markdown-remark": "^7.3.0",
     "@astrojs/react": "^7.0.0",
     "@astrojs/rss": "^4.0.19",
     "@astrojs/sitemap": "^3.7.4",

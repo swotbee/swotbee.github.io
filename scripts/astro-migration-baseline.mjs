@@ -102,6 +102,10 @@ function normalizeText(html) {
     .replace(/<(?:br|hr)\b[^>]*>/gi, " ")
     .replace(/<[^>]+>/g, " "))
     .replace(/\s+/g, " ")
+    // Quote direction is typography, not a semantic content change. Astro 7's
+    // unified processor corrects a few opening/closing quote mistakes from Astro 6.
+    .replace(/[\u2018\u2019]/g, "'")
+    .replace(/[\u201c\u201d]/g, '"')
     .trim();
 }
 

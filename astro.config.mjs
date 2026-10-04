@@ -1,5 +1,5 @@
 import { defineConfig } from "astro/config";
-import { satteri } from "@astrojs/markdown-satteri";
+import { unified } from "@astrojs/markdown-remark";
 import react from "@astrojs/react";
 import alpine from "@astrojs/alpinejs";
 // import tailwind from "@astrojs/tailwind";
@@ -77,14 +77,12 @@ export default defineConfig({
   },
 
   markdown: {
-    // Astro 7 uses Satteri by default. Configure it explicitly so the chosen
-    // processor and the existing smart-punctuation behavior cannot drift with
-    // a framework default. The full Markdown corpus is covered by the migration
-    // baseline before this becomes the permanent processor choice.
-    processor: satteri({
-      features: {
-        smartPunctuation: true,
-      },
+    // The Astro 7 Satteri trial changed meaningful text in multiple published
+    // posts and reduced Pagefind's indexed word count. Keep Astro 6's unified
+    // rendering contract until those content differences can be reviewed as a
+    // separate change instead of silently accepting them during this migration.
+    processor: unified({
+      smartypants: true,
     }),
   },
 

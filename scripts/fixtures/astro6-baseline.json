@@ -284,8 +284,8 @@
       "kind": "homepage-react-island",
       "route": "/",
       "hasHtmlElement": true,
-      "bytes": 132562,
-      "visibleTextHash": "6569ddb0831de815642d587afa5aab33ccfccf6430d60a687207af6714ee7e2c",
+      "bytes": 141629,
+      "visibleTextHash": "cfd63bab1d40feaf0680aa57dba31ae90a274bb443a29d217731760f3946a848",
       "visibleTextLength": 13875,
       "headings": [
         {
@@ -758,7 +758,7 @@
       "kind": "booking-funnel",
       "route": "/renewal-audit-call/",
       "hasHtmlElement": true,
-      "bytes": 49524,
+      "bytes": 58588,
       "visibleTextHash": "721b0680f7a3fc1616dde475140db73f3b4e81dc71e175bab076b433a2e38be6",
       "visibleTextLength": 3319,
       "headings": [
@@ -959,8 +959,8 @@
       "kind": "reporting-form-landing",
       "route": "/hubspot-sales-pipeline-reporting/",
       "hasHtmlElement": true,
-      "bytes": 106263,
-      "visibleTextHash": "7a7bf8509d29a435efd5ac443f775944c4eb3cd846b36342e0fb0881ee15e55e",
+      "bytes": 115331,
+      "visibleTextHash": "39e19285abf28055126d6621fcc357c9e4b832f4065bace76c57172f31c5059f",
       "visibleTextLength": 12480,
       "headings": [
         {
@@ -1452,8 +1452,8 @@
       "kind": "markdown-article",
       "route": "/posts/contract-renewal-reminder-software/",
       "hasHtmlElement": true,
-      "bytes": 91707,
-      "visibleTextHash": "ebd496b1e02fb3dac42cbf7c98e5b7d8b8c8a3705b6b2391b1911b79d1a92166",
+      "bytes": 100771,
+      "visibleTextHash": "8c8f0e69921cb5141f496c4083221c4aa03eb41f249750825f474b94a9cd704b",
       "visibleTextLength": 25362,
       "headings": [
         {
@@ -1954,7 +1954,7 @@
       "kind": "service-page",
       "route": "/services/sales-revops/",
       "hasHtmlElement": true,
-      "bytes": 59743,
+      "bytes": 68811,
       "visibleTextHash": "6fb49b079f149a2812f88e9661e522b2f8b841fb1272530b5f4ad1d5d93b724c",
       "visibleTextLength": 7144,
       "headings": [
@@ -2354,7 +2354,7 @@
       "kind": "resource-page",
       "route": "/resources/hubspot-management-reporting-starter-pack/",
       "hasHtmlElement": true,
-      "bytes": 49782,
+      "bytes": 58846,
       "visibleTextHash": "44f905eea9188e78e72f9e3fbd0d8bfd96a1b136148f07b7a8bfd785f390b86c",
       "visibleTextLength": 4781,
       "headings": [
@@ -2598,7 +2598,7 @@
       "kind": "interactive-calculator",
       "route": "/renewal-scorecard/",
       "hasHtmlElement": true,
-      "bytes": 59841,
+      "bytes": 68905,
       "visibleTextHash": "19e988b95e5c6c9fba251fa5cbffe5cf78326d8a4f0cbcd1e51b320ad3dedb07",
       "visibleTextLength": 2900,
       "headings": [
@@ -2820,8 +2820,8 @@
       "kind": "noindex-result-page",
       "route": "/renewal-audit-call/thank-you/",
       "hasHtmlElement": true,
-      "bytes": 37646,
-      "visibleTextHash": "d5bb484962517b1bb05cc1c682744d562b9268fb5af7178fbf53d919cc3e4e5b",
+      "bytes": 46710,
+      "visibleTextHash": "bd6711014299764c72ec2426a0e30838711b4403acce78395b4e8ef81639fe9e",
       "visibleTextLength": 1686,
       "headings": [
         {
@@ -3041,7 +3041,7 @@
   },
   "markdownPages": {
     "/posts/ActiveCampaign vs HubSpot_ Comprehensive Comparison 2023/": {
-      "textHash": "8458175c362fea2669408a4c70468f6d1cac96e1deed5f4249c5862413713c3d",
+      "textHash": "f0db058dc5928f02c0973a61f4847905f5e1bcbc3297bbd50867d13650bf5b8d",
       "textLength": 20932,
       "headings": [
         {
@@ -3216,7 +3216,7 @@
       "jsonLdCount": 3
     },
     "/posts/Affordable HubSpot Alternatives for Startups/": {
-      "textHash": "faf3e1450a889d106fad26e549d833e252cfe31d56262fc127ba1be4925adf54",
+      "textHash": "6d4f350dbf4ef47605e5f5d23314841abfc84a35edb173e96dc48240239563a4",
       "textLength": 12678,
       "headings": [
         {
@@ -3451,7 +3451,7 @@
       "jsonLdCount": 3
     },
     "/posts/Best Practices for Implementing CRM Solutions_ Free & Inexpensive Options/": {
-      "textHash": "8423d9fb5e3fbab826e60abd09b8104b40b3b74fff9c961cc70121409a06b51c",
+      "textHash": "518a1754c607cce630b14afdeb91b77619da9814e2b1fec5810e62daf719728d",
       "textLength": 23903,
       "headings": [
         {
@@ -3571,7 +3571,7 @@
       "jsonLdCount": 3
     },
     "/posts/Hootsuite vs HubSpot_ Ultimate Tool Comparison/": {
-      "textHash": "13a21518e0b403671023844558fd4eb4ad8aeef09a8611fc90efff43e9fe2dda",
+      "textHash": "0cafdc0b8bd6c338c29e5c906ddc46234b1979308250b576a2a2537293879e48",
       "textLength": 11625,
       "headings": [
         {
@@ -3612,12 +3612,12 @@
         {
           "level": 3,
           "id": "hootsuites-user-experience",
-          "text": "Hootsuite’s User Experience"
+          "text": "Hootsuite's User Experience"
         },
         {
           "level": 3,
           "id": "hubspots-user-experience",
-          "text": "HubSpot’s User Experience"
+          "text": "HubSpot's User Experience"
         },
         {
           "level": 2,
@@ -3651,7 +3651,7 @@
       "jsonLdCount": 3
     },
     "/posts/How_to_Onboard_Your_Team_with_HubSpot_CRM_Free_Plan_Setup/": {
-      "textHash": "7dbc34ad622ae387ed99d70c0be9f4d54b3e4cdd514f7617e9a1f46c61faaa13",
+      "textHash": "bf8d21dac1123313cf8cf0170d83a6af9c34dc02d16e7e24be68878f1f0514e6",
       "textLength": 30980,
       "headings": [
         {
@@ -3846,7 +3846,7 @@
       "jsonLdCount": 3
     },
     "/posts/How HubSpot Transforms Beverage Marketing Strategies/": {
-      "textHash": "ea2aa7a180d754a02ed82049fa6a00c907729c0a3d795012fad4c00e6da2b90a",
+      "textHash": "062d2f4efdd3441297da19e9b168d52c89d7ab9fcea76b54c5919e7afde2482a",
       "textLength": 16150,
       "headings": [
         {
@@ -3877,12 +3877,12 @@
         {
           "level": 3,
           "id": "case-study-1-a-craft-brewerys-journey-to-success",
-          "text": "Case Study 1: A Craft Brewery’s Journey to Success"
+          "text": "Case Study 1: A Craft Brewery's Journey to Success"
         },
         {
           "level": 3,
           "id": "case-study-2-a-beverage-distributors-streamlined-operations",
-          "text": "Case Study 2: A Beverage Distributor’s Streamlined Operations"
+          "text": "Case Study 2: A Beverage Distributor's Streamlined Operations"
         },
         {
           "level": 3,
@@ -3976,7 +3976,7 @@
       "jsonLdCount": 3
     },
     "/posts/HubSpot CMS_ Build & Manage Your Website/": {
-      "textHash": "1e728c095604058bcc6f468821cf60e4843bad8626cffa391194544c3fdb03d1",
+      "textHash": "078af25edf5fba4dbe9e9bcf8efc754189df42c44afa9f00ec11ad71f517da7b",
       "textLength": 20770,
       "headings": [
         {
@@ -4256,7 +4256,7 @@
       "jsonLdCount": 3
     },
     "/posts/HubSpot Free CRM vs Competitors_ Best Free CRM Comparison/": {
-      "textHash": "d45200184fc50cea3025fe045931e5db71fe2aa423335e0da525ad783c74ec88",
+      "textHash": "276c3166b569a89747c827bf3ae0fc977bd18fd61346399ea69baf0f0d913e23",
       "textLength": 15264,
       "headings": [
         {
@@ -4346,7 +4346,7 @@
       "jsonLdCount": 3
     },
     "/posts/HubSpot_for_Startups_Tips/": {
-      "textHash": "f6ff4c55ea6d9e8c472b449cffb6d49d2dcd95b02bd1f8e0d631069077360827",
+      "textHash": "bbbe99a8dd6250e4355b712a3c607d3046c7586c2978ee5e387f072f9fed80f6",
       "textLength": 23357,
       "headings": [
         {
@@ -4367,7 +4367,7 @@
         {
           "level": 2,
           "id": "hubspot-features-for-startups-whats-included",
-          "text": "HubSpot Features for Startups: What’s Included?"
+          "text": "HubSpot Features for Startups: What's Included?"
         },
         {
           "level": 2,
@@ -4466,7 +4466,7 @@
       "jsonLdCount": 3
     },
     "/posts/Master_HubSpot_Workflows_Optimize_Automate/": {
-      "textHash": "bca43155461f44a078c3e6986967c7b1f3b6fb00190da8f926abcaebb2533369",
+      "textHash": "d8d840ab02a2013a61cbe936b9e60b98835906fd3ac718f3dca25028b3f5f496",
       "textLength": 21009,
       "headings": [
         {
@@ -4601,7 +4601,7 @@
       "jsonLdCount": 3
     },
     "/posts/Maximize Customer Support with HubSpot_ Key Tools & Tips/": {
-      "textHash": "deeaaa0f43e75bb3632e190eb7d1906a37cdb305e507f609d5c73f973672a0d6",
+      "textHash": "565320e38b2f2e510f09d200a0a6ca5ea415fdf6edf2f4ad3644e1233d1cdb84",
       "textLength": 9955,
       "headings": [
         {
@@ -4756,7 +4756,7 @@
       "jsonLdCount": 3
     },
     "/posts/Maximize Your Marketing_ HubSpot Free Guide/": {
-      "textHash": "1d0be2b5620ccc306fa6f99eb59099ef702b277acc3a197f7931cef209d7e8c6",
+      "textHash": "696b800421eb325072116b5910d0df84913b2130b4f4cf5f2335844f7c23f768",
       "textLength": 20417,
       "headings": [
         {
@@ -4777,7 +4777,7 @@
         {
           "level": 2,
           "id": "exploring-hubspot-free-features-whats-included",
-          "text": "Exploring HubSpot Free Features: What’s Included?"
+          "text": "Exploring HubSpot Free Features: What's Included?"
         },
         {
           "level": 2,
@@ -4822,7 +4822,7 @@
         {
           "level": 2,
           "id": "marketing-automation-with-hubspot-free-whats-possible",
-          "text": "Marketing Automation with HubSpot Free: What’s Possible?"
+          "text": "Marketing Automation with HubSpot Free: What's Possible?"
         },
         {
           "level": 2,
@@ -4866,7 +4866,7 @@
       "jsonLdCount": 3
     },
     "/posts/Optimize Marketing with Amplitude HubSpot Integration/": {
-      "textHash": "889ddcb71b4a3c32c1f08104de7113404ed780289a818bab5c7e24a7ad82e25c",
+      "textHash": "b082962dad27441cf05f2c0cd7d3c9589ba3e3f95eb3d20392a47ba3d402c7ec",
       "textLength": 9689,
       "headings": [
         {
@@ -4951,7 +4951,7 @@
       "jsonLdCount": 3
     },
     "/posts/RecurPost vs HubSpot_ Feature & Pricing Comparison/": {
-      "textHash": "4f3cb2457586400d65c7b8b80fa2e574464d871eca93304d18fae2503d3278ef",
+      "textHash": "26e65aa2f143fe6a7516f2c4163ef88ed4b63959402213d15b0953e99e846968",
       "textLength": 10167,
       "headings": [
         {
@@ -5071,7 +5071,7 @@
       "jsonLdCount": 3
     },
     "/posts/Step-by-Step Guide to HubSpot WordPress Setup​/": {
-      "textHash": "d6fe32c90404cf1822e22aef73c4875ba4821be5655aaa8998c1069523d78240",
+      "textHash": "66264e2c25c371e8df5df6272bdb7b833736b7d2b83b9e0c1dd52eb6d8dd0663",
       "textLength": 11526,
       "headings": [
         {
@@ -5082,7 +5082,7 @@
         {
           "level": 3,
           "id": "leveraging-hubspots-capabilities",
-          "text": "Leveraging HubSpot’s Capabilities"
+          "text": "Leveraging HubSpot's Capabilities"
         },
         {
           "level": 3,
@@ -5127,7 +5127,7 @@
         {
           "level": 3,
           "id": "understanding-the-plugins-features",
-          "text": "Understanding the Plugin’s Features"
+          "text": "Understanding the Plugin's Features"
         },
         {
           "level": 3,
@@ -5256,7 +5256,7 @@
       "jsonLdCount": 3
     },
     "/posts/Strategic_Account_Management_Plan/": {
-      "textHash": "eebb19c0bfbe657a1e9b45461dca9b6bbae554bfeaa70e77d3524fcbbc3d498e",
+      "textHash": "6fc107459b6cd27d6b3a63461388b67b8f7648307384b633b6cdae35b1fcdde7",
       "textLength": 23524,
       "headings": [
         {
@@ -5356,7 +5356,7 @@
       "jsonLdCount": 3
     },
     "/posts/The Future of HubSpot CRM_ AI-Powered Automation/": {
-      "textHash": "60f3a115365204a48bd70b01780215f921a40649a3fc2375f46bc7d9e85151a1",
+      "textHash": "595a794c8187a464b561443a734dbefa816829239d5978408deac5be72c01c1d",
       "textLength": 9029,
       "headings": [
         {
@@ -5487,17 +5487,17 @@
         {
           "level": 3,
           "id": "hubspot-ai-foundations-series-beginner-friendly",
-          "text": "”HubSpot AI Foundations” Series (Beginner-Friendly)"
+          "text": "\"HubSpot AI Foundations\" Series (Beginner-Friendly)"
         },
         {
           "level": 3,
           "id": "advanced-ai-automation-series-intermediate-users",
-          "text": "”Advanced AI Automation” Series (Intermediate Users)"
+          "text": "\"Advanced AI Automation\" Series (Intermediate Users)"
         },
         {
           "level": 3,
           "id": "ai-success-stories-series-social-proof",
-          "text": "”AI Success Stories” Series (Social Proof)"
+          "text": "\"AI Success Stories\" Series (Social Proof)"
         },
         {
           "level": 2,
@@ -5546,7 +5546,7 @@
       "jsonLdCount": 3
     },
     "/posts/Top CRM Solutions Tailored for Accountants/": {
-      "textHash": "1dac375bbd9f2370f6278249934d7a01b2fd57e3b3006ae8b0a171e6d9f7987b",
+      "textHash": "9f192bd2c3ee955f54236e7c6341c82767528be0dda03753132caa0830a3a34b",
       "textLength": 19138,
       "headings": [
         {
@@ -5911,7 +5911,7 @@
       "jsonLdCount": 3
     },
     "/posts/Top Tools for Effective Content Management_ Enhance Workflow & Collaboration/": {
-      "textHash": "6ea1f6dcd1cfa56a3522d11d84be424b79e5c12d5a708e462028e5399ba8a4aa",
+      "textHash": "757a05b1366b86603cc21a3f08c1ad1bdfb8e95511b10613de65ce6fae5f3820",
       "textLength": 13984,
       "headings": [
         {
@@ -6131,7 +6131,7 @@
       "jsonLdCount": 3
     },
     "/posts/Transform Your Workflow with HubSpot Zapier Integration/": {
-      "textHash": "fe8fbe406c8e55adfbe3d4968c8da0e8dc5bae9972b2312a548ff90cac438645",
+      "textHash": "833edd62e67f1b16aa8c2fc1a40243a4b4dae733c2c92eb0619f8668ddb4de86",
       "textLength": 11509,
       "headings": [
         {
@@ -6346,7 +6346,7 @@
       "jsonLdCount": 3
     },
     "/posts/affiliate-attribution-models-explained/": {
-      "textHash": "82889f4fa89e23eb540295db04956c3c0528da002df86a0933b65217f8abd4ec",
+      "textHash": "16f00f465493ff4fd169b1f24a92655b4a3004a2a03a97206dbadbc1216b005d",
       "textLength": 17368,
       "headings": [
         {
@@ -6395,7 +6395,7 @@
       "jsonLdCount": 5
     },
     "/posts/amplitude-hubspot-renewal-signals/": {
-      "textHash": "f925479ea2f28453f11cf4e753a4dff98d6684d0eb0e51bf8fdcdfbb5a907148",
+      "textHash": "1bc6b18c853bea5b554043c8b642eb19aed6b491661bdd8ed938b8c816f68c11",
       "textLength": 8849,
       "headings": [
         {
@@ -6411,7 +6411,7 @@
         {
           "level": 2,
           "id": "copy-this-the-exact-cohort-definition-for-at-risk-account",
-          "text": "Copy This: The Exact Cohort Definition for “At-Risk Account”"
+          "text": "Copy This: The Exact Cohort Definition for \"At-Risk Account\""
         },
         {
           "level": 2,
@@ -6426,7 +6426,7 @@
         {
           "level": 2,
           "id": "what-this-data-can-and-cant-tell-you",
-          "text": "What This Data Can (and Can’t) Tell You"
+          "text": "What This Data Can (and Can't) Tell You"
         },
         {
           "level": 2,
@@ -6454,7 +6454,7 @@
       "jsonLdCount": 6
     },
     "/posts/at-bat-renewal-rate/": {
-      "textHash": "5ec17d093fde4c50a56b8ae219d8094aea4baa118e4f8420ac459a04b6d801c3",
+      "textHash": "7913c390616c32e973c0194dbd1f27f775f650123c62fd5b97c95c3e1f4841d3",
       "textLength": 6814,
       "headings": [
         {
@@ -6518,7 +6518,7 @@
       "jsonLdCount": 6
     },
     "/posts/b2b-saas-customer-retention/": {
-      "textHash": "e4ba752a22d29fafed3262ab73b790bb33eb7a2a91c4df4026a7f13ffed1eab0",
+      "textHash": "51291be4762fd1741709920c24f42daf478eb3995b9488729b7ffc1a140d4247",
       "textLength": 8797,
       "headings": [
         {
@@ -6586,7 +6586,7 @@
       "jsonLdCount": 5
     },
     "/posts/best-product-analytics-tools-hubspot-renewals/": {
-      "textHash": "5965473dbf019d60aa2ba8ba82c04a3a205c9acfc826a4a3e2a92dc16f3cedd6",
+      "textHash": "35ef1f30a1f549f5ff80f89b034dff1c7ff35e28588967bed55b4cdb90018a5c",
       "textLength": 10925,
       "headings": [
         {
@@ -6655,7 +6655,7 @@
       "jsonLdCount": 6
     },
     "/posts/cac-ltv-ratio-renewals/": {
-      "textHash": "aade5c31c88d24dde523221e62857a69eb770cce9ca53f6f5fe7d0dd01592851",
+      "textHash": "33fa2c6942d919e0067be97ab9ea83b6ef8e5cdd9c360d92fb4c2b573289bf58",
       "textLength": 7798,
       "headings": [
         {
@@ -6718,7 +6718,7 @@
       "jsonLdCount": 6
     },
     "/posts/chargebee-hubspot-integration/": {
-      "textHash": "b26de8ec960853e1c070e7ac70a3cb4f9e8491fa3e1eb0968d9a0bfcf5f9df9a",
+      "textHash": "357ae683b24282c0d90ce8acd0e3d0774b6f11c589caacf0a356a6b14158efd3",
       "textLength": 12421,
       "headings": [
         {
@@ -6776,7 +6776,7 @@
       "jsonLdCount": 6
     },
     "/posts/churned-customer-win-back/": {
-      "textHash": "bf16938e7d39db656432b57ed5f897b31be98ca5797c4df95ae03b2a30816f77",
+      "textHash": "184ce2941e076c67f15dda5abd0cce02db3ed9cdacbf9eed141564b804267df8",
       "textLength": 8649,
       "headings": [
         {
@@ -6842,7 +6842,7 @@
       "jsonLdCount": 6
     },
     "/posts/churnzero-pricing-alternatives/": {
-      "textHash": "1343c0a4c7cfa7010b87e8fed79dc474586c79638f0d343f857689d477261382",
+      "textHash": "b88f7bf0f10fbe9aa62e487da3e0583b76f4eb38af0a3a222851bf63ed1c273d",
       "textLength": 17668,
       "headings": [
         {
@@ -6858,7 +6858,7 @@
         {
           "level": 2,
           "id": "how-churnzeros-pricing-model-works-what-drives-a-quote",
-          "text": "How ChurnZero’s Pricing Model Works: What Drives a Quote"
+          "text": "How ChurnZero's Pricing Model Works: What Drives a Quote"
         },
         {
           "level": 3,
@@ -6944,7 +6944,7 @@
       "jsonLdCount": 6
     },
     "/posts/clm-vs-crm-contract-renewals/": {
-      "textHash": "1cf8a4e6a7153d1e5bfdda97c3d1fe25db0f8e4f2fb0b218c594cf8ed1f6e1e0",
+      "textHash": "e87712ce0e07a94d419d426d86ea249cfd447018a0484a01cfe85d49b91e3184",
       "textLength": 20370,
       "headings": [
         {
@@ -7033,7 +7033,7 @@
       "jsonLdCount": 6
     },
     "/posts/cohort-retention-analysis-churn/": {
-      "textHash": "cbbd664a3d205d4d1028982cf63758ee9593865dd4a41093bc6fd4c90767ff54",
+      "textHash": "ff06fb352f35678676f016c07563157b866f7db11849433ca86e8c968a1c1ba0",
       "textLength": 8062,
       "headings": [
         {
@@ -7096,7 +7096,7 @@
       "jsonLdCount": 6
     },
     "/posts/commission-accelerators-decelerators-guide/": {
-      "textHash": "d6bcd79a42d1d79ef4b08567922956765c98fa114f758248f04caf6081b2f1b1",
+      "textHash": "a327014caae88ea0a802e59641fde4296a66e0616c168b259e95889a8a71ef22",
       "textLength": 21718,
       "headings": [
         {
@@ -7255,7 +7255,7 @@
       "jsonLdCount": 5
     },
     "/posts/commission-splits-clawbacks-accelerators-guide/": {
-      "textHash": "a228aaf4a10d18d0883408d633a375c7a739820aee486119e3fe8732901e8fc5",
+      "textHash": "f4a8f2641d39a8e190de398ffec224f725b9d6690f3de2ae06744ff1de4b0247",
       "textLength": 18096,
       "headings": [
         {
@@ -7414,7 +7414,7 @@
       "jsonLdCount": 5
     },
     "/posts/commission-tracking-growing-teams-graduation/": {
-      "textHash": "030cd5148908843a35fc272697921dc1d779257ae8ca5c02e850b3a4bdef7705",
+      "textHash": "69ffee58da670a7d8ed3fe3bd15ea21eec0ee02896678ddee3f030d85a0fdfbb",
       "textLength": 17526,
       "headings": [
         {
@@ -7450,7 +7450,7 @@
         {
           "level": 2,
           "id": "the-hidden-cost-of-well-deal-with-it-later",
-          "text": "The Hidden Cost of “We’ll Deal With It Later”"
+          "text": "The Hidden Cost of \"We'll Deal With It Later\""
         },
         {
           "level": 2,
@@ -7499,7 +7499,7 @@
       "jsonLdCount": 5
     },
     "/posts/contract-management-automation-workflow/": {
-      "textHash": "700d9bd8c2570efed860c8c3558564b9b7f37da09b5aef485d209bfcd0cef337",
+      "textHash": "ee7750145c723baec9062b62a20d101fda33acb59450c11bfae150d014e71217",
       "textLength": 18741,
       "headings": [
         {
@@ -7590,7 +7590,7 @@
       "jsonLdCount": 6
     },
     "/posts/contract-management-checklist/": {
-      "textHash": "8ffc0222334ead61871dd9a959c62d9085ebae59fc19af4e52fc008d4e310ccd",
+      "textHash": "736dd80fa32f3dbdc7cd03d8c52bc98aae4433da554b86e719517de64e5beb7e",
       "textLength": 15574,
       "headings": [
         {
@@ -7666,7 +7666,7 @@
       "jsonLdCount": 6
     },
     "/posts/contract-management-guide/": {
-      "textHash": "8260f247831344b0083bcd2b0fc44f0c973f77c0da63074d81fd79a631d182e2",
+      "textHash": "5945de22c9b966dd7b9a7950f66a6d0898f28814f257668250e4cf7fe9f6ec8e",
       "textLength": 18598,
       "headings": [
         {
@@ -7780,7 +7780,7 @@
       "jsonLdCount": 5
     },
     "/posts/contract-management-software-compared/": {
-      "textHash": "d3b81a26aa27cb3206635c6b29818fda421e6d7b589e303974afae6f2f490142",
+      "textHash": "6f0614603131cff1f1a90227cd3c550cf1132bafa4da81780fccf7fda848ded1",
       "textLength": 17935,
       "headings": [
         {
@@ -7929,7 +7929,7 @@
       "jsonLdCount": 6
     },
     "/posts/contract-management-software-small-business/": {
-      "textHash": "eb0a4c8e922e0d5716bd744884378a9e312c1ec2a31bff56ba48cf3554595c22",
+      "textHash": "4ee28e93612423a6bdda56eb4421cdae74cde7f448b2737f3f792c14f52423c0",
       "textLength": 24792,
       "headings": [
         {
@@ -8034,7 +8034,7 @@
       "jsonLdCount": 6
     },
     "/posts/contract-renewal-management-complete-guide/": {
-      "textHash": "d29e0365d735c7292eb62454af84b4928eae0d5d301305ec1434d75041b04492",
+      "textHash": "4a89e9ce7ddef1953fd858a9bc03fbd3b21fb7158d2723e7fdfbd63ebbb669b8",
       "textLength": 27196,
       "headings": [
         {
@@ -8148,7 +8148,7 @@
       "jsonLdCount": 5
     },
     "/posts/contract-renewal-process-checklist/": {
-      "textHash": "cbe070e6b75010a93ed0eea21cdf784f6b490ed6fdc5ec094771e73adf636f0a",
+      "textHash": "5927da9042665ca862c903244e204315e94ca691d4b5bd7a569e338765b9965c",
       "textLength": 22759,
       "headings": [
         {
@@ -8217,7 +8217,7 @@
       "jsonLdCount": 6
     },
     "/posts/contract-renewal-reminder-software/": {
-      "textHash": "d85b68ed4241493e6fceb75a17097a94f6965f70a52ba19c37db310f2790d68f",
+      "textHash": "e2d7de743a5669812ce1f9dd8ef0a1b4c94f754e8e65ec07e2a29d6b416dca23",
       "textLength": 22984,
       "headings": [
         {
@@ -8320,7 +8320,7 @@
       "jsonLdCount": 6
     },
     "/posts/crm-customer-retention/": {
-      "textHash": "fe2a0cbe528d983ad7f7f105328d5feec2d39ec87e8156eccf3f80a30ca42a54",
+      "textHash": "767cde8a807c980a0948d6ddf3686659f35292a3ca07dc56c534d69a0a1577f1",
       "textLength": 6816,
       "headings": [
         {
@@ -8366,7 +8366,7 @@
       "jsonLdCount": 6
     },
     "/posts/crm-erp-integration/": {
-      "textHash": "d4ed88e2cedbc1a548fddac74156b42d99e38c0ad03ad7f0e517876550527651",
+      "textHash": "21af8f267be7ce1019cb2232cebc7092c0120769deddcc4d6765d8f3ae886309",
       "textLength": 9412,
       "headings": [
         {
@@ -8435,7 +8435,7 @@
       "jsonLdCount": 5
     },
     "/posts/cross-sell-vs-upsell/": {
-      "textHash": "9c53da1e3ff810af012970f55296985926d7a48045d630a59b6b13ee06e990da",
+      "textHash": "f257c768fbdbe89b624652edf8f7044e6b045c228af004031d25ade9ac252456",
       "textLength": 9003,
       "headings": [
         {
@@ -8501,7 +8501,7 @@
       "jsonLdCount": 6
     },
     "/posts/cs-platform-hubspot-integrations-compared/": {
-      "textHash": "4c54d4574aa9606d1630b9ece54e86fe4d920d09c3f299f7f51286fb07060325",
+      "textHash": "18bdd1e97da35b3b4c59775bb68953f063a767b5d546355207357d4615ae61c1",
       "textLength": 21629,
       "headings": [
         {
@@ -8547,7 +8547,7 @@
         {
           "level": 3,
           "id": "what-planhats-hubspot-v2-integration-syncs",
-          "text": "What Planhat’s HubSpot V2 Integration Syncs"
+          "text": "What Planhat's HubSpot V2 Integration Syncs"
         },
         {
           "level": 3,
@@ -8600,7 +8600,7 @@
       "jsonLdCount": 6
     },
     "/posts/custom-netsuite-crm-integration/": {
-      "textHash": "b96299c2b5eb2aba74975e4e868b8cf348d2a343ed0175030fbeb5d3c0577642",
+      "textHash": "5c8786d49440dcb81f5ae8c61d4d5f7cf3040ddc37ceb33cfe3e9e198a03d1b0",
       "textLength": 13697,
       "headings": [
         {
@@ -8686,7 +8686,7 @@
       "jsonLdCount": 6
     },
     "/posts/customer-retention-consulting/": {
-      "textHash": "ca1ae88d1b5bb082a2504701ddf42a26c56600f0640fa36be6f726fcf0e90e94",
+      "textHash": "95d8134a8e1d633b267cbbc32edc0f4fa4fbb3eb91ef97a3362586aa6af57745",
       "textLength": 13201,
       "headings": [
         {
@@ -8887,7 +8887,7 @@
       "jsonLdCount": 6
     },
     "/posts/customer-success-in-hubspot/": {
-      "textHash": "16ca373c050f4b0a70746aa2c4fd3ec120ba91fa4534b22a874dfa20b614fc7a",
+      "textHash": "3987ebdd0eb26b214199a3c4d844c63c3ec1f08129327e5171e45aa8ccc30faf",
       "textLength": 17189,
       "headings": [
         {
@@ -8903,7 +8903,7 @@
         {
           "level": 2,
           "id": "hubspots-native-customer-success-toolkit",
-          "text": "HubSpot’s Native Customer Success Toolkit"
+          "text": "HubSpot's Native Customer Success Toolkit"
         },
         {
           "level": 3,
@@ -8980,7 +8980,7 @@
       "jsonLdCount": 5
     },
     "/posts/customer-success-management-roi-research/": {
-      "textHash": "ded453a7bb7565b0616afcb55e400b83d4a26513c21175fd63d0b186d44f1db2",
+      "textHash": "837c030b78eb30ffae4218ec54b50dcf0d1922b51697a05d4f3264959a5e2768",
       "textLength": 12211,
       "headings": [
         {
@@ -9033,7 +9033,7 @@
       "jsonLdCount": 5
     },
     "/posts/customer-success-qualified-leads/": {
-      "textHash": "70b555fb1d41eb603171ca11fd918f26cf376b63ef0683a45ba4ca76e4e27365",
+      "textHash": "7ba2ae553cdcbb5a8c238d91fc8ccc6a6249300c856b2dd83ffe5cf1463ae1a7",
       "textLength": 6206,
       "headings": [
         {
@@ -9086,7 +9086,7 @@
       "jsonLdCount": 6
     },
     "/posts/customer-value-realization/": {
-      "textHash": "1f6cd28653a92d36216b10530fb6125ed9a58c0a9254dbfd11609d25ffc85f0b",
+      "textHash": "762de7c06fcf4a74e4b9d23475b9389756f90fcbda869c67a6cc47252d23fc1c",
       "textLength": 6434,
       "headings": [
         {
@@ -9097,7 +9097,7 @@
         {
           "level": 2,
           "id": "why-adoption-alone-doesnt-drive-renewals",
-          "text": "Why Adoption Alone Doesn’t Drive Renewals"
+          "text": "Why Adoption Alone Doesn't Drive Renewals"
         },
         {
           "level": 2,
@@ -9140,7 +9140,7 @@
       "jsonLdCount": 6
     },
     "/posts/defending-renewals-competitor-pricing/": {
-      "textHash": "9a192871118fa803edd106ec223fa5d770593d93c815a846064ac58c77eb6d6a",
+      "textHash": "4737350852f99df27823d98e943ce5e4c47218c5bd66cc324cc6c7c248db6a32",
       "textLength": 7943,
       "headings": [
         {
@@ -9194,7 +9194,7 @@
       "jsonLdCount": 6
     },
     "/posts/does-hubspot-crm-scale/": {
-      "textHash": "7e0eaa0ce6ef713539c3b4ce53cc3dd5600ae612c4015dd987a49fa067cca99b",
+      "textHash": "b229936909c8f664fe589836f7bd7542097fd9001ab544dd6d252bcf3691e15c",
       "textLength": 9826,
       "headings": [
         {
@@ -9230,7 +9230,7 @@
         {
           "level": 2,
           "id": "hubspots-biggest-competitors-for-scaling",
-          "text": "HubSpot’s Biggest Competitors for Scaling"
+          "text": "HubSpot's Biggest Competitors for Scaling"
         },
         {
           "level": 2,
@@ -9258,7 +9258,7 @@
       "jsonLdCount": 5
     },
     "/posts/evergreen-contract-auto-renewal-clause/": {
-      "textHash": "7e183f583f1c1bdcb0fbc180555ca171ac62749dbab7facc8a4ed2907349d2d3",
+      "textHash": "1d21722aedfbb4d522c7e005416dd41b3d77bf4a539d472fe85fbf901ec3e042",
       "textLength": 24417,
       "headings": [
         {
@@ -9400,7 +9400,7 @@
       "jsonLdCount": 6
     },
     "/posts/export-hubspot-reports-excel-powerpoint/": {
-      "textHash": "8838ae6873eb112b2569525198da34c299cce26a63190270a0abec838f823dfe",
+      "textHash": "442ba5492a41cdca5d0e54e3f84905e36348acbe8a9de09c81240e058cb0fb72",
       "textLength": 11577,
       "headings": [
         {
@@ -9484,7 +9484,7 @@
       "jsonLdCount": 6
     },
     "/posts/flowner-vs-enrollem-comparison/": {
-      "textHash": "4694b3c30e05659b93b1617ce3db30f0f18beb4c3e601cbcc4cbbc4bfa926d40",
+      "textHash": "bf6d2ee5b9bbd68ff63283d1648bef808bc51f6affe56747d693f023e9e72935",
       "textLength": 11876,
       "headings": [
         {
@@ -9550,7 +9550,7 @@
       "jsonLdCount": 4
     },
     "/posts/fractional-revops-vs-full-time-hire/": {
-      "textHash": "28f7617e2b68897a4edc673071d4680c2e688f3a779603bb5f37437b5ee359bf",
+      "textHash": "f39af6b5e398f20ecf4ed3dd01b9968d8993cc55be6ddf64dc9298abdb5ebe54",
       "textLength": 13308,
       "headings": [
         {
@@ -9625,7 +9625,7 @@
       "jsonLdCount": 6
     },
     "/posts/framing-renewals-roadmap/": {
-      "textHash": "e9ee495315c553b89aec88e3aadaf8644657ae28e291cb161e8f3e98a0c4230e",
+      "textHash": "55f80297d20d0bf3fd7cabbcbb47a8a08deebf0aea7afba6cb886618cee7b09a",
       "textLength": 5875,
       "headings": [
         {
@@ -9672,7 +9672,7 @@
       "jsonLdCount": 6
     },
     "/posts/gainsight-pricing-alternatives-hubspot/": {
-      "textHash": "5bad547e5a3172db17530d8ddd9eff1ed96e592505538905448a10c4bccb08d1",
+      "textHash": "6badf90de7bd633d217d947a6dd75f94a5731e548f508c41f0b9c49b013bce9b",
       "textLength": 15904,
       "headings": [
         {
@@ -9739,7 +9739,7 @@
       "jsonLdCount": 6
     },
     "/posts/good-better-best-pricing/": {
-      "textHash": "eb0d15c34003d4fd44b67b861bf666a4698bafacd48b9187edc7bf8bae37e28a",
+      "textHash": "0abe926bfd9ab6547243050ee84458a0d3b6500d58cac86eefb68d47dc26fa5e",
       "textLength": 6837,
       "headings": [
         {
@@ -9791,7 +9791,7 @@
       "jsonLdCount": 6
     },
     "/posts/gross-vs-net-revenue-retention/": {
-      "textHash": "6367c876f29134506c85ec0a8c08b6f0016486a7f223fc36122cb03c18a8e47c",
+      "textHash": "792677161061f954de847e314d9b65b249be0e61a24e09603de1e95c799124bb",
       "textLength": 16118,
       "headings": [
         {
@@ -9891,7 +9891,7 @@
       "jsonLdCount": 6
     },
     "/posts/growth-driven-design-hubspot/": {
-      "textHash": "a87d5f10f82d2fa2e900822c6bab952d559430c841852f14520f9ce5dcad1908",
+      "textHash": "5a55f1399093de4b30dad933facdd5053736f066333b1c1ecce8fa53c128c40b",
       "textLength": 6481,
       "headings": [
         {
@@ -9941,7 +9941,7 @@
       "jsonLdCount": 6
     },
     "/posts/health-score-churn-prediction-research/": {
-      "textHash": "405701f1bfd0b177035f199a54faaa28d43ee772b246de663282db7869df4804",
+      "textHash": "fb29f7bcdbaf358a1b3dadf06d5de1f9abd70590ce3e4f14f8305a683e3c9b9b",
       "textLength": 11916,
       "headings": [
         {
@@ -9994,7 +9994,7 @@
       "jsonLdCount": 5
     },
     "/posts/how-to-integrate-clm-and-crm/": {
-      "textHash": "cd190c98021e91dfe5adca5337575967202cef9094ce8efcea26df4b8c72332f",
+      "textHash": "a99969ef01b345e57074c4622d3389cb884025a666cefd231d747e65c693d83f",
       "textLength": 23866,
       "headings": [
         {
@@ -10084,7 +10084,7 @@
       "jsonLdCount": 7
     },
     "/posts/hubspot-billing-integrations-compared/": {
-      "textHash": "a87fc4814158d169bc7a55c46a672f657ef2e14945e6858a70a8c7e8ec0595b8",
+      "textHash": "8eda4155c2aef26bedc33e20efeef2fc1465d53df7b3bc28318d3af425250f86",
       "textLength": 21127,
       "headings": [
         {
@@ -10173,7 +10173,7 @@
       "jsonLdCount": 6
     },
     "/posts/hubspot-board-report-template/": {
-      "textHash": "921c1170c526c5c0073198b7fc0df612ce52c89a5aa758239e5f1ac8893f75b3",
+      "textHash": "225d2074e0e4bc042939ee9a5b95dc8b7542c8f953861c281f2b588010460d94",
       "textLength": 10013,
       "headings": [
         {
@@ -10269,7 +10269,7 @@
       "jsonLdCount": 6
     },
     "/posts/hubspot-churn-prevention-health-scores-workflows/": {
-      "textHash": "0e55beef7dbe955cf89a19db1447de5249d1678274490975f56a29d707afc141",
+      "textHash": "4370b726154c8379bbdd1be57abd1576b20c9399bc171ed0633ec9d85dda1027",
       "textLength": 13339,
       "headings": [
         {
@@ -10285,7 +10285,7 @@
         {
           "level": 2,
           "id": "health-score-option-1-hubspots-native-cs-workspace",
-          "text": "Health Score Option 1: HubSpot’s Native CS Workspace"
+          "text": "Health Score Option 1: HubSpot's Native CS Workspace"
         },
         {
           "level": 3,
@@ -10427,7 +10427,7 @@
       "jsonLdCount": 6
     },
     "/posts/hubspot-clone-deal-complete-guide/": {
-      "textHash": "dca0748561f7090a54963aa9a58f3e646df3412ff3fb411b9f99ef3a0e25735b",
+      "textHash": "28fa8c0b0453e6dc144da7d97cdb0df62bc9ce06e0596079bb7bf787312e7aad",
       "textLength": 15365,
       "headings": [
         {
@@ -10554,7 +10554,7 @@
       "jsonLdCount": 7
     },
     "/posts/hubspot-clone-deal-line-items/": {
-      "textHash": "fb09090887990b63c09a493eb472b93bf7cd77d5a3e0fc58aeb3d0327d1d9bdf",
+      "textHash": "e469044846a8b29c5fec1aab4049bcd16ac96f7a4b7cbefee044e5400955bd82",
       "textLength": 9655,
       "headings": [
         {
@@ -10565,7 +10565,7 @@
         {
           "level": 2,
           "id": "why-hubspot-workflows-cant-copy-line-items",
-          "text": "Why HubSpot Workflows Can’t Copy Line Items"
+          "text": "Why HubSpot Workflows Can't Copy Line Items"
         },
         {
           "level": 2,
@@ -10627,7 +10627,7 @@
       "jsonLdCount": 6
     },
     "/posts/hubspot-co-terming-renewals/": {
-      "textHash": "499019f8b2ce747f16b3b6cf2eba21b37efef1c2305d8aeba3585f3b7bc323e0",
+      "textHash": "18276454385db74e01b1a90e8dd5ff4521f71e05eab6ff9ca0bb8ae18046f865",
       "textLength": 6707,
       "headings": [
         {
@@ -10677,7 +10677,7 @@
       "jsonLdCount": 6
     },
     "/posts/hubspot-commission-tracking-setup-guide/": {
-      "textHash": "1e1e0e19101ad3ba8a1e0d34df4e111fa3da3b30b48d1becd09c28d737e1431d",
+      "textHash": "0514c3ce9d0fd7412151d6abb2b68583e2729cf42223fef417a56c581685fd90",
       "textLength": 18726,
       "headings": [
         {
@@ -10861,13 +10861,13 @@
       "jsonLdCount": 6
     },
     "/posts/hubspot-commission-tracking-tools-compared/": {
-      "textHash": "8ba551620a5f57b53c9ebd19ec1d81c56a3b66bd12dde7ac0db889dd1d8b7120",
+      "textHash": "284e792b386525c7fce60178f57d26d2cae5057a801a2476791b8f8d425a823d",
       "textLength": 28385,
       "headings": [
         {
           "level": 1,
           "id": "10-commission-tracking-tools-for-hubspot-compared-the-2026-buyers-guide",
-          "text": "10 Commission Tracking Tools for HubSpot Compared: The 2026 Buyer’s Guide"
+          "text": "10 Commission Tracking Tools for HubSpot Compared: The 2026 Buyer's Guide"
         },
         {
           "level": 2,
@@ -10993,7 +10993,7 @@
       "jsonLdCount": 5
     },
     "/posts/hubspot-contract-management/": {
-      "textHash": "6f74fa7424e75e650544f0269b1a51afcc2d484456002f053dfd49f4a5bbcde5",
+      "textHash": "1c68d78b24b499351aa7fde762fb4264779e2507470aeb56201451417e4145f9",
       "textLength": 22815,
       "headings": [
         {
@@ -11081,7 +11081,7 @@
       "jsonLdCount": 6
     },
     "/posts/hubspot-contracts-renewal-quotes/": {
-      "textHash": "1c52f1bef20765f446c5ec35be886aaf2fe2496d1a378a036cbc3c9f437c8cb7",
+      "textHash": "311ec865db7b17225ede648594038c0e1766bbb733717d756ede3c774e45ff00",
       "textLength": 12680,
       "headings": [
         {
@@ -11154,7 +11154,7 @@
       "jsonLdCount": 6
     },
     "/posts/hubspot-copy-deal-properties-workflow/": {
-      "textHash": "72c24a81a4f23c30e4211d6356f54074c58e142aaeb6439fd7badd7c0efb6cce",
+      "textHash": "5d3d6229694f5b97df45109edacde0253555ae1df701fb908372c2ca07cbda01",
       "textLength": 11151,
       "headings": [
         {
@@ -11165,7 +11165,7 @@
         {
           "level": 2,
           "id": "why-hubspots-copy-property-updates-the-wrong-deal",
-          "text": "Why HubSpot’s “Copy Property” Updates the Wrong Deal"
+          "text": "Why HubSpot's \"Copy Property\" Updates the Wrong Deal"
         },
         {
           "level": 2,
@@ -11213,7 +11213,7 @@
       "jsonLdCount": 6
     },
     "/posts/hubspot-customer-success-workspace/": {
-      "textHash": "6c934bec8d41af9321ef6810329fe98cda63cd9790941c70c2bc4a581d8d56aa",
+      "textHash": "73efaf022a6dec2f936e731e6aaf5b190ea2aec2a4f156a28f065644e675f244",
       "textLength": 17049,
       "headings": [
         {
@@ -11310,7 +11310,7 @@
       "jsonLdCount": 7
     },
     "/posts/hubspot-deal-cloning-apps-compared/": {
-      "textHash": "885b4cc99bf62dc9be3d838bb77c6e613990a74e66fc60d8a66f39af69ef0aff",
+      "textHash": "7287eb223d9e0b747d068cbc93feb04f36649a2c4e7ffdf4d3891a83dadfe5ee",
       "textLength": 11817,
       "headings": [
         {
@@ -11321,7 +11321,7 @@
         {
           "level": 2,
           "id": "why-native-hubspot-deal-cloning-isnt-enough",
-          "text": "Why Native HubSpot Deal Cloning Isn’t Enough"
+          "text": "Why Native HubSpot Deal Cloning Isn't Enough"
         },
         {
           "level": 2,
@@ -11392,7 +11392,7 @@
       "jsonLdCount": 6
     },
     "/posts/hubspot-deal-duplication-best-practices/": {
-      "textHash": "e215edaf83be690fe9b8d2fcec853aa7d5a753bb4805a978fb77ca5f34f1fd0a",
+      "textHash": "5a617715ea0af166ee3a9afec78f09c76783e37bf4ef3000e34ac18ad67be3d2",
       "textLength": 9714,
       "headings": [
         {
@@ -11493,7 +11493,7 @@
       "jsonLdCount": 6
     },
     "/posts/hubspot-erp-integration/": {
-      "textHash": "29189b3af8c363b692bc09ee65cd69ad75d9f60f22bcb256ec982012fc82c81e",
+      "textHash": "823692ffe08813615775d040524310d7707691b0cb490ba36616a2f61c0f2ac3",
       "textLength": 18917,
       "headings": [
         {
@@ -11606,7 +11606,7 @@
       "jsonLdCount": 5
     },
     "/posts/hubspot-growth-strategy/": {
-      "textHash": "169c9af6b069a0671b43dcc76b557dd193ed28cf34984d3088f2d3c91a02d27b",
+      "textHash": "d6d12df423b394ec5ca7c821d72a21a6e372228c6346485f8b50720db3b60edb",
       "textLength": 6157,
       "headings": [
         {
@@ -11656,7 +11656,7 @@
       "jsonLdCount": 6
     },
     "/posts/hubspot-growth-suite-customer-platform/": {
-      "textHash": "f82d2d4f1357b8e854f839b6db005c7345ff0c1455cdab71744d8aacf9e1263e",
+      "textHash": "167ff2cf4d64818a738eab76d8155cb94a4f671a8b6e7294c111946a81149ad0",
       "textLength": 6379,
       "headings": [
         {
@@ -11706,7 +11706,7 @@
       "jsonLdCount": 6
     },
     "/posts/hubspot-implementation-timeline/": {
-      "textHash": "1c2bc403a8d616b7952f3174e8e1c8f1b73b8f2524c1fc7470a1cfb5007178b9",
+      "textHash": "52ec382bb05ed6250b9d36639f9a2f3a6526f066039b8d26271587d5aba0f115",
       "textLength": 8236,
       "headings": [
         {
@@ -11757,7 +11757,7 @@
       "jsonLdCount": 6
     },
     "/posts/hubspot-management-reporting/": {
-      "textHash": "b81ae8dac2ddd2e3f3ba93e2f6e68769b43803e70f44e43be1ebe7952cae72c8",
+      "textHash": "368e7a472dba7a55ac237a503a82ac760cf15b06042eb57ff5544a3b0aadcd3f",
       "textLength": 16868,
       "headings": [
         {
@@ -11844,7 +11844,7 @@
       "jsonLdCount": 5
     },
     "/posts/hubspot-netsuite-connector-comparison/": {
-      "textHash": "456bb02528d6d25532cf7c03fe565df0ef17c8c1160611c9a135501b0f858d9f",
+      "textHash": "4bce5785102042be4c0a6f691a898ba03d98633b1f1f1e914d5ba5b65039f22e",
       "textLength": 9624,
       "headings": [
         {
@@ -11922,7 +11922,7 @@
       "jsonLdCount": 6
     },
     "/posts/hubspot-netsuite-data-mapping/": {
-      "textHash": "25aa7e93ab7db11a95f75d102bbca2394698196a1b961265b1edf1a9fb6687d0",
+      "textHash": "dedcb0feea265266a7c41e1adcb353e59dc59c51007708e348e7185b6cfc540c",
       "textLength": 10049,
       "headings": [
         {
@@ -11986,7 +11986,7 @@
       "jsonLdCount": 6
     },
     "/posts/hubspot-netsuite-integration/": {
-      "textHash": "ec226089f6888e05dbba6b2eb4026f307a376be56cfedcf4ee52c646eecb6d0b",
+      "textHash": "f5a4dc11570df3ab9c04118165cebaecf08e62fbe04e9ddd69d770cc72f2fe8d",
       "textLength": 12098,
       "headings": [
         {
@@ -12154,7 +12154,7 @@
       "jsonLdCount": 5
     },
     "/posts/hubspot-netsuite-sync/": {
-      "textHash": "1b1522e0142cd77cec23a04e9644ca465e2de75cd929183a846838aff31b4526",
+      "textHash": "cc1163dbacf147f11ddad2b5881ebc864f4f6e201a8cea14085a0aab696e8875",
       "textLength": 5918,
       "headings": [
         {
@@ -12209,7 +12209,7 @@
       "jsonLdCount": 6
     },
     "/posts/hubspot-pricing-at-scale/": {
-      "textHash": "246997dbf8f24472d75f5df1807f2b7aeada7ee1d332bcbbd45ee24b330114c4",
+      "textHash": "47d0b7638483c521d6a2feddfe32c83d0f7bf8b2b47d1d89ada27d35e478c1b1",
       "textLength": 6634,
       "headings": [
         {
@@ -12284,7 +12284,7 @@
       "jsonLdCount": 6
     },
     "/posts/hubspot-product-led-growth/": {
-      "textHash": "d3c06cb75b3978fa211334a622fc8083ab758fafb8498e96eedd7be0574c9405",
+      "textHash": "c43c8e78fc0c858bd99d1880151c54f06bb55250235183158cc23af68e8155d4",
       "textLength": 6481,
       "headings": [
         {
@@ -12329,7 +12329,7 @@
       "jsonLdCount": 6
     },
     "/posts/hubspot-renewal-deal-workflow-automation/": {
-      "textHash": "33675f51e4d9d1c9d728ba9bb06d89f3071526a1307d50e4d8f6f657e20b67ee",
+      "textHash": "4db3ca9af14274528a1df61d7c40908f6d857d9340391d04115925a1135d162a",
       "textLength": 13163,
       "headings": [
         {
@@ -12420,7 +12420,7 @@
         {
           "level": 2,
           "id": "workflow-4-renewal-closed-won--create-next-years-deal",
-          "text": "Workflow 4: Renewal Closed Won → Create Next Year’s Deal"
+          "text": "Workflow 4: Renewal Closed Won → Create Next Year's Deal"
         },
         {
           "level": 3,
@@ -12473,7 +12473,7 @@
       "jsonLdCount": 6
     },
     "/posts/hubspot-renewal-email-sequence/": {
-      "textHash": "6200bb0a517ccb34f039581709d10dfc5181ac04cab8822be20ae731a1e60ed7",
+      "textHash": "d0f70ebb8eb75178575b4a2997731ca71b82514ac65dac441138c79f7eadae34",
       "textLength": 8171,
       "headings": [
         {
@@ -12526,7 +12526,7 @@
       "jsonLdCount": 6
     },
     "/posts/hubspot-renewal-expansion-pipeline-structure/": {
-      "textHash": "e1bd6f60dcc92f20aeb94082b4dd631dbf6de01aa47cbf9c44660d112ab055a4",
+      "textHash": "6b98c883a0ded124ec77529f52d38a3c30f40b7ab9d30e4e745436172089bd84",
       "textLength": 8429,
       "headings": [
         {
@@ -12622,7 +12622,7 @@
       "jsonLdCount": 4
     },
     "/posts/hubspot-renewal-forecasting-accuracy/": {
-      "textHash": "c24498f779787f54aadfba404a1cb7a2944f7240180844e9600657dba8885adf",
+      "textHash": "2a29b015ba223b4f69dfd49f3387b9a804f75f1b5bbc782ad2b93ed3a215015c",
       "textLength": 11363,
       "headings": [
         {
@@ -12728,7 +12728,7 @@
         {
           "level": 2,
           "id": "using-hubspots-native-forecast-tool",
-          "text": "Using HubSpot’s Native Forecast Tool"
+          "text": "Using HubSpot's Native Forecast Tool"
         },
         {
           "level": 2,
@@ -12767,7 +12767,7 @@
       "jsonLdCount": 6
     },
     "/posts/hubspot-renewal-nrr-grr-dashboard-reporting/": {
-      "textHash": "8bd8262fe3265637015113b97c22513629d29076810423e055cad46ff71c4a71",
+      "textHash": "eda5f532421e7563c56af0e98ade10def9d3123797c41c68264994b3caa901e3",
       "textLength": 20768,
       "headings": [
         {
@@ -12930,7 +12930,7 @@
       "jsonLdCount": 6
     },
     "/posts/hubspot-renewal-ownership-cs-vs-sales/": {
-      "textHash": "d4a63f6672896c5bf290c928695404e4f18f13e60c61e32a29cd3eb1a846949f",
+      "textHash": "1330506a4687893b72e7d8fee3ba5aecd9e66ec599427c50dfb1450594c0e147",
       "textLength": 8109,
       "headings": [
         {
@@ -12983,7 +12983,7 @@
       "jsonLdCount": 6
     },
     "/posts/hubspot-renewal-pipeline-complete-guide/": {
-      "textHash": "e8825cce72d408c95503955ad00ef0e887ec1bd45f671c491837733f2d96c040",
+      "textHash": "223f93e0cbdb9eba4f20c74a18c0214862f8323b0bbae159ac1497bc4f092877",
       "textLength": 17011,
       "headings": [
         {
@@ -13154,7 +13154,7 @@
       "jsonLdCount": 6
     },
     "/posts/hubspot-renewal-pipeline-mistakes-costing-revenue/": {
-      "textHash": "837a2c635316a79049f2e839d3838714c364e951dcf52ed22504765d1206e094",
+      "textHash": "0794f137278d3d20b389f4087744ae23867e568cb754883fc48f300221bb09f0",
       "textLength": 10467,
       "headings": [
         {
@@ -13215,7 +13215,7 @@
         {
           "level": 2,
           "id": "mistake-12-no-audit-trail-who-changed-what-and-when",
-          "text": "Mistake 12: No Audit Trail: “Who Changed What and When?”"
+          "text": "Mistake 12: No Audit Trail: \"Who Changed What and When?\""
         },
         {
           "level": 2,
@@ -13240,7 +13240,7 @@
       "jsonLdCount": 4
     },
     "/posts/hubspot-renewal-pipeline-properties/": {
-      "textHash": "513c2e2bc9eedfd9c38fcad9f9e0a7ded752d075a2fb5da25da36580b134c6b2",
+      "textHash": "a81197e5bf27e08f24dbd5b6dfbf771eda8a8e92d307214d6295eb6c693ceda2",
       "textLength": 10661,
       "headings": [
         {
@@ -13353,7 +13353,7 @@
       "jsonLdCount": 6
     },
     "/posts/hubspot-renewal-pipeline-stages/": {
-      "textHash": "a232ed69e77f1d17feaffe14a456fdc1605f5c47737f6d2a70b9c7b5413ff296",
+      "textHash": "d3eab09bae861cbb882648a0636256933c88a9459eb035cc17e0c92d201e2338",
       "textLength": 10270,
       "headings": [
         {
@@ -13459,7 +13459,7 @@
       "jsonLdCount": 6
     },
     "/posts/hubspot-renewal-pipeline-template/": {
-      "textHash": "9e9a60edcac8fd8bb01bf33cdaa8ea1597bfa6a618c3a5eeb008d6d6b951c8a5",
+      "textHash": "c7515b426ccc6b5445bda30e345ff7323f5b156297174b04eb1d080fdc2421b7",
       "textLength": 6718,
       "headings": [
         {
@@ -13517,7 +13517,7 @@
       "jsonLdCount": 6
     },
     "/posts/hubspot-renewal-pipeline-vs-sales-pipeline/": {
-      "textHash": "ec16308cbfd19bdd7ce578f71d671a032ee3335b048bae9088309e38d7c5467c",
+      "textHash": "ce5aae8eac50dbad9a4fd31d9d35a9f31e1d4db8b05eff52abf7b24db48c9d29",
       "textLength": 6199,
       "headings": [
         {
@@ -13598,7 +13598,7 @@
       "jsonLdCount": 4
     },
     "/posts/hubspot-renewal-quote-price-increase/": {
-      "textHash": "be07c09261bafa99283a1ac24f952ac578023739c4e2a572957cf7cc4db52776",
+      "textHash": "081076715e2b81ae4c34d6fc7512af11877accd011bcde3aa12cbda5b0f60363",
       "textLength": 7679,
       "headings": [
         {
@@ -13658,7 +13658,7 @@
       "jsonLdCount": 6
     },
     "/posts/hubspot-renewal-reminders/": {
-      "textHash": "ed6f561a4bf6b5cd143fb6e73b783c6e3fb53ad5c792f16ca139ec83d6013b61",
+      "textHash": "910fcbe35364bc08fd6cea0cd36b83ea32b161e78e41553eac662828ebf9a318",
       "textLength": 11585,
       "headings": [
         {
@@ -13739,7 +13739,7 @@
       "jsonLdCount": 6
     },
     "/posts/hubspot-renewal-risk-scoring/": {
-      "textHash": "944eca13f28549ffabf24e72140bf994f76c1a749d8f8cecd1f4fe7294840d76",
+      "textHash": "5bbbd6ea818eec038dc20058475e0cc7bd172ef48104d42adf49a407f60a7959",
       "textLength": 9547,
       "headings": [
         {
@@ -13803,7 +13803,7 @@
       "jsonLdCount": 6
     },
     "/posts/hubspot-renewal-setup-help/": {
-      "textHash": "fa6f505ea06b8611c54c76d92dab2844bcfea911fd3fd9440aa24a9fb9272661",
+      "textHash": "87a84063b8c623518b9c969d033483c2d198779d3920127c58e1921710ae29da",
       "textLength": 11645,
       "headings": [
         {
@@ -13876,13 +13876,13 @@
       "jsonLdCount": 6
     },
     "/posts/hubspot-renewal-workflow-infinite-loop-fix/": {
-      "textHash": "b1f96c4cc477c4a45694f7dcf5d9ddd06b57c69aec680c1efba1a1891d83b834",
+      "textHash": "5a06da5d2019443ae6cb0440d9b3104c3019bbb790cdf2153580615d640b5f58",
       "textLength": 8389,
       "headings": [
         {
           "level": 2,
           "id": "why-this-happens-hubspots-re-enrollment-rules",
-          "text": "Why This Happens: HubSpot’s Re-Enrollment Rules"
+          "text": "Why This Happens: HubSpot's Re-Enrollment Rules"
         },
         {
           "level": 2,
@@ -13957,7 +13957,7 @@
         {
           "level": 2,
           "id": "solution-4-third-party-tools-when-native-isnt-enough",
-          "text": "Solution 4: Third-Party Tools (When Native Isn’t Enough)"
+          "text": "Solution 4: Third-Party Tools (When Native Isn't Enough)"
         },
         {
           "level": 3,
@@ -13997,7 +13997,7 @@
       "jsonLdCount": 5
     },
     "/posts/hubspot-revenue-vs-target-report/": {
-      "textHash": "34ae12bb56a94d15fe9fd6f02762191244190e24768097987371cb739498af68",
+      "textHash": "3b214da5bf83609c244b4d1aa95b8a9e1c531120158baab51afcc0298277090e",
       "textLength": 9560,
       "headings": [
         {
@@ -14095,7 +14095,7 @@
       "jsonLdCount": 6
     },
     "/posts/hubspot-sage-intacct-integration/": {
-      "textHash": "a61c699b91f6800b1895016f89762945969c32857aaef21804c3a2a2723ea670",
+      "textHash": "152f52963c584a246596969ff7951b8f60f1e59f810c2734304c99190c8f47a6",
       "textLength": 17218,
       "headings": [
         {
@@ -14167,7 +14167,7 @@
       "jsonLdCount": 6
     },
     "/posts/hubspot-sales-commission-tracking-complete-guide/": {
-      "textHash": "187ada79a274468fa9ed0e5094676646df984b734ee998bb0f84c5db33fc61d1",
+      "textHash": "45a575f6b8303b489c5e6c6afef9109764b090ce39efbdc0bb1ee9c10d8ff331",
       "textLength": 36066,
       "headings": [
         {
@@ -14208,7 +14208,7 @@
         {
           "level": 2,
           "id": "what-good-commission-tracking-actually-looks-like",
-          "text": "What “Good” Commission Tracking Actually Looks Like"
+          "text": "What \"Good\" Commission Tracking Actually Looks Like"
         },
         {
           "level": 3,
@@ -14379,7 +14379,7 @@
       "jsonLdCount": 6
     },
     "/posts/hubspot-tiered-commission-model-setup/": {
-      "textHash": "3cc15d17f3239913c3bdb6fb96146ffc63d4aed030459125d0d91dfe144a842a",
+      "textHash": "0fdfdd99f8ea0af76f13e44ee040c034a6426bc4d9d0fff30f9b4bc92e0a8984",
       "textLength": 20856,
       "headings": [
         {
@@ -14518,7 +14518,7 @@
       "jsonLdCount": 5
     },
     "/posts/hubspot-to-netsuite-integration-setup/": {
-      "textHash": "8fa348cb30c734014905b8a867fc9f4bd7ad17d1935a3227faa43c9831cd3f79",
+      "textHash": "bb60de7713628eb95d27b1f3deb0b85a49651b06a272ec21822720da3896556d",
       "textLength": 7221,
       "headings": [
         {
@@ -14589,7 +14589,7 @@
       "jsonLdCount": 6
     },
     "/posts/hubspot-weekly-sales-report-template/": {
-      "textHash": "55ac326627ff9acc25f09b76188c13e67586167a032ab2e3b16e16904328b404",
+      "textHash": "83f3489c1dedfc452e15db4dbcbbb1f094bdffa2ef16880e07fbf1773655bf82",
       "textLength": 13131,
       "headings": [
         {
@@ -14697,7 +14697,7 @@
       "jsonLdCount": 6
     },
     "/posts/land-and-expand-strategy/": {
-      "textHash": "fd43adb35af4c9e2edf056da3a6ad7fa3270a00e668dc0fab011ae540dd1ed7c",
+      "textHash": "bd1edb53285c21e8df4202d70e8dad5933f48dc05b49584dbcb6fb598c5451ea",
       "textLength": 5706,
       "headings": [
         {
@@ -14728,7 +14728,7 @@
         {
           "level": 2,
           "id": "the-land-expand-explode-variant",
-          "text": "The “Land, Expand, Explode” Variant"
+          "text": "The \"Land, Expand, Explode\" Variant"
         },
         {
           "level": 2,
@@ -14754,7 +14754,7 @@
       "jsonLdCount": 6
     },
     "/posts/migrate-netsuite-crm-to-hubspot/": {
-      "textHash": "02a9264b7600f332957fa2be9e42c71182dbf1487dae782defc29cfadeae9573",
+      "textHash": "6d37503e8a236a5a1d3204d3edec4313751ad9e40eaf564dc66e8f6106b4beae",
       "textLength": 5908,
       "headings": [
         {
@@ -14826,13 +14826,13 @@
       "jsonLdCount": 6
     },
     "/posts/mixpanel-to-hubspot-renewal-signals/": {
-      "textHash": "699323505747a7f586d95b96d255209442deebe9e39339323eaad5474c995db2",
+      "textHash": "3d7235aa8d56cf0219faa9f286fcba45b2dc14a342f588ae0bddf6d63943a9c2",
       "textLength": 8907,
       "headings": [
         {
           "level": 2,
           "id": "why-this-integration-isnt-native-and-what-that-means-for-you",
-          "text": "Why This Integration Isn’t Native (and What That Means for You)"
+          "text": "Why This Integration Isn't Native (and What That Means for You)"
         },
         {
           "level": 2,
@@ -14842,7 +14842,7 @@
         {
           "level": 2,
           "id": "what-actually-syncs-and-what-doesnt",
-          "text": "What Actually Syncs (and What Doesn’t)"
+          "text": "What Actually Syncs (and What Doesn't)"
         },
         {
           "level": 2,
@@ -14857,7 +14857,7 @@
         {
           "level": 2,
           "id": "a-note-on-what-this-data-can-and-cant-tell-you",
-          "text": "A Note on What This Data Can (and Can’t) Tell You"
+          "text": "A Note on What This Data Can (and Can't) Tell You"
         },
         {
           "level": 2,
@@ -14885,7 +14885,7 @@
       "jsonLdCount": 6
     },
     "/posts/multi-tier-affiliate-software-platforms-compared/": {
-      "textHash": "03782318ae07a41ccdd388a56d45a5fda712d9668731420ca720c9261fa677ca",
+      "textHash": "4926b2632c24c41b62687ac1e1fca2430c8db81a8ab859dbfbf0e4fa29514a6e",
       "textLength": 23557,
       "headings": [
         {
@@ -14996,7 +14996,7 @@
       "jsonLdCount": 5
     },
     "/posts/multi-tier-affiliate-vs-pyramid-scheme-legal/": {
-      "textHash": "5b6502ed98e7a9b64f995e5e4171d6e8788b837796fcaaac0736b02f63515a95",
+      "textHash": "6094db533ddda24d936921e14b4e7b1dd1af519816e6d4d3e7351875202ee6a4",
       "textLength": 17209,
       "headings": [
         {
@@ -15007,7 +15007,7 @@
         {
           "level": 2,
           "id": "the-ftcs-definition-in-plain-english",
-          "text": "The FTC’s Definition in Plain English"
+          "text": "The FTC's Definition in Plain English"
         },
         {
           "level": 2,
@@ -15037,7 +15037,7 @@
         {
           "level": 3,
           "id": "question-2-does-the-majority-of-your-programs-revenue-come-from-external-customers-buying-your-product",
-          "text": "Question 2: Does the majority of your program’s revenue come from external customers buying your product?"
+          "text": "Question 2: Does the majority of your program's revenue come from external customers buying your product?"
         },
         {
           "level": 3,
@@ -15115,7 +15115,7 @@
       "jsonLdCount": 5
     },
     "/posts/multi-tier-commission-programs-explained/": {
-      "textHash": "51fb5647847970157391c452c6a92ae1d188e769ab6645d897174da03e8426ae",
+      "textHash": "0ffd8eb7894b4698913c2c0fca0647ac9436f8106c59e502da02c5a95bd39187",
       "textLength": 20304,
       "headings": [
         {
@@ -15216,7 +15216,7 @@
       "jsonLdCount": 5
     },
     "/posts/multi-tiered-affiliate-incentive-structure-guide/": {
-      "textHash": "e6671ea6138815620d9e931fd81909a6e929c7377b4a2b2f65a5e886fe0e3eb5",
+      "textHash": "a0f997cf43857ecf53cf4a47b039dde6ca34efa12cad3c79491698c97e7ce651",
       "textLength": 35380,
       "headings": [
         {
@@ -15329,7 +15329,7 @@
       "jsonLdCount": 4
     },
     "/posts/netsuite-crm-vs-hubspot/": {
-      "textHash": "6e69327175049f3a95a30dbc30a084945c7c494b1f3f08c673d23f04446cb13b",
+      "textHash": "e3b2e9c55018b4aa508aec4e2c801eb4494e6fb241d664a95d67323bb581f217",
       "textLength": 8710,
       "headings": [
         {
@@ -15462,7 +15462,7 @@
       "jsonLdCount": 6
     },
     "/posts/outsource-contract-management/": {
-      "textHash": "1f13918af779a7fa3369a8dbc2775944e53843e95a22081c27cc19d6375efba1",
+      "textHash": "ff74005bd04595d479f7102bde61d8e4b20b7f8bfd9a2c85ea667c72bfe0d413",
       "textLength": 8672,
       "headings": [
         {
@@ -15516,7 +15516,7 @@
       "jsonLdCount": 6
     },
     "/posts/outsourced-renewal-management/": {
-      "textHash": "2069dfa88c8bc2590981f3d6cf4c46332dbfb96d0d656c06e9a86bb9e55f7a6d",
+      "textHash": "02ba02e143cf1e4f42a9e20b27f6f9630805f902d68269560796324e28281a36",
       "textLength": 14000,
       "headings": [
         {
@@ -15584,7 +15584,7 @@
       "jsonLdCount": 5
     },
     "/posts/pendo-hubspot-integration/": {
-      "textHash": "5a1ce7e432cbcaf5518c93072ef0aeebe8580c1f45622bb81bdb320b263c56a4",
+      "textHash": "61ad5c8db984bf099453ed8b608924606cb7053430dabf4d43df0ca12e65a278",
       "textLength": 10727,
       "headings": [
         {
@@ -15615,7 +15615,7 @@
         {
           "level": 2,
           "id": "when-native-isnt-enough-middleware-alternatives",
-          "text": "When Native Isn’t Enough: Middleware Alternatives"
+          "text": "When Native Isn't Enough: Middleware Alternatives"
         },
         {
           "level": 2,
@@ -15649,7 +15649,7 @@
       "jsonLdCount": 6
     },
     "/posts/product-qualified-signals-expansion/": {
-      "textHash": "4c103d9cce094b5d49d23f2f1a9dc37bb707f3cff6ffc12598caf1e2850b559f",
+      "textHash": "e24537383051d8ed2b0507ec567c722ea6aaded8af9f33cae25abb9d86222d8e",
       "textLength": 8539,
       "headings": [
         {
@@ -15707,13 +15707,13 @@
       "jsonLdCount": 6
     },
     "/posts/product-usage-data-renewals-hubspot/": {
-      "textHash": "293501a990e9932a891d44da470421bcd11682aaccbdaccda6a8122ad17bdd92",
+      "textHash": "27166efabe5def99ac51be7190343dfb85978a014d0e3b7c5a69778915130170",
       "textLength": 13030,
       "headings": [
         {
           "level": 2,
           "id": "what-usage-data-actually-tells-you-and-what-it-doesnt",
-          "text": "What Usage Data Actually Tells You (and What It Doesn’t)"
+          "text": "What Usage Data Actually Tells You (and What It Doesn't)"
         },
         {
           "level": 2,
@@ -15766,13 +15766,13 @@
       "jsonLdCount": 5
     },
     "/posts/product-usage-metrics-renewal-research/": {
-      "textHash": "8c5b8201cef416ec9815c480077907b8dfef72afdaaf562560843569a77920b2",
+      "textHash": "c8f0126bafd048299ad60bce0ff413dc1b14f17bd3cc1cb48400f0797f2dcbcf",
       "textLength": 15337,
       "headings": [
         {
           "level": 2,
           "id": "the-vendor-claims-vs-whats-actually-been-tested",
-          "text": "The Vendor Claims vs. What’s Actually Been Tested"
+          "text": "The Vendor Claims vs. What's Actually Been Tested"
         },
         {
           "level": 2,
@@ -15792,7 +15792,7 @@
         {
           "level": 2,
           "id": "why-which-usage-metric-might-be-the-wrong-question",
-          "text": "Why “Which Usage Metric” Might Be the Wrong Question"
+          "text": "Why \"Which Usage Metric\" Might Be the Wrong Question"
         },
         {
           "level": 2,
@@ -15825,7 +15825,7 @@
       "jsonLdCount": 5
     },
     "/posts/quote-to-cash-software/": {
-      "textHash": "a91b74d717f1ed93cb9edfd44073a5f99cd573bd85203a76ffca37c8b9655e74",
+      "textHash": "edbddc37c25b15542643d3f679d3193da09bf31e6b25799d4677d13d55ff5b2a",
       "textLength": 7949,
       "headings": [
         {
@@ -15871,7 +15871,7 @@
       "jsonLdCount": 6
     },
     "/posts/quote-to-cash-vs-cpq/": {
-      "textHash": "cb8aa1144fe63641b54b2e188df33d1291e4b20d0d8f5f09eda6ea66a367502d",
+      "textHash": "2e6f8610d093bc1fc64a99edc2e3ddc682089784ea8898a9465a94e25321bbbb",
       "textLength": 6215,
       "headings": [
         {
@@ -15887,7 +15887,7 @@
         {
           "level": 2,
           "id": "why-the-distinction-matters-when-youre-buying-software",
-          "text": "Why the Distinction Matters When You’re Buying Software"
+          "text": "Why the Distinction Matters When You're Buying Software"
         },
         {
           "level": 2,
@@ -15916,7 +15916,7 @@
       "jsonLdCount": 6
     },
     "/posts/quote-to-cash/": {
-      "textHash": "17511523e7a92c4a50d35fc72ca05eb58e2a5cbd99b878a3d0d7af69285acbf7",
+      "textHash": "639d44ea54dfda2484c9fc0fb78e4dce7a1d5bc9689d304c5b801b18e24a0a8c",
       "textLength": 13941,
       "headings": [
         {
@@ -15980,7 +15980,7 @@
       "jsonLdCount": 6
     },
     "/posts/renewal-metrics-explained/": {
-      "textHash": "338a42d0a3a4671219e8b4d1e93284050e68e6edbace8bf2224ff66c782507fa",
+      "textHash": "63dd0adfd6661b71a0ecd9a6109b01a4535b249a6a6353bb0857db8db1d4258f",
       "textLength": 9077,
       "headings": [
         {
@@ -16066,7 +16066,7 @@
       "jsonLdCount": 5
     },
     "/posts/renewal-playbook-template/": {
-      "textHash": "f1e4814d2baea24c6e1a4018376d5fbcedcb6029bde8967b5e2c8f06d7c20c06",
+      "textHash": "b9e87e47b01c3af1c8d460d1bdf396d22136557edc8a6fc940a9debbd879f784",
       "textLength": 17578,
       "headings": [
         {
@@ -16166,7 +16166,7 @@
       "jsonLdCount": 6
     },
     "/posts/renewal-revenue-leakage/": {
-      "textHash": "aedac2c6f7d104134ed7151000c89f3ad2836d65237d9369044f7b7d7ec20da2",
+      "textHash": "8cfa5dc01690db46e5d4768be4ffbeffa0900618ad4c499ad290b3df135323f8",
       "textLength": 13369,
       "headings": [
         {
@@ -16229,7 +16229,7 @@
       "jsonLdCount": 6
     },
     "/posts/renewal-strategy-365/": {
-      "textHash": "2a39d0133b92cbca5576b1dc1c8b6626d9c9f0d0abef13eaacc0c5b4fe187d09",
+      "textHash": "be1033a93eda70957b81fa6d395bae1ab6ac96b7b8c61d19ad332cf03f286c4c",
       "textLength": 13636,
       "headings": [
         {
@@ -16345,7 +16345,7 @@
       "jsonLdCount": 5
     },
     "/posts/renewal-tracking-software-vs-spreadsheet/": {
-      "textHash": "24796f41834eec26ba2b8ea8523054752f93db68ea806024fef5b3ff297ba578",
+      "textHash": "c38d8a481349ab698b6ba06d58bcb7960e328ed9999c54741e7eb5fd6025ccab",
       "textLength": 17054,
       "headings": [
         {
@@ -16463,7 +16463,7 @@
       "jsonLdCount": 7
     },
     "/posts/retention-reporting-survivorship-bias/": {
-      "textHash": "bc6d8e85f3c989b9b674f74dc8ea8b8a251282cc470767975310ecbb59fb2dae",
+      "textHash": "c4960fd9faa6c8dea4ea6f97febc62d1d37e048f7d0743eb2607d1ffacd654ba",
       "textLength": 13391,
       "headings": [
         {
@@ -16528,7 +16528,7 @@
       "jsonLdCount": 6
     },
     "/posts/revenue-operations-audit/": {
-      "textHash": "566353a3a32d66cff9df227c6668e1404ab6a9c0adb9ecf141f55b38c5e02d02",
+      "textHash": "5989c91261fd82e0ebe698521269fc5ca92cc7a594d84ea201e4748e053412dc",
       "textLength": 12844,
       "headings": [
         {
@@ -16594,7 +16594,7 @@
       "jsonLdCount": 6
     },
     "/posts/saas-affiliate-commission-structure-examples/": {
-      "textHash": "09e398754861515a73f1ba8a2163bdeafd94a0aa1f8dc97bd2d611d2246b5d97",
+      "textHash": "6f2ab1b537b6629fe0d7169f0c0112fe27352d4d175f078a480fc94a955f713b",
       "textLength": 24465,
       "headings": [
         {
@@ -16744,7 +16744,7 @@
       "jsonLdCount": 6
     },
     "/posts/saas-contract-negotiation-renewals/": {
-      "textHash": "ba8049c7856bc2c3feb64a63c7d8ab17f80adbd0c95988d971ff64b45cda32c0",
+      "textHash": "87b3de43d35294fffc47f62588dd8a9f7e9520853c282c7de339dd552941093f",
       "textLength": 6693,
       "headings": [
         {
@@ -16798,7 +16798,7 @@
       "jsonLdCount": 6
     },
     "/posts/saas-customer-retention-strategies/": {
-      "textHash": "51f6c9900a10b9e758c6cfa0c5e144f0a8b8f8156e3b9a12716fb711a922bc12",
+      "textHash": "24d7415b6abdce5b6a0b1372a3f5459b5351ad48024bdabeaab5afa3e47415a8",
       "textLength": 7986,
       "headings": [
         {
@@ -16896,7 +16896,7 @@
       "jsonLdCount": 6
     },
     "/posts/saas-quick-ratio/": {
-      "textHash": "6b66d17469e8d0f4df341d611af187a2550bea387d435413c264b07cb7ef2a0b",
+      "textHash": "0f25bde62f625905b567d46b32562032e66d46e56c02a6224402f43c3a9e6e53",
       "textLength": 5492,
       "headings": [
         {
@@ -16948,7 +16948,7 @@
       "jsonLdCount": 6
     },
     "/posts/sales-commission-disputes-trust/": {
-      "textHash": "57f32bf75c45751a14fb1a3bb94d2470f0cc1e243063217d942635954bd0e8e9",
+      "textHash": "ce4514a8e768088dc2321e7bdddfb01f4ad6e13d07d9da9cb07a3984c28adc4f",
       "textLength": 14777,
       "headings": [
         {
@@ -16974,7 +16974,7 @@
         {
           "level": 2,
           "id": "what-commission-confidence-looks-like",
-          "text": "What “Commission Confidence” Looks Like"
+          "text": "What \"Commission Confidence\" Looks Like"
         },
         {
           "level": 2,
@@ -16992,7 +16992,7 @@
       "jsonLdCount": 5
     },
     "/posts/sales-commission-spreadsheet-problems/": {
-      "textHash": "e3a4e65facb8d81ad8386c1db68727eb2157152ebd0d2d7106314083b8dd8958",
+      "textHash": "66bd6b549c468c37554541b85f56896c0596e66cd98764ddbe149ebcd879d054",
       "textLength": 13194,
       "headings": [
         {
@@ -17043,7 +17043,7 @@
         {
           "level": 2,
           "id": "five-signs-youve-outgrown-your-commission-spreadsheet",
-          "text": "Five Signs You’ve Outgrown Your Commission Spreadsheet"
+          "text": "Five Signs You've Outgrown Your Commission Spreadsheet"
         },
         {
           "level": 2,
@@ -17062,13 +17062,13 @@
       "jsonLdCount": 5
     },
     "/posts/sales-marketing-alignment-research/": {
-      "textHash": "3da6ac62875020e400e6e572bc29a01b7b5e1616b609eea67bb98d6044655578",
+      "textHash": "4bef24d6e38da7c77d8ebef18c4f853f2343456f9278b05b6a38ea09b11034bc",
       "textLength": 15595,
       "headings": [
         {
           "level": 2,
           "id": "where-the-208-more-revenue-number-actually-comes-from",
-          "text": "Where the “208% More Revenue” Number Actually Comes From"
+          "text": "Where the \"208% More Revenue\" Number Actually Comes From"
         },
         {
           "level": 2,
@@ -17118,7 +17118,7 @@
       "jsonLdCount": 5
     },
     "/posts/shopify-customer-retention/": {
-      "textHash": "d549f92ef4a83c8304049864394e004426f2c2432101e1f22ab5a6ddc3fbf9e8",
+      "textHash": "d23e162e32d41802476305421396287913c55dd916bf4e1ba28feff81d8b6758",
       "textLength": 7869,
       "headings": [
         {
@@ -17255,7 +17255,7 @@
       "jsonLdCount": 6
     },
     "/posts/single-threaded-renewals-multithreading/": {
-      "textHash": "fac2c5ab1d8e45ac62463419f5783827f1775c0b07f3a3cfeb6402de110b720e",
+      "textHash": "83985e0182931a724d59dc663a02a44886ac06adb9805fccd295c4dc9d8e7b3a",
       "textLength": 7526,
       "headings": [
         {
@@ -17313,13 +17313,13 @@
       "jsonLdCount": 6
     },
     "/posts/strategic-qbr-renewals/": {
-      "textHash": "89b46b046868dc2e2b92458abd5bf9b09cc0f2f26d27ff8bbb960c74f423b61f",
+      "textHash": "acbc3d4f5c0bb601d458542049738f79b6cc7cddb7d3269db0f04f16a6cbc336",
       "textLength": 4063,
       "headings": [
         {
           "level": 2,
           "id": "ebr-vs-qbr-whats-the-difference",
-          "text": "EBR vs QBR: What’s the Difference?"
+          "text": "EBR vs QBR: What's the Difference?"
         },
         {
           "level": 2,
@@ -17355,7 +17355,7 @@
       "jsonLdCount": 6
     },
     "/posts/switching-costs-b2b-renewal-research/": {
-      "textHash": "4f7ace4bfb7e7a5ad191d2f79eb3a6efb538be5f5b87a67653f048d20c930666",
+      "textHash": "4edbb4325a736d5a829d49463d1b314aa09eb2fb6983617fd6e712640c2ba942",
       "textLength": 11852,
       "headings": [
         {
@@ -17404,7 +17404,7 @@
       "jsonLdCount": 5
     },
     "/posts/tcv-vs-arr-forecasting/": {
-      "textHash": "684709ff3eba650260e3869537ea1a84180e3e3e9aaa53255b24c515e57f9803",
+      "textHash": "83dc51750f8c9d4d984d426c6302149dd47290dd241fe6527128d20cefdfbf5d",
       "textLength": 7158,
       "headings": [
         {
@@ -17467,7 +17467,7 @@
       "jsonLdCount": 6
     },
     "/posts/tiered-commission-structures-sales-motivation/": {
-      "textHash": "0c993a149f54d2a82a786acdcd42ec28c1ccb4c9d88ce022fc194b377e438fbc",
+      "textHash": "dac01dfe6a80340c99b0921c26a98fa030ac6473be89381eb6c97cf464faa53d",
       "textLength": 19424,
       "headings": [
         {
@@ -17553,7 +17553,7 @@
       "jsonLdCount": 5
     },
     "/posts/usage-based-revenue-forecasting/": {
-      "textHash": "d02b16740e35d5accdbce571b073520d1988bd2f30add07b4a9bc1cbf151fe2a",
+      "textHash": "4307bbaf31d9cce74089acecae8fcea317933a03f1d9f89912e3bc8bfeb3d9ea",
       "textLength": 9428,
       "headings": [
         {
@@ -17622,7 +17622,7 @@
       "jsonLdCount": 6
     },
     "/posts/vendor-contract-management/": {
-      "textHash": "9cb694aa98385b48ea9d7de0c112c83c9fa0d48ac2ebb92ea6867c5a02decf41",
+      "textHash": "3c01af0806ad4549a9c647a5fef820bac12dd16bca501a64a9681082c4e8f83c",
       "textLength": 22146,
       "headings": [
         {
@@ -17738,7 +17738,7 @@
       "jsonLdCount": 6
     },
     "/posts/whitespace-analysis-expansion/": {
-      "textHash": "1c102e56bb66e4b85b78414d8f8fc3c30a4d65c2c5ffee15d2814d5494fea4ef",
+      "textHash": "235b82db1aa73af5e283cd4ea3c36550bafab5b5476f7070d56a035b73c78263",
       "textLength": 6048,
       "headings": [
         {
