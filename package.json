@@ -3,6 +3,9 @@
   "type": "module",
   "version": "0.0.1",
   "packageManager": "pnpm@9.12.3",
+  "engines": {
+    "node": ">=22.12.0"
+  },
   "scripts": {
     "dev": "astro dev --host --verbose",
     "build": "node scripts/prepare-social-images.mjs && astro build && node scripts/check-social-metadata.mjs",
@@ -20,10 +23,11 @@
     "serve:dist": "node scripts/serve-dist.mjs"
   },
   "dependencies": {
-    "@astrojs/alpinejs": "^0.5.0",
-    "@astrojs/react": "^5.0.3",
+    "@astrojs/alpinejs": "^1.0.0",
+    "@astrojs/markdown-satteri": "^0.4.2",
+    "@astrojs/react": "^7.0.0",
     "@astrojs/rss": "^4.0.19",
-    "@astrojs/sitemap": "^3.7.2",
+    "@astrojs/sitemap": "^3.7.4",
     "@element-plus/icons-vue": "^2.3.2",
     "@fontsource-variable/dm-sans": "^5.2.8",
     "@fontsource-variable/hanken-grotesk": "^5.2.8",
@@ -32,12 +36,12 @@
     "@fontsource/lexend-deca": "^5.2.9",
     "@fontsource/vollkorn": "^5.2.8",
     "@heroicons/react": "^2.2.0",
-    "@tailwindcss/vite": "^4.1.14",
+    "@tailwindcss/vite": "^4.3.3",
     "@tailwindplus/elements": "^1.0.7",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
     "alpinejs": "^3.14.9",
-    "astro": "^6.4.8",
+    "astro": "^7.3.5",
     "element-plus": "^2.11.4",
     "embla-carousel": "^8.6.0",
     "flowbite": "^3.1.2",
@@ -54,13 +58,14 @@
     "tailwindcss": "^4.1.14"
   },
   "devDependencies": {
-    "@vitejs/plugin-react": "^5.0.4",
+    "@types/alpinejs": "^3.17.0",
+    "@vitejs/plugin-react": "^6.1.1",
     "autoprefixer": "^10.4.21",
     "flowbite-typography": "^1.0.5",
     "pagefind": "^1.4.0",
     "playwright": "^1.63.0",
     "serve": "^14.2.4",
-    "vite": "^7.3.6"
+    "vite": "^8.3.2"
   },
   "pnpm": {
     "overrides": {

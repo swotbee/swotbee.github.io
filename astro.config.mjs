@@ -1,4 +1,5 @@
 import { defineConfig } from "astro/config";
+import { satteri } from "@astrojs/markdown-satteri";
 import react from "@astrojs/react";
 import alpine from "@astrojs/alpinejs";
 // import tailwind from "@astrojs/tailwind";
@@ -57,6 +58,10 @@ export default defineConfig({
   base: "/",
   output: "static",
   trailingSlash: "always",
+  // Astro 7 defaults to JSX whitespace semantics. Retain Astro 6's lossless
+  // HTML-aware compression until the migration baseline proves every template
+  // has explicit whitespace where it needs it.
+  compressHTML: true,
 
   // 301-equivalent redirects for renamed posts. Astro's static output can't emit real
   // HTTP 301 headers (GitHub Pages serves plain files), so this generates a stub HTML
@@ -72,7 +77,15 @@ export default defineConfig({
   },
 
   markdown: {
-    smartypants: true,
+    // Astro 7 uses Satteri by default. Configure it explicitly so the chosen
+    // processor and the existing smart-punctuation behavior cannot drift with
+    // a framework default. The full Markdown corpus is covered by the migration
+    // baseline before this becomes the permanent processor choice.
+    processor: satteri({
+      features: {
+        smartPunctuation: true,
+      },
+    }),
   },
 
   integrations: [
