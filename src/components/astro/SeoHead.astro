@@ -1,0 +1,80 @@
+---
+interface OpenGraphProps {
+  title?: string;
+  description?: string;
+  type?: "website" | "article" | "profile";
+  image?: string;
+  url?: string;
+  siteName?: string;
+  locale?: string;
+}
+
+interface TwitterCardProps {
+  card?: "summary" | "summary_large_image" | "app" | "player";
+  site?: string;
+  creator?: string;
+  title?: string;
+  description?: string;
+  image?: string;
+}
+
+type JsonLd = Record<string, unknown> | Array<Record<string, unknown>>;
+
+interface Props {
+  title: string;
+  description?: string;
+  canonicalURL: string;
+  openGraph?: OpenGraphProps;
+  twitter?: TwitterCardProps;
+  jsonLd?: JsonLd;
+}
+
+const {
+  title,
+  description,
+  canonicalURL,
+  openGraph,
+  twitter,
+  jsonLd,
+} = Astro.props;
+
+const absoluteSocialImage = (image: string | undefined) => {
+  if (!image) return undefined;
+
+  return new URL(image, canonicalURL).href;
+};
+
+const openGraphImage = absoluteSocialImage(openGraph?.image);
+const twitterImage = absoluteSocialImage(twitter?.image);
+
+// JSON-LD is emitted as raw script content. Escaping characters that can end a
+// script element keeps the document safe without changing the parsed JSON value.
+const jsonLdScript = jsonLd
+  ? JSON.stringify(jsonLd, null, 2)
+      .replaceAll("<", "\\u003c")
+      .replaceAll("\u2028", "\\u2028")
+      .replaceAll("\u2029", "\\u2029")
+  : undefined;
+---
+
+<title>{title}</title>
+<meta name="title" content={title} />
+{description && <meta name="description" content={description} />}
+
+{openGraph?.title && <meta property="og:title" content={openGraph.title} />}
+{openGraph?.description && <meta property="og:description" content={openGraph.description} />}
+{openGraph?.type && <meta property="og:type" content={openGraph.type} />}
+{openGraphImage && <meta property="og:image" content={openGraphImage} />}
+{openGraph?.url && <meta property="og:url" content={openGraph.url} />}
+{openGraph?.siteName && <meta property="og:site_name" content={openGraph.siteName} />}
+{openGraph?.locale && <meta property="og:locale" content={openGraph.locale} />}
+
+{twitter?.card && <meta name="twitter:card" content={twitter.card} />}
+{twitter?.site && <meta name="twitter:site" content={twitter.site} />}
+{twitter?.creator && <meta name="twitter:creator" content={twitter.creator} />}
+{twitter?.title && <meta name="twitter:title" content={twitter.title} />}
+{twitter?.description && <meta name="twitter:description" content={twitter.description} />}
+{twitterImage && <meta name="twitter:image" content={twitterImage} />}
+
+<link rel="canonical" href={canonicalURL} />
+{jsonLdScript && <script type="application/ld+json" set:html={jsonLdScript} />}

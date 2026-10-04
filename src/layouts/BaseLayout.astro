@@ -1,5 +1,5 @@
 ---
-import { AstroSEO } from "astro-seo-plugin";
+import SeoHead from "../components/astro/SeoHead.astro";
 import {
   generateOgImage,
   generateCanonicalUrl,
@@ -90,9 +90,10 @@ const gtmId = import.meta.env.PUBLIC_GTM_ID || "GTM-WV9TQ6FH";
     <meta name="twitter:site" content="@swotbee" />
     <meta name="twitter:creator" content="@swotbee" />
 
-    <AstroSEO
+    <SeoHead
       title={`${title} | SWOTBee`}
       description={description}
+      canonicalURL={finalCanonicalURL}
       openGraph={{
         title: title,
         description: description,
@@ -172,7 +173,6 @@ const gtmId = import.meta.env.PUBLIC_GTM_ID || "GTM-WV9TQ6FH";
           },
         ],
       }}
-      additionalLinkTags={[{ rel: "canonical", href: finalCanonicalURL }]}
     />
     <!-- Preconnect to external origins -->
     <link rel="preconnect" href="https://images.unsplash.com" />
