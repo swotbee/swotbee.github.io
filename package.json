@@ -13,6 +13,10 @@
     "check:consent": "node scripts/verify-consent-gating.mjs",
     "check:reporting-resource": "node scripts/verify-reporting-resource.mjs",
     "check:report-signups": "node scripts/verify-report-signups.mjs",
+    "baseline:astro:capture": "node scripts/astro-migration-baseline.mjs capture",
+    "baseline:astro:compare": "node scripts/astro-migration-baseline.mjs compare",
+    "baseline:astro:self-test": "node scripts/astro-migration-baseline.mjs self-test",
+    "baseline:astro:visuals": "node scripts/astro-migration-visuals.mjs",
     "serve:dist": "node scripts/serve-dist.mjs"
   },
   "dependencies": {
