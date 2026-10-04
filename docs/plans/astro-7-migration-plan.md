@@ -147,6 +147,14 @@ Depends on task 7.
 
 Validate from a clean frozen install. Run all checks, review representative visual differences, compare production-like performance and bundles, inspect the final Git diff, and write a go or no-go report with exact versions, intentional differences, remaining advisories, and rollback point.
 
+Release-candidate decision: GO for review and push. The clean frozen install, full
+verification suite, semantic and Pagefind comparisons, interaction matrix, consent
+checks, dependency audit, Sharp smoke test, and 18 desktop and mobile screenshots all
+passed. Lighthouse scored 96 before and after, with LCP at 2.480 seconds, CLS at
+0.0294, and 2,317 fewer transferred bytes on Astro 7. The complete evidence and the
+remaining production gate are recorded in
+`docs/reports/astro-7-migration-release-candidate.md`.
+
 ### 9. `TASK-ad40801a8e7f`: Deploy Astro 7 and verify production behavior
 
 Depends on task 8 and explicit push authorization.
