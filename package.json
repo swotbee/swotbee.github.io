@@ -18,6 +18,7 @@
     "check:report-signups": "node scripts/verify-report-signups.mjs",
     "baseline:astro:capture": "node scripts/astro-migration-baseline.mjs capture",
     "baseline:astro:compare": "node scripts/astro-migration-baseline.mjs compare",
+    "baseline:astro:interactions": "node scripts/astro-migration-interactions.mjs",
     "baseline:astro:self-test": "node scripts/astro-migration-baseline.mjs self-test",
     "baseline:astro:visuals": "node scripts/astro-migration-visuals.mjs",
     "baseline:astro:search": "node scripts/astro-migration-pagefind-compare.mjs",

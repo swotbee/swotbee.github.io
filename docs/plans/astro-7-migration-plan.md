@@ -121,6 +121,13 @@ Depends on task 5.
 
 Use a production-like local server and real browser checks at mobile and desktop sizes. Verify Astro pages, React islands, Alpine controls, forms, booking, CTA events, scheduler events, GA4, GTM, Clarity, consent, and session attribution. Real external form submission remains opt-in and needs separate approval.
 
+The cross-version browser matrix covers the homepage React demo modal and focus
+return, testimonial carousel, mobile navigation, Alpine initialization, CTA event,
+Cal.com readiness/error/success callbacks, booking redirect payload, FAQ controls,
+last-touch session attribution, invalid contact-form rejection, and the interactive
+scorecard. External requests are blocked and the scorecard endpoint is fulfilled
+locally, so the test never creates a lead, booking, or production scorecard record.
+
 ### 7. `TASK-71e038abf6d4`: Reconcile Astro 7 dependency security and remove obsolete overrides
 
 Depends on task 6.
