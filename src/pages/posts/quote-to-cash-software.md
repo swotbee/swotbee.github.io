@@ -6,7 +6,7 @@ description: "What quote-to-cash software actually does, the categories it spans
 category:
   title: "Revenue Operations"
   href: "/categories/revenue-operations/"
-modifiedDate: "2026-08-19"
+modifiedDate: "2026-10-09"
 author:
   name: "SWOTBee Team"
   url: "https://swotbee.com"
@@ -33,9 +33,9 @@ faqs:
   - q: "Do I need a full quote-to-cash suite, or can I use separate tools?"
     a: "Most mid-market companies start with separate best-of-breed tools (CPQ, e-signature, billing) integrated through the CRM, because a full suite is expensive and often over-built for their deal complexity. Full suites make sense once deal volume, approval complexity, or subscription billing complexity outgrow what point tools and integrations can handle cleanly."
   - q: "Can HubSpot handle quote to cash on its own?"
-    a: "HubSpot's native quoting tool handles simple quotes and e-signature, but it does not do multi-tier CPQ pricing logic, contract lifecycle management, or revenue recognition. Most HubSpot users pair it with a dedicated CPQ or billing tool, or integrate to an ERP, for the parts native HubSpot doesn't cover."
+    a: "Revenue Hub combines CPQ, commercial Contracts, invoicing and payments. Some connected billing behavior requires beta enrollment. Evaluate legal-document governance and accounting requirements separately rather than assuming either native HubSpot or an external suite covers everything."
   - q: "What is the best quote-to-cash software for a mid-market company?"
-    a: "There is no single best answer, it depends on your CRM, deal complexity, and whether you bill one-time or on a subscription. Salesforce shops often use Salesforce CPQ or Revenue Cloud. HubSpot shops typically pair native quoting with a specialist CPQ tool like DealHub or PandaDoc, plus a billing/ERP integration for the back half."
+    a: "Choose against the actual quoting, document, billing and accounting requirements. HubSpot teams should evaluate Revenue Hub alongside specialist tools, rather than assuming external CPQ and recurring billing are always required."
   - q: "How much does quote to cash software cost?"
     a: "Point tools (e-signature, basic CPQ) can start under $50/user/month. Dedicated CPQ platforms like DealHub or Conga typically run into the hundreds of dollars per user per month for mid-market deployments. Full suites like Salesforce Revenue Cloud are priced per opportunity or per user and usually require a sales conversation, not published list pricing."
   - q: "Does quote to cash software replace my ERP?"
@@ -50,11 +50,13 @@ This guide covers the categories of quote-to-cash software, what each one actual
 
 ---
 
+Once you have selected the tools, the [HubSpot quote-to-cash implementation guide](/posts/hubspot-quote-to-cash/) helps map accepted agreements to billing and accounting. This guide retains software-selection ownership.
+
 ## The Categories of Quote-to-Cash Software
 
 Quote-to-cash is not one product category, it is a chain of five, and most companies end up combining tools from more than one:
 
-**CPQ (configure, price, quote).** Builds the quote itself: which products, at what price, with what discount approvals. This is the category most people mean when they say "quote to cash software" in isolation. Examples: Salesforce CPQ, DealHub, PandaDoc, HubSpot's native quote tool for simpler cases.
+**CPQ (configure, price, quote).** Builds the quote itself: which products, at what price, with what discount approvals. This is the category most people mean when they say "quote to cash software" in isolation. Examples: Salesforce CPQ, DealHub, PandaDoc, HubSpot Revenue Hub CPQ.
 
 **CLM and e-signature.** Manages the contract from draft through negotiation to signature. Once a quote is approved, this is where it becomes a binding agreement. Examples: DocuSign CLM, Ironclad, PandaDoc, HubSpot's native e-signature for simple contracts.
 
@@ -81,15 +83,15 @@ Quote-to-cash is not one product category, it is a chain of five, and most compa
 
 ## Where HubSpot Fits
 
-HubSpot's native quoting and e-signature cover the front half of quote-to-cash for straightforward deals: fixed pricing, simple approval, one signer. It does not do multi-tier CPQ logic, contract redlining, or revenue recognition. Most HubSpot users pair it with:
+Evaluate [Revenue Hub's connected CPQ, billing and payments](https://knowledge.hubspot.com/cpq/manage-the-connected-cpq-billing-and-payments-process) before buying additional tools. The connected process is a beta with Revenue Hub Professional or Enterprise and seat requirements. It can use accepted quotes to create Contracts, billing schedules and invoices. Confirm eligibility and test your invoice schedule before enabling it.
 
-- A specialist CPQ tool (DealHub, PandaDoc Complete) once pricing configuration gets complex.
-- A billing platform integrated via the HubSpot API for recurring revenue and revenue recognition. See our [comparison of HubSpot billing integrations](/posts/hubspot-billing-integrations-compared/) for how Revenue Hub (formerly Commerce Hub), Stripe, Chargebee, Maxio, Zuora, and Recurly stack up.
+- A specialist CPQ tool when a tested product-configuration requirement exceeds the native setup.
+- A billing or accounting platform when its required capabilities exceed the selected native billing path. See our [comparison of HubSpot billing integrations](/posts/hubspot-billing-integrations-compared/) for how Revenue Hub (formerly Commerce Hub), Stripe, Chargebee, Maxio, Zuora, and Recurly stack up.
 - An ERP integration for order fulfillment and financial reporting once the deal closes. See our [guide to CRM and ERP integration](/posts/crm-erp-integration/).
 
 ## Where Quote-to-Cash Software Ends and Renewals Begin
 
-Quote-to-cash software gets a deal from quote to signed contract to first invoice. What it typically does not manage well is what happens next: tracking when that contract is up for renewal, catching price increases and multi-year chains, and rebuilding the deal for the next term. That is a separate discipline that runs on the CRM's deal pipeline rather than the CPQ or billing tool.
+Renewals may already be supported by the chosen revenue or billing platform. In HubSpot, distinguish Contract-based renewals from a deal-workflow implementation. Define notice deadlines, amendments, ownership and renewal forecasting before choosing extra software; the first invoice is not the end of the agreement lifecycle.
 
 If you're evaluating quote-to-cash software for a subscription or contract-based business, it's worth deciding upfront how renewals will flow out the other end. Our [guide to building a renewal pipeline in HubSpot](/posts/hubspot-renewal-pipeline-complete-guide/) covers how to structure that handoff so a closed-won deal automatically becomes a tracked renewal instead of falling off a spreadsheet.
 
@@ -112,10 +114,10 @@ No. CPQ (configure, price, quote) is one stage of quote to cash. Quote-to-cash s
 Most mid-market companies start with separate best-of-breed tools (CPQ, e-signature, billing) integrated through the CRM, because a full suite is expensive and often over-built for their deal complexity. Full suites make sense once deal volume, approval complexity, or subscription billing complexity outgrow what point tools and integrations can handle cleanly.
 
 **Can HubSpot handle quote to cash on its own?**
-HubSpot's native quoting tool handles simple quotes and e-signature, but it does not do multi-tier CPQ pricing logic, contract lifecycle management, or revenue recognition. Most HubSpot users pair it with a dedicated CPQ or billing tool, or integrate to an ERP, for the parts native HubSpot doesn't cover.
+Revenue Hub combines CPQ, commercial Contracts, invoicing and payments. Some connected billing behavior requires beta enrollment. Evaluate legal-document governance and accounting requirements separately rather than assuming either native HubSpot or an external suite covers everything.
 
 **What is the best quote-to-cash software for a mid-market company?**
-There is no single best answer, it depends on your CRM, deal complexity, and whether you bill one-time or on a subscription. Salesforce shops often use Salesforce CPQ or Revenue Cloud. HubSpot shops typically pair native quoting with a specialist CPQ tool like DealHub or PandaDoc, plus a billing/ERP integration for the back half.
+Choose against the actual quoting, document, billing and accounting requirements. HubSpot teams should evaluate Revenue Hub alongside specialist tools, rather than assuming external CPQ and recurring billing are always required.
 
 **How much does quote to cash software cost?**
 Point tools (e-signature, basic CPQ) can start under $50/user/month. Dedicated CPQ platforms like DealHub or Conga typically run into the hundreds of dollars per user per month for mid-market deployments. Full suites like Salesforce Revenue Cloud are priced per opportunity or per user and usually require a sales conversation, not published list pricing.

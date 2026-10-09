@@ -2,7 +2,7 @@
 layout: ../../layouts/BlogPostLayout.astro
 title: "HubSpot ARR Reporting: NRR, GRR And Recurring Revenue Dashboards"
 pubDate: "2026-04-02"
-modifiedDate: "2026-09-10"
+modifiedDate: "2026-10-09"
 description: "Set up HubSpot ARR reporting, recurring revenue tracking, and practical dashboards for NRR, GRR, renewal rate, churn, and forecasts."
 howto: true
 howtoSteps:
@@ -17,7 +17,7 @@ howtoSteps:
   - name: "Set the columns"
     text: "Show count of deals, segmented by Deal Stage, Closed Won versus Closed Lost."
   - name: "Calculate the renewal rate"
-    text: "Download the report and divide the Closed Won count by the total closed count, since HubSpot's report builder cannot do this division natively."
+    text: "Download the report and divide the Closed Won count by the total closed count, to validate the numerator and denominator independently."
 category:
   title: "Revenue Operations"
   href: "/categories/revenue-operations/"
@@ -37,23 +37,23 @@ seriesName: "HubSpot Renewal Pipeline"
 pillarUrl: "/posts/hubspot-renewal-pipeline-complete-guide/"
 faqs:
   - q: "Does HubSpot have a native NRR report?"
-    a: "No. HubSpot has no built-in report that calculates net revenue retention. It stores the deal-level inputs (MRR, ARR, close date, deal type, previous contract value) but does not roll them into NRR or GRR anywhere in the product. You build that with custom properties and the custom report builder, covered in this guide."
+    a: "HubSpot documents Contract-based churn and net revenue retention reporting. Check its coverage against your agreement book; this guide supplies a deal-based reporting approach when native coverage or cohort rules do not fit."
   - q: "What is net revenue retention in HubSpot?"
-    a: "Net revenue retention (NRR) in HubSpot is a calculated metric, not a native field: (starting MRR + expansion - contraction - churn) / starting MRR for a cohort of existing customers, over a period. HubSpot stores the deal-level inputs (MRR, ARR, close date, deal type) but does not ship a report that rolls them into NRR, you build that with custom properties and the custom report builder, covered below."
+    a: "NRR measures starting recurring revenue plus expansion, less contraction and churn, divided by starting recurring revenue for the same cohort. Native Contract reports and custom deal-based reports use different inputs; reconcile their scope before comparing them."
   - q: "Does HubSpot calculate NRR and GRR automatically with workflows?"
-    a: "No. Workflows can automate the inputs, keeping Deal Type, Renewal Date, and Previous Contract Value populated so the numbers are accurate, but the NRR/GRR calculation itself happens in a custom report or dashboard, not inside a workflow. Sales Hub Enterprise's Revenue Analytics tool gets closer to automatic, but only if your data already sits in HubSpot's native recurring revenue properties."
-  - q: "What is HubSpot NRR reporting used for if there's no native report?"
-    a: "Board and CFO reporting on retention and expansion. Most mid-market teams build it as a custom dashboard on top of deal-level ARR/MRR properties, segmented by Renewal Year or pipeline, rather than waiting on a native HubSpot NRR report to exist."
+    a: "Workflows can maintain reporting inputs. Calculation properties, report formulas and native analytics are separate tools; none removes the need to validate the starting cohort, movements and agreement coverage."
+  - q: "When should I use custom HubSpot NRR reporting?"
+    a: "Retention reporting supports finance, customer success and board reviews. Native Contract reports may cover the job; custom deal-based dashboards remain useful for external agreement data or different cohort definitions."
   - q: "How do I report on a renewal deal and its original deal together?"
-    a: "Associate the renewal deal to the original deal (or chain each year's renewal to the prior year's) and use Previous Contract Value on the renewal to hold the prior deal's amount. That single property is what lets a report calculate expansion or contraction without a cross-object join, which HubSpot's native report builder cannot do well."
+    a: "Associate the renewal deal to the original deal (or chain each year's renewal to the prior year's) and use Previous Contract Value on the renewal to hold the prior deal's amount. The snapshot makes the prior-term value explicit. HubSpot supports multi-source reporting; validate associations and duplicate counts if using joins instead."
   - q: "Do I need Operations Hub for NRR and GRR reporting in HubSpot?"
-    a: "Not for the reporting itself; the custom report builder on Sales Hub Professional and above is enough once the properties are populated. Operations Hub helps upstream, with calculated properties and data sync, if you are pulling MRR or contract data in from a billing platform rather than entering it in HubSpot directly."
+    a: "Not universally. Check the reporting tools, calculation properties and connector entitlements needed by your model. Calculation properties are available in several Professional and Enterprise products, not only Data Hub."
   - q: "Can HubSpot divide two report values to calculate a percentage like NRR?"
-    a: "No, not inside the custom report builder itself. HubSpot's report builder cannot divide one calculated total by another, which is why Report 7 in this guide is a manual calculation: export the summed values and do the division in a spreadsheet, or use a calculated property built ahead of time if the inputs are stable."
+    a: "Validate the selected reporting tool and aggregation behavior. An export provides an independent check; a record calculation is not automatically equivalent to dividing cohort totals. Do not infer a platform-wide limitation from this manual example."
   - q: "How do I handle mid-term expansions in NRR reporting?"
     a: "Log the expansion as its own deal (Deal Type = Expansion) associated with the same company, rather than editing the original deal's amount. That preserves the audit trail and lets a report segment new business, renewal, and expansion revenue separately, which is what the Deal Type property in this guide's setup is for."
   - q: "Sales Hub Professional or Enterprise for NRR and GRR reporting?"
-    a: "Professional is enough for the custom report builder approach this guide walks through. Enterprise's Revenue Analytics tool automates more of the rollup, but only once your recurring revenue data already sits in HubSpot's native properties in the shape it expects, so most mid-market teams start on Professional and evaluate Enterprise once the manual process is proven."
+    a: "Check custom report builder access in the relevant Professional or Enterprise product. The Enterprise recurring-revenue analytics tool differs from the revenue analytics suite and Contract retention reports; each uses its own inputs. Choose against coverage and cohort requirements."
 ---
 
 Your board wants to see NRR. Your CFO wants GRR. Your CS leader wants renewal rate by segment. HubSpot can track recurring revenue, ARR, MRR, renewals, upgrades, downgrades, and churn, but those inputs do not automatically become a trustworthy NRR or GRR dashboard.
@@ -68,6 +68,8 @@ These are the revenue metrics every RevOps team reports on: monthly recurring re
 
 
 ## Reporting Depends On Renewal Deal Hygiene
+
+HubSpot documents [Contract retention reporting](https://knowledge.hubspot.com/contracts/view-and-manage-contracts), including churn and NRR. This article owns the custom deal-based dashboard approach. Compare coverage with the native [revenue analytics suite](https://knowledge.hubspot.com/reports/create-reports-in-the-revenue-analytics-suite) before building another report.
 
 **Cannot reconcile the dashboard with the contracts due for renewal?** Start with a sample of those contracts and compare their renewal dates, owners, previous values, and line items with the deals in your report. If records are missing or the rules are unclear, <a href="/renewal-audit-call/" data-ga-cta="renewal_dashboard_reconciliation_mid_call">discuss the reporting gaps on a Renewal Alignment Call</a>. The no-fee, 30-minute call helps decide whether a paid audit is worthwhile; no HubSpot access is needed for the call.
 
@@ -218,9 +220,9 @@ This dashboard answers: "Are we retaining and growing revenue?"
 3. Filter: Deal Type = Renewal, Pipeline = Renewal Pipeline
 4. Rows: Close Date (quarterly)
 5. Columns: Count of deals, segmented by "Deal Stage" (Closed Won vs Closed Lost)
-6. Calculate percentage in a downloaded spreadsheet (HubSpot can't do the division natively in the report builder)
+6. Calculate percentage in a downloaded spreadsheet (use this export as an independent reconciliation check)
 
-**Workaround for in-platform calculation:** Use [Operations Hub](https://www.hubspot.com/pricing/operations) to create a "Renewal Outcome" calculated property that flags Won/Lost, then build a report that counts each value per quarter.
+**In-platform option:** evaluate [calculation and rollup properties](https://knowledge.hubspot.com/properties/create-calculation-properties) under the portal entitlement, then validate the report numerator and denominator. A flag count alone does not establish a renewal rate.
 
 ### Report 6: Revenue Segmentation by Deal Type
 
@@ -234,7 +236,7 @@ This one chart tells leadership: "How much of our closed revenue is new vs. recu
 
 ### Report 7: NRR Trend (Manual Calculation)
 
-HubSpot can't calculate NRR natively. Here's the workaround:
+For this custom deal-based cohort, calculate and reconcile NRR from the components below. Native Contract retention reports may be preferable when they cover the same agreements and metric definition.
 
 1. **Export data monthly:** All deals closed this month, segmented by Deal Type
 2. **Spreadsheet formula:**
@@ -246,7 +248,7 @@ HubSpot can't calculate NRR natively. Here's the workaround:
 3. **Track monthly** in a spreadsheet or BI tool
 4. **Display in HubSpot** using a custom report that shows the component parts (even if the final calculation is manual)
 
-For teams with [Operations Hub Enterprise](https://www.hubspot.com/pricing/operations), you can use datasets and calculated fields to get closer to an automated NRR report, but it still requires some manual setup.
+For a dataset-based build, check [current dataset and reporting access](https://knowledge.hubspot.com/reports/create-reports-with-the-custom-report-builder) and reconcile the cohort totals. Dataset calculations do not remove the need for agreement-level data validation.
 
 ### Report 8: Churn Analysis by Reason
 
@@ -303,7 +305,7 @@ Only Closed Won deals appear in the Revenue Analytics report, and the Deal close
 
 Before the dashboards, get your recurring revenue data right. Whether you track HubSpot MRR through native recurring revenue properties or custom objects, the goal is a real-time, single source of revenue data in your core CRM.
 
-Start with where the fields live. HubSpot's recurring revenue properties sit on the deal record: Annual recurring revenue (ARR), Monthly recurring revenue (MRR), Annual contract value (ACV), and Total contract value (TCV). They are calculated automatically from line items, using each line item's recurring billing frequency and term, so they are only as accurate as your line-item hygiene. If you skip line items and type amounts directly onto deals, these fields stay empty and both Revenue Analytics and your custom revenue reports lose their data source.
+Start with where the fields live. HubSpot's recurring revenue properties sit on the deal record: Annual recurring revenue (ARR), Monthly recurring revenue (MRR), Annual contract value (ACV), and Total contract value (TCV). They are calculated automatically from line items, using each line item's recurring billing frequency and term, so they are only as accurate as your line-item hygiene. If you skip line items and type amounts directly onto deals, validate whether those calculated fields are populated. Custom reports using ARR/MRR need those inputs; the separate Enterprise recurring-revenue analytics report instead uses the four recurring-revenue properties described above.
 
 Dashboards consume these properties the same way they consume any deal field: sum ARR or MRR in the custom report builder, break it down by Deal Type or pipeline, and trend it by close date. Teams that cannot use line items can mirror the same idea with custom currency properties (a manual "ARR" field populated by workflow), which keeps the dashboards below working at the cost of automatic calculation. A few notes on making the numbers meaningful:
 
@@ -328,31 +330,31 @@ These inputs feed every dashboard below, and they connect retention to customer 
 ## Frequently Asked Questions
 
 **Does HubSpot have a native NRR report?**
-No. HubSpot has no built-in report that calculates net revenue retention. It stores the deal-level inputs (MRR, ARR, close date, deal type, previous contract value) but does not roll them into NRR or GRR anywhere in the product. You build that with custom properties and the custom report builder, covered above.
+HubSpot documents Contract-based churn and net revenue retention reporting. Check its coverage against your agreement book; this guide supplies a deal-based reporting approach when native coverage or cohort rules do not fit.
 
 **What is net revenue retention in HubSpot?**
-Net revenue retention (NRR) is a calculated metric, not a native field: (starting MRR + expansion, less contraction, less churn) divided by starting MRR for a cohort of existing customers, over a period. HubSpot stores the deal-level inputs (MRR, ARR, close date, deal type) but does not ship a report that rolls them into NRR, you build that with custom properties and the custom report builder, covered above.
+NRR measures starting recurring revenue plus expansion, less contraction and churn, divided by starting recurring revenue for the same cohort. Native Contract reports and custom deal-based reports use different inputs; reconcile their scope before comparing them.
 
 **Does HubSpot calculate NRR and GRR automatically with workflows?**
-No. Workflows automate the inputs, keeping Deal Type, Renewal Date, and Previous Contract Value populated, but the NRR/GRR calculation itself happens in a custom report or dashboard, not inside a workflow. Sales Hub Enterprise's Revenue Analytics tool gets closer to automatic, but only if your data already sits in HubSpot's native recurring revenue properties.
+Workflows can maintain reporting inputs. Calculation properties, report formulas and native analytics are separate tools; none removes the need to validate the starting cohort, movements and agreement coverage.
 
-**What is HubSpot NRR reporting used for if there's no native report?**
-Board and CFO reporting on retention and expansion. Most mid-market teams build it as a custom dashboard on top of deal-level ARR/MRR properties, segmented by Renewal Year or pipeline, rather than waiting on a native HubSpot NRR report to exist.
+**When should I use custom HubSpot NRR reporting?**
+Retention reporting supports finance, customer success and board reviews. Native Contract reports may cover the job; custom deal-based dashboards remain useful for external agreement data or different cohort definitions.
 
 **How do I report on a renewal deal and its original deal together?**
-Associate the renewal deal to the original deal (or chain each year's renewal to the prior year's) and use Previous Contract Value on the renewal to hold the prior deal's amount. That single property is what lets a report calculate expansion or contraction without a cross-object join, which HubSpot's native report builder cannot do well.
+Associate the renewal deal to the original deal (or chain each year's renewal to the prior year's) and use Previous Contract Value on the renewal to hold the prior deal's amount. The snapshot makes the prior-term value explicit. HubSpot supports multi-source reporting; validate associations and duplicate counts if using joins instead.
 
 **Do I need Operations Hub for NRR and GRR reporting in HubSpot?**
-Not for the reporting itself; the custom report builder on Sales Hub Professional and above is enough once the properties are populated. Operations Hub helps upstream, with calculated properties and data sync, if you are pulling MRR or contract data in from a billing platform rather than entering it in HubSpot directly.
+Not universally. Check the reporting tools, calculation properties and connector entitlements needed by your model. Calculation properties are available in several Professional and Enterprise products, not only Data Hub.
 
 **Can HubSpot divide two report values to calculate a percentage like NRR?**
-No, not inside the custom report builder itself. HubSpot's report builder cannot divide one calculated total by another, which is why Report 7 above is a manual calculation: export the summed values and do the division in a spreadsheet, or use a calculated property built ahead of time if the inputs are stable.
+Validate the selected reporting tool and aggregation behavior. An export provides an independent check; a record calculation is not automatically equivalent to dividing cohort totals. Do not infer a platform-wide limitation from this manual example.
 
 **How do I handle mid-term expansions in NRR reporting?**
 Log the expansion as its own deal (Deal Type = Expansion) associated with the same company, rather than editing the original deal's amount. That preserves the audit trail and lets a report segment new business, renewal, and expansion revenue separately, which is what the Deal Type property in the setup above is for.
 
 **Sales Hub Professional or Enterprise for NRR and GRR reporting?**
-Professional is enough for the custom report builder approach this guide walks through. Enterprise's Revenue Analytics tool automates more of the rollup, but only once your recurring revenue data already sits in HubSpot's native properties in the shape it expects, so most mid-market teams start on Professional and evaluate Enterprise once the manual process is proven.
+Check custom report builder access in the relevant Professional or Enterprise product. The Enterprise recurring-revenue analytics tool differs from the revenue analytics suite and Contract retention reports; each uses its own inputs. Choose against coverage and cohort requirements.
 
 A dashboard only reports what already happened; it does not stop a renewal from slipping. Pair it with [renewal reminders that fire before the date slips](/posts/contract-renewal-reminder-software/) so the deals behind these numbers get worked on time.
 

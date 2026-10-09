@@ -2,7 +2,7 @@
 layout: ../../layouts/BlogPostLayout.astro
 title: "How to Integrate CLM and CRM: Field Mapping, Events and Error Handling"
 pubDate: "2026-09-10"
-modifiedDate: "2026-09-11"
+modifiedDate: "2026-10-09"
 description: "CLM CRM integration fails when contract data drifts. Map fields, integrate systems, automate workflows, handle errors and reconcile every renewal handoff."
 category:
   title: "Revenue Operations"
@@ -66,6 +66,8 @@ Here, CLM means contract lifecycle management, not customer lifecycle management
 ![CLM and CRM integration event flow with validation, retries, quarantine and reconciliation](/assets/posts/clm-crm-integration-event-flow.svg)
 
 ---
+
+For a HubSpot-specific document workflow, use our [contract document integration guide](/posts/hubspot-contract-document-integrations/) to compare PandaDoc and DocuSign creation, approval, signature and CRM writeback checks.
 
 ## What should a CLM and CRM integration accomplish?
 

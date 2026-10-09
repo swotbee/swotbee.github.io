@@ -1,341 +1,296 @@
 ---
 layout: ../../layouts/BlogPostLayout.astro
-title: "The Complete Guide to Building a Renewal Pipeline in HubSpot"
+title: "HubSpot Renewal Pipeline: Setup, Notices and Ownership"
 pubDate: "2026-04-02"
-description: "The definitive guide to building a HubSpot renewal pipeline: from architecture and automation to dashboards and churn prevention. Everything mid-market teams need to stop losing renewals."
+modifiedDate: "2026-10-09"
+description: "Build a HubSpot renewal pipeline around notice dates, owners and multiple customer agreements. Compare native options, then discuss your setup on a call."
 category:
   title: "Revenue Operations"
   href: "/categories/revenue-operations/"
-modifiedDate: "2026-09-10"
-funnelCta: "renewal-audit"
 author:
   name: "SWOTBee Team"
   url: "https://swotbee.com"
   imageUrl: "/assets/ico/logo.png"
-  bio: "HubSpot-certified consultants specializing in renewal pipeline architecture, RevOps automation, and CRM migration for mid-market B2B companies."
-  linkedin: "https://linkedin.com/company/swotbee"
+  bio: "SwotBee works on HubSpot renewal workflows and integrations with document-signing and accounting tools."
   expertise:
     - "HubSpot CRM"
-    - "Renewal Pipelines"
+    - "Customer Contracts"
     - "Revenue Operations"
-reviewedBy:
-  name: "Sharmi"
-  title: "Co-Founder, SWOTBee"
-  linkedin: "https://www.linkedin.com/in/sharm1la/"
-  date: "July 2026"
-image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=450&fit=crop"
+image: "/assets/posts/hubspot-customer-contracts/hubspot-renewal-pipeline-complete-guide-hero.svg"
 tags:
   - "HubSpot"
-  - "Renewal Pipeline"
+  - "Customer Contracts"
+  - "Customer renewals"
   - "Revenue Operations"
-  - "Customer Retention"
-  - "CRM Automation"
-  - "SaaS Renewals"
 faqs:
-  - q: "Do I need a separate pipeline for renewals in HubSpot?"
-    a: "Yes, if you have recurring revenue at any real scale. Mixing renewals into your sales pipeline breaks forecasting (new business closes at 20-30%, renewals at 85-95%), lets renewals get deprioritized behind new logos, and leaves no clear owner for the renewal motion."
-  - q: "What stages should a HubSpot renewal pipeline have?"
-    a: "There are three proven models: time-based (12+ Months Out through Renewal Sent), activity-based (Active Contract through Renewal Proposal Sent), and customer-journey (Onboarding through Renewal Sent). The right one depends on your sales cycle and team size."
-  - q: "Who should own the renewal pipeline: sales or customer success?"
-    a: "Most commonly Customer Success owns individual renewal deals, while RevOps owns the pipeline architecture, automation, and reporting regardless of who works the deals."
-  - q: "What HubSpot tier do I need for a renewal pipeline?"
-    a: "At minimum, Sales Hub Professional for workflow automation plus Operations Hub Professional for calculated properties like Days to Renewal. Service Hub Professional adds native health scores via the Customer Success Workspace."
-  - q: "What automations does a renewal pipeline need?"
-    a: "Five core workflows: auto-creating the renewal deal on Closed Won, time-based stage progression, a 90-60-30 day engagement cadence, a multi-year renewal chain, and churn/at-risk alerts."
-  - q: "How do I avoid the renewal workflow infinite loop?"
-    a: "HubSpot's re-enrollment blocking stops a Year 1 to Year 2 renewal chain from continuing to Year 3. Fix it with the boolean toggle pattern or a dual-workflow (odd/even) pattern."
-  - q: "What metrics should I track for a renewal pipeline?"
-    a: "Renewal rate (target 90%+), net revenue retention (target 110%+), gross revenue retention (target 90%+), and churn rate (target under 5% annually)."
-  - q: "What's the most common mistake in HubSpot renewal pipelines?"
-    a: "Mixing deal types in one pipeline, which breaks reports, forecasts, and automation at once. Close behind: no churn reason taxonomy, and starting renewal conversations at 90 days instead of 6 months for enterprise contracts."
-howto: true
-howtoSteps:
-  - name: "Create the pipeline"
-    text: "Go to Settings, Objects, Deals, Pipelines, and click Create Pipeline. Name it something your team will recognize, like Renewal Pipeline."
-  - name: "Configure stages with probability weights"
-    text: "Add stages and assign probability weights that reflect renewal reality, not new-business reality, since renewal probabilities should be much higher across the board."
-  - name: "Add required properties"
-    text: "Make critical fields required at specific stages, for example requiring Churn Reason when a deal moves to Closed Lost, and Renewal Amount when a deal enters Renewal Sent."
-  - name: "Check your HubSpot tier"
-    text: "Confirm you have Sales Hub Professional or higher for workflow automation, and add Operations Hub Professional if you need calculated properties like Days to Renewal."
+  - q: "Does HubSpot support renewals natively?"
+    a: "Yes, native renewal alerts and quote-based commercial renewal are documented. Confirm the relevant account access, seats, permissions and settings."
+  - q: "Is the notice deadline always the end date minus days?"
+    a: "No. The reviewed clause may use another boundary, months, business days or receipt requirements. Keep the rule evidence with the date."
+  - q: "Do all renewals need a new signed document?"
+    a: "No. Follow the agreement and approved commercial/legal policy. Automatic renewal still needs a clear operational decision and billing check."
+  - q: "Should a new renewal deal appear each month?"
+    a: "Only if that is the actual commercial renewal event. Monthly invoicing alone does not establish a monthly opportunity."
+  - q: "How do we track several contracts with different notice periods for one customer?"
+    a: "Keep a separate agreement identity, reviewed rule, deadline and owner for each renewable commitment. Use a company rollup only for navigation. The control-sheet example above shows two separate notice windows and excludes a one-time project from renewal automation."
+  - q: "Should renewals use a separate pipeline from new business?"
+    a: "Use a separate pipeline when renewal stages, ownership or reporting need a distinct process. A shared pipeline can fit when those rules are the same and motion type remains identifiable. Test new sales, expansion and renewal reporting together; separating pipelines does not by itself prevent duplicate agreements or double-counted revenue."
 ---
 
-If you manage recurring revenue (subscriptions, annual contracts, retainers) and you're running renewals through your sales pipeline, you're almost certainly losing deals you shouldn't be.
+**A HubSpot renewal pipeline works when each customer agreement has verified dates, an accountable owner and a renewal opportunity tied to the correct term. Start work before the relevant notice deadline, distinguish reminders from commercial progress, and choose a native Contract or deal-based process that avoids duplicate opportunities and preserves agreement history.**
 
-The reason is simple: new business and renewals are fundamentally different motions. New business is intent-driven ("this prospect wants to buy"). Renewals are time-driven ("this contract expires in 90 days"). Mixing them in the same pipeline muddies your forecasting, confuses your team, and lets renewals slip through the cracks.
+The end date is not always the action deadline. A customer can hold several agreements, and a monthly invoice can belong to a multi-year commitment. Treating those as one date or one deal can send the team after the wrong renewal.
 
-This guide covers everything you need to build a dedicated renewal pipeline in HubSpot, from architecture decisions and stage definitions to automation workflows and executive dashboards. It's the resource we wish existed when we started building renewal systems for our clients in Energy, Manufacturing, and SaaS.
+For broader process and software selection, see our [contract renewal management guide](/posts/contract-renewal-management-complete-guide/). This guide owns the HubSpot operational workflow.
 
-> **This is the pillar article in our HubSpot Renewal Pipeline series.** Each section links to a deeper cluster article where we go step-by-step. Bookmark this page and use it as your reference.
+**Your takeaway:** an agreement-level renewal control sheet with reviewed notice dates, owner and backup, next action and a unique renewal event. Use the worked rows below to test reminders and prevent duplicate opportunities before enabling automation.
 
----
+## Which dates should drive customer contract renewals?
 
-## Why Renewals Deserve Their Own Pipeline
+Use the relevant decision deadline to start work, while retaining separate end, renewal and billing dates. The agreement’s actual terms determine the notice rule.
 
-Between 70% and 80% of SaaS revenue comes from existing customers. [Research by Bain & Company, published in Harvard Business Review](https://hbr.org/2014/10/the-value-of-keeping-the-right-customers), found that increasing customer retention by just 5% boosts profits by 25, 95%. For companies with annual contracts (energy services, manufacturing suppliers, B2B SaaS) the math is even more lopsided. A missed renewal doesn't just cost you one deal. It costs you every future year of that contract.
+<div style="max-width:100%; overflow-x:auto;" tabindex="0" role="region" aria-label="Which dates should drive customer contract renewals? table 1">
 
-Here's what goes wrong when renewals share a pipeline with new business:
+| Date | Meaning | Operational use |
+|---|---|---|
+| Contract end date | Current commitment’s scheduled end | Term visibility and expiry checks |
+| Notice deadline | Latest date for a specified notice under the reviewed clause | Decision, approval and delivery preparation |
+| Renewal effective date | Start of the next commercial term | Renewal commitment and forecast context |
+| Billing date/period | Invoice or recurring charge timing | Finance reconciliation, not automatic proof of renewal |
+| Internal decision date | Earlier team target | Allows preparation before notice or proposal deadline |
+| Review date | Scheduled check for evergreen/no fixed-end arrangements | Operational review without inventing an expiry |
 
-**Forecasting breaks.** New business deals close at 20, 30%. Renewals close at 85, 95%. When both live in the same pipeline, your weighted forecast is fiction. A VP of Sales looking at pipeline value has no idea what's real.
+</div>
 
-**Renewals get deprioritized.** Sales teams chase new logos. Renewal deals sitting at "Upcoming Renewal" don't get the same urgency as a hot inbound lead. Without a dedicated pipeline, renewals are invisible until they're overdue.
+Illustrative rule: if a reviewed clause requires notice 60 calendar days before a term boundary of 31 December 2026, subtraction gives 1 November 2026. A team might choose 2 October as its internal decision target, 30 days earlier. That arithmetic is only suitable if the clause really uses that boundary and calendar-day rule.
 
-**Stage definitions don't fit.** A new business pipeline has stages like "Discovery," "Demo," "Proposal Sent." Renewals need stages like "6+ Months Out," "90-Day Check-In," "Renewal Sent," "Negotiating." Forcing renewals into sales stages means your pipeline stages carry no useful information.
+Month-based periods, business days, receipt requirements, time zones and amendments can change the answer. Record the reviewed rule and evidence. Do not deploy one date formula to every agreement.
 
-**Ownership is unclear.** Is the renewal the AE's responsibility? The CSM's? When there's one pipeline, nobody owns it.
+Copy this control sheet for the next agreements needing action. These illustrative calendar-day rules must be replaced with each agreement's reviewed terms:
 
-Not sure if you need a separate pipeline? Read our [decision framework for separating vs. unifying pipelines](/posts/hubspot-renewal-pipeline-vs-sales-pipeline/).
+<div style="max-width:100%; overflow-x:auto;" tabindex="0" role="region" aria-label="Which dates should drive customer contract renewals? table 2">
 
----
+| Agreement | Term boundary | Reviewed notice rule | Notice deadline | Internal decision date | Owner / backup | Event key |
+|---|---|---|---|---|---|---|
+| A-101 support | 2026-12-31 | 60 calendar days before boundary | 2026-11-01 | 2026-10-02 | Account lead / service manager | `A-101|2027-01-01|renewal` |
+| A-102 security | 2027-03-31 | 90 calendar days before boundary | 2026-12-31 | 2026-12-01 | Security lead / account lead | `A-102|2027-04-01|renewal` |
+| A-103 migration | One-time project | No renewal rule | Not applicable | Delivery review only | Project lead / delivery manager | No recurring renewal event |
 
-## What a HubSpot Renewal Pipeline Looks Like
+</div>
 
+Add next action, due date, rule reference and notice evidence to your working copy. For A-101, an internal decision task is due on 2 October; if approval is incomplete at the agreed escalation date, the backup acts before the 1 November notice deadline. A reminder sent on 1 November alone would leave no preparation time.
 
-A well-built renewal pipeline has four components working together:
+![An illustrative notice timeline. 2 October 2026: Internal decision target; 1 November 2026: Reviewed notice deadline; 31 December 2026: Current term boundary; 1 January 2027: Next term starts.](/assets/posts/hubspot-customer-contracts/hubspot-renewal-pipeline-complete-guide-worksheet.svg)
 
-### Pipeline Stages
+*Illustrative design. Use it alongside the worksheet and adapt it to your reviewed agreement and selected tools.*
 
-There are three proven stage models. The right one depends on your sales cycle and team size:
+## How do you manage multiple agreements and renewal owners?
 
-1. **Time-based stages:** 12+ Months Out → 6, 12 Months → 3, 6 Months → 90 Days → 60 Days → 30 Days → Renewal Sent → Closed Won / Closed Lost
-2. **Activity-based stages:** Active Contract → Health Check Scheduled → Health Check Complete → Renewal Proposal Sent → Negotiating → Closed Won / Closed Lost
-3. **Customer-journey stages:** Onboarding → Adoption → Value Realization → Renewal Conversation → Renewal Sent → Closed Won / Closed Lost
+Track each independently renewable agreement separately and assign one accountable owner plus a fallback. A company-level summary can help navigation, but cannot replace agreement-level responsibility.
 
-See our [deep dive on stage definitions](/posts/hubspot-renewal-pipeline-stages/) for all three models with probability weightings and pros/cons.
+An illustrative service customer has an annual support SOW, a security add-on with a different notice window and a one-time migration project. The first two may renew; the third should not generate a recurring renewal deal merely because it has a completion date.
 
-### Essential Properties
+<div style="max-width:100%; overflow-x:auto;" tabindex="0" role="region" aria-label="How do you manage multiple agreements and renewal owners? table 3">
 
-Every renewal deal needs custom properties that standard HubSpot deal properties don't cover: deal type, renewal date, contract term, renewal year, auto-renew flag, days-to-renewal, health score, and churn reason.
+| Role | Responsibility |
+|---|---|
+| Agreement owner | Confirm dates, customer intentions and next action |
+| Commercial approver | Approve price, exceptions and renewal scope |
+| Finance owner | Validate billing changes and invoice continuity |
+| RevOps/admin | Maintain workflow rules, associations and exception reporting |
+| Backup owner | Act when the primary owner is unavailable |
 
-See the [complete list of 15 properties](/posts/hubspot-renewal-pipeline-properties/) your renewal pipeline needs.
+</div>
 
-### Ownership Model
+Sales or Customer Success can own the commercial motion. Choose according to who has authority and customer context, rather than assuming a universal organizational model. Record the handoff when an expansion needs another team.
 
-The most common model: **Customer Success owns the renewal pipeline**, Sales owns the new business pipeline. If there's an expansion opportunity during renewal, it either stays in the renewal deal (simple upsell) or spawns a separate deal in an expansion pipeline (complex multi-product upsell).
+The existing [CS versus sales ownership guide](/posts/hubspot-renewal-ownership-cs-vs-sales/) can support that decision. The acceptance test is whether an actual upcoming deadline has an owner who can act.
 
-RevOps should own the pipeline architecture, automation, and reporting, regardless of who owns individual deals. For the full decision framework and how to automate the CS-to-sales handoff, see [who should own renewals: CS vs sales](/posts/hubspot-renewal-ownership-cs-vs-sales/).
+## Should you use native Contract renewals or a deal-based process?
 
-### Automation Layer
+Use the selected agreement source to initiate the renewal motion, and one process to create its opportunity. Native Contracts can support renewal work; deal-based processes remain an option where they fit the current operating model.
 
-This is where HubSpot shines, and where most implementations break. The core automations are:
+According to [HubSpot’s renewal quote guide](https://knowledge.hubspot.com/quotes/create-a-renewal-quote-on-a-contract), renewal quotes require Revenue Hub Professional/Enterprise, a Revenue Hub seat and the relevant permissions. An accepted renewal quote creates a successor Contract associated with the previous one. Deal-based workflow quote creation is also documented.
 
-- **Create renewal deals and quotes** from Revenue Hub Contracts, or auto-create renewal deals when legacy or external contracts enter the renewal window
-- **Time-based stage progression** as the renewal date approaches
-- **90-60-30 day engagement cadence** with tasks and emails
-- **Multi-year renewal chains** that create next year's deal when this year closes
-- **Churn/at-risk alerts** when health signals deteriorate
+<div style="max-width:100%; overflow-x:auto;" tabindex="0" role="region" aria-label="Should you use native Contract renewals or a deal-based process? table 4">
 
-For the native Revenue Hub path, start with [HubSpot Contracts and renewal quotes](/posts/hubspot-contracts-renewal-quotes/). For the deeper builds, see [renewal reminders and alerts](/posts/hubspot-renewal-reminders/), [renewal email sequences](/posts/hubspot-renewal-email-sequence/), and [renewal risk scoring](/posts/hubspot-renewal-risk-scoring/).
+| Path | What should initiate work? | What to test |
+|---|---|---|
+| Native commercial Contract | Correct agreement renewal/notice context | Settings, quote/deal associations and successor handling |
+| Direct renewal beta | Reviewed existing agreement and direct-renewal action | Account enrollment, permissions and actual direct-renewal behavior |
+| Deal-based agreement process | Verified agreement term in the existing model | Required fields, line items and prevention of duplicate term deals |
+| Hybrid | Explicit routing by agreement/source type | Native and custom paths never both create the same renewal |
 
-Want a head start? Use our [copy-paste renewal pipeline template](/posts/hubspot-renewal-pipeline-template/) for the stages, properties, and automation checklist.
+</div>
 
----
+The [view/manage Contracts guide](https://knowledge.hubspot.com/contracts/view-and-manage-contracts) describes a seat exception for the Direct Create, Edit, and Renew beta. Do not apply that exception to renewal quotes without checking their separate requirements.
 
-## Setting Up Your Renewal Pipeline Step-by-Step
+Choose the overall record architecture with the [HubSpot contract management guide](/posts/hubspot-contract-management/). Use the [native setup child](/posts/hubspot-contracts-renewal-quotes/) for the detailed configuration, after checking access in your portal.
 
-### Step 1: Create the Pipeline
+## What fields should your HubSpot renewal pipeline use?
 
-In HubSpot, go to **Settings → Objects → Deals → Pipelines** and click "Create Pipeline." Name it "Renewal Pipeline" (or "Customer Renewals", whatever your team will recognize).
+Use a small field set that connects the renewal opportunity to its source agreement, deadline and next commitment. Reuse suitable native properties rather than creating parallel copies without a reason.
 
-### Step 2: Configure Stages with Probability Weights
+This is a copyable field-design worksheet, not a HubSpot import specification. Check available property types and automation actions in your account.
 
-Add your stages and assign probability weights that reflect renewal reality, not new business reality:
+<div style="max-width:100%; overflow-x:auto;" tabindex="0" role="region" aria-label="What fields should your HubSpot renewal pipeline use? table 5">
 
-| Stage | Probability | Notes |
-|-------|------------|-------|
-| Active Contract | 80% | Post-onboarding, healthy account |
-| 90-Day Check-In | 85% | Engagement started |
-| 60-Day Renewal Sent | 90% | Proposal delivered |
-| 30-Day Negotiating | 85% | Terms under discussion |
-| Closed Won. Renewed | 100% | Done |
-| Closed Lost. Churned | 0% | Log churn reason |
+| Suggested label | Type | Rule |
+|---|---|---|
+| Agreement Key / Source Record | Text/association | Identifies the agreement being renewed |
+| Renewal Event Key | Text, unique where supported | Agreement key + next-term effective date + event kind |
+| Notice Deadline | Date | Reviewed agreement rule; separate from end date |
+| Internal Decision Date | Date | Approved lead time before the relevant action deadline |
+| Renewal Effective Date | Date | Start of proposed next term |
+| Renewal Owner / Backup | Owner reference | Mandatory before operational enrollment |
+| Renewal Scope | Text/dropdown | Whole agreement, selected services or partial renewal |
+| Renewable Value / Currency | Number plus currency | Explicit amount basis; excludes unrelated one-time work |
+| Notice Status | Dropdown | Not required, pending review, planned, sent, evidence confirmed |
+| Next Action / Due Date | Text plus date | Named action, not just a stage label |
+| Exception Reason | Dropdown/text | Missing dates, unclear clause, owner absent, conflicting terms |
 
-Notice these are much higher than new business probabilities. That's the point: if your renewal probabilities look like sales probabilities, your pipeline isn't reflecting reality.
+</div>
 
-### Step 3: Add Required Properties
+The [renewal properties guide](/posts/hubspot-renewal-pipeline-properties/) covers the supporting field model. A field called “days to renewal” is optional convenience; do not make a universal extra-hub purchase a prerequisite for the entire workflow.
 
-Make critical fields required at specific stages. For example, require "Churn Reason" when a deal moves to Closed Lost. Require "Renewal Amount" when a deal enters "Renewal Sent."
+## How do you set up a dedicated HubSpot renewal pipeline?
 
-### Step 4: HubSpot Tier Check
+Set up a separate renewal deal pipeline when its stages differ from new business, then connect it to reviewed agreement data. Creating the pipeline and automating renewal deal creation are separate configuration jobs.
 
-You need **[Sales Hub Professional](https://www.hubspot.com/pricing/sales)** or higher for workflow automation. Enterprise gives you advanced permissions and predictive scoring. **[Operations Hub Professional](https://www.hubspot.com/pricing/operations)** adds calculated properties (essential for "Days to Renewal"). **[Service Hub Professional](https://www.hubspot.com/pricing/service)** gives you native health scores via the [Customer Success Workspace](https://knowledge.hubspot.com/customer-success/set-up-and-manage-the-customer-success-workspace).
+According to [HubSpot's pipeline setup guide](https://knowledge.hubspot.com/object-settings/set-up-and-customize-pipelines), custom pipelines require Starter or higher and Edit property settings permission. Limits depend on the account's pricing model; workflow and team-restriction features have separate requirements.
 
----
+1. In Settings, open Data Management > Objects, select Deals and open Pipelines.
+2. Choose Create pipeline > Create from scratch and name the renewal pipeline.
+3. Add the renewal stages and evidence rules described below, including won/lost outcomes.
+4. Add agreement key, renewal date, owner and next action to the working view.
+5. Enter one upcoming renewal manually and confirm associations and reporting.
+6. Only then configure the eligible workflow to create or find that event's deal, assign tasks and send notifications.
 
-## Automating the Renewal Lifecycle
+For Sales Hub users, verify the subscribed workflow tools rather than equating pipeline access with automation access. Test the same agreement in the original sales pipeline and renewal pipeline to check that the reports distinguish the two motions.
 
-Automation is the difference between a renewal pipeline that works and a glorified spreadsheet. [HubSpot Academy's lesson on automating renewals](https://academy.hubspot.com/lessons/maximizing-customer-retention-automate-your-renewal-process) covers the basics, here we go deeper with the five workflows every renewal pipeline needs:
+## How do you build a notice and escalation workflow?
 
-### Workflow 1: Auto-Create Renewal Deal on Closed Won
+Enroll verified agreements relative to the decision date, assign work and escalate incomplete action before the notice deadline. Missing or disputed inputs should enter a review queue.
 
-If the agreement originates from a Revenue Hub Contract, a workflow can create a renewal quote and either create or select the associated renewal deal. For legacy or externally managed agreements, a deal-based workflow creates the renewal deal with its date, amount, company, contacts and owner.
+The official [Contract settings guide](https://knowledge.hubspot.com/contracts/set-up-contracts) documents approaching-renewal alerts and renewal-date workflows, with workflow edit/publish permissions. A visible native alert does not establish that your specific notice rule or owner escalation is configured.
 
-Use the [native Contracts and renewal quotes setup guide](/posts/hubspot-contracts-renewal-quotes/) when Contracts are your source of truth. Follow our [renewal automation architecture guide](/posts/hubspot-renewal-deal-workflow-automation/) for the full deal-workflow path and the hybrid decision. On the deal-workflow path, the part teams get wrong most often is line items: a generic workflow-created deal does not inherit the source deal products. On the native Contract path, renewal quotes can inherit Contract line items. See our [complete guide to cloning deals in HubSpot](/posts/hubspot-clone-deal-complete-guide/) and the [line-item cloning fix](/posts/hubspot-clone-deal-line-items/) for the workarounds, and the [deal-cloning apps comparison](/posts/hubspot-deal-cloning-apps-compared/) if you'd rather use a marketplace app than build the workflow yourself.
+Use this workflow specification as a template to adapt and test:
 
-### Workflow 2: Time-Based Stage Progression
+1. **Eligibility:** agreement active, renewal relevant, rule reviewed, owner and decision date present.
+2. **Schedule:** start at the approved internal target; identify agreements imported after that date.
+3. **Action:** task the owner to confirm customer intent and commercial scope.
+4. **Decision branch:** proposal required, notice required, auto-renew under approved policy, or exception.
+5. **Escalation:** if the required evidence remains absent at the agreed escalation point, notify the backup/manager.
+6. **Completion:** store decision, notice evidence or accepted renewal reference.
+7. **Suppression:** close irrelevant tasks when terminated, superseded or already handled.
 
-A date-based workflow moves renewal deals forward automatically. When "Days to Renewal" drops below 90, the deal moves to "90-Day Check-In." Below 60, it moves to "60-Day" stage. And so on.
+An internal task is not proof a notice reached the counterparty. Record delivery evidence required by the approved policy. For detailed task configuration, use [renewal reminders](/posts/hubspot-renewal-reminders/); review its cadence against notice deadlines rather than automatically applying 90/60/30 days before expiry.
 
-### Workflow 3: The 90-60-30 Engagement Cadence
+## What HubSpot renewal pipeline stages should you use?
 
-At each milestone, the workflow creates tasks for the CSM:
-- **90 days:** Schedule a health check meeting
-- **60 days:** Send the renewal proposal
-- **30 days:** Follow up if unsigned, escalate if at-risk
+Use stages for completed commercial actions, with dates and tasks for urgency. Time passing alone should not imply that the customer is more likely to renew.
 
-Pair this internal cadence with a customer-facing [renewal email sequence](/posts/hubspot-renewal-email-sequence/) so outreach and reminders work together.
+<div style="max-width:100%; overflow-x:auto;" tabindex="0" role="region" aria-label="What HubSpot renewal pipeline stages should you use? table 6">
 
-### Workflow 4: Multi-Year Renewal Chain
+| Suggested stage | Evidence to enter |
+|---|---|
+| Renewal identified | Correct agreement, next term and owner confirmed |
+| Scope and terms reviewed | Required customer/internal review completed |
+| Proposal or notice prepared | Approved draft ready for the relevant action |
+| Proposal delivered / decision pending | Sending evidence and next follow-up recorded |
+| Negotiation or exception | Defined blocker, accountable owner and target date |
+| Closed Won | Required commercial acceptance evidence complete |
+| Closed Lost | Non-renewal/partial outcome classified under the reporting policy |
 
-When a renewal deal closes as Won, a new workflow creates next year's renewal deal. This is where HubSpot's re-enrollment blocking causes the infamous infinite loop problem.
+</div>
 
-Hit the infinite loop? Here's [how to fix it](/posts/hubspot-renewal-workflow-infinite-loop-fix/).
+This is an example stage design, not a universal template. Auto-renewing agreements may need a different action route from those requiring a fresh signature. Choose whether they belong in the same pipeline based on reporting and team work.
 
-### Workflow 5: Churn/At-Risk Alerts
+Assign forecast probabilities from your own historical cohorts and stage definitions. The current article’s 80% to 95% examples should not become defaults presented as established renewal reality. The [pipeline stages guide](/posts/hubspot-renewal-pipeline-stages/) and [separate-versus-shared pipeline guide](/posts/hubspot-renewal-pipeline-vs-sales-pipeline/) provide deeper design choices, subject to the same evidence rule.
 
-When an account's health score drops or a renewal deal sits too long without progress, alert the CSM and their manager. Build a [churn prevention workflow](/posts/hubspot-churn-prevention-health-scores-workflows/) that catches risk early.
+## How do you prevent duplicate deals across multiple years?
 
----
+Create one opportunity per intended renewal event, and verify that a repeated trigger finds the existing one. A monthly billing event should not create another annual renewal opportunity.
 
-## Handling Expansions, Downgrades, and Churn
+Use an event key such as `A-101|2027-01-01|renewal` as a design convention. Confirm how the selected workflow or integration enforces that rule. A text field alone is not a duplicate-prevention mechanism.
 
-Renewals rarely happen in isolation. Customers expand, downgrade, add products, or cancel specific services, often during the renewal conversation.
+Before creating a new deal, resolve the correct agreement and term, check for an existing renewal, and route conflicting matches to review. After acceptance, mark the old event handled and establish the successor’s verified dates. Retest termination and replacement paths.
 
-**Simple upsell (same product, higher tier):** Update the renewal deal amount. Keep it in the renewal pipeline.
+Native and custom automation must agree on which path creates the deal. If both native quote settings and an external scheduler do so, a successful test of each in isolation may still produce duplicates together.
 
-**Complex expansion (new product line):** Create a separate deal in an expansion pipeline. This keeps revenue tracking clean and avoids double-counting.
+The [workflow loop troubleshooting article](/posts/hubspot-renewal-workflow-infinite-loop-fix/) addresses a specific deal-chain problem. Do not prescribe toggle or odd/even workarounds until you reproduce the failure in your chosen architecture. Test at least three terms, not only year one creating year two.
 
-**Downgrade:** Update the renewal deal amount to reflect the lower value. Track contraction revenue with a "Revenue Change Reason" property.
+## How do you handle uplift, amendments and partial renewals?
 
-**Churn:** Move to Closed Lost with a required churn reason. Feed this into your churn analysis.
+Separate proposed pricing from accepted pricing and preserve the effective date of each change. Record which services renew and which end, rather than equating a partly renewed account with a fully retained agreement.
 
-How to [handle expansions and downgrades](/posts/hubspot-renewal-expansion-pipeline-structure/) alongside renewals.
+For example, if the customer renews support but removes the security add-on, the support renewal should not overwrite the add-on’s lost outcome. Keep the original sale, current agreement and next-term opportunity traceable.
 
-Clean deal ownership and Deal Type data here also determines whether commission calculations for the renewal are even possible: see [commission tracking tools compared](/posts/hubspot-commission-tracking-tools-compared/) for how renewal and expansion commission depends on the pipeline data above being accurate.
+[HubSpot’s change-quote documentation](https://knowledge.hubspot.com/quotes/create-a-change-quote-on-a-contract) supports recurring-line-item amendments with Revenue Hub and seat conditions. It excludes changes to one-time line items. Choose the native change path where it fits instead of claiming every amendment requires custom software.
 
-For the commercial side, see how to [build renewal quotes and price increases](/posts/hubspot-renewal-quote-price-increase/), and how to [co-term renewals onto a single date](/posts/hubspot-co-terming-renewals/) when a customer has multiple contracts.
+For price rules, use the [renewal quote and uplift guide](/posts/hubspot-renewal-quote-price-increase/). For aligning different agreement dates, use [co-terming renewals](/posts/hubspot-co-terming-renewals/), after validating the approved terms and finance treatment.
 
----
+## How should you forecast renewals, expansion revenue and churn?
 
-## Measuring Success: Dashboards and KPIs
+Forecast the renewable commitment separately from expansion, downgrade and churn outcomes. Keep customer health signals alongside the commercial stage, with an owner and action for each risk.
 
-HubSpot doesn't have a native NRR report. You have to build it yourself using custom properties and reports. For the metrics themselves (how to calculate renewal rate, NRR, GRR, and forecast churn), see our [guide to SaaS renewal metrics](/posts/renewal-metrics-explained/).
+For an illustrative USD 12,000 annual support renewal, the base renewable value is USD 12,000. A proposed USD 2,000 annual expansion is a separate increment. Use the agreed reporting policy to record a partial renewal or downgrade; do not count the old agreement plus its full successor as two active recurring commitments.
 
-### The Four Metrics That Matter
+Where your reporting supports weighted forecasting, use **renewable value × calibrated probability**. Set probability from your own renewal cohorts and stage evidence, rather than a universal percentage. Closed Won opportunity value, active recurring revenue and collected cash answer different questions.
 
-**Renewal Rate:** (Renewed deals ÷ Total deals up for renewal) × 100. Target: 90%+. [SaaS Capital's benchmark data](https://www.saas-capital.com/blog-posts/what-is-a-good-retention-rate-for-a-private-saas-company/) shows median NRR of 104% for private SaaS companies.
+A customer success team might flag an unresolved service escalation or missing executive contact. Store the signal's date and source, assign a next action and review whether it affects the renewal likelihood. A health score can support judgment, but neither the score nor a reminder guarantees customer retention. Keep detailed scoring and retention analysis with the existing reporting children.
 
-**Net Revenue Retention (NRR):** (Starting MRR + Expansion − Contraction − Churn) ÷ Starting MRR × 100. Target: 110%+ (meaning expansion outpaces churn). [A SaaS Capital survey of 1,500 companies found high-NRR startups grow twice as fast](https://www.saastr.com/saas-capital-survey-of-1500-saas-companies-high-nrr-high-growth/).
+## What should you report and reconcile?
 
-**Gross Revenue Retention (GRR):** (Starting MRR − Contraction − Churn) ÷ Starting MRR × 100. Target: 90%+.
+Report deadline work, commercial outcomes and revenue on their own defined bases. A renewal deal’s amount, commercial committed revenue, issued invoices and collected cash are different measures.
 
-**Churn Rate:** (Churned MRR ÷ Starting MRR) × 100. Target: <5% annual.
+Operational views should expose deadlines without evidence, absent owners, upcoming decision dates and aged exceptions. Leadership reporting should define eligible renewal events, partial outcomes, scope changes and the period used for comparison.
 
-### Building Your Dashboards
+[HubSpot’s Contract management documentation](https://knowledge.hubspot.com/contracts/view-and-manage-contracts) now describes revenue and retention reporting, including NRR analysis. Do not repeat a blanket claim that HubSpot has no native NRR report. Verify what your account’s native reporting covers and where its historical data starts.
 
-Build three dashboards:
+The [NRR/GRR dashboard guide](/posts/hubspot-renewal-nrr-grr-dashboard-reporting/) should complement that native assessment. Use the [quote-to-cash guide](/posts/hubspot-quote-to-cash/) for CRM/accounting reconciliation; do not sum original sales, renewal deals and contract totals into one revenue figure.
 
-1. **Operational dashboard** (for CSMs): Deals by stage, days-to-renewal, at-risk accounts
-2. **Revenue dashboard** (for leadership): NRR trend, renewal rate by quarter, churn by reason
-3. **Forecast dashboard** (for finance): Predicted renewal revenue by month, pipeline velocity
+## What should pass before the renewal process goes live?
 
-Build your first [renewal dashboard with NRR tracking](/posts/hubspot-renewal-nrr-grr-dashboard-reporting/).
+Verify deadline rules, ownership and opportunity creation against representative agreements, including exceptions. A dashboard is useful only if the underlying agreement and event counts reconcile.
 
-Learn why your [renewal forecast is wrong](/posts/hubspot-renewal-forecasting-accuracy/) and how to fix it.
+Practical checklist:
 
-Renewal deals aren't the only recurring-revenue asset worth tracking on a schedule. If your team also manages standalone service contracts (not just HubSpot deals), see our guide to [contract renewal reminder software](/posts/contract-renewal-reminder-software/) for the 90-60-30 reminder cadence applied outside the pipeline itself.
+- [ ] Two agreements on one customer keep independent notice dates and owners.
+- [ ] A one-time project does not enter the recurring renewal chain.
+- [ ] An evergreen agreement follows a reviewed notice/review policy without a fabricated end date.
+- [ ] Calendar-day, month-based and amended notice rules receive their own reviewed tests.
+- [ ] Missing rules and absent owners enter an exception view.
+- [ ] Late imports and changed dates create actionable work without duplicate tasks.
+- [ ] A repeated trigger creates no second opportunity for the same event.
+- [ ] Three successive terms work without copying stale dates or obsolete prices.
+- [ ] Native and custom renewal routes cannot both create the same deal.
+- [ ] Partial renewal, uplift and mid-term amendment remain distinguishable.
+- [ ] Approved terms reconcile to the billing handoff and reporting basis.
+- [ ] Owners can demonstrate the workflow and resolve a simulated failure.
 
----
+## Frequently asked questions
 
-## Common Mistakes to Avoid
+**Does HubSpot support renewals natively?**
+Yes, native renewal alerts and quote-based commercial renewal are documented. Confirm the relevant account access, seats, permissions and settings.
 
-After building renewal pipelines for dozens of mid-market companies, these are the mistakes we see most often:
+**Is the notice deadline always the end date minus days?**
+No. The reviewed clause may use another boundary, months, business days or receipt requirements. Keep the rule evidence with the date.
 
-1. **Mixing deal types in one pipeline.** Your reports, forecasts, and automation all break.
-2. **The infinite loop.** Year 1 creates Year 2, but Year 2 never creates Year 3 because of HubSpot's re-enrollment blocking.
-3. **No churn reason taxonomy.** "Lost to competitor" tells you nothing. You need 10, 15 specific reasons.
-4. **Treating silence as satisfaction.** A customer who isn't complaining isn't necessarily happy. They might just be quietly evaluating alternatives.
-5. **Starting renewal conversations at 90 days.** For enterprise contracts, 90 days is too late. Start at 6 months.
+**Do all renewals need a new signed document?**
+No. Follow the agreement and approved commercial/legal policy. Automatic renewal still needs a clear operational decision and billing check.
 
-Avoid the [12 most common mistakes](/posts/hubspot-renewal-pipeline-mistakes-costing-revenue/) we see in renewal pipelines.
+**Should a new renewal deal appear each month?**
+Only if that is the actual commercial renewal event. Monthly invoicing alone does not establish a monthly opportunity.
 
----
+**How do we track several contracts with different notice periods for one customer?**
+Keep a separate agreement identity, reviewed rule, deadline and owner for each renewable commitment. Use a company rollup only for navigation. The control-sheet example above shows two separate notice windows and excludes a one-time project from renewal automation.
 
-## What HubSpot Tier Do You Need?
+**Should renewals use a separate pipeline from new business?**
+Use a separate pipeline when renewal stages, ownership or reporting need a distinct process. A shared pipeline can fit when those rules are the same and motion type remains identifiable. Test new sales, expansion and renewal reporting together; separating pipelines does not by itself prevent duplicate agreements or double-counted revenue.
 
-| Capability | Free/Starter | Professional | Enterprise |
-|-----------|-------------|-------------|-----------|
-| Manual renewal pipeline | Yes | Yes | Yes |
-| Workflow automation | No | Yes | Yes |
-| Sequences (email cadence) | No | Yes | Yes |
-| Calculated properties | No | Ops Hub Pro | Ops Hub Pro |
-| Multiple pipelines | Yes (2) | Yes (15) | Yes (50) |
-| Advanced permissions | No | No | Yes |
-| Predictive scoring | No | No | Yes |
-| Native health scores | No | Service Pro | Service Enterprise |
+## Discuss your renewal process
 
-**Minimum for a functional renewal pipeline:** [Sales Hub Professional](https://www.hubspot.com/pricing/sales) + [Operations Hub Professional](https://www.hubspot.com/pricing/operations).
+SwotBee has delivered renewal-related projects. Its existing public project narrative describes multi-line renewal and quoting work; this guide does not assign new performance figures to that experience.
 
-**Recommended:** [Sales Hub Enterprise](https://www.hubspot.com/pricing/sales) + [Service Hub Professional](https://www.hubspot.com/pricing/service) + [Operations Hub Professional](https://www.hubspot.com/pricing/operations).
-
----
-
-## Glossary
-
-| Term | Definition |
-|------|-----------|
-| **ARR** | Annual Recurring Revenue, the annualized value of all active contracts |
-| **MRR** | Monthly Recurring Revenue. ARR ÷ 12 |
-| **NRR** | [Net Revenue Retention](https://baremetrics.com/blog/what-is-net-revenue-retention), includes expansion, contraction, and churn |
-| **GRR** | [Gross Revenue Retention](https://chartmogul.com/blog/gross-vs-net-retention/), excludes expansion (only contraction and churn) |
-| **[Churn Rate](https://en.wikipedia.org/wiki/Churn_rate)** | Percentage of revenue or customers lost in a period |
-| **Expansion Revenue** | Additional revenue from existing customers (upsells, cross-sells) |
-| **Contraction Revenue** | Revenue lost from downgrades (customer stays but pays less) |
-| **[Pipeline Velocity](https://blog.hubspot.com/sales/sales-velocity)** | How fast deals move through stages, measured in days |
-| **Deal Type** | Custom property: New Business, Renewal, Expansion |
-| **Renewal Date** | The date the current contract expires |
-| **Days to Renewal** | Calculated field: Renewal Date minus today |
-| **Health Score** | Composite metric of account health (usage, support, engagement) |
-| **QBR** | Quarterly Business Review, structured account review meeting |
-
----
-
-## Frequently Asked Questions
-
-**Do I need a separate pipeline for renewals in HubSpot?**
-Yes, if you have recurring revenue at any real scale. Mixing renewals into your sales pipeline breaks forecasting (new business closes at 20-30%, renewals at 85-95%), lets renewals get deprioritized behind new logos, and leaves no clear owner for the renewal motion.
-
-**What stages should a HubSpot renewal pipeline have?**
-There are three proven models: time-based (12+ Months Out through Renewal Sent), activity-based (Active Contract through Renewal Proposal Sent), and customer-journey (Onboarding through Renewal Sent). The right one depends on your sales cycle and team size.
-
-**Who should own the renewal pipeline: sales or customer success?**
-Most commonly Customer Success owns individual renewal deals, while RevOps owns the pipeline architecture, automation, and reporting regardless of who works the deals.
-
-**What HubSpot tier do I need for a renewal pipeline?**
-At minimum, Sales Hub Professional for workflow automation plus Operations Hub Professional for calculated properties like Days to Renewal. Service Hub Professional adds native health scores via the Customer Success Workspace.
-
-**What automations does a renewal pipeline need?**
-Five core workflows: auto-creating the renewal deal on Closed Won, time-based stage progression, a 90-60-30 day engagement cadence, a multi-year renewal chain, and churn/at-risk alerts.
-
-**How do I avoid the renewal workflow infinite loop?**
-HubSpot's re-enrollment blocking stops a Year 1 to Year 2 renewal chain from continuing to Year 3. Fix it with the boolean toggle pattern or a dual-workflow (odd/even) pattern.
-
-**What metrics should I track for a renewal pipeline?**
-Renewal rate (target 90%+), net revenue retention (target 110%+), gross revenue retention (target 90%+), and churn rate (target under 5% annually).
-
-**What's the most common mistake in HubSpot renewal pipelines?**
-Mixing deal types in one pipeline, which breaks reports, forecasts, and automation at once. Close behind: no churn reason taxonomy, and starting renewal conversations at 90 days instead of 6 months for enterprise contracts.
-
----
-
-## Next Steps
-
-Building a renewal pipeline isn't a weekend project. It requires alignment between Sales, Customer Success, and RevOps on ownership, process, and metrics.
-
-But the payoff is real: predictable revenue, fewer missed renewals, and a team that knows exactly which accounts need attention and when.
-
-The pipeline architecture above is the mechanics. For the surrounding strategy, how to make the renewal conversation itself go well, when to negotiate versus escalate, and what a healthy renewal rate actually looks like, see our [year-round SaaS renewal strategy guide](/posts/renewal-strategy-365/). For the wider contract renewal management process this pipeline sits inside, see our [complete guide to contract renewal management](/posts/contract-renewal-management-complete-guide/), and pair it with [the contract renewal process checklist](/posts/contract-renewal-process-checklist/) and [a renewal playbook template your team will actually follow](/posts/renewal-playbook-template/). If billing sits outside HubSpot, see [HubSpot billing integrations compared](/posts/hubspot-billing-integrations-compared/) for how renewal amounts sync back.
-
-**Need help building this?** SWOTBee sets up renewal pipelines for mid-market teams in Energy, Manufacturing, SaaS, and more. We handle the pipeline architecture, workflow automation, dashboard setup, and team training, so your team can focus on actually renewing customers.
-
-[Book a free 30-minute discovery call →](/contactus/)
+[Request a discovery call about your HubSpot customer renewals](/contactus/). Bring examples of concurrent agreements, notice rules and the point where owners or renewal deals lose track.

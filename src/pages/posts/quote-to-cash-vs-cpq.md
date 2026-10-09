@@ -6,7 +6,7 @@ description: "Quote to cash and CPQ are not the same thing. CPQ is the quoting s
 category:
   title: "Revenue Operations"
   href: "/categories/revenue-operations/"
-modifiedDate: "2026-08-19"
+modifiedDate: "2026-10-09"
 author:
   name: "SWOTBee Team"
   url: "https://swotbee.com"
@@ -34,12 +34,14 @@ faqs:
   - q: "Is Salesforce CPQ the same as Salesforce Revenue Cloud?"
     a: "No. Salesforce CPQ is the configure-price-quote product. Salesforce Revenue Cloud is Salesforce's broader quote-to-cash suite, which includes CPQ plus billing, revenue recognition, and subscription management."
   - q: "Does HubSpot have CPQ?"
-    a: "HubSpot's native quoting tool handles simple, fixed-price quoting and e-signature. It does not have the tiered pricing logic, product configuration rules, or approval workflows of a dedicated CPQ platform. HubSpot users with configurable pricing typically add a specialist CPQ tool like DealHub or PandaDoc."
+    a: "Yes. Revenue Hub has native CPQ, including tiered pricing and quote approvals. Eligibility and limits depend on the feature and subscription; test your product rules before choosing a separate CPQ tool."
 ---
 
 > This article is part of our [complete guide to quote to cash](/posts/quote-to-cash/), which is itself part of our [complete guide to CRM and ERP integration](/posts/crm-erp-integration/).
 
 **CPQ (configure, price, quote) and quote to cash are not the same thing. CPQ is one stage inside quote to cash, the part that produces an accurate quote. Quote to cash is the entire process, from that quote through the signed contract, the order, the invoice, the payment, and revenue recognition.** Confusing the two leads companies to buy a CPQ tool expecting it to solve billing or contract problems it was never built to touch.
+
+For implementation after choosing the quoting path, use our [HubSpot quote-to-cash guide](/posts/hubspot-quote-to-cash/), which covers customer agreements, billing ownership and accounting reconciliation.
 
 ## CPQ: One Stage of a Longer Process
 
@@ -86,9 +88,9 @@ The practical reason this distinction matters: it determines what you're actuall
 
 ## Where This Fits With HubSpot
 
-HubSpot's native quoting tool covers basic CPQ needs, fixed pricing, simple products, one approval layer. Once pricing gets configurable or approval chains get complex, most teams add a dedicated CPQ tool alongside HubSpot rather than trying to force the native tool to do CPQ's job. From there, the rest of quote to cash, contracts, billing, ERP handoff, runs through separate integrations. Our [guide to quote-to-cash software](/posts/quote-to-cash-software/) covers how those pieces typically get assembled.
+HubSpot now offers [native CPQ](https://knowledge.hubspot.com/cpq/understand-hubspot-cpq). Its [quote editor](https://knowledge.hubspot.com/quotes/create-and-send-quotes) supports flat-rate, tiered and ramp pricing. [Standard quote approvals](https://knowledge.hubspot.com/quotes/set-up-quote-approvals) are available with Revenue Hub Professional and Enterprise; advanced workflow-based approvals require Enterprise. Evaluate specific configuration rules rather than assuming a specialist tool is mandatory. This article owns the CPQ-versus-QTC distinction; our [software selection guide](/posts/quote-to-cash-software/) covers buying choices.
 
-And once a deal closes and the contract is signed, quote to cash hands off to a different problem entirely: keeping track of when that contract comes up for renewal. Neither CPQ nor most quote-to-cash suites do this well, it runs on the CRM's deal pipeline. Our [guide to building a renewal pipeline in HubSpot](/posts/hubspot-renewal-pipeline-complete-guide/) covers that handoff.
+Renewal operations continue after the first invoice. HubSpot supports [Contract-based renewal quotes](/posts/hubspot-contracts-renewal-quotes/) as well as deal workflows. Our [renewal pipeline guide](/posts/hubspot-renewal-pipeline-complete-guide/) covers ownership, stages and forecasting across those paths.
 
 ## Related Reading
 
@@ -111,4 +113,4 @@ Yes. Many companies run CPQ on its own, integrated to the CRM for the quote step
 No. Salesforce CPQ is the configure-price-quote product. Salesforce Revenue Cloud is Salesforce's broader quote-to-cash suite, which includes CPQ plus billing, revenue recognition, and subscription management.
 
 **Does HubSpot have CPQ?**
-HubSpot's native quoting tool handles simple, fixed-price quoting and e-signature. It does not have the tiered pricing logic, product configuration rules, or approval workflows of a dedicated CPQ platform. HubSpot users with configurable pricing typically add a specialist CPQ tool like DealHub or PandaDoc.
+Yes. Revenue Hub has native CPQ, including tiered pricing and quote approvals. Eligibility and limits depend on the feature and subscription; test your product rules before choosing a separate CPQ tool.

@@ -2,7 +2,7 @@
 layout: ../../layouts/BlogPostLayout.astro
 title: "HubSpot Billing Integrations: Stripe, Chargebee, Maxio Compared"
 pubDate: "2026-07-06"
-modifiedDate: "2026-10-02"
+modifiedDate: "2026-10-09"
 description: "Compare HubSpot billing integrations for Stripe, Chargebee, Maxio, Zuora and Recurly by sync direction, pricing, billing model and renewal workflow."
 category:
   title: "Revenue Operations"
@@ -55,6 +55,8 @@ A billing integration fixes the visibility half of that problem quickly. The end
 
 ---
 
+After selecting a billing platform, use the [HubSpot quote-to-cash guide](/posts/hubspot-quote-to-cash/) to design accepted-version handoffs and invoice reconciliation. Platform selection and implementation are separate jobs.
+
 ## The Two Jobs a Billing Integration Has to Do
 
 Before comparing vendors, be clear about which direction matters more for you, because most native integrations do one direction much better than the other. The billing integrations available for HubSpot differ mainly in which of these two jobs they do well, and the right choice should be based on HubSpot's own object model and how deeply each vendor maps to it.
@@ -73,7 +75,7 @@ Before adding a platform, check whether HubSpot's built-in commerce features are
 
 These native billing options work well for simple recurring billing, payment links on quotes, invoicing from a deal, and small catalogs. If you sell one HubSpot product at a flat monthly price paid by card, HubSpot Payments or Stripe alone may cover you without a separate billing platform. Using HubSpot for invoicing alone, without a subscription engine, is a reasonable choice for simple businesses. Some teams stretch this further with custom objects and workflows within HubSpot to track subscription terms; that works for basic billing, but it is hand-rolled and you become its maintainer.
 
-Where they stop: usage-based and metered billing, complex proration, dunning sequences, revenue recognition, multi-entity invoicing, and tax handling at scale. Those are exactly the jobs Chargebee, Maxio, Zuora, and Recurly exist to do. If your billing logic has outgrown a spreadsheet, it has usually outgrown native HubSpot commerce too.
+Evaluate native billing against your actual pricing, proration, tax, collection and accounting requirements. [Connected CPQ, billing and payments](https://knowledge.hubspot.com/cpq/manage-the-connected-cpq-billing-and-payments-process) is a beta; native Contract changes also support documented proration behavior. Specialist platforms remain candidates where a tested requirement is outside the selected native path. This comparison owns platform selection, not end-to-end implementation.
 
 ### Lightweight Invoicing Integration Options for HubSpot Users
 
@@ -81,7 +83,7 @@ There are also lighter HubSpot invoicing tools built with HubSpot users in mind 
 
 ### Using HubSpot Custom Objects for Basic Billing Tracking
 
-Teams that want a lightweight, hand-rolled option can build a HubSpot custom object to track subscription terms, renewal dates, and billing details alongside the deal, without paying for a separate platform. It is not a substitute for a real billing engine once volume or complexity grows, but it can bridge the gap early on.
+A custom object can track billing metadata when the native model does not fit, subject to Enterprise entitlement. It does not create a billing engine. Evaluate native Contracts and Subscriptions first rather than treating a custom object as the default low-cost recurring-billing path.
 
 ---
 
