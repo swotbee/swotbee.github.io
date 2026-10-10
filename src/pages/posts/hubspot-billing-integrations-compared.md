@@ -2,7 +2,7 @@
 layout: ../../layouts/BlogPostLayout.astro
 title: "HubSpot Billing Integrations: Stripe, Chargebee, Maxio Compared"
 pubDate: "2026-07-06"
-modifiedDate: "2026-10-09"
+modifiedDate: '2026-10-10'
 description: "Compare HubSpot billing integrations for Stripe, Chargebee, Maxio, Zuora and Recurly by sync direction, pricing, billing model and renewal workflow."
 category:
   title: "Revenue Operations"
@@ -56,6 +56,8 @@ A billing integration fixes the visibility half of that problem quickly. The end
 ---
 
 After selecting a billing platform, use the [HubSpot quote-to-cash guide](/posts/hubspot-quote-to-cash/) to design accepted-version handoffs and invoice reconciliation. Platform selection and implementation are separate jobs.
+
+For a Xero-specific implementation, use the [HubSpot Xero invoice sync and ownership guide](/posts/hubspot-xero-integration/).
 
 ## The Two Jobs a Billing Integration Has to Do
 

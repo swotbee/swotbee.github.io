@@ -6,7 +6,7 @@ description: "Quote to cash and CPQ are not the same thing. CPQ is the quoting s
 category:
   title: "Revenue Operations"
   href: "/categories/revenue-operations/"
-modifiedDate: "2026-10-09"
+modifiedDate: '2026-10-10'
 author:
   name: "SWOTBee Team"
   url: "https://swotbee.com"
@@ -42,6 +42,8 @@ faqs:
 **CPQ (configure, price, quote) and quote to cash are not the same thing. CPQ is one stage inside quote to cash, the part that produces an accurate quote. Quote to cash is the entire process, from that quote through the signed contract, the order, the invoice, the payment, and revenue recognition.** Confusing the two leads companies to buy a CPQ tool expecting it to solve billing or contract problems it was never built to touch.
 
 For implementation after choosing the quoting path, use our [HubSpot quote-to-cash guide](/posts/hubspot-quote-to-cash/), which covers customer agreements, billing ownership and accounting reconciliation.
+
+For a HubSpot-specific quoting implementation, use the [HubSpot CPQ product, pricing and approval guide](/posts/hubspot-cpq/).
 
 ## CPQ: One Stage of a Longer Process
 

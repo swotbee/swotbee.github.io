@@ -2,7 +2,7 @@
 layout: ../../layouts/BlogPostLayout.astro
 title: "HubSpot Renewal Pipeline: Setup, Notices and Ownership"
 pubDate: "2026-04-02"
-modifiedDate: "2026-10-09"
+modifiedDate: '2026-10-10'
 description: "Build a HubSpot renewal pipeline around notice dates, owners and multiple customer agreements. Compare native options, then discuss your setup on a call."
 category:
   title: "Revenue Operations"
@@ -44,6 +44,8 @@ The end date is not always the action deadline. A customer can hold several agre
 For broader process and software selection, see our [contract renewal management guide](/posts/contract-renewal-management-complete-guide/). This guide owns the HubSpot operational workflow.
 
 **Your takeaway:** an agreement-level renewal control sheet with reviewed notice dates, owner and backup, next action and a unique renewal event. Use the worked rows below to test reminders and prevent duplicate opportunities before enabling automation.
+
+For trigger design, repeated terms and safe recovery, use the [renewal deal workflow specification](/posts/hubspot-renewal-deal-workflow-automation/).
 
 ## Which dates should drive customer contract renewals?
 

@@ -2,7 +2,7 @@
 layout: ../../layouts/BlogPostLayout.astro
 title: "HubSpot Contract Management: Architecture and Setup Guide"
 pubDate: "2026-07-06"
-modifiedDate: "2026-10-09"
+modifiedDate: '2026-10-10'
 description: "HubSpot contract management starts with clear records. Compare native setup, migration and integrations, then discuss your workflow on a discovery call."
 category:
   title: "Revenue Operations"
@@ -44,6 +44,8 @@ If a customer has three agreements, one company-level “contract end date” ca
 This guide helps you choose the architecture before configuring automation. For the wider business process, see our [customer contract management guide](/posts/contract-management-guide/).
 
 **Your takeaway:** a one-page architecture decision brief and agreement field dictionary. Use them to decide what stays in HubSpot, what stays in your document or billing tool, and what to test before importing existing contracts.
+
+If your customer agreements need an Ironclad legal workflow, use the [Ironclad-to-HubSpot return specification](/posts/ironclad-hubspot-integration/) to compare packaged and custom routes against the required CRM handoff.
 
 ## What does a contract mean in HubSpot?
 

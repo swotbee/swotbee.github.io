@@ -2,7 +2,7 @@
 layout: ../../layouts/BlogPostLayout.astro
 title: 'HubSpot QuickBooks Integration: Invoice Sync Guide'
 pubDate: "2026-10-10"
-modifiedDate: "2026-10-10"
+modifiedDate: '2026-10-10'
 description: HubSpot QuickBooks integration needs clear invoice ownership. Check customer matching, sync failures and reconciliation with a worksheet before rollout.
 category:
   title: Revenue Operations
@@ -52,6 +52,8 @@ Start with the business result: sales needs reliable billing visibility, and fin
 Start with one invoice period. Have finance confirm the invoice owner and expected lines, then reconcile the resulting records using the worksheet before adding more customers.
 
 ---
+
+If your accounting authority is Xero instead, use the [Xero invoice ownership and reconciliation guide](/posts/hubspot-xero-integration/).
 
 ## Which HubSpot QuickBooks integration are you configuring?
 

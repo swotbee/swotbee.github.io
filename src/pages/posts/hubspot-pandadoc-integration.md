@@ -2,7 +2,7 @@
 layout: ../../layouts/BlogPostLayout.astro
 title: 'HubSpot PandaDoc Integration: Setup and Writeback Guide'
 pubDate: "2026-10-10"
-modifiedDate: "2026-10-10"
+modifiedDate: '2026-10-10'
 description: HubSpot PandaDoc integration connects templates, line items and CRM writeback. Use a setup worksheet to test approvals and signed terms before rolling out.
 category:
   title: Revenue Operations
@@ -50,6 +50,8 @@ faqs:
 Start by generating one internal pilot document with a recurring service and a one-time fee. Compare its schedule with the approved terms, then check the returned values on the intended CRM record.
 
 ---
+
+For a different legal-workflow requirement, compare the [Ironclad HubSpot responsibility and writeback guide](/posts/ironclad-hubspot-integration/). Its MATIC and custom middleware routes serve different legal-workflow requirements from PandaDoc template setup.
 
 ## What does the HubSpot PandaDoc integration cover?
 

@@ -2,7 +2,7 @@
 layout: ../../layouts/BlogPostLayout.astro
 title: "HubSpot Contract Document Integrations: PandaDoc & DocuSign"
 pubDate: "2026-10-09"
-modifiedDate: "2026-10-10"
+modifiedDate: '2026-10-10'
 description: "HubSpot contract document integrations connect creation, approval, signing and CRM writeback. Compare tools and discuss your workflow on a discovery call."
 category:
   title: "Revenue Operations"
@@ -44,6 +44,8 @@ A document marked “Completed” is useful evidence. It does not tell you, on i
 For the underlying record choice, use our [HubSpot contract management guide](/posts/hubspot-contract-management/). This article focuses on the customer-document handoff.
 
 **Your takeaway:** a signed-document writeback specification with a worked matching example and acceptance tests. Use it to identify exactly which fields must return, to which agreement, at which event, before buying additional integration work.
+
+For the native quote alternative, use the [HubSpot CPQ pricing and approval guide](/posts/hubspot-cpq/). For a legal workflow using Ironclad, see the [Ironclad HubSpot integration specification](/posts/ironclad-hubspot-integration/), which compares the third-party MATIC connector with custom middleware and CRM return requirements.
 
 ## What should a HubSpot e-signature integration workflow cover?
 

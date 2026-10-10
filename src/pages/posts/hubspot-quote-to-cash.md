@@ -2,7 +2,7 @@
 layout: ../../layouts/BlogPostLayout.astro
 title: "HubSpot Quote to Cash: Revenue Hub and Accounting Guide"
 pubDate: "2026-10-09"
-modifiedDate: "2026-10-10"
+modifiedDate: '2026-10-10'
 description: "Plan HubSpot quote to cash across quotes, agreements, billing and accounting. Set data ownership, test handoffs, then discuss your workflow on a call."
 category:
   title: "Revenue Operations"
@@ -50,6 +50,8 @@ The difficult question is often not “Can these apps connect?” It is “Which
 For the general lifecycle, see our [quote-to-cash process guide](/posts/quote-to-cash/). This guide focuses on implementing those handoffs with HubSpot.
 
 **Your takeaway:** a quote-to-invoice reconciliation worksheet. Use the filled service example to separate recurring and one-time amounts, select the billing controller and compare accepted terms with the first invoice and returned payment evidence.
+
+For product, pricing and approval configuration, use the [HubSpot CPQ setup guide](/posts/hubspot-cpq/). For Xero invoice ownership and reconciliation, use the [HubSpot Xero integration guide](/posts/hubspot-xero-integration/).
 
 ## What stages of quote-to-cash should HubSpot connect?
 
