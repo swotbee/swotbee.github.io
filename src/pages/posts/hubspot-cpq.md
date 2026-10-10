@@ -260,6 +260,8 @@ Release the process when representative quotes and failure cases produce the app
 
 Keep a short pilot log with the quote ID, test case, expected result, actual result and reviewer. Leave unresolved rows visible; do not convert them into assumptions because the standard quote works.
 
+For the detailed acceptance work, use [accepted mid-term contract changes](/posts/hubspot-contract-amendments/), and [document views versus agreement acceptance](/posts/hubspot-document-tracking/).
+
 ## Frequently asked questions
 
 ### Is HubSpot CPQ included with Sales Hub?

@@ -199,7 +199,7 @@ According to [HubSpot’s billing migration guide](https://knowledge.hubspot.com
 
 Before activation, identify the last legacy invoice and first new invoice for every migrated schedule. Reconcile service periods, opening receivables, payment methods and any scheduled price changes. Establish who stops the legacy charge and verifies that it stopped.
 
-Do not interpret this external-system migration path as a promise that every existing native HubSpot Subscription can be converted. That exact starting condition needs separate confirmation. The [HubSpot quote-to-cash guide](/posts/hubspot-quote-to-cash/) covers the downstream acceptance plan.
+The current [Contract import documentation](https://knowledge.hubspot.com/contracts/create-contracts) states that existing HubSpot Subscriptions cannot be migrated to Contracts. This is a different starting condition from importing external customer agreements. The [HubSpot quote-to-cash guide](/posts/hubspot-quote-to-cash/) covers the downstream acceptance plan.
 
 ## When do you need a document integration or CLM?
 
@@ -229,6 +229,8 @@ Practical checklist:
 - [ ] The admin receives the field dictionary, mappings, workflow inventory and operating instructions.
 
 For daily operation after setup, use the [HubSpot renewal pipeline guide](/posts/hubspot-renewal-pipeline-complete-guide/). The architecture is complete when the team can explain where agreement truth lives and how an exception gets resolved.
+
+For the detailed acceptance work, use [customer Contract import mapping and pilot reconciliation](/posts/hubspot-customer-contract-import/).
 
 ## Frequently asked questions
 

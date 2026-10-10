@@ -271,6 +271,8 @@ Approve the native path only after record, renewal and any intended billing evid
 
 ---
 
+For the detailed acceptance work, use [existing-agreement import checks](/posts/hubspot-customer-contract-import/), and [active-agreement amendment handoffs](/posts/hubspot-contract-amendments/).
+
 ## Frequently Asked Questions
 
 ### Can native Contracts be edited, renewed or terminated?

@@ -1,9 +1,12 @@
 ---
-layout: ../../layouts/BlogPostLayout.astro
+layout: ../../../layouts/BlogPostLayout.astro
 title: 'HubSpot Renewal Reminders: Notice Dates and Owner Alerts'
 pubDate: '2026-05-05'
 modifiedDate: '2026-10-10'
 description: HubSpot renewal reminders need reviewed notice dates and clear owners. Plan alerts, handle date changes and test exceptions with a practical checklist.
+draft: true
+draftStatus: published-reference
+noindex: true
 category:
   title: Revenue Operations
   href: /categories/revenue-operations/

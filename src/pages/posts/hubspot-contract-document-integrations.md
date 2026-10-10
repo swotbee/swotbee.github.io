@@ -220,6 +220,8 @@ Practical checklist:
 
 Pass approved terms to the billing design only after this gate. The [HubSpot quote-to-cash guide](/posts/hubspot-quote-to-cash/) covers that handoff; the [renewal operations guide](/posts/hubspot-renewal-pipeline-complete-guide/) covers dates, owners and future renewal work.
 
+For the detailed acceptance work, use [native document tracking and signature evidence](/posts/hubspot-document-tracking/).
+
 ## Frequently asked questions
 
 **Is installing PandaDoc or DocuSign enough?**

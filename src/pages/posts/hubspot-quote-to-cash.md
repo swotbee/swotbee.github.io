@@ -263,6 +263,8 @@ Practical checklist:
 
 Measure accepted agreements awaiting billing, reconciliation exceptions and time to resolve them. Improved results require reliable configuration and team use; connector installation alone does not guarantee cash-flow or revenue outcomes.
 
+For the detailed acceptance work, use [mid-term changes and financial acceptance](/posts/hubspot-contract-amendments/), and [non-billing agreement import boundaries](/posts/hubspot-customer-contract-import/).
+
 ## Frequently asked questions
 
 **Does HubSpot have CPQ?**

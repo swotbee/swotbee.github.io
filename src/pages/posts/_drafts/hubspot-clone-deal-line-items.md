@@ -1,9 +1,12 @@
 ---
-layout: ../../layouts/BlogPostLayout.astro
+layout: ../../../layouts/BlogPostLayout.astro
 title: 'Copy HubSpot Deal Line Items: Renewal Mapping and Tests'
 pubDate: '2026-04-02'
 modifiedDate: '2026-10-10'
 description: Copy HubSpot deal line items using accepted prices and terms. Compare native creation and copy routes, reconcile totals and test safe retries before use.
+draft: true
+draftStatus: published-reference
+noindex: true
 category:
   title: Revenue Operations
   href: /categories/revenue-operations/
