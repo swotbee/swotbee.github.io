@@ -2,7 +2,7 @@
 layout: ../../layouts/BlogPostLayout.astro
 title: "HubSpot Contract Document Integrations: PandaDoc & DocuSign"
 pubDate: "2026-10-09"
-modifiedDate: "2026-10-09"
+modifiedDate: "2026-10-10"
 description: "HubSpot contract document integrations connect creation, approval, signing and CRM writeback. Compare tools and discuss your workflow on a discovery call."
 category:
   title: "Revenue Operations"
@@ -104,6 +104,8 @@ Do not advance a deal to “Agreement sent” merely because both reviewers appr
 
 Check the template’s source object, workspace, recipients and pricing representation, then test the configured return rules. The new-experience connector and the automation connection have distinct setup responsibilities.
 
+For configuration and a filled worksheet, use the [HubSpot PandaDoc setup and writeback guide](/posts/hubspot-pandadoc-integration/).
+
 PandaDoc’s [new-experience documentation](https://support.pandadoc.com/en/articles/9714877-hubspot-crm-new-experience) notes per-workspace setup, case-sensitive variables, EU connection initiation from PandaDoc and separate HubSpot Automations authorization to the same portal. It distinguishes pricing tables from Quote Builder: recurring HubSpot items become one-time entries in the pricing-table path.
 
 For an illustrative annual support SOW, compare the generated document against the source record: customer legal name, service coverage, signer role, effective date, recurring charge, billing frequency and any one-time onboarding fee. A total that happens to match is insufficient if recurring and one-time amounts have lost their meaning.
@@ -115,6 +117,8 @@ Choose the return event by field purpose. A “Sent” update may be suitable fo
 ## What should you check in a HubSpot DocuSign integration?
 
 Check sender connectivity, template fields, recipients and the actual information available after completion. Separate CRM-to-envelope population from envelope-to-CRM field return.
+
+Use the [HubSpot DocuSign setup and CRM writeback guide](/posts/hubspot-docusign-integration/) to test templates, recipients and the required return.
 
 [HubSpot’s connection guide](https://knowledge.hubspot.com/integrations/use-hubspots-integration-with-docusign) says the app is not full-record data sync. Custom mapped DocuSign fields require text type and unique tooltips. Confirm which HubSpot user is connected and permitted to send, rather than assuming an administrator’s installation connects the entire team.
 

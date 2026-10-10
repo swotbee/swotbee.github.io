@@ -1,270 +1,304 @@
 ---
 layout: ../../layouts/BlogPostLayout.astro
-title: "HubSpot Contracts and Renewal Quotes: Complete Setup Guide"
+title: 'HubSpot Contracts and Renewal Quotes: Setup Guide'
 pubDate: "2026-09-10"
-modifiedDate: "2026-10-09"
-description: "Set up HubSpot Contracts, renewal alerts, renewal deals and renewal quotes in Revenue Hub, with a practical migration checklist and the limits to plan around."
+modifiedDate: "2026-10-10"
+description: HubSpot Contracts and renewal quotes have different setup paths. Use an access checklist and pilot worksheet to test imports, renewals and billing limits.
 category:
-  title: "Revenue Operations"
-  href: "/categories/revenue-operations/"
+  title: Revenue Operations
+  href: /categories/revenue-operations/
 author:
-  name: "SWOTBee Team"
-  url: "https://swotbee.com"
-  imageUrl: "/assets/ico/logo.png"
-  bio: "HubSpot-certified consultants specializing in deal automation, renewal pipelines, and CRM migration for mid-market B2B companies."
-  linkedin: "https://linkedin.com/company/swotbee"
+  name: SWOTBee Team
+  url: https://swotbee.com
+  imageUrl: /assets/ico/logo.png
+  bio: SwotBee works on HubSpot renewal workflows and integrations involving document-signing and accounting tools.
   expertise:
-    - "HubSpot CRM"
-    - "Renewal Automation"
-    - "Revenue Operations"
-reviewedBy:
-  name: "Sharmi"
-  title: "Co-Founder, SWOTBee"
-  linkedin: "https://www.linkedin.com/in/sharm1la/"
-  date: "September 2026"
-image: "/assets/blog/hubspot-contracts-renewal-quotes-hero.svg"
+  - HubSpot CRM
+  - Customer Contract Workflows
+  - Revenue Operations
+image: "/assets/blog/hubspot-contracts-renewal-quotes-setup-hero.svg"
 tags:
-  - "HubSpot"
-  - "Revenue Hub"
-  - "Contracts"
-  - "Renewal Quotes"
-  - "Renewal Automation"
-seriesName: "HubSpot Renewal Pipeline"
-pillarUrl: "/posts/hubspot-renewal-pipeline-complete-guide/"
-funnelCta: "renewal-audit"
+- HubSpot
+- Revenue Hub
+- Customer Contracts
+- Revenue Operations
+seriesName: HubSpot Renewal Pipeline
+pillarUrl: /posts/hubspot-renewal-pipeline-complete-guide/
 faqs:
-  - q: "Does HubSpot have a native contract object?"
-    a: "Yes. HubSpot has commercial Contract records. The quote-based and direct-create paths have different access requirements. They do not replace signed legal documents."
-  - q: "Can HubSpot create a renewal quote automatically?"
-    a: "Yes. A deal-based workflow can use the Create renewal quote from contract action. You select the associated contract and renewal quote template, then create a new deal or use an existing deal."
-  - q: "Do HubSpot renewal quotes copy line items?"
-    a: "Yes, when the renewal quote is created from a HubSpot contract. It inherits the contract's line items, including changes previously accepted through change quotes. This is different from a generic workflow-created deal, which does not copy source-deal line items by itself."
-  - q: "What happens when a HubSpot renewal quote is accepted?"
-    a: "HubSpot creates a new contract and associates it with the previous contract. The renewed contract appears in the contract activity and history, and future changes are managed from the new contract."
-  - q: "Can existing contracts be imported into HubSpot?"
-    a: "Yes, subject to the selected import path and permissions. Non-billing record import differs from the billing-migration beta. Do not assume an existing HubSpot Subscription can be converted in place; verify the source, processor and continuity requirements."
-  - q: "Which HubSpot subscription is required for contract renewals?"
-    a: "Renewal quotes require Revenue Hub Professional or Enterprise, a Revenue Hub seat and the relevant permissions. Direct Contract creation and renewal have a separate beta path; those exceptions do not remove the renewal-quote requirements."
+- q: Can native Contracts be edited, renewed or terminated?
+  a: HubSpot documents Contract management actions, including direct and quote-based paths with different access conditions. Select the supported action for the record and confirm its effective date, history and billing impact. Do not edit a reporting-only subscription as a substitute for changing the billing controller.
+- q: Are HubSpot Contracts available without Revenue Hub seats?
+  a: The direct-create beta has a documented seat exception and is listed for all plans. Renewal quotes and connected Revenue Hub billing have separate requirements. Verify the action you intend to use.
+- q: Can HubSpot import existing customer agreements?
+  a: Current dedicated documentation describes non-billing import and a separate billing-migration beta. Check the selected route, account access and associations rather than relying on older no-import wording.
+- q: Can an existing deal automatically become a Contract?
+  a: A won deal alone is not the same as the documented quote-acceptance, direct-create or import path. Choose and test a supported route; preserve the original opportunity history.
+- q: Do renewal quotes copy line items?
+  a: The native Contract-based renewal path carries commercial context into the quote. Review current items and terms. Do not extend that behavior to every generic deal-creation workflow.
+- q: Does a Contract alert cover our cancellation notice obligation?
+  a: Not automatically. Review the actual legal terms, store the correct deadline and test accountable actions. An approaching end-date alert may serve a different purpose.
 ---
 
-> This article is part of our [Complete Guide to Building a Renewal Pipeline in HubSpot](/posts/hubspot-renewal-pipeline-complete-guide/).
+> This setup guide supports our [HubSpot customer renewal pipeline pillar](/posts/hubspot-renewal-pipeline-complete-guide/).
 
-**HubSpot can now run a native contract renewal path in Revenue Hub Professional and Enterprise: an accepted quote creates a Contract, a contract workflow opens the renewal motion, a renewal quote reuses the contract's line items and terms, and acceptance creates the next associated Contract.** This is a meaningful change from the older deal-only approach. It also introduces a decision: evaluate quote-based, direct-create and import paths, then use deal workflows where the agreement model or system ownership requires them.
+**HubSpot Contracts can record customer revenue commitments through several setup paths: accepted Revenue Hub quotes, direct creation, non-billing import and billing migration. Their access requirements differ. Renewal quotes retain Revenue Hub Professional/Enterprise and seat conditions, while the direct-create beta has a separate exception. Choose the path before configuring renewal automation.**
 
-This guide owns native Contract configuration and renewal-quote handoffs. For architecture selection, start with [HubSpot contract management](/posts/hubspot-contract-management/); for notice ownership and pipeline operations, use the [renewal pipeline guide](/posts/hubspot-renewal-pipeline-complete-guide/).
+**Three things you can take away:**
 
----
+1. **A native access decision:** use the [setup-path table](#which-hubspot-contracts-setup-path-can-you-use) to check creation, import and renewal-quote requirements against your portal's tiers, seats, permissions and beta access.
+2. **A Contract import and setup pilot:** [copy the filled worksheet](#copy-this-native-contract-pilot-worksheet) to keep two customer agreements distinct, preserve recurring and one-time items, and record the intended billing behavior.
+3. **A renewal acceptance plan:** use the [renewal quote checks](#how-do-you-create-a-renewal-quote-and-deal) and [activation checklist](#what-should-pass-before-broader-activation) to verify ownership, dates, inherited terms, prior/new Contract relationships and duplicate prevention.
 
-When a separate signing tool owns the legal document, use the [HubSpot document integration guide](/posts/hubspot-contract-document-integrations/). For the accepted-term-to-invoice handoff, use our [HubSpot quote-to-cash guide](/posts/hubspot-quote-to-cash/).
-
-## What HubSpot Contracts Changed for Renewals
-
-HubSpot describes Contracts as the centralized source of truth for committed revenue. A Contract can expose contract value, ACV, MRR, ARR, start and end dates, billing information, current and upcoming line items, associated records, renewal status, activities and change history.
-
-That closes an important old gap. Before Contracts, most HubSpot teams represented an active agreement with a closed-won deal plus custom properties. That model still works and remains useful, but it is no longer accurate to say HubSpot has no native contract object or no native renewal path.
-
-The native lifecycle is now:
-
-1. A buyer accepts a Revenue Hub quote.
-2. HubSpot creates a Contract associated with the quote, deal, company and contacts.
-3. The Contract stores the committed revenue and line-item schedule.
-4. A renewal-date workflow creates tasks, a renewal deal, or a renewal quote.
-5. The renewal quote inherits the existing Contract's commercial context.
-6. When the quote is accepted, HubSpot creates the next Contract and associates it with the previous one.
-
-HubSpot documents the details in [Understand contracts in HubSpot](https://knowledge.hubspot.com/contracts/understand-contracts-in-hubspot) and [Create a renewal quote on a contract](https://knowledge.hubspot.com/quotes/create-a-renewal-quote-on-a-contract).
-
-![Two supported HubSpot renewal architectures: native Contracts and custom deal workflows](/assets/blog/hubspot-native-vs-deal-renewal-paths.svg)
+Start by choosing the path for one agreement and completing its access checks. Record whether the pilot should only create a commercial record or also change billing, before activating any workflow or migration.
 
 ---
 
-## Before You Turn It On: Requirements and Limits
+## What is a HubSpot Contract record?
 
-Check the path you intend to use. [Direct creation](https://knowledge.hubspot.com/contracts/directly-create-contracts-in-hubspot) is documented for all plans through the Direct Create, Edit, and Renew HubSpot Contracts beta. [Renewal quotes](https://knowledge.hubspot.com/quotes/create-a-renewal-quote-on-a-contract) retain Revenue Hub tier and seat requirements. [External billing migration](https://knowledge.hubspot.com/contracts/migrate-contracts-to-hubspot) is a separate beta with processor and continuity checks.
+A native Contract is a commercial revenue record, not a replacement for your signed legal agreement. Keep commitment, opportunity, billing and legal evidence distinguishable.
 
-| Check | Current requirement or behavior |
+According to [HubSpot's Contract overview](https://knowledge.hubspot.com/contracts/understand-contracts-in-hubspot), Contracts centralize committed revenue and related commercial details. They do not replace legal contracts. Store or reference the executed MSA/SOW through the reviewed document process.
+
+<div style="max-width:100%; overflow-x:auto;" tabindex="0" role="region" aria-label="What is a HubSpot Contract record? table 1">
+
+| Item | Role in the implementation |
 |---|---|
-| Subscription | Revenue Hub Professional or Enterprise for this quote-based walkthrough; direct-create beta differs |
-| Contract creation and editing | Check the direct-create beta exception and Contract permissions |
-| Renewal quote creation | Revenue Hub seat plus Contract and Deal permissions |
-| Workflow publishing | Workflow edit and publish permissions |
-| Automatic Contract creation | Accepted Revenue Hub quotes when the setting is enabled |
-| Legacy quotes | Accepted legacy quotes do not create Contracts |
-| Existing Contracts | Can be imported with a unique Contract property and associations |
-| Migration | Distinguish external billing migration, non-billing import and existing HubSpot Subscription conversion |
-| Customer access | Customers do not view the CRM Contract record; they receive quotes, invoices and receipts |
+| Legal agreement | Executed terms, scope and reviewed obligations |
+| Commercial Contract | Revenue commitment and selected native lifecycle |
+| Deal | Sale, expansion or renewal opportunity |
+| Subscription | Billing or reporting role under the configured flow |
+| Invoice/payment | Financial obligation and collection evidence |
 
-Feature documentation changed quickly during the 2026 rollout. For example, early setup guidance said Contract imports were unavailable, while the current [Create and import contracts](https://knowledge.hubspot.com/contracts/create-contracts) article documents the import procedure. Check the live documentation and test in a sandbox before treating any rollout-era limitation as permanent.
+</div>
 
----
 
-## Step 1: Choose the Source of Truth
+An accepted quote can create associated records under the relevant settings. An attached signed PDF alone does not prove a commercial Contract or billing schedule was created.
 
-Do this before configuring a workflow. A portal with two competing renewal sources will create duplicate deals, conflicting dates and reports nobody trusts.
-
-Use the native Contracts path when:
-
-- new agreements originate from Revenue Hub quotes;
-- you want line items, recurring revenue and billing context on a Contract record;
-- Revenue Hub Professional or Enterprise is already justified;
-- change quotes and renewal quotes match your commercial process.
-
-Keep or add a deal-based path when:
-
-- an external system must retain agreement ownership and the native import/direct-create path does not fit;
-- legacy deals do not map cleanly to Revenue Hub Contracts;
-- custom pricing, co-terming or renewal creation rules exceed the native flow;
-- the required native action is unavailable under the portal subscriptions and beta enrollment.
-
-A hybrid is often the honest answer. New Revenue Hub quotes can use Contracts, while imported or externally managed agreements continue to produce renewal deals from canonical date properties. Both paths should feed the same [dedicated renewal pipeline](/posts/hubspot-renewal-pipeline-vs-sales-pipeline/) so ownership, forecasting and reporting stay consistent.
+For choosing among native records, external documents and deal-based arrangements, use the [HubSpot contract architecture pillar](/posts/hubspot-contract-management/). This guide focuses on native setup after that decision.
 
 ---
 
-## Step 2: Configure Contract Creation
+## Which HubSpot Contracts setup path can you use?
 
-In HubSpot, go to **Settings, Objects, Contracts** and enable **Create contracts from accepted quotes**. Contracts then inherit the accepted quote's line items, terms and associated records.
+Check each action against its own entitlement, permission and beta conditions. Access to record creation does not establish access to renewal quotes or connected billing.
 
-Test the date behavior with all three product patterns you sell:
+<div style="max-width:100%; overflow-x:auto;" tabindex="0" role="region" aria-label="Which HubSpot Contracts setup path can you use? table 2">
 
-- **Fixed-term recurring line items:** the Contract end date is the latest line-item end date.
-- **Automatically renewing line items:** the Contract is evergreen and does not receive an end date. MRR and ARR remain available, but TCV and ACV are not calculated for evergreen Contracts.
-- **One-time-only line items:** the Contract does not receive an end date.
-
-That distinction matters because a renewal-date workflow cannot trigger from a date that does not exist. Evergreen agreements need a different review trigger, usually a notice date, anniversary date or scheduled commercial review date.
-
----
-
-## Step 3: Configure Renewal Management
-
-Under the Contract object's **Renewals** settings, choose when the approaching-renewal alert appears. HubSpot also supports Contract-based workflow enrollment using the Renewal date property.
-
-For a normal fixed-term B2B contract, use the alert as a visible warning and a workflow as the accountable process:
-
-| Timing | Workflow action | Owner output |
+| Path | Current documented condition | What to verify |
 |---|---|---|
-| T-120 | Create or verify the renewal deal | Named owner, amount and close date |
-| T-90 | Create health and stakeholder review tasks | Written risk tier and account plan |
-| T-60 | Create the renewal quote and approval task | Approved pricing and term |
-| T-30 | Escalate if the quote is not sent or accepted | Manager-visible recovery plan |
-| T-0 | Close, record outcome and schedule the next cycle | Clean renewal history and forecast |
+| Accepted Revenue Hub quote | Current quote tool and Contract creation setting | Tier, seat, quote type and billing behavior |
+| Direct creation/edit/renewal | Direct Create, Edit, and Renew HubSpot Contracts beta; listed for all plans | Enrollment and Contract permissions |
+| Non-billing import | Documented Contract import path | Unique identifier, associations and access |
+| Billing migration | Separate Billing Migrations onto Revenue Hub Contracts beta | Processor, continuity and activation conditions |
+| Renewal quote | Revenue Hub Professional/Enterprise and Revenue Hub seat | Contract and Deal permissions |
 
-For auto-renewing agreements, trigger operational work from the contractual notice date rather than the end date. Store the notice period and calculated notice date as custom properties if the native Contract does not represent your decision deadline. The broader timing model is in our [T-120 contract renewal checklist](/posts/contract-renewal-process-checklist/).
+</div>
+
+
+These conditions come from [direct-create documentation](https://knowledge.hubspot.com/contracts/directly-create-contracts-in-hubspot), [Contract import instructions](https://knowledge.hubspot.com/contracts/create-contracts), [migration documentation](https://knowledge.hubspot.com/contracts/migrate-contracts-to-hubspot) and [renewal-quote instructions](https://knowledge.hubspot.com/quotes/create-a-renewal-quote-on-a-contract).
+
+Write down the portal's actual subscriptions, assigned users, enrolled betas and available actions. A general “Professional” label is insufficient because hubs and actions differ. Beta documentation is not proof your account has already enrolled or that a future rollout will retain identical conditions.
 
 ---
 
-## Step 4: Build the Renewal Quote Template
+## How do you configure Contracts from accepted quotes?
 
-Go to **Settings, Objects, Quotes, Quote templates**, open the template library and create a Renewal Quote Template. HubSpot lets you configure and lock the modules sellers should not change, including the cover letter, executive summary, terms, payment options and acceptance method.
+Review the Contract creation setting and billing flow before publishing quotes. Existing published quotes, draft quotes and legacy quotes require separate checks.
 
-A practical template should lock the legal and billing baseline while leaving the commercial variables editable:
+In the documented settings path, select **Objects > Contracts** and review **Create contracts from accepted quotes**. [HubSpot's settings guide](https://knowledge.hubspot.com/contracts/set-up-contracts) says legacy quotes do not create Contracts; published quotes retain their publication-time flow, while drafts use current settings.
 
-| Template area | Recommended control |
+The [connected CPQ, billing and payments beta](https://knowledge.hubspot.com/cpq/manage-the-connected-cpq-billing-and-payments-process) adds billing behavior. In that flow, Contracts control billing, and associated recurring Subscription records can be non-billable reporting records. Editing those Subscription records does not control Contract billing.
+
+Before changing the setting, inventory open quotes and existing agreements. For each, record the intended controller and expected result on acceptance. Test an older published quote separately from a new draft. Do not assume one toggle retrofits all existing commercial records.
+
+Use the [HubSpot quote-to-cash guide](/posts/hubspot-quote-to-cash/) for finance handoff and accounting responsibilities.
+
+---
+
+## How do you create Contracts directly in HubSpot?
+
+Use the direct-create beta when the intended commercial record fits that path, and configure the agreement and billing behavior deliberately. External CPQ does not automatically require a deal-only architecture.
+
+[HubSpot's direct-create guide](https://knowledge.hubspot.com/contracts/directly-create-contracts-in-hubspot) documents creation from **Revenue > Contracts > Add contracts > Create new** and from supported associated records. Super Admin or appropriate Contract creation permissions are required.
+
+Prepare the agreement before entering it:
+
+1. Identify the customer entity, payer and relevant contacts.
+2. Preserve a stable agreement key and executed-document reference.
+3. Review start date, term, currency and recurring/one-time items.
+4. Decide whether HubSpot will bill or merely record the commercial agreement.
+5. Confirm expected associations and operational owner.
+6. Review the created record against the source evidence.
+
+These preparation steps are an implementation checklist, not a universal sequence of UI fields. Follow the current form and actual account access. A directly created revenue record does not send a legal agreement through PandaDoc or DocuSign by itself.
+
+---
+
+## How do you import existing non-billing Contracts?
+
+Use the documented import route for commercial records without transferring billing continuity. Prepare unique identity and associations before loading historical data.
+
+The [Contract import guide](https://knowledge.hubspot.com/contracts/create-contracts) specifies a unique single-line text Contract property, separate rows for multiple line items and deal Record IDs for associations. Its example identifier is `contract_import_id`; adapt the file to the actual importer rather than treating this article's worksheet as an upload-ready CSV.
+
+One official [settings page](https://knowledge.hubspot.com/contracts/set-up-contracts) still says imports are unavailable. The dedicated import and direct-create documentation now describe supported paths. Use those instructions and verify portal access; do not turn the contradictory rollout wording into a permanent feature-absence claim.
+
+Pilot two agreements for the same company, with different dates and line items. Compare source agreements, imported identities, associations and expected counts. Check that the original won deal remains an auditable sale snapshot.
+
+Re-import behavior needs its own test. Do not casually assume Contract, deal and line-item deduplication follow the same identity rules. Historical records should not enter current sending, onboarding or billing workflows unless explicitly intended.
+
+---
+
+## When is import a billing migration?
+
+It is billing migration when the new process takes responsibility for invoice schedules or collection, rather than only recording historical commercial data. That requires a finance-approved cutover.
+
+HubSpot's [migration guide](https://knowledge.hubspot.com/contracts/migrate-contracts-to-hubspot) documents a separate beta, processor requirements and draft validation. Final activation can commence billing. Its localization pilot is an end-to-end process, not merely a harmless preview.
+
+For every agreement, review the last old invoice, first new invoice, open receivables, payment method, dunning, customer messages and accounting return. Assign who approves stopping the old controller and starting the new one.
+
+Do not imply every existing HubSpot Subscription can be converted in place. Confirm source, migration format and continuity requirements. Likewise, a non-billing record import should not be presented as a completed finance migration.
+
+The [Stripe connection guide](/posts/stripe-hubspot-integration/) helps distinguish processing, visibility and migration. The [QuickBooks guide](/posts/hubspot-quickbooks-integration/) covers reconciliation when QuickBooks is the accounting destination.
+
+---
+
+## How do you set up renewal alerts and dates?
+
+Use native renewal alerts for visibility and a reviewed agreement-specific date for accountable action. End date, notice deadline, renewal effective date and billing date are different fields.
+
+[HubSpot's settings guide](https://knowledge.hubspot.com/contracts/set-up-contracts) documents approaching-renewal alerts and Contract-based workflows using Renewal date. A visible alert is not a task assignment or evidence that the responsible owner acted.
+
+Test your line-item patterns. The [Contract overview](https://knowledge.hubspot.com/contracts/understand-contracts-in-hubspot) describes fixed-term, evergreen and one-time date behavior. Do not design every reminder around an end date that might not exist.
+
+An annual support agreement with a reviewed 90-day notice rule needs an earlier decision than a project with no renewable commitment. Have the appropriate reviewer confirm the actual deadline, then decide when the owner must prepare the renewal. This is process design, not a universal legal date formula.
+
+Reuse the [renewal properties guide](/posts/hubspot-renewal-pipeline-properties/) and [reminder guide](/posts/hubspot-renewal-reminders/) for deeper date and escalation setup. A fixed T-120 cadence should not override the actual agreement terms.
+
+---
+
+## How do you create a renewal quote and deal?
+
+Create the renewal quote from the intended Contract and associate it with the intended opportunity. Review inherited terms and prevent competing automation from creating another renewal deal.
+
+The [renewal-quote guide](https://knowledge.hubspot.com/quotes/create-a-renewal-quote-on-a-contract) documents manual creation and a deal-based **Create renewal quote from contract** workflow action. Select the Contract, template and new/existing deal as supported by that path.
+
+Use the [change and renewal template guide](https://knowledge.hubspot.com/quotes/create-change-and-renewal-quote-templates) for template configuration. Before release, review:
+
+<div style="max-width:100%; overflow-x:auto;" tabindex="0" role="region" aria-label="How do you create a renewal quote and deal? table 3">
+
+| Template area | Acceptance check |
 |---|---|
-| Seller and buyer details | Pre-fill from the Contract |
-| Billing contact and address | Allow buyer update only if finance approves the process |
-| Line items | Inherit, then require seller review |
-| Effective date | Require an explicit confirmation |
-| Term length | Show it and prevent accidental removal |
-| Payment terms | Inherit unless finance approves a change |
-| Uplift or discount | Require approval above a defined threshold |
-| Acceptance method | Standardize by deal value and region |
+| Buyer/billing identity | Correct entity and approved contact |
+| Recurring items | Current scope, quantity and schedule |
+| One-time items | Included only where intended |
+| Effective date/term | Matches approved next commitment |
+| Discount/uplift | Required approval completed |
+| Acceptance method | Appropriate reviewed policy |
 
-This is the difference between automation and blind copying. Inheritance saves time; the review gate prevents last year's quantities, contacts or discounts from becoming this year's mistake.
+</div>
 
----
 
-## Step 5: Create Renewal Deals and Quotes
-
-A renewal quote must be associated with a deal. You can create the deal during the manual renewal quote process, automatically create a new deal through Contract settings, or select a new or existing deal in the **Create renewal quote from contract** workflow action.
-
-The recommended reporting pattern is a dedicated renewal pipeline. It keeps renewable revenue separate from new business and gives every renewal a commercial owner, stage, forecast category and close date.
-
-When the renewal quote is created from a Contract, it includes:
-
-- the associated company and contacts;
-- billing contacts from the current Contract;
-- the current Contract's line items, including accepted mid-term changes;
-- the same term length by default;
-- matching payment terms.
-
-This solves a different problem from generic deal cloning. A normal workflow-created deal still does not automatically recreate another deal's line items. The native inheritance occurs because the renewal quote is built from the Contract. If your process starts with a legacy deal rather than a Contract, use the [deal-based renewal automation path](/posts/hubspot-renewal-deal-workflow-automation/) and plan explicitly for line-item creation.
+Native renewal-quote inheritance is distinct from generic deal creation. A workflow-created deal should not be assumed to copy every source line item. Use the existing [deal-based renewal automation guide](/posts/hubspot-renewal-deal-workflow-automation/) when that is your chosen model.
 
 ---
 
-## Step 6: Define What Happens After Acceptance
+## What happens after acceptance or a mid-term change?
 
-When the customer accepts the renewal quote, HubSpot creates a new Contract and associates it with the previous Contract. The relationship and renewal event appear in Contract activities and history. From the renewal effective date, future changes are managed from the new Contract.
+Verify the new commercial record, accepted version and billing result rather than treating acceptance as proof of the entire operational handoff. Preserve the original sale and earlier agreement history.
 
-Add a post-acceptance control workflow even when the core lifecycle is native:
+According to [HubSpot's renewal documentation](https://knowledge.hubspot.com/quotes/create-a-renewal-quote-on-a-contract), accepted renewal quotes create a new Contract associated with the prior one. Review that relationship and the intended effective date.
 
-1. Confirm the new Contract association exists.
-2. Mark the renewal deal Closed Won.
-3. Compare renewed ARR with prior ARR and classify expansion, contraction or flat renewal.
-4. Notify finance and the CSM of the effective date and billing terms.
-5. Create the next account review or notice-date task.
-6. Flag any mismatch for RevOps review instead of silently updating the source data.
+The [change-quote guide](https://knowledge.hubspot.com/quotes/create-a-change-quote-on-a-contract) documents recurring-item amendments with its own tier/seat conditions; one-time item changes are excluded from that path. Legal redlines and clause approval remain separate responsibilities.
 
-That final verification is what makes [NRR and GRR reporting](/posts/hubspot-renewal-nrr-grr-dashboard-reporting/) dependable. Contract history explains what changed; the renewal deal explains the commercial outcome.
+Design post-acceptance controls for the renewal deal outcome, finance notification, next notice event and retention reporting. Do not describe those controls as automatic defaults unless confirmed in your account. Compare prior and renewed recurring components using the [NRR/GRR reporting guide](/posts/hubspot-renewal-nrr-grr-dashboard-reporting/), with one-time amounts treated separately.
 
 ---
 
-## A Copy-Paste Pilot Checklist
+![Native Contract setup: Accepted quote - Check Revenue Hub access; Direct creation - Verify separate beta access; Non-billing import - Map identifiers and line items; Billing migration - Validate before activation. Conceptual model, not a product screenshot.](/assets/blog/hubspot-contracts-renewal-quotes-setup-workflow.svg)
 
-Run a five-contract pilot before enabling the flow across the book:
+## Copy this native Contract pilot worksheet
 
-- [ ] One fixed-term contract with a single recurring line item
-- [ ] One contract with several recurring line items and different quantities
-- [ ] One contract changed mid-term through a change quote
-- [ ] One evergreen contract with a notice or review date
-- [ ] One imported historical contract associated with line items and a deal
-- [ ] Renewal alert appears at the configured time
-- [ ] Workflow creates or selects the correct renewal deal
-- [ ] Renewal quote uses the intended template
-- [ ] Company, contacts, billing contacts, line items, term and payment terms are correct
-- [ ] Approval rules catch an unexpected discount or uplift
-- [ ] Accepted quote creates and associates the new Contract
-- [ ] Renewal deal and retention reports show the expected outcome
+Use the worksheet to specify one agreement and a second agreement under the same customer. The sample fields and IDs are illustrative; they are not an importer file or tested native mappings.
 
-Do not use a production customer as the first test. A renewal workflow can create a real deal and quote, so keep the pilot records clearly labeled and exclude them from executive reporting.
+<div style="max-width:100%; overflow-x:auto;" tabindex="0" role="region" aria-label="Copy this native Contract pilot worksheet table 4">
+
+| Check | Filled example | Acceptance condition |
+|---|---|---|
+| Agreement identity | SUPPORT-01, source deal 801 | Project agreement PROJECT-02 remains distinct |
+| Legal evidence | Reviewed executed SOW reference | Authorized users can access current version |
+| Selected creation path | Non-billing historical import | No unintended invoice or charge |
+| Commercial schedule | USD 1,000/month for 12 months | Recurrence, term and currency correct |
+| Separate setup fee | USD 2,000 once | Not copied into each recurring period |
+| Ownership | Named renewal owner and backup | Missing owner produces an exception |
+| Notice rule | Reviewed contract-specific deadline | Task timing follows approved terms |
+| Next opportunity | One renewal event/deal | Repeated enrollment creates no duplicate |
+| Renewal quote | Intended template and effective date | Inherited items reviewed before sending |
+| Acceptance | New Contract linked to prior Contract | Original won-sale evidence retained |
+
+</div>
+
+
+Record actual results, reviewer and test date beside each condition. Test at least one fixed-term agreement, an evergreen arrangement, a changed recurring agreement and an imported agreement relevant to your business. Keep internal pilot records out of executive reports and customer sending.
 
 ---
 
-## Native Contracts vs a Renewal App
+## When should you add an app or custom automation?
 
-Native Contracts may fit quote-based or directly created/imported agreements. Test the selected renewal, pricing and approval path before adding an app. An app or custom automation becomes useful when you need to normalize legacy data, apply product-specific uplift rules, filter one-time line items, handle complex co-terming, create renewals in bulk, or maintain a mixed architecture across billing and contract systems.
+Add it when a required behavior remains unmet after testing the selected native path. Native availability and account eligibility should be assessed first.
 
-The decision should now be based on those specific gaps, not on the old statement that HubSpot has no Contract object. Review the [HubSpot renewal apps comparison](/compare/hubspot-renewal-apps/) against the exact exceptions found in your pilot.
+Examples to investigate include a demonstrated legacy-data normalization need, a complex co-terming rule, a particular external document handoff or a bulk action the current path cannot perform. Those are scoping questions, not blanket claims that native Contracts cannot handle them.
+
+Use the [document integration hub](/posts/hubspot-contract-document-integrations/) for legal document workflows and the [architecture pillar](/posts/hubspot-contract-management/) for alternative record models. Keep an existing working connector when it meets the actual requirement.
+
+---
+
+## What should pass before broader activation?
+
+Approve the native path only after record, renewal and any intended billing evidence reconcile. Include failures as well as the happy path.
+
+- [ ] Selected action's tier, seat, permissions and beta access confirmed.
+- [ ] Contract, legal document, deal and subscription responsibilities documented.
+- [ ] Published, draft and legacy quote behavior tested separately where relevant.
+- [ ] Unique import identities and correct associations verified.
+- [ ] Non-billing import creates no unintended collection.
+- [ ] Billing migration has an approved continuity and activation plan.
+- [ ] Notice, renewal and billing dates retain separate meanings.
+- [ ] Renewal owner and missing-data exception are assigned.
+- [ ] Quote inherits the intended current terms and approval policy.
+- [ ] Repeated workflow execution creates no second renewal opportunity.
+- [ ] Acceptance preserves prior/new Contract relationships and original sale history.
+- [ ] Finance and reporting checks use the correct recurring and one-time amounts.
 
 ---
 
 ## Frequently Asked Questions
 
-**Does HubSpot have a native contract object?**
+### Can native Contracts be edited, renewed or terminated?
 
-Yes. HubSpot has commercial Contract records. The quote-based and direct-create paths have different access requirements. They do not replace signed legal documents.
+HubSpot documents [Contract management actions](https://knowledge.hubspot.com/contracts/view-and-manage-contracts), including direct and quote-based paths with different access conditions. Select the supported action for the record and confirm its effective date, history and billing impact. Do not edit a reporting-only subscription as a substitute for changing the billing controller.
 
-**Can HubSpot create a renewal quote automatically?**
+### Are HubSpot Contracts available without Revenue Hub seats?
 
-Yes. A deal-based workflow can use the Create renewal quote from contract action. You select the associated Contract and a renewal quote template, then create a new deal or use an existing deal.
+The direct-create beta has a documented seat exception and is listed for all plans. Renewal quotes and connected Revenue Hub billing have separate requirements. Verify the action you intend to use.
 
-**Do HubSpot renewal quotes copy line items?**
+### Can HubSpot import existing customer agreements?
 
-Yes, when the renewal quote is created from a HubSpot Contract. It inherits the Contract's line items, including changes previously accepted through change quotes. A generic workflow-created deal still does not copy source-deal line items by itself.
+Current dedicated documentation describes non-billing import and a separate billing-migration beta. Check the selected route, account access and associations rather than relying on older no-import wording.
 
-**Can existing contracts be imported into HubSpot?**
+### Can an existing deal automatically become a Contract?
 
-Yes, subject to the selected import path and permissions. Non-billing record import differs from the billing-migration beta. Do not assume an existing HubSpot Subscription can be converted in place; verify the source, processor and continuity requirements.
+A won deal alone is not the same as the documented quote-acceptance, direct-create or import path. Choose and test a supported route; preserve the original opportunity history.
 
-**Which HubSpot subscription is required for contract renewals?**
+### Do renewal quotes copy line items?
 
-Renewal quotes require Revenue Hub Professional or Enterprise, a Revenue Hub seat and the relevant permissions. Direct Contract creation and renewal have a separate beta path; those exceptions do not remove the renewal-quote requirements.
+The native Contract-based renewal path carries commercial context into the quote. Review current items and terms. Do not extend that behavior to every generic deal-creation workflow.
 
-**What should we implement first?**
+### Does a Contract alert cover our cancellation notice obligation?
 
-Choose the source of truth and pilot the complete acceptance loop first. Do not start by building every reminder. Prove that an accepted renewal quote creates the correct next Contract and retention outcome, then add the T-120 cadence around it.
+Not automatically. Review the actual legal terms, store the correct deadline and test accountable actions. An approaching end-date alert may serve a different purpose.
 
 ---
 
-**SWOTBee designs the renewal architecture around the contracts you actually have: native Revenue Hub Contracts where they fit, deal-based automation where they do not, and one renewal forecast across both.**
+**Choose the native path by the agreement you need to operate, then verify its renewal and billing behavior.**
 
-[Book a free 30-minute discovery call →](/contactus/)
+[Request a discovery call to discuss your native HubSpot Contract setup](/contactus/).

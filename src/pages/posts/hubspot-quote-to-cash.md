@@ -2,7 +2,7 @@
 layout: ../../layouts/BlogPostLayout.astro
 title: "HubSpot Quote to Cash: Revenue Hub and Accounting Guide"
 pubDate: "2026-10-09"
-modifiedDate: "2026-10-09"
+modifiedDate: "2026-10-10"
 description: "Plan HubSpot quote to cash across quotes, agreements, billing and accounting. Set data ownership, test handoffs, then discuss your workflow on a call."
 category:
   title: "Revenue Operations"
@@ -155,6 +155,8 @@ Treat each named integration as a specific product with documented scope. Contac
 
 The [HubSpot QuickBooks Online guide](https://knowledge.hubspot.com/integrations/connect-hubspot-and-quickbooks-online) documents configurable object synchronization and Data Hub Starter-or-higher custom mappings. It also identifies editing restrictions for HubSpot-origin invoices, unsupported multi-invoice payment sync, and processing fees that do not automatically create an accounting expense.
 
+For a concrete test plan, see the [HubSpot QuickBooks invoice sync and reconciliation guide](/posts/hubspot-quickbooks-integration/).
+
 Test the correct billing contact and company association, invoice origin, tax behavior, credits and payment allocation. Avoid running a paid-invoice creation workflow alongside invoice sync without checking duplicate creation. Regional tax statements in the documentation are inconsistent, so non-US applicability needs account-specific verification.
 
 The guide says QuickBooks sandbox accounts cannot connect through this app. Design a safe validation arrangement with finance; do not promise a standard end-to-end sandbox test for every connector.
@@ -176,6 +178,8 @@ Scope subsidiary, customer ID, service item, agreement reference and order-updat
 ### Stripe: distinguish processing from external Stripe Billing
 
 [HubSpot’s Stripe payment-processing guide](https://knowledge.hubspot.com/payment-processing/connect-your-stripe-account-as-a-payment-processor-in-hubspot) describes collection for HubSpot revenue tools. Connecting does not import or change existing external Stripe subscriptions; HubSpot-created invoices and subscriptions are not created as equivalent records in Stripe. Country and account restrictions apply.
+
+Use the [Stripe HubSpot connection decision guide](/posts/stripe-hubspot-integration/) to compare payment processing, data sync and billing migration.
 
 If Stripe Billing remains your subscription authority, write that as a separate integration requirement. Do not call payment processing a migration of the existing subscription book. Validate the merchant’s location, permitted currency, fees and chosen workflow before offering native collection.
 

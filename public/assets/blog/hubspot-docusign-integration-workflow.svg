@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 630" role="img" aria-labelledby="title desc">
+<title id="title">Envelope to CRM</title>
+<desc id="desc">Conceptual implementation model, not a product screenshot. CRM source: Choose agreement and version; Signing envelope: Review recipients and terms; Validated return: Match before updating CRM.</desc>
+<rect width="600" height="630" rx="24" fill="#F5F8F7"/>
+<g font-family="Arial, sans-serif" fill="#173D3A">
+<text x="36" y="55" font-size="18" font-weight="700">SWOTBEE IMPLEMENTATION GUIDE</text>
+<text x="36" y="100" font-size="32" font-weight="700">Envelope to CRM</text>
+<rect x="36" y="142" width="528" height="124" rx="14" fill="white" stroke="#9CB9B1"/>
+<text x="58" y="184" font-size="25" font-weight="700">1. CRM source</text>
+<text x="58" y="224" font-size="23">Choose agreement and version</text>
+<rect x="36" y="292" width="528" height="124" rx="14" fill="white" stroke="#9CB9B1"/>
+<text x="58" y="334" font-size="25" font-weight="700">2. Signing envelope</text>
+<text x="58" y="374" font-size="23">Review recipients and terms</text>
+<rect x="36" y="442" width="528" height="124" rx="14" fill="white" stroke="#9CB9B1"/>
+<text x="58" y="484" font-size="25" font-weight="700">3. Validated return</text>
+<text x="58" y="524" font-size="23">Match before updating CRM</text>
+<text x="36" y="602" font-size="19">Conceptual model. Verify access and behavior in your portal.</text>
+</g></svg>

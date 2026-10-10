@@ -48,3 +48,10 @@ pnpm-debug.log*
 .idea/
 src/assets/service_features/prompts.md
 src/assets/service_features/prompts.pdf
+
+# Generated social cards for the customer-contract supporting drafts
+public/assets/blog/hubspot-docusign-integration-hero.social.png
+public/assets/blog/hubspot-pandadoc-integration-hero.social.png
+public/assets/blog/hubspot-quickbooks-integration-hero.social.png
+public/assets/blog/stripe-hubspot-integration-hero.social.png
+public/assets/blog/hubspot-contracts-renewal-quotes-setup-hero.social.png
