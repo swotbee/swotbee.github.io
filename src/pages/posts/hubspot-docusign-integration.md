@@ -231,7 +231,7 @@ Run creation, signature and required CRM return as one acceptance sequence. Incl
 - [ ] Missing required data enters a named review path.
 - [ ] Template values and recipient roles match the approved version.
 - [ ] Partial, completed, declined and voided outcomes remain distinct.
-- [ ] Completed evidence resolves to the intended agreement and deal.
+- [ ] Completed evidence resolves to the intended agreement and deal. Use the [HubSpot document tracking guide](/posts/hubspot-document-tracking/) to distinguish document views from envelope status and signed evidence.
 - [ ] Required customer-entered values are reviewed and accepted at the destination.
 - [ ] A second agreement for the customer remains unchanged.
 - [ ] Duplicate or older events do not repeat or reverse the handoff.

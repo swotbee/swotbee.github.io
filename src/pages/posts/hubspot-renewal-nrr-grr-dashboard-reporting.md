@@ -1,8 +1,8 @@
 ---
 layout: ../../layouts/BlogPostLayout.astro
-title: 'HubSpot ARR Reporting: MRR, NRR and GRR Dashboard Guide'
+title: 'HubSpot ARR, MRR, NRR and GRR Reporting'
 pubDate: '2026-04-02'
-modifiedDate: '2026-10-10'
+modifiedDate: '2026-10-11'
 description: Build HubSpot ARR reporting with defined recurring revenue inputs. Use a fixed-cohort NRR and GRR example, duplicate checks and a reconciliation workbook.
 category:
   title: Revenue Operations
