@@ -465,7 +465,7 @@ h1 {
   padding: 0.15em 0.4em;
   background: #f7f5f1;
   border-radius: 4px;
-  color: #C47A2A;
+  color: var(--color-v6-copper);
   white-space: nowrap;
 }
 
