@@ -2,7 +2,7 @@
 layout: ../../layouts/BlogPostLayout.astro
 title: "HubSpot Contract Management: Architecture and Setup Guide"
 pubDate: "2026-07-06"
-modifiedDate: '2026-10-10'
+modifiedDate: "2026-10-11"
 description: "HubSpot contract management starts with clear records. Compare native setup, migration and integrations, then discuss your workflow on a discovery call."
 category:
   title: "Revenue Operations"
@@ -124,7 +124,7 @@ Prepare an access record with these entries:
 
 According to [HubSpot’s setup documentation](https://knowledge.hubspot.com/contracts/set-up-contracts), accepted legacy quotes do not create Contracts. Test your actual quote type instead of assuming that every signed HubSpot quote follows the same path.
 
-The [native Contracts and renewal-quotes guide](/posts/hubspot-contracts-renewal-quotes/) is the detailed setup companion. Its rollout-era licensing and import statements need the corrections identified in the review notes before you rely on them.
+The [native Contracts and renewal-quotes guide](/posts/hubspot-contracts-renewal-quotes/) is the detailed setup companion. Use it to check the creation path, required access and renewal-quote behavior in your account.
 
 ## What agreement data should you prepare?
 
@@ -148,6 +148,8 @@ Use this starting schema as a design worksheet. These are suggested labels, not 
 | Related Deal/Contract IDs | Associations or text mapping | Original sale, current commitment and later revenue events |
 
 </div>
+
+If your starting register is a spreadsheet, use the [contract tracker CSV](/resources/contract-tracker-template/) to capture dates, notice periods and ownership before preparing the field mapping. It is a starting register, not a native HubSpot import file.
 
 Do not label an entire agreement’s value “ARR” if it includes a one-time implementation charge. Keep the amount basis visible, particularly when comparing CRM and finance reports.
 
@@ -227,6 +229,8 @@ Practical checklist:
 - [ ] If billing moves, finance verifies the first invoice and absence of duplicate legacy billing.
 - [ ] Missing access, failed writeback and orphaned documents have a named recovery path.
 - [ ] The admin receives the field dictionary, mappings, workflow inventory and operating instructions.
+
+Use the [contract management checklist](/posts/contract-management-checklist/) to review document access, dates, responsibilities and handoffs alongside these implementation tests.
 
 For daily operation after setup, use the [HubSpot renewal pipeline guide](/posts/hubspot-renewal-pipeline-complete-guide/). The architecture is complete when the team can explain where agreement truth lives and how an exception gets resolved.
 

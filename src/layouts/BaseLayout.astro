@@ -371,7 +371,7 @@ const gtmId = import.meta.env.PUBLIC_GTM_ID || "GTM-WV9TQ6FH";
           // outbound_click: any link to a different hostname.
           // cta_click: any element carrying data-ga-cta="<label>" (used for the funnel's
           // primary CTAs so clicks are labeled, not just "a link was clicked somewhere").
-          // cta_click is bound to pointerdown, NOT click, and this is deliberate.
+          // Pointer activation is tracked on pointerdown, and this is deliberate.
           // Every data-ga-cta element is an internal link, so a click starts a navigation
           // in the same tick the event fires and the page unloads before the request
           // leaves. GA4 recorded 0 cta_click across 90 days while scroll_depth (77, no
@@ -392,6 +392,12 @@ const gtmId = import.meta.env.PUBLIC_GTM_ID || "GTM-WV9TQ6FH";
             var el = e.target.closest ? e.target.closest('a[href]') : null;
             if (!el) return;
             var href = el.getAttribute('href') || '';
+            // Keyboard and assistive activation have no preceding pointerdown.
+            // Their click detail is zero; ordinary pointer clicks are already tracked.
+            var ctaLabel = el.getAttribute('data-ga-cta');
+            if (e.detail === 0 && ctaLabel) {
+              fire('cta_click', { cta: ctaLabel, href: href });
+            }
             try {
               var url = new URL(href, window.location.href);
               if (url.hostname && url.hostname !== window.location.hostname) {

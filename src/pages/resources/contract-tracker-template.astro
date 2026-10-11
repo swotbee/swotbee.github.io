@@ -46,6 +46,8 @@ const columns = [
         Most contract trackers store the end date and miss the deadline. This one calculates the <strong>notice date</strong>, which on an auto-renewing contract is the day the decision is actually made.
       </p>
       <button id="dl" type="button"
+        data-resource-download="csv"
+        data-file-name="contract-tracker-template.csv"
         class="inline-block bg-v6-copper text-white font-semibold px-6 py-3 rounded-lg hover:opacity-90 transition">
         Download the CSV
       </button>
@@ -155,7 +157,7 @@ Status flag      =IF(I2="", "",
       <div class="rounded-xl bg-v6-bg-warm border border-v6-border p-6">
         <p class="text-v6-dark font-semibold mb-2">A spreadsheet remembers. It does not chase anybody.</p>
         <p class="text-v6-text-muted text-sm mb-4">SWOTBee builds this into HubSpot directly: notice period as a real property, notice date as a calculation, and alerts that create tasks with owners and escalate when nothing happens.</p>
-        <a href="/contactus/" class="inline-block bg-v6-copper text-white font-semibold px-5 py-2.5 rounded-lg hover:opacity-90 transition">Book a free 30-minute discovery call →</a>
+        <a href="/contactus/" data-ga-cta="contract_tracker_discovery_call" class="inline-block bg-v6-copper text-white font-semibold px-5 py-2.5 rounded-lg hover:opacity-90 transition">Book a free 30-minute discovery call →</a>
       </div>
     </div>
   </section>
@@ -174,6 +176,16 @@ Status flag      =IF(I2="", "",
     ["Contoso Hosting","Supplier agreement","Supplier","36000","USD","2026-03-01","2027-02-28","30","","","Yes","Fixed term","none","C. Owner","Renegotiating","99.9% uptime","",""]
   ];
   function esc(v){ v = String(v); return /[",\n]/.test(v) ? '"' + v.replace(/"/g,'""') + '"' : v; }
+  function trackDownload() {
+    if (typeof window.__sbTrack !== "function") return;
+    window.__sbTrack("resource_download", {
+      resource_id: "contract_tracker_template",
+      asset_type: "csv",
+      file_name: "contract-tracker-template.csv",
+      source_page: "/resources/contract-tracker-template/",
+      cta_placement: "resource_hero"
+    });
+  }
   document.getElementById("dl").addEventListener("click", function () {
     var lines = [HEAD.map(esc).join(",")];
     for (var i = 0; i < rows.length; i++) {
@@ -188,6 +200,7 @@ Status flag      =IF(I2="", "",
     var a = document.createElement("a");
     a.href = url; a.download = "contract-tracker-template.csv";
     document.body.appendChild(a); a.click(); document.body.removeChild(a);
+    trackDownload();
     setTimeout(function(){ URL.revokeObjectURL(url); }, 1000);
   });
 })();

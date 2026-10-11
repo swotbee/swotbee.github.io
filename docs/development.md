@@ -62,10 +62,17 @@ For analytics, consent-banner, attribution, or third-party embed changes, also r
 ```bash
 PUBLIC_GA4_ID=G-TEST PUBLIC_CLARITY_ID=test pnpm build
 pnpm check:consent
+pnpm check:blog-measurement
 ```
 
 `check:consent` uses a real headless browser and requires a build containing the test
 analytics identifiers. Code inspection is not a substitute for this check.
+
+`check:blog-measurement` checks the contract tracker CSV, download event, mouse and
+keyboard enquiry events, and original landing/referrer values in the contact form
+after internal navigation. It blocks third-party requests and submits no form.
+Use `--port 4404` if its default preview port 4403 is occupied. It verifies browser
+event payloads and first-party attribution, not GA4's processed channel assignment.
 
 After a deployment, verify that every report-signup page renders and rejects invalid
 email without calling the webhook:

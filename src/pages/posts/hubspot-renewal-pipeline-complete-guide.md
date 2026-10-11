@@ -2,7 +2,7 @@
 layout: ../../layouts/BlogPostLayout.astro
 title: "HubSpot Renewal Pipeline: Setup, Notices and Ownership"
 pubDate: "2026-04-02"
-modifiedDate: '2026-10-10'
+modifiedDate: "2026-10-11"
 description: "Build a HubSpot renewal pipeline around notice dates, owners and multiple customer agreements. Compare native options, then discuss your setup on a call."
 category:
   title: "Revenue Operations"
@@ -68,6 +68,8 @@ Illustrative rule: if a reviewed clause requires notice 60 calendar days before 
 
 Month-based periods, business days, receipt requirements, time zones and amendments can change the answer. Record the reviewed rule and evidence. Do not deploy one date formula to every agreement.
 
+For an initial spreadsheet register, start with the [contract tracker template](/resources/contract-tracker-template/), then add the rule reference, backup owner and renewal event key used below.
+
 Copy this control sheet for the next agreements needing action. These illustrative calendar-day rules must be replaced with each agreement's reviewed terms:
 
 <div style="max-width:100%; overflow-x:auto;" tabindex="0" role="region" aria-label="Which dates should drive customer contract renewals? table 2">
@@ -103,6 +105,8 @@ An illustrative service customer has an annual support SOW, a security add-on wi
 | Backup owner | Act when the primary owner is unavailable |
 
 </div>
+
+Use the [contract renewal process checklist](/posts/contract-renewal-process-checklist/) to assign the preparation, approval and follow-up steps around each reviewed deadline.
 
 Sales or Customer Success can own the commercial motion. Choose according to who has authority and customer context, rather than assuming a universal organizational model. Record the handoff when an expansion needs another team.
 

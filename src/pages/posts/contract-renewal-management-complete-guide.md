@@ -6,7 +6,7 @@ description: "The complete B2B guide to contract renewal management: the end-to-
 category:
   title: "Revenue Operations"
   href: "/categories/revenue-operations/"
-modifiedDate: "2026-10-09"
+modifiedDate: "2026-10-11"
 author:
   name: "SWOTBee Team"
   url: "https://swotbee.com"
@@ -134,6 +134,8 @@ Whatever tooling you choose, the same contract renewal process best practices ap
 | Standalone renewal/contract trackers | Teams without a real CRM | Purpose-built reminders, simple contract repository | Another silo; renewal data separated from the customer record | Roughly 10 to 50 USD/user/mo (listed pricing, as of mid-2026) |
 | CLM suites (Ironclad, DocuSign CLM, etc.) | Legal-heavy orgs with high contract complexity | Clause management, approvals, signature, obligations | Manages the document, not the revenue motion; no pipeline or forecast | Commonly quote-based; buyers report five figures annually |
 | CRM-native renewal automation | Teams already running HubSpot or Salesforce | Renewal deals live next to the customer; workflows, tasks, forecasting, NRR reporting in one place | Requires setup work; native features alone leave gaps (see below) | CRM tier you already pay for, plus build or app cost |
+
+If you need a starting register before selecting software, the [free contract tracker template](/resources/contract-tracker-template/) holds contract dates, notice periods and ownership. Keep the reviewed notice rule and supporting agreement accessible alongside it.
 
 A few honest notes on each:
 
