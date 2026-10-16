@@ -9,6 +9,8 @@ import {
 // Body: Hanken Grotesk (primary), DM Sans (fallback), Lexend Deca (fallback)
 // Headings: Rokkitt Variable (custom @font-face in global.css), Vollkorn (fallback)
 import "@fontsource-variable/hanken-grotesk";     // Body — variable font covers all weights
+import bodyFontUrl from "@fontsource-variable/hanken-grotesk/files/hanken-grotesk-latin-wght-normal.woff2?url";
+import headingFontUrl from "@fontsource-variable/rokkitt/files/rokkitt-latin-wght-normal.woff2?url";
 // Rokkitt loaded via @font-face in global.css (variable woff2, no separate import needed)
 import "../styles/global.css";
 import ConsentBanner from "../components/astro/ConsentBanner.astro";
@@ -75,14 +77,14 @@ const gtmId = import.meta.env.PUBLIC_GTM_ID || "GTM-WV9TQ6FH";
     <meta name="revisit-after" content="7 days" />
     <meta name="theme-color" content="#1f2937" />
 
-    <!-- No font preloads on purpose. These used to preload /fonts/*.woff2, but the
-         @font-face rules that actually render text resolve to the hashed bundled
-         copies under /_astro/, so the preloaded files were a different URL and were
-         never used: every page downloaded both copies of both fonts, ~64 KB of pure
-         waste, and Chrome logged "preloaded but not used" for each. The fonts are
-         font-display:swap, so text paints immediately in the fallback either way and
-         the preload was buying nothing. Re-adding one is only correct if it points at
-         the exact URL the built CSS requests. -->
+    {/* Blog headings and body use these two faces above the fold. Import their URLs
+        through Vite so the hints match the hashed URLs in the bundled CSS, avoiding
+        the duplicate downloads caused by the old unrelated /fonts/ copies.
+        Keep swap/fallback behavior and leave other page types unchanged. */}
+    {ogType === "article" && <>
+      <link rel="preload" href={bodyFontUrl} as="font" type="font/woff2" crossorigin="anonymous" />
+      <link rel="preload" href={headingFontUrl} as="font" type="font/woff2" crossorigin="anonymous" />
+    </>}
 
     <!-- Additional SEO meta tags -->
     <meta property="og:locale" content="en_US" />
