@@ -2,7 +2,7 @@
 layout: ../../layouts/BlogPostLayout.astro
 title: "HubSpot Quote to Cash: Revenue Hub and Accounting Guide"
 pubDate: "2026-10-09"
-modifiedDate: '2026-10-10'
+modifiedDate: "2026-10-19"
 description: "Plan HubSpot quote to cash across quotes, agreements, billing and accounting. Set data ownership, test handoffs, then discuss your workflow on a call."
 category:
   title: "Revenue Operations"
@@ -106,6 +106,8 @@ For a recurring service, test quantity changes, discount exceptions, future ramp
 Commercial approval, legal review and signature are separate gates. Decide which system owns each gate and how a changed version re-enters review. The [document-integration guide](/posts/hubspot-contract-document-integrations/) covers PandaDoc and DocuSign workflow choices.
 
 Do not use a generic “deal moved to Closed Won” trigger unless that state reliably establishes all prerequisites for billing. Some implementations need additional acceptance, customer-account or billing-readiness evidence before creating the downstream record.
+
+For a three-year commitment with agreed annual increases, use our [HubSpot ramp-pricing worked example](/posts/hubspot-multi-year-contract-pricing/). The downloadable Excel workbook and PDF help you map sequential price phases, name the billing owner and record anniversary test results.
 
 ## In what order should you configure HubSpot quote-to-cash?
 

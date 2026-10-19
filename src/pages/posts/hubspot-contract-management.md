@@ -2,7 +2,7 @@
 layout: ../../layouts/BlogPostLayout.astro
 title: "HubSpot Contract Management: Architecture and Setup Guide"
 pubDate: "2026-07-06"
-modifiedDate: "2026-10-11"
+modifiedDate: "2026-10-19"
 description: "HubSpot contract management starts with clear records. Compare native setup, migration and integrations, then discuss your workflow on a discovery call."
 category:
   title: "Revenue Operations"
@@ -107,6 +107,10 @@ Use the [CLM and CRM responsibility guide](/posts/clm-vs-crm-contract-renewals/)
 ![One agreement, four responsibilities. Legal document: Executed terms and evidence; Commercial Contract: Active customer commitment; Deal: Sale or renewal opportunity; Billing record: Schedule, invoice and payment.](/assets/posts/hubspot-customer-contracts/hubspot-contract-management-worksheet.svg)
 
 *Illustrative design. Use it alongside the worksheet and adapt it to your reviewed agreement and selected tools.*
+
+### Multi-year agreements with scheduled price increases
+
+A multi-year agreement can contain a different price for each year while remaining one committed term. Keep the price phases, invoice frequency and renewal date distinct. See our [multi-year contract pricing worked example](/posts/hubspot-multi-year-contract-pricing/) and its free Excel setup workbook and printable PDF.
 
 ## What native HubSpot setup should you check first?
 
