@@ -112,6 +112,8 @@ Use the [CLM and CRM responsibility guide](/posts/clm-vs-crm-contract-renewals/)
 
 A multi-year agreement can contain a different price for each year while remaining one committed term. Keep the price phases, invoice frequency and renewal date distinct. See our [multi-year contract pricing worked example](/posts/hubspot-multi-year-contract-pricing/) and its free Excel setup workbook and printable PDF.
 
+For a completed two-agreement example, use the [Contract, Deal and billing responsibility map](/posts/hubspot-contract-record-responsibilities/). Its editable workbook and printable worksheet help you trace each field to its source and owner.
+
 ## What native HubSpot setup should you check first?
 
 Check the exact feature path in the target account before designing around an upgrade or beta. Access to record creation does not establish access to quoting, workflows or connected billing.

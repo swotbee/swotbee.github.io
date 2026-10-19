@@ -2,7 +2,7 @@
 layout: ../../layouts/BlogPostLayout.astro
 title: 'HubSpot Contracts and Renewal Quotes: Setup Guide'
 pubDate: "2026-09-10"
-modifiedDate: "2026-10-10"
+modifiedDate: "2026-10-19"
 description: HubSpot Contracts and renewal quotes have different setup paths. Use an access checklist and pilot worksheet to test imports, renewals and billing limits.
 category:
   title: Revenue Operations
@@ -52,6 +52,17 @@ faqs:
 Start by choosing the path for one agreement and completing its access checks. Record whether the pilot should only create a commercial record or also change billing, before activating any workflow or migration.
 
 ---
+
+**Download:** <a href="/templates/hubspot-contract-handoff-setup.xlsx" download>Draft check and handoff workbook (Excel)</a> and <a href="/templates/hubspot-contract-handoff-setup.pdf" download>signing-to-Contract workflow guide (PDF)</a>. Use these resources with the walkthrough below. Record your own observations in the workbook; the PDF describes proposed signing follow-up, not an executed integration.
+
+<figure aria-label="Check a HubSpot Contract draft and prepare the handoff">
+<video controls playsinline preload="none" width="1920" height="1080" poster="/videos/customer-contracts/hubspot-contracts-renewal-quotes.poster.webp" aria-label="Check a HubSpot Contract draft and prepare the handoff" style="display:block;width:100%;height:auto;aspect-ratio:16/9;background:#111;border-radius:12px;">
+  <source src="/videos/customer-contracts/hubspot-contracts-renewal-quotes.mp4" type="video/mp4" />
+  <track src="/videos/customer-contracts/hubspot-contracts-renewal-quotes.en.vtt" kind="captions" srclang="en" label="English" />
+  Your browser cannot play this video. Use the download link below.
+</video>
+<figcaption><strong>Watch: Check a HubSpot Contract draft and prepare the handoff</strong> (4:51). Fictional proposal and prepared draft. Customer acceptance and billing release are separate steps. <a href="/videos/customer-contracts/hubspot-contracts-renewal-quotes.mp4" download>Download video</a> or <a href="/videos/customer-contracts/hubspot-contracts-renewal-quotes.transcript.txt">read the transcript</a>.</figcaption>
+</figure>
 
 ## What is a HubSpot Contract record?
 
@@ -133,6 +144,33 @@ Prepare the agreement before entering it:
 These preparation steps are an implementation checklist, not a universal sequence of UI fields. Follow the current form and actual account access. A directly created revenue record does not send a legal agreement through PandaDoc or DocuSign by itself.
 
 ---
+
+## What are the best practices for a HubSpot Contract handoff?
+
+Match the source, verify the saved terms and name the next owner. A checked draft is an internal review milestone; customer acceptance and billing release remain separate decisions.
+
+In the walkthrough example, BeaconGrid proposes Solar Support to Cedar Vale Foods: $1,000 per month, quantity one, for 12 payments. The proposed service period is 1 November 2026 through 31 October 2027. The $12,000 term total is not an invoice due today. Battery Monitoring is another agreement under the same customer, with its own scope and dates.
+
+Use this draft-check sequence after confirming access to the direct-edit route:
+
+1. Open **Revenue > Contracts**, select the intended Solar Support record and confirm its **Draft** state. Match the source proposal and version before choosing **Edit contract**.
+2. Compare seller, buyer, contact and associated source deal. Association does not establish automatic synchronization.
+3. Check product, quantity, billing frequency, payment count and service dates against the proposal. If a value differs, resolve the correct source with Sales before proceeding.
+4. Keep billing disabled for this commercial-record pilot. Confirm the actual billing control and its explanatory message; external Finance setup is a separate handoff.
+5. Reopen the saved draft and inspect the relevant values again. Record observed results in the workbook rather than pre-filling success.
+6. Give the Sales manager the source version, record reference and checked terms. Assign Sales Ops the next action, such as requesting internal review, and record whether that request was actually submitted.
+
+If the proposal changes, version the source and repeat the affected checks. The video's prepared draft does not establish a signed agreement, an approval submission or a connected billing process.
+
+Make the sales team's contract process explicit: the sales rep supplies the current proposal; Sales Ops checks the contract data and tracks contract status; the manager reviews commercial exceptions; Finance controls billing release. Quote templates can standardize the proposal, while document management and contract signing follow the selected legal process. Record who acts when a customer signs a contract, and which verified step brings the accepted information back to HubSpot. These responsibilities keep the contract lifecycle traceable without implying that one connector automates every step.
+
+### How do PandaDoc and Docusign fit the handoff?
+
+Document-completion activity can start internal follow-up through a supported connector and workflow. Creating or updating the native Contract is a separate integration requirement unless your chosen route has been verified to perform it.
+
+The downloadable workflow PDF describes provider-specific trigger choices and a verification checklist. Confirm subscription, permissions, document or envelope identity, owner and duplicate-event handling before activating follow-up. Use the [PandaDoc integration guide](/posts/hubspot-pandadoc-integration/) or [Docusign integration guide](/posts/hubspot-docusign-integration/) for the wider connector setup.
+
+Then test a matching completed document, an unrelated document for the same contact and a repeated completion event. The intended result is one actionable internal handoff for the correct agreement. A notification alone does not prove the Contract terms were written correctly.
 
 ## How do you import existing non-billing Contracts?
 

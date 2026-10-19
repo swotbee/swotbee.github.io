@@ -1,0 +1,187 @@
+Cedar Vale renews its service and adds a new recurring service
+
+in the same purchase.
+
+There is also a one-time commissioning fee.
+
+The customer sees one purchase, but Finance and Sales need to
+
+understand three different kinds of value.
+
+In this fictional example, the old annual recurring baseline is twelve
+
+thousand dollars.
+
+The new commitment covers one full year, from January through December
+
+twenty twenty-seven.
+
+All amounts are in dollars, before tax, with no discounts or
+
+proration.
+
+Calling the entire purchase new sales overstates growth.
+
+Calling everything renewal hides expansion.
+
+The answer starts by classifying the components, then reconciling the
+
+customer total separately from the change in recurring value.
+
+The twelve-thousand-dollar renewal retains the existing recurring service.
+
+It contributes twelve thousand dollars to the new recurring total, but
+
+zero incremental growth.
+
+We are carrying the baseline forward, not creating that baseline again.
+
+The additional service adds three thousand dollars per year.
+
+That is recurring expansion in this example.
+
+Compare the products and entitlements with the prior agreement
+
+so that an existing charge is not accidentally labelled as a
+
+new service.
+
+The fifteen-hundred-dollar commissioning fee belongs in the
+
+purchase reconciliation, but not in annual recurring revenue.
+
+Its invoice and commission treatment can follow separate rules.
+
+A payment being collected today does not make it recurring.
+
+For recurring value, start with the twelve-thousand-dollar opening
+
+baseline.
+
+There is no contraction or churn in this case.
+
+Add three thousand dollars of expansion.
+
+Closing annual recurring revenue is fifteen thousand dollars, and recurring
+
+growth is three thousand.
+
+For the one-year purchase, add twelve thousand renewal, three thousand
+
+expansion, and fifteen hundred one-time work.
+
+That totals sixteen thousand five hundred dollars.
+
+Keep this consideration total separate from closing ARR, invoice cash, and
+
+recognized revenue.
+
+A common mistake is adding the old twelve-thousand-dollar baseline to the
+
+entire new fifteen-thousand-dollar recurring amount.
+
+That produces twenty-seven thousand dollars.
+
+The renewal already carries the retained baseline, so that calculation
+
+counts it twice.
+
+If one team manages the purchase, a single commercial deal with
+
+classified components can keep the customer story together.
+
+Record retained recurring value, expansion value, and one-time value
+
+separately.
+
+Those are proposed reporting categories, not a claim that HubSpot
+
+creates them automatically.
+
+Separate linked opportunities may help when renewal and expansion have
+
+different owners or outcomes.
+
+Keep their purchase relationship traceable.
+
+Never sum a combined parent amount and the same child amounts.
+
+A shared purchase identity does not prove that quoting across those
+
+deals works automatically.
+
+HubSpot's deal ARR uses recurring line items.
+
+Its separate Enterprise Revenue Analytics uses manually maintained
+
+recurring revenue fields, including a monthly amount.
+
+A custom report is another route, with account-dependent access.
+
+Choose one route deliberately and verify the units, dates, and filters.
+
+Define what one report row represents: for example, one purchase component.
+
+Adding associated contacts or activities can multiply rows.
+
+Add a deliberate duplicate to the test data and check that
+
+the money total stays unchanged.
+
+A distinct deal count alone does not guarantee that a money
+
+sum is correct.
+
+Now test a different outcome.
+
+The renewal succeeds, but the expansion is lost.
+
+Closing ARR should stay at twelve thousand dollars.
+
+Preserve the proposed three-thousand-dollar expansion and
+
+its lost outcome in history, rather than deleting the only evidence
+
+that it was ever offered.
+
+If the retained baseline falls to ten thousand and expansion adds
+
+three thousand, closing ARR becomes thirteen thousand.
+
+Also test future start dates: a signed expansion is not active
+
+before its effective date.
+
+Record expected and observed results separately; these examples are
+
+reporting tests, not executed HubSpot outcomes.
+
+Give the commission process the classified amounts, owners and policy
+
+version.
+
+Do not assume every dollar earns the same rate, or that
+
+ARR growth is always the commission base.
+
+Renewal credit, expansion credit and one-time services must follow the
+
+company's actual compensation policy.
+
+The companion pack contains a classification dictionary, a
+
+reconciliation sheet and reporting test cases.
+
+Agree the definitions first, trace each value to its source, and
+
+compare the expected result with the actual report.
+
+Fix discrepancies before using the report for decisions.
+
+One purchase can include renewal, expansion and one-time work.
+
+In this example, the purchase is sixteen thousand five hundred dollars,
+
+closing ARR is fifteen thousand, and recurring growth is three thousand.
+
+Keep those meanings distinct, and count each contribution once.

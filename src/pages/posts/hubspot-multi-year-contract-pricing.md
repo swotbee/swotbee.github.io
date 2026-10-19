@@ -34,6 +34,15 @@ This is about pricing your customers' agreements in HubSpot. Start with one sign
 
 **Download:** <a href="/templates/hubspot-phased-pricing-setup-workbook.xlsx" download>Phased-pricing setup workbook (Excel)</a>. Use the filled example, editable schedule, configuration checklist and transition test log. The <a href="/templates/hubspot-phased-pricing-companion-pack.pdf" download>printable companion pack (PDF)</a> covers the same checks for readers following the video.
 
+<figure aria-label="Three-year HubSpot pricing">
+<video controls playsinline preload="none" width="1920" height="1080" poster="/videos/customer-contracts/hubspot-multi-year-contract-pricing.poster.webp" aria-label="Three-year HubSpot pricing" style="display:block;width:100%;height:auto;aspect-ratio:16/9;background:#111;border-radius:12px;">
+  <source src="/videos/customer-contracts/hubspot-multi-year-contract-pricing.mp4" type="video/mp4" />
+  <track src="/videos/customer-contracts/hubspot-multi-year-contract-pricing.en.vtt" kind="captions" srclang="en" label="English" />
+  Your browser cannot play this video. Use the download link below.
+</video>
+<figcaption><strong>Watch: Three-year HubSpot pricing</strong> (4:46). Illustrated price schedule and expected transitions; live billing is not demonstrated. <a href="/videos/customer-contracts/hubspot-multi-year-contract-pricing.mp4" download>Download video</a> or <a href="/videos/customer-contracts/hubspot-multi-year-contract-pricing.transcript.txt">read the transcript</a>.</figcaption>
+</figure>
+
 ## How do annual price increases fit one multi-year contract?
 
 One commitment can contain several prices and either monthly or annual billing. Contract term tells you how long the customer committed; the price schedule tells you which rate applies when; billing frequency tells you how often to invoice.

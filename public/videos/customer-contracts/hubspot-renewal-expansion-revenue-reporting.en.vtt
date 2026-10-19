@@ -1,0 +1,356 @@
+WEBVTT
+
+00:00.000 --> 00:03.798
+Cedar Vale renews its service and adds
+a new recurring service
+
+00:03.798 --> 00:04.992
+in the same purchase.
+
+00:05.242 --> 00:07.461
+There is also a one-time commissioning
+fee.
+
+00:07.711 --> 00:11.830
+The customer sees one purchase, but
+Finance and Sales need to
+
+00:11.830 --> 00:13.940
+understand three different kinds of
+value.
+
+00:14.600 --> 00:18.776
+In this fictional example, the old annual
+recurring baseline is twelve
+
+00:18.776 --> 00:19.699
+thousand dollars.
+
+00:19.949 --> 00:23.996
+The new commitment covers one full
+year, from January through December
+
+00:23.996 --> 00:25.069
+twenty twenty-seven.
+
+00:25.319 --> 00:28.820
+All amounts are in dollars, before tax,
+with no discounts or
+
+00:28.820 --> 00:29.543
+proration.
+
+00:30.200 --> 00:33.635
+Calling the entire purchase new sales
+overstates growth.
+
+00:33.885 --> 00:36.295
+Calling everything renewal hides
+expansion.
+
+00:36.545 --> 00:40.693
+The answer starts by classifying the
+components, then reconciling the
+
+00:40.693 --> 00:44.439
+customer total separately from the
+change in recurring value.
+
+00:45.100 --> 00:49.516
+The twelve-thousand-dollar renewal
+retains the existing recurring service.
+
+00:49.766 --> 00:53.539
+It contributes twelve thousand dollars
+to the new recurring total, but
+
+00:53.539 --> 00:55.142
+zero incremental growth.
+
+00:55.392 --> 00:59.232
+We are carrying the baseline forward,
+not creating that baseline again.
+
+00:59.900 --> 01:03.079
+The additional service adds three
+thousand dollars per year.
+
+01:03.329 --> 01:05.910
+That is recurring expansion in this
+example.
+
+01:06.160 --> 01:09.479
+Compare the products and
+entitlements with the prior agreement
+
+01:09.479 --> 01:13.179
+so that an existing charge is not
+accidentally labelled as a
+
+01:13.179 --> 01:13.968
+new service.
+
+01:14.633 --> 01:17.806
+The fifteen-hundred-dollar
+commissioning fee belongs in the
+
+01:17.806 --> 01:21.716
+purchase reconciliation, but not in
+annual recurring revenue.
+
+01:21.966 --> 01:25.465
+Its invoice and commission treatment
+can follow separate rules.
+
+01:25.715 --> 01:29.021
+A payment being collected today does
+not make it recurring.
+
+01:29.700 --> 01:33.244
+For recurring value, start with the
+twelve-thousand-dollar opening
+
+01:33.244 --> 01:33.881
+baseline.
+
+01:34.131 --> 01:36.585
+There is no contraction or churn in this
+case.
+
+01:36.835 --> 01:39.011
+Add three thousand dollars of
+expansion.
+
+01:39.261 --> 01:43.705
+Closing annual recurring revenue is
+fifteen thousand dollars, and recurring
+
+01:43.705 --> 01:45.255
+growth is three thousand.
+
+01:45.933 --> 01:50.002
+For the one-year purchase, add twelve
+thousand renewal, three thousand
+
+01:50.002 --> 01:52.483
+expansion, and fifteen hundred
+one-time work.
+
+01:52.733 --> 01:55.442
+That totals sixteen thousand five
+hundred dollars.
+
+01:55.692 --> 02:00.786
+Keep this consideration total separate
+from closing ARR, invoice cash, and
+
+02:00.786 --> 02:01.943
+recognized revenue.
+
+02:02.600 --> 02:07.198
+A common mistake is adding the old
+twelve-thousand-dollar baseline to the
+
+02:07.198 --> 02:10.301
+entire new fifteen-thousand-dollar
+recurring amount.
+
+02:10.551 --> 02:12.898
+That produces twenty-seven thousand
+dollars.
+
+02:13.148 --> 02:17.274
+The renewal already carries the
+retained baseline, so that calculation
+
+02:17.274 --> 02:18.268
+counts it twice.
+
+02:18.933 --> 02:23.006
+If one team manages the purchase, a
+single commercial deal with
+
+02:23.006 --> 02:26.485
+classified components can keep the
+customer story together.
+
+02:26.735 --> 02:31.333
+Record retained recurring value,
+expansion value, and one-time value
+
+02:31.333 --> 02:31.919
+separately.
+
+02:32.169 --> 02:36.217
+Those are proposed reporting
+categories, not a claim that HubSpot
+
+02:36.217 --> 02:37.673
+creates them automatically.
+
+02:38.333 --> 02:42.352
+Separate linked opportunities may help
+when renewal and expansion have
+
+02:42.352 --> 02:44.029
+different owners or outcomes.
+
+02:44.279 --> 02:46.669
+Keep their purchase relationship
+traceable.
+
+02:46.919 --> 02:50.503
+Never sum a combined parent amount
+and the same child amounts.
+
+02:50.753 --> 02:54.500
+A shared purchase identity does not
+prove that quoting across those
+
+02:54.500 --> 02:56.299
+deals works automatically.
+
+02:56.967 --> 03:00.487
+HubSpot's deal ARR uses recurring line
+items.
+
+03:00.737 --> 03:04.959
+Its separate Enterprise Revenue
+Analytics uses manually maintained
+
+03:04.959 --> 03:08.267
+recurring revenue fields, including a
+monthly amount.
+
+03:08.517 --> 03:12.293
+A custom report is another route, with
+account-dependent access.
+
+03:12.543 --> 03:16.703
+Choose one route deliberately and
+verify the units, dates, and filters.
+
+03:17.367 --> 03:22.337
+Define what one report row represents:
+for example, one purchase component.
+
+03:22.587 --> 03:26.598
+Adding associated contacts or
+activities can multiply rows.
+
+03:26.848 --> 03:30.149
+Add a deliberate duplicate to the test
+data and check that
+
+03:30.149 --> 03:32.224
+the money total stays unchanged.
+
+03:32.474 --> 03:35.972
+A distinct deal count alone does not
+guarantee that a money
+
+03:35.972 --> 03:36.997
+sum is correct.
+
+03:37.667 --> 03:39.288
+Now test a different outcome.
+
+03:39.538 --> 03:42.461
+The renewal succeeds, but the
+expansion is lost.
+
+03:42.711 --> 03:45.697
+Closing ARR should stay at twelve
+thousand dollars.
+
+03:45.947 --> 03:49.720
+Preserve the proposed
+three-thousand-dollar expansion and
+
+03:49.720 --> 03:53.845
+its lost outcome in history, rather than
+deleting the only evidence
+
+03:53.845 --> 03:55.035
+that it was ever offered.
+
+03:55.700 --> 03:59.698
+If the retained baseline falls to ten
+thousand and expansion adds
+
+03:59.698 --> 04:03.700
+three thousand, closing ARR becomes
+thirteen thousand.
+
+04:03.950 --> 04:08.298
+Also test future start dates: a signed
+expansion is not active
+
+04:08.298 --> 04:09.582
+before its effective date.
+
+04:09.832 --> 04:14.080
+Record expected and observed results
+separately; these examples are
+
+04:14.080 --> 04:17.427
+reporting tests, not executed HubSpot
+outcomes.
+
+04:18.100 --> 04:21.976
+Give the commission process the
+classified amounts, owners and policy
+
+04:21.976 --> 04:22.452
+version.
+
+04:22.702 --> 04:26.178
+Do not assume every dollar earns the
+same rate, or that
+
+04:26.178 --> 04:28.825
+ARR growth is always the commission
+base.
+
+04:29.075 --> 04:33.822
+Renewal credit, expansion credit and
+one-time services must follow the
+
+04:33.822 --> 04:36.115
+company's actual compensation policy.
+
+04:36.767 --> 04:40.489
+The companion pack contains a
+classification dictionary, a
+
+04:40.489 --> 04:43.529
+reconciliation sheet and reporting test
+cases.
+
+04:43.779 --> 04:47.927
+Agree the definitions first, trace each
+value to its source, and
+
+04:47.927 --> 04:50.798
+compare the expected result with the
+actual report.
+
+04:51.048 --> 04:54.504
+Fix discrepancies before using the
+report for decisions.
+
+04:55.167 --> 04:58.985
+One purchase can include renewal,
+expansion and one-time work.
+
+04:59.235 --> 05:03.312
+In this example, the purchase is
+sixteen thousand five hundred dollars,
+
+05:03.312 --> 05:08.195
+closing ARR is fifteen thousand, and
+recurring growth is three thousand.
+
+05:08.445 --> 05:12.136
+Keep those meanings distinct, and
+count each contribution once.

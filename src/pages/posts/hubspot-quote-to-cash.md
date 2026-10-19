@@ -126,6 +126,8 @@ Use this implementation order for a B2B service agreement:
 
 In revenue operations, “source of truth” should name the authoritative system for each field. HubSpot CRM may hold the commercial context while finance retains the ledger. Agree that boundary before enabling synchronization.
 
+For the handoff before internal review, use the [checked Contract draft sequence](/posts/hubspot-contracts-renewal-quotes/#what-are-the-best-practices-for-a-hubspot-contract-handoff) and its downloadable pilot workbook. Document completion, commercial-record verification and billing release remain separate steps.
+
 ## What data should cross the agreement-to-billing handoff?
 
 Send the approved billing instruction with stable identifiers and explicitly typed commercial values. A total amount and company name leave too much ambiguity for recurring agreements.

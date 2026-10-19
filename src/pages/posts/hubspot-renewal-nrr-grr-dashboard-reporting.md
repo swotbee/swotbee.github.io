@@ -2,7 +2,7 @@
 layout: ../../layouts/BlogPostLayout.astro
 title: 'HubSpot ARR, MRR, NRR and GRR Reporting'
 pubDate: '2026-04-02'
-modifiedDate: '2026-10-11'
+modifiedDate: "2026-10-19"
 description: Build HubSpot ARR reporting with defined recurring revenue inputs. Use a fixed-cohort NRR and GRR example, duplicate checks and a reconciliation workbook.
 category:
   title: Revenue Operations
@@ -52,6 +52,8 @@ Three things you can take away:
 Start here: choose a reporting month, list the customer agreements active at its beginning and write down the recurring revenue basis. Do this before filtering to deals that happened to close during the month.
 
 **Download:** <a href="/templates/hubspot-retention-reporting-workbook.xlsx" download>HubSpot retention reporting workbook (Excel)</a>. Calculate fixed-cohort NRR and GRR, keep new-customer revenue separate, define your reporting policy and work through reconciliation checks. Blank templates and a filled example are included. No signup is required.
+
+When a renewal includes an upsell and one-time work, use the [renewal and expansion reconciliation example](/posts/hubspot-renewal-expansion-revenue-reporting/). It shows how purchase consideration, closing ARR and recurring growth differ, with an editable reporting workbook.
 
 ## Which revenue and renewal metrics should you separate?
 
