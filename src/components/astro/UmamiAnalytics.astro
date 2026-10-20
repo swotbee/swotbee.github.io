@@ -3,7 +3,7 @@
 const websiteId = import.meta.env.PUBLIC_UMAMI_WEBSITE_ID || '';
 const collector = import.meta.env.PUBLIC_UMAMI_ORIGIN || '';
 const defaultReplayPaths = '/,/hubspot-sales-pipeline-reporting/,/resources/hubspot-management-reporting-starter-pack/,/resources/contract-tracker-template/';
-const paths = (import.meta.env.PUBLIC_UMAMI_PATHS || defaultReplayPaths + ',/renewal-audit-call/,/renewal-audit-call/thank-you/').split(',').map((path) => path.trim()).filter(Boolean);
+const paths = (import.meta.env.PUBLIC_UMAMI_PATHS || defaultReplayPaths + ',/renewal-audit-call/,/renewal-audit-call/thank-you/,/services/hubspot-contract-management/').split(',').map((path) => path.trim()).filter(Boolean);
 const replayPaths = (import.meta.env.PUBLIC_UMAMI_REPLAY_PATHS || defaultReplayPaths).split(',').map((path) => path.trim()).filter(Boolean);
 if (Boolean(websiteId) !== Boolean(collector) || (websiteId && (!/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(websiteId) || !collector.startsWith('https://') || new URL(collector).origin !== collector))) {
   throw new Error('Umami requires a website UUID and an HTTPS origin without a trailing slash or path.');

@@ -147,6 +147,27 @@ try {
   assert(page.url().includes('email='), 'Do not change the real URL used by CRM/GA4');
   console.log('PASS sensitive-query replay exclusion without changing attribution URL');
 
+  const contractStart = sent.length;
+  const contractRequests = requests.length;
+  await page.goto(base + '/services/hubspot-contract-management/');
+  await page.waitForFunction(() => typeof window.umami?.track === 'function');
+  await page.getByLabel('Name', {exact:true}).fill('Local synthetic operator');
+  await page.getByLabel('Email *', {exact:true}).fill('private@example.invalid');
+  await page.getByLabel('Current signing tool').selectOption('PandaDoc');
+  await page.getByLabel('What would you like to change?').fill('Local fixture only: attach the signed agreement to its intended deal.');
+  await page.getByRole('button', {name:'Request a workflow call', exact:true}).click();
+  await page.getByText('Your workflow request has been received.', {exact:true}).waitFor();
+  await page.waitForTimeout(900);
+  const contractEvents = sent.slice(contractStart);
+  assert.equal(contractEvents.filter(p => p.name === 'contract_form_start').length, 1);
+  assert.equal(contractEvents.filter(p => p.name === 'contract_gateway_acknowledged').length, 1);
+  assert(await page.evaluate(() => window.dataLayer.some(args => args[0] === 'event' && args[1] === 'contract_gateway_acknowledged')));
+  assert(!JSON.stringify(contractEvents).includes('private@example.invalid'));
+  assert(!JSON.stringify(contractEvents).includes('Local fixture only'));
+  assert(!requests.slice(contractRequests).some(r => r.url.endsWith('/recorder.js')), 'Contract service page must not load replay');
+  assert.equal(fixtureSubmissions, 3, 'Contract form must use exactly one additional local webhook fixture');
+  console.log('PASS contract page scope, one form start/acknowledgement, GA4 parity, no form contents or replay');
+
   const excludedStart = requests.length;
   await page.goto(base + '/contactus/');
   await page.waitForTimeout(1000);

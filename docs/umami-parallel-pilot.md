@@ -27,8 +27,9 @@ Default traffic/event scope:
 - `/resources/contract-tracker-template/`
 - `/renewal-audit-call/`
 - `/renewal-audit-call/thank-you/`
+- `/services/hubspot-contract-management/` (added 20 October for the authorized landing-page release and form verification)
 
-Replay/heatmap script scope is the first four pages only. Booking pages receive
+Replay/heatmap script scope is the first four pages only. Booking and contract service pages receive
 analytics events, with URL queries removed except approved UTMs, and no recorder.
 Other pages remain on the existing analytics stack. Business events across the
 source now use `__sbTrack` or `__sbTrackThenGo`, so scope can expand after review

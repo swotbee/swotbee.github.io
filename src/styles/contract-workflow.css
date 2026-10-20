@@ -144,3 +144,17 @@ h1,h2,h3,h4 {font-family:"Rokkitt Variable",Georgia,serif;font-size-adjust:.399;
 .inquiry-form #contact-form{padding:0;border:0;box-shadow:none;margin-top:20px}
 .inquiry-form #cf-submit{width:100%;min-height:48px}
 .inquiry-form #cf-success{padding:15px;border-color:#b5ddd4;background:var(--v6-teal-50)}
+
+/* Keep the free call's output visible within the V6 layout. */
+.hero h1{font-size:56px;line-height:1.15}
+.hero .cta-note{max-width:480px;line-height:1.6;margin-top:16px;font-size:14px}
+.cta-price-note{font-size:13px;color:var(--muted);margin-top:6px}
+.example-checks{margin:20px 0 0;padding:0;list-style:none;display:grid;gap:12px}
+.example-checks li{display:flex;gap:10px;font-size:14px;line-height:1.55;color:var(--muted)}
+.example-checks li::before{content:'✓';color:var(--v6-teal-700);font-weight:700;flex-shrink:0}
+.header nav a,.section-afterword a{display:inline-flex;align-items:center;min-height:44px}
+.faq-list summary{min-height:56px}
+.footer-review a,.footer-review button{display:inline-flex;align-items:center;min-height:44px}
+@media(max-width:1050px){.hero h1{font-size:49px}}
+@media(max-width:800px){.hero h1{font-size:56px}}
+@media(max-width:520px){.hero h1{font-size:40px}.hero .cta-note{font-size:13px}.cta-price-note{font-size:12px}.example-checks li{font-size:14px}}
