@@ -176,7 +176,7 @@ const message = `Website report signup: ${reportName} (${offerCode}). Experiment
       }
 
       function track(name, extra) {
-        if (typeof window.gtag !== "function") return;
+        if (typeof window.__sbTrack !== "function") return;
         var payload = Object.assign({
           report_offer: offerCode,
           source_page: sourcePage,
@@ -185,7 +185,7 @@ const message = `Website report signup: ${reportName} (${offerCode}). Experiment
           analytics_consent: consentState(),
           transport_type: "beacon"
         }, extra || {});
-        window.gtag("event", name, payload);
+        window.__sbTrack(name, payload);
       }
 
       function setStatus(message, kind) {

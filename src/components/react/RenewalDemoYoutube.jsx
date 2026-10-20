@@ -5,7 +5,7 @@ const videoName = "renewal_demo";
 let youtubeApiPromise;
 
 function track(name) {
-  window.gtag?.("event", name, { video_name: videoName });
+  window.__sbTrack?.(name, { video_name: videoName });
 }
 
 function loadYoutubeApi() {

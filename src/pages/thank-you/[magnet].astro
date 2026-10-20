@@ -119,7 +119,7 @@ const c = COPY[magnet] ?? COPY.scorecard;
   <script is:inline define:vars={{ magnet }}>
     // Fire a conversion event on this dedicated URL. page_view is automatic; this adds an
     // explicit lead event keyed to the magnet for GA4 / ad-pixel conversion setup.
-    if (window.gtag) window.gtag("event", "generate_lead", { magnet: magnet, source: "magnet_optin" });
+    if (window.__sbTrack) window.__sbTrack("generate_lead", { magnet: magnet, source: "magnet_optin" });
   </script>
 
   <style>

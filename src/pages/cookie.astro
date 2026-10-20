@@ -116,6 +116,24 @@ import Navbar from "../components/astro/Navbar.astro";
       confuse people. It is never loaded unless you accept.
     </p>
 
+    {import.meta.env.PUBLIC_UMAMI_WEBSITE_ID && (
+      <>
+        <h3 class="mt-6 mb-2 text-lg font-semibold">Self-hosted analytics pilot</h3>
+        <p>
+          With your analytics permission, we also use Umami on selected public pages
+          to measure visits, campaign sources, clicks, scrolling and conversion events.
+          We compare it with our existing analytics before deciding whether to replace them.
+          Selected sessions may be recorded with page text and input values masked;
+          form contents and embedded booking tools are excluded from recording.
+          We do not send your email address or form responses as analytics event properties.
+          Recordings and heatmap points are retained for 14 days. Access is restricted
+          to authorized SwotBee operators. You can stop future collection using Cookie
+          settings in the footer and choosing Reject. Contact info@swotbee.com for
+          access or deletion requests. See our <a href="/privacy/" class="text-v6-copper underline">Privacy Policy</a>.
+        </p>
+      </>
+    )}
+
     <h3 class="mt-6 mb-2 text-lg font-semibold">Advertising, set regardless of your choice</h3>
     <div class="overflow-x-auto">
       <table class="min-w-full mt-2 mb-6 text-sm border">

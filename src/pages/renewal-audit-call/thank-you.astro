@@ -56,6 +56,6 @@ import Footer from "../../components/astro/Footer.astro";
         timeEl.textContent = `We’ll see you ${bookingTime.toLocaleString(undefined, { dateStyle: "full", timeStyle: "short" })}. A calendar invitation and confirmation email are on their way.`;
       }
     }
-    if (window.gtag) window.gtag("event", "booking_thank_you_view", { event_type: "renewal_audit_call" });
+    if (window.__sbTrack) window.__sbTrack("booking_thank_you_view", { event_type: "renewal_audit_call" });
   </script>
 </Layout>

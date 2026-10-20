@@ -27,6 +27,7 @@
 // advertising tag fired regardless would have made a public statement on our own site
 // false. Note this means "Reject" is now partial: it stops Google and Microsoft, and does
 // not stop LinkedIn. Both the banner text and section 1 of /cookie/ say so plainly.
+const { umamiEnabled = false } = Astro.props;
 ---
 
 <div
@@ -48,6 +49,7 @@
       Cookies on swotbee.com
     </h2>
     <p id="sb-consent-body" class="mt-1 text-[13px] leading-relaxed text-v6-text">
+      {umamiEnabled && <>With your permission, we also use self-hosted Umami analytics, masked session recordings and click/scroll heatmaps to improve selected pages. </>}
       LinkedIn advertising cookies are set on every visit. Analytics cookies are off until
       you say yes, and the essential ones that make the site work are always on. See our <a
         href="/cookie/"
@@ -120,6 +122,8 @@
       window.dataLayer = window.dataLayer || [];
       window.dataLayer.push({ event: granted ? "sb_consent_granted" : "sb_consent_denied" });
 
+      window.__sbUmamiSetConsent?.(granted);
+
       // Clarity is never loaded on a denied or undecided visit.
       if (granted && typeof window.__sbLoadClarity === "function") {
         window.__sbLoadClarity();
@@ -163,6 +167,7 @@
       write(granted ? "granted" : "denied");
       el.hidden = true;
       if (!granted && wasGranted) {
+        window.__sbUmamiSetConsent?.(false);
         clearTrackingCookies();
         location.reload();
         return;

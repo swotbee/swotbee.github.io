@@ -4,7 +4,7 @@ import RenewalDemoYoutube from "./RenewalDemoYoutube.jsx";
 const videoUrl = "https://www.youtube.com/watch?v=ZtYqSi4Kg5E";
 
 function track(name, details = {}) {
-  window.gtag?.("event", name, {
+  window.__sbTrack?.(name, {
     video_name: "renewal_demo",
     ...details,
   });
