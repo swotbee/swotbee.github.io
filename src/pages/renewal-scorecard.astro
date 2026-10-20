@@ -195,7 +195,7 @@ const dimOrder = dimensions.map((d) => d.key); // deterministic tie-break for "t
           a.innerHTML = '<span class="text-sm font-semibold text-v6-dark">' + g.label + '</span><span class="text-v6-copper font-bold" aria-hidden="true">&#8599;</span>';
           a.title = "Opens in a new tab";
           a.setAttribute("aria-label", g.label + " (opens in a new tab)");
-          if (window.gtag) a.addEventListener("click", function () { window.gtag("event", "scorecard_guide_click", { dimension: k }); });
+          if (window.__sbTrack) a.addEventListener("click", function () { window.__sbTrack("scorecard_guide_click", { dimension: k }); });
           li.appendChild(a);
           listEl.appendChild(li);
         });
@@ -212,7 +212,7 @@ const dimOrder = dimensions.map((d) => d.key); // deterministic tie-break for "t
           }).catch(function () {});
         } catch (e) {}
 
-        if (window.gtag) window.gtag("event", "scorecard_completed", { grade: gr.g, total: total });
+        if (window.__sbTrack) window.__sbTrack("scorecard_completed", { grade: gr.g, total: total });
       });
     })();
   </script>

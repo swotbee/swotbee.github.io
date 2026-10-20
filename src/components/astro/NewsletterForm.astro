@@ -91,8 +91,7 @@ const S = {
       })
         .then(function (res) {
           if (!res.ok) throw new Error("bad status " + res.status);
-          var g = window.gtag;
-          if (g) g("event", "newsletter_subscribe");
+          window.__sbTrack?.("newsletter_subscribe");
           showSuccess();
         })
         .catch(function () { showError("That did not go through. Please try again, or email us at info@swotbee.com."); })

@@ -114,8 +114,8 @@ import RecaptchaLazy from '../../components/astro/RecaptchaLazy.astro';
     const defaultErrorText = errorMsg?.textContent ?? "";
 
     function gaEvent(name: string, params?: Record<string, unknown>) {
-      const w = window as typeof window & { gtag?: (...args: unknown[]) => void };
-      if (w.gtag) w.gtag("event", name, params || {});
+      const w = window as typeof window & { __sbTrack?: (...args: unknown[]) => void };
+      if (w.__sbTrack) w.__sbTrack(name, params || {});
     }
     // Fire-and-forget is fine for form_start (no navigation follows it). Anything that
     // navigates must use trackThenGo instead, or the event dies with the page.

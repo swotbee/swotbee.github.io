@@ -13,6 +13,7 @@ import bodyFontUrl from "@fontsource-variable/hanken-grotesk/files/hanken-grotes
 import headingFontUrl from "@fontsource-variable/rokkitt/files/rokkitt-latin-wght-normal.woff2?url";
 // Rokkitt loaded via @font-face in global.css (variable woff2, no separate import needed)
 import "../styles/global.css";
+import UmamiAnalytics from "../components/astro/UmamiAnalytics.astro";
 import ConsentBanner from "../components/astro/ConsentBanner.astro";
 import AttributionCapture from "../components/astro/AttributionCapture.astro";
 
@@ -206,6 +207,7 @@ const gtmId = import.meta.env.PUBLIC_GTM_ID || "GTM-WV9TQ6FH";
     {import.meta.env.PUBLIC_GSC_VERIFICATION && (
       <meta name="google-site-verification" content={import.meta.env.PUBLIC_GSC_VERIFICATION} />
     )}
+    <UmamiAnalytics />
     {/* Google Consent Mode v2 defaults. This block MUST stay above the gtag.js tag
         below: Consent Mode only takes effect if the default arrives before the tag
         loads, and a default that lands afterwards silently does nothing. Everything
@@ -290,7 +292,7 @@ const gtmId = import.meta.env.PUBLIC_GTM_ID || "GTM-WV9TQ6FH";
         gtag('config', ga4Id);
       </script>
     )}
-    {import.meta.env.PUBLIC_GA4_ID && (
+    {(import.meta.env.PUBLIC_GA4_ID || import.meta.env.PUBLIC_UMAMI_WEBSITE_ID) && (
       <script is:inline>
         // Site-wide GA4 event taxonomy per research/conversion-optimization/00-swotbee-cro-framework.md's
         // pre-launch instrumentation gate: scroll_depth, cta_click, outbound_click here (global,
@@ -299,8 +301,9 @@ const gtmId = import.meta.env.PUBLIC_GTM_ID || "GTM-WV9TQ6FH";
         // global script doesn't have).
         (function () {
           function fire(name, params) {
+            window.__sbTrackUmami?.(name, params);
             if (!window.gtag) return;
-            var payload = params || {};
+            var payload = Object.assign({}, params || {});
             // sendBeacon survives the page unload that a click-then-navigate causes.
             // Without it the request is cancelled mid-flight and the event is lost.
             payload.transport_type = 'beacon';
@@ -333,14 +336,17 @@ const gtmId = import.meta.env.PUBLIC_GTM_ID || "GTM-WV9TQ6FH";
           // ambient context, because some call sites run from inside an iframe message
           // handler (Cal.com's embed) where that context is not reliable.
           window.__sbTrackThenGo = function (name, params, url) {
+            var umami = window.__sbTrackUmami?.(name, params);
             var done = false;
-            function go() {
+            function navigate() {
               if (done) return;   // event_callback and the timeout race; first wins
               done = true;
               window.location.assign(url);
             }
+            function go() { Promise.resolve(umami).then(navigate, navigate); }
+            window.setTimeout(navigate, 1200);
             if (!window.gtag) { go(); return; }
-            var payload = params || {};
+            var payload = Object.assign({}, params || {});
             payload.transport_type = 'beacon';
             payload.page_location = window.location.href;
             payload.page_path = window.location.pathname;
@@ -350,7 +356,6 @@ const gtmId = import.meta.env.PUBLIC_GTM_ID || "GTM-WV9TQ6FH";
             // fires, the visitor must still reach the thank-you page. 1200ms is long
             // enough for a beacon on a slow connection and short enough not to read as
             // a hang after a successful submission.
-            window.setTimeout(go, 1200);
           };
 
           // scroll_depth: 25/50/75/90, each fires once per page load.
@@ -457,8 +462,8 @@ const gtmId = import.meta.env.PUBLIC_GTM_ID || "GTM-WV9TQ6FH";
         tags inside it could never be granted, and anything not gated would have run
         unchallenged. Now that gtmId has a committed default this condition is always
         true in practice, which is the correct end state, not a reason to drop it. */}
-    {(import.meta.env.PUBLIC_GA4_ID || import.meta.env.PUBLIC_CLARITY_ID || gtmId) && (
-      <ConsentBanner />
+    {(import.meta.env.PUBLIC_GA4_ID || import.meta.env.PUBLIC_CLARITY_ID || gtmId || import.meta.env.PUBLIC_UMAMI_WEBSITE_ID) && (
+      <ConsentBanner umamiEnabled={Boolean(import.meta.env.PUBLIC_UMAMI_WEBSITE_ID)} />
     )}
     {/* Unconditional, unlike the banner above: this is not analytics. It carries the
         campaign that produced a visit into the form the visitor chooses to submit, which
