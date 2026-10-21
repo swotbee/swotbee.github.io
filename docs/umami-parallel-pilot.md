@@ -15,6 +15,7 @@ The Pages workflow reads public repository variables, not credentials:
 | `PUBLIC_UMAMI_ORIGIN` | `https://send.swotbee.com` |
 | `PUBLIC_UMAMI_PATHS` | Optional comma-separated exact paths; defaults below |
 | `PUBLIC_UMAMI_REPLAY_PATHS` | Optional comma-separated exact paths; defaults below |
+| `PUBLIC_UMAMI_PRECONSENT_TRIAL` | `true` for the temporary operator-authorized parity trial; unset or any other value restores consent gating |
 
 Leaving both ID and origin unset omits the Umami component. Setting only one fails
 the build to prevent a misleading partial configuration. No new dependency is used.
@@ -38,13 +39,20 @@ imports remain GA4-based during the overlap.
 
 ## Privacy and reliability
 
-- Nothing from Umami loads until analytics consent is granted. Rejection and withdrawal
-  block tracker/recorder requests, including unload requests; iframe previews are excluded.
-- Consented startup events wait in a bounded in-memory queue until the tracker is ready.
+- On 21 October 2026, Siva explicitly authorized visits, events, heatmaps and session
+  recordings before consent for the parity trial, including visitors who reject.
+  `PUBLIC_UMAMI_PRECONSENT_TRIAL=true` enables this exception. It changes neither GA4's
+  existing advanced Consent Mode nor Clarity's consent gate. It is not a statement
+  that non-consensual recording meets European requirements.
+- With the override unset or false, nothing from Umami loads until analytics consent
+  is granted, and rejection/withdrawal blocks requests including unload requests.
+  In either mode, iframe previews are excluded and the same page allowlists apply.
+- Eligible startup events wait in a bounded in-memory queue until the tracker is ready.
 - Scroll thresholds (25/50/75/90%) have separate per-vendor flags. Crossing a threshold
-  before consent can count in the existing GA4 advanced mode but cannot consume Umami's
-  threshold. Umami counts only subsequent post-consent scroll events, once per threshold
-  per page load. Granting consent alone never backfills earlier scroll activity.
+  before consent can count in both vendors during the override, once per threshold
+  per page load. In normal gated mode, it cannot consume Umami's threshold; Umami
+  counts subsequent post-consent scrolling. Granting consent never duplicates a
+  pageview or backfills earlier scrolling.
 - Navigation has a 1.2-second fallback even if the collector never responds. Downloads,
   forms and bookings must work with all analytics blocked.
 - Events keep only approved, bounded properties. Email/form bodies, transport callbacks
@@ -60,7 +68,8 @@ imports remain GA4-based during the overlap.
 - Replay and heatmap retention is 14 days, including saved recordings. Mini's existing
   storage guard and private backup procedures cover the explicit pilot tenant.
 
-Cookie/privacy notices and the existing consent text describe the optional pilot.
+Cookie/privacy notices and the banner describe the active mode, including the fact
+that Reject does not stop Umami during the override.
 This does not resolve every existing third-party practice: the previously configured
 LinkedIn advertising behavior and Google advanced Consent Mode remain unchanged.
 
@@ -77,6 +86,11 @@ pnpm check:consent
 pnpm check:blog-measurement
 pnpm check:reporting-resource
 ```
+
+Run the same build with `PUBLIC_UMAMI_PRECONSENT_TRIAL=true`, then run
+`node scripts/verify-umami-pilot.mjs --preconsent-trial` and the existing consent,
+blog and resource checks. The trial check verifies initial and rejected visitors,
+recorder loading, one pageview across a consent choice, and all four scroll thresholds.
 
 The pilot test serves the built website at `127.0.0.1:4418`, uses the real deployed
 tracker, blocks unrelated external traffic and intercepts signup/security fixtures.
@@ -115,3 +129,12 @@ Emergency collection stop: remove the real-site origins from the collector's exp
 allowlist and validate/reload only its nginx proxy. Permanent rollback: unset both Umami
 repository variables and rebuild, or revert this feature. Leave GA4/Clarity variables
 and all unrelated infrastructure unchanged.
+
+Restore consent gating: delete `PUBLIC_UMAMI_PRECONSENT_TRIAL` from repository variables
+or set it to `false`, then rebuild/deploy. The next page load applies the gate and
+restores consent-based notices. It does not erase data already collected.
+Exclude `umami_parallel_smoke`, `umami_scroll_fix_check` and `umami_preconsent_check`
+campaigns from customer-traffic comparisons. GA4 and Umami still use different
+identity/session and filtering rules, so equal event eligibility does not guarantee
+identical totals. Review this temporary exception at the existing 14-day pilot review
+before any EU cutover.

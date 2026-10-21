@@ -2,6 +2,8 @@
 // Optional parallel pilot. No configured ID means no script or collection.
 const websiteId = import.meta.env.PUBLIC_UMAMI_WEBSITE_ID || '';
 const collector = import.meta.env.PUBLIC_UMAMI_ORIGIN || '';
+// Temporary operator-authorized parity trial. Unset/false restores consent gating.
+const preconsentTrial = import.meta.env.PUBLIC_UMAMI_PRECONSENT_TRIAL === 'true';
 const defaultReplayPaths = '/,/hubspot-sales-pipeline-reporting/,/resources/hubspot-management-reporting-starter-pack/,/resources/contract-tracker-template/';
 const paths = (import.meta.env.PUBLIC_UMAMI_PATHS || defaultReplayPaths + ',/renewal-audit-call/,/renewal-audit-call/thank-you/,/services/hubspot-contract-management/').split(',').map((path) => path.trim()).filter(Boolean);
 const replayPaths = (import.meta.env.PUBLIC_UMAMI_REPLAY_PATHS || defaultReplayPaths).split(',').map((path) => path.trim()).filter(Boolean);
@@ -10,7 +12,7 @@ if (Boolean(websiteId) !== Boolean(collector) || (websiteId && (!/^[0-9a-f]{8}-[
 }
 ---
 {websiteId && collector && (
-  <script is:inline define:vars={{ websiteId, collector, paths, replayPaths }}>
+  <script is:inline define:vars={{ websiteId, collector, paths, replayPaths, preconsentTrial }}>
     (() => {
       // Dashboard previews must not become additional analytics visits.
       if (window.self !== window.top) return;
@@ -18,7 +20,7 @@ if (Boolean(websiteId) !== Boolean(collector) || (websiteId && (!/^[0-9a-f]{8}-[
       try { granted = localStorage.getItem('sb_consent') === 'granted'; } catch (_) {}
       let loading = false;
       let queue = [];
-      const eligible = () => granted && paths.includes(location.pathname);
+      const eligible = () => (granted || preconsentTrial) && paths.includes(location.pathname);
       const keys = new Set(['cta','href','destination','source_page','resource_id','resource','asset','placement','percent','form_name','offer','report_offer','cta_label','experiment','error_type','analytics_consent','video_name','video_title','video_id','event_type','magnet','source','dimension','grade','total','link_url','link_text','file_name','file_type','method']);
       const utms = new Set(['utm_source','utm_medium','utm_campaign','utm_content','utm_term']);
       const safeText = (value) => typeof value === 'string' && value.length <= 200 && !/[@\r\n]/.test(value);
@@ -54,7 +56,8 @@ if (Boolean(websiteId) !== Boolean(collector) || (websiteId && (!/^[0-9a-f]{8}-[
           id: undefined, data: cleanProperties(payload.data) };
       };
       // rrweb also flushes on unload. Block its network requests synchronously on
-      // withdrawal, before ConsentBanner reloads, rather than relying on unloading JS.
+      // withdrawal in normal mode, before ConsentBanner reloads. The temporary
+      // parity trial deliberately keeps collection running after rejection.
       const realFetch = window.fetch.bind(window);
       function isCollection(input) {
         const url = new URL(typeof input === 'string' ? input : input.url || String(input), location.href);
@@ -107,7 +110,7 @@ if (Boolean(websiteId) !== Boolean(collector) || (websiteId && (!/^[0-9a-f]{8}-[
       }
       window.__sbUmamiSetConsent = (value) => {
         granted = value === true;
-        if (granted) load();
+        if (eligible()) load();
         else { queue.forEach((item) => item[2]()); queue = []; }
       };
       window.addEventListener('storage', (event) => {
