@@ -41,6 +41,10 @@ imports remain GA4-based during the overlap.
 - Nothing from Umami loads until analytics consent is granted. Rejection and withdrawal
   block tracker/recorder requests, including unload requests; iframe previews are excluded.
 - Consented startup events wait in a bounded in-memory queue until the tracker is ready.
+- Scroll thresholds (25/50/75/90%) have separate per-vendor flags. Crossing a threshold
+  before consent can count in the existing GA4 advanced mode but cannot consume Umami's
+  threshold. Umami counts only subsequent post-consent scroll events, once per threshold
+  per page load. Granting consent alone never backfills earlier scroll activity.
 - Navigation has a 1.2-second fallback even if the collector never responds. Downloads,
   forms and bookings must work with all analytics blocked.
 - Events keep only approved, bounded properties. Email/form bodies, transport callbacks

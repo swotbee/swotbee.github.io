@@ -300,14 +300,18 @@ const gtmId = import.meta.env.PUBLIC_GTM_ID || "GTM-WV9TQ6FH";
         // where the relevant form/video markup lives (they need page-specific context this
         // global script doesn't have).
         (function () {
-          function fire(name, params) {
-            window.__sbTrackUmami?.(name, params);
+          function fireGoogle(name, params) {
             if (!window.gtag) return;
             var payload = Object.assign({}, params || {});
             // sendBeacon survives the page unload that a click-then-navigate causes.
             // Without it the request is cancelled mid-flight and the event is lost.
             payload.transport_type = 'beacon';
             window.gtag('event', name, payload);
+          }
+
+          function fire(name, params) {
+            window.__sbTrackUmami?.(name, params);
+            fireGoogle(name, params);
           }
 
           // Page-specific integrations can report non-navigation events through the
@@ -358,18 +362,28 @@ const gtmId = import.meta.env.PUBLIC_GTM_ID || "GTM-WV9TQ6FH";
             // a hang after a successful submission.
           };
 
-          // scroll_depth: 25/50/75/90, each fires once per page load.
+          // Each vendor tracks thresholds once per page load. A pre-consent GA4
+          // event must not consume Umami's threshold: Umami sends only after grant.
           var scrollThresholds = [25, 50, 75, 90];
           var scrollFired = {};
+          var umamiScrollFired = {};
           function checkScrollDepth() {
             var doc = document.documentElement;
             var scrollable = doc.scrollHeight - doc.clientHeight;
             if (scrollable <= 0) return;
             var pct = Math.round((window.scrollY / scrollable) * 100);
             scrollThresholds.forEach(function (t) {
-              if (pct >= t && !scrollFired[t]) {
+              if (pct < t) return;
+              if (!scrollFired[t]) {
                 scrollFired[t] = true;
-                fire('scroll_depth', { percent: t });
+                fireGoogle('scroll_depth', { percent: t });
+              }
+              if (!umamiScrollFired[t]) {
+                // The adapter returns a promise only when eligible and queued/sent.
+                // Denied or out-of-scope attempts leave this threshold available.
+                if (window.__sbTrackUmami?.('scroll_depth', { percent: t })) {
+                  umamiScrollFired[t] = true;
+                }
               }
             });
           }

@@ -63,6 +63,13 @@ try {
   await page.goto(base + pagePath);
   await page.waitForTimeout(1000);
   assert.equal(requests.length, 0, 'Undecided visitor must not load Umami');
+  // Reproduce the launch mismatch: reach the footer before granting consent.
+  // GA4 advanced consent mode sees those thresholds; Umami must not collect them.
+  await page.evaluate(() => window.scrollTo(0, document.documentElement.scrollHeight));
+  await page.waitForFunction(() => window.dataLayer.filter(args => args[0] === 'event' && args[1] === 'scroll_depth').length === 4);
+  assert.equal(requests.length, 0, 'Pre-consent scrolling contacted Umami');
+  await page.evaluate(() => window.scrollTo(0, 0));
+  await page.waitForTimeout(100);
   const buttons = await page.locator('#sb-consent button').evaluateAll(nodes => nodes.map(node => {
     const box = node.getBoundingClientRect(); return {width:box.width,height:box.height};
   }));
@@ -74,6 +81,21 @@ try {
   await page.setViewportSize({width:1280,height:900});
   await page.getByRole('button', { name:'Accept analytics cookies', exact:true }).click();
   await page.waitForFunction(() => typeof window.umami?.track === 'function');
+  assert.equal(sent.filter(p => p.name === 'scroll_depth').length, 0,
+    'Granting consent must not backfill earlier scrolling');
+  await page.mouse.wheel(0, 20000);
+  await page.waitForTimeout(1000);
+  const scrollEvents = sent.filter(p => p.name === 'scroll_depth');
+  assert.deepEqual(scrollEvents.map(p => p.data.percent).sort((a,b) => a-b), [25,50,75,90],
+    'Post-consent scrolling must reach Umami even if thresholds were crossed before consent');
+  assert.equal(await page.evaluate(() => window.dataLayer.filter(args => args[0] === 'event' && args[1] === 'scroll_depth').length), 4,
+    'Granting Umami consent must not duplicate GA4 scroll thresholds');
+  await page.mouse.wheel(0, -20000);
+  await page.waitForTimeout(100);
+  await page.mouse.wheel(0, 20000);
+  await page.waitForTimeout(400);
+  assert.equal(sent.filter(p => p.name === 'scroll_depth').length, 4, 'Repeat scrolling duplicated Umami thresholds');
+  console.log('PASS pre-consent scroll exclusion, post-consent thresholds and per-vendor deduplication');
   await page.locator('[data-resource-download]').click();
   await page.waitForTimeout(1500);
   assert.equal(sent.filter(p => p.name === 'resource_download').length, 1, 'Download must dispatch once');
@@ -87,6 +109,10 @@ try {
   await page.waitForFunction(() => typeof window.umami?.track === 'function');
   await page.waitForTimeout(1000);
   assert(sent.slice(start).some(p => !p.name), 'Returning visitor pageview missing');
+  await page.mouse.wheel(0, 20000);
+  await page.waitForTimeout(700);
+  assert.deepEqual(sent.slice(start).filter(p => p.name === 'scroll_depth').map(p => p.data.percent).sort((a,b) => a-b), [25,50,75,90],
+    'Returning consented visit must report all four thresholds');
   await page.evaluate(() => window.__sbTrack('cta_click', {
     cta:'synthetic_privacy_check', email:'private@example.invalid',
     href:'/contactus/?email=private@example.invalid#private', transport_type:'beacon'
