@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /** Controlled local-site acceptance against the synthetic Umami tenant only.
- * Usage: node scripts/verify-umami-pilot.mjs
- * Blocks other remote requests and never submits a form or booking.
+ * Usage: node scripts/verify-umami-pilot.mjs [--preconsent-trial]
+ * Blocks other remote requests; form tests use local stubs, never real submissions.
  */
 import assert from 'node:assert/strict';
 import { createServer } from 'node:http';
@@ -14,6 +14,9 @@ const base = 'http://127.0.0.1:4418';
 const collector = 'https://send.swotbee.com';
 const pagePath = '/resources/contract-tracker-template/';
 const html = await readFile(root + pagePath + 'index.html', 'utf8');
+const preconsentTrial = process.argv.includes('--preconsent-trial');
+assert(html.includes(`const preconsentTrial = ${preconsentTrial};`),
+  'Build mode must match the --preconsent-trial test option.');
 assert(html.includes('37de9287-3007-4ce1-b575-b720fca2b6e1') && html.includes(collector),
   'Build first with the synthetic Umami ID and origin; never run this against a production tenant.');
 const server = createServer(async (req, res) => {
@@ -31,10 +34,14 @@ await new Promise((resolve, reject) => { server.once('error', reject); server.li
 let browser;
 try {
   browser = await chromium.launch({ headless: true });
-  const context = await browser.newContext({ acceptDownloads: true });
+  // The collector excludes HeadlessChrome as bot traffic. Use a regular Chromium
+  // UA for this explicitly synthetic tenant so replay persistence is exercised.
+  const context = await browser.newContext({ acceptDownloads: true,
+    userAgent: `Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/${browser.version()} Safari/537.36` });
   const requests = [];
   const sent = [];
   const responses = [];
+  const recordKinds = new Set();
   let fixtureSubmissions = 0;
   await context.route('**/*', async route => {
     const req = route.request();
@@ -42,6 +49,9 @@ try {
     if (url.origin === collector) {
       requests.push({ url: req.url(), method: req.method() });
       if (url.pathname === '/api/send' && req.method() === 'POST') sent.push(JSON.parse(req.postData()).payload);
+      if (url.pathname === '/api/record' && req.method() === 'POST') {
+        for (const kind of ['record', 'heatmap']) if (req.postData()?.includes(`"${kind}"`)) recordKinds.add(kind);
+      }
       return route.continue();
     }
     if (url.origin === base) return route.continue();
@@ -62,13 +72,29 @@ try {
   await page.setViewportSize({width:390,height:844});
   await page.goto(base + pagePath);
   await page.waitForTimeout(1000);
-  assert.equal(requests.length, 0, 'Undecided visitor must not load Umami');
+  if (preconsentTrial) {
+    await page.waitForFunction(() => typeof window.umami?.track === 'function');
+    assert(requests.some(r => r.url.endsWith('/recorder.js')), 'Trial must load recorder before consent');
+    assert.equal(await page.evaluate(() => localStorage.getItem('sb_consent')), null);
+    assert(await page.locator('#sb-consent-body').innerText().then(text => text.includes('after Reject')));
+  } else assert.equal(requests.length, 0, 'Undecided visitor must not load Umami');
   // Reproduce the launch mismatch: reach the footer before granting consent.
-  // GA4 advanced consent mode sees those thresholds; Umami must not collect them.
+  // GA4 advanced consent mode sees those thresholds. Umami sees them only when
+  // the temporary pre-consent override is enabled.
   await page.evaluate(() => window.scrollTo(0, document.documentElement.scrollHeight));
   await page.waitForFunction(() => window.dataLayer.filter(args => args[0] === 'event' && args[1] === 'scroll_depth').length === 4);
-  assert.equal(requests.length, 0, 'Pre-consent scrolling contacted Umami');
+  if (preconsentTrial) {
+    await page.waitForTimeout(700);
+    assert.deepEqual(sent.filter(p => p.name === 'scroll_depth').map(p => p.data.percent).sort((a,b) => a-b), [25,50,75,90]);
+  } else assert.equal(requests.length, 0, 'Pre-consent scrolling contacted Umami');
   await page.evaluate(() => window.scrollTo(0, 0));
+  if (preconsentTrial) {
+    await page.locator('h1').click();
+    for (let attempt = 0; attempt < 40 && recordKinds.size < 2; attempt++) await page.waitForTimeout(500);
+    assert(recordKinds.has('record'), 'No pre-consent replay upload from the 100% synthetic tenant');
+    assert(recordKinds.has('heatmap'), 'No pre-consent heatmap upload from the synthetic tenant');
+    console.log('PASS actual pre-consent replay and heatmap uploads');
+  }
   await page.waitForTimeout(100);
   const buttons = await page.locator('#sb-consent button').evaluateAll(nodes => nodes.map(node => {
     const box = node.getBoundingClientRect(); return {width:box.width,height:box.height};
@@ -81,10 +107,11 @@ try {
   await page.setViewportSize({width:1280,height:900});
   await page.getByRole('button', { name:'Accept analytics cookies', exact:true }).click();
   await page.waitForFunction(() => typeof window.umami?.track === 'function');
-  assert.equal(sent.filter(p => p.name === 'scroll_depth').length, 0,
+  assert.equal(sent.filter(p => p.name === 'scroll_depth').length, preconsentTrial ? 4 : 0,
     'Granting consent must not backfill earlier scrolling');
   await page.mouse.wheel(0, 20000);
   await page.waitForTimeout(1000);
+  assert.equal(sent.filter(p => !p.name).length, 1, 'Consent choice must not duplicate the pageview');
   const scrollEvents = sent.filter(p => p.name === 'scroll_depth');
   assert.deepEqual(scrollEvents.map(p => p.data.percent).sort((a,b) => a-b), [25,50,75,90],
     'Post-consent scrolling must reach Umami even if thresholds were crossed before consent');
@@ -95,7 +122,7 @@ try {
   await page.mouse.wheel(0, 20000);
   await page.waitForTimeout(400);
   assert.equal(sent.filter(p => p.name === 'scroll_depth').length, 4, 'Repeat scrolling duplicated Umami thresholds');
-  console.log('PASS pre-consent scroll exclusion, post-consent thresholds and per-vendor deduplication');
+  console.log('PASS configured pre-consent behavior, scroll thresholds and per-vendor deduplication');
   await page.locator('[data-resource-download]').click();
   await page.waitForTimeout(1500);
   assert.equal(sent.filter(p => p.name === 'resource_download').length, 1, 'Download must dispatch once');
@@ -159,7 +186,14 @@ try {
   const afterWithdrawal = requests.length;
   await page.reload();
   await page.waitForTimeout(1200);
-  assert.equal(requests.length, afterWithdrawal, 'Returning denied visitor contacted collector');
+  if (preconsentTrial) {
+    assert(requests.length > afterWithdrawal, 'Trial must continue for returning denied visitor');
+    assert(requests.slice(afterWithdrawal).some(r => r.url.endsWith('/recorder.js')), 'Trial recorder missing after Reject');
+    const deniedStart = sent.length;
+    await page.evaluate(() => window.__sbTrack('cta_click', {cta:'synthetic_denied_trial'}));
+    await page.waitForTimeout(700);
+    assert(sent.slice(deniedStart).some(p => p.data?.cta === 'synthetic_denied_trial'));
+  } else assert.equal(requests.length, afterWithdrawal, 'Returning denied visitor contacted collector');
   console.log('PASS withdrawal and returning denied visitor');
 
   await context.addInitScript(() => localStorage.setItem('sb_consent', 'granted'));
@@ -204,7 +238,8 @@ try {
   await page.waitForTimeout(1500);
   assert.equal(requests.length, frameStart, 'Dashboard-style iframe preview contaminated analytics');
   console.log('PASS page scope and iframe-preview exclusion');
-  assert(!responses.some(r => r.status >= 400), 'Collector rejected a browser request');
+  assert(!responses.some(r => r.status >= 400), 'Collector rejected a browser request: ' +
+    JSON.stringify(responses.filter(r => r.status >= 400)));
   await context.close();
 } catch (error) {
   console.error('FAIL Umami pilot acceptance:', error.message);
