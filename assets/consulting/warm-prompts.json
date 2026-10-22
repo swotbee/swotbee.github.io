@@ -1,0 +1,6 @@
+{
+  "generator": "Built-in image_gen tool",
+  "palette": "Pale copper, apricot, peach blush, warm sand and ivory",
+  "editPrompt": "Edit this illustration by changing only its colour palette. Preserve its exact composition, subjects, shapes, proportions, paper-cut texture, shadows and 3:2 landscape dimensions. Replace the dominant blue/periwinkle/lavender palette with very pale copper, soft apricot, peach blush, warm sand and ivory. Background should be a light peach-beige wash; paper surfaces warm ivory; secondary shapes pale terracotta and copper; darkest details restrained charcoal-brown. Keep it airy and softly pastel, never strongly orange, saturated or dark. Avoid blue except tiny neutral slate details if required. Preserve the illustration's clear image boundary against an almost-white cream webpage. No added text, numbers, arrows, flowcharts, branding or client details. Opaque raster image.",
+  "styleReference": "customer-warm.png"
+}

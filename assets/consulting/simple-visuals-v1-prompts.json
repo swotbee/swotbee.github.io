@@ -1,0 +1,10 @@
+{
+  "common": "Use case: stylized-concept. Asset type: simple raster illustration for a professional consulting website offer card, landscape 3:2, 1536x1024. The attached image is a STYLE AND PALETTE REFERENCE only. Create a NEW simpler composition. Match the tactile softly dimensional paper-and-clay look and subtle grain, warm white/ivory stone background, sage, muted teal, dusty blue, apricot/copper and a small ochre accent. Balanced multicolour, soft light and shadows. Restrained, a touch whimsical, no cartoon faces. One strong focal object and at most two small supporting elements, plenty of breathing room but focal group large enough to read at 350px. No busy office scenery, plants, decorative framing, text, letters, numbers, logos, watermark, elaborate dashboards, flowcharts, neon or robots. Keep main objects within central 75% for responsive use. ",
+  "subjects": {
+    "forecasting": "A small warm-white planning board with a single line that gently forks into three potential paths in teal, dusty blue and apricot; paths vary rather than all growing. A tiny folded-paper plane rests near one route, suggesting exploring possibilities. One small calendar tile leans beside the board. Minimal graphic marks only, no arrowheads or numbers. Charming, grounded and easy to understand.",
+    "ai": "One warm-white customer-summary card with a circular profile silhouette and three short abstract lines. A small teal approval check rests at its corner, suggesting review. A tiny apricot paper sparkle hovers beside it, suggesting useful assistance. Slight playful tilt to the card. Just these three objects, no person, laptop or robot.",
+    "licensing": "Three small tactile seat-shaped tokens in sage, dusty blue and apricot arranged neatly on one warm-white subscription sheet. A small teal check token has just settled into the last open spot with a playful slight tilt. The sheet has only abstract short neutral bars. Choosing the right seats and plan, not a pricing comparison dashboard. Just this simple group, no money or calculator."
+  },
+  "reference": "assets/consulting/reporting-balanced-sample.png",
+  "generator": "built-in image_gen"
+}

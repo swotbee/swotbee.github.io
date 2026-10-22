@@ -7,10 +7,11 @@ import {
 } from "../utils/seo";
 // Fonts: only import what's actually used
 // Body: Hanken Grotesk (primary), DM Sans (fallback), Lexend Deca (fallback)
-// Headings: Rokkitt Variable (custom @font-face in global.css), Vollkorn (fallback)
+// Headings: Bricolage Grotesque; Rokkitt retained for historical palette comparisons.
 import "@fontsource-variable/hanken-grotesk";     // Body — variable font covers all weights
 // Rokkitt loaded via @font-face in global.css (variable woff2, no separate import needed)
 import "../styles/global.css";
+import SiteTheme from "../components/astro/SiteTheme.astro";
 import ConsentBanner from "../components/astro/ConsentBanner.astro";
 import AttributionCapture from "../components/astro/AttributionCapture.astro";
 
@@ -73,7 +74,8 @@ const gtmId = import.meta.env.PUBLIC_GTM_ID || "GTM-WV9TQ6FH";
     <meta name="robots" content={robots} />
     <meta name="language" content="English" />
     <meta name="revisit-after" content="7 days" />
-    <meta name="theme-color" content="#1f2937" />
+    <meta name="theme-color" content="#2E2A31" />
+    <SiteTheme />
 
     <!-- No font preloads on purpose. These used to preload /fonts/*.woff2, but the
          @font-face rules that actually render text resolve to the hashed bundled

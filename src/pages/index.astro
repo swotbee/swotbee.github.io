@@ -27,6 +27,7 @@ import Footer from "../components/astro/Footer.astro";
 import StructuredData from "../components/astro/StructuredData.astro";
 import RenewalServicePaths from "../components/astro/RenewalServicePaths.astro";
 import RenewalDemoModal from "../components/react/RenewalDemoModal.jsx";
+import HomepageAccentPreview from "../components/astro/HomepageAccentPreview.astro";
 import {
   AdjustmentsHorizontalIcon,
   ArrowDownIcon,
@@ -44,6 +45,11 @@ import {
   UserMinusIcon,
 } from "@heroicons/react/24/outline";
 
+interface Props {
+  colorPreview?: boolean;
+}
+const { colorPreview = false } = Astro.props;
+
 // SERP budget: BaseLayout appends " | SWOTBee" to every title, so the string below
 // must stay under ~50 chars to keep the rendered title inside Google's ~60-char cut.
 // Description stays under ~155 for the same reason.
@@ -57,7 +63,7 @@ const keywords =
 // correct if this page is ever moved or promoted to a different path (e.g. the homepage).
 const pageUrl = new URL(Astro.url.pathname, Astro.site ?? "https://swotbee.com")
   .href;
-const isHomepage = Astro.url.pathname === "/";
+const isHomepage = Astro.url.pathname === "/" || colorPreview;
 
 // Real client logos (greyscale). Files live in public/assets/customerLogos/.
 const clientLogos = [
@@ -385,13 +391,14 @@ const toneMap: Record<string, string> = {
 };
 ---
 
-{
-  /* No robots override: this is the homepage and must be indexable. It carried
-    robots="noindex, follow" for its whole life as /renewal-operations-animated-v3/, which
-    is what kept it out of the index and made it a clean measurement surface. Removing that
-    line IS the swap. */
-}
-<Layout title={title} description={description} keywords={keywords}>
+<Layout
+  title={colorPreview ? "Homepage Color Preview" : title}
+  description={description}
+  keywords={keywords}
+  robots={colorPreview ? "noindex, nofollow" : undefined}
+  canonicalURL={colorPreview ? new URL('/', Astro.site ?? 'https://swotbee.com').href : undefined}
+>
+  {colorPreview && <HomepageAccentPreview />}
   <StructuredData
     type="softwareApplication"
     data={{
@@ -470,10 +477,12 @@ const toneMap: Record<string, string> = {
           class="reveal flex flex-wrap justify-center lg:justify-start gap-3 mb-6"
         >
           <span
+            data-homepage-hero-badge="partner"
             class="bg-v6-teal-50 text-v6-teal text-xs font-semibold px-3 py-1 rounded-full"
             >HubSpot Solutions Partner</span
           >
           <span
+            data-homepage-hero-badge="product"
             class="bg-v6-copper-50 text-v6-copper text-xs font-semibold px-3 py-1 rounded-full"
             >Renewal Builder for HubSpot</span
           >
@@ -488,18 +497,30 @@ const toneMap: Record<string, string> = {
         >
           Manage HubSpot renewals without rebuilding every deal.
         </h1>
+        {colorPreview && (
+          <>
+            <p
+              data-homepage-hero-copy="original"
+              class="reveal text-base sm:text-lg text-v6-text-muted max-w-xl mx-auto lg:mx-0 mb-5 leading-relaxed"
+            >
+              Renewal Builder auto-creates review-ready renewal deals in your chosen
+              pipeline from the closed-won deals your team already trusts.
+            </p>
+            <p
+              data-homepage-hero-copy="original"
+              class="reveal text-base sm:text-lg text-v6-text-muted max-w-xl mx-auto lg:mx-0 mb-4 leading-relaxed"
+            >
+              Carry forward renewal dates, recurring line items, companies,
+              contacts, custom properties, and account ownership. Preview the new
+              deal first, then automate renewal workflows only when ready.
+            </p>
+          </>
+        )}
         <p
+          data-homepage-hero-copy="compact"
           class="reveal text-base sm:text-lg text-v6-text-muted max-w-xl mx-auto lg:mx-0 mb-5 leading-relaxed"
         >
-          Renewal Builder auto-creates review-ready renewal deals in your chosen
-          pipeline from the closed-won deals your team already trusts.
-        </p>
-        <p
-          class="reveal text-base sm:text-lg text-v6-text-muted max-w-xl mx-auto lg:mx-0 mb-4 leading-relaxed"
-        >
-          Carry forward renewal dates, recurring line items, companies,
-          contacts, custom properties, and account ownership. Preview the new
-          deal first, then automate renewal workflows only when ready.
+          Renewal Builder auto-creates review-ready renewal deals from closed-won data—carrying forward renewal dates, recurring line items, companies, contacts, custom properties, and account ownership.
         </p>
 
         <div
@@ -1115,7 +1136,7 @@ const toneMap: Record<string, string> = {
   </section>
 
   <!-- ============ TESTIMONIALS + CASE STUDY ============ -->
-  <section class="bg-v6-bg py-14 sm:py-18 px-4 sm:px-6 lg:px-8">
+  <section id="revenue-proof" class="bg-v6-bg py-14 sm:py-18 px-4 sm:px-6 lg:px-8">
     <div class="max-w-5xl mx-auto">
       <p
         class="reveal text-sm font-semibold uppercase tracking-[0.2em] text-v6-copper mb-3 text-center"
@@ -1465,6 +1486,77 @@ const toneMap: Record<string, string> = {
        layout has already closed </body></html>, which emits stray markup past the
        document end. Keep them here. -->
   <style>
+    /* The checked-in reference bypasses all trial colors and visual refinements. */
+    :global(:root[data-homepage-accent]:not([data-homepage-accent="checked-in"])) {
+      /* Dark default preserves text/CTA contrast; 600 remains the hover shade. */
+      --color-v6-copper: #9F254F;
+      --color-v6-copper-50: #FCF3F6;
+      --color-v6-copper-100: #F9E4EC;
+      --color-v6-copper-200: #F1C5D5;
+      --color-v6-copper-300: #E69AB4;
+      --color-v6-copper-400: #D76D92;
+      --color-v6-copper-500: #C94D79;
+      --color-v6-copper-600: #B83260;
+      --color-v6-copper-700: #9F254F;
+      --color-v6-copper-800: #852344;
+      --color-v6-copper-900: #6E223C;
+      --color-v6-copper-950: #420F21;
+    }
+    :global(:root:not([data-homepage-accent="checked-in"])) {
+      /* Reserve raspberry section labels for the product, demo, and service paths.
+         The other labels support the headings without competing with the CTAs. */
+      section > div > p.uppercase.text-v6-copper {
+        color: var(--color-v6-text-muted);
+      }
+      #how-renewal-builder-works > div > p.uppercase,
+      #demo > div > p.uppercase {
+        color: var(--color-v6-copper);
+      }
+
+      /* Brighter details add energy while text and button fills stay deep. */
+      .bg-v6-copper-50 > :global(svg),
+      :global(svg.text-v6-copper),
+      .testimonial-slide .text-v6-copper[aria-hidden="true"],
+      #the-math blockquote > p.text-v6-copper {
+        color: var(--color-v6-copper-500);
+      }
+      span.bg-v6-copper[aria-hidden="true"],
+      #scroll-progress {
+        background-color: var(--color-v6-copper-500);
+      }
+      .anim-card .rounded-full.bg-v6-copper,
+      #how-renewal-builder-works .rounded-full.bg-v6-copper {
+        /* Numbered circles still need sufficient contrast with white text. */
+        background-color: var(--color-v6-copper-600);
+      }
+      .stat-value.text-v6-copper {
+        color: var(--color-v6-copper-400);
+      }
+      .stat-value.text-v6-teal {
+        color: var(--color-v6-teal-300);
+      }
+
+      /* A quiet echo of the final CTA, limited to the dashboard side of the hero.
+         Preserve the warm neutral section and card backgrounds throughout. */
+      #hero .hero-dashboard {
+        position: relative;
+        isolation: isolate;
+      }
+      #hero .hero-dashboard::before {
+        content: "";
+        position: absolute;
+        inset: -4rem -3rem -2rem;
+        z-index: -1;
+        pointer-events: none;
+        background: radial-gradient(
+          ellipse at 50% 45%,
+          color-mix(in srgb, var(--color-v6-copper-400) 18%, transparent),
+          color-mix(in srgb, var(--color-v6-copper-300) 8%, transparent) 45%,
+          transparent 72%
+        );
+      }
+    }
+
     /* ===== Motion is reserved for reading order and the renewal-system flow. ===== */
     .anim .reveal {
       opacity: 0;

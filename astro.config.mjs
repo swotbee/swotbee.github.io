@@ -127,6 +127,7 @@ export default defineConfig({
           // lists all five steps to publish it.
           '/security/',
           '/hero-preview/',
+          '/homepage-colors-prototype/',
           '/index-old/',
           // src/pages/old_index.astro: a previous homepage, already noindex. Listing a
           // noindex page for crawling is a contradiction, same as index-consulting-old

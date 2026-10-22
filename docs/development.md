@@ -18,7 +18,9 @@ Important locations:
 - `src/components/astro/`: Astro components
 - `src/components/react/`: React components
 - `src/layouts/BaseLayout.astro`: primary page layout
-- `src/styles/global.css`: active Tailwind 4 theme and brand tokens
+- `src/styles/global.css`: Tailwind 4 utilities and original palette baseline
+- `src/styles/site-theme.css`: active Coral + aqua presentation
+- `src/utils/homepageAccentPalettes.ts`: shared default and comparison palette tokens
 - `src/utils/seo.ts`: SEO helpers
 - `docs/analytics-consent-and-attribution.md`: analytics and consent rules
 - `docs/content-guidelines/`: shared content rules
@@ -56,6 +58,45 @@ the canonical interface.
 
 No general unit-test runner or linter is currently configured. `pnpm verify` runs the
 production build and is the normal validation command.
+
+To compare homepage color palettes, run `pnpm dev` and open
+`/homepage-colors-prototype/`. The temporary, noindex preview supports
+`?variant=raspberry|iris|orchid|wine|graphite|plum|mauve|checked-in|raspberry-iris|balanced-orange|bright-orange|coral-red|coral-aqua`;
+its controls also switch the coordinated backgrounds and supporting colors.
+The checked-in option restores the original copper palette and styling. The
+raspberry-iris option uses iris throughout while retaining raspberry's warm ivory
+backgrounds and original supporting colors.
+Balanced orange uses `#D86329` action buttons; bright orange uses `#FF8C52`.
+Both orange variants use white button labels.
+Both use green section highlights, a mint hero gradient, and warm ivory backgrounds.
+Coral red uses `#E65E5E` buttons with light labels, a full coral shade scale,
+warm cream surfaces, and coordinated teal, slate blue, and amber supporting colors.
+Coral + aqua uses charcoal headings, aqua (`#247F76`) accents and closing band,
+pale aqua (`#F7FFFD`) section/card surfaces, and golden yellow (`#D4960A`) details
+on pale yellow (`#FEF9E0`). Mint (`#EFF6F4`) stays in the hero and selected highlights,
+with crisp 1px `#E2E8E6` borders around white cards. Divs using the pale aqua
+background have a 1px `#F1FFFC` border.
+Coral (`#DF462A`) is reserved for primary actions; supporting
+icons remain blue, teal and amber. Cookie Accept and footer Subscribe remain
+secondary outline buttons. The existing charcoal footer is preserved.
+The site default and this variant use self-hosted Bricolage Grotesque for headings, with
+optical size fixed at 14, main headings at weight 700, and card headings at 600.
+The hero uses `-0.025em` tracking and `1.08` line height; section headings use
+`-0.015em` tracking, while uppercase kickers and badges use `0.1em`.
+Hanken Grotesk is retained for body text. Other variants retain their original headings.
+Its bold hero title sits in a `max-w-7xl` container aligned with the navigation;
+the navigation has no inner side padding and shares the hero's responsive gutters.
+Its desktop hero uses a 44–48px title with a wider text column and one concise
+supporting paragraph; other variants keep the original two-paragraph hero copy.
+That paragraph lists renewal dates, recurring line items, companies, contacts,
+custom properties and account ownership. Demo and renewal-estimate actions use
+2px neutral-gray outlines with charcoal text and visible hover and keyboard-focus states.
+Both hero badges use the same aqua highlight.
+Coral + aqua is the default across the site and the default comparison selection.
+`BaseLayout.astro` applies its shared token map through `SiteTheme.astro` without
+JavaScript; normal pages do not include comparison controls or their bottom spacing.
+The regular homepage uses the compact supporting paragraph above. Historic preview
+variants still inherit the original `global.css` baseline before applying their tokens.
 
 For analytics, consent-banner, attribution, or third-party embed changes, also run:
 
@@ -108,7 +149,11 @@ state.
   `src/styles/global.css`. Do not treat the legacy `tailwind.config.js` as canonical.
 - Alpine.js is started by `@astrojs/alpinejs`. Do not add another `Alpine.start()`.
 - Use `BaseLayout.astro` for normal pages and `BlogPostLayout.astro` for posts.
-- Use the active brand tokens in `src/styles/global.css`.
+- Use the `v6` brand utilities from `src/styles/global.css`; their active values come
+  from `defaultSitePalette` in `src/utils/homepageAccentPalettes.ts`. Primary actions
+  use separate `--color-action` tokens in `src/styles/site-theme.css`.
+- Follow `docs/content-guidelines/page-imagery.md` for landing-page visuals:
+  use PNG or JPEG content illustrations, with editable SVG sources kept separately.
 - For user-facing changes, follow the workspace UX framework at
   `../docs/ux/UX_FRAMEWORK.md`.
 - Read `docs/analytics-consent-and-attribution.md` before adding a tag, pixel,
