@@ -3,6 +3,14 @@
 How swotbee.com tracks people, what it does not do until they agree, and how a campaign
 gets attached to a lead. Read this before adding any tag, pixel, embed or form field.
 
+**21 October 2026 trial exception:** Siva authorized Umami pageviews, events, heatmaps
+and sampled masked recordings before consent and after Reject on the pilot allowlist.
+`PUBLIC_UMAMI_PRECONSENT_TRIAL=true` enables this temporary behavior; unset/false restores
+Umami consent gating. Google and Clarity behavior below is unchanged. The banner and
+cookie/privacy notices describe the active mode. See `umami-parallel-pilot.md` for
+scope, retained masking, testing and rollback. Earlier statements below about all
+analytics being off on rejection do not apply to Umami while this override is active.
+
 Built 2026-08-10 and 2026-08-11 as gate D of the pre-ad-spend plan. Everything below was
 verified by driving a real browser, not by reading the code. That distinction earned its
 place: two consent bugs in this work survived a careful read and were caught only by

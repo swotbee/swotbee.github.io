@@ -71,14 +71,22 @@ Both orange variants use white button labels.
 Both use green section highlights, a mint hero gradient, and warm ivory backgrounds.
 Coral red uses `#E65E5E` buttons with light labels, a full coral shade scale,
 warm cream surfaces, and coordinated teal, slate blue, and amber supporting colors.
-Coral + aqua uses charcoal headings, aqua (`#247F76`) accents and closing band,
-pale aqua (`#F7FFFD`) section/card surfaces, and golden yellow (`#D4960A`) details
-on pale yellow (`#FEF9E0`). Mint (`#EFF6F4`) stays in the hero and selected highlights,
+Coral + aqua uses a pure white homepage canvas, charcoal headings, and aqua
+(`#247F76`) supporting accents. Pale aqua (`#F7FFFD`), mint (`#EFF6F4`), and
+golden yellow details stay inside components rather than full-width section washes,
 with crisp 1px `#E2E8E6` borders around white cards. Divs using the pale aqua
-background have a 1px `#F1FFFC` border.
-Coral (`#DF462A`) is reserved for primary actions; supporting
-icons remain blue, teal and amber. Cookie Accept and footer Subscribe remain
-secondary outline buttons. The existing charcoal footer is preserved.
+background have a 1px `#F1FFFC` border; the three consulting roadmap cards use
+a stronger slate-gray `#CBD8E5` border.
+Coral (`#DF462A`) is reserved for primary actions. The eight problem-grid icons
+use neutral mint (`#EFF6F4`) containers with deep spruce (`#133E39`) strokes;
+other supporting icons retain their existing colors. The dark metrics bar uses
+white statistics with muted mint (`#9FD3C7`) descriptive labels.
+Cookie Accept and footer Subscribe remain
+secondary outline buttons. The existing charcoal footer is preserved. Outcome
+metrics sit in a contained dark card immediately after the hero's integration strip
+and architecture sentence. The closing aqua CTA is also a contained card.
+Consulting sections use engineering slate blue (`#526F91`) cues and buttons;
+deep spruce (`#133E39`) is reserved for future forecasting product modules.
 The site default and this variant use self-hosted Bricolage Grotesque for headings, with
 optical size fixed at 14, main headings at weight 700, and card headings at 600.
 The hero uses `-0.025em` tracking and `1.08` line height; section headings use
@@ -103,10 +111,17 @@ For analytics, consent-banner, attribution, or third-party embed changes, also r
 ```bash
 PUBLIC_GA4_ID=G-TEST PUBLIC_CLARITY_ID=test pnpm build
 pnpm check:consent
+pnpm check:blog-measurement
 ```
 
 `check:consent` uses a real headless browser and requires a build containing the test
 analytics identifiers. Code inspection is not a substitute for this check.
+
+`check:blog-measurement` checks the contract tracker CSV, download event, mouse and
+keyboard enquiry events, and original landing/referrer values in the contact form
+after internal navigation. It blocks third-party requests and submits no form.
+Use `--port 4404` if its default preview port 4403 is occupied. It verifies browser
+event payloads and first-party attribution, not GA4's processed channel assignment.
 
 After a deployment, verify that every report-signup page renders and rejects invalid
 email without calling the webhook:
@@ -154,6 +169,8 @@ state.
   use separate `--color-action` tokens in `src/styles/site-theme.css`.
 - Follow `docs/content-guidelines/page-imagery.md` for landing-page visuals:
   use PNG or JPEG content illustrations, with editable SVG sources kept separately.
+- Follow [homepage color and proof principles](content-guidelines/homepage-color-system.md)
+  for the white canvas, contained color, product roles, and early proof placement.
 - For user-facing changes, follow the workspace UX framework at
   `../docs/ux/UX_FRAMEWORK.md`.
 - Read `docs/analytics-consent-and-attribution.md` before adding a tag, pixel,

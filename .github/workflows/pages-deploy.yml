@@ -38,6 +38,12 @@ jobs:
       - name: Build with Astro
         run: pnpm build
         env:
+          # Public pilot configuration. The temporary trial override defaults off.
+          PUBLIC_UMAMI_WEBSITE_ID: ${{ vars.PUBLIC_UMAMI_WEBSITE_ID }}
+          PUBLIC_UMAMI_ORIGIN: ${{ vars.PUBLIC_UMAMI_ORIGIN }}
+          PUBLIC_UMAMI_PATHS: ${{ vars.PUBLIC_UMAMI_PATHS }}
+          PUBLIC_UMAMI_REPLAY_PATHS: ${{ vars.PUBLIC_UMAMI_REPLAY_PATHS }}
+          PUBLIC_UMAMI_PRECONSENT_TRIAL: ${{ vars.PUBLIC_UMAMI_PRECONSENT_TRIAL }}
           PUBLIC_GA4_ID: ${{ secrets.PUBLIC_GA4_ID }}
           PUBLIC_CLARITY_ID: ${{ secrets.PUBLIC_CLARITY_ID }}
           # Google Tag Manager container, holding the LinkedIn Insight Tag. Without this

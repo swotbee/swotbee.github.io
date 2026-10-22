@@ -16,7 +16,8 @@ const RECAPTCHA_ACTION = "contact_form";
 const N8N_WEBHOOK_URL = "https://auto.zippylens.com/webhook/swotbee-form-submit";
 // Show the self-reported role dropdown only where wanted (e.g. /contactus), not on the
 // shared newsletter page. Optional field, so a missing value never blocks submission.
-const { role = false, variant = "contact" } = Astro.props;
+const { role = false, variant = "contact", preview = variant === "contract-workflow" } = Astro.props;
+const isContractWorkflow = variant === "contract-workflow";
 const isWeekOverWeekEarlyAccess = variant === "week-over-week-pipeline-early-access";
 const isHistoricalSnapshotEarlyAccess = variant === "historical-pipeline-snapshot-early-access";
 const isStaleDealsEarlyAccess = variant === "stale-deals-report-early-access";
@@ -32,7 +33,7 @@ const initialMessage = isStaleDealsEarlyAccess
     : "";
 import RecaptchaLazy from "./RecaptchaLazy.astro";
 ---
-<RecaptchaLazy siteKey={RECAPTCHA_SITE_KEY} />
+{!preview && <RecaptchaLazy siteKey={RECAPTCHA_SITE_KEY} />}
 <section id={isPipelineEarlyAccess ? "early-access" : "contact"} class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-12 text-left">
   <form
     id="contact-form"
@@ -42,7 +43,9 @@ import RecaptchaLazy from "./RecaptchaLazy.astro";
     data-recaptcha-site-key={RECAPTCHA_SITE_KEY}
     data-recaptcha-action={RECAPTCHA_ACTION}
     data-webhook={N8N_WEBHOOK_URL}
-    data-static-success={isPipelineEarlyAccess ? "true" : undefined}
+    data-contract-workflow={isContractWorkflow ? "true" : undefined}
+    data-preview={preview ? "true" : undefined}
+    data-static-success={isPipelineEarlyAccess || isContractWorkflow ? "true" : undefined}
     novalidate
   >
     <!-- Honeypot: off-screen, hidden from people; bots fill it and get dropped client-side. -->
@@ -62,17 +65,17 @@ import RecaptchaLazy from "./RecaptchaLazy.astro";
       name="gclid"
     /><input type="hidden" name="sb_landing_page" /><input type="hidden" name="sb_referrer" />
 
-    <div class="grid sm:grid-cols-2 gap-4">
+    <div class:list={["grid gap-4", !isContractWorkflow && "sm:grid-cols-2"]}>
       <div class="space-y-1.5">
-        <label for="cf-first" class="block text-sm font-semibold text-v6-dark">First name</label>
-        <input id="cf-first" name="firstname" type="text" autocomplete="given-name"
+        <label for="cf-first" class="block text-sm font-semibold text-v6-dark">{isContractWorkflow ? "Name" : "First name"}</label>
+        <input id="cf-first" name="firstname" type="text" autocomplete="given-name" required={isContractWorkflow}
           class="w-full rounded-lg border border-v6-border px-3.5 py-3 text-v6-dark focus:outline-none focus:ring-2 focus:ring-v6-copper focus:border-v6-copper" />
       </div>
-      <div class="space-y-1.5">
+      {!isContractWorkflow && <div class="space-y-1.5">
         <label for="cf-last" class="block text-sm font-semibold text-v6-dark">Last name</label>
         <input id="cf-last" name="lastname" type="text" autocomplete="family-name"
           class="w-full rounded-lg border border-v6-border px-3.5 py-3 text-v6-dark focus:outline-none focus:ring-2 focus:ring-v6-copper focus:border-v6-copper" />
-      </div>
+      </div>}
     </div>
 
     <div class="space-y-1.5">
@@ -81,7 +84,7 @@ import RecaptchaLazy from "./RecaptchaLazy.astro";
         class="w-full rounded-lg border border-v6-border px-3.5 py-3 text-v6-dark focus:outline-none focus:ring-2 focus:ring-v6-copper focus:border-v6-copper" />
     </div>
 
-    {!isPipelineEarlyAccess && (
+    {!isPipelineEarlyAccess && !isContractWorkflow && (
       <div class="space-y-1.5">
         <label for="cf-phone" class="block text-sm font-semibold text-v6-dark">Phone <span class="text-v6-text-muted font-normal">(optional)</span></label>
         <input id="cf-phone" name="phone" type="tel" autocomplete="tel"
@@ -103,16 +106,25 @@ import RecaptchaLazy from "./RecaptchaLazy.astro";
       </div>
     )}
 
+    {isContractWorkflow && <div class="space-y-1.5">
+      <label for="cf-tool" class="block text-sm font-semibold text-v6-dark">Current signing tool</label>
+      <select id="cf-tool" name="signing_tool" required class="w-full rounded-lg border border-v6-border px-3.5 py-3 text-v6-dark bg-white">
+        <option value="">Select your tool</option><option>PandaDoc</option><option>DocuSign</option><option>Other or not sure</option>
+      </select>
+    </div>}
+
     <div class="space-y-1.5">
-      <label for="cf-msg" class="block text-sm font-semibold text-v6-dark">{isStaleDealsEarlyAccess ? "What should make a deal count as stalled? (optional)" : isHistoricalSnapshotEarlyAccess ? "Which dated pipeline state do you need to preserve? (optional)" : isWeekOverWeekEarlyAccess ? "What should the weekly comparison help you explain? (optional)" : isPipelineEarlyAccess ? "What should this report help you explain? (optional)" : "How can we help?"}</label>
-      <textarea id="cf-msg" name="message" rows="4"
+      <label for="cf-msg" class="block text-sm font-semibold text-v6-dark">{isContractWorkflow ? "What would you like to change?" : isStaleDealsEarlyAccess ? "What should make a deal count as stalled? (optional)" : isHistoricalSnapshotEarlyAccess ? "Which dated pipeline state do you need to preserve? (optional)" : isWeekOverWeekEarlyAccess ? "What should the weekly comparison help you explain? (optional)" : isPipelineEarlyAccess ? "What should this report help you explain? (optional)" : "How can we help?"}</label>
+      <textarea id="cf-msg" name="message" rows="4" required={isContractWorkflow}
         class="w-full rounded-lg border border-v6-border px-3.5 py-3 text-v6-dark focus:outline-none focus:ring-2 focus:ring-v6-copper focus:border-v6-copper resize-y">{initialMessage}</textarea>
     </div>
 
     <button type="submit" id="cf-submit"
       class="w-full sm:w-auto bg-v6-copper text-white px-8 py-3 rounded-xl text-base font-semibold hover:bg-v6-copper-600 transition-colors disabled:opacity-60 disabled:cursor-not-allowed">
-      {isPipelineEarlyAccess ? "Join early access" : "Send message"}
+      {isContractWorkflow ? (preview ? "Preview workflow request" : "Request a workflow call") : isPipelineEarlyAccess ? "Join early access" : "Send message"}
     </button>
+
+    {isContractWorkflow && <p class="text-sm text-v6-text-muted">{preview ? "Review mode: use sample details. No request is sent or saved." : "We use these details to respond to your request. No contract uploads or account access needed."} <a href="/privacy/" class="underline">Privacy notice</a>.</p>}
 
     <p id="cf-status" role="status" aria-live="polite" class="text-sm leading-relaxed m-0"></p>
   </form>
@@ -122,7 +134,12 @@ import RecaptchaLazy from "./RecaptchaLazy.astro";
     <div class="flex h-14 w-14 items-center justify-center rounded-full bg-v6-teal/15 mb-4">
       <svg viewBox="0 0 24 24" class="h-8 w-8 text-v6-teal" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>
     </div>
-    {isPipelineEarlyAccess ? (
+    {isContractWorkflow ? (
+      <>
+        <h3 id="cf-success-title" class="text-xl text-v6-dark mb-2">{preview ? "Preview complete. Nothing was sent." : "Your workflow request has been received."}</h3>
+        <p class="text-v6-text-muted">{preview ? "This shows the confirmation layout only. No contact was created and no call was booked." : "We will respond by email about the next step. A call has not been booked yet."}</p>
+      </>
+    ) : isPipelineEarlyAccess ? (
       <>
         <h3 id="cf-success-title" class="text-xl font-bold text-v6-dark mb-2">You are on the early-access list.</h3>
         <p class="text-v6-text-muted mb-5">Thanks for helping us validate the report before we build it. We will contact you when the first test is ready, and we will not book a sales call unless you ask for one.</p>
@@ -152,9 +169,21 @@ import RecaptchaLazy from "./RecaptchaLazy.astro";
     var siteKey = form.getAttribute("data-recaptcha-site-key");
     var action = form.getAttribute("data-recaptcha-action");
     var webhookUrl = form.getAttribute("data-webhook");
+    var contractWorkflow = form.hasAttribute("data-contract-workflow");
+    var preview = form.hasAttribute("data-preview");
+    var started = false;
+    function trackContract(name) {
+      if (!preview && contractWorkflow && typeof window.__sbTrack === "function") {
+        window.__sbTrack(name, { form_name: "contract_workflow", offer: "contract_workflow_setup" });
+      }
+    }
+    form.addEventListener("focusin", function () {
+      if (!started) { started = true; trackContract("contract_form_start"); }
+    });
 
     function setStatus(msg, kind) {
       status.textContent = msg;
+      if (contractWorkflow) status.setAttribute("role", kind === "error" ? "alert" : "status");
       status.style.color = kind === "error" ? "#b3462f" : (kind === "ok" ? "#3f7d6f" : "");
     }
 
@@ -185,6 +214,7 @@ import RecaptchaLazy from "./RecaptchaLazy.astro";
       form.classList.add("hidden");
       if (panel) {
         panel.classList.remove("hidden");
+        if (contractWorkflow) { panel.setAttribute("tabindex", "-1"); panel.focus(); }
         panel.scrollIntoView({ behavior: "smooth", block: "center" });
       }
     }
@@ -200,25 +230,41 @@ import RecaptchaLazy from "./RecaptchaLazy.astro";
 
     form.addEventListener("submit", function (e) {
       e.preventDefault();
+      if (contractWorkflow && btn.disabled) return;
 
       // Honeypot filled -> a bot. Pretend success, send nothing.
       var hp = form.querySelector('[name="company_website"]');
       if (hp && hp.value) { form.reset(); setStatus("Thanks, your message has been sent.", "ok"); return; }
 
       var email = (form.email.value || "").trim();
-      if (!email || email.indexOf("@") < 1) {
+      if (!email || (contractWorkflow ? !form.email.checkValidity() : email.indexOf("@") < 1)) {
         setStatus("Please enter a valid email so we can reply.", "error");
         form.email.focus();
         return;
       }
 
+      if (contractWorkflow) {
+        var required = [form.firstname, form.signing_tool, form.message];
+        for (var i = 0; i < required.length; i++) {
+          if (!required[i].value.trim()) {
+            setStatus("Please add your name, signing tool and a sentence about the workflow.", "error");
+            required[i].focus(); return;
+          }
+        }
+      }
+      if (preview) {
+        if (typeof window.__sbFillAttribution === "function") window.__sbFillAttribution(form);
+        showSuccess("");
+        return; // Deliberately before token retrieval, fetch and accepted-lead events.
+      }
+
       var roleEl = form.querySelector('[name="self_reported_role"]');
       var fields = [
         { name: "firstname", value: (form.firstname.value || "").trim() },
-        { name: "lastname", value: (form.lastname.value || "").trim() },
+        { name: "lastname", value: ((form.lastname && form.lastname.value) || "").trim() },
         { name: "email", value: email },
         { name: "phone", value: ((form.phone && form.phone.value) || "").trim() },
-        { name: "message", value: (form.message.value || "").trim() },
+        { name: "message", value: contractWorkflow ? "[Contract workflow inquiry]\nSigning tool: " + form.signing_tool.value + "\nRequested change: " + form.message.value.trim() : (form.message.value || "").trim() },
         { name: "self_reported_role", value: roleEl ? roleEl.value : "" }
       ].filter(function (f) { return f.value; });
 
@@ -259,6 +305,7 @@ import RecaptchaLazy from "./RecaptchaLazy.astro";
         });
       }).then(function (res) {
         if (res.ok) {
+          trackContract("contract_gateway_acknowledged");
           var first = ((form.firstname && form.firstname.value) || "").trim();
           form.reset();
           showSuccess(first);

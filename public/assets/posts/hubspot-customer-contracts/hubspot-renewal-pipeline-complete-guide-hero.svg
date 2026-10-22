@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+<title id="title">Customer renewals: illustrative workflow</title>
+<desc id="desc">An illustrative notice timeline. 2 October 2026: Internal decision target; 1 November 2026: Reviewed notice deadline; 31 December 2026: Current term boundary; 1 January 2027: Next term starts. Illustrative design, not a HubSpot screenshot.</desc>
+<rect width="1200" height="630" rx="24" fill="#f7f5f1"/>
+<text x="70" y="95" font-family="DejaVu Sans, sans-serif" font-size="26" fill="#1a7ab5" font-weight="700">SWOTBEE / HUBSPOT GUIDES</text>
+<text x="70" y="177" font-family="DejaVu Sans, sans-serif" font-size="54" fill="#173f51" font-weight="700">Customer renewals</text>
+<rect x="70" y="285" width="248" height="150" rx="18" fill="#e4eef4"/>
+<text x="90" y="332" font-family="DejaVu Sans, sans-serif" font-size="28" fill="#1a7ab5" font-weight="700">01</text>
+<text x="90" y="376" font-family="DejaVu Sans, sans-serif" font-size="28" fill="#173f51" font-weight="700">Notice</text>
+<text x="90" y="414" font-family="DejaVu Sans, sans-serif" font-size="28" fill="#173f51" font-weight="400">rules</text>
+<rect x="350" y="285" width="248" height="150" rx="18" fill="#dcece7"/>
+<text x="370" y="332" font-family="DejaVu Sans, sans-serif" font-size="28" fill="#1a7ab5" font-weight="700">02</text>
+<text x="370" y="376" font-family="DejaVu Sans, sans-serif" font-size="28" fill="#173f51" font-weight="700">Owner</text>
+<text x="370" y="414" font-family="DejaVu Sans, sans-serif" font-size="28" fill="#173f51" font-weight="400">and backup</text>
+<rect x="630" y="285" width="248" height="150" rx="18" fill="#f3e4d2"/>
+<text x="650" y="332" font-family="DejaVu Sans, sans-serif" font-size="28" fill="#1a7ab5" font-weight="700">03</text>
+<text x="650" y="376" font-family="DejaVu Sans, sans-serif" font-size="28" fill="#173f51" font-weight="700">Renewal</text>
+<text x="650" y="414" font-family="DejaVu Sans, sans-serif" font-size="28" fill="#173f51" font-weight="400">opportunity</text>
+<rect x="910" y="285" width="248" height="150" rx="18" fill="#e8e6f0"/>
+<text x="930" y="332" font-family="DejaVu Sans, sans-serif" font-size="28" fill="#1a7ab5" font-weight="700">04</text>
+<text x="930" y="376" font-family="DejaVu Sans, sans-serif" font-size="28" fill="#173f51" font-weight="700">Evidence</text>
+<text x="930" y="414" font-family="DejaVu Sans, sans-serif" font-size="28" fill="#173f51" font-weight="400">and status</text>
+<text x="70" y="535" font-family="DejaVu Sans, sans-serif" font-size="32" fill="#173f51" font-weight="400">Choose ownership. Map the handoffs. Test the result.</text>
+<text x="70" y="580" font-family="DejaVu Sans, sans-serif" font-size="22" fill="#526773" font-weight="400">Original illustration / customer agreements</text>
+</svg>

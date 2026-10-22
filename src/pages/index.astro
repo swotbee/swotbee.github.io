@@ -30,7 +30,6 @@ import RenewalDemoModal from "../components/react/RenewalDemoModal.jsx";
 import HomepageAccentPreview from "../components/astro/HomepageAccentPreview.astro";
 import {
   AdjustmentsHorizontalIcon,
-  ArrowDownIcon,
   ArrowPathIcon,
   ArrowRightIcon,
   ArrowTrendingUpIcon,
@@ -458,7 +457,9 @@ const toneMap: Record<string, string> = {
   </div>
 
   <Navbar />
+  <RenewalDemoModal client:load showPoster={false} />
 
+  <div data-homepage-canvas>
   <!-- ============ HERO ============ -->
   <!-- id is load-bearing: the LCP guard in the stylesheet targets #hero to keep
        above-the-fold content painted at first paint. See ".anim #hero" below. -->
@@ -537,7 +538,8 @@ const toneMap: Record<string, string> = {
           </div>
           <div class="relative inline-block">
             <a
-              href="#demo"
+              id="demo"
+              href="https://www.youtube.com/watch?v=ZtYqSi4Kg5E"
               data-renewal-demo-trigger
               aria-haspopup="dialog"
               aria-controls="renewal-demo-modal"
@@ -627,28 +629,16 @@ const toneMap: Record<string, string> = {
         </p>
       </div>
     </div>
+    <p class="reveal max-w-5xl mx-auto mt-8 text-center text-sm text-v6-text-muted leading-relaxed">
+      Built for Energy, MSP, Manufacturing, Construction, and SaaS teams managing
+      hundreds to thousands of renewals a year.
+    </p>
   </section>
-  <section>
-    <div class="max-w-6xl mx-auto text-center mt-8 sm:mt-12">
-      <p
-        class="reveal text-base text-v6-text-muted mx-auto lg:mx-0 mb-3 leading-relaxed"
-      >
-        Built for Energy, MSP, Manufacturing, Construction, and SaaS teams managing
-        hundreds to thousands of renewals a year.
-      </p>
-      <!-- <p class="reveal text-base text-gray-500 leading-relaxed">
-          No commitment, no sales pitch. No long-term contracts, ever. We earn
-          your trust month by month.
-        </p> -->
-    </div>
-  </section>
-
   <!-- ============ TRUST BAR ============ -->
-  <section class="mt-6 sm:mt-8 bg-v6-bg border-y border-v6-border py-6 px-4">
+  <section id="homepage-integrations" class="bg-v6-bg border-y border-v6-border pt-6 pb-3 px-4">
     <div class="max-w-5xl mx-auto">
-      <!-- The 5 approved client logos, same set the service-page template uses.
-           Explicit width/height so the row reserves its space before the images
-           decode (no layout shift). -->
+      <!-- Integration ecosystem, labelled "Works with" rather than client proof.
+           Explicit dimensions reserve image space before decoding. -->
       <div
         class="reveal flex flex-wrap justify-center items-center gap-x-8 gap-y-3 pt-3"
       >
@@ -679,6 +669,41 @@ const toneMap: Record<string, string> = {
     </div>
   </section>
 
+  <p class="mx-auto max-w-5xl px-4 pt-2 text-center text-sm leading-relaxed text-v6-dark sm:px-6 lg:px-8">
+    We architect robust, bi-directional data pipelines between HubSpot and your core ERP, billing, and contract systems.
+  </p>
+
+  <!-- ============ STAT BAND ============ -->
+  <section id="renewal-metrics" class="bg-v6-dark py-14 sm:py-16 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto">
+      <h2
+        class="reveal text-3xl sm:text-4xl font-bold text-v6-teal-300 mb-8 text-center"
+      >
+        What Our Clients See
+      </h2>
+      <div class="stagger grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        {
+          stats.map((s) => (
+            <div>
+              <p
+                class={`stat-value text-3xl sm:text-4xl font-bold ${s.tone} mb-1`}
+                data-stat-value={s.value}
+              >
+                {s.value}
+              </p>
+              <p class="text-sm text-gray-300 leading-snug">{s.label}</p>
+            </div>
+          ))
+        }
+      </div>
+      <p class="reveal text-xs text-gray-400 text-center mt-8 max-w-xl mx-auto">
+        Representative outcomes from recent HubSpot renewal engagements across
+        Energy, Manufacturing, and SaaS. Your results depend on your data and
+        process.
+      </p>
+    </div>
+  </section>
+
   <!-- ============ HOW RENEWAL BUILDER WORKS ============ -->
   <section
     id="how-renewal-builder-works"
@@ -689,7 +714,7 @@ const toneMap: Record<string, string> = {
         How Renewal Builder works
       </p>
       <h2 class="reveal text-2xl sm:text-3xl lg:text-4xl font-bold text-v6-dark mb-4 text-center text-balance">
-        How to manage renewal deals in HubSpot without re-keying data.
+        Zero-effort renewal deals in HubSpot. Accurate to the Dollar
       </h2>
       <p class="reveal max-w-3xl mx-auto text-center text-base sm:text-lg text-v6-text-muted leading-relaxed">
         Renewal Builder works inside your existing HubSpot CRM and the renewal
@@ -743,58 +768,8 @@ const toneMap: Record<string, string> = {
     </div>
   </section>
 
-  <!-- ============ DEMO VIDEO ============ -->
-  <section
-    id="demo"
-    class="scroll-mt-24 bg-white px-4 sm:px-6 lg:px-8 pt-14 sm:pt-16 pb-12 sm:pb-14"
-  >
-    <div class="max-w-4xl mx-auto text-center">
-      <p
-        class="reveal text-sm font-semibold uppercase tracking-[0.2em] text-v6-copper mb-3"
-      >
-        See It In Action
-      </p>
-      <h2
-        class="reveal text-2xl sm:text-3xl lg:text-4xl font-bold text-v6-dark mb-3 text-balance"
-      >
-        See Renewal Builder create a review-ready HubSpot renewal.
-      </h2>
-      <p
-        class="reveal text-base sm:text-lg text-v6-text-muted mb-8 max-w-2xl mx-auto leading-relaxed"
-      >
-        See how Renewal Builder turns a closed-won deal into a review-ready
-        renewal in HubSpot, with the configured line items, timing, ownership,
-        and associations carried forward.
-      </p>
-      <div class="reveal max-w-3xl mx-auto">
-        <RenewalDemoModal client:load />
-      </div>
-      <div
-        class="reveal flex flex-col sm:flex-row gap-3 justify-center items-center mt-8"
-      >
-        <a
-          href="/renewal-audit-call/"
-          data-ga-cta="renewal_demo_book_audit"
-          class="bg-v6-copper text-white px-8 py-3.5 rounded-xl text-base font-semibold hover:bg-v6-copper-600 transition-colors text-center inline-flex items-center gap-2"
-        >
-          Book a free 30-minute renewal review <ArrowRightIcon aria-hidden="true" className="h-4 w-4" />
-        </a>
-        <a
-          href="/resources/renewal-leakage-estimate/"
-          class="border border-gray-300 text-v6-dark px-8 py-3.5 rounded-xl text-base font-medium hover:bg-gray-50 transition-colors text-center inline-flex items-center gap-2"
-        >
-          Estimate Your Renewal Leakage <ArrowDownIcon aria-hidden="true" className="h-4 w-4" />
-        </a>
-      </div>
-      <!-- <p class="reveal text-xs text-gray-500 mt-4">
-        Built on the real product. Northwind is an illustrative account; your
-        walkthrough runs on your own HubSpot.
-      </p> -->
-    </div>
-  </section>
-
   <!-- ============ AGITATION (Is This You?) ============ -->
-  <section class="bg-v6-bg py-14 sm:py-18 px-4 sm:px-6 lg:px-8">
+  <section id="renewal-problems" class="bg-v6-bg py-14 sm:py-18 px-4 sm:px-6 lg:px-8">
     <div class="max-w-4xl mx-auto">
       <p
         class="reveal text-sm font-semibold uppercase tracking-[0.2em] text-v6-copper mb-3 text-center"
@@ -804,7 +779,7 @@ const toneMap: Record<string, string> = {
       <h2
         class="reveal text-2xl sm:text-3xl lg:text-4xl font-bold text-v6-dark mb-3 text-center text-balance"
       >
-        Manual renewal management breaks as deal volume grows.
+        Manual renewals break as deal volume grows.
       </h2>
       <p
         class="reveal text-base sm:text-lg text-v6-text-muted mb-3 leading-relaxed text-center max-w-lg mx-auto"
@@ -872,7 +847,7 @@ const toneMap: Record<string, string> = {
       <h2
         class="reveal text-2xl sm:text-3xl lg:text-4xl font-bold text-v6-dark mb-8 text-center text-balance"
       >
-        What manual renewal deal creation actually costs
+        What manual renewal really costs
       </h2>
 
       <blockquote
@@ -926,7 +901,7 @@ const toneMap: Record<string, string> = {
   </section>
 
   <!-- ============ CAPABILITIES ============ -->
-  <section class="bg-white py-14 sm:py-18 px-4 sm:px-6 lg:px-8">
+  <section id="renewal-workflow" class="bg-white py-14 sm:py-18 px-4 sm:px-6 lg:px-8">
     <div class="max-w-7xl mx-auto">
       <p
         class="reveal text-sm font-semibold uppercase tracking-[0.2em] text-v6-copper mb-3 text-center"
@@ -936,71 +911,58 @@ const toneMap: Record<string, string> = {
       <h2
         class="reveal text-2xl sm:text-3xl lg:text-4xl font-bold text-v6-dark mb-3 text-center text-balance"
       >
-        Automate renewal deal creation using your HubSpot rules.
+        Automate renewal deal creation using your rules.
       </h2>
       <p class="reveal text-v6-text-muted text-center mb-10 max-w-2xl mx-auto">
         Choose the rules that matter, preview what carries forward, and create
         consistent renewal deals without rebuilding the same record by hand.
       </p>
 
-      <div class="stagger relative max-w-5xl mx-auto">
+      <ol class="renewal-timeline stagger relative max-w-5xl mx-auto" role="list" aria-label="Six-step renewal workflow">
         {
           renewalFlow.map((stage, index) => {
             const Icon = stage.icon;
             return (
-              <div class="relative grid grid-cols-[2.5rem_1fr] sm:grid-cols-[1fr_3.5rem_1fr] gap-x-5 sm:gap-x-8 pb-8 last:pb-0">
-              {index < renewalFlow.length && (
-                <div
-                  class="absolute left-5 sm:left-1/2 top-5 -bottom-5 w-px -translate-x-1/2 bg-v6-copper-200"
-                  aria-hidden="true"
-                ></div>
-              )}
-              <div class="relative z-10 col-start-1 row-start-1 sm:col-start-2 flex justify-center">
-                <div
-                  class={`w-10 h-10 rounded-lg ${stage.color} flex items-center justify-center font-bold`}
-                >
-                  <Icon aria-hidden="true" className="h-5 w-5" />
+              <li class="timeline-step relative grid grid-cols-[3rem_1fr] sm:grid-cols-[1fr_4rem_1fr] gap-x-4 sm:gap-x-8 pb-10">
+                <span class="timeline-rail absolute left-6 sm:left-1/2 top-6 -bottom-6 w-px -translate-x-1/2 bg-v6-copper-200" aria-hidden="true"></span>
+                <div class="relative z-10 col-start-1 row-start-1 sm:col-start-2 flex justify-center">
+                  <span class={`timeline-marker relative w-12 h-12 rounded-xl ${stage.color} flex items-center justify-center`}>
+                    <Icon aria-hidden="true" className="h-6 w-6" />
+                    <span class="timeline-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+                  </span>
                 </div>
-              </div>
-              <div class="relative col-start-2 row-start-1 sm:col-start-1 sm:text-right">
-                <p class="absolute -top-4 left-0 sm:left-auto sm:right-0 text-[10px] font-semibold uppercase tracking-wider text-v6-text-muted whitespace-nowrap">
-                  Step {index + 1}
-                </p>
-                <h3 class="text-lg sm:text-xl font-semibold text-v6-dark leading-snug">
-                  {stage.title}
-                </h3>
-              </div>
-              <ul class="col-start-2 row-start-2 sm:col-start-3 sm:row-start-1 space-y-2.5 rounded-xl border border-v6-border bg-v6-bg p-5">
-                {stage.points.map((point) => (
-                  <li class="flex gap-2 text-sm text-v6-text-muted leading-relaxed">
-                    <span class="mt-2 h-1.5 w-1.5 rounded-full bg-v6-copper flex-shrink-0" aria-hidden="true"></span>
-                    <span>{point}</span>
-                  </li>
-                ))}
-              </ul>
-              </div>
+                <div class="timeline-title col-start-2 row-start-1 sm:col-start-1 sm:text-right">
+                  <p class="timeline-label text-xs font-semibold uppercase tracking-wider text-v6-copper mb-2">Step {index + 1}</p>
+                  <h3 class="text-lg sm:text-xl font-semibold text-v6-dark leading-snug">{stage.title}</h3>
+                </div>
+                <ul class="timeline-card col-start-2 row-start-2 sm:col-start-3 sm:row-start-1 space-y-2.5 rounded-xl border border-v6-border bg-v6-bg p-5">
+                  {stage.points.map((point) => (
+                    <li class="flex gap-2 text-sm text-v6-text-muted leading-relaxed">
+                      <span class="mt-2 h-1.5 w-1.5 rounded-full bg-v6-copper flex-shrink-0" aria-hidden="true"></span>
+                      <span>{point}</span>
+                    </li>
+                  ))}
+                </ul>
+              </li>
             );
           })
         }
-        <div class="relative grid grid-cols-[2.5rem_1fr] sm:grid-cols-[1fr_3.5rem_1fr] gap-x-5 sm:gap-x-8">
+        <li class="timeline-step timeline-finish relative grid grid-cols-[3rem_1fr] sm:grid-cols-[1fr_4rem_1fr] gap-x-4 sm:gap-x-8">
           <div class="relative z-10 col-start-1 row-start-1 sm:col-start-2 flex justify-center">
-            <span class="inline-flex w-10 h-10 rounded-lg bg-v6-copper-50 text-v6-copper items-center justify-center font-semibold">
-              <ArrowPathIcon aria-hidden="true" className="h-5 w-5" />
+            <span class="timeline-marker relative inline-flex w-12 h-12 rounded-xl bg-v6-copper-50 text-v6-copper items-center justify-center">
+              <ArrowPathIcon aria-hidden="true" className="h-6 w-6" />
+              <span class="timeline-number" aria-hidden="true">06</span>
             </span>
           </div>
-          <div class="relative col-start-2 row-start-1 sm:col-start-1 sm:text-right">
-            <p class="absolute -top-4 left-0 sm:left-auto sm:right-0 text-[10px] font-semibold uppercase tracking-wider text-v6-text-muted whitespace-nowrap">
-              Step 6
-            </p>
-            <p class="text-lg sm:text-xl font-semibold text-v6-dark leading-snug">
-              Renews Flawlessly<br />Year After Year
-            </p>
+          <div class="timeline-title col-start-2 row-start-1 sm:col-start-1 sm:text-right">
+            <p class="timeline-label text-xs font-semibold uppercase tracking-wider text-v6-copper mb-2">Step 6</p>
+            <h3 class="text-lg sm:text-xl font-semibold text-v6-dark leading-snug">Renews Flawlessly<br />Year After Year</h3>
           </div>
-        </div>
-      </div>
-      <p class="reveal text-sm text-v6-text-muted text-center mt-8">
-        Every deal flows into renewal, expansion, and forecast—automatically.
-      </p>
+          <div class="timeline-card col-start-2 row-start-2 sm:col-start-3 sm:row-start-1 rounded-xl border border-v6-border bg-v6-bg p-5">
+            <p class="text-sm text-v6-text-muted leading-relaxed">Every deal flows into renewal, expansion, and forecast—automatically.</p>
+          </div>
+        </li>
+      </ol>
     </div>
   </section>
 
@@ -1018,7 +980,7 @@ const toneMap: Record<string, string> = {
       <h2
         class="reveal text-2xl sm:text-3xl lg:text-4xl font-bold text-v6-dark mb-3 text-center text-balance"
       >
-        Fix the renewal deal gaps without replacing what works.
+        Keep what works. Fix the renewal gaps.
       </h2>
       <p
         class="reveal text-base sm:text-lg text-v6-text-muted text-center text-balance mb-10 max-w-2xl mx-auto leading-relaxed"
@@ -1069,7 +1031,7 @@ const toneMap: Record<string, string> = {
   </section>
 
   <!-- ============ HOW WE WORK (3 steps) ============ -->
-  <section class="bg-white py-14 sm:py-18 px-4 sm:px-6 lg:px-8">
+  <section id="implementation-support" class="bg-white py-14 sm:py-18 px-4 sm:px-6 lg:px-8">
     <div class="max-w-4xl mx-auto">
       <p
         class="reveal text-sm font-semibold uppercase tracking-[0.2em] text-v6-copper mb-3 text-center"
@@ -1079,7 +1041,7 @@ const toneMap: Record<string, string> = {
       <h2
         class="reveal text-2xl sm:text-3xl lg:text-4xl font-bold text-v6-dark mb-3 text-center text-balance"
       >
-        Start with Renewal Builder and add expert help only where needed.
+        Self Serve or Personalized Setup. Your choice
       </h2>
       <p class="reveal text-v6-text-muted text-center mb-10 max-w-lg mx-auto">
       </p>
@@ -1104,37 +1066,6 @@ const toneMap: Record<string, string> = {
     </div>
   </section>
 
-  <!-- ============ STAT BAND ============ -->
-  <section class="bg-v6-dark py-14 sm:py-16 px-4 sm:px-6 lg:px-8">
-    <div class="max-w-4xl mx-auto">
-      <p
-        class="reveal text-xs font-semibold uppercase tracking-[0.2em] text-v6-copper-300 mb-8 text-center"
-      >
-        What Our Clients See
-      </p>
-      <div class="stagger grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-        {
-          stats.map((s) => (
-            <div>
-              <p
-                class={`stat-value text-3xl sm:text-4xl font-bold ${s.tone} mb-1`}
-                data-stat-value={s.value}
-              >
-                {s.value}
-              </p>
-              <p class="text-sm text-gray-300 leading-snug">{s.label}</p>
-            </div>
-          ))
-        }
-      </div>
-      <p class="reveal text-xs text-gray-400 text-center mt-8 max-w-xl mx-auto">
-        Representative outcomes from recent HubSpot renewal engagements across
-        Energy, Manufacturing, and SaaS. Your results depend on your data and
-        process.
-      </p>
-    </div>
-  </section>
-
   <!-- ============ TESTIMONIALS + CASE STUDY ============ -->
   <section id="revenue-proof" class="bg-v6-bg py-14 sm:py-18 px-4 sm:px-6 lg:px-8">
     <div class="max-w-5xl mx-auto">
@@ -1146,7 +1077,7 @@ const toneMap: Record<string, string> = {
       <h2
         class="reveal text-2xl sm:text-3xl lg:text-4xl font-bold text-v6-dark mb-3 text-center text-balance"
       >
-        A renewal process built around your HubSpot rules.
+        Our Customers love us. So will you.
       </h2>
       <p class="reveal text-v6-text-muted text-center mb-10 max-w-lg mx-auto">
         We start with your process, data, and business rules, then automate
@@ -1397,7 +1328,7 @@ const toneMap: Record<string, string> = {
       <p class="mt-3 text-xs text-gray-500">No fee. No HubSpot access required. The paid audit begins only after scope and terms are agreed.</p>
       <p class="mt-5">
         <a
-          href="#demo"
+          href="https://www.youtube.com/watch?v=ZtYqSi4Kg5E"
           data-renewal-demo-trigger
           aria-haspopup="dialog"
           aria-controls="renewal-demo-modal"
@@ -1444,6 +1375,7 @@ const toneMap: Record<string, string> = {
 
   <!-- ============ FINAL CTA ============ -->
   <section
+    id="renewal-closing-cta"
     class="bg-gradient-to-br from-v6-copper to-v6-copper-600 py-16 sm:py-20 px-4 sm:px-6 lg:px-8"
   >
     <div class="reveal max-w-2xl mx-auto text-center">
@@ -1468,7 +1400,7 @@ const toneMap: Record<string, string> = {
       <p class="mt-4 text-xs text-v6-copper-50">No fee. No HubSpot access required. The paid audit begins only after scope and terms are agreed.</p>
       <p class="mt-5">
         <a
-          href="#demo"
+          href="https://www.youtube.com/watch?v=ZtYqSi4Kg5E"
           data-renewal-demo-trigger
           aria-haspopup="dialog"
           aria-controls="renewal-demo-modal"
@@ -1479,6 +1411,8 @@ const toneMap: Record<string, string> = {
       </p>
     </div>
   </section>
+
+  </div>
 
   <Footer />
 
@@ -1508,8 +1442,7 @@ const toneMap: Record<string, string> = {
       section > div > p.uppercase.text-v6-copper {
         color: var(--color-v6-text-muted);
       }
-      #how-renewal-builder-works > div > p.uppercase,
-      #demo > div > p.uppercase {
+      #how-renewal-builder-works > div > p.uppercase {
         color: var(--color-v6-copper);
       }
 

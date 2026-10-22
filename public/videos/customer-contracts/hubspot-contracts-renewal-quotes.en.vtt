@@ -1,0 +1,205 @@
+WEBVTT
+
+00:00.000 --> 00:03.853
+Sales wants Cedar Vale's solar-support proposal reviewed.
+
+00:03.953 --> 00:06.697
+But there's also a battery-monitoring agreement.
+
+00:06.797 --> 00:11.013
+Which record is right, what does the price cover, and who acts next?
+
+00:11.113 --> 00:13.047
+Let's make that handoff clear.
+
+00:14.133 --> 00:19.309
+Here's how to use HubSpot Contracts to check a draft and hand it over for review.
+
+00:19.409 --> 00:21.193
+The deal tracks the sale.
+
+00:21.293 --> 00:26.960
+The Contract brings together its commercial details, including changes and renewals.
+
+00:27.060 --> 00:29.164
+We'll finish with a checked draft;
+
+00:29.264 --> 00:31.432
+customer acceptance comes later.
+
+00:32.533 --> 00:36.237
+BeaconGrid provides solar support to Cedar Vale Foods.
+
+00:36.337 --> 00:39.124
+Alex Morgan is Cedar Vale's contact.
+
+00:39.224 --> 00:46.469
+Our source is Solar Support Proposal, version one: one thousand US dollars a month for twelve months.
+
+00:46.569 --> 00:48.908
+Keep that proposal beside the draft.
+
+00:49.008 --> 00:51.965
+It's our reference for every check that follows.
+
+00:53.067 --> 00:56.067
+In HubSpot, open Revenue, then Contracts.
+
+00:56.167 --> 01:02.559
+This demo uses the direct-edit beta, so you'll need that access and permission to edit Contracts.
+
+01:02.659 --> 01:06.725
+Open Cedar Vale, Solar Support, and check the Draft label.
+
+01:06.825 --> 01:09.655
+Battery Monitoring is a separate agreement.
+
+01:09.755 --> 01:11.901
+Same customer, different service.
+
+01:12.001 --> 01:14.020
+Then choose Edit contract.
+
+01:15.100 --> 01:17.353
+First, match the people and the source.
+
+01:17.453 --> 01:22.544
+BeaconGrid is the seller, Cedar Vale the customer, and Alex the contact.
+
+01:22.644 --> 01:25.537
+Check the associated Solar Support deal too.
+
+01:25.637 --> 01:28.125
+The link helps us find the relationship;
+
+01:28.225 --> 01:30.927
+it doesn't prove every field stays in sync.
+
+01:31.027 --> 01:36.843
+If the proposal and draft disagree, pause and ask Sales to confirm the correct terms.
+
+01:37.933 --> 01:40.464
+Now the number that can cause confusion.
+
+01:40.564 --> 01:46.657
+This line is one Solar Support service at one thousand dollars a month, for twelve payments.
+
+01:46.757 --> 01:50.419
+That makes twelve thousand dollars across the proposed term.
+
+01:50.519 --> 01:53.561
+It's the term value, not a bill due today.
+
+01:53.661 --> 01:57.813
+Check the quantity, frequency and payment count before moving on.
+
+01:58.900 --> 02:07.361
+Next, check when the service runs: the first of November, twenty twenty-six, through the thirty-first of October, twenty twenty-seven.
+
+02:07.461 --> 02:11.315
+Compare the effective date and preview with the proposal too.
+
+02:11.415 --> 02:13.711
+These dates match in our example.
+
+02:13.811 --> 02:18.880
+In another agreement, check their meaning rather than assuming they must be identical.
+
+02:19.967 --> 02:25.719
+Finance has a separate billing process in this example, so HubSpot Billing stays off.
+
+02:25.819 --> 02:33.085
+Read the message on screen: this Contract won't create invoices or collect payments with billing disabled.
+
+02:33.185 --> 02:35.161
+We've checked the commercial record.
+
+02:35.261 --> 02:39.371
+We haven't connected the billing system or authorized an invoice.
+
+02:40.467 --> 02:44.533
+Before handing it over, return to the record and reopen the draft.
+
+02:44.633 --> 02:48.999
+Are the customer, service, price, payment count and dates still right?
+
+02:49.099 --> 02:50.605
+Is Billing still off?
+
+02:50.705 --> 02:54.559
+If you changed a value, confirm it was saved before leaving.
+
+02:54.659 --> 02:58.491
+If a value is missing or different, stop and resolve it.
+
+02:58.591 --> 03:00.972
+The result we want is a checked draft.
+
+03:02.067 --> 03:11.083
+Now the Sales manager has something specific to review: Solar Support Proposal, version one, the matching draft, and the checked terms.
+
+03:11.183 --> 03:15.676
+Sales Ops owns the next action: request that internal review.
+
+03:15.776 --> 03:18.072
+We haven't submitted it in this demo.
+
+03:18.172 --> 03:24.244
+If Sales changes the proposal, update the source version and repeat the affected checks.
+
+03:24.344 --> 03:28.453
+Customer acceptance and billing approval remain separate steps.
+
+03:29.533 --> 03:32.512
+Where do PandaDoc and Docusign fit?
+
+03:32.612 --> 03:36.508
+You can keep using them for document preparation and signing.
+
+03:36.608 --> 03:38.435
+The deal follows the sale;
+
+03:38.535 --> 03:41.343
+the signed document records the agreement;
+
+03:41.443 --> 03:45.019
+the HubSpot Contract holds its commercial details.
+
+03:45.119 --> 03:52.449
+For an external agreement, those details need a create or import step, or a separately verified integration.
+
+03:52.549 --> 03:58.536
+An accepted current HubSpot quote has its own automatic Contract route when configured.
+
+03:59.633 --> 04:01.503
+Here's where workflows help.
+
+04:01.603 --> 04:08.379
+Document activity, such as completion, can trigger an internal notification or a review task.
+
+04:08.479 --> 04:14.593
+Once the right terms are in the Contract, its renewal date can drive reminders and follow-up.
+
+04:14.693 --> 04:19.293
+Think of two connected stages: the signing system starts the handoff;
+
+04:19.393 --> 04:22.479
+the Contract supports the ongoing relationship.
+
+04:22.579 --> 04:27.520
+Automating the Contract-writing step needs its own configured integration.
+
+04:27.620 --> 04:30.428
+We'll keep those setup steps in the PDF.
+
+04:31.533 --> 04:38.672
+Cedar Vale's Solar Support draft now has a clear source, understandable terms and a next owner for review.
+
+04:38.772 --> 04:40.791
+That's the handoff to aim for.
+
+04:40.891 --> 04:46.813
+Want the workflow steps for connecting PandaDoc or Docusign to HubSpot Contracts?
+
+04:46.913 --> 04:49.551
+Comment WORKFLOW below for the PDF.

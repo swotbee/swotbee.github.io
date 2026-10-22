@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-labelledby="title desc">
+<title id="title">Revenue Reporting implementation guide</title>
+<desc id="desc">Illustrative implementation decisions, not a product screenshot.</desc>
+<rect width="800" height="450" rx="24" fill="#f2f7f6"/>
+<text x="45" y="55" font-family="Arial,sans-serif" font-size="17" font-weight="bold" fill="#165d63">SWOTBEE IMPLEMENTATION GUIDE</text>
+<text x="45" y="117" font-family="Arial,sans-serif" font-size="38" font-weight="bold" fill="#16383d">Revenue Reporting</text>
+<rect x="45" y="165" width="710" height="58" rx="12" fill="#ffffff"/>
+<circle cx="77" cy="194" r="18" fill="#a26519"/>
+<text x="77" y="200" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" fill="#fff">1</text>
+<text x="112" y="202" font-family="Arial,sans-serif" font-size="27" fill="#16383d">Freeze the cohort</text>
+<rect x="45" y="241" width="710" height="58" rx="12" fill="#ffffff"/>
+<circle cx="77" cy="270" r="18" fill="#a26519"/>
+<text x="77" y="276" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" fill="#fff">2</text>
+<text x="112" y="278" font-family="Arial,sans-serif" font-size="27" fill="#16383d">Explain the movements</text>
+<rect x="45" y="317" width="710" height="58" rx="12" fill="#ffffff"/>
+<circle cx="77" cy="346" r="18" fill="#a26519"/>
+<text x="77" y="352" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" fill="#fff">3</text>
+<text x="112" y="354" font-family="Arial,sans-serif" font-size="27" fill="#16383d">Reconcile the metric</text>
+<text x="45" y="426" font-family="Arial,sans-serif" font-size="17" fill="#4f6669">Illustrative design. Validate against your selected tools.</text>
+</svg>

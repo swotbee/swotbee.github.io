@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-labelledby="title desc">
+<title id="title">Invoice ownership</title>
+<desc id="desc">Conceptual implementation model, not a product screenshot. Commercial terms: Separate recurring and one-time; Invoice controller: Choose where invoices originate; Reconciliation: Match customers and payments.</desc>
+<rect width="800" height="450" rx="24" fill="#F5F8F7"/>
+<g font-family="Arial, sans-serif" fill="#173D3A">
+<text x="36" y="55" font-size="18" font-weight="700">SWOTBEE IMPLEMENTATION GUIDE</text>
+<text x="36" y="100" font-size="32" font-weight="700">Invoice ownership</text>
+<rect x="36.0" y="154" width="237.33333333333334" height="200" rx="16" fill="#FFFFFF" stroke="#9CB9B1"/>
+<circle cx="66.0" cy="188" r="16" fill="#173D3A"/>
+<text x="66.0" y="194" text-anchor="middle" font-size="18" fill="white">1</text>
+<text x="52.0" y="239" font-size="23" font-weight="700">Commercial terms</text>
+<rect x="281.33333333333337" y="154" width="237.33333333333334" height="200" rx="16" fill="#FFFFFF" stroke="#9CB9B1"/>
+<circle cx="311.33333333333337" cy="188" r="16" fill="#173D3A"/>
+<text x="311.33333333333337" y="194" text-anchor="middle" font-size="18" fill="white">2</text>
+<text x="297.33333333333337" y="239" font-size="23" font-weight="700">Invoice</text>
+<text x="297.33333333333337" y="268" font-size="23" font-weight="700">controller</text>
+<rect x="526.6666666666667" y="154" width="237.33333333333334" height="200" rx="16" fill="#FFFFFF" stroke="#9CB9B1"/>
+<circle cx="556.6666666666667" cy="188" r="16" fill="#173D3A"/>
+<text x="556.6666666666667" y="194" text-anchor="middle" font-size="18" fill="white">3</text>
+<text x="542.6666666666667" y="239" font-size="23" font-weight="700">Reconciliation</text>
+<text x="36" y="422" font-size="18">Conceptual model. Verify access and behavior in your portal.</text>
+</g></svg>

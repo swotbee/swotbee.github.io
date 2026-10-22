@@ -6,7 +6,7 @@ description: "A complete guide to quote to cash (Q2C, sometimes written quote-to
 category:
   title: "Revenue Operations"
   href: "/categories/revenue-operations/"
-modifiedDate: "2026-08-18"
+modifiedDate: "2026-10-09"
 author:
   name: "SWOTBee Team"
   url: "https://swotbee.com"
@@ -41,7 +41,7 @@ faqs:
   - q: "How do CLM and e-signature fit into quote to cash?"
     a: "Contract lifecycle management (CLM) and e-signature tools sit between the quote and the order: once a quote is approved, CLM manages contract creation and negotiation, and e-signature closes it, so the signed contract can trigger order creation without manual re-entry."
   - q: "What is the best quote to cash software?"
-    a: "It depends on company size and stack. Salesforce CPQ and Revenue Cloud, HubSpot's native quoting plus a CRM/ERP integration, and dedicated Q2C platforms like DealHub or Conga each fit a different combination of deal complexity, existing CRM, and ERP."
+    a: "It depends on company size and stack. Salesforce CPQ and Revenue Cloud, HubSpot Revenue Hub with accounting integration where required, and dedicated Q2C platforms like DealHub or Conga each fit a different combination of deal complexity, existing CRM, and ERP."
 ---
 
 > This article is part of our [complete guide to CRM and ERP integration](/posts/crm-erp-integration/).
@@ -51,6 +51,8 @@ faqs:
 Quote to cash is one of the most valuable processes a [CRM and ERP integration](/posts/crm-erp-integration/) automates.
 
 ---
+
+For a CRM-specific implementation, use our [HubSpot quote-to-cash guide](/posts/hubspot-quote-to-cash/) to connect approved quotes, customer agreements, billing and accounting. This article retains the general process definition.
 
 ## What Is Quote to Cash? (QTC/Q2C Meaning)
 
@@ -137,7 +139,7 @@ A modern quote to cash process runs on connected software rather than manual ste
 
 Cost, tax handling, and analytics reporting all sit downstream of these systems: get the handoffs right and a performance indicator like days sales outstanding becomes a number finance can trust, not a guess assembled from five spreadsheets by five different stakeholders across sales, finance, and marketing.
 
-Q2C software does not replace the CRM. It extends it: the CRM stays the system of record for the customer and the deal, while dedicated Q2C tooling (CPQ, CLM, billing) handles the steps the CRM alone was never built to run. Which combination is the best quote to cash software depends on company size and existing stack: Salesforce CPQ and Revenue Cloud suit Salesforce-native enterprises, HubSpot's native quoting plus a CRM/ERP integration suits a HubSpot-first mid-market company, and dedicated platforms such as DealHub or Conga fit teams that need CLM depth a native quoting tool does not offer.
+A quote-to-cash implementation assigns responsibility for the customer, quote, agreement, invoice, payment and accounting record. Some CRMs include commercial and billing functions: [HubSpot Revenue Hub](https://www.hubspot.com/products/revenue) is one example. Specialist CLM, billing or ERP tools remain options where the requirements justify them. This guide owns the generic process; the [software guide](/posts/quote-to-cash-software/) covers selection.
 
 See our [full guide to quote-to-cash software](/posts/quote-to-cash-software/) for how these categories compare and how to choose between a full suite and best-of-breed tools.
 
@@ -182,7 +184,7 @@ No. Quote to cash software extends the CRM rather than replacing it. The CRM sta
 Contract lifecycle management (CLM) and e-signature tools sit between the quote and the order: once a quote is approved, CLM manages contract creation and negotiation, and e-signature closes it, so the signed contract can trigger order creation without manual re-entry.
 
 **What is the best quote to cash software?**
-It depends on company size and stack. Salesforce CPQ and Revenue Cloud, HubSpot's native quoting plus a CRM/ERP integration, and dedicated Q2C platforms like DealHub or Conga each fit a different combination of deal complexity, existing CRM, and ERP.
+It depends on company size and stack. Salesforce CPQ and Revenue Cloud, HubSpot Revenue Hub with accounting integration where required, and dedicated Q2C platforms like DealHub or Conga each fit a different combination of deal complexity, existing CRM, and ERP.
 
 ---
 

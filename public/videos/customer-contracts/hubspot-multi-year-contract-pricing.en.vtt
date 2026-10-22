@@ -1,0 +1,335 @@
+WEBVTT
+
+00:00.000 --> 00:02.667
+Cedar Vale signs up for three years of
+service.
+
+00:02.727 --> 00:06.289
+The price is agreed from the start: twelve
+thousand dollars in
+
+00:06.349 --> 00:09.912
+year one, thirteen thousand two hundred in
+year two, and fourteen
+
+00:09.972 --> 00:12.639
+thousand five hundred and twenty in year
+three.
+
+00:13.300 --> 00:15.135
+How should HubSpot represent that?
+
+00:15.195 --> 00:18.608
+Start with one governing agreement and a
+dated price schedule.
+
+00:18.668 --> 00:22.316
+Each anniversary moves to the next agreed
+price; it is not
+
+00:22.376 --> 00:25.747
+automatically a new sale or a renewal
+negotiation.
+
+00:26.400 --> 00:30.197
+In this fictional example, the commitment
+runs from January twenty
+
+00:30.257 --> 00:32.860
+twenty-seven through December twenty
+twenty-nine.
+
+00:32.920 --> 00:35.245
+Each price applies for exactly one year.
+
+00:35.305 --> 00:39.209
+The total across the three years is
+thirty-nine thousand seven hundred
+
+00:39.269 --> 00:40.485
+and twenty dollars.
+
+00:41.167 --> 00:44.089
+The contract term tells us how long the
+commitment lasts.
+
+00:44.149 --> 00:46.965
+The price schedule tells us which rate
+applies when.
+
+00:47.025 --> 00:51.057
+Billing frequency answers a separate
+question: how often do we issue
+
+00:51.117 --> 00:52.077
+an invoice?
+
+00:52.733 --> 00:56.552
+With annual billing, the example has one
+charge of twelve thousand
+
+00:56.612 --> 01:00.601
+dollars in year one, then thirteen thousand
+two hundred, then fourteen
+
+01:00.661 --> 01:02.603
+thousand five hundred and twenty.
+
+01:02.663 --> 01:06.503
+Invoice issue and due dates still follow the
+agreed billing terms.
+
+01:07.167 --> 01:10.964
+With monthly billing, year one has twelve
+charges of one thousand
+
+01:11.024 --> 01:11.877
+dollars.
+
+01:11.937 --> 01:14.199
+Year two has twelve of eleven hundred.
+
+01:14.259 --> 01:16.648
+Year three has twelve of twelve hundred and
+ten.
+
+01:16.708 --> 01:19.716
+Both patterns cover the same three-year
+price schedule.
+
+01:20.367 --> 01:23.908
+Keep the source agreement and its price
+schedule identifiable.
+
+01:23.968 --> 01:27.467
+The commercial Contract represents the
+commitment being managed.
+
+01:27.527 --> 01:31.111
+The Deal records the sales opportunity, and
+a Quote presents the
+
+01:31.171 --> 01:32.984
+proposal when that route is used.
+
+01:33.667 --> 01:37.677
+Represent each period with its own start,
+finite term, quantity and
+
+01:37.737 --> 01:38.932
+applicable price.
+
+01:38.992 --> 01:40.869
+The three phases are sequential.
+
+01:40.929 --> 01:45.132
+If all three prices start together, you have
+described concurrent charges
+
+01:45.192 --> 01:46.963
+instead of a yearly increase.
+
+01:47.633 --> 01:50.855
+Keep the full commitment separate from the
+current period's rate.
+
+01:50.915 --> 01:54.712
+Thirty-nine thousand seven hundred and
+twenty dollars is the three-year
+
+01:54.772 --> 01:55.497
+total.
+
+01:55.557 --> 01:58.779
+It is not this year's recurring rate or
+evidence of cash
+
+01:58.839 --> 01:59.628
+collected.
+
+02:00.300 --> 02:04.567
+HubSpot now documents ramp pricing in
+Revenue Hub quotes: add the
+
+02:04.627 --> 02:08.701
+product as separate line items, set each
+phase's billing start date,
+
+02:08.761 --> 02:10.980
+and give each phase its intended term.
+
+02:11.040 --> 02:15.157
+This is a documented option, not a
+completed setup demonstration.
+
+02:15.833 --> 02:19.844
+That quote route requires Revenue Hub
+Professional or Enterprise and a
+
+02:19.904 --> 02:21.099
+Revenue Hub seat.
+
+02:21.159 --> 02:25.233
+The documentation also states a restriction
+on ramp pricing with
+
+02:25.293 --> 02:26.573
+HubSpot payments.
+
+02:26.633 --> 02:30.964
+Verify the processor and account path
+before promising automated billing.
+
+02:31.633 --> 02:35.068
+Direct Contracts offer dated line items
+through a beta route.
+
+02:35.128 --> 02:39.224
+Billing migration also documents ramp
+phases, but it is a separate
+
+02:39.284 --> 02:40.201
+process.
+
+02:40.261 --> 02:43.675
+A migration ramp key is not a field every
+quote needs.
+
+02:43.735 --> 02:46.657
+Do not infer that all these routes behave
+identically.
+
+02:47.333 --> 02:51.536
+If Finance bills elsewhere, keep that system
+responsible for its invoice
+
+02:51.596 --> 02:53.281
+schedule and check the handoff.
+
+02:53.341 --> 02:57.544
+Recording three prices in HubSpot alone
+does not configure the external
+
+02:57.604 --> 02:58.649
+billing system.
+
+02:59.300 --> 03:01.753
+Now test the boundary, not just the total.
+
+03:01.813 --> 03:05.931
+On December thirty-first, twenty
+twenty-seven, the example is still in
+
+03:05.991 --> 03:06.823
+year one.
+
+03:06.883 --> 03:10.808
+From January first, twenty twenty-eight, year
+two's price applies.
+
+03:10.868 --> 03:13.961
+There should be no overlap and no missing
+service period.
+
+03:14.633 --> 03:18.601
+For the monthly pattern, the expected rate
+changes from one thousand
+
+03:18.661 --> 03:20.219
+to eleven hundred dollars.
+
+03:20.279 --> 03:23.073
+The old phase must stop before the new one
+charges.
+
+03:23.133 --> 03:26.803
+Adding both would produce twenty-one
+hundred dollars for the same month.
+
+03:27.467 --> 03:30.837
+Repeat the check at the next anniversary,
+when the monthly rate
+
+03:30.897 --> 03:32.924
+becomes twelve hundred and ten dollars.
+
+03:32.984 --> 03:36.781
+For annual billing, check the corresponding
+annual amount instead.
+
+03:36.841 --> 03:42.217
+These are expected results; no invoices or
+automatic transitions were executed
+
+03:42.277 --> 03:42.939
+here.
+
+03:43.600 --> 03:46.928
+At the end of year three, confirm what the
+agreement actually
+
+03:46.988 --> 03:47.735
+says.
+
+03:47.795 --> 03:51.507
+Do not invent a fourth-year price or assume
+automatic renewal.
+
+03:51.567 --> 03:55.407
+Keep the source terms, commercial records
+and billing schedule aligned.
+
+03:56.067 --> 03:57.944
+Reconcile the complete schedule.
+
+03:58.004 --> 04:01.567
+Twelve thousand, plus thirteen thousand two
+hundred, plus fourteen
+
+04:01.627 --> 04:05.723
+thousand five hundred and twenty equals
+thirty-nine thousand seven
+
+04:05.783 --> 04:07.425
+hundred and twenty dollars.
+
+04:07.485 --> 04:11.965
+Thirty-six monthly charges produce the
+same total before taxes and other
+
+04:12.025 --> 04:13.241
+agreed adjustments.
+
+04:13.900 --> 04:17.633
+Use the configuration checklist to choose a
+route: which quote or
+
+04:17.693 --> 04:22.109
+Contract experience is available, which
+system controls billing, and what
+
+04:22.169 --> 04:24.004
+evidence proves each transition?
+
+04:24.064 --> 04:28.523
+Treat report values and revenue recognition
+as separate questions with
+
+04:28.583 --> 04:29.927
+their own definitions.
+
+04:30.600 --> 04:33.715
+The companion pack gives you the
+phased-pricing worksheet,
+
+04:33.775 --> 04:37.252
+configuration decision checklist and
+transition tests.
+
+04:37.312 --> 04:40.917
+Map one real agreement, name the owner,
+compare expected and
+
+04:40.977 --> 04:44.817
+observed results, and resolve discrepancies
+before automating.

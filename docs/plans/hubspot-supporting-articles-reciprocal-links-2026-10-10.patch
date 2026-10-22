@@ -1,0 +1,44 @@
+diff --git a/src/pages/posts/hubspot-contract-document-integrations.md b/src/pages/posts/hubspot-contract-document-integrations.md
+index aae045e..4c95168 100644
+--- a/src/pages/posts/hubspot-contract-document-integrations.md
++++ b/src/pages/posts/hubspot-contract-document-integrations.md
+@@ -104,6 +104,8 @@ Do not advance a deal to “Agreement sent” merely because both reviewers appr
+ 
+ Check the template’s source object, workspace, recipients and pricing representation, then test the configured return rules. The new-experience connector and the automation connection have distinct setup responsibilities.
+ 
++For configuration and a filled worksheet, use the [HubSpot PandaDoc setup and writeback guide](/posts/hubspot-pandadoc-integration/).
++
+ PandaDoc’s [new-experience documentation](https://support.pandadoc.com/en/articles/9714877-hubspot-crm-new-experience) notes per-workspace setup, case-sensitive variables, EU connection initiation from PandaDoc and separate HubSpot Automations authorization to the same portal. It distinguishes pricing tables from Quote Builder: recurring HubSpot items become one-time entries in the pricing-table path.
+ 
+ For an illustrative annual support SOW, compare the generated document against the source record: customer legal name, service coverage, signer role, effective date, recurring charge, billing frequency and any one-time onboarding fee. A total that happens to match is insufficient if recurring and one-time amounts have lost their meaning.
+@@ -116,6 +118,8 @@ Choose the return event by field purpose. A “Sent” update may be suitable fo
+ 
+ Check sender connectivity, template fields, recipients and the actual information available after completion. Separate CRM-to-envelope population from envelope-to-CRM field return.
+ 
++Use the [HubSpot DocuSign setup and CRM writeback guide](/posts/hubspot-docusign-integration/) to test templates, recipients and the required return.
++
+ [HubSpot’s connection guide](https://knowledge.hubspot.com/integrations/use-hubspots-integration-with-docusign) says the app is not full-record data sync. Custom mapped DocuSign fields require text type and unique tooltips. Confirm which HubSpot user is connected and permitted to send, rather than assuming an administrator’s installation connects the entire team.
+ 
+ The official [usage guide](https://knowledge.hubspot.com/integrations/use-the-docusign-integration) documents historical envelopes and event-driven workflows, with Professional/Enterprise workflow requirements across the listed hubs. Recipient behavior differs by source object; test the intended deal contacts or preconfigured company-template recipients.
+diff --git a/src/pages/posts/hubspot-quote-to-cash.md b/src/pages/posts/hubspot-quote-to-cash.md
+index 5d0aaf6..33d5209 100644
+--- a/src/pages/posts/hubspot-quote-to-cash.md
++++ b/src/pages/posts/hubspot-quote-to-cash.md
+@@ -155,6 +155,8 @@ Treat each named integration as a specific product with documented scope. Contac
+ 
+ The [HubSpot QuickBooks Online guide](https://knowledge.hubspot.com/integrations/connect-hubspot-and-quickbooks-online) documents configurable object synchronization and Data Hub Starter-or-higher custom mappings. It also identifies editing restrictions for HubSpot-origin invoices, unsupported multi-invoice payment sync, and processing fees that do not automatically create an accounting expense.
+ 
++For a concrete test plan, see the [HubSpot QuickBooks invoice sync and reconciliation guide](/posts/hubspot-quickbooks-integration/).
++
+ Test the correct billing contact and company association, invoice origin, tax behavior, credits and payment allocation. Avoid running a paid-invoice creation workflow alongside invoice sync without checking duplicate creation. Regional tax statements in the documentation are inconsistent, so non-US applicability needs account-specific verification.
+ 
+ The guide says QuickBooks sandbox accounts cannot connect through this app. Design a safe validation arrangement with finance; do not promise a standard end-to-end sandbox test for every connector.
+@@ -177,6 +179,8 @@ Scope subsidiary, customer ID, service item, agreement reference and order-updat
+ 
+ [HubSpot’s Stripe payment-processing guide](https://knowledge.hubspot.com/payment-processing/connect-your-stripe-account-as-a-payment-processor-in-hubspot) describes collection for HubSpot revenue tools. Connecting does not import or change existing external Stripe subscriptions; HubSpot-created invoices and subscriptions are not created as equivalent records in Stripe. Country and account restrictions apply.
+ 
++Use the [Stripe HubSpot connection decision guide](/posts/stripe-hubspot-integration/) to compare payment processing, data sync and billing migration.
++
+ If Stripe Billing remains your subscription authority, write that as a separate integration requirement. Do not call payment processing a migration of the existing subscription book. Validate the merchant’s location, permitted currency, fees and chosen workflow before offering native collection.
+ 
+ ## How do amendments and recurring charges change the design?

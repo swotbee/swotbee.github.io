@@ -6,7 +6,7 @@ description: "A practical guide to renewal quotes in HubSpot: create a renewal q
 category:
   title: "Revenue Operations"
   href: "/categories/revenue-operations/"
-modifiedDate: "2026-06-23"
+modifiedDate: "2026-10-19"
 author:
   name: "SWOTBee Team"
   url: "https://swotbee.com"
@@ -86,6 +86,8 @@ Not every renewal goes up. HubSpot quotes handle the full range:
 - **Multi-year terms.** Multi-year pricing (a discount in exchange for a 24 or 36 month term) locks in revenue and reduces churn risk. Set the contract term on the deal so the next renewal date is calculated correctly.
 
 ---
+
+When increases are already agreed inside the current term, use [phased pricing for multi-year customer contracts](/posts/hubspot-multi-year-contract-pricing/). Each anniversary implements the existing schedule; it does not automatically create another renewal negotiation. The guide includes an editable setup workbook and printable checklist.
 
 ## Billing, Seats, and Term Structure
 

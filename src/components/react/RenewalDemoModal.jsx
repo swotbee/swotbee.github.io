@@ -4,13 +4,13 @@ import RenewalDemoYoutube from "./RenewalDemoYoutube.jsx";
 const videoUrl = "https://www.youtube.com/watch?v=ZtYqSi4Kg5E";
 
 function track(name, details = {}) {
-  window.gtag?.("event", name, {
+  window.__sbTrack?.(name, {
     video_name: "renewal_demo",
     ...details,
   });
 }
 
-export default function RenewalDemoModal() {
+export default function RenewalDemoModal({ showPoster = true }) {
   const [isOpen, setIsOpen] = useState(false);
   const dialogRef = useRef(null);
   const triggerRef = useRef(null);
@@ -104,53 +104,55 @@ export default function RenewalDemoModal() {
 
   return (
     <>
-      <a
-        ref={triggerRef}
-        href={videoUrl}
-        onClick={openModal}
-        data-ga-cta="renewal_demo_open"
-        className="group relative block aspect-video w-full overflow-hidden rounded-2xl border border-v6-border bg-v6-dark text-left shadow-xl focus:outline-none focus-visible:ring-4 focus-visible:ring-v6-copper/60 focus-visible:ring-offset-4"
-        aria-haspopup="dialog"
-      >
-        <img
-          src="/demo/renewal-demo-poster.jpg"
-          alt=""
-          width="1920"
-          height="1080"
-          loading="lazy"
-          decoding="async"
-          className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.015] motion-reduce:transition-none motion-reduce:group-hover:transform-none"
-        />
-        <span
-          aria-hidden="true"
-          className="absolute inset-0 bg-gradient-to-t from-v6-dark/80 via-v6-dark/10 to-transparent"
-        />
-        <span className="absolute inset-0 flex items-center justify-center">
-          <span className="flex h-16 w-16 items-center justify-center rounded-full bg-v6-copper text-white shadow-lg transition-transform duration-200 group-hover:scale-105 motion-reduce:transition-none motion-reduce:group-hover:transform-none sm:h-20 sm:w-20">
-            <svg
-              aria-hidden="true"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              className="ml-1 h-8 w-8 sm:h-10 sm:w-10"
-            >
-              <path d="M8 5.5v13l10-6.5L8 5.5Z" />
-            </svg>
-          </span>
-        </span>
-        <span className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 p-4 text-white sm:p-6">
-          <span>
-            <span className="block text-lg font-semibold sm:text-xl">
-              Watch Renewal Builder in action
-            </span>
-            <span className="mt-1 block text-sm text-white/80">
-              2-minute product walkthrough
+      {showPoster && (
+        <a
+          ref={triggerRef}
+          href={videoUrl}
+          onClick={openModal}
+          data-ga-cta="renewal_demo_open"
+          className="group relative block aspect-video w-full overflow-hidden rounded-2xl border border-v6-border bg-v6-dark text-left shadow-xl focus:outline-none focus-visible:ring-4 focus-visible:ring-v6-copper/60 focus-visible:ring-offset-4"
+          aria-haspopup="dialog"
+        >
+          <img
+            src="/demo/renewal-demo-poster.jpg"
+            alt=""
+            width="1920"
+            height="1080"
+            loading="lazy"
+            decoding="async"
+            className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.015] motion-reduce:transition-none motion-reduce:group-hover:transform-none"
+          />
+          <span
+            aria-hidden="true"
+            className="absolute inset-0 bg-gradient-to-t from-v6-dark/80 via-v6-dark/10 to-transparent"
+          />
+          <span className="absolute inset-0 flex items-center justify-center">
+            <span className="flex h-16 w-16 items-center justify-center rounded-full bg-v6-copper text-white shadow-lg transition-transform duration-200 group-hover:scale-105 motion-reduce:transition-none motion-reduce:group-hover:transform-none sm:h-20 sm:w-20">
+              <svg
+                aria-hidden="true"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                className="ml-1 h-8 w-8 sm:h-10 sm:w-10"
+              >
+                <path d="M8 5.5v13l10-6.5L8 5.5Z" />
+              </svg>
             </span>
           </span>
-          <span className="hidden rounded-full bg-white/15 px-3 py-1 text-xs font-semibold uppercase tracking-wider backdrop-blur-sm sm:block">
-            Play video
+          <span className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 p-4 text-white sm:p-6">
+            <span>
+              <span className="block text-lg font-semibold sm:text-xl">
+                Watch Renewal Builder in action
+              </span>
+              <span className="mt-1 block text-sm text-white/80">
+                2-minute product walkthrough
+              </span>
+            </span>
+            <span className="hidden rounded-full bg-white/15 px-3 py-1 text-xs font-semibold uppercase tracking-wider backdrop-blur-sm sm:block">
+              Play video
+            </span>
           </span>
-        </span>
-      </a>
+        </a>
+      )}
 
       <dialog
         id="renewal-demo-modal"

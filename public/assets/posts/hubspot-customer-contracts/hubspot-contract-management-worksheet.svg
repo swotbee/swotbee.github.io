@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 890" role="img" aria-labelledby="title desc">
+<title id="title">Architecture and setup: illustrative workflow</title>
+<desc id="desc">One agreement, four responsibilities. Legal document: Executed terms and evidence; Commercial Contract: Active customer commitment; Deal: Sale or renewal opportunity; Billing record: Schedule, invoice and payment. Illustrative design, not a HubSpot screenshot.</desc>
+<rect width="720" height="890" rx="24" fill="#f7f5f1"/>
+<text x="36" y="52" font-family="DejaVu Sans, sans-serif" font-size="22" fill="#1a7ab5" font-weight="700">ILLUSTRATIVE DESIGN</text>
+<text x="36" y="100" font-family="DejaVu Sans, sans-serif" font-size="31" fill="#173f51" font-weight="700">One agreement, four</text>
+<text x="36" y="139" font-family="DejaVu Sans, sans-serif" font-size="31" fill="#173f51" font-weight="700">responsibilities</text>
+<rect x="36" y="180" width="648" height="126" rx="16" fill="white" stroke="#c7d9df" stroke-width="2"/>
+<text x="60" y="226" font-family="DejaVu Sans, sans-serif" font-size="30" fill="#173f51" font-weight="700">Legal document</text>
+<text x="60" y="269" font-family="DejaVu Sans, sans-serif" font-size="25" fill="#173f51" font-weight="400">Executed terms and evidence</text>
+<path d="M360 306V335" stroke="#5aab9d" stroke-width="4" stroke-dasharray="5 4"/>
+<rect x="36" y="335" width="648" height="126" rx="16" fill="white" stroke="#c7d9df" stroke-width="2"/>
+<text x="60" y="381" font-family="DejaVu Sans, sans-serif" font-size="30" fill="#173f51" font-weight="700">Commercial Contract</text>
+<text x="60" y="424" font-family="DejaVu Sans, sans-serif" font-size="25" fill="#173f51" font-weight="400">Active customer commitment</text>
+<path d="M360 461V490" stroke="#5aab9d" stroke-width="4" stroke-dasharray="5 4"/>
+<rect x="36" y="490" width="648" height="126" rx="16" fill="white" stroke="#c7d9df" stroke-width="2"/>
+<text x="60" y="536" font-family="DejaVu Sans, sans-serif" font-size="30" fill="#173f51" font-weight="700">Deal</text>
+<text x="60" y="579" font-family="DejaVu Sans, sans-serif" font-size="25" fill="#173f51" font-weight="400">Sale or renewal opportunity</text>
+<path d="M360 616V645" stroke="#5aab9d" stroke-width="4" stroke-dasharray="5 4"/>
+<rect x="36" y="645" width="648" height="126" rx="16" fill="white" stroke="#c7d9df" stroke-width="2"/>
+<text x="60" y="691" font-family="DejaVu Sans, sans-serif" font-size="30" fill="#173f51" font-weight="700">Billing record</text>
+<text x="60" y="734" font-family="DejaVu Sans, sans-serif" font-size="25" fill="#173f51" font-weight="400">Schedule, invoice and payment</text>
+<text x="36" y="845" font-family="DejaVu Sans, sans-serif" font-size="25" fill="#526773" font-weight="400">Link records with a stable agreement key.</text>
+</svg>

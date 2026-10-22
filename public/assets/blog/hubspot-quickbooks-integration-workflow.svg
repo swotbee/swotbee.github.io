@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 630" role="img" aria-labelledby="title desc">
+<title id="title">Invoice ownership</title>
+<desc id="desc">Conceptual implementation model, not a product screenshot. Commercial terms: Separate recurring and one-time; Invoice controller: Choose where invoices originate; Reconciliation: Match customers and payments.</desc>
+<rect width="600" height="630" rx="24" fill="#F5F8F7"/>
+<g font-family="Arial, sans-serif" fill="#173D3A">
+<text x="36" y="55" font-size="18" font-weight="700">SWOTBEE IMPLEMENTATION GUIDE</text>
+<text x="36" y="100" font-size="32" font-weight="700">Invoice ownership</text>
+<rect x="36" y="142" width="528" height="124" rx="14" fill="white" stroke="#9CB9B1"/>
+<text x="58" y="184" font-size="25" font-weight="700">1. Commercial terms</text>
+<text x="58" y="224" font-size="23">Separate recurring and one-time</text>
+<rect x="36" y="292" width="528" height="124" rx="14" fill="white" stroke="#9CB9B1"/>
+<text x="58" y="334" font-size="25" font-weight="700">2. Invoice controller</text>
+<text x="58" y="374" font-size="23">Choose where invoices originate</text>
+<rect x="36" y="442" width="528" height="124" rx="14" fill="white" stroke="#9CB9B1"/>
+<text x="58" y="484" font-size="25" font-weight="700">3. Reconciliation</text>
+<text x="58" y="524" font-size="23">Match customers and payments</text>
+<text x="36" y="602" font-size="19">Conceptual model. Verify access and behavior in your portal.</text>
+</g></svg>

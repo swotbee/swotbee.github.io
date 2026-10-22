@@ -29,7 +29,7 @@ Crawl-delay: 1
 
 User-agent: Bingbot
 Allow: /
-Crawl-delay: 1
+# Let Bing manage its crawl rate without a fixed per-request delay.
 
 # AI answer-engine crawlers (AEO) — explicit allow so a future WAF/CDN rule
 # can't silently block one of these by name. Functionally a no-op today:

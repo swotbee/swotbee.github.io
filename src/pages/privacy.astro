@@ -45,6 +45,25 @@ import Navbar from "../components/astro/Navbar.astro";
           <li>To comply with legal obligations and enforce our Terms of Use.</li>
         </ul>
 
+        {import.meta.env.PUBLIC_UMAMI_WEBSITE_ID && (
+          <p class="mt-4">
+            Our self-hosted Umami pilot measures visits, campaign sources and
+            conversion events on selected public pages.
+            {import.meta.env.PUBLIC_UMAMI_PRECONSENT_TRIAL === 'true'
+              ? ' During this trial, before you choose and after Reject,'
+              : ' With your analytics permission,'}
+            we may also collect masked session recordings and click/scroll heatmaps to
+            understand navigation problems. Form contents are excluded from recordings.
+            Recordings and heatmap points expire after 14 days. Only authorized SwotBee
+            operators may access this data.
+            {import.meta.env.PUBLIC_UMAMI_PRECONSENT_TRIAL === 'true'
+              ? ' Cookie settings control Google analytics cookies and Microsoft Clarity but do not stop Umami analytics, heatmaps or recordings during the trial.'
+              : ' Reject analytics in Cookie settings to stop future collection.'}
+            Contact info@swotbee.com to request access or deletion.
+            See the <a href="/cookie/" class="text-v6-copper underline">Cookie Policy</a> for details.
+          </p>
+        )}
+
         <h2 class="mt-8 text-2xl font-semibold">3. Data Sharing &amp; Disclosure</h2>
         <ul class="mt-4 ml-6 space-y-2 list-disc">
           <li>We do not sell your personal information.</li>

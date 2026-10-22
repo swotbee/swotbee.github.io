@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 780" role="img" aria-labelledby="title desc">
+<title id="title">Native Contract setup</title>
+<desc id="desc">Conceptual implementation model, not a product screenshot. Accepted quote: Check Revenue Hub access; Direct creation: Verify separate beta access; Non-billing import: Map identifiers and line items; Billing migration: Validate before activation.</desc>
+<rect width="600" height="780" rx="24" fill="#F5F8F7"/>
+<g font-family="Arial, sans-serif" fill="#173D3A">
+<text x="36" y="55" font-size="18" font-weight="700">SWOTBEE IMPLEMENTATION GUIDE</text>
+<text x="36" y="100" font-size="32" font-weight="700">Native Contract setup</text>
+<rect x="36" y="142" width="528" height="124" rx="14" fill="white" stroke="#9CB9B1"/>
+<text x="58" y="184" font-size="25" font-weight="700">1. Accepted quote</text>
+<text x="58" y="224" font-size="23">Check Revenue Hub access</text>
+<rect x="36" y="292" width="528" height="124" rx="14" fill="white" stroke="#9CB9B1"/>
+<text x="58" y="334" font-size="25" font-weight="700">2. Direct creation</text>
+<text x="58" y="374" font-size="23">Verify separate beta access</text>
+<rect x="36" y="442" width="528" height="124" rx="14" fill="white" stroke="#9CB9B1"/>
+<text x="58" y="484" font-size="25" font-weight="700">3. Non-billing import</text>
+<text x="58" y="524" font-size="23">Map identifiers and line items</text>
+<rect x="36" y="592" width="528" height="124" rx="14" fill="white" stroke="#9CB9B1"/>
+<text x="58" y="634" font-size="25" font-weight="700">4. Billing migration</text>
+<text x="58" y="674" font-size="23">Validate before activation</text>
+<text x="36" y="752" font-size="19">Conceptual model. Verify access and behavior in your portal.</text>
+</g></svg>

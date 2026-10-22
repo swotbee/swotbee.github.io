@@ -1,0 +1,122 @@
+---
+// Optional parallel pilot. No configured ID means no script or collection.
+const websiteId = import.meta.env.PUBLIC_UMAMI_WEBSITE_ID || '';
+const collector = import.meta.env.PUBLIC_UMAMI_ORIGIN || '';
+// Temporary operator-authorized parity trial. Unset/false restores consent gating.
+const preconsentTrial = import.meta.env.PUBLIC_UMAMI_PRECONSENT_TRIAL === 'true';
+const defaultReplayPaths = '/,/hubspot-sales-pipeline-reporting/,/resources/hubspot-management-reporting-starter-pack/,/resources/contract-tracker-template/';
+const paths = (import.meta.env.PUBLIC_UMAMI_PATHS || defaultReplayPaths + ',/renewal-audit-call/,/renewal-audit-call/thank-you/,/services/hubspot-contract-management/').split(',').map((path) => path.trim()).filter(Boolean);
+const replayPaths = (import.meta.env.PUBLIC_UMAMI_REPLAY_PATHS || defaultReplayPaths).split(',').map((path) => path.trim()).filter(Boolean);
+if (Boolean(websiteId) !== Boolean(collector) || (websiteId && (!/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(websiteId) || !collector.startsWith('https://') || new URL(collector).origin !== collector))) {
+  throw new Error('Umami requires a website UUID and an HTTPS origin without a trailing slash or path.');
+}
+---
+{websiteId && collector && (
+  <script is:inline define:vars={{ websiteId, collector, paths, replayPaths, preconsentTrial }}>
+    (() => {
+      // Dashboard previews must not become additional analytics visits.
+      if (window.self !== window.top) return;
+      let granted = false;
+      try { granted = localStorage.getItem('sb_consent') === 'granted'; } catch (_) {}
+      let loading = false;
+      let queue = [];
+      const eligible = () => (granted || preconsentTrial) && paths.includes(location.pathname);
+      const keys = new Set(['cta','href','destination','source_page','resource_id','resource','asset','placement','percent','form_name','offer','report_offer','cta_label','experiment','error_type','analytics_consent','video_name','video_title','video_id','event_type','magnet','source','dimension','grade','total','link_url','link_text','file_name','file_type','method']);
+      const utms = new Set(['utm_source','utm_medium','utm_campaign','utm_content','utm_term']);
+      const safeText = (value) => typeof value === 'string' && value.length <= 200 && !/[@\r\n]/.test(value);
+      function cleanUrl(value, campaigns = false) {
+        if (!value) return '';
+        try {
+          const url = new URL(value, location.origin);
+          if (!['http:', 'https:'].includes(url.protocol) || /@|%40/i.test(url.pathname)) return '';
+          url.username = ''; url.password = ''; url.hash = '';
+          for (const [key, value] of [...url.searchParams]) {
+            if (!campaigns || !utms.has(key) || !safeText(value)) url.searchParams.delete(key);
+          }
+          return url.toString();
+        } catch (_) { return ''; }
+      }
+      function cleanProperties(properties) {
+        const result = {};
+        for (const [key, value] of Object.entries(properties || {})) {
+          if (!keys.has(key)) continue;
+          if (typeof value === 'number' && Number.isFinite(value)) result[key] = value;
+          else if (typeof value === 'boolean') result[key] = value;
+          else if (safeText(value)) {
+            result[key] = /href|destination|source_page|link_url/.test(key) ? cleanUrl(value) : value;
+          }
+        }
+        return result;
+      }
+      // The hook runs for every SDK request, including unload and queued events.
+      window.__sbUmamiBeforeSend = (type, payload) => {
+        if (!eligible() || type !== 'event') return false;
+        if (payload.name && !/^[a-z][a-z0-9_]{0,63}$/.test(payload.name)) return false;
+        return { ...payload, url: cleanUrl(payload.url, true), referrer: cleanUrl(payload.referrer),
+          id: undefined, data: cleanProperties(payload.data) };
+      };
+      // rrweb also flushes on unload. Block its network requests synchronously on
+      // withdrawal in normal mode, before ConsentBanner reloads. The temporary
+      // parity trial deliberately keeps collection running after rejection.
+      const realFetch = window.fetch.bind(window);
+      function isCollection(input) {
+        const url = new URL(typeof input === 'string' ? input : input.url || String(input), location.href);
+        return url.origin === collector && ['/api/send', '/api/record'].includes(url.pathname);
+      }
+      window.fetch = (input, init) => {
+        if (isCollection(input) && !eligible()) return Promise.resolve(new Response('{}', { status: 200 }));
+        return realFetch(input, init);
+      };
+      if (navigator.sendBeacon) {
+        const beacon = navigator.sendBeacon.bind(navigator);
+        navigator.sendBeacon = (url, data) => isCollection(url) && !eligible() ? false : beacon(url, data);
+      }
+      function send(name, properties) {
+        if (!eligible()) return;
+        const data = cleanProperties(properties);
+        if (window.umami) {
+          try { return Promise.resolve(window.umami.track(name, data)).catch(() => {}); }
+          catch (_) { return; } // Analytics failure must not break a form or download.
+        }
+        if (queue.length < 30) return new Promise((resolve) => queue.push([name, data, resolve]));
+      }
+      window.__sbTrackUmami = send;
+      function load() {
+        if (!eligible() || loading) return;
+        loading = true;
+        const tracker = document.createElement('script');
+        tracker.src = collector + '/script.js';
+        tracker.dataset.websiteId = websiteId;
+        tracker.dataset.autoTrack = 'false';
+        tracker.dataset.beforeSend = '__sbUmamiBeforeSend';
+        tracker.onerror = () => { loading = false; queue.forEach((item) => item[2]()); queue = []; tracker.remove(); };
+        tracker.onload = () => {
+          if (!eligible()) { loading = false; queue.forEach((item) => item[2]()); queue = []; return; }
+          window.umami?.track();
+          const pending = queue; queue = [];
+          pending.forEach(([name, data, resolve]) => Promise.resolve(send(name, data)).then(resolve, resolve));
+          // Never change the real URL: GA4/Ads and first-party attribution need it.
+          // Instead omit replay on URLs containing unapproved query/hash values.
+          const url = new URL(location.href);
+          const safeReplay = replayPaths.includes(location.pathname) && !url.hash && [...url.searchParams].every(([key, value]) => utms.has(key) && safeText(value));
+          if (safeReplay) {
+            const recorder = document.createElement('script');
+            recorder.src = collector + '/recorder.js';
+            recorder.dataset.websiteId = websiteId;
+            document.head.append(recorder);
+          }
+        };
+        document.head.append(tracker);
+      }
+      window.__sbUmamiSetConsent = (value) => {
+        granted = value === true;
+        if (eligible()) load();
+        else { queue.forEach((item) => item[2]()); queue = []; }
+      };
+      window.addEventListener('storage', (event) => {
+        if (event.key === 'sb_consent') window.__sbUmamiSetConsent(event.newValue === 'granted');
+      });
+      load();
+    })();
+  </script>
+)}

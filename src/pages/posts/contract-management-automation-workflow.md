@@ -6,7 +6,7 @@ description: "A practical guide to contract management automation and workflow d
 category:
   title: "Revenue Operations"
   href: "/categories/revenue-operations/"
-modifiedDate: "2026-08-31"
+modifiedDate: "2026-10-09"
 author:
   name: "SWOTBee Team"
   url: "https://swotbee.com"
@@ -50,6 +50,8 @@ faqs:
 This guide covers which parts of the contract lifecycle repay automation, which parts punish it, how to design the workflow before you buy anything, and what the build actually looks like in a CRM you already own.
 
 ---
+
+For a document-to-CRM implementation in HubSpot, use the [PandaDoc and DocuSign workflow guide](/posts/hubspot-contract-document-integrations/) to define supported fields, completion events and recovery checks.
 
 ## Where contract management automation actually pays
 

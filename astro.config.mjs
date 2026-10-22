@@ -11,6 +11,7 @@ import tailwindcss from "@tailwindcss/vite";
 import { readdirSync, readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
+import rehypeBlogReading from "./src/plugins/rehype-blog-reading.mjs";
 
 // Read every post's frontmatter once and derive the two things the sitemap needs from
 // it: which posts are noindexed (so they can be excluded) and when each post was really
@@ -83,6 +84,7 @@ export default defineConfig({
     // separate change instead of silently accepting them during this migration.
     processor: unified({
       smartypants: true,
+      rehypePlugins: [rehypeBlogReading],
     }),
   },
 

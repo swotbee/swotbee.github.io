@@ -2,6 +2,7 @@
 layout: ../../layouts/BlogPostLayout.astro
 title: "Renewals, Expansions & Downgrades: How to Structure Multiple Pipelines in HubSpot"
 pubDate: "2026-04-02"
+modifiedDate: "2026-10-19"
 description: "Where should expansion revenue live in HubSpot? How do you prevent double-counting? This guide covers multi-pipeline architecture for renewals, expansions, and downgrades."
 category:
   title: "Revenue Operations"
@@ -30,6 +31,8 @@ This is the second most common HubSpot pipeline architecture question after "sho
 > This article is part of our [Complete Guide to Building a Renewal Pipeline in HubSpot](/posts/hubspot-renewal-pipeline-complete-guide/).
 
 ---
+
+Before choosing the pipeline arrangement, reconcile the components of one purchase. Our [renewal and expansion revenue example](/posts/hubspot-renewal-expansion-revenue-reporting/) separates retained value, incremental recurring revenue and one-time work, with an Excel workbook and printable test pack.
 
 ## The Three Architecture Options
 

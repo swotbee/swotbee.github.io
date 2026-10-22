@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 890" role="img" aria-labelledby="title desc">
+<title id="title">Document integrations: illustrative workflow</title>
+<desc id="desc">From approved inputs to accepted updates. Approved inputs: Entity, scope, price and version; Document completed: All required signatures; CRM update validated: Correct agreement and fields; Handoff ready: Finance and renewal owners. Illustrative design, not a HubSpot screenshot.</desc>
+<rect width="720" height="890" rx="24" fill="#f7f5f1"/>
+<text x="36" y="52" font-family="DejaVu Sans, sans-serif" font-size="22" fill="#1a7ab5" font-weight="700">ILLUSTRATIVE DESIGN</text>
+<text x="36" y="100" font-family="DejaVu Sans, sans-serif" font-size="31" fill="#173f51" font-weight="700">From approved inputs to accepted</text>
+<text x="36" y="139" font-family="DejaVu Sans, sans-serif" font-size="31" fill="#173f51" font-weight="700">updates</text>
+<rect x="36" y="180" width="648" height="126" rx="16" fill="white" stroke="#c7d9df" stroke-width="2"/>
+<text x="60" y="226" font-family="DejaVu Sans, sans-serif" font-size="30" fill="#173f51" font-weight="700">Approved inputs</text>
+<text x="60" y="269" font-family="DejaVu Sans, sans-serif" font-size="25" fill="#173f51" font-weight="400">Entity, scope, price and version</text>
+<path d="M360 306V335" stroke="#5aab9d" stroke-width="4" stroke-dasharray="5 4"/>
+<rect x="36" y="335" width="648" height="126" rx="16" fill="white" stroke="#c7d9df" stroke-width="2"/>
+<text x="60" y="381" font-family="DejaVu Sans, sans-serif" font-size="30" fill="#173f51" font-weight="700">Document completed</text>
+<text x="60" y="424" font-family="DejaVu Sans, sans-serif" font-size="25" fill="#173f51" font-weight="400">All required signatures</text>
+<path d="M360 461V490" stroke="#5aab9d" stroke-width="4" stroke-dasharray="5 4"/>
+<rect x="36" y="490" width="648" height="126" rx="16" fill="white" stroke="#c7d9df" stroke-width="2"/>
+<text x="60" y="536" font-family="DejaVu Sans, sans-serif" font-size="30" fill="#173f51" font-weight="700">CRM update validated</text>
+<text x="60" y="579" font-family="DejaVu Sans, sans-serif" font-size="25" fill="#173f51" font-weight="400">Correct agreement and fields</text>
+<path d="M360 616V645" stroke="#5aab9d" stroke-width="4" stroke-dasharray="5 4"/>
+<rect x="36" y="645" width="648" height="126" rx="16" fill="white" stroke="#c7d9df" stroke-width="2"/>
+<text x="60" y="691" font-family="DejaVu Sans, sans-serif" font-size="30" fill="#173f51" font-weight="700">Handoff ready</text>
+<text x="60" y="734" font-family="DejaVu Sans, sans-serif" font-size="25" fill="#173f51" font-weight="400">Finance and renewal owners</text>
+<text x="36" y="845" font-family="DejaVu Sans, sans-serif" font-size="25" fill="#526773" font-weight="400">Failed checks need a named exception owner.</text>
+</svg>

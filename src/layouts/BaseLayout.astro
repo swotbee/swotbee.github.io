@@ -9,9 +9,12 @@ import {
 // Body: Hanken Grotesk (primary), DM Sans (fallback), Lexend Deca (fallback)
 // Headings: Bricolage Grotesque; Rokkitt retained for historical palette comparisons.
 import "@fontsource-variable/hanken-grotesk";     // Body — variable font covers all weights
+import bodyFontUrl from "@fontsource-variable/hanken-grotesk/files/hanken-grotesk-latin-wght-normal.woff2?url";
+import headingFontUrl from "@fontsource-variable/rokkitt/files/rokkitt-latin-wght-normal.woff2?url";
 // Rokkitt loaded via @font-face in global.css (variable woff2, no separate import needed)
 import "../styles/global.css";
 import SiteTheme from "../components/astro/SiteTheme.astro";
+import UmamiAnalytics from "../components/astro/UmamiAnalytics.astro";
 import ConsentBanner from "../components/astro/ConsentBanner.astro";
 import AttributionCapture from "../components/astro/AttributionCapture.astro";
 
@@ -77,14 +80,14 @@ const gtmId = import.meta.env.PUBLIC_GTM_ID || "GTM-WV9TQ6FH";
     <meta name="theme-color" content="#2E2A31" />
     <SiteTheme />
 
-    <!-- No font preloads on purpose. These used to preload /fonts/*.woff2, but the
-         @font-face rules that actually render text resolve to the hashed bundled
-         copies under /_astro/, so the preloaded files were a different URL and were
-         never used: every page downloaded both copies of both fonts, ~64 KB of pure
-         waste, and Chrome logged "preloaded but not used" for each. The fonts are
-         font-display:swap, so text paints immediately in the fallback either way and
-         the preload was buying nothing. Re-adding one is only correct if it points at
-         the exact URL the built CSS requests. -->
+    {/* Blog headings and body use these two faces above the fold. Import their URLs
+        through Vite so the hints match the hashed URLs in the bundled CSS, avoiding
+        the duplicate downloads caused by the old unrelated /fonts/ copies.
+        Keep swap/fallback behavior and leave other page types unchanged. */}
+    {ogType === "article" && <>
+      <link rel="preload" href={bodyFontUrl} as="font" type="font/woff2" crossorigin="anonymous" />
+      <link rel="preload" href={headingFontUrl} as="font" type="font/woff2" crossorigin="anonymous" />
+    </>}
 
     <!-- Additional SEO meta tags -->
     <meta property="og:locale" content="en_US" />
@@ -206,6 +209,7 @@ const gtmId = import.meta.env.PUBLIC_GTM_ID || "GTM-WV9TQ6FH";
     {import.meta.env.PUBLIC_GSC_VERIFICATION && (
       <meta name="google-site-verification" content={import.meta.env.PUBLIC_GSC_VERIFICATION} />
     )}
+    <UmamiAnalytics />
     {/* Google Consent Mode v2 defaults. This block MUST stay above the gtag.js tag
         below: Consent Mode only takes effect if the default arrives before the tag
         loads, and a default that lands afterwards silently does nothing. Everything
@@ -290,7 +294,7 @@ const gtmId = import.meta.env.PUBLIC_GTM_ID || "GTM-WV9TQ6FH";
         gtag('config', ga4Id);
       </script>
     )}
-    {import.meta.env.PUBLIC_GA4_ID && (
+    {(import.meta.env.PUBLIC_GA4_ID || import.meta.env.PUBLIC_UMAMI_WEBSITE_ID) && (
       <script is:inline>
         // Site-wide GA4 event taxonomy per research/conversion-optimization/00-swotbee-cro-framework.md's
         // pre-launch instrumentation gate: scroll_depth, cta_click, outbound_click here (global,
@@ -298,13 +302,18 @@ const gtmId = import.meta.env.PUBLIC_GTM_ID || "GTM-WV9TQ6FH";
         // where the relevant form/video markup lives (they need page-specific context this
         // global script doesn't have).
         (function () {
-          function fire(name, params) {
+          function fireGoogle(name, params) {
             if (!window.gtag) return;
-            var payload = params || {};
+            var payload = Object.assign({}, params || {});
             // sendBeacon survives the page unload that a click-then-navigate causes.
             // Without it the request is cancelled mid-flight and the event is lost.
             payload.transport_type = 'beacon';
             window.gtag('event', name, payload);
+          }
+
+          function fire(name, params) {
+            window.__sbTrackUmami?.(name, params);
+            fireGoogle(name, params);
           }
 
           // Page-specific integrations can report non-navigation events through the
@@ -333,14 +342,17 @@ const gtmId = import.meta.env.PUBLIC_GTM_ID || "GTM-WV9TQ6FH";
           // ambient context, because some call sites run from inside an iframe message
           // handler (Cal.com's embed) where that context is not reliable.
           window.__sbTrackThenGo = function (name, params, url) {
+            var umami = window.__sbTrackUmami?.(name, params);
             var done = false;
-            function go() {
+            function navigate() {
               if (done) return;   // event_callback and the timeout race; first wins
               done = true;
               window.location.assign(url);
             }
+            function go() { Promise.resolve(umami).then(navigate, navigate); }
+            window.setTimeout(navigate, 1200);
             if (!window.gtag) { go(); return; }
-            var payload = params || {};
+            var payload = Object.assign({}, params || {});
             payload.transport_type = 'beacon';
             payload.page_location = window.location.href;
             payload.page_path = window.location.pathname;
@@ -350,21 +362,30 @@ const gtmId = import.meta.env.PUBLIC_GTM_ID || "GTM-WV9TQ6FH";
             // fires, the visitor must still reach the thank-you page. 1200ms is long
             // enough for a beacon on a slow connection and short enough not to read as
             // a hang after a successful submission.
-            window.setTimeout(go, 1200);
           };
 
-          // scroll_depth: 25/50/75/90, each fires once per page load.
+          // Each vendor tracks thresholds once per page load. A pre-consent GA4
+          // event must not consume Umami's threshold: Umami sends only after grant.
           var scrollThresholds = [25, 50, 75, 90];
           var scrollFired = {};
+          var umamiScrollFired = {};
           function checkScrollDepth() {
             var doc = document.documentElement;
             var scrollable = doc.scrollHeight - doc.clientHeight;
             if (scrollable <= 0) return;
             var pct = Math.round((window.scrollY / scrollable) * 100);
             scrollThresholds.forEach(function (t) {
-              if (pct >= t && !scrollFired[t]) {
+              if (pct < t) return;
+              if (!scrollFired[t]) {
                 scrollFired[t] = true;
-                fire('scroll_depth', { percent: t });
+                fireGoogle('scroll_depth', { percent: t });
+              }
+              if (!umamiScrollFired[t]) {
+                // The adapter returns a promise only when eligible and queued/sent.
+                // Denied or out-of-scope attempts leave this threshold available.
+                if (window.__sbTrackUmami?.('scroll_depth', { percent: t })) {
+                  umamiScrollFired[t] = true;
+                }
               }
             });
           }
@@ -373,7 +394,7 @@ const gtmId = import.meta.env.PUBLIC_GTM_ID || "GTM-WV9TQ6FH";
           // outbound_click: any link to a different hostname.
           // cta_click: any element carrying data-ga-cta="<label>" (used for the funnel's
           // primary CTAs so clicks are labeled, not just "a link was clicked somewhere").
-          // cta_click is bound to pointerdown, NOT click, and this is deliberate.
+          // Pointer activation is tracked on pointerdown, and this is deliberate.
           // Every data-ga-cta element is an internal link, so a click starts a navigation
           // in the same tick the event fires and the page unloads before the request
           // leaves. GA4 recorded 0 cta_click across 90 days while scroll_depth (77, no
@@ -394,6 +415,12 @@ const gtmId = import.meta.env.PUBLIC_GTM_ID || "GTM-WV9TQ6FH";
             var el = e.target.closest ? e.target.closest('a[href]') : null;
             if (!el) return;
             var href = el.getAttribute('href') || '';
+            // Keyboard and assistive activation have no preceding pointerdown.
+            // Their click detail is zero; ordinary pointer clicks are already tracked.
+            var ctaLabel = el.getAttribute('data-ga-cta');
+            if (e.detail === 0 && ctaLabel) {
+              fire('cta_click', { cta: ctaLabel, href: href });
+            }
             try {
               var url = new URL(href, window.location.href);
               if (url.hostname && url.hostname !== window.location.hostname) {
@@ -451,8 +478,8 @@ const gtmId = import.meta.env.PUBLIC_GTM_ID || "GTM-WV9TQ6FH";
         tags inside it could never be granted, and anything not gated would have run
         unchallenged. Now that gtmId has a committed default this condition is always
         true in practice, which is the correct end state, not a reason to drop it. */}
-    {(import.meta.env.PUBLIC_GA4_ID || import.meta.env.PUBLIC_CLARITY_ID || gtmId) && (
-      <ConsentBanner />
+    {(import.meta.env.PUBLIC_GA4_ID || import.meta.env.PUBLIC_CLARITY_ID || gtmId || import.meta.env.PUBLIC_UMAMI_WEBSITE_ID) && (
+      <ConsentBanner umamiEnabled={Boolean(import.meta.env.PUBLIC_UMAMI_WEBSITE_ID)} />
     )}
     {/* Unconditional, unlike the banner above: this is not analytics. It carries the
         campaign that produced a visit into the form the visitor chooses to submit, which

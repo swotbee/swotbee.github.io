@@ -235,8 +235,8 @@ const relatedLinks = [
 
   <script define:vars={{ resourceId, sourcePage }}>
     function sendReportingEvent(name, params) {
-      if (!window.gtag) return;
-      window.gtag('event', name, {
+      if (!window.__sbTrack) return;
+      window.__sbTrack(name, {
         ...params,
         transport_type: 'beacon',
       });
