@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 112 96" width="112" height="96">
+  <title>Rules kept in a person's head instead of the system</title>
+  <ellipse cx="56" cy="87" rx="40" ry="4" fill="#C7DDC9" opacity=".7"/>
+  <g stroke="#20343B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M23 80V66C9 58 7 42 12 29c5-14 20-19 32-14 12 4 17 14 17 26l8 12-10 3v12H44v12Z" fill="#489B89"/>
+    <rect x="20" y="25" width="29" height="30" rx="3" fill="#FFF9ED"/>
+    <path d="m25 33 2 2 4-5m4 3h8m-18 11 2 2 4-5m4 3h8" fill="none"/>
+    <circle cx="54" cy="42" r="1.5" fill="#20343B" stroke="none"/>
+    <rect x="78" y="35" width="29" height="32" rx="3" fill="#FFF9ED"/>
+    <path d="M78 43h29m-15 24v9m-8 0h16" fill="none"/>
+    <rect x="84" y="49" width="17" height="12" rx="1" fill="none" stroke="#1871A8" stroke-dasharray="2 3"/>
+    <path d="M66 29h13" fill="none" stroke-dasharray="2 4"/>
+    <path d="m70 23 7 12m0-12-7 12" fill="none" stroke="#F58232" stroke-width="3"/>
+  </g>
+</svg>
