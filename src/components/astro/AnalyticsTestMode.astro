@@ -1,0 +1,17 @@
+---
+// Explicit QA opt-out. It applies only to this tab session and never changes consent.
+---
+<script is:inline>
+  (function () {
+    var choice = new URLSearchParams(window.location.search).get('sb_analytics_test');
+    var enabled = choice === '1';
+    try {
+      if (choice === '1') sessionStorage.setItem('sb_analytics_test', '1');
+      else if (choice === '0') sessionStorage.removeItem('sb_analytics_test');
+      enabled = choice === '0' ? false : sessionStorage.getItem('sb_analytics_test') === '1';
+    } catch (_) {
+      // Without storage, the explicit URL choice still works on this page.
+    }
+    window.__sbAnalyticsTest = enabled;
+  })();
+</script>

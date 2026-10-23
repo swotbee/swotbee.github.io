@@ -17,6 +17,7 @@ import "../styles/site.css";
 import UmamiAnalytics from "../components/astro/UmamiAnalytics.astro";
 import ConsentBanner from "../components/astro/ConsentBanner.astro";
 import AttributionCapture from "../components/astro/AttributionCapture.astro";
+import AnalyticsTestMode from "../components/astro/AnalyticsTestMode.astro";
 
 interface Props {
   title: string;
@@ -220,6 +221,7 @@ const gtmId = import.meta.env.PUBLIC_GTM_ID || "GTM-WV9TQ6FH";
     {import.meta.env.PUBLIC_GSC_VERIFICATION && (
       <meta name="google-site-verification" content={import.meta.env.PUBLIC_GSC_VERIFICATION} />
     )}
+    <AnalyticsTestMode />
     <UmamiAnalytics />
     {/* Google Consent Mode v2 defaults. This block MUST stay above the gtag.js tag
         below: Consent Mode only takes effect if the default arrives before the tag
@@ -274,6 +276,7 @@ const gtmId = import.meta.env.PUBLIC_GTM_ID || "GTM-WV9TQ6FH";
     {gtmId && (
       <script is:inline define:vars={{ gtmId }}>
         (function(w,d,s,l,i){
+          if (w.__sbAnalyticsTest) return;
           w[l]=w[l]||[];
           w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});
           var f=d.getElementsByTagName(s)[0], j=d.createElement(s),
@@ -285,7 +288,14 @@ const gtmId = import.meta.env.PUBLIC_GTM_ID || "GTM-WV9TQ6FH";
       </script>
     )}
     {import.meta.env.PUBLIC_GA4_ID && (
-      <script async src={`https://www.googletagmanager.com/gtag/js?id=${import.meta.env.PUBLIC_GA4_ID}`}></script>
+      <script is:inline define:vars={{ ga4ScriptId: import.meta.env.PUBLIC_GA4_ID }}>
+        if (!window.__sbAnalyticsTest) {
+          var ga4Script = document.createElement('script');
+          ga4Script.async = true;
+          ga4Script.src = 'https://www.googletagmanager.com/gtag/js?id=' + ga4ScriptId;
+          document.head.appendChild(ga4Script);
+        }
+      </script>
     )}
     {import.meta.env.PUBLIC_GA4_ID && (
       <script is:inline define:vars={{ ga4Id: import.meta.env.PUBLIC_GA4_ID }}>
@@ -302,7 +312,9 @@ const gtmId = import.meta.env.PUBLIC_GTM_ID || "GTM-WV9TQ6FH";
         // strips those identifiers when consent is denied. Off is the default and is the
         // right setting while the goal is measuring a paid campaign.
         gtag('set', 'url_passthrough', true);
-        gtag('config', ga4Id);
+        // Also block any Google tag loaded elsewhere from measuring this QA tab.
+        if (window.__sbAnalyticsTest) window['ga-disable-' + ga4Id] = true;
+        else gtag('config', ga4Id);
       </script>
     )}
     {(import.meta.env.PUBLIC_GA4_ID || import.meta.env.PUBLIC_UMAMI_WEBSITE_ID) && (
@@ -314,7 +326,7 @@ const gtmId = import.meta.env.PUBLIC_GTM_ID || "GTM-WV9TQ6FH";
         // global script doesn't have).
         (function () {
           function fireGoogle(name, params) {
-            if (!window.gtag) return;
+            if (window.__sbAnalyticsTest || !window.gtag) return;
             var payload = Object.assign({}, params || {});
             // sendBeacon survives the page unload that a click-then-navigate causes.
             // Without it the request is cancelled mid-flight and the event is lost.
@@ -323,6 +335,7 @@ const gtmId = import.meta.env.PUBLIC_GTM_ID || "GTM-WV9TQ6FH";
           }
 
           function fire(name, params) {
+            if (window.__sbAnalyticsTest) return;
             window.__sbTrackUmami?.(name, params);
             fireGoogle(name, params);
           }
@@ -353,6 +366,7 @@ const gtmId = import.meta.env.PUBLIC_GTM_ID || "GTM-WV9TQ6FH";
           // ambient context, because some call sites run from inside an iframe message
           // handler (Cal.com's embed) where that context is not reliable.
           window.__sbTrackThenGo = function (name, params, url) {
+            if (window.__sbAnalyticsTest) { window.location.assign(url); return; }
             var umami = window.__sbTrackUmami?.(name, params);
             var done = false;
             function navigate() {
@@ -462,7 +476,7 @@ const gtmId = import.meta.env.PUBLIC_GTM_ID || "GTM-WV9TQ6FH";
         // calls it on load for a visitor who already accepted. Idempotent, so a double
         // call is harmless.
         window.__sbLoadClarity = function () {
-          if (window.__sbClarityLoaded) return;
+          if (window.__sbAnalyticsTest || window.__sbClarityLoaded) return;
           window.__sbClarityLoaded = true;
           (function (c, l, a, r, i, t, y) {
             c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments); };

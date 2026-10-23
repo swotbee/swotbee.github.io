@@ -14,6 +14,7 @@ if (Boolean(websiteId) !== Boolean(collector) || (websiteId && (!/^[0-9a-f]{8}-[
 {websiteId && collector && (
   <script is:inline define:vars={{ websiteId, collector, paths, replayPaths, preconsentTrial }}>
     (() => {
+      if (window.__sbAnalyticsTest) return;
       // Dashboard previews must not become additional analytics visits.
       if (window.self !== window.top) return;
       let granted = false;

@@ -116,7 +116,42 @@ try {
   });
   assert.deepEqual(formAttribution, landing, 'Contact form receives the original landing and referrer');
   await fresh.close();
-  console.log('[blog-measurement] PASS: CSV payload, one download event, pointer and keyboard enquiries, multi-page attribution');
+
+  // Explicit QA visits must not pollute acquisition or conversion reports. The flag
+  // survives internal navigation in this tab but never changes the consent choice.
+  const qa = await context('granted');
+  const qaPage = await qa.newPage();
+  const measurementRequests = [];
+  qaPage.on('request', (request) => {
+    if (/googletagmanager\.com|google-analytics\.com|clarity\.ms|umami-test\.invalid/.test(request.url())) {
+      measurementRequests.push(request.url());
+    }
+  });
+  await qaPage.goto(`${origin}/resources/contract-tracker-template/?sb_analytics_test=1`);
+  assert.equal(await qaPage.evaluate(() => window.__sbAnalyticsTest), true);
+  assert.equal(await qaPage.evaluate(() => typeof window.__sbUmamiBeforeSend), 'undefined',
+    'QA mode does not initialize the optional Umami collector');
+  await qaPage.evaluate(() => window.__sbTrack('report_signup_accepted', { report_offer: 'qa' }));
+  assert.equal((await events(qaPage, 'report_signup_accepted')).length, 0);
+  await Promise.all([
+    qaPage.waitForURL((url) => url.pathname === '/contactus/'),
+    qaPage.evaluate(() => window.__sbTrackThenGo('call_booked', {}, '/contactus/')),
+  ]);
+  assert.equal(await qaPage.evaluate(() => window.__sbAnalyticsTest), true,
+    'QA exclusion survives internal navigation');
+  assert.equal(await qaPage.evaluate(() => localStorage.getItem('sb_consent')), 'granted',
+    'QA exclusion does not change consent');
+  assert.equal(await qaPage.evaluate(() => window['ga-disable-G-TEST']), true);
+  assert.deepEqual(measurementRequests, [], 'QA tab loads no measurement scripts');
+  assert.equal(await qaPage.evaluate(() => Array.from(window.dataLayer || [])
+    .filter((entry) => entry[0] === 'config').length), 0, 'No automatic QA pageview configured');
+  await qaPage.goto(`${origin}/contactus/?sb_analytics_test=0`);
+  assert.equal(await qaPage.evaluate(() => window.__sbAnalyticsTest), false);
+  assert.equal(await qaPage.evaluate(() => Array.from(window.dataLayer || [])
+    .filter((entry) => entry[0] === 'config' && entry[1] === 'G-TEST').length), 1,
+    'Leaving QA mode restores exactly one GA configuration');
+  await qa.close();
+  console.log('[blog-measurement] PASS: CSV payload, one download event, pointer and keyboard enquiries, multi-page attribution, QA exclusion and restoration');
 } catch (error) {
   console.error(`[blog-measurement] FAIL: ${error.message}\nWhat next:\n`
     + '  1) Rebuild and retry: PUBLIC_GA4_ID=G-TEST PUBLIC_CLARITY_ID=test pnpm verify && pnpm check:blog-measurement\n'

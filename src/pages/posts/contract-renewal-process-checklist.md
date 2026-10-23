@@ -6,7 +6,7 @@ description: "Contract renewal step by step: a T-120 timeline anchored to the no
 category:
   title: "Revenue Operations"
   href: "/categories/revenue-operations/"
-modifiedDate: "2026-08-31"
+modifiedDate: "2026-10-23"
 author:
   name: "SWOTBee Team"
   url: "https://swotbee.com"
@@ -136,6 +136,8 @@ The deeper spec for this (fields to pass at handoff, meeting formats, plays by r
 ---
 
 ## The Copy-Paste Contract Renewal Checklist
+
+Need a place to keep the dates and owners? <a href="/resources/contract-tracker-template/" data-ga-cta="renewal_checklist_contract_tracker">Download the free contract tracker template for Excel or Google Sheets</a>. It includes notice-date formulas and decision status fields; no email or signup is required. Use this checklist alongside it to manage the work before each deadline.
 
 Copy this into your task tool, CRM playbook, or run sheet. Dates assume a T-120 start; scale proportionally for shorter cycles. The checklist exists so missing a renewal, or noticing too late that a contract is about to expire, stops being a possibility. It works as a manual contract run sheet, but it maps one to one onto contract management software to track every step automatically.
 

@@ -3,6 +3,26 @@
 How swotbee.com tracks people, what it does not do until they agree, and how a campaign
 gets attached to a lead. Read this before adding any tag, pixel, embed or form field.
 
+## Exclude a QA visit from analytics
+
+For manual release checks, start the tab at the page being checked with
+`?sb_analytics_test=1` (or append `&sb_analytics_test=1` to an existing query).
+`AnalyticsTestMode.astro` remembers the exclusion in sessionStorage for that tab.
+It runs before the measurement loaders and prevents Google Tag Manager, GA4,
+Clarity and the optional Umami adapter from collecting that visit. Site conversion
+helpers also skip analytics events while keeping normal navigation working.
+Consent controls and the form's original enquiry attribution still work normally.
+
+Use `?sb_analytics_test=0` to resume normal measurement, or close the tab. This
+does not remove historical test events from Google Analytics. It is not a form
+sandbox: submitting still contacts the real webhook and may create contacts,
+bookings or notifications. Prefer the local checks that block external requests
+and submit no forms. A real test submission still requires explicit authorization.
+
+Run `pnpm check:blog-measurement` after an analytics-enabled build to verify QA
+exclusion, restoration and original enquiry attribution after internal navigation.
+This validates browser behavior, not GA4's processed channel assignment.
+
 **21 October 2026 trial exception:** Siva authorized Umami pageviews, events, heatmaps
 and sampled masked recordings before consent and after Reject on the pilot allowlist.
 `PUBLIC_UMAMI_PRECONSENT_TRIAL=true` enables this temporary behavior; unset/false restores
