@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="24" height="24"><title>New renewal record</title><g stroke="#20343B" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M5 5h15v21H5Z" fill="#1871A8"/>
+    <path d="M10 9h16v20H10Z" fill="#FFF9ED"/>
+    <path d="M14 14h8m-8 4h5" fill="none"/>
+    <circle cx="24" cy="24" r="6" fill="#F58232"/>
+    <path d="M24 21v6m-3-3h6" stroke="#FFFEFA" stroke-width="2" fill="none"/>
+  </g></svg>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="24" height="24"><title>Validated renewal forecast</title><g stroke="#20343B" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M5 3h17l5 5v21H5Z" fill="#FFF9ED"/>
+    <path d="M22 3v6h5" fill="#489B89"/>
+    <path d="M9 24v-7h4v7Zm6 0V13h4v11Z" fill="#1871A8"/>
+    <circle cx="24" cy="23" r="6" fill="#489B89"/>
+    <path d="m21 23 2 2 4-5" fill="none" stroke="#FFFEFA" stroke-width="2.2"/>
+  </g></svg>

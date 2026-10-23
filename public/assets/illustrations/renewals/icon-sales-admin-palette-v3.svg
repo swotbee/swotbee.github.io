@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 112 96" width="112" height="96"><title>sales admin</title><ellipse cx="57" cy="86" rx="26" ry="4" fill="#C7DDC9" opacity=".7" /><g fill="none" stroke="#20343B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><g transform="rotate(3 52 44)">
+    <path d="m23 24 40-4 5 51-42 5Z" fill="#1871A8" />
+    <path d="m32 15 39 1 1 55-40-1Z" fill="#FFF9ED" />
+    <path d="m42 11 19 1 0 10-19-1Z" fill="#489B89" />
+    <path d="m41 32 20 0m-20 10 20 0m-20 10 13 0" fill="none" />
+    <circle cx="77" cy="61" r="19" fill="#F58232" />
+    <circle cx="77" cy="61" r="14" fill="#FFF9ED" />
+    <path d="M77 51v11l8 4" fill="none" />
+  </g></g></svg>

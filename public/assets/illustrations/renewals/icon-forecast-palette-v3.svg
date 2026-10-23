@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 112 96" width="112" height="96"><title>forecast</title><ellipse cx="57" cy="86" rx="26" ry="4" fill="#C7DDC9" opacity=".7" /><g fill="none" stroke="#20343B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><g transform="rotate(3 55 45)">
+    <path d="m22 16 61-1 1 57-60 2Z" fill="#FFF9ED" />
+    <path d="m23 17 59-1 0 10-59 1Z" fill="#1871A8" />
+    <path d="m33 34 0 27 40-1" fill="none" />
+    <path d="m37 55 10-11 9 7 10-15 9 4" fill="none" stroke="#F58232" stroke-width="4" />
+    <path d="m68 29 9 2-3 10" fill="#F58232" />
+    <path d="m75 63 16-5 9 5-16 6Z" fill="#489B89" />
+    <path d="m75 63 0 9 9 6 16-6 0-9m-16 6v9" fill="#489B89" />
+  </g></g></svg>

@@ -1,0 +1,7 @@
+---
+interface Props { variant: number }
+const { variant } = Astro.props;
+const files = ["line-items","escalation-clause","account-owner","sales-admin","late-escalation","workflow","forecast","renewal-rules","configuration","preview","automation"];
+const file = files[variant] ?? files[0];
+---
+<img data-renewal-illustration={variant} src={`/assets/illustrations/renewals/icon-${file}-palette-v3.svg`} width="96" height="84" alt="" aria-hidden="true" class="renewal-illustration" loading="lazy" decoding="async" />

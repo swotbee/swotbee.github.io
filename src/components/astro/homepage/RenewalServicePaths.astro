@@ -1,0 +1,99 @@
+---
+// Reusable offer section for the renewal landing page and paid-campaign variants.
+// Both paths begin with the same Renewal Alignment Call so buyers can choose the
+// delivery level only after we establish whether an audit is needed.
+import { ArrowRightIcon, CheckIcon } from "@heroicons/react/24/outline";
+
+const auditDeliverables = [
+  "Validated renewal process map",
+  "Renewal gaps and automation plan",
+  "HubSpot field blueprint",
+  "Upcoming-renewal validation set",
+];
+
+const implementationDeliverables = [
+  "Everything in the Renewal Operations Audit",
+  "HubSpot workflows, data model, reports, and controls configured",
+  "Agreed data cleanup and backfill",
+  "Output tested against real upcoming renewals",
+  "UAT, training, documentation, and launch support",
+];
+---
+
+<section id="service-paths" class="scroll-mt-24 bg-v6-bg py-14 sm:py-18 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-5xl mx-auto">
+    <div class="max-w-2xl mx-auto text-center mb-10">
+      <p class="text-sm font-semibold uppercase tracking-[0.2em] text-v6-copper mb-3">
+        Choose the level of help you need
+      </p>
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-v6-dark mb-3 text-balance">
+        Get the Blueprint—or a Working Renewal Operation
+      </h2>
+      <p class="text-v6-text-muted leading-relaxed">
+        Start with a Renewal Alignment Call. We’ll check whether you need a HubSpot Renewal Operations Audit, then you can take the blueprint to your team or have us implement and validate it.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
+      <article class="relative bg-white rounded-2xl border-2 border-v6-copper p-6 sm:p-8 flex flex-col shadow-sm">
+        <span class="absolute -top-3 left-6 bg-v6-copper text-white text-xs font-semibold uppercase tracking-[0.12em] px-3 py-1 rounded-full">Start with clarity</span>
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-[0.16em] text-v6-copper mb-3">Audit</p>
+          <h3 class="text-2xl font-bold text-v6-dark mb-3">Renewal Operations Audit</h3>
+          <p class="text-v6-text-muted leading-relaxed">
+            Get the evidence and build-ready blueprint your team needs to fix renewals with confidence.
+          </p>
+        </div>
+
+        <div class="mt-7 pt-6 border-t border-v6-border">
+          <p class="text-sm font-semibold text-v6-dark mb-4">You receive</p>
+          <ul class="space-y-3">
+            {auditDeliverables.map((deliverable) => (
+              <li class="flex items-start gap-3 text-sm text-v6-text-muted leading-relaxed">
+                <CheckIcon aria-hidden="true" className="h-5 w-5 text-v6-teal shrink-0 mt-0.5" />
+                <span>{deliverable}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="mt-auto pt-8">
+          <p class="text-sm text-v6-text-muted mb-5">Keep the blueprint and implement it internally, with another partner, or with us.</p>
+          <a href="/renewal-audit-call/" data-ga-cta="service_paths_audit" class="inline-flex items-center gap-2 bg-v6-copper text-white px-6 py-3 rounded-xl text-base font-semibold hover:bg-v6-copper-600 transition-colors">
+            Start with the Audit <ArrowRightIcon aria-hidden="true" className="h-4 w-4" />
+          </a>
+        </div>
+      </article>
+
+      <article class="relative bg-white rounded-2xl border-2 border-v6-teal p-6 sm:p-8 flex flex-col shadow-sm">
+        <span class="absolute -top-3 left-6 bg-v6-teal text-white text-xs font-semibold uppercase tracking-[0.12em] px-3 py-1 rounded-full">Most complete path</span>
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-[0.16em] text-v6-teal mb-3">Audit + Implementation</p>
+          <h3 class="text-2xl font-bold text-v6-dark mb-3">Audit + Renewal Builder Implementation</h3>
+          <p class="text-v6-text-muted leading-relaxed">
+            Get the blueprint, then have us configure, validate, and launch the renewal operation with your team.
+          </p>
+        </div>
+
+        <div class="mt-7 pt-6 border-t border-v6-border">
+          <p class="text-sm font-semibold text-v6-dark mb-4">You receive</p>
+          <ul class="space-y-3">
+            {implementationDeliverables.map((deliverable) => (
+              <li class="flex items-start gap-3 text-sm text-v6-text-muted leading-relaxed">
+                <CheckIcon aria-hidden="true" className="h-5 w-5 text-v6-teal shrink-0 mt-0.5" />
+                <span>{deliverable}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="mt-auto pt-8">
+          <p class="text-sm text-v6-text-muted mb-5">We do not stop at configuration: output is tested against the expected renewal set before launch.</p>
+          <a href="/renewal-audit-call/" data-ga-cta="service_paths_audit_implementation" class="inline-flex items-center gap-2 bg-v6-teal text-white px-6 py-3 rounded-xl text-base font-semibold hover:bg-v6-teal-600 transition-colors">
+            Discuss Audit + Implementation <ArrowRightIcon aria-hidden="true" className="h-4 w-4" />
+          </a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>

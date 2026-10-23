@@ -22,10 +22,12 @@
 // pending the WellStat case study; only sourced stats are used.
 // All motion stays gated behind prefers-reduced-motion. v1 and v2 left untouched.
 import Layout from "../layouts/Layout.astro";
-import Navbar from "../components/astro/Navbar.astro";
-import Footer from "../components/astro/Footer.astro";
+import Navbar from "../components/astro/homepage/Navbar.astro";
+import Footer from "../components/astro/homepage/Footer.astro";
 import StructuredData from "../components/astro/StructuredData.astro";
-import RenewalServicePaths from "../components/astro/RenewalServicePaths.astro";
+import RenewalServicePaths from "../components/astro/homepage/RenewalServicePaths.astro";
+import RenewalResults from "../components/astro/homepage/RenewalResults.astro";
+import RenewalIllustration from "../components/astro/homepage/RenewalIllustration.astro";
 import RenewalDemoModal from "../components/react/RenewalDemoModal.jsx";
 import {
   AdjustmentsHorizontalIcon,
@@ -56,7 +58,7 @@ const keywords =
 // correct if this page is ever moved or promoted to a different path (e.g. the homepage).
 const pageUrl = new URL(Astro.url.pathname, Astro.site ?? "https://swotbee.com")
   .href;
-const isHomepage = Astro.url.pathname === "/";
+const isHomepage = true;
 
 // Real client logos (greyscale). Files live in public/assets/customerLogos/.
 const clientLogos = [
@@ -128,42 +130,42 @@ const pains = [
     bg: "bg-v6-amber-50",
   },
   {
-    title: "Ownerless accounts",
+    title: "Accounts without owners",
     desc: "Accounts nobody owns don't get renewed in time. That is revenue lost to churn, quietly.",
     icon: UserMinusIcon,
     color: "text-v6-teal",
     bg: "bg-v6-teal-50",
   },
   {
-    title: "Sales Reps Stuck In Admin",
+    title: "Too much sales admin",
     desc: "Sales reps spend precious selling time on data entry, rebuilding deals, and chasing down renewal details.",
     icon: ClipboardDocumentListIcon,
     color: "text-v6-copper",
     bg: "bg-v6-copper-50",
   },
   {
-    title: "Last-Minute Fire Drills",
+    title: "Last-minute escalations",
     desc: "Renewal risks surface too late, turning preventable work into urgent escalation.",
     icon: BellAlertIcon,
     color: "text-v6-amber",
     bg: "bg-v6-amber-50",
   },
   {
-    title: "Workflows That Quietly Break",
-    desc: "DIY automation looks fine—until renewal loops, exceptions, or contract changes cause it to fail without warning.",
+    title: "Workflows that break",
+    desc: "DIY automation looks fine, until renewal loops, exceptions, or contract changes cause it to fail without warning.",
     icon: ArrowPathIcon,
     color: "text-v6-teal",
     bg: "bg-v6-teal-50",
   },
   {
-    title: "Frantic Forecasts",
+    title: "Forecasts that drift",
     desc: "Forecasts that go out of sync even as you present them because deal data is outdated and no one has a clear picture of upcoming renewals, expansion opportunities, and contract changes.",
     icon: ChartBarIcon,
     color: "text-v6-copper",
     bg: "bg-v6-copper-50",
   },
   {
-    title: "Rules Trapped In People's Heads",
+    title: "Rules outside the system",
     desc: "Every rep follows different rules for discounts, escalations, approvals, or notice periods because the rules that matter never made it into the system.",
     icon: AdjustmentsHorizontalIcon,
     color: "text-v6-amber",
@@ -196,23 +198,24 @@ const steps = [
 const builderSteps = [
   {
     n: "1",
-    title: "Connect Renewal Builder",
-    desc: "We help an authorized HubSpot admin connect the app and confirm the pipelines and deal fields it may use.",
+    phase: "configuration",
+    illustration: 8,
+    title: "Your rules, configured",
+    desc: "With an authorized HubSpot admin, connect the app and choose the pipeline, renewal timing, fields, and naming rules for one recipe.",
   },
   {
     n: "2",
-    title: "Define one renewal recipe",
-    desc: "Choose the destination pipeline, renewal timing, naming rules, and the deal data that should carry forward.",
+    phase: "preview",
+    illustration: 9,
+    title: "A renewal you can review",
+    desc: "Check the dates, line items, companies, contacts, and ownership on a sample renewal before creating it. Nothing is activated silently.",
   },
   {
     n: "3",
-    title: "Preview before creating",
-    desc: "Review a sample renewal first, including dates, line items, companies, contacts, and ownership. Nothing is activated silently.",
-  },
-  {
-    n: "4",
-    title: "Create in HubSpot",
-    desc: "Start with manual creation from a deal record, then add scheduled or event-based automation when your recipe is ready.",
+    phase: "automation",
+    illustration: 10,
+    title: "Automation at your pace",
+    desc: "Begin with manual creation from a deal record. Add scheduled or event-based automation only when your renewal recipe is ready.",
   },
 ];
 
@@ -284,6 +287,8 @@ const renewalFlow = [
     ],
   },
 ];
+
+const workflowIconFiles = ["closed-won", "renewal-created", "rules-applied", "risk-growth", "confident-forecast"];
 
 // Hard metrics from approved case studies / testimonials.
 const stats = [
@@ -388,7 +393,10 @@ const toneMap: Record<string, string> = {
   title={title}
   description={description}
   keywords={keywords}
+  robots="index, follow"
+  canonicalURL={pageUrl}
 >
+  <div data-homepage="renewals">
   <StructuredData
     type="softwareApplication"
     data={{
@@ -490,6 +498,7 @@ const toneMap: Record<string, string> = {
           Manage HubSpot renewals without rebuilding every deal.
         </h1>
         <p
+          data-homepage-hero-copy="compact"
           class="hero-summary reveal text-base sm:text-lg text-v6-text-muted max-w-xl mx-auto lg:mx-0 mb-5 leading-relaxed"
         >
           Renewal Builder auto-creates review-ready renewal deals from closed-won data—carrying forward renewal dates, recurring line items, companies, contacts, custom properties, and account ownership.
@@ -606,7 +615,7 @@ const toneMap: Record<string, string> = {
     </p>
   </section>
   <!-- ============ TRUST BAR ============ -->
-  <section id="homepage-integrations" data-proof-type="integrations" aria-label="Integration compatibility" class="bg-v6-bg border-y border-v6-border pt-6 pb-3 px-4">
+  <section id="homepage-integrations" class="bg-v6-bg border-y border-v6-border pt-6 pb-3 px-4">
     <div class="max-w-5xl mx-auto">
       <!-- Integration ecosystem, labelled "Works with" rather than client proof.
            Explicit dimensions reserve image space before decoding. -->
@@ -644,48 +653,20 @@ const toneMap: Record<string, string> = {
     We architect robust, bi-directional data pipelines between HubSpot and your core ERP, billing, and contract systems.
   </p>
 
-  <!-- ============ STAT BAND ============ -->
-  <section id="renewal-metrics" class="bg-v6-dark py-14 sm:py-16 px-4 sm:px-6 lg:px-8">
-    <div class="max-w-4xl mx-auto">
-      <h2
-        class="reveal text-3xl sm:text-4xl font-bold text-v6-teal-300 mb-8 text-center"
-      >
-        What Our Clients See
-      </h2>
-      <div class="stagger grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-        {
-          stats.map((s) => (
-            <div>
-              <p
-                class={`stat-value text-3xl sm:text-4xl font-bold ${s.tone} mb-1`}
-                data-stat-value={s.value}
-              >
-                {s.value}
-              </p>
-              <p class="text-sm text-gray-300 leading-snug">{s.label}</p>
-            </div>
-          ))
-        }
-      </div>
-      <p class="reveal text-xs text-gray-400 text-center mt-8 max-w-xl mx-auto">
-        Representative outcomes from recent HubSpot renewal engagements across
-        Energy, Manufacturing, and SaaS. Your results depend on your data and
-        process.
-      </p>
-    </div>
-  </section>
+  <!-- ============ ILLUSTRATED CUSTOMER RESULTS ============ -->
+  <RenewalResults stats={stats} />
 
   <!-- ============ HOW RENEWAL BUILDER WORKS ============ -->
   <section
     id="how-renewal-builder-works"
-    class="scroll-mt-24 bg-white py-14 sm:py-18 px-4 sm:px-6 lg:px-8"
+    class="scroll-mt-24 bg-white py-20 sm:py-24 px-4 sm:px-6 lg:px-8"
   >
     <div class="max-w-6xl mx-auto">
       <p class="reveal text-sm font-semibold uppercase tracking-[0.2em] text-v6-copper mb-3 text-center">
         How Renewal Builder works
       </p>
       <h2 class="reveal text-2xl sm:text-3xl lg:text-4xl font-bold text-v6-dark mb-4 text-center text-balance">
-        Zero-effort renewal deals in HubSpot. Accurate to the Dollar
+        Your renewal rules, carried forward.
       </h2>
       <p class="reveal max-w-3xl mx-auto text-center text-base sm:text-lg text-v6-text-muted leading-relaxed">
         Renewal Builder works inside your existing HubSpot CRM and the renewal
@@ -693,29 +674,49 @@ const toneMap: Record<string, string> = {
         the new deal, and moves from manual creation to automation when ready.
       </p>
 
-      <ol class="stagger grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-10">
+      <ol class="stagger grid grid-cols-1 md:grid-cols-3 gap-5 mt-10">
         {
           builderSteps.map((step) => (
-            <li class="anim-card rounded-2xl border border-v6-border bg-v6-bg p-6">
-              <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-v6-copper text-white font-bold">
-                {step.n}
-              </span>
-              <h3 class="mt-5 text-lg font-semibold text-v6-dark">{step.title}</h3>
+            <li data-renewal-phase={step.phase} class="anim-card rounded-2xl border border-v6-border bg-v6-bg p-6">
+              <div class="flex items-start justify-between gap-4">
+                <RenewalIllustration variant={step.illustration} />
+                <span aria-hidden="true" class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-v6-copper text-white text-sm font-bold">
+                  {step.n}
+                </span>
+              </div>
+              <h3 class="mt-4 text-lg font-semibold text-v6-dark">{step.title}</h3>
               <p class="mt-2 text-sm leading-relaxed text-v6-text-muted">{step.desc}</p>
             </li>
           ))
         }
       </ol>
 
-      <div class="stagger grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
-        {
-          builderAnswers.map((item) => (
-            <article class="rounded-xl border border-v6-border bg-white p-5">
-              <h3 class="text-base font-semibold text-v6-dark">{item.q}</h3>
-              <p class="mt-1.5 text-sm leading-relaxed text-v6-text-muted">{item.a}</p>
-            </article>
-          ))
-        }
+      <div class="reveal mx-auto mt-10 max-w-3xl divide-y divide-v6-border border-y border-v6-border">
+        {builderAnswers.map((item) => (
+          <details class="group py-1">
+            <summary class="flex min-h-14 cursor-pointer items-center justify-between gap-4 py-4 font-semibold text-v6-dark">
+              {item.q}<span aria-hidden="true" class="text-v6-copper group-open:rotate-45">+</span>
+            </summary>
+            <p class="pb-5 text-sm leading-relaxed text-v6-text-muted">{item.a}</p>
+          </details>
+        ))}
+        <details id="renewal-existing-workflows" class="group py-1 scroll-mt-24">
+          <summary class="flex min-h-14 cursor-pointer items-center justify-between gap-4 py-4 font-semibold text-v6-dark">
+            Can we keep our existing HubSpot workflows?<span aria-hidden="true" class="text-v6-copper group-open:rotate-45">+</span>
+          </summary>
+          <p class="pb-5 text-sm leading-relaxed text-v6-text-muted">Yes. HubSpot already provides workflows and, in Revenue Hub, contract and renewal quote capabilities. Keep what works. Use Renewal Builder for the deal-creation and data-carryover steps that still do not match your operating model. Start with a reviewed recipe and enable automation when ready.</p>
+        </details>
+        <details class="group py-1">
+          <summary class="flex min-h-14 cursor-pointer items-center justify-between gap-4 py-4 font-semibold text-v6-dark">
+            What if we need implementation support?<span aria-hidden="true" class="text-v6-copper group-open:rotate-45">+</span>
+          </summary>
+          <p class="pb-4 text-sm leading-relaxed text-v6-text-muted">Add implementation support when your pipelines, data, reporting, or cross-system handoffs need work beyond the app. A typical engagement follows these stages:</p>
+          <ol class="space-y-4 pb-5">
+            {steps.map((step) => (
+              <li class="text-sm leading-relaxed text-v6-text-muted"><strong class="text-v6-dark">{step.title} ({step.when}).</strong> {step.desc}</li>
+            ))}
+          </ol>
+        </details>
       </div>
 
       <div class="reveal mt-9 flex flex-col items-center gap-3 text-center">
@@ -741,7 +742,7 @@ const toneMap: Record<string, string> = {
 
   <!-- ============ AGITATION (Is This You?) ============ -->
   <section id="renewal-problems" class="bg-v6-bg py-14 sm:py-18 px-4 sm:px-6 lg:px-8">
-    <div class="max-w-4xl mx-auto">
+    <div class="max-w-6xl mx-auto">
       <p
         class="reveal text-sm font-semibold uppercase tracking-[0.2em] text-v6-copper mb-3 text-center"
       >
@@ -750,7 +751,7 @@ const toneMap: Record<string, string> = {
       <h2
         class="reveal text-2xl sm:text-3xl lg:text-4xl font-bold text-v6-dark mb-3 text-center text-balance"
       >
-        Manual renewals break as deal volume grows.
+        Renewals outgrow manual work.
       </h2>
       <p
         class="reveal text-base sm:text-lg text-v6-text-muted mb-3 leading-relaxed text-center max-w-lg mx-auto"
@@ -764,29 +765,14 @@ const toneMap: Record<string, string> = {
           >Every company has its own renewal rules.</span
         >
       </p>
-      <div class="stagger grid grid-cols-1 sm:grid-cols-2 gap-5">
-        {
-          pains.map((p) => {
-            const Icon = p.icon;
-            return (
-              <div class="anim-card bg-white rounded-xl p-6 border border-v6-border">
-                <div class="flex items-center gap-4 mb-4">
-                  <div
-                    class={`anim-emoji w-11 h-11 rounded-lg ${p.bg} flex items-center justify-center ${p.color} flex-shrink-0`}
-                  >
-                    <Icon aria-hidden="true" className="h-6 w-6" />
-                  </div>
-                  <h3 class="text-lg font-semibold text-v6-dark">
-                    {p.title}
-                  </h3>
-                </div>
-                <p class="text-base text-v6-text-muted leading-relaxed">
-                  {p.desc}
-                </p>
-              </div>
-            );
-          })
-        }
+      <div class="stagger grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        {pains.map((p, index) => (
+          <article class="anim-card bg-white rounded-2xl p-6 border border-v6-border">
+            <div class="mb-4"><RenewalIllustration variant={index} /></div>
+            <h3 class="text-lg font-semibold text-v6-dark mb-3">{p.title}</h3>
+            <p class="text-base text-v6-text-muted leading-relaxed">{p.desc}</p>
+          </article>
+        ))}
       </div>
       <div
         class="reveal mt-10 max-w-2xl mx-auto bg-v6-dark rounded-2xl p-8 text-center"
@@ -892,13 +878,13 @@ const toneMap: Record<string, string> = {
       <ol class="renewal-timeline stagger relative max-w-5xl mx-auto" role="list" aria-label="Six-step renewal workflow">
         {
           renewalFlow.map((stage, index) => {
-            const Icon = stage.icon;
+            const workflowIcon = workflowIconFiles[index];
             return (
               <li class="timeline-step relative grid grid-cols-[3rem_1fr] sm:grid-cols-[1fr_4rem_1fr] gap-x-4 sm:gap-x-8 pb-10">
                 <span class="timeline-rail absolute left-6 sm:left-1/2 top-6 -bottom-6 w-px -translate-x-1/2 bg-v6-copper-200" aria-hidden="true"></span>
                 <div class="relative z-10 col-start-1 row-start-1 sm:col-start-2 flex justify-center">
                   <span class={`timeline-marker relative w-12 h-12 rounded-xl ${stage.color} flex items-center justify-center`}>
-                    <Icon aria-hidden="true" className="h-6 w-6" />
+                    <img data-workflow-artwork src={`/assets/illustrations/renewals/workflow-${workflowIcon}-v1.svg`} width="24" height="24" class="h-6 w-6" alt="" aria-hidden="true" loading="lazy" decoding="async" />
                     <span class="timeline-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
                   </span>
                 </div>
@@ -921,7 +907,7 @@ const toneMap: Record<string, string> = {
         <li class="timeline-step timeline-finish relative grid grid-cols-[3rem_1fr] sm:grid-cols-[1fr_4rem_1fr] gap-x-4 sm:gap-x-8">
           <div class="relative z-10 col-start-1 row-start-1 sm:col-start-2 flex justify-center">
             <span class="timeline-marker relative inline-flex w-12 h-12 rounded-xl bg-v6-copper-50 text-v6-copper items-center justify-center">
-              <ArrowPathIcon aria-hidden="true" className="h-6 w-6" />
+              <img data-workflow-artwork src="/assets/illustrations/renewals/workflow-repeat-renewals-v1.svg" width="24" height="24" class="h-6 w-6" alt="" aria-hidden="true" loading="lazy" decoding="async" />
               <span class="timeline-number" aria-hidden="true">06</span>
             </span>
           </div>
@@ -1391,8 +1377,25 @@ const toneMap: Record<string, string> = {
        layout has already closed </body></html>, which emits stray markup past the
        document end. Keep them here. -->
   <style>
-    :global(:root) {
-      /* Keep section labels secondary; the workflow label uses the active accent. */
+    /* The checked-in reference bypasses all trial colors and visual refinements. */
+    :global(:root[data-homepage-accent]:not([data-homepage-accent="checked-in"])) {
+      /* Dark default preserves text/CTA contrast; 600 remains the hover shade. */
+      --color-v6-copper: #9F254F;
+      --color-v6-copper-50: #FCF3F6;
+      --color-v6-copper-100: #F9E4EC;
+      --color-v6-copper-200: #F1C5D5;
+      --color-v6-copper-300: #E69AB4;
+      --color-v6-copper-400: #D76D92;
+      --color-v6-copper-500: #C94D79;
+      --color-v6-copper-600: #B83260;
+      --color-v6-copper-700: #9F254F;
+      --color-v6-copper-800: #852344;
+      --color-v6-copper-900: #6E223C;
+      --color-v6-copper-950: #420F21;
+    }
+    :global(:root:not([data-homepage-accent="checked-in"])) {
+      /* Reserve raspberry section labels for the product, demo, and service paths.
+         The other labels support the headings without competing with the CTAs. */
       section > div > p.uppercase.text-v6-copper {
         color: var(--color-v6-text-muted);
       }
@@ -1831,4 +1834,5 @@ const toneMap: Record<string, string> = {
         updateSelection();
       });
   </script>
+  </div>
 </Layout>

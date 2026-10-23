@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 112 96" width="112" height="96"><title>automation</title><ellipse cx="57" cy="86" rx="26" ry="4" fill="#C7DDC9" opacity=".7" /><g fill="none" stroke="#20343B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><g transform="rotate(-3 54 45)">
+    <path d="m27 23 50 1 0 46-49 0Z" fill="#489B89" />
+    <path d="m23 18 50 1 0 46-49 0Z" fill="#FFF9ED" />
+    <path d="m24 19 48 1 0 12-48-1Z" fill="#1871A8" />
+    <path d="m35 13 0 11m25-10 0 11m-25 16 8 0m7 0 8 0m-23 11 8 0" fill="none" />
+    <path d="M15 51q-4-19 9-31m-9 31-5-4m5 4 4-6" fill="none" stroke="#F58232" stroke-width="3" />
+    <path d="M81 30q16 21 1 39m-1-39 7 2m-7-2-1 7" fill="none" stroke="#F58232" stroke-width="3" />
+    <path d="m52 58 24 0q11 0 11 10t-11 10l-24 0q-11 0-11-10t11-10Z" fill="#489B89" />
+    <circle cx="74" cy="68" r="7" fill="#FFF9ED" />
+  </g></g></svg>

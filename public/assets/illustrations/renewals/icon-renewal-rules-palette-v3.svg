@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 112 96" width="112" height="96"><title>renewal rules</title><ellipse cx="57" cy="86" rx="26" ry="4" fill="#C7DDC9" opacity=".7" /><g fill="none" stroke="#20343B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><g transform="rotate(-3 53 45)">
+    <path d="M36 76V64q-14-9-11-26 3-21 24-21 22 0 24 20l7 12-9 3-1 13-13-1-1 13Z" fill="#489B89" />
+    <path d="m39 31 18-1 1 8-19 1Zm1 14 16-1 0 8-16 0Z" fill="#FFF9ED" />
+    <path d="m43 35 9 0m-8 13 7 0" fill="none" />
+    <path d="m75 16 16 1 0 22-16-1Z" fill="#F58232" />
+    <path d="m79 23 8 0m-8 6 7 0M77 48l12-1 0 22-13 1" fill="none" stroke-dasharray="3 4" />
+    <circle cx="74" cy="44" r="2" fill="#1871A8" />
+  </g></g></svg>

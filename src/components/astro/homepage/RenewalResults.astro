@@ -1,0 +1,165 @@
+---
+const { stats } = Astro.props;
+const illustrations = [
+  { file: "renewal-results-clean-v3", story: "Renewal accuracy", scene: "A renewal calendar and completed deal cards" },
+  { file: "quote-effort-clean-v3", story: "Less quote effort", scene: "Quote documents prepared with one simple action" },
+  { file: "response-speed-clean-v3", story: "Faster quote response", scene: "A completed quote beside an oversized stopwatch" },
+  { file: "first-results-clean-v3", story: "Time to first results", scene: "A two-week implementation board with completed milestones" },
+];
+---
+
+<section id="customer-results" data-results-carousel aria-labelledby="customer-results-title" class="scroll-mt-24 bg-white py-16 sm:py-24 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-6xl mx-auto">
+    <div class="reveal mb-10 max-w-2xl">
+      <p class="text-sm font-semibold uppercase tracking-[0.2em] text-v6-copper mb-3">What our clients see</p>
+      <h2 id="customer-results-title" class="text-3xl sm:text-4xl font-bold text-v6-dark text-balance">Less rework. More room to grow.</h2>
+    </div>
+    <div class="results-layout grid items-start gap-8 lg:grid-cols-[0.9fr_1.2fr] lg:gap-12">
+      <div class="reveal min-w-0">
+        <div id="results-artwork" class="results-artwork overflow-hidden" aria-hidden="true">
+          {illustrations.map((art, index) => (
+            <img data-result-image={index} class:list={["results-image", { "is-active": index === 0 }]} src={`/assets/illustrations/renewals/${art.file}.svg`} alt="" width="1122" height="1402" loading="lazy" decoding="async" />
+          ))}
+        </div>
+        <p data-result-caption class="mt-4 text-sm text-v6-text-muted">{illustrations[0].scene}</p>
+      </div>
+      <div class="min-w-0">
+        <p class="mb-4 text-sm text-v6-text-muted">Select a result to explore its story.</p>
+        <div role="group" aria-label="Customer result illustrations" class="border-t border-v6-border">
+          {stats.map((stat, index) => (
+            <button type="button" data-result-select={index} data-result-scene={illustrations[index].scene} disabled aria-pressed={index === 0 ? "true" : "false"} aria-controls="results-artwork" aria-label={`${stat.value} ${stat.label}`} class="results-choice relative grid w-full items-center gap-2 border-b border-v6-border py-6 text-left sm:grid-cols-[0.85fr_1.15fr] sm:gap-6 sm:py-8">
+              <span class="results-progress" aria-hidden="true"><span data-result-progress></span></span>
+              <span class="relative text-4xl sm:text-5xl font-bold tracking-tight text-v6-dark">{stat.value}</span>
+              <span class="relative text-base leading-relaxed text-v6-text-muted">{stat.label}</span>
+            </button>
+          ))}
+        </div>
+        <div data-results-controls hidden class="results-controls mt-5 flex flex-wrap items-center justify-between gap-3">
+          <p data-result-count class="text-sm text-v6-text-muted">1 of 4</p>
+          <div class="flex items-center gap-2">
+            <button type="button" data-results-previous aria-label="Previous result illustration" class="results-control h-11 w-11 rounded-full border border-v6-border text-v6-dark">&larr;</button>
+            <button type="button" data-results-toggle class="results-control min-h-11 rounded-full border border-v6-border px-4 text-sm font-semibold text-v6-dark">Pause slideshow</button>
+            <button type="button" data-results-next aria-label="Next result illustration" class="results-control h-11 w-11 rounded-full border border-v6-border text-v6-dark">&rarr;</button>
+          </div>
+        </div>
+        <p data-results-announcement class="sr-only" aria-live="polite" aria-atomic="true"></p>
+        <p class="text-xs leading-relaxed text-v6-text-muted mt-6 max-w-xl">Representative outcomes from recent HubSpot renewal engagements across Energy, Manufacturing, and SaaS. Your results depend on your data and process.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll<HTMLElement>("[data-results-carousel]").forEach((root) => {
+    const choices = Array.from(root.querySelectorAll<HTMLButtonElement>("[data-result-select]"));
+    const images = Array.from(root.querySelectorAll<HTMLImageElement>("[data-result-image]"));
+    const toggle = root.querySelector<HTMLButtonElement>("[data-results-toggle]")!;
+    const controls = root.querySelector<HTMLElement>("[data-results-controls]")!;
+    const caption = root.querySelector<HTMLElement>("[data-result-caption]")!;
+    const count = root.querySelector<HTMLElement>("[data-result-count]")!;
+    const announcement = root.querySelector<HTMLElement>("[data-results-announcement]")!;
+    const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const duration = 6500;
+    let active = 0;
+    let elapsed = 0;
+    let previousTime = 0;
+    let frame = 0;
+    let inView = false;
+    let hovering = false;
+    let focused = false;
+    let paused = motion.matches;
+
+    const canPlay = () => !paused && !motion.matches && inView && !hovering && !focused && !document.hidden;
+    const updateToggle = () => {
+      toggle.disabled = motion.matches;
+      toggle.textContent = motion.matches ? "Motion reduced" : paused ? "Play slideshow" : "Pause slideshow";
+    };
+    const select = (index: number, manual = false) => {
+      active = (index + choices.length) % choices.length;
+      elapsed = 0;
+      choices.forEach((choice, i) => {
+        choice.setAttribute("aria-pressed", String(i === active));
+        choice.querySelector<HTMLElement>("[data-result-progress]")!.style.transform = "scaleX(0)";
+        images[i].classList.toggle("is-active", i === active);
+      });
+      caption.textContent = choices[active].dataset.resultScene!;
+      count.textContent = `${active + 1} of ${choices.length}`;
+      if (manual) {
+        paused = true;
+        updateToggle();
+        announcement.textContent = `Result ${active + 1} of ${choices.length}: ${choices[active].getAttribute("aria-label")}. Slideshow paused.`;
+      }
+    };
+    const tick = (time: number) => {
+      frame = 0;
+      if (!canPlay()) return;
+      elapsed += previousTime ? Math.min(time - previousTime, 100) : 0;
+      previousTime = time;
+      if (elapsed >= duration) select(active + 1);
+      choices[active].querySelector<HTMLElement>("[data-result-progress]")!.style.transform = `scaleX(${elapsed / duration})`;
+      frame = requestAnimationFrame(tick);
+    };
+    const sync = () => {
+      if (frame) cancelAnimationFrame(frame);
+      frame = 0;
+      previousTime = 0;
+      if (canPlay()) frame = requestAnimationFrame(tick);
+    };
+    choices.forEach((choice, index) => {
+      choice.disabled = false;
+      choice.addEventListener("click", () => { select(index, true); sync(); });
+      choice.addEventListener("keydown", (event) => {
+        let next = index;
+        if (["ArrowRight", "ArrowDown"].includes(event.key)) next = (index + 1) % choices.length;
+        else if (["ArrowLeft", "ArrowUp"].includes(event.key)) next = (index - 1 + choices.length) % choices.length;
+        else if (event.key === "Home") next = 0;
+        else if (event.key === "End") next = choices.length - 1;
+        else return;
+        event.preventDefault();
+        select(next, true);
+        choices[next].focus({ preventScroll: true });
+        sync();
+      });
+    });
+    root.querySelector("[data-results-previous]")!.addEventListener("click", () => { select(active - 1, true); sync(); });
+    root.querySelector("[data-results-next]")!.addEventListener("click", () => { select(active + 1, true); sync(); });
+    toggle.addEventListener("click", () => {
+      paused = !paused;
+      updateToggle();
+      sync();
+    });
+    root.addEventListener("mouseenter", () => { hovering = true; sync(); });
+    root.addEventListener("mouseleave", () => { hovering = false; sync(); });
+    root.addEventListener("focusin", () => { focused = true; sync(); });
+    root.addEventListener("focusout", (event) => { focused = !!event.relatedTarget && root.contains(event.relatedTarget as Node); sync(); });
+    document.addEventListener("visibilitychange", sync);
+    motion.addEventListener("change", () => { paused = motion.matches; updateToggle(); sync(); });
+    new IntersectionObserver(([entry]) => { inView = entry.isIntersecting; sync(); }, { threshold: 0.25 }).observe(root);
+    controls.hidden = false;
+    updateToggle();
+    sync();
+  });
+</script>
+
+<style>
+  .results-artwork { background: transparent; position: relative; aspect-ratio: 4 / 5; }
+  .results-image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; opacity: 0; transform: translateY(24px); transition: opacity 550ms ease, transform 650ms cubic-bezier(.2,.7,.2,1); }
+  .results-image.is-active { opacity: 1; transform: translateY(0); }
+  .results-choice { padding-inline: 1.25rem; cursor: pointer; isolation: isolate; }
+  .results-choice::before { content: ""; position: absolute; inset: 0; background: var(--color-aqua-50); opacity: 0; transition: opacity 250ms ease; }
+  .results-choice[aria-pressed="true"]::before, .results-choice:hover::before { opacity: 1; }
+  .results-progress { position: absolute; inset: 0 0 auto; height: 2px; overflow: hidden; }
+  .results-progress > span { display: block; height: 100%; background: var(--color-action); transform: scaleX(0); transform-origin: left; }
+  .results-choice[aria-pressed="true"] .results-progress { background: var(--color-coral-100); }
+  .results-control { cursor: pointer; background: white; }
+  .results-control:hover { background: var(--color-aqua-50); }
+  .results-controls[hidden] { display: none; }
+  :is(.results-choice,.results-control):focus-visible { outline: 3px solid var(--color-v6-blue); outline-offset: 3px; z-index: 1; }
+  @media (max-width: 1023px) { .results-artwork { height: 300px; aspect-ratio: auto; margin-inline: auto; } }
+  @media (max-width: 639px) {
+    .results-choice { grid-template-columns: 88px 1fr; gap: 12px; padding: 16px 12px; }
+    .results-choice > span:nth-child(2) { font-size: 1.875rem; }
+    .results-choice > span:nth-child(3) { font-size: .875rem; line-height: 1.25rem; }
+  }
+  @media (prefers-reduced-motion: reduce) { .results-image, .results-choice::before { transition: none; transform: none; } }
+</style>

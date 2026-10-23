@@ -69,6 +69,14 @@ export default defineConfig({
   // page at the old path with a canonical tag + instant meta-refresh to the new URL,
   // which Google treats as passing ranking signal, the standard pattern for static hosts.
   redirects: {
+    // Retired local theme previews now lead to the promoted homepage.
+    "/sample-homepage-v1": "/",
+    "/sample-homepage-v2": "/",
+    "/sample-homepage-v3": "/",
+    "/sample-palette-v3-aqua": "/",
+    "/sample-palette-v3": "/",
+    "/sample-homepage-v3-sharmi": "/",
+    "/sample-character-guide": "/brand/character-guide/",
     "/posts/Pendo HubSpot Integration_ Boost Customer Insights": "/posts/pendo-hubspot-integration",
     // The renewal page became the homepage on 2026-08-11. It was noindex for its whole
     // life so there is no ranking to preserve, but the URL is in ad plan docs, the

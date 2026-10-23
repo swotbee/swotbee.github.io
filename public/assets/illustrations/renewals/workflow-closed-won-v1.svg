@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="24" height="24"><title>Closed won contract</title><g stroke="#20343B" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M7 3h13l5 5v19H7Z" fill="#FFF9ED"/>
+    <path d="M20 3v6h5" fill="#1871A8"/>
+    <path d="M11 12h8m-8 4h6m-6 4h4" fill="none"/>
+    <circle cx="23" cy="24" r="6" fill="#489B89"/>
+    <path d="m20 24 2 2 4-5" stroke="#FFFEFA" stroke-width="2.2" fill="none"/>
+  </g></svg>
