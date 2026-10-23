@@ -7,13 +7,13 @@ import {
 } from "../utils/seo";
 // Fonts: only import what's actually used
 // Body: Hanken Grotesk (primary), DM Sans (fallback), Lexend Deca (fallback)
-// Headings: Bricolage Grotesque; Rokkitt retained for historical palette comparisons.
+// Headings: Bricolage Grotesque; Rokkitt remains available to legacy pages.
 import "@fontsource-variable/hanken-grotesk";     // Body — variable font covers all weights
 import bodyFontUrl from "@fontsource-variable/hanken-grotesk/files/hanken-grotesk-latin-wght-normal.woff2?url";
-import headingFontUrl from "@fontsource-variable/rokkitt/files/rokkitt-latin-wght-normal.woff2?url";
+import headingFontUrl from "@fontsource-variable/bricolage-grotesque/files/bricolage-grotesque-latin-standard-normal.woff2?url";
 // Rokkitt loaded via @font-face in global.css (variable woff2, no separate import needed)
 import "../styles/global.css";
-import SiteTheme from "../components/astro/SiteTheme.astro";
+import "../styles/site.css";
 import UmamiAnalytics from "../components/astro/UmamiAnalytics.astro";
 import ConsentBanner from "../components/astro/ConsentBanner.astro";
 import AttributionCapture from "../components/astro/AttributionCapture.astro";
@@ -42,6 +42,18 @@ const {
 
 const isNoindex = robots.includes("noindex");
 
+// Live funnel pages can be noindex, so robots alone cannot identify previews.
+// Keep historical/design routes available for comparison without restyling them.
+const pagePath = decodeURIComponent(Astro.url.pathname);
+const isDesignReference = /^\/(?:logo[^/]*|sample[^/]*|brand|bee-styles|design-index|hero-preview|index[^/]*|old_index|org-chart-account-planning-hubspot|renewal-operations(?:-animated(?:-v\d+)?)?)(?:\/|$)/.test(pagePath)
+  || /\/[^/]+-old(?:\/|$)/.test(pagePath);
+const isEditorial = ogType === "article" || /^\/(?:blog|categories|authors|search)(?:\/|$)/.test(pagePath);
+const siteCanvas = isDesignReference ? undefined : pagePath === "/" ? "homepage" : ogType === "article" ? "article" : "landing";
+const siteOffering = isEditorial ? "editorial"
+  : /^\/(?:services|integrations|hubspot-consulting|about|contactus|meetus)(?:\/|$)/.test(pagePath) ? "consulting"
+  : /^\/hubspot-[^/]*(?:report|snapshot)/.test(pagePath) || pagePath === "/resources/hubspot-management-reporting-starter-pack/" ? "reporting"
+  : "renewal";
+
 // Use utility functions for consistent URL generation
 // generateOgImage() absolutises a site-relative path and passes an http(s) URL through
 // untouched, so it must wrap ogImage rather than only supply the fallback. Passing
@@ -68,7 +80,7 @@ const gtmId = import.meta.env.PUBLIC_GTM_ID || "GTM-WV9TQ6FH";
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" data-site-canvas={siteCanvas} data-site-offering={siteCanvas ? siteOffering : undefined}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -78,7 +90,6 @@ const gtmId = import.meta.env.PUBLIC_GTM_ID || "GTM-WV9TQ6FH";
     <meta name="language" content="English" />
     <meta name="revisit-after" content="7 days" />
     <meta name="theme-color" content="#2E2A31" />
-    <SiteTheme />
 
     {/* Blog headings and body use these two faces above the fold. Import their URLs
         through Vite so the hints match the hashed URLs in the bundled CSS, avoiding
@@ -466,7 +477,7 @@ const gtmId = import.meta.env.PUBLIC_GTM_ID || "GTM-WV9TQ6FH";
     )}
   </head>
   <body class="min-h-full bg-custom">
-    <main>
+    <main data-site-content>
       <slot />
     </main>
     {/* Rendered only when there is something to consent to. With no analytics IDs

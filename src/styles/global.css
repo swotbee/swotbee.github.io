@@ -225,8 +225,11 @@
   --color-v6-blue-900: #071f33;
   --color-v6-blue-950: #051520;
 
-  /* Teal */
-  --color-v6-teal: #3d776d; /* darkened from #5AAB9D for WCAG AA text contrast */
+  /* Legacy teal palette, retained for reference.
+     If you are using teal, start using aqua.
+     The base was darkened from #5AAB9D for WCAG AA text contrast.
+
+  --color-v6-teal: #3d776d;
   --color-v6-teal-50: #e8f5f2;
   --color-v6-teal-100: #b5ddd4;
   --color-v6-teal-200: #7ec4b8;
@@ -237,6 +240,7 @@
   --color-v6-teal-700: #276558;
   --color-v6-teal-800: #1a4a3e;
   --color-v6-teal-900: #0e3028;
+  */
 
   /* Copper (CTA) */
   --color-v6-copper: #9a6021; /* darkened from #C47A2A for WCAG AA text/CTA contrast */
@@ -272,6 +276,108 @@
   --color-v6-bg-warm: #f5f3ef;
   --color-v6-border: #e5e2da;
   }
+
+/* Approved site colors. Original families above remain intact for compatibility.
+   Use these Tailwind shades and semantic aliases instead of local hex values.
+   Extra steps preserve distinct surface, border, and diagram colors. */
+@theme static {
+  /* Coral */
+  --color-coral-25: #FFF8F5;
+  --color-coral-50: #FFF4F1;
+  --color-coral-100: #FFE6DF;
+  --color-coral-200: #FFCCBE;
+  --color-coral-300: #FFA68E;
+  --color-coral-400: #F67B5B;
+  --color-coral-500: #ED5D3D;
+  --color-coral-600: #DF462A;
+  --color-coral-700: #CA3C22;
+  --color-coral-800: #B0341C;
+  --color-coral-900: #812C1E;
+  --color-coral-950: #42160E;
+  --color-coral-1000: #280C07;
+
+  /* Aqua */
+  --color-aqua-10: #F7FFFD;
+  --color-aqua-25: #F1FFFC;
+  --color-aqua-50: #EFF6F4;
+  --color-aqua-100: #D6EFEB;
+  --color-aqua-150: #D8EAE5;
+  --color-aqua-200: #C6DFD9;
+  --color-aqua-250: #ADDFD6;
+  --color-aqua-300: #9FD3C7;
+  --color-aqua-400: #76CABB;
+  --color-aqua-450: #82B3AA;
+  --color-aqua-475: #76B2A6;
+  --color-aqua-500: #349B8E;
+  --color-aqua-600: #247F76;
+  --color-aqua-650: #20726A;
+  --color-aqua-700: #1F726A;
+  --color-aqua-800: #195F59;
+  --color-aqua-900: #133E39;
+  --color-aqua-950: #0E2E28;
+  --color-aqua-1000: #071C18;
+
+  /* Existing text, border, and footer neutrals. */
+  --color-ink-25: #F5F6F7;
+  --color-ink-100: #E8EBED;
+  --color-ink-200: #E2E8E6;
+  --color-ink-250: #DCE7E4;
+  --color-ink-300: #CBD8E5;
+  --color-ink-500: #6B7280;
+  --color-ink-600: #5F6B68;
+  --color-ink-800: #273D3F;
+  --color-ink-850: #2F3441;
+  --color-ink-900: #2E2A31;
+
+  /* Compatibility aliases for existing utilities; use aqua shades in new code. */
+  --color-v6-teal: var(--color-aqua-600);
+  --color-v6-teal-50: var(--color-aqua-50);
+  --color-v6-teal-100: var(--color-aqua-100);
+  --color-v6-teal-200: var(--color-aqua-250);
+  --color-v6-teal-300: var(--color-aqua-400);
+  --color-v6-teal-400: var(--color-aqua-400);
+  --color-v6-teal-500: var(--color-aqua-400);
+  --color-v6-teal-600: var(--color-aqua-600);
+  --color-v6-teal-700: var(--color-aqua-650);
+  --color-v6-teal-800: var(--color-aqua-800);
+  --color-v6-teal-900: var(--color-ink-800);
+  --color-v6-teal-950: var(--color-ink-900);
+
+  /* Active aliases for existing v6 utilities. Color values live in this theme. */
+  --color-v6-dark: var(--color-ink-900);
+  --color-v6-text: var(--color-ink-900);
+  --color-v6-text-muted: var(--color-ink-600);
+  --color-v6-bg: var(--color-aqua-10);
+  --color-v6-bg-warm: var(--color-aqua-10);
+  --color-v6-border: var(--color-ink-250);
+  --color-v6-copper: var(--color-aqua-600);
+  --color-v6-copper-50: var(--color-aqua-50);
+  --color-v6-copper-100: var(--color-aqua-100);
+  --color-v6-copper-200: var(--color-aqua-250);
+  --color-v6-copper-300: var(--color-aqua-400);
+  --color-v6-copper-400: var(--color-aqua-400);
+  --color-v6-copper-500: var(--color-aqua-400);
+  --color-v6-copper-600: var(--color-aqua-600);
+  --color-v6-copper-700: var(--color-aqua-650);
+  --color-v6-copper-800: var(--color-aqua-800);
+  --color-v6-copper-900: var(--color-ink-800);
+  --color-v6-copper-950: var(--color-ink-900);
+
+  /* Shared functional roles. */
+  --color-action: var(--color-coral-600);
+  --color-action-hover: var(--color-coral-700);
+  --color-action-pressed: var(--color-coral-800);
+  --color-on-action: var(--color-coral-25);
+  --color-action-border: var(--color-coral-100);
+  --color-support-action: var(--color-aqua-600);
+  --color-support-hover: var(--color-aqua-700);
+  --color-surface-card-border: var(--color-ink-200);
+  --color-surface-footer: var(--color-ink-900);
+  --color-footer-input: var(--color-ink-850);
+  --color-product-renewal: var(--color-coral-600);
+  --color-product-forecast: var(--color-aqua-900);
+  --color-product-architecture: var(--color-v6-blue);
+}
 
 :root {
   /* Use Motion's spring() helper to generate a spring easing */

@@ -27,7 +27,6 @@ import Footer from "../components/astro/Footer.astro";
 import StructuredData from "../components/astro/StructuredData.astro";
 import RenewalServicePaths from "../components/astro/RenewalServicePaths.astro";
 import RenewalDemoModal from "../components/react/RenewalDemoModal.jsx";
-import HomepageAccentPreview from "../components/astro/HomepageAccentPreview.astro";
 import {
   AdjustmentsHorizontalIcon,
   ArrowPathIcon,
@@ -44,11 +43,6 @@ import {
   UserMinusIcon,
 } from "@heroicons/react/24/outline";
 
-interface Props {
-  colorPreview?: boolean;
-}
-const { colorPreview = false } = Astro.props;
-
 // SERP budget: BaseLayout appends " | SWOTBee" to every title, so the string below
 // must stay under ~50 chars to keep the rendered title inside Google's ~60-char cut.
 // Description stays under ~155 for the same reason.
@@ -62,7 +56,7 @@ const keywords =
 // correct if this page is ever moved or promoted to a different path (e.g. the homepage).
 const pageUrl = new URL(Astro.url.pathname, Astro.site ?? "https://swotbee.com")
   .href;
-const isHomepage = Astro.url.pathname === "/" || colorPreview;
+const isHomepage = Astro.url.pathname === "/";
 
 // Real client logos (greyscale). Files live in public/assets/customerLogos/.
 const clientLogos = [
@@ -391,13 +385,10 @@ const toneMap: Record<string, string> = {
 ---
 
 <Layout
-  title={colorPreview ? "Homepage Color Preview" : title}
+  title={title}
   description={description}
   keywords={keywords}
-  robots={colorPreview ? "noindex, nofollow" : undefined}
-  canonicalURL={colorPreview ? new URL('/', Astro.site ?? 'https://swotbee.com').href : undefined}
 >
-  {colorPreview && <HomepageAccentPreview />}
   <StructuredData
     type="softwareApplication"
     data={{
@@ -498,28 +489,8 @@ const toneMap: Record<string, string> = {
         >
           Manage HubSpot renewals without rebuilding every deal.
         </h1>
-        {colorPreview && (
-          <>
-            <p
-              data-homepage-hero-copy="original"
-              class="reveal text-base sm:text-lg text-v6-text-muted max-w-xl mx-auto lg:mx-0 mb-5 leading-relaxed"
-            >
-              Renewal Builder auto-creates review-ready renewal deals in your chosen
-              pipeline from the closed-won deals your team already trusts.
-            </p>
-            <p
-              data-homepage-hero-copy="original"
-              class="reveal text-base sm:text-lg text-v6-text-muted max-w-xl mx-auto lg:mx-0 mb-4 leading-relaxed"
-            >
-              Carry forward renewal dates, recurring line items, companies,
-              contacts, custom properties, and account ownership. Preview the new
-              deal first, then automate renewal workflows only when ready.
-            </p>
-          </>
-        )}
         <p
-          data-homepage-hero-copy="compact"
-          class="reveal text-base sm:text-lg text-v6-text-muted max-w-xl mx-auto lg:mx-0 mb-5 leading-relaxed"
+          class="hero-summary reveal text-base sm:text-lg text-v6-text-muted max-w-xl mx-auto lg:mx-0 mb-5 leading-relaxed"
         >
           Renewal Builder auto-creates review-ready renewal deals from closed-won data—carrying forward renewal dates, recurring line items, companies, contacts, custom properties, and account ownership.
         </p>
@@ -635,7 +606,7 @@ const toneMap: Record<string, string> = {
     </p>
   </section>
   <!-- ============ TRUST BAR ============ -->
-  <section id="homepage-integrations" class="bg-v6-bg border-y border-v6-border pt-6 pb-3 px-4">
+  <section id="homepage-integrations" data-proof-type="integrations" aria-label="Integration compatibility" class="bg-v6-bg border-y border-v6-border pt-6 pb-3 px-4">
     <div class="max-w-5xl mx-auto">
       <!-- Integration ecosystem, labelled "Works with" rather than client proof.
            Explicit dimensions reserve image space before decoding. -->
@@ -1420,25 +1391,8 @@ const toneMap: Record<string, string> = {
        layout has already closed </body></html>, which emits stray markup past the
        document end. Keep them here. -->
   <style>
-    /* The checked-in reference bypasses all trial colors and visual refinements. */
-    :global(:root[data-homepage-accent]:not([data-homepage-accent="checked-in"])) {
-      /* Dark default preserves text/CTA contrast; 600 remains the hover shade. */
-      --color-v6-copper: #9F254F;
-      --color-v6-copper-50: #FCF3F6;
-      --color-v6-copper-100: #F9E4EC;
-      --color-v6-copper-200: #F1C5D5;
-      --color-v6-copper-300: #E69AB4;
-      --color-v6-copper-400: #D76D92;
-      --color-v6-copper-500: #C94D79;
-      --color-v6-copper-600: #B83260;
-      --color-v6-copper-700: #9F254F;
-      --color-v6-copper-800: #852344;
-      --color-v6-copper-900: #6E223C;
-      --color-v6-copper-950: #420F21;
-    }
-    :global(:root:not([data-homepage-accent="checked-in"])) {
-      /* Reserve raspberry section labels for the product, demo, and service paths.
-         The other labels support the headings without competing with the CTAs. */
+    :global(:root) {
+      /* Keep section labels secondary; the workflow label uses the active accent. */
       section > div > p.uppercase.text-v6-copper {
         color: var(--color-v6-text-muted);
       }

@@ -18,9 +18,8 @@ Important locations:
 - `src/components/astro/`: Astro components
 - `src/components/react/`: React components
 - `src/layouts/BaseLayout.astro`: primary page layout
-- `src/styles/global.css`: Tailwind 4 utilities and original palette baseline
-- `src/styles/site-theme.css`: active Coral + aqua presentation
-- `src/utils/homepageAccentPalettes.ts`: shared default and comparison palette tokens
+- `src/styles/global.css`: Tailwind 4 utilities, original palettes, and canonical site colors
+- `src/styles/site.css`: shared typography, components, white canvas, and product roles
 - `src/utils/seo.ts`: SEO helpers
 - `docs/analytics-consent-and-attribution.md`: analytics and consent rules
 - `docs/content-guidelines/`: shared content rules
@@ -59,52 +58,15 @@ the canonical interface.
 No general unit-test runner or linter is currently configured. `pnpm verify` runs the
 production build and is the normal validation command.
 
-To compare homepage color palettes, run `pnpm dev` and open
-`/homepage-colors-prototype/`. The temporary, noindex preview supports
-`?variant=raspberry|iris|orchid|wine|graphite|plum|mauve|checked-in|raspberry-iris|balanced-orange|bright-orange|coral-red|coral-aqua`;
-its controls also switch the coordinated backgrounds and supporting colors.
-The checked-in option restores the original copper palette and styling. The
-raspberry-iris option uses iris throughout while retaining raspberry's warm ivory
-backgrounds and original supporting colors.
-Balanced orange uses `#D86329` action buttons; bright orange uses `#FF8C52`.
-Both orange variants use white button labels.
-Both use green section highlights, a mint hero gradient, and warm ivory backgrounds.
-Coral red uses `#E65E5E` buttons with light labels, a full coral shade scale,
-warm cream surfaces, and coordinated teal, slate blue, and amber supporting colors.
-Coral + aqua uses a pure white homepage canvas, charcoal headings, and aqua
-(`#247F76`) supporting accents. Pale aqua (`#F7FFFD`), mint (`#EFF6F4`), and
-golden yellow details stay inside components rather than full-width section washes,
-with crisp 1px `#E2E8E6` borders around white cards. Divs using the pale aqua
-background have a 1px `#F1FFFC` border; the three consulting roadmap cards use
-a stronger slate-gray `#CBD8E5` border.
-Coral (`#DF462A`) is reserved for primary actions. The eight problem-grid icons
-use neutral mint (`#EFF6F4`) containers with deep spruce (`#133E39`) strokes;
-other supporting icons retain their existing colors. The dark metrics bar uses
-white statistics with muted mint (`#9FD3C7`) descriptive labels.
-Cookie Accept and footer Subscribe remain
-secondary outline buttons. The existing charcoal footer is preserved. Outcome
-metrics sit in a contained dark card immediately after the hero's integration strip
-and architecture sentence. The closing aqua CTA is also a contained card.
-Consulting sections use engineering slate blue (`#526F91`) cues and buttons;
-deep spruce (`#133E39`) is reserved for future forecasting product modules.
-The site default and this variant use self-hosted Bricolage Grotesque for headings, with
-optical size fixed at 14, main headings at weight 700, and card headings at 600.
-The hero uses `-0.025em` tracking and `1.08` line height; section headings use
-`-0.015em` tracking, while uppercase kickers and badges use `0.1em`.
-Hanken Grotesk is retained for body text. Other variants retain their original headings.
-Its bold hero title sits in a `max-w-7xl` container aligned with the navigation;
-the navigation has no inner side padding and shares the hero's responsive gutters.
-Its desktop hero uses a 44–48px title with a wider text column and one concise
-supporting paragraph; other variants keep the original two-paragraph hero copy.
-That paragraph lists renewal dates, recurring line items, companies, contacts,
-custom properties and account ownership. Demo and renewal-estimate actions use
-2px neutral-gray outlines with charcoal text and visible hover and keyboard-focus states.
-Both hero badges use the same aqua highlight.
-Coral + aqua is the default across the site and the default comparison selection.
-`BaseLayout.astro` applies its shared token map through `SiteTheme.astro` without
-JavaScript; normal pages do not include comparison controls or their bottom spacing.
-The regular homepage uses the compact supporting paragraph above. Historic preview
-variants still inherit the original `global.css` baseline before applying their tokens.
+The active site styling is defined in `src/styles/global.css` (Tailwind colors and
+utilities) and `src/styles/site.css` (shared presentation). `BaseLayout.astro`
+imports both stylesheets directly. Use the Tailwind `@theme` definitions as the
+source for current color values and compatibility aliases.
+
+The site uses self-hosted Bricolage Grotesque for headings and Hanken Grotesk for
+body text. See [site color and proof principles](content-guidelines/homepage-color-system.md)
+for design guidance. Color choices can evolve; use the named Tailwind shades when
+implementing them.
 
 For analytics, consent-banner, attribution, or third-party embed changes, also run:
 
@@ -164,13 +126,21 @@ state.
   `src/styles/global.css`. Do not treat the legacy `tailwind.config.js` as canonical.
 - Alpine.js is started by `@astrojs/alpinejs`. Do not add another `Alpine.start()`.
 - Use `BaseLayout.astro` for normal pages and `BlogPostLayout.astro` for posts.
-- Use the `v6` brand utilities from `src/styles/global.css`; their active values come
-  from `defaultSitePalette` in `src/utils/homepageAccentPalettes.ts`. Primary actions
-  use separate `--color-action` tokens in `src/styles/site-theme.css`.
+- Existing `v6` brand utilities use compatibility aliases in
+  `src/styles/global.css`. All live homepage colors are defined in
+  `global.css`'s Tailwind `@theme`: `coral`, `aqua`, and `ink` shade families plus
+  functional aliases such as `action`, `support-action`, and `surface-card-border`.
+  Use utilities such as `bg-coral-600`, `bg-aqua-10`, and `border-ink-200`, or
+  reference their theme variables in component CSS. Do not add local hex colors.
+  Extra numbered shades (`10`, `25`, `150`, `1000`, etc.) preserve distinct colors
+  without arbitrary values. Original blue, amber, and other named families remain
+  available alongside the selected site colors.
 - Follow `docs/content-guidelines/page-imagery.md` for landing-page visuals:
   use PNG or JPEG content illustrations, with editable SVG sources kept separately.
 - Follow [homepage color and proof principles](content-guidelines/homepage-color-system.md)
-  for the white canvas, contained color, product roles, and early proof placement.
+  across live landing and blog pages for the white canvas, contained color, product
+  roles, and early proof placement. `BaseLayout.astro` applies route and offering
+  markers; noindex funnel pages are included, while legacy/design previews are excluded.
 - For user-facing changes, follow the workspace UX framework at
   `../docs/ux/UX_FRAMEWORK.md`.
 - Read `docs/analytics-consent-and-attribution.md` before adding a tag, pixel,
