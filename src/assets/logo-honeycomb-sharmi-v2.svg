@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 110" width="120" height="110" role="img" aria-labelledby="logo-title">
+  <title id="logo-title">SwotBee honeycomb logo, revised colour arrangement</title>
+  <polygon points="38,8 54,18 54,36 38,46 22,36 22,18" fill="#247F76"/>
+  <polygon points="72,8 88,18 88,36 72,46 56,36 56,18" fill="#DF462A"/>
+  <polygon points="21,40 37,50 37,68 21,78 5,68 5,50" fill="#76CABB"/>
+  <polygon points="55,40 71,50 71,68 55,78 39,68 39,50" fill="#DF462A"/>
+  <polygon points="89,40 105,50 105,68 89,78 73,68 73,50" fill="#3D9AD0"/>
+  <polygon points="38,72 54,82 54,100 38,110 22,100 22,82" fill="#DF462A"/>
+  <polygon points="72,72 88,82 88,100 72,110 56,100 56,82" fill="#1871A8"/>
+</svg>
