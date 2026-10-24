@@ -1,4 +1,6 @@
 ---
+import { contractCompanions } from "../../scripts/contract-companion-engagement.js";
+const companionPaths = ["/resources/", ...contractCompanions.map(asset => `/posts/${asset.slug}/`)];
 // Optional parallel pilot. No configured ID means no script or collection.
 const websiteId = import.meta.env.PUBLIC_UMAMI_WEBSITE_ID || '';
 const collector = import.meta.env.PUBLIC_UMAMI_ORIGIN || '';
@@ -12,7 +14,7 @@ if (Boolean(websiteId) !== Boolean(collector) || (websiteId && (!/^[0-9a-f]{8}-[
 }
 ---
 {websiteId && collector && (
-  <script is:inline define:vars={{ websiteId, collector, paths, replayPaths, preconsentTrial }}>
+  <script is:inline define:vars={{ websiteId, collector, paths, replayPaths, preconsentTrial, companionPaths }}>
     (() => {
       if (window.__sbAnalyticsTest) return;
       // Dashboard previews must not become additional analytics visits.
@@ -21,7 +23,10 @@ if (Boolean(websiteId) !== Boolean(collector) || (websiteId && (!/^[0-9a-f]{8}-[
       try { granted = localStorage.getItem('sb_consent') === 'granted'; } catch (_) {}
       let loading = false;
       let queue = [];
-      const eligible = () => (granted || preconsentTrial) && paths.includes(location.pathname);
+      // CM-04 adds only consented measurement on the five companion surfaces.
+      // They never inherit the existing pre-consent trial or recorder scope.
+      const companionPage = companionPaths.includes(location.pathname);
+      const eligible = () => companionPage ? granted : (granted || preconsentTrial) && paths.includes(location.pathname);
       const keys = new Set(['cta','href','destination','source_page','resource_id','resource','asset','placement','percent','form_name','offer','report_offer','cta_label','experiment','error_type','analytics_consent','video_name','video_title','video_id','event_type','magnet','source','dimension','grade','total','link_url','link_text','file_name','file_type','method']);
       const utms = new Set(['utm_source','utm_medium','utm_campaign','utm_content','utm_term']);
       const safeText = (value) => typeof value === 'string' && value.length <= 200 && !/[@\r\n]/.test(value);
@@ -99,7 +104,7 @@ if (Boolean(websiteId) !== Boolean(collector) || (websiteId && (!/^[0-9a-f]{8}-[
           // Never change the real URL: GA4/Ads and first-party attribution need it.
           // Instead omit replay on URLs containing unapproved query/hash values.
           const url = new URL(location.href);
-          const safeReplay = replayPaths.includes(location.pathname) && !url.hash && [...url.searchParams].every(([key, value]) => utms.has(key) && safeText(value));
+          const safeReplay = !companionPage && replayPaths.includes(location.pathname) && !url.hash && [...url.searchParams].every(([key, value]) => utms.has(key) && safeText(value));
           if (safeReplay) {
             const recorder = document.createElement('script');
             recorder.src = collector + '/recorder.js';

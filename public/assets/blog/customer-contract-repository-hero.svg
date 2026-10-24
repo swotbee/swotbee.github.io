@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">A customer contract repository you can act on</title>
+  <desc id="desc">Connect document evidence, reviewed agreement data and the person responsible for the next action.</desc>
+  <rect width="1200" height="675" fill="#fffaf1"/>
+  <g font-family="Arial, sans-serif" fill="#213343">
+    <text x="64" y="77" font-size="22" letter-spacing="2">SWOTBEE / CUSTOMER CONTRACTS</text>
+    <text x="64" y="157" font-size="48" font-weight="700">From signed files</text>
+    <text x="64" y="217" font-size="48" font-weight="700">to an actionable register</text>
+    <rect x="64" y="282" width="328" height="230" rx="18" fill="#213343"/>
+    <rect x="436" y="282" width="328" height="230" rx="18" fill="#213343"/>
+    <rect x="808" y="282" width="328" height="230" rx="18" fill="#213343"/>
+    <g fill="#ffe066" font-size="23"><text x="90" y="328">01 / EVIDENCE</text><text x="462" y="328">02 / AGREEMENT</text><text x="834" y="328">03 / NEXT ACTION</text></g>
+    <g fill="white" font-size="29" font-weight="700"><text x="90" y="389">Find the right</text><text x="90" y="430">document</text><text x="462" y="389">Review dates</text><text x="462" y="430">and relationships</text><text x="834" y="389">Assign an owner</text><text x="834" y="430">and deadline</text></g>
+    <path d="M400 394h27m-10-10 10 10-10 10M772 394h27m-10-10 10 10-10 10" stroke="#213343" stroke-width="4" fill="none"/>
+    <text x="64" y="579" font-size="25">A register, a worked agreement family and acceptance checks</text>
+    <text x="64" y="622" font-size="20">Illustrative design. A metadata row is not proof of execution or payment.</text>
+  </g>
+</svg>

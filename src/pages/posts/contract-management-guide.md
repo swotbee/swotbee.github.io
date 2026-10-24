@@ -223,6 +223,8 @@ Legal risk in contracts is well covered elsewhere. The commercial risks are less
 
 ---
 
+For document identity and relationships, use the [customer contract repository guide](/posts/customer-contract-repository/) and its free parent-linked register and retrieval checklist. Keep each governing MSA, service agreement and amendment traceable to the correct evidence.
+
 ## Improving contract management, in the order that works
 
 Most advice on this reads as a list of 10 contract management best practices with no sequence. Sequence is most of the value, because early steps make later ones cheaper.

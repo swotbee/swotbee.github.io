@@ -35,13 +35,19 @@ This is about pricing your customers' agreements in HubSpot. Start with one sign
 **Download:** <a href="/templates/hubspot-phased-pricing-setup-workbook.xlsx" download>Phased-pricing setup workbook (Excel)</a>. Use the filled example, editable schedule, configuration checklist and transition test log. The <a href="/templates/hubspot-phased-pricing-companion-pack.pdf" download>printable companion pack (PDF)</a> covers the same checks for readers following the video.
 
 <figure aria-label="Three-year HubSpot pricing">
-<video controls playsinline preload="none" width="1920" height="1080" poster="/videos/customer-contracts/hubspot-multi-year-contract-pricing.poster.webp" aria-label="Three-year HubSpot pricing" style="display:block;width:100%;height:auto;aspect-ratio:16/9;background:#111;border-radius:12px;">
+<video class="contract-companion-video" controls playsinline preload="none" width="1920" height="1080" poster="/videos/customer-contracts/hubspot-multi-year-contract-pricing.poster.webp" aria-label="Three-year HubSpot pricing" style="display:block;width:100%;height:auto;aspect-ratio:16/9;background:#111;border-radius:12px;">
   <source src="/videos/customer-contracts/hubspot-multi-year-contract-pricing.mp4" type="video/mp4" />
-  <track src="/videos/customer-contracts/hubspot-multi-year-contract-pricing.en.vtt" kind="captions" srclang="en" label="English" />
+  <track src="/videos/customer-contracts/hubspot-multi-year-contract-pricing.en.vtt" kind="captions" srclang="en" label="English" default />
   Your browser cannot play this video. Use the download link below.
 </video>
-<figcaption><strong>Watch: Three-year HubSpot pricing</strong> (4:46). Illustrated price schedule and expected transitions; live billing is not demonstrated. <a href="/videos/customer-contracts/hubspot-multi-year-contract-pricing.mp4" download>Download video</a> or <a href="/videos/customer-contracts/hubspot-multi-year-contract-pricing.transcript.txt">read the transcript</a>.</figcaption>
+<figcaption><strong>Watch: Three-year HubSpot pricing</strong> (5:08). Illustrated price schedule and expected transitions; live billing is not demonstrated. <a href="/videos/customer-contracts/hubspot-multi-year-contract-pricing.mp4" download>Download video</a> or <a href="/videos/customer-contracts/hubspot-multi-year-contract-pricing.transcript.txt">read the transcript</a>.</figcaption>
 </figure>
+
+<nav aria-label="Contract guide series" class="my-6 rounded-xl border border-ink-200 p-4">
+<p><strong>Contract guide series: 3 of 4</strong></p>
+<p><a href="/posts/hubspot-contract-record-responsibilities/" class="inline-flex items-center min-h-11">Start here: Record responsibilities</a></p>
+<p><a href="/posts/hubspot-renewal-expansion-revenue-reporting/" rel="next" class="inline-flex items-center min-h-11">Next guide: Renewal and expansion reporting</a></p>
+</nav>
 
 ## How do annual price increases fit one multi-year contract?
 
@@ -104,4 +110,4 @@ In the workbook, enter the environment, evidence, observed amount and corrective
 
 The companion video illustrates the schedule and expected transitions. It does not demonstrate live invoices or an executed HubSpot billing configuration. Product documentation checked 19 October 2026.
 
-Need help choosing the record and billing responsibilities? Return to the [HubSpot contract management guide](/posts/hubspot-contract-management/) or [discuss your agreement workflow with SwotBee](/contactus/).
+Need help choosing the record and billing responsibilities? Return to the [HubSpot contract management guide](/posts/hubspot-contract-management/) or [discuss your agreement workflow with SwotBee](/services/hubspot-contract-management/#inquiry).

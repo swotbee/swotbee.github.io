@@ -28,13 +28,19 @@ Calling the whole purchase new sales overstates growth. Calling the whole purcha
 Download the <a href="/templates/hubspot-renewal-expansion-reporting.xlsx" download>reconciliation and reporting workbook (Excel)</a> and <a href="/templates/hubspot-renewal-expansion-reporting.pdf" download>classification dictionary and test pack (PDF)</a>. They accompany both renewal-and-expansion videos and include the example, editable calculations and expected-versus-observed tests.
 
 <figure aria-label="Renewal and expansion revenue reporting">
-<video controls playsinline preload="none" width="1920" height="1080" poster="/videos/customer-contracts/hubspot-renewal-expansion-revenue-reporting.poster.webp" aria-label="Renewal and expansion revenue reporting" style="display:block;width:100%;height:auto;aspect-ratio:16/9;background:#111;border-radius:12px;">
+<video class="contract-companion-video" controls playsinline preload="none" width="1920" height="1080" poster="/videos/customer-contracts/hubspot-renewal-expansion-revenue-reporting.poster.webp" aria-label="Renewal and expansion revenue reporting" style="display:block;width:100%;height:auto;aspect-ratio:16/9;background:#111;border-radius:12px;">
   <source src="/videos/customer-contracts/hubspot-renewal-expansion-revenue-reporting.mp4" type="video/mp4" />
-  <track src="/videos/customer-contracts/hubspot-renewal-expansion-revenue-reporting.en.vtt" kind="captions" srclang="en" label="English" />
+  <track src="/videos/customer-contracts/hubspot-renewal-expansion-revenue-reporting.en.vtt" kind="captions" srclang="en" label="English" default />
   Your browser cannot play this video. Use the download link below.
 </video>
-<figcaption><strong>Watch: Renewal and expansion revenue reporting</strong> (5:13). Fictional reporting example and expected tests; an executed account report is not demonstrated. <a href="/videos/customer-contracts/hubspot-renewal-expansion-revenue-reporting.mp4" download>Download video</a> or <a href="/videos/customer-contracts/hubspot-renewal-expansion-revenue-reporting.transcript.txt">read the transcript</a>.</figcaption>
+<figcaption><strong>Watch: Renewal and expansion revenue reporting</strong> (5:31). Fictional reporting example and expected tests; an executed account report is not demonstrated. <a href="/videos/customer-contracts/hubspot-renewal-expansion-revenue-reporting.mp4" download>Download video</a> or <a href="/videos/customer-contracts/hubspot-renewal-expansion-revenue-reporting.transcript.txt">read the transcript</a>.</figcaption>
 </figure>
+
+<nav aria-label="Contract guide series" class="my-6 rounded-xl border border-ink-200 p-4">
+<p><strong>Contract guide series: 4 of 4</strong></p>
+<p><a href="/posts/hubspot-contract-record-responsibilities/" class="inline-flex items-center min-h-11">Start here: Record responsibilities</a></p>
+<p><a href="/resources/#contract-guides" class="inline-flex items-center min-h-11">Series complete: Browse all four companions</a></p>
+</nav>
 
 ## What belongs in renewal, expansion and one-time revenue?
 

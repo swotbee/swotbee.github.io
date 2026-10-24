@@ -246,4 +246,4 @@ Yes, design those as explicit gates in the process. Choose where requirements ar
 
 SwotBee has delivered integrations involving document-signing tools. A useful discovery conversation starts with one agreement and the specific handoff that currently fails.
 
-[Request a discovery call about your document-to-HubSpot workflow](/contactus/). Bring your template, source object, required returned fields and current tool plans.
+[Request a discovery call about your document-to-HubSpot workflow](/services/hubspot-contract-management/#inquiry). Bring your template, source object, required returned fields and current tool plans.

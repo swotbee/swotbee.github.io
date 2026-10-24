@@ -1,181 +1,39 @@
-Cedar Vale signs up for three years of service.
+Cedar Vale signs up for three years of service. The price is agreed from the start: twelve thousand dollars in year one, thirteen thousand two hundred in year two, and fourteen thousand five hundred and twenty in year three.
 
-The price is agreed from the start: twelve thousand dollars in
+How should HubSpot represent that? Start with the source agreement, its dated price schedule and the billing arrangement you intend to use. Each anniversary moves to the next agreed price; it is not automatically a new sale or a renewal negotiation.
 
-year one, thirteen thousand two hundred in year two, and fourteen
+In this fictional example, the commitment runs from January twenty twenty-seven through December twenty twenty-nine. Each price applies for exactly one year. The total across the three years is thirty-nine thousand seven hundred and twenty dollars.
 
-thousand five hundred and twenty in year three.
+The contract term tells us how long the commitment lasts. The price schedule tells us which rate applies when. Billing frequency answers a separate question: how often do we issue an invoice?
 
-How should HubSpot represent that?
+With annual billing, the example has one charge of twelve thousand dollars in year one, then thirteen thousand two hundred, then fourteen thousand five hundred and twenty. Invoice issue and due dates still follow the agreed billing terms.
 
-Start with one governing agreement and a dated price schedule.
+With monthly billing, year one has twelve charges of one thousand dollars. Year two has twelve of eleven hundred. Year three has twelve of twelve hundred and ten. Both patterns cover the same three-year price schedule.
 
-Each anniversary moves to the next agreed price; it is not
+Keep the source agreement and its price schedule identifiable. The commercial Contract represents the commitment being managed. The Deal records the sales opportunity, and a Quote presents the proposal when that route is used.
 
-automatically a new sale or a renewal negotiation.
+Represent each period with its own start, finite term, quantity and applicable price. The three phases are sequential. If all three prices start together, you have described concurrent charges instead of a yearly increase.
 
-In this fictional example, the commitment runs from January twenty
+Keep the full commitment separate from the current period's rate. Thirty-nine thousand seven hundred and twenty dollars is the three-year total. It is not this year's recurring rate or evidence of cash collected.
 
-twenty-seven through December twenty twenty-nine.
+HubSpot now documents ramp pricing in Revenue Hub quotes: add the product as separate line items, set each phase's billing start date, and give each phase its intended term. This is a documented option, not a completed setup demonstration.
 
-Each price applies for exactly one year.
+That quote route requires Revenue Hub Professional or Enterprise and a Revenue Hub seat. The documentation also states a restriction on ramp pricing with HubSpot payments. Verify the processor and account path before promising automated billing.
 
-The total across the three years is thirty-nine thousand seven hundred
+A direct Contract and a billing migration are separate setup routes. Check which one your account supports and how it handles dated line items. A migration ramp key belongs to its migration process; it is not a field every quote needs. Choose the route before copying the schedule into HubSpot.
 
-and twenty dollars.
+If Finance bills elsewhere, keep that system responsible for its invoice schedule and check the handoff. Recording three prices in HubSpot alone does not configure the external billing system.
 
-The contract term tells us how long the commitment lasts.
+Now test the boundary, not just the total. On December thirty-first, twenty twenty-seven, the example is still in year one. From January first, twenty twenty-eight, year two's price applies. There should be no overlap and no missing service period.
 
-The price schedule tells us which rate applies when.
+For the monthly pattern, the expected rate changes from one thousand to eleven hundred dollars. The old phase must stop before the new one charges. Adding both would produce twenty-one hundred dollars for the same month.
 
-Billing frequency answers a separate question: how often do we issue
+Repeat the check at the next anniversary, when the monthly rate becomes twelve hundred and ten dollars. For annual billing, check the corresponding annual amount instead. These are expected results; no invoices or automatic transitions were executed here.
 
-an invoice?
+At the end of year three, confirm what the agreement actually says. Do not invent a fourth-year price or assume automatic renewal. Keep the source terms, commercial records and billing schedule aligned.
 
-With annual billing, the example has one charge of twelve thousand
+Reconcile the complete schedule. Twelve thousand, plus thirteen thousand two hundred, plus fourteen thousand five hundred and twenty equals thirty-nine thousand seven hundred and twenty dollars. Thirty-six monthly charges produce the same total before taxes and other agreed adjustments.
 
-dollars in year one, then thirteen thousand two hundred, then fourteen
+Here's one row to record in the companion workbook. The boundary is the first of January, twenty twenty-eight. For monthly billing, the expected active rate is eleven hundred dollars, with the old one-thousand-dollar phase ended. Finance checks the actual billing result; Sales Ops records the source schedule and any discrepancy. Leave the observed result open until you've tested it. If both phases charge, correct the overlap and repeat the check before activating the schedule.
 
-thousand five hundred and twenty.
-
-Invoice issue and due dates still follow the agreed billing terms.
-
-With monthly billing, year one has twelve charges of one thousand
-
-dollars.
-
-Year two has twelve of eleven hundred.
-
-Year three has twelve of twelve hundred and ten.
-
-Both patterns cover the same three-year price schedule.
-
-Keep the source agreement and its price schedule identifiable.
-
-The commercial Contract represents the commitment being managed.
-
-The Deal records the sales opportunity, and a Quote presents the
-
-proposal when that route is used.
-
-Represent each period with its own start, finite term, quantity and
-
-applicable price.
-
-The three phases are sequential.
-
-If all three prices start together, you have described concurrent charges
-
-instead of a yearly increase.
-
-Keep the full commitment separate from the current period's rate.
-
-Thirty-nine thousand seven hundred and twenty dollars is the three-year
-
-total.
-
-It is not this year's recurring rate or evidence of cash
-
-collected.
-
-HubSpot now documents ramp pricing in Revenue Hub quotes: add the
-
-product as separate line items, set each phase's billing start date,
-
-and give each phase its intended term.
-
-This is a documented option, not a completed setup demonstration.
-
-That quote route requires Revenue Hub Professional or Enterprise and a
-
-Revenue Hub seat.
-
-The documentation also states a restriction on ramp pricing with
-
-HubSpot payments.
-
-Verify the processor and account path before promising automated billing.
-
-Direct Contracts offer dated line items through a beta route.
-
-Billing migration also documents ramp phases, but it is a separate
-
-process.
-
-A migration ramp key is not a field every quote needs.
-
-Do not infer that all these routes behave identically.
-
-If Finance bills elsewhere, keep that system responsible for its invoice
-
-schedule and check the handoff.
-
-Recording three prices in HubSpot alone does not configure the external
-
-billing system.
-
-Now test the boundary, not just the total.
-
-On December thirty-first, twenty twenty-seven, the example is still in
-
-year one.
-
-From January first, twenty twenty-eight, year two's price applies.
-
-There should be no overlap and no missing service period.
-
-For the monthly pattern, the expected rate changes from one thousand
-
-to eleven hundred dollars.
-
-The old phase must stop before the new one charges.
-
-Adding both would produce twenty-one hundred dollars for the same month.
-
-Repeat the check at the next anniversary, when the monthly rate
-
-becomes twelve hundred and ten dollars.
-
-For annual billing, check the corresponding annual amount instead.
-
-These are expected results; no invoices or automatic transitions were executed
-
-here.
-
-At the end of year three, confirm what the agreement actually
-
-says.
-
-Do not invent a fourth-year price or assume automatic renewal.
-
-Keep the source terms, commercial records and billing schedule aligned.
-
-Reconcile the complete schedule.
-
-Twelve thousand, plus thirteen thousand two hundred, plus fourteen
-
-thousand five hundred and twenty equals thirty-nine thousand seven
-
-hundred and twenty dollars.
-
-Thirty-six monthly charges produce the same total before taxes and other
-
-agreed adjustments.
-
-Use the configuration checklist to choose a route: which quote or
-
-Contract experience is available, which system controls billing, and what
-
-evidence proves each transition?
-
-Treat report values and revenue recognition as separate questions with
-
-their own definitions.
-
-The companion pack gives you the phased-pricing worksheet,
-
-configuration decision checklist and transition tests.
-
-Map one real agreement, name the owner, compare expected and
-
-observed results, and resolve discrepancies before automating.
+The companion pack gives you the phased-pricing worksheet, configuration decision checklist and transition tests. Map one real agreement, name the owner, compare expected and observed results, and resolve discrepancies before automating.

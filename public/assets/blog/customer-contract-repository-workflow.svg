@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">One agreement family, two recurring commitments</title>
+  <desc id="desc">MSA-001 governs support A-101, backup A-102 and one-time onboarding A-103. Amendment M101-1 changes A-101. It replaces a rate in a separate scenario rather than adding another agreement.</desc>
+  <rect width="1200" height="760" fill="#fffaf1"/>
+  <g font-family="Arial, sans-serif" fill="#213343">
+    <text x="48" y="61" font-size="32" font-weight="700">Document relationships are not revenue counts</text>
+    <rect x="399" y="100" width="402" height="117" rx="14" fill="#213343"/>
+    <g fill="white" text-anchor="middle"><text x="600" y="145" font-size="28" font-weight="700">MSA-001</text><text x="600" y="185" font-size="22">Governing document</text></g>
+    <g stroke="#213343" stroke-width="3" fill="none"><path d="M600 217v62H220v40M600 279v40M600 279h380v40"/></g>
+    <text x="626" y="262" font-size="20">governs</text>
+    <g stroke="#213343" stroke-width="2" fill="white"><rect x="45" y="319" width="350" height="152" rx="14"/><rect x="425" y="319" width="350" height="152" rx="14"/><rect x="805" y="319" width="350" height="152" rx="14"/></g>
+    <g text-anchor="middle"><g font-size="27" font-weight="700"><text x="220" y="362">A-101 / Support</text><text x="600" y="362">A-102 / Backup</text><text x="980" y="362">A-103 / Onboarding</text></g><g font-size="23"><text x="220" y="405">USD1,000 monthly</text><text x="600" y="405">USD250 monthly</text><text x="980" y="405">USD1,500 once</text></g><g font-size="20"><text x="220" y="444">Recurring agreement</text><text x="600" y="444">Recurring agreement</text><text x="980" y="444">One-time order</text></g></g>
+    <path d="M220 471v68" stroke="#213343" stroke-width="3" stroke-dasharray="8 6"/>
+    <rect x="45" y="539" width="730" height="110" rx="14" fill="#ffe066"/>
+    <text x="71" y="580" font-size="25" font-weight="700">M101-1 changes A-101 from 1 May 2027</text>
+    <text x="71" y="619" font-size="22">USD1,200 replaces USD1,000 in an isolated scenario.</text>
+    <text x="48" y="704" font-size="23">Five register entries. Two baseline recurring agreements. Unsigned demo references.</text>
+  </g>
+</svg>

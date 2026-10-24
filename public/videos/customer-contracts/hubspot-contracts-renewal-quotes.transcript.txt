@@ -1,135 +1,21 @@
-Sales wants Cedar Vale's solar-support proposal reviewed.
+Let's check Cedar Vale's Solar Support draft before it goes for review. We'll match the proposal, check the terms, and confirm who acts next. This is an internal draft check; customer acceptance comes later.
 
-But there's also a battery-monitoring agreement.
+You'll need the source proposal and an existing Contract draft, plus access to edit Contracts. Our fictional source is Solar Support Proposal, version one: one thousand US dollars a month for twelve payments. Keep it beside the draft.
 
-Which record is right, what does the price cover, and who acts next?
+In HubSpot, go to Revenue, then Contracts. Open Cedar Vale, Solar Support, and confirm its Draft status. Battery Monitoring is another agreement for the same customer, so check the service name as well as the customer. Choose Edit contract.
 
-Let's make that handoff clear.
+Match the seller, customer and contact to the proposal: BeaconGrid, Cedar Vale and Alex Morgan. Then check the associated Solar Support deal. That association helps you find the sale; it doesn't guarantee every field is synchronized. If the details differ, ask Sales to confirm the current source before continuing.
 
-Here's how to use HubSpot Contracts to check a draft and hand it over for review.
+Here, the unit price is one thousand dollars per month, with quantity one and twelve payments. So the proposed term value is twelve thousand dollars. That total is not an invoice due today. Check price, quantity, billing frequency and payment count together.
 
-The deal tracks the sale.
+The proposed service runs from November first, twenty twenty-six, through October thirty-first, twenty twenty-seven. Compare the service dates and effective date with the proposal. They match here; another agreement may use different dates.
 
-The Contract brings together its commercial details, including changes and renewals.
+Finance handles billing separately in this example, so HubSpot Billing stays off. The native message says no invoices will be created or sent. Keep that choice deliberate: checking this draft doesn't connect Finance's billing system or authorize a charge.
 
-We'll finish with a checked draft;
+Return to the record and reopen the draft to check the saved values. Compare the customer, service, price, payment count, dates and Billing off with your source. In the workbook, record what you actually observed and which proposal version you used. If something differs, keep it in Draft and resolve the mismatch with Sales. After saving a correction, reopen the draft and repeat the affected checks.
 
-customer acceptance comes later.
+The handoff now has three parts: the proposal version, the matching draft, and your recorded checks. In this example, Sales Ops owns the next action: request the Sales manager's review. We haven't submitted that request here. If the proposal changes, update the source and recheck the affected terms.
 
-BeaconGrid provides solar support to Cedar Vale Foods.
+If you use PandaDoc or Docusign, keep the signed document as evidence of customer agreement. For an external agreement, getting its terms into the native Contract needs a create or import step, or a separately tested integration. A document-completion workflow can start a review task when configured; renewal follow-up needs its own dates, owner and testing. The PDF outlines those proposed follow-up checks.
 
-Alex Morgan is Cedar Vale's contact.
-
-Our source is Solar Support Proposal, version one: one thousand US dollars a month for twelve months.
-
-Keep that proposal beside the draft.
-
-It's our reference for every check that follows.
-
-In HubSpot, open Revenue, then Contracts.
-
-This demo uses the direct-edit beta, so you'll need that access and permission to edit Contracts.
-
-Open Cedar Vale, Solar Support, and check the Draft label.
-
-Battery Monitoring is a separate agreement.
-
-Same customer, different service.
-
-Then choose Edit contract.
-
-First, match the people and the source.
-
-BeaconGrid is the seller, Cedar Vale the customer, and Alex the contact.
-
-Check the associated Solar Support deal too.
-
-The link helps us find the relationship;
-
-it doesn't prove every field stays in sync.
-
-If the proposal and draft disagree, pause and ask Sales to confirm the correct terms.
-
-Now the number that can cause confusion.
-
-This line is one Solar Support service at one thousand dollars a month, for twelve payments.
-
-That makes twelve thousand dollars across the proposed term.
-
-It's the term value, not a bill due today.
-
-Check the quantity, frequency and payment count before moving on.
-
-Next, check when the service runs: the first of November, twenty twenty-six, through the thirty-first of October, twenty twenty-seven.
-
-Compare the effective date and preview with the proposal too.
-
-These dates match in our example.
-
-In another agreement, check their meaning rather than assuming they must be identical.
-
-Finance has a separate billing process in this example, so HubSpot Billing stays off.
-
-Read the message on screen: this Contract won't create invoices or collect payments with billing disabled.
-
-We've checked the commercial record.
-
-We haven't connected the billing system or authorized an invoice.
-
-Before handing it over, return to the record and reopen the draft.
-
-Are the customer, service, price, payment count and dates still right?
-
-Is Billing still off?
-
-If you changed a value, confirm it was saved before leaving.
-
-If a value is missing or different, stop and resolve it.
-
-The result we want is a checked draft.
-
-Now the Sales manager has something specific to review: Solar Support Proposal, version one, the matching draft, and the checked terms.
-
-Sales Ops owns the next action: request that internal review.
-
-We haven't submitted it in this demo.
-
-If Sales changes the proposal, update the source version and repeat the affected checks.
-
-Customer acceptance and billing approval remain separate steps.
-
-Where do PandaDoc and Docusign fit?
-
-You can keep using them for document preparation and signing.
-
-The deal follows the sale;
-
-the signed document records the agreement;
-
-the HubSpot Contract holds its commercial details.
-
-For an external agreement, those details need a create or import step, or a separately verified integration.
-
-An accepted current HubSpot quote has its own automatic Contract route when configured.
-
-Here's where workflows help.
-
-Document activity, such as completion, can trigger an internal notification or a review task.
-
-Once the right terms are in the Contract, its renewal date can drive reminders and follow-up.
-
-Think of two connected stages: the signing system starts the handoff;
-
-the Contract supports the ongoing relationship.
-
-Automating the Contract-writing step needs its own configured integration.
-
-We'll keep those setup steps in the PDF.
-
-Cedar Vale's Solar Support draft now has a clear source, understandable terms and a next owner for review.
-
-That's the handoff to aim for.
-
-Want the workflow steps for connecting PandaDoc or Docusign to HubSpot Contracts?
-
-Comment WORKFLOW below for the PDF.
+For your next draft, use the workbook beside this video to record your checks and next owner. Use the PDF when you're ready to plan the signing and renewal follow-up.

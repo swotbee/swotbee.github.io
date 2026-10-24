@@ -1,149 +1,45 @@
-Cedar Vale Foods buys solar support and battery monitoring from Beacon Grid.
+Cedar Vale Foods buys solar support and battery monitoring from Beacon Grid. One customer, two services. Where should each agreement's terms, sales history and billing evidence live in HubSpot?
 
-One customer, two services.
+We'll follow solar support, compare battery monitoring, and build a map you can use on your own records. The HubSpot screens show prepared drafts. The documents are illustrations, not signed agreements.
 
-Where should each agreement's terms, sales history and billing evidence live in HubSpot?
+Solar support runs from November twenty twenty-six through October twenty twenty-seven. Battery monitoring starts and ends a month later. Each has its own service scope and renewal decision.
 
-We'll follow solar support, compare battery monitoring, and build a map you can use on your own records.
+That's why we give them separate agreement identities. It isn't a rule of one Contract per product. Services managed under one set of terms can share a Contract with several line items.
 
-The HubSpot screens show prepared drafts.
+The Company identifies the customer. It cannot, by itself, tell you which service an end date or a price belongs to. Keep those facts connected to the specific agreement.
 
-The documents are illustrations, not signed agreements.
+Start with the legal evidence. The master agreement, service schedule and accepted amendments establish what the parties agreed. HubSpot's commercial Contract does not replace those documents.
 
-Solar support runs from November twenty twenty-six through October twenty twenty-seven.
+Next, the Deal answers: which sales opportunity are we working on? Here, the solar draft links to its source Deal. A future renewal opportunity has a different job from the original sale.
 
-Battery monitoring starts and ends a month later.
+A Quote presents a proposal for buyer acceptance, when that route is used. Accepted HubSpot quotes can create Contracts. An agreement signed elsewhere can instead be recorded through the direct-create route, when available.
 
-Each has its own service scope and renewal decision.
+The commercial Contract holds the services, term and committed revenue being managed. This solar example is still a draft, so its values are proposed. A populated record is not proof of customer acceptance.
 
-That's why we give them separate agreement identities.
+The invoice answers what was billed. The payment record shows payment activity and status. For this example, HubSpot billing stays off. We have not created invoices or demonstrated collections.
 
-It isn't a rule of one Contract per product.
+A Subscription needs one extra check. In the standard billing flow, it can manage recurring billing. In a connected billing setup, it can support reporting while the Contract controls billing. Check which setup your account uses before deciding where to make changes.
 
-Services managed under one set of terms can share a Contract with several line items.
+Now check the numbers. The solar line is one thousand US dollars per month, quantity one, for twelve payments. That gives twelve thousand dollars across this fixed term.
 
-The Company identifies the customer.
+Those numbers describe different measures. The monthly recurring price is one thousand dollars. The term total is twelve thousand. Neither tells you how much has been invoiced or paid.
 
-It cannot, by itself, tell you which service an end date or a price belongs to.
+If a fifteen-hundred-dollar commissioning fee belongs to the same agreement, it adds to the total commitment, not the recurring monthly price. If it is separate, leave it outside the solar agreement. Don't carry a one-time fee into recurring renewal charges.
 
-Keep those facts connected to the specific agreement.
+Always name the field you're comparing. Deal Amount, recurring value and Contract total can have different calculation rules. Check the line items and term that produced the displayed number.
 
-Start with the legal evidence.
+Battery monitoring follows the same responsibility map. It's two hundred and fifty dollars monthly for twelve payments: three thousand dollars across its term. Its end date is November thirtieth, twenty twenty-seven.
 
-The master agreement, service schedule and accepted amendments establish what the parties agreed.
+The customer is shared, but the evidence, terms and next action must point to battery monitoring. A link through the same Company is not enough to prove that an invoice or a Deal belongs to that agreement.
 
-HubSpot's commercial Contract does not replace those documents.
+Associations also don't guarantee synchronization. HubSpot can copy line items into separate record instances. Compare their values and parent records, rather than assuming one edit updates every linked record.
 
-Next, the Deal answers: which sales opportunity are we working on?
+Here's the completed map. The Company identifies the customer. Documents supply agreed terms. Deals track opportunities. Quotes present proposals. Contracts manage commercial commitments. Billing records show charges and payment activity, according to your setup.
 
-Here, the solar draft links to its source Deal.
+Here's one example row for the companion workbook. The proposed service end is the thirty-first of October, twenty twenty-seven. Its source is Solar Support Proposal, version one, and its record is the Solar Support draft. In this example, the dates match. Sales Ops' next action is to request internal review. For your own agreement, record what you actually checked and any discrepancy.
 
-A future renewal opportunity has a different job from the original sale.
+Then make three checks. Can you retrieve the correct agreement evidence? Do the prices and dates match it? Do the linked Deal and billing records belong to this agreement? Record discrepancies and assign an owner.
 
-A Quote presents a proposal for buyer acceptance, when that route is used.
+You can start with a shared spreadsheet, controlled document links and assigned HubSpot tasks. Check which Contract creation, quote and workflow features your account includes, then choose the setup that fits your process.
 
-Accepted HubSpot quotes can create Contracts.
-
-An agreement signed elsewhere can instead be recorded through the direct-create route, when available.
-
-The commercial Contract holds the services, term and committed revenue being managed.
-
-This solar example is still a draft, so its values are proposed.
-
-A populated record is not proof of customer acceptance.
-
-The invoice answers what was billed.
-
-The payment record shows payment activity and status.
-
-For this example, HubSpot billing stays off.
-
-We have not created invoices or demonstrated collections.
-
-A Subscription needs one extra check.
-
-In the standard billing flow, it can manage recurring billing.
-
-In HubSpot's connected billing beta, it supports reporting while the Contract controls billing.
-
-Identify your setup before deciding where to make changes.
-
-Now check the numbers.
-
-The solar line is one thousand US dollars per month, quantity one, for twelve payments.
-
-That gives twelve thousand dollars across this fixed term.
-
-Those numbers describe different measures.
-
-The monthly recurring price is one thousand dollars.
-
-The term total is twelve thousand.
-
-Neither tells you how much has been invoiced or paid.
-
-If a fifteen-hundred-dollar commissioning fee belongs to the same agreement, it adds to the total commitment, not the recurring monthly price.
-
-If it is separate, leave it outside the solar agreement.
-
-Don't carry a one-time fee into recurring renewal charges.
-
-Always name the field you're comparing.
-
-Deal Amount, recurring value and Contract total can have different calculation rules.
-
-Check the line items and term that produced the displayed number.
-
-Battery monitoring follows the same responsibility map.
-
-It's two hundred and fifty dollars monthly for twelve payments: three thousand dollars across its term.
-
-Its end date is November thirtieth, twenty twenty-seven.
-
-The customer is shared, but the evidence, terms and next action must point to battery monitoring.
-
-A link through the same Company is not enough to prove that an invoice or a Deal belongs to that agreement.
-
-Associations also don't guarantee synchronization.
-
-HubSpot can copy line items into separate record instances.
-
-Compare their values and parent records, rather than assuming one edit updates every linked record.
-
-Here's the completed map.
-
-The Company identifies the customer.
-
-Documents supply agreed terms.
-
-Deals track opportunities.
-
-Quotes present proposals.
-
-Contracts manage commercial commitments.
-
-Billing records show charges and payment activity, according to your setup.
-
-For each important field, write down its source, the operational record, the responsible person and when it was checked.
-
-Keep the document reference and relevant clause alongside dates and prices.
-
-Then make three checks.
-
-Can you retrieve the correct agreement evidence?
-
-Do the prices and dates match it?
-
-Do the linked Deal and billing records belong to this agreement?
-
-Record discrepancies and assign an owner.
-
-A shared spreadsheet, controlled document links and assigned HubSpot tasks can support this manually.
-
-Direct Contract creation has a beta route across plans; quote creation and workflow automation have separate plan and seat requirements.
-
-Check your account.
-
-Use the accompanying worksheet and matching architecture guide to map one real agreement.
-
-Before automating, know where each fact comes from, which record owns it, and who will keep it correct.
+Use the accompanying worksheet and matching architecture guide to map one real agreement. Before automating, know where each fact comes from, which record owns it, and who will keep it correct.

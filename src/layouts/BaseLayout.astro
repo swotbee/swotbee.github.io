@@ -512,6 +512,10 @@ const gtmId = import.meta.env.PUBLIC_GTM_ID || "GTM-WV9TQ6FH";
         every page, because the landing page and the page with the form are usually
         different. */}
     <AttributionCapture />
+    <script>
+      import { initContractCompanionEngagement } from "../scripts/contract-companion-engagement.js";
+      initContractCompanionEngagement();
+    </script>
     <!-- Alpine is started by the @astrojs/alpinejs integration (it injects a
          page script that sets window.Alpine and calls start() on DOMContentLoaded).
          A second manual Alpine.start() used to live here, so every page in the site

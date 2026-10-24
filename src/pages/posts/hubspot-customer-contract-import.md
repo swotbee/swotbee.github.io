@@ -210,4 +210,4 @@ The stable key and chosen update behavior should identify the intended existing 
 
 ## Need help applying this to your customer agreements?
 
-Use the workbook to document one real agreement and its expected results. If you would like to discuss the implementation, [contact SwotBee](/contactus/) for a discovery conversation.
+Use the workbook to document one real agreement and its expected results. If you would like to discuss the implementation, [contact SwotBee](/services/hubspot-contract-management/#inquiry) to discuss your document handoff; import and migration work are assessed as separate scopes.

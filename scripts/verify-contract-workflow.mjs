@@ -44,10 +44,14 @@ try {
   assert.equal(await page.locator('#contact-form').getAttribute('data-preview'), null);
   assert.equal(await page.locator('link[rel="canonical"]').getAttribute('href'), 'https://swotbee.com' + routePath);
   assert(!(await page.locator('meta[name="robots"]').getAttribute('content')).includes('noindex'));
+  const requiredLabels = await page.locator('#contact-form :required').evaluateAll(inputs =>
+    inputs.map(input => input.labels[0].textContent.trim()));
+  assert.equal(requiredLabels.length, 4);
+  assert(requiredLabels.every(label => label.endsWith('*')), 'Every required field has a visible marker');
   const submit = page.getByRole('button', { name: 'Request a workflow call', exact: true });
   await submit.click();
   assert.match(await page.locator('#cf-status').innerText(), /valid email/);
-  await page.getByLabel('Name', { exact: true }).fill('Local QA');
+  await page.getByLabel('Name *', { exact: true }).fill('Local QA');
   await page.getByLabel('Email *', { exact: true }).fill('sample@example.com');
   await submit.click();
   assert.match(await page.locator('#cf-status').innerText(), /signing tool/);
@@ -56,7 +60,7 @@ try {
   await page.getByLabel('What would you like to change?').fill('Keep the signed agreement on the correct deal.');
   await submit.click();
   await page.getByText('Something went wrong sending that.', { exact: false }).waitFor();
-  assert.equal(await page.getByLabel('Name', { exact: true }).inputValue(), 'Local QA');
+  assert.equal(await page.getByLabel('Name *', { exact: true }).inputValue(), 'Local QA');
   assert(await submit.isEnabled());
   assert.equal(posts.length, 1);
   status = 200;

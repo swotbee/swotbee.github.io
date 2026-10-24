@@ -56,13 +56,19 @@ Start by choosing the path for one agreement and completing its access checks. R
 **Download:** <a href="/templates/hubspot-contract-handoff-setup.xlsx" download>Draft check and handoff workbook (Excel)</a> and <a href="/templates/hubspot-contract-handoff-setup.pdf" download>signing-to-Contract workflow guide (PDF)</a>. Use these resources with the walkthrough below. Record your own observations in the workbook; the PDF describes proposed signing follow-up, not an executed integration.
 
 <figure aria-label="Check a HubSpot Contract draft and prepare the handoff">
-<video controls playsinline preload="none" width="1920" height="1080" poster="/videos/customer-contracts/hubspot-contracts-renewal-quotes.poster.webp" aria-label="Check a HubSpot Contract draft and prepare the handoff" style="display:block;width:100%;height:auto;aspect-ratio:16/9;background:#111;border-radius:12px;">
+<video class="contract-companion-video" controls playsinline preload="none" width="1920" height="1080" poster="/videos/customer-contracts/hubspot-contracts-renewal-quotes.poster.webp" aria-label="Check a HubSpot Contract draft and prepare the handoff" style="display:block;width:100%;height:auto;aspect-ratio:16/9;background:#111;border-radius:12px;">
   <source src="/videos/customer-contracts/hubspot-contracts-renewal-quotes.mp4" type="video/mp4" />
-  <track src="/videos/customer-contracts/hubspot-contracts-renewal-quotes.en.vtt" kind="captions" srclang="en" label="English" />
+  <track src="/videos/customer-contracts/hubspot-contracts-renewal-quotes.en.vtt" kind="captions" srclang="en" label="English" default />
   Your browser cannot play this video. Use the download link below.
 </video>
-<figcaption><strong>Watch: Check a HubSpot Contract draft and prepare the handoff</strong> (4:51). Fictional proposal and prepared draft. Customer acceptance and billing release are separate steps. <a href="/videos/customer-contracts/hubspot-contracts-renewal-quotes.mp4" download>Download video</a> or <a href="/videos/customer-contracts/hubspot-contracts-renewal-quotes.transcript.txt">read the transcript</a>.</figcaption>
+<figcaption><strong>Watch: Check a HubSpot Contract draft and prepare the handoff</strong> (3:15). Fictional proposal and prepared draft. Customer acceptance and billing release are separate steps. <a href="/videos/customer-contracts/hubspot-contracts-renewal-quotes.mp4" download>Download video</a> or <a href="/videos/customer-contracts/hubspot-contracts-renewal-quotes.transcript.txt">read the transcript</a>.</figcaption>
 </figure>
+
+<nav aria-label="Contract guide series" class="my-6 rounded-xl border border-ink-200 p-4">
+<p><strong>Contract guide series: 2 of 4</strong></p>
+<p><a href="/posts/hubspot-contract-record-responsibilities/" class="inline-flex items-center min-h-11">Start here: Record responsibilities</a></p>
+<p><a href="/posts/hubspot-multi-year-contract-pricing/" rel="next" class="inline-flex items-center min-h-11">Next guide: Phased pricing</a></p>
+</nav>
 
 ## What is a HubSpot Contract record?
 
@@ -341,4 +347,4 @@ Not automatically. Review the actual legal terms, store the correct deadline and
 
 **Choose the native path by the agreement you need to operate, then verify its renewal and billing behavior.**
 
-[Request a discovery call to discuss your native HubSpot Contract setup](/contactus/).
+[Discuss your contract handoff and setup needs with SwotBee](/services/hubspot-contract-management/#inquiry).

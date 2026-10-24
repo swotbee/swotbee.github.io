@@ -65,9 +65,11 @@ import RecaptchaLazy from "./RecaptchaLazy.astro";
       name="gclid"
     /><input type="hidden" name="sb_landing_page" /><input type="hidden" name="sb_referrer" />
 
+    {isContractWorkflow && <p class="text-sm text-v6-text-muted">Fields marked * are required.</p>}
+
     <div class:list={["grid gap-4", !isContractWorkflow && "sm:grid-cols-2"]}>
       <div class="space-y-1.5">
-        <label for="cf-first" class="block text-sm font-semibold text-v6-dark">{isContractWorkflow ? "Name" : "First name"}</label>
+        <label for="cf-first" class="block text-sm font-semibold text-v6-dark">{isContractWorkflow ? "Name" : "First name"}{isContractWorkflow && <span class="text-v6-copper"> *</span>}</label>
         <input id="cf-first" name="firstname" type="text" autocomplete="given-name" required={isContractWorkflow}
           class="w-full rounded-lg border border-v6-border px-3.5 py-3 text-v6-dark focus:outline-none focus:ring-2 focus:ring-v6-copper focus:border-v6-copper" />
       </div>
@@ -107,14 +109,14 @@ import RecaptchaLazy from "./RecaptchaLazy.astro";
     )}
 
     {isContractWorkflow && <div class="space-y-1.5">
-      <label for="cf-tool" class="block text-sm font-semibold text-v6-dark">Current signing tool</label>
+      <label for="cf-tool" class="block text-sm font-semibold text-v6-dark">Current signing tool <span class="text-v6-copper">*</span></label>
       <select id="cf-tool" name="signing_tool" required class="w-full rounded-lg border border-v6-border px-3.5 py-3 text-v6-dark bg-white">
         <option value="">Select your tool</option><option>PandaDoc</option><option>DocuSign</option><option>Other or not sure</option>
       </select>
     </div>}
 
     <div class="space-y-1.5">
-      <label for="cf-msg" class="block text-sm font-semibold text-v6-dark">{isContractWorkflow ? "What would you like to change?" : isStaleDealsEarlyAccess ? "What should make a deal count as stalled? (optional)" : isHistoricalSnapshotEarlyAccess ? "Which dated pipeline state do you need to preserve? (optional)" : isWeekOverWeekEarlyAccess ? "What should the weekly comparison help you explain? (optional)" : isPipelineEarlyAccess ? "What should this report help you explain? (optional)" : "How can we help?"}</label>
+      <label for="cf-msg" class="block text-sm font-semibold text-v6-dark">{isContractWorkflow ? "What would you like to change?" : isStaleDealsEarlyAccess ? "What should make a deal count as stalled? (optional)" : isHistoricalSnapshotEarlyAccess ? "Which dated pipeline state do you need to preserve? (optional)" : isWeekOverWeekEarlyAccess ? "What should the weekly comparison help you explain? (optional)" : isPipelineEarlyAccess ? "What should this report help you explain? (optional)" : "How can we help?"}{isContractWorkflow && <span class="text-v6-copper"> *</span>}</label>
       <textarea id="cf-msg" name="message" rows="4" required={isContractWorkflow}
         class="w-full rounded-lg border border-v6-border px-3.5 py-3 text-v6-dark focus:outline-none focus:ring-2 focus:ring-v6-copper focus:border-v6-copper resize-y">{initialMessage}</textarea>
     </div>

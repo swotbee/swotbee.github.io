@@ -28,13 +28,19 @@ The challenge becomes visible when one customer buys two services. A company-lev
 Download the <a href="/templates/hubspot-contract-record-map.xlsx" download>editable record-mapping workbook (Excel)</a> and <a href="/templates/hubspot-contract-record-map.pdf" download>printable responsibility worksheet (PDF)</a>. Use the completed example, then map one real agreement's sources, owners and verification evidence. These resources accompany the record-responsibility video.
 
 <figure aria-label="HubSpot Contract record responsibilities">
-<video controls playsinline preload="none" width="1920" height="1080" poster="/videos/customer-contracts/hubspot-contract-record-responsibilities.poster.webp" aria-label="HubSpot Contract record responsibilities" style="display:block;width:100%;height:auto;aspect-ratio:16/9;background:#111;border-radius:12px;">
+<video class="contract-companion-video" controls playsinline preload="none" width="1920" height="1080" poster="/videos/customer-contracts/hubspot-contract-record-responsibilities.poster.webp" aria-label="HubSpot Contract record responsibilities" style="display:block;width:100%;height:auto;aspect-ratio:16/9;background:#111;border-radius:12px;">
   <source src="/videos/customer-contracts/hubspot-contract-record-responsibilities.mp4" type="video/mp4" />
-  <track src="/videos/customer-contracts/hubspot-contract-record-responsibilities.en.vtt" kind="captions" srclang="en" label="English" />
+  <track src="/videos/customer-contracts/hubspot-contract-record-responsibilities.en.vtt" kind="captions" srclang="en" label="English" default />
   Your browser cannot play this video. Use the download link below.
 </video>
-<figcaption><strong>Watch: HubSpot Contract record responsibilities</strong> (4:59). Fictional agreement example. Prepared drafts; billing is disabled. <a href="/videos/customer-contracts/hubspot-contract-record-responsibilities.mp4" download>Download video</a> or <a href="/videos/customer-contracts/hubspot-contract-record-responsibilities.transcript.txt">read the transcript</a>.</figcaption>
+<figcaption><strong>Watch: HubSpot Contract record responsibilities</strong> (5:09). Fictional agreement example. Prepared drafts; billing is disabled. <a href="/videos/customer-contracts/hubspot-contract-record-responsibilities.mp4" download>Download video</a> or <a href="/videos/customer-contracts/hubspot-contract-record-responsibilities.transcript.txt">read the transcript</a>.</figcaption>
 </figure>
+
+<nav aria-label="Contract guide series" class="my-6 rounded-xl border border-ink-200 p-4">
+<p><strong>Contract guide series: 1 of 4</strong></p>
+<p><strong>Start here: Record responsibilities</strong></p>
+<p><a href="/posts/hubspot-contracts-renewal-quotes/" rel="next" class="inline-flex items-center min-h-11">Next guide: Draft check and handoff</a></p>
+</nav>
 
 ## How do HubSpot Contracts and CRM deal records differ?
 

@@ -161,6 +161,8 @@ Do not label an entire agreement’s value “ARR” if it includes a one-time i
 
 For the operational renewal fields, continue to [renewal pipeline properties](/posts/hubspot-renewal-pipeline-properties/). For workflow design outside this HubSpot-specific architecture, see [contract management automation](/posts/contract-management-automation-workflow/).
 
+To organize the underlying evidence, use the [customer contract repository guide](/posts/customer-contract-repository/) and its free register. It shows governing-document and amendment relationships; use the separate import guide when mapping records into HubSpot.
+
 ## How should you model multiple agreements per customer?
 
 Give each independently managed agreement a durable identity. Keep a customer-level summary for visibility, while preserving the separate agreement dates, owners and evidence underneath it.
@@ -266,4 +268,4 @@ It may solve the required document handoff after configuration. Confirm field sc
 
 SwotBee has delivered renewal-related projects and integrations involving document-signing and accounting tools. The useful starting point is your agreement workflow: what exists today, where it breaks and what your current accounts can support.
 
-[Request a discovery call about your customer-contract setup](/contactus/). Bring an anonymized agreement example, your HubSpot plan and your document/billing tools.
+[Request a discovery call about your customer-contract setup](/services/hubspot-contract-management/#inquiry). Bring an anonymized agreement example, your HubSpot plan and your document/billing tools.

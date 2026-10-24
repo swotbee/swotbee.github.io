@@ -32,6 +32,10 @@ Default traffic/event scope:
 
 Replay/heatmap script scope is the first four pages only. Booking and contract service pages receive
 analytics events, with URL queries removed except approved UTMs, and no recorder.
+CM-04 additionally enables consented pageviews/events on `/resources/` and the four
+contract companion articles listed in [contract companion measurement](contract-companion-measurement.md).
+Those five routes remain consent-only even while the pre-consent trial is enabled,
+and never load the recorder. This is a local implementation pending the selected release.
 Other pages remain on the existing analytics stack. Business events across the
 source now use `__sbTrack` or `__sbTrackThenGo`, so scope can expand after review
 without editing each form/video component again. Existing reports and Ads conversion

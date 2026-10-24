@@ -158,3 +158,6 @@ h1,h2,h3,h4 {font-family:"Rokkitt Variable",Georgia,serif;font-size-adjust:.399;
 @media(max-width:1050px){.hero h1{font-size:49px}}
 @media(max-width:800px){.hero h1{font-size:56px}}
 @media(max-width:520px){.hero h1{font-size:40px}.hero .cta-note{font-size:13px}.cta-price-note{font-size:12px}.example-checks li{font-size:14px}}
+
+.worked-guide{padding-block:24px 48px}.worked-guide h2{font-size:clamp(26px,4vw,36px);margin-bottom:16px}.worked-guide p{max-width:760px}.worked-guide a{text-decoration:underline;text-underline-offset:4px}
+@media(max-width:600px){.hero-copy{min-width:0}.hero .highlight{white-space:normal}}

@@ -43,6 +43,37 @@ const guides = [
   },
 ];
 
+const contractGuides = [
+  {
+    title: "Record responsibilities",
+    description: "Map which record owns each agreement fact before automating updates.",
+    url: "/posts/hubspot-contract-record-responsibilities/",
+    workbook: "/templates/hubspot-contract-record-map.xlsx",
+    pdf: "/templates/hubspot-contract-record-map.pdf",
+  },
+  {
+    title: "Draft check and handoff",
+    description: "Check a prepared native Contract draft. The signing follow-up is proposed, not a tested integration.",
+    url: "/posts/hubspot-contracts-renewal-quotes/",
+    workbook: "/templates/hubspot-contract-handoff-setup.xlsx",
+    pdf: "/templates/hubspot-contract-handoff-setup.pdf",
+  },
+  {
+    title: "Phased pricing",
+    description: "Map dated price changes and expected transitions; live billing is not demonstrated.",
+    url: "/posts/hubspot-multi-year-contract-pricing/",
+    workbook: "/templates/hubspot-phased-pricing-setup-workbook.xlsx",
+    pdf: "/templates/hubspot-phased-pricing-companion-pack.pdf",
+  },
+  {
+    title: "Renewal and expansion reporting",
+    description: "Reconcile purchase value, closing ARR and recurring growth using expected tests.",
+    url: "/posts/hubspot-renewal-expansion-revenue-reporting/",
+    workbook: "/templates/hubspot-renewal-expansion-reporting.xlsx",
+    pdf: "/templates/hubspot-renewal-expansion-reporting.pdf",
+  },
+];
+
 const renewalSetupGuides = [
   {
     title: "Auto-create renewal deals",
@@ -110,6 +141,26 @@ const quickLinks = [
       <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
       Search all content...
     </a>
+  </section>
+
+  <section id="contract-guides" class="bg-white px-4 sm:px-6 lg:px-8 py-14" aria-labelledby="contract-guides-title">
+    <div class="max-w-6xl mx-auto">
+      <h2 id="contract-guides-title" class="text-2xl font-bold text-v6-dark mb-3">Customer-contract videos and workbooks</h2>
+      <p class="text-v6-text-muted mb-8 max-w-2xl">Start with record responsibilities, then follow the four guides in order. Each includes a video, editable Excel workbook and PDF companion. All downloads are free to use without a signup or call.</p>
+      <ol class="grid gap-6 sm:grid-cols-2">
+        {contractGuides.map((guide, index) => (
+          <li class="rounded-xl border border-v6-border bg-v6-bg p-6">
+            <p class="text-sm text-v6-text-muted mb-2">{index === 0 ? "Start here" : `Guide ${index + 1} of 4`}</p>
+            <h3 class="text-lg font-bold text-v6-dark mb-2"><a href={guide.url} class="inline-flex items-center min-h-11 underline underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-2">{guide.title}</a></h3>
+            <p class="text-sm text-v6-text-muted mb-3">{guide.description}</p>
+            <div class="flex flex-wrap gap-x-6 gap-y-2 text-sm">
+              <a href={guide.workbook} download class="inline-flex items-center min-h-11 underline underline-offset-4" aria-label={`Download ${guide.title} workbook (Excel)`}>Download workbook (Excel)</a>
+              <a href={guide.pdf} download class="inline-flex items-center min-h-11 underline underline-offset-4" aria-label={`Download ${guide.title} companion (PDF)`}>Download companion (PDF)</a>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </div>
   </section>
 
   <!-- Complete Guides -->

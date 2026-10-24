@@ -483,3 +483,10 @@ html:root[data-site-canvas="article"] {
     background-color: var(--color-v6-blue-50);
   }
 }
+
+/* Keep native companion captions readable in narrow article players. */
+.contract-companion-video::cue {
+  font-size: clamp(14px, 2vw, 22px);
+  color: white;
+  background-color: rgb(0 0 0 / 85%);
+}

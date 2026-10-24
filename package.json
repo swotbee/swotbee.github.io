@@ -15,6 +15,7 @@
     "verify": "pnpm build",
     "check:consent": "node scripts/verify-consent-gating.mjs",
     "check:blog-measurement": "node scripts/verify-blog-measurement.mjs",
+    "check:contract-companions": "node scripts/verify-contract-companions.mjs",
     "check:reporting-resource": "node scripts/verify-reporting-resource.mjs",
     "check:report-signups": "node scripts/verify-report-signups.mjs",
     "baseline:astro:capture": "node scripts/astro-migration-baseline.mjs capture",

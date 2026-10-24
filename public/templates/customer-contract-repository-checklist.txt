@@ -1,0 +1,36 @@
+CUSTOMER-CONTRACT REPOSITORY: RETRIEVAL AND CORRECTION TEST
+Copy this form for one agreement family. No automated checks run from this file.
+
+Agreement ID: __________________ Customer ID: __________________
+Tester and authorized role: __________________ Date: __________________
+Scenario / period reviewed: __________________
+
+EXAMPLE TO PRACTISE
+Find A-101, its governing MSA-001 and amendment reference M101-1. Confirm that
+A-102 keeps its own deadline. Sample files are unsigned placeholders, so an
+executed-evidence test must remain unresolved until real approved evidence is
+provided. Do not record a sample reference as proof of a signature or access.
+
+For EACH check record:
+Expected result: __________________
+Observed result: __________________
+Evidence reference (approved location): __________________
+State (pending / passed / exception): __________________
+Correction owner and next action: __________________
+Retest date and result: __________________
+
+[ ] Identity: correct agreement and customer, without joining another guide's IDs.
+[ ] Relationships: governing MSA and change target both resolve to correct records.
+[ ] Evidence: approved executed version identified; drafts/history distinguished.
+[ ] Effective terms: correct price for the selected period and scenario.
+[ ] Amount basis: recurring and one-time values separated; amendment not added twice.
+[ ] Dates: A-101 and A-102 retain independently reviewed notice rules/deadlines.
+[ ] Ownership: primary and backup accept the next action; blanks stay unresolved.
+[ ] Authorized access: intended reader retrieves the correct evidence.
+[ ] Restricted access: approved restricted role cannot exceed its permitted access.
+[ ] Recovery: broken link or missing field assigned, corrected and retested.
+[ ] Export: saved/reopened copy retains IDs, dates, parents and evidence references.
+[ ] Billing: actual billing controller identified; no migration inferred from filing.
+
+Conclude only after recording observed evidence. A populated row is not a passed
+test. If a check cannot run, record why, its owner and the next review action.
