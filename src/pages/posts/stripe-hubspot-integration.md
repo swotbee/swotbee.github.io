@@ -16,7 +16,8 @@ author:
   - HubSpot CRM
   - Customer Contract Workflows
   - Revenue Operations
-image: "/assets/blog/stripe-hubspot-integration-hero.svg"
+image: "/assets/blog/stripe-hubspot-integration-hero.png"
+socialImage: "/assets/blog/stripe-hubspot-integration-hero-share.png"
 tags:
 - HubSpot
 - Stripe
@@ -129,7 +130,7 @@ For record setup, use the [native Contracts guide](/posts/hubspot-contracts-rene
 
 ---
 
-![Choose your Stripe path: Payment processing - Collect on HubSpot commerce; Existing data sync - Add CRM visibility to billing; Billing migration - Plan a controller cutover. Conceptual model, not a product screenshot.](/assets/blog/stripe-hubspot-integration-workflow.svg)
+![Connection is not billing cutover. USD 1,000 / month is separate from USD 2,000 setup.](/assets/blog/stripe-hubspot-integration-workflow.svg)
 
 ## Copy this Stripe HubSpot decision worksheet
 

@@ -16,7 +16,8 @@ author:
   - HubSpot CRM
   - Customer Contract Workflows
   - Revenue Operations
-image: "/assets/blog/hubspot-renewal-deal-workflow-automation-hero.svg"
+image: "/assets/blog/hubspot-renewal-deal-workflow-automation-hero.png"
+socialImage: "/assets/blog/hubspot-renewal-deal-workflow-automation-hero-share.png"
 tags:
 - HubSpot
 - Renewal Automation
@@ -196,7 +197,7 @@ The [Create record guide](https://knowledge.hubspot.com/workflows/create-records
 
 Use the [line-item cloning guide](/posts/hubspot-clone-deal-line-items/) where a copying approach is appropriate, and test that its current behavior fits your quote path. Do not move the original accepted quote onto the renewal deal without checking association behavior: a quote belongs to one deal at a time.
 
-![Illustrative renewal automation gates: reviewed term, one renewal key, identified target, validated handoff and recoverable exception.](/assets/blog/hubspot-renewal-deal-workflow-automation-workflow.svg)
+![One agreement and term, one renewal. Repeated enrollment should resolve to the intended target.](/assets/blog/hubspot-renewal-deal-workflow-automation-workflow.svg)
 
 The diagram shows acceptance gates. It does not establish that a particular workflow action provides a database lock or copies a complete agreement.
 

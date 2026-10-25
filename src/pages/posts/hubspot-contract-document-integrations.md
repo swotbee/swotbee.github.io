@@ -16,7 +16,8 @@ author:
     - "HubSpot CRM"
     - "Customer Contracts"
     - "Revenue Operations"
-image: "/assets/posts/hubspot-customer-contracts/hubspot-contract-document-integrations-hero.svg"
+image: "/assets/posts/hubspot-customer-contracts/hubspot-contract-document-integrations-hero.png"
+socialImage: "/assets/posts/hubspot-customer-contracts/hubspot-contract-document-integrations-hero-share.png"
 tags:
   - "HubSpot"
   - "Customer Contracts"
@@ -130,7 +131,7 @@ For a two-signer agreement, demonstrate both recipient assignments and completio
 
 Where required field extraction or matching falls outside the connector, scope a separate solution only after verifying the provider API, account access and license terms. Do not promise unrestricted synchronization or guaranteed avoidance of a higher DocuSign tier.
 
-![From approved inputs to accepted updates. Approved inputs: Entity, scope, price and version; Document completed: All required signatures; CRM update validated: Correct agreement and fields; Handoff ready: Finance and renewal owners.](/assets/posts/hubspot-customer-contracts/hubspot-contract-document-integrations-worksheet.svg)
+![A signature is one handoff. Document completion does not prove CRM writeback.](/assets/posts/hubspot-customer-contracts/hubspot-contract-document-integrations-worksheet.svg)
 
 *Illustrative design. Use it alongside the worksheet and adapt it to your reviewed agreement and selected tools.*
 

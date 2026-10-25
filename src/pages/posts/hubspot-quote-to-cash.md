@@ -16,7 +16,8 @@ author:
     - "HubSpot CRM"
     - "Customer Contracts"
     - "Revenue Operations"
-image: "/assets/posts/hubspot-customer-contracts/hubspot-quote-to-cash-hero.svg"
+image: "/assets/posts/hubspot-customer-contracts/hubspot-quote-to-cash-hero.png"
+socialImage: "/assets/posts/hubspot-customer-contracts/hubspot-quote-to-cash-hero-share.png"
 tags:
   - "HubSpot"
   - "Customer Contracts"
@@ -232,7 +233,7 @@ If the customer adds five units later, the accepted amendment should specify its
 
 This same method works for SaaS subscriptions, maintenance agreements and professional-service retainers. It does not assume all those businesses should use the same billing tool.
 
-![Reconcile the accepted service agreement. Accepted agreement: USD 1,000/month + USD 2,000 setup; First invoice: USD 3,000: support + setup; Following 11 invoices: USD 1,000 each: support only; Term reconciliation: USD 12,000 recurring + USD 2,000.](/assets/posts/hubspot-customer-contracts/hubspot-quote-to-cash-worksheet.svg)
+![Reconcile the full service term. Commercial acceptance and payment need separate evidence.](/assets/posts/hubspot-customer-contracts/hubspot-quote-to-cash-worksheet.svg)
 
 *Illustrative design. Use it alongside the worksheet and adapt it to your reviewed agreement and selected tools.*
 

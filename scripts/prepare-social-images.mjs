@@ -1,10 +1,12 @@
 #!/usr/bin/env node
 /**
- * Generate raster social-card derivatives for local SVG blog hero images.
+ * Generate raster social-card derivatives for local SVG blog hero images,
+ * including compatibility URLs for PNG heroes with explicit share exports.
  *
  * The script is idempotent and runs before every Astro build. Source SVGs stay
  * in place for article rendering; generated 1200 x 630 PNG files are ignored by
- * Git and copied into the static build for social crawlers.
+ * Git and copied into the static build for social crawlers. PNG heroes with
+ * explicit share exports retain their earlier .social.png URLs on clean builds.
  */
 import { promises as fs } from 'node:fs';
 import path from 'node:path';
@@ -35,11 +37,12 @@ async function walk(directory) {
   return files;
 }
 
-function extractFrontmatterImage(markdown) {
+function extractFrontmatterImage(markdown, property = 'image') {
   const frontmatter = markdown.match(/^---\s*\n([\s\S]*?)\n---/);
   if (!frontmatter) return undefined;
 
-  return frontmatter[1].match(/^image:\s*["']([^"']+)["']\s*$/m)?.[1];
+  return frontmatter[1].split('\n').find(line => line.startsWith(`${property}:`))
+    ?.match(/:\s*["']([^"']+)["']\s*$/)?.[1];
 }
 
 function socialPathFor(imagePath) {
@@ -69,14 +72,22 @@ async function run() {
   for (const markdownPath of markdownFiles) {
     const markdown = await fs.readFile(markdownPath, 'utf8');
     const imagePath = extractFrontmatterImage(markdown);
-    if (!imagePath || !/\.svg$/i.test(imagePath)) continue;
+    if (!imagePath) continue;
+    const sharePath = extractFrontmatterImage(markdown, 'socialImage');
+    const isSvg = /\.svg$/i.test(imagePath);
+    const hasRasterShare = /\.png$/i.test(imagePath)
+      && sharePath === imagePath.replace(/\.png$/i, '-share.png');
+    if (!isSvg && !hasRasterShare) continue;
 
     if (!imagePath.startsWith('/')) {
-      throw new Error(`SVG social image must be site-relative: ${imagePath}`);
+      throw new Error(`Blog social image must be site-relative: ${imagePath}`);
     }
 
-    const sourcePath = path.join(PUBLIC_DIR, imagePath.slice(1));
-    const outputPath = path.join(PUBLIC_DIR, socialPathFor(imagePath).slice(1));
+    const sourcePath = path.join(PUBLIC_DIR, (hasRasterShare ? sharePath : imagePath).slice(1));
+    const outputImage = hasRasterShare
+      ? imagePath.replace(/\.png$/i, '.social.png')
+      : socialPathFor(imagePath);
+    const outputPath = path.join(PUBLIC_DIR, outputImage.slice(1));
 
     await fs.access(sourcePath);
     await fs.mkdir(path.dirname(outputPath), { recursive: true });

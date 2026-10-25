@@ -16,7 +16,8 @@ author:
   - HubSpot CRM
   - Customer Contract Workflows
   - Revenue Operations
-image: "/assets/blog/hubspot-xero-integration-hero.svg"
+image: "/assets/blog/hubspot-xero-integration-hero.png"
+socialImage: "/assets/blog/hubspot-xero-integration-hero-share.png"
 tags:
 - HubSpot
 - Xero
@@ -209,7 +210,7 @@ For product coding, specify the service SKU, Xero item and intended accounting t
 
 If a required dynamic account, tracking category or purchase-order reference is unavailable in the chosen route, record that exact gap. Avoid jumping from one missing mapping to a claim that the entire integration is unusable.
 
-![Illustrative invoice reconciliation sequence: origin and identity, customer and products, amounts and tax, payment allocation and exception review.](/assets/blog/hubspot-xero-integration-workflow.svg)
+![Match the invoice and its balance. Origin, identity, amount and allocation must reconcile.](/assets/blog/hubspot-xero-integration-workflow.svg)
 
 This diagram is a conceptual review sequence. It does not represent a guaranteed native deal association or a tested accounting configuration.
 

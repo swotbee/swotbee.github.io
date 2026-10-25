@@ -16,7 +16,8 @@ author:
   - HubSpot CRM
   - Customer Contract Workflows
   - Revenue Operations
-image: "/assets/blog/hubspot-docusign-integration-hero.svg"
+image: "/assets/blog/hubspot-docusign-integration-hero.png"
+socialImage: "/assets/blog/hubspot-docusign-integration-hero-share.png"
 tags:
 - HubSpot
 - DocuSign
@@ -159,7 +160,7 @@ Specify the event, envelope/version, match key, validation rule and owner. Keep 
 
 ---
 
-![Envelope to CRM: CRM source - Choose agreement and version; Signing envelope - Review recipients and terms; Validated return - Match before updating CRM. Conceptual model, not a product screenshot.](/assets/blog/hubspot-docusign-integration-workflow.svg)
+![Match the completed envelope. Envelope + version + agreement identify the return.](/assets/blog/hubspot-docusign-integration-workflow.svg)
 
 ## Copy this envelope-to-CRM mapping worksheet
 

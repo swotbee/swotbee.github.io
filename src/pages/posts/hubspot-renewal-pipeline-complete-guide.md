@@ -16,7 +16,8 @@ author:
     - "HubSpot CRM"
     - "Customer Contracts"
     - "Revenue Operations"
-image: "/assets/posts/hubspot-customer-contracts/hubspot-renewal-pipeline-complete-guide-hero.svg"
+image: "/assets/posts/hubspot-customer-contracts/hubspot-renewal-pipeline-complete-guide-hero.png"
+socialImage: "/assets/posts/hubspot-customer-contracts/hubspot-renewal-pipeline-complete-guide-hero-share.png"
 tags:
   - "HubSpot"
   - "Customer Contracts"
@@ -84,7 +85,7 @@ Copy this control sheet for the next agreements needing action. These illustrati
 
 Add next action, due date, rule reference and notice evidence to your working copy. For A-101, an internal decision task is due on 2 October; if approval is incomplete at the agreed escalation date, the backup acts before the 1 November notice deadline. A reminder sent on 1 November alone would leave no preparation time.
 
-![An illustrative notice timeline. 2 October 2026: Internal decision target; 1 November 2026: Reviewed notice deadline; 31 December 2026: Current term boundary; 1 January 2027: Next term starts.](/assets/posts/hubspot-customer-contracts/hubspot-renewal-pipeline-complete-guide-worksheet.svg)
+![Plan the notice window first. Give each renewable agreement its own rule and owner.](/assets/posts/hubspot-customer-contracts/hubspot-renewal-pipeline-complete-guide-worksheet.svg)
 
 *Illustrative design. Use it alongside the worksheet and adapt it to your reviewed agreement and selected tools.*
 

@@ -16,7 +16,8 @@ author:
   - HubSpot CRM
   - Customer Contract Workflows
   - Revenue Operations
-image: "/assets/blog/ironclad-hubspot-integration-hero.svg"
+image: "/assets/blog/ironclad-hubspot-integration-hero.png"
+socialImage: "/assets/blog/ironclad-hubspot-integration-hero-share.png"
 tags:
 - HubSpot
 - Ironclad
@@ -191,7 +192,7 @@ Prepare a return-field table with source field, destination, format, authority, 
 
 Do not automatically copy all legal metadata to CRM. Select what the sales, service, renewal and finance teams need, and preserve the legal system as the reference for the executed agreement. Keep agreement-specific values off shared company master fields where another agreement could overwrite them.
 
-![Illustrative Ironclad customer-agreement handoff: approved intake, identified workflow, reviewed completion, matched CRM return and recoverable exceptions.](/assets/blog/ironclad-hubspot-integration-workflow.svg)
+![Keep the legal workflow identity. On timeout, inspect existing work before relaunching.](/assets/blog/ironclad-hubspot-integration-workflow.svg)
 
 This conceptual diagram shows validation boundaries. It does not imply a native connector or unrestricted two-way synchronization.
 

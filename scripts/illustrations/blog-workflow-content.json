@@ -1,0 +1,526 @@
+[
+  {
+    "slug": "hubspot-customer-contract-import",
+    "title": "Import rows are not agreement counts",
+    "subtitle": "Worked example: Company 42, two separate agreements.",
+    "layout": "ledger",
+    "rows": [
+      [
+        "A-101 · Managed support",
+        "USD 900 MRR",
+        "Source deal 501; preserve the agreement key."
+      ],
+      [
+        "A-101 · Onboarding",
+        "USD 1,500 once",
+        "Same agreement; exclude this fee from MRR."
+      ],
+      [
+        "A-102 · Backup service",
+        "USD 200 MRR",
+        "Source deal 502; keep its identity separate."
+      ]
+    ],
+    "result": "2 agreements · 3 lines · USD 1,100 MRR",
+    "note": "The one-time control is USD 1,500. Two imported agreements with only USD 900 MRR still fail reconciliation.",
+    "icon": "folder",
+    "target": "public/assets/blog/hubspot-customer-contract-import-workflow.svg"
+  },
+  {
+    "slug": "hubspot-document-tracking",
+    "title": "Viewed, signed and matched differ",
+    "subtitle": "Worked example: trace evidence to the right agreement.",
+    "layout": "evidence",
+    "rows": [
+      [
+        "Sales activity",
+        "DOC-10 viewed",
+        "A service-overview view is not a signature."
+      ],
+      [
+        "Signing evidence",
+        "ENV-42 · A-101 · SOW v3",
+        "Match envelope, agreement and document version."
+      ],
+      [
+        "CRM validation",
+        "A-101 only",
+        "The separate backup agreement A-102 stays unchanged."
+      ]
+    ],
+    "result": "Accept the return only after identity and version match.",
+    "note": "A document view does not establish legal completion or prove that the intended CRM fields were updated.",
+    "icon": "document",
+    "target": "public/assets/blog/hubspot-document-tracking-workflow.svg"
+  },
+  {
+    "slug": "hubspot-renewal-reminders",
+    "title": "Act before the notice deadline",
+    "subtitle": "Illustrative agreement A-101, reviewed SOW version 3.",
+    "layout": "timeline",
+    "rows": [
+      [
+        "02 Sep 2026",
+        "Internal action date",
+        "Reserve time for review, outreach and a named owner."
+      ],
+      [
+        "02 Oct 2026",
+        "Reviewed notice deadline",
+        "The decision must meet this reviewed obligation."
+      ],
+      [
+        "01 Dec 2026",
+        "Expiry-based alert is late",
+        "Thirty days before expiry misses the notice window."
+      ],
+      [
+        "31 Dec 2026",
+        "Current term ends",
+        "Next term starts 1 January 2027."
+      ]
+    ],
+    "result": "Schedule from the reviewed deadline, then verify action.",
+    "note": "Example dates are reviewed inputs. Keep the agreement, source, owner, backup and changed-date policy together.",
+    "icon": "calendar",
+    "target": "public/assets/blog/hubspot-renewal-reminders-workflow.svg"
+  },
+  {
+    "slug": "hubspot-contract-management",
+    "title": "One agreement, distinct record roles",
+    "subtitle": "Choose who owns each fact before configuring automation.",
+    "layout": "ownership",
+    "rows": [
+      [
+        "Legal document",
+        "Executed terms",
+        "Retain the accepted version and signing evidence."
+      ],
+      [
+        "Commercial Contract",
+        "Service commitment",
+        "Keep the agreed scope, value and effective term."
+      ],
+      [
+        "Deal",
+        "Sales or renewal opportunity",
+        "Track the opportunity and its outcome."
+      ],
+      [
+        "Billing record",
+        "Charges and payments",
+        "Retain the schedule, invoices and payment evidence."
+      ]
+    ],
+    "result": "Use a stable agreement key to connect the records.",
+    "note": "Multiple agreements for one customer keep separate identities. CRM visibility does not itself move billing ownership.",
+    "icon": "folder",
+    "target": "public/assets/posts/hubspot-customer-contracts/hubspot-contract-management-worksheet.svg"
+  },
+  {
+    "slug": "hubspot-quote-to-cash",
+    "title": "Reconcile the full service term",
+    "subtitle": "Worked example: twelve full months, before tax.",
+    "layout": "ledger",
+    "rows": [
+      [
+        "Accepted agreement",
+        "USD 1,000 / month",
+        "Plus USD 2,000 setup, charged once."
+      ],
+      [
+        "First invoice",
+        "USD 3,000",
+        "USD 1,000 support + USD 2,000 setup."
+      ],
+      [
+        "Following 11 invoices",
+        "USD 1,000 each",
+        "Recurring support only; do not repeat setup."
+      ],
+      [
+        "Term reconciliation",
+        "USD 14,000",
+        "USD 12,000 recurring + USD 2,000 one-time."
+      ]
+    ],
+    "result": "Commercial acceptance and payment need separate evidence.",
+    "note": "Illustrative amounts exclude tax, discounts and proration. Verify the invoice and payment returns in their owning systems.",
+    "icon": "invoice",
+    "target": "public/assets/posts/hubspot-customer-contracts/hubspot-quote-to-cash-worksheet.svg"
+  },
+  {
+    "slug": "hubspot-renewal-pipeline-complete-guide",
+    "title": "Plan the notice window first",
+    "subtitle": "Illustrative timeline using a reviewed 60-calendar-day rule.",
+    "layout": "timeline",
+    "rows": [
+      [
+        "02 Oct 2026",
+        "Internal decision target",
+        "Thirty days ahead of the reviewed notice deadline."
+      ],
+      [
+        "01 Nov 2026",
+        "Reviewed notice deadline",
+        "Derived from the example's reviewed clause."
+      ],
+      [
+        "31 Dec 2026",
+        "Current term boundary",
+        "Keep the service-end meaning explicit."
+      ],
+      [
+        "01 Jan 2027",
+        "Next term starts",
+        "Identify the opportunity for this agreement and term."
+      ]
+    ],
+    "result": "Give each renewable agreement its own rule and owner.",
+    "note": "Replace these dates with reviewed terms. A completed one-time project must not create a recurring renewal by default.",
+    "icon": "calendar",
+    "target": "public/assets/posts/hubspot-customer-contracts/hubspot-renewal-pipeline-complete-guide-worksheet.svg"
+  },
+  {
+    "slug": "hubspot-contract-document-integrations",
+    "title": "A signature is one handoff",
+    "subtitle": "Trace approved source terms through to verified CRM data.",
+    "layout": "evidence",
+    "rows": [
+      [
+        "Prepare",
+        "Reviewed source and version",
+        "Confirm entity, service scope, price and recipients."
+      ],
+      [
+        "Complete",
+        "All required signatures",
+        "Retain the executed document and completion evidence."
+      ],
+      [
+        "Match",
+        "Intended agreement and fields",
+        "Validate identity, version and permitted returned values."
+      ],
+      [
+        "Hand over",
+        "Named finance and renewal owners",
+        "Assign incomplete or failed checks for resolution."
+      ]
+    ],
+    "result": "Document completion does not prove CRM writeback.",
+    "note": "Use the post's matching worksheet. Repeated events must not overwrite a separate agreement or launch duplicate work.",
+    "icon": "document",
+    "target": "public/assets/posts/hubspot-customer-contracts/hubspot-contract-document-integrations-worksheet.svg"
+  },
+  {
+    "slug": "hubspot-contracts-renewal-quotes",
+    "title": "Choose the Contract setup route",
+    "subtitle": "These are alternative starting conditions, not four steps.",
+    "layout": "routes",
+    "rows": [
+      [
+        "Accepted quote",
+        "Quote-based creation",
+        "Check the account's access and intended lifecycle."
+      ],
+      [
+        "Direct creation",
+        "Separate route and access",
+        "Confirm eligibility and the required commercial inputs."
+      ],
+      [
+        "Non-billing import",
+        "Existing agreement records",
+        "Map identities, lines and associations; reconcile."
+      ],
+      [
+        "Billing migration",
+        "Billing ownership changes",
+        "Treat cutover, schedules and first invoices separately."
+      ]
+    ],
+    "result": "USD 1,000 × 12 = USD 12,000 commitment.",
+    "note": "In the walkthrough, the service term is 1 November 2026 to 31 October 2027. That term total is not an invoice due today.",
+    "icon": "folder",
+    "target": "public/assets/blog/hubspot-contracts-renewal-quotes-setup-workflow.svg"
+  },
+  {
+    "slug": "hubspot-cpq",
+    "title": "Keep recurring and one-time apart",
+    "subtitle": "Worked quote before discount, in USD and before tax.",
+    "layout": "ledger",
+    "rows": [
+      [
+        "Managed support",
+        "40 users × USD 25",
+        "USD 1,000 MRR; USD 12,000 over twelve months."
+      ],
+      [
+        "Onboarding",
+        "USD 1,500 once",
+        "Separate product, price basis and recurrence."
+      ],
+      [
+        "Quoted commitment",
+        "USD 13,500",
+        "USD 12,000 recurring + USD 1,500 one-time."
+      ]
+    ],
+    "result": "A 10% support-only discount gives USD 900 MRR.",
+    "note": "With that discount, term commitment is USD 12,300. The quote total does not establish when the first invoice is due.",
+    "icon": "invoice",
+    "target": "public/assets/blog/hubspot-cpq-workflow.svg"
+  },
+  {
+    "slug": "hubspot-docusign-integration",
+    "title": "Match the completed envelope",
+    "subtitle": "Illustrative identities, not native field names or API syntax.",
+    "layout": "evidence",
+    "rows": [
+      [
+        "Approved source",
+        "ENV-42 · version 2",
+        "Use the current approved document and intended signers."
+      ],
+      [
+        "Agreement context",
+        "A-101 · deal 501",
+        "Keep a second agreement at the same company distinct."
+      ],
+      [
+        "Required return",
+        "Signed values and document",
+        "Validate each required field and authorized document link."
+      ],
+      [
+        "Acceptance check",
+        "A-102 stays unchanged",
+        "Completion alone is not proof of the CRM handoff."
+      ]
+    ],
+    "result": "Envelope + version + agreement identify the return.",
+    "note": "Review actual connector mappings. Record missing fields and repeated-event handling before enabling the workflow.",
+    "icon": "document",
+    "target": "public/assets/blog/hubspot-docusign-integration-workflow.svg"
+  },
+  {
+    "slug": "hubspot-pandadoc-integration",
+    "title": "Preserve the quote's meaning",
+    "subtitle": "Worked support proposal using the approved template.",
+    "layout": "ledger",
+    "rows": [
+      [
+        "Recurring support",
+        "USD 1,000 / month",
+        "Twelve months; annual recurring component USD 12,000."
+      ],
+      [
+        "One-time onboarding",
+        "USD 2,000 once",
+        "Do not repeat monthly or add it to recurring revenue."
+      ],
+      [
+        "Total commitment",
+        "USD 14,000",
+        "Before tax; this is not a monthly amount."
+      ],
+      [
+        "Template and CRM return",
+        "Approved support template v3",
+        "Check workspace, source terms and supported field updates."
+      ]
+    ],
+    "result": "Review the generated document, then validate its return.",
+    "note": "The selected integration's capabilities need verification. A signed proposal does not prove all commercial fields returned.",
+    "icon": "document",
+    "target": "public/assets/blog/hubspot-pandadoc-integration-workflow.svg"
+  },
+  {
+    "slug": "hubspot-quickbooks-integration",
+    "title": "One business invoice, one origin",
+    "subtitle": "Define invoice authority before enabling sync.",
+    "layout": "evidence",
+    "rows": [
+      [
+        "Commercial context",
+        "Agreement and deal",
+        "Separate recurring service from one-time setup."
+      ],
+      [
+        "Creation authority",
+        "One approved origin",
+        "Do not issue the same invoice independently twice."
+      ],
+      [
+        "Correction authority",
+        "Permitted edit path",
+        "Record where each invoice family may be corrected."
+      ],
+      [
+        "Reconciliation",
+        "Customer, invoice and payment",
+        "Check identity and allocation; visibility is not association."
+      ]
+    ],
+    "result": "A payment for an existing invoice must not issue it again.",
+    "note": "Review overlapping invoice and sales-receipt workflows. Invoice origin can constrain the supported edit and return path.",
+    "icon": "invoice",
+    "target": "public/assets/blog/hubspot-quickbooks-integration-workflow.svg"
+  },
+  {
+    "slug": "hubspot-xero-integration",
+    "title": "Match the invoice and its balance",
+    "subtitle": "Worked example: INV-204 for agreement A-101.",
+    "layout": "ledger",
+    "rows": [
+      [
+        "Invoice subtotal",
+        "USD 1,200",
+        "Use the correct legal payer and invoice identity."
+      ],
+      [
+        "Allocated payment",
+        "USD 700",
+        "Match the payment to this specific invoice."
+      ],
+      [
+        "Outstanding balance",
+        "USD 500",
+        "USD 1,200 minus USD 700, before tax."
+      ],
+      [
+        "Agreement association",
+        "A-101 only",
+        "Prove that the separate agreement A-102 is unaffected."
+      ]
+    ],
+    "result": "Origin, identity, amount and allocation must reconcile.",
+    "note": "Confirm tax, currency and the selected connector's mappings. A company-level invoice list is not agreement-level proof.",
+    "icon": "invoice",
+    "target": "public/assets/blog/hubspot-xero-integration-workflow.svg"
+  },
+  {
+    "slug": "stripe-hubspot-integration",
+    "title": "Connection is not billing cutover",
+    "subtitle": "Three different business jobs need different evidence.",
+    "layout": "routes",
+    "rows": [
+      [
+        "Payment processing",
+        "Collect new payments",
+        "Verify the intended commerce and invoice controller."
+      ],
+      [
+        "Existing billing visibility",
+        "SUPPORT-01 · SUB-42",
+        "The example keeps billing ownership in Stripe."
+      ],
+      [
+        "Billing migration",
+        "Change the controller",
+        "Plan cutover, schedules and first-invoice checks."
+      ]
+    ],
+    "result": "USD 1,000 / month is separate from USD 2,000 setup.",
+    "note": "The example recurring component annualizes to USD 12,000. A payment or data-sync event does not prove renewal or migration.",
+    "icon": "invoice",
+    "target": "public/assets/blog/stripe-hubspot-integration-workflow.svg"
+  },
+  {
+    "slug": "ironclad-hubspot-integration",
+    "title": "Keep the legal workflow identity",
+    "subtitle": "Illustrative consultancy SOW launch and return.",
+    "layout": "evidence",
+    "rows": [
+      [
+        "Launch source",
+        "Deal 501 · agreement A-101",
+        "Use the reviewed legal template and intake data."
+      ],
+      [
+        "Returned workflow",
+        "WF-42",
+        "Preserve the workflow identity before any retry."
+      ],
+      [
+        "Completion evidence",
+        "Executed version and terms",
+        "Validate document access and required commercial fields."
+      ],
+      [
+        "Matched CRM context",
+        "A-101 / 501 only",
+        "Agreement A-102 and deal 502 remain unchanged."
+      ]
+    ],
+    "result": "On timeout, inspect existing work before relaunching.",
+    "note": "Packaged third-party and custom middleware routes differ. Legal completion does not automatically create a commercial Contract.",
+    "icon": "document",
+    "target": "public/assets/blog/ironclad-hubspot-integration-workflow.svg"
+  },
+  {
+    "slug": "hubspot-renewal-deal-workflow-automation",
+    "title": "One agreement and term, one renewal",
+    "subtitle": "Worked identity: A-101:2027-01-01.",
+    "layout": "evidence",
+    "rows": [
+      [
+        "Reviewed source",
+        "Agreement A-101",
+        "Confirm dates, source terms and the responsible owner."
+      ],
+      [
+        "Next-term identity",
+        "A-101:2027-01-01",
+        "Distinct from A-102:2027-01-01 at the same company."
+      ],
+      [
+        "Target opportunity",
+        "Preserve the returned deal ID",
+        "Re-check the existing target before creating another."
+      ],
+      [
+        "Safe recovery",
+        "Resume missing permitted work",
+        "Validate associations and lines after a repeated event."
+      ]
+    ],
+    "result": "Repeated enrollment should resolve to the intended target.",
+    "note": "Record date-change and replacement policy with history. Do not use the customer company alone as a renewal identity.",
+    "icon": "folder",
+    "target": "public/assets/blog/hubspot-renewal-deal-workflow-automation-workflow.svg"
+  },
+  {
+    "slug": "hubspot-renewal-nrr-grr-dashboard-reporting",
+    "title": "Show the cohort behind NRR",
+    "subtitle": "Illustrative monthly MRR cohort, starting at USD 10,000.",
+    "layout": "ledger",
+    "rows": [
+      [
+        "Starting-customer expansion",
+        "+ USD 1,500",
+        "Contraction: USD 500; churn: USD 1,000."
+      ],
+      [
+        "GRR excludes expansion",
+        "85%",
+        "(10,000 - 500 - 1,000) / 10,000"
+      ],
+      [
+        "NRR includes expansion",
+        "100%",
+        "(10,000 + 1,500 - 500 - 1,000) / 10,000"
+      ],
+      [
+        "New-customer MRR",
+        "USD 2,000 excluded",
+        "It is outside the starting cohort's retention numerator."
+      ]
+    ],
+    "result": "100% NRR still coexists with USD 1,500 of losses.",
+    "note": "Starting-cohort ending MRR is USD 10,000; including new customers it is USD 12,000. These are examples, not benchmarks.",
+    "icon": "chart",
+    "target": "public/assets/blog/hubspot-renewal-nrr-grr-dashboard-reporting-workflow.svg"
+  }
+]

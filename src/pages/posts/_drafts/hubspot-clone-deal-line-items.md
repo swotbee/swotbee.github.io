@@ -19,7 +19,8 @@ author:
   - HubSpot CRM
   - Customer Contract Workflows
   - Revenue Operations
-image: "/assets/blog/hubspot-clone-deal-line-items-hero.svg"
+image: "/assets/blog/hubspot-clone-deal-line-items-hero.png"
+socialImage: "/assets/blog/hubspot-clone-deal-line-items-hero-share.png"
 tags:
 - HubSpot
 - Customer Contracts

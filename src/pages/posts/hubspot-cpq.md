@@ -16,7 +16,8 @@ author:
   - HubSpot CRM
   - Customer Contract Workflows
   - Revenue Operations
-image: "/assets/blog/hubspot-cpq-hero.svg"
+image: "/assets/blog/hubspot-cpq-hero.png"
+socialImage: "/assets/blog/hubspot-cpq-hero-share.png"
 tags:
 - HubSpot
 - CPQ
@@ -214,7 +215,7 @@ HubSpot's [quote creation guide](https://knowledge.hubspot.com/quotes/create-and
 
 Keep signed legal evidence distinct from a native commercial Contract. An accepted quote can support a commercial lifecycle under configured settings; it does not replace the customer's MSA or SOW. The [customer-contract architecture guide](/posts/hubspot-contract-management/) explains those record responsibilities.
 
-![Illustrative quote acceptance gates: valid products, approved price, reviewed agreement, accepted quote and verified handoff.](/assets/blog/hubspot-cpq-workflow.svg)
+![Keep recurring and one-time apart. A 10% support-only discount gives USD 900 MRR.](/assets/blog/hubspot-cpq-workflow.svg)
 
 This diagram is a conceptual test sequence, not a HubSpot screenshot. Use the gates to identify exactly where your example becomes incorrect or incomplete.
 

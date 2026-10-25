@@ -16,7 +16,8 @@ author:
   - HubSpot CRM
   - Customer Contract Workflows
   - Revenue Operations
-image: "/assets/blog/hubspot-renewal-nrr-grr-dashboard-reporting-hero.svg"
+image: "/assets/blog/hubspot-renewal-nrr-grr-dashboard-reporting-hero.png"
+socialImage: "/assets/blog/hubspot-renewal-nrr-grr-dashboard-reporting-hero-share.png"
 tags:
 - HubSpot
 - Revenue Reporting
@@ -222,7 +223,7 @@ Build a deliberate duplicate test: one agreement, two contacts, three invoices a
 
 The custom report builder documentation explains multi-source reports, not a universal no-duplication guarantee. Validate your actual data sources and aggregation behavior before making a dashboard the finance reference.
 
-![Illustrative retention reporting gates: frozen cohort, reviewed movements, controlled aggregation, reconciled totals and dashboard sign-off.](/assets/blog/hubspot-renewal-nrr-grr-dashboard-reporting-workflow.svg)
+![Show the cohort behind NRR. 100% NRR still coexists with USD 1,500 of losses.](/assets/blog/hubspot-renewal-nrr-grr-dashboard-reporting-workflow.svg)
 
 This is a reporting acceptance model, not a screenshot or proof of a particular native formula configuration.
 

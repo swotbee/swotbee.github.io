@@ -16,7 +16,8 @@ author:
   - HubSpot CRM
   - Customer Contract Workflows
   - Revenue Operations
-image: "/assets/blog/hubspot-customer-contract-import-hero.svg"
+image: "/assets/blog/hubspot-customer-contract-import-hero.png"
+socialImage: "/assets/blog/hubspot-customer-contract-import-hero-share.png"
 tags:
 - HubSpot
 - Customer Contracts
@@ -162,9 +163,9 @@ For a historical agreement without an originating deal, define the reviewed asso
 
 Document access is part of import acceptance. Verify that the intended operator can open the correct executed version, while an unauthorized user cannot access private terms through a public link. For provider-specific handoffs, use the [document integration pillar](/posts/hubspot-contract-document-integrations/).
 
-![Illustrative import acceptance: choose the route, preserve agreement identity, map associations, reconcile controls and repair exceptions.](/assets/blog/hubspot-customer-contract-import-workflow.svg)
+![Import rows are not agreement counts. 2 agreements · 3 lines · USD 1,100 MRR](/assets/blog/hubspot-customer-contract-import-workflow.svg)
 
-The diagram describes a pilot review sequence. It does not claim a particular account is enrolled in a beta or that a provider import has been tested.
+The diagram shows illustrative import controls. It does not claim a particular account is enrolled in a beta or that a provider import has been tested.
 
 ## What should pass before you expand the import?
 

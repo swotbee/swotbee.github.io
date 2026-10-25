@@ -19,7 +19,8 @@ author:
   - HubSpot CRM
   - Customer Contract Workflows
   - Revenue Operations
-image: "/assets/blog/hubspot-renewal-reminders-hero.svg"
+image: "/assets/blog/hubspot-renewal-reminders-hero.png"
+socialImage: "/assets/blog/hubspot-renewal-reminders-hero-share.png"
 tags:
 - HubSpot
 - Customer Contracts
@@ -152,7 +153,7 @@ Specify three fields in the escalation plan: who acts, by when and what happens 
 
 Distinguish operational failure from commercial risk. A revoked notification connection needs a repair owner. A correctly delivered task with unresolved customer terms needs a renewal decision. Both deserve visibility, but they require different next actions.
 
-![Illustrative reminder controls: reviewed deadline, agreement identity, scheduled checkpoint, assigned task and verified next action.](/assets/blog/hubspot-renewal-reminders-workflow.svg)
+![Act before the notice deadline. Schedule from the reviewed deadline, then verify action.](/assets/blog/hubspot-renewal-reminders-workflow.svg)
 
 This is a conceptual acceptance sequence, not a HubSpot screenshot or a claim that a particular workflow has passed the tests.
 

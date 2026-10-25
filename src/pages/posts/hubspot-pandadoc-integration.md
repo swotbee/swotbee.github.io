@@ -16,7 +16,8 @@ author:
   - HubSpot CRM
   - Customer Contract Workflows
   - Revenue Operations
-image: "/assets/blog/hubspot-pandadoc-integration-hero.svg"
+image: "/assets/blog/hubspot-pandadoc-integration-hero.png"
+socialImage: "/assets/blog/hubspot-pandadoc-integration-hero-share.png"
 tags:
 - HubSpot
 - PandaDoc
@@ -189,7 +190,7 @@ Separate completed-PDF attachment, deal-stage update, field return and line-item
 
 ---
 
-![Template to signed terms: Template inputs - Review properties and line items; Approval and signing - Confirm the configured workflow; CRM return - Validate supported field updates. Conceptual model, not a product screenshot.](/assets/blog/hubspot-pandadoc-integration-workflow.svg)
+![Preserve the quote's meaning. Review the generated document, then validate its return.](/assets/blog/hubspot-pandadoc-integration-workflow.svg)
 
 ## Copy this PandaDoc setup and writeback worksheet
 

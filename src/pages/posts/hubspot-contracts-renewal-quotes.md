@@ -16,7 +16,8 @@ author:
   - HubSpot CRM
   - Customer Contract Workflows
   - Revenue Operations
-image: "/assets/blog/hubspot-contracts-renewal-quotes-setup-hero.svg"
+image: "/assets/blog/hubspot-contracts-renewal-quotes-setup-hero.png"
+socialImage: "/assets/blog/hubspot-contracts-renewal-quotes-setup-hero-share.png"
 tags:
 - HubSpot
 - Revenue Hub
@@ -258,7 +259,7 @@ Design post-acceptance controls for the renewal deal outcome, finance notificati
 
 ---
 
-![Native Contract setup: Accepted quote - Check Revenue Hub access; Direct creation - Verify separate beta access; Non-billing import - Map identifiers and line items; Billing migration - Validate before activation. Conceptual model, not a product screenshot.](/assets/blog/hubspot-contracts-renewal-quotes-setup-workflow.svg)
+![Choose the Contract setup route. USD 1,000 × 12 = USD 12,000 commitment.](/assets/blog/hubspot-contracts-renewal-quotes-setup-workflow.svg)
 
 ## Copy this native Contract pilot worksheet
 

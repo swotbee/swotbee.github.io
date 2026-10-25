@@ -16,7 +16,8 @@ author:
   - HubSpot CRM
   - Customer Contract Workflows
   - Revenue Operations
-image: "/assets/blog/hubspot-document-tracking-hero.svg"
+image: "/assets/blog/hubspot-document-tracking-hero.png"
+socialImage: "/assets/blog/hubspot-document-tracking-hero-share.png"
 tags:
 - HubSpot
 - Customer Contracts
@@ -152,7 +153,7 @@ The provider-specific [PandaDoc integration guide](/posts/hubspot-pandadoc-integ
 
 Retain the completion identity, timestamp, executed-version reference and processing result. If the return is repeated, recognize the already-processed completion. If it is unmatched, create an owned exception rather than updating the first deal found for the company.
 
-![Document views, signature completion and commercial record evidence](/assets/blog/hubspot-document-tracking-workflow.svg)
+![Viewed, signed and matched differ. Accept the return only after identity and version match.](/assets/blog/hubspot-document-tracking-workflow.svg)
 
 ## Should you use Documents, quotes or a signing integration?
 

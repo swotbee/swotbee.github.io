@@ -12,7 +12,7 @@ const { recentPosts } = await getRecentPosts();
 const pageTitle = frontmatter.title;
 const pageDescription = frontmatter.description || 'Read our latest blog post on SWOTBee';
 const canonicalURL = generateCanonicalUrl(Astro.url.pathname);
-const socialImage = generateSocialImagePath(frontmatter.image);
+const socialImage = frontmatter.socialImage || generateSocialImagePath(frontmatter.image);
 
 // Calculate reading time (average 230 words per minute)
 const content = await Astro.slots.render('default');

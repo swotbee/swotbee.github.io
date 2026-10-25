@@ -16,7 +16,8 @@ author:
   - HubSpot CRM
   - Customer Contract Workflows
   - Revenue Operations
-image: "/assets/blog/hubspot-quickbooks-integration-hero.svg"
+image: "/assets/blog/hubspot-quickbooks-integration-hero.png"
+socialImage: "/assets/blog/hubspot-quickbooks-integration-hero-share.png"
 tags:
 - HubSpot
 - QuickBooks Online
@@ -156,7 +157,7 @@ Use durable source identifiers in your reconciliation record. Product matching s
 
 ---
 
-![Invoice ownership: Commercial terms - Separate recurring and one-time; Invoice controller - Choose where invoices originate; Reconciliation - Match customers and payments. Conceptual model, not a product screenshot.](/assets/blog/hubspot-quickbooks-integration-workflow.svg)
+![One business invoice, one origin. A payment for an existing invoice must not issue it again.](/assets/blog/hubspot-quickbooks-integration-workflow.svg)
 
 ## Copy this invoice reconciliation worksheet
 

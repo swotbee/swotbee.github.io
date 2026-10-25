@@ -16,7 +16,8 @@ author:
     - "HubSpot CRM"
     - "Customer Contracts"
     - "Revenue Operations"
-image: "/assets/posts/hubspot-customer-contracts/hubspot-contract-management-hero.svg"
+image: "/assets/posts/hubspot-customer-contracts/hubspot-contract-management-hero.png"
+socialImage: "/assets/posts/hubspot-customer-contracts/hubspot-contract-management-hero-share.png"
 tags:
   - "HubSpot"
   - "Customer Contracts"
@@ -104,7 +105,7 @@ If the candidate fails a required test, record the failed requirement before eva
 
 Use the [CLM and CRM responsibility guide](/posts/clm-vs-crm-contract-renewals/) to decide who owns each kind of information. Avoid declaring HubSpot authoritative for every field merely because it is the CRM.
 
-![One agreement, four responsibilities. Legal document: Executed terms and evidence; Commercial Contract: Active customer commitment; Deal: Sale or renewal opportunity; Billing record: Schedule, invoice and payment.](/assets/posts/hubspot-customer-contracts/hubspot-contract-management-worksheet.svg)
+![One agreement, distinct record roles. Use a stable agreement key to connect the records.](/assets/posts/hubspot-customer-contracts/hubspot-contract-management-worksheet.svg)
 
 *Illustrative design. Use it alongside the worksheet and adapt it to your reviewed agreement and selected tools.*
 

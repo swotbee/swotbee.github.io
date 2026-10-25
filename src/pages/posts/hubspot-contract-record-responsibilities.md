@@ -13,7 +13,8 @@ author:
   imageUrl: /assets/ico/logo.png
   bio: SwotBee works on HubSpot customer contract workflows, renewal operations and integrations.
   expertise: [HubSpot CRM, Customer Contract Workflows, Revenue Operations]
-image: "/assets/blog/hubspot-contract-record-responsibilities-hero.svg"
+image: "/assets/blog/hubspot-contract-record-responsibilities-hero.png"
+socialImage: "/assets/blog/hubspot-contract-record-responsibilities-hero-share.png"
 tags: [HubSpot, Customer Contracts, Data Ownership, Revenue Operations]
 seriesName: HubSpot Contract Management
 pillarUrl: /posts/hubspot-contract-management/
