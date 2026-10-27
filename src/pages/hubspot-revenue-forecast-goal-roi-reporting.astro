@@ -4,116 +4,93 @@ import Footer from "../components/astro/Footer.astro";
 import LogoHoneycomb from "../components/astro/LogoHoneycomb.astro";
 import ClientLogoStrip from "../components/astro/ClientLogoStrip.astro";
 import ReportSignup from "../components/astro/ReportSignup.astro";
-import ReportOutputBento from "../components/astro/ReportOutputBento.astro";
-import ReportLandingHero from "../components/astro/ReportLandingHero.astro";
 
-const title = "HubSpot Revenue Reporting | Forecast, Goals and ROI";
-const description =
-  "Put HubSpot actual revenue, forecast, targets, and ROI into one recurring management report in Excel, PowerPoint, or a live dashboard.";
+const title = "HubSpot Forecasting by Product, Region & Partner";
+const description = "See where your HubSpot forecast falls short. Plan by product, region, partner or account, using custom measures, historical snapshots and scenarios. Request free app access.";
 
-const dealRows = [
+const businessViews = [
   {
-    deal: "Northstar expansion",
-    owner: "Maya Chen",
-    team: "Enterprise",
-    amount: "$82k",
-    forecast: "Commit",
-    issue: "Legal review due Friday",
-    action: "Confirm signature date",
+    name: "Product & product family",
+    question: "Will you sell the mix you planned for?",
+    copy: "See which products are carrying the forecast and which are falling behind. Compare value and quantities with product targets before deciding what to promote, produce or purchase.",
+    example: "Product family × region × month",
+    evidence: "Real request: component demand planning (2023)",
+    evidenceUrl: "https://community.hubspot.com/t/forecasting-at-quote-product-level/74764",
   },
   {
-    deal: "Quarry annual plan",
-    owner: "Liam Ross",
-    team: "Mid-Market",
-    amount: "$64k",
-    forecast: "Best case",
-    issue: "Decision date moved by 12 days",
-    action: "Reconfirm close plan",
+    name: "Region & territory",
+    question: "Which market needs help while there’s still time?",
+    copy: "Separate the markets beating plan from those missing it. Review each region or territory against its own target, even when that view differs from your sales team hierarchy.",
+    example: "Territory × customer segment × quarter",
   },
   {
-    deal: "Acme regional rollout",
-    owner: "Elena Park",
-    team: "Mid-Market",
-    amount: "$48k",
-    forecast: "Pipeline",
-    issue: "No meeting booked this month",
-    action: "Manager review",
+    name: "Partner & channel",
+    question: "Which partners will deliver on their targets?",
+    copy: "Put partner pipeline, expected contribution and target gaps in the same view. See where to focus channel support, with a clear distinction between sourced and influenced revenue.",
+    example: "Partner × product family × quarter",
+    evidence: "Real request: tracking reseller targets (2024)",
+    evidenceUrl: "https://community.hubspot.com/t/forecasting-for-channel-partners/114983",
+  },
+  {
+    name: "Customer & account",
+    question: "Which accounts will deliver the next period’s growth?",
+    copy: "Build the review around the customers you manage. Separate repeat orders, renewals and expansion so a healthy acquisition forecast doesn’t hide a shortfall in existing accounts.",
+    example: "Account × revenue motion × month",
+    evidence: "Real request: forecasting by customer (2024)",
+    evidenceUrl: "https://community.hubspot.com/t/forecasting-on-a-per-customer-basis-instead-of-per-sales-rep/122842",
   },
 ];
 
-const reportAreas = [
-  {
-    title: "Actual revenue and target",
-    description:
-      "Closed-won revenue, the agreed target, progress toward it, and the remaining gap for the same period and currency.",
-  },
-  {
-    title: "Forecast and movement",
-    description:
-      "The latest team forecast, the previous submission, the change between them, and the deals responsible for that movement.",
-  },
-  {
-    title: "Pipeline and coverage",
-    description:
-      "Open pipeline, likely revenue, coverage against the remaining target, and the opportunities that could change the outcome.",
-  },
-  {
-    title: "Team and market results",
-    description:
-      "Revenue and forecast by owner, team, pipeline, region, product, segment, or another supported field used in your review.",
-  },
-  {
-    title: "Marketing spend and return",
-    description:
-      "Selected spend, attributed revenue, and the approved ROI calculation, with the inputs shown alongside the result.",
-  },
-  {
-    title: "Risks, decisions, and actions",
-    description:
-      "Deals and missing inputs that need attention, the decision required, and an owner and due date for the next step.",
-  },
+const moreViews = [
+  { title: "How you sell", copy: "Business unit, customer segment, industry and route to market." },
+  { title: "How customers buy", copy: "Recurring versus one-time charges, contract renewal cohorts, acquisition cohorts and customer tenure." },
+  { title: "What drives the plan", copy: "Acquisition source, delivery practice and deal size or type." },
+];
+
+const measures = [
+  { title: "Forecast the value that matters", copy: "Use your agreed currency measure: bookings, a custom amount, recurring value or gross profit. Keep definitions explicit so Sales and Finance are discussing the same number.", example: "Custom value × product family × close month" },
+  { title: "Forecast units you’ll need to supply", copy: "Use product quantities to understand expected demand. See which product families or components need attention before you commit to purchasing or production.", example: "Expected units × product × delivery month" },
+  { title: "Forecast work you’ll need to deliver", copy: "Combine expected wins with recorded delivery hours and service dates. Compare the workload with the capacity you provide to see where the plan needs more people or different timing.", example: "Expected hours × delivery practice × service month" },
+];
+
+const scenarios = [
+  { name: "Base case", assumption: "The current forecast holds.", forecast: "$360k", gap: "$140k below target", decision: "Which opportunities can close the gap?" },
+  { name: "Downside", assumption: "An $80k opportunity slips out.", forecast: "$280k", gap: "$220k below target", decision: "What is the fallback if it slips?" },
+  { name: "Upside", assumption: "An additional $60k closes.", forecast: "$420k", gap: "$80k below target", decision: "Would the upside actually be enough?" },
 ];
 
 const faqs = [
   {
-    q: "What is included in the HubSpot revenue report?",
-    a: "You choose what belongs in it. A report can include Closed Won revenue, the latest team forecast, forecast changes, revenue targets, the gap to target, open pipeline, selected campaign spend and return, the deals behind the numbers, and agreed actions.",
+    q: "Can HubSpot already forecast using a custom amount field?",
+    a: "Yes. Eligible HubSpot subscriptions support custom forecast types using a deal currency property and a date property. The distinction here is a connected planning view across business slices, measures, historical checkpoints and assumptions. A different currency field alone does not answer a unit-demand or delivery-capacity question.",
+    source: "https://knowledge.hubspot.com/forecast/create-a-forecast-to-view-multiple-outcomes",
+    sourceLabel: "Read HubSpot’s custom forecast documentation",
   },
   {
-    q: "Can I compare actual revenue, forecast, and target in one report?",
-    a: "Yes, when the matching deal, forecast, and goal data is available in your HubSpot account. The report uses the same period, pipelines, teams, and currency across the comparison and shows when an input is missing.",
+    q: "Is this different from filtering a report by region or partner?",
+    a: "A filter shows a subset of records. The planning question goes further: what is that slice’s target, what do we expect, what has changed since the last review, and who needs to act? The views on this page bring those questions together. Available combinations depend on the fields, associations and allocation rules in your data.",
   },
   {
-    q: "Can I use Excel, PowerPoint, or a live dashboard?",
-    a: "Yes. Excel carries the calculations and deal detail, PowerPoint provides an editable meeting-ready version, and a live dashboard can be shared when the audience needs the latest approved view. All three use the same reporting setup.",
+    q: "Can I forecast quantities or capacity instead of money?",
+    a: "Those are the operating measures illustrated here. Quantity forecasts need product or line-item quantities. Capacity planning also needs workload assumptions, service dates and your available capacity; a deal amount alone cannot supply them. We’ll confirm the inputs and supported measures for your use case before setup.",
   },
   {
-    q: "Can I create a PowerPoint for Finance, executives, or the board?",
-    a: "Yes. The editable presentation carries the revenue result, target gap, forecast change, main drivers, risks, and decisions into a shorter meeting-ready format. The supporting detail remains in Excel.",
+    q: "Does HubSpot already have historical reporting?",
+    a: "Yes. HubSpot has submission history and sales analytics reports including snapshots and pipeline movement. The requirement highlighted here is comparing a saved checkpoint using the business assignments and measure definitions captured at that time. Confirm that exact requirement against your existing reports before adding another tool.",
+    source: "https://knowledge.hubspot.com/reports/create-sales-reports-in-the-sales-analytics-suite",
+    sourceLabel: "Read HubSpot’s sales analytics documentation",
   },
   {
-    q: "Can the report use manual forecast submissions?",
-    a: "For eligible HubSpot accounts, the current Forecasts API provides read-only access to submitted forecasts and their change history. Availability depends on the account's HubSpot subscription, permissions, and forecast setup.",
+    q: "Will I see historical snapshots from before I connect?",
+    a: "Dependable snapshot history starts when capture begins. Older comparisons are possible only where the required values, dates and assignments were recorded. Missing historical information cannot be recreated reliably just by installing an app.",
   },
   {
-    q: "How is marketing ROI calculated?",
-    a: "You first choose the spend, revenue value, attribution approach, currency, and period that should count. SWOTBee calculates return only when those inputs are available and labels the calculation used. It does not substitute a missing value or silently change the revenue definition.",
+    q: "How do you avoid counting the same deal twice?",
+    a: "The forecast needs an explicit allocation rule. A deal containing two products should contribute its allocated values once to the company total. Partner-influenced views can overlap and need to be labelled as such. We’ll confirm your attribution and allocation needs when assessing the setup.",
   },
   {
-    q: "Can I use HubSpot revenue analytics or the custom report builder?",
-    a: "Yes, when those tools and the required data are available in your HubSpot subscription. Revenue analytics and standard dashboards can answer common questions. The custom report builder can support a specific view across deals, goals, campaigns, or custom properties. SWOTBee packages the approved result for a recurring management review.",
-  },
-  {
-    q: "When should the billing system be the source of revenue?",
-    a: "Use the finance or billing system when it owns the recognized, invoiced, or recurring revenue figure. HubSpot can still provide pipeline, forecast, attribution, and deal context. The report should name the source, period, currency, and calculation for every revenue metric so teams do not compare different definitions.",
-  },
-  {
-    q: "Can SWOTBee create MRR, ARR, NRR, or GRR reports?",
-    a: "Yes, when the required recurring-revenue values and dates are available in HubSpot or the agreed billing source. NRR and GRR belong in a separate retention-revenue report because they need starting revenue, expansion, contraction, and churn—not the forecast and target view shown on this page. SWOTBee cannot reconstruct an earlier revenue state that was never recorded.",
-  },
-  {
-    q: "Will signing up connect my HubSpot account?",
-    a: "No. This signup records your work email and requested report so we can contact you about access. It does not create an app account or connect to your HubSpot portal.",
+    q: "Is the app free, and what happens when I request access?",
+    a: "The offer is free app access. Leave your work email and we’ll contact you about availability, supported features and installation. This form requests access; it does not install the app or connect your HubSpot account. HubSpot’s own subscription, seat and data-access requirements may still apply.",
   },
 ];
 
@@ -121,742 +98,209 @@ const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   mainEntity: faqs.map((item) => ({
-    "@type": "Question",
-    name: item.q,
+    "@type": "Question", name: item.q,
     acceptedAnswer: { "@type": "Answer", text: item.a },
   })),
 };
 ---
 
-<Layout
-  title={title}
-  description={description}
-  keywords="hubspot revenue reporting, hubspot revenue report, hubspot revenue forecasting reports, hubspot actual revenue vs target, hubspot goal reporting, hubspot executive revenue reporting, hubspot board revenue report, hubspot campaign ROI reporting, export hubspot reports to excel"
->
+<Layout title={title} description={description} keywords="HubSpot forecasting, forecast by product, forecast by region, partner forecasting, custom forecast measures, capacity forecasting, historical forecast snapshots, HubSpot scenario planning">
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
-
-  <header class="border-b border-v6-border bg-white">
-    <div
-      class="mx-auto flex min-h-16 max-w-6xl items-center justify-between gap-6 px-4 py-2 sm:px-6 lg:px-8"
-    >
-      <a
-        href="/"
-        class="flex min-h-11 shrink-0 items-center gap-2 rounded-md focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2"
-        aria-label="SWOTbee home"
-      >
-        <LogoHoneycomb width={32} height={30} />
-        <span class="text-lg font-bold text-v6-dark"
-          >SWOT<span class="text-v6-teal-700">bee</span></span
-        >
+  <a href="#forecast-content" class="skip-link">Skip to content</a>
+  <header class="border-b border-ink-200 bg-white">
+    <div class="mx-auto flex min-h-20 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
+      <a href="/" class="inline-flex min-h-11 items-center gap-2 font-bold text-ink-900" aria-label="SWOTBee home">
+        <LogoHoneycomb width={32} height={30} /><span class="text-xl">SWOT<span class="text-aqua-800">bee</span></span>
       </a>
-      <nav
-        class="hidden items-center gap-6 text-sm font-semibold text-v6-text-muted lg:flex"
-        aria-label="Page navigation"
-      >
-        <a
-          href="#how-it-works"
-          class="rounded-md py-2 hover:text-v6-dark focus:outline-none focus:ring-2 focus:ring-v6-copper"
-          >How it works</a
-        >
-        <a
-          href="#sample-report"
-          class="rounded-md py-2 hover:text-v6-dark focus:outline-none focus:ring-2 focus:ring-v6-copper"
-          >Sample report</a
-        >
-        <a
-          href="#report-contents"
-          class="rounded-md py-2 hover:text-v6-dark focus:outline-none focus:ring-2 focus:ring-v6-copper"
-          >What's included</a
-        >
-        <a
-          href="#questions"
-          class="rounded-md py-2 hover:text-v6-dark focus:outline-none focus:ring-2 focus:ring-v6-copper"
-          >FAQs</a
-        >
+      <nav class="hidden items-center gap-6 text-sm font-semibold text-ink-800 lg:flex" aria-label="Page navigation">
+        <a href="#forecast-views">Forecast your way</a><a href="#forecast-history">See what changed</a><a href="#scenarios">Test scenarios</a><a href="#questions">FAQs</a>
       </nav>
-      <a
-        href="#report-signup"
-        data-ga-cta="revenue_report_header_signup"
-        class="inline-flex min-h-11 shrink-0 items-center justify-center rounded-lg border border-v6-copper px-4 py-2 text-sm font-semibold text-v6-copper transition-colors hover:bg-v6-copper-50 focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2"
-      >
-        Get your first Revenue Report
-      </a>
+      <a href="#report-signup" data-ga-cta="revenue_report_header_signup" class="primary-button text-sm">Get free app access</a>
     </div>
   </header>
 
-  <main>
-    <ReportLandingHero
-      eyebrow="HubSpot revenue reporting"
-      titleLead="Turn HubSpot Revenue Data into,"
-      titleAccent="Your Report in 3 Clicks"
-      description="Build a complete HubSpot revenue report for the executives review. See what closed, what the team expects to close, how that compares with target, and which marketing spend produced revenue—then use the same numbers in Excel, PowerPoint, or a live dashboard."
-      ctaLabel="Get your first Revenue Report"
-      ctaEvent="revenue_report_hero_signup"
-      reassurance={[
-        "Run it weekly, monthly, or quarterly.",
-        "No separate exports.",
-        "No spreadsheet joins.",
-        "No rebuilt slide deck.",
-      ]}
-    />
-
-    <ClientLogoStrip
-      caption="HubSpot and revenue operations work trusted by teams at"
-    />
-
-    <section class="px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
-      <div
-        class="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.88fr_1.12fr] lg:items-center"
-      >
+  <main id="forecast-content">
+    <section class="px-4 pb-12 pt-14 sm:px-6 sm:pb-16 sm:pt-20 lg:px-8" aria-labelledby="forecast-heading">
+      <div class="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-[1.1fr_1fr]">
         <div>
-          <p
-            class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper"
-          >
-            One meeting, five places to look
-          </p>
-          <h2
-            class="mt-3 text-balance text-3xl font-bold text-v6-dark sm:text-4xl"
-          >
-            Actual, forecast, target, and ROI are in HubSpot. The executive view
-            is not.
-          </h2>
+          <p class="eyebrow">Forecasting & scenario planning for HubSpot</p>
+          <h1 id="forecast-heading" class="mt-5 text-balance text-4xl leading-[1.08] font-bold tracking-tight text-ink-900 sm:text-5xl lg:text-[3.4rem]">Stop letting one revenue number <span class="text-aqua-800">hide where you’ll miss.</span></h1>
+          <p class="mt-6 text-xl leading-relaxed text-ink-800">The quarter looks on track. A product is falling behind. A partner won’t make target. Your delivery team can’t cover the work you expect to win.</p>
+          <p class="mt-4 text-lg leading-relaxed text-ink-800">SWOTBee connects your HubSpot forecast to the way your business runs. Plan by product, region, partner or account. Use revenue, units or hours. See the gap while you can still act.</p>
+          <div class="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3">
+            <a href="#report-signup" data-ga-cta="revenue_report_hero_signup" class="primary-button">Get free app access</a>
+            <a href="#forecast-views" class="text-link">Find your forecast view <span aria-hidden="true">→</span></a>
+          </div>
+          <p class="mt-4 text-sm text-ink-600">Free app access by request. No credit card required.</p>
         </div>
-        <div class="space-y-5 text-lg leading-relaxed text-v6-text-muted">
-          <p>
-            Closed revenue is in Deals. The team’s latest number is in Forecast.
-            Targets are in Goals. Spend and attributed revenue are in Ads or
-            Campaigns. Recurring revenue may use a separate set of fields again.
-          </p>
-          <p>
-            By the time those numbers reach Finance, someone has exported
-            separate files, checked the periods and currencies, joined the rows
-            in Excel, found the deals behind the change, and rebuilt the result
-            in PowerPoint.
-          </p>
-          <p class="font-semibold text-v6-dark">
-            SWOTBee keeps that reporting setup together, so the next review
-            starts with fresh data—not another reconciliation exercise.
-          </p>
-        </div>
+        <figure id="sample-report" class="min-w-0 scroll-mt-8 rounded-2xl border border-ink-200 bg-white p-5 shadow-lg shadow-ink-900/5 sm:p-7">
+          <figcaption><p class="eyebrow">Illustrative forecast · same quarter</p><h2 class="mt-3 text-2xl font-bold text-ink-900">The total says “on plan.”<br />The product mix says otherwise.</h2></figcaption>
+          <div class="mt-6 grid grid-cols-2 gap-3 rounded-xl border border-aqua-25 bg-aqua-10 p-4">
+            <div><p class="text-sm text-ink-600">Revenue target</p><p class="mt-1 text-3xl font-bold text-ink-900">$1m</p></div>
+            <div><p class="text-sm text-ink-600">Latest forecast</p><p class="mt-1 text-3xl font-bold text-ink-900">$1m</p></div>
+          </div>
+          <table class="mt-5 w-full text-left text-sm">
+            <caption class="sr-only">Product revenue targets versus forecast, in US dollars</caption>
+            <thead><tr class="border-b border-ink-200 text-ink-600"><th scope="col" class="py-3 pr-2">Product</th><th scope="col" class="py-3 text-right">Target</th><th scope="col" class="py-3 text-right">Forecast</th></tr></thead>
+            <tbody class="text-ink-900">
+              <tr class="border-b border-ink-200"><th scope="row" class="py-4 pr-2 font-semibold">A <span class="block text-xs font-normal text-ink-600">80% gross margin</span></th><td class="text-right">$600k</td><td class="text-right font-bold">$400k <span class="block text-xs font-normal text-coral-800">$200k short</span></td></tr>
+              <tr><th scope="row" class="py-4 pr-2 font-semibold">B <span class="block text-xs font-normal text-ink-600">30% gross margin</span></th><td class="text-right">$400k</td><td class="text-right font-bold">$600k <span class="block text-xs font-normal text-aqua-800">$200k ahead</span></td></tr>
+            </tbody>
+          </table>
+          <div class="mt-2 rounded-xl border border-coral-100 bg-coral-25 p-4"><p class="text-lg font-bold text-ink-900">Revenue on target. Gross profit $100k short.</p><p class="mt-2 text-sm leading-relaxed text-ink-800">A different product mix takes expected gross profit from $600k to $500k. Which product gets your sales team’s attention now?</p></div>
+          <p class="mt-4 text-xs leading-relaxed text-ink-600">Fictional example in USD with fixed gross margins. Demonstrates a planning decision, not a customer result or guaranteed improvement.</p>
+        </figure>
       </div>
     </section>
 
-    <section
-      id="how-it-works"
-      class="scroll-mt-8 bg-v6-bg px-4 py-16 sm:px-6 sm:py-20 lg:px-8"
-    >
-      <div class="mx-auto max-w-6xl">
-        <div class="max-w-3xl">
-          <p
-            class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper"
-          >
-            A reusable revenue review
-          </p>
-          <h2
-            class="mt-3 text-balance text-3xl font-bold text-v6-dark sm:text-4xl"
-          >
-            Set the revenue review once. Run it again next week, month, or
-            quarter.
-          </h2>
-          <p class="mt-4 text-lg leading-relaxed text-v6-text-muted">
-            Set it up for the way your business measures revenue.
-          </p>
+    <ClientLogoStrip caption="Our HubSpot and revenue operations experience includes work with teams at" />
+
+    <section id="forecast-views" class="page-section" aria-labelledby="views-heading">
+      <div class="section-container">
+        <div class="section-intro"><p class="eyebrow">Forecast the business you actually run</p><h2 id="views-heading" class="section-heading">Every target has an owner.<br />Give them a forecast they can act on.</h2><p class="section-copy">Your sales hierarchy is one view. Your product plan, regional targets, partner commitments and key accounts need their own. Bring target, forecast, actuals and the remaining gap together for each view.</p></div>
+        <div class="mt-10 grid gap-5 md:grid-cols-2">
+          {businessViews.map((view) => (
+            <article class="content-card">
+              <p class="eyebrow">{view.name}</p>
+              <h3 class="mt-4 text-2xl font-bold text-ink-900">{view.question}</h3>
+              <p class="mt-4 leading-relaxed text-ink-800">{view.copy}</p>
+              <p class="mt-5 rounded-lg border border-aqua-25 bg-aqua-10 px-4 py-3 text-sm font-semibold text-aqua-900">{view.example}</p>
+              {view.evidenceUrl && (
+                <a href={view.evidenceUrl} target="_blank" rel="noopener noreferrer" class="text-link mt-3 text-sm">
+                  {view.evidence}<span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span>
+                </a>
+              )}
+            </article>
+          ))}
         </div>
-        <ol class="mt-10 grid gap-6 md:grid-cols-3">
-          <li class="rounded-2xl border border-v6-border bg-white p-6 sm:p-7">
-            <span
-              class="flex h-9 w-9 items-center justify-center rounded-full bg-v6-copper-50 text-sm font-bold text-v6-copper-800"
-              >1</span
-            ><h3 class="mt-5 text-xl font-bold text-v6-dark">
-              Choose the scope
-            </h3><p class="mt-3 leading-relaxed text-v6-text-muted">
-              Pick the period, comparison, currency, pipelines, teams, regions,
-              and campaigns that belong in the report.
-            </p>
-          </li>
-          <li class="rounded-2xl border border-v6-border bg-white p-6 sm:p-7">
-            <span
-              class="flex h-9 w-9 items-center justify-center rounded-full bg-v6-copper-50 text-sm font-bold text-v6-copper-800"
-              >2</span
-            ><h3 class="mt-5 text-xl font-bold text-v6-dark">
-              Choose your KPIs
-            </h3><p class="mt-3 leading-relaxed text-v6-text-muted">
-              Choose actual revenue, forecast, target, gap, pipeline, and ROI.
-              Confirm which date and revenue value each number should use.
-            </p>
-          </li>
-          <li class="rounded-2xl border border-v6-border bg-white p-6 sm:p-7">
-            <span
-              class="flex h-9 w-9 items-center justify-center rounded-full bg-v6-copper-50 text-sm font-bold text-v6-copper-800"
-              >3</span
-            ><h3 class="mt-5 text-xl font-bold text-v6-dark">
-              Get your report
-            </h3><p class="mt-3 leading-relaxed text-v6-text-muted">
-              Review the result and use it in Excel, PowerPoint, or a live
-              dashboard, with the same numbers in every version.
-            </p>
-          </li>
+        <details class="mt-6 rounded-xl border border-ink-200 p-5 sm:p-6">
+          <summary class="flex min-h-11 cursor-pointer items-center justify-between gap-4 font-semibold text-ink-900">Explore more ways to slice your forecast <span aria-hidden="true">+</span></summary>
+          <div class="mt-5 grid gap-6 md:grid-cols-3">{moreViews.map((view) => <div><h3 class="font-bold text-ink-900">{view.title}</h3><p class="mt-2 leading-relaxed text-ink-800">{view.copy}</p></div>)}</div>
+          <p class="mt-5 text-sm leading-relaxed text-ink-600">Start with the view that drives a recurring decision. Combine dimensions where your HubSpot data supports the required fields and relationships.</p>
+        </details>
+      </div>
+    </section>
+
+    <section id="forecast-measures" class="page-section" aria-labelledby="measures-heading">
+      <div class="section-container">
+        <div class="section-intro"><p class="eyebrow">Beyond the amount on the deal</p><h2 id="measures-heading" class="section-heading">You sell in dollars.<br />You deliver in units, hours and people.</h2><p class="section-copy">A revenue total won’t tell you how many components to order or how much implementation work is coming. Pair the right business slice with the right measure and the month it belongs in.</p></div>
+        <div class="mt-10 grid gap-5 md:grid-cols-3">
+          {measures.map((measure) => (
+            <article class="content-card flex flex-col"><h3 class="text-xl font-bold text-ink-900">{measure.title}</h3><p class="mb-5 mt-4 flex-1 leading-relaxed text-ink-800">{measure.copy}</p><p class="border-t border-ink-200 pt-4 text-sm font-semibold text-aqua-900">{measure.example}</p></article>
+          ))}
+        </div>
+        <aside class="mt-6 grid gap-5 rounded-2xl border border-aqua-25 bg-aqua-10 p-6 sm:p-8 md:grid-cols-[1fr_2fr]" aria-label="Illustrative capacity planning example">
+          <div><p class="eyebrow">Illustrative capacity check</p><p class="mt-3 text-3xl font-bold text-ink-900">300 hours short</p></div>
+          <div><p class="text-lg font-semibold text-ink-900">1,200 expected delivery hours. 900 available. The gap needs a decision.</p><p class="mt-3 leading-relaxed text-ink-800">Move the start date, bring in support or adjust the sales plan. Make the call before the work lands. This example uses supplied workload, service dates, win assumptions and capacity inputs.</p></div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="forecast-history" class="page-section" aria-labelledby="history-heading">
+      <div class="section-container grid items-start gap-10 lg:grid-cols-2">
+        <div><p class="eyebrow">Historical snapshots, in the same business slices</p><h2 id="history-heading" class="section-heading">Last Friday’s forecast should still mean last Friday.</h2><p class="section-copy">A close date moves. An account changes territory. A partner is reassigned. Today’s CRM view can no longer explain what you believed when you made the plan.</p><p class="mt-4 text-lg leading-relaxed text-ink-800">Save the selected values and business assignments at each checkpoint. Compare the same product, region, partner or account across reviews. See what was added, reduced, won, lost or pushed into a later period.</p><p class="mt-5 font-semibold leading-relaxed text-ink-900">Then compare the saved forecast with actuals. Find the slices that repeatedly overpromise, and the deals behind the movement.</p><p class="mt-4 text-sm leading-relaxed text-ink-600">Snapshot history builds from capture onward. Earlier comparisons depend on what was already recorded.</p></div>
+        <figure class="content-card">
+          <figcaption><p class="eyebrow">Illustrative movement · product A / EMEA</p><h3 class="mt-3 text-xl font-bold text-ink-900">Same quarter. Two saved checkpoints.</h3></figcaption>
+          <dl class="mt-6 divide-y divide-ink-200 text-ink-800">
+            <div class="movement-row"><dt>Forecast · 2 October</dt><dd class="font-bold text-ink-900">$400k</dd></div>
+            <div class="movement-row"><dt>New expected contribution</dt><dd>+$60k</dd></div>
+            <div class="movement-row"><dt>Moved to next quarter</dt><dd>−$80k</dd></div>
+            <div class="movement-row"><dt>Expected deal values reduced</dt><dd>−$20k</dd></div>
+            <div class="movement-row"><dt class="font-bold text-ink-900">Forecast · 9 October</dt><dd class="text-xl font-bold text-ink-900">$360k</dd></div>
+          </dl>
+          <p class="mt-5 rounded-xl border border-coral-100 bg-coral-25 p-4 text-sm leading-relaxed text-ink-900"><strong>$40k lower, with the movement explained.</strong> Now the review can focus on the slipped opportunity and the next action.</p>
+          <p class="mt-4 text-xs text-ink-600">Fictional USD values. Forecast includes closed and expected open contribution; the same definition applies at both checkpoints.</p>
+        </figure>
+      </div>
+    </section>
+
+    <section id="scenarios" class="page-section" aria-labelledby="scenarios-heading">
+      <div class="section-container">
+        <div class="section-intro"><p class="eyebrow">Scenario planning</p><h2 id="scenarios-heading" class="section-heading">Find out what breaks<br />before the quarter does.</h2><p class="section-copy">What if the biggest partner deal slips? What if a region converts less pipeline? What if you win more work than you can deliver? Test the assumption against a saved baseline and see how the target gap or workload changes.</p></div>
+        <p class="mt-8 text-sm font-semibold text-ink-600">Illustrative comparison · Product A / EMEA · quarterly target $500k · USD</p>
+        <div class="mt-4 grid gap-5 md:grid-cols-3">
+          {scenarios.map((scenario) => (
+            <article class="content-card"><p class="eyebrow">{scenario.name}</p><p class="mt-3 text-ink-800">{scenario.assumption}</p><p class="mt-6 text-4xl font-bold text-ink-900">{scenario.forecast}</p><p class="mt-2 font-semibold text-coral-800">{scenario.gap}</p><h3 class="mt-6 border-t border-ink-200 pt-5 text-lg font-bold text-ink-900">{scenario.decision}</h3></article>
+          ))}
+        </div>
+        <p class="mt-6 leading-relaxed text-ink-800">Keep assumptions separate from the live forecast. Compare base, upside and downside for the business slice you’re reviewing, then choose the action worth taking.</p>
+        <a href="#report-signup" data-ga-cta="revenue_report_scenarios_signup" class="primary-button mt-7">Get free app access</a>
+      </div>
+    </section>
+
+    <section id="how-it-works" class="page-section" aria-labelledby="setup-heading">
+      <div class="section-container">
+        <div class="section-intro"><p class="eyebrow">From HubSpot data to a decision</p><h2 id="setup-heading" class="section-heading">Start with the forecast<br />your next meeting needs.</h2><p class="section-copy">Choose one decision first: a product target, a partner gap, a regional commitment or a capacity shortfall. Build the view around it.</p></div>
+        <ol class="mt-10 grid gap-5 md:grid-cols-3">
+          <li class="content-card"><p class="eyebrow">01 · Connect</p><h3 class="mt-4 text-xl font-bold text-ink-900">Bring in your HubSpot data</h3><p class="mt-3 leading-relaxed text-ink-800">After access is confirmed, authorize the connection and select the pipelines and records for your review.</p></li>
+          <li class="content-card"><p class="eyebrow">02 · Configure</p><h3 class="mt-4 text-xl font-bold text-ink-900">Define the view that matters</h3><p class="mt-3 leading-relaxed text-ink-800">Choose the business slice, measure, time period and target. Confirm allocations and any workload or capacity inputs.</p></li>
+          <li class="content-card"><p class="eyebrow">03 · Confirm</p><h3 class="mt-4 text-xl font-bold text-ink-900">Check the numbers. Choose the action.</h3><p class="mt-3 leading-relaxed text-ink-800">Review the starting position and the deals behind it. Save your baseline and build the history for the next comparison.</p></li>
         </ol>
-        <p class="mt-8 font-semibold text-v6-dark">
-          No digging through fields. No rebuilding filters. No hours copying and
-          pasting.
-        </p>
-        <div class="mt-8">
-          <a
-            href="#report-signup"
-            data-ga-cta="revenue_report_steps_signup"
-            class="inline-flex min-h-12 items-center justify-center rounded-xl bg-v6-copper px-7 py-3.5 text-base font-semibold text-white transition-colors hover:bg-v6-copper-600 focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2"
-            >Get your first Revenue Report</a>
-        </div>
+        <div class="mt-8 rounded-2xl border border-ink-200 p-6 sm:p-8"><h3 class="text-2xl font-bold text-ink-900">Take the same forecast into the room.</h3><p class="mt-3 max-w-4xl text-lg leading-relaxed text-ink-800">Use Excel to inspect the detail, PowerPoint to present the decision, and a dashboard to review the current position. Keep the same slices, periods and measure definitions across the reporting pack.</p></div>
       </div>
     </section>
 
-    <section
-      id="report-outputs"
-      class="scroll-mt-8 px-4 py-16 sm:px-6 sm:py-20 lg:px-8"
-    >
-      <div class="mx-auto max-w-6xl">
-        <div class="max-w-4xl">
-          <p
-            class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper"
-          >
-            One reporting setup
-          </p>
-          <h2
-            class="mt-3 text-balance text-3xl font-bold text-v6-dark sm:text-4xl"
-          >
-            One revenue report—ready in Excel, PowerPoint, or a live dashboard.
-          </h2>
-          <p class="mt-4 text-lg leading-relaxed text-v6-text-muted">
-            Check the calculations and deals in Excel. Take the decisions into
-            PowerPoint. Share a live view when the audience needs the latest
-            position. All three use the same period and definitions.
-          </p>
-        </div>
-        <ReportOutputBento
-          datasetName="revenue"
-          workbookDescription="Verify the calculations, targets, ROI inputs, and deal-level evidence in a familiar spreadsheet."
-          presentationDescription="Present the same approved figures and chart patterns as a clear revenue story."
-          dashboardDescription="Share a current revenue view without rebuilding the report or changing its definitions."
-        />
-      </div>
-    </section>
-
-    <section
-      id="sample-report"
-      class="scroll-mt-8 px-4 py-16 sm:px-6 sm:py-20 lg:px-8"
-    >
-      <div class="mx-auto max-w-6xl">
-        <div class="max-w-3xl">
-          <div class="flex flex-wrap items-center gap-3">
-            <p
-              class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper"
-            >
-              Inside the revenue report
-            </p><span
-              class="rounded-full border border-v6-copper-200 bg-v6-copper-50 px-2.5 py-1 text-xs font-semibold text-v6-copper-800"
-              >Example data</span>
-          </div>
-          <h2
-            class="mt-3 text-balance text-3xl font-bold text-v6-dark sm:text-4xl"
-          >
-            Show where revenue will land—and the deals that could change it
-          </h2>
-          <p class="mt-4 text-lg leading-relaxed text-v6-text-muted">
-            Start with actual revenue, the latest forecast, the target, and the
-            gap. Then show what changed and which deals require a decision.
-          </p>
-        </div>
-
-        <div
-          class="mt-10 overflow-hidden rounded-2xl border border-v6-border bg-white shadow-lg shadow-v6-dark/5"
-        >
-          <div
-            class="flex flex-col gap-4 border-b border-v6-border px-5 py-5 sm:flex-row sm:items-center sm:justify-between sm:px-7"
-          >
-            <div>
-              <p
-                class="text-xs font-semibold uppercase tracking-[0.14em] text-v6-text-muted"
-              >
-                Revenue, forecast and target
-              </p><h3 class="mt-1 text-xl font-bold text-v6-dark">
-                Q3 executive review
-              </h3><p class="mt-1 text-sm text-v6-text-muted">
-                Updated 19 September 2026
-              </p>
-            </div>
-            <div class="flex flex-wrap gap-2">
-              <span
-                class="rounded-full bg-v6-copper-50 px-3 py-1.5 text-xs font-semibold text-v6-copper-800"
-                >$90k gap</span
-              ><span
-                class="rounded-full bg-v6-blue-50 px-3 py-1.5 text-xs font-semibold text-v6-blue-800"
-                >Example data</span>
-            </div>
-          </div>
-
-          <div class="grid gap-px bg-v6-border sm:grid-cols-2 lg:grid-cols-4">
-            <div class="bg-white p-5 sm:p-6">
-              <p class="text-sm text-v6-text-muted">Closed revenue</p><div
-                class="mt-2 flex items-end justify-between gap-3"
-              >
-                <p class="text-2xl font-bold text-v6-dark">$684k</p><span
-                  class="text-sm font-semibold text-v6-teal-800">+$76k</span>
-              </div>
-            </div>
-            <div class="bg-white p-5 sm:p-6">
-              <p class="text-sm text-v6-text-muted">Latest forecast</p><div
-                class="mt-2 flex items-end justify-between gap-3"
-              >
-                <p class="text-2xl font-bold text-v6-dark">$910k</p><span
-                  class="text-sm font-semibold text-v6-copper-800">-$35k</span>
-              </div>
-            </div>
-            <div class="bg-white p-5 sm:p-6">
-              <p class="text-sm text-v6-text-muted">Quarter target</p><p
-                class="mt-2 text-2xl font-bold text-v6-dark"
-              >
-                $1.00m
-              </p>
-            </div>
-            <div class="bg-v6-copper-50 p-5 sm:p-6">
-              <p class="text-sm text-v6-copper-800">Forecast gap</p><p
-                class="mt-2 text-2xl font-bold text-v6-copper-800"
-              >
-                $90k
-              </p>
-            </div>
-          </div>
-
-          <div
-            class="grid gap-6 border-t border-v6-border p-5 sm:p-7 lg:grid-cols-[0.9fr_1.1fr]"
-          >
-            <article class="rounded-xl border border-v6-border p-5">
-              <p
-                class="text-xs font-semibold uppercase tracking-[0.14em] text-v6-copper"
-              >
-                Target progress
-              </p>
-              <div class="mt-5 space-y-5">
-                <div>
-                  <div class="flex items-center justify-between text-sm">
-                    <span class="font-semibold text-v6-dark">Closed</span><span
-                      class="text-v6-text-muted">68%</span>
-                  </div><div
-                    class="mt-2 h-3 overflow-hidden rounded-full bg-v6-bg"
-                  >
-                    <div class="h-full w-[68%] rounded-full bg-v6-teal"></div>
-                  </div>
-                </div>
-                <div>
-                  <div class="flex items-center justify-between text-sm">
-                    <span class="font-semibold text-v6-dark"
-                      >Latest forecast</span
-                    ><span class="text-v6-text-muted">91%</span>
-                  </div><div
-                    class="mt-2 h-3 overflow-hidden rounded-full bg-v6-bg"
-                  >
-                    <div class="h-full w-[91%] rounded-full bg-v6-copper"></div>
-                  </div>
-                </div>
-              </div>
-              <p class="mt-5 text-sm leading-relaxed text-v6-text-muted">
-                The team needs another $90k in the forecast to reach the quarter
-                target.
-              </p>
-            </article>
-            <article
-              class="rounded-xl border border-v6-copper-200 bg-v6-copper-50 p-5"
-            >
-              <div class="flex items-center justify-between gap-4">
-                <p
-                  class="text-xs font-semibold uppercase tracking-[0.14em] text-v6-copper-800"
-                >
-                  Reviewed summary
-                </p><span
-                  class="rounded-full bg-white px-2.5 py-1 text-xs font-semibold text-v6-teal-800"
-                  >Approved</span>
-              </div>
-              <p class="mt-4 text-lg font-bold leading-relaxed text-v6-dark">
-                Forecast fell by $35k after two Mid-Market deals moved out of
-                the quarter.
-              </p>
-              <p class="mt-3 text-sm leading-relaxed text-v6-text-muted">
-                Enterprise remains $24k ahead of target. Three Mid-Market deals
-                worth $194k need a close-date or confidence review.
-              </p>
-              <p
-                class="mt-5 rounded-lg bg-white px-3 py-2 text-sm text-v6-text-muted"
-              >
-                <strong class="text-v6-dark">Decision:</strong> Confirm which of the
-                three deals remain in this quarter’s forecast.
-              </p>
-            </article>
-          </div>
-
-          <div class="border-t border-v6-border p-5 sm:p-7">
-            <div
-              class="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between sm:gap-4"
-            >
-              <h4 class="text-base font-bold text-v6-dark">
-                Deals that could change the forecast
-              </h4><span class="text-xs text-v6-text-muted"
-                >The records behind the summary</span>
-            </div>
-            <div
-              class="mt-4 hidden overflow-x-auto rounded-xl border border-v6-border md:block"
-            >
-              <table
-                class="w-full min-w-[920px] border-collapse text-left text-sm"
-              >
-                <thead
-                  class="bg-v6-bg text-xs uppercase tracking-wide text-v6-text-muted"
-                  ><tr
-                    ><th class="px-4 py-3 font-semibold">Deal</th><th
-                      class="px-4 py-3 font-semibold">Owner and team</th
-                    ><th class="px-4 py-3 font-semibold">Amount</th><th
-                      class="px-4 py-3 font-semibold">Forecast</th
-                    ><th class="px-4 py-3 font-semibold">What changed</th><th
-                      class="px-4 py-3 font-semibold">Next action</th
-                    ></tr
-                  ></thead
-                >
-                <tbody class="divide-y divide-v6-border">
-                  {
-                    dealRows.map((row) => (
-                      <tr>
-                        <>
-                          <td class="px-4 py-3 font-semibold text-v6-dark">
-                            {row.deal}
-                          </td>
-                          <td class="px-4 py-3">
-                            <>
-                              <p class="text-v6-dark">{row.owner}</p>
-                              <p class="mt-0.5 text-xs text-v6-text-muted">
-                                {row.team}
-                              </p>
-                            </>
-                          </td>
-                          <td class="px-4 py-3 font-semibold text-v6-dark">
-                            {row.amount}
-                          </td>
-                          <td class="px-4 py-3 text-v6-dark">{row.forecast}</td>
-                          <td class="px-4 py-3 text-v6-text-muted">
-                            {row.issue}
-                          </td>
-                          <td class="px-4 py-3 text-v6-dark">{row.action}</td>
-                        </>
-                      </tr>
-                    ))
-                  }
-                </tbody>
-              </table>
-            </div>
-            <div class="mt-4 space-y-3 md:hidden">
-              {
-                dealRows.map((row) => (
-                  <article class="rounded-xl border border-v6-border p-4">
-                    <>
-                      <div class="flex items-start justify-between gap-4">
-                        <>
-                          <div>
-                            <>
-                              <h5 class="font-semibold text-v6-dark">
-                                {row.deal}
-                              </h5>
-                              <p class="mt-0.5 text-xs text-v6-text-muted">
-                                {row.owner} · {row.team}
-                              </p>
-                            </>
-                          </div>
-                          <span class="font-bold text-v6-dark">
-                            {row.amount}
-                          </span>
-                        </>
-                      </div>
-                      <p class="mt-3 text-sm text-v6-text-muted">
-                        <strong class="text-v6-dark">Forecast:</strong>{" "}
-                        {row.forecast}
-                      </p>
-                      <p class="mt-2 text-sm text-v6-text-muted">
-                        <strong class="text-v6-dark">What changed:</strong>{" "}
-                        {row.issue}
-                      </p>
-                      <p class="mt-2 text-sm text-v6-text-muted">
-                        <strong class="text-v6-dark">Next:</strong> {row.action}
-                      </p>
-                    </>
-                  </article>
-                ))
-              }
-            </div>
-          </div>
-          <div
-            class="border-t border-v6-border bg-v6-bg px-5 py-3 text-xs text-v6-text-muted sm:px-7"
-          >
-            Data current to 19 September 2026, 09:00 UTC · 126 deals included ·
-            3 deals need review
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section
-      id="report-contents"
-      class="scroll-mt-8 bg-v6-bg px-4 py-16 sm:px-6 sm:py-20 lg:px-8"
-    >
-      <div class="mx-auto max-w-6xl">
-        <div class="max-w-3xl">
-          <p
-            class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper"
-          >
-            Built around the revenue review
-          </p>
-          <h2
-            class="mt-3 text-balance text-3xl font-bold text-v6-dark sm:text-4xl"
-          >
-            Bring the whole revenue position into one report
-          </h2>
-          <p class="mt-4 text-lg leading-relaxed text-v6-text-muted">
-            Start with where revenue is likely to land, then show the target,
-            the movement, the contributing deals, and the decisions the team
-            needs to make.
-          </p>
-        </div>
-        <div
-          class="mt-10 grid gap-px overflow-hidden rounded-2xl border border-v6-border bg-v6-border md:grid-cols-2 lg:grid-cols-3"
-        >
-          {
-            reportAreas.map((area, index) => (
-              <article class="bg-white p-6 sm:p-7">
-                <>
-                  <span class="text-sm font-bold text-v6-copper">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                  <h3 class="mt-3 text-xl font-bold text-v6-dark">
-                    {area.title}
-                  </h3>
-                  <p class="mt-3 leading-relaxed text-v6-text-muted">
-                    {area.description}
-                  </p>
-                </>
-              </article>
-            ))
-          }
-        </div>
-        <p class="mt-6 max-w-4xl text-sm leading-relaxed text-v6-text-muted">
-          The exact measures depend on the revenue fields, targets, forecast
-          setup, campaign data, currencies, and permissions available in your
-          HubSpot account. Missing inputs are identified for review rather than
-          quietly treated as zero.
-        </p>
-        <p class="mt-3 max-w-4xl text-sm leading-relaxed text-v6-text-muted">
-          Need retention metrics instead? Use the dedicated
-          <a href="/guides/nrr-grr-renewal-reporting-hubspot/" class="font-semibold text-v6-copper underline decoration-v6-copper-300 underline-offset-4 hover:text-v6-copper-700">HubSpot NRR and GRR reporting guide</a>
-          for recurring revenue, expansion, contraction, and churn.
-        </p>
-      </div>
-    </section>
-
-    <section
-      class="px-4 py-16 sm:px-6 sm:py-20 lg:px-8"
-      aria-label="Revenue comparisons and history"
-    >
-      <div
-        class="mx-auto grid max-w-6xl overflow-hidden rounded-2xl border border-v6-border bg-v6-border lg:grid-cols-2"
-      >
-        <article class="bg-white p-7 sm:p-9">
-          <p
-            class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper"
-          >
-            Consistent comparisons
-          </p>
-          <h2 class="mt-3 text-balance text-3xl font-bold text-v6-dark">
-            Compare this quarter's revenue with:
-          </h2>
-          <ul
-            class="mt-6 space-y-2 rounded-xl bg-v6-bg-warm px-5 py-4 text-lg font-semibold text-v6-dark"
-            aria-label="Available comparison periods"
-          >
-            <li><span class="mr-2 text-v6-copper-800">1.</span>Last quarter</li>
-            <li>
-              <span class="mr-2 text-v6-copper-800">2.</span>The same quarter
-              last year
-            </li>
-            <li>
-              <span class="mr-2 text-v6-copper-800">3.</span>Any period you
-              choose
-            </li>
-          </ul>
-        </article>
-        <article
-          class="border-t border-v6-border bg-white p-7 sm:p-9 lg:border-l lg:border-t-0"
-        >
-          <p
-            class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper"
-          >
-            Point-in-time history
-          </p>
-          <h2 class="mt-3 text-balance text-3xl font-bold text-v6-dark">
-            Keep the forecast history you will need next quarter.
-          </h2>
-          <p
-            class="mt-6 rounded-xl bg-v6-bg-warm px-5 py-4 text-lg font-semibold leading-relaxed text-v6-dark"
-          >
-            SWOTBee saves each reporting cutoff, so you can compare the forecast
-            with what actually closed.
-          </p>
-        </article>
-      </div>
-    </section>
-
-    <section
-      class="bg-v6-dark px-4 py-16 text-white sm:px-6 sm:py-20 lg:px-8"
-      aria-labelledby="reporting-benefits-heading"
-    >
-      <div class="mx-auto max-w-6xl">
-        <div class="mx-auto max-w-3xl text-center">
-          <p
-            class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper-200"
-          >
-            Built for the people who get things done
-          </p>
-          <h2
-            id="reporting-benefits-heading"
-            class="mt-3 text-balance text-3xl font-bold sm:text-4xl"
-          >
-            Spend less time building the report. Make more of the review.
-          </h2>
-        </div>
-        <div
-          class="mt-10 grid overflow-hidden rounded-2xl border border-white/10 sm:grid-cols-2"
-        >
-          <article class="p-7 sm:p-8">
-            <p
-              class="text-sm font-bold uppercase tracking-[0.14em] text-v6-copper-200"
-            >
-              01 · Time back
-            </p>
-            <h3 class="mt-4 text-balance text-2xl font-bold leading-snug">
-              Get hours of copy-and-paste time back. Every week.
-            </h3>
-          </article>
-          <article
-            class="border-t border-white/10 p-7 sm:border-l sm:border-t-0 sm:p-8"
-          >
-            <p
-              class="text-sm font-bold uppercase tracking-[0.14em] text-v6-copper-200"
-            >
-              02 · A reliable rhythm
-            </p>
-            <h3 class="mt-4 text-balance text-2xl font-bold leading-snug">
-              Stop rebuilding the report. We run it for you every week.
-            </h3>
-          </article>
-          <article class="border-t border-white/10 p-7 sm:p-8">
-            <p
-              class="text-sm font-bold uppercase tracking-[0.14em] text-v6-copper-200"
-            >
-              03 · Less HubSpot admin
-            </p>
-            <h3 class="mt-4 text-balance text-2xl font-bold leading-snug">
-              Get the report without wrestling with HubSpot fields, filters, and
-              settings.
-            </h3>
-          </article>
-          <article class="border-t border-white/10 p-7 sm:border-l sm:p-8">
-            <p
-              class="text-sm font-bold uppercase tracking-[0.14em] text-v6-copper-200"
-            >
-              04 · Clearer decisions
-            </p>
-            <h3 class="mt-4 text-balance text-2xl font-bold leading-snug">
-              Turn findings into clear decisions and next steps.
-            </h3>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section
-      id="questions"
-      class="scroll-mt-8 px-4 py-16 sm:px-6 sm:py-20 lg:px-8"
-    >
+    <section id="questions" class="page-section" aria-labelledby="questions-heading">
       <div class="mx-auto max-w-3xl">
-        <div>
-          <p
-            class="text-sm font-semibold uppercase tracking-[0.16em] text-v6-copper"
-          >
-            Before you sign up
-          </p><h2 class="mt-3 text-3xl font-bold text-v6-dark sm:text-4xl">
-            Questions about the revenue report
-          </h2>
-        </div>
-        <div class="mt-10 divide-y divide-v6-border border-y border-v6-border">
-          {
-            faqs.map((item) => (
-              <details class="group py-5">
-                <>
-                  <summary class="flex min-h-11 cursor-pointer list-none items-center justify-between gap-5 rounded-md font-semibold text-v6-dark focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2">
-                    <>
-                      <span>{item.q}</span>
-                      <span
-                        class="text-xl font-normal text-v6-copper transition-transform group-open:rotate-45"
-                        aria-hidden="true"
-                      >
-                        +
-                      </span>
-                    </>
-                  </summary>
-                  <p class="max-w-2xl pb-1 pr-8 pt-3 leading-relaxed text-v6-text-muted">
-                    {item.a}
-                  </p>
-                </>
-              </details>
-            ))
-          }
+        <p class="eyebrow">Choose the right fit</p><h2 id="questions-heading" class="section-heading">Before your next forecast review.</h2>
+        <div class="mt-8 divide-y divide-ink-200 border-y border-ink-200">
+          {faqs.map((faq) => (
+            <details class="py-4"><summary class="flex min-h-11 cursor-pointer items-center justify-between gap-5 font-semibold text-ink-900"><span>{faq.q}</span><span class="shrink-0 text-xl text-aqua-800" aria-hidden="true">+</span></summary><p class="pb-2 pt-3 leading-relaxed text-ink-800">{faq.a}</p>{faq.source && <a href={faq.source} target="_blank" rel="noopener noreferrer" class="text-link mb-2 inline-flex min-h-11 items-center gap-2 text-sm">{faq.sourceLabel}<span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a>}</details>
+          ))}
         </div>
       </div>
     </section>
 
-    <section
-      id="report-signup"
-      class="scroll-mt-8 bg-gradient-to-br from-v6-copper to-v6-copper-600 px-4 py-16 sm:px-6 sm:py-20 lg:px-8"
-    >
-      <div class="mx-auto max-w-3xl text-center text-white">
-        <p
-          class="mb-3 text-balance text-xs font-semibold uppercase tracking-[0.2em] text-white/70"
-        >
-          One report solves today. A repeatable one solves every month.
-        </p>
-        <h2 class="text-balance text-2xl font-bold sm:text-3xl">
-          Give your executive team a clear, decision-ready Revenue report.
-        </h2>
-        <p
-          class="mx-auto mb-4 mt-4 max-w-3xl text-balance text-base leading-relaxed text-v6-copper-50 sm:text-lg"
-        >
-          We’ll help you organise your HubSpot revenue, forecast, targets, and
-          ROI data into an Excel workbook, presentation, and dashboard—so you
-          can spend less time reconciling numbers and more time deciding how to
-          close the gap.
-        </p>
+    <section id="report-signup" class="page-section" aria-labelledby="signup-heading">
+      <div class="mx-auto max-w-5xl rounded-3xl border border-aqua-25 bg-aqua-10 px-5 py-10 text-center sm:p-12">
+        <p class="eyebrow">Free HubSpot forecasting app · access by request</p><h2 id="signup-heading" class="section-heading mx-auto max-w-3xl">Know where to act<br />before the quarter is over.</h2>
+        <p class="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-ink-800">Bring the product, region, partner or capacity question your current forecast leaves unanswered. Get a clearer view of the gap—and what you can do about it.</p>
         <ReportSignup
           offerCode="hubspot_revenue_forecast_goal_roi_reporting"
-          reportName="HubSpot revenue, forecast, goal, and ROI report"
+          reportName="Free HubSpot forecasting app access"
           sourcePage="hubspot-revenue-forecast-goal-roi-reporting"
           ctaLabel="revenue_report_signup"
-          buttonLabel="Get your first Revenue Report"
-          successTitle="Your request has been saved"
+          buttonLabel="Request free app access"
+          loadingLabel="Saving your access request…"
+          loadingMessage="Saving your work email so we can contact you about free app access."
+          successTitle="Your free app access request is saved"
           successMessages={[
-            "This part of our website is currently undergoing maintenance. We’ll email you with instructions for accessing the app.",
-            "As a courtesy, a member of our team will be available to personally help you get set up.",
-            "We apologize for the inconvenience and appreciate your patience.",
+            "We’ll email you about availability, the features supported for your use case and how to install the app.",
+            "This saved your access request. No app account was created and no HubSpot account was connected or accessed.",
           ]}
         />
-        <p class="mt-4 text-xs text-v6-copper-50">No credit card required.</p>
+        <p class="mx-auto mt-5 max-w-xl text-sm leading-relaxed text-ink-600">You’re requesting access, not connecting HubSpot. We’ll confirm availability and installation details by email. No credit card required.</p>
       </div>
     </section>
   </main>
-
   <Footer />
 </Layout>
+
+<style>
+  .page-section { padding: 3.5rem 1rem; scroll-margin-top: 2rem; }
+  .section-container { max-width: 72rem; margin-inline: auto; }
+  .section-intro { max-width: 49rem; }
+  .eyebrow { color: var(--color-aqua-800); font-size: .75rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; line-height: 1.6; }
+  .section-heading { margin-top: 1rem; color: var(--color-ink-900); font-size: clamp(2rem, 3.8vw, 2.75rem); font-weight: 700; line-height: 1.15; text-wrap: balance; }
+  .section-copy { margin-top: 1.25rem; color: var(--color-ink-800); font-size: 1.125rem; line-height: 1.75; }
+  .content-card { min-width: 0; padding: 1.5rem; border: 1px solid var(--color-ink-200); border-radius: 1rem; background: var(--color-white); }
+  .primary-button { display: inline-flex; min-height: 3rem; align-items: center; justify-content: center; border: 2px solid var(--color-coral-100); border-radius: .75rem; padding: .75rem 1.25rem; background: var(--color-coral-700); color: var(--color-white); font-weight: 700; text-align: center; }
+  .primary-button:hover { background: var(--color-coral-800); }
+  .primary-button:active { background: var(--color-coral-900); }
+  #report-signup :global(button[type="submit"]) { background: var(--color-coral-700); }
+  #report-signup :global(button[type="submit"]:hover) { background: var(--color-coral-800); }
+  #report-signup :global(button[type="submit"]:active) { background: var(--color-coral-900); }
+  .text-link { min-height: 2.75rem; display: inline-flex; align-items: center; gap: .5rem; color: var(--color-aqua-900); font-weight: 600; text-decoration: underline; text-underline-offset: .25em; }
+  .text-link:hover, nav a:hover { color: var(--color-ink-900); }
+  nav a { display: inline-flex; min-height: 2.75rem; align-items: center; }
+  a:focus-visible, summary:focus-visible { outline: 3px solid var(--color-aqua-900); outline-offset: 4px; border-radius: .25rem; }
+  summary { list-style: none; }
+  summary::-webkit-details-marker { display: none; }
+  details[open] > summary > span[aria-hidden] { transform: rotate(45deg); }
+  .movement-row { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; padding-block: 1rem; }
+  .movement-row dd { flex-shrink: 0; }
+  .skip-link { position: fixed; top: 1rem; left: 1rem; z-index: 100; padding: .75rem 1rem; background: var(--color-white); color: var(--color-ink-900); transform: translateY(-200%); }
+  .skip-link:focus { transform: translateY(0); }
+  @media (min-width: 640px) { .page-section { padding: 4.5rem 1.5rem; } .content-card { padding: 1.75rem; } }
+  @media (min-width: 1024px) { .page-section { padding-inline: 2rem; } }
+</style>
