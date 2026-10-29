@@ -82,6 +82,11 @@ try {
   collected.length = 0;
   await page.goto(base + '/resources/contract-tracker-template/?private=FAKE_PRIVATE_VALUE');
   await page.evaluate(() => window.__sbTrack('qa_startup', { resource_id: 'local' }));
+  await page.locator('h1').evaluate(element => element.addEventListener('click', () => {
+    // Deliberate synthetic delay exceeds the SDK's event-timing threshold.
+    const start = performance.now();
+    while (performance.now() - start < 90) { /* synthetic INP stimulus */ }
+  }, { once: true }));
   await page.locator('h1').click();
   await page.waitForTimeout(11500);
   const pageviews = collected.filter(value => value.type === 'event' && !value.payload.name);
@@ -91,6 +96,8 @@ try {
   const performance = collected.find(value => value.type === 'performance');
   assert(performance, 'Real SDK must send performance through before-send hook');
   assert(['ttfb', 'fcp', 'lcp'].some(key => Number.isFinite(performance.payload[key])));
+  assert(Number.isFinite(performance.payload.inp) && performance.payload.inp >= 60,
+    'Synthetic slow interaction must produce an INP measurement');
   assert(collected.every(value => !JSON.stringify(value).includes('FAKE_PRIVATE_VALUE')));
   console.log('PASS real-SDK performance metrics, startup linkage, one pageview and URL minimization');
   await context.close();

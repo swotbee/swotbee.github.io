@@ -94,6 +94,10 @@ try {
   } else assert.equal(requests.length, 0, 'Pre-consent scrolling contacted Umami');
   await page.evaluate(() => window.scrollTo(0, 0));
   if (preconsentTrial) {
+    await page.locator('h1').evaluate(element => element.addEventListener('click', () => {
+      const start = performance.now();
+      while (performance.now() - start < 90) { /* synthetic INP stimulus only */ }
+    }, { once: true }));
     await page.locator('h1').click();
     for (let attempt = 0; attempt < 40 && recordKinds.size < 2; attempt++) await page.waitForTimeout(500);
     assert(recordKinds.has('record'), 'No pre-consent replay upload from the 100% synthetic tenant');
@@ -114,6 +118,13 @@ try {
   await page.waitForFunction(() => Boolean(window.umami?.getSession?.()?.cache));
   assert.equal(sent.filter(p => p.name === 'scroll_depth').length, preconsentTrial ? 4 : 0,
     'Granting consent must not backfill earlier scrolling');
+  if (!preconsentTrial) {
+    await page.locator('h1').evaluate(element => element.addEventListener('click', () => {
+      const start = performance.now();
+      while (performance.now() - start < 90) { /* synthetic INP stimulus only */ }
+    }, { once: true }));
+    await page.locator('h1').click();
+  }
   await page.mouse.wheel(0, 20000);
   await page.waitForTimeout(1000);
   assert.equal(sent.filter(p => !p.name).length, 1, 'Consent choice must not duplicate the pageview');
@@ -243,6 +254,9 @@ try {
   await page.waitForTimeout(1500);
   assert.equal(requests.length, frameStart, 'Dashboard-style iframe preview contaminated analytics');
   console.log('PASS page scope and iframe-preview exclusion');
+  assert(performanceSent.some(payload => Number.isFinite(payload.inp) && payload.inp >= 60),
+    'Synthetic interaction must reach the real collector as a native performance payload');
+  console.log('PASS native performance payload includes synthetic INP');
   assert(!responses.some(r => r.status >= 400), 'Collector rejected a browser request: ' +
     JSON.stringify(responses.filter(r => r.status >= 400)));
   await context.close();
