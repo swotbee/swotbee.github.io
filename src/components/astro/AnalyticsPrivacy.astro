@@ -1,0 +1,24 @@
+---
+// Booking details are needed for the confirmation UI, not third-party measurement.
+const privateBookingPage = Astro.url.pathname === '/renewal-audit-call/thank-you/';
+---
+{privateBookingPage && (
+  <>
+    <meta name="referrer" content="no-referrer" />
+    <script is:inline>
+      (() => {
+        window.__sbPrivateAnalyticsPage = true;
+        const url = new URL(location.href);
+        const time = url.searchParams.get('startTime');
+        if (time && time.length < 80 && Number.isFinite(Date.parse(time))) window.__sbBookingTime = time;
+        const allowed = new Set(['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term',
+          'gclid', 'gbraid', 'wbraid', 'msclkid', 'sb_analytics_test']);
+        for (const key of [...url.searchParams.keys()]) {
+          if (!allowed.has(key)) url.searchParams.delete(key);
+        }
+        url.hash = '';
+        history.replaceState(history.state, '', url.pathname + url.search);
+      })();
+    </script>
+  </>
+)}

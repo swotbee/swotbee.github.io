@@ -12,6 +12,7 @@
     } catch (_) {
       // Without storage, the explicit URL choice still works on this page.
     }
-    window.__sbAnalyticsTest = enabled;
+    // Analytics dashboards embed the live page. Those previews are not visits.
+    window.__sbAnalyticsTest = enabled || window.self !== window.top;
   })();
 </script>

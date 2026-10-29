@@ -22,6 +22,7 @@ if (Boolean(websiteId) !== Boolean(collector) || (websiteId && (!/^[0-9a-f]{8}-[
       let granted = false;
       try { granted = localStorage.getItem('sb_consent') === 'granted'; } catch (_) {}
       let loading = false;
+      let ready = false;
       let queue = [];
       // CM-04 adds only consented measurement on the five companion surfaces.
       // They never inherit the existing pre-consent trial or recorder scope.
@@ -56,7 +57,7 @@ if (Boolean(websiteId) !== Boolean(collector) || (websiteId && (!/^[0-9a-f]{8}-[
       }
       // The hook runs for every SDK request, including unload and queued events.
       window.__sbUmamiBeforeSend = (type, payload) => {
-        if (!eligible() || type !== 'event') return false;
+        if (!eligible() || !['event', 'performance'].includes(type)) return false;
         if (payload.name && !/^[a-z][a-z0-9_]{0,63}$/.test(payload.name)) return false;
         return { ...payload, url: cleanUrl(payload.url, true), referrer: cleanUrl(payload.referrer),
           id: undefined, data: cleanProperties(payload.data) };
@@ -80,7 +81,7 @@ if (Boolean(websiteId) !== Boolean(collector) || (websiteId && (!/^[0-9a-f]{8}-[
       function send(name, properties) {
         if (!eligible()) return;
         const data = cleanProperties(properties);
-        if (window.umami) {
+        if (window.umami && ready) {
           try { return Promise.resolve(window.umami.track(name, data)).catch(() => {}); }
           catch (_) { return; } // Analytics failure must not break a form or download.
         }
@@ -93,12 +94,16 @@ if (Boolean(websiteId) !== Boolean(collector) || (websiteId && (!/^[0-9a-f]{8}-[
         const tracker = document.createElement('script');
         tracker.src = collector + '/script.js';
         tracker.dataset.websiteId = websiteId;
-        tracker.dataset.autoTrack = 'false';
+        tracker.dataset.autoPageview = 'false';
+        tracker.dataset.performance = 'true';
         tracker.dataset.beforeSend = '__sbUmamiBeforeSend';
         tracker.onerror = () => { loading = false; queue.forEach((item) => item[2]()); queue = []; tracker.remove(); };
-        tracker.onload = () => {
+        tracker.onload = async () => {
           if (!eligible()) { loading = false; queue.forEach((item) => item[2]()); queue = []; return; }
-          window.umami?.track();
+          // Establish the SDK cache before queued events, so they share the visit.
+          await window.umami?.track();
+          if (!eligible()) { queue.forEach((item) => item[2]()); queue = []; return; }
+          ready = true;
           const pending = queue; queue = [];
           pending.forEach(([name, data, resolve]) => Promise.resolve(send(name, data)).then(resolve, resolve));
           // Never change the real URL: GA4/Ads and first-party attribution need it.

@@ -18,6 +18,7 @@ import UmamiAnalytics from "../components/astro/UmamiAnalytics.astro";
 import ConsentBanner from "../components/astro/ConsentBanner.astro";
 import AttributionCapture from "../components/astro/AttributionCapture.astro";
 import AnalyticsTestMode from "../components/astro/AnalyticsTestMode.astro";
+import AnalyticsPrivacy from "../components/astro/AnalyticsPrivacy.astro";
 
 interface Props {
   title: string;
@@ -84,6 +85,7 @@ const gtmId = import.meta.env.PUBLIC_GTM_ID || "GTM-WV9TQ6FH";
 <html lang="en" data-site-canvas={siteCanvas} data-site-offering={siteCanvas ? siteOffering : undefined}>
   <head>
     <meta charset="UTF-8" />
+    <AnalyticsPrivacy />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="keywords" content={keywords} />
     <meta name="author" content={author} />
@@ -476,7 +478,7 @@ const gtmId = import.meta.env.PUBLIC_GTM_ID || "GTM-WV9TQ6FH";
         // calls it on load for a visitor who already accepted. Idempotent, so a double
         // call is harmless.
         window.__sbLoadClarity = function () {
-          if (window.__sbAnalyticsTest || window.__sbClarityLoaded) return;
+          if (window.__sbAnalyticsTest || window.__sbPrivateAnalyticsPage || window.__sbClarityLoaded) return;
           window.__sbClarityLoaded = true;
           (function (c, l, a, r, i, t, y) {
             c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments); };
