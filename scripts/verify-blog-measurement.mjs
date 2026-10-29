@@ -95,6 +95,44 @@ try {
   });
   await ctx.close();
 
+  // Validate the two article-specific enquiry paths without submitting a form.
+  for (const [slug, label] of [
+    ['ironclad-hubspot-integration', 'ironclad_integration_scope'],
+    ['hubspot-multi-year-contract-pricing', 'multi_year_pricing_scope'],
+  ]) {
+    const articleContext = await context('granted');
+    const article = await articleContext.newPage();
+    await article.goto(`${origin}/posts/${slug}/`, { referer: 'https://www.google.com/' });
+    const original = await article.evaluate(() => window.__sbAttribution());
+    const enquiry = article.locator(`[data-ga-cta="${label}"]`);
+    assert.equal(await enquiry.getAttribute('href'), '/contactus/');
+    await article.evaluate(() => {
+      window.__enquiryCheck = (event) => {
+        if (event.target.closest('[data-ga-cta]')) event.preventDefault();
+      };
+      document.addEventListener('click', window.__enquiryCheck, true);
+    });
+    await enquiry.click();
+    await enquiry.focus();
+    await article.keyboard.press('Enter');
+    const measured = (await events(article, 'cta_click')).filter((event) => event.cta === label);
+    assert.equal(measured.length, 2, `${slug}: one event per pointer and keyboard activation`);
+    await article.evaluate(() => document.removeEventListener('click', window.__enquiryCheck, true));
+    await Promise.all([
+      article.waitForURL((url) => url.pathname === '/contactus/'),
+      enquiry.click(),
+    ]);
+    const enquiryAttribution = await article.evaluate(() => {
+      const form = document.querySelector('form');
+      window.__sbFillAttribution(form);
+      return Object.fromEntries(['sb_landing_page', 'sb_referrer'].map((name) => [name,
+        form.querySelector(`input[name="${name}"]`).value]));
+    });
+    assert.deepEqual(enquiryAttribution, original, `${slug}: original article attribution reaches form`);
+    await articleContext.close();
+    console.log(`${slug}: pointer, keyboard and enquiry attribution passed`);
+  }
+
   const fresh = await context();
   const visitor = await fresh.newPage();
   await visitor.goto(`${origin}/posts/flowner-vs-enrollem-comparison/`, { referer: 'https://www.google.com/' });

@@ -2,7 +2,7 @@
 layout: ../../layouts/BlogPostLayout.astro
 title: 'HubSpot Renewal Automation: Deal Workflow Setup Guide'
 pubDate: '2026-04-02'
-modifiedDate: '2026-10-10'
+modifiedDate: '2026-10-29'
 description: HubSpot renewal automation needs reviewed dates and duplicate checks. Use a workflow specification and recovery tests, then discuss your agreement handoff.
 category:
   title: Revenue Operations
@@ -119,6 +119,8 @@ Document four dates separately: effective date, current term end, next-term star
 If a calculation is needed, define calendar-month behavior and test the chosen supported transformation. February 29 and month-end starts deserve explicit cases. Adding 365 days is not a general solution for annual customer agreements.
 
 For alerts and variable notice periods, link to the [renewal reminder guide](/posts/hubspot-renewal-reminders/). This workflow should consume a validated deadline and preserve its source, rather than acting as legal clause interpretation.
+
+For a shorter starting point, use the [four-step renewal deal creation guide](/guides/auto-create-renewal-deals-hubspot/), then return here for the full specification and failure tests.
 
 ## How do you automate renewals step by step in HubSpot?
 

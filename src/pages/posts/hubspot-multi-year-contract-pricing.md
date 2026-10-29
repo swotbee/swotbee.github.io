@@ -2,7 +2,7 @@
 layout: ../../layouts/BlogPostLayout.astro
 title: "HubSpot Ramp Pricing: Quote Line Items and Billing"
 pubDate: "2026-10-19"
-modifiedDate: "2026-10-19"
+modifiedDate: '2026-10-29'
 description: "HubSpot ramp pricing needs clear dates and billing ownership. Map annual price increases with a worked example and download a setup workbook to test them."
 category:
   title: Revenue Operations
@@ -48,6 +48,8 @@ This is about pricing your customers' agreements in HubSpot. Start with one sign
 <p><a href="/posts/hubspot-contract-record-responsibilities/" class="inline-flex items-center min-h-11">Start here: Record responsibilities</a></p>
 <p><a href="/posts/hubspot-renewal-expansion-revenue-reporting/" rel="next" class="inline-flex items-center min-h-11">Next guide: Renewal and expansion reporting</a></p>
 </nav>
+
+Need help applying the schedule to your agreement? <a href="/contactus/" data-ga-cta="multi_year_pricing_scope">Discuss your HubSpot pricing and billing workflow with SwotBee</a>. Bring one dated price schedule and identify the billing system.
 
 ## How do annual price increases fit one multi-year contract?
 

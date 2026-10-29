@@ -2,7 +2,7 @@
 layout: ../../layouts/BlogPostLayout.astro
 title: 'Ironclad HubSpot Integration: MATIC and CRM Setup Guide'
 pubDate: '2026-10-10'
-modifiedDate: '2026-10-10'
+modifiedDate: '2026-10-29'
 description: Ironclad HubSpot integration can use MATIC or custom middleware. Compare routes, map customer agreement data and test CRM return with a practical workbook.
 category:
   title: Revenue Operations
@@ -51,6 +51,8 @@ Three things you can take away:
 Start here: choose a customer agreement that requires legal review. Write down its originating deal, approved template, reviewers and the exact fields HubSpot needs after completion.
 
 **Download:** <a href="/templates/ironclad-hubspot-integration-workbook.xlsx" download>Ironclad HubSpot integration workbook (Excel)</a>. Map intake and CRM return fields, document access requirements, and record acceptance and recovery tests. Blank templates and a filled example are included. No signup is required.
+
+Need help mapping your agreement workflow to HubSpot? <a href="/contactus/" data-ga-cta="ironclad_integration_scope">Discuss your Ironclad integration scope with SwotBee</a>. Bring the required CRM return fields and one example agreement.
 
 ## Is there a native Ironclad HubSpot connector?
 

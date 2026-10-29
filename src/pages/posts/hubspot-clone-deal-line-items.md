@@ -2,7 +2,7 @@
 layout: ../../layouts/BlogPostLayout.astro
 title: 'Copy HubSpot Deal Line Items: Renewal Mapping and Tests'
 pubDate: '2026-04-02'
-modifiedDate: '2026-10-10'
+modifiedDate: '2026-10-29'
 description: Copy HubSpot deal line items using accepted prices and terms. Compare native creation and copy routes, reconcile totals and test safe retries before use.
 category:
   title: Revenue Operations
@@ -121,6 +121,8 @@ Choose the simplest route that demonstrates the required target values and recov
 According to [HubSpot's workflow actions guide](https://knowledge.hubspot.com/workflows/choose-your-workflow-actions), custom-code actions require Data Hub Professional or Enterprise. Do not infer this access from another Professional hub subscription. API authentication and scopes are a separate implementation check.
 
 Use our [HubSpot clone-deal apps comparison](/posts/hubspot-deal-cloning-apps-compared/) to shortlist app routes. Confirm current provider terms and demonstrate the exact copy in a test account before procurement. This guide does not assign unverified current prices or claim that every connector synchronizes every field.
+
+For a shorter starting point, use the [renewal line-item carryover guide and reconciliation template](/guides/copy-line-items-renewal-hubspot/), then return here for the field map and recovery tests.
 
 ## How do you copy line items from one deal to another?
 

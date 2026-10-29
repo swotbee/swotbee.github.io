@@ -2,7 +2,7 @@
 layout: ../../layouts/BlogPostLayout.astro
 title: "HubSpot Renewal Pipeline: Setup, Notices and Ownership"
 pubDate: "2026-04-02"
-modifiedDate: "2026-10-11"
+modifiedDate: '2026-10-29'
 description: "Build a HubSpot renewal pipeline around notice dates, owners and multiple customer agreements. Compare native options, then discuss your setup on a call."
 category:
   title: "Revenue Operations"
@@ -214,6 +214,8 @@ Use stages for completed commercial actions, with dates and tasks for urgency. T
 This is an example stage design, not a universal template. Auto-renewing agreements may need a different action route from those requiring a fresh signature. Choose whether they belong in the same pipeline based on reporting and team work.
 
 Assign forecast probabilities from your own historical cohorts and stage definitions. The current article’s 80% to 95% examples should not become defaults presented as established renewal reality. The [pipeline stages guide](/posts/hubspot-renewal-pipeline-stages/) and [separate-versus-shared pipeline guide](/posts/hubspot-renewal-pipeline-vs-sales-pipeline/) provide deeper design choices, subject to the same evidence rule.
+
+Before configuring creation, use the [renewal deal workflow quick guide](/guides/auto-create-renewal-deals-hubspot/). If the new opportunity needs negotiated source lines, pair it with the [line-item carryover guide](/guides/copy-line-items-renewal-hubspot/).
 
 ## How do you prevent duplicate deals across multiple years?
 
