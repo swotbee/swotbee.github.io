@@ -40,6 +40,7 @@ try {
     userAgent: `Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/${browser.version()} Safari/537.36` });
   const requests = [];
   const sent = [];
+  const performanceSent = [];
   const responses = [];
   const recordKinds = new Set();
   let fixtureSubmissions = 0;
@@ -48,7 +49,11 @@ try {
     const url = new URL(req.url());
     if (url.origin === collector) {
       requests.push({ url: req.url(), method: req.method() });
-      if (url.pathname === '/api/send' && req.method() === 'POST') sent.push(JSON.parse(req.postData()).payload);
+      if (url.pathname === '/api/send' && req.method() === 'POST') {
+        const value = JSON.parse(req.postData());
+        if (value.type === 'performance') performanceSent.push(value.payload);
+        else sent.push(value.payload);
+      }
       if (url.pathname === '/api/record' && req.method() === 'POST') {
         for (const kind of ['record', 'heatmap']) if (req.postData()?.includes(`"${kind}"`)) recordKinds.add(kind);
       }
@@ -73,7 +78,7 @@ try {
   await page.goto(base + pagePath);
   await page.waitForTimeout(1000);
   if (preconsentTrial) {
-    await page.waitForFunction(() => typeof window.umami?.track === 'function');
+    await page.waitForFunction(() => Boolean(window.umami?.getSession?.()?.cache));
     assert(requests.some(r => r.url.endsWith('/recorder.js')), 'Trial must load recorder before consent');
     assert.equal(await page.evaluate(() => localStorage.getItem('sb_consent')), null);
     assert(await page.locator('#sb-consent-body').innerText().then(text => text.includes('after Reject')));
@@ -89,6 +94,10 @@ try {
   } else assert.equal(requests.length, 0, 'Pre-consent scrolling contacted Umami');
   await page.evaluate(() => window.scrollTo(0, 0));
   if (preconsentTrial) {
+    await page.locator('h1').evaluate(element => element.addEventListener('click', () => {
+      const start = performance.now();
+      while (performance.now() - start < 90) { /* synthetic INP stimulus only */ }
+    }, { once: true }));
     await page.locator('h1').click();
     for (let attempt = 0; attempt < 40 && recordKinds.size < 2; attempt++) await page.waitForTimeout(500);
     assert(recordKinds.has('record'), 'No pre-consent replay upload from the 100% synthetic tenant');
@@ -106,9 +115,16 @@ try {
   await page.screenshot({path:'/tmp/umami-pilot-consent-mobile.png'});
   await page.setViewportSize({width:1280,height:900});
   await page.getByRole('button', { name:'Accept analytics cookies', exact:true }).click();
-  await page.waitForFunction(() => typeof window.umami?.track === 'function');
+  await page.waitForFunction(() => Boolean(window.umami?.getSession?.()?.cache));
   assert.equal(sent.filter(p => p.name === 'scroll_depth').length, preconsentTrial ? 4 : 0,
     'Granting consent must not backfill earlier scrolling');
+  if (!preconsentTrial) {
+    await page.locator('h1').evaluate(element => element.addEventListener('click', () => {
+      const start = performance.now();
+      while (performance.now() - start < 90) { /* synthetic INP stimulus only */ }
+    }, { once: true }));
+    await page.locator('h1').click();
+  }
   await page.mouse.wheel(0, 20000);
   await page.waitForTimeout(1000);
   assert.equal(sent.filter(p => !p.name).length, 1, 'Consent choice must not duplicate the pageview');
@@ -133,7 +149,7 @@ try {
   // Returning consent queues the page-specific event until the real SDK is ready.
   const start = sent.length;
   await page.reload();
-  await page.waitForFunction(() => typeof window.umami?.track === 'function');
+  await page.waitForFunction(() => Boolean(window.umami?.getSession?.()?.cache));
   await page.waitForTimeout(1000);
   assert(sent.slice(start).some(p => !p.name), 'Returning visitor pageview missing');
   await page.mouse.wheel(0, 20000);
@@ -154,7 +170,7 @@ try {
 
   const formStart = sent.length;
   await page.goto(base + '/hubspot-sales-pipeline-reporting/');
-  await page.waitForFunction(() => typeof window.umami?.track === 'function');
+  await page.waitForFunction(() => Boolean(window.umami?.getSession?.()?.cache));
   const form = page.locator('form[data-report-signup]');
   await form.locator('input[name=email]').fill('private@example.invalid');
   await form.locator('button[type=submit]').click();
@@ -200,7 +216,7 @@ try {
   const queryStart = sent.length;
   const reqStart = requests.length;
   await page.goto(base + pagePath + '?email=private@example.invalid&utm_source=synthetic_test');
-  await page.waitForFunction(() => typeof window.umami?.track === 'function');
+  await page.waitForFunction(() => Boolean(window.umami?.getSession?.()?.cache));
   await page.waitForTimeout(1200);
   assert(sent.slice(queryStart).every(p => !JSON.stringify(p).includes('private@example.invalid')));
   assert(!requests.slice(reqStart).some(r => r.url.endsWith('/recorder.js')), 'Recorder must not capture sensitive-query URL');
@@ -210,8 +226,8 @@ try {
   const contractStart = sent.length;
   const contractRequests = requests.length;
   await page.goto(base + '/services/hubspot-contract-management/');
-  await page.waitForFunction(() => typeof window.umami?.track === 'function');
-  await page.getByLabel('Name', {exact:true}).fill('Local synthetic operator');
+  await page.waitForFunction(() => Boolean(window.umami?.getSession?.()?.cache));
+  await page.getByLabel(/^Name\s*\*?$/).fill('Local synthetic operator');
   await page.getByLabel('Email *', {exact:true}).fill('private@example.invalid');
   await page.getByLabel('Current signing tool').selectOption('PandaDoc');
   await page.getByLabel('What would you like to change?').fill('Local fixture only: attach the signed agreement to its intended deal.');
@@ -238,11 +254,21 @@ try {
   await page.waitForTimeout(1500);
   assert.equal(requests.length, frameStart, 'Dashboard-style iframe preview contaminated analytics');
   console.log('PASS page scope and iframe-preview exclusion');
+  assert(performanceSent.some(payload => Number.isFinite(payload.inp) && payload.inp >= 60),
+    'Synthetic interaction must reach the real collector as a native performance payload');
+  console.log('PASS native performance payload includes synthetic INP');
   assert(!responses.some(r => r.status >= 400), 'Collector rejected a browser request: ' +
     JSON.stringify(responses.filter(r => r.status >= 400)));
   await context.close();
 } catch (error) {
   console.error('FAIL Umami pilot acceptance:', error.message);
+  console.error(error.stack);
+  const failedPage = browser?.contexts()[0]?.pages()[0];
+  if (failedPage && !failedPage.isClosed()) console.error('Synthetic browser state:', await failedPage.evaluate(() => ({
+    path: location.pathname, testMode: window.__sbAnalyticsTest, consent: localStorage.getItem('sb_consent'),
+    scrollY, height: document.documentElement.scrollHeight, viewport: innerHeight,
+    googleEvents: (window.dataLayer || []).filter(args => args[0] === 'event').map(args => args[1]),
+  })));
   console.error('Fix/retry: inspect the failed assertion and rebuild with the synthetic IDs.');
   console.error('Pause safely: leave PUBLIC_UMAMI_WEBSITE_ID unset in production.');
   console.error('Investigate: inspect collector CORS and script availability without exposing credentials.');

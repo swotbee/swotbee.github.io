@@ -51,6 +51,9 @@ jobs:
           # from production, while local builds that export it look fine.
           PUBLIC_GTM_ID: ${{ secrets.PUBLIC_GTM_ID }}
 
+      - name: Preserve immutable analytics replay assets
+        run: node scripts/preserve-replay-assets.mjs --apply
+
       - name: Upload Pages artifact
         id: upload
         uses: actions/upload-pages-artifact@v5
