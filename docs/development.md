@@ -135,8 +135,9 @@ state.
   Extra numbered shades (`10`, `25`, `150`, `1000`, etc.) preserve distinct colors
   without arbitrary values. Original blue, amber, and other named families remain
   available alongside the selected site colors.
-- Follow `docs/content-guidelines/page-imagery.md` for landing-page visuals:
-  use PNG or JPEG content illustrations, with editable SVG sources kept separately.
+- Follow `docs/creating-nia-illustrations.md` for Nia artwork and references:
+  use native SVG geometry, white paper, cool neutral shadows and shared aqua,
+  blue and light coral accents. The character JSON records the exact palette.
 - Follow [homepage color and proof principles](content-guidelines/homepage-color-system.md)
   across live landing and blog pages for the white canvas, contained color, product
   roles, and early proof placement. `BaseLayout.astro` applies route and offering

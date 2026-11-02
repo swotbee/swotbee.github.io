@@ -29,7 +29,7 @@ All references are in `public/assets/illustrations/renewals/`:
 
 | File | Use |
 | --- | --- |
-| `character-reference.json` | Authoritative character description, drawing rules, 26 material colors and reusable prompt. |
+| `character-reference.json` | Authoritative character description, drawing rules, 26 material roles, shared site color tokens and reusable prompt. |
 | `nia-portrait-reference.png` | Attach this to image generation tools for face, hair and clothing reference. |
 | `nia-portrait-reference.svg` | Editable portrait reference. |
 | `renewal-results-clean-v3.svg` | Full-body reference with calendar and deal cards. |
@@ -61,22 +61,29 @@ Use a different gesture and relevant prop for each story. Repeating an existing 
 
 ## Keep the character consistent
 
-Retain her face, warm brown skin, dark shoulder-length curly hair, gold hoop earrings, pale mint collared shirt with rolled sleeves, high-waisted wide-leg blue trousers and off-white sneakers. Her personality is calm, capable, practical and warm.
+Retain her face, warm brown skin, dark shoulder-length curly hair, gold hoop earrings, pale mint collared shirt with rolled sleeves, high-waisted wide-leg blue trousers and light sneakers. Her personality is calm, capable, practical and warm.
 
 Read exact colors from `character-reference.json`. Main roles include:
 
-| Role | Color |
-| --- | --- |
-| Outline | `#20343B` |
-| Hair | `#252A2E` |
-| Skin | `#D77D3C` |
-| Shirt | `#D7EFDF` |
-| Blue trousers and blue props | `#1871A8` |
-| Teal props | `#287D70` |
-| Orange emphasis | `#F58232` |
-| Paper | `#FFF9ED` |
+| Role | Color | Shared site token |
+| --- | --- | --- |
+| Outline | `#20343B` | Character material |
+| Hair | `#252A2E` | Character material |
+| Skin | `#D77D3C` | Character material |
+| Shirt | `#D7EFDF` | Character material |
+| Blue trousers and blue props | `#1871A8` | `v6-blue` |
+| Teal props | `#247F76` | `aqua-600` |
+| Teal shadows / highlights | `#195F59` / `#76CABB` | `aqua-800` / `aqua-400` |
+| Light coral emphasis | `#FFA68E` | `coral-300` |
+| Coral shading | `#F67B5B` | `coral-400` |
+| Paper and white details | `#FFFFFF` | `white` |
+| Paper and neutral ground shadows | `#E8EBED` | `ink-100` |
+| Pale ground detail | `#E2E8E6` | `ink-200` |
+| Document accents | `#9FD3C7` | `aqua-300` |
 
-Use the specified shadow and highlight colors from the JSON where needed. Avoid introducing arbitrary shades. The illustration material palette is separate from the Tailwind colors used for website buttons and text.
+The approved direction uses white paper, cool neutral shadows, aqua and blue props, and light coral accents. Avoid cream paper, beige shadows, saturated orange props and an overall yellow or sepia cast. Keep warm skin and small gold jewelry details natural; do not cool or desaturate the whole character to remove the paper tint. Use dark symbols on light coral surfaces so small icons remain clear.
+
+Use the specified shadow and highlight colors from the JSON where needed. Avoid introducing arbitrary shades. Props share the website's named colors from `src/styles/global.css`; the JSON's `siteColorTokens` records their mapping. Keep the character's skin, hair and clothing materials consistent independently of UI color changes. The legacy palette keys `orange`, `orangeShadow` and `groundWarm` have been replaced by `coral`, `coralShade` and `groundNeutral`.
 
 Use smooth curves, a deliberate dark outline and two or three intentional shades per material. Avoid fragmented grey fringes, tiny unwanted contour shapes and dense texture. Keep the background transparent; a small intentional ground shadow is acceptable. Keep text and UI labels in HTML where possible.
 
@@ -103,7 +110,7 @@ Use the attached Nia portrait and full scene as the visual identity references.
 Use character-reference.json as the palette and character specification.
 
 Preserve her face, warm brown skin, shoulder-length dark curly hair, gold hoop
-earrings, mint rolled-sleeve collared shirt, wide-leg blue trousers and off-white
+earrings, mint rolled-sleeve collared shirt, wide-leg blue trousers and light
 sneakers. She is calm, capable, warm and practical.
 
 Message: [WHAT THE VISITOR SHOULD UNDERSTAND]
@@ -117,6 +124,10 @@ consistent with the references. Use smooth curves, controlled dark outlines,
 the supplied material palette and two or three deliberate shades per material.
 Avoid noisy texture, fragmented grey outlines and unnecessary tiny shapes.
 Keep the background transparent and avoid baked-in text.
+Use white paper, cool neutral shadows, aqua and blue props, and light coral-300
+accents with coral-400 shading. Avoid cream paper, beige shading, saturated
+orange props and a yellow or sepia cast. Keep her skin and gold jewelry natural.
+Use dark symbols on light coral surfaces so small icons remain clear.
 
 For concept generation: provide a transparent PNG for approval.
 For final vector delivery: provide native SVG paths/shapes with no embedded or

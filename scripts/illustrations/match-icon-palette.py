@@ -9,7 +9,7 @@ roles = {
     '#273d3f': 'outline',
     '#1871a8': 'blue',
     '#76cabb': 'tealLight',
-    '#df462a': 'orange',
+    '#df462a': 'coral',
     '#fff8f5': 'paper',
     '#a7d8e8': 'groundMint',
 }

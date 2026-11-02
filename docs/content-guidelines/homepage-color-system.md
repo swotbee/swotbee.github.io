@@ -74,7 +74,9 @@ independent color.
 
 Visuals should explain connected systems, reliable data flow, renewal operations,
 and modular implementation. Vibrancy should help visitors understand those ideas.
-Follow [page imagery](page-imagery.md) for artwork and keep meaningful copy in HTML.
+Follow [the Nia illustration guide](../creating-nia-illustrations.md) for character
+artwork and keep meaningful copy in HTML. Use white paper, cool neutral shadows
+and light coral accents alongside the shared aqua and blue colors.
 
 ## Implementation and review
 
