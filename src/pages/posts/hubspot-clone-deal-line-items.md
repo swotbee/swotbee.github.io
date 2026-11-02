@@ -173,6 +173,8 @@ For excluded one-time lines, record the exclusion reason. See [renewal deal work
 
 Run the checks on representative pricing and failure cases. An exact copy test and a renewal-with-exclusions test should have different expected results.
 
+Before copied lines become a customer proposal, use the [proposal readiness review](/posts/hubspot-line-items-proposal-readiness/) to confirm the intended commercial terms and customer associations. A successful technical copy does not establish that the offer is ready to send.
+
 - [ ] The accepted source version and target purpose are recorded.
 - [ ] Product, description and quantity match the specification.
 - [ ] Price and discount type produce the expected net value.
