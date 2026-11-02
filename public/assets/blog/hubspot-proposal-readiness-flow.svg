@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="630" viewBox="0 0 1000 630" role="img" aria-labelledby="title desc">
+  <title id="title">Proposal review with a correction and recheck route</title>
+  <desc id="desc">The rep submits evidence. RevOps checks it and either requests specific corrections or clears the checked version for proposal release. Material changes require another review.</desc>
+  <rect width="1000" height="630" rx="20" fill="#F7FFFD"/>
+  <g font-family="Arial, sans-serif" fill="#2E2A31" text-anchor="middle">
+    <text x="500" y="59" font-size="30" font-weight="700">Give the decision an owner and a version</text>
+    <g fill="#FFFFFF" stroke="#E2E8E6" stroke-width="2">
+      <rect x="55" y="113" width="260" height="165" rx="15"/>
+      <rect x="370" y="113" width="260" height="165" rx="15"/>
+      <rect x="685" y="113" width="260" height="165" rx="15"/>
+      <rect x="370" y="370" width="260" height="145" rx="15"/>
+    </g>
+    <g font-size="25" font-weight="700">
+      <text x="185" y="158">1. Submit</text>
+      <text x="500" y="158">2. Review</text>
+      <text x="815" y="158">3. Release</text>
+      <text x="500" y="415">Correct and recheck</text>
+    </g>
+    <g font-size="22">
+      <text x="185" y="205">Rep prepares lines</text><text x="185" y="240">and customer records</text>
+      <text x="500" y="205">RevOps checks offer</text><text x="500" y="240">and records decision</text>
+      <text x="815" y="205">Quote creator checks</text><text x="815" y="240">the resulting proposal</text>
+      <text x="500" y="457">Specific issue, owner</text><text x="500" y="490">and affected version</text>
+    </g>
+    <g fill="none" stroke="#247F76" stroke-width="3">
+      <path d="M315 190h53m-10-9 10 9-10 9M630 190h53m-10-9 10 9-10 9M500 278v89m-9-10 9 10 9-10"/>
+      <path d="M370 440H185V280m-9 10 9-10 9 10M815 278v300H500v-61m-9 10 9-10 9 10"/>
+    </g>
+    <text x="640" y="564" font-size="21" fill="#1F726A">Material change: review again</text>
+    <text x="500" y="613" font-size="18">Proposed responsibilities. This diagram does not enforce stage or quote permissions.</text>
+  </g>
+</svg>

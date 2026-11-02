@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Check the offer before creating the proposal</title>
+  <desc id="desc">An illustrative review card checks customer, products, price and terms before a proposal is released. This is a process illustration, not a HubSpot screen.</desc>
+  <rect width="1200" height="675" fill="#F7FFFD"/>
+  <g font-family="Arial, sans-serif" fill="#2E2A31">
+    <text x="64" y="76" font-size="23" font-weight="700" fill="#1F726A">SWOTBee / REVENUE OPERATIONS</text>
+    <text x="64" y="159" font-size="49" font-weight="700">Line items present.</text>
+    <text x="64" y="221" font-size="49" font-weight="700">Proposal ready?</text>
+    <text x="66" y="277" font-size="25">Check the offer behind the deal.</text>
+    <rect x="64" y="339" width="478" height="242" rx="20" fill="#FFFFFF" stroke="#E2E8E6" stroke-width="2"/>
+    <text x="94" y="388" font-size="25" font-weight="700">A decision with evidence</text>
+    <text x="94" y="434" font-size="23">Correct customer and products</text>
+    <text x="94" y="477" font-size="23">Agreed price, quantity and terms</text>
+    <text x="94" y="520" font-size="23">Named reviewer and checked version</text>
+    <path d="M570 443h49m-14-13 14 13-14 13" fill="none" stroke="#247F76" stroke-width="5"/>
+    <rect x="650" y="121" width="487" height="460" rx="23" fill="#FFFFFF" stroke="#E2E8E6" stroke-width="2"/>
+    <rect x="650" y="121" width="487" height="74" rx="23" fill="#D6EFEB"/>
+    <text x="683" y="168" font-size="27" font-weight="700">Proposal readiness review</text>
+    <g fill="none" stroke="#247F76" stroke-width="4">
+      <path d="m688 245 8 8 16-18m-24 80 8 8 16-18m-24 80 8 8 16-18m-24 80 8 8 16-18"/>
+    </g>
+    <text x="736" y="252" font-size="25">Customer associations</text>
+    <text x="736" y="322" font-size="25">Products and quantities</text>
+    <text x="736" y="392" font-size="25">Prices and terms</text>
+    <text x="736" y="462" font-size="25">Version and decision</text>
+    <rect x="681" y="500" width="425" height="50" rx="10" fill="#1F726A"/>
+    <text x="893" y="533" font-size="23" font-weight="700" text-anchor="middle" fill="#FFFFFF">Review before release</text>
+    <text x="64" y="629" font-size="20">Illustrative process. Verify controls in your HubSpot portal.</text>
+  </g>
+</svg>

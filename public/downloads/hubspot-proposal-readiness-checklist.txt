@@ -1,0 +1,75 @@
+HUBSPOT PROPOSAL READINESS CHECKLIST
+SwotBee | Prepared 2 November 2026 | Adapt before use
+Guide: https://swotbee.com/posts/hubspot-line-items-proposal-readiness/
+
+Purpose: inspect the intended offer before creating or releasing a proposal.
+This template does not enforce HubSpot permissions or associations.
+Do not enter credentials, sensitive personal details or unnecessary customer data.
+
+REVIEW RECORD
+Deal reference / proposal version:
+Requested by / requested at:
+Reviewer / backup:
+Reviewed at:
+Outcome: Ready / Needs correction / Exception approved
+Evidence location:
+Next action / owner / due date:
+
+1. CUSTOMER
+[ ] Company and relevant buyer/contact associations are correct.
+[ ] Buyer, payer and signing roles are distinguished where needed.
+[ ] Required custom-object associations are checked where applicable.
+
+2. PRODUCTS AND SCOPE
+[ ] All intended products/services are included without unwanted duplicates.
+[ ] Quantities and units match the intended offer.
+[ ] Placeholder or obsolete products are resolved.
+
+3. PRICING AND TIMING
+[ ] Currency, unit prices and discounts match the intended offer.
+[ ] Discount or other commercial exceptions have an authorized decision.
+[ ] One-time vs recurring charges, frequency, start dates and terms are correct.
+[ ] Phased prices and differences from the deal amount are explained.
+
+4. PROPOSAL RELEASE
+[ ] Rep, reviewer and quote creator/sender have clear responsibilities.
+[ ] Generated proposal matches the reviewed customer and commercial data.
+[ ] Review decision, time and version are recorded.
+[ ] Open corrections have owners; unresolved items are not silently accepted.
+
+5. CHANGE AND EXCEPTION CONTROL
+[ ] Changes invalidating the decision are defined and assigned to an owner.
+[ ] Product/quantity/price/discount/currency/term/customer changes receive recheck.
+[ ] Exception reason, decision-maker and scope are recorded.
+[ ] Prior review evidence is retained when a new version is reviewed.
+
+ROLLOUT TEST LOG (synthetic deals first; duplicate for every case)
+Environment / date:
+Scenario / user role / update route:
+Expected result:
+Observed result / evidence:
+Pass or issue / correction owner:
+Retest result / accepted by:
+
+Test scenarios:
+[ ] Missing lines; placeholder line; correct lines.
+[ ] Incorrect commercial values despite existing lines.
+[ ] Missing or incorrect customer associations.
+[ ] Ordinary rep stage skip, later-stage creation and closed-stage transition.
+[ ] Administrator or privileged user behavior.
+[ ] Workflow and integration/API changes, including user-context differences.
+[ ] Corrections remain possible under the chosen access model.
+[ ] Reviewer absence and backup ownership.
+[ ] Change after review invalidates or reopens the decision as designed.
+[ ] Generated proposal differs from reviewed data; correction is required.
+[ ] Repeated product automation cannot add unwanted duplicates.
+[ ] Forecast/stage-conversion reporting and review-queue visibility are understood.
+
+RELEASE DECISION
+Process owner:
+Known exceptions / remaining limitations:
+Accepted controls and monitoring owner:
+Pilot decision / date:
+
+A completed form is evidence of a review, not proof of universal enforcement.
+Verify subscription, seat, permission, workflow, integration and quote-tool behavior.
