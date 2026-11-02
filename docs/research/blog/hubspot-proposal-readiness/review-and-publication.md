@@ -1,5 +1,8 @@
 # Proposal readiness article review package
 
+The authorized [SEO polish and rescore](seo-polish-2026-11-02.md) is complete:
+NeuronWriter **67/100**, up from 55 on the same analysis. Publication remains pending.
+
 Prepared 2 November 2026 for TASK-d7aeae9aa25d. User selected the proposal-readiness
 angle and authorized preparation. No publication or community posting is authorized.
 
