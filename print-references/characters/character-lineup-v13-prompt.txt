@@ -1,0 +1,9 @@
+Use case: identity-preserve
+Asset type: SWOTBee five-person lineup v13, precise partial clothing-color reversion.
+Input image 1 (character-lineup-v12-white-preview.png) is the EDIT TARGET and source for the complete composition.
+Input image 2 (character-lineup-v11-white-preview.png) is a COLOR REFERENCE ONLY for Mei and Alex, the third and fourth people. Do not copy Ravi or Helen's darker colors from image 2.
+Primary request: revert Mei and Alex to their previous clothing colors. Change ONLY the fabric colors of Mei and Alex in image 1 to match their colors in image 2.
+Mei, third from left: restore her original richer aqua/teal overshirt, white top, and brighter blue trousers exactly as in image 2. Restore their corresponding original shading. Keep her white shoes and folio unchanged.
+Alex, fourth from left: restore his original pale blue shirt and deeper blue trousers exactly as in image 2, including the original shading. Keep his white shoes and folio unchanged.
+LOCK Nia (leftmost), Ravi (second) and Helen (rightmost) completely to image 1. Do not redraw or recolor any part of those three. Retain Ravi's lighter dusty slate-blue shirt and cool slate-grey trousers from image 1. Retain Helen's lighter dusty-plum blazer and slate-grey trousers from image 1. Nia's entire appearance stays unchanged.
+Invariants: all five faces, skin tones, hairstyles, expressions, ages, body shapes, poses, head sizes, garment cuts, outlines, accessories, labels, ground shadows, positions, framing and white background remain exactly as in image 1. Same resolution and clean editorial vector-like illustration style. Keep all five people and complete feet visible. Keep names exactly 'Nia', 'Ravi', 'Mei', 'Alex', 'Helen'. No global color correction, restyling, new objects, text, cropping or watermark. Only restore Mei and Alex's previous clothing colors; preserve every other part of image 1.

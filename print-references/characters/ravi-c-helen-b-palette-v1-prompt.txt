@@ -1,0 +1,10 @@
+Use case: identity-preserve
+Asset type: SWOTBee five-character lineup preview, Ravi palette C with Helen palette B.
+Input image 1: ravi-helen-palette-c-v1-white-preview.png is the EDIT TARGET and the source for the whole image.
+Input image 2: ravi-helen-palette-b-v1-white-preview.png is a COLOR REFERENCE ONLY for Helen, the rightmost woman.
+Primary request: keep palette C, but bring in Helen's complete clothing color combination from palette B. Change ONLY Helen's blazer and trouser fabric colors in image 1 to exactly match Helen in image 2: warm mushroom/taupe blazer, white blouse and medium slate-blue trousers, including their existing coordinated shading. Keep her charcoal flats, belt, gold studs and plain watch. Do not change her garment shapes or body.
+Keep Ravi exactly as in image 1: soft muted mauve shirt and medium cool slate-grey trousers. Do not copy Ravi's teal shirt or sand trousers from image 2.
+Absolute locks: Nia, Mei, Alex and Ravi remain completely unchanged from image 1. Nia retains her mint shirt and blue trousers, Mei her richer aqua overshirt and bright blue trousers, Alex his pale-blue shirt and deep-blue trousers, Ravi his mauve/slate combination. No recoloring or redrawing of their faces, clothes or poses. No global filter or color correction.
+Preserve Helen's selected face, expression, age, brown side-part low bun, slightly slimmer natural build, head size and self-assured hand-at-waist stance. All five faces, skin tones, hair, bodies, gestures, garment cuts, folds, outlines, accessories, folios, shoes and labels stay fixed.
+Composition: the same exact five people and left-to-right order, positions, full-body framing and image size. Same clean white background, subtle ground shadows, clean editorial vector-like illustration style and restrained flat shading. Keep labels exactly 'Nia', 'Ravi', 'Mei', 'Alex', 'Helen'. No title, decorations, new props, cropping, realism, texture, logos or watermark.
+Produce ONE new preview and preserve the input files. Only Helen's blazer and trousers take the B colors; everything else remains C.

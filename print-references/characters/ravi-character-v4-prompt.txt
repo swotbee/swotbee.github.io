@@ -1,0 +1,12 @@
+Use case: precise-object-edit
+Asset type: small head-size refinement of the Ravi full-body reference.
+Edit target: supplied Ravi v3 illustration.
+Primary request: Ravi's head is only a LITTLE too large for this full-body figure. Make a subtle head-size reduction of approximately 7 to 8 percent in width and height. This is a small proportional correction, not a redesign and not a move toward realistic portrait anatomy.
+Scale the entire head as one unit: hair, skull, face, ears and all facial features together. Preserve EXACTLY the same facial identity, eye shape, eyebrows, nose, expression, smile, skin colors and hair shape inside the smaller head. Do not re-age him, alter the face construction or add/remove facial lines.
+Anchor the smaller head naturally at the existing neck/collar position. Keep the same short natural neck and approved head-to-shoulder relationship, with a smooth connection. The top of his hair may sit slightly lower, leaving a little more transparent headroom. Do not lengthen the neck or shift the shoulders to compensate.
+Keep EVERYTHING BELOW THE NECK unchanged: torso and shoulder width, body build, waist, hips, arms, hands, hand-in-pocket pose, watch, navy open-collar button-up shirt, rolled sleeves, belt, charcoal trousers, both light shoes, ground ellipse and all body positions in the canvas. Do not resize the body, widen the chest, change leg length or scale the whole image instead of reducing the head.
+Retain the same confident warm closed-mouth smile, level gaze, dark side-swept hair, clean-shaven face and lack of grey hair, beard or glasses.
+Style: same smooth dark outlines, simple flat matte shading and clean editorial character illustration family. Preserve the stylization shared with Helen and the rest of the cast. No anatomical head-count formula, tiny realistic head, photorealism, glossy 3D or new texture.
+Composition: same full-body portrait framing, same canvas orientation and figure placement, whole head, hands and shoes visible.
+Background: preserve genuinely transparent alpha and the existing cool-neutral ground shadow. No background rectangle, halo, fog or glow.
+Constraints: one person, no new props or accessories, no lettering, logos or watermark, no extra limbs. Only a modest head-scale correction. Save as a new version and preserve the source.

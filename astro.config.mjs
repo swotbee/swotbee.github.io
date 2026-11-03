@@ -168,6 +168,7 @@ export default defineConfig({
           // only ever loaded locally to screenshot an export
           '/brand/',
           '/design-index/',
+          '/temp-sitemap/',
           // DRAFT until the two placeholders are filled and Sharmi signs off.
           // The page source is src/pages/_security.astro: the underscore keeps it out
           // of the router entirely, so it is not built or deployed and this filter entry

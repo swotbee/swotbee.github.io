@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import LogoHoneycomb from "../components/astro/LogoHoneycomb.astro";
+import Navbar from "../components/astro/Navbar.astro";
 import Footer from "../components/astro/Footer.astro";
 import StructuredData from "../components/astro/StructuredData.astro";
 
@@ -102,21 +102,7 @@ const primaryButton = "inline-flex min-h-12 items-center justify-center rounded-
   <StructuredData type="service" data={{ name: "HubSpot Implementation, Integration & Revenue Operations", description, serviceType: "HubSpot Consulting", url: "https://swotbee.com/hubspot-consulting/" }} />
   <StructuredData type="faq" data={{ faqs }} />
   <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-lg focus:bg-white focus:p-4 focus:text-v6-dark focus:outline focus:outline-2 focus:outline-v6-copper">Skip to content</a>
-  <header class="border-b border-v6-border bg-white">
-    <div class="mx-auto flex min-h-18 max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
-      <a href="/" aria-label="SWOTbee home" class="inline-flex min-h-11 shrink-0 items-center gap-2 rounded-md focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2">
-        <LogoHoneycomb width={32} height={30} />
-        <span class="text-lg font-bold text-v6-dark">SWOT<span class="text-v6-teal-700">bee</span></span>
-      </a>
-      <nav aria-label="Page navigation" class="hidden items-center gap-6 text-sm font-semibold text-v6-text-muted lg:flex">
-        <a href="#capabilities" class="nav-link">What we help with</a>
-        <a href="#clients" class="nav-link">Client stories</a>
-        <a href="#approach" class="nav-link">How we work</a>
-        <a href="#questions" class="nav-link">FAQs</a>
-      </nav>
-      <a href={consultationUrl} class="inline-flex min-h-11 items-center justify-center rounded-lg border border-v6-copper-800 px-3 py-2 text-sm font-semibold text-v6-copper-800 transition-colors hover:bg-v6-copper-50 focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2 sm:px-4">Let's talk HubSpot</a>
-    </div>
-  </header>
+  <Navbar />
 
   <main id="main-content">
     <section class="relative isolate overflow-hidden bg-white px-4 py-14 sm:px-6 sm:py-20 lg:px-8" aria-labelledby="consulting-heading">
@@ -272,7 +258,6 @@ const primaryButton = "inline-flex min-h-12 items-center justify-center rounded-
   .section-shell { @apply px-4 py-16 sm:px-6 sm:py-20 lg:px-8; }
   .eyebrow { @apply text-xs font-bold uppercase tracking-[0.14em] text-v6-copper-800; }
   .section-heading { @apply mt-3 text-balance text-3xl font-bold leading-tight text-v6-dark sm:text-4xl; }
-  .nav-link { @apply inline-flex min-h-11 items-center rounded-md hover:text-v6-dark focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2; }
-  section[id] { scroll-margin-top: 2rem; }
+  section[id] { scroll-margin-top: 5rem; }
   summary::-webkit-details-marker { display: none; }
 </style>

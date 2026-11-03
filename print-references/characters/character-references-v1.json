@@ -1,0 +1,43 @@
+{
+  "status": "Draft identity references for user review; not yet final SVG website assets",
+  "nameStatus": "All names are provisional working labels, not public brand decisions",
+  "generator": "Built-in imagegen",
+  "existingCharacters": "Nia remains unchanged in public/assets/illustrations/renewals/",
+  "styleReferences": [
+    "print-references/consulting-hero-nia-v1.png",
+    "public/assets/illustrations/renewals/renewal-results-clean-v3.svg",
+    "public/assets/illustrations/renewals/character-reference.json"
+  ],
+  "reuseRules": [
+    "Use the character PNG as the identity reference for future scenes.",
+    "Keep face, age, hair, build and outfit consistent; adapt gesture and props to the message.",
+    "Use the established dark outlines and aqua, mint, blue and light coral palette.",
+    "Each person can be a consultant, client or colleague; identities do not prescribe roles.",
+    "Approve the concept before preparing native SVG artwork for website use.",
+    "Preserve all existing artwork; save new poses under new versioned names."
+  ],
+  "characters": [
+    {
+      "workingName": "Arun",
+      "identity": "An older South Asian man, approximately 55 to 60, with medium warm brown skin, a broad slightly rounded face, short salt-and-pepper hair swept naturally to one side, a tidy close-cropped salt-and-pepper beard, and understated dark rectangular glasses. Average height with a softly stocky build. His expression is thoughtful and friendly, with subtle smile lines. Outfit: pale mint rolled-sleeve button-up shirt, dark aqua straight-leg trousers, a simple dark belt and light sneakers. One hand holds a slim white notebook against his waist while the other opens in a small explanatory gesture. Create a distinctive older face, not a young person with grey hair. Working reference name Arun; do not print the name in the image.",
+      "image": "arun-character-v1.png",
+      "whitePreview": "arun-character-v1-white-preview.png",
+      "prompt": "arun-character-v1-prompt.txt"
+    },
+    {
+      "workingName": "Mei",
+      "identity": "An East Asian woman, approximately 35 to 40, with a natural light-medium warm skin tone, a softly angular oval face, dark brown eyes and straight black chin-length bob hair tucked behind one ear. Average height and a sturdy athletic build. Her expression is attentive and quietly confident, with a small natural smile. Outfit: an aqua overshirt worn open over a crisp white top, blue straight-leg trousers, light sneakers, and tiny simple stud earrings. Relaxed standing pose, one hand loosely holding a slim white notebook at her side and the other making a small open conversational gesture. Give her individual, proportionate facial features without exaggerated ethnic markers. Working reference name Mei; do not print the name in the image.",
+      "image": "mei-character-v1.png",
+      "whitePreview": "mei-character-v1-white-preview.png",
+      "prompt": "mei-character-v1-prompt.txt"
+    },
+    {
+      "workingName": "Alex",
+      "identity": "A white man of European appearance, approximately 35 to 45, with a natural fair complexion, a few subtle freckles across the nose, short wavy chestnut-brown hair, dark eyebrows and a clean-shaven face. Tall with an average build and relaxed shoulders. His expression is warm and engaged, with a small confident smile. Outfit: a pale cool blue rolled-sleeve collared shirt, dark blue straight-leg trousers, a simple dark belt and light sneakers; a plain watch is the only accessory. He holds a slim white notebook comfortably in one hand, while the other makes a small open conversational gesture. Keep the fair skin naturally light without an orange cast. Working reference name Alex; do not print the name in the image.",
+      "image": "alex-character-v1.png",
+      "whitePreview": "alex-character-v1-white-preview.png",
+      "prompt": "alex-character-v1-prompt.txt"
+    }
+  ],
+  "reviewSheet": "character-lineup-v1-white-preview.png"
+}

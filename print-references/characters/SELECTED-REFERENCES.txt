@@ -1,0 +1,67 @@
+SWOTBee selected character reference set
+Final palette selected 3 November 2026
+
+Authoritative guide: ../../docs/illustration-character-library.md
+Current library: ../../docs/illustration-character-library.json
+Reusable scene request: ../../docs/illustration-scene-brief.txt
+Archive: ../swotbee-character-reference-pack-2026-11-03-final.zip
+Exact staging paths: COMMIT-FILES.txt
+
+FINAL WARDROBE — Ravi C + Helen B
+  ravi-c-helen-b-palette-v1-white-preview.png
+  ravi-c-helen-b-palette-v1-prompt.txt
+  Ravi: soft mauve open-collar shirt and medium cool slate-grey trousers.
+  Helen: warm taupe blazer, white blouse and medium slate-blue trousers.
+  Nia unchanged; Mei and Alex retain their original clothing colors.
+
+The final lineup defines current fabric colors. Individual masters below
+define faces, hair, apparent ages, proportions, garment shapes and accessories.
+Their earlier navy/plum/charcoal fabric colors are historical.
+
+Nia
+  ../../public/assets/illustrations/renewals/nia-portrait-reference.png
+  ../../public/assets/illustrations/renewals/nia-portrait-reference.svg
+  ../../public/assets/illustrations/renewals/character-reference.json
+  Published full-body native SVG scenes are included in the pack.
+
+Ravi face and body
+  ravi-character-v4.png
+  ravi-character-v4-white-preview.png
+  ravi-character-v4-prompt.txt
+  Face identity: ravi-chest-study-v1.png
+  Face preview: ravi-chest-study-v1-white-preview.png
+  Face prompt: ravi-chest-study-v1-prompt.txt
+  Use the face study's features and v4's full-body head scale.
+
+Mei
+  mei-character-v1.png
+  mei-character-v1-white-preview.png
+  mei-character-v1-prompt.txt
+
+Alex
+  alex-character-v1.png
+  alex-character-v1-white-preview.png
+  alex-character-v1-prompt.txt
+
+Helen face and body
+  helen-character-v6.png
+  helen-character-v6-prompt.txt
+  Selected facial direction: helen-character-v5.png
+  Face direction prompt: helen-character-v5-prompt.txt
+  Preserve v6's slightly slimmer build, self-assured stance and chestnut low bun.
+
+Supporting face/style previews
+  ravi-helen-chest-study-v1-white-preview.png
+  ravi-mei-alex-v4-white-preview.png
+  helen-v4-chest-reference.png (historical style crop used for Ravi's face study)
+  These show earlier fabric colors; the selected wardrobe lineup overrides them.
+
+The Nia consulting-hero concept and prompt are retained as scene references.
+Its unnamed male colleague is not an additional named cast member.
+
+Arun, earlier rejected character versions and unselected palette images are
+excluded from the reusable pack. They remain source history in the checkout.
+Historical prompt text is provenance; use current identity references with the
+selected wardrobe and reusable brief for new scenes.
+
+Final website art needs native SVG production. This pack changes no live pages.

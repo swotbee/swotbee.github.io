@@ -2,6 +2,11 @@
 
 Nia is SWOTBee's provisional renewal operations character. Use the committed reference artwork and character specification to create a new scene with the same identity. These references are not a trained image model or an articulated character rig.
 
+For the full recurring cast, start with the [character continuity guide](illustration-character-library.md)
+and [current character library](illustration-character-library.json). They cover Nia,
+Ravi, Mei, Alex and Helen, including Helen's revised brown pulled-back hair. This
+page remains the Nia-specific reference and vector-finishing guide.
+
 ## Get the reference set
 
 Repository: https://github.com/swotbee/swotbee.github.io

@@ -74,9 +74,17 @@ independent color.
 
 Visuals should explain connected systems, reliable data flow, renewal operations,
 and modular implementation. Vibrancy should help visitors understand those ideas.
-Follow [the Nia illustration guide](../creating-nia-illustrations.md) for character
-artwork and keep meaningful copy in HTML. Use white paper, cool neutral shadows
+Follow the [character continuity guide](../illustration-character-library.md) for
+the recurring cast and [the Nia illustration guide](../creating-nia-illustrations.md)
+for her artwork and vector finishing. Keep meaningful copy in HTML. Use white paper, cool neutral shadows
 and light coral accents alongside the shared aqua and blue colors.
+
+Character wardrobes follow their individual identity references. Keep a varied
+cast: shared linework and selective prop accents provide cohesion without dressing
+everyone in aqua or mint. The final selected leadership wardrobe uses a muted mauve
+shirt and slate-grey trousers for Ravi, and a warm taupe blazer, white blouse and
+slate-blue trousers for Helen. The approved wardrobe lineup in the character
+library overrides older navy/plum colors in face and pose references.
 
 ## Implementation and review
 

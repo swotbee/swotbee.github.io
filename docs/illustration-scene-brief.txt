@@ -1,0 +1,69 @@
+SWOTBee reusable character scene brief
+
+Read docs/illustration-character-library.md and docs/illustration-character-library.json first.
+
+Character IDs: [CHOOSE: nia, ravi, mei, alex, helen]
+Identity references: [ATTACH THE CURRENT referenceImage FOR EACH SELECTED ID]
+Style-only reference: [OPTIONAL APPROVED SCENE, LABELLED STYLE ONLY]
+Identity lock: [PASTE immutableTraits AND RELEVANT continuityNotes FOR EACH ID]
+
+Create a NEW scene with the exact same selected people. Their identity references
+define their faces, apparent ages, complexions, hair silhouettes, builds, outfits
+and accessories. Preserve those traits. Change their poses, expressions and
+actions to fit the message. People in a style-only reference are not additional
+cast members.
+
+Message: [ONE THING THE VISITOR SHOULD UNDERSTAND]
+Roles in this scene: [WHO IS THE CLIENT, CONSULTANT OR COLLEAGUE]
+Action for each person: [SPECIFIC ACTION, NOT A REPEATED MASTER-REFERENCE POSE]
+Props: [MINIMUM OBJECTS NEEDED TO EXPLAIN THE ACTION]
+Expression and gaze: [MOOD AND WHAT EACH PERSON IS LOOKING AT]
+Composition: [ASPECT RATIO, FRAMING, PLACEMENT AND EMPTY SPACE]
+Website location: [PAGE AND SECTION]
+Output filename: [NEW VERSIONED FILENAME]
+
+Use the established dark outline, smooth curves and two or three intentional
+shades per material. Use the shared aqua, mint, blue, light coral, white paper
+and cool neutral palette selectively for props and accents. Clothing follows each
+person's own distinct current wardrobe; do not dress the cast in an aqua or mint
+uniform. Skin and hair also follow each person's identity image. Nia's material
+palette must not recolor the rest of the cast.
+
+Keep the background genuinely transparent with no room backdrop, cream paper,
+yellow or sepia cast, grain, glow or fog. A small intentional ground shadow is
+acceptable. Keep text, labels and claims in HTML. Do not invent client data,
+testimonials, numeric results or logos.
+
+Approved wardrobe: ravi-c-helen-b-palette-v1-white-preview.png.
+The user fixed Ravi C + Helen B as the final palette on 3 November 2026.
+Attach this lineup for Ravi and Helen and label it AUTHORITATIVE FOR FABRIC COLORS.
+Individual face/body masters retain identity, body scale and garment shapes.
+Their earlier navy/plum colors are superseded; do not copy those old fabric colors.
+
+For Ravi, attach ravi-chest-study-v1.png for the selected face, shorter neck,
+broader relaxed shoulders, level head and calm expression. Attach ravi-character-v4.png
+for full-body head scale and garment shape. Use a soft muted MAUVE open-collar
+button-up shirt with rolled sleeves, medium cool SLATE-GREY straight-leg trousers,
+dark belt, light sneakers and plain watch. Keep dark hair and the simple clean-shaven
+warm brown face. No beard, moustache, glasses, grey hair or dense ageing lines.
+Do not copy literal bust head scale into a full figure, lengthen his neck or
+restore the old sweater/white collar.
+
+For Helen, use helen-character-v6.png for her selected facial appearance,
+slightly slimmer build, self-assured posture and garment shapes. Retain the v5
+face and apparent age carried into v6. Use a warm MUSHROOM/TAUPE blazer, WHITE blouse,
+medium SLATE-BLUE wide-leg trousers and charcoal flats, gold studs and watch.
+Keep entirely chestnut-brown side-part hair in the low bun, with brown highlights.
+No white, grey, silver or blonde streaks. The old plum/charcoal outfit is historical.
+
+Nia is unchanged. Keep Mei's original richer aqua overshirt, white top and brighter
+blue trousers, and Alex's pale-blue shirt and deeper blue trousers.
+Ravi and Helen should read as experienced colleagues in the same professional
+generation. Preserve their selected faces and builds; exact numerical ages are
+secondary. Adapt gestures to each scene while retaining recognizable identities.
+Arun is retired: do not attach his images or reuse his rejected identity.
+
+Concept deliverable: transparent PNG for review, preserving the originals.
+Final website deliverable after review: native SVG paths/shapes with a viewBox,
+no embedded or linked bitmap and no foreignObject. PNG inside SVG is still raster.
+Save new poses under new names; do not overwrite existing illustrations.

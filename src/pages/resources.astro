@@ -3,6 +3,9 @@ import Layout from "../layouts/Layout.astro";
 import Navbar from "../components/astro/Navbar.astro";
 import Footer from "../components/astro/Footer.astro";
 import StructuredData from "../components/astro/StructuredData.astro";
+import { freeToolGroups } from "../data/free-tools";
+
+const freeToolCount = freeToolGroups.reduce((count, group) => count + group.links.length, 0);
 
 const guides = [
   {
@@ -65,9 +68,14 @@ const renewalSetupGuides = [
     url: "/guides/renewal-pipeline-visibility-hubspot/",
   },
   {
-    title: "Score renewal health",
-    description: "Assess process coverage across ownership, timing, data, and reporting.",
-    url: "/renewal-scorecard/",
+    title: "Recover unbilled uplifts",
+    description: "Find missed escalation clauses and apply the correct price increases.",
+    url: "/guides/recover-unbilled-uplifts/",
+  },
+  {
+    title: "Report NRR, GRR and renewal rate",
+    description: "Build renewal reporting with consistent revenue and retention calculations.",
+    url: "/guides/nrr-grr-renewal-reporting-hubspot/",
   },
 ];
 
@@ -86,14 +94,14 @@ const quickLinks = [
 ---
 
 <Layout
-  title="Resource Center"
-  description="Guides, strategies, and tools for mastering HubSpot, revenue operations, and renewal pipeline management."
+  title="Free Tools, Templates & HubSpot Resources"
+  description="Free renewal calculators, scorecards, contract templates, reporting downloads and practical HubSpot guides. Find the resource for your next renewal task."
 >
   <StructuredData
     type="breadcrumb"
     data={{ breadcrumbs: [
       { name: "Home", url: "https://swotbee.com" },
-      { name: "Resources", url: "https://swotbee.com/resources" },
+      { name: "Resources", url: "https://swotbee.com/resources/" },
     ]}}
   />
 
@@ -102,20 +110,49 @@ const quickLinks = [
   <!-- Hero -->
   <section class="bg-v6-bg border-b border-v6-border px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20 pb-12 text-center">
     <span class="inline-block bg-v6-copper-50 text-v6-copper text-xs font-semibold px-3 py-1 rounded-full mb-4">Resource Center</span>
-    <h1 class="text-3xl sm:text-4xl font-bold text-v6-dark mb-4">Everything You Need to Master HubSpot</h1>
+    <h1 class="text-3xl sm:text-4xl font-bold text-v6-dark mb-4">Free tools, templates and HubSpot resources</h1>
     <p class="text-base sm:text-lg text-v6-text-muted max-w-2xl mx-auto leading-relaxed mb-8">
-      Guides, frameworks, and strategies for mid-market teams in Energy, Manufacturing, and SaaS.
+      Calculate renewal deadlines, check revenue leakage and put ready-made templates to work.
+      Browse {freeToolCount} free tools and downloads, plus practical guides for your HubSpot team.
     </p>
+    <div class="flex flex-wrap items-center justify-center gap-3">
+    <a href="#free-tools" class="inline-flex items-center min-h-11 bg-coral-600 text-white rounded-xl px-5 py-3 text-sm font-semibold hover:bg-coral-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-aqua-800 transition-colors">Browse free tools</a>
     <a href="/search/" class="inline-flex items-center gap-2 bg-white border border-v6-border rounded-xl px-5 py-3 text-sm text-v6-text-muted hover:border-v6-copper hover:text-v6-dark transition-colors">
       <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
-      Search all content...
+      Search articles
     </a>
+    </div>
+  </section>
+
+  <section id="free-tools" class="bg-white px-4 sm:px-6 lg:px-8 py-14 scroll-mt-20" aria-labelledby="free-tools-heading">
+    <div class="max-w-6xl mx-auto">
+      <h2 id="free-tools-heading" class="text-2xl font-bold text-ink-900 mb-3">Free tools and downloads</h2>
+      <p class="text-ink-600 max-w-2xl mb-10">Choose an online tool or a resource to use with your team. Some downloads are delivered by email.</p>
+      <div class="space-y-12">
+        {freeToolGroups.map(group => (
+          <div id={group.id} class="scroll-mt-20">
+            <h3 class="text-xl font-bold text-ink-900 mb-2">{group.title}</h3>
+            <p class="text-sm text-ink-600 mb-6">{group.description}</p>
+            <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+              {group.links.map(resource => (
+                <a href={resource.href} data-free-resource class="group flex flex-col rounded-xl border border-ink-200 bg-white p-6 hover:border-aqua-600 hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-aqua-800 transition-shadow">
+                  <span class="self-start rounded-full bg-aqua-50 px-3 py-1 text-xs font-semibold text-aqua-900 mb-4">{resource.format}</span>
+                  <h4 class="text-lg font-bold text-ink-900 group-hover:text-aqua-800 mb-2">{resource.label}</h4>
+                  <p class="text-sm text-ink-600 leading-relaxed mb-5">{resource.description}</p>
+                  <span class="mt-auto text-sm font-semibold text-aqua-800" aria-hidden="true">View resource →</span>
+                </a>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
   </section>
 
   <!-- Complete Guides -->
   <section class="bg-white px-4 sm:px-6 lg:px-8 py-14">
     <div class="max-w-6xl mx-auto">
-      <h2 class="text-2xl font-bold text-v6-dark mb-8">Complete Guides</h2>
+      <h2 class="text-2xl font-bold text-v6-dark mb-8">Guides and services</h2>
       <div class="grid gap-6 sm:grid-cols-2">
         {guides.map(guide => (
           <a href={guide.url} class="group block bg-v6-bg rounded-xl border border-v6-border p-6 hover:shadow-md transition-shadow">

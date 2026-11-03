@@ -1,0 +1,9 @@
+Use case: precise-object-edit
+Asset type: small hair-color revision to the existing Helen character reference for SWOTBee.
+Edit target: supplied Helen v3 full-body illustration.
+Primary request: Remove ALL white, grey and silver hair from Helen. Make her entire hairstyle naturally CHESTNUT BROWN, including both temples, the sideburn areas, the swept-back side sections and the low bun. The broad light grey temple streaks in the reference must become brown hair. Use two or three natural brown tones for form and highlights; highlights should also be brown, never white, grey, silver or blonde.
+Change only hair color. Preserve the EXACT same low bun/twist, side part, hair silhouette and swept-back shape. Do not switch to a bob, loose hair or a different haircut.
+Preserve everything else: same recognizable white woman, same face and expression, same eyes/nose/mouth, fair naturally rosy complexion, existing subtle facial lines, gold stud earrings, watch, fuller build, body proportions, pose, hands, plum blazer, white blouse, charcoal trousers, black/charcoal pointed flats, belt, linework, shading, composition and framing. Do not change her apparent age through facial retouching or redraw the rest of the character.
+Style: identical clean editorial vector-like illustration style, controlled dark outlines and restrained flat material shades. No new realism, gradients, texture or glossy finish.
+Background: preserve genuine transparent alpha and the existing subtle cool-neutral ground ellipse. No background panel, halo, fog or added room.
+Constraints: exactly one person; no text, logos, watermark, props or extra limbs. This is a new version with brown hair only; keep the existing source version preserved.

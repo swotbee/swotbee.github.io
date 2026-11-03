@@ -1,0 +1,593 @@
+{
+  "schemaVersion": 1,
+  "handbook": "docs/illustration-character-library.md",
+  "sceneBriefTemplate": "docs/illustration-scene-brief.txt",
+  "namePolicy": "Use stable character IDs in filenames and briefs. Working names are internal, not public brand decisions.",
+  "readiness": "Final cast wardrobe selected: Ravi C (mauve/slate-grey) + Helen B (taupe/white/slate-blue), with Nia, Mei and Alex unchanged. Approved face and body masters remain selected. Earlier palette trials and Arun are historical; native SVG production remains separate work for final website artwork.",
+  "paletteSource": "public/assets/illustrations/renewals/character-reference.json",
+  "paletteScope": "Shared prop and accent colors come from the palette source. Nia's materials remain unchanged. The approved wardrobe reference sets Ravi's mauve/slate-grey and Helen's taupe/white/slate-blue colors. Each person retains a distinct outfit; the palette source's skin and hair colors describe Nia only.",
+  "referencePrecedence": [
+    "Approved wardrobe reference, for current fabric colors only; it overrides superseded colors in individual face/body masters and historical prompts",
+    "Any approvedFaceReference, for facial identity, hair and expression rather than literal full-body head scale",
+    "Current fullBodyReference, for full-figure head/body scale and framing, with its review status respected",
+    "Immutable traits and current revision notes in this library",
+    "Shared illustration-family style, palette and drawing rules",
+    "Historical prompts and contact sheets for reconstruction only"
+  ],
+  "cast": {
+    "leadershipScenes": [
+      "ravi",
+      "helen"
+    ],
+    "managersAndProfessionals": [
+      "nia",
+      "mei",
+      "alex"
+    ],
+    "rolePolicy": "Scene context establishes the role. Each person can be a consultant, client, colleague or leader; age, gender and ethnicity do not impose a permanent job or hierarchy.",
+    "agePolicy": "Apparent age is a loose casting direction, not a quota. The user prioritizes characters that visually belong together and feel relatable over making executives look very old.",
+    "pairingIntent": "When Ravi and Helen appear together, they should read as experienced colleagues in the same professional generation. Use their current faces as the age/maturity references; exact numerical ages are secondary."
+  },
+  "styleRules": [
+    "Keep smooth vector-like curves, deliberate dark outlines and two or three intentional shades per material.",
+    "Keep each person's approved face, age, complexion, hair, build, garment shape and accessories consistent with their individual masters; take fabric colors from the approved wardrobe reference.",
+    "Use shared colors selectively for props and accents. Preserve each character's final distinct wardrobe palette rather than dressing the cast in an aqua or mint uniform.",
+    "Preserve natural differences in skin and hair; do not apply Nia's complexion to the whole cast.",
+    "Use transparent backgrounds and small intentional ground shadows. Avoid cream paper, yellow or sepia washes, room backdrops, grain and glow halos.",
+    "Keep text, labels, logos and business claims outside the image where possible.",
+    "Use new actions and meaningful props for new scenes. The master reference pose and notebook are not required in every scene.",
+    "Attach an identity reference for each selected character. Additional people shown in style-only references must not appear unless requested.",
+    "Preserve existing illustrations. Save each new scene or identity revision under a new versioned filename.",
+    "Review a changed identity before using it as an approved reference. The current consulting illustration refresh is reviewed one image at a time.",
+    "Final website illustrations must use native SVG paths and shapes, without embedded or linked bitmaps or foreignObject content."
+  ],
+  "characters": [
+    {
+      "id": "nia",
+      "workingName": "Nia",
+      "nameStatus": "Provisional internal name",
+      "visualAge": "Adult; approximate scene direction 30–40, preserving the existing reference face",
+      "representation": "Black woman",
+      "referenceStatus": "Published reference artwork",
+      "referenceImage": "public/assets/illustrations/renewals/nia-portrait-reference.png",
+      "fullBodyReference": "public/assets/illustrations/renewals/renewal-results-clean-v3.svg",
+      "whitePreview": null,
+      "originalPrompt": null,
+      "revisionPrompt": null,
+      "immutableTraits": {
+        "face": "Warm brown skin, attentive eyes, small confident smile and the recognizable face in the portrait reference.",
+        "hair": "Dark shoulder-length curls with the same full curl silhouette.",
+        "build": "Retain the existing adult proportions and silhouette.",
+        "outfit": "Pale mint collared shirt with rolled sleeves; high-waisted wide-leg blue trousers; light sneakers.",
+        "accessories": [
+          "Gold hoop earrings"
+        ]
+      },
+      "suggestedScenes": [
+        "Renewal operations",
+        "Consulting walkthroughs",
+        "RevOps leadership",
+        "Working with clients"
+      ],
+      "allowedChanges": [
+        "Pose and gesture",
+        "Gaze and expression appropriate to the story",
+        "Task-specific props",
+        "Scene role, interactions, composition and camera framing"
+      ],
+      "continuityNotes": [
+        "Her visual identity and exact material palette remain defined in public/assets/illustrations/renewals/character-reference.json.",
+        "The existing /brand/character-guide/ is Nia-specific."
+      ]
+    },
+    {
+      "id": "ravi",
+      "workingName": "Ravi",
+      "nameStatus": "Provisional internal name for the fresh replacement; not a rename of Arun",
+      "visualAge": "Experienced adult, visually compatible with Helen; exact numerical age is secondary to the user-selected face study",
+      "representation": "South Asian man",
+      "referenceStatus": "Selected face and full-body v4 proportions; use approved wardrobe reference for final mauve/slate-grey colors",
+      "referenceImage": "print-references/characters/ravi-character-v4.png",
+      "fullBodyReference": "print-references/characters/ravi-character-v4.png",
+      "whitePreview": "print-references/characters/ravi-character-v4-white-preview.png",
+      "originalPrompt": "print-references/characters/ravi-character-v1-prompt.txt",
+      "revisionPrompt": "print-references/characters/ravi-character-v4-prompt.txt",
+      "immutableTraits": {
+        "face": "Warm medium-brown skin, gently defined adult jaw and cheekbones, dark attentive eyes, relaxed level eyebrows, natural straight nose, clean-shaven face and a small balanced closed-mouth smile. Match the approved chest-up study's simple facial detail; do not add dense forehead/crow's-feet ageing lines.",
+        "hair": "Dark side-swept hair matching the approved chest-up study silhouette; no grey or white hair.",
+        "build": "Ordinary slim-to-average adult build, grounded torso, shorter natural neck and broader relaxed shoulders matching the approved chest-up study.",
+        "outfit": "Soft muted mauve open-collar button-up shirt with relaxed rolled sleeves; medium cool slate-grey straight-leg trousers; simple dark belt; clean light minimalist sneakers. Match the approved Ravi C + Helen B lineup.",
+        "accessories": [
+          "Plain understated watch"
+        ],
+        "facialHair": "Clean-shaven; no beard or moustache.",
+        "proportions": "Use the approved chest-up study for facial features, hair and expression. Current full-body v4 sets the modestly reduced head scale relative to the unchanged torso, shoulders and limbs, with the same short natural neck. Do not copy literal bust head scale into a full figure or enforce a realistic anatomical head-count formula."
+      },
+      "suggestedScenes": [
+        "Leadership conversations",
+        "Consulting collaboration",
+        "Business priorities",
+        "Working with the RevOps team"
+      ],
+      "allowedChanges": [
+        "Pose and gesture",
+        "Gaze and expression appropriate to the story",
+        "Task-specific props",
+        "Scene role, interactions, composition and camera framing"
+      ],
+      "continuityNotes": [
+        "Final colors are fixed by the user-selected Ravi C + Helen B lineup. Existing face/body masters show earlier colors; preserve their identity and garment shapes while using the approved wardrobe colors.",
+        "Use the approvedFaceReference for face identity, hair and expression, and current fullBodyReference for the head-to-body scale. The user explicitly liked the chest-up direction.",
+        "Full-body v4 slightly reduces the v3 head as a unit, preserving the selected face, shirt shape, body build, pose, wardrobe and proportions below the neck. The user selected this v4 for saving and reuse.",
+        "Keep a level head, relaxed eyebrows, simple smile and natural shoulder/neck relationship. Avoid tentative raised-brow/head-tilt expressions and pasted-on age lines.",
+        "Preserve dark hair, clean-shaven face, no glasses, mauve shirt, slate-grey trousers, light sneakers and understated watch. The earlier navy/charcoal colors in the face/body masters are historical.",
+        "Ravi remains an independent character replacing retired Arun; no Arun image is an input.",
+        "Ravi v1/v2 full-body drafts and their sweater/white collar are historical. They must not override the selected chest-up facial and shirt-shape direction.",
+        "Helen's original v4 artwork is unchanged in both comparison and full-body-extension workflow.",
+        "The v4 prompt requested a modest head-scale reduction, approximately 7–8%, not a measured geometric guarantee. Avoid overcorrecting toward a tiny realistic head or lengthening the neck."
+      ],
+      "generationInputReferences": [
+        "print-references/characters/alex-character-v1.png",
+        "print-references/characters/mei-character-v1.png",
+        "public/assets/illustrations/renewals/nia-portrait-reference.png"
+      ],
+      "revisionInputReferences": [
+        "print-references/characters/ravi-character-v3.png"
+      ],
+      "approvedFaceReference": "print-references/characters/ravi-chest-study-v1.png",
+      "directionReview": {
+        "status": "User selected the chest-up face and upper-body direction",
+        "feedback": "Yes this is better.",
+        "scope": "Selected face, expression, hair, open-collar shirt shape and subsequent full-body v4 head scale. The original navy fabric color is superseded by the final approved mauve wardrobe."
+      },
+      "designStudies": [
+        {
+          "id": "ravi-chest-study-v1",
+          "image": "print-references/characters/ravi-chest-study-v1.png",
+          "whitePreview": "print-references/characters/ravi-chest-study-v1-white-preview.png",
+          "prompt": "print-references/characters/ravi-chest-study-v1-prompt.txt",
+          "comparison": "print-references/characters/ravi-helen-chest-study-v1-white-preview.png",
+          "styleReference": "print-references/characters/helen-v4-chest-reference.png",
+          "referenceCrop": {
+            "source": "print-references/characters/helen-character-v4.png",
+            "left": 200,
+            "top": 15,
+            "width": 600,
+            "height": 685
+          },
+          "identityInspiration": "print-references/characters/ravi-character-v1.png",
+          "status": "Direction selected by the user before full-body extension",
+          "method": "Ravi was generated alone; the comparison uses a crop of unchanged Helen artwork."
+        }
+      ],
+      "selectionReview": {
+        "status": "Selected by user for saving and reuse",
+        "feedback": "Yes Better. Save these. The documentation and sample images",
+        "fullBodyReference": "print-references/characters/ravi-character-v4.png",
+        "faceReference": "print-references/characters/ravi-chest-study-v1.png",
+        "scope": "Reusable visual identity and full-body proportions. Future scenes and native SVG website integration are separate work."
+      },
+      "wardrobeReference": {
+        "image": "print-references/characters/ravi-c-helen-b-palette-v1-white-preview.png",
+        "subject": "Second person from the left, labelled Ravi",
+        "status": "Final wardrobe colors selected by user",
+        "selectedDate": "2026-11-03",
+        "palette": "Soft muted mauve open-collar button-up shirt, medium cool slate-grey straight-leg trousers and light sneakers",
+        "precedence": "Use these fabric colors with the existing face/body master. Older navy/plum wardrobes are superseded."
+      }
+    },
+    {
+      "id": "mei",
+      "workingName": "Mei",
+      "nameStatus": "Provisional internal name",
+      "visualAge": "Approximately 35–40",
+      "representation": "East Asian woman",
+      "referenceStatus": "Working concept reference; no final website SVG yet",
+      "referenceImage": "print-references/characters/mei-character-v1.png",
+      "fullBodyReference": "print-references/characters/mei-character-v1.png",
+      "whitePreview": "print-references/characters/mei-character-v1-white-preview.png",
+      "originalPrompt": "print-references/characters/mei-character-v1-prompt.txt",
+      "revisionPrompt": null,
+      "immutableTraits": {
+        "face": "Light-medium warm skin, softly angular oval face, dark brown eyes and a small attentive smile.",
+        "hair": "Straight black chin-length bob tucked behind one ear.",
+        "build": "Average height, sturdy athletic build.",
+        "outfit": "Aqua overshirt open over a white top; blue straight-leg trousers; light sneakers.",
+        "accessories": [
+          "Small stud earrings"
+        ]
+      },
+      "suggestedScenes": [
+        "Team coordination",
+        "Forecast review",
+        "RevOps projects",
+        "Operational planning"
+      ],
+      "allowedChanges": [
+        "Pose and gesture",
+        "Gaze and expression appropriate to the story",
+        "Task-specific props",
+        "Scene role, interactions, composition and camera framing"
+      ],
+      "continuityNotes": [
+        "Her black bob must remain distinct from Helen's brown pulled-back hair."
+      ]
+    },
+    {
+      "id": "alex",
+      "workingName": "Alex",
+      "nameStatus": "Provisional internal name",
+      "visualAge": "Approximately 35–45",
+      "representation": "White man",
+      "referenceStatus": "Working concept reference; no final website SVG yet",
+      "referenceImage": "print-references/characters/alex-character-v1.png",
+      "fullBodyReference": "print-references/characters/alex-character-v1.png",
+      "whitePreview": "print-references/characters/alex-character-v1-white-preview.png",
+      "originalPrompt": "print-references/characters/alex-character-v1-prompt.txt",
+      "revisionPrompt": null,
+      "immutableTraits": {
+        "face": "Fair complexion, subtle freckles, dark eyebrows and a clean-shaven face with an engaged expression.",
+        "hair": "Short wavy chestnut-brown hair.",
+        "build": "Tall, average build and relaxed shoulders.",
+        "outfit": "Pale cool blue rolled-sleeve collared shirt; dark blue straight-leg trousers; dark belt; light sneakers.",
+        "accessories": [
+          "Plain watch"
+        ]
+      },
+      "suggestedScenes": [
+        "Workflow configuration",
+        "Data checks",
+        "Reporting operations",
+        "Integration work"
+      ],
+      "allowedChanges": [
+        "Pose and gesture",
+        "Gaze and expression appropriate to the story",
+        "Task-specific props",
+        "Scene role, interactions, composition and camera framing"
+      ],
+      "continuityNotes": [
+        "Retain his clean-shaven face, freckles and wavy hair.",
+        "The original prompt specified 35–45. Later proposed casting ranges are not identity revisions."
+      ]
+    },
+    {
+      "id": "helen",
+      "workingName": "Helen",
+      "nameStatus": "Provisional internal name",
+      "visualAge": "Experienced executive, slightly younger than v4, preserving the user-selected v5 face carried into v6. Exact numerical ages are secondary to the chosen appearance.",
+      "representation": "Caucasian / white woman",
+      "referenceStatus": "Selected face and full-body v6 proportions; use approved wardrobe reference for final taupe/white/slate-blue colors",
+      "referenceImage": "print-references/characters/helen-character-v6.png",
+      "fullBodyReference": "print-references/characters/helen-character-v6.png",
+      "whitePreview": null,
+      "originalPrompt": "print-references/characters/helen-character-v1-prompt.txt",
+      "revisionPrompt": "print-references/characters/helen-character-v6-prompt.txt",
+      "immutableTraits": {
+        "face": "Fair naturally rosy skin, experienced adult facial structure with softly restrained age details, attentive eyes and a confident approachable closed-mouth smile. Preserve the selected v5 face as carried into v6.",
+        "hair": "Entirely chestnut-brown hair with a soft side part, swept back into a low bun or twist. Temples, side sections and bun are all brown. Use brown-toned highlights only; no white, grey, silver or blonde streaks.",
+        "build": "Average height, slightly slimmer natural build, upright self-assured posture, open settled shoulders and a grounded relaxed stance.",
+        "outfit": "Warm mushroom/taupe single-breasted blazer; crisp white collared blouse; medium slate-blue wide-leg trousers with clean crease and full-length drape; polished charcoal pointed leather flats with a tiny practical heel. Match the approved Ravi C + Helen B lineup.",
+        "accessories": [
+          "Small gold stud earrings",
+          "Plain watch"
+        ]
+      },
+      "suggestedScenes": [
+        "Revenue leadership",
+        "Finance review",
+        "Strategic planning",
+        "Executive decisions"
+      ],
+      "allowedChanges": [
+        "Pose and gesture",
+        "Gaze and expression appropriate to the story",
+        "Task-specific props",
+        "Scene role, interactions, composition and camera framing"
+      ],
+      "continuityNotes": [
+        "Final colors are fixed by the user-selected Ravi C + Helen B lineup. Existing face/body masters show earlier colors; preserve their identity and garment shapes while using the approved wardrobe colors.",
+        "Use helen-character-v6.png as the selected current full-body reference. V5's face was selected first and preserved in v6.",
+        "Retain entirely chestnut-brown pulled-back hair with brown highlights, no white/grey/silver/blonde streaks.",
+        "Preserve the selected face, expression, apparent age, slim natural build and existing head scale. A relaxed hand at her waist and open shoulders communicate calm confidence.",
+        "Retain the blazer/blouse/wide-leg-trouser shapes, flats, gold studs and plain watch; use the final taupe/white/slate-blue wardrobe colors. The plum and aqua outfits and silver bob are historical.",
+        "V4 was the earlier brown-hair-only version. V5 softened facial age details; v6 added the selected slimmer build and self-assured posture. Earlier variants remain preserved.",
+        "The combined lineup is for cast comparison. Individual face/body references define identity and proportions; the approved wardrobe reference defines current fabric colors. Final website art still needs native SVG production."
+      ],
+      "revisionHistory": [
+        {
+          "id": "helen-character-v5",
+          "image": "print-references/characters/helen-character-v5.png",
+          "prompt": "print-references/characters/helen-character-v5-prompt.txt",
+          "status": "User selected the facial appearance; further build and posture refinement requested."
+        }
+      ],
+      "directionReview": {
+        "status": "User selected v5 facial appearance; preserve it in subsequent revisions",
+        "reference": "print-references/characters/helen-character-v5.png",
+        "feedback": "her facial look is good",
+        "scope": "Face, expression and apparent age only; the user requested further body and posture refinement."
+      },
+      "approvedFaceReference": "print-references/characters/helen-character-v5.png",
+      "selectionReview": {
+        "status": "Selected by user",
+        "feedback": "Yes better. put them all in one image",
+        "reference": "print-references/characters/helen-character-v6.png",
+        "scope": "Full-body v6 including the selected facial appearance, slightly slimmer build and self-assured stance."
+      },
+      "wardrobeReference": {
+        "image": "print-references/characters/ravi-c-helen-b-palette-v1-white-preview.png",
+        "subject": "Rightmost person, labelled Helen",
+        "status": "Final wardrobe colors selected by user",
+        "selectedDate": "2026-11-03",
+        "palette": "Warm mushroom/taupe blazer, white blouse, medium slate-blue wide-leg trousers and charcoal flats",
+        "precedence": "Use these fabric colors with the existing face/body master. Older navy/plum wardrobes are superseded."
+      }
+    }
+  ],
+  "sceneReferences": [
+    {
+      "id": "consulting-hero-nia-v1",
+      "image": "print-references/consulting-hero-nia-v1.png",
+      "whitePreview": "print-references/consulting-hero-nia-v1-white-preview.png",
+      "prompt": "print-references/consulting-hero-nia-v1-prompt.txt",
+      "status": "User liked the concept; not yet integrated or converted to native SVG.",
+      "characters": [
+        "nia"
+      ],
+      "additionalPerson": "An unnamed male colleague appears in the hero. He is not Alex or Ravi, and is not a separate named cast identity. Establish an individual reference before reusing him as a recurring character.",
+      "use": "Scene composition and style reference; selected character identity references take precedence."
+    }
+  ],
+  "reviewSheets": {
+    "raviWithStyleReferences": "print-references/characters/ravi-mei-alex-v4-white-preview.png",
+    "approvedRaviChestDirection": "print-references/characters/ravi-helen-chest-study-v1-white-preview.png",
+    "currentFullCast": "print-references/characters/ravi-c-helen-b-palette-v1-white-preview.png"
+  },
+  "historicalReferences": {
+    "helenV1": "print-references/characters/helen-character-v1.png",
+    "manifests": [
+      "print-references/characters/character-references-v1.json",
+      "print-references/characters/character-references-v2.json"
+    ],
+    "note": "Arun is retired. Ravi v1/v2 were not selected; the chest-up study established the chosen face direction. Full-body v3 extended it, and v4 makes a small head-scale correction while retaining the face. Earlier Helen references show superseded hair or clothing.",
+    "arunV1": "print-references/characters/arun-character-v1.png",
+    "helenV2": "print-references/characters/helen-character-v2.png",
+    "arunV2": "print-references/characters/arun-character-v2.png",
+    "arunV3": "print-references/characters/arun-character-v3.png",
+    "arunV4": "print-references/characters/arun-character-v4.png",
+    "helenV3": "print-references/characters/helen-character-v3.png",
+    "arunV5": "print-references/characters/arun-character-v5.png",
+    "retiredArunReviewSheets": [
+      "print-references/characters/arun-mei-alex-v1-white-preview.png",
+      "print-references/characters/character-lineup-v1-white-preview.png",
+      "print-references/characters/character-lineup-v6-white-preview.png",
+      "print-references/characters/senior-character-pair-v7-white-preview.png"
+    ],
+    "raviV1": "print-references/characters/ravi-character-v1.png",
+    "firstRaviHelenPair": "print-references/characters/leadership-character-pair-v1-white-preview.png",
+    "raviV2": "print-references/characters/ravi-character-v2.png",
+    "raviV3": "print-references/characters/ravi-character-v3.png",
+    "helenV4": "print-references/characters/helen-character-v4.png",
+    "helenV5": "print-references/characters/helen-character-v5.png",
+    "helenV4ReviewSheets": {
+      "leadershipPair": "print-references/characters/leadership-character-pair-v4-white-preview.png",
+      "meiAndHelen": "print-references/characters/mei-helen-v4-white-preview.png",
+      "fourNewCharacters": "print-references/characters/character-lineup-v10-white-preview.png"
+    },
+    "previousLineup": {
+      "image": "print-references/characters/character-lineup-v11-white-preview.png",
+      "prompt": "print-references/characters/character-lineup-v11-prompt.txt",
+      "characters": [
+        "nia",
+        "ravi",
+        "mei",
+        "alex",
+        "helen"
+      ],
+      "sourceReferences": [
+        "public/assets/illustrations/renewals/nia-portrait-reference.png",
+        "print-references/characters/ravi-character-v4.png",
+        "print-references/characters/mei-character-v1.png",
+        "print-references/characters/alex-character-v1.png",
+        "print-references/characters/helen-character-v6.png"
+      ],
+      "method": "Built-in imagegen composition from five individual identity references",
+      "use": "Combined visual comparison; individual references remain authoritative."
+    }
+  },
+  "fileNaming": "{character-id}-{scene-slug}-v{number}.{png|svg}; list two character IDs for paired scenes.",
+  "workflow": [
+    "Choose character IDs and their current identity images.",
+    "Fill the scene brief using immutable traits from this library.",
+    "Attach identity images first and label extra references style-only.",
+    "Generate one concept; inspect identity, hands, props, palette and transparent edges.",
+    "Collect the requested review for the scene or identity revision.",
+    "Prepare and inspect native SVG for approved website artwork.",
+    "Add the scene under a new filename, update its consuming page and run the repository validation.",
+    "When a revision is selected, update this library and handbook without deleting previous references."
+  ],
+  "generationMode": "Built-in imagegen created the character concepts; JSON and prompts do not constitute a trained model or character rig.",
+  "wardrobePolicy": {
+    "purpose": "Distinct, relatable people in one coherent illustration family, suitable for leadership, consulting and operational scenes.",
+    "cohesion": "Shared linework, proportions, shading and selective prop accents provide consistency; matching clothes are not required.",
+    "currentPalettes": {
+      "nia": "Mint shirt and blue trousers",
+      "mei": "Aqua overshirt, white top and blue trousers",
+      "alex": "Pale blue shirt and dark blue trousers",
+      "helen": "Warm mushroom/taupe blazer, white blouse, medium slate-blue wide-leg trousers and charcoal flats",
+      "ravi": "Soft muted mauve open-collar button-up shirt, medium cool slate-grey straight-leg trousers and light sneakers"
+    },
+    "changes": "Keep the final selected wardrobe colors and existing garment shapes consistent across scenes. The approvedWardrobe image overrides older fabric colors in pose/face masters. Save future requested revisions under new names and obtain selection before changing these pointers."
+  },
+  "executiveDirection": "Relatable, capable people who visibly belong to the same illustration family as Nia, Mei and Alex. Leadership is communicated through action, context, collaboration and expression. Visual cohesion takes priority over old-age signals, formal suits or a separate realistic executive-portrait style.",
+  "stylePriority": "Visual cohesion with the established cast and reader identification take priority over making characters visibly old, highly formal or anatomically realistic. Review each revision beside the rest of the cast.",
+  "familyStyleReferences": [
+    "public/assets/illustrations/renewals/nia-portrait-reference.png",
+    "public/assets/illustrations/renewals/renewal-results-clean-v3.svg",
+    "print-references/characters/mei-character-v1.png",
+    "print-references/characters/alex-character-v1.png"
+  ],
+  "retiredCharacters": [
+    {
+      "id": "arun",
+      "workingName": "Arun",
+      "status": "Retired by explicit user request; excluded from the active cast",
+      "replacementId": "ravi",
+      "lastDraft": "print-references/characters/arun-character-v5.png",
+      "images": [
+        "print-references/characters/arun-character-v1.png",
+        "print-references/characters/arun-character-v2.png",
+        "print-references/characters/arun-character-v3.png",
+        "print-references/characters/arun-character-v4.png",
+        "print-references/characters/arun-character-v5.png"
+      ],
+      "reason": "User scrapped the character after repeated revisions and requested a fresh start with a similar general idea.",
+      "reusePolicy": "Keep files for history only. Do not use Arun images, prompts, identity cues or rejected anatomical targets as generation inputs for the replacement."
+    }
+  ],
+  "saveState": {
+    "status": "Saved locally in the repository workspace",
+    "referencePack": "print-references/swotbee-character-reference-pack-2026-11-03-final.zip",
+    "inventory": "print-references/characters/SELECTED-REFERENCES.txt",
+    "scope": "Final selected five-person wardrobe lineup, face/body masters, prompts, scene brief, continuity documentation and exact commit path list. Older fabric colors in face/body masters are superseded by approvedWardrobe.",
+    "historicalScope": "Retired Arun and earlier rejected image variants are preserved in the checkout and excluded from this reference pack.",
+    "sourceOfTruth": "docs/illustration-character-library.json",
+    "snapshotPolicy": "Regenerate the pack when a new reference is selected; the live handbook and library JSON remain authoritative.",
+    "commitFiles": "print-references/characters/COMMIT-FILES.txt"
+  },
+  "wardrobeExperiments": {
+    "status": "Closed: Ravi C + Helen B selected by user. Other options and mixed previews retained as history.",
+    "mixedPreview": {
+      "image": "print-references/characters/ravi-b-helen-a-palette-v1-white-preview.png",
+      "prompt": "print-references/characters/ravi-b-helen-a-palette-v1-prompt.txt",
+      "status": "Historical alternative; final choice is Ravi C + Helen B",
+      "referenceInputs": [
+        "print-references/characters/ravi-helen-palette-a-v1-white-preview.png",
+        "print-references/characters/ravi-helen-palette-b-v1-white-preview.png"
+      ],
+      "method": "Built-in imagegen edits Ravi's fabric colors in option A to match Ravi in option B. Helen and the other three retain option A appearance."
+    },
+    "referenceInput": "print-references/characters/character-lineup-v13-white-preview.png",
+    "scope": "Change only clothing colors for Ravi and Helen. Nia, Mei and Alex retain v13 appearance and clothing colors; all faces, poses and garment shapes remain fixed.",
+    "generationMode": "Built-in imagegen, one independent edit per option",
+    "referencePolicy": "Historical options are preserved for provenance. Use approvedWardrobe for final current colors.",
+    "options": [
+      {
+        "id": "palette-a",
+        "label": "Dusty blue + sage",
+        "image": "print-references/characters/ravi-helen-palette-a-v1-white-preview.png",
+        "prompt": "print-references/characters/ravi-helen-palette-a-v1-prompt.txt",
+        "palettes": {
+          "ravi": "Keep his shirt a medium-light dusty blue, distinct from Alex's pale blue; recolor his trousers to light warm stone grey, with natural slightly darker folds.",
+          "helen": "Recolor her blazer to soft muted sage green, clearly greener and more subdued than Mei's aqua; keep the blouse white and trousers medium cool slate grey."
+        },
+        "status": "Historical option; component colors contribute only where selected in approvedWardrobe"
+      },
+      {
+        "id": "palette-b",
+        "label": "Muted teal + warm taupe",
+        "image": "print-references/characters/ravi-helen-palette-b-v1-white-preview.png",
+        "prompt": "print-references/characters/ravi-helen-palette-b-v1-prompt.txt",
+        "palettes": {
+          "ravi": "Recolor his shirt to medium muted blue-teal, a restrained deeper blue-green distinct from Mei's brighter aqua; recolor his trousers to light warm sand/beige.",
+          "helen": "Recolor her blazer to warm mushroom/taupe, with a white blouse and medium slate-blue trousers. Maintain clear contrast among blazer, blouse and trousers."
+        },
+        "status": "Historical option; component colors contribute only where selected in approvedWardrobe"
+      },
+      {
+        "id": "palette-c",
+        "label": "Soft mauve + slate blue",
+        "image": "print-references/characters/ravi-helen-palette-c-v1-white-preview.png",
+        "prompt": "print-references/characters/ravi-helen-palette-c-v1-prompt.txt",
+        "palettes": {
+          "ravi": "Recolor his shirt to softly muted mauve, a calm dusty rose-purple rather than vivid pink; keep his trousers medium cool slate grey.",
+          "helen": "Recolor her blazer to medium dusty slate blue, with her white blouse; recolor her trousers to light warm stone grey. Maintain enough contrast between jacket and trousers."
+        },
+        "status": "Historical option; component colors contribute only where selected in approvedWardrobe"
+      }
+    ],
+    "selectedPreview": {
+      "id": "ravi-c-helen-b-palette-v1",
+      "image": "print-references/characters/ravi-c-helen-b-palette-v1-white-preview.png",
+      "prompt": "print-references/characters/ravi-c-helen-b-palette-v1-prompt.txt",
+      "status": "Selected by user as the final palette",
+      "palettes": {
+        "ravi": "Palette C: soft mauve shirt and medium cool slate-grey trousers",
+        "helen": "Palette B: warm mushroom/taupe blazer, white blouse and medium slate-blue trousers"
+      },
+      "referenceInputs": [
+        "print-references/characters/ravi-helen-palette-c-v1-white-preview.png",
+        "print-references/characters/ravi-helen-palette-b-v1-white-preview.png"
+      ],
+      "method": "Built-in imagegen edits Helen's blazer and trouser colors in C to match Helen B, retaining Ravi C and the other three characters."
+    },
+    "earlierPreferences": {
+      "ravi": "Palette B: muted teal shirt and light sand/beige trousers",
+      "helen": "Palette A: sage blazer, white blouse and slate-grey trousers",
+      "alternative": "Palette C is also liked; preserve its image and prompt."
+    },
+    "earlierPaletteTrial": {
+      "id": "character-lineup-v13",
+      "image": "print-references/characters/character-lineup-v13-white-preview.png",
+      "prompt": "print-references/characters/character-lineup-v13-prompt.txt",
+      "referenceInput": "print-references/characters/character-lineup-v12-white-preview.png",
+      "colorRestorationReference": "print-references/characters/character-lineup-v11-white-preview.png",
+      "previousRevision": {
+        "image": "print-references/characters/character-lineup-v12-white-preview.png",
+        "prompt": "print-references/characters/character-lineup-v12-prompt.txt",
+        "feedback": "User requested restoring Mei and Alex's previous colors while retaining the other characters."
+      },
+      "status": "Historical palette trial; superseded by the final Ravi C + Helen B selection",
+      "request": "Revert Mei and Alex to their previous colors. Preserve Nia, and Ravi and Helen's lighter v12 colors.",
+      "lockedCharacter": "Nia: retain her complete appearance and wardrobe unchanged; no global color correction",
+      "palettes": {
+        "ravi": "Lighter dusty slate-blue shirt and medium cool slate-grey trousers",
+        "mei": "Restored original richer aqua overshirt, white top and brighter blue trousers from v11",
+        "alex": "Restored original pale blue shirt and deeper blue trousers from v11",
+        "helen": "Soft dusty-plum blazer, white blouse and cool slate-grey trousers"
+      },
+      "invariants": "Preserve every face, skin tone, hairstyle, age, body shape, pose, garment shape, accessories, name labels and composition. Retain varied wardrobes without dressing everyone in aqua.",
+      "generationMode": "Built-in imagegen localized clothing-color edit; original files preserved",
+      "reusePolicy": "History only. Use approvedWardrobe for current wardrobe colors."
+    }
+  },
+  "lineupReference": {
+    "image": "print-references/characters/ravi-c-helen-b-palette-v1-white-preview.png",
+    "prompt": "print-references/characters/ravi-c-helen-b-palette-v1-prompt.txt",
+    "status": "Final combined palette selected by user",
+    "palettes": {
+      "ravi": "Palette C: soft mauve shirt and medium cool slate-grey trousers",
+      "helen": "Palette B: warm mushroom/taupe blazer, white blouse and medium slate-blue trousers"
+    },
+    "referenceInputs": [
+      "print-references/characters/ravi-helen-palette-c-v1-white-preview.png",
+      "print-references/characters/ravi-helen-palette-b-v1-white-preview.png"
+    ],
+    "method": "Built-in imagegen edits Helen's blazer and trouser colors in C to match Helen B, retaining Ravi C and the other three characters.",
+    "characters": [
+      "nia",
+      "ravi",
+      "mei",
+      "alex",
+      "helen"
+    ],
+    "use": "Authoritative current wardrobe color reference. Use individual face/body masters for identity, proportions and garment shapes."
+  },
+  "approvedWardrobe": {
+    "status": "Final palette selected by user",
+    "selectedDate": "2026-11-03",
+    "feedback": "If feel so too. Lets fix it here.",
+    "image": "print-references/characters/ravi-c-helen-b-palette-v1-white-preview.png",
+    "prompt": "print-references/characters/ravi-c-helen-b-palette-v1-prompt.txt",
+    "combination": "Ravi palette C + Helen palette B",
+    "palettes": {
+      "nia": "Mint shirt and blue trousers",
+      "mei": "Aqua overshirt, white top and blue trousers",
+      "alex": "Pale blue shirt and dark blue trousers",
+      "helen": "Warm mushroom/taupe blazer, white blouse, medium slate-blue wide-leg trousers and charcoal flats",
+      "ravi": "Soft muted mauve open-collar button-up shirt, medium cool slate-grey straight-leg trousers and light sneakers"
+    },
+    "referencePolicy": "This approved lineup is authoritative for current wardrobe colors. Individual face/body masters remain authoritative for identity, body proportions and garment shapes; their earlier fabric colors are superseded. Nia, Mei and Alex retain their established appearances."
+  }
+}

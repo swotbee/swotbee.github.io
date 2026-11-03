@@ -135,7 +135,10 @@ state.
   Extra numbered shades (`10`, `25`, `150`, `1000`, etc.) preserve distinct colors
   without arbitrary values. Original blue, amber, and other named families remain
   available alongside the selected site colors.
-- Follow `docs/creating-nia-illustrations.md` for Nia artwork and references:
+- Follow the [character continuity guide](illustration-character-library.md) and
+  [current character library](illustration-character-library.json) for the full
+  recurring cast, identity references, version history and reusable scene brief.
+  Follow `docs/creating-nia-illustrations.md` for Nia artwork and vector finishing:
   use native SVG geometry, white paper, cool neutral shadows and shared aqua,
   blue and light coral accents. The character JSON records the exact palette.
 - Follow [homepage color and proof principles](content-guidelines/homepage-color-system.md)
