@@ -69,6 +69,9 @@ export default defineConfig({
   // page at the old path with a canonical tag + instant meta-refresh to the new URL,
   // which Google treats as passing ranking signal, the standard pattern for static hosts.
   redirects: {
+    // Keep the shared service-prefixed app URL working; retain the established
+    // product URL as the destination for existing app links and search metadata.
+    "/services/hubspot-contract-management-app/": "/hubspot-contract-management-app/",
     // Retired design experiments and service revisions retain working shared URLs.
     "/bee-styles": "/",
     "/design-index": "/",

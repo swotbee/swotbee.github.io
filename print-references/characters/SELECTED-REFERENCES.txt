@@ -56,8 +56,12 @@ Supporting face/style previews
   helen-v4-chest-reference.png (historical style crop used for Ravi's face study)
   These show earlier fabric colors; the selected wardrobe lineup overrides them.
 
-The Nia consulting-hero concept and prompt are retained as scene references.
-Its unnamed male colleague is not an additional named cast member.
+Previous consulting hero explorations were discarded and removed at the user's
+request. The subsequent fresh wireframe v5 and its benefit messaging were
+approved on 3 November 2026; finished character artwork and installation still
+require review. See ../../docs/consulting-hero-brief.txt and
+../consulting-hero-wireframe-v5-review.png. The figures are Nia/Ravi placement
+guides; use the approved identity masters and wardrobe for finished artwork.
 
 Arun, earlier rejected character versions and unselected palette images are
 excluded from the reusable pack. They remain source history in the checkout.
