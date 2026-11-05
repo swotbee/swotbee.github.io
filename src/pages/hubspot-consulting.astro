@@ -41,7 +41,7 @@ const familiar = [
 const workingTogether = [
   { question: "Will our team actually use it?", answer: "We test agreed business scenarios and tailor walkthroughs to daily users, administrators and leadership." },
   { question: "Can we see it before it goes live?", answer: "Yes. We agree how to test and demonstrate the work. A suitable Enterprise sandbox can support the changes it covers." },
-  { question: "What happens when you hand it over?", answer: "Written documentation, videos where useful and agreed support give your team a way to use and maintain the work." },
+  { question: "What happens when you hand it over?", answer: "Written documentation, videos and ongoing support will set your team up for easy adoption and success." },
 ];
 
 const outcomes: { image: string; alt: string; name: string; heading: string; description: string; evidence?: string }[] = [
@@ -53,7 +53,7 @@ const outcomes: { image: string; alt: string; name: string; heading: string; des
   { image: "service", alt: "Illustration of a service professional coordinating a customer request and a field visit.", name: "Service Hub & customer operations", heading: "Help customers without the chasing.", description: "Requests arrive with context and clear ownership. Routing, reminders, escalation and closure keep service and field teams coordinated.", evidence: "Ticket workflows redesigned; HubSpot-to-Monday.com site-visit sync implemented." },
   { image: "reporting", alt: "Conceptual illustration of an executive dashboard and a prepared report, without client data.", name: "Reporting & management visibility", heading: "Walk into the review with a clear picture.", description: "Consistent definitions, historical comparisons and data checks make management reporting repeatable.", evidence: "Executive service reporting covering backlog, demand, throughput, response times and workload." },
   { image: "forecasting", alt: "Conceptual illustration of three possible forecast paths, a tiny paper plane and a calendar.", name: "Forecasting, scenario planning & pipeline management", heading: "Know what could change the forecast.", description: "Assess pipeline coverage, compare scenarios and track forecast movement and accuracy. Give revenue risks a place in the discussion." },
-  { image: "ai", alt: "Conceptual illustration of a customer-summary card with a review check and a small paper sparkle.", name: "AI strategy, implementation & adoption", heading: "Give AI a useful job to do.", description: "Choose worthwhile tasks, prepare CRM data and knowledge sources, then connect AI to the workflow. Define human review, ownership and measures of usefulness." },
+  { image: "ai", alt: "Conceptual illustration of a customer-summary card with a review check and a small paper sparkle.", name: "Identify gaps in processes", heading: "Test, Evaluate, Apply", description: "Choose worthwhile tasks, prepare CRM data and knowledge sources, then connect AI to the workflow. Define human review, ownership and measures of usefulness." },
   { image: "licensing", alt: "Conceptual illustration of three colourful seats finding their place on a subscription sheet.", name: "HubSpot pricing, licensing & usage advisory", heading: "Choose what your team actually needs.", description: "Match subscriptions, seats and usage credits to your plans. Understand cost implications and underused capabilities before buying, expanding or renewing." },
 ];
 const capabilityGroups = [
@@ -67,7 +67,7 @@ const process = [
   { title: "Meet the people doing the work", description: "Understand the process with stakeholders and daily users.", result: "A shared view of the process" },
   { title: "Check our understanding", description: "Share what we've learned with your executive team and confirm the priority.", result: "A priority everyone understands" },
   { title: "Lay out your options", description: "Explain solution options, dependencies and our recommendations so you can decide.", result: "Options you can compare" },
-  { title: "Agree the result and scope", description: "Define costs, responsibilities and what will show the work is complete.", result: "Clear completion criteria" },
+  { title: "Agree on the result and scope", description: "Define costs, responsibilities and what will show the work is complete.", result: "Clear completion criteria" },
 ];
 const delivery = [
   { title: "Plan", description: "Agree what should improve and how we'll know." },
@@ -113,8 +113,8 @@ const primaryButton = "inline-flex min-h-12 items-center justify-center rounded-
             <p class="rounded-full bg-v6-teal-50 px-4 py-2 text-xs font-bold text-v6-teal-700">HubSpot Solutions Partner</p>
           </div>
           <h1 id="consulting-heading" class="mt-6 max-w-2xl text-balance text-4xl leading-[1.08] tracking-tight text-v6-dark sm:text-6xl" style="font-family: 'Rokkitt Variable', 'Vollkorn', serif; font-weight: 800;">Make HubSpot work for <span class="text-v6-copper-800">the way your business runs.</span></h1>
-          <p class="mt-5 text-lg font-semibold text-v6-dark">Consulting, implementation & revenue operations</p>
-          <p class="mt-4 max-w-xl text-lg leading-relaxed text-v6-text-muted">Make the investment count with reliable data, connected teams and useful automation. Bring AI, forecasting and platform decisions into the same conversation.</p>
+          <p class="mt-5 text-lg font-semibold text-v6-dark">RevOps, Forecast & Reporting, Renewals, Services</p>
+          <p class="mt-4 max-w-xl text-lg leading-relaxed text-v6-text-muted">Make your investment in HubSpot count. Reliable data, connected teams and useful automation. Bring AI, forecasting and platform decisions into the same conversation.</p>
           <a href={consultationUrl} class:list={[primaryButton, "mt-7 w-full sm:w-auto"]}>Book a free consultation <span class="ml-2" aria-hidden="true">→</span></a>
           <p class="mt-3 text-sm text-v6-text-muted">30 minutes. Bring the process you want to improve.</p>
         </div>
@@ -146,7 +146,7 @@ const primaryButton = "inline-flex min-h-12 items-center justify-center rounded-
 
     <section id="sound-familiar" class="section-shell bg-white" aria-labelledby="familiar-heading">
       <div class="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
-        <div><p class="eyebrow">Sound familiar?</p><h2 id="familiar-heading" class="section-heading">HubSpot is in place.<br />The workarounds are still there.</h2><p class="mt-4 max-w-md leading-relaxed text-v6-text-muted">Bring the part that's slowing you down. We'll help you work out where to start.</p></div>
+        <div><p class="eyebrow">Sound familiar?</p><h2 id="familiar-heading" class="section-heading">You paid for HubSpot.<br />So why are the workarounds still there ?</h2><p class="mt-4 max-w-md leading-relaxed text-v6-text-muted">Bring the part that's slowing you down. We'll help you work out where to start.</p></div>
         <ul class="grid gap-x-8 sm:grid-cols-2">
           {familiar.map(item => <li class="border-b border-v6-border py-5"><p class="text-lg font-semibold leading-relaxed text-v6-dark">“{item.thought}”</p><a href={item.href} class="mt-2 inline-flex min-h-11 items-center gap-2 rounded text-sm font-semibold text-v6-copper-800 underline-offset-4 hover:underline focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2">{item.label}<span aria-hidden="true">→</span></a></li>)}
         </ul>
@@ -181,13 +181,12 @@ const primaryButton = "inline-flex min-h-12 items-center justify-center rounded-
             </div>
           ))}
         </div>
-        <p class="mt-8 text-sm text-v6-text-muted">Project figures describe separate pieces of one engagement, shared without client-identifying details. Illustrations are conceptual.</p>
       </div>
     </section>
 
     <section id="clients" class="section-shell bg-white" aria-labelledby="clients-heading">
       <div class="mx-auto max-w-6xl">
-        <div class="mb-9 max-w-2xl"><p class="eyebrow">In our clients' words</p><h2 id="clients-heading" class="section-heading">People who understand the work.</h2></div>
+        <div class="mb-9 max-w-2xl"><p class="eyebrow">In our clients' words</p><h2 id="clients-heading" class="section-heading">Why Our Clients Love Us.</h2></div>
         <div class="grid gap-6 md:grid-cols-2">
           {testimonials.map(t => (
             <figure class="flex flex-col rounded-2xl border border-v6-border bg-v6-bg-warm p-6 sm:p-8" data-client-testimonial={t.company}>
@@ -205,7 +204,7 @@ const primaryButton = "inline-flex min-h-12 items-center justify-center rounded-
 
     <section id="approach" class="section-shell border-t border-v6-border bg-v6-bg" aria-labelledby="approach-heading">
       <div class="mx-auto max-w-6xl">
-        <div class="max-w-3xl"><p class="eyebrow">How we work</p><h2 id="approach-heading" class="section-heading">Agree the first useful improvement.</h2><p class="mt-4 text-xl font-medium leading-relaxed text-v6-dark sm:text-2xl">Understand the work. Agree the priority. Define the result.</p></div>
+        <div class="max-w-3xl"><p class="eyebrow">How we work</p><h2 id="approach-heading" class="section-heading">Transparency All the Way.</h2><p class="mt-4 text-xl font-medium leading-relaxed text-v6-dark sm:text-2xl">We understand the work. You set the priorities.</p></div>
         <div class="mt-10 flex items-center gap-3"><span class="h-2.5 w-2.5 rounded-full bg-v6-copper" aria-hidden="true"></span><p class="text-base font-bold uppercase tracking-wider text-v6-copper-800">Before we build</p></div>
         <ol class="mt-6 grid gap-6 md:grid-cols-2">{process.map((step, i) => (
           <li class="flex flex-col rounded-2xl border border-v6-border bg-white p-6 sm:p-8">
@@ -215,25 +214,6 @@ const primaryButton = "inline-flex min-h-12 items-center justify-center rounded-
             <p class="mt-6 border-t border-v6-border pt-5 leading-relaxed"><span class="block text-base font-medium text-v6-text-muted">You'll leave this step with</span><strong class="mt-2 block text-xl font-bold text-v6-dark">{step.result}</strong></p>
           </li>
         ))}</ol>
-        <div class="mt-12 rounded-2xl border border-v6-teal-100 bg-[#f8f5f0] p-6 sm:p-8">
-          <p class="text-base font-bold uppercase tracking-wider text-v6-teal-700">As the work takes shape</p>
-          <h3 class="mt-3 text-3xl font-bold leading-snug text-v6-dark">Build it. See it in action. Improve it together.</h3>
-          <div class="mt-8 grid items-center gap-8 lg:grid-cols-2" data-pdsa-cycle>
-            <figure class="mx-auto w-full max-w-xl">
-              <img src="/assets/consulting/pdsa-cycle-1200.png" srcset="/assets/consulting/pdsa-cycle-600.png 600w, /assets/consulting/pdsa-cycle-1200.png 1200w" sizes="(min-width: 1024px) 500px, (min-width: 640px) 576px, calc(100vw - 80px)" width="1200" height="1200" loading="lazy" decoding="async" alt="A continuous clockwise cycle: Plan, Do, Study, Act, then back to Plan. Your team's priorities remain at the centre." class="w-full rounded-2xl" />
-              <figcaption class="mt-4 text-center text-lg font-semibold text-v6-dark">Plan → Do → Study → Act → Plan</figcaption>
-            </figure>
-            <div>
-              <p class="mb-6 text-xl font-bold text-v6-dark">Your team's priorities guide every cycle.</p>
-              <ol class="grid gap-6 sm:grid-cols-2 lg:grid-cols-1">{delivery.map(step => <li class="border-l-4 border-v6-teal-200 pl-5"><h4 class="text-2xl font-bold text-v6-dark">{step.title}</h4><p class="mt-2 text-xl font-medium leading-relaxed text-v6-dark">{step.description}</p></li>)}</ol>
-            </div>
-          </div>
-          <div class="mt-8 border-t border-v6-teal-200 pt-6">
-            <p class="text-lg font-semibold text-v6-dark">When agreed completion criteria are met</p>
-            <p class="mt-4 flex flex-col gap-3 text-xl font-bold text-v6-dark sm:flex-row sm:items-center sm:gap-4"><span class="rounded-xl border border-v6-border bg-white px-5 py-4">Ready for everyday use</span><span aria-hidden="true" class="hidden sm:inline">→</span><span class="rounded-xl border border-v6-border bg-white px-5 py-4">Handover and agreed support</span></p>
-            <p class="mt-6 text-lg font-medium leading-relaxed text-v6-dark"><strong class="font-bold">Your feedback shapes the next cycle.</strong> Changes affecting scope, cost or timing are agreed before proceeding.</p>
-          </div>
-        </div>
         <div class="mt-10 border-t border-v6-border pt-9">
           <p class="eyebrow">Ready for everyday use</p><h3 class="mt-3 text-3xl font-bold text-v6-dark">A handover your team can work with.</h3>
           <div class="mt-7 grid gap-6 lg:grid-cols-3">{workingTogether.map(item => <div class="rounded-xl border border-v6-border bg-white p-6"><h4 class="text-2xl font-bold leading-snug text-v6-dark">{item.question}</h4><p class="mt-4 text-xl font-medium leading-relaxed text-v6-dark">{item.answer}</p></div>)}</div>
