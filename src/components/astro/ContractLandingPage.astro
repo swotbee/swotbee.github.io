@@ -1,0 +1,299 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Navbar from "./Navbar.astro";
+import Footer from "./Footer.astro";
+import StructuredData from "./StructuredData.astro";
+import ContractWorkflowPreview from "./ContractWorkflowPreview.astro";
+import RenewalIllustration from "./homepage/RenewalIllustration.astro";
+import ClientTestimonials from "./ClientTestimonials.astro";
+import type { ContractPage } from "../../data/contract-pages";
+
+interface Props { page: ContractPage }
+const { page } = Astro.props;
+const enquiryUrl = `/contactus/?subject=${page.enquirySubject}`;
+const pageUrl = `https://swotbee.com${page.path}`;
+// Use the client-experience family on /hubspot-consulting/. The anonymous
+// project below is separate from these logos; no app adoption is implied.
+const clientLogos = [
+  { name: "Zenergy", src: "/logos/clients/zenergy.png", width: 351, height: 90, dark: false, size: "wide" },
+  { name: "Knape & Vogt", src: "/logos/clients/knape-vogt.png", width: 446, height: 313, dark: false, size: "tall" },
+  { name: "Embrio", src: "/logos/clients/embryo.png", width: 297, height: 62, dark: true, size: "wide" },
+  { name: "Jirav", src: "/logos/clients/jirav.png", width: 862, height: 794, dark: false, size: "square" },
+  { name: "GWC Data.AI", src: "/logos/clients/gwcdata.png", width: 700, height: 188, dark: false, size: "wide" },
+];
+---
+
+<BaseLayout title={page.title} description={page.description} canonicalURL={pageUrl} keywords="HubSpot contract management, contract workflow, contract management consulting, HubSpot renewal automation">
+  <StructuredData type={page.kind === "app" ? "softwareApplication" : "service"} data={{
+    name: page.title, description: page.description, url: pageUrl,
+    serviceType: "Contract Management Consulting",
+    featureList: page.kind === "app" ? ["Agreement preparation from HubSpot data", "Signing status and follow-up", "Notice dates and renewal deal automation"] : undefined,
+  }} />
+  <StructuredData type="faq" data={{ faqs: page.faqs }} />
+  <StructuredData type="breadcrumb" data={{ breadcrumbs: [
+    { name: "Home", url: "https://swotbee.com/" },
+    ...(page.kind === "consulting" ? [{ name: "Services", url: "https://swotbee.com/services/" }] : []),
+    { name: page.label, url: pageUrl },
+  ] }} />
+  <a class="contract-skip" href="#contract-main">Skip to content</a>
+  <Navbar />
+  <div id="contract-main" class:list={["contract-page", page.kind]} tabindex="-1">
+    <section class="contract-hero wrap" aria-labelledby="contract-heading">
+      <div class="hero-copy">
+        <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span>{page.kind === "consulting" && <><a href="/services/">Services</a><span aria-hidden="true">/</span></>}<span aria-current="page">{page.kind === "app" ? "Contract management app" : "Contract consulting"}</span></nav>
+        <p class="eyebrow">{page.label}</p>
+        <h1 id="contract-heading">{page.headline} <span>{page.headlineAccent}</span></h1>
+        <p class="hero-intro">{page.intro}</p>
+        <div class="hero-actions"><a class="primary-action" href={enquiryUrl}>{page.cta}<span aria-hidden="true">↗</span></a><a class="text-action" href="#contract-outcomes">See how it works <span aria-hidden="true">↓</span></a></div>
+        <p class="cta-note">{page.ctaNote}</p>
+        <p class="partner-note"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none"><path d="m12 3 7 4v5c0 5-7 9-7 9s-7-4-7-9V7l7-4Z M8.5 11.5 11 14l4.5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /></svg>HubSpot Solutions Partner</p>
+      </div>
+      <div class="hero-visual"><ContractWorkflowPreview kind={page.kind} /></div>
+    </section>
+
+    <section class="client-experience wrap" aria-labelledby="contract-clients-heading" data-proof-type="clients">
+      <h2 id="contract-clients-heading">Teams we’ve worked with</h2>
+      <div class="client-logos">{clientLogos.map(logo => <span class:list={["client-logo", logo.size, { "dark-logo": logo.dark }]}><img src={logo.src} alt={logo.name} width={logo.width} height={logo.height} loading="lazy" /></span>)}</div>
+    </section>
+
+    <section class="proof-section wrap" aria-labelledby="contract-proof-heading">
+      <div class="proof-card">
+        <div class="proof-figure"><strong>$2M+</strong><p>in annual recurring revenue missing from CRM visibility, identified in one client engagement.</p></div>
+        <div class="proof-story"><p class="eyebrow">{page.kind === "app" ? "The experience behind the app" : "Our work in practice"}</p><h2 id="contract-proof-heading">{page.proofHeading}</h2><p>Historical contracts brought into HubSpot. A renewal pipeline, automated deal creation and contract-value calculations.</p><a class="text-action" href="#contract-case-study">See the work behind the figure <span aria-hidden="true">↓</span></a></div>
+      </div>
+    </section>
+
+    <section id="contract-outcomes" class="outcomes-section wrap" aria-labelledby="contract-outcomes-heading">
+      <div class="section-intro"><p class="eyebrow">What gets easier</p><h2 id="contract-outcomes-heading">{page.outcomesHeading}</h2><p>{page.outcomesIntro}</p></div>
+      <div class="outcomes-grid">{page.outcomes.map((outcome, i) => (
+        <article class="outcome-card">
+          <div class="outcome-art"><img src={`/assets/illustrations/renewals/${outcome.illustration}.svg`} alt="" width="1122" height="1402" loading="lazy" decoding="async" /></div>
+          <div class="outcome-copy">
+            <p class="stage-label"><span>0{i + 1}</span>{outcome.stage}</p>
+            <h3>{outcome.title}</h3>
+            <p>{outcome.description}</p>
+            <ul class="outcome-points">{outcome.points.map(point => <li><span aria-hidden="true">✓</span>{point}</li>)}</ul>
+            <p class="outcome-detail">{outcome.detail}</p>
+          </div>
+        </article>
+      ))}</div>
+      <div class="notice-example" aria-labelledby="notice-example-heading">
+        <div><p class="eyebrow">An example notice window</p><h3 id="notice-example-heading">Time to act before the deadline.</h3><p>For a contract ending 31 December 2027 with 90 days’ notice, the notice deadline is 2 October. Starting the owner’s review 30 days earlier leaves room for a decision.</p></div>
+        <ol class="notice-timeline"><li><span>Start the review</span><strong>2 Sep</strong></li><li><span>Notice due</span><strong>2 Oct</strong></li><li><span>Contract ends</span><strong>31 Dec</strong></li></ol>
+      </div>
+      <p class="illustration-note">Conceptual illustrations. Notice dates shown are an example.</p>
+    </section>
+
+    <section class="visibility-section wrap" aria-labelledby="contract-visibility-heading">
+      <div class="section-intro"><p class="eyebrow">{page.kind === "app" ? "A clearer contract review" : "Checks built around your work"}</p><h2 id="contract-visibility-heading">{page.visibility.heading}</h2><p>{page.visibility.description}</p></div>
+      <div class="visibility-grid">{page.visibility.items.map(item => <article><RenewalIllustration variant={item.illustration} /><h3>{item.title}</h3><p>{item.description}</p></article>)}</div>
+    </section>
+
+    <section id="contract-how-we-work" class="process-section wrap" aria-labelledby="contract-process-heading">
+      <div class="section-intro"><p class="eyebrow">{page.kind === "app" ? "How setup works" : "How we work"}</p><h2 id="contract-process-heading">{page.processHeading}</h2><p>{page.processIntro}</p></div>
+      <ol class:list={["process-grid", { "four-steps": page.steps.length === 4 }]}>
+        {page.steps.map((step, i) => (
+          <li>
+            <div class="process-card-heading"><RenewalIllustration variant={step.illustration} /><span class="process-number" aria-hidden="true">0{i + 1}</span></div>
+            <h3>{step.title}</h3><p>{step.description}</p>
+            <ul class="process-checks">{step.checks.map(check => <li>{check}</li>)}</ul>
+            <p class="step-result"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none"><path d="m5 12 4 4L19 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>{step.result}</p>
+          </li>
+        ))}
+      </ol>
+      {page.workingNotes.length > 0 && <div class="working-notes">{page.workingNotes.map(note => <div><h3>{note.title}</h3><p>{note.description}</p></div>)}</div>}
+      <aside class="alternative"><div><h3>{page.alternative.title}</h3><p>{page.alternative.description}</p></div><a class="text-action" href={page.alternative.href}>{page.alternative.label}<span aria-hidden="true">→</span></a></aside>
+    </section>
+
+    <section id="contract-case-study" class="case-section wrap" aria-labelledby="contract-case-heading">
+      <div class="case-layout">
+        <div class="case-art"><img src="/assets/illustrations/renewals/first-results-clean-v3.svg" alt="" width="1122" height="1402" loading="lazy" decoding="async" /></div>
+        <div class="case-copy">
+          <p class="eyebrow">{page.kind === "app" ? "Consulting experience behind our products" : "An implementation example"}</p>
+          <h2 id="contract-case-heading">From contracts outside the CRM to a working renewal pipeline.</h2>
+          <dl class="case-details">
+            <div><dt>The starting point</dt><dd>Contract and renewal information sat outside HubSpot, leaving recurring-revenue visibility incomplete.</dd></div>
+            <div><dt>The work delivered</dt><dd>A renewal data model and pipeline, historical contract migration, automated renewal creation and contract-value calculations.</dd></div>
+            <div><dt>The practical change</dt><dd>A defined process for tracking contracts and upcoming renewals inside HubSpot, with the information needed to work the next term.</dd></div>
+          </dl>
+          <p class="case-qualification">The $2M+ figure describes an ARR visibility gap identified in this engagement. The illustration is conceptual.</p>
+        </div>
+      </div>
+    </section>
+
+    <ClientTestimonials id="contract-testimonials" description="Feedback on our HubSpot consulting work." />
+
+    <section class="faq-section wrap" aria-labelledby="contract-faq-heading"><div class="faq-intro"><p class="eyebrow">A few practical questions</p><h2 id="contract-faq-heading">Before we talk.</h2><p>Tools, setup and working together.</p></div><div class="faq-list">{page.faqs.map(faq => <details><summary><span>{faq.q}</span><svg aria-hidden="true" viewBox="0 0 24 24" fill="none"><path d="m7 10 5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg></summary><p>{faq.a}</p></details>)}</div></section>
+
+    <section class="closing-section wrap" aria-labelledby="contract-closing-heading"><div class="closing-card"><p class="eyebrow">{page.kind === "app" ? "Take a closer look" : "Start with a conversation"}</p><h2 id="contract-closing-heading">{page.closingHeading}</h2><p>{page.closingDescription}</p><a class="primary-action" href={enquiryUrl}>{page.cta}<span aria-hidden="true">↗</span></a><p class="cta-note">{page.kind === "app" ? "A guided walkthrough with your workflow in mind." : "Free initial conversation. Scope and costs agreed before work begins."}</p></div></section>
+  </div>
+  <Footer />
+</BaseLayout>
+
+<style>
+  .contract-skip { position: absolute; top: .5rem; left: 1rem; z-index: 100; padding: .8rem 1.2rem; background: var(--color-white); color: var(--color-ink-900); border: 2px solid var(--color-ink-900); border-radius: .5rem; transform: translateY(-180%); }
+  .contract-skip:focus { transform: translateY(0); }
+  .contract-page { --contract-accent: var(--color-aqua-900); --contract-tint: var(--color-aqua-10); color: var(--color-ink-900); }
+  .contract-page.consulting { --contract-accent: var(--color-v6-blue-800); --contract-tint: var(--color-v6-blue-50); }
+  .wrap { width: min(76rem, calc(100% - 3rem)); margin-inline: auto; }
+  .contract-page :is(a, summary):focus-visible { outline: 3px solid var(--color-ink-900); outline-offset: 4px; }
+  .eyebrow { color: var(--contract-accent); font-size: .75rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+  .contract-hero { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); align-items: center; gap: clamp(2rem, 5vw, 5rem); padding-block: 2rem 3.5rem; }
+  .breadcrumbs { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; color: var(--color-ink-600); font-size: .75rem; margin-bottom: 2.5rem; }
+  .breadcrumbs a { display: inline-flex; align-items: center; min-height: 2.75rem; text-decoration: underline; text-underline-offset: .2rem; }
+  .breadcrumbs a:hover { color: var(--contract-accent); }
+  .contract-hero h1 { margin-top: 1rem; font-size: clamp(2.6rem, 3.7vw, 3.5rem); line-height: 1.09; letter-spacing: -.035em; text-wrap: balance; }
+  .contract-hero h1 span { display: block; color: var(--contract-accent); }
+  .hero-intro { max-width: 34rem; margin-top: 1.5rem; font-size: 1.2rem; line-height: 1.65; color: var(--color-ink-600); }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: .4rem 1.3rem; align-items: center; margin-top: 1.8rem; }
+  .primary-action { display: inline-flex; align-items: center; justify-content: center; gap: 1rem; min-height: 3.2rem; padding: .85rem 1.35rem; border: 2px solid var(--color-action-border); border-radius: .75rem; background: var(--color-action); color: var(--color-on-action); text-decoration: none; font-size: 1rem; font-weight: 700; text-align: center; line-height: 1.4; }
+  .primary-action:hover { background: var(--color-action-hover); }
+  .primary-action:active { background: var(--color-action-pressed); }
+  .primary-action > span { flex-shrink: 0; }
+  .text-action { display: inline-flex; min-height: 2.75rem; align-items: center; gap: .7rem; color: var(--contract-accent); font-weight: 600; font-size: .9rem; line-height: 1.5; text-decoration: underline; text-decoration-color: transparent; text-underline-offset: .25rem; }
+  .text-action:hover { text-decoration-color: currentColor; }
+  .cta-note { margin-top: .75rem; font-size: .8rem; color: var(--color-ink-600); line-height: 1.5; }
+  .partner-note { display: flex; gap: .5rem; align-items: center; margin-top: 1.75rem; font-size: .8rem; font-weight: 600; color: var(--color-ink-600); }
+  .partner-note svg { width: 1.25rem; height: 1.25rem; color: var(--contract-accent); }
+  .hero-visual { min-width: 0; padding-top: 3rem; }
+  .client-experience { display: flex; align-items: center; gap: 2rem; padding-block: 1.5rem; border-block: 1px solid var(--color-ink-200); }
+  .client-experience h2 { flex: 0 0 9rem; color: var(--color-ink-600); font-family: inherit; font-size: .75rem; font-weight: 500; line-height: 1.5; letter-spacing: 0; }
+  .client-logos { display: flex; flex: 1; flex-wrap: wrap; gap: 1.5rem 2rem; justify-content: space-around; align-items: center; }
+  .client-logo { display: inline-flex; align-items: center; justify-content: center; }
+  .client-logo img { object-fit: contain; width: auto; max-width: 8rem; height: 1.7rem; }
+  .client-logo.tall img { height: 3.2rem; }
+  .client-logo.square img { height: 3rem; }
+  .client-logo.dark-logo { padding: .6rem .75rem; background: var(--color-ink-900); border-radius: .4rem; }
+  .client-logo.dark-logo img { height: 1.2rem; }
+  .proof-section { padding-block: 2.5rem 1rem; }
+  .proof-card { display: grid; grid-template-columns: 1fr 1.7fr; gap: 3rem; align-items: center; padding: 2.5rem; background: var(--color-ink-900); border: 1px solid var(--color-ink-900); border-radius: 1.5rem; color: var(--color-white); }
+  .proof-figure { padding-right: 2rem; border-right: 1px solid var(--color-aqua-800); }
+  .proof-figure strong { font-family: 'Bricolage Grotesque Variable', sans-serif; font-size: 3.75rem; font-weight: 700; letter-spacing: -.04em; line-height: 1.1; color: var(--color-white); }
+  .proof-figure p { margin-top: .6rem; font-size: .95rem; color: var(--color-aqua-300); line-height: 1.6; }
+  .proof-story .eyebrow { font-size: .7rem; color: var(--color-aqua-300); }
+  .proof-story h2 { margin-top: .6rem; font-size: 1.5rem; line-height: 1.3; }
+  .proof-story > p:not(.eyebrow) { margin-top: .75rem; color: var(--color-ink-100); font-size: .95rem; line-height: 1.6; }
+  .proof-story .text-action { margin-top: .65rem; color: var(--color-aqua-300); }
+  .proof-story .text-action:focus-visible { outline-color: var(--color-white); }
+  .outcomes-section, .process-section, .visibility-section, .case-section { padding-block: 4.5rem 1.5rem; scroll-margin-top: 6rem; }
+  .section-intro { max-width: 46rem; margin-bottom: 2rem; }
+  .section-intro h2, .faq-intro h2, .closing-card h2, .case-copy h2 { margin-top: .7rem; font-size: clamp(1.9rem, 3vw, 2.6rem); line-height: 1.15; letter-spacing: -.025em; text-wrap: balance; }
+  .section-intro > p:last-child { margin-top: 1rem; max-width: 40rem; color: var(--color-ink-600); font-size: 1.1rem; line-height: 1.6; }
+  .outcomes-grid { display: grid; gap: 2rem; }
+  .outcome-card { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1fr); gap: 3rem; align-items: center; padding-block: 1.5rem; border-bottom: 1px solid var(--color-ink-200); }
+  .outcome-card:nth-child(even) .outcome-art { order: 2; }
+  .outcome-art { min-width: 0; }
+  .outcome-art img { width: 100%; height: 23rem; object-fit: contain; }
+  .outcome-copy { max-width: 34rem; padding: 1rem 1.5rem 1rem 0; }
+  .stage-label { display: flex; align-items: center; gap: .6rem; font-size: .7rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--contract-accent); }
+  .stage-label > span { color: var(--color-ink-500); font-variant-numeric: tabular-nums; }
+  .outcome-copy h3 { margin-top: .8rem; font-size: clamp(1.6rem, 2.4vw, 2rem); line-height: 1.2; text-wrap: balance; }
+  .outcome-copy > p:not(.stage-label) { margin-top: 1rem; color: var(--color-ink-600); font-size: 1.05rem; line-height: 1.65; }
+  .outcome-points { display: grid; gap: .75rem; list-style: none; margin: 1.2rem 0 0; padding: 0; }
+  .outcome-points li { display: flex; align-items: flex-start; gap: .65rem; font-size: .95rem; line-height: 1.6; }
+  .outcome-points li > span { flex-shrink: 0; color: var(--contract-accent); font-weight: 700; }
+  .outcome-copy > p.outcome-detail { padding-top: 1rem; border-top: 1px solid var(--color-ink-200); font-size: .85rem; }
+  .illustration-note { text-align: right; font-size: .7rem; color: var(--color-ink-600); margin-top: .6rem; }
+  .notice-example { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 2rem; align-items: center; padding: 2rem; margin-top: 2rem; border: 1px solid var(--color-aqua-25); border-radius: 1rem; background: var(--color-aqua-10); }
+  .notice-example h3 { margin-top: .5rem; font-size: 1.35rem; line-height: 1.3; }
+  .notice-example div > p:last-child { margin-top: .75rem; font-size: .9rem; line-height: 1.6; color: var(--color-ink-600); }
+  .notice-timeline { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; list-style: none; margin: 0; padding: 0; }
+  .notice-timeline li { display: grid; gap: .6rem; padding-top: 1rem; border-top: 3px solid var(--color-aqua-300); }
+  .notice-timeline li:nth-child(2) { border-color: var(--color-coral-600); }
+  .notice-timeline span { font-size: .75rem; color: var(--color-ink-600); }
+  .notice-timeline strong { font-size: 1.5rem; white-space: nowrap; }
+  .visibility-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem; }
+  .visibility-grid article { padding: 1.5rem; border: 1px solid var(--color-ink-200); border-radius: 1rem; }
+  .visibility-grid h3 { margin-top: 1rem; font-size: 1.2rem; line-height: 1.35; }
+  .visibility-grid p { margin-top: .75rem; font-size: .95rem; line-height: 1.65; color: var(--color-ink-600); }
+  .process-section > .section-intro { text-align: center; margin-inline: auto; }
+  .process-section > .section-intro > p:last-child { margin-inline: auto; }
+  .process-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem; list-style: none; margin: 0; padding: 0; }
+  .process-grid.four-steps { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .process-grid > li { display: flex; flex-direction: column; padding: 1.5rem; border: 1px solid var(--color-ink-300); border-radius: 1rem; background: var(--contract-tint); }
+  .process-card-heading { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; }
+  .process-number { display: grid; place-items: center; width: 2rem; height: 2rem; border-radius: 50%; color: var(--contract-accent); background: var(--color-white); border: 1px solid var(--color-ink-200); font-size: .8rem; font-weight: 700; }
+  .process-grid h3 { margin-top: .85rem; font-size: 1.3rem; line-height: 1.3; }
+  .process-grid p { margin-top: .7rem; color: var(--color-ink-600); line-height: 1.6; }
+  .process-grid p:not(.step-result) { font-size: .95rem; }
+  .process-checks { flex: 1; display: grid; align-content: start; gap: .5rem; margin: 1rem 0 0; padding-left: 1.1rem; font-size: .85rem; line-height: 1.55; color: var(--color-ink-600); list-style: disc; }
+  .process-checks li::marker { color: var(--contract-accent); }
+  .process-grid .step-result { display: flex; align-items: flex-start; gap: .5rem; margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid var(--color-ink-300); font-size: .8rem; font-weight: 600; color: var(--contract-accent); }
+  .step-result svg { flex-shrink: 0; width: 1.1rem; height: 1.1rem; margin-top: .1rem; }
+  .working-notes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem; padding-block: 2rem; margin-top: .5rem; }
+  .working-notes h3 { font-size: 1rem; line-height: 1.4; }
+  .working-notes p { margin-top: .6rem; font-size: .9rem; line-height: 1.65; color: var(--color-ink-600); }
+  .alternative { display: flex; justify-content: space-between; gap: 1.5rem 3rem; align-items: center; margin-top: 1.5rem; padding: 1.5rem 2rem; border: 1px solid var(--color-ink-200); border-radius: 1rem; }
+  .alternative h3 { font-size: 1.1rem; line-height: 1.4; }
+  .alternative p { margin-top: .4rem; max-width: 34rem; font-size: .9rem; line-height: 1.6; color: var(--color-ink-600); }
+  .alternative a { flex-shrink: 0; max-width: 18rem; }
+  .case-layout { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 4rem; align-items: center; }
+  .case-art img { width: 100%; height: 28rem; object-fit: contain; }
+  .case-details { display: grid; gap: 1.2rem; margin: 1.5rem 0 0; }
+  .case-details div { border-left: 3px solid var(--color-aqua-300); padding-left: 1rem; }
+  .case-details dt { font-size: .85rem; font-weight: 700; color: var(--contract-accent); }
+  .case-details dd { margin-top: .4rem; font-size: .95rem; line-height: 1.65; color: var(--color-ink-600); }
+  .case-qualification { margin-top: 1.5rem; font-size: .75rem; line-height: 1.6; color: var(--color-ink-600); }
+  .faq-section { display: grid; grid-template-columns: 1fr 1.8fr; gap: 4rem; padding-block: 4.5rem; }
+  .faq-intro > p:last-child { margin-top: 1rem; color: var(--color-ink-600); line-height: 1.6; }
+  .faq-list { border-top: 1px solid var(--color-ink-200); }
+  .faq-list details { border-bottom: 1px solid var(--color-ink-200); }
+  .faq-list summary { display: flex; cursor: pointer; list-style: none; gap: 1.25rem; justify-content: space-between; align-items: center; min-height: 3.5rem; padding-block: 1.1rem; font-weight: 600; line-height: 1.5; }
+  .faq-list summary::-webkit-details-marker { display: none; }
+  .faq-list summary:hover { color: var(--contract-accent); }
+  .faq-list summary svg { flex-shrink: 0; width: 1.25rem; height: 1.25rem; color: var(--contract-accent); }
+  .faq-list details[open] summary svg { transform: rotate(180deg); }
+  .faq-list details > p { padding: 0 2.5rem 1.5rem 0; font-size: .95rem; line-height: 1.7; color: var(--color-ink-600); }
+  .closing-section { padding-block: 0 5rem; }
+  .closing-card { background: var(--color-aqua-10); border: 1px solid var(--color-aqua-25); border-radius: 1.5rem; padding: clamp(2rem, 5vw, 4rem); text-align: center; }
+  .closing-card h2 { max-width: 45rem; margin-inline: auto; }
+  .closing-card > p:not(.eyebrow, .cta-note) { max-width: 38rem; margin: 1.2rem auto 1.75rem; font-size: 1.1rem; line-height: 1.6; color: var(--color-ink-600); }
+  @media (max-width: 1023px) {
+    .contract-hero { gap: 2rem; }
+    .contract-hero h1 { font-size: 2.6rem; }
+    .hero-intro { font-size: 1.05rem; }
+    .outcome-card { gap: 2rem; }
+    .outcome-copy { padding: 1rem 0; }
+    .outcome-art img { height: 22rem; }
+    .process-grid.four-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .notice-example { grid-template-columns: 1fr; }
+    .case-layout { gap: 2rem; }
+    .client-experience { flex-direction: column; gap: 1rem; }
+    .client-experience h2 { flex: auto; }
+    .client-logos { width: 100%; }
+    .alternative { align-items: flex-start; flex-direction: column; gap: .75rem; }
+  }
+  @media (max-width: 767px) {
+    .wrap { width: calc(100% - 2rem); }
+    .contract-hero { grid-template-columns: 1fr; padding-block: 1rem 2rem; gap: 2rem; }
+    .breadcrumbs { margin-bottom: 1.2rem; }
+    .contract-hero h1 { max-width: 38rem; font-size: clamp(2.3rem, 6vw, 3rem); }
+    .hero-intro { font-size: 1.15rem; }
+    .hero-visual { padding-top: 0; max-width: 36rem; width: 100%; margin-inline: auto; }
+    .client-logos { gap: 1.5rem; }
+    .client-logo img { max-width: 6.5rem; height: 1.4rem; }
+    .proof-card { grid-template-columns: 1fr; gap: 1.5rem; padding: 1.5rem; }
+    .proof-figure { padding: 0 0 1.5rem; border-right: 0; border-bottom: 1px solid var(--color-aqua-800); }
+    .outcomes-section, .process-section, .visibility-section, .case-section { padding-block: 3rem 1rem; }
+    .outcome-card, .process-grid, .process-grid.four-steps, .visibility-grid, .working-notes, .case-layout { grid-template-columns: 1fr; }
+    .outcome-card { gap: 0; }
+    .outcome-card:nth-child(even) .outcome-art { order: 0; }
+    .outcome-art img { height: 18rem; }
+    .outcome-copy { max-width: none; padding: 1.5rem 0; }
+    .outcome-copy h3 { font-size: 1.7rem; }
+    .notice-example { padding: 1.5rem; }
+    .notice-timeline { gap: .75rem; }
+    .notice-timeline strong { font-size: 1.3rem; }
+    .process-grid { gap: 1rem; }
+    .working-notes { gap: 1.5rem; }
+    .case-art img { height: 18rem; }
+    .alternative { padding: 1.5rem; }
+    .faq-section { grid-template-columns: 1fr; gap: 1.5rem; padding-block: 3rem; }
+    .closing-section { padding-bottom: 3rem; }
+  }
+  @media (max-width: 520px) {
+    .hero-actions { align-items: stretch; flex-direction: column; }
+    .hero-actions .text-action { justify-content: center; }
+    .closing-card { padding: 2rem 1.25rem; }
+  }
+</style>

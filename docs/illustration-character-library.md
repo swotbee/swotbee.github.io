@@ -334,17 +334,20 @@ for Ravi or any future character. Do not carry forward Arun's face, glasses,
 beard, ageing instructions, suit iterations or anatomical targets. His working
 name and stable ID are retired from the active cast.
 
-## Consulting hero scene reference
+## Consulting hero brief
 
-The user liked the [new Nia consulting hero concept](../print-references/consulting-hero-nia-v1-white-preview.png).
-Its [transparent PNG](../print-references/consulting-hero-nia-v1.png) and
-[original prompt](../print-references/consulting-hero-nia-v1-prompt.txt) are saved.
-It has not yet replaced the consulting page's original hero or been converted to
-native SVG.
-
-That scene includes an unnamed male colleague. He is not Alex or Ravi. If he
-becomes a recurring person, establish an individual identity reference and stable
-ID before adding him to the named cast.
+The user discarded all previous consulting hero concepts, renderings, prompts
+and composition studies on 3 November 2026 and requested their removal.
+After that reset, the user approved the messaging and
+[fresh wireframe v5](../print-references/consulting-hero-wireframe-v5-review.png)
+on 3 November 2026 with "Looks good." Use the
+[brief](consulting-hero-brief.txt) and
+[text-free layout geometry](../print-references/consulting-hero-wireframe-v5-layout.svg)
+for the ascending gameboard journey. The wireframe uses Nia and Ravi placement
+guides; detailed character artwork and the finished hero are not yet approved.
+Use their approved identities and wardrobes, and review the finished hero before
+installation. Discarded hero explorations remain excluded. The original installed
+consulting illustrations remain unchanged.
 
 ## Final continuity review
 

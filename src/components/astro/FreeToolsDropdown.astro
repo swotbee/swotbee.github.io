@@ -1,0 +1,79 @@
+---
+import { freeToolGroups } from "../../data/free-tools";
+
+interface Props {
+  mobile?: boolean;
+}
+
+const { mobile = false } = Astro.props;
+---
+
+<details class:list={["free-tools", { mobile }]} data-free-tools>
+  <summary>
+    Free Tools
+    <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+    </svg>
+  </summary>
+  <div class="tools-panel">
+    <div class="tools-groups">
+      {freeToolGroups.map(group => (
+        <div>
+          <p class="group-title">{group.title}</p>
+          <ul>
+            {group.links.map(link => <li><a href={link.href}>{link.label}</a></li>)}
+          </ul>
+        </div>
+      ))}
+    </div>
+    <a class="all-resources" href="/resources/">All resources <span aria-hidden="true">→</span></a>
+  </div>
+</details>
+
+<style>
+  .free-tools { position: relative; font-size: 14px; color: var(--color-ink-900); }
+  summary { display: flex; align-items: center; gap: 6px; min-height: 44px; padding: 8px 12px; border-radius: 6px; font-weight: 500; list-style: none; cursor: pointer; white-space: nowrap; }
+  summary::-webkit-details-marker { display: none; }
+  summary:hover, .free-tools[open] > summary { background: var(--color-ink-25); }
+  .free-tools[open] > summary svg { transform: rotate(180deg); }
+  summary:focus-visible, a:focus-visible { outline: 3px solid var(--color-aqua-600); outline-offset: 2px; }
+  .tools-panel { position: absolute; top: calc(100% + 8px); left: 50%; transform: translateX(-50%); width: min(38rem, calc(100vw - 3rem)); max-height: calc(100dvh - 6rem); overflow-y: auto; overscroll-behavior: contain; padding: 20px; border: 1px solid var(--color-ink-200); border-radius: 12px; background: var(--color-white); box-shadow: 0 12px 32px color-mix(in srgb, var(--color-ink-900) 12%, transparent); z-index: 50; }
+  .tools-groups { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+  .group-title { margin: 0 0 8px; color: var(--color-aqua-800); font-size: 12px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
+  ul { list-style: none; padding: 0; margin: 0; }
+  a { display: flex; align-items: center; min-height: 44px; padding: 10px 8px; border-radius: 6px; color: var(--color-ink-900); line-height: 1.45; text-decoration: none; }
+  a:hover { background: var(--color-aqua-50); color: var(--color-aqua-900); }
+  .all-resources { justify-content: space-between; margin-top: 16px; border-top: 1px solid var(--color-ink-200); border-radius: 0; padding-top: 16px; font-weight: 600; }
+  .mobile .tools-panel { position: static; transform: none; width: auto; max-height: none; overflow: visible; margin: 4px 0 12px; padding: 16px 12px; box-shadow: none; }
+  .mobile .tools-groups { grid-template-columns: 1fr; gap: 20px; }
+</style>
+
+<script>
+  const dropdowns = Array.from(document.querySelectorAll<HTMLDetailsElement>("[data-free-tools]"));
+
+  for (const dropdown of dropdowns) {
+    dropdown.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && dropdown.open) {
+        event.preventDefault();
+        dropdown.open = false;
+        dropdown.querySelector("summary")?.focus();
+      }
+    });
+    dropdown.addEventListener("toggle", () => {
+      if (dropdown.open) {
+        for (const other of dropdowns) {
+          if (other !== dropdown) other.open = false;
+        }
+      }
+    });
+  }
+
+  for (const eventName of ["click", "focusin"]) {
+    document.addEventListener(eventName, (event) => {
+      if (!(event.target instanceof Node)) return;
+      for (const dropdown of dropdowns) {
+        if (dropdown.open && !dropdown.contains(event.target)) dropdown.open = false;
+      }
+    });
+  }
+</script>

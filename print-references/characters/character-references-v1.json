@@ -4,7 +4,6 @@
   "generator": "Built-in imagegen",
   "existingCharacters": "Nia remains unchanged in public/assets/illustrations/renewals/",
   "styleReferences": [
-    "print-references/consulting-hero-nia-v1.png",
     "public/assets/illustrations/renewals/renewal-results-clean-v3.svg",
     "public/assets/illustrations/renewals/character-reference.json"
   ],

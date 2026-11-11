@@ -53,8 +53,13 @@ Exact repository paths for this character work: COMMIT-FILES.txt
 To stage only this work, from the repository root:
   git add --pathspec-from-file=print-references/characters/COMMIT-FILES.txt
 
-The commit list includes this character folder and its history, the six related
-documentation files, the original Nia consulting-hero samples, and the final
-reference pack. Unrelated landing-page changes, root print exports, audio and
+The commit list includes this character folder and its history, related
+documentation files, the consulting hero brief and approved fresh wireframe v5,
+and the final reference
+pack. Earlier consulting hero drafts were discarded and removed at the user's
+request; use ../../docs/consulting-hero-brief.txt for the retained idea.
+The later wireframe's messaging and direction are approved; detailed character
+artwork and the finished hero still require review before installation.
+Unrelated landing-page changes, root print exports, audio and
 temporary files are excluded. The reusable pack contains the selected set and
 face/body masters, not the complete history or retired Arun.

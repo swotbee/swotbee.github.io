@@ -1,0 +1,37 @@
+---
+interface Props { kind: "app" | "consulting" }
+const { kind } = Astro.props;
+const imageDescription = kind === "app"
+  ? "Illustration of contracts in HubSpot: an agreement awaiting signature with a named owner, and a renewal with line items carried over, a price uplift applied and follow-up scheduled before the notice deadline."
+  : "Illustration of a connected contract process: sales prepares the agreement, finance and delivery receive the signed terms, and the account team receives the next renewal with its notice date and commercial details.";
+// Exported upright at twice the displayed size. The mobile export preserves readable
+// text and its own aspect ratio without rendering a selectable product mockup.
+const artwork = kind === "app"
+  ? { desktop: { width: 1090, height: 1250 }, mobile: { width: 716, height: 1414 } }
+  : { desktop: { width: 1090, height: 1220 }, mobile: { width: 716, height: 1246 } };
+---
+
+<picture class="preview-illustration" draggable="false">
+  <source
+    media="(max-width: 767px)"
+    srcset={`/assets/contracts/hero-${kind}-mobile.webp`}
+    width={artwork.mobile.width}
+    height={artwork.mobile.height}
+  />
+  <img
+    class="workflow-preview"
+    src={`/assets/contracts/hero-${kind}-desktop-level.webp`}
+    alt={imageDescription}
+    width={artwork.desktop.width}
+    height={artwork.desktop.height}
+    loading="eager"
+    decoding="async"
+    fetchpriority="high"
+    draggable="false"
+  />
+</picture>
+
+<style>
+  .preview-illustration { display: block; cursor: default; -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; }
+  .workflow-preview { display: block; width: 100%; height: auto; pointer-events: none; -webkit-user-select: none; user-select: none; -webkit-user-drag: none; -webkit-touch-callout: none; }
+</style>

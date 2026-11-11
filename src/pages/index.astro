@@ -29,6 +29,7 @@ import RenewalServicePaths from "../components/astro/homepage/RenewalServicePath
 import RenewalResults from "../components/astro/homepage/RenewalResults.astro";
 import RenewalIllustration from "../components/astro/homepage/RenewalIllustration.astro";
 import RenewalDemoModal from "../components/react/RenewalDemoModal.jsx";
+import { clientTestimonials } from "../data/client-testimonials";
 import {
   AdjustmentsHorizontalIcon,
   ArrowPathIcon,
@@ -304,27 +305,12 @@ const stats = [
   { value: "2 wks", label: "to first results", tone: "text-v6-amber" },
 ];
 
-// TESTIMONIALS
-const testimonials = [
-  {
-    quote:
-      "Siva quickly grasped our complex workflows and immediately began identifying optimization opportunities. What sets him apart is how he functions as a true extension of our team, handling both technical implementation and strategic guidance.",
-    name: "Samantha Ross",
-    initials: "RO",
-    context: "Postgrad",
-    image: "/assets/testimonials/profile1.webp",
-    companyLogo: "/logos/clients/postgrad.png",
-  },
-  {
-    quote:
-      "Sharmi helped our team do the foundational work that launched our ABM strategy. She took unstructured goals and, by applying her customer-focused insight and technical know-how, turned them into specific solutions that optimized our entire enrichment project in HubSpot.",
-    name: "Shreyas Mecheri",
-    initials: "MO",
-    context: "Jirav",
-    image: "/assets/testimonials/profile2.jpg",
-    companyLogo: "/logos/clients/jirav.png",
-  },
-];
+// Share the published quotes while preserving this page's carousel layout.
+const testimonials = clientTestimonials.map(({ company, logo, ...testimonial }) => ({
+  ...testimonial,
+  context: company,
+  companyLogo: logo,
+}));
 
 // CASE STUDY (anonymous).
 const caseStudy = {

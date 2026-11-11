@@ -3,6 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Navbar from "../components/astro/Navbar.astro";
 import Footer from "../components/astro/Footer.astro";
 import StructuredData from "../components/astro/StructuredData.astro";
+import ClientTestimonials from "../components/astro/ClientTestimonials.astro";
 
 // Client approval for a named case study is pending. Keep the source document,
 // client identity, branding and attributed quotations out of this page and its assets.
@@ -21,16 +22,6 @@ const clientLogos = [
   { name: "Embrio", src: "/logos/clients/embryo.png", width: 297, height: 62, dark: true, style: "h-5 sm:h-6" },
   { name: "Jirav", src: "/logos/clients/jirav.png", width: 862, height: 794, dark: false, style: "h-12 sm:h-14" },
   { name: "GWC Data.AI", src: "/logos/clients/gwcdata.png", width: 700, height: 188, dark: false, style: "h-8 sm:h-9" },
-];
-const testimonials = [
-  {
-    quote: "Siva quickly grasped our complex workflows and immediately began identifying optimization opportunities. What sets him apart is how he functions as a true extension of our team, handling both technical implementation and strategic guidance.",
-    name: "Samantha Ross", company: "Postgrad", image: "/assets/testimonials/profile1.webp", logo: "/logos/clients/postgrad.png",
-  },
-  {
-    quote: "Sharmi helped our team do the foundational work that launched our ABM strategy. She took unstructured goals and, by applying her customer-focused insight and technical know-how, turned them into specific solutions that optimized our entire enrichment project in HubSpot.",
-    name: "Shreyas Mecheri", company: "Jirav", image: "/assets/testimonials/profile2.jpg", logo: "/logos/clients/jirav.png",
-  },
 ];
 const familiar = [
   { thought: "We have HubSpot, but the team still works in spreadsheets.", href: "#offer-customer", label: "CRM & data" },
@@ -184,23 +175,7 @@ const primaryButton = "inline-flex min-h-12 items-center justify-center rounded-
       </div>
     </section>
 
-    <section id="clients" class="section-shell bg-white" aria-labelledby="clients-heading">
-      <div class="mx-auto max-w-6xl">
-        <div class="mb-9 max-w-2xl"><p class="eyebrow">In our clients' words</p><h2 id="clients-heading" class="section-heading">Why Our Clients Love Us.</h2></div>
-        <div class="grid gap-6 md:grid-cols-2">
-          {testimonials.map(t => (
-            <figure class="flex flex-col rounded-2xl border border-v6-border bg-v6-bg-warm p-6 sm:p-8" data-client-testimonial={t.company}>
-              <div class="mb-5 flex h-12 items-center"><img src={t.logo} alt={`${t.company} logo`} width={t.company === "Postgrad" ? 146 : 80} height={t.company === "Postgrad" ? 30 : 74} loading="lazy" decoding="async" class:list={["object-contain object-left", t.company === "Postgrad" ? "h-auto w-36" : "h-12 w-auto"]} /></div>
-              <blockquote class="flex-1 text-lg leading-relaxed text-v6-dark"><p>“{t.quote}”</p></blockquote>
-              <figcaption class="mt-6 flex items-center gap-3 border-t border-v6-border pt-5">
-                <img src={t.image} alt="" width="48" height="48" loading="lazy" decoding="async" class="h-12 w-12 shrink-0 rounded-full object-cover" />
-                <div><p class="font-semibold text-v6-dark">{t.name}</p><p class="text-sm text-v6-text-muted">{t.company}</p></div>
-              </figcaption>
-            </figure>
-          ))}
-        </div>
-      </div>
-    </section>
+    <ClientTestimonials />
 
     <section id="approach" class="section-shell border-t border-v6-border bg-v6-bg" aria-labelledby="approach-heading">
       <div class="mx-auto max-w-6xl">

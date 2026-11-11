@@ -1,0 +1,69 @@
+---
+import { clientTestimonials } from "../../data/client-testimonials";
+
+interface Props {
+  id?: string;
+  description?: string;
+}
+
+const { id = "clients", description } = Astro.props;
+const headingId = `${id}-heading`;
+---
+
+<section id={id} class="client-testimonials" aria-labelledby={headingId} data-client-testimonials>
+  <div class="testimonials-inner">
+    <div class="testimonials-heading">
+      <p class="testimonials-eyebrow">In our clients’ words</p>
+      <h2 id={headingId}>Why Our Clients Love Us.</h2>
+      {description && <p class="testimonials-description">{description}</p>}
+    </div>
+    <div class="testimonials-grid">
+      {clientTestimonials.map(testimonial => (
+        <figure class="testimonial-card" data-client-testimonial={testimonial.company}>
+          <div class="company-logo">
+            <img
+              src={testimonial.logo}
+              alt={`${testimonial.company} logo`}
+              width={testimonial.company === "Postgrad" ? 146 : 80}
+              height={testimonial.company === "Postgrad" ? 30 : 74}
+              class:list={{ "postgrad-logo": testimonial.company === "Postgrad" }}
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <blockquote><p>“{testimonial.quote}”</p></blockquote>
+          <figcaption>
+            <img src={testimonial.image} alt="" width="48" height="48" loading="lazy" decoding="async" />
+            <div><p class="client-name">{testimonial.name}</p><p class="client-company">{testimonial.company}</p></div>
+          </figcaption>
+        </figure>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .client-testimonials { padding: 4rem 1rem; scroll-margin-top: 5rem; }
+  .testimonials-inner { max-width: 72rem; margin-inline: auto; }
+  .testimonials-heading { max-width: 42rem; margin-bottom: 2.25rem; }
+  .testimonials-eyebrow { font-size: .75rem; font-weight: 700; line-height: 1.5; letter-spacing: .14em; text-transform: uppercase; color: var(--color-v6-copper-800); }
+  .testimonials-heading h2 { margin-top: .75rem; font-size: 1.875rem; line-height: 1.25; font-weight: 700; text-wrap: balance; color: var(--color-ink-900); }
+  .testimonials-description { margin-top: 1rem; color: var(--color-ink-600); line-height: 1.6; }
+  .testimonials-grid { display: grid; gap: 1.5rem; }
+  .testimonial-card { display: flex; flex-direction: column; margin: 0; padding: 1.5rem; border: 1px solid var(--color-ink-200); border-radius: 1rem; background: var(--color-aqua-10); }
+  .company-logo { display: flex; align-items: center; height: 3rem; margin-bottom: 1.25rem; }
+  .company-logo img { width: auto; height: 3rem; object-fit: contain; object-position: left; }
+  .company-logo img.postgrad-logo { width: 9rem; height: auto; }
+  blockquote { flex: 1; font-size: 1.125rem; line-height: 1.625; color: var(--color-ink-900); }
+  figcaption { display: flex; align-items: center; gap: .75rem; margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid var(--color-ink-200); }
+  figcaption > img { flex-shrink: 0; width: 3rem; height: 3rem; object-fit: cover; border-radius: 50%; }
+  .client-name { font-weight: 600; color: var(--color-ink-900); }
+  .client-company { font-size: .875rem; line-height: 1.5; color: var(--color-ink-600); }
+  @media (min-width: 640px) {
+    .client-testimonials { padding: 5rem 1.5rem; }
+    .testimonials-heading h2 { font-size: 2.25rem; }
+    .testimonial-card { padding: 2rem; }
+  }
+  @media (min-width: 768px) { .testimonials-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (min-width: 1024px) { .client-testimonials { padding-inline: 2rem; } }
+</style>

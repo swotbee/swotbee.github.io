@@ -327,18 +327,23 @@
   ],
   "sceneReferences": [
     {
-      "id": "consulting-hero-nia-v1",
-      "image": "print-references/consulting-hero-nia-v1.png",
-      "whitePreview": "print-references/consulting-hero-nia-v1-white-preview.png",
-      "prompt": "print-references/consulting-hero-nia-v1-prompt.txt",
-      "status": "User liked the concept; not yet integrated or converted to native SVG.",
-      "characters": [
-        "nia"
-      ],
-      "additionalPerson": "An unnamed male colleague appears in the hero. He is not Alex or Ravi, and is not a separate named cast identity. Establish an individual reference before reusing him as a recurring character.",
-      "use": "Scene composition and style reference; selected character identity references take precedence."
+      "id": "consulting-hero-wireframe-v5",
+      "image": "print-references/consulting-hero-wireframe-v5-review.png",
+      "layout": "print-references/consulting-hero-wireframe-v5-layout.svg",
+      "source": "print-references/consulting-hero-wireframe-v5.mjs",
+      "notes": "print-references/consulting-hero-wireframe-v5-notes.txt",
+      "characters": ["nia", "ravi"],
+      "status": "Messaging and wireframe direction approved by the user on 2026-11-03. Detailed character artwork, finished hero and installation are not approved.",
+      "feedback": "Looks good.",
+      "use": "Approved benefit wording, route geometry and equal-scale character placement. Figures are placeholders; use current identity masters and wardrobe references for finished character artwork."
     }
   ],
+  "consultingHeroBrief": {
+    "path": "docs/consulting-hero-brief.txt",
+    "status": "Fresh wireframe v5 and messaging approved on 2026-11-03 after the earlier hero explorations were discarded and removed. Finished artwork and installation require separate review.",
+    "idea": "An ascending gameboard journey showing how resolving practical HubSpot challenges supports business growth.",
+    "referencePolicy": "Use the approved fresh wireframe v5 for layout and messaging, and current identity masters and wardrobes for Nia and Ravi. Do not reuse discarded hero explorations."
+  },
   "reviewSheets": {
     "raviWithStyleReferences": "print-references/characters/ravi-mei-alex-v4-white-preview.png",
     "approvedRaviChestDirection": "print-references/characters/ravi-helen-chest-study-v1-white-preview.png",
