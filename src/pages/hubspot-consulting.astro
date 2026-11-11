@@ -4,6 +4,7 @@ import Navbar from "../components/astro/Navbar.astro";
 import Footer from "../components/astro/Footer.astro";
 import StructuredData from "../components/astro/StructuredData.astro";
 import ClientTestimonials from "../components/astro/ClientTestimonials.astro";
+import ConsultingHeroStory from "../components/astro/ConsultingHeroStory.astro";
 
 // Client approval for a named case study is pending. Keep the source document,
 // client identity, branding and attributed quotations out of this page and its assets.
@@ -97,7 +98,7 @@ const primaryButton = "inline-flex min-h-12 items-center justify-center rounded-
 
   <main id="main-content">
     <section class="relative isolate overflow-hidden bg-white px-4 py-14 sm:px-6 sm:py-20 lg:px-8" aria-labelledby="consulting-heading">
-      <div class="mx-auto grid max-w-[100rem] items-center gap-10 lg:grid-cols-[1fr_1.25fr] lg:gap-12">
+      <div class="mx-auto grid max-w-[100rem] items-center gap-10 lg:grid-cols-[0.92fr_1.42fr] lg:gap-12">
         <div>
           <div class="flex flex-wrap items-center gap-3">
             <p class="eyebrow inline-flex rounded-full bg-v6-copper-50 px-4 py-2">HubSpot consulting</p>
@@ -109,20 +110,7 @@ const primaryButton = "inline-flex min-h-12 items-center justify-center rounded-
           <a href={consultationUrl} class:list={[primaryButton, "mt-7 w-full sm:w-auto"]}>Book a free consultation <span class="ml-2" aria-hidden="true">→</span></a>
           <p class="mt-3 text-sm text-v6-text-muted">30 minutes. Bring the process you want to improve.</p>
         </div>
-        <figure class="mx-auto w-full max-w-3xl lg:max-w-none" data-hero-illustration>
-          <img
-            src="/assets/consulting/hero-journey-v7-1536.webp"
-            srcset="/assets/consulting/hero-journey-v7-600.webp 600w, /assets/consulting/hero-journey-v7-1200.webp 1200w, /assets/consulting/hero-journey-v7-1536.webp 1536w"
-            sizes="(min-width: 1664px) 862px, (min-width: 1024px) calc(55.56vw - 62px), (min-width: 816px) 768px, (min-width: 640px) calc(100vw - 48px), calc(100vw - 32px)"
-            width="1536"
-            height="1024"
-            alt="Two professionals recover a slipping opportunity and review a customer brief along an ascending gameboard path."
-            fetchpriority="high"
-            decoding="async"
-            class="block h-auto w-full"
-          />
-          <figcaption class="mt-4 text-center text-sm font-semibold text-v6-text-muted">People, processes and information working together.</figcaption>
-        </figure>
+        <ConsultingHeroStory />
       </div>
     </section>
 

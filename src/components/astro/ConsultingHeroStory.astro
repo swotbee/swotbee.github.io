@@ -1,0 +1,93 @@
+---
+const scenes = [
+  { caption: "We learn how your business works and identify what is holding it back.", alt: "A team considers different reports beneath a tangled process on a whiteboard." },
+  { caption: "We speak with your stakeholders to clarify needs, questions and dependencies.", alt: "Four people discuss a partially mapped process with dotted connections and a question mark." },
+  { caption: "Together, we agree on a clear picture and the next steps to improve it.", alt: "The team discusses a clear process connecting commercial activity, an agreement and a financial view." },
+];
+---
+<figure class="mx-auto w-full max-w-3xl lg:max-w-none" data-consulting-story aria-label="Our consulting approach" aria-roledescription="carousel">
+  <div class="story-stage">
+    <div class="story-background" aria-hidden="true"></div>
+    <div class="story-controls" role="group" aria-label="Illustration playback controls" data-story-controls hidden>
+      <button type="button" data-story-previous aria-label="Previous scene" title="Previous scene"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 5-7 7 7 7" /></svg></button>
+      <button type="button" data-story-toggle aria-label="Pause slideshow" title="Pause slideshow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5v14M15 5v14" /></svg></button>
+      <button type="button" data-story-next aria-label="Next scene" title="Next scene"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7" /></svg></button>
+    </div>
+    {scenes.map((scene, index) => <img src={`/assets/consulting/hero-story-v2/layered-scene-${index + 1}-1200.webp`} srcset={`/assets/consulting/hero-story-v2/layered-scene-${index + 1}-600.webp 600w, /assets/consulting/hero-story-v2/layered-scene-${index + 1}-1200.webp 1200w`} sizes="(min-width: 1664px) 900px, (min-width: 1024px) 57vw, (min-width: 816px) 768px, (min-width: 640px) calc(100vw - 48px), calc(100vw - 32px)" width="1200" height="675" alt={index === 0 ? scene.alt : ""} aria-hidden={index === 0 ? "false" : "true"} fetchpriority={index === 0 ? "high" : "low"} decoding="async" class:list={["story-image", index === 0 && "current"]} data-story-image />)}
+  </div>
+  <figcaption class="mt-4 text-center text-sm font-semibold text-v6-text-muted" data-story-caption aria-live="off">{scenes[0].caption}</figcaption>
+  <script type="application/json" data-story-scenes set:html={JSON.stringify(scenes)} />
+</figure>
+<style>
+  .story-stage { position: relative; isolation: isolate; display: grid; }
+  .story-background { position: absolute; inset: 7% 3%; z-index: -1; background: #e1f0e8; border-radius: 51% 38% 58% 35% / 42% 57% 37% 61%; }
+  .story-image { grid-area: 1 / 1; display: block; width: 100%; height: auto; opacity: 0; z-index: 0; }
+  .story-image.previous { opacity: 1; z-index: 1; }
+  .story-image.current { opacity: 1; z-index: 2; transition: opacity .7s ease-in-out; }
+  .story-controls { position: absolute; right: .5rem; bottom: .5rem; z-index: 4; display: flex; gap: .2rem; padding: .25rem; border-radius: .75rem; background: rgba(255, 255, 255, .94); box-shadow: 0 2px 10px rgba(18, 47, 44, .18); opacity: .55; transition: opacity .2s ease; }
+  .story-controls[hidden] { display: none; }
+  .story-stage:hover .story-controls, .story-stage:focus-within .story-controls { opacity: 1; }
+  .story-controls button { min-width: 44px; min-height: 44px; display: grid; place-items: center; border: 0; border-radius: .5rem; color: #174a43; background: transparent; cursor: pointer; }
+  .story-controls :global(svg) { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .story-controls button:hover { background: #dceee5; }
+  .story-controls button:focus-visible { outline: 3px solid #a64d32; outline-offset: 2px; }
+  @media (hover: none) { .story-controls { opacity: 1; } }
+  @media (prefers-reduced-motion: reduce) { .story-image.current, .story-controls { transition: none; } }
+</style>
+<script>
+  document.querySelectorAll<HTMLElement>('[data-consulting-story]').forEach((story) => {
+    const images = [...story.querySelectorAll<HTMLImageElement>('[data-story-image]')];
+    const caption = story.querySelector<HTMLElement>('[data-story-caption]');
+    const source = story.querySelector<HTMLScriptElement>('[data-story-scenes]');
+    const controls = story.querySelector<HTMLElement>('[data-story-controls]');
+    const toggle = story.querySelector<HTMLButtonElement>('[data-story-toggle]');
+    if (!caption || !source || !controls || !toggle || images.length < 2) return;
+    const scenes: { caption: string; alt: string }[] = JSON.parse(source.textContent || '[]');
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let index = 0;
+    let timer: ReturnType<typeof setInterval> | undefined;
+    let cleanup: ReturnType<typeof setTimeout> | undefined;
+    let hovering = false;
+    let hoverOverride = false;
+    let playing = !reduced.matches;
+    let pointerChoice: boolean | undefined;
+    function show(next: number) {
+      clearTimeout(cleanup);
+      const old = images[index];
+      const incoming = images[next];
+      images.forEach(image => image.classList.remove('previous'));
+      old.classList.remove('current');
+      old.classList.add('previous');
+      incoming.classList.remove('previous');
+      void incoming.offsetWidth;
+      incoming.classList.add('current');
+      cleanup = window.setTimeout(() => old.classList.remove('previous'), 700);
+      old.alt = '';
+      old.setAttribute('aria-hidden', 'true');
+      incoming.alt = scenes[next].alt;
+      incoming.setAttribute('aria-hidden', 'false');
+      caption!.textContent = scenes[next].caption;
+      index = next;
+    }
+    function sync() {
+      clearInterval(timer);
+      toggle!.querySelector('path')?.setAttribute('d', playing ? 'M9 5v14M15 5v14' : 'M8 5v14l11-7z');
+      toggle!.setAttribute('aria-label', playing ? 'Pause slideshow' : 'Play slideshow');
+      toggle!.title = playing ? 'Pause slideshow' : 'Play slideshow';
+      caption!.setAttribute('aria-live', playing ? 'off' : 'polite');
+      if (playing && !document.hidden && (!hovering || hoverOverride)) timer = setInterval(() => show((index + 1) % scenes.length), 3000);
+    }
+    story.querySelector<HTMLButtonElement>('[data-story-previous]')?.addEventListener('click', () => { playing = false; show((index + scenes.length - 1) % scenes.length); sync(); });
+    story.querySelector<HTMLButtonElement>('[data-story-next]')?.addEventListener('click', () => { playing = false; show((index + 1) % scenes.length); sync(); });
+    toggle.addEventListener('pointerdown', () => { pointerChoice = !playing; });
+    toggle.addEventListener('pointercancel', () => { pointerChoice = undefined; });
+    toggle.addEventListener('click', () => { playing = pointerChoice ?? !playing; pointerChoice = undefined; hoverOverride = playing; if (playing) show((index + 1) % scenes.length); sync(); });
+    story.addEventListener('mouseenter', () => { hovering = true; hoverOverride = false; sync(); });
+    story.addEventListener('mouseleave', () => { hovering = false; hoverOverride = false; sync(); });
+    story.addEventListener('focusin', () => { playing = false; sync(); });
+    reduced.addEventListener('change', (event) => { if (event.matches) playing = false; sync(); });
+    document.addEventListener('visibilitychange', sync);
+    controls.hidden = false;
+    sync();
+  });
+</script>
