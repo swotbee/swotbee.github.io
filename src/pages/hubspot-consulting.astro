@@ -25,55 +25,25 @@ const clientLogos = [
   { name: "GWC Data.AI", src: "/logos/clients/gwcdata.png", width: 700, height: 188, dark: false, style: "h-8 sm:h-9" },
 ];
 const familiar = [
-  { thought: "We have HubSpot, but the team still works in spreadsheets.", href: "#offer-customer", label: "CRM & data" },
-  { thought: "Sales and finance keep coming back with different numbers.", href: "#offer-integrations", label: "Connected systems" },
-  { thought: "Every quote or renewal needs someone to chase it through.", href: "#offer-quoting", label: "Quoting & contracts" },
-  { thought: "We spend more time preparing sales reports and forecasts than discussing them.", href: "#offer-reporting", label: "Reporting & forecasting" },
-];
-const workingTogether = [
-  { question: "Will our team actually use it?", answer: "We test agreed business scenarios and tailor walkthroughs to daily users, administrators and leadership." },
-  { question: "Can we see it before it goes live?", answer: "Yes. We agree how to test and demonstrate the work. A suitable Enterprise sandbox can support the changes it covers." },
-  { question: "What happens when you hand it over?", answer: "Written documentation, videos and ongoing support will set your team up for easy adoption and success." },
+  { thought: "Your team still relies on spreadsheets alongside HubSpot.", href: "#capability-customer", label: "Explore CRM & data" },
+  { thought: "Sales and finance work with different numbers.", href: "#capability-integrations", label: "Explore connected systems" },
+  { thought: "Quotes or renewals need someone to chase the next step.", href: "#capability-quoting", label: "Explore quoting & renewals" },
+  { thought: "Reports take too long to prepare or are difficult to trust.", href: "#capability-reporting", label: "Explore reporting & forecasting" },
 ];
 
 const outcomes: { image: string; alt: string; name: string; heading: string; description: string; evidence?: string }[] = [
-  { image: "customer", alt: "Two colleagues review a customer profile connected to company, location, deal and service records.", name: "CRM architecture, data migration & optimisation", heading: "See the whole customer relationship.", description: "Clean records and a CRM structure that connects customers, locations, deals and service activity.", evidence: "18,900+ company records audited; custom data models and associations designed." },
-  { image: "sales", alt: "Two colleagues review a prioritised opportunity and its follow-up workflow.", name: "Sales automation & lead management", heading: "Focus on the right opportunities.", description: "Meaningful qualification and lead scoring, clear handoffs and less admin around approvals and deal values.", evidence: "Lead scoring rebuilt using evidence from 323 closed-won deals." },
-  { image: "renewals", alt: "Two colleagues review a contract, its owner and an upcoming renewal reminder.", name: "Contract operations & renewal management", heading: "See renewals before they become urgent.", description: "Connect contract terms, values, dates and owners. Bring historical agreements into HubSpot and automate renewal creation.", evidence: "$2M+ in ARR identified outside CRM revenue visibility." },
-  { image: "quoting", alt: "Two colleagues review a quote with pricing, two locations and an approval check.", name: "Complex quoting, CPQ & commercial controls", heading: "Send a quote you're confident in.", description: "Keep locations, pricing, approvals and contract-value calculations together through quoting and signature.", evidence: "Experience includes multi-building quoting and branded PandaDoc templates." },
-  { image: "integrations", alt: "Two colleagues review a validated handoff between a customer record and a finance document.", name: "ERP, finance & operational integrations", heading: "Give the next team what they need.", description: "Reliable mappings, validation and handoffs between HubSpot, finance and delivery tools, including NetSuite and Monday.com.", evidence: "HubSpot-side NetSuite readiness: deals passing checks increased from 41 to 256." },
-  { image: "service", alt: "Two colleagues coordinate a customer request, its owner and a field visit.", name: "Service Hub & customer operations", heading: "Help customers without the chasing.", description: "Requests arrive with context and clear ownership. Routing, reminders, escalation and closure keep service and field teams coordinated.", evidence: "Ticket workflows redesigned; HubSpot-to-Monday.com site-visit sync implemented." },
-  { image: "reporting", alt: "Two colleagues review a conceptual dashboard and a matching report.", name: "Reporting & management visibility", heading: "Walk into the review with a clear picture.", description: "Consistent definitions, historical comparisons and data checks make management reporting repeatable.", evidence: "Executive service reporting covering backlog, demand, throughput, response times and workload." },
-  { image: "forecasting", alt: "Two colleagues consider three possible forecast paths leading to a future review.", name: "Forecasting, scenario planning & pipeline management", heading: "Know what could change the forecast.", description: "Assess pipeline coverage, compare scenarios and track forecast movement and accuracy. Give revenue risks a place in the discussion." },
-  { image: "ai", alt: "Two colleagues review a suggested customer summary and its place in a workflow.", name: "Identify gaps in processes", heading: "Test, Evaluate, Apply", description: "Choose worthwhile tasks, prepare CRM data and knowledge sources, then connect AI to the workflow. Define human review, ownership and measures of usefulness." },
-  { image: "licensing", alt: "Two colleagues review subscription choices alongside seats, usage and cost.", name: "HubSpot pricing, licensing & usage advisory", heading: "Choose what your team actually needs.", description: "Match subscriptions, seats and usage credits to your plans. Understand cost implications and underused capabilities before buying, expanding or renewing." },
-];
-const capabilityGroups = [
-  { id: "data", name: "Data & connected systems", offers: ["customer", "integrations"] },
-  { id: "commercial", name: "Sales & commercial operations", offers: ["sales", "quoting", "renewals"] },
-  { id: "customer-operations", name: "Customer service", offers: ["service"] },
-  { id: "visibility", name: "Management visibility", offers: ["reporting", "forecasting"] },
-  { id: "platform", name: "AI & platform investment", offers: ["ai", "licensing"] },
-].map(group => ({ ...group, items: group.offers.map(key => outcomes.find(item => item.image === key)!) }));
-const process = [
-  { title: "Meet the people doing the work", description: "Understand the process with stakeholders and daily users.", result: "A shared view of the process" },
-  { title: "Check our understanding", description: "Share what we've learned with your executive team and confirm the priority.", result: "A priority everyone understands" },
-  { title: "Lay out your options", description: "Explain solution options, dependencies and our recommendations so you can decide.", result: "Options you can compare" },
-  { title: "Agree on the result and scope", description: "Define costs, responsibilities and what will show the work is complete.", result: "Clear completion criteria" },
-];
-const delivery = [
-  { title: "Plan", description: "Agree what should improve and how we'll know." },
-  { title: "Do", description: "Build and test around your team's work." },
-  { title: "Study", description: "See it in action and check results together." },
-  { title: "Act", description: "Agree what to keep, change or try next." },
+  { image: "customer", alt: "Two colleagues review a customer profile connected to company, location, deal and service records.", name: "Get a complete view of every customer", heading: "See the whole customer relationship.", description: "Clean records and a CRM structure that connects customers, locations, deals and service activity.", evidence: "18,900+ company records audited; custom data models and associations designed." },
+  { image: "sales", alt: "Two colleagues review a prioritised opportunity and its follow-up workflow.", name: "Stop good leads from falling through the cracks", heading: "Focus on the right opportunities.", description: "Meaningful qualification and lead scoring, clear handoffs and less admin around approvals and deal values.", evidence: "Lead scoring rebuilt using evidence from 323 closed-won deals." },
+  { image: "renewals", alt: "Two colleagues review a contract, its owner and an upcoming renewal reminder.", name: "Know what is renewing before it is too late", heading: "See renewals before they become urgent.", description: "Connect contract terms, values, dates and owners. Bring historical agreements into HubSpot and automate renewal creation.", evidence: "$2M+ in ARR identified outside CRM revenue visibility." },
+  { image: "quoting", alt: "Two colleagues review a quote with pricing, two locations and an approval check.", name: "Send accurate quotes without the back-and-forth", heading: "Send a quote you're confident in.", description: "Keep locations, pricing, approvals and contract-value calculations together through quoting and signature.", evidence: "Experience includes multi-building quoting and branded PandaDoc templates." },
+  { image: "integrations", alt: "Two colleagues review a validated handoff between a customer record and a finance document.", name: "Connect HubSpot with your finance and operations systems", heading: "Give the next team what they need.", description: "Reliable mappings, validation and handoffs between HubSpot, finance and delivery tools, including NetSuite and Monday.com.", evidence: "HubSpot-side NetSuite readiness: deals passing checks increased from 41 to 256." },
+  { image: "service", alt: "Two colleagues coordinate a customer request, its owner and a field visit.", name: "Keep customer requests from getting lost", heading: "Help customers without the chasing.", description: "Requests arrive with context and clear ownership. Routing, reminders, escalation and closure keep service and field teams coordinated.", evidence: "Ticket workflows redesigned; HubSpot-to-Monday.com site-visit sync implemented." },
+  { image: "reporting", alt: "Two colleagues review a conceptual dashboard and a matching report.", name: "Get reports your leadership team can trust", heading: "Walk into the review with a clear picture.", description: "Consistent definitions, historical comparisons and data checks make management reporting repeatable.", evidence: "Executive service reporting covering backlog, demand, throughput, response times and workload." },
+  { image: "forecasting", alt: "Two colleagues consider three possible forecast paths leading to a future review.", name: "Know what could change your forecast", heading: "Know what could change the forecast.", description: "Assess pipeline coverage, compare scenarios and track forecast movement and accuracy. Give revenue risks a place in the discussion." },
+  { image: "ai", alt: "Two colleagues review a suggested customer summary and its place in a workflow.", name: "Decide where AI is worth using", heading: "Test, Evaluate, Apply", description: "Choose worthwhile tasks, prepare CRM data and knowledge sources, then connect AI to the workflow. Define human review, ownership and measures of usefulness." },
+  { image: "licensing", alt: "Two colleagues review subscription choices alongside seats, usage and cost.", name: "Know whether you are paying for the right HubSpot setup", heading: "Choose what your team actually needs.", description: "Match subscriptions, seats and usage credits to your plans. Understand cost implications and underused capabilities before buying, expanding or renewing." },
 ];
 const imageUrl = (name: string, width: number) => `/assets/consulting/character-scenes/${name}-${width}.webp`;
-const reports = [
-  { href: "/hubspot-sales-pipeline-reporting/", title: "Sales & pipeline" },
-  { href: "/hubspot-revenue-forecast-goal-roi-reporting/", title: "Revenue & forecast" },
-  { href: "/hubspot-service-hub-performance-report/", title: "Service performance" },
-  { href: "/hubspot-aeo-reporting-export/", title: "AEO reporting" },
-];
 const faqs = [
   { q: "Will you change the setup we already have?", a: "We will not modify existing work unless explicitly requested. We review what you have, explain our recommendations and agree the changes with you before implementation." },
   { q: "Can we start with one problem rather than a full implementation?", a: "Yes. A quoting bottleneck, a renewal workflow or an unreliable report can be a sensible starting point. We check its dependencies and agree a focused scope before recommending wider changes." },
@@ -86,12 +56,13 @@ const faqs = [
   { q: "Can you report on history we haven't recorded?", a: "We check what history is available in HubSpot and your other systems. We make gaps clear and introduce tracking for future comparisons where an earlier state cannot be reconstructed." },
   { q: "How long will it take, and what will it cost?", a: "That depends on the data, systems and teams involved. We offer project-based, retainer and hourly consulting. After a free 30-minute conversation, we agree deliverables, dependencies, milestones and costs before implementation." },
 ];
+const previewFaqs = faqs.filter((_, index) => [0, 1, 3, 6, 9].includes(index));
 const primaryButton = "inline-flex min-h-12 items-center justify-center rounded-xl bg-v6-copper-800 px-6 py-3 text-base font-bold text-white shadow-lg shadow-v6-copper/15 transition-colors hover:bg-v6-copper-900 focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2";
 ---
 
 <BaseLayout title={title} description={description} keywords="HubSpot consulting, HubSpot implementation, CRM architecture, HubSpot integrations, revenue operations, HubSpot quoting, Service Hub consulting">
   <StructuredData type="service" data={{ name: "HubSpot Implementation, Integration & Revenue Operations", description, serviceType: "HubSpot Consulting", url: "https://swotbee.com/hubspot-consulting/" }} />
-  <StructuredData type="faq" data={{ faqs }} />
+  <StructuredData type="faq" data={{ faqs: previewFaqs }} />
   <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-lg focus:bg-white focus:p-4 focus:text-v6-dark focus:outline focus:outline-2 focus:outline-v6-copper">Skip to content</a>
   <Navbar />
 
@@ -103,11 +74,11 @@ const primaryButton = "inline-flex min-h-12 items-center justify-center rounded-
             <p class="eyebrow inline-flex rounded-full bg-v6-copper-50 px-4 py-2">HubSpot consulting</p>
             <p class="rounded-full bg-v6-teal-50 px-4 py-2 text-xs font-bold text-v6-teal-700">HubSpot Solutions Partner</p>
           </div>
-          <h1 id="consulting-heading" class="mt-6 max-w-2xl text-balance text-4xl leading-[1.08] tracking-tight text-v6-dark sm:text-6xl" style="font-family: 'Rokkitt Variable', 'Vollkorn', serif; font-weight: 800;">Make HubSpot work for <span class="text-v6-copper-800">the way your business runs.</span></h1>
-          <p class="mt-5 text-lg font-semibold text-v6-dark">RevOps, Forecast & Reporting, Renewals, Services</p>
-          <p class="mt-4 max-w-xl text-lg leading-relaxed text-v6-text-muted">Make your investment in HubSpot count. Reliable data, connected teams and useful automation. Bring AI, forecasting and platform decisions into the same conversation.</p>
-          <a href={consultationUrl} class:list={[primaryButton, "mt-7 w-full sm:w-auto"]}>Book a free consultation <span class="ml-2" aria-hidden="true">→</span></a>
-          <p class="mt-3 text-sm text-v6-text-muted">30 minutes. Bring the process you want to improve.</p>
+          <h1 id="consulting-heading" class="mt-6 max-w-2xl text-balance text-4xl leading-[1.08] tracking-tight text-v6-dark sm:text-6xl" style="font-family: 'Rokkitt Variable', 'Vollkorn', serif; font-weight: 800;">Make HubSpot fit <span class="text-v6-copper-800">the way your business works.</span></h1>
+          <p class="mt-5 text-lg font-semibold text-v6-dark">For teams already using HubSpot</p>
+          <p class="mt-4 max-w-xl text-lg leading-relaxed text-v6-text-muted">Improve reporting, reduce manual work, and connect the information your sales, finance, and operations teams rely on.</p>
+          <a href={consultationUrl} class:list={[primaryButton, "mt-7 w-full sm:w-auto"]}>Request a free consultation <span class="ml-2" aria-hidden="true">→</span></a>
+          <p class="mt-3 text-sm text-v6-text-muted">Send a request for a free 30-minute conversation. Bring one process you want to improve.</p>
         </div>
         <ConsultingHeroStory />
       </div>
@@ -123,70 +94,65 @@ const primaryButton = "inline-flex min-h-12 items-center justify-center rounded-
     </section>
 
     <section id="sound-familiar" class="section-shell bg-white" aria-labelledby="familiar-heading">
-      <div class="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
-        <div><p class="eyebrow">Sound familiar?</p><h2 id="familiar-heading" class="section-heading">You paid for HubSpot.<br />So why are the workarounds still there ?</h2><p class="mt-4 max-w-md leading-relaxed text-v6-text-muted">Bring the part that's slowing you down. We'll help you work out where to start.</p></div>
-        <ul class="grid gap-x-8 sm:grid-cols-2">
-          {familiar.map(item => <li class="border-b border-v6-border py-5"><p class="text-lg font-semibold leading-relaxed text-v6-dark">“{item.thought}”</p><a href={item.href} class="mt-2 inline-flex min-h-11 items-center gap-2 rounded text-sm font-semibold text-v6-copper-800 underline-offset-4 hover:underline focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2">{item.label}<span aria-hidden="true">→</span></a></li>)}
+      <div class="mx-auto max-w-6xl">
+        <div class="max-w-4xl">
+          <p class="eyebrow">Sound familiar?</p>
+          <h2 id="familiar-heading" class="section-heading">Your business has moved forward. Has your HubSpot setup kept up?</h2>
+          <p class="mt-4 max-w-3xl text-lg leading-relaxed text-v6-text-muted">As teams, processes, and systems change, workarounds can become part of everyday work.</p>
+        </div>
+        <ul class="mt-6 grid gap-3 sm:grid-cols-2">
+          {familiar.map(item => <li class="problem-card relative flex flex-col rounded-xl border border-v6-border bg-v6-bg p-4 sm:p-6" data-motion-card><p class="flex-1 text-lg font-semibold leading-relaxed text-v6-dark">{item.thought}</p><a href={item.href} class="mt-1 inline-flex min-h-11 w-fit items-center gap-2 rounded text-sm font-bold text-v6-teal-700 underline decoration-v6-teal-200 underline-offset-4 hover:text-v6-teal-900 focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-v6-copper">{item.label}<span class="service-arrow" aria-hidden="true"><svg class="icon-circle" viewBox="0 0 28 28"><circle cx="14" cy="14" r="11"/><path d="M8 14h11m-4-4 4 4-4 4"/></svg></span></a></li>)}
         </ul>
+        <p class="mt-6 max-w-4xl text-base font-medium leading-relaxed text-v6-dark">We help you understand where the process breaks down and agree on a practical place to start.</p>
       </div>
     </section>
 
-    <section id="capabilities" class="section-shell border-y border-v6-border bg-v6-bg" aria-labelledby="outcomes-heading">
+    <ClientTestimonials eyebrow="Client experiences" heading="What clients say about working with us" description="From understanding complex workflows to putting solutions into practice, here is how clients describe their experience with SwotBee." />
+
+    <section id="capabilities" class="section-shell border-t border-v6-border bg-white" aria-labelledby="outcomes-heading" data-service-carousel>
       <div class="mx-auto max-w-6xl">
-        <div class="mb-8 max-w-2xl"><p class="eyebrow">Ten core capabilities</p><h2 id="outcomes-heading" class="section-heading">Make the everyday work easier.</h2><p class="mt-4 text-lg leading-relaxed text-v6-text-muted">Start with one process, or bring several teams together. Choose the mix that supports your priority.</p></div>
-        <nav class="mb-12 flex flex-wrap gap-2" aria-label="Explore consulting capabilities">
-          {capabilityGroups.map(group => <a href={`#capability-${group.id}`} class="inline-flex min-h-11 items-center rounded-lg border border-v6-border bg-white px-3 py-2 text-sm font-semibold text-v6-dark hover:border-v6-copper focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2">{group.name}</a>)}
-        </nav>
-        <div class="space-y-12 sm:space-y-16">
-          {capabilityGroups.map(group => (
-            <div id={`capability-${group.id}`} class="scroll-mt-8" data-capability-group={group.id}>
-              <h3 class="mb-6 text-2xl font-bold text-v6-dark">{group.name}</h3>
-              <div class:list={["grid gap-6", group.items.length > 1 && "md:grid-cols-2", group.items.length === 3 && "lg:grid-cols-3"]}>
-                {group.items.map(item => (
-                  <article id={`offer-${item.image}`} data-offer={item.image} class:list={["scroll-mt-8 overflow-hidden rounded-2xl border border-v6-border bg-white", group.items.length === 1 ? "grid items-center md:grid-cols-2" : "flex flex-col"]}>
-                    <figure class="overflow-hidden border-b border-[#e0e3dc] bg-[#f1f0e8]">
-                      <img src={imageUrl(item.image, 1200)} srcset={`${imageUrl(item.image, 600)} 600w, ${imageUrl(item.image, 1200)} 1200w`} sizes={group.items.length === 3 ? "(min-width: 1200px) 366px, (min-width: 768px) 45vw, calc(100vw - 32px)" : "(min-width: 1200px) 564px, (min-width: 768px) 45vw, calc(100vw - 32px)"} width="1200" height="800" alt={item.alt} loading="lazy" decoding="async" class="w-full" />
-                    </figure>
-                    <div class="flex flex-1 flex-col justify-center p-6 sm:p-8">
-                      <p class="eyebrow">{item.heading}</p><h4 class="mt-3 text-balance text-2xl font-bold leading-tight text-v6-dark">{item.name}</h4>
-                      <p class="mt-4 leading-relaxed text-v6-text-muted">{item.description}</p>
-                      {item.evidence && <p class="mt-5 border-l-2 border-v6-copper-200 pl-4 text-sm leading-relaxed text-v6-text-muted">{item.evidence}</p>}
-                      {item.image === "reporting" && <div class="mt-5 flex flex-wrap gap-2" aria-label="Explore reporting offers">{reports.map(report => <a href={report.href} class="inline-flex min-h-11 items-center gap-2 rounded-lg border border-v6-border bg-white px-3 py-2 text-sm font-semibold text-v6-dark transition-colors hover:border-v6-copper hover:bg-v6-copper-50 focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2">{report.title}<span aria-hidden="true">→</span></a>)}</div>}
-                    </div>
-                  </article>
-                ))}
-              </div>
-            </div>
+        <div class="mb-10 max-w-3xl"><p class="eyebrow">How we can help</p><h2 id="outcomes-heading" class="section-heading">Start with the work you want to improve.</h2><p class="mt-4 text-lg leading-relaxed text-v6-text-muted">Bring one issue or a process that spans several teams. Explore the areas where we can help.</p></div>
+        <div class="service-scroll-track" data-service-track><div class="service-scroll-stage hidden items-start gap-8 lg:grid lg:grid-cols-[1.2fr_0.8fr] lg:items-stretch lg:gap-12">
+          <div class="order-2 min-w-0 scroll-mt-24 lg:order-1" id="service-artwork">
+            {outcomes.map((item, index) => (
+              <article id={`service-detail-${item.image}`} data-service-panel={index} class="overflow-hidden rounded-2xl border border-v6-border bg-v6-bg">
+                <img src={imageUrl(item.image, 1200)} srcset={`${imageUrl(item.image, 600)} 600w, ${imageUrl(item.image, 1200)} 1200w`} sizes="(min-width: 1024px) 650px, calc(100vw - 32px)" width="1200" height="800" alt={item.alt} loading="lazy" decoding="async" class="w-full" />
+                <div class="p-6 sm:p-8"><p class="eyebrow">{item.heading}</p><h3 class="mt-3 text-balance text-2xl font-bold leading-tight text-v6-dark">{item.name}</h3><p class="mt-4 leading-relaxed text-v6-text-muted">{item.description}</p>{item.evidence && <p class="mt-5 border-l-2 border-v6-copper-200 pl-4 text-sm leading-relaxed text-v6-text-muted">{item.evidence}</p>}<a href={consultationUrl} class:list={[primaryButton, "mt-6 w-full sm:w-auto"]}>Request a free consultation <span class="ml-2" aria-hidden="true">→</span></a><p class="mt-3 text-sm text-v6-text-muted">Tell us what you want to improve in a free 30-minute conversation.</p></div>
+              </article>
+            ))}
+          </div>
+          <div class="order-1 min-w-0 lg:order-2 lg:flex lg:flex-col"><div role="group" aria-label="Consulting services" class="border-t border-v6-border lg:flex lg:flex-1 lg:flex-col">{outcomes.map((item, index) => <button id={`capability-${item.image}`} type="button" data-service-select={index} data-service-name={item.name} aria-pressed={index === 0 ? "true" : "false"} aria-controls={`service-detail-${item.image}`} disabled class="service-choice relative flex min-h-14 w-full scroll-mt-24 items-center border-b border-v6-border px-5 py-4 text-left lg:flex-1"><span class="service-progress" aria-hidden="true"><span data-service-progress></span></span><span class="relative text-base font-bold leading-snug text-v6-dark">{item.name}</span></button>)}</div>
+            <div data-service-controls hidden class="service-controls mt-5 flex flex-wrap items-center justify-between gap-3"><div class="flex items-center gap-3"><p data-service-count class="text-sm text-v6-text-muted">1 of 10</p><a href="#approach" aria-label="Skip to how we work" class="inline-flex min-h-11 items-center text-sm font-semibold text-v6-teal-700 underline underline-offset-4 focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-v6-copper">Skip</a></div><div class="flex items-center gap-2"><button type="button" data-service-previous aria-label="Previous service" class="service-control h-11 w-11 rounded-full border border-v6-border text-v6-dark">←</button><button type="button" data-service-toggle class="service-control min-h-11 rounded-full border border-v6-border px-4 text-sm font-semibold text-v6-dark">Play slideshow</button><button type="button" data-service-next aria-label="Next service" class="service-control h-11 w-11 rounded-full border border-v6-border text-v6-dark">→</button></div></div><p data-service-announcement class="sr-only" aria-live="polite" aria-atomic="true"></p>
+          </div>
+        </div>
+        </div>
+        <div class="space-y-3 lg:hidden" data-mobile-services>
+          {outcomes.map(item => (
+            <details id={`mobile-capability-${item.image}`} data-mobile-service class="mobile-service scroll-mt-24 overflow-hidden rounded-xl border border-v6-border bg-v6-bg">
+              <summary class="flex min-h-16 cursor-pointer items-center justify-between gap-4 px-5 py-4 text-base font-bold text-v6-dark focus:outline focus:outline-2 focus:outline-offset-[-3px] focus:outline-v6-copper"><span>{item.name}</span><svg class="mobile-service-chevron h-5 w-5 shrink-0 text-v6-teal-700" aria-hidden="true" viewBox="0 0 24 24" fill="none"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg></summary>
+              <div class="border-t border-v6-border bg-white"><img src={imageUrl(item.image, 600)} srcset={`${imageUrl(item.image, 600)} 600w, ${imageUrl(item.image, 1200)} 1200w`} sizes="(min-width: 640px) 90vw, calc(100vw - 32px)" width="1200" height="800" alt={item.alt} loading="lazy" decoding="async" class="w-full" /><div class="bg-v6-bg p-5 sm:p-6"><p class="eyebrow">{item.heading}</p><h3 class="mt-3 text-xl font-bold leading-snug text-v6-dark">{item.name}</h3><p class="mt-4 leading-relaxed text-v6-text-muted">{item.description}</p>{item.evidence && <p class="mt-5 border-l-2 border-v6-copper-200 pl-4 text-sm leading-relaxed text-v6-text-muted">{item.evidence}</p>}<a href={consultationUrl} class:list={[primaryButton, "mt-6 w-full sm:w-auto"]}>Request a free consultation <span class="ml-2" aria-hidden="true">→</span></a><p class="mt-3 text-sm text-v6-text-muted">Tell us what you want to improve in a free 30-minute conversation.</p></div></div>
+            </details>
           ))}
         </div>
       </div>
     </section>
 
-    <ClientTestimonials />
-
-    <section id="approach" class="section-shell border-t border-v6-border bg-v6-bg" aria-labelledby="approach-heading">
+    <section id="approach" class="section-shell border-t border-v6-border bg-white" aria-labelledby="approach-heading">
       <div class="mx-auto max-w-6xl">
-        <div class="max-w-3xl"><p class="eyebrow">How we work</p><h2 id="approach-heading" class="section-heading">Transparency All the Way.</h2><p class="mt-4 text-xl font-medium leading-relaxed text-v6-dark sm:text-2xl">We understand the work. You set the priorities.</p></div>
-        <div class="mt-10 flex items-center gap-3"><span class="h-2.5 w-2.5 rounded-full bg-v6-copper" aria-hidden="true"></span><p class="text-base font-bold uppercase tracking-wider text-v6-copper-800">Before we build</p></div>
-        <ol class="mt-6 grid gap-6 md:grid-cols-2">{process.map((step, i) => (
-          <li class="flex flex-col rounded-2xl border border-v6-border bg-white p-6 sm:p-8">
-            <span class="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-v6-copper-50 text-xl font-bold text-v6-copper-800">{String(i+1).padStart(2, "0")}</span>
-            <h3 class="text-2xl font-bold leading-snug text-v6-dark sm:text-3xl">{step.title}</h3>
-            <p class="mt-4 flex-1 text-xl font-medium leading-relaxed text-v6-dark">{step.description}</p>
-            <p class="mt-6 border-t border-v6-border pt-5 leading-relaxed"><span class="block text-base font-medium text-v6-text-muted">You'll leave this step with</span><strong class="mt-2 block text-xl font-bold text-v6-dark">{step.result}</strong></p>
-          </li>
-        ))}</ol>
-        <div class="mt-10 border-t border-v6-border pt-9">
-          <p class="eyebrow">Ready for everyday use</p><h3 class="mt-3 text-3xl font-bold text-v6-dark">A handover your team can work with.</h3>
-          <div class="mt-7 grid gap-6 lg:grid-cols-3">{workingTogether.map(item => <div class="rounded-xl border border-v6-border bg-white p-6"><h4 class="text-2xl font-bold leading-snug text-v6-dark">{item.question}</h4><p class="mt-4 text-xl font-medium leading-relaxed text-v6-dark">{item.answer}</p></div>)}</div>
-        </div>
+        <div class="max-w-4xl"><p class="eyebrow">How we work</p><h2 id="approach-heading" class="section-heading">Understand the work. Agree the scope. Improve it together.</h2></div>
+        <ol class="motion-process mt-8 grid gap-4 md:grid-cols-3">
+          <li class="process-card relative rounded-xl border border-v6-border bg-v6-bg p-5 sm:p-6"><span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-v6-teal-100 text-sm font-bold text-v6-teal-900" aria-hidden="true">01</span><h3 class="mt-4 text-xl font-bold leading-snug text-v6-dark">Understand your situation</h3><p class="mt-3 leading-relaxed text-v6-text-muted">We speak with the people doing the work, review the existing process, and check our understanding with your team.</p></li>
+          <li class="process-card relative rounded-xl border border-v6-border bg-v6-bg p-5 sm:p-6"><span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-v6-teal-100 text-sm font-bold text-v6-teal-900" aria-hidden="true">02</span><h3 class="mt-4 text-xl font-bold leading-snug text-v6-dark">Agree on a practical plan</h3><p class="mt-3 leading-relaxed text-v6-text-muted">We explain the options and dependencies, then agree on the scope, responsibilities, cost, and how we will know the work is complete.</p></li>
+          <li class="process-card relative rounded-xl border border-v6-border bg-v6-bg p-5 sm:p-6"><span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-v6-teal-100 text-sm font-bold text-v6-teal-900" aria-hidden="true">03</span><h3 class="mt-4 text-xl font-bold leading-snug text-v6-dark">Implement and hand over</h3><p class="mt-3 leading-relaxed text-v6-text-muted">We make the agreed changes, test them with your team, and provide documentation and walkthroughs for the people who will use and maintain them.</p></li>
+        </ol>
+        <div class="mt-6 rounded-xl border border-v6-border p-5 sm:p-6"><h3 class="text-xl font-bold text-v6-dark">Start with the level of help you need</h3><p class="mt-2 max-w-4xl leading-relaxed text-v6-text-muted">We offer project-based, hourly, and ongoing consulting. We agree the scope, responsibilities, and cost before work begins.</p><p class="mt-3 text-sm leading-relaxed text-v6-text-muted"><strong class="text-v6-dark">Your main contact:</strong> Sharmila or Siva, with specialists matched to the agreed scope.</p></div>
       </div>
     </section>
 
     <section id="questions" class="section-shell border-t border-v6-border bg-v6-bg" aria-labelledby="questions-heading">
       <div class="mx-auto max-w-3xl"><p class="eyebrow">A few practical questions</p><h2 id="questions-heading" class="section-heading">Before we talk.</h2>
-        <div class="mt-8 space-y-3">{faqs.map((faq) => (
-          <details class="group rounded-xl border border-v6-border bg-white"><summary class="flex min-h-14 cursor-pointer items-center justify-between gap-4 rounded-xl px-5 py-4 text-base font-semibold text-v6-dark hover:bg-v6-copper-50 focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2"><span>{faq.q}</span><svg aria-hidden="true" class="h-5 w-5 shrink-0 text-v6-copper-800 transition-transform group-open:rotate-180 motion-reduce:transition-none" viewBox="0 0 24 24" fill="none"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg></summary><p class="px-5 pb-5 leading-relaxed text-v6-text-muted">{faq.a}</p></details>
+        <div class="mt-8 space-y-3">{previewFaqs.map((faq) => (
+          <details class="faq-item group rounded-xl border border-v6-border bg-white"><summary class="flex min-h-14 cursor-pointer items-center justify-between gap-4 rounded-xl px-5 py-4 text-base font-semibold text-v6-dark hover:bg-v6-copper-50 focus:outline-none focus:ring-2 focus:ring-v6-copper focus:ring-offset-2"><span>{faq.q}</span><svg aria-hidden="true" class="faq-chevron h-5 w-5 shrink-0 text-v6-copper-800" viewBox="0 0 24 24" fill="none"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg></summary><p class="faq-answer px-5 pb-6 pt-4 leading-relaxed text-v6-text-muted">{faq.a}</p></details>
         ))}</div>
       </div>
     </section>
@@ -196,8 +162,8 @@ const primaryButton = "inline-flex min-h-12 items-center justify-center rounded-
         <p class="text-xs font-semibold uppercase tracking-[0.2em] text-white/70 mb-3">Start with a conversation</p>
         <h2 id="consultation-heading" class="text-2xl sm:text-3xl font-bold text-white mb-4">What would make the biggest difference first?</h2>
         <p class="text-v6-copper-50 text-base sm:text-lg mb-4">Bring one process you'd like to improve. In 30 minutes, we'll discuss what matters, what already works and the next step worth scoping.</p>
-        <a href={consultationUrl} class="bg-white text-v6-copper px-8 py-3.5 rounded-xl text-base font-semibold hover:bg-gray-50 transition-colors inline-block min-h-12 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-v6-copper">Book a free 30-minute consultation <span aria-hidden="true">→</span></a>
-        <p class="mt-4 text-xs text-v6-copper-50">No fee. No HubSpot access required. We agree scope and costs before any project begins.</p>
+        <a href={consultationUrl} class="bg-white text-v6-copper px-8 py-3.5 rounded-xl text-base font-semibold hover:bg-gray-50 transition-colors inline-block min-h-12 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-v6-copper">Request a free 30-minute consultation <span aria-hidden="true">→</span></a>
+        <p class="mt-4 text-xs text-v6-copper-50">Send a request using our contact form. No fee or HubSpot access is required for the initial conversation. We agree scope and costs before any project begins.</p>
         <p class="mt-5"><a href="mailto:info@swotbee.com" class="text-white/90 text-sm font-medium underline underline-offset-4 hover:text-white transition-colors inline-flex min-h-11 items-center rounded focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-v6-copper">Prefer email? Tell us what you'd like to improve <span class="ml-1" aria-hidden="true">→</span></a></p>
       </div>
     </section>
@@ -205,11 +171,246 @@ const primaryButton = "inline-flex min-h-12 items-center justify-center rounded-
   <Footer />
 </BaseLayout>
 
+<script>
+  const legacyCapabilityHashes: Record<string, string> = {
+    '#capability-data': '#capability-customer',
+    '#capability-commercial': '#capability-sales',
+    '#capability-customer-operations': '#capability-service',
+    '#capability-visibility': '#capability-reporting',
+    '#capability-platform': '#capability-ai',
+  };
+  const normalizeCapabilityHash = () => {
+    const hash = location.hash;
+    const target = legacyCapabilityHashes[hash] || (hash.startsWith('#offer-') ? hash.replace('#offer-', '#capability-') : null);
+    if (target && document.getElementById(target.slice(1))) history.replaceState(null, '', target);
+  };
+  normalizeCapabilityHash();
+  window.addEventListener('hashchange', normalizeCapabilityHash);
+  function openLinkedCapability() {
+    if (!location.hash) return;
+    const target = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+    const parent = target?.closest('details');
+    if (parent) parent.open = true;
+  }
+  window.addEventListener('hashchange', openLinkedCapability);
+  openLinkedCapability();
+
+  const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const motionTargets = document.querySelectorAll<HTMLElement>('[data-motion-card], .motion-process');
+  if (!motionPreference.matches && 'IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('motion-visible');
+          if (!entry.target.classList.contains('motion-process')) observer.unobserve(entry.target);
+        } else if (entry.target.classList.contains('motion-process')) {
+          entry.target.classList.remove('motion-visible');
+        }
+      });
+    }, { threshold: 0.1 });
+    motionTargets.forEach(target => observer.observe(target));
+  }
+
+  document.querySelectorAll<HTMLElement>('[data-service-carousel]').forEach(root => {
+    const choices = Array.from(root.querySelectorAll<HTMLButtonElement>('[data-service-select]'));
+    const panels = Array.from(root.querySelectorAll<HTMLElement>('[data-service-panel]'));
+    const controls = root.querySelector<HTMLElement>('[data-service-controls]')!;
+    const toggle = root.querySelector<HTMLButtonElement>('[data-service-toggle]')!;
+    const count = root.querySelector<HTMLElement>('[data-service-count]')!;
+    const announcement = root.querySelector<HTMLElement>('[data-service-announcement]')!;
+    const motion = matchMedia('(prefers-reduced-motion: reduce)');
+    const track = root.querySelector<HTMLElement>('[data-service-track]')!;
+    const desktop = matchMedia('(min-width: 1024px)');
+    const stage = root.querySelector<HTMLElement>('.service-scroll-stage')!;
+    root.dataset.scrollReady = 'true';
+    let active = 0, elapsed = 0, previous = 0, frame = 0;
+    let inView = false, hovering = false, focused = false, paused = true;
+    const canPlay = () => !paused && !motion.matches && inView && !hovering && !focused && !document.hidden;
+    const updateToggle = () => { toggle.disabled = motion.matches; toggle.textContent = motion.matches ? 'Motion reduced' : paused ? 'Play slideshow' : 'Pause slideshow'; };
+    const select = (index: number, manual = false) => {
+      active = (index + choices.length) % choices.length; elapsed = 0;
+      choices.forEach((choice, i) => { choice.setAttribute('aria-pressed', String(i === active)); choice.querySelector<HTMLElement>('[data-service-progress]')!.style.transform = 'scaleX(0)'; panels[i].hidden = i !== active; });
+      const name = choices[active].dataset.serviceName!;
+      count.textContent = `${active + 1} of ${choices.length}`;
+      if (manual) { paused = true; updateToggle(); announcement.textContent = `Service ${active + 1} of ${choices.length}: ${name}. Slideshow paused.`; }
+    };
+    const tick = (time: number) => { frame = 0; if (!canPlay()) return; elapsed += previous ? Math.min(time - previous, 100) : 0; previous = time; if (elapsed >= 6500) select(active + 1); choices[active].querySelector<HTMLElement>('[data-service-progress]')!.style.transform = `scaleX(${elapsed / 6500})`; frame = requestAnimationFrame(tick); };
+    const sync = () => { if (frame) cancelAnimationFrame(frame); frame = 0; previous = 0; if (canPlay()) frame = requestAnimationFrame(tick); };
+    const moveTo = (index: number) => {
+      if (!desktop.matches || root.dataset.scrollFit !== 'true') return;
+      const range = Math.max(1, track.offsetHeight - innerHeight);
+      const top = track.getBoundingClientRect().top + scrollY;
+      window.scrollTo({ top: top + range * ((index + .5) / choices.length), behavior: 'instant' });
+    };
+    choices.forEach((choice, index) => {
+      choice.disabled = false;
+      choice.addEventListener('click', () => { select(index, true); moveTo(index); sync(); });
+      choice.addEventListener('keydown', event => { let next = index; if (['ArrowRight', 'ArrowDown'].includes(event.key)) next = (index + 1) % choices.length; else if (['ArrowLeft', 'ArrowUp'].includes(event.key)) next = (index - 1 + choices.length) % choices.length; else if (event.key === 'Home') next = 0; else if (event.key === 'End') next = choices.length - 1; else return; event.preventDefault(); select(next, true); moveTo(next); choices[next].focus({ preventScroll: true }); sync(); });
+    });
+    root.querySelector('[data-service-previous]')!.addEventListener('click', () => { select(active - 1, true); moveTo(active); sync(); });
+    root.querySelector('[data-service-next]')!.addEventListener('click', () => { select(active + 1, true); moveTo(active); sync(); });
+    toggle.addEventListener('click', () => { paused = !paused; updateToggle(); sync(); });
+    root.addEventListener('mouseenter', () => { hovering = true; sync(); }); root.addEventListener('mouseleave', () => { hovering = false; sync(); });
+    root.addEventListener('focusin', () => { focused = true; sync(); }); root.addEventListener('focusout', event => { focused = !!event.relatedTarget && root.contains(event.relatedTarget as Node); sync(); });
+    document.addEventListener('visibilitychange', sync); motion.addEventListener('change', () => { paused = motion.matches; updateToggle(); sync(); });
+    if ('IntersectionObserver' in window) new IntersectionObserver(([entry]) => { inView = entry.isIntersecting; sync(); }, { threshold: .25 }).observe(root); else inView = true;
+    const selectFromHash = () => { const index = choices.findIndex(choice => '#' + choice.id === location.hash); if (index >= 0) { select(index, true); if (desktop.matches) requestAnimationFrame(() => moveTo(index)); sync(); } };
+    const updateFit = () => { const height = stage.getBoundingClientRect().height; root.style.setProperty('--service-stage-height', `${height}px`); root.dataset.scrollFit = String(desktop.matches && height > 0 && height <= innerHeight - 96); };
+    select(0); controls.hidden = false; updateFit(); if ('ResizeObserver' in window) new ResizeObserver(updateFit).observe(stage); addEventListener('resize', updateFit); addEventListener('hashchange', selectFromHash); selectFromHash(); if (desktop.matches && location.hash.startsWith('#capability-')) setTimeout(selectFromHash, 250); controls.hidden = false; updateToggle(); sync();
+    let scrollFrame = 0;
+    const updateFromScroll = () => {
+      scrollFrame = 0;
+      if (!desktop.matches || root.dataset.scrollFit !== 'true' || panels[active].contains(document.activeElement)) return;
+      const range = track.offsetHeight - innerHeight;
+      if (range <= 0) return;
+      const offset = -track.getBoundingClientRect().top;
+      if (offset < 0 || offset > range) return;
+      const index = Math.min(choices.length - 1, Math.floor(offset / range * choices.length));
+      if (index !== active) { paused = true; select(index); updateToggle(); sync(); }
+    };
+    addEventListener('scroll', () => { if (!scrollFrame) scrollFrame = requestAnimationFrame(updateFromScroll); }, { passive: true });
+
+  });
+
+
+  const mobileServices = document.querySelector<HTMLElement>('[data-mobile-services]');
+  if (mobileServices) {
+    const mobileViewport = matchMedia('(max-width: 1023px)');
+    const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+    const details = Array.from(mobileServices.querySelectorAll<HTMLDetailsElement>('[data-mobile-service]'));
+    const observer = 'IntersectionObserver' in window ? new IntersectionObserver(entries => {
+      if (!mobileViewport.matches || reduced.matches) return;
+      entries.sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top).forEach(entry => {
+        const summary = entry.target as HTMLElement;
+        const rect = summary.getBoundingClientRect();
+        if (entry.isIntersecting && rect.top >= 0 && rect.top < innerHeight * .8) {
+          const item = summary.parentElement as HTMLDetailsElement;
+          observer?.unobserve(summary);
+          item.open = true;
+        }
+      });
+    }, { rootMargin: '0px 0px -20% 0px', threshold: 0 }) : null;
+    details.forEach(item => {
+      const summary = item.querySelector('summary')!;
+      observer?.observe(summary);
+      summary.addEventListener('pointerdown', () => observer?.unobserve(summary));
+      summary.addEventListener('keydown', event => { if (event.key === 'Enter' || event.key === ' ') observer?.unobserve(summary); });
+    });
+    const openMobileHash = (hash: string, scroll: boolean) => {
+      if (!mobileViewport.matches || !hash.startsWith('#capability-')) return false;
+      const item = document.getElementById('mobile-' + hash.slice(1)) as HTMLDetailsElement | null;
+      if (!item) return false;
+      observer?.unobserve(item.querySelector('summary')!); item.open = true;
+      if (scroll) item.scrollIntoView({ behavior: 'instant', block: 'start' });
+      return true;
+    };
+    document.querySelectorAll<HTMLAnchorElement>('#sound-familiar a[href^="#capability-"]').forEach(link => link.addEventListener('click', event => {
+      const hash = link.getAttribute('href')!;
+      if (openMobileHash(hash, true)) { event.preventDefault(); history.replaceState(null, '', hash); }
+    }));
+    if (mobileViewport.matches && location.hash.startsWith('#capability-')) requestAnimationFrame(() => openMobileHash(location.hash, true));
+    addEventListener('hashchange', () => openMobileHash(location.hash, true));
+  }
+
+</script>
+
 <style>
   @reference "../styles/global.css";
+  #consultation { --color-action: var(--color-coral-700); --color-action-hover: var(--color-coral-800); }
+  :global(html:root nav a.bg-v6-copper) { --color-action: var(--color-coral-700); --color-action-hover: var(--color-coral-800); }
   .section-shell { @apply px-4 py-16 sm:px-6 sm:py-20 lg:px-8; }
   .eyebrow { @apply text-xs font-bold uppercase tracking-[0.14em] text-v6-copper-800; }
   .section-heading { @apply mt-3 text-balance text-3xl font-bold leading-tight text-v6-dark sm:text-4xl; }
   section[id] { scroll-margin-top: 5rem; }
   summary::-webkit-details-marker { display: none; }
+  #sound-familiar li, #capabilities article { transition: border-color 200ms ease, box-shadow 200ms ease, background-color 200ms ease; }
+  #sound-familiar .problem-card:hover, #sound-familiar .problem-card:focus-within,
+  #capabilities article:has(a:hover), #capabilities article:focus-within { border-color: var(--color-v6-teal-600); box-shadow: 0 4px 16px color-mix(in srgb, var(--color-v6-teal-900) 10%, transparent); }
+  #sound-familiar .problem-card:hover, #sound-familiar .problem-card:focus-within { background-color: var(--color-v6-teal-50); }
+  #sound-familiar .problem-card a::after { content: ""; position: absolute; inset: 0; border-radius: inherit; }
+  #sound-familiar a span, #capabilities a span, #consultation a[href="/contactus/"] span { transition: transform 200ms ease; }
+  #sound-familiar .problem-card:hover a span, #sound-familiar .problem-card:focus-within a span,
+  #capabilities a:hover span, #capabilities a:focus-visible span,
+  #consultation a[href="/contactus/"]:hover span, #consultation a[href="/contactus/"]:focus-visible span { transform: translateX(5px); }
+  #questions details summary { transition: background-color 200ms ease; }
+  #questions details[open] summary { background-color: var(--color-v6-teal-50); border-radius: .75rem .75rem 0 0; }
+  #questions .faq-chevron { transform: rotate(0deg); transition: transform 280ms ease; }
+  #questions details[open] .faq-chevron { transform: rotate(180deg); }
+  #questions .faq-answer { border-top: 1px solid var(--color-v6-border); }
+  #questions details[open] .faq-answer { animation: answer-arrive 220ms ease-out both; }
+  .service-arrow { display: inline-flex; flex: none; align-items: center; justify-content: center; width: 28px; height: 28px; }
+  .service-arrow svg { display: block; width: 26px; height: 26px; fill: none; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
+  [data-service-panel][hidden] { display: none; }
+  .mobile-service-chevron { transition: transform 250ms ease; }
+  .mobile-service[open] .mobile-service-chevron { transform: rotate(180deg); }
+  @media (prefers-reduced-motion: reduce) { .mobile-service-chevron { transition: none; } }
+  .service-choice { cursor: pointer; isolation: isolate; }
+  @media (min-width: 1024px) {
+    [data-scroll-fit="true"] .service-scroll-track { height: 730vh; }
+    [data-scroll-fit="true"] .service-scroll-stage { position: sticky; top: max(5rem, calc((100svh - var(--service-stage-height)) / 2)); align-content: start; }
+    [data-scroll-ready="true"] #service-artwork [data-service-panel] > img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: contain; }
+  }
+  @media (min-width: 1024px) and (min-height: 801px) and (max-height: 1000px) {
+    [data-scroll-ready="true"] #service-artwork [data-service-panel] > div { padding: 1.25rem; }
+    [data-scroll-ready="true"] #service-artwork [data-service-panel] h3 { margin-top: .5rem; }
+    [data-scroll-ready="true"] #service-artwork [data-service-panel] p.mt-4 { margin-top: .5rem; }
+    [data-scroll-ready="true"] #service-artwork [data-service-panel] p.mt-5 { margin-top: .75rem; }
+    [data-scroll-ready="true"] #service-artwork [data-service-panel] a.mt-6 { margin-top: 1rem; }
+    [data-scroll-ready="true"] #service-artwork [data-service-panel] p.mt-3 { margin-top: .5rem; }
+  }
+  @media (min-width: 1024px) and (max-height: 800px) {
+    [data-scroll-ready="true"] #service-artwork [data-service-panel]:not([hidden]) { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: center; }
+    [data-scroll-ready="true"] #service-artwork [data-service-panel] > img { align-self: center; }
+    [data-scroll-ready="true"] #service-artwork [data-service-panel] > div { padding: 1.25rem; }
+    [data-scroll-ready="true"] .service-choice { min-height: 44px; padding-top: .45rem; padding-bottom: .45rem; }
+  }
+  @media (min-width: 1600px) {
+    #main-content .max-w-6xl, #main-content :global(.client-testimonials .testimonials-inner) { max-width: min(88vw, 120rem); }
+  }
+  @media (min-width: 2200px) and (min-height: 1201px) {
+    .service-choice { font-size: 1.25rem; }
+    #service-artwork [data-service-panel] h3 { font-size: 1.875rem; }
+    #service-artwork [data-service-panel] p:not(.eyebrow) { font-size: 1.125rem; }
+    #service-artwork [data-service-panel] a { font-size: 1.125rem; }
+  }
+  @media (min-width: 1600px) and (max-height: 1200px) {
+    #main-content .max-w-6xl, #main-content :global(.client-testimonials .testimonials-inner) { max-width: min(88vw, 90rem); }
+  }
+  .service-choice::before { content: ''; position: absolute; inset: 0; background: var(--color-aqua-50); opacity: 0; transition: opacity 250ms ease; }
+  .service-choice[aria-pressed="true"]::before, .service-choice:hover::before { opacity: 1; }
+  .service-progress { position: absolute; inset: 0 0 auto; height: 2px; overflow: hidden; }
+  .service-progress > span { display: block; height: 100%; background: var(--color-action); transform: scaleX(0); transform-origin: left; }
+  .service-choice[aria-pressed="true"] .service-progress { background: var(--color-coral-100); }
+  .service-control { cursor: pointer; background: white; }
+  .service-control:hover { background: var(--color-aqua-50); }
+  .service-controls[hidden] { display: none; }
+  :is(.service-choice, .service-control):focus-visible { outline: 3px solid var(--color-v6-blue); outline-offset: 3px; z-index: 1; }
+  @media (prefers-reduced-motion: reduce) { .service-choice::before { transition: none; } }
+  .motion-process { position: relative; padding-left: 28px; }
+  .motion-process::before, .motion-process::after { content: ""; position: absolute; top: 22px; bottom: 22px; left: 8px; width: 3px; border-radius: 999px; transform-origin: top; }
+  .motion-process::before { background: var(--color-v6-teal-100); }
+  .motion-process::after { background: var(--color-v6-teal-700); }
+  .motion-process.motion-visible::after { animation: process-travel-vertical 3.4s ease-in-out both; }
+  .process-card::before { content: ""; position: absolute; z-index: 1; top: 22px; left: -24px; width: 11px; height: 11px; border: 2px solid var(--color-v6-teal-700); border-radius: 50%; background: white; }
+  .process-card:last-child::after { content: ""; position: absolute; top: 33px; bottom: 0; left: -24px; width: 11px; background: white; }
+  .motion-process.motion-visible .process-card > span { animation: process-step 650ms ease-out both; }
+  .motion-process.motion-visible .process-card:nth-child(2) > span { animation-delay: 1.4s; }
+  .motion-process.motion-visible .process-card:nth-child(3) > span { animation-delay: 2.8s; }
+  @media (min-width: 768px) {
+    .motion-process { padding-left: 0; padding-bottom: 30px; }
+    .motion-process::before, .motion-process::after { top: auto; bottom: 10px; left: 16.67%; right: 16.67%; width: auto; height: 3px; transform-origin: left; }
+    .motion-process.motion-visible::after { animation-name: process-travel-horizontal; }
+    .process-card::before { top: auto; left: 50%; bottom: -24px; transform: translateX(-50%); }
+    .process-card:last-child::after { display: none; }
+  }
+  @keyframes content-settle { from { transform: translateY(10px); } to { transform: translateY(0); } }
+  @keyframes process-travel-horizontal { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+  @keyframes process-travel-vertical { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+  @keyframes process-step { 0%, 100% { transform: scale(1); } 45% { transform: scale(1.15); } }
+  @keyframes answer-arrive { from { opacity: .65; transform: translateY(-4px); } to { opacity: 1; transform: translateY(0); } }
+  @media (prefers-reduced-motion: reduce) {
+    #sound-familiar li, #capabilities article, #sound-familiar a span, #capabilities a span, #consultation a span, #questions details summary, #questions .faq-chevron { transition: none; }
+    #sound-familiar a span, #capabilities a span, #consultation a span { transform: none !important; }
+    [data-motion-card].motion-visible, .motion-process.motion-visible::after, .motion-process.motion-visible .process-card > span, #questions details[open] .faq-answer { animation: none; }
+  }
 </style>

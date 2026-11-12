@@ -4,17 +4,19 @@ import { clientTestimonials } from "../../data/client-testimonials";
 interface Props {
   id?: string;
   description?: string;
+  eyebrow?: string;
+  heading?: string;
 }
 
-const { id = "clients", description } = Astro.props;
+const { id = "clients", description, eyebrow = "In our clients’ words", heading = "Why Our Clients Love Us." } = Astro.props;
 const headingId = `${id}-heading`;
 ---
 
 <section id={id} class="client-testimonials" aria-labelledby={headingId} data-client-testimonials>
   <div class="testimonials-inner">
     <div class="testimonials-heading">
-      <p class="testimonials-eyebrow">In our clients’ words</p>
-      <h2 id={headingId}>Why Our Clients Love Us.</h2>
+      <p class="testimonials-eyebrow">{eyebrow}</p>
+      <h2 id={headingId}>{heading}</h2>
       {description && <p class="testimonials-description">{description}</p>}
     </div>
     <div class="testimonials-grid">
