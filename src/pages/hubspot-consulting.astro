@@ -36,12 +36,12 @@ const outcomes: { image: string; alt: string; name: string; heading: string; des
   { image: "sales", alt: "Two colleagues review a prioritised opportunity and its follow-up workflow.", name: "Stop good leads from falling through the cracks", heading: "Focus on the right opportunities.", description: "Meaningful qualification and lead scoring, clear handoffs and less admin around approvals and deal values.", evidence: "Lead scoring rebuilt using evidence from 323 closed-won deals." },
   { image: "renewals", alt: "Two colleagues review a contract, its owner and an upcoming renewal reminder.", name: "Know what is renewing before it is too late", heading: "See renewals before they become urgent.", description: "Connect contract terms, values, dates and owners. Bring historical agreements into HubSpot and automate renewal creation.", evidence: "$2M+ in ARR identified outside CRM revenue visibility." },
   { image: "quoting", alt: "Two colleagues review a quote with pricing, two locations and an approval check.", name: "Send accurate quotes without the back-and-forth", heading: "Send a quote you're confident in.", description: "Keep locations, pricing, approvals and contract-value calculations together through quoting and signature.", evidence: "Experience includes multi-building quoting and branded PandaDoc templates." },
-  { image: "integrations", alt: "Two colleagues review a validated handoff between a customer record and a finance document.", name: "Connect HubSpot with your finance and operations systems", heading: "Give the next team what they need.", description: "Reliable mappings, validation and handoffs between HubSpot, finance and delivery tools, including NetSuite and Monday.com.", evidence: "HubSpot-side NetSuite readiness: deals passing checks increased from 41 to 256." },
+  { image: "integrations", alt: "Two colleagues review a validated handoff between a customer record and a finance document.", name: "Stop re-entering data across teams", heading: "Give the next team what they need.", description: "Reliable mappings, validation and handoffs between HubSpot, finance and delivery tools, including NetSuite and Monday.com.", evidence: "HubSpot-side NetSuite readiness: deals passing checks increased from 41 to 256." },
   { image: "service", alt: "Two colleagues coordinate a customer request, its owner and a field visit.", name: "Keep customer requests from getting lost", heading: "Help customers without the chasing.", description: "Requests arrive with context and clear ownership. Routing, reminders, escalation and closure keep service and field teams coordinated.", evidence: "Ticket workflows redesigned; HubSpot-to-Monday.com site-visit sync implemented." },
   { image: "reporting", alt: "Two colleagues review a conceptual dashboard and a matching report.", name: "Get reports your leadership team can trust", heading: "Walk into the review with a clear picture.", description: "Consistent definitions, historical comparisons and data checks make management reporting repeatable.", evidence: "Executive service reporting covering backlog, demand, throughput, response times and workload." },
   { image: "forecasting", alt: "Two colleagues consider three possible forecast paths leading to a future review.", name: "Know what could change your forecast", heading: "Know what could change the forecast.", description: "Assess pipeline coverage, compare scenarios and track forecast movement and accuracy. Give revenue risks a place in the discussion." },
   { image: "ai", alt: "Two colleagues review a suggested customer summary and its place in a workflow.", name: "Decide where AI is worth using", heading: "Test, Evaluate, Apply", description: "Choose worthwhile tasks, prepare CRM data and knowledge sources, then connect AI to the workflow. Define human review, ownership and measures of usefulness." },
-  { image: "licensing", alt: "Two colleagues review subscription choices alongside seats, usage and cost.", name: "Know whether you are paying for the right HubSpot setup", heading: "Choose what your team actually needs.", description: "Match subscriptions, seats and usage credits to your plans. Understand cost implications and underused capabilities before buying, expanding or renewing." },
+  { image: "licensing", alt: "Two colleagues review subscription choices alongside seats, usage and cost.", name: "Make your HubSpot investment count", heading: "Choose what your team actually needs.", description: "Match subscriptions, seats and usage credits to your plans. Understand cost implications and underused capabilities before buying, expanding or renewing." },
 ];
 const imageUrl = (name: string, width: number) => `/assets/consulting/character-scenes/${name}-${width}.webp`;
 const faqs = [
@@ -122,7 +122,7 @@ const primaryButton = "inline-flex min-h-12 items-center justify-center rounded-
             ))}
           </div>
           <div class="order-1 min-w-0 lg:order-2 lg:flex lg:flex-col"><div role="group" aria-label="Consulting services" class="border-t border-v6-border lg:flex lg:flex-1 lg:flex-col">{outcomes.map((item, index) => <button id={`capability-${item.image}`} type="button" data-service-select={index} data-service-name={item.name} aria-pressed={index === 0 ? "true" : "false"} aria-controls={`service-detail-${item.image}`} disabled class="service-choice relative flex min-h-14 w-full scroll-mt-24 items-center border-b border-v6-border px-5 py-4 text-left lg:flex-1"><span class="service-progress" aria-hidden="true"><span data-service-progress></span></span><span class="relative text-base font-bold leading-snug text-v6-dark">{item.name}</span></button>)}</div>
-            <div data-service-controls hidden class="service-controls mt-5 flex flex-wrap items-center justify-between gap-3"><div class="flex items-center gap-3"><p data-service-count class="text-sm text-v6-text-muted">1 of 10</p><a href="#approach" aria-label="Skip to how we work" class="inline-flex min-h-11 items-center text-sm font-semibold text-v6-teal-700 underline underline-offset-4 focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-v6-copper">Skip</a></div><div class="flex items-center gap-2"><button type="button" data-service-previous aria-label="Previous service" class="service-control h-11 w-11 rounded-full border border-v6-border text-v6-dark">←</button><button type="button" data-service-toggle class="service-control min-h-11 rounded-full border border-v6-border px-4 text-sm font-semibold text-v6-dark">Play slideshow</button><button type="button" data-service-next aria-label="Next service" class="service-control h-11 w-11 rounded-full border border-v6-border text-v6-dark">→</button></div></div><p data-service-announcement class="sr-only" aria-live="polite" aria-atomic="true"></p>
+            <div data-service-controls hidden class="service-controls mt-5 flex flex-wrap items-center justify-between gap-3"><div class="flex items-center gap-3"><p data-service-count class="text-sm text-v6-text-muted">1 of 10</p><a href="#approach" aria-label="Skip to how we work" class="inline-flex min-h-11 items-center text-sm font-semibold text-v6-teal-700 underline underline-offset-4 focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-v6-copper">Skip</a></div><div class="service-control-group" role="group" aria-label="Service slideshow controls"><button type="button" data-service-previous aria-label="Previous service" title="Previous service" class="service-control"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14.5 6-6 6 6 6" /></svg></button><button type="button" data-service-toggle aria-label="Play slideshow" title="Play slideshow" class="service-control"><svg data-service-play viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 10 7-10 7z" /></svg><svg data-service-pause viewBox="0 0 24 24" aria-hidden="true" hidden><path d="M9 5v14M15 5v14" /></svg></button><button type="button" data-service-next aria-label="Next service" title="Next service" class="service-control"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9.5 6 6 6-6 6" /></svg></button></div></div><p data-service-announcement class="sr-only" aria-live="polite" aria-atomic="true"></p>
           </div>
         </div>
         </div>
@@ -226,10 +226,10 @@ const primaryButton = "inline-flex min-h-12 items-center justify-center rounded-
     let active = 0, elapsed = 0, previous = 0, frame = 0;
     let inView = false, hovering = false, focused = false, paused = true;
     const canPlay = () => !paused && !motion.matches && inView && !hovering && !focused && !document.hidden;
-    const updateToggle = () => { toggle.disabled = motion.matches; toggle.textContent = motion.matches ? 'Motion reduced' : paused ? 'Play slideshow' : 'Pause slideshow'; };
+    const updateToggle = () => { const label = motion.matches ? 'Slideshow unavailable with reduced motion' : paused ? 'Play slideshow' : 'Pause slideshow'; toggle.disabled = motion.matches; toggle.setAttribute('aria-label', label); toggle.title = label; toggle.querySelector<SVGElement>('[data-service-play]')!.toggleAttribute('hidden', !paused && !motion.matches); toggle.querySelector<SVGElement>('[data-service-pause]')!.toggleAttribute('hidden', paused || motion.matches); };
     const select = (index: number, manual = false) => {
       active = (index + choices.length) % choices.length; elapsed = 0;
-      choices.forEach((choice, i) => { choice.setAttribute('aria-pressed', String(i === active)); choice.querySelector<HTMLElement>('[data-service-progress]')!.style.transform = 'scaleX(0)'; panels[i].hidden = i !== active; });
+      choices.forEach((choice, i) => { const selected = i === active; choice.setAttribute('aria-pressed', String(selected)); choice.querySelector<HTMLElement>('[data-service-progress]')!.style.transform = 'scaleX(0)'; panels[i].hidden = false; panels[i].dataset.active = String(selected); panels[i].inert = !selected; panels[i].setAttribute('aria-hidden', String(!selected)); });
       const name = choices[active].dataset.serviceName!;
       count.textContent = `${active + 1} of ${choices.length}`;
       if (manual) { paused = true; updateToggle(); announcement.textContent = `Service ${active + 1} of ${choices.length}: ${name}. Slideshow paused.`; }
@@ -341,6 +341,15 @@ const primaryButton = "inline-flex min-h-12 items-center justify-center rounded-
   .service-arrow { display: inline-flex; flex: none; align-items: center; justify-content: center; width: 28px; height: 28px; }
   .service-arrow svg { display: block; width: 26px; height: 26px; fill: none; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
   [data-service-panel][hidden] { display: none; }
+  @media (min-width: 1024px) {
+    [data-scroll-ready="true"] #service-artwork { display: grid; align-items: stretch; }
+    [data-scroll-ready="true"] #service-artwork [data-service-panel] { grid-area: 1 / 1; min-width: 0; opacity: 0; visibility: hidden; pointer-events: none; transition: opacity .7s ease-in-out, visibility 0s linear .7s; }
+    [data-scroll-ready="true"] #service-artwork [data-service-panel][data-active="true"] { opacity: 1; visibility: visible; pointer-events: auto; z-index: 2; transition: opacity .7s ease-in-out; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    [data-scroll-ready="true"] #service-artwork [data-service-panel],
+    [data-scroll-ready="true"] #service-artwork [data-service-panel][data-active="true"] { transition: none; }
+  }
   .mobile-service-chevron { transition: transform 250ms ease; }
   .mobile-service[open] .mobile-service-chevron { transform: rotate(180deg); }
   @media (prefers-reduced-motion: reduce) { .mobile-service-chevron { transition: none; } }
@@ -359,7 +368,7 @@ const primaryButton = "inline-flex min-h-12 items-center justify-center rounded-
     [data-scroll-ready="true"] #service-artwork [data-service-panel] p.mt-3 { margin-top: .5rem; }
   }
   @media (min-width: 1024px) and (max-height: 800px) {
-    [data-scroll-ready="true"] #service-artwork [data-service-panel]:not([hidden]) { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: center; }
+    [data-scroll-ready="true"] #service-artwork [data-service-panel] { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: center; }
     [data-scroll-ready="true"] #service-artwork [data-service-panel] > img { align-self: center; }
     [data-scroll-ready="true"] #service-artwork [data-service-panel] > div { padding: 1.25rem; }
     [data-scroll-ready="true"] .service-choice { min-height: 44px; padding-top: .45rem; padding-bottom: .45rem; }
@@ -381,8 +390,13 @@ const primaryButton = "inline-flex min-h-12 items-center justify-center rounded-
   .service-progress { position: absolute; inset: 0 0 auto; height: 2px; overflow: hidden; }
   .service-progress > span { display: block; height: 100%; background: var(--color-action); transform: scaleX(0); transform-origin: left; }
   .service-choice[aria-pressed="true"] .service-progress { background: var(--color-coral-100); }
-  .service-control { cursor: pointer; background: white; }
+  .service-control-group { display: inline-flex; align-items: center; gap: .25rem; padding: .25rem; border: 1px solid var(--color-v6-border); border-radius: 999px; background: white; }
+  .service-control { display: grid; place-items: center; width: 44px; height: 44px; border: 0; border-radius: 50%; background: transparent; color: var(--color-v6-teal-900); cursor: pointer; transition: background-color 180ms ease, color 180ms ease; }
+  .service-control svg { display: block; width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .service-control svg[hidden] { display: none; }
   .service-control:hover { background: var(--color-aqua-50); }
+  .service-control:disabled { opacity: .5; cursor: not-allowed; }
+  @media (prefers-reduced-motion: reduce) { .service-control { transition: none; } }
   .service-controls[hidden] { display: none; }
   :is(.service-choice, .service-control):focus-visible { outline: 3px solid var(--color-v6-blue); outline-offset: 3px; z-index: 1; }
   @media (prefers-reduced-motion: reduce) { .service-choice::before { transition: none; } }
